@@ -1,0 +1,740 @@
+html {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-color:white;
+color:black;
+font-family:sans-sarif;
+}
+.track_text {
+	font-size:30px;
+	margin-left:3px;
+	margin-right:3px;
+	vertical-align:top;
+}
+#text_gan {
+	vertical-align:top;
+	color: #990000;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.forest_medallion{
+	vertical-align:top;
+	color: green;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.fire_medallion{
+	vertical-align:top;
+	color: red;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.water_medallion{
+	vertical-align:top;
+	color: blue;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.generic_medallion{
+	vertical-align:top;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.greenstone{
+	vertical-align:top;
+	font-size:24px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+	color: green;
+	font-style:italic;
+	font-weight:100;
+	opacity:.8;
+}
+.redstone{
+	vertical-align:top;
+	font-size:24px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+	color: red;
+	font-style:italic;
+	font-weight:100;
+	opacity:.8;
+}
+.bluestone{
+	vertical-align:top;
+	font-size:24px;
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+	color: blue;
+	font-style:italic;
+	font-weight:100;
+	opacity:.8;
+}
+.requirements {
+	height:30px;
+	width: 30px;
+	margin-left:4px;
+	margin-right:0px;
+	opacity: 0.2;
+}
+.hint_input {
+	width: 50px;
+	vertical-align: top;
+	margin-bottom: 3px;
+}
+#skip_req{
+	color: darkgreen;
+}
+.hint_text {
+	font-size: 20px;
+	font-weight: bold;
+}
+.meh_text {
+	font-size: 14px;
+	color: green;
+}
+.meh_input {
+	width: 25px;
+	vertical-align: top;
+	margin-bottom: 3px;
+}
+#woth_text {
+	color: #33cccc
+}
+#barren_text {
+	color: #ff8080
+}
+.super_hint_input {
+	width: 200px;
+	height:140px;
+	vertical-align: top;
+	margin-bottom: 3px;
+	columns: 5
+}
+.area_titles {
+	font-size: 22px;
+	text-align: left;
+	font-weight: 3000;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+.column {
+  float: left;
+  width: 9%;
+}
+#info_column {
+	float: left;
+	width: 13%;
+}
+#songcolumn {
+	float: left;
+	width: 9%;
+}
+.dungcolumn {
+  float: left;
+  width: 12%;
+}
+.minidungcolumn {
+  float: left;
+  width: 11%;
+}
+.no_span {
+	
+}
+.full_span{
+	display:inline-block;
+	width:40px;
+}
+.half_span{
+	display:inline-block;
+	width:20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.check_input {
+	width: 30px;
+	vertical-align: top;
+	margin-bottom: 3px;
+}
+.layout_input {
+	width: 55px;
+	vertical-align: top;
+	margin-bottom: 3px;
+}
+.check_text {
+	font-size: 16px;
+}
+.dot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+}
+.bossdot {
+  height: 18px;
+  width: 18px;
+  background-color: red;
+  margin-right:3px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.keydot {
+  height: 18px;
+  width: 18px;
+  background-color: gray;
+  margin-right:3px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.greendot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: green;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.reddot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.bluedot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: blue;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.purpledot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: purple;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.orangedot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: orange;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.yellowdot {
+  height: 18px;
+  width: 18px;
+  margin-right:3px;
+  background-color: yellow;
+  border-radius: 50%;
+  opacity: 0.2;
+  display: inline-block;
+}
+.gameFocus{
+position:absolute;
+left:50%;
+margin-top:40px;
+margin-left:-33%;
+text-align:center;
+height:85%;
+width:67%;
+border:3px solid black;
+border-radius:7.5%;
+}
+.locationTitle{
+font-weight:bold;
+font-size:22px;
+}
+.locationDescription{
+
+    font-size:17px;
+}
+.localListing{
+    width:100%;
+    height:5%;
+}
+.log {
+    margin-top:5%;
+    height:80%;
+    width:10%;
+    margin-left:2.5%;
+    text-align:left;
+}
+.logHeading{
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+}
+.localText{
+}
+.localHeading{
+    font-size:16px;
+    font-weight:bold;
+}
+.localSection{
+vertical-align:top;
+width:25%;
+height:60%;
+display:inline-block;
+margin:1.5%;
+margin-top:0%;
+}
+#timeMarker{
+    position:absolute;
+    bottom:100px;
+    left:45%;
+    width:9px;
+    height:9px;
+    background:gold;
+    border-radius:50%;
+     
+}
+#travelHeading{
+position:absolute;
+width:100%;
+top:-8%;
+text-align: center;
+margin: 0 auto;
+font-size:107%;
+}
+.travelMenu{
+position:absolute;
+
+height:55%;
+width:12%;
+text-align:center;
+border:2px solid black;
+top:42%;
+right:2%;
+}
+.travelOption{
+width:92%;
+font-size:17px;
+margin:4%;
+height:6.5%;
+}
+.travelDestination{
+font-size:14px;
+margin: 0 auto;
+float:left;
+}
+.travelTime{
+margin:0 auto;
+float:right;
+}
+.sun{
+   width:200px;
+    height:200px;
+    position:absolute;
+}
+.clock {
+    position: absolute;
+        top:8%;
+    right:4%;
+}
+#day {
+    position:absolute;
+    right:36px;
+    top:-60px;
+    font-size:70px;
+}
+#timeCircle{
+    top:8%;
+    right:4%;
+    width: 90px;
+    height: 90px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: 8px solid green;
+    border-radius: 100%;
+    background: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);  
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+}
+
+.rBlueHeader{
+margin-top:53px;
+color:blue;
+font-size:30px;
+}
+.bonusBlueprints{
+color:white;
+background-color: slategray;
+margin-top: 10px;
+border-color:black;
+}
+.boostsD{
+color: green;
+font-weight:'bold';
+font-size:20px;
+}
+#boostsH{
+font-size:25px;
+}
+#bdc{
+position: absolute;
+color: blue;
+font-size: 25px;
+width:25%;
+height:25%;
+right:40%;
+top:8%;
+}
+.timeBox{
+font-family:"sans-sarif";
+top:0px;
+left:80%;
+float:right;
+right:30px;
+width:20%;
+text-align:right;
+}
+.timeBox > p{
+color:#003366;
+font-weight:900;
+}
+.mainMenu{
+text-align:center;
+height:0px;
+width:50%;
+margin:0 auto;
+margin-top:1.3%;
+}
+.focus{
+border: 2px solid;
+border-radius: 25px;
+font-weight:900;
+}
+.resourcesBank{
+width: 20%;
+height:100%;
+text-align:left;
+}
+.resourcesBank > p{
+font-weight:bold;
+}
+h1 {
+text-align:center;
+width:30%;
+margin:0 auto;
+padding-bottom:8px;
+}
+button{
+outline:none;
+}
+.top {
+display:inline;
+}
+.chooseBar{
+position:absolute;
+left:20%;
+height:10%;
+width:60%;
+top:17.5%
+}
+.sectCB{
+-moz-user-select: none; 
+        -khtml-user-select: none; 
+        -webkit-user-select: none; 
+        -o-user-select: none;
+
+font-size:18px;
+width:15%;
+display:inline;
+padding:15px;
+margin-left:2%;
+background-color:gainsboro;
+border: 2px solid black;
+}
+#sect1 {
+color:black;
+background-color:red;
+font-weight:bold;
+}
+#sect2 {
+color:blue;
+}
+#sect3 {
+color:green;
+}
+#mainSpot {
+position:absolute;
+left:20%;
+height:70%;
+width:60%;
+top:30%;
+}
+.interchangeable{
+position:absolute;
+left:20%;
+height:60%;
+width:60%;
+top:25%;
+}
+.blueheader{
+color:black;
+font-size:20px;
+}
+.blueprints{
+display:block;
+font-weight:normal;
+color:gold;
+background-color: gray;
+border-color:black;
+font-size:14px;
+}
+.web{position:absolute; height:20px; width:20px; background-color:black; color:black; border-radius:50%; }
+
+#cweb{height:35px; width:35px; top:50%; left:50%;}
+#a1web{top:59%; left:52%;}
+#a2web{top:60%; left:56%;}
+#a3web{top:62%; left:60%;}
+#a4web{top:65%; left:64%;}
+#a5web{top:62%; left:68%;}
+#a6web{top:58%; left:72%;}
+#a7web{top:61%; left:75%; height:55px; width:55px;}
+#b1web{top:44%; left:52%;}
+#b2web{top:42%; left:49%;}
+#b3web{top:36%; left:50%;}
+#b4web{top:32%; left:47%;}
+
+@-webkit-keyframes orbit { 
+from { -webkit-transform:rotate(0deg) } 
+to { -webkit-transform:rotate(360deg) } }
+
+.hours{
+font-size:20px;
+height:105px;
+width:105px;
+}
+
+.hourCircle{
+position:absolute;
+left:43px;
+bottom:98px;
+}
+
+.twelveClock{
+transform:rotate(0deg);
+}
+#clock0{
+transform:rotate(0deg);
+}
+
+.elevenClock{
+transform:rotate(330deg);
+}
+#clock11{
+transform:rotate(-330deg);
+}
+
+.tenClock{
+transform:rotate(300deg);
+}
+#clock10{
+transform:rotate(-300deg);
+}
+
+.nineClock{
+transform:rotate(274deg);
+}
+#clock9{
+transform:rotate(-274deg);
+}
+
+.eightClock{
+transform:rotate(244deg);
+}
+#clock8{
+transform:rotate(-244deg);
+}
+
+.sevenClock{
+transform:rotate(214deg);
+}
+#clock7{
+transform:rotate(-214deg);
+}
+
+.sixClock{
+transform:rotate(184deg);
+}
+#clock6{
+transform:rotate(-184deg);
+}
+
+.fiveClock{
+transform:rotate(154deg);
+}
+#clock5{
+transform:rotate(-154deg);
+}
+
+.fourClock{
+transform:rotate(124deg);
+}
+#clock4{
+transform:rotate(-124deg);
+}
+
+.threeClock{
+transform:rotate(94deg);
+}
+#clock3{
+transform:rotate(-94deg);
+}
+
+.twoClock{
+transform:rotate(64deg);
+}
+#clock2{
+transform:rotate(-64deg);
+}
+
+.oneClock{
+transform:rotate(34deg);
+}
+#clock1{
+transform:rotate(-34deg);
+}
+
+#title_kokiri {
+color:#20EA01;
+}
+#title_ranch {
+color:#101001;
+}
+
+#title_field {
+color:#B6B004;
+}
+
+#title_valley {
+color:#01E6D7;
+}
+
+#title_hylia {
+color:#0101E6;
+}
+
+#title_market {
+color:#C704E5;
+}
+
+#title_hcastle {
+color:#84FE0B;
+}
+
+#title_outG {
+color:#FE0404;
+}
+
+#title_ToT {
+color:#D4E3EF;
+}
+
+#title_river {
+color:#5DB8FE;
+}
+#title_domain {
+color:#A3D7FE;
+}
+#title_lostwoods {
+color:#004F0B;
+}
+#title_ganons {
+color:#990000	
+}
+#title_sfm {
+color:#8BFB9A;
+}
+#title_gcity {
+color:#FEB813;
+}
+#title_trail {
+color:#573E02;
+}
+#title_kakariko {
+color:#678C8A;
+}
+#title_crater {
+color:#FE3E04;
+}
+#title_fortress {
+color:#C3AB7C;
+}
+#title_wasteland {
+color:#976500;
+}
+#title_colossus {
+color:#FED788;
+}
+#title_graveyard {
+color:#200A28;
+}
+#title_deku {
+color:#563C25;
+}
+#title_dodongos {
+color:#B35705;
+}
+#title_jabu {
+color:#077D8A;
+}
+#title_fountain {
+color:#77F1FE;
+}
+#title_ice {
+color:#9EF3FD;
+}
+#title_forest {
+color:#88FA4E;
+}
+#title_fire {
+color:#FE3213;
+}
+#title_water {
+color:#131BFE;
+}
+#title_spirit {
+color:#8C9B03;
+}
+#title_shadow {
+color:#69008E;
+}
+#title_botw {
+color:#DE86FE;
+}
+#title_gtg {
+color:#FE8B08;
+}
+
