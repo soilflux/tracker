@@ -2989,49 +2989,49 @@ Game.checks_remaining -=1;
 function check1(x) {
 	setTimeout(function(){
 		moreCheck1(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check2(x) {
 	setTimeout(function(){
 		moreCheck2(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check3(x) {
 	setTimeout(function(){
 		moreCheck3(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check4(x) {
 	setTimeout(function(){
 		moreCheck4(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check5(x) {
 	setTimeout(function(){
 		moreCheck5(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check6(x) {
 	setTimeout(function(){
 		moreCheck6(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function check7(x) {
 	setTimeout(function(){
 		moreCheck7(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function checkS(x) {
 	setTimeout(function(){
 		moreCheckS(x)
-		}, 8000);
+		}, 2000);
 	Update();Update();Update();
 }
 function moreCheck1(x) {
@@ -3815,7 +3815,7 @@ function highlight(x) {
 function get_medallions1(x) {
 	setTimeout(function(){
 		get_medallions2(x)
-		}, 8000);
+		}, 10000);
 	Update();Update();Update();
 }
 function get_medallions2(x) {
@@ -3886,7 +3886,7 @@ function get_medallions2(x) {
 function get_stones1(x) {
 	setTimeout(function(){
 		get_stones2(x)
-		}, 8000);
+		}, 10000);
 	Update();Update();Update();
 }
 function get_stones2(x) {
@@ -3946,5 +3946,5 @@ function shuffle(array) {
   return array;
 }
 
-setInterval(Update,5000);
+setInterval(Update,2000);
 Update();Update();Update();
