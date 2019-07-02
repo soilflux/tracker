@@ -1407,19 +1407,19 @@ function Update() {
 	timeCurrent = timeFuture-timeStart;
 	timeCurrent = timeCurrent *3.5/60;
 	timeFinal = timeCurrent + timeLost;
-	skipValue = document.getElementById("go_input").value/(Game.checks_remaining-13) * 1508.33334 * 35/Game.logically_accessible;
+	//skipValue = document.getElementById("go_input").value/(Game.checks_remaining-13) * 1508.33334 * 35/Game.logically_accessible;
 	if (timeFinal > 0) {document.getElementById("time_difference").style.color="red"; }
 	tMinutes = Math.floor(timeFinal / 60000);
 	tSeconds = Math.floor(timeFinal % 60000 / 1000);
-	sMinutes = Math.floor(skipValue / 60);
-	sSeconds = Math.floor(skipValue % 60);
+	//sMinutes = Math.floor(skipValue / 60);
+	//sSeconds = Math.floor(skipValue % 60);
 	rValue = Math.floor(timeFinal/1000 *1.3 + 60)
 	rMinutes = Math.floor(rValue / 60);
 	rSeconds = Math.floor(rValue % 60);
-	goodCheckPercent = Math.floor(document.getElementById("go_input").value/(Game.checks_remaining-13)*100);
+	//goodCheckPercent = Math.floor(document.getElementById("go_input").value/(Game.checks_remaining-13)*100);
 	document.getElementById("checks_remaining").innerHTML="Remaining: "+Game.checks_remaining;
 	document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Game.logically_accessible;
-	document.getElementById("good_check_percent").innerHTML="&nbsp; &nbsp;&nbsp;" + goodCheckPercent + "%";
+	//document.getElementById("good_check_percent").innerHTML="&nbsp; &nbsp;&nbsp;" + goodCheckPercent + "%";
 	//document.getElementById("time_difference").innerHTML="" + tMinutes + "m" + tSeconds + "s";
 	//document.getElementById("skip_req").innerHTML="" + rMinutes + "m" + rSeconds + "s";
 	//document.getElementById("skip_value").innerHTML="" + sMinutes + "m" + sSeconds + "s";
@@ -1453,7 +1453,7 @@ var timeFinal;
 var timeLost =0;
 var tMinutes = 0;
 var tSeconds = 0;
-document.getElementById("go_input").value = 9;
+//document.getElementById("go_input").value = 9;
 	
 	
 	
@@ -2989,49 +2989,49 @@ Game.checks_remaining -=1;
 function check1(x) {
 	setTimeout(function(){
 		moreCheck1(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check2(x) {
 	setTimeout(function(){
 		moreCheck2(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check3(x) {
 	setTimeout(function(){
 		moreCheck3(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check4(x) {
 	setTimeout(function(){
 		moreCheck4(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check5(x) {
 	setTimeout(function(){
 		moreCheck5(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check6(x) {
 	setTimeout(function(){
 		moreCheck6(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function check7(x) {
 	setTimeout(function(){
 		moreCheck7(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function checkS(x) {
 	setTimeout(function(){
 		moreCheckS(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function moreCheck1(x) {
@@ -3815,7 +3815,7 @@ function highlight(x) {
 function get_medallions1(x) {
 	setTimeout(function(){
 		get_medallions2(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function get_medallions2(x) {
@@ -3886,7 +3886,7 @@ function get_medallions2(x) {
 function get_stones1(x) {
 	setTimeout(function(){
 		get_stones2(x)
-		}, 15000);
+		}, 8000);
 	Update();Update();Update();
 }
 function get_stones2(x) {
@@ -3946,5 +3946,5 @@ function shuffle(array) {
   return array;
 }
 
-setInterval(Update,10000);
+setInterval(Update,5000);
 Update();Update();Update();
