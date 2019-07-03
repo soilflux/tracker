@@ -16,8 +16,9 @@ font-family:sans-sarif;
 	vertical-align:top;
 }
 #checks_remaining {
-	color:lightblue;
-	font-weight: 3000;
+	color:blue;
+	font-size: 18px;
+	font-weight: 2000;
 	text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -25,7 +26,8 @@ font-family:sans-sarif;
 		1px 1px 0 #000;
 }
 #logically_accessible{
-	color:lightgreen;
+	color:forestgreen;
+	font-size: 18px;
 	font-weight: 3000;
 	text-shadow:
 		-1px -1px 0 #000,
