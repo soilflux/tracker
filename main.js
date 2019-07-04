@@ -611,6 +611,7 @@ for (const key of keys) {
 	if (temp == 256) {break; }
 	temp +=1;
 	if(document.getElementById(key) == null) {continue;}
+	if (temp <= 244) { 
  if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
 	if (document.getElementById(key).value == "sli" && !Game.slingshot) {Location.slingshot1 = document.getElementById(key).id; Game.slingshot = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -670,7 +671,8 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "cla" && (!Game.prescription || !Game.claim_check)) {Location.claim_check = document.getElementById(key).id; Game.claim_check = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
 	if (document.getElementById(key).value == "lig" && !Game.light_arrows) {Location.light_arrows = document.getElementById(key).id; Game.light_arrows = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	
+	}
+	else {
 	if (document.getElementById(key).value == "lul" && !Game.lullaby) {Location.lullaby = document.getElementById(key).id; Game.lullaby = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key));}
 	if (document.getElementById(key).value == "epo" && !Game.eponas) {Location.eponas = document.getElementById(key).id; Game.eponas = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Epona's"; junkBS(document.getElementById(key))}
 	if (document.getElementById(key).value == "sar" && !Game.sarias) {Location.sarias = document.getElementById(key).id; Game.sarias = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Saria's"; junkBS(document.getElementById(key))}
@@ -683,6 +685,7 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "req" && !Game.requiem) {Location.requiem = document.getElementById(key).id; Game.requiem = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Requiem"; junkBS(document.getElementById(key))}
 	if (document.getElementById(key).value == "noc" && !Game.nocturne) {Location.nocturne = document.getElementById(key).id; Game.nocturne = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; junkBS(document.getElementById(key))}
 	if (document.getElementById(key).value == "pre" && !Game.prelude) {Location.prelude = document.getElementById(key).id; Game.prelude = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key))}
+	}
 }
 	
 	Location_Logic.kokiri_sword = true;
