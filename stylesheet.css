@@ -18,22 +18,13 @@ font-family:sans-sarif;
 #checks_remaining {
 	color:blue;
 	font-size: 18px;
-	font-weight: 2000;
-	text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+	font-weight: bold;
+	
 }
 #logically_accessible{
-	color:forestgreen;
+	color:darkgreen;
 	font-size: 18px;
-	font-weight: 3000;
-	text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+	font-weight: bold;
 }
 #text_gan {
 	vertical-align:top;
@@ -199,6 +190,16 @@ font-family:sans-sarif;
 }
 .check_text {
 	font-size: 16px;
+}
+.logic_check_text{
+	font-size: 18px;
+	color: green;
+	font-weight:bold;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 .dot {
   height: 18px;
