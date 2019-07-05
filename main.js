@@ -1650,6 +1650,19 @@ if(tempstring.length == 6) 	{
 	if (Game.dins_fire) {if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").style.opacity =1; }}
 	if (Game.hover_boots) {if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").style.opacity =1; }}
 	
+	if (Game.lullaby) {document.getElementById("lullabyimg").style.opacity =1;}
+	if (Game.eponas) {document.getElementById("eponasimg").style.opacity =1;}
+	if (Game.sarias) {document.getElementById("sariasimg").style.opacity =1;}
+	if (Game.suns_song) {document.getElementById("sunsimg").style.opacity =1;}
+	if (Game.song_of_time) {document.getElementById("sotimg").style.opacity =1;}
+	if (Game.song_of_storms) {document.getElementById("sosimg").style.opacity =1;}
+	if (Game.minuet) {document.getElementById("minuetimg").style.opacity =1;}
+	if (Game.bolero) {document.getElementById("boleroimg").style.opacity =1;}
+	if (Game.serenade) {document.getElementById("serenadeimg").style.opacity =1;}
+	if (Game.requiem) {document.getElementById("requiemimg").style.opacity =1;}
+	if (Game.nocturne) {document.getElementById("nocturneimg").style.opacity =1;}
+	if (Game.prelude) {document.getElementById("preludeimg").style.opacity =1;}
+	
 	/**if (Game.minuet) {document.getElementById("min_note").style.opacity = 1;}
 	if (Game.bolero) {document.getElementById("bol_note").style.opacity = 1;}
 	if (Game.serenade) {document.getElementById("ser_note").style.opacity = 1;}

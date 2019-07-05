@@ -100,7 +100,7 @@ font-family:sans-sarif;
 .hint_input {
 	width: 50px;
 	vertical-align: top;
-	margin-bottom: 3px;
+	margin-bottom: 0px;
 }
 #skip_req{
 	color: darkgreen;
@@ -211,6 +211,15 @@ font-family:sans-sarif;
   margin-right:3px;
   border-radius: 50%;
   display: inline-block;
+}
+.songpics {
+	height:26px;
+	width: 26px;
+	margin-left:8px;
+	margin-right:0px;
+	margin-top:3px;
+	margin-bottom:3px;
+	opacity: .2;
 }
 .keydot {
   height: 18px;
