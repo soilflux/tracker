@@ -1028,7 +1028,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.fire11 = Logic.can_climb_fire_temple && Logic.fire_keys>=5 && Logic.bomb_bag;
 	Location_Logic.fire12 = Logic.can_climb_fire_temple && Logic.fire_keys>=5 && Logic.hookshot;
 	Location_Logic.fire13 = Logic.can_climb_fire_temple && Logic.fire_keys>=6;
-	Location_Logic.fire14 = Logic.can_climb_fire_temple && Logic.fire_keys>=7 && Logic.hammer && (Logic.song_of_time || Logic.bomb_bag);
+	Location_Logic.fire14 = Logic.can_climb_fire_temple && (Logic.fire_keys>=7 || (Logic.fire_keys>=6 && Logic.hover_boots)) && Logic.hammer && (Logic.song_of_time || Logic.bomb_bag);
 	Location_Logic.fire15 = Logic.can_climb_fire_temple && (Logic.fire_keys>=7 || (Logic.fire_keys >= 6 && Logic.hover_boots)) && Logic.bomb_bag;
 	Location_Logic.water1 = Logic.can_enter_water;
 	Location_Logic.water2 = Logic.can_enter_water;
