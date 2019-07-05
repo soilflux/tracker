@@ -254,6 +254,8 @@ function Update() {
 
 	if(Game.kokiri_sword == true) {Logic.kokiri_sword = Location_Logic[Location.kokiri_sword]; }
 	
+	if(Game.farores_wind == true) {Logic.farores_wind = Location_Logic[Location.farores_wind]; }
+	
 	if(Game.slingshot == true) {Logic.slingshot1 = Location_Logic[Location.slingshot1];  }
 	if(Game.slingshot2 == true) {Logic.slingshot2 = Location_Logic[Location.slingshot2]; }
 	if(Game.slingshot3 == true) {Logic.slingshot3 = Location_Logic[Location.slingshot3]; }
@@ -415,6 +417,7 @@ function Update() {
 	Logic.can_enter_colossus = (Logic.can_cross_quicksand && Logic.can_see) || Logic.requiem;
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
 	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
+	Logic.can_use_farores = Logic.farores_wind && Logic.magic;
 	Logic.can_see = Logic.lens_of_truth && Logic.magic;
 	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
 	Logic.can_enter_dodongos_adult = Logic.can_blast_or_smash || Logic.goron_bracelet;
@@ -633,6 +636,8 @@ for (const key of keys) {
 	if(document.getElementById(key) == null) {continue;}
 	if (temp <= 244) { 
  if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+ 
+ if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; Game.farores_wind = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
 	if (document.getElementById(key).value == "sli" && !Game.slingshot) {Location.slingshot1 = document.getElementById(key).id; Game.slingshot = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	else if (document.getElementById(key).value == "sli" && !Game.slingshot2) {Location.slingshot2 = document.getElementById(key).id; Game.slingshot2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -825,7 +830,7 @@ if(tempstring.length == 6) 	{
 	if(Logic.forest_medallion_location.length > 0 && Logic.fire_medallion_location.length > 0 && Logic.water_medallion_location.length> 0) {
 		parent.removeChild(child);
 		if (first == "de") {Logic.forest_medallion_location = "deku"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dek"; document.getElementById("text_for_med").id = "text_deku";}
-	else if (first == "do") {Logic.forest_medallion_location = "dodongos"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dod"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/TszSBld.png"; document.getElementById("for_med_req1").id = "dod_req1"; document.getElementById("text_for_med").id = "text_dod";}
+	else if (first == "do") {Logic.forest_medallion_location = "dodongos"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dod"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/TszSBld.png"; ; document.getElementById("for_med_req1").id = "dod_req1"; document.getElementById("text_for_med").id = "text_dod";}
 	else if (first == "ja") {Logic.forest_medallion_location = "jabu"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "jab"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req2").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/WAY6Qpc.png"; document.getElementById("for_med_req2").src="https://i.imgur.com/jH5MR3n.png"; document.getElementById("for_med_req1").id = "jab_req1"; document.getElementById("for_med_req2").id = "jab_req2"; document.getElementById("text_for_med").id = "text_jabu";}
 	else if (first == "fo") {Logic.forest_medallion_location = "forest"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "for"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req2").className = "requirements"; document.getElementById("for_med_req3").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/HHCTVla.png"; document.getElementById("for_med_req2").src = "https://i.imgur.com/muCeqKm.png"; document.getElementById("for_med_req3").src="https://i.imgur.com/y0ob3bv.png"; document.getElementById("for_med_req1").id = "for_req1"; document.getElementById("for_med_req2").id = "for_req2"; document.getElementById("for_med_req3").id = "for_req3"; document.getElementById("text_for_med").id = "text_forest";}
 	else if (first == "fi") {Logic.forest_medallion_location = "fire"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "fir"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/w3sKOvf.png"; document.getElementById("for_med_req1").id = "fir_req1"; document.getElementById("text_for_med").id = "text_fire";}
@@ -1663,6 +1668,11 @@ if(tempstring.length == 6) 	{
 	if (Game.nocturne) {document.getElementById("nocturneimg").style.opacity =1;}
 	if (Game.prelude) {document.getElementById("preludeimg").style.opacity =1;}
 	
+	if (Game.bottle1 || Logic.bottle) {document.getElementById("bottleimg").style.opacity =1;}
+	if (Game.farores_wind) {document.getElementById("faroresimg").style.opacity =1;}
+	if (Game.fire_arrows) {document.getElementById("firearrowsimg").style.opacity =1;}
+	if (Game.silver_scale) {document.getElementById("silverscaleimg").style.opacity =1;}
+	
 	/**if (Game.minuet) {document.getElementById("min_note").style.opacity = 1;}
 	if (Game.bolero) {document.getElementById("bol_note").style.opacity = 1;}
 	if (Game.serenade) {document.getElementById("ser_note").style.opacity = 1;}
@@ -1767,6 +1777,7 @@ var tSeconds = 0;
 	
 	
 	Game.kokiri_sword = false;
+	Game.farores_wind = false;
 	Game.slingshot= false;
 	Game.boomerang = false;
 	Game.rutos_letter = false;
@@ -1848,6 +1859,7 @@ var tSeconds = 0;
 	
 	
 	Logic.kokiri_sword = false;
+	Logic.farores_wind = false;
 	Logic.slingshot= false;
 	Logic.boomerang = false;
 	Logic.rutos_letter = false;
@@ -4177,7 +4189,7 @@ function get_medallions2(x) {
 	parent.removeChild(child);
 	
 	if (first == "de") {Logic.forest_medallion_location = "deku"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dek"; document.getElementById("text_for_med").id = "text_deku";}
-	else if (first == "do") {Logic.forest_medallion_location = "dodongos"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dod"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/TszSBld.png"; document.getElementById("for_med_req1").id = "dod_req1"; document.getElementById("text_for_med").id = "text_dod";}
+	else if (first == "do") {Logic.forest_medallion_location = "dodongos"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dod"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/TszSBld.png";document.getElementById("for_med_req1").onclick ="highlight(this)"; document.getElementById("for_med_req1").id = "dod_req1"; document.getElementById("text_for_med").id = "text_dod";}
 	else if (first == "ja") {Logic.forest_medallion_location = "jabu"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "jab"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req2").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/WAY6Qpc.png"; document.getElementById("for_med_req2").src="https://i.imgur.com/jH5MR3n.png"; document.getElementById("for_med_req1").id = "jab_req1"; document.getElementById("for_med_req2").id = "jab_req2"; document.getElementById("text_for_med").id = "text_jabu";}
 	else if (first == "fo") {Logic.forest_medallion_location = "forest"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "for"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req2").className = "requirements"; document.getElementById("for_med_req3").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/HHCTVla.png"; document.getElementById("for_med_req2").src = "https://i.imgur.com/muCeqKm.png"; document.getElementById("for_med_req3").src="https://i.imgur.com/y0ob3bv.png"; document.getElementById("for_med_req1").id = "for_req1"; document.getElementById("for_med_req2").id = "for_req2"; document.getElementById("for_med_req3").id = "for_req3"; document.getElementById("text_for_med").id = "text_forest";}
 	else if (first == "fi") {Logic.forest_medallion_location = "fire"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "fir"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = "https://i.imgur.com/w3sKOvf.png"; document.getElementById("for_med_req1").id = "fir_req1"; document.getElementById("text_for_med").id = "text_fire";}
