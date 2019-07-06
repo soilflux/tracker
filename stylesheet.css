@@ -5,9 +5,15 @@ html {
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-background-color:		white;
+background-color:		#505050;
 color:black;
 font-family:sans-sarif;
+}
+body {
+margin: 0;
+}
+#normalColumn1 {
+	margin-left:10px;
 }
 .track_text {
 	font-size:30px;
@@ -144,22 +150,27 @@ font-family:sans-sarif;
 		1px 1px 0 #000;
 }
 .column {
+	margin-top:10px;
   float: left;
   width: 9%;
 }
 #info_column {
+	margin-top:10px;
 	float: left;
 	width: 13%;
 }
 #songcolumn {
+	margin-top:10px;
 	float: left;
 	width: 9%;
 }
 .dungcolumn {
+	margin-top:10px;
   float: left;
   width: 12%;
 }
 .minidungcolumn {
+	margin-top:10px;
   float: left;
   width: 11%;
 }
@@ -195,8 +206,8 @@ font-family:sans-sarif;
 	font-size: 16px;
 }
 .logic_check_text{
-	font-size: 18px;
-	color: green;
+	font-size: 16px;
+	color: 						chartreuse;
 	font-weight:bold;
 	margin-bottom:5px;
 }
