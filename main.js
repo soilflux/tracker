@@ -1628,14 +1628,14 @@ if(tempstring.length == 6) 	{
 	if (Location_Logic.nocturneSpot == true && document.getElementById("text_nocturneSpot") != null) {document.getElementById("text_nocturneSpot").style.color = "green"; document.getElementById("text_nocturneSpot").style.fontWeight = 1000;}
 	if (Location_Logic.oot == true && document.getElementById("text_oot") != null) {document.getElementById("text_oot").style.color = "green"; document.getElementById("text_oot").style.fontWeight = 1000;}
 	
-	if (Game.forest_checks_remaining < Game.forest_logically_accessible) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
-	if (Game.fire_checks_remaining < Game.fire_logically_accessible) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
-	if (Game.water_checks_remaining < Game.water_logically_accessible) {Game.logically_accessible -= (Game.water_logically_accessible - Game.water_checks_remaining);}
-	if (Game.spirit_checks_remaining < Game.spirit_logically_accessible) {Game.logically_accessible -= (Game.spirit_logically_accessible - Game.spirit_checks_remaining);}
-	if (Game.shadow_checks_remaining < Game.shadow_logically_accessible) {Game.logically_accessible -= (Game.shadow_logically_accessible - Game.shadow_checks_remaining);}
-	if (Game.gtg_checks_remaining < Game.gtg_logically_accessible) {Game.logically_accessible -= (Game.gtg_logically_accessible - Game.gtg_checks_remaining);}
-	if (Game.well_checks_remaining < Game.well_logically_accessible) {Game.logically_accessible -= (Game.well_logically_accessible - Game.well_checks_remaining);}
-	if (Game.ganons_checks_remaining < Game.ganons_logically_accessible) {Game.logically_accessible -= (Game.ganons_logically_accessible - Game.ganons_checks_remaining);}
+	if (Game.forest_checks_remaining >=0 && (Game.forest_checks_remaining < Game.forest_logically_accessible)) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
+	if (Game.fire_checks_remaining >=0 && (Game.fire_checks_remaining < Game.fire_logically_accessible)) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
+	if (Game.water_checks_remaining >=0 && (Game.water_checks_remaining < Game.water_logically_accessible)) {Game.logically_accessible -= (Game.water_logically_accessible - Game.water_checks_remaining);}
+	if (Game.spirit_checks_remaining >=0 && (Game.spirit_checks_remaining < Game.spirit_logically_accessible)) {Game.logically_accessible -= (Game.spirit_logically_accessible - Game.spirit_checks_remaining);}
+	if (Game.shadow_checks_remaining >=0 && (Game.shadow_checks_remaining < Game.shadow_logically_accessible)) {Game.logically_accessible -= (Game.shadow_logically_accessible - Game.shadow_checks_remaining);}
+	if (Game.gtg_checks_remaining >=0 && (Game.gtg_checks_remaining < Game.gtg_logically_accessible)) {Game.logically_accessible -= (Game.gtg_logically_accessible - Game.gtg_checks_remaining);}
+	if (Game.well_checks_remaining >=0 && (Game.well_checks_remaining < Game.well_logically_accessible)) {Game.logically_accessible -= (Game.well_logically_accessible - Game.well_checks_remaining);}
+	if (Game.ganons_checks_remaining >=0 && (Game.ganons_checks_remaining < Game.ganons_logically_accessible)) {Game.logically_accessible -= (Game.ganons_logically_accessible - Game.ganons_checks_remaining);}
 	
 	
 	if (Game.bomb_bag) {if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").style.opacity =1; } if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").style.opacity =1; } if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").style.opacity =1; }}
