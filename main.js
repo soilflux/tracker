@@ -442,6 +442,7 @@ function Update() {
 	if(Logic.forest_medallion_location == "water") {Logic.forest_medallion = Location_Logic.water11;}
 	if(Logic.forest_medallion_location == "spirit") {Logic.forest_medallion = Location_Logic.spirit20;}
 	if(Logic.forest_medallion_location == "shadow") {Logic.forest_medallion = Location_Logic.shadow18;}
+	if(Logic.forest_medallion_location == "pocket") {Logic.forest_medallion = true;}
 	
 	if(Logic.fire_medallion_location == "deku") {Logic.fire_medallion = Location_Logic.deku_queen_gohma;}
 	if(Logic.fire_medallion_location == "dodongos") {Logic.fire_medallion = Location_Logic.dodongos_king_dodongo;}
@@ -451,6 +452,7 @@ function Update() {
 	if(Logic.fire_medallion_location == "water") {Logic.fire_medallion = Location_Logic.water11;}
 	if(Logic.fire_medallion_location == "spirit") {Logic.fire_medallion = Location_Logic.spirit20;}
 	if(Logic.fire_medallion_location == "shadow") {Logic.fire_medallion = Location_Logic.shadow18;}
+	if(Logic.fire_medallion_location == "pocket") {Logic.fire_medallion = true;}
 	
 	if(Logic.water_medallion_location == "deku") {Logic.water_medallion = Location_Logic.deku_queen_gohma;}
 	if(Logic.water_medallion_location == "dodongos") {Logic.water_medallion = Location_Logic.dodongos_king_dodongo;}
@@ -460,6 +462,7 @@ function Update() {
 	if(Logic.water_medallion_location == "water") {Logic.water_medallion = Location_Logic.water11;}
 	if(Logic.water_medallion_location == "spirit") {Logic.water_medallion = Location_Logic.spirit20;}
 	if(Logic.water_medallion_location == "shadow") {Logic.water_medallion = Location_Logic.shadow18;}
+	if(Logic.water_medallion_location == "pocket") {Logic.water_medallion = true;}
 	
 	if(Logic.emerald == "deku") {Logic.kokiri_emerald = Location_Logic.deku_queen_gohma;}
 	if(Logic.emerald == "dodongos") {Logic.kokiri_emerald = Location_Logic.dodongos_king_dodongo;}
@@ -469,6 +472,7 @@ function Update() {
 	if(Logic.emerald == "water") {Logic.kokiri_emerald = Location_Logic.water11;}
 	if(Logic.emerald == "spirit") {Logic.kokiri_emerald = Location_Logic.spirit20;}
 	if(Logic.emerald == "shadow") {Logic.kokiri_emerald = Location_Logic.shadow18;}
+	if(Logic.emerald == "pocket") {Logic.kokiri_emerald = true;}
 	
 	if(Logic.ruby == "deku") {Logic.goron_ruby = Location_Logic.deku_queen_gohma;}
 	if(Logic.ruby == "dodongos") {Logic.goron_ruby = Location_Logic.dodongos_king_dodongo;}
@@ -478,6 +482,7 @@ function Update() {
 	if(Logic.ruby == "water") {Logic.goron_ruby = Location_Logic.water11;}
 	if(Logic.ruby == "spirit") {Logic.goron_ruby = Location_Logic.spirit20;}
 	if(Logic.ruby == "shadow") {Logic.goron_ruby = Location_Logic.shadow18;}
+	if(Logic.ruby == "pocket") {Logic.goron_ruby = true;}
 	
 	if(Logic.sapphire == "deku") {Logic.zora_sapphire = Location_Logic.deku_queen_gohma;}
 	if(Logic.sapphire == "dodongos") {Logic.zora_sapphire = Location_Logic.dodongos_king_dodongo;}
@@ -487,6 +492,7 @@ function Update() {
 	if(Logic.sapphire == "water") {Logic.zora_sapphire = Location_Logic.water11;}
 	if(Logic.sapphire == "spirit") {Logic.zora_sapphire = Location_Logic.spirit20;}
 	if(Logic.sapphire == "shadow") {Logic.zora_sapphire = Location_Logic.shadow18;}
+	if(Logic.sapphire == "pocket") {Logic.zora_sapphire = true;}
 	
 	if(document.getElementById("img_emerald").style.opacity=="1") {Logic.kokiri_emerald = true;}
 	if(document.getElementById("img_ruby").style.opacity=="1") {Logic.goron_ruby = true;}
