@@ -1043,14 +1043,14 @@ if(tempstring.length == 6) 	{
 	Location_Logic.water11 = Logic.can_enter_water && Logic.water_boss_key && Logic.longshot ;
 	Location_Logic.spirit1 = Logic.requiem && (Logic.slingshot || Logic.boomerang);
 	Location_Logic.spirit2 = Logic.requiem && (Logic.slingshot || Logic.boomerang);
-	Location_Logic.spirit3 = (Logic.spirit_keys >=1 && Logic.projectile_both) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.projectile_adult) || (Logic.spirit_keys >=5 && Logic.requiem && Logic.projectile_child);
-	Location_Logic.spirit4 = (Logic.spirit_keys >=1 && Logic.projectile_both) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.projectile_adult) || (Logic.spirit_keys >=5 && Logic.requiem && Logic.projectile_child);
+	Location_Logic.spirit3 = (Logic.spirit_keys >=1 && Logic.projectile_both);
+	Location_Logic.spirit4 = (Logic.spirit_keys >=1 && Logic.projectile_both);
 	Location_Logic.spirit5 = (Logic.spirit_keys ==5 && Logic.requiem && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
 	Location_Logic.spirit6 = (Logic.spirit_keys ==5 && Logic.requiem && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
 	Location_Logic.spirit7 = (Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys == 5;
 	Location_Logic.spirit8 = Logic.can_enter_adult_spirit && Logic.hookshot && Logic.lullaby;
 	Location_Logic.spirit9 = Logic.can_enter_adult_spirit && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
-	Location_Logic.spirit10 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=3 ;
+	Location_Logic.spirit10 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=3;
 	Location_Logic.spirit11 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=3;
 	Location_Logic.spirit12 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=3 && Logic.lullaby;
 	Location_Logic.spirit13 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=3 && Logic.lullaby && (Logic.hookshot || Logic.hover_boots);
@@ -1059,7 +1059,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.spirit16 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=4 && Logic.bomb_bag ;//&& Logic.can_see;
 	Location_Logic.spirit17 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=4 && Logic.bomb_bag;
 	Location_Logic.spirit18 = Logic.can_enter_adult_spirit && Logic.spirit_keys ==5 && Logic.bow && Logic.lullaby && Logic.hookshot;
-	Location_Logic.spirit19 = Logic.can_enter_adult_spirit && Logic.spirit_keys ==5 && Logic.mirror_shield && (Logic.bow || Logic.hookshot || Logic.bomb_bag || Logic.hammer);
+	Location_Logic.spirit19 = Logic.can_enter_adult_spirit && Logic.spirit_keys ==5 && Logic.mirror_shield;
 	Location_Logic.spirit20 = Logic.can_enter_adult_spirit && Logic.spirit_keys ==5 && Logic.mirror_shield && Logic.bomb_bag && Logic.spirit_boss_key && Logic.hookshot;
 	Location_Logic.shadow1 = Logic.can_enter_shadow;
 	Location_Logic.shadow2 = Logic.can_enter_shadow;
