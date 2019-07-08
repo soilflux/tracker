@@ -478,6 +478,36 @@ function Update() {
 	if(Logic.water_medallion_location == "shadow") {Logic.water_medallion = Location_Logic.shadow18;}
 	if(Logic.water_medallion_location == "pocket") {Logic.water_medallion = true;}
 	
+	if(Logic.generic1 == "deku") {Logic.gen1 = Location_Logic.deku_queen_gohma;}
+	if(Logic.generic1 == "dodongos") {Logic.gen1 = Location_Logic.dodongos_king_dodongo;}
+	if(Logic.generic1 == "jabu") {Logic.gen1 = Location_Logic.jabu_barinade;}
+	if(Logic.generic1 == "forest") {Logic.gen1 = Location_Logic.forest14;}
+	if(Logic.generic1 == "fire") {Logic.gen1 = Location_Logic.fire6;}
+	if(Logic.generic1 == "water") {Logic.gen1 = Location_Logic.water11;}
+	if(Logic.generic1 == "spirit") {Logic.gen1 = Location_Logic.spirit20;}
+	if(Logic.generic1 == "shadow") {Logic.gen1 = Location_Logic.shadow18;}
+	if(Logic.generic1 == "pocket") {Logic.gen1 = true;}
+	
+	if(Logic.generic2 == "deku") {Logic.gen2 = Location_Logic.deku_queen_gohma;}
+	if(Logic.generic2 == "dodongos") {Logic.gen2 = Location_Logic.dodongos_king_dodongo;}
+	if(Logic.generic2 == "jabu") {Logic.gen2 = Location_Logic.jabu_barinade;}
+	if(Logic.generic2 == "forest") {Logic.gen2 = Location_Logic.forest14;}
+	if(Logic.generic2 == "fire") {Logic.gen2 = Location_Logic.fire6;}
+	if(Logic.generic2 == "water") {Logic.gen2 = Location_Logic.water11;}
+	if(Logic.generic2 == "spirit") {Logic.gen2 = Location_Logic.spirit20;}
+	if(Logic.generic2 == "shadow") {Logic.gen2 = Location_Logic.shadow18;}
+	if(Logic.generic2 == "pocket") {Logic.gen2 = true;}
+	
+	if(Logic.generic3 == "deku") {Logic.gen3 = Location_Logic.deku_queen_gohma;}
+	if(Logic.generic3 == "dodongos") {Logic.gen3 = Location_Logic.dodongos_king_dodongo;}
+	if(Logic.generic3 == "jabu") {Logic.gen3 = Location_Logic.jabu_barinade;}
+	if(Logic.generic3 == "forest") {Logic.gen3 = Location_Logic.forest14;}
+	if(Logic.generic3 == "fire") {Logic.gen3 = Location_Logic.fire6;}
+	if(Logic.generic3 == "water") {Logic.gen3 = Location_Logic.water11;}
+	if(Logic.generic3 == "spirit") {Logic.gen3 = Location_Logic.spirit20;}
+	if(Logic.generic3 == "shadow") {Logic.gen3 = Location_Logic.shadow18;}
+	if(Logic.generic3 == "pocket") {Logic.gen3 = true;}
+	
 	if(Logic.emerald == "deku") {Logic.kokiri_emerald = Location_Logic.deku_queen_gohma;}
 	if(Logic.emerald == "dodongos") {Logic.kokiri_emerald = Location_Logic.dodongos_king_dodongo;}
 	if(Logic.emerald == "jabu") {Logic.kokiri_emerald = Location_Logic.jabu_barinade;}
@@ -547,7 +577,7 @@ function Update() {
 	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater;
 	Logic.crater_top = Logic.crater_by_city || Logic.hammer;
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
-	Logic.can_enter_ganons = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.spirit_medallion && Logic.shadow_medallion && Logic.light_medallion;
+	Logic.can_enter_ganons = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3;
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag); 
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
 	Logic.middle_water = Logic.can_enter_water && Logic.lullaby && (Logic.bow || Logic.can_use_dins || Logic.water_keys >= 5);
