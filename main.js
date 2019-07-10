@@ -762,9 +762,12 @@ function Update() {
 	}
 	Logic.spirit_keys = Math.max(Logic.min_spirit_keys,Logic.current_spirit_keys);
 	
-	
-	
+	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && Logic.hammer && Logic.bomb_bag && Logic.iron_boots) {Logic.min_gtg_keys = 9;}
+	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && (Logic.hammer || Logic.bomb_bag || Logic.iron_boots)) {Logic.min_gtg_keys = 7;}
+	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && ((Logic.hammer && Logic.bomb_bag) || (Logic.iron_boots && Logic.hammer) || (Logic.iron_boots && Logic.bomb_bag)) {Logic.min_gtg_keys = 8;}
+	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && Logic.hammer && Logic.bomb_bag && Logic.iron_boots) {Logic.min_gtg_keys = 9;}
 	Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
+	
 	Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
 	
 	const keys = Object.keys(Location_Logic)
