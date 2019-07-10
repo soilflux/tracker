@@ -768,6 +768,7 @@ function Update() {
 	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && Logic.hammer && Logic.bomb_bag && Logic.iron_boots) {Logic.min_gtg_keys = 9;}
 	Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
 	
+	if(Logic.bomb_bag && Logic.lullaby && Logic.song_of_storms) {Logic.min_well_keys = 3;}
 	Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
 	
 	const keys = Object.keys(Location_Logic)
