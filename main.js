@@ -594,7 +594,7 @@ for (i = 1; i <= 6; i++) {
 	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
 	Logic.can_enter_dodongos_adult = Logic.can_blast_or_smash || Logic.goron_bracelet;
 	Logic.can_enter_dodongos_child = Logic.bomb_bag || Logic.goron_bracelet;
-	Logic.can_reach_dodongos_bomb_bag_chest_child = (Logic.bomb_bag || Logic.goron_bracelets) && Logic.slingshot
+	Logic.can_reach_dodongos_bomb_bag_chest_child = (Logic.bomb_bag || Logic.goron_bracelet) && Logic.slingshot
 	Logic.can_reach_dodongos_bomb_bag_chest_adult = Logic.can_enter_dodongos_child ;//&& (Logic.bow || Logic.longshot || Logic.hover_boots)
 	Logic.can_reach_dodongos_bomb_bag_chest = Logic.can_reach_dodongos_bomb_bag_chest_child || Logic.can_reach_dodongos_bomb_bag_chest_adult;
 	Logic.can_enter_shadow= Logic.nocturne && Logic.can_use_dins && (Logic.hover_boots || Logic.hookshot) ;//&& Logic.can_see;
@@ -1170,6 +1170,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.dodongos_bomb_flower_platform = Logic.can_enter_dodongos_child;
 	Location_Logic.dodongos_bomb_bag = Logic.can_reach_dodongos_bomb_bag_chest;
 	Location_Logic.dodongos_end_of_bridge = (Logic.can_reach_dodongos_bomb_bag_chest_adult && (Logic.bomb_bag || Logic.hammer)) || (Logic.can_reach_dodongos_bomb_bag_chest_child && Logic.bomb_bag);
+	console.log(Logic.can_reach_dodongos_bomb_bag_chest_child );
 	Location_Logic.dodongos_above_king = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
 	Location_Logic.dodongos_king_dodongo = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
 	Location_Logic.jabu_boomerang = Logic.can_enter_jabu && (Logic.boomerang || Logic.bomb_bag || Logic.slingshot);
