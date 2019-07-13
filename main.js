@@ -749,7 +749,7 @@ for (i = 1; i <= 6; i++) {
 	if (Check["well14"] == "small_key" && Location_Logic.well14) {Logic.current_well_keys +=1;}
 	
 	if ((Logic.song_of_time || Logic.bow) && Logic.hookshot) {Logic.min_forest_keys = 1;}
-	if (/*(Logic.song_of_time || Logic.iron_boots || Logic.golden_scale) &&*/ Logic.hookshot && Logic.bow && Logic.goron_bracelet) {Logic.min_forest_keys = 5; Logic.forest_boss_key = true;}
+	if (/*(Logic.song_of_time || Logic.iron_boots || Logic.golden_scale) &&*/ Logic.hookshot && Logic.bow && Logic.goron_bracelet && (Logic.hover_boots || Logic.forest_keys >= 2)) {Logic.min_forest_keys = 5; Logic.forest_boss_key = true;}
 	Logic.forest_keys = Math.max(Logic.min_forest_keys,Logic.current_forest_keys);
 	
 	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.hover_boots) {Logic.min_fire_keys =2;}
@@ -777,26 +777,32 @@ for (i = 1; i <= 6; i++) {
 	Logic.min_water_keys = Math.min((Logic.water_chests -3),6);
 	if (Logic.lullaby && Logic.iron_boots && Logic.longshot && Logic.goron_bracelet && Logic.bow && Logic.bomb_bag && Logic.can_wear_zora_tunic) {
 		Logic.min_water_keys = 5;
-		Logic.water_boss_key = true;
+		if (Logic.song_of_time) {
+			Logic.water_boss_key = true;
 		}
+	}
 	Logic.water_keys = Math.max(Logic.min_water_keys,Logic.current_water_keys);
 	
 	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.bomb_bag && Logic.goron_bracelet) {Logic.min_shadow_keys = 2;}
 	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.hookshot && Logic.bomb_bag && Logic.goron_bracelet) {Logic.min_shadow_keys = 4;}
-	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.hookshot && Logic.bomb_bag && Logic.goron_bracelet && Logic.lullaby && (Logic.bow || Logic.longshot)) {
+	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.hookshot && Logic.bomb_bag && Logic.goron_bracelet && Logic.lullaby) {
 		Logic.min_shadow_keys = 5;
 		Logic.shadow_boss_key = true;
 	}
 	Logic.shadow_keys = Math.max(Logic.min_shadow_keys,Logic.current_shadow_keys);
 	
-	if(Logic.requiem && Logic.projectile_both && Logic.bomb_bag && Logic.can_use_fire && Logic.mirror_shield && Logic.hookshot && Logic.lullaby && Logic.silver_gauntlets) {
+	if(Logic.requiem && Logic.hookshot && (Logic.slingshot || Logic.boomerang) && Logic.silver_gauntlets && Logic.lullaby) {Logic.min_spirit_keys = 1;}
+	if(Logic.requiem && (Logic.slingshot || Logic.boomerang) && Logic.bomb_bag && Logic.can_use_fire && Logic.hookshot && Logic.lullaby && Logic.silver_gauntlets) {Logic.min_spirit_keys = 4;}
+	if(Logic.requiem && (Logic.slingshot || Logic.boomerang) && Logic.bomb_bag && Logic.can_use_fire && Logic.mirror_shield && Logic.hookshot && Logic.lullaby && Logic.silver_gauntlets) {
 		Logic.min_spirit_keys = 5;
-		Logic.spirit_boss_key = true;
+		if (Logic.bow) {
+			Logic.spirit_boss_key = true;
+		}
 	}
 	Logic.spirit_keys = Math.max(Logic.min_spirit_keys,Logic.current_spirit_keys);
 	
-	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets) {Logic.min_gtg_keys = 4;}
-	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && (Logic.hammer || Logic.bomb_bag || Logic.iron_boots)) {Logic.min_gtg_keys = 6;}
+
+	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && (Logic.hammer || Logic.bomb_bag || Logic.iron_boots)) {Logic.min_gtg_keys = 5;}
 	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && ((Logic.hammer && Logic.bomb_bag) || (Logic.iron_boots && Logic.hammer) || (Logic.iron_boots && Logic.bomb_bag))) {Logic.min_gtg_keys = 8;}
 	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && Logic.hammer && Logic.bomb_bag && Logic.iron_boots) {Logic.min_gtg_keys = 9;}
 	Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
@@ -1293,7 +1299,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.gtg19 = Logic.can_save_carpenters && Logic.gtg_keys >= 6;
 	Location_Logic.gtg20 = Logic.can_save_carpenters && Logic.gtg_keys >= 7;
 	Location_Logic.gtg21 = Logic.can_save_carpenters && Logic.gtg_keys >= 9;
-	Location_Logic.gtg22 = Logic.can_save_carpenters && Logic.iron_boots && Logic.song_of_time && (Logic.gtg_keys == 9 || Logic.bomb_bag || (Logic.hookshot /*&& Logic.can_see*/));
+	Location_Logic.gtg22 = Logic.can_save_carpenters && Logic.iron_boots && Logic.song_of_time && Logic.hookshot /*&& Logic.can_see*/;
 	Location_Logic.well1 = Logic.song_of_storms ;//&& Logic.can_see;
 	Location_Logic.well2 = Logic.song_of_storms && Logic.bomb_bag;
 	Location_Logic.well3 = Logic.song_of_storms && Logic.lullaby;
@@ -1307,7 +1313,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.well11 = Logic.song_of_storms ;//&& Logic.can_see;
 	Location_Logic.well12 = Logic.song_of_storms && Logic.well_keys == 3 ;//&& Logic.can_see ;
 	Location_Logic.well13 = Logic.song_of_storms && Logic.well_keys == 3 ;//&& Logic.can_see ;
-	Location_Logic.well14 = Logic.song_of_storms && (Logic.bomb_bag || (((/*Logic.can_see &&*/ Logic.botw_key == 3) || Logic.can_use_dins) && Logic.goron_bracelet));
+	Location_Logic.well14 = Logic.song_of_storms && (Logic.bomb_bag || (((/*Logic.can_see &&*/ Logic.well_keys == 3) || Logic.can_use_dins) && Logic.goron_bracelet));
 	Location_Logic.zeldasSpot = true;
 	Location_Logic.eponasSpot = true;
 	Location_Logic.sariasSpot = true;
