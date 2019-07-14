@@ -11,6 +11,7 @@ font-family:sans-sarif;
 }
 body {
 margin: 0;
+overflow: hidden;
 }
 #normalColumn1 {
 	margin-left:10px;
