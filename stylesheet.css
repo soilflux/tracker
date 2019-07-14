@@ -1,4 +1,6 @@
 html {
+overflow: scroll;
+ overflow-x: hidden;
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
@@ -8,6 +10,10 @@ user-select: none;
 background-color:		#505050;
 color:black;
 font-family:sans-sarif;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
 body {
 margin: 0;
