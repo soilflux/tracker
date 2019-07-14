@@ -1,40 +1,78 @@
 function Update() {
 
 	if(Game.theme == "dark" && Game.themeChange) {
-		Game.bomb_bag_img= "https://i.imgur.com/Szzkd7F.png";
-		Game.letter_img= "https://i.imgur.com/iJIaSHd.png";
-		Game.boomerang_img= "https://i.imgur.com/7hFOlue.png";
-		Game.hookshot_img= "https://i.imgur.com/rxxwYMo.png";
-		Game.bow_img= "https://i.imgur.com/2epNjhW.png";
-		Game.goron_bracelet_img= "https://i.imgur.com/Z54r5V4.png";
-		Game.hammer_img= "https://i.imgur.com/Kd3ocEG.png";
-		Game.iron_boots_img= "https://i.imgur.com/XGfzsLq.png";
-		Game.golden_scale_img= "https://i.imgur.com/RzHFZO0.png";
-		Game.longshot_img= "https://i.imgur.com/bnHAV6n.png";
-		Game.silver_gauntlets_img= "https://i.imgur.com/xuLKMEz.png";
-		Game.mirror_shield_img= "https://i.imgur.com/rE6YCpS.png";
-		Game.dins_fire_img= "https://i.imgur.com/yVKrH5F.png";
-		Game.magic_meter_img= "https://i.imgur.com/rtHPkHm.png";
-		Game.hover_boots_img= "https://i.imgur.com/9Y8VU3w.png";
-		document.getElementById("gan_req2").src="https://i.imgur.com/ryADixy.png";
-		document.getElementById("gan_req1").src="https://i.imgur.com/rtHPkHm.png";
-		document.getElementById("gan_req3").src="https://i.imgur.com/2epNjhW.png";
-		document.getElementById("lullabyimg").src="https://i.imgur.com/W5BH8Kx.png";
-		document.getElementById("eponasimg").src="https://i.imgur.com/GK2Wz4B.png";
-		document.getElementById("sariasimg").src="https://i.imgur.com/LwXDhSl.png";
-		document.getElementById("sunsimg").src="https://i.imgur.com/aD6smol.png";
-		document.getElementById("sotimg").src="https://i.imgur.com/yxe0Ig2.png";
-		document.getElementById("sosimg").src="https://i.imgur.com/ZXOSeAb.png";
-		document.getElementById("minuetimg").src="https://i.imgur.com/zlHK7ia.png";
-		document.getElementById("boleroimg").src="https://i.imgur.com/4HjyZki.png";
-		document.getElementById("serenadeimg").src="https://i.imgur.com/TExRzzb.png";
-		document.getElementById("requiemimg").src="https://i.imgur.com/wczkkXu.png";
-		document.getElementById("nocturneimg").src="https://i.imgur.com/uoKC8f9.png";
-		document.getElementById("preludeimg").src="https://i.imgur.com/Smte0D8.png";
-		document.getElementById("faroresimg").src="https://i.imgur.com/nUPfeZt.png";
-		document.getElementById("bottleimg").src="https://i.imgur.com/2a90Fgd.png";
-		document.getElementById("firearrowsimg").src="https://i.imgur.com/caxHISp.png";
-		document.getElementById("silverscaleimg").src="https://i.imgur.com/wK17k2u.png";
+		if (Person.isBoring != true) {
+			Game.bomb_bag_img= "https://i.imgur.com/Szzkd7F.png";
+			Game.letter_img= "https://i.imgur.com/iJIaSHd.png";
+			Game.boomerang_img= "https://i.imgur.com/7hFOlue.png";
+			Game.hookshot_img= "https://i.imgur.com/rxxwYMo.png";
+			Game.bow_img= "https://i.imgur.com/2epNjhW.png";
+			Game.goron_bracelet_img= "https://i.imgur.com/Z54r5V4.png";
+			Game.hammer_img= "https://i.imgur.com/Kd3ocEG.png";
+			Game.iron_boots_img= "https://i.imgur.com/XGfzsLq.png";
+			Game.golden_scale_img= "https://i.imgur.com/RzHFZO0.png";
+			Game.longshot_img= "https://i.imgur.com/bnHAV6n.png";
+			Game.silver_gauntlets_img= "https://i.imgur.com/xuLKMEz.png";
+			Game.mirror_shield_img= "https://i.imgur.com/rE6YCpS.png";
+			Game.dins_fire_img= "https://i.imgur.com/yVKrH5F.png";
+			Game.magic_meter_img= "https://i.imgur.com/rtHPkHm.png";
+			Game.hover_boots_img= "https://i.imgur.com/9Y8VU3w.png";
+			document.getElementById("gan_req2").src="https://i.imgur.com/ryADixy.png";
+			document.getElementById("gan_req1").src="https://i.imgur.com/rtHPkHm.png";
+			document.getElementById("gan_req3").src="https://i.imgur.com/2epNjhW.png";
+			document.getElementById("lullabyimg").src="https://i.imgur.com/W5BH8Kx.png";
+			document.getElementById("eponasimg").src="https://i.imgur.com/GK2Wz4B.png";
+			document.getElementById("sariasimg").src="https://i.imgur.com/LwXDhSl.png";
+			document.getElementById("sunsimg").src="https://i.imgur.com/aD6smol.png";
+			document.getElementById("sotimg").src="https://i.imgur.com/yxe0Ig2.png";
+			document.getElementById("sosimg").src="https://i.imgur.com/ZXOSeAb.png";
+			document.getElementById("minuetimg").src="https://i.imgur.com/zlHK7ia.png";
+			document.getElementById("boleroimg").src="https://i.imgur.com/4HjyZki.png";
+			document.getElementById("serenadeimg").src="https://i.imgur.com/TExRzzb.png";
+			document.getElementById("requiemimg").src="https://i.imgur.com/wczkkXu.png";
+			document.getElementById("nocturneimg").src="https://i.imgur.com/uoKC8f9.png";
+			document.getElementById("preludeimg").src="https://i.imgur.com/Smte0D8.png";
+			document.getElementById("faroresimg").src="https://i.imgur.com/nUPfeZt.png";
+			document.getElementById("bottleimg").src="https://i.imgur.com/2a90Fgd.png";
+			document.getElementById("firearrowsimg").src="https://i.imgur.com/caxHISp.png";
+			document.getElementById("silverscaleimg").src="https://i.imgur.com/wK17k2u.png";
+		}
+		else {
+			Game.bomb_bag_img= "https://i.imgur.com/Crv3yEP.png";
+			Game.letter_img= "https://i.imgur.com/U5I0eI3.png";
+			Game.boomerang_img= "https://i.imgur.com/t3Yh4u9.png";
+			Game.hookshot_img= "https://i.imgur.com/OsimO2I.png";
+			Game.bow_img= "https://i.imgur.com/Q1A4IKm.png";
+			Game.goron_bracelet_img= "https://i.imgur.com/eNhXvnn.png";
+			Game.hammer_img= "https://i.imgur.com/87SDP6J.png";
+			Game.iron_boots_img= "https://i.imgur.com/BdwilDO.png";
+			Game.golden_scale_img= "https://i.imgur.com/b74ulVL.png";
+			Game.longshot_img= "https://i.imgur.com/niB4C6a.png";
+			Game.silver_gauntlets_img= "https://i.imgur.com/nGTIfUH.png";
+			Game.mirror_shield_img= "https://i.imgur.com/tra2ZuV.png";
+			Game.dins_fire_img= "https://i.imgur.com/jJldvdx.png";
+			Game.magic_meter_img= "https://i.imgur.com/QRvECAU.png";
+			Game.hover_boots_img= "https://i.imgur.com/CAodFbs.png";
+			document.getElementById("gan_req2").src="https://i.imgur.com/TsCBezD.png";
+			document.getElementById("gan_req1").src="https://i.imgur.com/QRvECAU.png";
+			document.getElementById("gan_req3").src="https://i.imgur.com/Q1A4IKm.png";
+			document.getElementById("lullabyimg").src="https://i.imgur.com/xY1N3Bl.png";
+			document.getElementById("eponasimg").src="https://i.imgur.com/rmRRvB6.png";
+			document.getElementById("sariasimg").src="https://i.imgur.com/0XvMkF9.png";
+			document.getElementById("sunsimg").src="https://i.imgur.com/k2f8UDu.png";
+			document.getElementById("sotimg").src="https://i.imgur.com/iW2aPfR.png";
+			document.getElementById("sosimg").src="https://i.imgur.com/JUIqB9o.png";
+			document.getElementById("minuetimg").src="https://i.imgur.com/mUPUwnV.png";
+			document.getElementById("boleroimg").src="https://i.imgur.com/vjYXIbi.png";
+			document.getElementById("serenadeimg").src="https://i.imgur.com/4pjNCKa.png";
+			document.getElementById("requiemimg").src="https://i.imgur.com/xSjs2qm.png";
+			document.getElementById("nocturneimg").src="https://i.imgur.com/13pSyWB.png";
+			document.getElementById("preludeimg").src="https://i.imgur.com/cl7N7z9.png";
+			document.getElementById("faroresimg").src="https://i.imgur.com/L3ddFVs.png";
+			document.getElementById("bottleimg").src="https://i.imgur.com/d2LSzw7.png";
+			document.getElementById("firearrowsimg").src="https://i.imgur.com/vpGexj9.png";
+			document.getElementById("silverscaleimg").src="https://i.imgur.com/QfdjqYK.png";
+		}
 		Game.themeChange = false;
 		document.getElementById("checks_remaining").style.color="lightblue";
 		document.getElementById("logically_accessible").style.color="chartreuse";
@@ -2196,6 +2234,7 @@ if(tempstring.length == 6) 	{
 
 var Check={};
 var Game={};
+var Person={};
 var Map={};
 var UI={};
 var Location_Logic={};
@@ -2215,7 +2254,7 @@ var tMinutes = 0;
 var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	
-	
+	Person.isBoring = false;
 	
 	Game.kokiri_sword = false;
 	Game.farores_wind = false;
@@ -4683,6 +4722,12 @@ window.onclick = function(event) {
 function changeTheme() {
 	if (Game.theme == "dark") {Game.theme = "light"}
 	else {Game.theme = "dark"}
+	Game.themeChange = true;
+	Update();
+	}
+	
+function iAmBoring() {
+	Person.isBoring = true;
 	Game.themeChange = true;
 	Update();
 	}
