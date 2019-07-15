@@ -659,132 +659,45 @@ for (i = 1; i <= 6; i++) {
 	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (Logic.lullaby && Logic.bottle));
 	
 	Logic.current_forest_keys = 0;
-	if (Check["forest1"] == "small_key" && Location_Logic.forest1) {Logic.current_forest_keys +=1;}
-	if (Check["forest2"] == "small_key" && Location_Logic.forest2) {Logic.current_forest_keys +=1;}
-	if (Check["forest3"] == "small_key" && Location_Logic.forest3) {Logic.current_forest_keys +=1;}
-	if (Check["forest4"] == "small_key" && Location_Logic.forest4) {Logic.current_forest_keys +=1;}
-	if (Check["forest5"] == "small_key" && Location_Logic.forest5) {Logic.current_forest_keys +=1;}
-	if (Check["forest6"] == "small_key" && Location_Logic.forest6) {Logic.current_forest_keys +=1;}
-	if (Check["forest7"] == "small_key" && Location_Logic.forest7) {Logic.current_forest_keys +=1;}
-	if (Check["forest8"] == "small_key" && Location_Logic.forest8) {Logic.current_forest_keys +=1;}
-	if (Check["forest9"] == "small_key" && Location_Logic.forest9) {Logic.current_forest_keys +=1;}
-	if (Check["forest10"] == "small_key" && Location_Logic.forest10) {Logic.current_forest_keys +=1;}
-	if (Check["forest11"] == "small_key" && Location_Logic.forest11) {Logic.current_forest_keys +=1;}
-	if (Check["forest12"] == "small_key" && Location_Logic.forest12) {Logic.current_forest_keys +=1;}
-	if (Check["forest13"] == "small_key" && Location_Logic.forest13) {Logic.current_forest_keys +=1;}
-	if (Check["forest14"] == "small_key" && Location_Logic.forest14) {Logic.current_forest_keys +=1;}
-	
+	for (i = 1; i <= 14; i++) {
+		str = "forest" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_forest_keys +=1;}
+	}
 	Logic.current_fire_keys = 0;
-	if (Check["fire1"] == "small_key" && Location_Logic.fire1) {Logic.current_fire_keys +=1;}
-	if (Check["fire2"] == "small_key" && Location_Logic.fire2) {Logic.current_fire_keys +=1;}
-	if (Check["fire3"] == "small_key" && Location_Logic.fire3) {Logic.current_fire_keys +=1;}
-	if (Check["fire4"] == "small_key" && Location_Logic.fire4) {Logic.current_fire_keys +=1;}
-	if (Check["fire5"] == "small_key" && Location_Logic.fire5) {Logic.current_fire_keys +=1;}
-	if (Check["fire6"] == "small_key" && Location_Logic.fire6) {Logic.current_fire_keys +=1;}
-	if (Check["fire7"] == "small_key" && Location_Logic.fire7) {Logic.current_fire_keys +=1;}
-	if (Check["fire8"] == "small_key" && Location_Logic.fire8) {Logic.current_fire_keys +=1;}
-	if (Check["fire9"] == "small_key" && Location_Logic.fire9) {Logic.current_fire_keys +=1;}
-	if (Check["fire10"] == "small_key" && Location_Logic.fire10) {Logic.current_fire_keys +=1;}
-	if (Check["fire11"] == "small_key" && Location_Logic.fire11) {Logic.current_fire_keys +=1;}
-	if (Check["fire12"] == "small_key" && Location_Logic.fire12) {Logic.current_fire_keys +=1;}
-	if (Check["fire13"] == "small_key" && Location_Logic.fire13) {Logic.current_fire_keys +=1;}
-	if (Check["fire14"] == "small_key" && Location_Logic.fire14) {Logic.current_fire_keys +=1;}
-	if (Check["fire15"] == "small_key" && Location_Logic.fire15) {Logic.current_fire_keys +=1;}
+	for (i = 1; i <= 15; i++) {
+		str = "fire" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_fire_keys +=1;}
+	}
 	
 	Logic.current_water_keys = 0;
-	if (Check["water1"] == "small_key" && Location_Logic.water1) {Logic.current_water_keys +=1;}
-	if (Check["water2"] == "small_key" && Location_Logic.water2) {Logic.current_water_keys +=1;}
-	if (Check["water3"] == "small_key" && Location_Logic.water3) {Logic.current_water_keys +=1;}
-	if (Check["water4"] == "small_key" && Location_Logic.water4) {Logic.current_water_keys +=1;}
-	if (Check["water5"] == "small_key" && Location_Logic.water5) {Logic.current_water_keys +=1;}
-	if (Check["water6"] == "small_key" && Location_Logic.water6) {Logic.current_water_keys +=1;}
-	if (Check["water7"] == "small_key" && Location_Logic.water7) {Logic.current_water_keys +=1;}
-	if (Check["water8"] == "small_key" && Location_Logic.water8) {Logic.current_water_keys +=1;}
-	if (Check["water9"] == "small_key" && Location_Logic.water9) {Logic.current_water_keys +=1;}
-	if (Check["water10"] == "small_key" && Location_Logic.water10) {Logic.current_water_keys +=1;}
-	if (Check["water11"] == "small_key" && Location_Logic.water11) {Logic.current_water_keys +=1;}
+	for (i = 1; i <= 11; i++) {
+		str = "water" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_water_keys +=1;}
+	}
 	
 	Logic.current_spirit_keys = 0;
-	if (Check["spirit1"] == "small_key" && Location_Logic.spirit1) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit2"] == "small_key" && Location_Logic.spirit2) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit3"] == "small_key" && Location_Logic.spirit3) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit4"] == "small_key" && Location_Logic.spirit4) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit5"] == "small_key" && Location_Logic.spirit5) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit6"] == "small_key" && Location_Logic.spirit6) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit7"] == "small_key" && Location_Logic.spirit7) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit8"] == "small_key" && Location_Logic.spirit8) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit9"] == "small_key" && Location_Logic.spirit9) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit10"] == "small_key" && Location_Logic.spirit10) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit11"] == "small_key" && Location_Logic.spirit11) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit12"] == "small_key" && Location_Logic.spirit12) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit13"] == "small_key" && Location_Logic.spirit13) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit14"] == "small_key" && Location_Logic.spirit14) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit15"] == "small_key" && Location_Logic.spirit15) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit16"] == "small_key" && Location_Logic.spirit16) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit17"] == "small_key" && Location_Logic.spirit17) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit18"] == "small_key" && Location_Logic.spirit18) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit19"] == "small_key" && Location_Logic.spirit19) {Logic.current_spirit_keys +=1;}
-	if (Check["spirit20"] == "small_key" && Location_Logic.spirit20) {Logic.current_spirit_keys +=1;}
+	for (i = 1; i <= 20; i++) {
+		str = "spirit" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_spirit_keys +=1;}
+	}
 	
 	Logic.current_shadow_keys = 0;
-	if (Check["shadow1"] == "small_key" && Location_Logic.shadow1) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow2"] == "small_key" && Location_Logic.shadow2) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow3"] == "small_key" && Location_Logic.shadow3) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow4"] == "small_key" && Location_Logic.shadow4) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow5"] == "small_key" && Location_Logic.shadow5) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow6"] == "small_key" && Location_Logic.shadow6) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow7"] == "small_key" && Location_Logic.shadow7) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow8"] == "small_key" && Location_Logic.shadow8) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow9"] == "small_key" && Location_Logic.shadow9) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow10"] == "small_key" && Location_Logic.shadow10) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow11"] == "small_key" && Location_Logic.shadow11) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow12"] == "small_key" && Location_Logic.shadow12) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow13"] == "small_key" && Location_Logic.shadow13) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow14"] == "small_key" && Location_Logic.shadow14) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow15"] == "small_key" && Location_Logic.shadow15) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow16"] == "small_key" && Location_Logic.shadow16) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow17"] == "small_key" && Location_Logic.shadow17) {Logic.current_shadow_keys +=1;}
-	if (Check["shadow18"] == "small_key" && Location_Logic.shadow18) {Logic.current_shadow_keys +=1;}
+	for (i = 1; i <= 18; i++) {
+		str = "shadow" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_shadow_keys +=1;}
+	}
 	
 	Logic.current_gtg_keys = 0;
-	if (Check["gtg1"] == "small_key" && Location_Logic.gtg1) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg2"] == "small_key" && Location_Logic.gtg2) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg3"] == "small_key" && Location_Logic.gtg3) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg4"] == "small_key" && Location_Logic.gtg4) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg5"] == "small_key" && Location_Logic.gtg5) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg6"] == "small_key" && Location_Logic.gtg6) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg7"] == "small_key" && Location_Logic.gtg7) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg8"] == "small_key" && Location_Logic.gtg8) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg9"] == "small_key" && Location_Logic.gtg9) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg10"] == "small_key" && Location_Logic.gtg10) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg11"] == "small_key" && Location_Logic.gtg11) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg12"] == "small_key" && Location_Logic.gtg12) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg13"] == "small_key" && Location_Logic.gtg13) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg14"] == "small_key" && Location_Logic.gtg14) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg15"] == "small_key" && Location_Logic.gtg15) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg16"] == "small_key" && Location_Logic.gtg16) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg17"] == "small_key" && Location_Logic.gtg17) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg18"] == "small_key" && Location_Logic.gtg18) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg19"] == "small_key" && Location_Logic.gtg19) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg20"] == "small_key" && Location_Logic.gtg20) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg21"] == "small_key" && Location_Logic.gtg21) {Logic.current_gtg_keys +=1;}
-	if (Check["gtg22"] == "small_key" && Location_Logic.gtg22) {Logic.current_gtg_keys +=1;}
+	for (i = 1; i <= 22; i++) {
+		str = "gtg" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_gtg_keys +=1;}
+	}
 	
 	Logic.current_well_keys = 0;
-	if (Check["well1"] == "small_key" && Location_Logic.well1) {Logic.current_well_keys +=1;}
-	if (Check["well2"] == "small_key" && Location_Logic.well2) {Logic.current_well_keys +=1;}
-	if (Check["well3"] == "small_key" && Location_Logic.well3) {Logic.current_well_keys +=1;}
-	if (Check["well4"] == "small_key" && Location_Logic.well4) {Logic.current_well_keys +=1;}
-	if (Check["well5"] == "small_key" && Location_Logic.well5) {Logic.current_well_keys +=1;}
-	if (Check["well6"] == "small_key" && Location_Logic.well6) {Logic.current_well_keys +=1;}
-	if (Check["well7"] == "small_key" && Location_Logic.well7) {Logic.current_well_keys +=1;}
-	if (Check["well8"] == "small_key" && Location_Logic.well8) {Logic.current_well_keys +=1;}
-	if (Check["well9"] == "small_key" && Location_Logic.well9) {Logic.current_well_keys +=1;}
-	if (Check["well10"] == "small_key" && Location_Logic.well10) {Logic.current_well_keys +=1;}
-	if (Check["well11"] == "small_key" && Location_Logic.well11) {Logic.current_well_keys +=1;}
-	if (Check["well12"] == "small_key" && Location_Logic.well12) {Logic.current_well_keys +=1;}
-	if (Check["well13"] == "small_key" && Location_Logic.well13) {Logic.current_well_keys +=1;}
-	if (Check["well14"] == "small_key" && Location_Logic.well14) {Logic.current_well_keys +=1;}
+	for (i = 1; i <= 14; i++) {
+		str = "well" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_well_keys +=1;}
+	}
 	
 	if ((Logic.song_of_time || Logic.bow) && Logic.hookshot) {Logic.min_forest_keys = 1;}
 	if (/*(Logic.song_of_time || Logic.iron_boots || Logic.golden_scale) &&*/ Logic.hookshot && Logic.bow && Logic.goron_bracelet && (Logic.hover_boots || Logic.forest_keys >= 2)) {Logic.min_forest_keys = 5; Logic.forest_boss_key = true;}
