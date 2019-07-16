@@ -360,7 +360,6 @@ function Update() {
 	for (var i = 1; i <=3; i++) {
 		str = "generic" + i;
 		str2 = "gen" + i;
-		if(Logic[str] == "shadow") {console.log(document.getElementById("text_shadow").style.color);}
 		if(Logic[str] == "deku") {Logic[str2] = Location_Logic.deku_queen_gohma; if(document.getElementById("text_deku").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.deku_queen_gohma;} if(document.getElementById("text_deku").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
 		if(Logic[str] == "dodongos") {Logic[str2] = Location_Logic.dodongos_king_dodongo; if(document.getElementById("text_dod").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.dodongos_king_dodongo;} if(document.getElementById("text_dod").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
 		if(Logic[str] == "jabu") {Logic[str2] = Location_Logic.jabu_barinade; if(document.getElementById("text_jabu").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.jabu_barinade;} if(document.getElementById("text_jabu").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
@@ -371,8 +370,6 @@ function Update() {
 		if(Logic[str] == "shadow") {Logic[str2] = Location_Logic.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
 		if(Logic[str] == "pocket") {Logic[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
 	}
-	console.log(Logic.shadow_medallion);
-	console.log(Logic.spirit_medallion);
 	
 	if(Logic.emerald == "deku") {Logic.kokiri_emerald = Location_Logic.deku_queen_gohma;}
 	if(Logic.emerald == "dodongos") {Logic.kokiri_emerald = Location_Logic.dodongos_king_dodongo;}
