@@ -401,16 +401,13 @@ function Update() {
 	if(Logic.sapphire == "shadow") {Logic.zora_sapphire = Location_Logic.shadow18;}
 	if(Logic.sapphire == "pocket") {Logic.zora_sapphire = true;}
 	
-	if(document.getElementById("img_emerald").style.opacity=="1") {Logic.kokiri_emerald = true;}
-	if(document.getElementById("img_ruby").style.opacity=="1") {Logic.goron_ruby = true;}
-	if(document.getElementById("img_sapphire").style.opacity=="1") {Logic.zora_sapphire = true;}
-	if(document.getElementById("img_forest").style.opacity=="1") {Logic.forest_medallion = true;}
-	if(document.getElementById("img_fire").style.opacity=="1") {Logic.fire_medallion = true;}
-	if(document.getElementById("img_water").style.opacity=="1") {Logic.water_medallion = true;}
-	if(document.getElementById("img_shadow").style.opacity=="1") {Logic.shadow_medallion = true;}
-	if(document.getElementById("img_spirit").style.opacity=="1") {Logic.spirit_medallion = true;}
-	if(document.getElementById("img_light").style.opacity=="1") {Logic.light_medallion = true;}
 	
+	if(Logic.emerald == "unknown") {Logic.kokiri_emerald = false;}
+	if(Logic.ruby == "unknown") {Logic.goron_ruby = false;}
+	if(Logic.sapphire == "unknown") {Logic.zora_sapphire = false;}
+	if(Logic.forest_medallion_location == "unknown") {Logic.forest_medallion = false;}
+	if(Logic.fire_medallion_location == "unknown") {Logic.fire_medallion = false;}
+	if(Logic.water_medallion_location == "unknown") {Logic.water_medallion = false;}
 	var i;
 for (i = 1; i <= 6; i++) {
 	str = "forceLogic" + i;
@@ -442,6 +439,9 @@ for (i = 1; i <= 6; i++) {
 	if(document.getElementById(str).value == "len") {Logic.lens_of_truth = true;}
 	if(document.getElementById(str).value == "pre") {Logic.prescription = true;}
 	if(document.getElementById(str).value == "cla") {Logic.claim_check = true;}
+	if(document.getElementById(str).value == "1me") {Logic.forest_medallion = true;}
+	if(document.getElementById(str).value == "3me") {Logic.forest_medallion = true; Logic.fire_medallion = true; Logic.water_medallion = true;}
+	if(document.getElementById(str).value == "oot") {Logic.kokiri_emerald = true; Logic.goron_ruby = true; Logic.zora_sapphire = true;}
 }
 	
 	Logic.can_enter_jabu = Logic.rutos_letter && ((Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale)
@@ -1661,6 +1661,13 @@ var tSeconds = 0;
 	Logic.kokiri_emerald = false;
 	Logic.goron_ruby = false;
 	Logic.zora_sapphire = false;
+	
+	Logic.forest_medallion_location = "unknown";
+	Logic.fire_medallion_location  = "unknown";
+	Logic.water_medallion_location  = "unknown";
+	Logic.emerald = "unknown";
+	Logic.ruby  = "unknown";
+	Logic.sapphire  = "unknown";
 	
 	Logic.bottle = false;
 	Logic.big_poe = false;

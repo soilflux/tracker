@@ -412,23 +412,8 @@ display:inline-block;
 margin:1.5%;
 margin-top:0%;
 }
-#timeMarker{
-    position:absolute;
-    bottom:100px;
-    left:45%;
-    width:9px;
-    height:9px;
-    background:gold;
-    border-radius:50%;
-     
-}
-#travelHeading{
-position:absolute;
-width:100%;
-top:-8%;
-text-align: center;
-margin: 0 auto;
-font-size:107%;
+#markStones {
+	margin-left:70px;
 }
 .travelMenu{
 position:absolute;
@@ -439,113 +424,6 @@ text-align:center;
 border:2px solid black;
 top:42%;
 right:2%;
-}
-.travelOption{
-width:92%;
-font-size:17px;
-margin:4%;
-height:6.5%;
-}
-.travelDestination{
-font-size:14px;
-margin: 0 auto;
-float:left;
-}
-.travelTime{
-margin:0 auto;
-float:right;
-}
-.sun{
-   width:200px;
-    height:200px;
-    position:absolute;
-}
-.clock {
-    position: absolute;
-        top:8%;
-    right:4%;
-}
-#day {
-    position:absolute;
-    right:36px;
-    top:-60px;
-    font-size:70px;
-}
-#timeCircle{
-    top:8%;
-    right:4%;
-    width: 90px;
-    height: 90px;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    border: 8px solid green;
-    border-radius: 100%;
-    background: transparent;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.5), inset 2px 2px 4px rgba(0,0,0,.5);
-    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);  
-    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
-}
-
-.rBlueHeader{
-margin-top:53px;
-color:blue;
-font-size:30px;
-}
-.bonusBlueprints{
-color:white;
-background-color: slategray;
-margin-top: 10px;
-border-color:black;
-}
-.boostsD{
-color: green;
-font-weight:'bold';
-font-size:20px;
-}
-#boostsH{
-font-size:25px;
-}
-#bdc{
-position: absolute;
-color: blue;
-font-size: 25px;
-width:25%;
-height:25%;
-right:40%;
-top:8%;
-}
-.timeBox{
-font-family:"sans-sarif";
-top:0px;
-left:80%;
-float:right;
-right:30px;
-width:20%;
-text-align:right;
-}
-.timeBox > p{
-color:#003366;
-font-weight:900;
-}
-.mainMenu{
-text-align:center;
-height:0px;
-width:50%;
-margin:0 auto;
-margin-top:1.3%;
-}
-.focus{
-border: 2px solid;
-border-radius: 25px;
-font-weight:900;
-}
-.resourcesBank{
-width: 20%;
-height:100%;
-text-align:left;
-}
-.resourcesBank > p{
-font-weight:bold;
 }
 h1 {
 text-align:center;
@@ -558,64 +436,6 @@ outline:none;
 }
 .top {
 display:inline;
-}
-.chooseBar{
-position:absolute;
-left:20%;
-height:10%;
-width:60%;
-top:17.5%
-}
-.sectCB{
--moz-user-select: none; 
-        -khtml-user-select: none; 
-        -webkit-user-select: none; 
-        -o-user-select: none;
-
-font-size:18px;
-width:15%;
-display:inline;
-padding:15px;
-margin-left:2%;
-background-color:gainsboro;
-border: 2px solid black;
-}
-#sect1 {
-color:black;
-background-color:red;
-font-weight:bold;
-}
-#sect2 {
-color:blue;
-}
-#sect3 {
-color:green;
-}
-#mainSpot {
-position:absolute;
-left:20%;
-height:70%;
-width:60%;
-top:30%;
-}
-.interchangeable{
-position:absolute;
-left:20%;
-height:60%;
-width:60%;
-top:25%;
-}
-.blueheader{
-color:black;
-font-size:20px;
-}
-.blueprints{
-display:block;
-font-weight:normal;
-color:gold;
-background-color: gray;
-border-color:black;
-font-size:14px;
 }
 .web{position:absolute; height:20px; width:20px; background-color:black; color:black; border-radius:50%; }
 
