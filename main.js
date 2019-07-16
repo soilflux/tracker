@@ -1551,6 +1551,7 @@ var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	
 	Person.isBoring = false;
+	Logic.brackets = false;
 	
 	document.getElementById("text_gen_med1").style.color = "yellow";
 	document.getElementById("text_gen_med2").style.color = "yellow";
@@ -2853,6 +2854,19 @@ function identifyMedal(x) {
 	}
 	else if (x.style.color == "rgb(255, 165, 0)") {
 		x.style.color = "yellow";
+	}
+}
+
+function toggleSettings() {
+	if(Logic.brackets) {
+		Logic.brackets = false;
+		document.getElementById("SettingsToggle").innerHTML = "Switch to Brackets";
+		Update();
+	}
+	else {
+		Logic.brackets = true;
+		document.getElementById("SettingsToggle").innerHTML = "Switch to Weekly";
+		Update();
 	}
 }
 
