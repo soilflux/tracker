@@ -819,7 +819,7 @@ if(tempstring.length == 6) 	{
 	else if (third == "sp") {Logic.sapphire = "spirit"; }
 	else if (third == "sh") {Logic.sapphire = "shadow"; }
 	else if (third == "fr" || third == "kk") {Logic.sapphire = "pocket"; }
-	if(Logic.emerald.length > 0 && Logic.ruby.length > 0 && Logic.sapphire.length> 0 && Logic.emerald != "unknown") {
+	if(Logic.emerald.length > 0 && Logic.ruby.length > 0 && Logic.sapphire.length> 0 && Logic.emerald != "unknown" && Logic.ruby != "unknown" && Logic.sapphire != "unknown") {
 		parent.removeChild(child);
 		if (first == "de") {Logic.emerald = "deku"; document.getElementById("text_kok_eme").className="greenstone"; document.getElementById("text_kok_eme").innerHTML = "dek"; document.getElementById("text_kok_eme").id = "text_deku";}
 	else if (first == "do") {Logic.emerald = "dodongos"; document.getElementById("text_kok_eme").className="greenstone"; document.getElementById("text_kok_eme").innerHTML = "dod"; document.getElementById("kok_eme_req1").className = "requirements"; document.getElementById("kok_eme_req1").src=Game.bomb_bag_img; document.getElementById("kok_eme_req1").id = "dod_req1"; document.getElementById("text_kok_eme").id = "text_dod";}
@@ -893,7 +893,7 @@ if(tempstring.length == 6) 	{
 	else if (third == "sp") {Logic.water_medallion_location = "spirit"; }
 	else if (third == "sh") {Logic.water_medallion_location = "shadow"; }
 	else if (third == "fr" || third == "kk") {Logic.water_medallion_location = "pocket"; }
-	if(Logic.forest_medallion_location.length > 0 && Logic.fire_medallion_location.length > 0 && Logic.water_medallion_location.length> 0 && Logic.forest_medallion_location != "unknown") {
+	if(Logic.forest_medallion_location.length > 0 && Logic.fire_medallion_location.length > 0 && Logic.water_medallion_location.length> 0 && Logic.forest_medallion_location != "unknown" && Logic.fire_medallion_location != "unknown" && Logic.water_medallion_location != "unknown") {
 		parent.removeChild(child);
 		if (first == "de") {Logic.forest_medallion_location = "deku"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dek"; document.getElementById("text_for_med").id = "text_deku";}
 	else if (first == "do") {Logic.forest_medallion_location = "dodongos"; document.getElementById("text_for_med").className="forest_medallion"; document.getElementById("text_for_med").innerHTML = "dod"; document.getElementById("for_med_req1").className = "requirements"; document.getElementById("for_med_req1").src = Game.bomb_bag_img; ; document.getElementById("for_med_req1").id = "dod_req1"; document.getElementById("text_for_med").id = "text_dod";}
