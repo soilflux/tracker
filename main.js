@@ -145,6 +145,25 @@ function Update() {
 		Game.dins_fire_img= "https://i.imgur.com/zcRc5ZI.png";
 		Game.magic_meter_img= "https://i.imgur.com/uAyOlX8.png";
 		Game.hover_boots_img= "https://i.imgur.com/DSzo0JN.png";
+		if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
+			if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
+			if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
+			if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
+			if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
+			if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
+			if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
+			if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
+			if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
+			if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
+			if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
+			if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
+			if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
+			if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
+			if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
+			if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
+			if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
+			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
+			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
 		document.getElementById("gan_req2").src="https://i.imgur.com/NsuqX43.png";
 		document.getElementById("gan_req1").src="https://i.imgur.com/uAyOlX8.png";
 		document.getElementById("gan_req3").src="https://i.imgur.com/muCeqKm.png";
