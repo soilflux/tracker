@@ -199,7 +199,12 @@ function Update() {
 		if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#990000';}
 		document.body.style.backgroundColor = "white";
 	}
-
+	if(Game.forest_checks_remaining == 0) {
+		for (var i = 1; i <= 14; i++) {
+			str = "forest" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
+		}
+	}
 	if(Game.current_forest_keys == 5) {
 		for (var i = 1; i <= 11; i++) {
 			str = "forest" + i;
@@ -210,6 +215,12 @@ function Update() {
 		for (var i = 1; i <= 13; i++) {
 			str = "forest" + i;
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
+		}
+	}
+	if(Game.fire_checks_remaining == 0) {
+		for (var i = 1; i <= 15; i++) {
+			str = "fire" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
 		}
 	}
 	if(Game.current_fire_keys == 8) {
@@ -225,6 +236,12 @@ function Update() {
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
 		}
 	}
+	if(Game.water_checks_remaining == 0) {
+		for (var i = 1; i <= 11; i++) {
+			str = "water" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
+		}
+	}
 	if(Game.current_water_keys == 6) {
 		for (var i = 1; i <= 11; i++) {
 			str = "water" + i;
@@ -235,6 +252,13 @@ function Update() {
 		for (var i = 1; i <= 10; i++) {
 			str = "water" + i;
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
+		}
+	}
+	if(Game.spirit_checks_remaining == 0) {
+		for (var i = 1; i <= 20; i++) {
+			if(i == 7 || i == 17){continue;}
+			str = "spirit" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
 		}
 	}
 	if(Game.current_spirit_keys == 5) {
@@ -251,6 +275,12 @@ function Update() {
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
 		}
 	}
+	if(Game.shadow_checks_remaining == 0) {
+		for (var i = 1; i <= 18; i++) {
+			str = "shadow" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
+		}
+	}
 	if(Game.current_shadow_keys == 5) {
 		for (var i = 1; i <= 17; i++) {
 			str = "shadow" + i;
@@ -262,6 +292,12 @@ function Update() {
 		for (var i = 1; i <= 17; i++) {
 			str = "shadow" + i;
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
+		}
+	}
+	if(Game.ganon_checks_remaining == 0) {
+		for (var i = 1; i <= 16; i++) {
+			str = "ganons" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
 		}
 	}
 	if(Game.current_ganons_keys == 2) {
@@ -276,11 +312,23 @@ function Update() {
 		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
 		}
 	}
+	if(Game.gtg_checks_remaining == 0) {
+		for (var i = 1; i <= 22; i++) {
+			str = "gtg" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
+		}
+	}
 	if(Game.current_gtg_keys == 9) {
 		for (var i = 1; i <= 22; i++) {
 			if (i == 21) {continue;}
 			str = "gtg" + i;
 			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
+		}
+	}
+	if(Game.well_checks_remaining == 0) {
+		for (var i = 1; i <= 14; i++) {
+			str = "well" + i;
+		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
 		}
 	}
 	if(Game.current_well_keys == 3) {
@@ -1633,7 +1681,7 @@ var tSeconds = 0;
 	Game.fire_checks_remaining = 6;
 	Game.water_checks_remaining = 4;
 	Game.shadow_checks_remaining = 12;
-	Game.spirit_checks_remaining = 14;
+	Game.spirit_checks_remaining = 12;
 	Game.gtg_checks_remaining = 13;
 	Game.well_checks_remaining = 11;
 	Game.ganons_checks_remaining = 13;
