@@ -516,30 +516,25 @@ function Update() {
 	if(Logic.fire_medallion_location == "unknown") {Logic.fire_medallion = false;}
 	if(Logic.water_medallion_location == "unknown") {Logic.water_medallion = false;}
 	var i;
-for (i = 1; i <= 6; i++) {
+for (i = 1; i <= 4; i++) {
 	str = "forceLogic" + i;
 	if(document.getElementById(str).value == "bom") {Logic.bomb_bag = true;}
 	if(document.getElementById(str).value == "far") {Logic.farores_wind = true;}
 	if(document.getElementById(str).value == "sli") {Logic.slingshot = true;}
 	if(document.getElementById(str).value == "boo") {Logic.boomerang = true;}
-	if(document.getElementById(str).value == "sc1") {Logic.silver_scale = true;}
-	if(document.getElementById(str).value == "sc2") {Logic.golden_scale = true;}
+	if(document.getElementById(str).value == "sca") {if(Logic.golden_scale) {Logic.golden_scale = true;} else if(Logic.silver_scale){Logic.silver_scale = true;}}
 	if(document.getElementById(str).value == "rut") {Logic.rutos_letter = true;}
 	if(document.getElementById(str).value == "bot") {Logic.bottle = true;}
 	if(document.getElementById(str).value == "big") {Logic.big_poe = true;}
 	if(document.getElementById(str).value == "ham") {Logic.hammer = true;}
 	if(document.getElementById(str).value == "bow") {Logic.bow = true;}
-	if(document.getElementById(str).value == "ho2") {Logic.longshot = true;}
-	if(document.getElementById(str).value == "ho1") {Logic.hookshot = true;}
+	if(document.getElementById(str).value == "hoo") {if(Logic.longshot) {Logic.longshot = true;} else if(Logic.hookshot){Logic.hookshot = true;}}
 	if(document.getElementById(str).value == "gor") {Logic.goron_tunic= true;}
 	if(document.getElementById(str).value == "zor") {Logic.zora_tunic= true;}
-	if(document.getElementById(str).value == "st1") {Logic.goron_bracelet = true;}
-	if(document.getElementById(str).value == "st2") {Logic.silver_gauntlets = true;}
-	if(document.getElementById(str).value == "st3") {Logic.golden_gauntlets= true;}
+	if(document.getElementById(str).value == "str") {if(Logic.golden_gauntlets) {Logic.golden_gauntlets = true;} else if(Logic.silver_gauntlets){Logic.silver_gauntlets = true;} else if(Logic.goron_bracelet){Logic.goron_bracelet = true;}}
 	if(document.getElementById(str).value == "iro") {Logic.iron_boots = true;}
 	if(document.getElementById(str).value == "hov") {Logic.hover_boots = true;}
-	if(document.getElementById(str).value == "wa1") {Logic.adults_wallet = true;}
-	if(document.getElementById(str).value == "wa2") {Logic.giants_wallet = true;}
+	if(document.getElementById(str).value == "wal") {if(Logic.giants_wallet) {Logic.giants_wallet = true;} else if(Logic.adults_wallet){Logic.adults_wallet = true;}}
 	if(document.getElementById(str).value == "mag") {Logic.magic = true;}
 	if(document.getElementById(str).value == "din") {Logic.dins_fire = true;}
 	if(document.getElementById(str).value == "fir") {Logic.fire_arrows = true;}
@@ -549,6 +544,55 @@ for (i = 1; i <= 6; i++) {
 	if(document.getElementById(str).value == "1me") {Logic.forest_medallion = true;}
 	if(document.getElementById(str).value == "3me") {Logic.forest_medallion = true; Logic.fire_medallion = true; Logic.water_medallion = true;}
 	if(document.getElementById(str).value == "oot") {Logic.kokiri_emerald = true; Logic.goron_ruby = true; Logic.zora_sapphire = true;}
+	if(document.getElementById(str).value == "lul") {Logic.lullaby = true;}
+	if(document.getElementById(str).value == "epo") {Logic.eponas = true;}
+	if(document.getElementById(str).value == "sar") {Logic.sarias = true;}
+	if(document.getElementById(str).value == "sun") {Logic.suns_song = true;}
+	if(document.getElementById(str).value == "sot") {Logic.song_of_time = true;}
+	if(document.getElementById(str).value == "sos") {Logic.song_of_storms = true;}
+	if(document.getElementById(str).value == "min") {Logic.minuet = true;}
+	if(document.getElementById(str).value == "bol") {Logic.bolero = true;}
+	if(document.getElementById(str).value == "noc") {Logic.nocturne = true;}
+	if(document.getElementById(str).value == "req") {Logic.requiem = true;}
+}
+for (i = 1; i <= 4; i++) {
+	str = "forceOutOfLogic" + i;
+	if(document.getElementById(str).value == "bom") {Logic.bomb_bag = false;}
+	if(document.getElementById(str).value == "far") {Logic.farores_wind = false;}
+	if(document.getElementById(str).value == "sli") {Logic.slingshot = false;}
+	if(document.getElementById(str).value == "boo") {Logic.boomerang = false;}
+	if(document.getElementById(str).value == "sca") {if(Logic.golden_scale) {Logic.golden_scale = false;} else if(Logic.silver_scale){Logic.silver_scale = false;}}
+	if(document.getElementById(str).value == "rut") {Logic.rutos_letter = false;}
+	if(document.getElementById(str).value == "bot") {Logic.bottle = false;}
+	if(document.getElementById(str).value == "big") {Logic.big_poe = false;}
+	if(document.getElementById(str).value == "ham") {Logic.hammer = false;}
+	if(document.getElementById(str).value == "bow") {Logic.bow = false;}
+	if(document.getElementById(str).value == "hoo") {if(Logic.longshot) {Logic.longshot = false;} else if(Logic.hookshot){Logic.hookshot = false;}}
+	if(document.getElementById(str).value == "gor") {Logic.goron_tunic= false;}
+	if(document.getElementById(str).value == "zor") {Logic.zora_tunic= false;}
+	if(document.getElementById(str).value == "str") {if(Logic.golden_gauntlets) {Logic.golden_gauntlets = false;} else if(Logic.silver_gauntlets){Logic.silver_gauntlets = false;} else if(Logic.goron_bracelet){Logic.goron_bracelet = false;}}
+	if(document.getElementById(str).value == "iro") {Logic.iron_boots = false;}
+	if(document.getElementById(str).value == "hov") {Logic.hover_boots = false;}
+	if(document.getElementById(str).value == "wal") {if(Logic.giants_wallet) {Logic.giants_wallet = false;} else if(Logic.adults_wallet){Logic.adults_wallet = false;}}
+	if(document.getElementById(str).value == "mag") {Logic.magic = false;}
+	if(document.getElementById(str).value == "din") {Logic.dins_fire = false;}
+	if(document.getElementById(str).value == "fir") {Logic.fire_arrows = false;}
+	if(document.getElementById(str).value == "len") {Logic.lens_of_truth = false;}
+	if(document.getElementById(str).value == "pre") {Logic.prescription = false;}
+	if(document.getElementById(str).value == "cla") {Logic.claim_check = false;}
+	if(document.getElementById(str).value == "1me") {Logic.forest_medallion = false;}
+	if(document.getElementById(str).value == "3me") {Logic.forest_medallion = false; Logic.fire_medallion = false; Logic.water_medallion = false;}
+	if(document.getElementById(str).value == "oot") {Logic.kokiri_emerald = false; Logic.goron_ruby = false; Logic.zora_sapphire = false;}
+	if(document.getElementById(str).value == "lul") {Logic.lullaby = false;}
+	if(document.getElementById(str).value == "epo") {Logic.eponas = false;}
+	if(document.getElementById(str).value == "sar") {Logic.sarias = false;}
+	if(document.getElementById(str).value == "sun") {Logic.suns_song = false;}
+	if(document.getElementById(str).value == "sot") {Logic.song_of_time = false;}
+	if(document.getElementById(str).value == "sos") {Logic.song_of_storms = false;}
+	if(document.getElementById(str).value == "min") {Logic.minuet = false;}
+	if(document.getElementById(str).value == "bol") {Logic.bolero = false;}
+	if(document.getElementById(str).value == "noc") {Logic.nocturne = false;}
+	if(document.getElementById(str).value == "req") {Logic.requiem = false;}
 }
 	
 	Logic.can_enter_jabu = Logic.rutos_letter && ((Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale)

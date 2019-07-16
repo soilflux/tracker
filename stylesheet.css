@@ -415,6 +415,14 @@ margin-top:0%;
 #markStones {
 	margin-left:62px;
 }
+#forceOutOfLogic{
+	color:pink;
+	font-size:18px;
+}
+#forceIntoLogic{
+	color:lightgreen;
+	font-size:18px;
+}
 .travelMenu{
 position:absolute;
 
