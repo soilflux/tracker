@@ -1479,11 +1479,11 @@ if(tempstring.length == 6) 	{
 	for (const key of keys) {
 		if (temp == 256) {break; }
 		temp +=1;
-		str = key + "";
-		if(document.getElementById(key) == null) {continue;}
+		str = "text_" + key;
+		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
-			document.getElementById("text_"+ str).className= "logic_check_text"; 
-			if(document.getElementById("img3_" + str) != null) {
+			document.getElementById(str).className= "logic_check_text"; 
+			if(document.getElementById("img3_" + key) != null) {
 				if (temp <= 244) {Game.logically_accessible += 1;}
 				if (temp >= 117 && temp <= 130) {Game.forest_logically_accessible += 1;}
 				if (temp >= 131 && temp <= 145) {Game.fire_logically_accessible += 1;}
@@ -1496,7 +1496,7 @@ if(tempstring.length == 6) 	{
 			}
 		}
 		else {
-			document.getElementById("text_" + str).className= "ool_check_text";
+			document.getElementById(str).className= "ool_check_text";
 		}
 	}
 	
