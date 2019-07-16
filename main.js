@@ -354,36 +354,25 @@ function Update() {
 	if(Logic.water_medallion_location == "spirit") {Logic.water_medallion = Location_Logic.spirit20;}
 	if(Logic.water_medallion_location == "shadow") {Logic.water_medallion = Location_Logic.shadow18;}
 	if(Logic.water_medallion_location == "pocket") {Logic.water_medallion = true;}
-	
-	if(Logic.generic1 == "deku") {Logic.gen1 = Location_Logic.deku_queen_gohma;}
-	if(Logic.generic1 == "dodongos") {Logic.gen1 = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.generic1 == "jabu") {Logic.gen1 = Location_Logic.jabu_barinade;}
-	if(Logic.generic1 == "forest") {Logic.gen1 = Location_Logic.forest14;}
-	if(Logic.generic1 == "fire") {Logic.gen1 = Location_Logic.fire6;}
-	if(Logic.generic1 == "water") {Logic.gen1 = Location_Logic.water11;}
-	if(Logic.generic1 == "spirit") {Logic.gen1 = Location_Logic.spirit20;}
-	if(Logic.generic1 == "shadow") {Logic.gen1 = Location_Logic.shadow18;}
-	if(Logic.generic1 == "pocket") {Logic.gen1 = true;}
-	
-	if(Logic.generic2 == "deku") {Logic.gen2 = Location_Logic.deku_queen_gohma;}
-	if(Logic.generic2 == "dodongos") {Logic.gen2 = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.generic2 == "jabu") {Logic.gen2 = Location_Logic.jabu_barinade;}
-	if(Logic.generic2 == "forest") {Logic.gen2 = Location_Logic.forest14;}
-	if(Logic.generic2 == "fire") {Logic.gen2 = Location_Logic.fire6;}
-	if(Logic.generic2 == "water") {Logic.gen2 = Location_Logic.water11;}
-	if(Logic.generic2 == "spirit") {Logic.gen2 = Location_Logic.spirit20;}
-	if(Logic.generic2 == "shadow") {Logic.gen2 = Location_Logic.shadow18;}
-	if(Logic.generic2 == "pocket") {Logic.gen2 = true;}
-	
-	if(Logic.generic3 == "deku") {Logic.gen3 = Location_Logic.deku_queen_gohma;}
-	if(Logic.generic3 == "dodongos") {Logic.gen3 = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.generic3 == "jabu") {Logic.gen3 = Location_Logic.jabu_barinade;}
-	if(Logic.generic3 == "forest") {Logic.gen3 = Location_Logic.forest14;}
-	if(Logic.generic3 == "fire") {Logic.gen3 = Location_Logic.fire6;}
-	if(Logic.generic3 == "water") {Logic.gen3 = Location_Logic.water11;}
-	if(Logic.generic3 == "spirit") {Logic.gen3 = Location_Logic.spirit20;}
-	if(Logic.generic3 == "shadow") {Logic.gen3 = Location_Logic.shadow18;}
-	if(Logic.generic3 == "pocket") {Logic.gen3 = true;}
+
+	Logic.shadow_medallion = false;
+	Logic.spirit_medallion = false;
+	for (var i = 1; i <=3; i++) {
+		str = "generic" + i;
+		str2 = "gen" + i;
+		if(Logic[str] == "shadow") {console.log(document.getElementById("text_shadow").style.color);}
+		if(Logic[str] == "deku") {Logic[str2] = Location_Logic.deku_queen_gohma; if(document.getElementById("text_deku").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.deku_queen_gohma;} if(document.getElementById("text_deku").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "dodongos") {Logic[str2] = Location_Logic.dodongos_king_dodongo; if(document.getElementById("text_dod").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.dodongos_king_dodongo;} if(document.getElementById("text_dod").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "jabu") {Logic[str2] = Location_Logic.jabu_barinade; if(document.getElementById("text_jabu").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.jabu_barinade;} if(document.getElementById("text_jabu").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "forest") {Logic[str2] = Location_Logic.forest14; if(document.getElementById("text_forest").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.forest14;} if(document.getElementById("text_forest").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "fire") {Logic[str2] = Location_Logic.fire6; if(document.getElementById("text_fire").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.fire6;} if(document.getElementById("text_fire").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "water") {Logic[str2] = Location_Logic.water11; if(document.getElementById("text_water").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.water11;} if(document.getElementById("text_water").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "spirit") {Logic[str2] = Location_Logic.spirit20; if(document.getElementById("text_spirit").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.spirit20;} if(document.getElementById("text_spirit").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "shadow") {Logic[str2] = Location_Logic.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+		if(Logic[str] == "pocket") {Logic[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
+	}
+	console.log(Logic.shadow_medallion);
+	console.log(Logic.spirit_medallion);
 	
 	if(Logic.emerald == "deku") {Logic.kokiri_emerald = Location_Logic.deku_queen_gohma;}
 	if(Logic.emerald == "dodongos") {Logic.kokiri_emerald = Location_Logic.dodongos_king_dodongo;}
@@ -670,18 +659,18 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "lig" && !Game.light_arrows) {Location.light_arrows = document.getElementById(key).id; Game.light_arrows = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	}
 	else {
-	if (document.getElementById(key).value == "lul" && !Game.lullaby) {Location.lullaby = document.getElementById(key).id; Game.lullaby = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key));}
-	if (document.getElementById(key).value == "epo" && !Game.eponas) {Location.eponas = document.getElementById(key).id; Game.eponas = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Epona's"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "sar" && !Game.sarias) {Location.sarias = document.getElementById(key).id; Game.sarias = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Saria's"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "sun" && !Game.suns_song) {Location.suns_song = document.getElementById(key).id; Game.suns_song = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Sun's"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "sot" && !Game.song_of_time) {Location.song_of_time = document.getElementById(key).id; Game.song_of_time = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Time"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "sos" && !Game.song_of_storms) {Location.song_of_storms = document.getElementById(key).id; Game.song_of_storms = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Storms"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "min" && !Game.minuet) {Location.minuet = document.getElementById(key).id; Game.minuet = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Minuet"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "bol" && !Game.bolero) {Location.bolero = document.getElementById(key).id; Game.bolero = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Bolero"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "ser" && !Game.serenade) {Location.serenade = document.getElementById(key).id; Game.serenade = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Serenade"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "req" && !Game.requiem) {Location.requiem = document.getElementById(key).id; Game.requiem = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Requiem"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "noc" && !Game.nocturne) {Location.nocturne = document.getElementById(key).id; Game.nocturne = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; junkBS(document.getElementById(key))}
-	if (document.getElementById(key).value == "pre" && !Game.prelude) {Location.prelude = document.getElementById(key).id; Game.prelude = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key))}
+	if (document.getElementById(key).value == "lul" && !Game.lullaby) {Location.lullaby = document.getElementById(key).id; Game.lullaby = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "epo" && !Game.eponas) {Location.eponas = document.getElementById(key).id; Game.eponas = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Epona's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sar" && !Game.sarias) {Location.sarias = document.getElementById(key).id; Game.sarias = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Saria's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sun" && !Game.suns_song) {Location.suns_song = document.getElementById(key).id; Game.suns_song = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Sun's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sot" && !Game.song_of_time) {Location.song_of_time = document.getElementById(key).id; Game.song_of_time = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Time"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sos" && !Game.song_of_storms) {Location.song_of_storms = document.getElementById(key).id; Game.song_of_storms = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Storms"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "min" && !Game.minuet) {Location.minuet = document.getElementById(key).id; Game.minuet = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Minuet"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "bol" && !Game.bolero) {Location.bolero = document.getElementById(key).id; Game.bolero = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Bolero"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "ser" && !Game.serenade) {Location.serenade = document.getElementById(key).id; Game.serenade = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Serenade"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "req" && !Game.requiem) {Location.requiem = document.getElementById(key).id; Game.requiem = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Requiem"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "noc" && !Game.nocturne) {Location.nocturne = document.getElementById(key).id; Game.nocturne = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "pre" && !Game.prelude) {Location.prelude = document.getElementById(key).id; Game.prelude = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key)); continue;}
 	}
 }
 
@@ -890,7 +879,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.poes= (Logic.bow && Logic.eponas && Logic.bottle) || Logic.big_poe;
 	Location_Logic.dins_fairy = Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.ganons_fairy = Logic.golden_gauntlets && Logic.lullaby;
-	Location_Logic.lacs = Game.spirit_medallion && Game.shadow_medallion;
+	Location_Logic.lacs = Logic.spirit_medallion && Logic.shadow_medallion;
 	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots;
 	Location_Logic.river_grotto = true;
 	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
@@ -1506,6 +1495,10 @@ var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	
 	Person.isBoring = false;
+	
+	document.getElementById("text_gen_med1").style.color = "yellow";
+	document.getElementById("text_gen_med2").style.color = "yellow";
+	document.getElementById("text_gen_med3").style.color = "yellow";
 	
 	Game.kokiri_sword = false;
 	Game.farores_wind = false;
@@ -2779,6 +2772,19 @@ function iAmBoring() {
 	Game.themeChange = true;
 	Update();
 	}
+	
+function identifyMedal(x) {
+	console.log(x.style.color);
+	if (x.style.color == "yellow") {
+		x.style.color = "rgb(238, 130, 238)";
+	}
+	else if (x.style.color == "rgb(238, 130, 238)") {
+		x.style.color = "rgb(255, 165, 0)";
+	}
+	else if (x.style.color == "rgb(255, 165, 0)") {
+		x.style.color = "yellow";
+	}
+}
 
 setInterval(Update,500);
 Update();Update();Update();
