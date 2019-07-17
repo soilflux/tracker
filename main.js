@@ -522,19 +522,19 @@ for (i = 1; i <= 4; i++) {
 	if(document.getElementById(str).value == "far") {Logic.farores_wind = true;}
 	if(document.getElementById(str).value == "sli") {Logic.slingshot = true;}
 	if(document.getElementById(str).value == "boo") {Logic.boomerang = true;}
-	if(document.getElementById(str).value == "sca") {if(Logic.golden_scale) {Logic.golden_scale = true;} else if(Logic.silver_scale){Logic.silver_scale = true;}}
+	if(document.getElementById(str).value == "sca") {if(!Logic.silver_scale) {Logic.silver_scale = true;} else if(!Logic.golden_scale){Logic.golden_scale = true;}}
 	if(document.getElementById(str).value == "rut") {Logic.rutos_letter = true;}
 	if(document.getElementById(str).value == "bot") {Logic.bottle = true;}
 	if(document.getElementById(str).value == "big") {Logic.big_poe = true;}
 	if(document.getElementById(str).value == "ham") {Logic.hammer = true;}
 	if(document.getElementById(str).value == "bow") {Logic.bow = true;}
-	if(document.getElementById(str).value == "hoo") {if(Logic.longshot) {Logic.longshot = true;} else if(Logic.hookshot){Logic.hookshot = true;}}
+	if(document.getElementById(str).value == "hoo") {if(!Logic.hookshot) {Logic.hookshot = true;} else if(!Logic.longshot){Logic.longshot = true;}}
 	if(document.getElementById(str).value == "gor") {Logic.goron_tunic= true;}
 	if(document.getElementById(str).value == "zor") {Logic.zora_tunic= true;}
-	if(document.getElementById(str).value == "str") {if(Logic.golden_gauntlets) {Logic.golden_gauntlets = true;} else if(Logic.silver_gauntlets){Logic.silver_gauntlets = true;} else if(Logic.goron_bracelet){Logic.goron_bracelet = true;}}
+	if(document.getElementById(str).value == "str") {if(!Logic.goron_bracelet) {Logic.goron_bracelet = true;} else if(!Logic.silver_gauntlets){Logic.silver_gauntlets = true;} else if(!Logic.golden_gauntlets){Logic.golden_gauntlets = true;}}
 	if(document.getElementById(str).value == "iro") {Logic.iron_boots = true;}
 	if(document.getElementById(str).value == "hov") {Logic.hover_boots = true;}
-	if(document.getElementById(str).value == "wal") {if(Logic.giants_wallet) {Logic.giants_wallet = true;} else if(Logic.adults_wallet){Logic.adults_wallet = true;}}
+	if(document.getElementById(str).value == "wal") {if(!Logic.adults_wallet) {Logic.adults_wallet = true;} else if(!Logic.giants_wallet){Logic.giants_wallet = true;}}
 	if(document.getElementById(str).value == "mag") {Logic.magic = true;}
 	if(document.getElementById(str).value == "din") {Logic.dins_fire = true;}
 	if(document.getElementById(str).value == "fir") {Logic.fire_arrows = true;}
