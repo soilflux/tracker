@@ -216,7 +216,7 @@ overflow: hidden;
 .layout_input {
 	width: 55px;
 	vertical-align: top;
-	margin-bottom: 3px;
+	margin-bottom: 0px;
 	margin-top:3px;
 }
 .check_text {
