@@ -208,6 +208,7 @@ overflow: hidden;
   clear: both;
 }
 .check_input {
+	height:22px;
 	width: 30px;
 	vertical-align: top;
 	margin-bottom: 3px;
@@ -225,12 +226,18 @@ overflow: hidden;
 	font-size: 16px;
 	color: 						chartreuse;
 	font-weight:bold;
+	display: inline-block;
+	margin-top:2px;
 	margin-bottom:5px;
+	vertical-align: top;
 }
 .ool_check_text{
+	vertical-align: top;
 	font-size: 16px;
 	font-weight: normal;
 	color: 	black;
+	display: inline-block;
+	margin-top:2px;
 	margin-bottom:5px;
 }
 .modal {
@@ -288,8 +295,8 @@ overflow: hidden;
 	width: 26px;
 	margin-left:8px;
 	margin-right:0px;
-	margin-top:3px;
-	margin-bottom:3px;
+	margin-top:5px;
+	margin-bottom:5px;
 	opacity: .2;
 }
 .bonuspics{
@@ -413,7 +420,7 @@ margin:1.5%;
 margin-top:0%;
 }
 #markStones {
-	margin-left:62px;
+	margin-left:69px;
 }
 #forceOutOfLogic{
 	color:pink;
