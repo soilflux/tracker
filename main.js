@@ -1,7 +1,7 @@
 function Update() {
 
 	if(Game.theme == "dark" && Game.themeChange) {
-		if (Person.isBoring != true) {
+		if (Person.type == "soli") {
 			Game.bomb_bag_img= "https://i.imgur.com/Szzkd7F.png";
 			Game.letter_img= "https://i.imgur.com/iJIaSHd.png";
 			Game.boomerang_img= "https://i.imgur.com/7hFOlue.png";
@@ -55,9 +55,17 @@ function Update() {
 			document.getElementById("bottleimg").src="https://i.imgur.com/2a90Fgd.png";
 			document.getElementById("firearrowsimg").src="https://i.imgur.com/caxHISp.png";
 			document.getElementById("silverscaleimg").src="https://i.imgur.com/wK17k2u.png";
+			var all = document.getElementsByClassName('songpics');
+			for (var i = 0; i < all.length; i++) {
+			all[i].style.width="26px";
+			all[i].style.height="26px";
+			all[i].style.marginLeft="8px";
+			all[i].style.marginBottom="2px";
+			all[i].style.marginTop="5px";
+			}
 			document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 		}
-		else {
+		else if (Person.type == "normie") {
 			Game.bomb_bag_img= "https://i.imgur.com/Crv3yEP.png";
 			Game.letter_img= "https://i.imgur.com/U5I0eI3.png";
 			Game.boomerang_img= "https://i.imgur.com/t3Yh4u9.png";
@@ -111,7 +119,79 @@ function Update() {
 			document.getElementById("bottleimg").src="https://i.imgur.com/d2LSzw7.png";
 			document.getElementById("firearrowsimg").src="https://i.imgur.com/vpGexj9.png";
 			document.getElementById("silverscaleimg").src="https://i.imgur.com/QfdjqYK.png";
-			document.getElementById("iWantToRemoveThisButton").innerHTML="CoolCat";
+			var all = document.getElementsByClassName('songpics');
+			for (var i = 0; i < all.length; i++) {
+			all[i].style.width="26px";
+			all[i].style.height="26px";
+			all[i].style.marginLeft="8px";
+			all[i].style.marginBottom="2px";
+			all[i].style.marginTop="5px";
+			}
+			document.getElementById("iWantToRemoveThisButton").innerHTML="tagnia";
+		}
+		else if (Person.type = "tagnia") {
+			Game.bomb_bag_img= "https://i.imgur.com/TjVjKRn.png";
+			Game.letter_img= "https://i.imgur.com/RAP8wMy.png";
+			Game.boomerang_img= "https://i.imgur.com/kdy5BRJ.png";
+			Game.hookshot_img= "https://i.imgur.com/wZLWSuW.png";
+			Game.bow_img= "https://i.imgur.com/gtzNOGr.png";
+			Game.goron_bracelet_img= "https://i.imgur.com/KkYqAOL.png";
+			Game.hammer_img= "https://i.imgur.com/xYItW1t.png";
+			Game.iron_boots_img= "https://i.imgur.com/m3cAI1P.png";
+			Game.golden_scale_img= "https://i.imgur.com/3vEpKLx.png";
+			Game.longshot_img= "https://i.imgur.com/3WbyXbi.png";
+			Game.silver_gauntlets_img= "https://i.imgur.com/K6198X3.png";
+			Game.mirror_shield_img= "https://i.imgur.com/RbIuZyE.png";
+			Game.dins_fire_img= "https://i.imgur.com/QlwigGB.png";
+			Game.magic_meter_img= "https://i.imgur.com/XRsHr3v.png";
+			Game.hover_boots_img= "https://i.imgur.com/INd88ZQ.png";
+			if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
+			if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
+			if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
+			if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
+			if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
+			if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
+			if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
+			if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
+			if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
+			if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
+			if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
+			if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
+			if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
+			if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
+			if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
+			if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
+			if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
+			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
+			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+			document.getElementById("gan_req2").src="https://i.imgur.com/1TgxgFJ.png";
+			document.getElementById("gan_req1").src=Game.magic_meter_img;
+			document.getElementById("gan_req3").src=Game.bow_img;
+			document.getElementById("lullabyimg").src="https://i.imgur.com/OXWzSgW.png";
+			document.getElementById("eponasimg").src="https://i.imgur.com/ERy6k4d.png";
+			document.getElementById("sariasimg").src="https://i.imgur.com/r7zkrIQ.png";
+			document.getElementById("sunsimg").src="https://i.imgur.com/cgrvqxW.png";
+			document.getElementById("sotimg").src="https://i.imgur.com/cz9mQKV.png";
+			document.getElementById("sosimg").src="https://i.imgur.com/CxUPmOZ.png";
+			document.getElementById("minuetimg").src="https://i.imgur.com/i67LLTT.png";
+			document.getElementById("boleroimg").src="https://i.imgur.com/nmiHshX.png";
+			document.getElementById("serenadeimg").src="https://i.imgur.com/xSz72al.png";
+			document.getElementById("requiemimg").src="https://i.imgur.com/iThvSVN.png";
+			document.getElementById("nocturneimg").src="https://i.imgur.com/VQzHM86.png";
+			document.getElementById("preludeimg").src="https://i.imgur.com/awQDIDe.png";
+			document.getElementById("faroresimg").src="https://i.imgur.com/D20ZL4Q.png";
+			document.getElementById("bottleimg").src="https://i.imgur.com/qvbNLJ5.png";
+			document.getElementById("firearrowsimg").src="https://i.imgur.com/bToAQj0.png";
+			document.getElementById("silverscaleimg").src="https://i.imgur.com/s1YGBfp.png";
+			var all = document.getElementsByClassName('songpics');
+			for (var i = 0; i < all.length; i++) {
+			all[i].style.width="40px";
+			all[i].style.height="40px";
+			all[i].style.marginLeft="0px";
+			all[i].style.marginBottom="0px";
+			all[i].style.marginTop="0px";
+			}
+			document.getElementById("iWantToRemoveThisButton").innerHTML="soli";
 		}
 		Game.themeChange = false;
 		document.getElementById("checks_remaining").style.color="lightblue";
@@ -1642,7 +1722,7 @@ var tMinutes = 0;
 var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	
-	Person.isBoring = false;
+	Person.type = "soli";
 	Logic.brackets = false;
 	
 	document.getElementById("text_gen_med1").style.color = "yellow";
@@ -2923,14 +3003,19 @@ function changeTheme() {
 	Update();
 	}
 	
-function iAmBoring() {
-	if(Person.isBoring) {
-		Person.isBoring = false;
+function whoAmI() {
+	if(Person.type == "soli") {
+		Person.type = "normie";
 		Game.themeChange = true;
 		Update();
 	}
-	else {
-		Person.isBoring = true;
+	else if (Person.type == "normie") {
+		Person.type = "tagnia";
+		Game.themeChange = true;
+		Update();
+	}
+	else if (Person.type == "tagnia") {
+		Person.type = "soli";
 		Game.themeChange = true;
 		Update();
 	}
