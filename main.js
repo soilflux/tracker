@@ -63,7 +63,7 @@ function Update() {
 			all[i].style.marginBottom="2px";
 			all[i].style.marginTop="5px";
 			}
-			document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
+			document.getElementById("iWantToRemoveThisButton").innerHTML="the GREAT and POWERFUL tagnia";
 		}
 		else if (Person.type == "normie") {
 			Game.bomb_bag_img= "https://i.imgur.com/Crv3yEP.png";
@@ -127,7 +127,7 @@ function Update() {
 			all[i].style.marginBottom="2px";
 			all[i].style.marginTop="5px";
 			}
-			document.getElementById("iWantToRemoveThisButton").innerHTML="tagnia";
+			document.getElementById("iWantToRemoveThisButton").innerHTML="soli";
 		}
 		else if (Person.type = "tagnia") {
 			Game.bomb_bag_img= "https://i.imgur.com/TjVjKRn.png";
@@ -191,7 +191,7 @@ function Update() {
 			all[i].style.marginBottom="0px";
 			all[i].style.marginTop="0px";
 			}
-			document.getElementById("iWantToRemoveThisButton").innerHTML="soli";
+			document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 		}
 		Game.themeChange = false;
 		document.getElementById("checks_remaining").style.color="lightblue";
@@ -1810,7 +1810,7 @@ var tSeconds = 0;
 	Game.well_checks_remaining = 11;
 	Game.ganons_checks_remaining = 13;
 	
-	Game.checks_remaining=194;
+	Game.checks_remaining=195;
 	Game.logically_accessible=35;
 	Game.forest_logically_accessible=0;
 	Game.fire_logically_accessible=0;
@@ -3005,16 +3005,16 @@ function changeTheme() {
 	
 function whoAmI() {
 	if(Person.type == "soli") {
-		Person.type = "normie";
-		Game.themeChange = true;
-		Update();
-	}
-	else if (Person.type == "normie") {
 		Person.type = "tagnia";
 		Game.themeChange = true;
 		Update();
 	}
 	else if (Person.type == "tagnia") {
+		Person.type = "normie";
+		Game.themeChange = true;
+		Update();
+	}
+	else if (Person.type == "normie") {
 		Person.type = "soli";
 		Game.themeChange = true;
 		Update();
