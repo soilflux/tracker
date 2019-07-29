@@ -282,6 +282,18 @@ overflow: hidden;
   border-radius: 50%;
   display: inline-block;
 }
+.superdot {
+  height: 26px;
+  width: 26px;
+  margin-left:3px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size:22px;
+  color:orange;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+}
 .bossdot {
   height: 18px;
   width: 18px;

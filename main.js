@@ -714,42 +714,48 @@ for (i = 1; i <= 4; i++) {
 	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow));
 	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (Logic.lullaby && Logic.bottle));
 	
-	Logic.current_forest_keys = 0;
+	Logic.current_forest_keys = Logic.forced_forest_keys;
 	for (i = 1; i <= 14; i++) {
 		str = "forest" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_forest_keys +=1;}
 	}
-	Logic.current_fire_keys = 0;
+	Logic.current_fire_keys = Logic.forced_fire_keys;;
 	for (i = 1; i <= 15; i++) {
 		str = "fire" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_fire_keys +=1;}
 	}
 	
-	Logic.current_water_keys = 0;
+	Logic.current_water_keys = Logic.forced_water_keys;;
 	for (i = 1; i <= 11; i++) {
 		str = "water" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_water_keys +=1;}
 	}
 	
-	Logic.current_spirit_keys = 0;
+	Logic.current_spirit_keys = Logic.forced_spirit_keys;;
 	for (i = 1; i <= 20; i++) {
 		str = "spirit" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_spirit_keys +=1;}
 	}
 	
-	Logic.current_shadow_keys = 0;
+	Logic.current_shadow_keys = Logic.forced_shadow_keys;;
 	for (i = 1; i <= 18; i++) {
 		str = "shadow" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_shadow_keys +=1;}
 	}
 	
-	Logic.current_gtg_keys = 0;
+	Logic.current_ganons_keys = Logic.forced_ganons_keys;;
+	for (i = 1; i <= 16; i++) {
+		str = "ganons" + i;
+		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_ganons_keys +=1;}
+	}
+	
+	Logic.current_gtg_keys = Logic.forced_gtg_keys;;
 	for (i = 1; i <= 22; i++) {
 		str = "gtg" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_gtg_keys +=1;}
 	}
 	
-	Logic.current_well_keys = 0;
+	Logic.current_well_keys = Logic.forced_well_keys;;
 	for (i = 1; i <= 14; i++) {
 		str = "well" + i;
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_well_keys +=1;}
@@ -1580,6 +1586,15 @@ if(tempstring.length == 6) 	{
 		}
 	}
 	
+	document.getElementById("forest").innerHTML = "" + Game.forest_checks_remaining;
+	document.getElementById("fire").innerHTML = "" + Game.fire_checks_remaining;
+	document.getElementById("water").innerHTML = "" + Game.water_checks_remaining;
+	document.getElementById("spirit").innerHTML = "" + Game.spirit_checks_remaining;
+	document.getElementById("shadow").innerHTML = "" + Game.shadow_checks_remaining;
+	document.getElementById("ganons").innerHTML = "" + Game.ganons_checks_remaining;
+	document.getElementById("gtg").innerHTML = "" + Game.gtg_checks_remaining;
+	document.getElementById("well").innerHTML = "" + Game.well_checks_remaining;
+	
 	if (Game.forest_checks_remaining >=0 && (Game.forest_checks_remaining < Game.forest_logically_accessible)) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
 	if (Game.fire_checks_remaining >=0 && (Game.fire_checks_remaining < Game.fire_logically_accessible)) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
 	if (Game.water_checks_remaining >=0 && (Game.water_checks_remaining < Game.water_logically_accessible)) {Game.logically_accessible -= (Game.water_logically_accessible - Game.water_checks_remaining);}
@@ -1948,6 +1963,14 @@ var tSeconds = 0;
 	Logic.min_well_keys=0;
 	Logic.current_well_keys=0;
 	Logic.well_keys = 0;
+	Logic.forced_forest_keys=0;
+	Logic.forced_fire_keys=0;
+	Logic.forced_water_keys=0;
+	Logic.forced_spirit_keys=0;
+	Logic.forced_shadow_keys=0;
+	Logic.forced_ganons_keys=0;
+	Logic.forced_gtg_keys=0;
+	Logic.forced_well_keys=0;
 	
 	Logic.forest_boss_key = false;
 	Logic.fire_boss_key = false;
@@ -2607,6 +2630,62 @@ if (document.getElementById(delete8) !== null) {
 if(str2.startsWith('gtg')) {Game.gtg_checks_remaining -= 1;}
 if(str2.startsWith('well')) {Game.well_checks_remaining -= 1;}
 Game.checks_remaining -=1;
+	Update();Update();Update();
+}
+function junkUltra(x) {
+	if (x.id == "forest") {var temp = 14; var temp2 = Game.forest_checks_remaining; Game.forest_checks_remaining = 0; var parent = document.getElementById("dung1"); Logic.forced_forest_keys = 5 - Game.current_forest_keys; if (Game.forest_boss_key == false) {Logic.forest_boss_key = true;}}
+	if (x.id == "fire") {var temp = 15; var temp2 = Game.fire_checks_remaining; Game.fire_checks_remaining = 0; var parent = document.getElementById("dung1"); Logic.forced_fire_keys = 8 - Game.current_fire_keys; if (Game.fire_boss_key == false) {Logic.fire_boss_key = true;}}
+	if (x.id == "water") {var temp = 11; var temp2 = Game.water_checks_remaining; Game.water_checks_remaining = 0; var parent = document.getElementById("dung1"); Logic.forced_water_keys = 6 - Game.current_water_keys; if (Game.water_boss_key == false) {Logic.water_boss_key = true;}}
+	if (x.id == "spirit") {var temp = 20; var temp2 = Game.spirit_checks_remaining; Game.spirit_checks_remaining = 0; var parent = document.getElementById("dung2"); Logic.forced_spirit_keys = 5 - Game.current_spirit_keys; if (Game.spirit_boss_key == false) {Logic.spirit_boss_key = true;}}
+	if (x.id == "shadow") {var temp = 18; var temp2 = Game.shadow_checks_remaining; Game.shadow_checks_remaining = 0; var parent = document.getElementById("dung2"); Logic.forced_shadow_keys = 5 - Game.current_shadow_keys; if (Game.shadow_boss_key == false) {Logic.shadow_boss_key = true;}}
+	if (x.id == "ganons") {var temp = 16; var temp2 = Game.ganons_checks_remaining; Game.ganons_checks_remaining = 0; var parent = document.getElementById("dung2"); Logic.forced_ganons_keys = 2 - Game.current_ganons_keys; if (Game.ganons_boss_key == false) {Logic.ganons_boss_key = true;}}
+	if (x.id == "gtg") {var temp = 22; var temp2 = Game.gtg_checks_remaining; Game.gtg_checks_remaining = 0; var parent = document.getElementById("dung3"); Logic.forced_gtg_keys = 5 - Game.current_gtg_keys;}
+	if (x.id == "well") {var temp = 14; var temp2 = Game.well_checks_remaining; Game.well_checks_remaining = 0; var parent = document.getElementById("dung3"); Logic.forced_well_keys = 5 - Game.current_well_keys;}
+	for (var i = 1; i <= temp; i++){
+		if (x.id == "spirit" && (i == 7 || i == 17)) {continue;}
+		var str2 = x.id + i;
+		var delete1 = "img1_" + str2;
+		var delete2 = "img2_" + str2;
+		var delete3 = str2;
+		var delete4 = "text_" + str2;
+		var delete5 = "br_" + str2;
+		var delete6 = "span_" + str2;
+		var delete7 = "img3_" + str2;
+		var delete8 = "span2_" + str2;
+		if (document.getElementById(delete1) !== null) {
+			var child = document.getElementById(delete1);
+			parent.removeChild(child);
+		}
+		if (document.getElementById(delete2) !== null) {
+			var child = document.getElementById(delete2);
+			parent.removeChild(child);
+		}
+		if (document.getElementById(delete3) !== null) {
+			var child = document.getElementById(delete3);
+			parent.removeChild(child);
+		}
+		if (document.getElementById(delete4) !== null) {
+			var child = document.getElementById(delete4);
+			parent.removeChild(child);
+		}
+		if (document.getElementById(delete5) !== null) {
+			var child = document.getElementById(delete5);
+			parent.removeChild(child);
+		}		
+		if (document.getElementById(delete6) !== null) {
+			var child = document.getElementById(delete6);
+			parent.removeChild(child);
+		} 
+		if (document.getElementById(delete7) !== null) {
+			var child = document.getElementById(delete7);
+			parent.removeChild(child);
+		} 
+		if (document.getElementById(delete8) !== null) {
+			var child = document.getElementById(delete8);
+			parent.removeChild(child);
+		}
+	}
+		Game.checks_remaining -= temp2;
 	Update();Update();Update();
 }
 
