@@ -282,6 +282,16 @@ overflow: hidden;
   border-radius: 50%;
   display: inline-block;
 }
+.logicdot {
+	height: 12px;
+	width: 12px;
+	margin-left:3px;
+	margin-right:3px;
+	background-color: palevioletred;
+	vertical-align: center;
+	border-radius: 50%;
+	display: inline-block;
+}
 .superdot {
   height: 26px;
   width: 26px;
