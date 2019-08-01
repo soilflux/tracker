@@ -279,145 +279,6 @@ function Update() {
 		if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#990000';}
 		document.body.style.backgroundColor = "white";
 	}
-	if(Game.forest_checks_remaining == 0) {
-		for (var i = 1; i <= 14; i++) {
-			str = "forest" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_forest_keys == 5) {
-		for (var i = 1; i <= 11; i++) {
-			str = "forest" + i;
-		if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.forest_boss_key == true) {
-		for (var i = 1; i <= 13; i++) {
-			str = "forest" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.fire_checks_remaining == 0) {
-		for (var i = 1; i <= 15; i++) {
-			str = "fire" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_fire_keys == 8) {
-		for (var i = 1; i <= 15; i++) {
-			str = "fire" + i;
-		if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.fire_boss_key == true) {
-		for (var i = 1; i <= 15; i++) {
-			if (i == 6) {continue;}
-			str = "fire" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.water_checks_remaining == 0) {
-		for (var i = 1; i <= 11; i++) {
-			str = "water" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_water_keys == 6) {
-		for (var i = 1; i <= 11; i++) {
-			str = "water" + i;
-		if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.water_boss_key == true) {
-		for (var i = 1; i <= 10; i++) {
-			str = "water" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.spirit_checks_remaining == 0) {
-		for (var i = 1; i <= 20; i++) {
-			if(i == 7 || i == 17){continue;}
-			str = "spirit" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_spirit_keys == 5) {
-		for (var i = 1; i <= 20; i++) {
-			if(i == 7 || i >= 17){continue;}
-			str = "spirit" + i;
-			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.spirit_boss_key == true) {
-		for (var i = 1; i <= 20; i++) {
-			if(i == 7 || i == 17 || i == 20){continue;}
-			str = "spirit" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.shadow_checks_remaining == 0) {
-		for (var i = 1; i <= 18; i++) {
-			str = "shadow" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_shadow_keys == 5) {
-		for (var i = 1; i <= 17; i++) {
-			str = "shadow" + i;
-			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	
-	if(Game.shadow_boss_key == true) {
-		for (var i = 1; i <= 17; i++) {
-			str = "shadow" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.ganon_checks_remaining == 0) {
-		for (var i = 1; i <= 16; i++) {
-			str = "ganons" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_ganons_keys == 2) {
-		for (var i = 1; i <= 16; i++) {
-			str = "ganons" + i;
-			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.ganons_boss_key == true) {
-		for (var i = 1; i <= 16; i++) {
-			str = "ganons" + i;
-		if(document.getElementById("img2_"+str) != null) {document.getElementById("img2_"+str).className="dot_span";}
-		}
-	}
-	if(Game.gtg_checks_remaining == 0) {
-		for (var i = 1; i <= 22; i++) {
-			str = "gtg" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_gtg_keys == 9) {
-		for (var i = 1; i <= 22; i++) {
-			if (i == 21) {continue;}
-			str = "gtg" + i;
-			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
-	if(Game.well_checks_remaining == 0) {
-		for (var i = 1; i <= 14; i++) {
-			str = "well" + i;
-		if(document.getElementById("img3_"+str) != null) {document.getElementById("img3_"+str).className="dot_span";}
-		}
-	}
-	if(Game.current_well_keys == 3) {
-		for (var i = 1; i <= 14; i++) {
-			if (i == 12 || i == 13) {continue;}
-			str = "well" + i;
-			if(document.getElementById("img1_"+str) != null) {document.getElementById("img1_"+str).className="dot_span";}
-		}
-	}
 
 	if(Game.kokiri_sword == true) {Logic.kokiri_sword = Location_Logic[Location.kokiri_sword];}
 	
@@ -835,67 +696,67 @@ for (const key of keys) {
 	temp +=1;
 	if(document.getElementById(key) == null) {continue;}
 	if (temp <= 244) { 
- if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+ if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
  
- if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; Game.farores_wind = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+ if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; Game.farores_wind = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "sli" && !Game.slingshot) {Location.slingshot1 = document.getElementById(key).id; Game.slingshot = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sli" && !Game.slingshot2) {Location.slingshot2 = document.getElementById(key).id; Game.slingshot2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sli" && !Game.slingshot3) {Location.slingshot3 = document.getElementById(key).id; Game.slingshot3 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "sli" && !Game.slingshot) {Location.slingshot1 = document.getElementById(key).id; Game.slingshot = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sli" && !Game.slingshot2) {Location.slingshot2 = document.getElementById(key).id; Game.slingshot2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sli" && !Game.slingshot3) {Location.slingshot3 = document.getElementById(key).id; Game.slingshot3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "boo" && !Game.boomerang) {Location.boomerang = document.getElementById(key).id; Game.boomerang = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "boo" && !Game.boomerang) {Location.boomerang = document.getElementById(key).id; Game.boomerang = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "sca" && !Game.silver_scale) {Location.scale1 = document.getElementById(key).id; Game.silver_scale = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sca" && !Game.golden_scale) {Location.scale2 = document.getElementById(key).id; Game.golden_scale = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "sca" && !Game.silver_scale) {Location.scale1 = document.getElementById(key).id; Game.silver_scale = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sca" && !Game.golden_scale) {Location.scale2 = document.getElementById(key).id; Game.golden_scale = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "rut" && !Game.rutos_letter) {Location.rutos_letter = document.getElementById(key).id; Game.rutos_letter = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "rut" && !Game.rutos_letter) {Location.rutos_letter = document.getElementById(key).id; Game.rutos_letter = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "bot" && !Game.bottle1) {Location.bottle1 = document.getElementById(key).id; Game.bottle1 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bot" && !Game.bottle2) {Location.bottle2 = document.getElementById(key).id; Game.bottle2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bot" && !Game.bottle3) {Location.bottle3 = document.getElementById(key).id; Game.bottle3 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "bot" && !Game.bottle1) {Location.bottle1 = document.getElementById(key).id; Game.bottle1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bot" && !Game.bottle2) {Location.bottle2 = document.getElementById(key).id; Game.bottle2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bot" && !Game.bottle3) {Location.bottle3 = document.getElementById(key).id; Game.bottle3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "big" && !Game.bottle1) {Location.bottle1 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle1 = true; Game.big_poe = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "big" && !Game.bottle2) {Location.bottle2 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle2 = true; Game.big_poe = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "big" && !Game.bottle3) {Location.bottle3 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle3 = true; Game.big_poe = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "big" && !Game.bottle1) {Location.bottle1 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle1 = true; Game.big_poe = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "big" && !Game.bottle2) {Location.bottle2 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle2 = true; Game.big_poe = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "big" && !Game.bottle3) {Location.bottle3 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; Game.bottle3 = true; Game.big_poe = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "bom" && !Game.bomb_bag) {Location.bomb_bag1 = document.getElementById(key).id; Game.bomb_bag = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag2) {Location.bomb_bag2 = document.getElementById(key).id; Game.bomb_bag2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag3) {Location.bomb_bag3 = document.getElementById(key).id; Game.bomb_bag3 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "bom" && !Game.bomb_bag) {Location.bomb_bag1 = document.getElementById(key).id; Game.bomb_bag = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag2) {Location.bomb_bag2 = document.getElementById(key).id; Game.bomb_bag2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag3) {Location.bomb_bag3 = document.getElementById(key).id; Game.bomb_bag3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "ham" && !Game.hammer) {Location.hammer = document.getElementById(key).id; Game.hammer = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "ham" && !Game.hammer) {Location.hammer = document.getElementById(key).id; Game.hammer = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "bow" && !Game.bow) {Location.bow1 = document.getElementById(key).id; Game.bow = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bow" && !Game.bow2) {Location.bow2 = document.getElementById(key).id; Game.bow2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bow" && !Game.bow3) {Location.bow3 = document.getElementById(key).id; Game.bow3 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "bow" && !Game.bow) {Location.bow1 = document.getElementById(key).id; Game.bow = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bow" && !Game.bow2) {Location.bow2 = document.getElementById(key).id; Game.bow2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bow" && !Game.bow3) {Location.bow3 = document.getElementById(key).id; Game.bow3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "hoo" && !Game.hookshot) {Location.hookshot1 = document.getElementById(key).id; Game.hookshot = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "hoo" && !Game.longshot) {Location.hookshot2 = document.getElementById(key).id; Game.longshot = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "hoo" && !Game.hookshot) {Location.hookshot1 = document.getElementById(key).id; Game.hookshot = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "hoo" && !Game.longshot) {Location.hookshot2 = document.getElementById(key).id; Game.longshot = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "str" && !Game.goron_bracelet) {Location.strength1 = document.getElementById(key).id; Game.goron_bracelet = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "str" && !Game.silver_gauntlets) {Location.strength2 = document.getElementById(key).id; Game.silver_gauntlets = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "str" && !Game.gold_gauntlets) {Location.strength3 = document.getElementById(key).id; Game.gold_gauntlets = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "str" && !Game.goron_bracelet) {Location.strength1 = document.getElementById(key).id; Game.goron_bracelet = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "str" && !Game.silver_gauntlets) {Location.strength2 = document.getElementById(key).id; Game.silver_gauntlets = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "str" && !Game.gold_gauntlets) {Location.strength3 = document.getElementById(key).id; Game.gold_gauntlets = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "mir" && !Game.mirror_shield) {Location.mirror_shield = document.getElementById(key).id; Game.mirror_shield = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "mir" && !Game.mirror_shield) {Location.mirror_shield = document.getElementById(key).id; Game.mirror_shield = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "mag" && !Game.magic) {Location.magic1 = document.getElementById(key).id; Game.magic = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "mag" && !Game.magic2) {Location.magic2 = document.getElementById(key).id; Game.magic2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "mag" && !Game.magic) {Location.magic1 = document.getElementById(key).id; Game.magic = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "mag" && !Game.magic2) {Location.magic2 = document.getElementById(key).id; Game.magic2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "iro" && !Game.iron_boots) {Location.iron_boots = document.getElementById(key).id; Game.iron_boots = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "hov" && !Game.hover_boots) {Location.hover_boots = document.getElementById(key).id; Game.hover_boots = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "iro" && !Game.iron_boots) {Location.iron_boots = document.getElementById(key).id; Game.iron_boots = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "hov" && !Game.hover_boots) {Location.hover_boots = document.getElementById(key).id; Game.hover_boots = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "wal" && !Game.wallet1) {Location.wallet1 = document.getElementById(key).id; Game.wallet1 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "wal" && !Game.wallet2) {Location.wallet2 = document.getElementById(key).id; Game.wallet2 = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "wal" && !Game.wallet1) {Location.wallet1 = document.getElementById(key).id; Game.wallet1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "wal" && !Game.wallet2) {Location.wallet2 = document.getElementById(key).id; Game.wallet2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "gor" && !Game.goron_tunic) {Location.goron_tunic = document.getElementById(key).id; Game.goron_tunic = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "zor" && !Game.zora_tunic) {Location.zora_tunic = document.getElementById(key).id; Game.zora_tunic = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "din" && !Game.dins_fire) {Location.dins_fire = document.getElementById(key).id; Game.dins_fire = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "fir" && !Game.fire_arrows) {Location.fire_arrows = document.getElementById(key).id; Game.fire_arrows = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "len" && !Game.lens_of_truth) {Location.lens_of_truth = document.getElementById(key).id; Game.lens_of_truth = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "sto" && !Game.stone_of_agony) {Location.stone_of_agony = document.getElementById(key).id; Game.stone_of_agony = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if ((document.getElementById(key).value == "pre" || document.getElementById(key).value == "eye" || document.getElementById(key).value == "dro") && (!Game.prescription || !Game.claim_check)) {Location.prescription = document.getElementById(key).id; Game.prescription = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "cla" && (!Game.prescription || !Game.claim_check)) {Location.claim_check = document.getElementById(key).id; Game.claim_check = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "gor" && !Game.goron_tunic) {Location.goron_tunic = document.getElementById(key).id; Game.goron_tunic = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "zor" && !Game.zora_tunic) {Location.zora_tunic = document.getElementById(key).id; Game.zora_tunic = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "din" && !Game.dins_fire) {Location.dins_fire = document.getElementById(key).id; Game.dins_fire = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "fir" && !Game.fire_arrows) {Location.fire_arrows = document.getElementById(key).id; Game.fire_arrows = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "len" && !Game.lens_of_truth) {Location.lens_of_truth = document.getElementById(key).id; Game.lens_of_truth = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "sto" && !Game.stone_of_agony) {Location.stone_of_agony = document.getElementById(key).id; Game.stone_of_agony = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if ((document.getElementById(key).value == "pre" || document.getElementById(key).value == "eye" || document.getElementById(key).value == "dro") && (!Game.prescription || !Game.claim_check)) {Location.prescription = document.getElementById(key).id; Game.prescription = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "cla" && (!Game.prescription || !Game.claim_check)) {Location.claim_check = document.getElementById(key).id; Game.claim_check = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "lig" && !Game.light_arrows) {Location.light_arrows = document.getElementById(key).id; Game.light_arrows = true; if (temp <= 31) {junkB1(document.getElementById(key))} else if (temp<=59) {junkB2(document.getElementById(key))} else if (temp <= 84){junkB3(document.getElementById(key))} else if (temp <= 116) {junkB4(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "lig" && !Game.light_arrows) {Location.light_arrows = document.getElementById(key).id; Game.light_arrows = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	}
 	else {
 	if (document.getElementById(key).value == "lul" && !Game.lullaby) {Location.lullaby = document.getElementById(key).id; Game.lullaby = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key)); continue;}
@@ -1574,7 +1435,7 @@ if(tempstring.length == 6) 	{
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text"; 
-			if(document.getElementById("img3_" + key) != null) {
+			if(Check[key] !== "unknown") {
 				if (temp <= 244) {Game.logically_accessible += 1;}
 				if (temp >= 117 && temp <= 130) {Game.forest_logically_accessible += 1;}
 				if (temp >= 131 && temp <= 145) {Game.fire_logically_accessible += 1;}
@@ -1600,14 +1461,30 @@ if(tempstring.length == 6) 	{
 	document.getElementById("gtg").innerHTML = "" + Game.gtg_checks_remaining;
 	document.getElementById("well").innerHTML = "" + Game.well_checks_remaining;
 	
-	if(Location_Logic.deku_queen_gohma == true) {document.getElementById("dekuLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("dekuLogic").style.backgroundColor = "palevioletred";}
+	document.getElementById("forestSKs").innerHTML = "" + (5 - Game.current_forest_keys);
+	document.getElementById("fireSKs").innerHTML = "" + (8 - Game.current_fire_keys);
+	document.getElementById("waterSKs").innerHTML = "" + (6 - Game.current_water_keys);
+	document.getElementById("spiritSKs").innerHTML = "" + (5 - Game.current_spirit_keys);
+	document.getElementById("shadowSKs").innerHTML = "" + (5 - Game.current_shadow_keys);
+	document.getElementById("ganonsSKs").innerHTML = "" + (2 - Game.current_ganons_keys);
+	document.getElementById("gtgSKs").innerHTML = "" + (9 - Game.current_gtg_keys);
+	document.getElementById("wellSKs").innerHTML = "" + (3 - Game.current_well_keys);
+	
+	if (Game.forest_boss_key) {document.getElementById("forestBKs").innerHTML = 0;} else {document.getElementById("forestBKs").innerHTML = 1;}
+	if (Game.fire_boss_key) {document.getElementById("fireBKs").innerHTML = 0;} else {document.getElementById("fireBKs").innerHTML = 1;}
+	if (Game.water_boss_key) {document.getElementById("waterBKs").innerHTML = 0;} else {document.getElementById("waterBKs").innerHTML = 1;}
+	if (Game.spirit_boss_key) {document.getElementById("spiritBKs").innerHTML = 0;} else {document.getElementById("spiritBKs").innerHTML = 1;}
+	if (Game.shadow_boss_key) {document.getElementById("shadowBKs").innerHTML = 0;} else {document.getElementById("shadowBKs").innerHTML = 1;}
+	if (Game.ganons_boss_key) {document.getElementById("ganonsBKs").innerHTML = 0;} else {document.getElementById("ganonsBKs").innerHTML = 1;}
+	
+	/*if(Location_Logic.deku_queen_gohma == true) {document.getElementById("dekuLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("dekuLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.dodongos_king_dodongo == true) {document.getElementById("dodongosLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("dodongosLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.jabu_barinade == true) {document.getElementById("jabuLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("jabuLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.forest14 == true) {document.getElementById("forestLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("forestLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.fire6 == true) {document.getElementById("fireLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("fireLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.water11 == true) {document.getElementById("waterLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("waterLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.spirit20 == true) {document.getElementById("spiritLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("spiritLogic").style.backgroundColor = "palevioletred";}
-	if(Location_Logic.shadow18 == true) {document.getElementById("shadowLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("shadowLogic").style.backgroundColor = "palevioletred";}
+	if(Location_Logic.shadow18 == true) {document.getElementById("shadowLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("shadowLogic").style.backgroundColor = "palevioletred";}**/
 	
 	
 	
@@ -1871,6 +1748,44 @@ var tSeconds = 0;
 	Game.theme = "dark";
 	Game.themeChange = true;
 	
+	var Locations = [
+		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "kokiri_song_of_storms",
+		"talons_chickens", "back_of_ranch",
+		"hyrule_forest_boulder", "hyrule_open_grotto", "hyrule_hp_grotto", "hyrule_boulder_of_destiny", "hyrule_tektite_grotto",
+		"gerudovalley_box", "gerudovalley_waterfall", "gerudo_hammer",
+		"hylia_child_fishing", "hylia_bottle", "hylia_adult_fishing", "hylia_lab_top", "hylia_lab_dive", "hylia_sun_shoot",
+		"market_slingshot_game", "richard", "market_bowling_1", "market_bowling_2","market_lens_game","poes",
+		"dins_fairy",
+		"ganons_fairy",
+		"lacs",
+		"fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain",
+		"ice_map", "ice_compass", "ice_hp", "ice_irons",
+		"deku_lobby", "deku_slingshot", "deku_slingshot_room_side", "deku_compass", "deku_compass_room_side", "deku_basement", "deku_queen_gohma",
+		"ocarina_game", "lost_woods_grotto", "lost_woods_scrub_grotto", "bridge_scrub", "target", "skull_kid", "theater",
+		"wolfos_grotto",
+		"rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "goron_maze_3", "goron_link",
+		"dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king", "dodongos_king_dodongo",
+		"trail_bombable", "trail_dodongos_top", "trail_song_of_storms", "crater_peak_fairy", "trade_quest",
+		"crater_bean", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp",
+		"man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
+		"shield_grave", "gravedigging_tour", "suns_grave", "fire_grave", "graveyard_box", "race_1", "race_2",
+		"river_pillar", "river_grotto", "river_ledge", "frogs_1", "frogs_2",
+		"zora_diving", "zora_torches", "thaw_king",
+		"colossus_bean", "colossus_fairy", "spirit7", "spirit17",
+		"wasteland",
+		"gerudo_roof", "gerudo_archery_1", "gerudo_archery_2",
+		"jabu_boomerang", "jabu_map", "jabu_compass", "jabu_barinade",
+		"forest1", "forest2", "forest3", "forest4", "forest5", "forest6", "forest7", "forest8", "forest9", "forest10", "forest11", "forest12", "forest13", "forest14",
+		"fire1", "fire2", "fire3", "fire4", "fire5", "fire6", "fire7", "fire8", "fire9", "fire10", "fire11", "fire12", "fire13", "fire14", "fire15",
+		"water1", "water2", "water3", "water4", "water5", "water6", "water7", "water8", "water9", "water10", "water11",
+		"spirit1", "spirit2", "spirit3", "spirit4", "spirit5", "spirit6", "spirit8", "spirit9", "spirit10", "spirit11", "spirit12", "spirit13", "spirit14", "spirit15", "spirit16", "spirit18", "spirit19", "spirit20",
+		"shadow1", "shadow2", "shadow3", "shadow4", "shadow5", "shadow6", "shadow7", "shadow8", "shadow9", "shadow10", "shadow11", "shadow12", "shadow13", "shadow14", "shadow15", "shadow16", "shadow17", "shadow18",
+		"ganons1", "ganons2", "ganons3", "ganons4", "ganons5", "ganons6", "ganons7", "ganons8", "ganons9", "ganons10", "ganons11", "ganons12", "ganons13", "ganons14", "ganons15", "ganons16",
+		"gtg1", "gtg2", "gtg3", "gtg4", "gtg5", "gtg6", "gtg7", "gtg8", "gtg9", "gtg10", "gtg11", "gtg12", "gtg13", "gtg14", "gtg15", "gtg16", "gtg17",  "gtg18", "gtg19", "gtg20", "gtg21", "gtg22",
+		"well1", "well2", "well3", "well4", "well5", "well6", "well7", "well8", "well9", "well10", "well11", "well12", "well13", "well14",
+		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
+		];
+	
 	Logic.kokiri_sword = false;
 	Logic.farores_wind = false;
 	Logic.slingshot= false;
@@ -2000,660 +1915,76 @@ var tSeconds = 0;
 	Logic.spirit_boss_key = false;
 	Logic.shadow_boss_key = false;
 	Logic.ganons_boss_key = false;
+	
+	for (var i = 0; i < 244; i++) {
+		Check[Location[i]] = "unknown";
+	}
+	
+function junk(x) {
+	var type = event.button;
+	var str = x.id;
+	str = str.substring('text_'.length);
+	var temp = Locations.indexOf(str);
+	
+	if(type == 0) {
+		if(str.startsWith("forest") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
+		else if(str.startsWith("fire") && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -=1;}
+		else if(str.startsWith("water") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
+		else if(str.startsWith("spirit") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
+		else if(str.startsWith("shadow") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
+		else if(str.startsWith("ganons") && Game.ganon_checks_remaining != 0) {Game.ganon_checks_remaining -=1;}
+		else if(str.startsWith("gtg") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
+		else if(str.startsWith("well") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
+		else if(temp < 116){}
+		else {return;}
+		Check[str]="junk";
+		Game.checks_remaining -=1;
+	}
+	
+	else if(type == 1) {
+		if(str.startsWith("forest") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
+		else if(str.startsWith("fire") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
+		else if(str.startsWith("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
+		else if(str.startsWith("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
+		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
+		else {return;}
+		Check[str]="boss_key";
+	}
+	
+	else if (type == 2) {
+		if(str.startsWith("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
+		else if(str.startsWith("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
+		else if(str.startsWith("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
+		else if(str.startsWith("spirit") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
+		else if(str.startsWith("shadow") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
+		else if(str.startsWith("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
+		else if(str.startsWith("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
+		else {return;}
+		Check[str]="small_key";
+	}
+	
+	var delete1 = str;
+	var delete2 = "text_" + str;
+	var delete3 = "br_" + str;
+	
+	if(temp < 38) {var parent = document.getElementById("normalColumn1");} else if (temp < 76) {var parent = document.getElementById("normalColumn2");} else if (temp < 116) {var parent = document.getElementById("normalColumn3");} else if (temp < 156) {var parent = document.getElementById("dung1");} else if (temp < 208) {var parent = document.getElementById("dung2");} else {var parent = document.getElementById("dung3");}
+	
+	if (document.getElementById(delete1) !== null) {
+		var child = document.getElementById(delete1);
+		parent.removeChild(child);
+	}
+	if (document.getElementById(delete2) !== null) {
+		var child = document.getElementById(delete2);
+		parent.removeChild(child);
+	}	
+	if (document.getElementById(delete3) !== null) {
+		var child = document.getElementById(delete3);
+		parent.removeChild(child);
+	}
 
-function bossKey(x) {
-var str = x.id;
-var str2 = str.substring('img2_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung1");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-if(str2.startsWith("forest")) {Game.forest_boss_key = true; Location.forest_boss_key = str2}
-if(str2.startsWith("fire")) {Game.fire_boss_key = true; Location.fire_boss_key = str2}
-if(str2.startsWith("water")) {Game.water_boss_key = true; Location.water_boss_key = str2}
-Check[str2]="boss_key";
 	Update();Update();Update();
-}
-function bossKey2(x) {
-var str = x.id;
-var str2 = str.substring('img2_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
+}	
 
-var parent = document.getElementById("dung2");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-if(str2.startsWith("spirit")) {Game.spirit_boss_key = true; Location.spirit_boss_key = str2}
-if(str2.startsWith("shadow")) {Game.shadow_boss_key = true; Location.shadow_boss_key = str2}
-if(str2.startsWith("ganons")) {Game.ganons_boss_key = true; Location.shadow_boss_key = str2}
-Check[str2]="boss_key";
-	Update();Update();Update();
-}
-function bossKey3(x) {
-var str = x.id;
-var str2 = str.substring('img2_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung3");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="boss_key";
-	Update();Update();Update();
-}
-
-function smallKey(x) {
-var str = x.id;
-var str2 = str.substring('img1_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung1");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-if(str2.startsWith("forest")) {Game.current_forest_keys +=1;}
-if(str2.startsWith("fire")) {Game.current_fire_keys +=1;}
-if(str2.startsWith("water")) {Game.current_water_keys +=1;}
-Check[str2]="small_key";
-	Update();Update();Update();
-}
-function smallKey2(x) {
-var str = x.id;
-var str2 = str.substring('img1_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung2");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-if(str2.startsWith("spirit")) {Game.current_spirit_keys +=1;}
-if(str2.startsWith("shadow")) {Game.current_shadow_keys +=1;}
-if(str2.startsWith("ganons")) {Game.current_ganons_keys +=1;}
-Check[str2]="small_key";
-	Update();Update();Update();
-}
-function smallKey3(x) {
-var str = x.id;
-var str2 = str.substring('img1_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung3");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-} 
-if(str2.startsWith("gtg")) {Game.current_gtg_keys +=1;}
-if(str2.startsWith("well")) {Game.current_well_keys +=1;}
-Check[str2]="small_key";
-	Update();Update();Update();
-}
-
-function junk1(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("normalColumn1");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="junk";
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk2(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("normalColumn2");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="junk";
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk3(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("normalColumn3");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="junk";
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk4(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("normalColumn4");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="junk";
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk5(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung1");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-}
-Check[str2]="junk";
-if(str2.startsWith('forest')) {Game.forest_checks_remaining -= 1;}
-if(str2.startsWith('fire')) {Game.fire_checks_remaining -= 1;}
-if(str2.startsWith('water')) {Game.water_checks_remaining -= 1;}
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk6(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung2");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-} 
-if(str2.startsWith('shadow')) {Game.shadow_checks_remaining -= 1;}
-if(str2.startsWith('spirit')) {Game.spirit_checks_remaining -= 1;}
-if(str2.startsWith('ganons')) {Game.ganons_checks_remaining -= 1;}
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
-function junk7(x) {
-var str = x.id;
-var str2 = str.substring('img3_'.length);
-var delete1 = "img1_" + str2;
-var delete2 = "img2_" + str2;
-var delete3 = str2;
-var delete4 = "text_" + str2;
-var delete5 = "br_" + str2;
-var delete6 = "span_" + str2;
-var delete7 = "img3_" + str2;
-var delete8 = "span2_" + str2;
-
-var parent = document.getElementById("dung3");
-if (document.getElementById(delete1) !== null) {
-	var child = document.getElementById(delete1);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete2) !== null) {
-	var child = document.getElementById(delete2);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete3) !== null) {
-	var child = document.getElementById(delete3);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete4) !== null) {
-	var child = document.getElementById(delete4);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete5) !== null) {
-	var child = document.getElementById(delete5);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete6) !== null) {
-	var child = document.getElementById(delete6);
-	parent.removeChild(child);
-} 
-if (document.getElementById(delete7) !== null) {
-	var child = document.getElementById(delete7);
-	parent.removeChild(child);
-}
-if (document.getElementById(delete8) !== null) {
-	var child = document.getElementById(delete8);
-	parent.removeChild(child);
-} 
-if(str2.startsWith('gtg')) {Game.gtg_checks_remaining -= 1;}
-if(str2.startsWith('well')) {Game.well_checks_remaining -= 1;}
-Game.checks_remaining -=1;
-	Update();Update();Update();
-}
 function junkUltra(x) {
 	if (x.id == "forest") {var temp = 14; var temp2 = Game.forest_checks_remaining; Game.forest_checks_remaining = 0; var parent = document.getElementById("dung1"); Logic.forced_forest_keys = 5 - Game.current_forest_keys; if (Game.forest_boss_key == false) {Logic.forced_forest_boss_key = true;}}
 	if (x.id == "fire") {var temp = 15; var temp2 = Game.fire_checks_remaining; Game.fire_checks_remaining = 0; var parent = document.getElementById("dung1"); Logic.forced_fire_keys = 8 - Game.current_fire_keys; if (Game.fire_boss_key == false) {Logic.forced_fire_boss_key = true;}}
