@@ -698,7 +698,7 @@ for (const key of keys) {
 	if (temp <= 244) { 
  if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
  
- if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; Game.farores_wind = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+ if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; document.getElementById("farores_location").innerHTML = Location.farores_wind; Game.farores_wind = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
 	if (document.getElementById(key).value == "sli" && !Game.slingshot) {Location.slingshot1 = document.getElementById(key).id; Game.slingshot = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	else if (document.getElementById(key).value == "sli" && !Game.slingshot2) {Location.slingshot2 = document.getElementById(key).id; Game.slingshot2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -980,14 +980,20 @@ if(tempstring.length == 6) 	{
 	Location_Logic.dins_fairy = Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.ganons_fairy = Logic.golden_gauntlets && Logic.lullaby;
 	Location_Logic.lacs = Logic.spirit_medallion && Logic.shadow_medallion;
-	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots;
-	Location_Logic.river_grotto = true;
-	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
-	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.song_of_storms;
-	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.song_of_storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns_song && Logic.song_of_time);
-	Location_Logic.zora_diving = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
-	Location_Logic.zora_torches = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
-	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && Logic.giants_wallet && Logic.lullaby);
+	Location_Logic.fountain_fairy = Logic.ice_access && Logic.bomb_bag;
+	Location_Logic.ice_glacier_hp = Logic.ice_access;
+	Location_Logic.ice_map = Logic.ice_access;
+	Location_Logic.ice_hp = Logic.ice_access;
+	Location_Logic.ice_compass = Logic.ice_access;
+	Location_Logic.ice_irons = Logic.ice_access;
+	Location_Logic.ice_bottom_of_fountain = Logic.ice_access && Logic.iron_boots;
+	Location_Logic.deku_lobby = true;
+	Location_Logic.deku_slingshot = true;
+	Location_Logic.deku_slingshot_room_side = true;
+	Location_Logic.deku_compass = true;
+	Location_Logic.deku_compass_room_side = true;
+	Location_Logic.deku_basement = true;
+	Location_Logic.deku_queen_gohma = Logic.slingshot;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
 	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
@@ -1003,11 +1009,22 @@ if(tempstring.length == 6) 	{
 	Location_Logic.goron_maze_2 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
 	Location_Logic.goron_maze_3 = Logic.hammer || Logic.silver_gauntlets;
 	Location_Logic.goron_link = Logic.can_stop_link_the_goron;
+	Location_Logic.dodongos_map = Logic.can_enter_dodongos_adult;
+	Location_Logic.dodongos_compass = Logic.can_enter_dodongos_adult;
+	Location_Logic.dodongos_bomb_flower_platform = Logic.can_enter_dodongos_child;
+	Location_Logic.dodongos_bomb_bag = Logic.can_reach_dodongos_bomb_bag_chest;
+	Location_Logic.dodongos_end_of_bridge = (Logic.can_reach_dodongos_bomb_bag_chest_adult && (Logic.bomb_bag || Logic.hammer)) || (Logic.can_reach_dodongos_bomb_bag_chest_child && Logic.bomb_bag);
+	Location_Logic.dodongos_above_king = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
+	Location_Logic.dodongos_king_dodongo = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_song_of_storms = Logic.song_of_storms;
 	Location_Logic.crater_peak_fairy = Logic.can_blast_or_smash && Logic.lullaby;
 	Location_Logic.trade_quest = (((Logic.ice_access || (Logic.giants_wallet && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
+	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
+	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
+	Location_Logic.crater_nook_hp = Logic.crater_top;
+	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
 	Location_Logic.man_on_roof = true;//Logic.hookshot;
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.song_of_time;
@@ -1021,18 +1038,6 @@ if(tempstring.length == 6) 	{
 	Location_Logic.tokens_30 = Logic.gold_skulltulas >= 30;
 	Location_Logic.tokens_40 = Logic.gold_skulltulas >= 40;
 	Location_Logic.tokens_50 = Logic.gold_skulltulas >= 50;
-	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
-	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
-	Location_Logic.crater_nook_hp = Logic.crater_top;
-	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
-	Location_Logic.gerudo_roof = Logic.fortress_access && (Logic.hookshot || Logic.hover_boots);
-	Location_Logic.gerudo_archery_1 = Logic.eponas && Logic.bow;
-	Location_Logic.gerudo_archery_2 = Logic.eponas && Logic.bow;
-	Location_Logic.wasteland = Logic.can_cross_quicksand && Logic.can_use_fire;
-	Location_Logic.colossus_bean = Logic.requiem && Logic.child_can_enter_river;
-	Location_Logic.colossus_fairy = Logic.can_enter_colossus && Logic.bomb_bag && Logic.lullaby;
-	Location_Logic.spirit7 = (Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys == 5;
-	Location_Logic.spirit17 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=4 && Logic.bomb_bag;
 	Location_Logic.gravedigging_tour = true;
 	Location_Logic.graveyard_box = Logic.child_can_enter_river || Logic.longshot;
 	Location_Logic.shield_grave = true;
@@ -1040,31 +1045,26 @@ if(tempstring.length == 6) 	{
 	Location_Logic.fire_grave = Logic.lullaby && Logic.can_use_fire;
 	Location_Logic.race_1 = true;
 	Location_Logic.race_2 = true;
-	Location_Logic.deku_lobby = true;
-	Location_Logic.deku_slingshot = true;
-	Location_Logic.deku_slingshot_room_side = true;
-	Location_Logic.deku_compass = true;
-	Location_Logic.deku_compass_room_side = true;
-	Location_Logic.deku_basement = true;
-	Location_Logic.deku_queen_gohma = Logic.slingshot;
-	Location_Logic.dodongos_map = Logic.can_enter_dodongos_adult;
-	Location_Logic.dodongos_compass = Logic.can_enter_dodongos_adult;
-	Location_Logic.dodongos_bomb_flower_platform = Logic.can_enter_dodongos_child;
-	Location_Logic.dodongos_bomb_bag = Logic.can_reach_dodongos_bomb_bag_chest;
-	Location_Logic.dodongos_end_of_bridge = (Logic.can_reach_dodongos_bomb_bag_chest_adult && (Logic.bomb_bag || Logic.hammer)) || (Logic.can_reach_dodongos_bomb_bag_chest_child && Logic.bomb_bag);
-	Location_Logic.dodongos_above_king = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
-	Location_Logic.dodongos_king_dodongo = Logic.can_reach_dodongos_bomb_bag_chest && Logic.bomb_bag;
+	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots;
+	Location_Logic.river_grotto = true;
+	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
+	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.song_of_storms;
+	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.song_of_storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns_song && Logic.song_of_time);
+	Location_Logic.zora_diving = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
+	Location_Logic.zora_torches = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
+	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && Logic.giants_wallet && Logic.lullaby);
+	Location_Logic.colossus_bean = Logic.requiem && Logic.child_can_enter_river;
+	Location_Logic.colossus_fairy = Logic.can_enter_colossus && Logic.bomb_bag && Logic.lullaby;
+	Location_Logic.spirit7 = (Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys == 5;
+	Location_Logic.spirit17 = Logic.can_enter_adult_spirit && Logic.spirit_keys >=4 && Logic.bomb_bag;
+	Location_Logic.wasteland = Logic.can_cross_quicksand && Logic.can_use_fire;
+	Location_Logic.gerudo_roof = Logic.fortress_access && (Logic.hookshot || Logic.hover_boots);
+	Location_Logic.gerudo_archery_1 = Logic.eponas && Logic.bow;
+	Location_Logic.gerudo_archery_2 = Logic.eponas && Logic.bow;
 	Location_Logic.jabu_boomerang = Logic.can_enter_jabu && (Logic.boomerang || Logic.bomb_bag || Logic.slingshot);
 	Location_Logic.jabu_map = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_compass = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_barinade = Logic.can_enter_jabu && Logic.boomerang;
-	Location_Logic.fountain_fairy = Logic.ice_access && Logic.bomb_bag;
-	Location_Logic.ice_glacier_hp = Logic.ice_access;
-	Location_Logic.ice_map = Logic.ice_access;
-	Location_Logic.ice_hp = Logic.ice_access;
-	Location_Logic.ice_compass = Logic.ice_access;
-	Location_Logic.ice_irons = Logic.ice_access;
-	Location_Logic.ice_bottom_of_fountain = Logic.ice_access && Logic.iron_boots;
 	Location_Logic.forest1 = (Logic.minuet || Logic.sarias) && Logic.hookshot;
 	Location_Logic.forest2 = (Logic.minuet || Logic.sarias) && Logic.hookshot;
 	Location_Logic.forest3 = (Logic.minuet || Logic.sarias) && Logic.hookshot && (Logic.song_of_time || Logic.bow || (Logic.hover_boots && Logic.forest_keys>=1));

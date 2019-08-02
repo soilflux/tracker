@@ -169,6 +169,11 @@ overflow: hidden;
   float: left;
   width: 6.5%;
 }
+#checkSummaryColumn {
+	margin-top:10px;
+	float: left;
+	width: 13%;
+}
 #info_column {
 	margin-top:10px;
 	float: left;
