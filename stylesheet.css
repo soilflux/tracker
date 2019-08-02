@@ -172,7 +172,12 @@ overflow: hidden;
 #checkSummaryColumn {
 	margin-top:10px;
 	float: left;
-	width: 13%;
+	width: 13.5%;
+}
+#checkSummaryColumn2 {
+	margin-top:10px;
+	float: left;
+	width: 13.5%;
 }
 #info_column {
 	margin-top:10px;
@@ -235,6 +240,12 @@ overflow: hidden;
 	margin-bottom:5px;
 	vertical-align: top;
 }
+.logic_check_text2{
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: normal;
+	color: 	chartreuse;
+}
 .ool_check_text{
 	vertical-align: top;
 	font-size: 16px;
@@ -243,6 +254,12 @@ overflow: hidden;
 	display: inline-block;
 	margin-top:2px;
 	margin-bottom:5px;
+}
+.ool_check_text2{
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: normal;
+	color: 	black;
 }
 .modal {
   display: none;
