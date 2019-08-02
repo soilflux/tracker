@@ -245,6 +245,8 @@ overflow: hidden;
 	font-size: 16px;
 	font-weight: normal;
 	color: 	chartreuse;
+	display: inline-block;
+	margin-bottom:2px;
 }
 .ool_check_text{
 	vertical-align: top;
@@ -260,6 +262,8 @@ overflow: hidden;
 	font-size: 16px;
 	font-weight: normal;
 	color: 	black;
+	display: inline-block;
+	margin-bottom:2px;
 }
 .modal {
   display: none;
