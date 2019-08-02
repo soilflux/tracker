@@ -2115,6 +2115,14 @@ if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
 	parent.removeChild(child);
 }
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
+	parent.removeChild(child);
+}
 if (document.getElementById(delete6) !== null) {
 	var child = document.getElementById(delete6);
 	parent.removeChild(child);
@@ -2153,6 +2161,14 @@ if (document.getElementById(delete2) !== null) {
 }
 if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
 	parent.removeChild(child);
 }
 if (document.getElementById(delete6) !== null) {
@@ -2194,6 +2210,14 @@ if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
 	parent.removeChild(child);
 }
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
+	parent.removeChild(child);
+}
 if (document.getElementById(delete6) !== null) {
 	var child = document.getElementById(delete6);
 	parent.removeChild(child);
@@ -2233,6 +2257,14 @@ if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
 	parent.removeChild(child);
 }
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
+	parent.removeChild(child);
+}
 if (document.getElementById(delete6) !== null) {
 	var child = document.getElementById(delete6);
 	parent.removeChild(child);
@@ -2270,6 +2302,14 @@ if (document.getElementById(delete2) !== null) {
 }
 if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
 	parent.removeChild(child);
 }
 if (document.getElementById(delete6) !== null) {
@@ -2314,7 +2354,14 @@ if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
 	parent.removeChild(child);
 }
-
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
+	parent.removeChild(child);
+}
 if (document.getElementById(delete6) !== null) {
 	var child = document.getElementById(delete6);
 	parent.removeChild(child);
@@ -2357,7 +2404,14 @@ if (document.getElementById(delete3) !== null) {
 	var child = document.getElementById(delete3);
 	parent.removeChild(child);
 }
-
+if (document.getElementById(delete4) !== null) {
+	var child = document.getElementById(delete4);
+	parent.removeChild(child);
+}
+if (document.getElementById(delete5) !== null) {
+	var child = document.getElementById(delete5);
+	parent.removeChild(child);
+}
 if (document.getElementById(delete6) !== null) {
 	var child = document.getElementById(delete6);
 	parent.removeChild(child);
