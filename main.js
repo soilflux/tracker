@@ -2002,9 +2002,9 @@ function junk(x) {
 	
 	if(type == 0) {
 		if(str.startsWith("forest") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
-		else if(str.startsWith("fire") && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -=1;}
+		else if(str.startsWith("fire") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
 		else if(str.startsWith("water") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
-		else if(str.startsWith("spirit") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
+		else if(str.startsWith("spirit") && Game.spirit_checks_remaining != 0 && str != "spirit7" && str != "spirit17") {Game.spirit_checks_remaining -=1;}
 		else if(str.startsWith("shadow") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
 		else if(str.startsWith("ganons") && Game.ganon_checks_remaining != 0) {Game.ganon_checks_remaining -=1;}
 		else if(str.startsWith("gtg") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
