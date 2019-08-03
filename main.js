@@ -709,7 +709,7 @@ for (i = 1; i <= 4; i++) {
 for (const key of keys) {
 	if (temp == 256) {break; }
 	temp +=1;
-	if(document.getElementById(key) == null && checkedYet[temp-1] == false) {checkedYet[temp - 1] = true; document.getElementById("textbox").innerHTML += "" + Names[temp-1] + " " + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s" + "\n"};
+	if(document.getElementById(key) == null && checkedYet[temp-1] == false) {checkedYet[temp - 1] = true; textBlock += "" + Names[temp-1] + " " + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s" + "\n"};
 	if(document.getElementById(key) == null) {continue;}
 	if (temp <= 244) { 
  if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -1862,7 +1862,7 @@ var tSeconds = 0;
 		"Ganon's: Light 1", "Ganon's: Light 2", "Ganon's: Light 3", "Ganon's: Light 4", "Ganon's: Light 5", "Ganon's: Light 6", "Ganon's: Light Enemies", "Ganon's: Light Lullaby", "Ganon's: Spirit 1", "Ganon's: Spirit 2", "Ganon's: Forest", "Ganon's: Water 1", "Ganon's: Water 2", "Ganon's: Shadow 1", "Ganon's: Shadow 2", "Ganon's: BK",
 		"GTG: Lobby Left", "GTG: Lobby Right", "GTG: Stalfos", "GTG: Wolfos", "GTG: Silvers 1", "GTG: Silvers 2", "GTG: Silvers 3", "GTG: Silvers 4", "GTG: Eyes", "GTG: Above Eyes", "GTG: Keese n Slugs", "GTG: Hammer", "GTG: Freestanding", "GTG: Right 1", "GTG: Right 2", "GTG: Beamos", "GTG: Left 1",  "GTG: Left 2", "GTG: Left 3", "GTG: Left 4", "GTG: Final", "GTG: Toilet",
 		"Well: Fake Right", "Well: Center Small", "Well: Back Bomb", "Well: Water Left", "Well: Freestanding", "Well: Center Big", "Well: Fake Left", "Well: Front Bomb", "Well: Water Front", "Well: Dead Hand", "Well: Invisible", "Well: Locked 1", "Well: Locked 2", "Well: Basement",
-		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
+		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Medallion", "3 Medallion", "Ocarina of Time"
 		];
 	
 	var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens_of_truth", "trade", "light_arrows"];
@@ -1999,6 +1999,7 @@ var tSeconds = 0;
 	   
     var checkedYet = new Array(256).fill(false);
 	var initialTime = 0;
+	var textBlock = '';
 	
 	for (var i = 0; i < 244; i++) {
 		Check[Location[i]] = "unknown";
@@ -2624,32 +2625,16 @@ function countDown() {
 	document.getElementById("songColumn").removeChild(document.getElementById("countDown"));
 }
 
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
-
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
+ function download() {
+        var a = document.body.appendChild(
+            document.createElement("a")
+        );
+        var textToWrite = textBlock;
+        a.download = "route.txt"; 
+        textToWrite = textToWrite.replace(/\n/g, "%0D%0A"); 
+        a.href = "data:text/plain," + textToWrite;
+        a.click();
     }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-  };
-
-
-  var create = document.getElementById('create'),
-    textbox = document.getElementById('textbox');
-
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
-    link.href = makeTextFile(textbox.value);
-    link.style.display = 'block';
-  }, false);
-})();
 
 setInterval(Update,500);
 Update();Update();Update();
