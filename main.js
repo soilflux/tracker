@@ -700,9 +700,16 @@ for (i = 1; i <= 4; i++) {
 	
 	const keys = Object.keys(Location_Logic)
 	var temp = 0;
+	var d = new Date();
+	var tempTime = Math.floor((d.getTime() - initialTime - 4000)/1000);
+	var tempHours = Math.floor(tempTime / 3600);
+	var tempMinutes = Math.floor((tempTime % 3600) / 60);
+	var tempSeconds = Math.floor((tempTime % 3600) % 60);
+	console.log(tempTime % 3600);
 for (const key of keys) {
 	if (temp == 256) {break; }
 	temp +=1;
+	if(document.getElementById(key) == null && checkedYet[temp-1] == false) {checkedYet[temp - 1] = true; document.getElementById("textbox").innerHTML += "" + Names[temp-1] + " " + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s" + "\n"};
 	if(document.getElementById(key) == null) {continue;}
 	if (temp <= 244) { 
  if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 116){junkB3(document.getElementById(key))} else if (temp <= 156) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -1989,6 +1996,9 @@ var tSeconds = 0;
 	Logic.spirit_boss_key = false;
 	Logic.shadow_boss_key = false;
 	Logic.ganons_boss_key = false;
+	   
+    var checkedYet = new Array(256).fill(false);
+	var initialTime = 0;
 	
 	for (var i = 0; i < 244; i++) {
 		Check[Location[i]] = "unknown";
@@ -2606,6 +2616,40 @@ function toggleSettings() {
 		Update();
 	}
 }
+
+function countDown() {
+	var d = new Date();
+	initialTime = d.getTime();
+	console.log(initialTime);
+	document.getElementById("songColumn").removeChild(document.getElementById("countDown"));
+}
+
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+
+
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value);
+    link.style.display = 'block';
+  }, false);
+})();
 
 setInterval(Update,500);
 Update();Update();Update();
