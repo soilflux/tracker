@@ -1019,8 +1019,8 @@ if(tempstring.length == 6) 	{
 	Location_Logic.theater = true;
 	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
 	Location_Logic.rolling_goron = Logic.bomb_bag;
-	Location_Logic.goron_pot = (Logic.bomb_bag || Logic.goron_bracelet) && (Logic.lullaby || Logic.can_use_dins);
 	Location_Logic.goron_dance = Logic.lullaby && Logic.sarias;
+	Location_Logic.goron_pot = (Logic.bomb_bag || Logic.goron_bracelet) && (Logic.lullaby || Logic.can_use_dins);
 	Location_Logic.goron_maze_1 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
 	Location_Logic.goron_maze_2 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
 	Location_Logic.goron_maze_3 = Logic.hammer || Logic.silver_gauntlets;
