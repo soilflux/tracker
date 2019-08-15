@@ -965,11 +965,11 @@ if(tempstring.length == 6) 	{
 }
 }
 	
-	Location_Logic.kokiri_sword = true;
 	Location_Logic.mido_1 = true;
 	Location_Logic.mido_2 = true;
 	Location_Logic.mido_3 = true;
 	Location_Logic.mido_4 = true;
+	Location_Logic.kokiri_sword = true;
 	Location_Logic.kokiri_song_of_storms = Logic.song_of_storms;
 	Location_Logic.talons_chickens = true;
 	Location_Logic.back_of_ranch = true;
@@ -1000,8 +1000,8 @@ if(tempstring.length == 6) 	{
 	Location_Logic.ice_glacier_hp = Logic.ice_access;
 	Location_Logic.ice_bottom_of_fountain = Logic.ice_access && Logic.iron_boots;
 	Location_Logic.ice_map = Logic.ice_access;
-	Location_Logic.ice_hp = Logic.ice_access;
 	Location_Logic.ice_compass = Logic.ice_access;
+	Location_Logic.ice_hp = Logic.ice_access;
 	Location_Logic.ice_irons = Logic.ice_access;
 	Location_Logic.deku_lobby = true;
 	Location_Logic.deku_slingshot = true;
@@ -1014,8 +1014,8 @@ if(tempstring.length == 6) 	{
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
 	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
 	Location_Logic.bridge_scrub = true;
-	Location_Logic.skull_kid = Logic.sarias;
 	Location_Logic.target = Logic.slingshot;
+	Location_Logic.skull_kid = Logic.sarias;
 	Location_Logic.theater = true;
 	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
 	Location_Logic.rolling_goron = Logic.bomb_bag;
@@ -1039,8 +1039,8 @@ if(tempstring.length == 6) 	{
 	Location_Logic.trade_quest = (((Logic.ice_access || (Logic.giants_wallet && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
-	Location_Logic.crater_nook_hp = Logic.crater_top;
 	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
+	Location_Logic.crater_nook_hp = Logic.crater_top;
 	Location_Logic.man_on_roof = true;//Logic.hookshot;
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.song_of_time;
@@ -1054,11 +1054,11 @@ if(tempstring.length == 6) 	{
 	Location_Logic.tokens_30 = Logic.gold_skulltulas >= 30;
 	Location_Logic.tokens_40 = Logic.gold_skulltulas >= 40;
 	Location_Logic.tokens_50 = Logic.gold_skulltulas >= 50;
-	Location_Logic.gravedigging_tour = true;
-	Location_Logic.graveyard_box = Logic.child_can_enter_river || Logic.longshot;
 	Location_Logic.shield_grave = true;
+	Location_Logic.gravedigging_tour = true;
 	Location_Logic.suns_grave = Logic.suns_song;
 	Location_Logic.fire_grave = Logic.lullaby && Logic.can_use_fire;
+	Location_Logic.graveyard_box = Logic.child_can_enter_river || Logic.longshot;
 	Location_Logic.race_1 = true;
 	Location_Logic.race_2 = true;
 	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots;
