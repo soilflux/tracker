@@ -1173,7 +1173,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.shadow8 = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
 	Location_Logic.shadow9 = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
 	Location_Logic.shadow10 = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2;
-	Location_Logic.shadow11 = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2 && Logic.hookshot;
+	Location_Logic.shadow11 = Logic.can_bomb_shadow_wall && Logic.hookshot && Logic.shadow_keys >=2;
 	Location_Logic.shadow12 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
 	Location_Logic.shadow13 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
 	Location_Logic.shadow14 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
@@ -1402,7 +1402,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.trail_bombable = Game.can_blast_or_smash;
 	Location_Access.trail_dodongos_top = true;
 	Location_Access.trail_song_of_storms = Game.song_of_storms;
-	Location_Access.crater_bean = (Game.bolero && Game.child_can_enter_river) || (Game.hover_boots && Game.crater_by_city);
+	Location_Access.crater_bean = Game.bolero || Game.crater_by_city || Game.crater_top;
 	Location_Access.crater_hammer_fairy = Game.crater_by_city && Game.hammer && Game.lullaby;
 	Location_Access.crater_nook_hp = Game.crater_top;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
@@ -1414,7 +1414,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.gerudo_archery_2 = Game.eponas && Game.bow;
 	Location_Access.wasteland = (Game.can_cross_quicksand || Game.requiem) && Game.can_use_fire;
 	Location_Access.colossus_fairy = Game.can_enter_colossus && (Game.bomb_bag || Game.has_chus) && Game.lullaby;
-	Location_Access.colossus_bean = Game.requiem && Game.child_can_enter_river;
+	Location_Access.colossus_bean = Game.requiem;
 	Location_Access.man_on_roof = true;//Game.hookshot;
 	Location_Access.kakariko_grotto = true;
 	Location_Access.windmill = true;//Game.boomerang || Game.song_of_time;
