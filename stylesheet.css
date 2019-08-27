@@ -120,7 +120,7 @@ overflow: hidden;
 	opacity: 0.2;
 }
 .hint_input {
-	width: 50px;
+	width: 46px;
 	vertical-align: top;
 	margin-bottom: 0px;
 }
@@ -248,6 +248,13 @@ overflow: hidden;
 	display: inline-block;
 	margin-bottom:2px;
 }
+.access_check_text{
+	font-size: 16px;
+	color: 						yellow;
+	font-weight:normal;
+	margin-bottom:5px;
+	opacity: .5;
+}
 .ool_check_text{
 	vertical-align: top;
 	font-size: 16px;
@@ -256,6 +263,7 @@ overflow: hidden;
 	display: inline-block;
 	margin-top:2px;
 	margin-bottom:5px;
+	opacity: .4;
 }
 .ool_check_text2{
 	vertical-align: top;
