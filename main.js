@@ -1414,7 +1414,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.gerudo_archery_2 = Game.eponas && Game.bow;
 	Location_Access.wasteland = (Game.can_cross_quicksand || Game.requiem) && Game.can_use_fire;
 	Location_Access.colossus_fairy = Game.can_enter_colossus && (Game.bomb_bag || Game.has_chus) && Game.lullaby;
-	Location_Access.colossus_bean = Game.requiem;
+	Location_Access.colossus_bean = Game.can_enter_colossus;
 	Location_Access.man_on_roof = true;//Game.hookshot;
 	Location_Access.kakariko_grotto = true;
 	Location_Access.windmill = true;//Game.boomerang || Game.song_of_time;
