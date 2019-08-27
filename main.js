@@ -599,7 +599,7 @@ for (i = 1; i <= 4; i++) {
 	Game.can_blast_or_smash = Game.bomb_bag || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet;
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);
-	Game.can_enter_shadow= Game.nocturne && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
+	Game.can_enter_shadow= Game.nocturne && Game.can_use_fire && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
 	Game.can_bomb_shadow_wall = Game.can_cross_shadow_gap && (Game.bomb_bag || Game.has_chus);
 	Game.can_pass_shadow_hookshot_door = Game.can_bomb_shadow_wall && Game.hookshot;
@@ -1535,8 +1535,8 @@ if(tempstring.length == 6) 	{
 	Location_Access.shadow12 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
 	Location_Access.shadow13 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
 	Location_Access.shadow14 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
-	Location_Access.shadow15 = Game.can_ride_shadow_boat && Game.shadow_keys >=4;
-	Location_Access.shadow16 = Game.can_ride_shadow_boat && Game.shadow_keys >=4;
+	Location_Access.shadow15 = Game.can_ride_shadow_boat && Game.can_use_dins && Game.shadow_keys >=4;
+	Location_Access.shadow16 = Game.can_ride_shadow_boat && Game.can_use_dins && Game.shadow_keys >=4;
 	Location_Access.shadow17 = Game.can_ride_shadow_boat && Game.shadow_keys >=4;
 	Location_Access.shadow18 = Game.can_beat_shadow_boss && Game.shadow_keys >=5;
 	Location_Access.ganons1 = Game.can_enter_ganons && Game.golden_gauntlets;
