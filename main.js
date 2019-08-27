@@ -2322,7 +2322,7 @@ function junk(x) {
 		else if(str.startsWith("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
 		else if(str.startsWith("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
 		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
-		else if(str.startsWith("ganons") && !Game.shadow_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
+		else if(str.startsWith("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {return;}
 		Check[str]="boss_key";
 	}
