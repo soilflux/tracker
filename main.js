@@ -1173,7 +1173,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.shadow8 = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
 	Location_Logic.shadow9 = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
 	Location_Logic.shadow10 = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2;
-	Location_Logic.shadow11 = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2;
+	Location_Logic.shadow11 = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2 && Logic.hookshot;
 	Location_Logic.shadow12 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
 	Location_Logic.shadow13 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
 	Location_Logic.shadow14 = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
@@ -1531,7 +1531,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.shadow8 = Game.can_bomb_shadow_wall;
 	Location_Access.shadow9 = Game.can_bomb_shadow_wall;
 	Location_Access.shadow10 = Game.can_bomb_shadow_wall && Game.shadow_keys >=2;
-	Location_Access.shadow11 = Game.can_bomb_shadow_wall && Game.shadow_keys >=2;
+	Location_Access.shadow11 = Game.can_bomb_shadow_wall && Game.hookshot && Game.shadow_keys >=2;
 	Location_Access.shadow12 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
 	Location_Access.shadow13 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
 	Location_Access.shadow14 = Game.can_pass_shadow_hookshot_door && Game.shadow_keys >=3;
