@@ -721,6 +721,9 @@ for (i = 1; i <= 4; i++) {
 	if(Logic.bomb_bag && Logic.lullaby && Logic.song_of_storms) {Logic.min_well_keys = 3;}
 	Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
 	
+	if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
+	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
+	
 	const keys = Object.keys(Location_Logic)
 	var temp = 0;
 	var d = new Date();
@@ -728,7 +731,6 @@ for (i = 1; i <= 4; i++) {
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
 	var tempSeconds = Math.floor((tempTime % 3600) % 60);
-	console.log(tempTime % 3600);
 for (const key of keys) {
 	if (temp == 256) {break; }
 	temp +=1;
@@ -2320,6 +2322,7 @@ function junk(x) {
 		else if(str.startsWith("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
 		else if(str.startsWith("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
 		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
+		else if(str.startsWith("ganons") && !Game.shadow_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {return;}
 		Check[str]="boss_key";
 	}
@@ -2332,6 +2335,7 @@ function junk(x) {
 		else if(str.startsWith("shadow") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
 		else if(str.startsWith("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
 		else if(str.startsWith("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
+		else if(str.startsWith("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {return;}
 		Check[str]="small_key";
 	}
@@ -2881,7 +2885,6 @@ function whoAmI() {
 }
 	
 function identifyMedal(x) {
-	console.log(x.style.color);
 	if (x.style.color == "yellow") {
 		x.style.color = "rgb(238, 130, 238)";
 	}
@@ -2920,7 +2923,6 @@ function enableChus() {
 function countDown() {
 	var d = new Date();
 	initialTime = d.getTime();
-	console.log(initialTime);
 	document.getElementById("songColumn").removeChild(document.getElementById("countDown"));
 }
 
