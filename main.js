@@ -1402,9 +1402,9 @@ if(tempstring.length == 6) 	{
 	Location_Access.trail_bombable = Game.can_blast_or_smash;
 	Location_Access.trail_dodongos_top = true;
 	Location_Access.trail_song_of_storms = Game.song_of_storms;
-	Location_Access.crater_bean = Game.bolero || Game.crater_by_city || Game.crater_top;
+	Location_Access.crater_bean = Game.bolero || Game.crater_top;
 	Location_Access.crater_hammer_fairy = Game.crater_by_city && Game.hammer && Game.lullaby;
-	Location_Access.crater_nook_hp = Game.crater_top;
+	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
 	Location_Access.crater_peak_fairy = Game.can_blast_or_smash && Game.lullaby;
 	Location_Access.trade_quest = (((Game.ice_access || (Game.giants_wallet && Game.lullaby && Game.bottle)) && Game.prescription) || Game.claim_check) && Game.crater_top;
