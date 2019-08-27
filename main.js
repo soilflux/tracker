@@ -1451,7 +1451,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.dodongos_end_of_bridge = (Game.dodongos_climb && Game.can_blast_or_smash)
 	Location_Access.dodongos_above_king = Game.dodongos_climb && (Game.bomb_bag || Game.has_chus);
 	Location_Access.dodongos_king_dodongo = Game.dodongos_climb && (Game.bomb_bag || (Game.has_chus && Game.goron_bracelet));
-	Location_Access.jabu_boomerang = Game.can_enter_jabu && (Game.boomerang || Game.bomb_bag || Game.slingshot);
+	Location_Access.jabu_boomerang = Game.can_enter_jabu && (Game.boomerang || Game.bomb_bag || Game.slingshot || Game.has_chus);
 	Location_Access.jabu_map = Game.can_enter_jabu && Game.boomerang;
 	Location_Access.jabu_compass = Game.can_enter_jabu && Game.boomerang;
 	Location_Access.jabu_barinade = Game.can_enter_jabu && Game.boomerang;
@@ -1503,8 +1503,8 @@ if(tempstring.length == 6) 	{
 	Location_Access.water9 = Game.can_enter_water && Game.lullaby && ((Game.water_keys >= 2 && Game.song_of_time && Game.bow) || Game.goron_bracelet);
 	Location_Access.water10 = Game.can_enter_water && Game.lullaby && Game.longshot && Game.water_keys >= 2;
 	Location_Access.water11 = Game.can_enter_water && Game.water_boss_key && Game.longshot ;
-	Location_Access.spirit1 = Game.requiem && (Game.slingshot || Game.boomerang);
-	Location_Access.spirit2 = Game.requiem && (Game.slingshot || Game.boomerang);
+	Location_Access.spirit1 = Game.requiem && (Game.slingshot || Game.boomerang || Game.has_chus);
+	Location_Access.spirit2 = Game.requiem && (Game.slingshot || Game.boomerang || Game.has_chus);
 	Location_Access.spirit3 = Game.spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
 	Location_Access.spirit4 = Game.spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
 	Location_Access.spirit5 = Game.spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag || Game.has_chus)) || (Game.can_use_fire && Game.silver_gauntlets));
