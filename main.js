@@ -613,7 +613,7 @@ for (i = 1; i <= 4; i++) {
 	Game.crater_top = Game.crater_by_city || Game.hammer;
 	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
 	Game.can_enter_ganons = Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3;
-	Game.can_climb_fire_temple = Game.can_enter_fire_temple && game.current_fire_keys >=3 && (Game.bow || Game.hookshot || Game.bomb_bag);
+	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow || Game.hookshot || Game.bomb_bag);
 	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.golden_scale);
 	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins);
 	Game.projectile_both = Game.bomb_bag || Game.has_chus || ((Game.slingshot || Game.boomerang) && (Game.bow || Game.hookshot));
@@ -1471,7 +1471,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.forest5 = Game.hookshot && (Game.song_of_time || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1) || (Game.bow/* && (Game.iron_boots || Game.golden_scale || Game.longshot)*/));
 	Location_Access.forest6 = Game.hookshot && Game.current_forest_keys >= 1 && Game.bow && Game.goron_bracelet;
 	Location_Access.forest7 = Game.hookshot && Game.current_forest_keys >= 2 && Game.bow && Game.goron_bracelet;
-	Location_Access.forest8 = Game.hookshot && ((Game.bow && Game.goron_bracelet && game.current_forest_keys >=2) || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys >=1));
+	Location_Access.forest8 = Game.hookshot && ((Game.bow && Game.goron_bracelet && Game.current_forest_keys >=2) || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys >=1));
 	Location_Access.forest9 = Game.hookshot && Game.goron_bracelet && Game.bow && Game.current_forest_keys>=3;
 	Location_Access.forest10 = Game.hookshot && Game.goron_bracelet && Game.current_forest_keys>=3;
 	Location_Access.forest11 = Game.hookshot && Game.goron_bracelet && Game.bow && Game.current_forest_keys>=3;
@@ -1486,7 +1486,7 @@ if(tempstring.length == 6) 	{
 	Location_Access.fire6 = Game.can_enter_fire_temple && Game.fire_boss_key && Game.hammer;
 	Location_Access.fire7 = Game.can_climb_fire_temple;
 	Location_Access.fire8 = Game.can_climb_fire_temple;
-	Location_Access.fire9 = Game.can_climb_fire_temple && ((Game.current_fire_keys >= 4 && Game.bow) || game.current_fire_keys>=5);
+	Location_Access.fire9 = Game.can_climb_fire_temple && ((Game.current_fire_keys >= 4 && Game.bow) || Game.current_fire_keys>=5);
 	Location_Access.fire10 = Game.can_climb_fire_temple && Game.current_fire_keys>=5;
 	Location_Access.fire11 = Game.can_climb_fire_temple && Game.current_fire_keys>=5 && (Game.bomb_bag || Game.has_chus);
 	Location_Access.fire12 = Game.can_climb_fire_temple && Game.current_fire_keys>=5 && Game.hookshot;
