@@ -321,7 +321,7 @@ function Update() {
 	
 	if(Game.goron_bracelet == true) {Logic.strength1 = Location_Logic[Location.strength1];}
 	if(Game.silver_gauntlets == true) {Logic.strength2 = Location_Logic[Location.strength2];}
-	if(Game.gold_gauntlets == true) {Logic.strength3 = Location_Logic[Location.strength3];}
+	if(Game.golden_gauntlets == true) {Logic.strength3 = Location_Logic[Location.strength3];}
 	Logic.goron_bracelet = Logic.strength1 || Logic.strength2 || Logic.strength3;
 	Logic.silver_gauntlets = (Logic.strength1 && Logic.strength2) || (Logic.strength1 && Logic.strength3) || (Logic.strength2 && Logic.strength3)
 	Logic.golden_gauntlets = Logic.strength1 && Logic.strength2 && Logic.strength3;
@@ -776,7 +776,7 @@ for (const key of keys) {
 	
 	if (document.getElementById(key).value == "str" && !Game.goron_bracelet) {Location.strength1 = document.getElementById(key).id; document.getElementById("strength1_location").innerHTML = "Strength -> " + Names[temp-1]; Game.goron_bracelet = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	else if (document.getElementById(key).value == "str" && !Game.silver_gauntlets) {Location.strength2 = document.getElementById(key).id; document.getElementById("strength2_location").innerHTML = "Strength -> " + Names[temp-1]; Game.silver_gauntlets = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "str" && !Game.gold_gauntlets) {Location.strength3 = document.getElementById(key).id; document.getElementById("strength3_location").innerHTML = "Strength -> " + Names[temp-1]; Game.gold_gauntlets = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "str" && !Game.golden_gauntlets) {Location.strength3 = document.getElementById(key).id; document.getElementById("strength3_location").innerHTML = "Strength -> " + Names[temp-1]; Game.golden_gauntlets = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
 	if (document.getElementById(key).value == "mir" && !Game.mirror_shield) {Location.mirror_shield = document.getElementById(key).id; document.getElementById("mirror_shield_location").innerHTML = "Mirror Shield -> " + Names[temp-1]; Game.mirror_shield = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
@@ -1993,7 +1993,7 @@ var tSeconds = 0;
 	Game.fire_arrows = false;
 	Game.goron_bracelet = false;
 	Game.silver_gauntlets = false;
-	Game.gold_gauntlets = false;
+	Game.golden_gauntlets = false;
 	Game.mirror_shield = false;
 	Game.wallet1 = false;
 	Game.wallet2 = false;
