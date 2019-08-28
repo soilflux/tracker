@@ -2373,7 +2373,6 @@ function junkUltra(x) {
 	if (x.id == "gtg") {var temp = 22; var temp2 = Game.gtg_checks_remaining; Game.gtg_checks_remaining = 0; var parent = document.getElementById("dung3"); Logic.forced_gtg_keys = 5 - Game.current_gtg_keys;}
 	if (x.id == "well") {var temp = 14; var temp2 = Game.well_checks_remaining; Game.well_checks_remaining = 0; var parent = document.getElementById("dung3"); Logic.forced_well_keys = 5 - Game.current_well_keys;}
 	for (var i = 1; i <= temp; i++){
-		if (x.id == "spirit" && (i == 7 || i == 17)) {continue;}
 		var str2 = x.id + i;
 		var delete1 = "img1_" + str2;
 		var delete2 = "img2_" + str2;
