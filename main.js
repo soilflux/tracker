@@ -1713,7 +1713,7 @@ if(tempstring.length == 6) 	{
 
 	Logic.gold_skulltulas = 0;
 	var i;
-	for (i = 1; i<100; i++) {
+	for (i = 1; i<=100; i++) {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1;};
 	}
 
