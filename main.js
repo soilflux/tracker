@@ -2618,8 +2618,12 @@ var delete5 = "br_" + str2;
 var delete6 = "span_" + str2;
 var delete7 = "img3_" + str2;
 var delete8 = "span2_" + str2;
+if(str2.startsWith('forest') && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -= 1;} else {return;}
+if(str2.startsWith('fire') && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -= 1;} else {return;}
+if(str2.startsWith('water') && Game.water_checks_remaining != 0) {Game.water_checks_remaining -= 1;} else {return;}
 document.getElementById(delete4).innerHTML += ": " +x.value;
 var parent = document.getElementById("dung1");
+	Game.checks_remaining -=1;
 if (document.getElementById(delete1) !== null) {
 	var child = document.getElementById(delete1);
 	parent.removeChild(child);
@@ -2652,10 +2656,7 @@ if (document.getElementById(delete8) !== null) {
 	var child = document.getElementById(delete8);
 	parent.removeChild(child);
 }
-	if(str2.startsWith('forest')) {Game.forest_checks_remaining -= 1;}
-	if(str2.startsWith('fire')) {Game.fire_checks_remaining -= 1;}
-	if(str2.startsWith('water')) {Game.water_checks_remaining -= 1;}
-	Game.checks_remaining -=1;
+	
 	Update();Update();Update();
 }
 function junkB6(x) {
@@ -2668,6 +2669,9 @@ var delete5 = "br_" + str2;
 var delete6 = "span_" + str2;
 var delete7 = "img3_" + str2;
 var delete8 = "span2_" + str2;
+if(str2.startsWith('shadow') && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -= 1;} else {return;}
+if(str2.startsWith('spirit') && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -= 1;} else {return;}
+if(str2.startsWith('ganons') && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -= 1;} else {return;}
 document.getElementById(delete4).innerHTML += ": " +x.value;
 var parent = document.getElementById("dung2");
 if (document.getElementById(delete1) !== null) {
@@ -2702,9 +2706,6 @@ if (document.getElementById(delete8) !== null) {
 	var child = document.getElementById(delete8);
 	parent.removeChild(child);
 }
-	if(str2.startsWith('shadow')) {Game.shadow_checks_remaining -= 1;}
-	if(str2.startsWith('spirit')) {Game.spirit_checks_remaining -= 1;}
-	if(str2.startsWith('ganons')) {Game.ganons_checks_remaining -= 1;}
 	Game.checks_remaining -=1;
 	Update();Update();Update();
 }
@@ -2718,6 +2719,8 @@ var delete5 = "br_" + str2;
 var delete6 = "span_" + str2;
 var delete7 = "img3_" + str2;
 var delete8 = "span2_" + str2;
+if(str2.startsWith('gtg') && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -= 1;} else {return;}
+if(str2.startsWith('well') && Game.well_checks_remaining != 0) {Game.well_checks_remaining -= 1;} else {return;}
 document.getElementById(delete4).innerHTML += ": " +x.value;
 var parent = document.getElementById("dung3");
 if (document.getElementById(delete1) !== null) {
@@ -2752,8 +2755,6 @@ if (document.getElementById(delete8) !== null) {
 	var child = document.getElementById(delete8);
 	parent.removeChild(child);
 }
-	if(str2.startsWith('gtg')) {Game.gtg_checks_remaining -= 1;}
-	if(str2.startsWith('well')) {Game.well_checks_remaining -= 1;}
 	Game.checks_remaining -=1;
 	Update();Update();Update();
 }
