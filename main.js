@@ -1292,7 +1292,7 @@ if(tempstring.length == 6) 	{
 	Location_Logic.gs_hylia_lab_wall = Logic.boomerang;
 	Location_Logic.gs_hylia_island = true;
 	Location_Logic.gs_hylia_tree = Logic.longshot;
-	Location_Logic.gs_lab_crate = Logic.iron_boots & Logic.hookshot;
+	Location_Logic.gs_lab_crate = Logic.iron_boots && Logic.hookshot;
 	Location_Logic.gs_valley_small_bridge = Logic.boomerang;
 	Location_Logic.gs_valley_bean = Logic.bottle;
 	Location_Logic.gs_valley_tent = Logic.fortress_access && Logic.hookshot;
@@ -1324,9 +1324,9 @@ if(tempstring.length == 6) 	{
 	Location_Logic.gs_forest_outdoor_west = (Logic.minuet || Logic.sarias) && Logic.hookshot && (((Logic.bow || Logic.song_of_time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
 	Location_Logic.gs_forest_basement = (Logic.minuet || Logic.sarias) && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
 	Location_Logic.gs_fire_song_of_time = Logic.can_enter_fire_temple && Logic.fire_keys >= 1 && Logic.song_of_time;
-	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire && Logic.goron_bracelet && Logic.bomb_bag;
-	Location_Logic.gs_fire_scarecrow1 = Logic.can_climb_fire && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
-	Location_Logic.gs_fire_scarecrow2 = Logic.can_climb_fire && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
+	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
+	Location_Logic.gs_fire_scarecrow1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
+	Location_Logic.gs_fire_scarecrow2 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
 	Location_Logic.gs_fire_basement = Logic.can_enter_fire_temple && Logic.hammer;
 	Location_Logic.gs_water_south_basement = Logic.can_enter_water && Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.gs_water_river = Logic.can_enter_water && Logic.song_of_time && Logic.water_keys >= 5;
@@ -1713,7 +1713,7 @@ if(tempstring.length == 6) 	{
 
 	Logic.gold_skulltulas = 0;
 	var i;
-	for (i = 1; i<100; i++) {
+	for (i = 1; i<=100; i++) {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1;};
 	}
 
