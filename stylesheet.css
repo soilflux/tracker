@@ -74,6 +74,20 @@ overflow: hidden;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
+.shadow_medallion{
+	vertical-align:top;
+	font-size:30px;
+	color: rgb(238, 130, 238);
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
+.spirit_medallion{
+	vertical-align:top;
+	font-size:30px;
+	color: rgb(255, 165, 0);
+	text-transform:uppercase;
+	font-family: "Consolas", Courier, monospace;
+}
 .generic_medallion{
 	vertical-align:top;
 	font-size:30px;
