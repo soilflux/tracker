@@ -1259,7 +1259,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.market_lens_game = Logic.can_see;
 	Location_Logic.poes= (Logic.bow && Logic.eponas && Logic.bottle) || Logic.big_poe;
 	Location_Logic.dins_fairy = Logic.bomb_bag && Logic.lullaby;
-	Location_Logic.ganons_fairy = Logic.golden_gauntlets && Logic.lullaby;
+	Location_Logic.g_fairy = Logic.golden_gauntlets && Logic.lullaby;
 	Location_Logic.lacs = Logic.gen1 && Logic.gen2;
 	Location_Logic.fountain_fairy = Logic.ice_access && Logic.bomb_bag;
 	Location_Logic.ice_glacier_hp = Logic.ice_access;
@@ -1615,7 +1615,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.market_lens_game = Game.can_see;
 	Location_Access.poes= (Game.bow && Game.eponas && Game.bottle) || Game.big_poe;
 	Location_Access.dins_fairy = (Game.bomb_bag || Game.has_chus) && Game.lullaby;
-	Location_Access.ganons_fairy = Game.strength3 && Game.lullaby;
+	Location_Access.g_fairy = Game.strength3 && Game.lullaby;
 	Location_Access.lacs = false;
 	Location_Access.river_pillar = true;
 	Location_Access.river_grotto = true;
@@ -2100,7 +2100,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (document.getElementById("hylia_break") != null && document.getElementById("hylia_child_fishing") == null && document.getElementById("hylia_bottle") == null && document.getElementById("hylia_adult_fishing") == null && document.getElementById("hylia_lab_top") == null && document.getElementById("hylia_lab_dive") == null && document.getElementById("hylia_sun_shoot") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("hylia_break"));}
 	if (document.getElementById("market_break") != null && document.getElementById("market_slingshot_game") == null && document.getElementById("richard") == null && document.getElementById("market_bowling_1") == null && document.getElementById("market_bowling_2") == null && document.getElementById("market_lens_game") == null && document.getElementById("poes") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("market_break"));}
 	if (document.getElementById("dfairy_break") != null && document.getElementById("dins_fairy") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("dfairy_break"));}
-	if (document.getElementById("gfairy_break") != null && document.getElementById("ganons_fairy") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("gfairy_break"));}
+	if (document.getElementById("gfairy_break") != null && document.getElementById("g_fairy") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("gfairy_break"));}
 	if (document.getElementById("tot_break") != null && document.getElementById("lacs") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("tot_break"));}
 	if (document.getElementById("fountain_break") != null && document.getElementById("fountain_fairy") == null && document.getElementById("ice_glacier_hp") == null && document.getElementById("ice_bottom_of_fountain") == null) {document.getElementById("normalColumn1").removeChild(document.getElementById("fountain_break"));}
 	if (document.getElementById("deku_break") != null && document.getElementById("deku_lobby") == null && document.getElementById("deku_slingshot") == null && document.getElementById("deku_slingshot_room_side") == null && document.getElementById("deku_compass") == null && document.getElementById("deku_basement") == null && document.getElementById("deku_queen_gohma") == null) {document.getElementById("normalColumn2").removeChild(document.getElementById("deku_break"));}
@@ -2362,7 +2362,7 @@ var tSeconds = 0;
 		"hylia_child_fishing", "hylia_bottle", "hylia_adult_fishing", "hylia_lab_top", "hylia_lab_dive", "hylia_sun_shoot",
 		"market_slingshot_game", "richard", "market_bowling_1", "market_bowling_2","market_lens_game","poes",
 		"dins_fairy",
-		"ganons_fairy",
+		"g_fairy",
 		"lacs",
 		"fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain",
 		"ice_map", "ice_compass", "ice_hp", "ice_irons",
