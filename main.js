@@ -297,19 +297,19 @@ function Update() {
 	if(Game.bottle3 == true) {Logic.bottle3 = Location_Logic[Location.bottle3];}
 	Logic.bottle = (Logic.rutos_letter && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale)) || Logic.bottle1 || Logic.bottle2 || Logic.bottle3;
 	
-	if(Game.silver_scale == true) {Logic.scale1 = Location_Logic[Location.scale1]; }
-	if(Game.golden_scale == true) {Logic.scale2 = Location_Logic[Location.scale2]; }
+	if(Game.scale1 == true) {Logic.scale1 = Location_Logic[Location.scale1]; }
+	if(Game.scale2 == true) {Logic.scale2 = Location_Logic[Location.scale2]; }
 	Logic.silver_scale = Logic.scale1 || Logic.scale2;
 	Logic.golden_scale = Logic.scale1 && Logic.scale2;
 	
-	if(Game.bomb_bag == true) {Logic.bomb_bag1 = Location_Logic[Location.bomb_bag1];}
+	if(Game.bomb_bag1 == true) {Logic.bomb_bag1 = Location_Logic[Location.bomb_bag1];}
 	if(Game.bomb_bag2 == true) {Logic.bomb_bag2 = Location_Logic[Location.bomb_bag2];}
 	if(Game.bomb_bag3 == true) {Logic.bomb_bag3 = Location_Logic[Location.bomb_bag3];}
 	Logic.bomb_bag = Logic.bomb_bag1 || Logic.bomb_bag2 || Logic.bomb_bag3;
 	
 	if(Game.hammer == true) {Logic.hammer = Location_Logic[Location.hammer];} else{Logic.hammer= false;}
 	
-	if(Game.bow == true) {Logic.bow1 = Location_Logic[Location.bow1];}
+	if(Game.bow1 == true) {Logic.bow1 = Location_Logic[Location.bow1];}
 	if(Game.bow2 == true) {Logic.bow2 = Location_Logic[Location.bow2];}
 	if(Game.bow3 == true) {Logic.bow3 = Location_Logic[Location.bow3];}
 	Logic.bow = Logic.bow1 || Logic.bow2 || Logic.bow3;
@@ -333,7 +333,7 @@ function Update() {
 	if(Game.iron_boots == true) {Logic.iron_boots = Location_Logic[Location.iron_boots];} else{Logic.iron_boots = false;}
 	if(Game.hover_boots == true) {Logic.hover_boots = Location_Logic[Location.hover_boots];} else{Logic.hover_boots = false;}
 	
-	if(Game.magic == true) {Logic.magic1 = Location_Logic[Location.magic1];}
+	if(Game.magic1 == true) {Logic.magic1 = Location_Logic[Location.magic1];}
 	if(Game.magic2 == true) {Logic.magic2 = Location_Logic[Location.magic2];}
 	Logic.magic = Logic.magic1 || Logic.magic2;
 	
@@ -586,16 +586,16 @@ for (i = 1; i <= 4; i++) {
 	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow));
 	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (Logic.lullaby && Logic.bottle));
 
-	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag || Game.has_chus || Game.silver_scale)
-	Game.child_can_enter_river = Game.bomb_bag || Game.has_chus || Game.silver_scale;
+	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag || Game.has_chus || Game.scale1)
+	Game.child_can_enter_river = Game.bomb_bag || Game.has_chus || Game.scale1;
 	Game.fortress_access = Game.eponas || Game.hookshot2 || Game.requiem;
 	Game.can_save_carpenters = Game.fortress_access && ((Game.bow || Game.hookshot || Game.hover_boots) || true) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
-	Game.can_use_fire = (Game.dins_fire || (Game.bow && Game.fire_arrows)) && Game.magic;
-	Game.can_use_dins = Game.dins_fire && Game.magic;
-	Game.can_use_farores = Game.farores_wind && Game.magic;
-	Game.can_see = Game.lens_of_truth && Game.magic;
+	Game.can_use_fire = (Game.dins_fire || (Game.bow && Game.fire_arrows)) && Game.magic1;
+	Game.can_use_dins = Game.dins_fire && Game.magic1;
+	Game.can_use_farores = Game.farores_wind && Game.magic1;
+	Game.can_see = Game.lens_of_truth && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.strength1;
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag || Game.has_chus || Game.strength1 || Game.can_use_dins);
@@ -747,8 +747,8 @@ for (const key of keys) {
 	
 	if (document.getElementById(key).value == "boo" && !Game.boomerang) {Location.boomerang = document.getElementById(key).id; document.getElementById("boomerang_location").innerHTML = "Boomerang -> " + Names[temp-1]; Game.boomerang = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "sca" && !Game.silver_scale) {Location.scale1 = document.getElementById(key).id; document.getElementById("scale1_location").innerHTML = "Scale -> " + Names[temp-1]; Game.silver_scale = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sca" && !Game.golden_scale) {Location.scale2 = document.getElementById(key).id; document.getElementById("scale2_location").innerHTML = "Scale -> " + Names[temp-1]; Game.golden_scale = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "sca" && !Game.scale1) {Location.scale1 = document.getElementById(key).id; document.getElementById("scale1_location").innerHTML = "Scale -> " + Names[temp-1]; Game.scale1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sca" && !Game.scale2) {Location.scale2 = document.getElementById(key).id; document.getElementById("scale2_location").innerHTML = "Scale -> " + Names[temp-1]; Game.scale2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
 	if (document.getElementById(key).value == "rut" && !Game.rutos_letter) {Location.rutos_letter = document.getElementById(key).id; document.getElementById("rutos_letter_location").innerHTML = "Letter -> " + Names[temp-1]; Game.rutos_letter = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
@@ -760,13 +760,13 @@ for (const key of keys) {
 	else if (document.getElementById(key).value == "big" && !Game.bottle2) {Location.bottle2 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle2_location").innerHTML = "Big Poe -> " + Names[temp-1]; Game.bottle2 = true; Game.big_poe = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	else if (document.getElementById(key).value == "big" && !Game.bottle3) {Location.bottle3 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle3_location").innerHTML = "Big Poe -> " + Names[temp-1]; Game.bottle3 = true; Game.big_poe = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "bom" && !Game.bomb_bag) {Location.bomb_bag1 = document.getElementById(key).id; document.getElementById("bomb_bag1_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Game.bomb_bag = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "bom" && !Game.bomb_bag1) {Location.bomb_bag1 = document.getElementById(key).id; document.getElementById("bomb_bag1_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Game.bomb_bag1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag2) {Location.bomb_bag2 = document.getElementById(key).id; document.getElementById("bomb_bag2_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Game.bomb_bag2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag3) {Location.bomb_bag3 = document.getElementById(key).id; document.getElementById("bomb_bag3_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Game.bomb_bag3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
 	if (document.getElementById(key).value == "ham" && !Game.hammer) {Location.hammer = document.getElementById(key).id; document.getElementById("hammer_location").innerHTML = "Hammer -> " + Names[temp-1]; Game.hammer = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "bow" && !Game.bow) {Location.bow1 = document.getElementById(key).id; document.getElementById("bow1_location").innerHTML = "Bow -> " + Names[temp-1]; Game.bow = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "bow" && !Game.bow1) {Location.bow1 = document.getElementById(key).id; document.getElementById("bow1_location").innerHTML = "Bow -> " + Names[temp-1]; Game.bow1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	else if (document.getElementById(key).value == "bow" && !Game.bow2) {Location.bow2 = document.getElementById(key).id; document.getElementById("bow2_location").innerHTML = "Bow -> " + Names[temp-1]; Game.bow2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	else if (document.getElementById(key).value == "bow" && !Game.bow3) {Location.bow3 = document.getElementById(key).id; document.getElementById("bow3_location").innerHTML = "Bow -> " + Names[temp-1]; Game.bow3 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
@@ -779,7 +779,7 @@ for (const key of keys) {
 	
 	if (document.getElementById(key).value == "mir" && !Game.mirror_shield) {Location.mirror_shield = document.getElementById(key).id; document.getElementById("mirror_shield_location").innerHTML = "Mirror Shield -> " + Names[temp-1]; Game.mirror_shield = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "mag" && !Game.magic) {Location.magic1 = document.getElementById(key).id; document.getElementById("magic1_location").innerHTML = "Magic -> " + Names[temp-1]; Game.magic = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "mag" && !Game.magic1) {Location.magic1 = document.getElementById(key).id; document.getElementById("magic1_location").innerHTML = "Magic -> " + Names[temp-1]; Game.magic1 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	else if (document.getElementById(key).value == "mag" && !Game.magic2) {Location.magic2 = document.getElementById(key).id; document.getElementById("magic2_location").innerHTML = "Magic -> " + Names[temp-1]; Game.magic2 = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
 	if (document.getElementById(key).value == "iro" && !Game.iron_boots) {Location.iron_boots = document.getElementById(key).id; document.getElementById("iron_boots_location").innerHTML = "Iron Boots -> " + Names[temp-1]; Game.iron_boots = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
@@ -826,6 +826,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gf") {gcast = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {tot = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou") {fountain = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {ice = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "deku" || document.getElementById("woth_input" + i).value == "dek" || document.getElementById("woth_input" + i).value == "dt") {deku = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "lw" || document.getElementById("woth_input" + i).value == "lost" || document.getElementById("woth_input" + i).value == "woods") {lostwoods = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "sfm" || document.getElementById("woth_input" + i).value == "mea" || document.getElementById("woth_input" + i).value == "mead") {sfm = "woth";} 
@@ -863,22 +864,22 @@ for(var i = 0; i < checkSummary.length; i++) {
 		}
 		if (Game[checkSummary[i]]) { 
 			if (document.getElementById(str).innerHTML.includes("Kokiri:") && kokiri == "woth") {
-				document.getElementById(str).style.color = "20EA01";
+				document.getElementById(str).style.color = "00ff88";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Ranch:") && ranch == "woth") {
-				document.getElementById(str).style.color = "6f6fFF";
+				document.getElementById(str).style.color = "aaaa00";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Field:") && field == "woth") {
-				document.getElementById(str).style.color = "B6B004";
+				document.getElementById(str).style.color = "ffff00";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Valley:") && valley == "woth") {
-				document.getElementById(str).style.color = "01E6D7";
+				document.getElementById(str).style.color = "ffaa00";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Hylia:") && hylia == "woth") {
-				document.getElementById(str).style.color = "0101E6";
+				document.getElementById(str).style.color = "00aaff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Market:") && market == "woth") {
-				document.getElementById(str).style.color = "C704E5";
+				document.getElementById(str).style.color = "aaaaaa";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && hcast == "woth") {
 				document.getElementById(str).style.color = "84FFFF";
@@ -887,25 +888,25 @@ for(var i = 0; i < checkSummary.length; i++) {
 				document.getElementById(str).style.color = "FE0404";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && tot == "woth") {
-				document.getElementById(str).style.color = "D4E3EF";
+				document.getElementById(str).style.color = "ffffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fountain:") && fountain == "woth") {
-				document.getElementById(str).style.color = "77F1FE";
+				document.getElementById(str).style.color = "70ffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Ice:") && ice == "woth") {
-				document.getElementById(str).style.color = "9EF3FD";
+				document.getElementById(str).style.color = "aaffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Deku:") && deku == "woth") {
-				document.getElementById(str).style.color = "563C25";
+				document.getElementById(str).style.color = "996000";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && lostwoods == "woth") {
-				document.getElementById(str).style.color = "004F0B";
+				document.getElementById(str).style.color = "009000";
 			}
 			else if (document.getElementById(str).innerHTML.includes("SFM:") && sfm == "woth") {
-				document.getElementById(str).style.color = "8BFB9A";
+				document.getElementById(str).style.color = "80ff80";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Goron City:") && goroncity == "woth") {
-				document.getElementById(str).style.color = "FEB813";
+				document.getElementById(str).style.color = "ffcc00";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Dodongos:") && dodongos == "woth") {
 				document.getElementById(str).style.color = "B35705";
@@ -914,10 +915,9 @@ for(var i = 0; i < checkSummary.length; i++) {
 				document.getElementById(str).style.color = "573E02";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Crater:") && crater == "woth") {
-				document.getElementById(str).style.color = "FE3E04";
+				document.getElementById(str).style.color = "ff5050";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && kakariko == "woth") {
-				console.log("hi");
 				document.getElementById(str).style.color = "678C8A";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && graveyard == "woth") {
@@ -927,40 +927,40 @@ for(var i = 0; i < checkSummary.length; i++) {
 				document.getElementById(str).style.color = "5DB8FE";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Domain:") && domain == "woth") {
-				document.getElementById(str).style.color = "A3D7FE";
+				document.getElementById(str).style.color = "00ffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Colossus:") && colossus == "woth") {
-				document.getElementById(str).style.color = "FED788";
+				document.getElementById(str).style.color = "cccc90";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && wasteland == "woth") {
-				document.getElementById(str).style.color = "976500";
+				document.getElementById(str).style.color = "cccc30";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fortress:") && fortress == "woth") {
-				document.getElementById(str).style.color = "C3AB7C";
+				document.getElementById(str).style.color = "ffff90";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Jabu:") && jabu == "woth") {
-				document.getElementById(str).style.color = "077D8A";
+				document.getElementById(str).style.color = "ff0080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Forest:") && forest == "woth") {
 				document.getElementById(str).style.color = "5FAF36";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fire:") && fire == "woth") {
-				document.getElementById(str).style.color = "FE3213";
+				document.getElementById(str).style.color = "ff0000";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Water:") && water == "woth") {
-				document.getElementById(str).style.color = "131BFE";
+				document.getElementById(str).style.color = "00cccc";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Shadow:") && shadow == "woth") {
-				document.getElementById(str).style.color = "69008E";
+				document.getElementById(str).style.color = "c900c9";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Spirit:") && spirit == "woth") {
-				document.getElementById(str).style.color = "8C9B03";
+				document.getElementById(str).style.color = "ffff50";
 			}
 			else if (document.getElementById(str).innerHTML.includes("GTG:") && gtg == "woth") {
-				document.getElementById(str).style.color = "FE8B08";
+				document.getElementById(str).style.color = "ffcc60";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Well:") && botw == "woth") {
-				document.getElementById(str).style.color = "DE86FE";
+				document.getElementById(str).style.color = "ff00ff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Ganon's:") && ganons == "woth") {
 				document.getElementById(str).style.color = "990000";
@@ -2047,18 +2047,18 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (Game.ganons_checks_remaining >=0 && (Game.ganons_checks_remaining < Game.ganons_logically_accessible)) {Game.logically_accessible -= (Game.ganons_logically_accessible - Game.ganons_checks_remaining);}
 	
 	
-	if (Game.bomb_bag) {if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").style.opacity =1; } if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").style.opacity =1; } if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").style.opacity =1; }}
-	if (Game.magic) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").style.opacity =1; }}
+	if (Game.bomb_bag1) {if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").style.opacity =1; } if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").style.opacity =1; } if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").style.opacity =1; }}
+	if (Game.magic1) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").style.opacity =1; }}
 	if (Game.light_arrows) {document.getElementById("gan_req2").style.opacity=1;}
-	if (Game.bow) {document.getElementById("gan_req3").style.opacity=1; if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").style.opacity =1; }}
+	if (Game.bow1) {document.getElementById("gan_req3").style.opacity=1; if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").style.opacity =1; }}
 	if (Game.hookshot1) {if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").style.opacity =1; } if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").style.opacity =1; } if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").style.opacity =1; }}
 	if (Game.strength1) {if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").style.opacity =1; }}
 	if (Game.hammer) {if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").style.opacity =1; }}
 	if (Game.rutos_letter) {if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").style.opacity =1; }}
 	if (Game.boomerang) {if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").style.opacity =1; }}
 	if (Game.iron_boots) {if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").style.opacity =1; }}
-	if (Game.golden_scale) {if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").style.opacity =1; }}
-	if (Game.longshot) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =1; }}
+	if (Game.scale2) {if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").style.opacity =1; }}
+	if (Game.hookshot2) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =1; }}
 	if (Game.strength2) {if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").style.opacity =1; }}
 	if (Game.mirror_shield) {if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").style.opacity =1; }}
 	if (Game.dins_fire) {if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").style.opacity =1; }}
@@ -2080,7 +2080,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (Game.bottle1 || Logic.bottle) {document.getElementById("bottleimg").style.opacity =1;}
 	if (Game.farores_wind) {document.getElementById("faroresimg").style.opacity =1;}
 	if (Game.fire_arrows) {document.getElementById("firearrowsimg").style.opacity =1;}
-	if (Game.silver_scale) {document.getElementById("silverscaleimg").style.opacity =1;}
+	if (Game.scale1) {document.getElementById("silverscaleimg").style.opacity =1;}
 	
 	/**if (Game.minuet) {document.getElementById("min_note").style.opacity = 1;}
 	if (Game.bolero) {document.getElementById("bol_note").style.opacity = 1;}
@@ -2251,24 +2251,33 @@ var tSeconds = 0;
 	Game.kokiri_sword = false;
 	Game.farores_wind = false;
 	Game.slingshot= false;
+	Game.slingshot1= false;
+	Game.slingshot2= false;
+	Game.slingshot3= false;
 	Game.boomerang = false;
 	Game.rutos_letter = false;
 	Game.bottle1 = false;
 	Game.bottle2 = false;
 	Game.bottle3 = false;
 	Game.big_poe = false;
-	Game.silver_scale = false;
-	Game.golden_scale = false;
+	Game.scale1 = false;
+	Game.scale2 = false;
 	Game.bomb_bag = false;
+	Game.bomb_bag1 = false;
 	Game.bomb_bag2 = false;
 	Game.bomb_bag3 = false;
 	Game.hammer = false;
 	Game.bow = false;
+	Game.bow1 = false;
+	Game.bow2 = false;
+	Game.bow3 = false;
 	Game.hookshot1 = false;
 	Game.longshot = false;
 	Game.iron_boots = false;
 	Game.hover_boots = false;
 	Game.magic = false;
+	Game.magic1 = false;
+	Game.magic2 = false;
 	Game.dins_fire = false;
 	Game.fire_arrows = false;
 	Game.strength1 = false;
