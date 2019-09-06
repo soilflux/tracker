@@ -314,7 +314,7 @@ function Update() {
 	if(Game.bow3 == true) {Logic.bow3 = Location_Logic[Location.bow3];}
 	Logic.bow = Logic.bow1 || Logic.bow2 || Logic.bow3;
 	
-	if(Game.hookshot == true) {Logic.hookshot1 = Location_Logic[Location.hookshot1];}
+	if(Game.hookshot1 == true) {Logic.hookshot1 = Location_Logic[Location.hookshot1];}
 	if(Game.hookshot2 == true) {Logic.hookshot2 = Location_Logic[Location.hookshot2];}
 	Logic.hookshot = Logic.hookshot1 || Logic.hookshot2;
 	Logic.longshot = Logic.hookshot1 && Logic.hookshot2;
@@ -853,8 +853,14 @@ for (var i = 1; i <= 5; i++) {
 	
 for(var i = 0; i < checkSummary.length; i++) {
 		str = checkSummary[i] + "_location";
-		if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".3"; document.getElementById(str).style.fontWeight = "normal";}
-		else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+		if (checkSummary[i] == "trade") {
+			if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
+			else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+			}
+		else {
+			if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
+			else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+		}
 		if (Game[checkSummary[i]]) { 
 			if (document.getElementById(str).innerHTML.includes("Kokiri:") && kokiri == "woth") {
 				document.getElementById(str).style.color = "20EA01";
@@ -2465,8 +2471,8 @@ var tSeconds = 0;
 	Logic.bomb_bag = false;
 	Logic.hammer = false;
 	Logic.bow = false;
-	Logic.hookshot = false;
-	Logic.longshot = false;
+	Logic.hookshot1 = false;
+	Logic.hookshot2 = false;
 	Logic.iron_boots = false;
 	Logic.hover_boots = false;
 	Logic.magic = false;
@@ -2482,6 +2488,7 @@ var tSeconds = 0;
 	Logic.zora_tunic = false;
 	Logic.lens_of_truth = false;
 	Logic.stone_of_agony = false;
+	Logic.trade = false;
 	Logic.prescription = false;
 	Logic.claim_check = false;
 	Logic.light_arrows = false;
