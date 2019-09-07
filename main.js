@@ -876,7 +876,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {domain = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus") {colossus = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl") {wasteland = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gfairy") {fortress = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {fortress = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb") {jabu = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot") {forest = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fir" || document.getElementById("woth_input" + i).value == "fire" || document.getElementById("woth_input" + i).value == "fit") {fire = "woth";} 
