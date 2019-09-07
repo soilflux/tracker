@@ -1734,7 +1734,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.dodongos_bomb_bag = Game.dodongos_climb;
 	Location_Access.dodongos_end_of_bridge = (Game.dodongos_climb && Game.can_blast_or_smash)
 	Location_Access.dodongos_above_king = Game.dodongos_climb && (Game.bomb_bag || Game.has_chus);
-	Location_Access.dodongos_king_dodongo = Game.dodongos_climb && (Game.bomb_bag || (Game.has_chus && Game.strength1));
+	Location_Access.dodongos_king_dodongo = Game.dodongos_climb && (Game.bomb_bag || Game.has_chus);
 	Location_Access.jabu_boomerang = Game.can_enter_jabu && (Game.boomerang || Game.bomb_bag || Game.slingshot || Game.has_chus);
 	Location_Access.jabu_map = Game.can_enter_jabu && Game.boomerang;
 	Location_Access.jabu_compass = Game.can_enter_jabu && Game.boomerang;
