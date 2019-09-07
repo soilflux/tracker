@@ -298,7 +298,7 @@ function Update() {
 	Logic.bottle = (Logic.rutos_letter && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale)) || Logic.bottle1 || Logic.bottle2 || Logic.bottle3;
 	
 	if(Game.scale1 == true) {Logic.scale1 = Location_Logic[Location.scale1]; }
-	if(Game.scale2 == true) {Logic.scale2 = Location_Logic[Location.scale2]; }
+	if(Game.scale2 == true) {Logic.scale2 = Location_Logic[Location.scale2]; document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
 	Logic.silver_scale = Logic.scale1 || Logic.scale2;
 	Logic.golden_scale = Logic.scale1 && Logic.scale2;
 	
@@ -576,7 +576,7 @@ for (i = 1; i <= 4; i++) {
 	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||(Logic.hammer && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && Logic.hammer);
 	Logic.crater_top = Logic.crater_by_city || Logic.hammer;
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
-	Logic.can_enter_ganons = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3;
+	Logic.can_enter_ganons = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.shadow_medallion && Logic.spirit_medallion && Logic.light_medallion;
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
 	Logic.middle_water = Logic.can_enter_water && Logic.lullaby && (Logic.bow || Logic.can_use_dins);
@@ -815,6 +815,42 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "pre" && !Game.prelude) {Location.prelude = document.getElementById(key).id; Game.prelude = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key)); continue;}
 	}
 }
+kokiri = "normal";
+ranch = "normal";
+field = "normal";
+valley = "normal";
+hylia = "normal";
+market = "normal";
+hcast = "normal";
+gcast = "normal";
+tot = "normal";
+fountain= "normal";  
+ice = "normal";
+deku = "normal";
+lostwoods = "normal";
+sfm = "normal";
+goroncity = "normal";
+dodongos = "normal";
+trail = "normal";
+crater = "normal";
+kakariko = "normal";
+graveyard = "normal";
+river = "normal";
+domain = "normal";
+colossus = "normal";
+wasteland = "normal";
+fortress = "normal";
+jabu = "normal";
+forest = "normal";
+fire = "normal";
+water = "normal";
+spirit = "normal";
+shadow = "normal";
+gtg = "normal";
+botw = "normal";
+ganons = "normal";
+
+
 for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki") {kokiri = "woth";}
 	if (document.getElementById("woth_input" + i).value == "llr" || document.getElementById("woth_input" + i).value == "ranch" || document.getElementById("woth_input" + i).value == "lon") {ranch = "woth";} 
@@ -823,7 +859,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "hyl" || document.getElementById("woth_input" + i).value == "hylia" || document.getElementById("woth_input" + i).value == "lh") {hylia = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "mkt" || document.getElementById("woth_input" + i).value == "market" || document.getElementById("woth_input" + i).value == "mar") {market = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "hyr c" || document.getElementById("woth_input" + i).value == "hcast" || document.getElementById("woth_input" + i).value == "hc") {hcast = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gf") {gcast = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gfairy") {gcast = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {tot = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou") {fountain = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {ice = "woth";} 
@@ -840,7 +876,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {domain = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus") {colossus = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl") {wasteland = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {fortress = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gfairy") {fortress = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb") {jabu = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot") {forest = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fir" || document.getElementById("woth_input" + i).value == "fire" || document.getElementById("woth_input" + i).value == "fit") {fire = "woth";} 
@@ -964,6 +1000,9 @@ for(var i = 0; i < checkSummary.length; i++) {
 			}
 			else if (document.getElementById(str).innerHTML.includes("Ganon's:") && ganons == "woth") {
 				document.getElementById(str).style.color = "990000";
+			}
+			else {
+				document.getElementById(str).style.color = "chartreuse";
 			}
 		}
 	}
@@ -1266,7 +1305,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.poes= (Logic.bow && Logic.eponas && Logic.bottle) || Logic.big_poe;
 	Location_Logic.dins_fairy = Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.g_fairy = Logic.golden_gauntlets && Logic.lullaby;
-	Location_Logic.lacs = Logic.gen1 && Logic.gen2;
+	Location_Logic.lacs = Logic.shadow_medallion && Logic.spirit_medallion;
 	Location_Logic.fountain_fairy = Logic.ice_access && Logic.bomb_bag;
 	Location_Logic.ice_glacier_hp = Logic.ice_access;
 	Location_Logic.ice_bottom_of_fountain = Logic.ice_access && Logic.iron_boots;
