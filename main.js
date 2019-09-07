@@ -597,7 +597,7 @@ for (i = 1; i <= 4; i++) {
 	Game.can_use_farores = Game.farores_wind && Game.magic1;
 	Game.can_see = Game.lens_of_truth && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag || Game.hammer || Game.has_chus;
-	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.strength1;
+	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.strength1 || ((Game.bottle1 || Game.can_enter_jabu) && Game.giants_wallet);
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag || Game.has_chus || Game.strength1 || Game.can_use_dins);
 	Game.can_enter_shadow= Game.nocturne && Game.can_use_fire && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
@@ -1658,7 +1658,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.market_bowling_1 = Game.bomb_bag;
 	Location_Access.market_bowling_2 = Game.bomb_bag;
 	Location_Access.market_lens_game = Game.can_see;
-	Location_Access.poes= (Game.bow && Game.eponas && Game.bottle) || Game.big_poe;
+	Location_Access.poes= (Game.bow && Game.eponas && (Game.bottle1 || Game.can_enter_jabu)) || Game.big_poe;
 	Location_Access.dins_fairy = (Game.bomb_bag || Game.has_chus) && Game.lullaby;
 	Location_Access.g_fairy = Game.strength3 && Game.lullaby;
 	Location_Access.lacs = false;
@@ -1693,7 +1693,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
 	Location_Access.crater_peak_fairy = Game.can_blast_or_smash && Game.lullaby;
-	Location_Access.trade_quest = (((Game.ice_access || (Game.giants_wallet && Game.lullaby && Game.bottle)) && Game.prescription) || Game.claim_check) && Game.crater_top;
+	Location_Access.trade_quest = (((Game.ice_access || (Game.giants_wallet && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot1 || Game.hover_boots);
 	Location_Access.gerudo_archery_1 = Game.eponas && Game.bow;
