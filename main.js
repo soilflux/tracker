@@ -852,7 +852,7 @@ ganons = "normal";
 
 
 for (var i = 1; i <= 5; i++) {
-	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki") {kokiri = "woth";}
+	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki" || document.getElementById("woth_input" + i).value == "kfc") {kokiri = "woth";}
 	if (document.getElementById("woth_input" + i).value == "llr" || document.getElementById("woth_input" + i).value == "ranch" || document.getElementById("woth_input" + i).value == "lon") {ranch = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fie" || document.getElementById("woth_input" + i).value == "hf" || document.getElementById("woth_input" + i).value == "field") {field = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "gv" || document.getElementById("woth_input" + i).value == "val" || document.getElementById("woth_input" + i).value == "valley") {valley = "woth";} 
@@ -861,7 +861,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "hyr c" || document.getElementById("woth_input" + i).value == "hcast" || document.getElementById("woth_input" + i).value == "hc") {hcast = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gfairy") {gcast = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {tot = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou") {fountain = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou" || document.getElementById("woth_input" + i).value == "zf") {fountain = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {ice = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "deku" || document.getElementById("woth_input" + i).value == "dek" || document.getElementById("woth_input" + i).value == "dt") {deku = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "lw" || document.getElementById("woth_input" + i).value == "lost" || document.getElementById("woth_input" + i).value == "woods") {lostwoods = "woth";} 
@@ -875,7 +875,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "riv" || document.getElementById("woth_input" + i).value == "river" || document.getElementById("woth_input" + i).value == "zr") {river = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {domain = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus") {colossus = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl") {wasteland = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl" || document.getElementById("woth_input" + i).value == "hw") {wasteland = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {fortress = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb") {jabu = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot") {forest = "woth";} 
@@ -885,7 +885,7 @@ for (var i = 1; i <= 5; i++) {
 	if (document.getElementById("woth_input" + i).value == "spi" || document.getElementById("woth_input" + i).value == "spirit" || document.getElementById("woth_input" + i).value == "sprt") {spirit = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "gtg") {gtg = "woth";} 
 	if (document.getElementById("woth_input" + i).value == "well" || document.getElementById("woth_input" + i).value == "botw" || document.getElementById("woth_input" + i).value == "wel") {botw = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gan" || document.getElementById("woth_input" + i).value == "gan c" || document.getElementById("woth_input" + i).value == "ganons") {ganons = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gan" || document.getElementById("woth_input" + i).value == "gan c" || document.getElementById("woth_input" + i).value == "ganons" || document.getElementById("woth_input" + i).value == "ganon") {ganons = "woth";} 
 	}
 	
 for(var i = 0; i < checkSummary.length; i++) {
