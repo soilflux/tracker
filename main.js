@@ -897,12 +897,12 @@ for(var i = 0; i < checkSummary.length; i++) {
 		if (i <= 36 ){
 			str = checkSummary[i] + "_location";
 			if (checkSummary[i] == "trade") {
-				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal";}
-				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold";}
+				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
+				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "16px";}
 			}
 			else {
-				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.fontWeight = "normal";}
-				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold";}
+				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
+				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "16px";}
 			}
 		}
 		else {
@@ -910,10 +910,10 @@ for(var i = 0; i < checkSummary.length; i++) {
 		}
 		if (Game[checkSummary[i]] || i > 36) { 
 			if (document.getElementById(str).innerHTML.includes("Kokiri:") && Area[1] == "woth") {
-				document.getElementById(str).style.color = "00ff88";
+				document.getElementById(str).style.color = "00ff88"; 
 			}
 			else if ((document.getElementById(str).innerHTML.includes("Ranch:") || document.getElementById(str).innerHTML.includes("Malon"))  && Area[2] == "woth") {
-				document.getElementById(str).style.color = "aaaa00";
+				document.getElementById(str).style.color = "aaaa00"; 
 			}
 			else if ((document.getElementById(str).innerHTML.includes("Field:") || document.getElementById(str).innerHTML.includes("OoT")) && Area[3] == "woth") {
 				document.getElementById(str).style.color = "ffff00";
@@ -934,7 +934,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 				document.getElementById(str).style.color = "FE0404";
 			}
 			else if ((document.getElementById(str).innerHTML.includes("Temple of Time:") || document.getElementById(str).innerHTML.includes("1Med")) && Area[9] == "woth") {
-				document.getElementById(str).style.color = "ffffff";
+				document.getElementById(str).style.color = "ffffff"; 
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fountain:") && Area[10] == "woth") {
 				document.getElementById(str).style.color = "70ffff";
