@@ -897,12 +897,12 @@ for(var i = 0; i < checkSummary.length; i++) {
 		if (i <= 36 ){
 			str = checkSummary[i] + "_location";
 			if (checkSummary[i] == "trade") {
-				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
-				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal";}
+				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold";}
 			}
 			else {
-				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
-				else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.fontWeight = "normal";}
+				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold";}
 			}
 		}
 		else {
