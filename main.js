@@ -541,7 +541,7 @@ for (i = 1; i <= 4; i++) {
 	if(document.getElementById(str).value == "req") {Logic.requiem = false;}
 }
 
-	for(var i = 0; i < checkSummary.length; i++){
+	for(var i = 0; i <= 36; i++){
 		str = checkSummary[i] + "_location";
 		
 		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {var exception = true;} else {var exception = false;}
@@ -894,23 +894,28 @@ for (var i = 1; i <= 5; i++) {
 }
 	
 for(var i = 0; i < checkSummary.length; i++) {
-		str = checkSummary[i] + "_location";
-		if (checkSummary[i] == "trade") {
-			if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
-			else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+		if (i <= 36 ){
+			str = checkSummary[i] + "_location";
+			if (checkSummary[i] == "trade") {
+				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
+				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+			}
+			else {
+				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
+				else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+			}
 		}
 		else {
-			if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
-			else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
+			str = checkSummary[i];
 		}
-		if (Game[checkSummary[i]]) { 
+		if (Game[checkSummary[i]] || i > 36) { 
 			if (document.getElementById(str).innerHTML.includes("Kokiri:") && Area[1] == "woth") {
 				document.getElementById(str).style.color = "00ff88";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ranch:") && Area[2] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Ranch:") || document.getElementById(str).innerHTML.includes("Malon"))  && Area[2] == "woth") {
 				document.getElementById(str).style.color = "aaaa00";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Field:") && Area[3] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Field:") || document.getElementById(str).innerHTML.includes("OoT")) && Area[3] == "woth") {
 				document.getElementById(str).style.color = "ffff00";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Valley:") && Area[4] == "woth") {
@@ -922,19 +927,19 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Market:") && Area[6] == "woth") {
 				document.getElementById(str).style.color = "aaaaaa";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && Area[7] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Hyrule Castle:") || document.getElementById(str).innerHTML.includes("Zelda")) && Area[7] == "woth") {
 				document.getElementById(str).style.color = "84FFFF";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Outside G's:") && Area[8] == "woth") {
 				document.getElementById(str).style.color = "FE0404";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && Area[9] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Temple of Time:") || document.getElementById(str).innerHTML.includes("1Med")) && Area[9] == "woth") {
 				document.getElementById(str).style.color = "ffffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fountain:") && Area[10] == "woth") {
 				document.getElementById(str).style.color = "70ffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ice:") && Area[11] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Ice:") || document.getElementById(str).innerHTML.includes("Ice")) && Area[11] == "woth") {
 				document.getElementById(str).style.color = "aaffff";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Deku:") && Area[12] == "woth") {
@@ -943,7 +948,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && Area[13] == "woth") {
 				document.getElementById(str).style.color = "009000";
 			}
-			else if (document.getElementById(str).innerHTML.includes("SFM:") && Area[14] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("SFM:") || document.getElementById(str).innerHTML.includes("Meadow") || document.getElementById(str).innerHTML.includes("Saria")) && Area[14] == "woth") {
 				document.getElementById(str).style.color = "80ff80";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Goron City:") && Area[15] == "woth") {
@@ -955,13 +960,13 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Trail:") && Area[17] == "woth") {
 				document.getElementById(str).style.color = "573E02";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Crater:") && Area[18] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Crater:") || document.getElementById(str).innerHTML.includes("Crater")) && Area[18] == "woth") {
 				document.getElementById(str).style.color = "ff5050";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && Area[19] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Kakariko:") || document.getElementById(str).innerHTML.includes("Windmill") || document.getElementById(str).innerHTML.includes("3Med")) && Area[19] == "woth") {
 				document.getElementById(str).style.color = "678C8A";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && Area[20] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Graveyard:") || document.getElementById(str).innerHTML.includes("Grave")) && Area[20] == "woth") {
 				document.getElementById(str).style.color = "8f8493";
 			}
 			else if (document.getElementById(str).innerHTML.includes("River:") && Area[21] == "woth") {
@@ -970,7 +975,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Domain:") && Area[22] == "woth") {
 				document.getElementById(str).style.color = "00ffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Colossus:") && Area[23] == "woth") {
+			else if ((document.getElementById(str).innerHTML.includes("Colossus:") || document.getElementById(str).innerHTML.includes("Colossus")) && Area[23] == "woth") {
 				document.getElementById(str).style.color = "cccc90";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && Area[24] == "woth") {
@@ -1009,10 +1014,10 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Kokiri:") && Area[1] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ranch:") && Area[2] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Ranch:") || document.getElementById(str).innerHTML.includes("Malon")) && Area[2] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Field:") && Area[3] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Field:") || document.getElementById(str).innerHTML.includes("OoT")) && Area[3] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Valley:") && Area[4] == "barren") {
@@ -1024,19 +1029,19 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Market:") && Area[6] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && Area[7] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Hyrule Castle:") || document.getElementById(str).innerHTML.includes("Zelda")) && Area[7] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Outside G's:") && Area[8] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && Area[9] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Temple of Time:") || document.getElementById(str).innerHTML.includes("1Med")) && Area[9] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Fountain:") && Area[10] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ice:") && Area[11] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Ice:") || document.getElementById(str).innerHTML.includes("Ice")) && Area[11] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Deku:") && Area[12] == "barren") {
@@ -1045,7 +1050,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && Area[13] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("SFM:") && Area[14] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("SFM:") || document.getElementById(str).innerHTML.includes("Saria") || document.getElementById(str).innerHTML.includes("Meadow")) && Area[14] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Goron City:") && Area[15] == "barren") {
@@ -1057,13 +1062,13 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Trail:") && Area[17] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Crater:") && Area[18] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Crater:") || document.getElementById(str).innerHTML.includes("Crater")) && Area[18] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && Area[19] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Kakariko:") || document.getElementById(str).innerHTML.includes("Windmill") || document.getElementById(str).innerHTML.includes("3Med")) && Area[19] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && Area[20] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Graveyard:") || document.getElementById(str).innerHTML.includes("Grave")) && Area[20] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("River:") && Area[21] == "barren") {
@@ -1072,7 +1077,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Domain:") && Area[22] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Colossus:") && Area[23] == "barren") {
+			else if ((document.getElementById(str).innerHTML.includes("Colossus:") || document.getElementById(str).innerHTML.includes("Colossus")) && Area[23] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && Area[24] == "barren") {
@@ -1108,7 +1113,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 			else if (document.getElementById(str).innerHTML.includes("Well:") && Area[34] == "barren") {
 				document.getElementById(str).style.color = "ff8080";
 			}
-			else {
+			else if (i <= 36) {
 				document.getElementById(str).style.color = "chartreuse";
 			}
 		}
@@ -2762,7 +2767,7 @@ var tSeconds = 0;
 		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Medallion", "3 Medallion", "Ocarina of Time"
 		];
 	
-	var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens_of_truth", "trade", "light_arrows"];
+	var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens_of_truth", "trade", "light_arrows", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot",];
 	
 	Logic.bottle = false;
 	Logic.big_poe = false;
