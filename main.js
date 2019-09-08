@@ -815,198 +815,510 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "pre" && !Game.prelude) {Location.prelude = document.getElementById(key).id; Game.prelude = true; var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key)); continue;}
 	}
 }
-kokiri = "normal";
-ranch = "normal";
-field = "normal";
-valley = "normal";
-hylia = "normal";
-market = "normal";
-hcast = "normal";
-gcast = "normal";
-tot = "normal";
-fountain= "normal";  
-ice = "normal";
-deku = "normal";
-lostwoods = "normal";
-sfm = "normal";
-goroncity = "normal";
-dodongos = "normal";
-trail = "normal";
-crater = "normal";
-kakariko = "normal";
-graveyard = "normal";
-river = "normal";
-domain = "normal";
-colossus = "normal";
-wasteland = "normal";
-fortress = "normal";
-jabu = "normal";
-forest = "normal";
-fire = "normal";
-water = "normal";
-spirit = "normal";
-shadow = "normal";
-gtg = "normal";
-botw = "normal";
-ganons = "normal";
 
+for( var i = 1; i <= 34; i++) {
+Area[i] = "normal";
+}
 
 for (var i = 1; i <= 5; i++) {
-	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki" || document.getElementById("woth_input" + i).value == "kfc") {kokiri = "woth";}
-	if (document.getElementById("woth_input" + i).value == "llr" || document.getElementById("woth_input" + i).value == "ranch" || document.getElementById("woth_input" + i).value == "lon") {ranch = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fie" || document.getElementById("woth_input" + i).value == "hf" || document.getElementById("woth_input" + i).value == "field") {field = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gv" || document.getElementById("woth_input" + i).value == "val" || document.getElementById("woth_input" + i).value == "valley") {valley = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "hyl" || document.getElementById("woth_input" + i).value == "hylia" || document.getElementById("woth_input" + i).value == "lh") {hylia = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "mkt" || document.getElementById("woth_input" + i).value == "market" || document.getElementById("woth_input" + i).value == "mar") {market = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "hyr c" || document.getElementById("woth_input" + i).value == "hcast" || document.getElementById("woth_input" + i).value == "hc") {hcast = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gfairy") {gcast = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {tot = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou" || document.getElementById("woth_input" + i).value == "zf") {fountain = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {ice = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "deku" || document.getElementById("woth_input" + i).value == "dek" || document.getElementById("woth_input" + i).value == "dt") {deku = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "lw" || document.getElementById("woth_input" + i).value == "lost" || document.getElementById("woth_input" + i).value == "woods") {lostwoods = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "sfm" || document.getElementById("woth_input" + i).value == "mea" || document.getElementById("woth_input" + i).value == "mead") {sfm = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gor" || document.getElementById("woth_input" + i).value == "gc" || document.getElementById("woth_input" + i).value == "goron") {goroncity = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "dod" || document.getElementById("woth_input" + i).value == "dodo" || document.getElementById("woth_input" + i).value == "dc") {dodongos = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "tra" || document.getElementById("woth_input" + i).value == "trail" || document.getElementById("woth_input" + i).value == "dmt") {trail = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "cra" || document.getElementById("woth_input" + i).value == "crater" || document.getElementById("woth_input" + i).value == "dmc") {crater = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "kak" || document.getElementById("woth_input" + i).value == "kaki" || document.getElementById("woth_input" + i).value == "kv") {kakariko = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gra" || document.getElementById("woth_input" + i).value == "grave" || document.getElementById("woth_input" + i).value == "gy") {graveyard = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "riv" || document.getElementById("woth_input" + i).value == "river" || document.getElementById("woth_input" + i).value == "zr") {river = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {domain = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus") {colossus = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl" || document.getElementById("woth_input" + i).value == "hw") {wasteland = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {fortress = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb") {jabu = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot") {forest = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fir" || document.getElementById("woth_input" + i).value == "fire" || document.getElementById("woth_input" + i).value == "fit") {fire = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "wat" || document.getElementById("woth_input" + i).value == "wata" || document.getElementById("woth_input" + i).value == "water") {water = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "sha" || document.getElementById("woth_input" + i).value == "shadow" || document.getElementById("woth_input" + i).value == "shad") {shadow = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "spi" || document.getElementById("woth_input" + i).value == "spirit" || document.getElementById("woth_input" + i).value == "sprt") {spirit = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "gtg") {gtg = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "well" || document.getElementById("woth_input" + i).value == "botw" || document.getElementById("woth_input" + i).value == "wel") {botw = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gan" || document.getElementById("woth_input" + i).value == "gan c" || document.getElementById("woth_input" + i).value == "ganons" || document.getElementById("woth_input" + i).value == "ganon") {ganons = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki" || document.getElementById("woth_input" + i).value == "kfc") {Area[1] = "woth";}
+	if (document.getElementById("woth_input" + i).value == "llr" || document.getElementById("woth_input" + i).value == "ranch" || document.getElementById("woth_input" + i).value == "lon") {Area[2] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fie" || document.getElementById("woth_input" + i).value == "hf" || document.getElementById("woth_input" + i).value == "field") {Area[3] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gv" || document.getElementById("woth_input" + i).value == "val" || document.getElementById("woth_input" + i).value == "valley") {Area[4] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "hyl" || document.getElementById("woth_input" + i).value == "hylia" || document.getElementById("woth_input" + i).value == "lh") {Area[5] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "mkt" || document.getElementById("woth_input" + i).value == "market" || document.getElementById("woth_input" + i).value == "mar") {Area[6] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "hyr c" || document.getElementById("woth_input" + i).value == "hcast" || document.getElementById("woth_input" + i).value == "hc") {Area[7] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gfairy" || document.getElementById("woth_input" + i).value == "og" || document.getElementById("woth_input" + i).value == "out") {Area[8] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {Area[9] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou" || document.getElementById("woth_input" + i).value == "zf") {Area[10] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {Area[11] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "deku" || document.getElementById("woth_input" + i).value == "dek" || document.getElementById("woth_input" + i).value == "dt") {Area[12] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "lw" || document.getElementById("woth_input" + i).value == "lost" || document.getElementById("woth_input" + i).value == "woods") {Area[13] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "sfm" || document.getElementById("woth_input" + i).value == "mea" || document.getElementById("woth_input" + i).value == "mead") {Area[14] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gor" || document.getElementById("woth_input" + i).value == "gc" || document.getElementById("woth_input" + i).value == "goron") {Area[15] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "dod" || document.getElementById("woth_input" + i).value == "dodo" || document.getElementById("woth_input" + i).value == "dc") {Area[16] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "tra" || document.getElementById("woth_input" + i).value == "trail" || document.getElementById("woth_input" + i).value == "dmt") {Area[17] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "cra" || document.getElementById("woth_input" + i).value == "crater" || document.getElementById("woth_input" + i).value == "dmc") {Area[18] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "kak" || document.getElementById("woth_input" + i).value == "kaki" || document.getElementById("woth_input" + i).value == "kv") {Area[19] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gra" || document.getElementById("woth_input" + i).value == "grave" || document.getElementById("woth_input" + i).value == "gy") {Area[20] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "riv" || document.getElementById("woth_input" + i).value == "river" || document.getElementById("woth_input" + i).value == "zr") {Area[21] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {Area[22] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus" || document.getElementById("woth_input" + i).value == "co") {Area[23] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl" || document.getElementById("woth_input" + i).value == "hw") {Area[24] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {Area[25] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb" || document.getElementById("woth_input" + i).value == "jj") {Area[26] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot" || document.getElementById("woth_input" + i).value == "fo") {Area[27] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "fir" || document.getElementById("woth_input" + i).value == "fire" || document.getElementById("woth_input" + i).value == "fit" || document.getElementById("woth_input" + i).value == "fi") {Area[28] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "wat" || document.getElementById("woth_input" + i).value == "wata" || document.getElementById("woth_input" + i).value == "water" || document.getElementById("woth_input" + i).value == "wa") {Area[29] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "spi" || document.getElementById("woth_input" + i).value == "spirit" || document.getElementById("woth_input" + i).value == "sprt" || document.getElementById("woth_input" + i).value == "sp") {Area[30] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "sha" || document.getElementById("woth_input" + i).value == "shadow" || document.getElementById("woth_input" + i).value == "shad" || document.getElementById("woth_input" + i).value == "sh") {Area[31] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gan" || document.getElementById("woth_input" + i).value == "gan c" || document.getElementById("woth_input" + i).value == "ganons" || document.getElementById("woth_input" + i).value == "ganon" || document.getElementById("woth_input" + i).value == "ga") {Area[32] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "tg" || document.getElementById("woth_input" + i).value == "gt") {Area[33] = "woth";} 
+	if (document.getElementById("woth_input" + i).value == "well" || document.getElementById("woth_input" + i).value == "botw" || document.getElementById("woth_input" + i).value == "wel") {Area[34] = "woth";} 
+	if (i <= 3) {
+		if (document.getElementById("barren_input" + i).value == "kok" || document.getElementById("barren_input" + i).value == "kf" || document.getElementById("barren_input" + i).value == "koki" || document.getElementById("barren_input" + i).value == "kfc") {Area[1] = "barren";}
+		if (document.getElementById("barren_input" + i).value == "llr" || document.getElementById("barren_input" + i).value == "ranch" || document.getElementById("barren_input" + i).value == "lon") {Area[2] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "fie" || document.getElementById("barren_input" + i).value == "hf" || document.getElementById("barren_input" + i).value == "field") {Area[3] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "gv" || document.getElementById("barren_input" + i).value == "val" || document.getElementById("barren_input" + i).value == "valley") {Area[4] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "hyl" || document.getElementById("barren_input" + i).value == "hylia" || document.getElementById("barren_input" + i).value == "lh") {Area[5] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "mkt" || document.getElementById("barren_input" + i).value == "market" || document.getElementById("barren_input" + i).value == "mar") {Area[6] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "hyr c" || document.getElementById("barren_input" + i).value == "hcast" || document.getElementById("barren_input" + i).value == "hc") {Area[7] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "ogc" || document.getElementById("barren_input" + i).value == "out g" || document.getElementById("barren_input" + i).value == "gfairy" || document.getElementById("barren_input" + i).value == "og" || document.getElementById("barren_input" + i).value == "out") {Area[8] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "tot" || document.getElementById("barren_input" + i).value == "temple" || document.getElementById("barren_input" + i).value == "time") {Area[9] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "fountain" || document.getElementById("barren_input" + i).value == "fount" || document.getElementById("barren_input" + i).value == "fou" || document.getElementById("barren_input" + i).value == "zf") {Area[10] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "ice" || document.getElementById("barren_input" + i).value == "ic" || document.getElementById("barren_input" + i).value == "cavern") {Area[11] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "deku" || document.getElementById("barren_input" + i).value == "dek" || document.getElementById("barren_input" + i).value == "dt") {Area[12] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "lw" || document.getElementById("barren_input" + i).value == "lost" || document.getElementById("barren_input" + i).value == "woods") {Area[13] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "sfm" || document.getElementById("barren_input" + i).value == "mea" || document.getElementById("barren_input" + i).value == "mead") {Area[14] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "gor" || document.getElementById("barren_input" + i).value == "gc" || document.getElementById("barren_input" + i).value == "goron") {Area[15] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "dod" || document.getElementById("barren_input" + i).value == "dodo" || document.getElementById("barren_input" + i).value == "dc") {Area[16] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "tra" || document.getElementById("barren_input" + i).value == "trail" || document.getElementById("barren_input" + i).value == "dmt") {Area[17] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "cra" || document.getElementById("barren_input" + i).value == "crater" || document.getElementById("barren_input" + i).value == "dmc") {Area[18] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "kak" || document.getElementById("barren_input" + i).value == "kaki" || document.getElementById("barren_input" + i).value == "kv") {Area[19] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "gra" || document.getElementById("barren_input" + i).value == "grave" || document.getElementById("barren_input" + i).value == "gy") {Area[20] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "riv" || document.getElementById("barren_input" + i).value == "river" || document.getElementById("barren_input" + i).value == "zr") {Area[21] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "dom" || document.getElementById("barren_input" + i).value == "domain" || document.getElementById("barren_input" + i).value == "zd") {Area[22] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "col" || document.getElementById("barren_input" + i).value == "colo" || document.getElementById("barren_input" + i).value == "colossus" || document.getElementById("barren_input" + i).value == "co") {Area[23] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "was" || document.getElementById("barren_input" + i).value == "waste" || document.getElementById("barren_input" + i).value == "wl" || document.getElementById("barren_input" + i).value == "hw") {Area[24] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "fort" || document.getElementById("barren_input" + i).value == "fortress" || document.getElementById("barren_input" + i).value == "gf") {Area[25] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "jab" || document.getElementById("barren_input" + i).value == "jabu" || document.getElementById("barren_input" + i).value == "jjb" || document.getElementById("barren_input" + i).value == "jj") {Area[26] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "for" || document.getElementById("barren_input" + i).value == "forest" || document.getElementById("barren_input" + i).value == "fot" || document.getElementById("barren_input" + i).value == "fo") {Area[27] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "fir" || document.getElementById("barren_input" + i).value == "fire" || document.getElementById("barren_input" + i).value == "fit" || document.getElementById("barren_input" + i).value == "fi") {Area[28] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "wat" || document.getElementById("barren_input" + i).value == "wata" || document.getElementById("barren_input" + i).value == "water" || document.getElementById("barren_input" + i).value == "wa") {Area[29] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "spi" || document.getElementById("barren_input" + i).value == "spirit" || document.getElementById("barren_input" + i).value == "sprt" || document.getElementById("barren_input" + i).value == "sp") {Area[30] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "sha" || document.getElementById("barren_input" + i).value == "shadow" || document.getElementById("barren_input" + i).value == "shad" || document.getElementById("barren_input" + i).value == "sh") {Area[31] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "gan" || document.getElementById("barren_input" + i).value == "gan c" || document.getElementById("barren_input" + i).value == "ganons" || document.getElementById("barren_input" + i).value == "ganon" || document.getElementById("barren_input" + i).value == "ga") {Area[32] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "gtg" || document.getElementById("barren_input" + i).value == "tg" || document.getElementById("barren_input" + i).value == "gt") {Area[33] = "barren";} 
+		if (document.getElementById("barren_input" + i).value == "well" || document.getElementById("barren_input" + i).value == "botw" || document.getElementById("barren_input" + i).value == "wel") {Area[34] = "barren";} 
 	}
+}
 	
 for(var i = 0; i < checkSummary.length; i++) {
 		str = checkSummary[i] + "_location";
 		if (checkSummary[i] == "trade") {
 			if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
 			else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
-			}
+		}
 		else {
 			if (!Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = ".45"; document.getElementById(str).style.fontWeight = "normal";}
 			else if (Logic[checkSummary[i]]) { document.getElementById(str).style.opacity = "1"; document.getElementById(str).style.fontWeight = "bold";}
 		}
 		if (Game[checkSummary[i]]) { 
-			if (document.getElementById(str).innerHTML.includes("Kokiri:") && kokiri == "woth") {
+			if (document.getElementById(str).innerHTML.includes("Kokiri:") && Area[1] == "woth") {
 				document.getElementById(str).style.color = "00ff88";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ranch:") && ranch == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Ranch:") && Area[2] == "woth") {
 				document.getElementById(str).style.color = "aaaa00";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Field:") && field == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Field:") && Area[3] == "woth") {
 				document.getElementById(str).style.color = "ffff00";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Valley:") && valley == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Valley:") && Area[4] == "woth") {
 				document.getElementById(str).style.color = "ffaa00";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Hylia:") && hylia == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Hylia:") && Area[5] == "woth") {
 				document.getElementById(str).style.color = "00aaff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Market:") && market == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Market:") && Area[6] == "woth") {
 				document.getElementById(str).style.color = "aaaaaa";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && hcast == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && Area[7] == "woth") {
 				document.getElementById(str).style.color = "84FFFF";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Outside G's:") && gcast == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Outside G's:") && Area[8] == "woth") {
 				document.getElementById(str).style.color = "FE0404";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && tot == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && Area[9] == "woth") {
 				document.getElementById(str).style.color = "ffffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Fountain:") && fountain == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Fountain:") && Area[10] == "woth") {
 				document.getElementById(str).style.color = "70ffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ice:") && ice == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Ice:") && Area[11] == "woth") {
 				document.getElementById(str).style.color = "aaffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Deku:") && deku == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Deku:") && Area[12] == "woth") {
 				document.getElementById(str).style.color = "996000";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && lostwoods == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && Area[13] == "woth") {
 				document.getElementById(str).style.color = "009000";
 			}
-			else if (document.getElementById(str).innerHTML.includes("SFM:") && sfm == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("SFM:") && Area[14] == "woth") {
 				document.getElementById(str).style.color = "80ff80";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Goron City:") && goroncity == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Goron City:") && Area[15] == "woth") {
 				document.getElementById(str).style.color = "ffcc00";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Dodongos:") && dodongos == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Dodongos:") && Area[16] == "woth") {
 				document.getElementById(str).style.color = "B35705";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Trail:") && trail == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Trail:") && Area[17] == "woth") {
 				document.getElementById(str).style.color = "573E02";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Crater:") && crater == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Crater:") && Area[18] == "woth") {
 				document.getElementById(str).style.color = "ff5050";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && kakariko == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && Area[19] == "woth") {
 				document.getElementById(str).style.color = "678C8A";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && graveyard == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && Area[20] == "woth") {
 				document.getElementById(str).style.color = "8f8493";
 			}
-			else if (document.getElementById(str).innerHTML.includes("River:") && river == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("River:") && Area[21] == "woth") {
 				document.getElementById(str).style.color = "5DB8FE";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Domain:") && domain == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Domain:") && Area[22] == "woth") {
 				document.getElementById(str).style.color = "00ffff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Colossus:") && colossus == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Colossus:") && Area[23] == "woth") {
 				document.getElementById(str).style.color = "cccc90";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && wasteland == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && Area[24] == "woth") {
 				document.getElementById(str).style.color = "cccc30";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Fortress:") && fortress == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Fortress:") && Area[25] == "woth") {
 				document.getElementById(str).style.color = "ffff90";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Jabu:") && jabu == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Jabu:") && Area[26] == "woth") {
 				document.getElementById(str).style.color = "ff0080";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Forest:") && forest == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Forest:") && Area[27] == "woth") {
 				document.getElementById(str).style.color = "5FAF36";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Fire:") && fire == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Fire:") && Area[28] == "woth") {
 				document.getElementById(str).style.color = "ff0000";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Water:") && water == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Water:") && Area[29] == "woth") {
 				document.getElementById(str).style.color = "00cccc";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Shadow:") && shadow == "woth") {
-				document.getElementById(str).style.color = "c900c9";
-			}
-			else if (document.getElementById(str).innerHTML.includes("Spirit:") && spirit == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Spirit:") && Area[30] == "woth") {
 				document.getElementById(str).style.color = "ffff50";
 			}
-			else if (document.getElementById(str).innerHTML.includes("GTG:") && gtg == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Shadow:") && Area[31] == "woth") {
+				document.getElementById(str).style.color = "c900c9";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Ganon's:") && Area[32] == "woth") {
+				document.getElementById(str).style.color = "990000";
+			}
+			else if (document.getElementById(str).innerHTML.includes("GTG:") && Area[33] == "woth") {
 				document.getElementById(str).style.color = "ffcc60";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Well:") && botw == "woth") {
+			else if (document.getElementById(str).innerHTML.includes("Well:") && Area[34] == "woth") {
 				document.getElementById(str).style.color = "ff00ff";
 			}
-			else if (document.getElementById(str).innerHTML.includes("Ganon's:") && ganons == "woth") {
-				document.getElementById(str).style.color = "990000";
+			else if (document.getElementById(str).innerHTML.includes("Kokiri:") && Area[1] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Ranch:") && Area[2] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Field:") && Area[3] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Valley:") && Area[4] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Hylia:") && Area[5] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Market:") && Area[6] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Hyrule Castle:") && Area[7] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Outside G's:") && Area[8] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Temple of Time:") && Area[9] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Fountain:") && Area[10] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Ice:") && Area[11] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Deku:") && Area[12] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Lost Woods:") && Area[13] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("SFM:") && Area[14] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Goron City:") && Area[15] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Dodongos:") && Area[16] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Trail:") && Area[17] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Crater:") && Area[18] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Kakariko:") && Area[19] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Graveyard:") && Area[20] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("River:") && Area[21] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Domain:") && Area[22] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Colossus:") && Area[23] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Wasteland:") && Area[24] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Fortress:") && Area[25] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Jabu:") && Area[26] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Forest:") && Area[27] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Fire:") && Area[28] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Water:") && Area[29] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Spirit:") && Area[30] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Shadow:") && Area[31] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Ganon's:") && Area[32] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("GTG:") && Area[33] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
+			}
+			else if (document.getElementById(str).innerHTML.includes("Well:") && Area[34] == "barren") {
+				document.getElementById(str).style.color = "ff8080";
 			}
 			else {
 				document.getElementById(str).style.color = "chartreuse";
 			}
 		}
-	}
+}
+for (var i = 1; i <= 34; i++) {
 	
+	if (Area[i] == "barren") {AreaAge[i] += 1;}
+	else {AreaAge[i] = 0;}
+	
+	if (AreaAge[i] == 10) {
+		if (i == 1) {
+			if(document.getElementById("text_" + Locations[0]) != null) {document.getElementById("text_" + Locations[0]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[1]) != null) {document.getElementById("text_" + Locations[1]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[2]) != null) {document.getElementById("text_" + Locations[2]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[3]) != null) {document.getElementById("text_" + Locations[3]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[4]) != null) {document.getElementById("text_" + Locations[4]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[5]) != null) {document.getElementById("text_" + Locations[5]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 2) {
+			if(document.getElementById("text_" + Locations[6]) != null) {document.getElementById("text_" + Locations[6]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[7]) != null) {document.getElementById("text_" + Locations[7]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 3) {
+			if(document.getElementById("text_" + Locations[8]) != null) {document.getElementById("text_" + Locations[8]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[9]) != null) {document.getElementById("text_" + Locations[9]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[10]) != null) {document.getElementById("text_" + Locations[10]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[11]) != null) {document.getElementById("text_" + Locations[11]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[12]) != null) {document.getElementById("text_" + Locations[12]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 4) {
+			if(document.getElementById("text_" + Locations[13]) != null) {document.getElementById("text_" + Locations[13]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[14]) != null) {document.getElementById("text_" + Locations[14]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[15]) != null) {document.getElementById("text_" + Locations[15]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 5) {
+			if(document.getElementById("text_" + Locations[16]) != null) {document.getElementById("text_" + Locations[16]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[17]) != null) {document.getElementById("text_" + Locations[17]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[18]) != null) {document.getElementById("text_" + Locations[18]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[19]) != null) {document.getElementById("text_" + Locations[19]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[20]) != null) {document.getElementById("text_" + Locations[20]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[21]) != null) {document.getElementById("text_" + Locations[21]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 6) {
+			if(document.getElementById("text_" + Locations[22]) != null) {document.getElementById("text_" + Locations[22]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[23]) != null) {document.getElementById("text_" + Locations[23]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[24]) != null) {document.getElementById("text_" + Locations[24]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[25]) != null) {document.getElementById("text_" + Locations[25]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[26]) != null) {document.getElementById("text_" + Locations[26]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[27]) != null) {document.getElementById("text_" + Locations[27]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 7) {
+			if(document.getElementById("text_" + Locations[28]) != null) {document.getElementById("text_" + Locations[28]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 8) {
+			if(document.getElementById("text_" + Locations[29]) != null) {document.getElementById("text_" + Locations[29]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 9) {
+			if(document.getElementById("text_" + Locations[30]) != null) {document.getElementById("text_" + Locations[30]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 10) {
+			if(document.getElementById("text_" + Locations[31]) != null) {document.getElementById("text_" + Locations[31]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[32]) != null) {document.getElementById("text_" + Locations[32]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[33]) != null) {document.getElementById("text_" + Locations[33]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 11) {
+			if(document.getElementById("text_" + Locations[34]) != null) {document.getElementById("text_" + Locations[34]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[35]) != null) {document.getElementById("text_" + Locations[35]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[36]) != null) {document.getElementById("text_" + Locations[36]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[37]) != null) {document.getElementById("text_" + Locations[37]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 12) {
+			if(document.getElementById("text_" + Locations[38]) != null) {document.getElementById("text_" + Locations[38]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[39]) != null) {document.getElementById("text_" + Locations[39]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[40]) != null) {document.getElementById("text_" + Locations[40]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[41]) != null) {document.getElementById("text_" + Locations[41]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[42]) != null) {document.getElementById("text_" + Locations[42]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[43]) != null) {document.getElementById("text_" + Locations[43]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[44]) != null) {document.getElementById("text_" + Locations[44]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 13) {
+			if(document.getElementById("text_" + Locations[45]) != null) {document.getElementById("text_" + Locations[45]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[46]) != null) {document.getElementById("text_" + Locations[46]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[47]) != null) {document.getElementById("text_" + Locations[47]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[48]) != null) {document.getElementById("text_" + Locations[48]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[49]) != null) {document.getElementById("text_" + Locations[49]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[50]) != null) {document.getElementById("text_" + Locations[50]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[51]) != null) {document.getElementById("text_" + Locations[51]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 14) {
+			if(document.getElementById("text_" + Locations[52]) != null) {document.getElementById("text_" + Locations[52]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 15) {
+			if(document.getElementById("text_" + Locations[53]) != null) {document.getElementById("text_" + Locations[53]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[54]) != null) {document.getElementById("text_" + Locations[54]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[55]) != null) {document.getElementById("text_" + Locations[55]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[56]) != null) {document.getElementById("text_" + Locations[56]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[57]) != null) {document.getElementById("text_" + Locations[57]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[58]) != null) {document.getElementById("text_" + Locations[58]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[59]) != null) {document.getElementById("text_" + Locations[59]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 16) {
+			if(document.getElementById("text_" + Locations[60]) != null) {document.getElementById("text_" + Locations[60]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[61]) != null) {document.getElementById("text_" + Locations[61]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[62]) != null) {document.getElementById("text_" + Locations[62]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[63]) != null) {document.getElementById("text_" + Locations[63]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[64]) != null) {document.getElementById("text_" + Locations[64]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[65]) != null) {document.getElementById("text_" + Locations[65]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[66]) != null) {document.getElementById("text_" + Locations[66]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 17) {
+			if(document.getElementById("text_" + Locations[67]) != null) {document.getElementById("text_" + Locations[67]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[68]) != null) {document.getElementById("text_" + Locations[68]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[69]) != null) {document.getElementById("text_" + Locations[69]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[70]) != null) {document.getElementById("text_" + Locations[70]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[71]) != null) {document.getElementById("text_" + Locations[71]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 18) {
+			if(document.getElementById("text_" + Locations[72]) != null) {document.getElementById("text_" + Locations[72]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[73]) != null) {document.getElementById("text_" + Locations[73]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[74]) != null) {document.getElementById("text_" + Locations[74]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[75]) != null) {document.getElementById("text_" + Locations[75]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 19) {
+			if(document.getElementById("text_" + Locations[76]) != null) {document.getElementById("text_" + Locations[76]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[77]) != null) {document.getElementById("text_" + Locations[77]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[78]) != null) {document.getElementById("text_" + Locations[78]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[79]) != null) {document.getElementById("text_" + Locations[79]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[80]) != null) {document.getElementById("text_" + Locations[80]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[81]) != null) {document.getElementById("text_" + Locations[81]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[82]) != null) {document.getElementById("text_" + Locations[82]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[83]) != null) {document.getElementById("text_" + Locations[83]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[84]) != null) {document.getElementById("text_" + Locations[84]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[85]) != null) {document.getElementById("text_" + Locations[85]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[86]) != null) {document.getElementById("text_" + Locations[86]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[87]) != null) {document.getElementById("text_" + Locations[87]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[88]) != null) {document.getElementById("text_" + Locations[88]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 20) {
+			if(document.getElementById("text_" + Locations[89]) != null) {document.getElementById("text_" + Locations[89]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[90]) != null) {document.getElementById("text_" + Locations[90]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[91]) != null) {document.getElementById("text_" + Locations[91]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[92]) != null) {document.getElementById("text_" + Locations[92]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[93]) != null) {document.getElementById("text_" + Locations[93]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[94]) != null) {document.getElementById("text_" + Locations[94]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[95]) != null) {document.getElementById("text_" + Locations[95]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 21) {
+			if(document.getElementById("text_" + Locations[96]) != null) {document.getElementById("text_" + Locations[96]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[97]) != null) {document.getElementById("text_" + Locations[97]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[98]) != null) {document.getElementById("text_" + Locations[98]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[99]) != null) {document.getElementById("text_" + Locations[99]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[100]) != null) {document.getElementById("text_" + Locations[100]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 22) {
+			if(document.getElementById("text_" + Locations[101]) != null) {document.getElementById("text_" + Locations[101]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[102]) != null) {document.getElementById("text_" + Locations[102]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[103]) != null) {document.getElementById("text_" + Locations[103]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 23) {
+			if(document.getElementById("text_" + Locations[104]) != null) {document.getElementById("text_" + Locations[104]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[105]) != null) {document.getElementById("text_" + Locations[105]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 24) {
+			if(document.getElementById("text_" + Locations[106]) != null) {document.getElementById("text_" + Locations[106]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 25) {
+			if(document.getElementById("text_" + Locations[107]) != null) {document.getElementById("text_" + Locations[107]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[108]) != null) {document.getElementById("text_" + Locations[108]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[109]) != null) {document.getElementById("text_" + Locations[109]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 26) {
+			if(document.getElementById("text_" + Locations[110]) != null) {document.getElementById("text_" + Locations[110]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[111]) != null) {document.getElementById("text_" + Locations[111]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[112]) != null) {document.getElementById("text_" + Locations[112]).dispatchEvent(new Event('mousedown'));}
+			if(document.getElementById("text_" + Locations[113]) != null) {document.getElementById("text_" + Locations[113]).dispatchEvent(new Event('mousedown'));}
+		}
+		if (i == 27) {
+			Game.checks_remaining -= Game.forest_checks_remaining;
+			Game.forest_checks_remaining = 0;
+		}
+		if (i == 28) {
+			Game.checks_remaining -= Game.fire_checks_remaining;
+			Game.fire_checks_remaining = 0;
+		}
+		if (i == 29) {
+			Game.checks_remaining -= Game.water_checks_remaining;
+			Game.water_checks_remaining = 0;
+		}
+		if (i == 30) {
+			Game.checks_remaining -= Game.spirit_checks_remaining;
+			Game.spirit_checks_remaining = 0;
+		}
+		if (i == 31) {
+			Game.checks_remaining -= Game.shadow_checks_remaining;
+			Game.shadow_checks_remaining = 0;
+		}
+		if (i == 32) {
+			Game.checks_remaining -= Game.ganons_checks_remaining;
+			Game.ganons_checks_remaining = 0;
+		}
+		if (i == 33) {
+			Game.checks_remaining -= Game.gtg_checks_remaining;
+			Game.gtg_checks_remaining = 0;
+		}
+		if (i == 34) {
+			Game.checks_remaining -= Game.well_checks_remaining;
+			Game.well_checks_remaining = 0;
+		}
+	}
+}
 	
 if (document.getElementById("markStones") != null) {
 	var tempstring = document.getElementById("markStones").value;
@@ -2231,6 +2543,7 @@ var Location_Access={};
 var Logic={};
 var Location ={};
 var gs = [];
+var Area = [];
 
 Game.logically_accessible = 0;
 var d = new Date();
@@ -2251,41 +2564,6 @@ var tSeconds = 0;
 	document.getElementById("text_gen_med1").style.color = "yellow";
 	document.getElementById("text_gen_med2").style.color = "yellow";
 	document.getElementById("text_gen_med3").style.color = "yellow";
-	
-	var kokiri = "unknown";
-	var ranch = "unknown";
-	var field = "unknown";
-	var valley = "unknown";
-	var hylia = "unknown";
-	var market = "unknown";
-	var hcast = "unknown";
-	var gcast = "unknown";
-	var tot = "unknown";
-	var fountain = "unknown";
-	var ice = "unknown";
-	var deku = "unknown";
-	var lostwoods = "unknown";
-	var sfm = "unknown";
-	var goroncity = "unknown";
-	var dodongos = "unknown";
-	var trail = "unknown";
-	var crater = "unknown";
-	var kakariko = "unknown";
-	var graveyard = "unknown";
-	var river = "unknown";
-	var domain = "unknown";
-	var colossus = "unknown";
-	var wasteland = "unknown";
-	var fortress = "unknown";
-	var jabu = "unknown";
-	var forest = "unknown";
-	var fire = "unknown";
-	var water = "unknown";
-	var shadow = "unknown";
-	var spirit = "unknown";
-	var gtg = "unknown";
-	var botw = "unknown";
-	var ganons = "unknown";
 	
 	Game.kokiri_sword = false;
 	Game.farores_wind = false;
@@ -2621,6 +2899,7 @@ var tSeconds = 0;
 	Logic.ganons_boss_key = false;
 	   
     var checkedYet = new Array(256).fill(false);
+	var AreaAge = new Array(34).fill(0);
 	var textBlock = '';
 	
 	for (var i = 0; i < 244; i++) {
@@ -2670,6 +2949,10 @@ function junk(x) {
 		else if(str.startsWith("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {return;}
 		Check[str]="small_key";
+	}
+	else {
+		Check[str]="junk";
+		Game.checks_remaining -=1;
 	}
 	
 	var delete1 = str;
