@@ -1114,7 +1114,12 @@ for(var i = 0; i < checkSummary.length; i++) {
 				document.getElementById(str).style.color = "ff8080";
 			}
 			else if (i <= 36) {
-				document.getElementById(str).style.color = "chartreuse";
+				if (Logic[checkSummary[i]]) {
+					document.getElementById(str).style.color = "chartreuse";
+				}
+				else {
+					document.getElementById(str).style.color = "black";
+				}
 			}
 		}
 }
