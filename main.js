@@ -1319,8 +1319,7 @@ for (var i = 1; i <= 34; i++) {
 			Game.shadow_checks_remaining = 0;
 		}
 		if (i == 32) {
-			Game.checks_remaining -= Game.ganons_checks_remaining;
-			Game.ganons_checks_remaining = 0;
+			document.getElementById("ganons").click();
 		}
 		if (i == 33) {
 			Game.checks_remaining -= Game.gtg_checks_remaining;
@@ -1334,8 +1333,7 @@ for (var i = 1; i <= 34; i++) {
 }
 
 if (Game.magic1 && Game.light_arrows && Game.bow1) {
-	Game.checks_remaining -= Game.ganons_checks_remaining;
-	Game.ganons_checks_remaining = 0;
+	document.getElementById("ganons").click();
 }
 	
 if (document.getElementById("markStones") != null) {
@@ -2574,6 +2572,7 @@ var timeFinal;
 var timeLost =0;
 var tMinutes = 0;
 var tSeconds = 0;
+var lastCheck = "start";
 //document.getElementById("go_input").value = 9;
 	
 	Person.type = "soli";
