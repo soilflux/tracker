@@ -1674,8 +1674,8 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.trade_quest = (((Logic.ice_access || (Logic.giants_wallet && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
-	Location_Logic.crater_nook_hp = Logic.crater_top;
 	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
+	Location_Logic.crater_nook_hp = Logic.crater_top;
 	Location_Logic.man_on_roof = true;//Logic.hookshot;
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.song_of_time;
