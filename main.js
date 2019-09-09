@@ -821,75 +821,78 @@ Area[i] = "normal";
 }
 
 for (var i = 1; i <= 5; i++) {
-	if (document.getElementById("woth_input" + i).value == "kok" || document.getElementById("woth_input" + i).value == "kf" || document.getElementById("woth_input" + i).value == "koki" || document.getElementById("woth_input" + i).value == "kfc") {Area[1] = "woth";}
-	if (document.getElementById("woth_input" + i).value == "llr" || document.getElementById("woth_input" + i).value == "ranch" || document.getElementById("woth_input" + i).value == "lon") {Area[2] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fie" || document.getElementById("woth_input" + i).value == "hf" || document.getElementById("woth_input" + i).value == "field") {Area[3] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gv" || document.getElementById("woth_input" + i).value == "val" || document.getElementById("woth_input" + i).value == "valley") {Area[4] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "hyl" || document.getElementById("woth_input" + i).value == "hylia" || document.getElementById("woth_input" + i).value == "lh") {Area[5] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "mkt" || document.getElementById("woth_input" + i).value == "market" || document.getElementById("woth_input" + i).value == "mar") {Area[6] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "hyr c" || document.getElementById("woth_input" + i).value == "hcast" || document.getElementById("woth_input" + i).value == "hc") {Area[7] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "ogc" || document.getElementById("woth_input" + i).value == "out g" || document.getElementById("woth_input" + i).value == "gfairy" || document.getElementById("woth_input" + i).value == "og" || document.getElementById("woth_input" + i).value == "out") {Area[8] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "tot" || document.getElementById("woth_input" + i).value == "temple" || document.getElementById("woth_input" + i).value == "time") {Area[9] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fountain" || document.getElementById("woth_input" + i).value == "fount" || document.getElementById("woth_input" + i).value == "fou" || document.getElementById("woth_input" + i).value == "zf") {Area[10] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "ice" || document.getElementById("woth_input" + i).value == "ic" || document.getElementById("woth_input" + i).value == "cavern") {Area[11] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "deku" || document.getElementById("woth_input" + i).value == "dek" || document.getElementById("woth_input" + i).value == "dt") {Area[12] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "lw" || document.getElementById("woth_input" + i).value == "lost" || document.getElementById("woth_input" + i).value == "woods") {Area[13] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "sfm" || document.getElementById("woth_input" + i).value == "mea" || document.getElementById("woth_input" + i).value == "mead") {Area[14] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gor" || document.getElementById("woth_input" + i).value == "gc" || document.getElementById("woth_input" + i).value == "goron") {Area[15] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "dod" || document.getElementById("woth_input" + i).value == "dodo" || document.getElementById("woth_input" + i).value == "dc") {Area[16] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "tra" || document.getElementById("woth_input" + i).value == "trail" || document.getElementById("woth_input" + i).value == "dmt") {Area[17] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "cra" || document.getElementById("woth_input" + i).value == "crater" || document.getElementById("woth_input" + i).value == "dmc") {Area[18] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "kak" || document.getElementById("woth_input" + i).value == "kaki" || document.getElementById("woth_input" + i).value == "kv") {Area[19] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gra" || document.getElementById("woth_input" + i).value == "grave" || document.getElementById("woth_input" + i).value == "gy") {Area[20] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "riv" || document.getElementById("woth_input" + i).value == "river" || document.getElementById("woth_input" + i).value == "zr") {Area[21] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "dom" || document.getElementById("woth_input" + i).value == "domain" || document.getElementById("woth_input" + i).value == "zd") {Area[22] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "col" || document.getElementById("woth_input" + i).value == "colo" || document.getElementById("woth_input" + i).value == "colossus" || document.getElementById("woth_input" + i).value == "co") {Area[23] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "was" || document.getElementById("woth_input" + i).value == "waste" || document.getElementById("woth_input" + i).value == "wl" || document.getElementById("woth_input" + i).value == "hw") {Area[24] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fort" || document.getElementById("woth_input" + i).value == "fortress" || document.getElementById("woth_input" + i).value == "gf") {Area[25] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "jab" || document.getElementById("woth_input" + i).value == "jabu" || document.getElementById("woth_input" + i).value == "jjb" || document.getElementById("woth_input" + i).value == "jj") {Area[26] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "for" || document.getElementById("woth_input" + i).value == "forest" || document.getElementById("woth_input" + i).value == "fot" || document.getElementById("woth_input" + i).value == "fo") {Area[27] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "fir" || document.getElementById("woth_input" + i).value == "fire" || document.getElementById("woth_input" + i).value == "fit" || document.getElementById("woth_input" + i).value == "fi") {Area[28] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "wat" || document.getElementById("woth_input" + i).value == "wata" || document.getElementById("woth_input" + i).value == "water" || document.getElementById("woth_input" + i).value == "wa") {Area[29] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "spi" || document.getElementById("woth_input" + i).value == "spirit" || document.getElementById("woth_input" + i).value == "sprt" || document.getElementById("woth_input" + i).value == "sp") {Area[30] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "sha" || document.getElementById("woth_input" + i).value == "shadow" || document.getElementById("woth_input" + i).value == "shad" || document.getElementById("woth_input" + i).value == "sh") {Area[31] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gan" || document.getElementById("woth_input" + i).value == "gan c" || document.getElementById("woth_input" + i).value == "ganons" || document.getElementById("woth_input" + i).value == "ganon" || document.getElementById("woth_input" + i).value == "ga") {Area[32] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "gtg" || document.getElementById("woth_input" + i).value == "tg" || document.getElementById("woth_input" + i).value == "gt") {Area[33] = "woth";} 
-	if (document.getElementById("woth_input" + i).value == "well" || document.getElementById("woth_input" + i).value == "botw" || document.getElementById("woth_input" + i).value == "wel") {Area[34] = "woth";} 
+	var str = document.getElementById("woth_input" + i).value;
+	str = str.replace("2","");
+	if (str == "kok" || str == "kf" || str == "koki" || str == "kfc") {Area[1] = "woth";}
+	if (str == "llr" || str == "ranch" || str == "lon" || str == "ran") {Area[2] = "woth";} 
+	if (str == "fie" || str == "hf" || str == "field") {Area[3] = "woth";} 
+	if (str == "gv" || str == "val" || str == "valley") {Area[4] = "woth";} 
+	if (str == "hyl" || str == "hylia" || str == "lh") {Area[5] = "woth";} 
+	if (str == "mkt" || str == "market" || str == "mar") {Area[6] = "woth";} 
+	if (str == "hyr c" || str == "hcast" || str == "hc") {Area[7] = "woth";} 
+	if (str == "ogc" || str == "out g" || str == "gfairy" || str == "og" || str == "out") {Area[8] = "woth";} 
+	if (str == "tot" || str == "temple" || str == "time") {Area[9] = "woth";} 
+	if (str == "fountain" || str == "fount" || str == "fou" || str == "zf") {Area[10] = "woth";} 
+	if (str == "ice" || str == "ic" || str == "cavern") {Area[11] = "woth";} 
+	if (str == "deku" || str == "dek" || str == "dt") {Area[12] = "woth";} 
+	if (str == "lw" || str == "lost" || str == "woods") {Area[13] = "woth";} 
+	if (str == "sfm" || str == "mea" || str == "mead") {Area[14] = "woth";} 
+	if (str == "gor" || str == "gc" || str == "goron") {Area[15] = "woth";} 
+	if (str == "dod" || str == "dodo" || str == "dc") {Area[16] = "woth";} 
+	if (str == "tra" || str == "trail" || str == "dmt") {Area[17] = "woth";} 
+	if (str == "cra" || str == "crater" || str == "dmc") {Area[18] = "woth";} 
+	if (str == "kak" || str == "kaki" || str == "kv") {Area[19] = "woth";} 
+	if (str == "gra" || str == "grave" || str == "gy") {Area[20] = "woth";} 
+	if (str == "riv" || str == "river" || str == "zr") {Area[21] = "woth";} 
+	if (str == "dom" || str == "domain" || str == "zd") {Area[22] = "woth";} 
+	if (str == "col" || str == "colo" || str == "colossus" || str == "co") {Area[23] = "woth";} 
+	if (str == "was" || str == "waste" || str == "wl" || str == "hw") {Area[24] = "woth";} 
+	if (str == "fort" || str == "fortress" || str == "gf") {Area[25] = "woth";} 
+	if (str == "jab" || str == "jabu" || str == "jjb" || str == "jj") {Area[26] = "woth";} 
+	if (str == "for" || str == "forest" || str == "fot" || str == "fo") {Area[27] = "woth";} 
+	if (str == "fir" || str == "fire" || str == "fit" || str == "fi") {Area[28] = "woth";} 
+	if (str == "wat" || str == "wata" || str == "water" || str == "wa") {Area[29] = "woth";} 
+	if (str == "spi" || str == "spirit" || str == "sprt" || str == "sp") {Area[30] = "woth";} 
+	if (str == "sha" || str == "shadow" || str == "shad" || str == "sh") {Area[31] = "woth";} 
+	if (str == "gan" || str == "gan c" || str == "ganons" || str == "ganon" || str == "ga") {Area[32] = "woth";} 
+	if (str == "gtg" || str == "tg" || str == "gt") {Area[33] = "woth";} 
+	if (str == "well" || str == "botw" || str == "wel") {Area[34] = "woth";}
 	if (i <= 3) {
-		if (document.getElementById("barren_input" + i).value == "kok" || document.getElementById("barren_input" + i).value == "kf" || document.getElementById("barren_input" + i).value == "koki" || document.getElementById("barren_input" + i).value == "kfc") {Area[1] = "barren";}
-		if (document.getElementById("barren_input" + i).value == "llr" || document.getElementById("barren_input" + i).value == "ranch" || document.getElementById("barren_input" + i).value == "lon") {Area[2] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "fie" || document.getElementById("barren_input" + i).value == "hf" || document.getElementById("barren_input" + i).value == "field") {Area[3] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "gv" || document.getElementById("barren_input" + i).value == "val" || document.getElementById("barren_input" + i).value == "valley") {Area[4] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "hyl" || document.getElementById("barren_input" + i).value == "hylia" || document.getElementById("barren_input" + i).value == "lh") {Area[5] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "mkt" || document.getElementById("barren_input" + i).value == "market" || document.getElementById("barren_input" + i).value == "mar") {Area[6] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "hyr c" || document.getElementById("barren_input" + i).value == "hcast" || document.getElementById("barren_input" + i).value == "hc") {Area[7] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "ogc" || document.getElementById("barren_input" + i).value == "out g" || document.getElementById("barren_input" + i).value == "gfairy" || document.getElementById("barren_input" + i).value == "og" || document.getElementById("barren_input" + i).value == "out") {Area[8] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "tot" || document.getElementById("barren_input" + i).value == "temple" || document.getElementById("barren_input" + i).value == "time") {Area[9] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "fountain" || document.getElementById("barren_input" + i).value == "fount" || document.getElementById("barren_input" + i).value == "fou" || document.getElementById("barren_input" + i).value == "zf") {Area[10] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "ice" || document.getElementById("barren_input" + i).value == "ic" || document.getElementById("barren_input" + i).value == "cavern") {Area[11] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "deku" || document.getElementById("barren_input" + i).value == "dek" || document.getElementById("barren_input" + i).value == "dt") {Area[12] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "lw" || document.getElementById("barren_input" + i).value == "lost" || document.getElementById("barren_input" + i).value == "woods") {Area[13] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "sfm" || document.getElementById("barren_input" + i).value == "mea" || document.getElementById("barren_input" + i).value == "mead") {Area[14] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "gor" || document.getElementById("barren_input" + i).value == "gc" || document.getElementById("barren_input" + i).value == "goron") {Area[15] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "dod" || document.getElementById("barren_input" + i).value == "dodo" || document.getElementById("barren_input" + i).value == "dc") {Area[16] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "tra" || document.getElementById("barren_input" + i).value == "trail" || document.getElementById("barren_input" + i).value == "dmt") {Area[17] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "cra" || document.getElementById("barren_input" + i).value == "crater" || document.getElementById("barren_input" + i).value == "dmc") {Area[18] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "kak" || document.getElementById("barren_input" + i).value == "kaki" || document.getElementById("barren_input" + i).value == "kv") {Area[19] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "gra" || document.getElementById("barren_input" + i).value == "grave" || document.getElementById("barren_input" + i).value == "gy") {Area[20] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "riv" || document.getElementById("barren_input" + i).value == "river" || document.getElementById("barren_input" + i).value == "zr") {Area[21] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "dom" || document.getElementById("barren_input" + i).value == "domain" || document.getElementById("barren_input" + i).value == "zd") {Area[22] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "col" || document.getElementById("barren_input" + i).value == "colo" || document.getElementById("barren_input" + i).value == "colossus" || document.getElementById("barren_input" + i).value == "co") {Area[23] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "was" || document.getElementById("barren_input" + i).value == "waste" || document.getElementById("barren_input" + i).value == "wl" || document.getElementById("barren_input" + i).value == "hw") {Area[24] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "fort" || document.getElementById("barren_input" + i).value == "fortress" || document.getElementById("barren_input" + i).value == "gf") {Area[25] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "jab" || document.getElementById("barren_input" + i).value == "jabu" || document.getElementById("barren_input" + i).value == "jjb" || document.getElementById("barren_input" + i).value == "jj") {Area[26] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "for" || document.getElementById("barren_input" + i).value == "forest" || document.getElementById("barren_input" + i).value == "fot" || document.getElementById("barren_input" + i).value == "fo") {Area[27] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "fir" || document.getElementById("barren_input" + i).value == "fire" || document.getElementById("barren_input" + i).value == "fit" || document.getElementById("barren_input" + i).value == "fi") {Area[28] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "wat" || document.getElementById("barren_input" + i).value == "wata" || document.getElementById("barren_input" + i).value == "water" || document.getElementById("barren_input" + i).value == "wa") {Area[29] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "spi" || document.getElementById("barren_input" + i).value == "spirit" || document.getElementById("barren_input" + i).value == "sprt" || document.getElementById("barren_input" + i).value == "sp") {Area[30] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "sha" || document.getElementById("barren_input" + i).value == "shadow" || document.getElementById("barren_input" + i).value == "shad" || document.getElementById("barren_input" + i).value == "sh") {Area[31] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "gan" || document.getElementById("barren_input" + i).value == "gan c" || document.getElementById("barren_input" + i).value == "ganons" || document.getElementById("barren_input" + i).value == "ganon" || document.getElementById("barren_input" + i).value == "ga") {Area[32] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "gtg" || document.getElementById("barren_input" + i).value == "tg" || document.getElementById("barren_input" + i).value == "gt") {Area[33] = "barren";} 
-		if (document.getElementById("barren_input" + i).value == "well" || document.getElementById("barren_input" + i).value == "botw" || document.getElementById("barren_input" + i).value == "wel") {Area[34] = "barren";} 
+		var str2 = document.getElementById("barren_input" + i).value;
+		if (str2 == "kok" || str2 == "kf" || str2 == "koki" || str2 == "kfc") {Area[1] = "barren";}
+		if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
+		if (str2 == "fie" || str2 == "hf" || str2 == "field") {Area[3] = "barren";} 
+		if (str2 == "gv" || str2 == "val" || str2 == "valley") {Area[4] = "barren";} 
+		if (str2 == "hyl" || str2 == "hylia" || str2 == "lh") {Area[5] = "barren";} 
+		if (str2 == "mkt" || str2 == "market" || str2 == "mar") {Area[6] = "barren";} 
+		if (str2 == "hyr c" || str2 == "hcast" || str2 == "hc") {Area[7] = "barren";} 
+		if (str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
+		if (str2 == "tot" || str2 == "temple" || str2 == "time") {Area[9] = "barren";} 
+		if (str2 == "fountain" || str2 == "fount" || str2 == "fou" || str2 == "zf") {Area[10] = "barren";} 
+		if (str2 == "ice" || str2 == "ic" || str2 == "cavern") {Area[11] = "barren";} 
+		if (str2 == "deku" || str2 == "dek" || str2 == "dt") {Area[12] = "barren";} 
+		if (str2 == "lw" || str2 == "lost" || str2 == "woods") {Area[13] = "barren";} 
+		if (str2 == "sfm" || str2 == "mea" || str2 == "mead") {Area[14] = "barren";} 
+		if (str2 == "gor" || str2 == "gc" || str2 == "goron") {Area[15] = "barren";} 
+		if (str2 == "dod" || str2 == "dodo" || str2 == "dc") {Area[16] = "barren";} 
+		if (str2 == "tra" || str2 == "trail" || str2 == "dmt") {Area[17] = "barren";} 
+		if (str2 == "cra" || str2 == "crater" || str2 == "dmc") {Area[18] = "barren";} 
+		if (str2 == "kak" || str2 == "kaki" || str2 == "kv") {Area[19] = "barren";} 
+		if (str2 == "gra" || str2 == "grave" || str2 == "gy") {Area[20] = "barren";} 
+		if (str2 == "riv" || str2 == "river" || str2 == "zr") {Area[21] = "barren";} 
+		if (str2 == "dom" || str2 == "domain" || str2 == "zd") {Area[22] = "barren";} 
+		if (str2 == "col" || str2 == "colo" || str2 == "colossus" || str2 == "co") {Area[23] = "barren";} 
+		if (str2 == "was" || str2 == "waste" || str2 == "wl" || str2 == "hw") {Area[24] = "barren";} 
+		if (str2 == "fort" || str2 == "fortress" || str2 == "gf") {Area[25] = "barren";} 
+		if (str2 == "jab" || str2 == "jabu" || str2 == "jjb" || str2 == "jj") {Area[26] = "barren";} 
+		if (str2 == "for" || str2 == "forest" || str2 == "fot" || str2 == "fo") {Area[27] = "barren";} 
+		if (str2 == "fir" || str2 == "fire" || str2 == "fit" || str2 == "fi") {Area[28] = "barren";} 
+		if (str2 == "wat" || str2 == "wata" || str2 == "water" || str2 == "wa") {Area[29] = "barren";} 
+		if (str2 == "spi" || str2 == "spirit" || str2 == "sprt" || str2 == "sp") {Area[30] = "barren";} 
+		if (str2 == "sha" || str2 == "shadow" || str2 == "shad" || str2 == "sh") {Area[31] = "barren";} 
+		if (str2 == "gan" || str2 == "gan c" || str2 == "ganons" || str2 == "ganon" || str2 == "ga") {Area[32] = "barren";} 
+		if (str2 == "gtg" || str2 == "tg" || str2 == "gt") {Area[33] = "barren";} 
+		if (str2 == "well" || str2 == "botw" || str2 == "wel") {Area[34] = "barren";} 
 	}
 }
 	
@@ -1671,8 +1674,8 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.trade_quest = (((Logic.ice_access || (Logic.giants_wallet && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
-	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
 	Location_Logic.crater_nook_hp = Logic.crater_top;
+	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
 	Location_Logic.man_on_roof = true;//Logic.hookshot;
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.song_of_time;
