@@ -1332,6 +1332,11 @@ for (var i = 1; i <= 34; i++) {
 		}
 	}
 }
+
+if (Game.magic1 && Game.light_arrows && Game.bow1) {
+	Game.checks_remaining -= Game.ganons_checks_remaining;
+	Game.ganons_checks_remaining = 0;
+}
 	
 if (document.getElementById("markStones") != null) {
 	var tempstring = document.getElementById("markStones").value;
