@@ -1199,7 +1199,8 @@ for (var i = 1; i <= 34; i++) {
 			if(document.getElementById("text_" + Locations[41]) != null) {document.getElementById("text_" + Locations[41]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[42]) != null) {document.getElementById("text_" + Locations[42]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[43]) != null) {document.getElementById("text_" + Locations[43]).dispatchEvent(new Event('mousedown'));}
-			if(document.getElementById("text_" + Locations[44]) != null) {document.getElementById("text_" + Locations[44]).dispatchEvent(new Event('mousedown'));}
+			Game.deku_checks_remaining = 0;
+			Game.checks_remaining -= 1;
 		}
 		if (i == 13) {
 			if(document.getElementById("text_" + Locations[45]) != null) {document.getElementById("text_" + Locations[45]).dispatchEvent(new Event('mousedown'));}
@@ -1229,7 +1230,8 @@ for (var i = 1; i <= 34; i++) {
 			if(document.getElementById("text_" + Locations[63]) != null) {document.getElementById("text_" + Locations[63]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[64]) != null) {document.getElementById("text_" + Locations[64]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[65]) != null) {document.getElementById("text_" + Locations[65]).dispatchEvent(new Event('mousedown'));}
-			if(document.getElementById("text_" + Locations[66]) != null) {document.getElementById("text_" + Locations[66]).dispatchEvent(new Event('mousedown'));}
+			Game.dodongos_checks_remaining = 0;
+			Game.checks_remaining -= 1;
 		}
 		if (i == 17) {
 			if(document.getElementById("text_" + Locations[67]) != null) {document.getElementById("text_" + Locations[67]).dispatchEvent(new Event('mousedown'));}
@@ -1296,7 +1298,8 @@ for (var i = 1; i <= 34; i++) {
 			if(document.getElementById("text_" + Locations[110]) != null) {document.getElementById("text_" + Locations[110]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[111]) != null) {document.getElementById("text_" + Locations[111]).dispatchEvent(new Event('mousedown'));}
 			if(document.getElementById("text_" + Locations[112]) != null) {document.getElementById("text_" + Locations[112]).dispatchEvent(new Event('mousedown'));}
-			if(document.getElementById("text_" + Locations[113]) != null) {document.getElementById("text_" + Locations[113]).dispatchEvent(new Event('mousedown'));}
+			Game.jabu_checks_remaining = 0;
+			Game.checks_remaining -= 1;
 		}
 		if (i == 27) {
 			Game.checks_remaining -= Game.forest_checks_remaining;
@@ -2349,6 +2352,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 			document.getElementById(str).className= "logic_check_text";
 			if(document.getElementById(key) != null) {
 				if (temp <= 242) {Game.logically_accessible += 1;}
+				if (temp == 44 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
+			    if (temp == 66 && Game.dodongos_checks_remaining == 0) {Game.logically_accessible -= 1;}
+				if (temp == 113 && Game.jabu_checks_remaining == 0) {Game.logically_accessible -= 1;}
 				if (temp >= 115 && temp <= 128) {Game.forest_logically_accessible += 1;}
 				if (temp >= 129 && temp <= 143) {Game.fire_logically_accessible += 1;}
 				if (temp >= 144 && temp <= 154) {Game.water_logically_accessible += 1;}
@@ -2663,6 +2669,9 @@ var lastCheck = "start";
 	Game.min_well_keys=0;
 	Game.current_well_keys=0;
 	Game.well_keys = 0;		
+	Game.deku_checks_remaining = 7;
+	Game.dodongos_checks_remaining = 7;
+	Game.jabu_checks_remaining = 4;
 	Game.forest_checks_remaining = 8;
 	Game.fire_checks_remaining = 6;
 	Game.water_checks_remaining = 4;
@@ -2941,6 +2950,9 @@ function junk(x) {
 		else if(temp < 114){}
 		else {return;}
 		Check[str]="junk";
+		if (temp == 44 && Game.deku_checks_remaining == 0) {Game.checks_remaining +=1;}
+		if (temp == 66 && Game.dodongos_checks_remaining == 0) {Game.checks_remaining +=1;}
+		if (temp == 113 && Game.jabu_checks_remaining == 0) {Game.checks_remaining +=1;}
 		Game.checks_remaining -=1;
 	}
 	
