@@ -738,7 +738,9 @@ for (const key of keys) {
 	if(document.getElementById(key) == null && checkedYet[temp-1] == false) {checkedYet[temp - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + Names[temp-1] + "\n"};
 	if(document.getElementById(key) == null) {continue;}
 	if (temp <= 244) { 
- 
+	
+	if (document.getElementById(key).value == "kok" && !Game.kokiri_sword) {Location.kokiri_sword = document.getElementById(key).id; Game.kokiri_sword = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	
 	if (document.getElementById(key).value == "far" && !Game.farores_wind) {Location.farores_wind = document.getElementById(key).id; document.getElementById("farores_wind_location").innerHTML = "Farores -> " + Names[temp-1]; Game.farores_wind = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
 	if (document.getElementById(key).value == "sli" && !Game.slingshot1) {Location.slingshot1 = document.getElementById(key).id; document.getElementById("slingshot1_location").innerHTML = "Slingshot -> " + Names[temp-1]; Game.slingshot1 = true; Game.slingshot = true; if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
@@ -1644,12 +1646,12 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.ice_compass = Logic.ice_access;
 	Location_Logic.ice_hp = Logic.ice_access;
 	Location_Logic.ice_irons = Logic.ice_access;
-	Location_Logic.deku_lobby = true;
-	Location_Logic.deku_slingshot = true;
-	Location_Logic.deku_slingshot_room_side = true;
-	Location_Logic.deku_compass = true;
-	Location_Logic.deku_compass_room_side = true;
-	Location_Logic.deku_basement = true;
+	Location_Logic.deku_lobby = Logic.kokiri_sword;
+	Location_Logic.deku_slingshot = Logic.kokiri_sword;
+	Location_Logic.deku_slingshot_room_side = Logic.kokiri_sword;
+	Location_Logic.deku_compass = Logic.kokiri_sword;
+	Location_Logic.deku_compass_room_side = Logic.kokiri_sword;
+	Location_Logic.deku_basement = Logic.kokiri_sword;
 	Location_Logic.deku_queen_gohma = Logic.slingshot;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
