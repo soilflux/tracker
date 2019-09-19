@@ -1652,7 +1652,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.deku_compass = Logic.kokiri_sword;
 	Location_Logic.deku_compass_room_side = Logic.kokiri_sword;
 	Location_Logic.deku_basement = Logic.kokiri_sword;
-	Location_Logic.deku_queen_gohma = Logic.slingshot;
+	Location_Logic.deku_queen_gohma = Logic.slingshot && Logic.kokiri_sword;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
 	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
