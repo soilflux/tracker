@@ -2330,7 +2330,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	for (i = 1; i<=100; i++) {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1;};
 	}
-
+	document.getElementById("skulls_in_logic").innerHTML = "Skulls: " + Logic.gold_skulltulas;
 
 	Game.logically_accessible = 0;
 	Game.forest_logically_accessible=0;
