@@ -550,7 +550,7 @@ for (i = 1; i <= 4; i++) {
 		else {document.getElementById(str).className = "ool_check_text2";}
 	}
 	
-	Logic.can_enter_jabu = Logic.rutos_letter && ((Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale)
+	Logic.can_enter_jabu = Logic.rutos_letter && ((Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale) && (Logic.boomerang || Logic.bomb_bag || Logic.slingshot);
 	Logic.child_can_enter_river = Logic.bomb_bag || Logic.silver_scale;
 	Logic.fortress_access = Logic.eponas || Logic.longshot;
 	Logic.can_save_carpenters = Logic.fortress_access && ((Logic.bow || Logic.hookshot || Logic.hover_boots) || true) /*fast carpenter fix**/;
@@ -1716,7 +1716,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.gerudo_roof = Logic.fortress_access && (Logic.hookshot || Logic.hover_boots);
 	Location_Logic.gerudo_archery_1 = Logic.eponas && Logic.bow;
 	Location_Logic.gerudo_archery_2 = Logic.eponas && Logic.bow;
-	Location_Logic.jabu_boomerang = Logic.can_enter_jabu && (Logic.boomerang || Logic.bomb_bag || Logic.slingshot);
+	Location_Logic.jabu_boomerang = Logic.can_enter_jabu;
 	Location_Logic.jabu_map = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_compass = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_barinade = Logic.can_enter_jabu && Logic.boomerang;
