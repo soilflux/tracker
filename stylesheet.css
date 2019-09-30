@@ -11,6 +11,9 @@ background-color:		#505050;
 color:black;
 font-family:sans-sarif;
 }
+button {
+	margin-bottom: 5px;
+}
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -39,6 +42,11 @@ overflow: hidden;
 	font-size: 18px;
 	font-weight: bold;
 	
+}
+#text_next {
+	color: lightblue;
+	font-size: 18px;
+	font-weight: bold;
 }
 #logically_accessible{
 	color:darkgreen;
@@ -206,12 +214,12 @@ overflow: hidden;
 .dungcolumn {
 	margin-top:10px;
   float: left;
-  width: 7%;
+  width: 7.25%;
 }
 .minidungcolumn {
 	margin-top:10px;
   float: left;
-  width: 6.5%;
+  width: 6.75%;
 }
 .no_span {
 	
@@ -396,11 +404,10 @@ overflow: hidden;
 	opacity: .2;
 }
 .bonuspics{
-	height:22px;
-	width: 22px;
-	margin-left:2px;
-	margin-right:0px;
-	margin-top:0px;
+	height:26px;
+	width: 26px;
+	margin-right:4px;
+	margin-top:2px;
 	margin-bottom:3px;
 	opacity: .2;
 }
@@ -413,17 +420,18 @@ overflow: hidden;
   display: inline-block;
 }
 .greendot {
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
   margin-right:3px;
+  margin-bottom:3px;
   background-color: green;
   border-radius: 50%;
   opacity: 0.2;
   display: inline-block;
 }
 .reddot {
-  height: 18px;
-  width: 18px;
+  height: 26px;
+  width: 26px;
   margin-right:3px;
   background-color: red;
   border-radius: 50%;
