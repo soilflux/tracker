@@ -411,6 +411,12 @@ overflow: hidden;
 	margin-bottom:3px;
 	opacity: .2;
 }
+.pplpics {
+	height:12px;
+	width: 12px;
+	margin-right:4px;
+	margin-top:9px;
+}
 .keydot {
   height: 18px;
   width: 18px;
