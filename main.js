@@ -787,6 +787,7 @@ for (i = 1; i <= 4; i++) {
 	temp +=1;
 	if(document.getElementById(key) == null && checkedYet[temp-1] == false) {checkedYet[temp - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + Names[temp-1] + "\n"};
 	if(document.getElementById(key) == null) {continue;}
+	hinted = false;
 	if (isUpperCase(document.getElementById(key).value) && document.getElementById(key).value.length == 3) {
 		hinted = true;
 		document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
