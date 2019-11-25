@@ -1983,7 +1983,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.gs_deku_compass = true;
 	Location_Logic.gs_dodongos_east_side = Logic.can_enter_dodongos;
 	Location_Logic.gs_dodongos_stair_room = Logic.dodongos_climb;
-	Location_Logic.gs_dodongos_above_stairs = Logic.dodongos_climb && (Logic.hookshot || Logic.boomerang);
+	Location_Logic.gs_dodongos_above_stairs = (Logic.dodongos_climb && Logic.hookshot) || (Logic.boomerang && (Logic.bomb_bag || Logic.goron_bracelet));
 	Location_Logic.gs_dodongos_scarecrow = Logic.can_enter_dodongos && Logic.hookshot;
 	Location_Logic.gs_dodongos_before_king = Logic.bomb_bag;
 	Location_Logic.gs_jabu_vines = Logic.can_enter_jabu;
