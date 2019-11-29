@@ -722,59 +722,198 @@ for (i = 1; i <= 4; i++) {
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_well_keys +=1;}
 	}
 	
-	if ((Logic.song_of_time || Logic.bow) && Logic.hookshot) {Logic.min_forest_keys = 1;}
-	if (/*(Logic.song_of_time || Logic.iron_boots || Logic.golden_scale) &&*/ Logic.hookshot && Logic.bow && Logic.goron_bracelet && (Logic.hover_boots || Logic.forest_keys >= 2)) {Logic.min_forest_keys = 5; Logic.forest_boss_key = true;}
+	if (Logic.current_forest_keys < 5) {
+		var for_keys = [[1,2,3,4,5], [6,8], [7], [9,10,11]]
+		var done = false;
+		for (i = 0; i < for_keys.length; i++) {
+			for (j = 0; j < for_keys[i].length; j++) {
+				str = "forest" + for_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_forest_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_forest_keys = 5;}
+	}
 	Logic.forest_keys = Math.max(Logic.min_forest_keys,Logic.current_forest_keys);
-	
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.hover_boots) {Logic.min_fire_keys =2;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.hover_boots) {Logic.min_fire_keys =3;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.hover_boots) {Logic.min_fire_keys =4;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.bow && Logic.hover_boots) {Logic.min_fire_keys =5;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.bow && Logic.hookshot && Logic.hover_boots) {
-		Logic.min_fire_keys =8;
-		Logic.fire_boss_key = true;
+	if (!Logic.forest_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 13; i++) {
+			str = "forest" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
 		}
+		Logic.forest_boss_key = bk;
+	}
+
+	if (Logic.current_fire_keys < 8 && ((Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
+		var done = false;
+		for (i = 0; i < fir_keys.length; i++) {
+			for (j = 0; j < fir_keys[i].length; j++) {
+				str = "fire" + fir_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_fire_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_fire_keys = 8;}
+	}
 	Logic.fire_keys = Math.max(Logic.min_fire_keys,Logic.current_fire_keys);
-	
-	if (Logic.lullaby && Logic.iron_boots && Logic.longshot && Logic.goron_bracelet && Logic.bow && Logic.bomb_bag && Logic.can_wear_zora_tunic) {
-		Logic.min_water_keys = 5;
-		if (Logic.song_of_time) {
-			Logic.water_boss_key = true;
+	if (!Logic.fire_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 15; i++) {
+			if (i == 6) {
+				continue;
+			}
+			str = "fire" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
 		}
+		Logic.fire_boss_key = bk;
+	}
+
+	if (Logic.current_water_keys < 6 && (Logic.longshot && Logic.iron_boots || (Check["water11"] != "small_key" && typeof(Check["water11"]) != "undefined"))) {
+		var wat_keys = [[1,2,3,4,5,6,9]]
+		var done = false;
+		for (i = 0; i < wat_keys.length; i++) {
+			for (j = 0; j < wat_keys[i].length; j++) {
+				str = "water" + wat_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_water_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_water_keys = 6;}
 	}
 	Logic.water_keys = Math.max(Logic.min_water_keys,Logic.current_water_keys);
-	
-	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.bomb_bag && Logic.goron_bracelet) {Logic.min_shadow_keys = 2;}
-	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.hookshot && Logic.bomb_bag && Logic.goron_bracelet) {Logic.min_shadow_keys = 4;}
-	if (Logic.nocturne && Logic.can_use_dins && Logic.hover_boots && Logic.hookshot && Logic.bomb_bag && Logic.goron_bracelet && Logic.lullaby) {
-		Logic.min_shadow_keys = 5;
-		Logic.shadow_boss_key = true;
-	}
-	Logic.shadow_keys = Math.max(Logic.min_shadow_keys,Logic.current_shadow_keys);
-	
-	if(Logic.requiem && Logic.hookshot && (Logic.slingshot || Logic.boomerang) && Logic.silver_gauntlets && Logic.lullaby) {Logic.min_spirit_keys = 1;}
-	if(Logic.requiem && (Logic.slingshot || Logic.boomerang) && Logic.bomb_bag && Logic.can_use_fire && Logic.hookshot && Logic.lullaby && Logic.silver_gauntlets) {Logic.min_spirit_keys = 3;}
-	if(Logic.requiem && (Logic.slingshot || Logic.boomerang) && Logic.bomb_bag && Logic.can_use_fire && Logic.longshot && Logic.lullaby && Logic.silver_gauntlets) {Logic.min_spirit_keys = 4;}
-	if(Logic.requiem && (Logic.slingshot || Logic.boomerang) && Logic.bomb_bag && Logic.can_use_fire && Logic.mirror_shield && Logic.longshot && Logic.lullaby && Logic.silver_gauntlets) {
-		Logic.min_spirit_keys = 5;
-		if (Logic.bow) {
-			Logic.spirit_boss_key = true;
+	if (!Logic.water_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 10; i++) {
+			str = "water" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
 		}
+		Logic.water_boss_key = bk;
+	}
+
+	if (Logic.current_spirit_keys < 5) {
+		var spi_keys = [[1,2,8,9], [3,4,5,6], [], [7,10,11,12,13],[14,15,16,17],[18,19]]
+		var done = false;
+		for (i = 0; i < spi_keys.length; i++) {
+			for (j = 0; j < spi_keys[i].length; j++) {
+				str = "spirit" + spi_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_spirit_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_spirit_keys = 5;}
 	}
 	Logic.spirit_keys = Math.max(Logic.min_spirit_keys,Logic.current_spirit_keys);
-	
+	if (!Logic.spirit_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 19; i++) {
+			str = "spirit" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
+		}
+		Logic.spirit_boss_key = bk;
+	}
 
-	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && (Logic.hammer || Logic.bomb_bag || Logic.iron_boots)) {Logic.min_gtg_keys = 5;}
-	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && ((Logic.hammer && Logic.bomb_bag) || (Logic.iron_boots && Logic.hammer) || (Logic.iron_boots && Logic.bomb_bag))) {Logic.min_gtg_keys = 8;}
-	if(Logic.can_save_carpenters && Logic.hookshot && Logic.bow && Logic.song_of_time && Logic.silver_gauntlets && Logic.hammer && Logic.bomb_bag && Logic.iron_boots) {Logic.min_gtg_keys = 9;}
-	Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
-	
-	if(Logic.bomb_bag && Logic.lullaby && Logic.song_of_storms) {Logic.min_well_keys = 3;}
-	Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
-	
-	if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
+	if (Logic.current_shadow_keys < 5) {
+		var sha_keys = [[1,2,3,4], [5,6,7,8,9], [10,11],[12,13,14],[15,16,17]]
+		var done = false;
+		for (i = 0; i < sha_keys.length; i++) {
+			for (j = 0; j < sha_keys[i].length; j++) {
+				str = "shadow" + sha_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_shadow_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_shadow_keys = 5;}
+	}
+	Logic.shadow_keys = Math.max(Logic.min_shadow_keys,Logic.current_shadow_keys);
+	if (!Logic.shadow_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 17; i++) {
+			str = "shadow" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
+		}
+		Logic.shadow_boss_key = bk;
+	}
+
+	if (Logic.current_ganons_keys < 2) {
+		Logic.min_ganons_keys = 2;
+		var done = false;
+		for (i = 1; i <= 16; i++) {
+			if (i == 8) {continue;}
+			str = "ganons" + i;
+			if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+				Logic.min_ganons_keys = 0;
+				break;
+			}
+		}
+	}
 	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
-	
+
+	if (Logic.current_gtg_keys < 9) {
+		var ger_keys = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,22], [],[],[17],[18],[],[19],[20]]
+		var done = false;
+		for (i = 0; i < ger_keys.length; i++) {
+			for (j = 0; j < ger_keys[i].length; j++) {
+				str = "gtg" + ger_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+					Logic.min_gtg_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_gtg_keys = 9;}
+	}
+	Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
+	if (Logic.current_well_keys < 3) {
+		Logic.min_well_keys = 3;
+		for (i = 1; i <= 14; i++) {
+			if (i == 12 || i == 13) {continue;}
+			str = "well" + i;
+			if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+				Logic.min_well_keys = 0;
+				break;
+			}
+		}
+	}
+	Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
+
 	const keys = Object.keys(Location_Logic)
 	var temp = 0;
 	var d = new Date();
