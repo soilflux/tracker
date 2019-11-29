@@ -757,7 +757,7 @@ for (i = 1; i <= 4; i++) {
 		for (i = 0; i < fir_keys.length; i++) {
 			for (j = 0; j < fir_keys[i].length; j++) {
 				str = "fire" + fir_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
 					Logic.min_fire_keys = i;
 					done = true;
 					break;
@@ -789,7 +789,7 @@ for (i = 1; i <= 4; i++) {
 		for (i = 0; i < wat_keys.length; i++) {
 			for (j = 0; j < wat_keys[i].length; j++) {
 				str = "water" + wat_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" )) {
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || typeof(Check["water11"]) == "undefined")))) {
 					Logic.min_water_keys = i;
 					done = true;
 					break;
