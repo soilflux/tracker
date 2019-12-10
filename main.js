@@ -1735,7 +1735,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_song_of_storms = Logic.song_of_storms;
 	Location_Logic.crater_peak_fairy = Logic.can_blast_or_smash && Logic.lullaby;
-	Location_Logic.trade_quest = (((Logic.ice_access || (Logic.giants_wallet && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
+	Location_Logic.trade_quest = (((Logic.ice_access || ((Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
 	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
