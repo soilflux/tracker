@@ -127,6 +127,7 @@ function Update() {
 			Game.requiem_img = "./normal/requiem.png";
 			Game.nocturne_img = "./normal/nocturne.png";
 			Game.prelude_img = "./normal/prelude.png";
+			Game.bombchu_img = "./normal/bombchu.png";
 			if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
 			if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
 			if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
@@ -146,6 +147,8 @@ function Update() {
 			if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
 			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
 			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+			document.getElementById("chuButton").src= Game.bombchu_img;
+			document.getElementById("chuButton").style.opacity = .4;
 			document.getElementById("gan_req2").src= Game.light_arrows_img;
 			document.getElementById("gan_req1").src= Game.magic_meter_img;
 			document.getElementById("gan_req3").src= Game.bow_img;
@@ -4062,11 +4065,13 @@ function toggleSettings() {
 function enableChus() {
 	if(Game.has_chus == false) {
 		Game.has_chus = true;
-		document.getElementById("chuButton").src = "./images/chuo.png";
+		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chuo.png";}
+		else {document.getElementById("chuButton").style.opacity = 1;}
 	}
 	else if(Game.has_chus == true) {
 		Game.has_chus = false;
-		document.getElementById("chuButton").src = "./images/chux.png";
+		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chux.png";}
+		else {document.getElementById("chuButton").style.opacity = .4;}
 	}
 }
 
