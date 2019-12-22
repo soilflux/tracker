@@ -738,15 +738,35 @@ for (i = 1; i <= 4; i++) {
 		}
 		if (!done) {Logic.min_forest_keys = 5;}
 	}
-	
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.hover_boots) {Logic.min_fire_keys =2;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.hover_boots) {Logic.min_fire_keys =3;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.hover_boots) {Logic.min_fire_keys =4;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.bow && Logic.hover_boots) {Logic.min_fire_keys =5;}
-	if (Logic.can_enter_fire_temple && Logic.hammer && Logic.can_wear_goron_tunic && Logic.bomb_bag && Logic.goron_bracelet && Logic.bow && Logic.hookshot && Logic.hover_boots) {
-		Logic.min_fire_keys =8;
-		Logic.fire_boss_key = true;
+	Logic.forest_keys = Math.max(Logic.min_forest_keys,Logic.current_forest_keys);
+	if (!Logic.forest_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 13; i++) {
+			str = "forest" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
 		}
+		Logic.forest_boss_key = bk;
+	}
+
+	if (Logic.current_fire_keys < 8 && ((Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
+		var done = false;
+		for (i = 0; i < fir_keys.length; i++) {
+			for (j = 0; j < fir_keys[i].length; j++) {
+				str = "fire" + fir_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+					Logic.min_fire_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {Logic.min_fire_keys = 8;}
+	}
 	Logic.fire_keys = Math.max(Logic.min_fire_keys,Logic.current_fire_keys);
 	if (!Logic.fire_boss_key) {
 		var bk = true;
@@ -4691,14 +4711,22 @@ function checksLockedByItem(item) {
 		if (!done) {Locked_Logic.min_forest_keys = 5;}
 	}
 	
-	if (Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer && Locked_Logic.can_wear_goron_tunic && Locked_Logic.hover_boots) {Locked_Logic.min_fire_keys =2;}
-	if (Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer && Locked_Logic.can_wear_goron_tunic && Locked_Logic.bomb_bag && Locked_Logic.hover_boots) {Locked_Logic.min_fire_keys =3;}
-	if (Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer && Locked_Logic.can_wear_goron_tunic && Locked_Logic.bomb_bag && Locked_Logic.goron_bracelet && Locked_Logic.hover_boots) {Locked_Logic.min_fire_keys =4;}
-	if (Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer && Locked_Logic.can_wear_goron_tunic && Locked_Logic.bomb_bag && Locked_Logic.goron_bracelet && Locked_Logic.bow && Locked_Logic.hover_boots) {Locked_Logic.min_fire_keys =5;}
-	if (Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer && Locked_Logic.can_wear_goron_tunic && Locked_Logic.bomb_bag && Locked_Logic.goron_bracelet && Locked_Logic.bow && Locked_Logic.hookshot && Locked_Logic.hover_boots) {
-		Locked_Logic.min_fire_keys =8;
-		Locked_Logic.fire_boss_key = true;
+	if (Locked_Logic.current_fire_keys < 8 && ((Locked_Logic.can_wear_goron_tunic && Locked_Logic.hammer && Locked_Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
+		var done = false;
+		for (i = 0; i < fir_keys.length; i++) {
+			for (j = 0; j < fir_keys[i].length; j++) {
+				str = "fire" + fir_keys[i][j];
+				if (!(Location_Locked_Logic[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+					Locked_Logic.min_fire_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
 		}
+		if (!done) {Locked_Logic.min_fire_keys = 8;}
+	}
 	Locked_Logic.fire_keys = Math.max(Locked_Logic.min_fire_keys,Locked_Logic.current_fire_keys);
 	if (!Locked_Logic.fire_boss_key) {
 		var bk = true;
@@ -5347,14 +5375,22 @@ function checksLockedByItem(item) {
 		if (!done) {Locked_Logic2.min_forest_keys = 5;}
 	}
 	
-	if (Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hover_boots) {Locked_Logic2.min_fire_keys =2;}
-	if (Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.bomb_bag && Locked_Logic2.hover_boots) {Locked_Logic2.min_fire_keys =3;}
-	if (Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.bomb_bag && Locked_Logic2.goron_bracelet && Locked_Logic2.hover_boots) {Locked_Logic2.min_fire_keys =4;}
-	if (Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.bomb_bag && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.hover_boots) {Locked_Logic2.min_fire_keys =5;}
-	if (Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.bomb_bag && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.hookshot && Locked_Logic2.hover_boots) {
-		Locked_Logic2.min_fire_keys =8;
-		Locked_Logic2.fire_boss_key = true;
+	if (Locked_Logic2.current_fire_keys < 8 && ((Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hammer && Locked_Logic2.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
+		var done = false;
+		for (i = 0; i < fir_keys.length; i++) {
+			for (j = 0; j < fir_keys[i].length; j++) {
+				str = "fire" + fir_keys[i][j];
+				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+					Locked_Logic2.min_fire_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
 		}
+		if (!done) {Locked_Logic2.min_fire_keys = 8;}
+	}
 	Locked_Logic2.fire_keys = Math.max(Locked_Logic2.min_fire_keys,Locked_Logic2.current_fire_keys);
 	if (!Locked_Logic2.fire_boss_key) {
 		var bk = true;
