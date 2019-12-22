@@ -1,19 +1,9 @@
 <!DOCTYPE>
   <html>
     <head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150218504-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-150218504-1');
-		</script>
-
-		<link rel="shortcut icon" href="circus-tent_1f3aa.png" />
-		<link style="text/css" rel="stylesheet" href="stylesheet.css"/>
-		<title>Exploremental</title>
+	  <link rel="shortcut icon" href="circus-tent_1f3aa.png" />
+      <link style="text/css" rel="stylesheet" href="stylesheet.css"/>
+      <title>Exploremental</title>
     </head>
     <body oncontextmenu="return false;">
 	<div class="row">
@@ -123,7 +113,7 @@
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="cow_house" class= "check_input" > </input><small id="text_cow_house" class="check_text" onmousedown = "junk(this)">Cow</small><br id= "br_cow_house" />
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="archery_game" class= "check_input" > </input><small id="text_archery_game" class="check_text" onmousedown = "junk(this)">Arch'ry</small><br id= "br_archery_game" />
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="redead_grotto" class= "check_input" > </input><small id="text_redead_grotto" class="check_text" onmousedown = "junk(this)">Front Hole</small><br id= "br_redead_grotto" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="anjus_chickens" class= "check_input" > </input><small id="text_anjus_chickens" class="check_text" onmousedown = "junk(this)">Chickens???</small><br id= "br_anjus_chickens" />
+		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="anjus_chickens" class= "check_input" > </input><small id="text_anjus_chickens" class="check_text" onmousedown = "junk(this)">Cuccos???</small><br id= "br_anjus_chickens" />
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="tokens_10" class= "check_input" > </input><small id="text_tokens_10" class="check_text" onmousedown = "junk(this)">10 tokes</small><br id= "br_tokens_10" />
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="tokens_20" class= "check_input" > </input><small id="text_tokens_20" class="check_text" onmousedown = "junk(this)">20 tokes</small><br id= "br_tokens_20" />
 		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); height:22px; width: 30px;" id="tokens_30" class= "check_input" > </input><small id="text_tokens_30" class="check_text" onmousedown = "junk(this)">30 tokes</small><br id= "br_tokens_30" />
@@ -338,13 +328,16 @@
 		<input id="forceOutOfLogic3" class= "check_input"></input>
 		<input id="forceOutOfLogic4" class= "check_input"></input>
 		<br /><br />
-		<button id="chuButton" onclick="enableChus()">Enable Chus</button><br /><br />
-		<button id="myBtn">halp</button><br /><br />
-		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br />
+		<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child_1f9d2.png"></img><br /> 
+		<img id="chuButton" onclick="enableChus()" class="buttonpics" src="./images/chux.png"></img><br /><br />
+		
+		<small id="skulls_in_logic" class="check_text">Skulls: </small>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="myBtn">halp</button><br /><br />
+		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><br />
+		<button id="safetyButton" onclick="safetyLevel()">Be Safe</button><br />
 		<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br />
 		<button onClick="download()">Download Route</button><br /><br />
-		<small id="skulls_in_logic" class="check_text">Skulls: </small><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-	    <small>Credits:</small><br />
+		<small>Credits:</small><br />
 		<img src="./images/clown-face_1f921.png" class="pplpics" onclick = "highlight(this)"><br />
 		<img src="./images/honeybee_1f41d.png" class="pplpics" onclick = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onclick = "highlight(this)"><br />
 		<img src="./images/flexed-biceps_1f4aa.png" class="pplpics" onclick = "highlight(this)">3 seeds a day<br />
@@ -354,8 +347,10 @@
 		<span class="close">&times;</span>
 		<p>Input the first three letters of the common name for items/songs next to checks. Exceptions are lul, sot, sos for zelda's lullaby, song of time, and song of storms. 
 		<br /> Progressive items use str, hoo, wal, and sca.
-		<br />Left click check text if it was irrelevant for logic. Use middle clicks and right clicks for boss keys and small keys, respectively.
+		<br /> Use all caps to input hinted items. Click an item's icon when the item has been obtained.
+		<br />Left click check text if it was irrelevant for logic. Use middle clicks(or alt + left click) and right clicks for boss keys and small keys, respectively.
 		<br /><br /> Input stones and forest+fire+water medallion into the top right two boxes. Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
+		<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
 		
 		
 		</p>
@@ -367,6 +362,7 @@
 	
 	  <div id="info_column">
 	  <small id="checks_remaining" class="check_text"> Remaining:195      </small><small id="logically_accessible" class="check_text">In Logic:  </small><small id="good_check_percent" class="check_text"> </small><br />
+	  <input id="next" class= "check_input" > </input><small id="text_next" class="check_text" onmousedown = "junk_next()">Kokiri: Mido's 1</small><br />
 	  <small id="time_difference" class="check_text"></small>
 	  <small id="skip_req" class="check_text"></small>
 	  <small id="skip_value" class="check_text"></small>
@@ -388,50 +384,55 @@
 	  <small id="text_kok_eme" ></small><img id="kok_eme_req1" onclick = "highlight(this)"><small class="track_text" id="kok_eme_text2" ></small><img id="kok_eme_req2" onclick = "highlight(this)"><small class="track_text" id="kok_eme_text3" ></small><img id="kok_eme_req3" onclick = "highlight(this)"><img id="kok_eme_req4" onclick = "highlight(this)"><img id="kok_eme_req5" onclick = "highlight(this)"><br />
 	  <small id="text_gor_rub" ></small><img id="gor_rub_req1" onclick = "highlight(this)"><small class="track_text" id="gor_rub_text2" ></small><img id="gor_rub_req2" onclick = "highlight(this)"><small class="track_text" id="gor_rub_text3" ></small><img id="gor_rub_req3" onclick = "highlight(this)"><img id="gor_rub_req4" onclick = "highlight(this)"><img id="gor_rub_req5" onclick = "highlight(this)"><br />
 	  <small id="text_zor_sap" ></small><img id="zor_sap_req1" onclick = "highlight(this)"><small class="track_text" id="zor_sap_text2" ></small><img id="zor_sap_req2" onclick = "highlight(this)"><small class="track_text" id="zor_sap_text3" ></small><img id="zor_sap_req3" onclick = "highlight(this)"><img id="zor_sap_req4" onclick = "highlight(this)"><img id="zor_sap_req5" onclick = "highlight(this)"><br />
+	  <div id = "woth_info">
+		<br /><small id="woth1_title" class="woth_info_title"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
+		<br /><small id="woth2_title" class="woth_info_title"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
+		<br /><small id="woth3_title" class="woth_info_title"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
+		<br /><small id="woth4_title" class="woth_info_title"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
+		<br /><small id="woth5_title" class="woth_info_title"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
+	  </div>
 	  <!-- <br /><br /><textarea spellcheck="false"; class = "super_hint_input"></textarea>-->
 	  </div>
 	  <div id="checkSummaryColumn">
-		<small id="farores_wind_location" class="checkSummaryText">Farores -> </small><br />
-		<small id="slingshot1_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="slingshot2_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="slingshot3_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="boomerang_location" class="checkSummaryText">Boomerang -> </small><br />
-		<small id="scale1_location" class="checkSummaryText">Scale -> </small><br />
-		<small id="scale2_location" class="checkSummaryText">Scale -> </small><br />
-		<small id="rutos_letter_location" class="checkSummaryText">Letter -> </small><br />
-		<small id="bottle1_location" class="checkSummaryText">Bottle -> </small><br />
-		<small id="bottle2_location" class="checkSummaryText">Bottle -> </small><br />
-		<small id="bottle3_location" class="checkSummaryText">Bottle -> </small><br />
 		<small id="bomb_bag1_location" class="checkSummaryText">Bomb Bag -> </small><br />
 		<small id="bomb_bag2_location" class="checkSummaryText">Bomb Bag -> </small><br />
 		<small id="bomb_bag3_location" class="checkSummaryText">Bomb Bag -> </small><br />
-		<small id="hammer_location" class="checkSummaryText">Hammer -> </small><br />
+		<small id="boomerang_location" class="checkSummaryText">Boomerang -> </small><br />
+		<small id="bottle1_location" class="checkSummaryText">Bottle -> </small><br />
+		<small id="bottle2_location" class="checkSummaryText">Bottle -> </small><br />
+		<small id="bottle3_location" class="checkSummaryText">Bottle -> </small><br />
 		<small id="bow1_location" class="checkSummaryText">Bow -> </small><br />
 		<small id="bow2_location" class="checkSummaryText">Bow -> </small><br />
-		<small id="bow3_location" class="checkSummaryText">Bow -> </small>
-		
-	</div>
-	<div id="checkSummaryColumn2">
+		<small id="bow3_location" class="checkSummaryText">Bow -> </small><br />
+		<small id="dins_fire_location" class="checkSummaryText">Dins Fire -> </small><br />
+		<small id="farores_wind_location" class="checkSummaryText">Farores -> </small><br />
+		<small id="fire_arrows_location" class="checkSummaryText">Fire Arrows -> </small><br />
+		<small id="goron_tunic_location" class="checkSummaryText">Goron Tunic -> </small><br />
+		<small id="hammer_location" class="checkSummaryText">Hammer -> </small><br />
 		<small id="hookshot1_location" class="checkSummaryText">Hookshot -> </small><br />
 		<small id="hookshot2_location" class="checkSummaryText">Hookshot -> </small><br />
+		<small id="hover_boots_location" class="checkSummaryText">Hover Boots -> </small><br />
+		<small id="iron_boots_location" class="checkSummaryText">Iron Boots -> </small>
+	</div>
+	<div id="checkSummaryColumn2">
+		<small id="lens_of_truth_location" class="checkSummaryText">Lens -> </small><br />
+		<small id="rutos_letter_location" class="checkSummaryText">Letter -> </small><br />
+		<small id="light_arrows_location" class="checkSummaryText">Light Arrows -> </small><br />
+		<small id="magic1_location" class="checkSummaryText">Magic -> </small><br />
+		<small id="magic2_location" class="checkSummaryText">Magic -> </small><br />
+		<small id="mirror_shield_location" class="checkSummaryText">Mirror Shield -> </small><br />
+		<small id="scale1_location" class="checkSummaryText">Scale -> </small><br />
+		<small id="scale2_location" class="checkSummaryText">Scale -> </small><br />
+		<small id="slingshot1_location" class="checkSummaryText">Slingshot -> </small><br />
+		<small id="slingshot2_location" class="checkSummaryText">Slingshot -> </small><br />
+		<small id="slingshot3_location" class="checkSummaryText">Slingshot -> </small><br />
 		<small id="strength1_location" class="checkSummaryText">Strength -> </small><br />
 		<small id="strength2_location" class="checkSummaryText">Strength -> </small><br />
 		<small id="strength3_location" class="checkSummaryText">Strength -> </small><br />
-		<small id="mirror_shield_location" class="checkSummaryText">Mirror Shield -> </small><br />
-		<small id="magic1_location" class="checkSummaryText">Magic -> </small><br />
-		<small id="magic2_location" class="checkSummaryText">Magic -> </small><br />
-		<small id="iron_boots_location" class="checkSummaryText">Iron Boots -> </small><br />
-		<small id="hover_boots_location" class="checkSummaryText">Hover Boots -> </small><br />
+		<small id="trade_location" class="checkSummaryText">Trade -> </small><br />
 		<small id="wallet1_location" class="checkSummaryText">Wallet -> </small><br />
 		<small id="wallet2_location" class="checkSummaryText">Wallet -> </small><br />
-		<small id="goron_tunic_location" class="checkSummaryText">Goron Tunic -> </small><br />
-		<small id="zora_tunic_location" class="checkSummaryText">Zora Tunic -> </small><br />
-		<small id="dins_fire_location" class="checkSummaryText">Dins Fire -> </small><br />
-		<small id="fire_arrows_location" class="checkSummaryText">Fire Arrows -> </small><br />
-		<small id="lens_of_truth_location" class="checkSummaryText">Lens -> </small><br />
-		<small id="trade_location" class="checkSummaryText">Trade -> </small><br />
-		<small id="light_arrows_location" class="checkSummaryText">Light Arrows -> </small>
-		
+		<small id="zora_tunic_location" class="checkSummaryText">Zora Tunic -> </small>	
 	  </div>
 	</div>  
 	 

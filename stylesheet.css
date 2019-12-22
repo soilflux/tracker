@@ -44,9 +44,13 @@ overflow: hidden;
 	
 }
 #text_next {
+	display: none;
 	color: lightblue;
 	font-size: 18px;
 	font-weight: bold;
+}
+#next {
+	display: none !important;
 }
 #logically_accessible{
 	color:darkgreen;
@@ -189,37 +193,43 @@ overflow: hidden;
 .column {
 	margin-top:10px;
   float: left;
-  width: 6.5%;
+  width: 115px;
 }
 #checkSummaryColumn {
 	margin-top:10px;
 	float: left;
-	width: 13.5%;
+	width: 300px;
 }
 #checkSummaryColumn2 {
 	margin-top:10px;
 	float: left;
-	width: 13.5%;
+	width: 300px;
 }
 #info_column {
 	margin-top:10px;
 	float: left;
-	width: 13%;
+	width: 295px;
+}
+.pplpics {
+	height:12px;
+	width: 12px;
+	margin-right:4px;
+	margin-top:9px;
 }
 #songcolumn {
 	margin-top:10px;
 	float: left;
-	width: 8%;
+	width: 160px;
 }
 .dungcolumn {
 	margin-top:10px;
   float: left;
-  width: 7.25%;
+  width: 136px;
 }
 .minidungcolumn {
 	margin-top:10px;
   float: left;
-  width: 6.75%;
+  width: 133px;
 }
 .no_span {
 	
@@ -411,11 +421,50 @@ overflow: hidden;
 	margin-bottom:3px;
 	opacity: .2;
 }
-.pplpics {
-	height:12px;
-	width: 12px;
+.buttonpics{
+	height:32px;
+	width: 32px;
 	margin-right:4px;
-	margin-top:9px;
+	margin-top:2px;
+	margin-bottom:3px;
+	opacity: 1;
+}
+#chuButton {
+	top:365px;
+	left:881px;
+	position: absolute;
+}
+#skulls_in_logic {
+	top:10px;
+	font-size: 18px;
+	color: gold;
+	left:834px;
+	position: absolute;
+}
+#woth_info {
+	top:620px;
+	left:760px;
+	position: absolute;
+}
+.woth_info_text {
+	font-size: 14px;
+	font-style: italic;
+}
+.woth_item_text {
+	color:lightblue;
+	font-size: 14px;
+	font-style: italic;
+}
+.woth_info_title {
+	font-size: 18px;
+}
+#ageButton {
+	display: none;
+	height: 20px;
+	width: 20px;
+	top:29px;
+	left:895px;
+	position: absolute;
 }
 .keydot {
   height: 18px;
