@@ -253,6 +253,16 @@ overflow: hidden;
 	width: 30px;
 	vertical-align: top;
 	margin-bottom: 3px;
+	padding: 0;
+	border: none;
+}
+.picture_input {
+	height:20px;
+	width: 28px;
+	vertical-align: top;
+	margin-bottom: 3px;
+	padding: 0;
+	border: none;
 }
 .layout_input {
 	width: 55px;
