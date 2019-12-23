@@ -1226,6 +1226,11 @@ for (var i = 1; i <= 34; i++) {
 		AreaWotHAge[i] = 5;
 	}
 	else if (Area[i] == "normal" || Area[i] == "barren") {
+		if (woth1 == AreaNames[i]) {woth1 = "unknown"}
+		if (woth2 == AreaNames[i]) {woth2 = "unknown"}
+		if (woth3 == AreaNames[i]) {woth3 = "unknown"}
+		if (woth4 == AreaNames[i]) {woth4 = "unknown"}
+		if (woth5 == AreaNames[i]) {woth5 = "unknown"}
 	AreaWotHAge[i] = 0;	
 	}
 }
