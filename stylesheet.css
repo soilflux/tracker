@@ -193,7 +193,7 @@ overflow: hidden;
 .column {
 	margin-top:10px;
   float: left;
-  width: 115px;
+  width: 122px;
 }
 #checkSummaryColumn {
 	margin-top:10px;
@@ -431,7 +431,7 @@ overflow: hidden;
 }
 #chuButton {
 	top:365px;
-	left:881px;
+	left:901px;
 	position: absolute;
 }
 #skulls_in_logic {
@@ -443,7 +443,7 @@ overflow: hidden;
 }
 #woth_info {
 	top:620px;
-	left:760px;
+	left:780px;
 	position: absolute;
 }
 .woth_info_text {
