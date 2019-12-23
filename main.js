@@ -37,6 +37,7 @@ function Update() {
 			Game.requiem_img = "./images/requiem505050.png";
 			Game.nocturne_img = "./images/nocturne505050.png";
 			Game.prelude_img = "./images/prelude505050.png";
+			Game.bombchu_img = "./images/chux.png"
 			if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
 			if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
 			if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
@@ -56,6 +57,8 @@ function Update() {
 			if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
 			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
 			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+			document.getElementById("chuButton").src= Game.bombchu_img;
+			document.getElementById("chuButton").style.opacity = .4;
 			document.getElementById("gan_req2").src= Game.light_arrows_img;
 			document.getElementById("gan_req1").src= Game.magic_meter_img;
 			document.getElementById("gan_req3").src= Game.bow_img;
