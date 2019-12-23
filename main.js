@@ -1,5 +1,5 @@
 function Update() {
-
+	const keys = Object.keys(Location_Logic);
 	if(Game.theme == "dark" && Game.themeChange) {
 		if (Person.type == "soli") {
 			Game.bomb_bag_img= "./images/explosive505050.png";
@@ -150,6 +150,37 @@ function Update() {
 			if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
 			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
 			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+			var temp = 0;
+			for (const key of keys) {
+				if (temp == 256) {break; }	
+				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./normal/Kokiri_Forest.png')";}
+				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./normal/Lon_Lon_Ranch_(Ocarina_of_Time).png')";}
+				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Field_(Ocarina_of_Time).png')";}
+				if (temp >= 13 && temp <=15) {document.getElementById(key).style.backgroundImage = "url('./normal/Gerudo_Valley.png')";}
+				if (temp >= 16 && temp <=21) {document.getElementById(key).style.backgroundImage = "url('./normal/Lake_Hylia_(Ocarina_of_Time).png')";}
+				if (temp >= 22 && temp <=27) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Castle_Town_Market.png')";}
+				if (temp >= 28 && temp <=28) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Castle_(Ocarina_of_Time).png')";}
+				if (temp >= 29 && temp <=29) {document.getElementById(key).style.backgroundImage = "url('./normal/Ganons_Castle_(Ocarina_of_Time).png')";}
+				if (temp >= 30 && temp <=30) {document.getElementById(key).style.backgroundImage = "url('./normal/la.jpg')";}
+				if (temp >= 31 && temp <=33) {document.getElementById(key).style.backgroundImage = "url('./normal/Zoras_Fountain.png')";}
+				if (temp >= 34 && temp <=37) {document.getElementById(key).style.backgroundImage = "url('./normal/Ice_Cavern.jpg')";}
+				if (temp >= 38 && temp <=44) {document.getElementById(key).style.backgroundImage = "url('./normal/Great_Deku_Trees_Meadow.png')";}
+				if (temp >= 45 && temp <=51) {document.getElementById(key).style.backgroundImage = "url('./normal/Lost_Woods.png')";}
+				if (temp >= 52 && temp <=52) {document.getElementById(key).style.backgroundImage = "url('./normal/Sacred_Forest_Meadow.png')";}
+				if (temp >= 53 && temp <=59) {document.getElementById(key).style.backgroundImage = "url('./normal/Goron_City.png')";}
+				if (temp >= 60 && temp <=66) {document.getElementById(key).style.backgroundImage = "url('./normal/DCC.jpg')";}
+				if (temp >= 67 && temp <=71) {document.getElementById(key).style.backgroundImage = "url('./normal/OoT_Death_Mountain_Trail.jpg')";}
+				if (temp >= 72 && temp <=75) {document.getElementById(key).style.backgroundImage = "url('./normal/Deathcrater.jpg')";}
+				if (temp >= 76 && temp <=88) {document.getElementById(key).style.backgroundImage = "url('./normal/Kakariko_Village.png')";}
+				if (temp >= 89 && temp <=95) {document.getElementById(key).style.backgroundImage = "url('./normal/Kakariko_Graveyard_(Ocarina_of_Time).png')";}
+				if (temp >= 96 && temp <=100) {document.getElementById(key).style.backgroundImage = "url('./normal/Zoras_River_(Ocarina_of_Time).png')";}
+				if (temp >= 101 && temp <=103) {document.getElementById(key).style.backgroundImage = "url('./normal/ZoraThroneRoomOoT.png')";}
+				if (temp >= 104 && temp <=105) {document.getElementById(key).style.backgroundImage = "url('./normal/Desertcolossus2.jpg')";}
+				if (temp >= 106 && temp <=106) {document.getElementById(key).style.backgroundImage = "url('./normal/Haunted_Wasteland.jpg')";}
+				if (temp >= 107 && temp <=109) {document.getElementById(key).style.backgroundImage = "url('./normal/Gerudo_Fortress.png')";}
+				if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./normal/Jabu.jpg')";}
+			temp +=1;
+			}
 			document.getElementById("chuButton").src= Game.bombchu_img;
 			document.getElementById("chuButton").style.opacity = .4;
 			document.getElementById("gan_req2").src= Game.light_arrows_img;
@@ -949,7 +980,6 @@ for (i = 1; i <= 4; i++) {
     if (!Known.hover_boots) {knowMode += hoversRequired;}
 	
 	
-	const keys = Object.keys(Location_Logic)
 	var temp = 0;
 	var d = new Date();
 	var tempTime = Math.floor((d.getTime() - initialTime)/1000);
@@ -2765,6 +2795,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (document.getElementById("wasteland_break") != null && document.getElementById("wasteland") == null) {document.getElementById("normalColumn3").removeChild(document.getElementById("wasteland_break"));}
 	if (document.getElementById("fortress_break") != null && document.getElementById("gerudo_roof") == null && document.getElementById("gerudo_archery_1") == null && document.getElementById("gerudo_archery_2") == null) {document.getElementById("normalColumn3").removeChild(document.getElementById("fortress_break"));}
 	 
+	if (Game.changetheme == 1) {Game.themeChange = true; Game.changetheme = 0;}
 	
 			
 		/*
@@ -3018,7 +3049,8 @@ var tSeconds = 0;
 	Game.magic_meter_img= "./images/magic505050.png";
 	Game.hover_boots_img= "./images/hovers505050.png";
 	Game.theme = "dark";
-	Game.themeChange = true;
+	Game.themeChange = false;
+	Game.changetheme = 1;
 	
 	Game.has_chus = false;
 	
