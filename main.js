@@ -60,6 +60,11 @@ function Update() {
 			var temp = 0;
 			for (const key of keys) {
 				if (temp == 256) {break; }	
+				document.getElementById(key).style.height="21px";
+				document.getElementById(key).style.width="29px";
+				document.getElementById("normalColumn1").style.width="120px";
+				document.getElementById("normalColumn2").style.width="120px";
+				document.getElementById("normalColumn3").style.width="120px";
 				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
 				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
 				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
@@ -183,33 +188,35 @@ function Update() {
 			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
 			var temp = 0;
 			for (const key of keys) {
-				if (temp == 256) {break; }	
-				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./normal/Kokiri_Forest.png')";}
-				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./normal/Lon_Lon_Ranch_(Ocarina_of_Time).png')";}
+				if (temp == 114) {break; }	
+				document.getElementById(key).style.height="29px";
+				document.getElementById(key).style.width="38px";
+				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./normal/kokiri.jpg')";}
+				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./normal/cow.jpg')";}
 				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Field_(Ocarina_of_Time).png')";}
 				if (temp >= 13 && temp <=15) {document.getElementById(key).style.backgroundImage = "url('./normal/Gerudo_Valley.png')";}
 				if (temp >= 16 && temp <=21) {document.getElementById(key).style.backgroundImage = "url('./normal/Lake_Hylia_(Ocarina_of_Time).png')";}
-				if (temp >= 22 && temp <=27) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Castle_Town_Market.png')";}
-				if (temp >= 28 && temp <=28) {document.getElementById(key).style.backgroundImage = "url('./normal/Hyrule_Castle_(Ocarina_of_Time).png')";}
-				if (temp >= 29 && temp <=29) {document.getElementById(key).style.backgroundImage = "url('./normal/Ganons_Castle_(Ocarina_of_Time).png')";}
+				if (temp >= 22 && temp <=27) {document.getElementById(key).style.backgroundImage = "url('./normal/market.jpg')";}
+				if (temp >= 28 && temp <=28) {document.getElementById(key).style.backgroundImage = "url('./normal/dinsfairy.jpg')";}
+				if (temp >= 29 && temp <=29) {document.getElementById(key).style.backgroundImage = "url('./normal/gfairy.jpg')";}
 				if (temp >= 30 && temp <=30) {document.getElementById(key).style.backgroundImage = "url('./normal/la.jpg')";}
-				if (temp >= 31 && temp <=33) {document.getElementById(key).style.backgroundImage = "url('./normal/Zoras_Fountain.png')";}
-				if (temp >= 34 && temp <=37) {document.getElementById(key).style.backgroundImage = "url('./normal/Ice_Cavern.jpg')";}
-				if (temp >= 38 && temp <=44) {document.getElementById(key).style.backgroundImage = "url('./normal/Great_Deku_Trees_Meadow.png')";}
-				if (temp >= 45 && temp <=51) {document.getElementById(key).style.backgroundImage = "url('./normal/Lost_Woods.png')";}
-				if (temp >= 52 && temp <=52) {document.getElementById(key).style.backgroundImage = "url('./normal/Sacred_Forest_Meadow.png')";}
-				if (temp >= 53 && temp <=59) {document.getElementById(key).style.backgroundImage = "url('./normal/Goron_City.png')";}
-				if (temp >= 60 && temp <=66) {document.getElementById(key).style.backgroundImage = "url('./normal/dodongos.png')";}
+				if (temp >= 31 && temp <=33) {document.getElementById(key).style.backgroundImage = "url('./normal/fountain.jpg')";}
+				if (temp >= 34 && temp <=37) {document.getElementById(key).style.backgroundImage = "url('./normal/ice.jpg')";}
+				if (temp >= 38 && temp <=44) {document.getElementById(key).style.backgroundImage = "url('./normal/deku.png')";}
+				if (temp >= 45 && temp <=51) {document.getElementById(key).style.backgroundImage = "url('./normal/Skull_Kid_(Ocarina_of_Time).png')";}
+				if (temp >= 52 && temp <=52) {document.getElementById(key).style.backgroundImage = "url('./normal/sfm.jpg')";}
+				if (temp >= 53 && temp <=59) {document.getElementById(key).style.backgroundImage = "url('./normal/goron.jpg')";}
+				if (temp >= 60 && temp <=66) {document.getElementById(key).style.backgroundImage = "url('./normal/0272-Dodongos-Cavern.png')";}
 				if (temp >= 67 && temp <=71) {document.getElementById(key).style.backgroundImage = "url('./normal/OoT_Death_Mountain_Trail.jpg')";}
-				if (temp >= 72 && temp <=75) {document.getElementById(key).style.backgroundImage = "url('./normal/Deathcrater.jpg')";}
-				if (temp >= 76 && temp <=88) {document.getElementById(key).style.backgroundImage = "url('./normal/Kakariko_Village.png')";}
-				if (temp >= 89 && temp <=95) {document.getElementById(key).style.backgroundImage = "url('./normal/Kakariko_Graveyard_(Ocarina_of_Time).png')";}
-				if (temp >= 96 && temp <=100) {document.getElementById(key).style.backgroundImage = "url('./normal/Zoras_River_(Ocarina_of_Time).png')";}
-				if (temp >= 101 && temp <=103) {document.getElementById(key).style.backgroundImage = "url('./normal/ZoraThroneRoomOoT (1).png')";}
+				if (temp >= 72 && temp <=75) {document.getElementById(key).style.backgroundImage = "url('./normal/crater.png')";}
+				if (temp >= 76 && temp <=88) {document.getElementById(key).style.backgroundImage = "url('./normal/kakiriko.png')";}
+				if (temp >= 89 && temp <=95) {document.getElementById(key).style.backgroundImage = "url('./normal/graveyard.png')";}
+				if (temp >= 96 && temp <=100) {document.getElementById(key).style.backgroundImage = "url('./normal/river.jpg')";}
+				if (temp >= 101 && temp <=103) {document.getElementById(key).style.backgroundImage = "url('./normal/ZoraThroneRoomOoT.png')";}
 				if (temp >= 104 && temp <=105) {document.getElementById(key).style.backgroundImage = "url('./normal/Desertcolossus2.jpg')";}
 				if (temp >= 106 && temp <=106) {document.getElementById(key).style.backgroundImage = "url('./normal/Haunted_Wasteland.jpg')";}
-				if (temp >= 107 && temp <=109) {document.getElementById(key).style.backgroundImage = "url('./normal/Gerudo_Fortress.png')";}
-				if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./normal/Jabu.jpg')";}
+				if (temp >= 107 && temp <=109) {document.getElementById(key).style.backgroundImage = "url('./normal/fortress.jpg')";}
+				if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./normal/jabu.jpg')";}
 			temp +=1;
 			}
 			document.getElementById("chuButton").src= Game.bombchu_img;
@@ -1405,8 +1412,8 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			if (Location.iron_boots != null) {if (Locations.indexOf(Location.iron_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.iron_boots) < AreaIndexes[i]) {if (WotHLocations.includes("iron_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Irons: " + "<br />"; tempnumber1 += 1;}} 
 			if (Location.hover_boots != null) {if (Locations.indexOf(Location.hover_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.hover_boots) < AreaIndexes[i]) {if (WotHLocations.includes("hover_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hovers: " + "<br />"; tempnumber1 += 1;}} 
 			if (Location.goron_tunic != null) {if (Locations.indexOf(Location.goron_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.goron_tunic) < AreaIndexes[i]) {if (WotHLocations.includes("goron_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Goron Tunic: " + "<br />"; tempnumber1 += 1;}}
-			if (Location.zora_tunic != null) {if (Locations.indexOf(Location.zora_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.zora_tunic) < AreaIndexes[i]) {if (WotHLocations.includes("zora_tunic")) {} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Zora Tunic: " + "<br />"; tempnumber1 += 1;}} 
-			if (Location.dins_fire != null) {if (Locations.indexOf(Location.dins_fire) >= AreaIndexes[i-1] && Locations.indexOf(Location.dins_fire) < AreaIndexes[i]) {if (WotHLocations.includes("dins_fire")) {} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Din's Fire: " + "<br />"; tempnumber1 += 1;}}
+			if (Location.zora_tunic != null) {if (Locations.indexOf(Location.zora_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.zora_tunic) < AreaIndexes[i]) {if (WotHLocations.includes("zora_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text";} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Zora Tunic: " + "<br />"; tempnumber1 += 1;}} 
+			if (Location.dins_fire != null) {if (Locations.indexOf(Location.dins_fire) >= AreaIndexes[i-1] && Locations.indexOf(Location.dins_fire) < AreaIndexes[i]) {if (WotHLocations.includes("dins_fire")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text";} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Din's Fire: " + "<br />"; tempnumber1 += 1;}}
 			if (Location.fire_arrows != null) {if (Locations.indexOf(Location.fire_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.fire_arrows) < AreaIndexes[i]) {if (WotHLocations.includes("fire_arrows")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Fire Arrows: " + "<br />"; tempnumber1 += 1;}}
 			if (Location.lens_of_truth != null) {if (Locations.indexOf(Location.lens_of_truth) >= AreaIndexes[i-1] && Locations.indexOf(Location.lens_of_truth) < AreaIndexes[i]) {if (WotHLocations.includes("lens_of_truth")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lens: " + "<br />"; tempnumber1 += 1;}}
 			if (Location.light_arrows != null) {if (Locations.indexOf(Location.light_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.light_arrows) < AreaIndexes[i]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Light Arrows: " + "<br />"; tempnumber1 += 1;}}
@@ -3205,8 +3212,8 @@ var tSeconds = 0;
 		];
 		
 	var AreaIndexes = [0,6,8,13,16,22,28,29,30,31,34,38,45,52,53,60,67,72,76,89,96,101,104,106,107,110,114,128,144,155,175,193,215,229];
-	var SongIndexes = [0,245,255,0,0,0,244,0,253,0,252,0,0,246,0,0,0,250,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
-	var SongIndexes2 = [0,245,255,0,0,0,244,0,253,0,252,0,0,250,0,0,0,250,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
+	var SongIndexes = [0,245,255,0,0,0,244,0,253,0,252,0,0,246,0,0,0,249,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
+	var SongIndexes2 = [0,245,255,0,0,0,244,0,253,0,252,0,0,250,0,0,0,249,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
 		
 	var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 	
