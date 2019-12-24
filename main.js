@@ -1036,7 +1036,10 @@ for (i = 1; i <= 4; i++) {
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
 	var tempSeconds = Math.floor((tempTime % 3600) % 60);
-	
+	document.getElementById("timer").innerHTML = "";
+	if (tempHours > 0) {document.getElementById("timer").innerHTML += tempHours + "h ";}
+	if (tempMinutes > 0) {document.getElementById("timer").innerHTML += tempMinutes + "m ";}
+	document.getElementById("timer").innerHTML += tempSeconds + "s";
 	var str = document.getElementById("next").value;
 	
 	
