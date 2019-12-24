@@ -2746,6 +2746,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (document.getElementById("tokens_40") != null) temptext[1] += "40 "; 
 	if (document.getElementById("tokens_50") != null) temptext[1] += "50 "; 
 	if (document.getElementById("oot") != null) temptext[1] += "OoT "; 
+	if (document.getElementById("trade_quest") != null) temptext[1] += "Bigo "; 
 	if (document.getElementById("frogs_2") != null) temptext[1] += "Frogs2 "; 
 	if (document.getElementById("theater") != null) temptext[1] += "Mask ";  
 	document.getElementById("notes").innerHTML = temptext[0] + "Always: " + temptext[1];
