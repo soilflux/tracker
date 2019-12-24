@@ -62,9 +62,12 @@ function Update() {
 				if (temp == 256) {break; }	
 				document.getElementById(key).style.height="21px";
 				document.getElementById(key).style.width="29px";
-				document.getElementById("normalColumn1").style.width="120px";
-				document.getElementById("normalColumn2").style.width="120px";
-				document.getElementById("normalColumn3").style.width="120px";
+				document.getElementById("normalColumn1").style.width="125px";
+				document.getElementById("normalColumn2").style.width="125px";
+				document.getElementById("normalColumn3").style.width="125px";
+				document.getElementById("chuButton").style.left="913px";
+				document.getElementById("woth_info").style.left="790px";
+				document.getElementById("skulls_in_logic").style.left="867px";
 				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
 				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
 				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
@@ -187,6 +190,12 @@ function Update() {
 			if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
 			if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
 			var temp = 0;
+			document.getElementById("normalColumn1").style.width="132px";
+			document.getElementById("normalColumn2").style.width="132px";
+			document.getElementById("normalColumn3").style.width="132px";
+			document.getElementById("chuButton").style.left="933px";
+			document.getElementById("woth_info").style.left="810px";
+			document.getElementById("skulls_in_logic").style.left="889px";
 			for (const key of keys) {
 				if (temp == 114) {break; }	
 				document.getElementById(key).style.height="29px";
