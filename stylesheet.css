@@ -219,7 +219,7 @@ overflow: hidden;
 #songcolumn {
 	margin-top:10px;
 	float: left;
-	width: 160px;
+	width: 165px;
 }
 .dungcolumn {
 	margin-top:10px;
@@ -450,6 +450,42 @@ overflow: hidden;
 	color: gold;
 	left:854px;
 	position: absolute;
+}
+#forest_medallion {
+	top: 50px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
+}
+#fire_medallion {
+	top: 87px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
+}
+#water_medallion {
+	top: 124px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
+}
+#gen1_medallion {
+	top: 159px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
+}
+#gen2_medallion {
+	top: 196px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
+}
+#gen3_medallion {
+	top: 231px;
+	right: 940px;
+	position: absolute;
+	opacity: .2;
 }
 #woth_info {
 	top:585px;
