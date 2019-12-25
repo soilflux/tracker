@@ -129,7 +129,7 @@ function Update() {
 			all[i].style.marginBottom="2px";
 			all[i].style.marginTop="5px";
 			}
-			document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
+			document.getElementById("iWantToRemoveThisButton").innerHTML="Correct Theme";
 		}
 		else if (Person.type == "normie") {
 			Game.bomb_bag_img= "./normal/bombbag.png";
@@ -325,7 +325,7 @@ function Update() {
 			all[i].style.marginBottom="0px";
 			all[i].style.marginTop="0px";
 			}
-			document.getElementById("iWantToRemoveThisButton").innerHTML="soli";
+			document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Soli";
 		}
 		Game.themeChange = false;
 		document.getElementById("checks_remaining").style.color="lightblue";
@@ -1404,7 +1404,6 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			else if (woth3 == AreaNames[i]) {tempnumber2 = 3;}
 			else if (woth4 == AreaNames[i]) {tempnumber2 = 4;}
 			else if (woth5 == AreaNames[i]) {tempnumber2 = 5;}
-			console.log(Hinted[Location.farores_wind]);
 			if (Location.farores_wind != null && Hinted[Location.farores_wind] == false || typeof Hinted[Location.farores_wind] == "undefined") {if (Locations.indexOf(Location.farores_wind) >= AreaIndexes[i-1] && Locations.indexOf(Location.farores_wind) < AreaIndexes[i]) {if (WotHLocations.includes("farores_wind")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;}document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Farores "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.farores_wind.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
 			if (Location.slingshot1 != null && Hinted[Location.slingshot1] == false || typeof Hinted[Location.slingshot1] == "undefined") {if (Locations.indexOf(Location.slingshot1) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot1) < AreaIndexes[i]) {if (WotHLocations.includes("slingshot1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
 			if (Location.slingshot2 != null && Hinted[Location.slingshot2] == false || typeof Hinted[Location.slingshot2] == "undefined") {;if (Locations.indexOf(Location.slingshot2) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot2) < AreaIndexes[i]) {if (WotHLocations.includes("slingshot2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
@@ -2993,7 +2992,7 @@ var tMinutes = 0;
 var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	
-	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "soli";}
+	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 	Logic.brackets = false;
 	
 	document.getElementById("text_gen_med1").style.color = "yellow";
