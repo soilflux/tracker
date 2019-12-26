@@ -68,6 +68,12 @@ function Update() {
 				document.getElementById("chuButton").style.left="913px";
 				document.getElementById("woth_info").style.left="790px";
 				document.getElementById("skulls_in_logic").style.left="867px";
+				document.getElementById("forest_medallion").style.right="960px";
+				document.getElementById("fire_medallion").style.right="960px";
+				document.getElementById("water_medallion").style.right="960px";
+				document.getElementById("gen1_medallion").style.right="960px";
+				document.getElementById("gen2_medallion").style.right="960px";
+				document.getElementById("gen3_medallion").style.right="960px";
 				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
 				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
 				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
@@ -196,6 +202,12 @@ function Update() {
 			document.getElementById("chuButton").style.left="933px";
 			document.getElementById("woth_info").style.left="810px";
 			document.getElementById("skulls_in_logic").style.left="889px";
+			document.getElementById("forest_medallion").style.right="940px";
+			document.getElementById("fire_medallion").style.right="940px";
+			document.getElementById("water_medallion").style.right="940px";
+			document.getElementById("gen1_medallion").style.right="940px";
+			document.getElementById("gen2_medallion").style.right="940px";
+			document.getElementById("gen3_medallion").style.right="940px";
 			for (const key of keys) {
 				if (temp == 114) {break; }	
 				if (document.getElementById(key) != null){document.getElementById(key).style.height="29px";}
