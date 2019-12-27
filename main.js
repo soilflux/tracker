@@ -66,7 +66,7 @@ function Update() {
 				document.getElementById("normalColumn2").style.width="125px";
 				document.getElementById("normalColumn3").style.width="125px";
 				document.getElementById("chuButton").style.left="913px";
-				document.getElementById("woth_info").style.left="790px";
+				document.getElementById("woth_info").style.left="956px";
 				document.getElementById("timer").style.right="980px";
 				document.getElementById("skulls_in_logic").style.left="867px";
 				document.getElementById("forest_medallion").style.right="960px";
