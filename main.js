@@ -1475,7 +1475,7 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			
 			var tempArray2 = [];
 			for (k = 0; k < tempArray.length; k++) {
-				tempArray2.push.apply(tempArray2, ChecksPutInLogicBy[tempArray[k]]);
+				if (ChecksPutInLogicBy[tempArray[k]].length < 15) {tempArray2.push.apply(tempArray2, ChecksPutInLogicBy[tempArray[k]]);}
 			}
 			
 			document.getElementById("woth" + tempnumber2 + "_title").style.color= WotHColors[tempnumber2];
@@ -7392,7 +7392,7 @@ function checksPutInLogicByItem(item) {
 	for (const key of keys4) {
 		temp += 1;
 		if (temp == 256) {break;} 
-		if (Location_Logic[key] && !Location_PutIn_Logic[key]) {tempArray.push(key);}
+		if (Location_Logic[key] && !Location_PutIn_Logic[key] && document.getElementById(key) != null) {tempArray.push(key);}
 	}
 	return tempArray;
 	
