@@ -451,6 +451,14 @@ overflow: hidden;
 	left:854px;
 	position: absolute;
 }
+#timer {
+	font-size:42px;
+	color: white;
+	position: absolute;
+	top:770px;
+	right:960px;
+	font-family: calibri;
+}
 #forest_medallion {
 	top: 52px;
 	right: 940px;
@@ -488,8 +496,8 @@ overflow: hidden;
 	opacity: .2;
 }
 #woth_info {
-	top:585px;
-	left:780px;
+	top:550px;
+	left: 980px;
 	position: absolute;
 }
 .woth_info_text {

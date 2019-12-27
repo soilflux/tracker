@@ -67,6 +67,7 @@ function Update() {
 				document.getElementById("normalColumn3").style.width="125px";
 				document.getElementById("chuButton").style.left="913px";
 				document.getElementById("woth_info").style.left="790px";
+				document.getElementById("timer").style.right="980px";
 				document.getElementById("skulls_in_logic").style.left="867px";
 				document.getElementById("forest_medallion").style.right="960px";
 				document.getElementById("fire_medallion").style.right="960px";
@@ -200,7 +201,8 @@ function Update() {
 			document.getElementById("normalColumn2").style.width="132px";
 			document.getElementById("normalColumn3").style.width="132px";
 			document.getElementById("chuButton").style.left="933px";
-			document.getElementById("woth_info").style.left="810px";
+			document.getElementById("woth_info").style.left="976px";
+			document.getElementById("timer").style.right="960px";
 			document.getElementById("skulls_in_logic").style.left="889px";
 			document.getElementById("forest_medallion").style.right="940px";
 			document.getElementById("fire_medallion").style.right="940px";
@@ -1048,9 +1050,10 @@ for (i = 1; i <= 4; i++) {
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
 	var tempSeconds = Math.floor((tempTime % 3600) % 60);
 	document.getElementById("timer").innerHTML = "";
-	if (tempHours > 0) {document.getElementById("timer").innerHTML += tempHours + "h ";}
-	if (tempMinutes > 0) {document.getElementById("timer").innerHTML += tempMinutes + "m ";}
-	document.getElementById("timer").innerHTML += tempSeconds + "s";
+	if (tempHours > 0) {document.getElementById("timer").innerHTML += tempHours + ":";}
+	if (tempMinutes > 0) {if (tempMinutes < 10 && tempHours > 0) {document.getElementById("timer").innerHTML += "0";} document.getElementById("timer").innerHTML += tempMinutes + ":";}
+	if (tempSeconds < 10 && tempMinutes > 0) {document.getElementById("timer").innerHTML += "0";}
+	document.getElementById("timer").innerHTML += tempSeconds;
 	var str = document.getElementById("next").value;
 	
 	
@@ -2775,7 +2778,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if(Location_Logic.spirit20 == true) {document.getElementById("spiritLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("spiritLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.shadow18 == true) {document.getElementById("shadowLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("shadowLogic").style.backgroundColor = "palevioletred";}**/
 	
-	var temptext = document.getElementById("notes").innerHTML.split("Always: ");
+	var temptext = document.getElementById("notes").innerHTML.split("Unread: ");
 	temptext[1] = "";
 	if (document.getElementById("tokens_30") != null) temptext[1] += "30 "; 
 	if (document.getElementById("tokens_40") != null) temptext[1] += "40 "; 
@@ -2784,7 +2787,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (document.getElementById("trade_quest") != null) temptext[1] += "Bigo "; 
 	if (document.getElementById("frogs_2") != null) temptext[1] += "Frogs2 "; 
 	if (document.getElementById("theater") != null) temptext[1] += "Mask ";  
-	document.getElementById("notes").innerHTML = temptext[0] + "Always: " + temptext[1];
+	document.getElementById("notes").innerHTML = temptext[0] + "Unread: " + temptext[1];
 	
 	if (Game.forest_checks_remaining >=0 && (Game.forest_checks_remaining < Game.forest_logically_accessible)) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
 	if (Game.fire_checks_remaining >=0 && (Game.fire_checks_remaining < Game.fire_logically_accessible)) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
@@ -3270,7 +3273,7 @@ var tSeconds = 0;
 		"Well" 
 		];
 		
-	var AreaIndexes = [0,6,8,13,16,22,28,29,30,31,34,38,45,52,53,60,67,72,76,89,96,101,104,106,107,110,114,128,144,155,175,193,215,229];
+	var AreaIndexes = [0,6,8,13,16,22,28,29,30,31,34,38,45,52,53,60,67,72,76,89,96,101,104,106,107,110,114,128,144,155,175,193,208,230,244];
 	var SongIndexes = [0,245,255,0,0,0,244,0,253,0,252,0,0,246,0,0,0,249,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
 	var SongIndexes2 = [0,245,255,0,0,0,244,0,253,0,252,0,0,250,0,0,0,249,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
 		
