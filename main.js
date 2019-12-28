@@ -467,7 +467,6 @@ function Update() {
 	if(Known.hookshot2 == true) {Logic.hookshot2 = Location_Logic[Location.hookshot2];}
 	Logic.hookshot = Logic.hookshot1 || Logic.hookshot2;
 	Logic.longshot = Logic.hookshot1 && Logic.hookshot2;
-	
 	if(Known.strength1 == true) {Logic.strength1 = Location_Logic[Location.strength1];}
 	if(Known.strength2 == true) {Logic.strength2 = Location_Logic[Location.strength2];}
 	if(Known.strength3 == true) {Logic.strength3 = Location_Logic[Location.strength3];}
@@ -1045,6 +1044,7 @@ for (i = 1; i <= 4; i++) {
 	
 	var temp = 0;
 	var d = new Date();
+	if (paused == true) {initialTime +=.250}
 	var tempTime = Math.floor((d.getTime() - initialTime)/1000);
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
@@ -1105,80 +1105,80 @@ for (const key of keys) {
 
 	if (temp <= 244) { 
  
-	if (document.getElementById(key).value == "far" && !Game.farores_wind) {Check[document.getElementById(key).id] = "farores_wind"; Location.farores_wind = document.getElementById(key).id; document.getElementById("farores_wind_location").innerHTML = "Farores -> " + Names[temp-1]; Known.farores_wind = true; if (!hinted && !peeked) {Game.farores_wind = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Farores" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "far" && !Known.farores_wind) {Check[document.getElementById(key).id] = "farores_wind"; Location.farores_wind = document.getElementById(key).id; document.getElementById("farores_wind_location").innerHTML = "Farores -> " + Names[temp-1]; Known.farores_wind = true; if (!hinted && !peeked) {Game.farores_wind = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Farores" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "sli" && !Game.slingshot1) {Check[document.getElementById(key).id] = "slingshot"; Location.slingshot1 = document.getElementById(key).id; document.getElementById("slingshot1_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot1 = true; if (!hinted && !peeked) {Game.slingshot1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sli" && !Game.slingshot2) {Check[document.getElementById(key).id] = "slingshot"; Location.slingshot2 = document.getElementById(key).id; document.getElementById("slingshot2_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot2 = true; if (!hinted && !peeked) {Game.slingshot2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sli" && !Game.slingshot3) {Check[document.getElementById(key).id] = "slingshot";Location.slingshot3 = document.getElementById(key).id; document.getElementById("slingshot3_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot3 = true; if (!hinted && !peeked) {Game.slingshot3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "sli" && !Known.slingshot1) {Check[document.getElementById(key).id] = "slingshot"; Location.slingshot1 = document.getElementById(key).id; document.getElementById("slingshot1_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot1 = true; if (!hinted && !peeked) {Game.slingshot1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sli" && !Known.slingshot2) {Check[document.getElementById(key).id] = "slingshot"; Location.slingshot2 = document.getElementById(key).id; document.getElementById("slingshot2_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot2 = true; if (!hinted && !peeked) {Game.slingshot2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sli" && !Known.slingshot3) {Check[document.getElementById(key).id] = "slingshot";Location.slingshot3 = document.getElementById(key).id; document.getElementById("slingshot3_location").innerHTML = "Slingshot -> " + Names[temp-1]; Known.slingshot3 = true; if (!hinted && !peeked) {Game.slingshot3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Slingshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "boo" && !Game.boomerang) {Check[document.getElementById(key).id] = "boomerang"; Location.boomerang = document.getElementById(key).id; document.getElementById("boomerang_location").innerHTML = "Boomerang -> " + Names[temp-1]; Known.boomerang = true; if (!hinted && !peeked) {Game.boomerang = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Boomerang" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "boo" && !Known.boomerang) {Check[document.getElementById(key).id] = "boomerang"; Location.boomerang = document.getElementById(key).id; document.getElementById("boomerang_location").innerHTML = "Boomerang -> " + Names[temp-1]; Known.boomerang = true; if (!hinted && !peeked) {Game.boomerang = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Boomerang" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "sca" && !Game.scale1) {Check[document.getElementById(key).id] = "scale"; Location.scale1 = document.getElementById(key).id; document.getElementById("scale1_location").innerHTML = "Scale -> " + Names[temp-1]; Known.scale1 = true; if (!hinted && !peeked) {Game.scale1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Scale" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "sca" && !Game.scale2) {Check[document.getElementById(key).id] = "scale";Location.scale2 = document.getElementById(key).id; document.getElementById("scale2_location").innerHTML = "Scale -> " + Names[temp-1]; Known.scale2 = true; if (!hinted && !peeked) {Game.scale2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Scale" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "sca" && !Known.scale1) {Check[document.getElementById(key).id] = "scale"; Location.scale1 = document.getElementById(key).id; document.getElementById("scale1_location").innerHTML = "Scale -> " + Names[temp-1]; Known.scale1 = true; if (!hinted && !peeked) {Game.scale1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Scale" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "sca" && !Known.scale2) {Check[document.getElementById(key).id] = "scale";Location.scale2 = document.getElementById(key).id; document.getElementById("scale2_location").innerHTML = "Scale -> " + Names[temp-1]; Known.scale2 = true; if (!hinted && !peeked) {Game.scale2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Scale" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "rut" && !Game.rutos_letter) {Check[document.getElementById(key).id] = "rutos_letter"; Location.rutos_letter = document.getElementById(key).id; document.getElementById("rutos_letter_location").innerHTML = "Letter -> " + Names[temp-1]; Known.rutos_letter = true; if (!hinted && !peeked) {Game.rutos_letter = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Letter" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "rut" && !Known.rutos_letter) {Check[document.getElementById(key).id] = "rutos_letter"; Location.rutos_letter = document.getElementById(key).id; document.getElementById("rutos_letter_location").innerHTML = "Letter -> " + Names[temp-1]; Known.rutos_letter = true; if (!hinted && !peeked) {Game.rutos_letter = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Letter" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "bot" && !Game.bottle1) {Check[document.getElementById(key).id] = "bottle"; Location.bottle1 = document.getElementById(key).id; document.getElementById("bottle1_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle1 = true; if (!hinted && !peeked) {Game.bottle1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bot" && !Game.bottle2) {Check[document.getElementById(key).id] = "bottle"; Location.bottle2 = document.getElementById(key).id; document.getElementById("bottle2_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle2 = true; if (!hinted && !peeked) {Game.bottle2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bot" && !Game.bottle3) {Check[document.getElementById(key).id] = "bottle"; Location.bottle3 = document.getElementById(key).id; document.getElementById("bottle3_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle3 = true; if (!hinted && !peeked) {Game.bottle3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "bot" && !Known.bottle1) {Check[document.getElementById(key).id] = "bottle"; Location.bottle1 = document.getElementById(key).id; document.getElementById("bottle1_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle1 = true; if (!hinted && !peeked) {Game.bottle1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bot" && !Known.bottle2) {Check[document.getElementById(key).id] = "bottle"; Location.bottle2 = document.getElementById(key).id; document.getElementById("bottle2_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle2 = true; if (!hinted && !peeked) {Game.bottle2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bot" && !Known.bottle3) {Check[document.getElementById(key).id] = "bottle"; Location.bottle3 = document.getElementById(key).id; document.getElementById("bottle3_location").innerHTML = "Bottle -> " + Names[temp-1]; Known.bottle3 = true; if (!hinted && !peeked) {Game.bottle3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bottle" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "big" && !Game.bottle1) {Check[document.getElementById(key).id] = "big_poe";Location.bottle1 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle1_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle1 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "big" && !Game.bottle2) {Check[document.getElementById(key).id] = "big_poe"; Location.bottle2 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle2_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle2 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "big" && !Game.bottle3) {Check[document.getElementById(key).id] = "big_poe";Location.bottle3 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle3_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle3 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	if (document.getElementById(key).value == "big" && !Known.bottle1) {Check[document.getElementById(key).id] = "big_poe";Location.bottle1 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle1_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle1 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "big" && !Known.bottle2) {Check[document.getElementById(key).id] = "big_poe"; Location.bottle2 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle2_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle2 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "big" && !Known.bottle3) {Check[document.getElementById(key).id] = "big_poe";Location.bottle3 = document.getElementById(key).id; Location.big1= document.getElementById(key).id; document.getElementById("bottle3_location").innerHTML = "Big Poe -> " + Names[temp-1]; Known.bottle1 = true; Known.big_poe = true; if (!hinted && !peeked) {Game.bottle3 = true; Game.big_poe = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Big Poe" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
 	
-	if (document.getElementById(key).value == "bom" && !Game.bomb_bag1) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag1 = document.getElementById(key).id; document.getElementById("bomb_bag1_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag1 = true; if (!hinted && !peeked) {Game.bomb_bag1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
-	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag2) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag2 = document.getElementById(key).id; document.getElementById("bomb_bag2_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag2 = true; if (!hinted && !peeked) {Game.bomb_bag2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bom" && !Game.bomb_bag3) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag3 = document.getElementById(key).id; document.getElementById("bomb_bag3_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag3 = true; if (!hinted && !peeked) {Game.bomb_bag3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "bom" && !Known.bomb_bag1) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag1 = document.getElementById(key).id; document.getElementById("bomb_bag1_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag1 = true; if (!hinted && !peeked) {Game.bomb_bag1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))} continue;}
+	else if (document.getElementById(key).value == "bom" && !Known.bomb_bag2) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag2 = document.getElementById(key).id; document.getElementById("bomb_bag2_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag2 = true; if (!hinted && !peeked) {Game.bomb_bag2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bom" && !Known.bomb_bag3) {Check[document.getElementById(key).id] = "bomb_bag"; Location.bomb_bag3 = document.getElementById(key).id; document.getElementById("bomb_bag3_location").innerHTML = "Bomb Bag -> " + Names[temp-1]; Known.bomb_bag3 = true; if (!hinted && !peeked) {Game.bomb_bag3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bomb Bag" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "ham" && !Game.hammer) {Check[document.getElementById(key).id] = "hammer"; Location.hammer = document.getElementById(key).id; document.getElementById("hammer_location").innerHTML = "Hammer -> " + Names[temp-1]; Known.hammer = true; if (!hinted && !peeked) {Game.hammer = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Hammer" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "ham" && !Known.hammer) {Check[document.getElementById(key).id] = "hammer"; Location.hammer = document.getElementById(key).id; document.getElementById("hammer_location").innerHTML = "Hammer -> " + Names[temp-1]; Known.hammer = true; if (!hinted && !peeked) {Game.hammer = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Hammer" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "bow" && !Game.bow1) {Check[document.getElementById(key).id] = "bow"; Location.bow1 = document.getElementById(key).id; document.getElementById("bow1_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow1 = true; if (!hinted && !peeked) {Game.bow1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bow" && !Game.bow2) {Check[document.getElementById(key).id] = "bow"; Location.bow2 = document.getElementById(key).id; document.getElementById("bow2_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow2 = true; if (!hinted && !peeked) {Game.bow2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "bow" && !Game.bow3) {Check[document.getElementById(key).id] = "bow";Location.bow3 = document.getElementById(key).id; document.getElementById("bow3_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow3 = true; if (!hinted && !peeked) {Game.bow3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "bow" && !Known.bow1) {Check[document.getElementById(key).id] = "bow"; Location.bow1 = document.getElementById(key).id; document.getElementById("bow1_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow1 = true; if (!hinted && !peeked) {Game.bow1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bow" && !Known.bow2) {Check[document.getElementById(key).id] = "bow"; Location.bow2 = document.getElementById(key).id; document.getElementById("bow2_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow2 = true; if (!hinted && !peeked) {Game.bow2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "bow" && !Known.bow3) {Check[document.getElementById(key).id] = "bow";Location.bow3 = document.getElementById(key).id; document.getElementById("bow3_location").innerHTML = "Bow -> " + Names[temp-1]; Known.bow3 = true; if (!hinted && !peeked) {Game.bow3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Bow" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "hoo" && !Game.hookshot1) {Check[document.getElementById(key).id] = "hookshot";Location.hookshot1 = document.getElementById(key).id; document.getElementById("hookshot1_location").innerHTML = "Hookshot -> " + Names[temp-1]; Known.hookshot1 = true; if (!hinted && !peeked) {Game.hookshot1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Hookshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "hoo" && !Game.hookshot2) {Check[document.getElementById(key).id] = "hookshot";Location.hookshot2 = document.getElementById(key).id; document.getElementById("hookshot2_location").innerHTML = "Hookshot -> " + Names[temp-1]; Known.hookshot2 = true; if (!hinted && !peeked) {Game.hookshot2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Hookshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "hoo" && !Known.hookshot1) {Check[document.getElementById(key).id] = "hookshot";Location.hookshot1 = document.getElementById(key).id; document.getElementById("hookshot1_location").innerHTML = "Hookshot -> " + Names[temp-1]; Known.hookshot1 = true; if (!hinted && !peeked) {Game.hookshot1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Hookshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "hoo" && !Known.hookshot2) {Check[document.getElementById(key).id] = "hookshot";Location.hookshot2 = document.getElementById(key).id; document.getElementById("hookshot2_location").innerHTML = "Hookshot -> " + Names[temp-1]; Known.hookshot2 = true; if (!hinted && !peeked) {Game.hookshot2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Hookshot" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "str" && !Game.strength1) {Check[document.getElementById(key).id] = "strength"; Location.strength1 = document.getElementById(key).id; document.getElementById("strength1_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength1 = true; if (!hinted && !peeked) {Game.strength1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Strength" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "str" && !Game.strength2) {Check[document.getElementById(key).id] = "strength"; Location.strength2 = document.getElementById(key).id; document.getElementById("strength2_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength2 = true; if (!hinted && !peeked) {Game.strength2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Strength" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "str" && !Game.strength3) {Check[document.getElementById(key).id] = "strength";Location.strength3 = document.getElementById(key).id; document.getElementById("strength3_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength3 = true; if (!hinted && !peeked) {Game.strength3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Strength" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "str" && !Known.strength1) {Check[document.getElementById(key).id] = "strength"; Location.strength1 = document.getElementById(key).id; document.getElementById("strength1_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength1 = true; if (!hinted && !peeked) {Game.strength1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Strength" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "str" && !Known.strength2) {Check[document.getElementById(key).id] = "strength"; Location.strength2 = document.getElementById(key).id; document.getElementById("strength2_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength2 = true; if (!hinted && !peeked) {Game.strength2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Strength" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "str" && !Known.strength3) {Check[document.getElementById(key).id] = "strength";Location.strength3 = document.getElementById(key).id; document.getElementById("strength3_location").innerHTML = "Strength -> " + Names[temp-1]; Known.strength3 = true; if (!hinted && !peeked) {Game.strength3 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Strength" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "mir" && !Game.mirror_shield) {Check[document.getElementById(key).id] = "mirror_shield"; Location.mirror_shield = document.getElementById(key).id; document.getElementById("mirror_shield_location").innerHTML = "Mirror Shield -> " + Names[temp-1]; Known.mirror_shield = true; if (!hinted && !peeked) {Game.mirror_shield = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Mirror Shield" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "mir" && !Known.mirror_shield) {Check[document.getElementById(key).id] = "mirror_shield"; Location.mirror_shield = document.getElementById(key).id; document.getElementById("mirror_shield_location").innerHTML = "Mirror Shield -> " + Names[temp-1]; Known.mirror_shield = true; if (!hinted && !peeked) {Game.mirror_shield = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Mirror Shield" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "mag" && !Game.magic1) {Check[document.getElementById(key).id] = "magic"; Location.magic1 = document.getElementById(key).id; document.getElementById("magic1_location").innerHTML = "Magic -> " + Names[temp-1]; Known.magic1 = true; if (!hinted && !peeked) {Game.magic1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Magic" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "mag" && !Game.magic2) {Check[document.getElementById(key).id] = "magic"; Location.magic2 = document.getElementById(key).id; document.getElementById("magic2_location").innerHTML = "Magic -> " + Names[temp-1]; Known.magic2 = true; if (!hinted && !peeked) {Game.magic2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Magic" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "mag" && !Known.magic1) {Check[document.getElementById(key).id] = "magic"; Location.magic1 = document.getElementById(key).id; document.getElementById("magic1_location").innerHTML = "Magic -> " + Names[temp-1]; Known.magic1 = true; if (!hinted && !peeked) {Game.magic1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Magic" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "mag" && !Known.magic2) {Check[document.getElementById(key).id] = "magic"; Location.magic2 = document.getElementById(key).id; document.getElementById("magic2_location").innerHTML = "Magic -> " + Names[temp-1]; Known.magic2 = true; if (!hinted && !peeked) {Game.magic2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Magic" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "iro" && !Game.iron_boots) {Check[document.getElementById(key).id] = "iron_boots";Location.iron_boots = document.getElementById(key).id; document.getElementById("iron_boots_location").innerHTML = "Iron Boots -> " + Names[temp-1]; Known.iron_boots = true; if (!hinted && !peeked) {Game.iron_boots = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Iron Boots" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "hov" && !Game.hover_boots) {Check[document.getElementById(key).id] = "hover_boots";Location.hover_boots = document.getElementById(key).id; document.getElementById("hover_boots_location").innerHTML = "Hover Boots -> " + Names[temp-1]; Known.hover_boots = true; if (!hinted && !peeked) {Game.hover_boots = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Hover Boots" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "iro" && !Known.iron_boots) {Check[document.getElementById(key).id] = "iron_boots";Location.iron_boots = document.getElementById(key).id; document.getElementById("iron_boots_location").innerHTML = "Iron Boots -> " + Names[temp-1]; Known.iron_boots = true; if (!hinted && !peeked) {Game.iron_boots = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Iron Boots" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "hov" && !Known.hover_boots) {Check[document.getElementById(key).id] = "hover_boots";Location.hover_boots = document.getElementById(key).id; document.getElementById("hover_boots_location").innerHTML = "Hover Boots -> " + Names[temp-1]; Known.hover_boots = true; if (!hinted && !peeked) {Game.hover_boots = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Hover Boots" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "wal" && !Game.wallet1) {Check[document.getElementById(key).id] = "wallet";Location.wallet1 = document.getElementById(key).id; document.getElementById("wallet1_location").innerHTML = "Wallet -> " + Names[temp-1]; Known.wallet1 = true; if (!hinted && !peeked) {Game.wallet1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Wallet" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	else if (document.getElementById(key).value == "wal" && !Game.wallet2) {Check[document.getElementById(key).id] = "wallet";Location.wallet2 = document.getElementById(key).id; document.getElementById("wallet2_location").innerHTML = "Wallet -> " + Names[temp-1]; Known.wallet2 = true; if (!hinted && !peeked) {Game.wallet2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Wallet" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "wal" && !Known.wallet1) {Check[document.getElementById(key).id] = "wallet";Location.wallet1 = document.getElementById(key).id; document.getElementById("wallet1_location").innerHTML = "Wallet -> " + Names[temp-1]; Known.wallet1 = true; if (!hinted && !peeked) {Game.wallet1 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Wallet" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	else if (document.getElementById(key).value == "wal" && !Known.wallet2) {Check[document.getElementById(key).id] = "wallet";Location.wallet2 = document.getElementById(key).id; document.getElementById("wallet2_location").innerHTML = "Wallet -> " + Names[temp-1]; Known.wallet2 = true; if (!hinted && !peeked) {Game.wallet2 = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Wallet" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "gor" && !Game.goron_tunic) {Check[document.getElementById(key).id] = "goron_tunic";Location.goron_tunic = document.getElementById(key).id; document.getElementById("goron_tunic_location").innerHTML = "Goron Tunic -> " + Names[temp-1]; Known.goron_tunic = true; if (!hinted && !peeked) {Game.goron_tunic = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Goron Tunic" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "zor" && !Game.zora_tunic) {Check[document.getElementById(key).id] = "zora_tunic";Location.zora_tunic = document.getElementById(key).id; document.getElementById("zora_tunic_location").innerHTML = "Zora Tunic -> " + Names[temp-1]; Known.zora_tunic = true; if (!hinted && !peeked) {Game.zora_tunic = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Zora Tunic" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "din" && !Game.dins_fire) {Check[document.getElementById(key).id] = "dins_fire";Location.dins_fire = document.getElementById(key).id; document.getElementById("dins_fire_location").innerHTML = "Dins Fire -> " + Names[temp-1]; Known.dins_fire = true; if (!hinted && !peeked) {Game.dins_fire = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Din's Fire" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "fir" && !Game.fire_arrows) {Check[document.getElementById(key).id] = "fire_arrows"; Location.fire_arrows = document.getElementById(key).id; document.getElementById("fire_arrows_location").innerHTML = "Fire Arrows -> " + Names[temp-1]; Known.fire_arrows = true; if (!hinted && !peeked) {Game.fire_arrows = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Fire Arrows" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "len" && !Game.lens_of_truth) {Check[document.getElementById(key).id] = "lens_of_truth";Location.lens_of_truth = document.getElementById(key).id; document.getElementById("lens_of_truth_location").innerHTML = "Lens -> " + Names[temp-1]; Known.lens_of_truth = true; if (!hinted && !peeked) {Game.lens_of_truth = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Lens" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "sto" && !Game.stone_of_agony) {Location.stone_of_agony = document.getElementById(key).id; Known.stone_of_agony = true; if (!hinted && !peeked) {Game.stone_of_agony = true;} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if ((document.getElementById(key).value == "pre" || document.getElementById(key).value == "eye" || document.getElementById(key).value == "dro") && (!Game.prescription || !Game.claim_check)) {Check[document.getElementById(key).id] = "prescription";Location.prescription = document.getElementById(key).id; document.getElementById("trade_location").innerHTML = "Prescription -> " + Names[temp-1]; Known.prescription = true; if (!hinted && !peeked) {Game.prescription = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Prescription" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
-	if (document.getElementById(key).value == "cla" && (!Game.prescription || !Game.claim_check)) {Check[document.getElementById(key).id] = "claim_check";Location.claim_check = document.getElementById(key).id; document.getElementById("trade_location").innerHTML = "Claim -> " + Names[temp-1]; Known.claim_check = true; if (!hinted && !peeked) {Game.claim_check = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Claim Check" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "gor" && !Known.goron_tunic) {Check[document.getElementById(key).id] = "goron_tunic";Location.goron_tunic = document.getElementById(key).id; document.getElementById("goron_tunic_location").innerHTML = "Goron Tunic -> " + Names[temp-1]; Known.goron_tunic = true; if (!hinted && !peeked) {Game.goron_tunic = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Goron Tunic" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "zor" && !Known.zora_tunic) {Check[document.getElementById(key).id] = "zora_tunic";Location.zora_tunic = document.getElementById(key).id; document.getElementById("zora_tunic_location").innerHTML = "Zora Tunic -> " + Names[temp-1]; Known.zora_tunic = true; if (!hinted && !peeked) {Game.zora_tunic = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Zora Tunic" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "din" && !Known.dins_fire) {Check[document.getElementById(key).id] = "dins_fire";Location.dins_fire = document.getElementById(key).id; document.getElementById("dins_fire_location").innerHTML = "Dins Fire -> " + Names[temp-1]; Known.dins_fire = true; if (!hinted && !peeked) {Game.dins_fire = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Din's Fire" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "fir" && !Known.fire_arrows) {Check[document.getElementById(key).id] = "fire_arrows"; Location.fire_arrows = document.getElementById(key).id; document.getElementById("fire_arrows_location").innerHTML = "Fire Arrows -> " + Names[temp-1]; Known.fire_arrows = true; if (!hinted && !peeked) {Game.fire_arrows = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Fire Arrows" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "len" && !Known.lens_of_truth) {Check[document.getElementById(key).id] = "lens_of_truth";Location.lens_of_truth = document.getElementById(key).id; document.getElementById("lens_of_truth_location").innerHTML = "Lens -> " + Names[temp-1]; Known.lens_of_truth = true; if (!hinted && !peeked) {Game.lens_of_truth = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Lens" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "sto" && !Known.stone_of_agony) {Location.stone_of_agony = document.getElementById(key).id; Known.stone_of_agony = true; if (!hinted && !peeked) {Game.stone_of_agony = true;} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if ((document.getElementById(key).value == "pre" || document.getElementById(key).value == "eye" || document.getElementById(key).value == "dro") && (!Known.prescription || !Known.claim_check)) {Check[document.getElementById(key).id] = "prescription";Location.prescription = document.getElementById(key).id; document.getElementById("trade_location").innerHTML = "Prescription -> " + Names[temp-1]; Known.prescription = true; if (!hinted && !peeked) {Game.prescription = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Prescription" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "cla" && (!Known.prescription || !Known.claim_check)) {Check[document.getElementById(key).id] = "claim_check";Location.claim_check = document.getElementById(key).id; document.getElementById("trade_location").innerHTML = "Claim -> " + Names[temp-1]; Known.claim_check = true; if (!hinted && !peeked) {Game.claim_check = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Claim Check" + "<br />";} if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
-	if (document.getElementById(key).value == "lig" && !Game.light_arrows) {Check[document.getElementById(key).id] = "light_arrows"; Location.light_arrows = document.getElementById(key).id; document.getElementById("light_arrows_location").innerHTML = "Light Arrows -> " + Names[temp-1]; Known.light_arrows = true; if (!hinted && !peeked) {Game.light_arrows = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i].split(': ')[1] + ":  Light Arrows" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
+	if (document.getElementById(key).value == "lig" && !Known.light_arrows) {Check[document.getElementById(key).id] = "light_arrows"; Location.light_arrows = document.getElementById(key).id; document.getElementById("light_arrows_location").innerHTML = "Light Arrows -> " + Names[temp-1]; Known.light_arrows = true; if (!hinted && !peeked) {Game.light_arrows = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1].split(': ')[1] + ":  Light Arrows" + "<br />";}if (temp <= 38) {junkB1(document.getElementById(key))} else if (temp<=76) {junkB2(document.getElementById(key))} else if (temp <= 114){junkB3(document.getElementById(key))} else if (temp <= 154) {junkB5(document.getElementById(key))} else if (temp <= 208){ junkB6(document.getElementById(key))} else{junkB7(document.getElementById(key))}continue;}
 	
 	}
 	else {
-	if (document.getElementById(key).value == "lul" && !Game.lullaby) {Check[document.getElementById(key).id] = "lullaby";Location.lullaby = document.getElementById(key).id; Known.lullaby = true; if (!hinted && !peeked) {Game.lullaby = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Lullaby" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "epo" && !Game.eponas) {Check[document.getElementById(key).id] = "eponas";Location.eponas = document.getElementById(key).id; Known.eponas = true; if (!hinted && !peeked) {Game.eponas = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Eponas" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Epona's"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "sar" && !Game.sarias) {Check[document.getElementById(key).id] = "sarias";Location.sarias = document.getElementById(key).id; Known.sarias = true; if (!hinted && !peeked) {Game.sarias = true;} else if (!hinted) {temptext2 += Names[temp - i] + ": Sarias" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Saria's"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "sun" && !Game.suns_song) {Check[document.getElementById(key).id] = "suns";Location.suns_song = document.getElementById(key).id; Known.suns_song = true; if (!hinted && !peeked) {Game.suns_song = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Suns" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Sun's"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "sot" && !Game.song_of_time) {Check[document.getElementById(key).id] = "sot";Location.song_of_time = document.getElementById(key).id; Known.song_of_time = true; if (!hinted && !peeked) {Game.song_of_time = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Time" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Time"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "sos" && !Game.song_of_storms) {Check[document.getElementById(key).id] = "sos"; Location.song_of_storms = document.getElementById(key).id; Known.song_of_storms = true; if (!hinted && !peeked) {Game.song_of_storms = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Storms" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Storms"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "min" && !Game.minuet) {Check[document.getElementById(key).id] = "minuet"; Location.minuet = document.getElementById(key).id; Known.minuet = true; if (!hinted && !peeked) {Game.minuet = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Minuet" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Minuet"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "bol" && !Game.bolero) {Check[document.getElementById(key).id] = "bolero";Location.bolero = document.getElementById(key).id; Known.bolero = true; if (!hinted && !peeked) {Game.bolero = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Bolero" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Bolero"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "ser" && !Game.serenade) {Check[document.getElementById(key).id] = "serenade";Location.serenade = document.getElementById(key).id; Known.serenade = true; if (!hinted && !peeked) {Game.serenade = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Serenade" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Serenade"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "req" && !Game.requiem) {Check[document.getElementById(key).id] = "requiem";Location.requiem = document.getElementById(key).id; Known.requiem = true; if (!hinted && !peeked) {Game.requiem = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Requiem" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Requiem"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "noc" && !Game.nocturne) {Check[document.getElementById(key).id] = "nocturne";Location.nocturne = document.getElementById(key).id; Known.nocturne = true; if (!hinted && !peeked) {Game.nocturne = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Nocturne" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; junkBS(document.getElementById(key)); continue;}
-	if (document.getElementById(key).value == "pre" && !Game.prelude) {Check[document.getElementById(key).id] = "prelude";Location.prelude = document.getElementById(key).id; Known.prelude = true; if (!hinted && !peeked) {Game.prelude = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - i] + ": Prelude" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "lul" && !Known.lullaby) {Check[document.getElementById(key).id] = "lullaby";Location.lullaby = document.getElementById(key).id; Known.lullaby = true; if (!hinted && !peeked) {Game.lullaby = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Lullaby" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Lullaby"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "epo" && !Known.eponas) {Check[document.getElementById(key).id] = "eponas";Location.eponas = document.getElementById(key).id; Known.eponas = true; if (!hinted && !peeked) {Game.eponas = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Eponas" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Epona's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sar" && !Known.sarias) {Check[document.getElementById(key).id] = "sarias";Location.sarias = document.getElementById(key).id; Known.sarias = true; if (!hinted && !peeked) {Game.sarias = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Sarias" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Saria's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sun" && !Known.suns_song) {Check[document.getElementById(key).id] = "suns";Location.suns_song = document.getElementById(key).id; Known.suns_song = true; if (!hinted && !peeked) {Game.suns_song = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Suns" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Sun's"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sot" && !Known.song_of_time) {Check[document.getElementById(key).id] = "sot";Location.song_of_time = document.getElementById(key).id; Known.song_of_time = true; if (!hinted && !peeked) {Game.song_of_time = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Time" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Time"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "sos" && !Known.song_of_storms) {Check[document.getElementById(key).id] = "sos"; Location.song_of_storms = document.getElementById(key).id; Known.song_of_storms = true; if (!hinted && !peeked) {Game.song_of_storms = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Storms" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Storms"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "min" && !Known.minuet) {Check[document.getElementById(key).id] = "minuet"; Location.minuet = document.getElementById(key).id; Known.minuet = true; if (!hinted && !peeked) {Game.minuet = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Minuet" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Minuet"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "bol" && !Known.bolero) {Check[document.getElementById(key).id] = "bolero";Location.bolero = document.getElementById(key).id; Known.bolero = true; if (!hinted && !peeked) {Game.bolero = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Bolero" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Bolero"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "ser" && !Known.serenade) {Check[document.getElementById(key).id] = "serenade";Location.serenade = document.getElementById(key).id; Known.serenade = true; if (!hinted && !peeked) {Game.serenade = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Serenade" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Serenade"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "req" && !Known.requiem) {Check[document.getElementById(key).id] = "requiem";Location.requiem = document.getElementById(key).id; Known.requiem = true; if (!hinted && !peeked) {Game.requiem = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Requiem" + "<br />";}var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Requiem"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "noc" && !Known.nocturne) {Check[document.getElementById(key).id] = "nocturne";Location.nocturne = document.getElementById(key).id; Known.nocturne = true; if (!hinted && !peeked) {Game.nocturne = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Nocturne" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; junkBS(document.getElementById(key)); continue;}
+	if (document.getElementById(key).value == "pre" && !Known.prelude) {Check[document.getElementById(key).id] = "prelude";Location.prelude = document.getElementById(key).id; Known.prelude = true; if (!hinted && !peeked) {Game.prelude = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Prelude" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; junkBS(document.getElementById(key)); continue;}
 	}
 	
 }
@@ -1292,6 +1292,7 @@ for(var i = 0; i < checkSummary.length; i++) {
 }
 //"ff8080"
 AreaColors = ["", "00ff88", " aaaa00", " ffff00", " ffaa00", " 00aaff", " aaaaaa", " 84FFFF", " FE0404", " ffffff", " 70ffff", " aaffff", " 996000", " 009000", " 80ff80", " ffcc00", " B35705", " 573E02", " ff5050", " 678C8A", " 8f8493", " 5DB8FE", " 00ffff", " cccc90", " cccc30", " ffff90", " ff0080", " 5FAF36", " ff0000", " 00cccc", " ffff50", " c900c9", " 990000", " ffcc60", " ff00ff"];
+WotHColors = ["", "9cc4d9", "white", "b19cd9","d09cd9","cyan"];
 
 for (var i = 1; i <= 34; i++) {
 	if (Area[i] == "woth" && AreaWotHAge[i] != 1) {
@@ -1413,6 +1414,7 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 		var tempnumber2 = 0;
 		var tempnumber3 = 1;
 		var tempbool = false;
+	
 		
 		if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i]) {
 			
@@ -1421,61 +1423,79 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			else if (woth3 == AreaNames[i]) {tempnumber2 = 3;}
 			else if (woth4 == AreaNames[i]) {tempnumber2 = 4;}
 			else if (woth5 == AreaNames[i]) {tempnumber2 = 5;}
-			if (Location.farores_wind != null && Hinted[Location.farores_wind] == false || typeof Hinted[Location.farores_wind] == "undefined") {if (Locations.indexOf(Location.farores_wind) >= AreaIndexes[i-1] && Locations.indexOf(Location.farores_wind) < AreaIndexes[i]) {if (WotHItems.includes("farores_wind")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;}document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Farores"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.farores_wind.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.slingshot1 != null && Hinted[Location.slingshot1] == false || typeof Hinted[Location.slingshot1] == "undefined") {if (Locations.indexOf(Location.slingshot1) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot1) < AreaIndexes[i]) {if (WotHItems.includes("slingshot1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.slingshot2 != null && Hinted[Location.slingshot2] == false || typeof Hinted[Location.slingshot2] == "undefined") {;if (Locations.indexOf(Location.slingshot2) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot2) < AreaIndexes[i]) {if (WotHItems.includes("slingshot2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.slingshot3 != null && Hinted[Location.slingshot3] == false || typeof Hinted[Location.slingshot3] == "undefined") {if (Locations.indexOf(Location.slingshot3) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot3) < AreaIndexes[i]) {if (WotHItems.includes("slingshot3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.boomerang != null && Hinted[Location.boomerang] == false || typeof Hinted[Location.boomerang] == "undefined") {if (Locations.indexOf(Location.boomerang) >= AreaIndexes[i-1] && Locations.indexOf(Location.boomerang) < AreaIndexes[i]) {if (WotHItems.includes("boomerang")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Boomerang"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.boomerang.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.scale1 != null && Hinted[Location.scale1] == false || typeof Hinted[Location.scale1] == "undefined") {if (Locations.indexOf(Location.scale1) >= AreaIndexes[i-1] && Locations.indexOf(Location.scale1) < AreaIndexes[i]) {if (WotHItems.includes("scale1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Scale"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.scale1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.scale2 != null && Hinted[Location.scale2] == false || typeof Hinted[Location.scale2] == "undefined") {if (Locations.indexOf(Location.scale2) >= AreaIndexes[i-1] && Locations.indexOf(Location.scale2) < AreaIndexes[i]) {if (WotHItems.includes("scale2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Scale"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.scale2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bomb_bag1 != null && Hinted[Location.bomb_bag1] == false || typeof Hinted[Location.bomb_bag1] == "undefined") {if (Locations.indexOf(Location.bomb_bag1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag1) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bomb_bag2 != null && Hinted[Location.bomb_bag2] == false || typeof Hinted[Location.bomb_bag2] == "undefined") {if (Locations.indexOf(Location.bomb_bag2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag2) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bomb_bag3 != null && Hinted[Location.bomb_bag3] == false || typeof Hinted[Location.bomb_bag3] == "undefined") {if (Locations.indexOf(Location.bomb_bag3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag3) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bow1 != null && Hinted[Location.bow1] == false || typeof Hinted[Location.bow1] == "undefined") {if (Locations.indexOf(Location.bow1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow1) < AreaIndexes[i]) {if (WotHItems.includes("bow1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bow2 != null && Hinted[Location.bow2] == false || typeof Hinted[Location.bow2] == "undefined") {if (Locations.indexOf(Location.bow2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow2) < AreaIndexes[i]) {if (WotHItems.includes("bow2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bow3 != null && Hinted[Location.bow3] == false || typeof Hinted[Location.bow3] == "undefined") {if (Locations.indexOf(Location.bow3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow3) < AreaIndexes[i]) {if (WotHItems.includes("bow3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.hookshot1 != null && Hinted[Location.hookshot1] == false || typeof Hinted[Location.hookshot1] == "undefined") {if (Locations.indexOf(Location.hookshot1) >= AreaIndexes[i-1] && Locations.indexOf(Location.hookshot1) < AreaIndexes[i]) {if (WotHItems.includes("hookshot1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hookshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hookshot1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.hookshot2 != null && Hinted[Location.hookshot2] == false || typeof Hinted[Location.hookshot2] == "undefined") {if (Locations.indexOf(Location.hookshot2) >= AreaIndexes[i-1] && Locations.indexOf(Location.hookshot2) < AreaIndexes[i]) {if (WotHItems.includes("hookshot2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hookshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hookshot2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.strength1 != null && Hinted[Location.strength1] == false || typeof Hinted[Location.strength1] == "undefined") {if (Locations.indexOf(Location.strength1) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength1) < AreaIndexes[i]) {if (WotHItems.includes("strength1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.strength2 != null && Hinted[Location.strength2] == false || typeof Hinted[Location.strength2] == "undefined") {if (Locations.indexOf(Location.strength2) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength2) < AreaIndexes[i]) {if (WotHItems.includes("strength2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.strength3 != null && Hinted[Location.strength3] == false || typeof Hinted[Location.strength3] == "undefined") {if (Locations.indexOf(Location.strength3) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength3) < AreaIndexes[i]) {if (WotHItems.includes("strength3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.magic1 != null && Hinted[Location.magic1] == false || typeof Hinted[Location.magic1] == "undefined") {if (Locations.indexOf(Location.magic1) >= AreaIndexes[i-1] && Locations.indexOf(Location.magic1) < AreaIndexes[i]) {if (WotHItems.includes("magic1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Magic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.magic1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.magic2 != null && Hinted[Location.magic2] == false || typeof Hinted[Location.magic2] == "undefined") {if (Locations.indexOf(Location.magic2) >= AreaIndexes[i-1] && Locations.indexOf(Location.magic2) < AreaIndexes[i]) {if (WotHItems.includes("magic2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Magic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.magic2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.wallet1 != null && Hinted[Location.wallet1] == false || typeof Hinted[Location.wallet1] == "undefined") {if (Locations.indexOf(Location.wallet1) >= AreaIndexes[i-1] && Locations.indexOf(Location.wallet1) < AreaIndexes[i]) {if (WotHItems.includes("wallet1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Wallet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.wallet1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.wallet2 != null && Hinted[Location.wallet2] == false || typeof Hinted[Location.wallet2] == "undefined") {if (Locations.indexOf(Location.wallet2) >= AreaIndexes[i-1] && Locations.indexOf(Location.wallet2) < AreaIndexes[i]) {if (WotHItems.includes("wallet2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Wallet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.wallet2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.bottle1 != null && Hinted[Location.bottle1] == false || typeof Hinted[Location.bottle1] == "undefined") {if (Locations.indexOf(Location.bottle1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle1) < AreaIndexes[i]) {if (WotHItems.includes("bottle1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bottle2 != null && Hinted[Location.bottle2] == false || typeof Hinted[Location.bottle2] == "undefined") {if (Locations.indexOf(Location.bottle2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle2) < AreaIndexes[i]) {if (WotHItems.includes("bottle2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.bottle3 != null && Hinted[Location.bottle3] == false || typeof Hinted[Location.bottle3] == "undefined") {if (Locations.indexOf(Location.bottle3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle3) < AreaIndexes[i]) {if (WotHItems.includes("bottle3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.rutos_letter != null && Hinted[Location.rutos_letter] == false || typeof Hinted[Location.rutos_letter] == "undefined") {if (Locations.indexOf(Location.rutos_letter) >= AreaIndexes[i-1] && Locations.indexOf(Location.rutos_letter) < AreaIndexes[i]) {if (WotHItems.includes("rutos_letter")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Letter"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.rutos_letter.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.hammer != null && Hinted[Location.hammer] == false || typeof Hinted[Location.hammer] == "undefined") {if (Locations.indexOf(Location.hammer) >= AreaIndexes[i-1] && Locations.indexOf(Location.hammer) < AreaIndexes[i]) {if (WotHItems.includes("hammer")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hammer"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hammer.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.mirror_shield != null && Hinted[Location.mirror_shield] == false || typeof Hinted[Location.mirror_shield] == "undefined") {if (Locations.indexOf(Location.mirror_shield) >= AreaIndexes[i-1] && Locations.indexOf(Location.mirror_shield) < AreaIndexes[i]) {if (WotHItems.includes("mirror_shield")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Mirror"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.mirror_shield.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.iron_boots != null && Hinted[Location.iron_boots] == false || typeof Hinted[Location.iron_boots] == "undefined") {if (Locations.indexOf(Location.iron_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.iron_boots) < AreaIndexes[i]) {if (WotHItems.includes("iron_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Irons"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.iron_boots.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.hover_boots != null && Hinted[Location.hover_boots] == false || typeof Hinted[Location.hover_boots] == "undefined") {if (Locations.indexOf(Location.hover_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.hover_boots) < AreaIndexes[i]) {if (WotHItems.includes("hover_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hovers"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hover_boots.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.goron_tunic != null && Hinted[Location.goron_tunic] == false || typeof Hinted[Location.goron_tunic] == "undefined") {if (Locations.indexOf(Location.goron_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.goron_tunic) < AreaIndexes[i]) {if (WotHItems.includes("goron_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Goron Tunic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.goron_tunic.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.zora_tunic != null && Hinted[Location.zora_tunic] == false || typeof Hinted[Location.zora_tunic] == "undefined") {if (Locations.indexOf(Location.zora_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.zora_tunic) < AreaIndexes[i]) {if (WotHItems.includes("zora_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Zora Tunic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.zora_tunic.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.dins_fire != null && Hinted[Location.dins_fire] == false || typeof Hinted[Location.dins_fire] == "undefined") {if (Locations.indexOf(Location.dins_fire) >= AreaIndexes[i-1] && Locations.indexOf(Location.dins_fire) < AreaIndexes[i]) {if (WotHItems.includes("dins_fire")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Din's Fire"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.dins_fire.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.fire_arrows != null && Hinted[Location.fire_arrows] == false || typeof Hinted[Location.fire_arrows] == "undefined") {if (Locations.indexOf(Location.fire_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.fire_arrows) < AreaIndexes[i]) {if (WotHItems.includes("fire_arrows")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Fire Arrows "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.fire_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.lens_of_truth != null && Hinted[Location.lens_of_truth] == false || typeof Hinted[Location.lens_of_truth] == "undefined") {if (Locations.indexOf(Location.lens_of_truth) >= AreaIndexes[i-1] && Locations.indexOf(Location.lens_of_truth) < AreaIndexes[i]) {if (WotHItems.includes("lens_of_truth")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lens"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lens_of_truth.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.light_arrows != null && Hinted[Location.light_arrows] == false || typeof Hinted[Location.light_arrows] == "undefined") {if (Locations.indexOf(Location.light_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.light_arrows) < AreaIndexes[i]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Light Arrows"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.light_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.prescription != null && Hinted[Location.prescription] == false || typeof Hinted[Location.prescription] == "undefined") {if (Locations.indexOf(Location.prescription) >= AreaIndexes[i-1] && Locations.indexOf(Location.prescription) < AreaIndexes[i]) {if (WotHItems.includes("prescription")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Prescription"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.trade.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.claim_check != null && Hinted[Location.claim_check] == false || typeof Hinted[Location.claim_check] == "undefined") {if (Locations.indexOf(Location.claim_check) >= AreaIndexes[i-1] && Locations.indexOf(Location.claim_check) < AreaIndexes[i]) {if (WotHItems.includes("claim_check")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Claim Check"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.trade.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.lullaby != null && Hinted[Location.lullaby] == false || typeof Hinted[Location.lullaby] == "undefined") {if (Locations.indexOf(Location.lullaby) == SongIndexes[i-1] || Locations.indexOf(Location.lullaby) == SongIndexes2[i-1]) {if (WotHItems.includes("lullaby")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lullaby"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lullaby.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.eponas != null && Hinted[Location.eponas] == false || typeof Hinted[Location.eponas] == "undefined") {if (Locations.indexOf(Location.eponas) == SongIndexes[i-1] || Locations.indexOf(Location.eponas) == SongIndexes2[i-1]) {if (WotHItems.includes("eponas")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Eponas"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.eponas.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.sarias != null && Hinted[Location.sarias] == false || typeof Hinted[Location.sarias] == "undefined") {if (Locations.indexOf(Location.sarias) == SongIndexes[i-1] || Locations.indexOf(Location.sarias) == SongIndexes2[i-1]) {if (WotHItems.includes("sarias")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Sarias"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.sarias.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.suns != null && Hinted[Location.suns] == false || typeof Hinted[Location.suns] == "undefined") {if (Locations.indexOf(Location.suns) == SongIndexes[i-1] || Locations.indexOf(Location.suns) == SongIndexes2[i-1]) {if (WotHItems.includes("suns")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Suns"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.suns.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			if (Location.song_of_time != null && Hinted[Location.song_of_time] == false || typeof Hinted[Location.song_of_time] == "undefined") {if (Locations.indexOf(Location.song_of_time) == SongIndexes[i-1] || Locations.indexOf(Location.song_of_time) == SongIndexes2[i-1]) {if (WotHItems.includes("song_of_time")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Time"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.song_of_time.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.song_of_storms != null && Hinted[Location.song_of_storms] == false || typeof Hinted[Location.song_of_storms] == "undefined") {if (Locations.indexOf(Location.song_of_storms) == SongIndexes[i-1] || Locations.indexOf(Location.song_of_storms) == SongIndexes2[i-1]) {if (WotHItems.includes("song_of_storms")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Storms"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.song_of_storms.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.minuet != null && Hinted[Location.minuet] == false || typeof Hinted[Location.minuet] == "undefined") {if (Locations.indexOf(Location.minuet) == SongIndexes[i-1] || Locations.indexOf(Location.minuet) == SongIndexes2[i-1]) {if (WotHItems.includes("minuet")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Minuet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.minuet.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.bolero != null && Hinted[Location.bolero] == false || typeof Hinted[Location.bolero] == "undefined") {if (Locations.indexOf(Location.bolero) == SongIndexes[i-1] || Locations.indexOf(Location.bolero) == SongIndexes2[i-1]) {if (WotHItems.includes("bolero")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bolero"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bolero.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	 
-			if (Location.requiem != null && Hinted[Location.requiem] == false || typeof Hinted[Location.requiem] == "undefined") {if (Locations.indexOf(Location.requiem) == SongIndexes[i-1] || Locations.indexOf(Location.requiem) == SongIndexes2[i-1]) {if (WotHItems.includes("requiem")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Requiem"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.requiem.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 
-			if (Location.nocturne != null && Hinted[Location.nocturne] == false || typeof Hinted[Location.nocturne] == "undefined") {if (Locations.indexOf(Location.nocturne) == SongIndexes[i-1] || Locations.indexOf(Location.nocturne) == SongIndexes2[i-1]) {if (WotHItems.includes("nocturne")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Nocturne"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.nocturne.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}} 	
-			document.getElementById("woth" + tempnumber2 + "_title").style.color= AreaColors[i];
+			var tempArray = [];
+			if (Location.farores_wind != null && Hinted[Location.farores_wind] == false || typeof Hinted[Location.farores_wind] == "undefined") {if (Locations.indexOf(Location.farores_wind) >= AreaIndexes[i-1] && Locations.indexOf(Location.farores_wind) < AreaIndexes[i]) {if (WotHItems.includes("farores_wind")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;}document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Farores"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.farores_wind.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("farores_wind"); }} 	
+			if (Location.slingshot1 != null && Hinted[Location.slingshot1] == false || typeof Hinted[Location.slingshot1] == "undefined") {if (Locations.indexOf(Location.slingshot1) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot1) < AreaIndexes[i]) {if (WotHItems.includes("slingshot1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("slingshot1"); }} 	
+			if (Location.slingshot2 != null && Hinted[Location.slingshot2] == false || typeof Hinted[Location.slingshot2] == "undefined") {;if (Locations.indexOf(Location.slingshot2) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot2) < AreaIndexes[i]) {if (WotHItems.includes("slingshot2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("slingshot2"); }} 	
+			if (Location.slingshot3 != null && Hinted[Location.slingshot3] == false || typeof Hinted[Location.slingshot3] == "undefined") {if (Locations.indexOf(Location.slingshot3) >= AreaIndexes[i-1] && Locations.indexOf(Location.slingshot3) < AreaIndexes[i]) {if (WotHItems.includes("slingshot3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Slingshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.slingshot3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("slingshot3"); }} 	
+			if (Location.boomerang != null && Hinted[Location.boomerang] == false || typeof Hinted[Location.boomerang] == "undefined") {if (Locations.indexOf(Location.boomerang) >= AreaIndexes[i-1] && Locations.indexOf(Location.boomerang) < AreaIndexes[i]) {if (WotHItems.includes("boomerang")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Boomerang"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.boomerang.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("boomerang"); }} 	
+			if (Location.scale1 != null && Hinted[Location.scale1] == false || typeof Hinted[Location.scale1] == "undefined") {if (Locations.indexOf(Location.scale1) >= AreaIndexes[i-1] && Locations.indexOf(Location.scale1) < AreaIndexes[i]) {if (WotHItems.includes("scale1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Scale"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.scale1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("scale1"); }} 	 
+			if (Location.scale2 != null && Hinted[Location.scale2] == false || typeof Hinted[Location.scale2] == "undefined") {if (Locations.indexOf(Location.scale2) >= AreaIndexes[i-1] && Locations.indexOf(Location.scale2) < AreaIndexes[i]) {if (WotHItems.includes("scale2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Scale"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.scale2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("scale2"); }} 	
+			if (Location.bomb_bag1 != null && Hinted[Location.bomb_bag1] == false || typeof Hinted[Location.bomb_bag1] == "undefined") {if (Locations.indexOf(Location.bomb_bag1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag1) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bomb_bag1"); }} 	
+			if (Location.bomb_bag2 != null && Hinted[Location.bomb_bag2] == false || typeof Hinted[Location.bomb_bag2] == "undefined") {if (Locations.indexOf(Location.bomb_bag2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag2) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bomb_bag2"); }} 	
+			if (Location.bomb_bag3 != null && Hinted[Location.bomb_bag3] == false || typeof Hinted[Location.bomb_bag3] == "undefined") {if (Locations.indexOf(Location.bomb_bag3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bomb_bag3) < AreaIndexes[i]) {if (WotHItems.includes("bomb_bag3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bomb Bag"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bomb_bag3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bomb_bag3"); }} 	
+			if (Location.bow1 != null && Hinted[Location.bow1] == false || typeof Hinted[Location.bow1] == "undefined") {if (Locations.indexOf(Location.bow1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow1) < AreaIndexes[i]) {if (WotHItems.includes("bow1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bow1"); }} 	
+			if (Location.bow2 != null && Hinted[Location.bow2] == false || typeof Hinted[Location.bow2] == "undefined") {if (Locations.indexOf(Location.bow2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow2) < AreaIndexes[i]) {if (WotHItems.includes("bow2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bow2"); }} 	
+			if (Location.bow3 != null && Hinted[Location.bow3] == false || typeof Hinted[Location.bow3] == "undefined") {if (Locations.indexOf(Location.bow3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bow3) < AreaIndexes[i]) {if (WotHItems.includes("bow3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bow"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bow3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bow3"); }} 	
+			if (Location.hookshot1 != null && Hinted[Location.hookshot1] == false || typeof Hinted[Location.hookshot1] == "undefined") {if (Locations.indexOf(Location.hookshot1) >= AreaIndexes[i-1] && Locations.indexOf(Location.hookshot1) < AreaIndexes[i]) {if (WotHItems.includes("hookshot1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hookshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hookshot1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("hookshot1"); }} 	
+			if (Location.hookshot2 != null && Hinted[Location.hookshot2] == false || typeof Hinted[Location.hookshot2] == "undefined") {if (Locations.indexOf(Location.hookshot2) >= AreaIndexes[i-1] && Locations.indexOf(Location.hookshot2) < AreaIndexes[i]) {if (WotHItems.includes("hookshot2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hookshot"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hookshot2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("hookshot2"); }} 	
+			if (Location.strength1 != null && Hinted[Location.strength1] == false || typeof Hinted[Location.strength1] == "undefined") {if (Locations.indexOf(Location.strength1) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength1) < AreaIndexes[i]) {if (WotHItems.includes("strength1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("strength1"); }} 	
+			if (Location.strength2 != null && Hinted[Location.strength2] == false || typeof Hinted[Location.strength2] == "undefined") {if (Locations.indexOf(Location.strength2) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength2) < AreaIndexes[i]) {if (WotHItems.includes("strength2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("strength2"); }} 	
+			if (Location.strength3 != null && Hinted[Location.strength3] == false || typeof Hinted[Location.strength3] == "undefined") {if (Locations.indexOf(Location.strength3) >= AreaIndexes[i-1] && Locations.indexOf(Location.strength3) < AreaIndexes[i]) {if (WotHItems.includes("strength3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Strength"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.strength3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("strength3"); }} 	 
+			if (Location.magic1 != null && Hinted[Location.magic1] == false || typeof Hinted[Location.magic1] == "undefined") {if (Locations.indexOf(Location.magic1) >= AreaIndexes[i-1] && Locations.indexOf(Location.magic1) < AreaIndexes[i]) {if (WotHItems.includes("magic1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Magic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.magic1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("magic1"); }} 	 
+			if (Location.magic2 != null && Hinted[Location.magic2] == false || typeof Hinted[Location.magic2] == "undefined") {if (Locations.indexOf(Location.magic2) >= AreaIndexes[i-1] && Locations.indexOf(Location.magic2) < AreaIndexes[i]) {if (WotHItems.includes("magic2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Magic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.magic2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("magic2"); }} 	
+			if (Location.wallet1 != null && Hinted[Location.wallet1] == false || typeof Hinted[Location.wallet1] == "undefined") {if (Locations.indexOf(Location.wallet1) >= AreaIndexes[i-1] && Locations.indexOf(Location.wallet1) < AreaIndexes[i]) {if (WotHItems.includes("wallet1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Wallet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.wallet1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("wallet1"); }} 	
+			if (Location.wallet2 != null && Hinted[Location.wallet2] == false || typeof Hinted[Location.wallet2] == "undefined") {if (Locations.indexOf(Location.wallet2) >= AreaIndexes[i-1] && Locations.indexOf(Location.wallet2) < AreaIndexes[i]) {if (WotHItems.includes("wallet2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Wallet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.wallet2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("wallet2"); }} 	 
+			if (Location.bottle1 != null && Hinted[Location.bottle1] == false || typeof Hinted[Location.bottle1] == "undefined") {if (Locations.indexOf(Location.bottle1) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle1) < AreaIndexes[i]) {if (WotHItems.includes("bottle1")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle1.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bottle1"); }} 	
+			if (Location.bottle2 != null && Hinted[Location.bottle2] == false || typeof Hinted[Location.bottle2] == "undefined") {if (Locations.indexOf(Location.bottle2) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle2) < AreaIndexes[i]) {if (WotHItems.includes("bottle2")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle2.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bottle2"); }} 	
+			if (Location.bottle3 != null && Hinted[Location.bottle3] == false || typeof Hinted[Location.bottle3] == "undefined") {if (Locations.indexOf(Location.bottle3) >= AreaIndexes[i-1] && Locations.indexOf(Location.bottle3) < AreaIndexes[i]) {if (WotHItems.includes("bottle3")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bottle"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bottle3.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bottle3"); }} 	
+			if (Location.rutos_letter != null && Hinted[Location.rutos_letter] == false || typeof Hinted[Location.rutos_letter] == "undefined") {if (Locations.indexOf(Location.rutos_letter) >= AreaIndexes[i-1] && Locations.indexOf(Location.rutos_letter) < AreaIndexes[i]) {if (WotHItems.includes("rutos_letter")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Letter"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.rutos_letter.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("rutos_letter"); }} 	
+			if (Location.hammer != null && Hinted[Location.hammer] == false || typeof Hinted[Location.hammer] == "undefined") {if (Locations.indexOf(Location.hammer) >= AreaIndexes[i-1] && Locations.indexOf(Location.hammer) < AreaIndexes[i]) {if (WotHItems.includes("hammer")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hammer"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hammer.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("hammer"); }} 	 
+			if (Location.mirror_shield != null && Hinted[Location.mirror_shield] == false || typeof Hinted[Location.mirror_shield] == "undefined") {if (Locations.indexOf(Location.mirror_shield) >= AreaIndexes[i-1] && Locations.indexOf(Location.mirror_shield) < AreaIndexes[i]) {if (WotHItems.includes("mirror_shield")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Mirror"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.mirror_shield.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("mirror_shield"); }} 	 
+			if (Location.iron_boots != null && Hinted[Location.iron_boots] == false || typeof Hinted[Location.iron_boots] == "undefined") {if (Locations.indexOf(Location.iron_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.iron_boots) < AreaIndexes[i]) {if (WotHItems.includes("iron_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Irons"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.iron_boots.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("iron_boots"); }} 	 
+			if (Location.hover_boots != null && Hinted[Location.hover_boots] == false || typeof Hinted[Location.hover_boots] == "undefined") {if (Locations.indexOf(Location.hover_boots) >= AreaIndexes[i-1] && Locations.indexOf(Location.hover_boots) < AreaIndexes[i]) {if (WotHItems.includes("hover_boots")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Hovers"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.hover_boots.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("hover_boots"); }} 	
+			if (Location.goron_tunic != null && Hinted[Location.goron_tunic] == false || typeof Hinted[Location.goron_tunic] == "undefined") {if (Locations.indexOf(Location.goron_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.goron_tunic) < AreaIndexes[i]) {if (WotHItems.includes("goron_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Goron Tunic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.goron_tunic.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("goron_tunic"); }} 	
+			if (Location.zora_tunic != null && Hinted[Location.zora_tunic] == false || typeof Hinted[Location.zora_tunic] == "undefined") {if (Locations.indexOf(Location.zora_tunic) >= AreaIndexes[i-1] && Locations.indexOf(Location.zora_tunic) < AreaIndexes[i]) {if (WotHItems.includes("zora_tunic")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Zora Tunic"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.zora_tunic.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("zora_tunic"); }} 	 
+			if (Location.dins_fire != null && Hinted[Location.dins_fire] == false || typeof Hinted[Location.dins_fire] == "undefined") {if (Locations.indexOf(Location.dins_fire) >= AreaIndexes[i-1] && Locations.indexOf(Location.dins_fire) < AreaIndexes[i]) {if (WotHItems.includes("dins_fire")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Din's Fire"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.dins_fire.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("dins_fire"); }} 	
+			if (Location.fire_arrows != null && Hinted[Location.fire_arrows] == false || typeof Hinted[Location.fire_arrows] == "undefined") {if (Locations.indexOf(Location.fire_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.fire_arrows) < AreaIndexes[i]) {if (WotHItems.includes("fire_arrows")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Fire Arrows "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.fire_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("fire_arrows"); }} 	
+			if (Location.lens_of_truth != null && Hinted[Location.lens_of_truth] == false || typeof Hinted[Location.lens_of_truth] == "undefined") {if (Locations.indexOf(Location.lens_of_truth) >= AreaIndexes[i-1] && Locations.indexOf(Location.lens_of_truth) < AreaIndexes[i]) {if (WotHItems.includes("lens_of_truth")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lens"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lens_of_truth.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("lens_of_truth"); }} 	
+			if (Location.light_arrows != null && Hinted[Location.light_arrows] == false || typeof Hinted[Location.light_arrows] == "undefined") {if (Locations.indexOf(Location.light_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.light_arrows) < AreaIndexes[i]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Light Arrows"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.light_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("light_arrows"); }} 	
+			if (Location.prescription != null && Hinted[Location.prescription] == false || typeof Hinted[Location.prescription] == "undefined") {if (Locations.indexOf(Location.prescription) >= AreaIndexes[i-1] && Locations.indexOf(Location.prescription) < AreaIndexes[i]) {if (WotHItems.includes("prescription")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Prescription"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.trade.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("trade"); }} 	
+			if (Location.claim_check != null && Hinted[Location.claim_check] == false || typeof Hinted[Location.claim_check] == "undefined") {if (Locations.indexOf(Location.claim_check) >= AreaIndexes[i-1] && Locations.indexOf(Location.claim_check) < AreaIndexes[i]) {if (WotHItems.includes("claim_check")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Claim Check"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.trade.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("trade"); }} 	 
+			if (Location.lullaby != null && Hinted[Location.lullaby] == false || typeof Hinted[Location.lullaby] == "undefined") {if (Locations.indexOf(Location.lullaby) == SongIndexes[i-1] || Locations.indexOf(Location.lullaby) == SongIndexes2[i-1]) {if (WotHItems.includes("lullaby")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lullaby"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lullaby.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("lullaby"); }} 	 
+			if (Location.eponas != null && Hinted[Location.eponas] == false || typeof Hinted[Location.eponas] == "undefined") {if (Locations.indexOf(Location.eponas) == SongIndexes[i-1] || Locations.indexOf(Location.eponas) == SongIndexes2[i-1]) {if (WotHItems.includes("eponas")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Eponas"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.eponas.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("eponas"); }} 	 
+			if (Location.sarias != null && Hinted[Location.sarias] == false || typeof Hinted[Location.sarias] == "undefined") {if (Locations.indexOf(Location.sarias) == SongIndexes[i-1] || Locations.indexOf(Location.sarias) == SongIndexes2[i-1]) {if (WotHItems.includes("sarias")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Sarias"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.sarias.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("sarias"); }} 	 
+			if (Location.suns != null && Hinted[Location.suns] == false || typeof Hinted[Location.suns] == "undefined") {if (Locations.indexOf(Location.suns) == SongIndexes[i-1] || Locations.indexOf(Location.suns) == SongIndexes2[i-1]) {if (WotHItems.includes("suns")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Suns"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.suns.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("suns"); }} 	
+			if (Location.song_of_time != null && Hinted[Location.song_of_time] == false || typeof Hinted[Location.song_of_time] == "undefined") {if (Locations.indexOf(Location.song_of_time) == SongIndexes[i-1] || Locations.indexOf(Location.song_of_time) == SongIndexes2[i-1]) {if (WotHItems.includes("song_of_time")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Time"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.song_of_time.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("song_of_time"); }} 	 
+			if (Location.song_of_storms != null && Hinted[Location.song_of_storms] == false || typeof Hinted[Location.song_of_storms] == "undefined") {if (Locations.indexOf(Location.song_of_storms) == SongIndexes[i-1] || Locations.indexOf(Location.song_of_storms) == SongIndexes2[i-1]) {if (WotHItems.includes("song_of_storms")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Storms"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.song_of_storms.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("song_of_storms"); }} 	 
+			if (Location.minuet != null && Hinted[Location.minuet] == false || typeof Hinted[Location.minuet] == "undefined") {if (Locations.indexOf(Location.minuet) == SongIndexes[i-1] || Locations.indexOf(Location.minuet) == SongIndexes2[i-1]) {if (WotHItems.includes("minuet")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Minuet"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.minuet.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("minuet"); }} 	 
+			if (Location.bolero != null && Hinted[Location.bolero] == false || typeof Hinted[Location.bolero] == "undefined") {if (Locations.indexOf(Location.bolero) == SongIndexes[i-1] || Locations.indexOf(Location.bolero) == SongIndexes2[i-1]) {if (WotHItems.includes("bolero")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Bolero"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.bolero.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("bolero"); }} 	 
+			if (Location.requiem != null && Hinted[Location.requiem] == false || typeof Hinted[Location.requiem] == "undefined") {if (Locations.indexOf(Location.requiem) == SongIndexes[i-1] || Locations.indexOf(Location.requiem) == SongIndexes2[i-1]) {if (WotHItems.includes("requiem")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Requiem"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.requiem.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("requiem"); }} 
+			if (Location.nocturne != null && Hinted[Location.nocturne] == false || typeof Hinted[Location.nocturne] == "undefined") {if (Locations.indexOf(Location.nocturne) == SongIndexes[i-1] || Locations.indexOf(Location.nocturne) == SongIndexes2[i-1]) {if (WotHItems.includes("nocturne")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Nocturne"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.nocturne.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("ncoturne"); }} 	
+			
+			var tempArray2 = [];
+			for (k = 0; k < tempArray.length; k++) {
+				if ((ChecksPutInLogicBy[tempArray[k]].length < 15 && !tempArray[k].startsWith("bomb_bag")) ||(ChecksPutInLogicBy[tempArray[k]].length < 5 && tempArray[k].startsWith("bomb_bag"))) {tempArray2.push.apply(tempArray2, ChecksPutInLogicBy[tempArray[k]]);}
+			}
+			
+			document.getElementById("woth" + tempnumber2 + "_title").style.color= WotHColors[tempnumber2];
 			if (AreaWotHAge[i] < tempnumber3) {
 				document.getElementById("woth" + tempnumber2 + "_title").style.opacity = .4;
+				if (tempnumber2 == 1) {woth1Locations =[];}
+				if (tempnumber2 == 2) {woth2Locations = [];}
+				if (tempnumber2 == 3) {woth3Locations = [];}
+				if (tempnumber2 == 4) {woth4Locations =[];}
+				if (tempnumber2 == 5) {woth5Locations = [];}
 			}
 			if (AreaWotHAge[i] >= tempnumber3) {
 				document.getElementById("woth" + tempnumber2 + "_title").style.opacity = 1;
+				if (tempnumber2 == 1) {woth1Locations = tempArray2.slice(0);}
+				if (tempnumber2 == 2) {woth2Locations = tempArray2.slice(0);}
+				if (tempnumber2 == 3) {woth3Locations = tempArray2.slice(0);}
+				if (tempnumber2 == 4) {woth4Locations = tempArray2.slice(0);}
+				if (tempnumber2 == 5) {woth5Locations = tempArray2.slice(0);}
 			}
+			console.log(ChecksPutInLogicBy.slingshot1);
 		}
 		
 	}	
@@ -2593,8 +2613,6 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
 
 
-
-
 	gs[1] = Location_Logic.gs_kokiri_child;
 	gs[2] = Location_Logic.gs_kokiri_bean;
 	gs[3] = Location_Logic.gs_kokiri_adult;
@@ -2721,6 +2739,14 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
+			document.getElementById(str).innerHTML = backUp[temp-1];
+			var tempbool = false;
+			if (!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) {document.getElementById(str).style.color = "chartreuse";}
+			if (woth1Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[1];}
+			if (woth2Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[2] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[2]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[2];}}
+			if (woth3Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[3]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[3];}}
+			if (woth4Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[4] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[4]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[4];}}
+			if (woth5Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[5] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[5]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[5];}}
 			if(document.getElementById(key) != null) {
 				if (temp <= 242) {Game.logically_accessible += 1;}
 				if (temp == 44 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
@@ -2959,6 +2985,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 var Hinted = {};
 var Check={};
 var ChecksLockedBy={};
+var ChecksPutInLogicBy = {};
 var Game={};
 var Person={};
 var Map={};
@@ -2966,14 +2993,24 @@ var UI={};
 var Location_Logic ={};
 var Location_Locked_Logic={};
 var Location_Locked_Logic2={};
+var Location_PutIn_Logic={};
 var Locked_Logic={};
 var Locked_Logic2={};
+var PutIn_Logic={};
 var Location_Access={};
 var Logic={};
 var Location ={};
 var gs = [];
 var Area = [];
 var Known = [];
+var paused = false;
+var woth1Locations = [];
+var woth2Locations = [];
+var woth3Locations = [];
+var woth4Locations = [];
+var woth5Locations = [];
+
+
 
 var age = "child";
 var hinted = false;
@@ -3192,9 +3229,12 @@ var tSeconds = 0;
 		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 		];
 		
+		var backUp = [];
+		
 		for (var i = 0; i < Locations.length; i++) {
 			Check[Locations[i]] = "unknown";
 			Location[Locations[i]] = "unknown";
+			backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
 		}
 		
 		var Names = [
@@ -3336,7 +3376,18 @@ var tSeconds = 0;
 	Logic.trade = false;
 	Logic.prescription = false;
 	Logic.claim_check = false;
-	Logic.light_arrows = false;
+	Locked_Logic2.forced_fire_keys=0;
+	Locked_Logic2.forced_water_keys=0;
+	Locked_Logic2.forced_spirit_keys=0;
+	Locked_Logic2.forced_shadow_keys=0;
+	Locked_Logic2.forced_ganons_keys=0;
+	Locked_Logic2.forced_gtg_keys=0;
+	Locked_Logic2.forced_well_keys=0;
+	Locked_Logic2.forced_forest_boss_key = false;
+	Locked_Logic2.forced_fire_boss_key = false;
+	Locked_Logic2.forced_water_boss_key = false;
+	Locked_Logic2.forced_spirit_boss_key = false;
+	Locked_Logic2.forced_shadow_boss_key = false;Logic.light_arrows = false;
 	Logic.lullaby = false;
 	Logic.eponas = false;
 	Logic.sarias = false;
@@ -3435,6 +3486,18 @@ var tSeconds = 0;
 	Locked_Logic2.forced_water_boss_key = false;
 	Locked_Logic2.forced_spirit_boss_key = false;
 	Locked_Logic2.forced_shadow_boss_key = false;
+	PutIn_Logic.forced_fire_keys=0;
+	PutIn_Logic.forced_water_keys=0;
+	PutIn_Logic.forced_spirit_keys=0;
+	PutIn_Logic.forced_shadow_keys=0;
+	PutIn_Logic.forced_ganons_keys=0;
+	PutIn_Logic.forced_gtg_keys=0;
+	PutIn_Logic.forced_well_keys=0;
+	PutIn_Logic.forced_forest_boss_key = false;
+	PutIn_Logic.forced_fire_boss_key = false;
+	PutIn_Logic.forced_water_boss_key = false;
+	PutIn_Logic.forced_spirit_boss_key = false;
+	PutIn_Logic.forced_shadow_boss_key = false;
 	
 	Logic.forest_boss_key = false;
 	Logic.fire_boss_key = false;
@@ -4690,7 +4753,7 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2[key] = false;
 	}
 	
-	var temp = 5;
+	var temp = 6;
 	var tempArray = [];
 	
 	while (temp > 0) {
@@ -5354,8 +5417,216 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic.preludeSpot = Locked_Logic.forest_medallion;
 	Location_Locked_Logic.nocturneSpot = Locked_Logic.forest_medallion && Locked_Logic.fire_medallion && Locked_Logic.water_medallion;
 	Location_Locked_Logic.oot = Locked_Logic.kokiri_emerald && Locked_Logic.goron_ruby && Locked_Logic.zora_sapphire;
+	
+	Location_Locked_Logic.gs_kokiri_child = true;
+	Location_Locked_Logic.gs_kokiri_bean = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_kokiri_adult = Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_market = true;
+	Location_Locked_Logic.gs_lost_woods_bean1 = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_lost_woods_bean2 = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_lost_woods_above_stage = (Locked_Logic.bomb_bag || Locked_Logic.silver_scale) && (Locked_Logic.sarias || Locked_Logic.minuet);
+	Location_Locked_Logic.gs_sacred_forest = Locked_Logic.hookshot && (Locked_Logic.sarias || Locked_Logic.minuet);
+	Location_Locked_Logic.gs_outside_kakariko = (Locked_Logic.boomerang && Locked_Logic.bomb_bag) || (Locked_Logic.can_blast_or_smash && Locked_Logic.hookshot)
+	Location_Locked_Logic.gs_near_gerudo = (Locked_Logic.hammer && Locked_Logic.can_use_fire && Locked_Logic.hookshot) || (Locked_Logic.can_use_dins && Locked_Logic.bomb_bag && Locked_Logic.boomerang);
+	Location_Locked_Logic.gs_hyrule_castle_tree = true;
+	Location_Locked_Logic.gs_hyrule_castle_grotto = Locked_Logic.song_of_storms && Locked_Logic.bomb_bag && Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_lon_lon_tree = true;
+	Location_Locked_Logic.gs_lon_lon_shed = true;
+	Location_Locked_Logic.gs_lon_lon_window = Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_lon_lon_back_wall = Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_kakariko_construction = true;
+	Location_Locked_Logic.gs_kakariko_skulltula_house = true;
+	Location_Locked_Logic.gs_kakariko_guard_house = true;
+	Location_Locked_Logic.gs_kakariko_tree = true;
+	Location_Locked_Logic.gs_kakariko_tower = Locked_Logic.bomb_bag || Locked_Logic.slingshot;
+	Location_Locked_Logic.gs_kakariko_impas = Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_graveyard_wall = Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_graveyard_bean = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_trail_bean = Locked_Logic.bottle && (Locked_Logic.bomb_bag || Locked_Logic.goron_bracelet);
+	Location_Locked_Logic.gs_trail_bombable_wall = Locked_Logic.can_blast_or_smash;
+	Location_Locked_Logic.gs_trail_hail_path = Locked_Logic.hammer;
+	Location_Locked_Logic.gs_trail_above_dodongos = Locked_Logic.hammer;
+	Location_Locked_Logic.gs_goron_city_center = true;
+	Location_Locked_Logic.gs_goron_city_maze = Locked_Logic.bomb_bag;
+	Location_Locked_Logic.gs_crater_crate = Locked_Logic.can_blast_or_smash;
+	Location_Locked_Logic.gs_crater_bean = Locked_Logic.bottle && Locked_Logic.bolero;
+	Location_Locked_Logic.gs_river_ladder = Locked_Logic.silver_scale || Locked_Logic.bomb_bag;
+	Location_Locked_Logic.gs_river_near_grotto = Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_river_above_bridge = Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_domain = Locked_Logic.lullaby && (Locked_Logic.hookshot || Locked_Logic.magic || Locked_Logic.bow);
+	Location_Locked_Logic.gs_fountain_above_log = Locked_Logic.rutos_letter && (Locked_Logic.silver_scale || (Locked_Logic.bomb_bag && Locked_Logic.lullaby)) && Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_fountain_tree = Locked_Logic.rutos_letter && (Locked_Logic.silver_scale || (Locked_Logic.bomb_bag && Locked_Logic.lullaby))
+	Location_Locked_Logic.gs_fountain_hidden_cave = Locked_Logic.ice_access && Locked_Logic.silver_gauntlets && Locked_Logic.hookshot && Locked_Logic.can_blast_or_smash;
+	Location_Locked_Logic.gs_hylia_bean = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_hylia_lab_wall = Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_hylia_island = true;
+	Location_Locked_Logic.gs_hylia_tree = Locked_Logic.longshot;
+	Location_Locked_Logic.gs_lab_crate = Locked_Logic.iron_boots && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_valley_small_bridge = Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_valley_bean = Locked_Logic.bottle;
+	Location_Locked_Logic.gs_valley_tent = Locked_Logic.fortress_access && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_valley_pillar = Locked_Logic.fortress_access && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_fortress_archery = Locked_Logic.fortress_access && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_fortress_top = Locked_Logic.fortress_access;
+	Location_Locked_Logic.gs_wasteland_structure = Locked_Logic.hookshot && Locked_Logic.can_cross_quicksand;
+	Location_Locked_Logic.gs_colossus_bean = Locked_Logic.bottle && Locked_Logic.requiem;
+	Location_Locked_Logic.gs_colossus_tree = Locked_Logic.hookshot && Locked_Logic.can_enter_colossus;
+	Location_Locked_Logic.gs_colossus_hill = (Locked_Logic.requiem && (Locked_Logic.bomb_bag || Locked_Logic.silver_scale)) || (Locked_Logic.longshot && Locked_Logic.can_enter_colossus);
+	Location_Locked_Logic.gs_zora_river_tree = true;
+	Location_Locked_Logic.gs_ganons = true;
+	Location_Locked_Logic.gs_deku_basement_back = Locked_Logic.boomerang && Locked_Logic.bomb_bag && Locked_Logic.slingshot;
+	Location_Locked_Logic.gs_deku_basement_gate = true;
+	Location_Locked_Logic.gs_deku_basement_vines = Locked_Logic.slingshot || Locked_Logic.boomerang || Locked_Logic.bomb_bag || Locked_Logic.can_use_dins;
+	Location_Locked_Logic.gs_deku_compass = true;
+	Location_Locked_Logic.gs_dodongos_east_side = Locked_Logic.can_enter_dodongos;
+	Location_Locked_Logic.gs_dodongos_stair_room = Locked_Logic.dodongos_climb;
+	Location_Locked_Logic.gs_dodongos_above_stairs = (Locked_Logic.dodongos_climb && Locked_Logic.hookshot) || (Locked_Logic.boomerang && (Locked_Logic.bomb_bag || Locked_Logic.goron_bracelet));
+	Location_Locked_Logic.gs_dodongos_scarecrow = Locked_Logic.can_enter_dodongos && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_dodongos_before_king = Locked_Logic.bomb_bag;
+	Location_Locked_Logic.gs_jabu_vines = Locked_Logic.can_enter_jabu;
+	Location_Locked_Logic.gs_jabu_near_octo1 = Locked_Logic.can_enter_jabu && Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_jabu_near_octo2 = Locked_Logic.can_enter_jabu && Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_jabu_near_boss = Locked_Logic.can_enter_jabu && Locked_Logic.boomerang;
+	Location_Locked_Logic.gs_forest_first = (Locked_Logic.minuet || Locked_Logic.sarias) && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_forest_lobby = (Locked_Logic.minuet || Locked_Logic.sarias) && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_forest_outdoor_east = (Locked_Logic.minuet || Locked_Logic.sarias) && Locked_Logic.hookshot && ((Locked_Logic.bow || Locked_Logic.song_of_time) || (Locked_Logic.forest_keys >= 1 && Locked_Logic.hover_boots));
+	Location_Locked_Logic.gs_forest_outdoor_west = (Locked_Logic.minuet || Locked_Logic.sarias) && Locked_Logic.hookshot && (((Locked_Logic.bow || Locked_Logic.song_of_time) && Locked_Logic.longshot) || (Locked_Logic.forest_keys >= 1 && Locked_Logic.hover_boots) || (Locked_Logic.forest_keys >= 2 && Locked_Logic.goron_bracelet && Locked_Logic.bow))
+	Location_Locked_Logic.gs_forest_basement = (Locked_Logic.minuet || Locked_Logic.sarias) && Locked_Logic.bow && Locked_Logic.goron_bracelet && Locked_Logic.forest_keys == 5;
+	Location_Locked_Logic.gs_fire_song_of_time = Locked_Logic.can_enter_fire_temple && Locked_Logic.fire_keys >= 1 && Locked_Logic.song_of_time;
+	Location_Locked_Logic.gs_fire_bomb_wall = Locked_Logic.can_climb_fire_temple && Locked_Logic.goron_bracelet && Locked_Logic.bomb_bag;
+	Location_Locked_Logic.gs_fire_scarecrow1 = Locked_Logic.can_climb_fire_temple && Locked_Logic.goron_bracelet && Locked_Logic.fire_keys >=5 && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_fire_scarecrow2 = Locked_Logic.can_climb_fire_temple && Locked_Logic.goron_bracelet && Locked_Logic.fire_keys >=5 && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_fire_basement = Locked_Logic.can_enter_fire_temple && Locked_Logic.hammer;
+	Location_Locked_Logic.gs_water_south_basement = Locked_Logic.can_enter_water && Locked_Logic.bomb_bag && Locked_Logic.lullaby;
+	Location_Locked_Logic.gs_water_river = Locked_Logic.can_enter_water && Locked_Logic.song_of_time && Locked_Logic.water_keys >= 5;
+	Location_Locked_Logic.gs_water_central = Locked_Logic.middle_water && Locked_Logic.longshot || Locked_Logic.can_use_farores;
+	Location_Locked_Logic.gs_water_near_boss_key = Locked_Logic.can_enter_water && Locked_Logic.longshot && Locked_Logic.lullaby && Locked_Logic.water_keys >=4;
+	Location_Locked_Logic.gs_water_platform_room = Locked_Logic.can_enter_water && Locked_Logic.longshot && Locked_Logic.lullaby && Locked_Logic.water_keys >=4;
+	Location_Locked_Logic.gs_spirit_metal_fence = Locked_Logic.requiem && (Locked_Logic.boomerang || Locked_Logic.slingshot);
+	Location_Locked_Logic.gs_spirit_before_child_knuckle = (Locked_Logic.bomb_bag && Locked_Logic.boomerang && Locked_Logic.hookshot && Locked_Logic.spirit_keys >= 1) || (Locked_Logic.boomerang && Locked_Logic.spirit_keys == 5 && Locked_Logic.bomb_bag && Locked_Logic.requiem) || (Locked_Logic.hookshot && Locked_Logic.silver_gauntlets && Locked_Logic.spirit_keys >= 3);
+	Location_Locked_Logic.gs_spirit_boulder_room = Locked_Logic.can_enter_adult_spirit && Locked_Logic.song_of_time && (Locked_Logic.bow || Locked_Logic.hookshot || Locked_Logic.bomb_bag);
+	Location_Locked_Logic.gs_spirit_temple_lobby = Locked_Logic.can_enter_adult_spirit && Locked_Logic.spirit_keys >= 3 && (Locked_Logic.hookshot || Locked_Logic.hover_boots);
+	Location_Locked_Logic.gs_spirit_bomb_for_light_room = Locked_Logic.spirit_keys >= 1;
+	Location_Locked_Logic.gs_shadow_like_like = Locked_Logic.can_bomb_shadow_wall;
+	Location_Locked_Logic.gs_shadow_crusher = Locked_Logic.can_bomb_shadow_wall && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_shadow_giant_pot = Locked_Logic.can_bomb_shadow_wall && Locked_Logic.shadow_keys >=2 && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_shadow_near_boat = Locked_Logic.can_pass_shadow_hookshot_door && Locked_Logic.longshot && Locked_Logic.shadow_keys >=4;
+	Location_Locked_Logic.gs_shadow_three_pots = Locked_Logic.can_ride_shadow_boat;
+	Location_Locked_Logic.gs_well_west_inner = Locked_Logic.boomerang /*&& Locked_Logic.can_see*/ && Locked_Logic.well_keys >=3;
+	Location_Locked_Logic.gs_well_east_inner = Locked_Logic.boomerang /*&& Locked_Logic.can_see*/ && Locked_Logic.well_keys >=3;
+	Location_Locked_Logic.gs_well_like_like = Locked_Logic.boomerang /*&& Locked_Logic.can_see*/ && Locked_Logic.well_keys >=3;
+	Location_Locked_Logic.gs_ice_spinning_scythe = Locked_Logic.ice_access && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_ice_hp_room = Locked_Logic.ice_access && Locked_Logic.hookshot;
+	Location_Locked_Logic.gs_ice_block_room = Locked_Logic.ice_access && Locked_Logic.hookshot;
+	
+	gs[1] = Location_Locked_Logic.gs_kokiri_child;
+	gs[2] = Location_Locked_Logic.gs_kokiri_bean;
+	gs[3] = Location_Locked_Logic.gs_kokiri_adult;
+	gs[4] = Location_Locked_Logic.gs_market;
+	gs[5] = Location_Locked_Logic.gs_lost_woods_bean1;
+	gs[6] = Location_Locked_Logic.gs_lost_woods_bean2;
+	gs[7] = Location_Locked_Logic.gs_lost_woods_above_stage;
+	gs[8] = Location_Locked_Logic.gs_sacred_forest;
+	gs[9] = Location_Locked_Logic.gs_outside_kakariko;
+	gs[10] = Location_Locked_Logic.gs_near_gerudo;
+	gs[11] = Location_Locked_Logic.gs_hyrule_castle_tree;
+	gs[12] = Location_Locked_Logic.gs_hyrule_castle_grotto;
+	gs[13] = Location_Locked_Logic.gs_lon_lon_tree;
+	gs[14] = Location_Locked_Logic.gs_lon_lon_shed;
+	gs[15] = Location_Locked_Logic.gs_lon_lon_window;
+	gs[16] = Location_Locked_Logic.gs_lon_lon_back_wall;
+	gs[17] = Location_Locked_Logic.gs_kakariko_construction;
+	gs[18] = Location_Locked_Logic.gs_kakariko_skulltula_house;
+	gs[19] = Location_Locked_Logic.gs_kakariko_guard_house;
+	gs[20] = Location_Locked_Logic.gs_kakariko_tree;
+	gs[21] = Location_Locked_Logic.gs_kakariko_tower;
+	gs[22] = Location_Locked_Logic.gs_kakariko_impas;
+	gs[23] = Location_Locked_Logic.gs_graveyard_wall;
+	gs[24] = Location_Locked_Logic.gs_graveyard_bean;
+	gs[25] = Location_Locked_Logic.gs_trail_bean;
+	gs[26] = Location_Locked_Logic.gs_trail_bombable_wall;
+	gs[27] = Location_Locked_Logic.gs_trail_hail_path;
+	gs[28] = Location_Locked_Logic.gs_trail_above_dodongos;
+	gs[29] = Location_Locked_Logic.gs_goron_city_center;
+	gs[30] = Location_Locked_Logic.gs_goron_city_maze;
+	gs[31] = Location_Locked_Logic.gs_crater_crate;
+	gs[32] = Location_Locked_Logic.gs_crater_bean;
+	gs[33] = Location_Locked_Logic.gs_river_ladder;
+	gs[34] = Location_Locked_Logic.gs_river_near_grotto;
+	gs[35] = Location_Locked_Logic.gs_river_above_bridge;
+	gs[36] = Location_Locked_Logic.gs_domain;
+	gs[37] = Location_Locked_Logic.gs_fountain_above_log;
+	gs[38] = Location_Locked_Logic.gs_fountain_tree;
+	gs[39] = Location_Locked_Logic.gs_fountain_hidden_cave;
+	gs[40] = Location_Locked_Logic.gs_hylia_bean;
+	gs[41] = Location_Locked_Logic.gs_hylia_lab_wall;
+	gs[42] = Location_Locked_Logic.gs_hylia_island;
+	gs[43] = Location_Locked_Logic.gs_hylia_tree;
+	gs[44] = Location_Locked_Logic.gs_lab_crate;
+	gs[45] = Location_Locked_Logic.gs_valley_small_bridge;
+	gs[46] = Location_Locked_Logic.gs_valley_bean;
+	gs[47] = Location_Locked_Logic.gs_valley_tent;
+	gs[48] = Location_Locked_Logic.gs_valley_pillar;
+	gs[49] = Location_Locked_Logic.gs_fortress_archery;
+	gs[50] = Location_Locked_Logic.gs_fortress_top;
+	gs[51] = Location_Locked_Logic.gs_wasteland_structure;
+	gs[52] = Location_Locked_Logic.gs_colossus_bean;
+	gs[53] = Location_Locked_Logic.gs_colossus_tree;
+	gs[54] = Location_Locked_Logic.gs_colossus_hill;
+	gs[55] = Location_Locked_Logic.gs_zora_river_tree;
+	gs[56] = Location_Locked_Logic.gs_ganons;
+	gs[57] = Location_Locked_Logic.gs_deku_basement_back;
+	gs[58] = Location_Locked_Logic.gs_deku_basement_gate;
+	gs[59] = Location_Locked_Logic.gs_deku_basement_vines;
+	gs[60] = Location_Locked_Logic.gs_deku_compass;
+	gs[61] = Location_Locked_Logic.gs_dodongos_east_side;
+	gs[62] = Location_Locked_Logic.gs_dodongos_stair_room;
+	gs[63] = Location_Locked_Logic.gs_dodongos_above_stairs;
+	gs[64] = Location_Locked_Logic.gs_dodongos_scarecrow;
+	gs[65] = Location_Locked_Logic.gs_dodongos_before_king;
+	gs[66] = Location_Locked_Logic.gs_jabu_vines;
+	gs[67] = Location_Locked_Logic.gs_jabu_near_octo1;
+	gs[68] = Location_Locked_Logic.gs_jabu_near_octo2;
+	gs[69] = Location_Locked_Logic.gs_jabu_near_boss;
+	gs[70] = Location_Locked_Logic.gs_forest_first;
+	gs[71] = Location_Locked_Logic.gs_forest_lobby;
+	gs[72] = Location_Locked_Logic.gs_forest_outdoor_east;
+	gs[73] = Location_Locked_Logic.gs_forest_outdoor_west;
+	gs[74] = Location_Locked_Logic.gs_forest_basement;
+	gs[75] = Location_Locked_Logic.gs_fire_song_of_time;
+	gs[76] = Location_Locked_Logic.gs_fire_bomb_wall;
+	gs[77] = Location_Locked_Logic.gs_fire_scarecrow1;
+	gs[78] = Location_Locked_Logic.gs_fire_scarecrow2;
+	gs[79] = Location_Locked_Logic.gs_fire_basement;
+	gs[80] = Location_Locked_Logic.gs_water_south_basement;
+	gs[81] = Location_Locked_Logic.gs_water_river;
+	gs[82] = Location_Locked_Logic.gs_water_central;
+	gs[83] = Location_Locked_Logic.gs_water_near_boss_key;
+	gs[84] = Location_Locked_Logic.gs_water_platform_room;
+	gs[85] = Location_Locked_Logic.gs_spirit_metal_fence;
+	gs[86] = Location_Locked_Logic.gs_spirit_before_child_knuckle;
+	gs[87] = Location_Locked_Logic.gs_spirit_boulder_room;
+	gs[88] = Location_Locked_Logic.gs_spirit_temple_lobby;
+	gs[89] = Location_Locked_Logic.gs_spirit_bomb_for_light_room;
+	gs[90] = Location_Locked_Logic.gs_shadow_like_like;
+	gs[91] = Location_Locked_Logic.gs_shadow_crusher;
+	gs[92] = Location_Locked_Logic.gs_shadow_giant_pot;
+	gs[93] = Location_Locked_Logic.gs_shadow_near_boat;
+	gs[94] = Location_Locked_Logic.gs_shadow_three_pots;
+	gs[95] = Location_Locked_Logic.gs_well_west_inner;
+	gs[96] = Location_Locked_Logic.gs_well_east_inner;
+	gs[97] = Location_Locked_Logic.gs_well_like_like;
+	gs[98] = Location_Locked_Logic.gs_ice_spinning_scythe;
+	gs[99] = Location_Locked_Logic.gs_ice_hp_room;
+	gs[100] = Location_Locked_Logic.gs_ice_block_room;
+
+	Locked_Logic.gold_skulltulas = 0;
+	var i;
+	for (i = 1; i<=100; i++) {
+		if (gs[i] == true) {Locked_Logic.gold_skulltulas +=1;};
 	}
-	temp = 5;
+	}
+	temp = 10;
 	
 	while (temp > 0) {
     temp -= 1;
@@ -6017,6 +6288,214 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.preludeSpot = Locked_Logic2.forest_medallion;
 	Location_Locked_Logic2.nocturneSpot = Locked_Logic2.forest_medallion && Locked_Logic2.fire_medallion && Locked_Logic2.water_medallion;
 	Location_Locked_Logic2.oot = Locked_Logic2.kokiri_emerald && Locked_Logic2.goron_ruby && Locked_Logic2.zora_sapphire;
+	
+	Location_Locked_Logic2.gs_kokiri_child = true;
+	Location_Locked_Logic2.gs_kokiri_bean = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_kokiri_adult = Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_market = true;
+	Location_Locked_Logic2.gs_lost_woods_bean1 = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_lost_woods_bean2 = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_lost_woods_above_stage = (Locked_Logic2.bomb_bag || Locked_Logic2.silver_scale) && (Locked_Logic2.sarias || Locked_Logic2.minuet);
+	Location_Locked_Logic2.gs_sacred_forest = Locked_Logic2.hookshot && (Locked_Logic2.sarias || Locked_Logic2.minuet);
+	Location_Locked_Logic2.gs_outside_kakariko = (Locked_Logic2.boomerang && Locked_Logic2.bomb_bag) || (Locked_Logic2.can_blast_or_smash && Locked_Logic2.hookshot)
+	Location_Locked_Logic2.gs_near_gerudo = (Locked_Logic2.hammer && Locked_Logic2.can_use_fire && Locked_Logic2.hookshot) || (Locked_Logic2.can_use_dins && Locked_Logic2.bomb_bag && Locked_Logic2.boomerang);
+	Location_Locked_Logic2.gs_hyrule_castle_tree = true;
+	Location_Locked_Logic2.gs_hyrule_castle_grotto = Locked_Logic2.song_of_storms && Locked_Logic2.bomb_bag && Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_lon_lon_tree = true;
+	Location_Locked_Logic2.gs_lon_lon_shed = true;
+	Location_Locked_Logic2.gs_lon_lon_window = Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_lon_lon_back_wall = Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_kakariko_construction = true;
+	Location_Locked_Logic2.gs_kakariko_skulltula_house = true;
+	Location_Locked_Logic2.gs_kakariko_guard_house = true;
+	Location_Locked_Logic2.gs_kakariko_tree = true;
+	Location_Locked_Logic2.gs_kakariko_tower = Locked_Logic2.bomb_bag || Locked_Logic2.slingshot;
+	Location_Locked_Logic2.gs_kakariko_impas = Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_graveyard_wall = Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_graveyard_bean = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_trail_bean = Locked_Logic2.bottle && (Locked_Logic2.bomb_bag || Locked_Logic2.goron_bracelet);
+	Location_Locked_Logic2.gs_trail_bombable_wall = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.gs_trail_hail_path = Locked_Logic2.hammer;
+	Location_Locked_Logic2.gs_trail_above_dodongos = Locked_Logic2.hammer;
+	Location_Locked_Logic2.gs_goron_city_center = true;
+	Location_Locked_Logic2.gs_goron_city_maze = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.gs_crater_crate = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.gs_crater_bean = Locked_Logic2.bottle && Locked_Logic2.bolero;
+	Location_Locked_Logic2.gs_river_ladder = Locked_Logic2.silver_scale || Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.gs_river_near_grotto = Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_river_above_bridge = Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_domain = Locked_Logic2.lullaby && (Locked_Logic2.hookshot || Locked_Logic2.magic || Locked_Logic2.bow);
+	Location_Locked_Logic2.gs_fountain_above_log = Locked_Logic2.rutos_letter && (Locked_Logic2.silver_scale || (Locked_Logic2.bomb_bag && Locked_Logic2.lullaby)) && Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_fountain_tree = Locked_Logic2.rutos_letter && (Locked_Logic2.silver_scale || (Locked_Logic2.bomb_bag && Locked_Logic2.lullaby))
+	Location_Locked_Logic2.gs_fountain_hidden_cave = Locked_Logic2.ice_access && Locked_Logic2.silver_gauntlets && Locked_Logic2.hookshot && Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.gs_hylia_bean = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_hylia_lab_wall = Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_hylia_island = true;
+	Location_Locked_Logic2.gs_hylia_tree = Locked_Logic2.longshot;
+	Location_Locked_Logic2.gs_lab_crate = Locked_Logic2.iron_boots && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_valley_small_bridge = Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_valley_bean = Locked_Logic2.bottle;
+	Location_Locked_Logic2.gs_valley_tent = Locked_Logic2.fortress_access && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_valley_pillar = Locked_Logic2.fortress_access && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_fortress_archery = Locked_Logic2.fortress_access && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_fortress_top = Locked_Logic2.fortress_access;
+	Location_Locked_Logic2.gs_wasteland_structure = Locked_Logic2.hookshot && Locked_Logic2.can_cross_quicksand;
+	Location_Locked_Logic2.gs_colossus_bean = Locked_Logic2.bottle && Locked_Logic2.requiem;
+	Location_Locked_Logic2.gs_colossus_tree = Locked_Logic2.hookshot && Locked_Logic2.can_enter_colossus;
+	Location_Locked_Logic2.gs_colossus_hill = (Locked_Logic2.requiem && (Locked_Logic2.bomb_bag || Locked_Logic2.silver_scale)) || (Locked_Logic2.longshot && Locked_Logic2.can_enter_colossus);
+	Location_Locked_Logic2.gs_zora_river_tree = true;
+	Location_Locked_Logic2.gs_ganons = true;
+	Location_Locked_Logic2.gs_deku_basement_back = Locked_Logic2.boomerang && Locked_Logic2.bomb_bag && Locked_Logic2.slingshot;
+	Location_Locked_Logic2.gs_deku_basement_gate = true;
+	Location_Locked_Logic2.gs_deku_basement_vines = Locked_Logic2.slingshot || Locked_Logic2.boomerang || Locked_Logic2.bomb_bag || Locked_Logic2.can_use_dins;
+	Location_Locked_Logic2.gs_deku_compass = true;
+	Location_Locked_Logic2.gs_dodongos_east_side = Locked_Logic2.can_enter_dodongos;
+	Location_Locked_Logic2.gs_dodongos_stair_room = Locked_Logic2.dodongos_climb;
+	Location_Locked_Logic2.gs_dodongos_above_stairs = (Locked_Logic2.dodongos_climb && Locked_Logic2.hookshot) || (Locked_Logic2.boomerang && (Locked_Logic2.bomb_bag || Locked_Logic2.goron_bracelet));
+	Location_Locked_Logic2.gs_dodongos_scarecrow = Locked_Logic2.can_enter_dodongos && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_dodongos_before_king = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.gs_jabu_vines = Locked_Logic2.can_enter_jabu;
+	Location_Locked_Logic2.gs_jabu_near_octo1 = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_jabu_near_octo2 = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_jabu_near_boss = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
+	Location_Locked_Logic2.gs_forest_first = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_forest_lobby = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_forest_outdoor_east = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && ((Locked_Logic2.bow || Locked_Logic2.song_of_time) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots));
+	Location_Locked_Logic2.gs_forest_outdoor_west = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (((Locked_Logic2.bow || Locked_Logic2.song_of_time) && Locked_Logic2.longshot) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots) || (Locked_Logic2.forest_keys >= 2 && Locked_Logic2.goron_bracelet && Locked_Logic2.bow))
+	Location_Locked_Logic2.gs_forest_basement = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.bow && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys == 5;
+	Location_Locked_Logic2.gs_fire_song_of_time = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >= 1 && Locked_Logic2.song_of_time;
+	Location_Locked_Logic2.gs_fire_bomb_wall = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.goron_bracelet && Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.gs_fire_scarecrow1 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.goron_bracelet && Locked_Logic2.fire_keys >=5 && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_fire_scarecrow2 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.goron_bracelet && Locked_Logic2.fire_keys >=5 && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_fire_basement = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer;
+	Location_Locked_Logic2.gs_water_south_basement = Locked_Logic2.can_enter_water && Locked_Logic2.bomb_bag && Locked_Logic2.lullaby;
+	Location_Locked_Logic2.gs_water_river = Locked_Logic2.can_enter_water && Locked_Logic2.song_of_time && Locked_Logic2.water_keys >= 5;
+	Location_Locked_Logic2.gs_water_central = Locked_Logic2.middle_water && Locked_Logic2.longshot || Locked_Logic2.can_use_farores;
+	Location_Locked_Logic2.gs_water_near_boss_key = Locked_Logic2.can_enter_water && Locked_Logic2.longshot && Locked_Logic2.lullaby && Locked_Logic2.water_keys >=4;
+	Location_Locked_Logic2.gs_water_platform_room = Locked_Logic2.can_enter_water && Locked_Logic2.longshot && Locked_Logic2.lullaby && Locked_Logic2.water_keys >=4;
+	Location_Locked_Logic2.gs_spirit_metal_fence = Locked_Logic2.requiem && (Locked_Logic2.boomerang || Locked_Logic2.slingshot);
+	Location_Locked_Logic2.gs_spirit_before_child_knuckle = (Locked_Logic2.bomb_bag && Locked_Logic2.boomerang && Locked_Logic2.hookshot && Locked_Logic2.spirit_keys >= 1) || (Locked_Logic2.boomerang && Locked_Logic2.spirit_keys == 5 && Locked_Logic2.bomb_bag && Locked_Logic2.requiem) || (Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets && Locked_Logic2.spirit_keys >= 3);
+	Location_Locked_Logic2.gs_spirit_boulder_room = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.song_of_time && (Locked_Logic2.bow || Locked_Logic2.hookshot || Locked_Logic2.bomb_bag);
+	Location_Locked_Logic2.gs_spirit_temple_lobby = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >= 3 && (Locked_Logic2.hookshot || Locked_Logic2.hover_boots);
+	Location_Locked_Logic2.gs_spirit_bomb_for_light_room = Locked_Logic2.spirit_keys >= 1;
+	Location_Locked_Logic2.gs_shadow_like_like = Locked_Logic2.can_bomb_shadow_wall;
+	Location_Locked_Logic2.gs_shadow_crusher = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_shadow_giant_pot = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.shadow_keys >=2 && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_shadow_near_boat = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.longshot && Locked_Logic2.shadow_keys >=4;
+	Location_Locked_Logic2.gs_shadow_three_pots = Locked_Logic2.can_ride_shadow_boat;
+	Location_Locked_Logic2.gs_well_west_inner = Locked_Logic2.boomerang /*&& Locked_Logic2.can_see*/ && Locked_Logic2.well_keys >=3;
+	Location_Locked_Logic2.gs_well_east_inner = Locked_Logic2.boomerang /*&& Locked_Logic2.can_see*/ && Locked_Logic2.well_keys >=3;
+	Location_Locked_Logic2.gs_well_like_like = Locked_Logic2.boomerang /*&& Locked_Logic2.can_see*/ && Locked_Logic2.well_keys >=3;
+	Location_Locked_Logic2.gs_ice_spinning_scythe = Locked_Logic2.ice_access && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_ice_hp_room = Locked_Logic2.ice_access && Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_ice_block_room = Locked_Logic2.ice_access && Locked_Logic2.hookshot;
+	
+	gs[1] = Location_Locked_Logic2.gs_kokiri_child;
+	gs[2] = Location_Locked_Logic2.gs_kokiri_bean;
+	gs[3] = Location_Locked_Logic2.gs_kokiri_adult;
+	gs[4] = Location_Locked_Logic2.gs_market;
+	gs[5] = Location_Locked_Logic2.gs_lost_woods_bean1;
+	gs[6] = Location_Locked_Logic2.gs_lost_woods_bean2;
+	gs[7] = Location_Locked_Logic2.gs_lost_woods_above_stage;
+	gs[8] = Location_Locked_Logic2.gs_sacred_forest;
+	gs[9] = Location_Locked_Logic2.gs_outside_kakariko;
+	gs[10] = Location_Locked_Logic2.gs_near_gerudo;
+	gs[11] = Location_Locked_Logic2.gs_hyrule_castle_tree;
+	gs[12] = Location_Locked_Logic2.gs_hyrule_castle_grotto;
+	gs[13] = Location_Locked_Logic2.gs_lon_lon_tree;
+	gs[14] = Location_Locked_Logic2.gs_lon_lon_shed;
+	gs[15] = Location_Locked_Logic2.gs_lon_lon_window;
+	gs[16] = Location_Locked_Logic2.gs_lon_lon_back_wall;
+	gs[17] = Location_Locked_Logic2.gs_kakariko_construction;
+	gs[18] = Location_Locked_Logic2.gs_kakariko_skulltula_house;
+	gs[19] = Location_Locked_Logic2.gs_kakariko_guard_house;
+	gs[20] = Location_Locked_Logic2.gs_kakariko_tree;
+	gs[21] = Location_Locked_Logic2.gs_kakariko_tower;
+	gs[22] = Location_Locked_Logic2.gs_kakariko_impas;
+	gs[23] = Location_Locked_Logic2.gs_graveyard_wall;
+	gs[24] = Location_Locked_Logic2.gs_graveyard_bean;
+	gs[25] = Location_Locked_Logic2.gs_trail_bean;
+	gs[26] = Location_Locked_Logic2.gs_trail_bombable_wall;
+	gs[27] = Location_Locked_Logic2.gs_trail_hail_path;
+	gs[28] = Location_Locked_Logic2.gs_trail_above_dodongos;
+	gs[29] = Location_Locked_Logic2.gs_goron_city_center;
+	gs[30] = Location_Locked_Logic2.gs_goron_city_maze;
+	gs[31] = Location_Locked_Logic2.gs_crater_crate;
+	gs[32] = Location_Locked_Logic2.gs_crater_bean;
+	gs[33] = Location_Locked_Logic2.gs_river_ladder;
+	gs[34] = Location_Locked_Logic2.gs_river_near_grotto;
+	gs[35] = Location_Locked_Logic2.gs_river_above_bridge;
+	gs[36] = Location_Locked_Logic2.gs_domain;
+	gs[37] = Location_Locked_Logic2.gs_fountain_above_log;
+	gs[38] = Location_Locked_Logic2.gs_fountain_tree;
+	gs[39] = Location_Locked_Logic2.gs_fountain_hidden_cave;
+	gs[40] = Location_Locked_Logic2.gs_hylia_bean;
+	gs[41] = Location_Locked_Logic2.gs_hylia_lab_wall;
+	gs[42] = Location_Locked_Logic2.gs_hylia_island;
+	gs[43] = Location_Locked_Logic2.gs_hylia_tree;
+	gs[44] = Location_Locked_Logic2.gs_lab_crate;
+	gs[45] = Location_Locked_Logic2.gs_valley_small_bridge;
+	gs[46] = Location_Locked_Logic2.gs_valley_bean;
+	gs[47] = Location_Locked_Logic2.gs_valley_tent;
+	gs[48] = Location_Locked_Logic2.gs_valley_pillar;
+	gs[49] = Location_Locked_Logic2.gs_fortress_archery;
+	gs[50] = Location_Locked_Logic2.gs_fortress_top;
+	gs[51] = Location_Locked_Logic2.gs_wasteland_structure;
+	gs[52] = Location_Locked_Logic2.gs_colossus_bean;
+	gs[53] = Location_Locked_Logic2.gs_colossus_tree;
+	gs[54] = Location_Locked_Logic2.gs_colossus_hill;
+	gs[55] = Location_Locked_Logic2.gs_zora_river_tree;
+	gs[56] = Location_Locked_Logic2.gs_ganons;
+	gs[57] = Location_Locked_Logic2.gs_deku_basement_back;
+	gs[58] = Location_Locked_Logic2.gs_deku_basement_gate;
+	gs[59] = Location_Locked_Logic2.gs_deku_basement_vines;
+	gs[60] = Location_Locked_Logic2.gs_deku_compass;
+	gs[61] = Location_Locked_Logic2.gs_dodongos_east_side;
+	gs[62] = Location_Locked_Logic2.gs_dodongos_stair_room;
+	gs[63] = Location_Locked_Logic2.gs_dodongos_above_stairs;
+	gs[64] = Location_Locked_Logic2.gs_dodongos_scarecrow;
+	gs[65] = Location_Locked_Logic2.gs_dodongos_before_king;
+	gs[66] = Location_Locked_Logic2.gs_jabu_vines;
+	gs[67] = Location_Locked_Logic2.gs_jabu_near_octo1;
+	gs[68] = Location_Locked_Logic2.gs_jabu_near_octo2;
+	gs[69] = Location_Locked_Logic2.gs_jabu_near_boss;
+	gs[70] = Location_Locked_Logic2.gs_forest_first;
+	gs[71] = Location_Locked_Logic2.gs_forest_lobby;
+	gs[72] = Location_Locked_Logic2.gs_forest_outdoor_east;
+	gs[73] = Location_Locked_Logic2.gs_forest_outdoor_west;
+	gs[74] = Location_Locked_Logic2.gs_forest_basement;
+	gs[75] = Location_Locked_Logic2.gs_fire_song_of_time;
+	gs[76] = Location_Locked_Logic2.gs_fire_bomb_wall;
+	gs[77] = Location_Locked_Logic2.gs_fire_scarecrow1;
+	gs[78] = Location_Locked_Logic2.gs_fire_scarecrow2;
+	gs[79] = Location_Locked_Logic2.gs_fire_basement;
+	gs[80] = Location_Locked_Logic2.gs_water_south_basement;
+	gs[81] = Location_Locked_Logic2.gs_water_river;
+	gs[82] = Location_Locked_Logic2.gs_water_central;
+	gs[83] = Location_Locked_Logic2.gs_water_near_boss_key;
+	gs[84] = Location_Locked_Logic2.gs_water_platform_room;
+	gs[85] = Location_Locked_Logic2.gs_spirit_metal_fence;
+	gs[86] = Location_Locked_Logic2.gs_spirit_before_child_knuckle;
+	gs[87] = Location_Locked_Logic2.gs_spirit_boulder_room;
+	gs[88] = Location_Locked_Logic2.gs_spirit_temple_lobby;
+	gs[89] = Location_Locked_Logic2.gs_spirit_bomb_for_light_room;
+	gs[90] = Location_Locked_Logic2.gs_shadow_like_like;
+	gs[91] = Location_Locked_Logic2.gs_shadow_crusher;
+	gs[92] = Location_Locked_Logic2.gs_shadow_giant_pot;
+	gs[93] = Location_Locked_Logic2.gs_shadow_near_boat;
+	gs[94] = Location_Locked_Logic2.gs_shadow_three_pots;
+	gs[95] = Location_Locked_Logic2.gs_well_west_inner;
+	gs[96] = Location_Locked_Logic2.gs_well_east_inner;
+	gs[97] = Location_Locked_Logic2.gs_well_like_like;
+	gs[98] = Location_Locked_Logic2.gs_ice_spinning_scythe;
+	gs[99] = Location_Locked_Logic2.gs_ice_hp_room;
+	gs[100] = Location_Locked_Logic2.gs_ice_block_room;
+
+	Locked_Logic2.gold_skulltulas = 0;
+	var i;
+	for (i = 1; i<=100; i++) {
+		if (gs[i] == true) {Locked_Logic2.gold_skulltulas +=1;};
+	}
 	}
 
 	var temp = 0;
@@ -6030,12 +6509,911 @@ function checksLockedByItem(item) {
 	return tempArray;
 	
 }
+function checksPutInLogicByItem(item) {
+	const keys4 = Object.keys(Location_PutIn_Logic);
+	
+	for (const key of keys4) {
+		temp += 1;
+		if (temp == 256) {break;} 
+		Location_PutIn_Logic[key] = false;
+	}
+	
+	var temp = 6;
+	var tempArray = [];
+	
+	while (temp > 0) {
+    temp -= 1;
+	
+	if(Known.farores_wind == true) {PutIn_Logic.farores_wind = Location_PutIn_Logic[Location.farores_wind];} if (item == "farores_wind") {PutIn_Logic.farores_wind = false;}
+	 
+	if(Known.slingshot1 == true) {PutIn_Logic.slingshot1 = Location_PutIn_Logic[Location.slingshot1];} if (item == "slingshot1") {PutIn_Logic.slingshot1 = false;}
+	if(Known.slingshot2 == true) {PutIn_Logic.slingshot2 = Location_PutIn_Logic[Location.slingshot2];} if (item == "slingshot2") {PutIn_Logic.slingshot2 = false;}
+	if(Known.slingshot3 == true) {PutIn_Logic.slingshot3 = Location_PutIn_Logic[Location.slingshot3];} if (item == "slingshot3") {PutIn_Logic.slingshot3 = false;}
+	PutIn_Logic.slingshot = PutIn_Logic.slingshot1 || PutIn_Logic.slingshot2 || PutIn_Logic.slingshot3; 
+	 
+	if(Known.boomerang == true) {PutIn_Logic.boomerang = Location_PutIn_Logic[Location.boomerang];} if (item == "boomerang") {PutIn_Logic.boomerang = false;}
+	
+	if(Known.rutos_letter == true) {PutIn_Logic.rutos_letter = Location_PutIn_Logic[Location.rutos_letter];} if (item == "rutos_letter") {PutIn_Logic.rutos_letter = false;}
+	if(Known.bottle1 == true) {PutIn_Logic.bottle1 = Location_PutIn_Logic[Location.bottle1];} if (item == "bottle1") {PutIn_Logic.bottle1 = false;}
+	if(Known.bottle2 == true) {PutIn_Logic.bottle2 = Location_PutIn_Logic[Location.bottle2];} if (item == "bottle2") {PutIn_Logic.bottle2 = false;}
+	if(Known.bottle3 == true) {PutIn_Logic.bottle3 = Location_PutIn_Logic[Location.bottle3];} if (item == "bottle3") {PutIn_Logic.bottle3 = false;}
+	PutIn_Logic.bottle = (PutIn_Logic.rutos_letter && ((PutIn_Logic.bomb_bag && PutIn_Logic.lullaby) || PutIn_Logic.silver_scale)) || PutIn_Logic.bottle1 || PutIn_Logic.bottle2 || PutIn_Logic.bottle3;
+	
+	if(Known.scale1 == true) {PutIn_Logic.scale1 = Location_PutIn_Logic[Location.scale1]; } if (item == "scale1") {PutIn_Logic.scale1 = false;}
+	if(Known.scale2 == true) {PutIn_Logic.scale2 = Location_PutIn_Logic[Location.scale2]; } if (item == "scale2") {PutIn_Logic.scale2 = false;}
+	if(Game.scale2 == true) {document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
+	PutIn_Logic.silver_scale = PutIn_Logic.scale1 || PutIn_Logic.scale2; 
+	PutIn_Logic.golden_scale = PutIn_Logic.scale1 && PutIn_Logic.scale2; 
+	
+	if(Known.bomb_bag1 == true) {PutIn_Logic.bomb_bag1 = Location_PutIn_Logic[Location.bomb_bag1];} if (item == "bomb_bag1") {PutIn_Logic.bomb_bag1 = false;}
+	if(Known.bomb_bag2 == true) {PutIn_Logic.bomb_bag2 = Location_PutIn_Logic[Location.bomb_bag2];} if (item == "bomb_bag2") {PutIn_Logic.bomb_bag2 = false;}
+	if(Known.bomb_bag3 == true) {PutIn_Logic.bomb_bag3 = Location_PutIn_Logic[Location.bomb_bag3];} if (item == "bomb_bag3") {PutIn_Logic.bomb_bag3 = false;}
+	PutIn_Logic.bomb_bag = PutIn_Logic.bomb_bag1 || PutIn_Logic.bomb_bag2 || PutIn_Logic.bomb_bag3;
+	
+	if(Known.hammer == true) {PutIn_Logic.hammer = Location_PutIn_Logic[Location.hammer];} if (item == "hammer") {PutIn_Logic.hammer = false;}
+	 
+	if(Known.bow1 == true) {PutIn_Logic.bow1 = Location_PutIn_Logic[Location.bow1];} if (item == "bow1") {PutIn_Logic.bow1 = false;}
+	if(Known.bow2 == true) {PutIn_Logic.bow2 = Location_PutIn_Logic[Location.bow2];} if (item == "bow2") {PutIn_Logic.bow2 = false;}
+	if(Known.bow3 == true) {PutIn_Logic.bow3 = Location_PutIn_Logic[Location.bow3];} if (item == "bow3") {PutIn_Logic.bow3 = false;}
+	PutIn_Logic.bow = PutIn_Logic.bow1 || PutIn_Logic.bow2 || PutIn_Logic.bow3;
+	
+	if(Known.hookshot1 == true) {PutIn_Logic.hookshot1 = Location_PutIn_Logic[Location.hookshot1];} if (item == "hookshot1") {PutIn_Logic.hookshot1 = false;}
+	if(Known.hookshot2 == true) {PutIn_Logic.hookshot2 = Location_PutIn_Logic[Location.hookshot2];} if (item == "hookshot2") {PutIn_Logic.hookshot2 = false;}
+	PutIn_Logic.hookshot = PutIn_Logic.hookshot1 || PutIn_Logic.hookshot2;
+	PutIn_Logic.longshot = PutIn_Logic.hookshot1 && PutIn_Logic.hookshot2;
+	
+	if(Known.strength1 == true) {PutIn_Logic.strength1 = Location_PutIn_Logic[Location.strength1];} if (item == "strength1") {PutIn_Logic.strength1 = false;}
+	if(Known.strength2 == true) {PutIn_Logic.strength2 = Location_PutIn_Logic[Location.strength2];} if (item == "strength2") {PutIn_Logic.strength2 = false;}
+	if(Known.strength3 == true) {PutIn_Logic.strength3 = Location_PutIn_Logic[Location.strength3];} if (item == "strength3") {PutIn_Logic.strength3 = false;}
+	PutIn_Logic.goron_bracelet = PutIn_Logic.strength1 || PutIn_Logic.strength2 || PutIn_Logic.strength3;
+	PutIn_Logic.silver_gauntlets = (PutIn_Logic.strength1 && PutIn_Logic.strength2) || (PutIn_Logic.strength1 && PutIn_Logic.strength3) || (PutIn_Logic.strength2 && PutIn_Logic.strength3);
+	PutIn_Logic.golden_gauntlets = PutIn_Logic.strength1 && PutIn_Logic.strength2 && PutIn_Logic.strength3;
+	
+	if(Known.mirror_shield == true) {PutIn_Logic.mirror_shield = Location_PutIn_Logic[Location.mirror_shield];} if (item == "mirror_shield") {PutIn_Logic.mirror_shield = false;}
+	
+	if(Known.big_poe == true) {PutIn_Logic.big_poe = Location_PutIn_Logic[Location.big1];} if (item == "big1") {PutIn_Logic.big1 = false;}
+	
+	if(Known.iron_boots == true) {PutIn_Logic.iron_boots = Location_PutIn_Logic[Location.iron_boots];} if (item == "iron_boots") {PutIn_Logic.iron_boots = false;}
+	if(Known.hover_boots == true) {PutIn_Logic.hover_boots = Location_PutIn_Logic[Location.hover_boots];} if (item == "hover_boots") {PutIn_Logic.hover_boots = false;}
+	
+	if(Known.magic1 == true) {PutIn_Logic.magic1 = Location_PutIn_Logic[Location.magic1];} if (item == "magic1") {PutIn_Logic.magic1 = false;}
+	if(Known.magic2 == true) {PutIn_Logic.magic2 = Location_PutIn_Logic[Location.magic2];} if (item == "magic2") {PutIn_Logic.magic2 = false;}
+	PutIn_Logic.magic = PutIn_Logic.magic1 || PutIn_Logic.magic2; 
+	
+	if(Known.dins_fire == true) {PutIn_Logic.dins_fire = Location_PutIn_Logic[Location.dins_fire];} if (item == "dins_fire") {PutIn_Logic.dins_fire = false;}
+	if(Known.fire_arrows == true) {PutIn_Logic.fire_arrows = Location_PutIn_Logic[Location.fire_arrows];} if (item == "fire_arrows") {PutIn_Logic.fire_arrows = false;}
+	
+	if(Known.wallet1 == true) {PutIn_Logic.wallet1 = Location_PutIn_Logic[Location.wallet1];} if (item == "wallet1") {PutIn_Logic.wallet1 = false;}
+	if(Known.wallet2 == true) {PutIn_Logic.wallet2 = Location_PutIn_Logic[Location.wallet2];} if (item == "wallet2") {PutIn_Logic.wallet2 = false;}
+	PutIn_Logic.adults_wallet = PutIn_Logic.wallet1 || PutIn_Logic.wallet2; 
+	PutIn_Logic.giants_wallet = PutIn_Logic.wallet1 && PutIn_Logic.wallet2; 
+	
+	if(Known.goron_tunic == true) {PutIn_Logic.goron_tunic = Location_PutIn_Logic[Location.goron_tunic];} if (item == "goron_tunic") {PutIn_Logic.goron_tunic = false;}
+	if(Known.zora_tunic == true) {PutIn_Logic.zora_tunic = Location_PutIn_Logic[Location.zora_tunic];} if (item == "zora_tunic") {PutIn_Logic.zora_tunic = false;}
+	if(Known.lens_of_truth == true) {PutIn_Logic.lens_of_truth = Location_PutIn_Logic[Location.lens_of_truth];}  if (item == "lens_of_truth") {PutIn_Logic.lens_of_truth = false;}
+	if(Known.prescription == true) {PutIn_Logic.prescription = Location_PutIn_Logic[Location.prescription];} if (item == "prescription") {PutIn_Logic.prescription = false;}
+	if(Known.claim_check == true) {PutIn_Logic.claim_check = Location_PutIn_Logic[Location.claim_check];} if (item == "claim_check") {PutIn_Logic.claim_check = false;}
+	
+	if(Known.light_arrows == true) {PutIn_Logic.light_arrows = Location_PutIn_Logic[Location.light_arrows];} if (item == "light_arrows") {PutIn_Logic.light_arrows = false;}
+	
+	if(Known.lullaby == true) {PutIn_Logic.lullaby = Location_PutIn_Logic[Location.lullaby]; } if (item == "lullaby") {PutIn_Logic.lullaby = false;}
+	if(Known.eponas == true) {PutIn_Logic.eponas = Location_PutIn_Logic[Location.eponas]; } if (item == "eponas") {PutIn_Logic.eponas = false;}
+	if(Known.sarias == true) {PutIn_Logic.sarias = Location_PutIn_Logic[Location.sarias]; } if (item == "sarias") {PutIn_Logic.sarias = false;}
+	if(Known.suns_song == true) {PutIn_Logic.suns_song = Location_PutIn_Logic[Location.suns_song]; } if (item == "suns_song") {PutIn_Logic.suns_song = false;}
+	if(Known.song_of_time == true) {PutIn_Logic.song_of_time = Location_PutIn_Logic[Location.song_of_time]; } if (item == "song_of_time") {PutIn_Logic.song_of_time = false;}
+	if(Known.song_of_storms == true) {PutIn_Logic.song_of_storms = Location_PutIn_Logic[Location.song_of_storms]; } if (item == "song_of_storms") {PutIn_Logic.song_of_storms = false;}
+	if(Known.minuet == true) {PutIn_Logic.minuet = Location_PutIn_Logic[Location.minuet]; } if (item == "minuet") {PutIn_Logic.minuet = false;}
+	if(Known.bolero == true) {PutIn_Logic.bolero = Location_PutIn_Logic[Location.bolero]; } if (item == "bolero") {PutIn_Logic.bolero = false;}
+	if(Known.serenade == true) {PutIn_Logic.serenade = Location_PutIn_Logic[Location.serenade]; } if (item == "serenade") {PutIn_Logic.serenade = false;}
+	if(Known.requiem == true) {PutIn_Logic.requiem = Location_PutIn_Logic[Location.requiem]; } if (item == "requiem") {PutIn_Logic.requiem = false;}
+	if(Known.nocturne == true) {PutIn_Logic.nocturne = Location_PutIn_Logic[Location.nocturne]; } if (item == "nocturne") {PutIn_Logic.nocturne = false;}
+	if(Known.prelude == true) {PutIn_Logic.prelude = Location_PutIn_Logic[Location.prelude]; } if (item == "prelude") {PutIn_Logic.prelude = false;}  
+	
+	PutIn_Logic.can_enter_jabu = PutIn_Logic.rutos_letter && ((PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale) && (PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.slingshot);
+	PutIn_Logic.child_can_enter_river = PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale;
+	PutIn_Logic.fortress_access = PutIn_Logic.eponas || PutIn_Logic.longshot;
+	PutIn_Logic.can_save_carpenters = PutIn_Logic.fortress_access && ((PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.hover_boots) || true) /*fast carpenter fix**/;
+	PutIn_Logic.can_cross_quicksand = PutIn_Logic.fortress_access && (PutIn_Logic.longshot || PutIn_Logic.hover_boots);
+	PutIn_Logic.can_enter_colossus = (PutIn_Logic.can_cross_quicksand && (PutIn_Logic.brackets || PutIn_Logic.can_see)) || PutIn_Logic.requiem;
+	PutIn_Logic.can_use_fire = (PutIn_Logic.dins_fire || (PutIn_Logic.bow && PutIn_Logic.fire_arrows)) && PutIn_Logic.magic;
+	PutIn_Logic.can_use_dins = PutIn_Logic.dins_fire && PutIn_Logic.magic;
+	PutIn_Logic.can_use_farores = PutIn_Logic.farores_wind && PutIn_Logic.magic;
+	PutIn_Logic.can_see = PutIn_Logic.lens_of_truth && PutIn_Logic.magic;
+	PutIn_Logic.can_blast_or_smash = PutIn_Logic.bomb_bag || PutIn_Logic.hammer;
+	PutIn_Logic.can_enter_dodongos = PutIn_Logic.can_blast_or_smash || PutIn_Logic.goron_bracelet;
+	PutIn_Logic.dodongos_climb = PutIn_Logic.can_enter_dodongos && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.can_use_dins);
+	PutIn_Logic.can_enter_shadow = PutIn_Logic.nocturne && PutIn_Logic.can_use_dins && (PutIn_Logic.hover_boots || PutIn_Logic.hookshot) ;//&& PutIn_Logic.can_see;
+	PutIn_Logic.can_cross_shadow_gap= PutIn_Logic.can_enter_shadow && PutIn_Logic.hover_boots;
+	PutIn_Logic.can_bomb_shadow_wall = PutIn_Logic.can_cross_shadow_gap && PutIn_Logic.bomb_bag;
+	PutIn_Logic.can_pass_shadow_hookshot_door = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot;
+	PutIn_Logic.can_ride_shadow_boat = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.lullaby;
+	PutIn_Logic.can_beat_shadow_boss = PutIn_Logic.can_ride_shadow_boat && (PutIn_Logic.bow || PutIn_Logic.longshot);
+	PutIn_Logic.can_stop_link_the_goron = PutIn_Logic.bomb_bag || PutIn_Logic.bow || PutIn_Logic.goron_bracelet;
+	PutIn_Logic.ice_access = PutIn_Logic.rutos_letter && PutIn_Logic.lullaby && PutIn_Logic.child_can_enter_river;
+	PutIn_Logic.reverse_crater = (PutIn_Logic.hover_boots || PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river) && PutIn_Logic.bolero;
+	PutIn_Logic.can_enter_fire_temple = (PutIn_Logic.crater_by_city && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots)) || PutIn_Logic.bolero
+	PutIn_Logic.crater_by_city = PutIn_Logic.bow || PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.reverse_crater ||(PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (PutIn_Logic.longshot && PutIn_Logic.goron_tunic && PutIn_Logic.hammer);
+	PutIn_Logic.crater_top = PutIn_Logic.crater_by_city || PutIn_Logic.hammer;
+	PutIn_Logic.can_enter_adult_spirit = PutIn_Logic.can_enter_colossus && PutIn_Logic.silver_gauntlets;
+	PutIn_Logic.can_enter_ganons = PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion && PutIn_Logic.gen1 && PutIn_Logic.gen2 && PutIn_Logic.gen3;
+	PutIn_Logic.can_climb_fire_temple = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=3 && PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
+	PutIn_Logic.can_enter_water = PutIn_Logic.hookshot && PutIn_Logic.iron_boots;
+	PutIn_Logic.middle_water = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && (PutIn_Logic.bow || PutIn_Logic.can_use_dins);
+	PutIn_Logic.projectile_both = PutIn_Logic.bomb_bag || ((PutIn_Logic.slingshot || PutIn_Logic.boomerang) && (PutIn_Logic.bow || PutIn_Logic.hookshot));
+	PutIn_Logic.projectile_child = PutIn_Logic.bomb_bag || PutIn_Logic.slingshot || PutIn_Logic.boomerang;
+	PutIn_Logic.projectile_adult = PutIn_Logic.bomb_bag || PutIn_Logic.bow || PutIn_Logic.hookshot;
+	PutIn_Logic.can_wear_goron_tunic = PutIn_Logic.goron_tunic || (PutIn_Logic.adults_wallet && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.bow));
+	PutIn_Logic.can_wear_zora_tunic = PutIn_Logic.zora_tunic || (PutIn_Logic.giants_wallet && (PutIn_Logic.lullaby && PutIn_Logic.bottle));
+	
+	PutIn_Logic.current_forest_keys = PutIn_Logic.forced_forest_keys;
+	for (i = 1; i <= 14; i++) {
+		str = "forest" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_forest_keys +=1;}
+	}
+	PutIn_Logic.current_fire_keys = PutIn_Logic.forced_fire_keys;
+	for (i = 1; i <= 15; i++) {
+		str = "fire" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_fire_keys +=1;}
+	}
+	
+	PutIn_Logic.current_water_keys = PutIn_Logic.forced_water_keys;
+	for (i = 1; i <= 11; i++) {
+		str = "water" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_water_keys +=1;}
+	}
+	
+	PutIn_Logic.current_spirit_keys = PutIn_Logic.forced_spirit_keys;
+	for (i = 1; i <= 20; i++) {
+		str = "spirit" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_spirit_keys +=1;}
+	}
+	PutIn_Logic.current_shadow_keys = PutIn_Logic.forced_shadow_keys;
+	for (i = 1; i <= 18; i++) {
+		str = "shadow" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_shadow_keys +=1;}
+	}
+	
+	PutIn_Logic.current_ganons_keys = PutIn_Logic.forced_ganons_keys;
+	for (i = 1; i <= 16; i++) {
+		str = "ganons" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_ganons_keys +=1;}
+	}
+	
+	PutIn_Logic.current_gtg_keys = PutIn_Logic.forced_gtg_keys;
+	for (i = 1; i <= 22; i++) {
+		str = "gtg" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_gtg_keys +=1;}
+	}
+	
+	PutIn_Logic.current_well_keys = PutIn_Logic.forced_well_keys;
+	for (i = 1; i <= 14; i++) {
+		str = "well" + i;
+		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_well_keys +=1;}
+	}
+	
+	if (PutIn_Logic.current_forest_keys < 5) {
+		var for_keys = [[1,2,3,4,5], [6,8], [7], [9,10,11]]
+		var done = false;
+		for (i = 0; i < for_keys.length; i++) {
+			for (j = 0; j < for_keys[i].length; j++) {
+				str = "forest" + for_keys[i][j];
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+					PutIn_Logic.min_forest_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_forest_keys = 5;}
+	}
+	
+	if (PutIn_Logic.current_fire_keys < 8 && ((PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
+		var done = false;
+		for (i = 0; i < fir_keys.length; i++) {
+			for (j = 0; j < fir_keys[i].length; j++) {
+				str = "fire" + fir_keys[i][j];
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+					PutIn_Logic.min_fire_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_fire_keys = 8;}
+	}
+	PutIn_Logic.fire_keys = Math.max(PutIn_Logic.min_fire_keys,PutIn_Logic.current_fire_keys);
+	if (!PutIn_Logic.fire_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 15; i++) {
+			if (i == 6) {
+				continue;
+			}
+			str = "fire" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		PutIn_Logic.fire_boss_key = bk;
+	}
+	if (PutIn_Logic.current_water_keys < 6 && (PutIn_Logic.longshot && PutIn_Logic.iron_boots || (Check["water11"] != "small_key" && typeof(Check["water11"]) != "undefined"))) {
+		var wat_keys = [[1,2,3,4,5,6,9]]
+		var done = false;
+		for (i = 0; i < wat_keys.length; i++) {
+			for (j = 0; j < wat_keys[i].length; j++) {
+				str = "water" + wat_keys[i][j];
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || typeof(Check["water11"]) == "undefined")))) {
+					PutIn_Logic.min_water_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_water_keys = 6;}
+	}
+	PutIn_Logic.water_keys = Math.max(PutIn_Logic.min_water_keys,PutIn_Logic.current_water_keys);
+	if (!PutIn_Logic.water_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 10; i++) {
+			str = "water" + i;
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		PutIn_Logic.water_boss_key = bk;
+	}
+	if (PutIn_Logic.current_spirit_keys < 5) {
+		var spi_keys = [[1,2,8,9], [3,4,5,6], [], [7,10,11,12,13],[14,15,16,17],[18,19]]
+		var done = false;
+		for (i = 0; i < spi_keys.length; i++) {
+			for (j = 0; j < spi_keys[i].length; j++) {
+				str = "spirit" + spi_keys[i][j];
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+					PutIn_Logic.min_spirit_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_spirit_keys = 5;}
+	}
+	PutIn_Logic.spirit_keys = Math.max(PutIn_Logic.min_spirit_keys,PutIn_Logic.current_spirit_keys);
+	if (!PutIn_Logic.spirit_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 19; i++) {
+			str = "spirit" + i;
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		PutIn_Logic.spirit_boss_key = bk;
+	}
+	if (PutIn_Logic.current_shadow_keys < 5) {
+		var sha_keys = [[1,2,3,4], [5,6,7,8,9], [10,11],[12,13,14],[15,16,17]]
+		var done = false;
+		for (i = 0; i < sha_keys.length; i++) {
+			for (j = 0; j < sha_keys[i].length; j++) {
+				str = "shadow" + sha_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+					PutIn_Logic.min_shadow_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_shadow_keys = 5;}
+	}
+	PutIn_Logic.shadow_keys = Math.max(PutIn_Logic.min_shadow_keys,PutIn_Logic.current_shadow_keys);
+	if (!PutIn_Logic.shadow_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 17; i++) {
+			str = "shadow" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		PutIn_Logic.shadow_boss_key = bk;
+	}
+	if (PutIn_Logic.current_ganons_keys < 2) {
+		PutIn_Logic.min_ganons_keys = 2;
+		var done = false;
+		for (i = 1; i <= 16; i++) {
+			if (i == 8) {continue;}
+			str = "ganons" + i;
+			if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				PutIn_Logic.min_ganons_keys = 0;
+				break;
+			}
+		}
+	}
+	PutIn_Logic.ganons_keys = Math.max(PutIn_Logic.min_ganons_keys,PutIn_Logic.current_ganons_keys);
+	if (PutIn_Logic.current_gtg_keys < 9) {
+		var ger_keys = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,22], [],[],[17],[18],[],[19],[20]]
+		var done = false;
+		for (i = 0; i < ger_keys.length; i++) {
+			for (j = 0; j < ger_keys[i].length; j++) {
+				str = "gtg" + ger_keys[i][j];
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+					PutIn_Logic.min_gtg_keys = i;
+					done = true;
+					break;
+				}
+			}
+			if (done) {break;}
+		}
+		if (!done) {PutIn_Logic.min_gtg_keys = 9;}
+	}
+	PutIn_Logic.gtg_keys = Math.max(PutIn_Logic.min_gtg_keys,PutIn_Logic.current_gtg_keys);
+	if (PutIn_Logic.current_well_keys < 3) {
+		PutIn_Logic.min_well_keys = 3;
+		for (i = 1; i <= 14; i++) {
+			if (i == 12 || i == 13) {continue;}
+			str = "well" + i;
+			if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				PutIn_Logic.min_well_keys = 0;
+				break;
+			}
+		}
+	}
+	PutIn_Logic.well_keys = Math.max(PutIn_Logic.min_well_keys,PutIn_Logic.current_well_keys);
+	
+	if(PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets) {PutIn_Logic.min_ganons_keys = 1;}
+	PutIn_Logic.ganons_keys = Math.max(PutIn_Logic.min_ganons_keys,PutIn_Logic.current_ganons_keys);
+	
+	PutIn_Logic.forest_boss_key = PutIn_Logic.forced_forest_boss_key;
+	PutIn_Logic.fire_boss_key = PutIn_Logic.forced_fire_boss_key;
+	PutIn_Logic.water_boss_key = PutIn_Logic.forced_water_boss_key;
+	PutIn_Logic.spirit_boss_key = PutIn_Logic.forced_spirit_boss_key;
+	PutIn_Logic.shadow_boss_key = PutIn_Logic.forced_shadow_boss_key;
+	if(Game.forest_boss_key == true) {PutIn_Logic.forest_boss_key = Location_PutIn_Logic[Location.forest_boss_key]; }
+	if(Game.fire_boss_key == true) {PutIn_Logic.fire_boss_key = Location_PutIn_Logic[Location.fire_boss_key]; }
+	if(Game.water_boss_key == true) {PutIn_Logic.water_boss_key = Location_PutIn_Logic[Location.water_boss_key]; }
+	if(Game.spirit_boss_key == true) {PutIn_Logic.spirit_boss_key = Location_PutIn_Logic[Location.spirit_boss_key]; }
+	if(Game.shadow_boss_key == true) {PutIn_Logic.shadow_boss_key = Location_PutIn_Logic[Location.shadow_boss_key]; }
+	
+	if(PutIn_Logic.forest_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.deku_queen_gohma;}
+	if(PutIn_Logic.forest_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(PutIn_Logic.forest_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.jabu_barinade;}
+	if(PutIn_Logic.forest_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.forest14;}
+	if(PutIn_Logic.forest_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.fire6;}
+	if(PutIn_Logic.forest_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.water11;}
+	if(PutIn_Logic.forest_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.spirit20;}
+	if(PutIn_Logic.forest_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.shadow18;}
+	if(PutIn_Logic.forest_medallion_location == "pocket") {Game.forest_medallion = true; PutIn_Logic.forest_medallion = true;}
+	
+	if(PutIn_Logic.fire_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.deku_queen_gohma;}
+	if(PutIn_Logic.fire_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(PutIn_Logic.fire_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.jabu_barinade;}
+	if(PutIn_Logic.fire_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.forest14;}
+	if(PutIn_Logic.fire_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.fire6;}
+	if(PutIn_Logic.fire_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.water11;}
+	if(PutIn_Logic.fire_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.spirit20;}
+	if(PutIn_Logic.fire_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.fire_medallion = true;} PutIn_Logic.fire_medallion = Location_PutIn_Logic.shadow18;}
+	if(PutIn_Logic.fire_medallion_location == "pocket") {Game.fire_medallion = true; PutIn_Logic.fire_medallion = true;}
+	
+	if(PutIn_Logic.water_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.deku_queen_gohma;}
+	if(PutIn_Logic.water_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(PutIn_Logic.water_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.jabu_barinade;}
+	if(PutIn_Logic.water_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.forest14;}
+	if(PutIn_Logic.water_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.fire6;}
+	if(PutIn_Logic.water_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.water11;}
+	if(PutIn_Logic.water_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.spirit20;}
+	if(PutIn_Logic.water_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.water_medallion = true;} PutIn_Logic.water_medallion = Location_PutIn_Logic.shadow18;}
+	if(PutIn_Logic.water_medallion_location == "pocket") {Game.water_medallion = true; PutIn_Logic.water_medallion = true;}
+
+	PutIn_Logic.shadow_medallion = false;
+	PutIn_Logic.spirit_medallion = false;
+	for (var i = 1; i <=3; i++) {
+		str = "generic" + i;
+		str2 = "gen" + i;
+		if(PutIn_Logic[str] == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.deku_queen_gohma; if(document.getElementById("text_deku").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.deku_queen_gohma;} if(document.getElementById("text_deku").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.deku_queen_gohma;}}
+		if(PutIn_Logic[str] == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.dodongos_king_dodongo; if(document.getElementById("text_dodongos").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.dodongos_king_dodongo;} if(document.getElementById("text_dodongos").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.dodongos_king_dodongo;}}
+		if(PutIn_Logic[str] == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.jabu_barinade; if(document.getElementById("text_jabu").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.jabu_barinade;} if(document.getElementById("text_jabu").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.jabu_barinade;}}
+		if(PutIn_Logic[str] == "forest") {if (document.getElementById("forest14") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.forest14; if(document.getElementById("text_forest").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.forest14;} if(document.getElementById("text_forest").style.color=="rgb(255, 165, 0)") {Location_PutIn_Logic.forest14;}}
+		if(PutIn_Logic[str] == "fire") {if (document.getElementById("fire6") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.fire6; if(document.getElementById("text_fire").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.fire6;} if(document.getElementById("text_fire").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.fire6;}}
+		if(PutIn_Logic[str] == "water") {if (document.getElementById("water11") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.water11; if(document.getElementById("text_water").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.water11;} if(document.getElementById("text_water").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.water11;}}
+		if(PutIn_Logic[str] == "spirit") {if (document.getElementById("spirit20") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.spirit20; if(document.getElementById("text_spirit").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.spirit20;} if(document.getElementById("text_spirit").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.spirit20;}}
+		if(PutIn_Logic[str] == "shadow") {if (document.getElementById("shadow18") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.shadow18;}}
+		if(PutIn_Logic[str] == "pocket") {Game[str2] = true; PutIn_Logic[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = true;}}
+	}
+	
+	Location_PutIn_Logic.mido_1 = true;
+	Location_PutIn_Logic.mido_2 = true;
+	Location_PutIn_Logic.mido_3 = true;
+	Location_PutIn_Logic.mido_4 = true;
+	Location_PutIn_Logic.kokiri_sword = true;
+	Location_PutIn_Logic.kokiri_song_of_storms = PutIn_Logic.song_of_storms;
+	Location_PutIn_Logic.talons_chickens = true;
+	Location_PutIn_Logic.back_of_ranch = true;
+	Location_PutIn_Logic.hyrule_forest_boulder = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.hyrule_open_grotto = true;
+	Location_PutIn_Logic.hyrule_hp_scrub = PutIn_Logic.can_blast_or_smash;;
+	Location_PutIn_Logic.hyrule_boulder_of_destiny = PutIn_Logic.can_blast_or_smash;;
+	Location_PutIn_Logic.hyrule_tektite_grotto = PutIn_Logic.can_blast_or_smash && (PutIn_Logic.golden_scale || PutIn_Logic.iron_boots);
+	Location_PutIn_Logic.gerudovalley_box = true;
+	Location_PutIn_Logic.gerudovalley_waterfall = true;
+	Location_PutIn_Logic.gerudo_hammer = PutIn_Logic.fortress_access && PutIn_Logic.hammer;
+	Location_PutIn_Logic.hylia_child_fishing = true;
+	Location_PutIn_Logic.hylia_bottle = PutIn_Logic.silver_scale;
+	Location_PutIn_Logic.hylia_adult_fishing = PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river;
+	Location_PutIn_Logic.hylia_lab_top = PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river;
+	Location_PutIn_Logic.hylia_lab_dive = PutIn_Logic.golden_scale;
+	Location_PutIn_Logic.hylia_sun_shoot = PutIn_Logic.longshot && PutIn_Logic.bow;
+	Location_PutIn_Logic.market_slingshot_game = true;
+	Location_PutIn_Logic.richard = true;
+	Location_PutIn_Logic.market_bowling_1 = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.market_bowling_2 = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.market_lens_game = PutIn_Logic.can_see;
+	Location_PutIn_Logic.poes= (PutIn_Logic.bow && PutIn_Logic.eponas && PutIn_Logic.bottle) || PutIn_Logic.big_poe;
+	Location_PutIn_Logic.dins_fairy = PutIn_Logic.bomb_bag && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.g_fairy = PutIn_Logic.golden_gauntlets && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.lacs = PutIn_Logic.shadow_medallion && PutIn_Logic.spirit_medallion;
+	Location_PutIn_Logic.fountain_fairy = PutIn_Logic.ice_access && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.ice_glacier_hp = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.ice_bottom_of_fountain = PutIn_Logic.ice_access && PutIn_Logic.iron_boots;
+	Location_PutIn_Logic.ice_map = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.ice_compass = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.ice_hp = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.ice_irons = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.deku_lobby = true;
+	Location_PutIn_Logic.deku_slingshot = true;
+	Location_PutIn_Logic.deku_slingshot_room_side = true;
+	Location_PutIn_Logic.deku_compass = true;
+	Location_PutIn_Logic.deku_compass_room_side = true;
+	Location_PutIn_Logic.deku_basement = true;
+	Location_PutIn_Logic.deku_queen_gohma = PutIn_Logic.slingshot;
+	Location_PutIn_Logic.ocarina_game = true;
+	Location_PutIn_Logic.lost_woods_grotto = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.lost_woods_scrub_grotto = PutIn_Logic.bomb_bag || (PutIn_Logic.sarias || PutIn_Logic.minuet) && PutIn_Logic.hammer;
+	Location_PutIn_Logic.bridge_scrub = true;
+	Location_PutIn_Logic.target = PutIn_Logic.slingshot;
+	Location_PutIn_Logic.skull_kid = PutIn_Logic.sarias;
+	Location_PutIn_Logic.theater = true;
+	Location_PutIn_Logic.wolfos_grotto = PutIn_Logic.bomb_bag || (PutIn_Logic.sarias || PutIn_Logic.minuet) && PutIn_Logic.hammer;
+	Location_PutIn_Logic.rolling_goron = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.goron_dance = PutIn_Logic.lullaby && PutIn_Logic.sarias;
+	Location_PutIn_Logic.goron_pot = (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet) && (PutIn_Logic.lullaby || PutIn_Logic.can_use_dins);
+	Location_PutIn_Logic.goron_maze_1 = PutIn_Logic.can_blast_or_smash || PutIn_Logic.silver_gauntlets;
+	Location_PutIn_Logic.goron_maze_2 = PutIn_Logic.can_blast_or_smash || PutIn_Logic.silver_gauntlets;
+	Location_PutIn_Logic.goron_maze_3 = PutIn_Logic.hammer || PutIn_Logic.silver_gauntlets;
+	Location_PutIn_Logic.goron_link = PutIn_Logic.can_stop_link_the_goron;
+	Location_PutIn_Logic.dodongos_map = PutIn_Logic.can_enter_dodongos;
+	Location_PutIn_Logic.dodongos_compass = PutIn_Logic.can_enter_dodongos;
+	Location_PutIn_Logic.dodongos_bomb_flower_platform = PutIn_Logic.dodongos_climb;
+	Location_PutIn_Logic.dodongos_bomb_bag = PutIn_Logic.dodongos_climb;
+	Location_PutIn_Logic.dodongos_end_of_bridge = PutIn_Logic.dodongos_climb && PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.dodongos_above_king = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.dodongos_king_dodongo = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.trail_bombable = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.trail_dodongos_top = true;
+	Location_PutIn_Logic.trail_song_of_storms = PutIn_Logic.song_of_storms;
+	Location_PutIn_Logic.crater_peak_fairy = PutIn_Logic.can_blast_or_smash && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.trade_quest = Location_PutIn_Logic.trade_quest = (((PutIn_Logic.ice_access || ((PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby && PutIn_Logic.bottle)) && PutIn_Logic.prescription) || PutIn_Logic.claim_check) && PutIn_Logic.crater_top;
+	Location_PutIn_Logic.crater_bean = (PutIn_Logic.bolero && PutIn_Logic.child_can_enter_river) || (PutIn_Logic.hover_boots && PutIn_Logic.crater_by_city);
+	Location_PutIn_Logic.crater_hammer_fairy = PutIn_Logic.crater_by_city && PutIn_Logic.hammer && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.crater_grotto = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.crater_nook_hp = PutIn_Logic.crater_top;
+	Location_PutIn_Logic.man_on_roof = true;//PutIn_Logic.hookshot;
+	Location_PutIn_Logic.kakariko_grotto = true;
+	Location_PutIn_Logic.windmill = true;//PutIn_Logic.boomerang || PutIn_Logic.song_of_time;
+	Location_PutIn_Logic.anju = true;
+	Location_PutIn_Logic.cow_house = true;
+	Location_PutIn_Logic.archery_game = PutIn_Logic.bow;
+	Location_PutIn_Logic.redead_grotto = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.anjus_chickens = true;
+	Location_PutIn_Logic.tokens_10 = PutIn_Logic.gold_skulltulas >= 10;
+	Location_PutIn_Logic.tokens_20 = PutIn_Logic.gold_skulltulas >= 20;
+	Location_PutIn_Logic.tokens_30 = PutIn_Logic.gold_skulltulas >= 30;
+	Location_PutIn_Logic.tokens_40 = PutIn_Logic.gold_skulltulas >= 40;
+	Location_PutIn_Logic.tokens_50 = PutIn_Logic.gold_skulltulas >= 50;
+	Location_PutIn_Logic.shield_grave = true;
+	Location_PutIn_Logic.gravedigging_tour = true;
+	Location_PutIn_Logic.suns_grave = PutIn_Logic.suns_song;
+	Location_PutIn_Logic.fire_grave = PutIn_Logic.lullaby && PutIn_Logic.can_use_fire;
+	Location_PutIn_Logic.graveyard_box = PutIn_Logic.child_can_enter_river || PutIn_Logic.longshot;
+	Location_PutIn_Logic.race_1 = true;
+	Location_PutIn_Logic.race_2 = true;
+	Location_PutIn_Logic.river_pillar = PutIn_Logic.child_can_enter_river || PutIn_Logic.hover_boots;
+	Location_PutIn_Logic.river_grotto = true;
+	Location_PutIn_Logic.river_ledge = PutIn_Logic.child_can_enter_river || PutIn_Logic.hover_boots;
+	Location_PutIn_Logic.frogs_1 = PutIn_Logic.child_can_enter_river && PutIn_Logic.song_of_storms;
+	Location_PutIn_Logic.frogs_2 = PutIn_Logic.child_can_enter_river && (PutIn_Logic.song_of_storms && PutIn_Logic.lullaby && PutIn_Logic.eponas && PutIn_Logic.sarias && PutIn_Logic.suns_song && PutIn_Logic.song_of_time);
+	Location_PutIn_Logic.zora_diving = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
+	Location_PutIn_Logic.zora_torches = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
+	Location_PutIn_Logic.thaw_king = PutIn_Logic.ice_access || (PutIn_Logic.bottle && (PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby);
+	Location_PutIn_Logic.colossus_bean = PutIn_Logic.requiem && PutIn_Logic.child_can_enter_river;
+	Location_PutIn_Logic.colossus_fairy = PutIn_Logic.can_enter_colossus && PutIn_Logic.bomb_bag && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.wasteland = PutIn_Logic.can_cross_quicksand && PutIn_Logic.can_use_fire;
+	Location_PutIn_Logic.gerudo_roof = PutIn_Logic.fortress_access && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
+	Location_PutIn_Logic.gerudo_archery_1 = PutIn_Logic.eponas && PutIn_Logic.bow;
+	Location_PutIn_Logic.gerudo_archery_2 = PutIn_Logic.eponas && PutIn_Logic.bow;
+	Location_PutIn_Logic.jabu_boomerang = PutIn_Logic.can_enter_jabu;
+	Location_PutIn_Logic.jabu_map = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.jabu_compass = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.jabu_barinade = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.forest1 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.forest2 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.forest3 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
+	Location_PutIn_Logic.forest4 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+	Location_PutIn_Logic.forest5 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+	Location_PutIn_Logic.forest6 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.forest7 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.forest8 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
+	Location_PutIn_Logic.forest9 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest10 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest11 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest12 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
+	Location_PutIn_Logic.forest13 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
+	Location_PutIn_Logic.forest14 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
+	Location_PutIn_Logic.fire1 = PutIn_Logic.can_enter_fire_temple;
+	Location_PutIn_Logic.fire2 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
+	Location_PutIn_Logic.fire3 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
+	Location_PutIn_Logic.fire4 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1;
+	Location_PutIn_Logic.fire5 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1 && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.fire6 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_boss_key && PutIn_Logic.hammer && PutIn_Logic.can_wear_goron_tunic && (PutIn_Logic.hover_boots || (PutIn_Logic.fire_keys >=7 && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag)));
+	Location_PutIn_Logic.fire7 = PutIn_Logic.can_climb_fire_temple;
+	Location_PutIn_Logic.fire8 = PutIn_Logic.can_climb_fire_temple;
+	Location_PutIn_Logic.fire9 = PutIn_Logic.can_climb_fire_temple && ((PutIn_Logic.fire_keys >= 4 && PutIn_Logic.bow) || PutIn_Logic.fire_keys>=5);
+	Location_PutIn_Logic.fire10 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5;
+	Location_PutIn_Logic.fire11 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.fire12 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.fire13 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=6;
+	Location_PutIn_Logic.fire14 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys>=6 && PutIn_Logic.hover_boots)) && PutIn_Logic.hammer && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag);
+	Location_PutIn_Logic.fire15 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys >= 6 && PutIn_Logic.hover_boots)) && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.water1 = PutIn_Logic.can_enter_water;
+	Location_PutIn_Logic.water2 = PutIn_Logic.can_enter_water;
+	Location_PutIn_Logic.water3 = PutIn_Logic.middle_water && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.water4 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && (PutIn_Logic.bow || PutIn_Logic.can_use_dins);
+	Location_PutIn_Logic.water5 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && (PutIn_Logic.hover_boots || PutIn_Logic.longshot);
+	Location_PutIn_Logic.water6 = PutIn_Logic.middle_water && PutIn_Logic.can_wear_zora_tunic;
+	Location_PutIn_Logic.water7 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.water8 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby && PutIn_Logic.song_of_time && PutIn_Logic.bow;
+	Location_PutIn_Logic.water9 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && ((PutIn_Logic.water_keys >= 5 && PutIn_Logic.song_of_time && PutIn_Logic.bow) || PutIn_Logic.goron_bracelet);
+	Location_PutIn_Logic.water10 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.longshot && PutIn_Logic.water_keys >= 5 && ((PutIn_Logic.bomb_bag && PutIn_Logic.goron_bracelet) || PutIn_Logic.hover_boots);
+	Location_PutIn_Logic.water11 = PutIn_Logic.can_enter_water && PutIn_Logic.water_boss_key && PutIn_Logic.longshot ;
+	Location_PutIn_Logic.spirit1 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
+	Location_PutIn_Logic.spirit2 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
+	Location_PutIn_Logic.spirit3 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
+	Location_PutIn_Logic.spirit4 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
+	Location_PutIn_Logic.spirit5 = (PutIn_Logic.spirit_keys ==5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
+	Location_PutIn_Logic.spirit6 = (PutIn_Logic.spirit_keys ==5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
+	Location_PutIn_Logic.spirit7 = (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.longshot && PutIn_Logic.bomb_bag) || PutIn_Logic.spirit_keys == 5;
+	Location_PutIn_Logic.spirit8 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.hookshot && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.spirit9 = PutIn_Logic.can_enter_adult_spirit && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
+	Location_PutIn_Logic.spirit10 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
+	Location_PutIn_Logic.spirit11 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
+	Location_PutIn_Logic.spirit12 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.spirit13 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
+	Location_PutIn_Logic.spirit14 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag && PutIn_Logic.mirror_shield;
+	Location_PutIn_Logic.spirit15 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.spirit16 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.spirit17 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.spirit18 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys ==5 && PutIn_Logic.bow && PutIn_Logic.lullaby && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.spirit19 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys ==5 && PutIn_Logic.mirror_shield;
+	Location_PutIn_Logic.spirit20 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys ==5 && PutIn_Logic.mirror_shield && PutIn_Logic.bomb_bag && PutIn_Logic.spirit_boss_key && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.shadow1 = PutIn_Logic.can_enter_shadow;
+	Location_PutIn_Logic.shadow2 = PutIn_Logic.can_enter_shadow;
+	Location_PutIn_Logic.shadow3 = PutIn_Logic.can_cross_shadow_gap;
+	Location_PutIn_Logic.shadow4 = PutIn_Logic.can_cross_shadow_gap;
+	Location_PutIn_Logic.shadow5 = PutIn_Logic.can_bomb_shadow_wall;
+	Location_PutIn_Logic.shadow6 = PutIn_Logic.can_bomb_shadow_wall;
+	Location_PutIn_Logic.shadow7 = PutIn_Logic.can_bomb_shadow_wall;
+	Location_PutIn_Logic.shadow8 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.shadow9 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.shadow10 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.shadow_keys >=2;
+	Location_PutIn_Logic.shadow11 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot && PutIn_Logic.shadow_keys >=2;
+	Location_PutIn_Logic.shadow12 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+	Location_PutIn_Logic.shadow13 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+	Location_PutIn_Logic.shadow14 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+	Location_PutIn_Logic.shadow15 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+	Location_PutIn_Logic.shadow16 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+	Location_PutIn_Logic.shadow17 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+	Location_PutIn_Logic.shadow18 = PutIn_Logic.can_beat_shadow_boss && PutIn_Logic.shadow_keys >=5;
+	Location_PutIn_Logic.ganons1 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons2 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons3 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons4 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons5 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons6 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
+	Location_PutIn_Logic.ganons7 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.ganons8 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets && PutIn_Logic.lullaby && PutIn_Logic.ganons_keys >= 1;
+	Location_PutIn_Logic.ganons9 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.ganons10 = PutIn_Logic.can_enter_ganons && PutIn_Logic.bomb_bag;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.ganons11 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.ganons12 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.ganons13 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.ganons14 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.ganons15 = PutIn_Logic.can_enter_ganons && (PutIn_Logic.longshot || ((PutIn_Logic.fire_arrows && PutIn_Logic.magic) || (PutIn_Logic.hover_boots && PutIn_Logic.can_use_dins)));
+	Location_PutIn_Logic.ganons16 = PutIn_Logic.can_enter_ganons;
+	Location_PutIn_Logic.gtg1 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
+	Location_PutIn_Logic.gtg2 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
+	Location_PutIn_Logic.gtg3 = PutIn_Logic.can_save_carpenters;
+	Location_PutIn_Logic.gtg4 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gtg5 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.gtg6 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.gtg7 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.gtg8 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.gtg9 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow;  //((PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9) && PutIn_Logic.hammer));
+	Location_PutIn_Logic.gtg10 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.gtg12 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
+	Location_PutIn_Logic.gtg11 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
+	Location_PutIn_Logic.gtg13 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys == 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+	Location_PutIn_Logic.gtg14 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys == 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+	Location_PutIn_Logic.gtg15 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys == 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+	Location_PutIn_Logic.gtg16 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gtg17 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 3 ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.gtg18 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 4;
+	Location_PutIn_Logic.gtg19 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 6;
+	Location_PutIn_Logic.gtg20 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 7;
+	Location_PutIn_Logic.gtg21 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 9;
+	Location_PutIn_Logic.gtg22 = PutIn_Logic.can_save_carpenters && PutIn_Logic.iron_boots && PutIn_Logic.song_of_time && PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/;
+	Location_PutIn_Logic.well1 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.well5 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.well2 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.well3 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.well4 = PutIn_Logic.song_of_storms;
+	Location_PutIn_Logic.well6 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.well11 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.well7 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.well10 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.well8 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.kokiri_sword;
+	Location_PutIn_Logic.well9 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.well12 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys == 3 ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.well13 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys == 3 ;//&& PutIn_Logic.can_see ;
+	Location_PutIn_Logic.well14 = PutIn_Logic.song_of_storms && (PutIn_Logic.bomb_bag || (((/*PutIn_Logic.can_see &&*/ PutIn_Logic.well_keys == 3) || PutIn_Logic.can_use_dins) && PutIn_Logic.goron_bracelet));
+	Location_PutIn_Logic.zeldasSpot = true;
+	Location_PutIn_Logic.eponasSpot = true;
+	Location_PutIn_Logic.sariasSpot = true;
+	Location_PutIn_Logic.stormsSpot = true;
+	Location_PutIn_Logic.sunsSpot = PutIn_Logic.lullaby;
+	Location_PutIn_Logic.boleroSpot = PutIn_Logic.can_enter_fire_temple;
+	Location_PutIn_Logic.minuetSpot = PutIn_Logic.minuet || PutIn_Logic.sarias;
+	Location_PutIn_Logic.requiemSpot = PutIn_Logic.can_enter_colossus;
+	Location_PutIn_Logic.serenadeSpot = PutIn_Logic.ice_access;
+	Location_PutIn_Logic.preludeSpot = PutIn_Logic.forest_medallion;
+	Location_PutIn_Logic.nocturneSpot = PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion;
+	Location_PutIn_Logic.oot = PutIn_Logic.kokiri_emerald && PutIn_Logic.goron_ruby && PutIn_Logic.zora_sapphire;
+	
+	Location_PutIn_Logic.gs_kokiri_child = true;
+	Location_PutIn_Logic.gs_kokiri_bean = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_kokiri_adult = PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_market = true;
+	Location_PutIn_Logic.gs_lost_woods_bean1 = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_lost_woods_bean2 = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_lost_woods_above_stage = (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale) && (PutIn_Logic.sarias || PutIn_Logic.minuet);
+	Location_PutIn_Logic.gs_sacred_forest = PutIn_Logic.hookshot && (PutIn_Logic.sarias || PutIn_Logic.minuet);
+	Location_PutIn_Logic.gs_outside_kakariko = (PutIn_Logic.boomerang && PutIn_Logic.bomb_bag) || (PutIn_Logic.can_blast_or_smash && PutIn_Logic.hookshot)
+	Location_PutIn_Logic.gs_near_gerudo = (PutIn_Logic.hammer && PutIn_Logic.can_use_fire && PutIn_Logic.hookshot) || (PutIn_Logic.can_use_dins && PutIn_Logic.bomb_bag && PutIn_Logic.boomerang);
+	Location_PutIn_Logic.gs_hyrule_castle_tree = true;
+	Location_PutIn_Logic.gs_hyrule_castle_grotto = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_lon_lon_tree = true;
+	Location_PutIn_Logic.gs_lon_lon_shed = true;
+	Location_PutIn_Logic.gs_lon_lon_window = PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_lon_lon_back_wall = PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_kakariko_construction = true;
+	Location_PutIn_Logic.gs_kakariko_skulltula_house = true;
+	Location_PutIn_Logic.gs_kakariko_guard_house = true;
+	Location_PutIn_Logic.gs_kakariko_tree = true;
+	Location_PutIn_Logic.gs_kakariko_tower = PutIn_Logic.bomb_bag || PutIn_Logic.slingshot;
+	Location_PutIn_Logic.gs_kakariko_impas = PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_graveyard_wall = PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_graveyard_bean = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_trail_bean = PutIn_Logic.bottle && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet);
+	Location_PutIn_Logic.gs_trail_bombable_wall = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.gs_trail_hail_path = PutIn_Logic.hammer;
+	Location_PutIn_Logic.gs_trail_above_dodongos = PutIn_Logic.hammer;
+	Location_PutIn_Logic.gs_goron_city_center = true;
+	Location_PutIn_Logic.gs_goron_city_maze = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gs_crater_crate = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.gs_crater_bean = PutIn_Logic.bottle && PutIn_Logic.bolero;
+	Location_PutIn_Logic.gs_river_ladder = PutIn_Logic.silver_scale || PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gs_river_near_grotto = PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_river_above_bridge = PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_domain = PutIn_Logic.lullaby && (PutIn_Logic.hookshot || PutIn_Logic.magic || PutIn_Logic.bow);
+	Location_PutIn_Logic.gs_fountain_above_log = PutIn_Logic.rutos_letter && (PutIn_Logic.silver_scale || (PutIn_Logic.bomb_bag && PutIn_Logic.lullaby)) && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_fountain_tree = PutIn_Logic.rutos_letter && (PutIn_Logic.silver_scale || (PutIn_Logic.bomb_bag && PutIn_Logic.lullaby))
+	Location_PutIn_Logic.gs_fountain_hidden_cave = PutIn_Logic.ice_access && PutIn_Logic.silver_gauntlets && PutIn_Logic.hookshot && PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.gs_hylia_bean = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_hylia_lab_wall = PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_hylia_island = true;
+	Location_PutIn_Logic.gs_hylia_tree = PutIn_Logic.longshot;
+	Location_PutIn_Logic.gs_lab_crate = PutIn_Logic.iron_boots && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_valley_small_bridge = PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_valley_bean = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_valley_tent = PutIn_Logic.fortress_access && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_valley_pillar = PutIn_Logic.fortress_access && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_fortress_archery = PutIn_Logic.fortress_access && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_fortress_top = PutIn_Logic.fortress_access;
+	Location_PutIn_Logic.gs_wasteland_structure = PutIn_Logic.hookshot && PutIn_Logic.can_cross_quicksand;
+	Location_PutIn_Logic.gs_colossus_bean = PutIn_Logic.bottle && PutIn_Logic.requiem;
+	Location_PutIn_Logic.gs_colossus_tree = PutIn_Logic.hookshot && PutIn_Logic.can_enter_colossus;
+	Location_PutIn_Logic.gs_colossus_hill = (PutIn_Logic.requiem && (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale)) || (PutIn_Logic.longshot && PutIn_Logic.can_enter_colossus);
+	Location_PutIn_Logic.gs_zora_river_tree = true;
+	Location_PutIn_Logic.gs_ganons = true;
+	Location_PutIn_Logic.gs_deku_basement_back = PutIn_Logic.boomerang && PutIn_Logic.bomb_bag && PutIn_Logic.slingshot;
+	Location_PutIn_Logic.gs_deku_basement_gate = true;
+	Location_PutIn_Logic.gs_deku_basement_vines = PutIn_Logic.slingshot || PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.can_use_dins;
+	Location_PutIn_Logic.gs_deku_compass = true;
+	Location_PutIn_Logic.gs_dodongos_east_side = PutIn_Logic.can_enter_dodongos;
+	Location_PutIn_Logic.gs_dodongos_stair_room = PutIn_Logic.dodongos_climb;
+	Location_PutIn_Logic.gs_dodongos_above_stairs = (PutIn_Logic.dodongos_climb && PutIn_Logic.hookshot) || (PutIn_Logic.boomerang && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet));
+	Location_PutIn_Logic.gs_dodongos_scarecrow = PutIn_Logic.can_enter_dodongos && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_dodongos_before_king = PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gs_jabu_vines = PutIn_Logic.can_enter_jabu;
+	Location_PutIn_Logic.gs_jabu_near_octo1 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_jabu_near_octo2 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_jabu_near_boss = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_forest_first = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_forest_lobby = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_forest_outdoor_east = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow || PutIn_Logic.song_of_time) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots));
+	Location_PutIn_Logic.gs_forest_outdoor_west = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (((PutIn_Logic.bow || PutIn_Logic.song_of_time) && PutIn_Logic.longshot) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots) || (PutIn_Logic.forest_keys >= 2 && PutIn_Logic.goron_bracelet && PutIn_Logic.bow))
+	Location_PutIn_Logic.gs_forest_basement = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys == 5;
+	Location_PutIn_Logic.gs_fire_song_of_time = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >= 1 && PutIn_Logic.song_of_time;
+	Location_PutIn_Logic.gs_fire_bomb_wall = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gs_fire_scarecrow1 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_fire_scarecrow2 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_fire_basement = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
+	Location_PutIn_Logic.gs_water_south_basement = PutIn_Logic.can_enter_water && PutIn_Logic.bomb_bag && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.gs_water_river = PutIn_Logic.can_enter_water && PutIn_Logic.song_of_time && PutIn_Logic.water_keys >= 5;
+	Location_PutIn_Logic.gs_water_central = PutIn_Logic.middle_water && PutIn_Logic.longshot || PutIn_Logic.can_use_farores;
+	Location_PutIn_Logic.gs_water_near_boss_key = PutIn_Logic.can_enter_water && PutIn_Logic.longshot && PutIn_Logic.lullaby && PutIn_Logic.water_keys >=4;
+	Location_PutIn_Logic.gs_water_platform_room = PutIn_Logic.can_enter_water && PutIn_Logic.longshot && PutIn_Logic.lullaby && PutIn_Logic.water_keys >=4;
+	Location_PutIn_Logic.gs_spirit_metal_fence = PutIn_Logic.requiem && (PutIn_Logic.boomerang || PutIn_Logic.slingshot);
+	Location_PutIn_Logic.gs_spirit_before_child_knuckle = (PutIn_Logic.bomb_bag && PutIn_Logic.boomerang && PutIn_Logic.hookshot && PutIn_Logic.spirit_keys >= 1) || (PutIn_Logic.boomerang && PutIn_Logic.spirit_keys == 5 && PutIn_Logic.bomb_bag && PutIn_Logic.requiem) || (PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets && PutIn_Logic.spirit_keys >= 3);
+	Location_PutIn_Logic.gs_spirit_boulder_room = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.song_of_time && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
+	Location_PutIn_Logic.gs_spirit_temple_lobby = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >= 3 && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
+	Location_PutIn_Logic.gs_spirit_bomb_for_light_room = PutIn_Logic.spirit_keys >= 1;
+	Location_PutIn_Logic.gs_shadow_like_like = PutIn_Logic.can_bomb_shadow_wall;
+	Location_PutIn_Logic.gs_shadow_crusher = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_shadow_giant_pot = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.shadow_keys >=2 && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_shadow_near_boat = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.longshot && PutIn_Logic.shadow_keys >=4;
+	Location_PutIn_Logic.gs_shadow_three_pots = PutIn_Logic.can_ride_shadow_boat;
+	Location_PutIn_Logic.gs_well_west_inner = PutIn_Logic.boomerang /*&& PutIn_Logic.can_see*/ && PutIn_Logic.well_keys >=3;
+	Location_PutIn_Logic.gs_well_east_inner = PutIn_Logic.boomerang /*&& PutIn_Logic.can_see*/ && PutIn_Logic.well_keys >=3;
+	Location_PutIn_Logic.gs_well_like_like = PutIn_Logic.boomerang /*&& PutIn_Logic.can_see*/ && PutIn_Logic.well_keys >=3;
+	Location_PutIn_Logic.gs_ice_spinning_scythe = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_ice_hp_room = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_ice_block_room = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
+	
+	gs[1] = Location_PutIn_Logic.gs_kokiri_child;
+	gs[2] = Location_PutIn_Logic.gs_kokiri_bean;
+	gs[3] = Location_PutIn_Logic.gs_kokiri_adult;
+	gs[4] = Location_PutIn_Logic.gs_market;
+	gs[5] = Location_PutIn_Logic.gs_lost_woods_bean1;
+	gs[6] = Location_PutIn_Logic.gs_lost_woods_bean2;
+	gs[7] = Location_PutIn_Logic.gs_lost_woods_above_stage;
+	gs[8] = Location_PutIn_Logic.gs_sacred_forest;
+	gs[9] = Location_PutIn_Logic.gs_outside_kakariko;
+	gs[10] = Location_PutIn_Logic.gs_near_gerudo;
+	gs[11] = Location_PutIn_Logic.gs_hyrule_castle_tree;
+	gs[12] = Location_PutIn_Logic.gs_hyrule_castle_grotto;
+	gs[13] = Location_PutIn_Logic.gs_lon_lon_tree;
+	gs[14] = Location_PutIn_Logic.gs_lon_lon_shed;
+	gs[15] = Location_PutIn_Logic.gs_lon_lon_window;
+	gs[16] = Location_PutIn_Logic.gs_lon_lon_back_wall;
+	gs[17] = Location_PutIn_Logic.gs_kakariko_construction;
+	gs[18] = Location_PutIn_Logic.gs_kakariko_skulltula_house;
+	gs[19] = Location_PutIn_Logic.gs_kakariko_guard_house;
+	gs[20] = Location_PutIn_Logic.gs_kakariko_tree;
+	gs[21] = Location_PutIn_Logic.gs_kakariko_tower;
+	gs[22] = Location_PutIn_Logic.gs_kakariko_impas;
+	gs[23] = Location_PutIn_Logic.gs_graveyard_wall;
+	gs[24] = Location_PutIn_Logic.gs_graveyard_bean;
+	gs[25] = Location_PutIn_Logic.gs_trail_bean;
+	gs[26] = Location_PutIn_Logic.gs_trail_bombable_wall;
+	gs[27] = Location_PutIn_Logic.gs_trail_hail_path;
+	gs[28] = Location_PutIn_Logic.gs_trail_above_dodongos;
+	gs[29] = Location_PutIn_Logic.gs_goron_city_center;
+	gs[30] = Location_PutIn_Logic.gs_goron_city_maze;
+	gs[31] = Location_PutIn_Logic.gs_crater_crate;
+	gs[32] = Location_PutIn_Logic.gs_crater_bean;
+	gs[33] = Location_PutIn_Logic.gs_river_ladder;
+	gs[34] = Location_PutIn_Logic.gs_river_near_grotto;
+	gs[35] = Location_PutIn_Logic.gs_river_above_bridge;
+	gs[36] = Location_PutIn_Logic.gs_domain;
+	gs[37] = Location_PutIn_Logic.gs_fountain_above_log;
+	gs[38] = Location_PutIn_Logic.gs_fountain_tree;
+	gs[39] = Location_PutIn_Logic.gs_fountain_hidden_cave;
+	gs[40] = Location_PutIn_Logic.gs_hylia_bean;
+	gs[41] = Location_PutIn_Logic.gs_hylia_lab_wall;
+	gs[42] = Location_PutIn_Logic.gs_hylia_island;
+	gs[43] = Location_PutIn_Logic.gs_hylia_tree;
+	gs[44] = Location_PutIn_Logic.gs_lab_crate;
+	gs[45] = Location_PutIn_Logic.gs_valley_small_bridge;
+	gs[46] = Location_PutIn_Logic.gs_valley_bean;
+	gs[47] = Location_PutIn_Logic.gs_valley_tent;
+	gs[48] = Location_PutIn_Logic.gs_valley_pillar;
+	gs[49] = Location_PutIn_Logic.gs_fortress_archery;
+	gs[50] = Location_PutIn_Logic.gs_fortress_top;
+	gs[51] = Location_PutIn_Logic.gs_wasteland_structure;
+	gs[52] = Location_PutIn_Logic.gs_colossus_bean;
+	gs[53] = Location_PutIn_Logic.gs_colossus_tree;
+	gs[54] = Location_PutIn_Logic.gs_colossus_hill;
+	gs[55] = Location_PutIn_Logic.gs_zora_river_tree;
+	gs[56] = Location_PutIn_Logic.gs_ganons;
+	gs[57] = Location_PutIn_Logic.gs_deku_basement_back;
+	gs[58] = Location_PutIn_Logic.gs_deku_basement_gate;
+	gs[59] = Location_PutIn_Logic.gs_deku_basement_vines;
+	gs[60] = Location_PutIn_Logic.gs_deku_compass;
+	gs[61] = Location_PutIn_Logic.gs_dodongos_east_side;
+	gs[62] = Location_PutIn_Logic.gs_dodongos_stair_room;
+	gs[63] = Location_PutIn_Logic.gs_dodongos_above_stairs;
+	gs[64] = Location_PutIn_Logic.gs_dodongos_scarecrow;
+	gs[65] = Location_PutIn_Logic.gs_dodongos_before_king;
+	gs[66] = Location_PutIn_Logic.gs_jabu_vines;
+	gs[67] = Location_PutIn_Logic.gs_jabu_near_octo1;
+	gs[68] = Location_PutIn_Logic.gs_jabu_near_octo2;
+	gs[69] = Location_PutIn_Logic.gs_jabu_near_boss;
+	gs[70] = Location_PutIn_Logic.gs_forest_first;
+	gs[71] = Location_PutIn_Logic.gs_forest_lobby;
+	gs[72] = Location_PutIn_Logic.gs_forest_outdoor_east;
+	gs[73] = Location_PutIn_Logic.gs_forest_outdoor_west;
+	gs[74] = Location_PutIn_Logic.gs_forest_basement;
+	gs[75] = Location_PutIn_Logic.gs_fire_song_of_time;
+	gs[76] = Location_PutIn_Logic.gs_fire_bomb_wall;
+	gs[77] = Location_PutIn_Logic.gs_fire_scarecrow1;
+	gs[78] = Location_PutIn_Logic.gs_fire_scarecrow2;
+	gs[79] = Location_PutIn_Logic.gs_fire_basement;
+	gs[80] = Location_PutIn_Logic.gs_water_south_basement;
+	gs[81] = Location_PutIn_Logic.gs_water_river;
+	gs[82] = Location_PutIn_Logic.gs_water_central;
+	gs[83] = Location_PutIn_Logic.gs_water_near_boss_key;
+	gs[84] = Location_PutIn_Logic.gs_water_platform_room;
+	gs[85] = Location_PutIn_Logic.gs_spirit_metal_fence;
+	gs[86] = Location_PutIn_Logic.gs_spirit_before_child_knuckle;
+	gs[87] = Location_PutIn_Logic.gs_spirit_boulder_room;
+	gs[88] = Location_PutIn_Logic.gs_spirit_temple_lobby;
+	gs[89] = Location_PutIn_Logic.gs_spirit_bomb_for_light_room;
+	gs[90] = Location_PutIn_Logic.gs_shadow_like_like;
+	gs[91] = Location_PutIn_Logic.gs_shadow_crusher;
+	gs[92] = Location_PutIn_Logic.gs_shadow_giant_pot;
+	gs[93] = Location_PutIn_Logic.gs_shadow_near_boat;
+	gs[94] = Location_PutIn_Logic.gs_shadow_three_pots;
+	gs[95] = Location_PutIn_Logic.gs_well_west_inner;
+	gs[96] = Location_PutIn_Logic.gs_well_east_inner;
+	gs[97] = Location_PutIn_Logic.gs_well_like_like;
+	gs[98] = Location_PutIn_Logic.gs_ice_spinning_scythe;
+	gs[99] = Location_PutIn_Logic.gs_ice_hp_room;
+	gs[100] = Location_PutIn_Logic.gs_ice_block_room;
+
+	PutIn_Logic.gold_skulltulas = 0;
+	var i;
+	for (i = 1; i<=100; i++) {
+		if (gs[i] == true) {PutIn_Logic.gold_skulltulas +=1;};
+	}
+	}
+	temp = 6;
+
+	var temp = 0;
+	
+	for (const key of keys4) {
+		temp += 1;
+		if (temp == 256) {break;} 
+		if (Location_Logic[key] && !Location_PutIn_Logic[key] && document.getElementById(key) != null) {tempArray.push(key);}
+	}
+	return tempArray;
+	
+}
+
+
 for (i=0; i < Items.length; i++) {
 	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
 	}
 function slowUpdate() {
 	for (i=0; i < Items.length; i++) {
 	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
+	}
+	for (i=0; i < Items.length; i++) {
+	ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);
 	}
 }
 
