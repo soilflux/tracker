@@ -1044,7 +1044,7 @@ for (i = 1; i <= 4; i++) {
 	
 	var temp = 0;
 	var d = new Date();
-	if (paused == true) {initialTime +=.250}
+	if (paused == true) {initialTime +=250}
 	var tempTime = Math.floor((d.getTime() - initialTime)/1000);
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
@@ -7421,6 +7421,11 @@ function slowUpdate() {
 	for (i=0; i < Items.length; i++) {
 	ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);
 	}
+}
+
+function timerControl() {
+	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
+	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
 }
 
 setInterval(Update,250);
