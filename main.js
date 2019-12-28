@@ -2742,11 +2742,11 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if (temp == 256) {break; }
 		temp +=1;
 		str = "text_" + key;
-		document.getElementById(str).innerHTML = backUp[temp-1];
+	
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
-			
+			document.getElementById(str).innerHTML = backUp[temp-1];
 			var tempbool = false;
 			if (!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) {document.getElementById(str).style.color = "chartreuse";}
 			if (woth1Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[1];}
