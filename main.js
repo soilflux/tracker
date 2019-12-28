@@ -467,7 +467,6 @@ function Update() {
 	if(Known.hookshot2 == true) {Logic.hookshot2 = Location_Logic[Location.hookshot2];}
 	Logic.hookshot = Logic.hookshot1 || Logic.hookshot2;
 	Logic.longshot = Logic.hookshot1 && Logic.hookshot2;
-	
 	if(Known.strength1 == true) {Logic.strength1 = Location_Logic[Location.strength1];}
 	if(Known.strength2 == true) {Logic.strength2 = Location_Logic[Location.strength2];}
 	if(Known.strength3 == true) {Logic.strength3 = Location_Logic[Location.strength3];}
@@ -2613,8 +2612,6 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
 
 
-
-
 	gs[1] = Location_Logic.gs_kokiri_child;
 	gs[2] = Location_Logic.gs_kokiri_bean;
 	gs[3] = Location_Logic.gs_kokiri_adult;
@@ -2741,12 +2738,13 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
+			document.getElementById(str).innerHTML = backUp[temp-1];
 			if (woth1Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[1];}
-			else if (woth2Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[2];}
-			else if (woth3Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[3];}
-			else if (woth4Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[4];}
-			else if (woth5Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[5];}
-			else document.getElementById(str).style.color = "chartreuse";
+			if (woth2Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[2]){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[2]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>')} else{document.getElementById(str).style.color = WotHColors[2];}}
+			if (woth3Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3]){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[3]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>')} else{document.getElementById(str).style.color = WotHColors[3];}}
+			if (woth4Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[4]){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[4]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>')} else{document.getElementById(str).style.color = WotHColors[4];}}
+			if (woth5Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[5]){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[5]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>')} else{document.getElementById(str).style.color = WotHColors[5];}}
+			if (!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) {document.getElementById(str).style.color = "chartreuse";}
 			if(document.getElementById(key) != null) {
 				if (temp <= 242) {Game.logically_accessible += 1;}
 				if (temp == 44 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
@@ -3009,6 +3007,8 @@ var woth3Locations = [];
 var woth4Locations = [];
 var woth5Locations = [];
 
+
+
 var age = "child";
 var hinted = false;
 var dekutod = false;
@@ -3226,9 +3226,12 @@ var tSeconds = 0;
 		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 		];
 		
+		var backUp = [];
+		
 		for (var i = 0; i < Locations.length; i++) {
 			Check[Locations[i]] = "unknown";
 			Location[Locations[i]] = "unknown";
+			backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
 		}
 		
 		var Names = [
