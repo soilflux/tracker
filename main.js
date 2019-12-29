@@ -4953,7 +4953,7 @@ function checksLockedByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -4985,7 +4985,7 @@ function checksLockedByItem(item) {
 				continue;
 			}
 			str = "fire" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5054,7 +5054,7 @@ function checksLockedByItem(item) {
 		for (i = 0; i < sha_keys.length; i++) {
 			for (j = 0; j < sha_keys[i].length; j++) {
 				str = "shadow" + sha_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_Locked_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					Locked_Logic.min_shadow_keys = i;
 					done = true;
 					break;
@@ -5069,7 +5069,7 @@ function checksLockedByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 17; i++) {
 			str = "shadow" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5095,7 +5095,7 @@ function checksLockedByItem(item) {
 		for (i = 0; i < ger_keys.length; i++) {
 			for (j = 0; j < ger_keys[i].length; j++) {
 				str = "gtg" + ger_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_Locked_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					Locked_Logic.min_gtg_keys = i;
 					done = true;
 					break;
@@ -5111,7 +5111,7 @@ function checksLockedByItem(item) {
 		for (i = 1; i <= 14; i++) {
 			if (i == 12 || i == 13) {continue;}
 			str = "well" + i;
-			if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+			if (!(Location_Locked_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 				Locked_Logic.min_well_keys = 0;
 				break;
 			}
@@ -5836,7 +5836,7 @@ function checksLockedByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5868,7 +5868,7 @@ function checksLockedByItem(item) {
 				continue;
 			}
 			str = "fire" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5937,7 +5937,7 @@ function checksLockedByItem(item) {
 		for (i = 0; i < sha_keys.length; i++) {
 			for (j = 0; j < sha_keys[i].length; j++) {
 				str = "shadow" + sha_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					Locked_Logic2.min_shadow_keys = i;
 					done = true;
 					break;
@@ -5952,7 +5952,7 @@ function checksLockedByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 17; i++) {
 			str = "shadow" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5978,7 +5978,7 @@ function checksLockedByItem(item) {
 		for (i = 0; i < ger_keys.length; i++) {
 			for (j = 0; j < ger_keys[i].length; j++) {
 				str = "gtg" + ger_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					Locked_Logic2.min_gtg_keys = i;
 					done = true;
 					break;
@@ -5994,7 +5994,7 @@ function checksLockedByItem(item) {
 		for (i = 1; i <= 14; i++) {
 			if (i == 12 || i == 13) {continue;}
 			str = "well" + i;
-			if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+			if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 				Locked_Logic2.min_well_keys = 0;
 				break;
 			}
@@ -6742,7 +6742,7 @@ function checksPutInLogicByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
 				bk = false;
 				break;
 			}
@@ -6774,7 +6774,7 @@ function checksPutInLogicByItem(item) {
 				continue;
 			}
 			str = "fire" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -6843,7 +6843,7 @@ function checksPutInLogicByItem(item) {
 		for (i = 0; i < sha_keys.length; i++) {
 			for (j = 0; j < sha_keys[i].length; j++) {
 				str = "shadow" + sha_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					PutIn_Logic.min_shadow_keys = i;
 					done = true;
 					break;
@@ -6858,7 +6858,7 @@ function checksPutInLogicByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 17; i++) {
 			str = "shadow" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -6884,7 +6884,7 @@ function checksPutInLogicByItem(item) {
 		for (i = 0; i < ger_keys.length; i++) {
 			for (j = 0; j < ger_keys[i].length; j++) {
 				str = "gtg" + ger_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					PutIn_Logic.min_gtg_keys = i;
 					done = true;
 					break;
@@ -6900,7 +6900,7 @@ function checksPutInLogicByItem(item) {
 		for (i = 1; i <= 14; i++) {
 			if (i == 12 || i == 13) {continue;}
 			str = "well" + i;
-			if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
+			if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 				PutIn_Logic.min_well_keys = 0;
 				break;
 			}
