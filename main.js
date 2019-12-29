@@ -1401,7 +1401,6 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			for (var j = 0; j<WotHItems.length; j++){
 				if (Location[WotHItems[j]] != null) {
 					if (ChecksLockedBy[Items[i]].includes(Location[WotHItems[j]])) {
-						console.log(ChecksLockedBy[Items[i]]);
 							if (!WotHItems.includes(Items[i])) {WotHItems.push(Items[i]);}
 					}
 				}
@@ -1501,7 +1500,6 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 				if (tempnumber2 == 4) {woth4Locations = tempArray2.slice(0);}
 				if (tempnumber2 == 5) {woth5Locations = tempArray2.slice(0);}
 			}
-			console.log(ChecksPutInLogicBy.slingshot1);
 		}
 		
 	}	
@@ -3493,6 +3491,7 @@ var tSeconds = 0;
 	Locked_Logic2.forced_water_boss_key = false;
 	Locked_Logic2.forced_spirit_boss_key = false;
 	Locked_Logic2.forced_shadow_boss_key = false;
+	PutIn_Logic.forced_forest_keys=0;
 	PutIn_Logic.forced_fire_keys=0;
 	PutIn_Logic.forced_water_keys=0;
 	PutIn_Logic.forced_spirit_keys=0;
@@ -4949,6 +4948,18 @@ function checksLockedByItem(item) {
 		}
 		if (!done) {Locked_Logic.min_forest_keys = 5;}
 	}
+	Locked_Logic.forest_keys = Math.max(Locked_Logic.min_forest_keys,Locked_Logic.current_forest_keys);
+	if (!Locked_Logic.forest_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 13; i++) {
+			str = "forest" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		Locked_Logic.forest_boss_key = bk;
+	}
 	
 	if (Locked_Logic.current_fire_keys < 8 && ((Locked_Logic.can_wear_goron_tunic && Locked_Logic.hammer && Locked_Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
 		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
@@ -5819,6 +5830,18 @@ function checksLockedByItem(item) {
 			if (done) {break;}
 		}
 		if (!done) {Locked_Logic2.min_forest_keys = 5;}
+	}
+	Locked_Logic2.forest_keys = Math.max(Locked_Logic2.min_forest_keys,Locked_Logic2.current_forest_keys);
+	if (!Locked_Logic2.forest_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 13; i++) {
+			str = "forest" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
+				bk = false;
+				break;
+			}
+		}
+		Locked_Logic2.forest_boss_key = bk;
 	}
 	
 	if (Locked_Logic2.current_fire_keys < 8 && ((Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hammer && Locked_Logic2.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
@@ -6713,6 +6736,18 @@ function checksPutInLogicByItem(item) {
 			if (done) {break;}
 		}
 		if (!done) {PutIn_Logic.min_forest_keys = 5;}
+	}
+	PutIn_Logic.forest_keys = Math.max(PutIn_Logic.min_forest_keys,PutIn_Logic.current_forest_keys);
+	if (!PutIn_Logic.forest_boss_key) {
+		var bk = true;
+		for (i = 1; i <= 13; i++) {
+			str = "forest" + i;
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+				bk = false;
+				break;
+			}
+		}
+		PutIn_Logic.forest_boss_key = bk;
 	}
 	
 	if (PutIn_Logic.current_fire_keys < 8 && ((PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
