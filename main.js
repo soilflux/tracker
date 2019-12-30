@@ -1515,7 +1515,7 @@ if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
 			
 			document.getElementById("woth" + tempnumber2 + "_title").style.color= WotHColors[tempnumber2];
 			if (AreaWotHAge[i] < tempnumber3) {
-				document.getElementById("woth" + tempnumber2 + "_title").style.opacity = .4;
+				document.getElementById("woth" + tempnumber2 + "_title").style.opacity = .2;
 				if (tempnumber2 == 1) {woth1Locations =[];}
 				if (tempnumber2 == 2) {woth2Locations = [];}
 				if (tempnumber2 == 3) {woth3Locations = [];}
