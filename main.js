@@ -4846,59 +4846,69 @@ function checksLockedByItem(item) {
 	Locked_Logic2.can_wear_zora_tunic = Locked_Logic2.zora_tunic || (Locked_Logic2.giants_wallet && (Locked_Logic2.lullaby && Locked_Logic2.bottle));
 	
 	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
+	var max = 0;
 	for (i = 1; i <= 14; i++) {
 		str = "forest" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.forest_keys = Locked_Logic2.current_forest_keys;
+	Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
+	max = 0;
 	Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
 	for (i = 1; i <= 15; i++) {
 		str = "fire" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.fire_keys = Locked_Logic2.current_fire_keys;
-
+	Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
+	max = 0;
 	Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
 	for (i = 1; i <= 11; i++) {
 		str = "water" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.water_keys = Locked_Logic2.current_water_keys;
-
+	Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
+	max = 0;
 	Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
 	for (i = 1; i <= 20; i++) {
 		str = "spirit" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.spirit_keys = Locked_Logic2.current_spirit_keys;
-
+	Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
+	max = 0;
 	Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
 	for (i = 1; i <= 18; i++) {
 		str = "shadow" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.shadow_keys = Locked_Logic2.current_shadow_keys;
-
+	Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
+	max = 0;
 	Locked_Logic2.current_ganons_keys = Locked_Logic2.forced_ganons_keys;
 	for (i = 1; i <= 16; i++) {
 		str = "ganons" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_ganons_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.ganons_keys = Locked_Logic2.current_ganons_keys;
-
+	Locked_Logic2.ganons_keys = Math.min(Locked_Logic2.current_ganons_keys, max);
+	max = 0;
 	Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
 	for (i = 1; i <= 22; i++) {
 		str = "gtg" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.gtg_keys = Locked_Logic2.current_gtg_keys;
-
+	Locked_Logic2.gtg_keys = Math.min(Locked_Logic2.current_gtg_keys, max);
+	max = 0;
 	Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
 	for (i = 1; i <= 14; i++) {
 		str = "well" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys -=1;}
+		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
-	Locked_Logic2.well_keys = Locked_Logic2.current_well_keys;
+	Locked_Logic2.well_keys = Math.min(Locked_Logic2.current_well_keys, max);
 	
 	if (!Locked_Logic2.forest_boss_key) {
 		var bk = true;
