@@ -3349,13 +3349,13 @@ var tSeconds = 0;
 	Logic.trade = false;
 	Logic.prescription = false;
 	Logic.claim_check = false;
-	Locked_Logic2.forced_fire_keys=0;
-	Locked_Logic2.forced_water_keys=0;
-	Locked_Logic2.forced_spirit_keys=0;
-	Locked_Logic2.forced_shadow_keys=0;
-	Locked_Logic2.forced_ganons_keys=0;
-	Locked_Logic2.forced_gtg_keys=0;
-	Locked_Logic2.forced_well_keys=0;
+	Locked_Logic2.forced_fire_keys=8;
+	Locked_Logic2.forced_water_keys=6;
+	Locked_Logic2.forced_spirit_keys=5;
+	Locked_Logic2.forced_shadow_keys=5;
+	Locked_Logic2.forced_ganons_keys=3;
+	Locked_Logic2.forced_gtg_keys=9;
+	Locked_Logic2.forced_well_keys=3;
 	Locked_Logic2.forced_forest_boss_key = false;
 	Locked_Logic2.forced_fire_boss_key = false;
 	Locked_Logic2.forced_water_boss_key = false;
@@ -3446,14 +3446,14 @@ var tSeconds = 0;
 	Locked_Logic.forced_water_boss_key = false;
 	Locked_Logic.forced_spirit_boss_key = false;
 	Locked_Logic.forced_shadow_boss_key = false;
-	Locked_Logic2.forced_forest_keys=0;
-	Locked_Logic2.forced_fire_keys=0;
-	Locked_Logic2.forced_water_keys=0;
-	Locked_Logic2.forced_spirit_keys=0;
-	Locked_Logic2.forced_shadow_keys=0;
-	Locked_Logic2.forced_ganons_keys=0;
-	Locked_Logic2.forced_gtg_keys=0;
-	Locked_Logic2.forced_well_keys=0;
+	Locked_Logic2.forced_forest_keys=5;
+	Locked_Logic2.forced_fire_keys=8;
+	Locked_Logic2.forced_water_keys=6;
+	Locked_Logic2.forced_spirit_keys=5;
+	Locked_Logic2.forced_shadow_keys=5;
+	Locked_Logic2.forced_ganons_keys=2;
+	Locked_Logic2.forced_gtg_keys=9;
+	Locked_Logic2.forced_well_keys=3;
 	Locked_Logic2.forced_forest_boss_key = false;
 	Locked_Logic2.forced_fire_boss_key = false;
 	Locked_Logic2.forced_water_boss_key = false;
@@ -4848,72 +4848,63 @@ function checksLockedByItem(item) {
 	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 	for (i = 1; i <= 14; i++) {
 		str = "forest" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
 	}
+	Locked_Logic2.forest_keys = Locked_Logic2.current_forest_keys;
 	Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
 	for (i = 1; i <= 15; i++) {
 		str = "fire" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
 	}
-	
+	Locked_Logic2.fire_keys = Locked_Logic2.current_fire_keys;
+
 	Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
 	for (i = 1; i <= 11; i++) {
 		str = "water" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
 	}
-	
+	Locked_Logic2.water_keys = Locked_Logic2.current_water_keys;
+
 	Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
 	for (i = 1; i <= 20; i++) {
 		str = "spirit" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
 	}
-	
+	Locked_Logic2.spirit_keys = Locked_Logic2.current_spirit_keys;
+
 	Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
 	for (i = 1; i <= 18; i++) {
 		str = "shadow" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
 	}
-	
+	Locked_Logic2.shadow_keys = Locked_Logic2.current_shadow_keys;
+
 	Locked_Logic2.current_ganons_keys = Locked_Logic2.forced_ganons_keys;
 	for (i = 1; i <= 16; i++) {
 		str = "ganons" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_ganons_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_ganons_keys -=1;}
 	}
-	
+	Locked_Logic2.ganons_keys = Locked_Logic2.current_ganons_keys;
+
 	Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
 	for (i = 1; i <= 22; i++) {
 		str = "gtg" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys -=1;}
 	}
-	
+	Locked_Logic2.gtg_keys = Locked_Logic2.current_gtg_keys;
+
 	Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
 	for (i = 1; i <= 14; i++) {
 		str = "well" + i;
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys +=1;}
+		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys -=1;}
 	}
+	Locked_Logic2.well_keys = Locked_Logic2.current_well_keys;
 	
-	if (Locked_Logic2.current_forest_keys < 5) {
-		var for_keys = [[1,2,3,4,5], [6,8], [7], [9,10,11]]
-		var done = false;
-		for (i = 0; i < for_keys.length; i++) {
-			for (j = 0; j < for_keys[i].length; j++) {
-				str = "forest" + for_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Locked_Logic2.min_forest_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_forest_keys = 5;}
-	}
-	Locked_Logic2.forest_keys = Math.max(Locked_Logic2.min_forest_keys,Locked_Logic2.current_forest_keys);
 	if (!Locked_Logic2.forest_boss_key) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && Check[str] == "boss_key") {
 				bk = false;
 				break;
 			}
@@ -4921,23 +4912,6 @@ function checksLockedByItem(item) {
 		Locked_Logic2.forest_boss_key = bk;
 	}
 	
-	if (Locked_Logic2.current_fire_keys < 8 && ((Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hammer && Locked_Logic2.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
-		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
-		var done = false;
-		for (i = 0; i < fir_keys.length; i++) {
-			for (j = 0; j < fir_keys[i].length; j++) {
-				str = "fire" + fir_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
-					Locked_Logic2.min_fire_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_fire_keys = 8;}
-	}
-	Locked_Logic2.fire_keys = Math.max(Locked_Logic2.min_fire_keys,Locked_Logic2.current_fire_keys);
 	if (!Locked_Logic2.fire_boss_key) {
 		var bk = true;
 		for (i = 1; i <= 15; i++) {
@@ -4945,143 +4919,46 @@ function checksLockedByItem(item) {
 				continue;
 			}
 			str = "fire" + i;
-			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && Check[str] == "boss_key") {
 				bk = false;
 				break;
 			}
 		}
 		Locked_Logic2.fire_boss_key = bk;
 	}
-	if (Locked_Logic2.current_water_keys < 6 && (Locked_Logic2.longshot && Locked_Logic2.iron_boots || (Check["water11"] != "small_key" && typeof(Check["water11"]) != "undefined"))) {
-		var wat_keys = [[1,2,3,4,5,6,9]]
-		var done = false;
-		for (i = 0; i < wat_keys.length; i++) {
-			for (j = 0; j < wat_keys[i].length; j++) {
-				str = "water" + wat_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || typeof(Check["water11"]) == "undefined")))) {
-					Locked_Logic2.min_water_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_water_keys = 6;}
-	}
-	Locked_Logic2.water_keys = Math.max(Locked_Logic2.min_water_keys,Locked_Logic2.current_water_keys);
 	if (!Locked_Logic2.water_boss_key) {
 		var bk = true;
 		for (i = 1; i <= 10; i++) {
 			str = "water" + i;
-			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && Check[str] == "boss_key") {
 				bk = false;
 				break;
 			}
 		}
 		Locked_Logic2.water_boss_key = bk;
 	}
-	if (Locked_Logic2.current_spirit_keys < 5) {
-		var spi_keys = [[1,2,8,9], [3,4,5,6], [], [7,10,11,12,13],[14,15,16,17],[18,19]]
-		var done = false;
-		for (i = 0; i < spi_keys.length; i++) {
-			for (j = 0; j < spi_keys[i].length; j++) {
-				str = "spirit" + spi_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Locked_Logic2.min_spirit_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_spirit_keys = 5;}
-	}
-	Locked_Logic2.spirit_keys = Math.max(Locked_Logic2.min_spirit_keys,Locked_Logic2.current_spirit_keys);
 	if (!Locked_Logic2.spirit_boss_key) {
 		var bk = true;
 		for (i = 1; i <= 19; i++) {
 			str = "spirit" + i;
-			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && Check[str] == "boss_key") {
 				bk = false;
 				break;
 			}
 		}
 		Locked_Logic2.spirit_boss_key = bk;
 	}
-	if (Locked_Logic2.current_shadow_keys < 5) {
-		var sha_keys = [[1,2,3,4], [5,6,7,8,9], [10,11],[12,13,14],[15,16,17]]
-		var done = false;
-		for (i = 0; i < sha_keys.length; i++) {
-			for (j = 0; j < sha_keys[i].length; j++) {
-				str = "shadow" + sha_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Locked_Logic2.min_shadow_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_shadow_keys = 5;}
-	}
-	Locked_Logic2.shadow_keys = Math.max(Locked_Logic2.min_shadow_keys,Locked_Logic2.current_shadow_keys);
 	if (!Locked_Logic2.shadow_boss_key) {
 		var bk = true;
 		for (i = 1; i <= 17; i++) {
 			str = "shadow" + i;
-			if (!Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (!Location_Locked_Logic2[str] && Check[str] == "boss_key") {
 				bk = false;
 				break;
 			}
 		}
 		Locked_Logic2.shadow_boss_key = bk;
 	}
-	if (Locked_Logic2.current_ganons_keys < 2) {
-		Locked_Logic2.min_ganons_keys = 2;
-		var done = false;
-		for (i = 1; i <= 16; i++) {
-			if (i == 8) {continue;}
-			str = "ganons" + i;
-			if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-				Locked_Logic2.min_ganons_keys = 0;
-				break;
-			}
-		}
-	}
-	Locked_Logic2.ganons_keys = Math.max(Locked_Logic2.min_ganons_keys,Locked_Logic2.current_ganons_keys);
-	if (Locked_Logic2.current_gtg_keys < 9) {
-		var ger_keys = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,22], [],[],[17],[18],[],[19],[20]]
-		var done = false;
-		for (i = 0; i < ger_keys.length; i++) {
-			for (j = 0; j < ger_keys[i].length; j++) {
-				str = "gtg" + ger_keys[i][j];
-				if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Locked_Logic2.min_gtg_keys = i;
-					done = true;
-					break;
-				}
-			}
-			if (done) {break;}
-		}
-		if (!done) {Locked_Logic2.min_gtg_keys = 9;}
-	}
-	Locked_Logic2.gtg_keys = Math.max(Locked_Logic2.min_gtg_keys,Locked_Logic2.current_gtg_keys);
-	if (Locked_Logic2.current_well_keys < 3) {
-		Locked_Logic2.min_well_keys = 3;
-		for (i = 1; i <= 14; i++) {
-			if (i == 12 || i == 13) {continue;}
-			str = "well" + i;
-			if (!(Location_Locked_Logic2[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-				Locked_Logic2.min_well_keys = 0;
-				break;
-			}
-		}
-	}
-	Locked_Logic2.well_keys = Math.max(Locked_Logic2.min_well_keys,Locked_Logic2.current_well_keys);
-	
-	if(Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets) {Locked_Logic2.min_ganons_keys = 1;}
-	Locked_Logic2.ganons_keys = Math.max(Locked_Logic2.min_ganons_keys,Locked_Logic2.current_ganons_keys);
-	
 /*	Locked_Logic2.forest_boss_key = Locked_Logic2.forced_forest_boss_key;
 	Locked_Logic2.fire_boss_key = Locked_Logic2.forced_fire_boss_key;
 	Locked_Logic2.water_boss_key = Locked_Logic2.forced_water_boss_key;
