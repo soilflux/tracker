@@ -526,34 +526,34 @@ function Update() {
 	if(Game.spirit_boss_key == true) {Logic.spirit_boss_key = Location_Logic[Location.spirit_boss_key]; }
 	if(Game.shadow_boss_key == true) {Logic.shadow_boss_key = Location_Logic[Location.shadow_boss_key]; }
 	
-	if(Logic.forest_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.deku_queen_gohma;}
-	if(Logic.forest_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.forest_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.jabu_barinade;}
-	if(Logic.forest_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.forest14;}
-	if(Logic.forest_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.fire6;}
-	if(Logic.forest_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.water11;}
-	if(Logic.forest_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.spirit20;}
-	if(Logic.forest_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.shadow18;}
+	if(Logic.forest_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.deku_queen_gohma; Location.forest_medallion = "deku_queen_gohma";}
+	if(Logic.forest_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.dodongos_king_dodongo;Location.forest_medallion = "dodongos_king_dodongo";}
+	if(Logic.forest_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.jabu_barinade; Location.forest_medallion = "jabu_barinade";}
+	if(Logic.forest_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.forest14; Location.forest_medallion = "forest14";}
+	if(Logic.forest_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.fire6; Location.forest_medallion = "fire6";}
+	if(Logic.forest_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.water11; Location.forest_medallion = "water11";}
+	if(Logic.forest_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.spirit20; Location.forest_medallion = "spirit20";}
+	if(Logic.forest_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.shadow18; Location.forest_medallion = "shadow18";}
 	if(Logic.forest_medallion_location == "pocket") {Game.forest_medallion = true; Logic.forest_medallion = true;}
 	
-	if(Logic.fire_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.deku_queen_gohma;}
-	if(Logic.fire_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.fire_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.jabu_barinade;}
-	if(Logic.fire_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.forest14;}
-	if(Logic.fire_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.fire6;}
-	if(Logic.fire_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.water11;}
-	if(Logic.fire_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.spirit20;}
-	if(Logic.fire_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.shadow18;}
+	if(Logic.fire_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.deku_queen_gohma; Location.fire_medallion = "deku_queen_gohma";}
+	if(Logic.fire_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.dodongos_king_dodongo; Location.fire_medallion = "dodongos_king_dodongo";}
+	if(Logic.fire_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.jabu_barinade; Location.fire_medallion = "jabu_barinade";}
+	if(Logic.fire_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.forest14; Location.fire_medallion = "forest14";}
+	if(Logic.fire_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.fire6; Location.fire_medallion = "fire6";}
+	if(Logic.fire_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.water11; Location.fire_medallion = "water11";}
+	if(Logic.fire_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.spirit20; Location.fire_medallion = "spirit20";}
+	if(Logic.fire_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.shadow18; Location.fire_medallion = "shadow18";}
 	if(Logic.fire_medallion_location == "pocket") {Game.fire_medallion = true; Logic.fire_medallion = true;}
 	
-	if(Logic.water_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.deku_queen_gohma;}
-	if(Logic.water_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.dodongos_king_dodongo;}
-	if(Logic.water_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.jabu_barinade;}
-	if(Logic.water_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.forest14;}
-	if(Logic.water_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.fire6;}
-	if(Logic.water_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.water11;}
-	if(Logic.water_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.spirit20;}
-	if(Logic.water_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.shadow18;}
+	if(Logic.water_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.deku_queen_gohma; Location.water_medallion = "deku_queen_gohma";}
+	if(Logic.water_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.dodongos_king_dodongo; Location.water_medallion = "dodongos_king_dodongo";}
+	if(Logic.water_medallion_location == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.jabu_barinade; Location.water_medallion = "jabu_barinade";}
+	if(Logic.water_medallion_location == "forest") {if (document.getElementById("forest14") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.forest14; Location.water_medallion = "forest14";}
+	if(Logic.water_medallion_location == "fire") {if (document.getElementById("fire6") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.fire6; Location.water_medallion = "fire6";}
+	if(Logic.water_medallion_location == "water") {if (document.getElementById("water11") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.water11; Location.water_medallion = "water11";}
+	if(Logic.water_medallion_location == "spirit") {if (document.getElementById("spirit20") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.spirit20; Location.water_medallion = "spirit20";}
+	if(Logic.water_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.shadow18; Location.water_medallion = "shadow18";}
 	if(Logic.water_medallion_location == "pocket") {Game.water_medallion = true; Logic.water_medallion = true;}
 
 	Logic.shadow_medallion = false;
@@ -561,14 +561,14 @@ function Update() {
 	for (var i = 1; i <=3; i++) {
 		str = "generic" + i;
 		str2 = "gen" + i;
-		if(Logic[str] == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.deku_queen_gohma; if(document.getElementById("text_deku").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.deku_queen_gohma;} if(document.getElementById("text_deku").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.deku_queen_gohma;}}
-		if(Logic[str] == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.dodongos_king_dodongo; if(document.getElementById("text_dodongos").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.dodongos_king_dodongo;} if(document.getElementById("text_dodongos").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.dodongos_king_dodongo;}}
-		if(Logic[str] == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.jabu_barinade; if(document.getElementById("text_jabu").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.jabu_barinade;} if(document.getElementById("text_jabu").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.jabu_barinade;}}
-		if(Logic[str] == "forest") {if (document.getElementById("forest14") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.forest14; if(document.getElementById("text_forest").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.forest14;} if(document.getElementById("text_forest").style.color=="rgb(255, 165, 0)") {Location_Logic.forest14;}}
-		if(Logic[str] == "fire") {if (document.getElementById("fire6") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.fire6; if(document.getElementById("text_fire").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.fire6;} if(document.getElementById("text_fire").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.fire6;}}
-		if(Logic[str] == "water") {if (document.getElementById("water11") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.water11; if(document.getElementById("text_water").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.water11;} if(document.getElementById("text_water").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.water11;}}
-		if(Logic[str] == "spirit") {if (document.getElementById("spirit20") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.spirit20; if(document.getElementById("text_spirit").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.spirit20;} if(document.getElementById("text_spirit").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.spirit20;}}
-		if(Logic[str] == "shadow") {if (document.getElementById("shadow18") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.shadow18;}}
+		if(Logic[str] == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.deku_queen_gohma; Location[str2] = "deku_queen_gohma"; if(document.getElementById("text_deku").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.deku_queen_gohma;} if(document.getElementById("text_deku").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.deku_queen_gohma;}}
+		if(Logic[str] == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.dodongos_king_dodongo; Location[str2] = "dodongos_king_dodongo"; if(document.getElementById("text_dodongos").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.dodongos_king_dodongo;} if(document.getElementById("text_dodongos").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.dodongos_king_dodongo;}}
+		if(Logic[str] == "jabu") {if (document.getElementById("jabu_barinade") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.jabu_barinade; Location[str2] = "jabu_barinade"; if(document.getElementById("text_jabu").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.jabu_barinade;} if(document.getElementById("text_jabu").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.jabu_barinade;}}
+		if(Logic[str] == "forest") {if (document.getElementById("forest14") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.forest14; Location[str2] = "forest14"; if(document.getElementById("text_forest").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.forest14;} if(document.getElementById("text_forest").style.color=="rgb(255, 165, 0)") {Location_Logic.forest14;}}
+		if(Logic[str] == "fire") {if (document.getElementById("fire6") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.fire6; Location[str2] = "fire6"; if(document.getElementById("text_fire").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.fire6;} if(document.getElementById("text_fire").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.fire6;}}
+		if(Logic[str] == "water") {if (document.getElementById("water11") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.water11; Location[str2] = "water11"; if(document.getElementById("text_water").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.water11;} if(document.getElementById("text_water").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.water11;}}
+		if(Logic[str] == "spirit") {if (document.getElementById("spirit20") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.spirit20; Location[str2] = "spirit20"; if(document.getElementById("text_spirit").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.spirit20;} if(document.getElementById("text_spirit").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.spirit20;}}
+		if(Logic[str] == "shadow") {if (document.getElementById("shadow18") == null) {Game[str2] = true;} Logic[str2] = Location_Logic.shadow18; Location[str2] = "shadow18"; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = Location_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = Location_Logic.shadow18;}}
 		if(Logic[str] == "pocket") {Game[str2] = true; Logic[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {Logic.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {Logic.spirit_medallion = true;}}
 	}
 	
@@ -1344,87 +1344,19 @@ for (var i = 1; i <= 34; i++) {
 	AreaWotHAge[i] = 0;	
 	}
 }
-if (Check.oot == "nocturne" || Check.oot == "lullaby") {
-	if (!WotHItems.includes("dins_fire")) {WotHItems.push("dins_fire")}
-	if (!WotHItems.includes("hover_boots")) {WotHItems.push("hover_boots")}
-	if (!WotHItems.includes("mirror_shield")) {WotHItems.push("mirror_shield")}
-	if (Known.strength1 && Known.strength2) {
-		if (ChecksLockedBy.strength1.includes(Location.strength2)) {if (!WotHItems.includes("strength1")) {WotHItems.push("strength1")}}
-		if (ChecksLockedBy.strength2.includes(Location.strength1)) {if (!WotHItems.includes("strength2")) {WotHItems.push("strength2")}}
-		}
-	if (Known.strength1 && Known.strength3) {
-		if (ChecksLockedBy.strength1.includes(Location.strength3)) {if (!WotHItems.includes("strength1")) {WotHItems.push("strength1")}}
-		if (ChecksLockedBy.strength3.includes(Location.strength1)) {if (!WotHItems.includes("strength3")) {WotHItems.push("strength3")}}
-		}
-	if (Known.strength2 && Known.strength3) {
-		if (ChecksLockedBy.strength3.includes(Location.strength2)) {if (!WotHItems.includes("strength3")) {WotHItems.push("strength3")}}
-		if (ChecksLockedBy.strength2.includes(Location.strength3)) {if (!WotHItems.includes("strength2")) {WotHItems.push("strength2")}}
-		}
-	if (!WotHItems.includes("hammer")) {WotHItems.push("hammer")}
-	if (!WotHItems.includes("hookshot2")) {WotHItems.push("hookshot2")}
-	if (!WotHItems.includes("hookshot1")) {WotHItems.push("hookshot1")}
-	if (!WotHItems.includes("rutos_letter")) {WotHItems.push("rutos_letter")}
-	if (!WotHItems.includes("boomerang")) {WotHItems.push("boomerang")}
-	if (!WotHItems.includes("dins_fire")) {WotHItems.push("dins_fire")}
-	if (Known.slingshot1 && Known.slingshot2 && Known.slingshot3) {
-			if (ChecksLockedBy.slingshot1.includes(Location.slingshot2) && ChecksLockedBy.slingshot1.includes(Location.slingshot3)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-			if (ChecksLockedBy.slingshot2.includes(Location.slingshot1) && ChecksLockedBy.slingshot2.includes(Location.slingshot3)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-			if (ChecksLockedBy.slingshot3.includes(Location.slingshot2) && ChecksLockedBy.slingshot3.includes(Location.slingshot1)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-	}
-}
-if (Known.bomb_bag1 && Known.bomb_bag2 && Known.bomb_bag3) {
-		if (ChecksLockedBy.bomb_bag1.includes(Location.bomb_bag2) && ChecksLockedBy.bomb_bag1.includes(Location.bomb_bag3)) {if (Logic.emerald != "unknown" && ((Logic.emerald != "spirit" && Logic.ruby != "spirit" && Logic.sapphire != "spirit") || (Logic.emerald != "dodongos" && Logic.ruby != "dodongos" && Logic.sapphire != "dodongos") || (Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow"))) {if (!WotHItems.includes("bomb_bag1")) {WotHItems.push("bomb_bag1")}}}
-		if (ChecksLockedBy.bomb_bag2.includes(Location.bomb_bag1) && ChecksLockedBy.bomb_bag2.includes(Location.bomb_bag3)) {if (Logic.emerald != "unknown" && ((Logic.emerald != "spirit" && Logic.ruby != "spirit" && Logic.sapphire != "spirit") || (Logic.emerald != "dodongos" && Logic.ruby != "dodongos" && Logic.sapphire != "dodongos") || (Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow"))) {if (!WotHItems.includes("bomb_bag2")) {WotHItems.push("bomb_bag2")}}}
-		if (ChecksLockedBy.bomb_bag3.includes(Location.bomb_bag2) && ChecksLockedBy.bomb_bag3.includes(Location.bomb_bag1)) {if (Logic.emerald != "unknown" && ((Logic.emerald != "spirit" && Logic.ruby != "spirit" && Logic.sapphire != "spirit") || (Logic.emerald != "dodongos" && Logic.ruby != "dodongos" && Logic.sapphire != "dodongos") || (Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow"))) {if (!WotHItems.includes("bomb_bag3")) {WotHItems.push("bomb_bag3")}}}
-	}
-	if (Logic.emerald != "unknown" && Logic.emerald != "jabu" && Logic.ruby != "jabu" && Logic.sapphire != "jabu") {if (!WotHItems.includes("boomerang")) {WotHItems.push("boomerang")}}
+if (!WotHItems.includes("forest_medallion")) { WotHItems.push("forest_medallion");}
+if (!WotHItems.includes("fire_medallion")) { WotHItems.push("fire_medallion");}
+if (!WotHItems.includes("water_medallion")) { WotHItems.push("water_medallion");}
+if (!WotHItems.includes("gen1")) { WotHItems.push("gen1");}
+if (!WotHItems.includes("gen2")) { WotHItems.push("gen2");}
+if (!WotHItems.includes("gen3")) { WotHItems.push("gen3");}
 	if (Known.bow1 && Known.bow2 && Known.bow3) {
 		if (ChecksLockedBy.bow1.includes(Location.bow2) && ChecksLockedBy.bow1.includes(Location.bow3)) {if (!WotHItems.includes("bow")) {WotHItems.push("bow")}}
 		if (ChecksLockedBy.bow2.includes(Location.bow1) && ChecksLockedBy.bow2.includes(Location.bow3)) {if (!WotHItems.includes("bow")) {WotHItems.push("bow")}}
 		if (ChecksLockedBy.bow3.includes(Location.bow2) && ChecksLockedBy.bow3.includes(Location.bow1)) {if (!WotHItems.includes("bow")) {WotHItems.push("bow")}}
 		}
-	if (Logic.emerald != "unknown" && Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow") {if (!WotHItems.includes("dins_fire")) {WotHItems.push("dins_fire")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "fire" && Logic.ruby != "fire" && Logic.sapphire != "fire") {if (!WotHItems.includes("hammer")) {WotHItems.push("hammer")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "water" && Logic.ruby != "water" && Logic.sapphire != "water") {if (!WotHItems.includes("hookshot2")) {WotHItems.push("hookshot2");} if (!WotHItems.includes("hookshot1")) {WotHItems.push("hookshot1");}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow") {if (!WotHItems.includes("hover_boots")) {WotHItems.push("hover_boots")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "water" && Logic.ruby != "water" && Logic.sapphire != "water") {if (!WotHItems.includes("iron_boots")) {WotHItems.push("iron_boots")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "jabu" && Logic.ruby != "jabu" && Logic.sapphire != "jabu") {if (!WotHItems.includes("rutos_letter")) {WotHItems.push("rutos_letter")}}
-	if (ChecksLockedBy.hookshot1.includes(Location.hookshot2)) {if (!WotHItems.includes("hookshot1")) {WotHItems.push("hookshot1")}}
-	if (ChecksLockedBy.hookshot2.includes(Location.hookshot1)) {if (!WotHItems.includes("hookshot2")) {WotHItems.push("hookshot2")}}
 	if (ChecksLockedBy.magic1.includes(Location.magic2)) {if (!WotHItems.includes("magic1")) {WotHItems.push("magic1")}}
 	if (ChecksLockedBy.magic2.includes(Location.magic1)) {if (!WotHItems.includes("magic2")) {WotHItems.push("magic2")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "spirit" && Logic.ruby != "spirit" && Logic.sapphire != "spirit") {if (!WotHItems.includes("mirror_shield")) {WotHItems.push("mirror_shield")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "deku" && Logic.ruby != "deku" && Logic.sapphire != "deku") {
-		if (Known.slingshot1 && Known.slingshot2 && Known.slingshot3) {
-			if (ChecksLockedBy.slingshot1.includes(Location.slingshot2) && ChecksLockedBy.slingshot1.includes(Location.slingshot3)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-			if (ChecksLockedBy.slingshot2.includes(Location.slingshot1) && ChecksLockedBy.slingshot2.includes(Location.slingshot3)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-			if (ChecksLockedBy.slingshot3.includes(Location.slingshot2) && ChecksLockedBy.slingshot3.includes(Location.slingshot1)) {if (!WotHItems.includes("slingshot")) {WotHItems.push("slingshot")}}
-		}
-	}
-	if (Logic.emerald != "unknown" && Logic.emerald != "forest" && Logic.ruby != "forest" && Logic.sapphire != "forest") {
-		if (Known.strength1 && Known.strength3 && Known.strength2) {
-			if (ChecksLockedBy.strength1.includes(Location.strength2) && ChecksLockedBy.strength1.includes(Location.strength3)) {if (!WotHItems.includes("strength1")) {WotHItems.push("strength1")}}
-			if (ChecksLockedBy.strength2.includes(Location.strength1) && ChecksLockedBy.strength2.includes(Location.strength3)) {if (!WotHItems.includes("strength2")) {WotHItems.push("strength2")}}
-			if (ChecksLockedBy.strength3.includes(Location.strength2) && ChecksLockedBy.strength3.includes(Location.strength1)) {if (!WotHItems.includes("strength3")) {WotHItems.push("strength3")}}
-		}
-	}
-	if (Logic.emerald != "unknown" && Logic.emerald != "spirit" && Logic.ruby != "spirit" && Logic.sapphire != "spirit") {
-		if (Known.strength1 && Known.strength2) {
-			if (ChecksLockedBy.strength1.includes(Location.strength2)) {if (!WotHItems.includes("strength1")) {WotHItems.push("strength1")}}
-			if (ChecksLockedBy.strength2.includes(Location.strength1)) {if (!WotHItems.includes("strength2")) {WotHItems.push("strength2")}}
-		}
-		if (Known.strength1 && Known.strength3) {
-			if (ChecksLockedBy.strength1.includes(Location.strength3)) {if (!WotHItems.includes("strength1")) {WotHItems.push("strength1")}}
-			if (ChecksLockedBy.strength3.includes(Location.strength1)) {if (!WotHItems.includes("strength3")) {WotHItems.push("strength3")}}
-		}
-		if (Known.strength2 && Known.strength3) {
-			if (ChecksLockedBy.strength3.includes(Location.strength2)) {if (!WotHItems.includes("strength3")) {WotHItems.push("strength3")}}
-			if (ChecksLockedBy.strength2.includes(Location.strength3)) {if (!WotHItems.includes("strength2")) {WotHItems.push("strength2")}}
-		}
-	}
-	if (Logic.emerald != "unknown" && Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow") {if (!WotHItems.includes("lullaby")) {WotHItems.push("lullaby")}}
-	if (Logic.emerald != "unknown" && Logic.emerald != "shadow" && Logic.ruby != "shadow" && Logic.sapphire != "shadow") {if (!WotHItems.includes("nocturne")) {WotHItems.push("nocturne")}}
-
 	for (var i = 0; i<Items.length; i++) {
 		if (Items[i] != null) {
 			for (var j = 0; j<WotHItems.length; j++){
@@ -5160,6 +5092,12 @@ function checksLockedByItem(item) {
 	if(Game.water_boss_key == true) {Locked_Logic2.water_boss_key = Location_Locked_Logic2[Location.water_boss_key]; }
 	if(Game.spirit_boss_key == true) {Locked_Logic2.spirit_boss_key = Location_Locked_Logic2[Location.spirit_boss_key]; }
 	if(Game.shadow_boss_key == true) {Locked_Logic2.shadow_boss_key = Location_Locked_Logic2[Location.shadow_boss_key]; }
+	Locked_Logic2.forest_medallion = true;
+	Locked_Logic2.fire_medallion = true;
+	Locked_Logic2.water_medallion = true;
+	Locked_Logic2.gen1 = true;
+	Locked_Logic2.gen2 = true;
+	Locked_Logic2.gen3 = true;
 	
 	if(Logic.forest_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.forest_medallion = true;} Locked_Logic2.forest_medallion = Location_Locked_Logic2.deku_queen_gohma;}
 	if(Logic.forest_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.forest_medallion = true;} Locked_Logic2.forest_medallion = Location_Locked_Logic2.dodongos_king_dodongo;}
@@ -5191,8 +5129,8 @@ function checksLockedByItem(item) {
 	if(Logic.water_medallion_location == "shadow") {if (document.getElementById("shadow18") == null) {Game.water_medallion = true;} Locked_Logic2.water_medallion = Location_Locked_Logic2.shadow18;}
 	if(Logic.water_medallion_location == "pocket") {Game.water_medallion = true; Locked_Logic2.water_medallion = true;}
 
-	Locked_Logic2.shadow_medallion = false;
-	Locked_Logic2.spirit_medallion = false;
+	Locked_Logic2.shadow_medallion = true;
+	Locked_Logic2.spirit_medallion = true;
 	for (var i = 1; i <=3; i++) {
 		str = "generic" + i;
 		str2 = "gen" + i;
@@ -5206,6 +5144,40 @@ function checksLockedByItem(item) {
 		if(Logic[str] == "shadow") {if (document.getElementById("shadow18") == null) {Game[str2] = true;} Locked_Logic2[str2] = Location_Locked_Logic2.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {Locked_Logic2.shadow_medallion = Location_Locked_Logic2.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {Locked_Logic2.spirit_medallion = Location_Locked_Logic2.shadow18;}}
 		if(Logic[str] == "pocket") {Game[str2] = true; Locked_Logic2[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {Locked_Logic2.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {Locked_Logic2.spirit_medallion = true;}}
 	}
+	
+	Locked_Logic2.kokiri_emerald = true;
+	Locked_Logic2.goron_ruby = true;
+	Locked_Logic2.zora_sapphire = true;
+	if(Logic.emerald == "deku") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.deku_queen_gohma;}
+	if(Logic.emerald == "dodongos") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.dodongos_king_dodongo;}
+	if(Logic.emerald == "jabu") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.jabu_barinade;}
+	if(Logic.emerald == "forest") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.forest14;}
+	if(Logic.emerald == "fire") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.fire6;}
+	if(Logic.emerald == "water") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.water11;}
+	if(Logic.emerald == "spirit") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.spirit20;}
+	if(Logic.emerald == "shadow") {Locked_Logic2.kokiri_emerald = Location_Locked_Logic2.shadow18;}
+	if(Logic.emerald == "pocket") {Locked_Logic2.kokiri_emerald = true;}
+	
+	if(Logic.ruby == "deku") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.deku_queen_gohma;}
+	if(Logic.ruby == "dodongos") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.dodongos_king_dodongo;}
+	if(Logic.ruby == "jabu") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.jabu_barinade;}
+	if(Logic.ruby == "forest") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.forest14;}
+	if(Logic.ruby == "fire") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.fire6;}
+	if(Logic.ruby == "water") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.water11;}
+	if(Logic.ruby == "spirit") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.spirit20;}
+	if(Logic.ruby == "shadow") {Locked_Logic2.goron_ruby = Location_Locked_Logic2.shadow18;}
+	if(Logic.ruby == "pocket") {Locked_Logic2.goron_ruby = true;}
+	
+	if(Logic.sapphire == "deku") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.deku_queen_gohma;}
+	if(Logic.sapphire == "dodongos") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.dodongos_king_dodongo;}
+	if(Logic.sapphire == "jabu") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.jabu_barinade;}
+	if(Logic.sapphire == "forest") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.forest14;}
+	if(Logic.sapphire == "fire") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.fire6;}
+	if(Logic.sapphire == "water") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.water11;}
+	if(Logic.sapphire == "spirit") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.spirit20;}
+	if(Logic.sapphire == "shadow") {Locked_Logic2.zora_sapphire = Location_Locked_Logic2.shadow18;}
+	if(Logic.sapphire == "pocket") {Locked_Logic2.zora_sapphire = true;}
+
 	
 	Location_Locked_Logic2.mido_1 = true;
 	Location_Locked_Logic2.mido_2 = true;
@@ -5678,8 +5650,8 @@ function checksLockedByItem(item) {
 	
 	for (const key of keys3) {
 		temp += 1;
-		if (temp == 256) {break;} 
 		if (!Location_Locked_Logic2[key]) {tempArray.push(key);}
+		if (temp == 256) {break;} 
 	}
 	return tempArray;
 	
@@ -6066,6 +6038,12 @@ function checksPutInLogicByItem(item) {
 	if(Game.water_boss_key == true) {PutIn_Logic.water_boss_key = Location_PutIn_Logic[Location.water_boss_key]; }
 	if(Game.spirit_boss_key == true) {PutIn_Logic.spirit_boss_key = Location_PutIn_Logic[Location.spirit_boss_key]; }
 	if(Game.shadow_boss_key == true) {PutIn_Logic.shadow_boss_key = Location_PutIn_Logic[Location.shadow_boss_key]; }
+	PutIn_Logic.forest_medallion = true;
+	PutIn_Logic.fire_medallion = true;
+	PutIn_Logic.water_medallion = true;
+	PutIn_Logic.gen1 = true;
+	PutIn_Logic.gen2 = true;
+	PutIn_Logic.gen3 = true;
 	
 	if(Logic.forest_medallion_location == "deku") {if (document.getElementById("deku_queen_gohma") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.deku_queen_gohma;}
 	if(Logic.forest_medallion_location == "dodongos") {if (document.getElementById("dodongos_king_dodongo") == null) {Game.forest_medallion = true;} PutIn_Logic.forest_medallion = Location_PutIn_Logic.dodongos_king_dodongo;}
@@ -6112,6 +6090,39 @@ function checksPutInLogicByItem(item) {
 		if(Logic[str] == "shadow") {if (document.getElementById("shadow18") == null) {Game[str2] = true;} PutIn_Logic[str2] = Location_PutIn_Logic.shadow18; if(document.getElementById("text_shadow").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = Location_PutIn_Logic.shadow18;} if(document.getElementById("text_shadow").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = Location_PutIn_Logic.shadow18;}}
 		if(Logic[str] == "pocket") {Game[str2] = true; PutIn_Logic[str2] = true; if(document.getElementById("text_pocket").style.color=="rgb(238, 130, 238)") {PutIn_Logic.shadow_medallion = true;} if(document.getElementById("text_pocket").style.color=="rgb(255, 165, 0)") {PutIn_Logic.spirit_medallion = true;}}
 	}
+	
+	PutIn_Logic.kokiri_emerald = true;
+	PutIn_Logic.goron_ruby = true;
+	PutIn_Logic.zora_sapphire = true;
+	if(Logic.emerald == "deku") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.deku_queen_gohma;}
+	if(Logic.emerald == "dodongos") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(Logic.emerald == "jabu") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.jabu_barinade;}
+	if(Logic.emerald == "forest") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.forest14;}
+	if(Logic.emerald == "fire") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.fire6;}
+	if(Logic.emerald == "water") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.water11;}
+	if(Logic.emerald == "spirit") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.spirit20;}
+	if(Logic.emerald == "shadow") {PutIn_Logic.kokiri_emerald = Location_PutIn_Logic.shadow18;}
+	if(Logic.emerald == "pocket") {PutIn_Logic.kokiri_emerald = true;}
+	
+	if(Logic.ruby == "deku") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.deku_queen_gohma;}
+	if(Logic.ruby == "dodongos") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(Logic.ruby == "jabu") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.jabu_barinade;}
+	if(Logic.ruby == "forest") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.forest14;}
+	if(Logic.ruby == "fire") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.fire6;}
+	if(Logic.ruby == "water") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.water11;}
+	if(Logic.ruby == "spirit") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.spirit20;}
+	if(Logic.ruby == "shadow") {PutIn_Logic.goron_ruby = Location_PutIn_Logic.shadow18;}
+	if(Logic.ruby == "pocket") {PutIn_Logic.goron_ruby = true;}
+	
+	if(Logic.sapphire == "deku") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.deku_queen_gohma;}
+	if(Logic.sapphire == "dodongos") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.dodongos_king_dodongo;}
+	if(Logic.sapphire == "jabu") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.jabu_barinade;}
+	if(Logic.sapphire == "forest") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.forest14;}
+	if(Logic.sapphire == "fire") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.fire6;}
+	if(Logic.sapphire == "water") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.water11;}
+	if(Logic.sapphire == "spirit") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.spirit20;}
+	if(Logic.sapphire == "shadow") {PutIn_Logic.zora_sapphire = Location_PutIn_Logic.shadow18;}
+	if(Logic.sapphire == "pocket") {PutIn_Logic.zora_sapphire = true;}
 	
 	Location_PutIn_Logic.mido_1 = true;
 	Location_PutIn_Logic.mido_2 = true;
@@ -6584,8 +6595,8 @@ function checksPutInLogicByItem(item) {
 	
 	for (const key of keys4) {
 		temp += 1;
-		if (temp == 256) {break;} 
 		if (Location_Logic[key] && !Location_PutIn_Logic[key]) {tempArray.push(key);}
+		if (temp == 256) {break;} 
 	}
 	return tempArray;
 	
