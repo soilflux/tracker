@@ -5150,11 +5150,11 @@ function checksLockedByItem(item) {
 	if(Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets) {Locked_Logic2.min_ganons_keys = 1;}
 	Locked_Logic2.ganons_keys = Math.max(Locked_Logic2.min_ganons_keys,Locked_Logic2.current_ganons_keys);
 	
-	Locked_Logic2.forest_boss_key = Locked_Logic2.forced_forest_boss_key;
+/*	Locked_Logic2.forest_boss_key = Locked_Logic2.forced_forest_boss_key;
 	Locked_Logic2.fire_boss_key = Locked_Logic2.forced_fire_boss_key;
 	Locked_Logic2.water_boss_key = Locked_Logic2.forced_water_boss_key;
 	Locked_Logic2.spirit_boss_key = Locked_Logic2.forced_spirit_boss_key;
-	Locked_Logic2.shadow_boss_key = Locked_Logic2.forced_shadow_boss_key;
+	Locked_Logic2.shadow_boss_key = Locked_Logic2.forced_shadow_boss_key; */
 	if(Game.forest_boss_key == true) {Locked_Logic2.forest_boss_key = Location_Locked_Logic2[Location.forest_boss_key]; }
 	if(Game.fire_boss_key == true) {Locked_Logic2.fire_boss_key = Location_Locked_Logic2[Location.fire_boss_key]; }
 	if(Game.water_boss_key == true) {Locked_Logic2.water_boss_key = Location_Locked_Logic2[Location.water_boss_key]; }
@@ -6056,11 +6056,11 @@ function checksPutInLogicByItem(item) {
 	if(PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets) {PutIn_Logic.min_ganons_keys = 1;}
 	PutIn_Logic.ganons_keys = Math.max(PutIn_Logic.min_ganons_keys,PutIn_Logic.current_ganons_keys);
 	
-	PutIn_Logic.forest_boss_key = PutIn_Logic.forced_forest_boss_key;
+/*	PutIn_Logic.forest_boss_key = PutIn_Logic.forced_forest_boss_key;
 	PutIn_Logic.fire_boss_key = PutIn_Logic.forced_fire_boss_key;
 	PutIn_Logic.water_boss_key = PutIn_Logic.forced_water_boss_key;
 	PutIn_Logic.spirit_boss_key = PutIn_Logic.forced_spirit_boss_key;
-	PutIn_Logic.shadow_boss_key = PutIn_Logic.forced_shadow_boss_key;
+	PutIn_Logic.shadow_boss_key = PutIn_Logic.forced_shadow_boss_key; */
 	if(Game.forest_boss_key == true) {PutIn_Logic.forest_boss_key = Location_PutIn_Logic[Location.forest_boss_key]; }
 	if(Game.fire_boss_key == true) {PutIn_Logic.fire_boss_key = Location_PutIn_Logic[Location.fire_boss_key]; }
 	if(Game.water_boss_key == true) {PutIn_Logic.water_boss_key = Location_PutIn_Logic[Location.water_boss_key]; }
