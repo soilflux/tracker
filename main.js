@@ -736,8 +736,8 @@ for (i = 1; i <= 4; i++) {
 
 	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag1 || Game.has_chus || Game.scale1)
 	Game.child_can_enter_river = Game.bomb_bag1 || Game.has_chus || Game.scale1;
-	Game.fortress_access = Game.eponas || Game.hookshot2 || Game.requiem;
-	Game.can_save_carpenters = Game.fortress_access && ((Game.bow1 || Game.hookshot1 || Game.hover_boots) || true) /*fast carpenter fix**/;
+	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem;
+	Game.can_save_carpenters = Game.fortress_access && ((Game.bow1 || Game.hookshot || Game.hover_boots) || true) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
 	Game.can_use_fire = (Game.dins_fire || (Game.bow1 && Game.fire_arrows)) && Game.magic1;
@@ -745,31 +745,31 @@ for (i = 1; i <= 4; i++) {
 	Game.can_use_farores = Game.farores_wind && Game.magic1;
 	Game.can_see = Game.lens_of_truth && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
-	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.strength1 || ((Game.bottle1 || Game.can_enter_jabu) && Game.giants_wallet);
-	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.strength1 || Game.can_use_dins);
-	Game.can_enter_shadow= Game.nocturne && Game.can_use_fire && (Game.hover_boots || Game.hookshot1) ;//&& Game.can_see;
+	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.giants_wallet);
+	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);
+	Game.can_enter_shadow= Game.nocturne && Game.can_use_fire && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
 	Game.can_bomb_shadow_wall = Game.can_cross_shadow_gap && (Game.bomb_bag1 || Game.has_chus);
-	Game.can_pass_shadow_hookshot_door = Game.can_bomb_shadow_wall && Game.hookshot1;
+	Game.can_pass_shadow_hookshot_door = Game.can_bomb_shadow_wall && Game.hookshot;
 	Game.can_ride_shadow_boat = Game.can_pass_shadow_hookshot_door && Game.lullaby;
-	Game.can_beat_shadow_boss = Game.can_ride_shadow_boat && (Game.bow1 || Game.hookshot2);
-	Game.can_stop_link_the_goron = Game.bomb_bag1 || Game.bow1 || Game.strength1 || Game.has_chus;
+	Game.can_beat_shadow_boss = Game.can_ride_shadow_boat && (Game.bow1 || Game.longshot);
+	Game.can_stop_link_the_goron = Game.bomb_bag1 || Game.bow1 || Game.goron_bracelet || Game.has_chus;
 	Game.ice_access = Game.rutos_letter && Game.lullaby && Game.child_can_enter_river;
-	Game.reverse_crater = (Game.hover_boots || Game.hookshot1 || Game.child_can_enter_river) && Game.bolero;
-	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot1 || Game.hover_boots)) || Game.bolero;
-	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.strength1 || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.hookshot2 && Game.hammer);
+	Game.reverse_crater = (Game.hover_boots || Game.hookshot || Game.child_can_enter_river) && Game.bolero;
+	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot || Game.hover_boots)) || Game.bolero;
+	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer);
 	Game.crater_top = Game.crater_by_city || Game.hammer;
-	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.strength2;
+	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
 	Game.can_enter_ganons = Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3;
-	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow1 || Game.hookshot1 || Game.bomb_bag1);
-	Game.can_enter_water = (Game.hookshot1 && Game.iron_boots) || (Game.hookshot2 && Game.golden_scale);
+	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow1 || Game.hookshot || Game.bomb_bag1);
+	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.golden_scale);
 	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow1 || Game.can_use_dins);
-	Game.projectile_both = Game.bomb_bag1 || Game.has_chus || ((Game.slingshot1 || Game.boomerang) && (Game.bow1 || Game.hookshot1));
+	Game.projectile_both = Game.bomb_bag1 || Game.has_chus || ((Game.slingshot1 || Game.boomerang) && (Game.bow1 || Game.hookshot));
 	Game.projectile_child = Game.bomb_bag1 || Game.has_chus || Game.slingshot1 || Game.boomerang;
-	Game.projectile_adult = Game.bomb_bag1 || Game.has_chus || Game.bow1 || Game.hookshot1;
+	Game.projectile_adult = Game.bomb_bag1 || Game.has_chus || Game.bow1 || Game.hookshot;
 	Game.can_wear_goron_tunic = true;
 	Game.can_wear_zora_tunic = true;
-	Game.can_climb_gtg_hole = Game.hookshot1 || Game.hover_boots || Game.bomb_bag1;
+	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
 	Game.giants_wallet = Game.wallet1 && Game.wallet2;
 	
 	Logic.current_forest_keys = Logic.forced_forest_keys;
@@ -1183,6 +1183,19 @@ for (const key of keys) {
 	
 }
 document.getElementById("notes").innerHTML = temptext2 + temptext;
+
+if (Game.hookshot1 && Game.hookshot2) {
+	Game.longshot = true;
+}
+if (Game.hookshot1 || Game.hookshot2) {
+	Game.hookshot = true;
+}
+
+if (Game.strength1 && Game.strength2 && Game.strength3) {Game.golden_gauntlets = true;}
+if (Game.strength1 && Game.strength3) {Game.silver_gauntlets = true;}
+if (Game.strength2 && Game.strength3) {Game.silver_gauntlets = true;}
+if (Game.strength1 && Game.strength2) {Game.silver_gauntlets = true;}
+if (Game.strength1 || Game.strength2 || Game.strength3) {Game.goron_bracelet = true;}
 
 for( var i = 1; i <= 34; i++) {
 Area[i] = "normal";
@@ -2344,9 +2357,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.gerudovalley_waterfall = true;
 	Location_Access.hylia_child_fishing = true;
 	Location_Access.hylia_bottle = true;
-	Location_Access.hylia_adult_fishing = Game.hookshot1 || Game.child_can_enter_river;
-	Location_Access.hylia_lab_top = Game.hookshot1 || Game.child_can_enter_river;
-	Location_Access.hylia_lab_dive = Game.scale2 || (Game.hookshot1 && Game.iron_boots);
+	Location_Access.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river;
+	Location_Access.hylia_lab_top = Game.hookshot || Game.child_can_enter_river;
+	Location_Access.hylia_lab_dive = Game.scale2 || (Game.hookshot && Game.iron_boots);
 	Location_Access.hylia_sun_shoot = Game.bow1;
 	Location_Access.market_slingshot_game = true;
 	Location_Access.richard = true;
@@ -2355,7 +2368,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.market_lens_game = Game.can_see;
 	Location_Access.poes= (Game.bow1 && Game.eponas && (Game.bottle1 || Game.can_enter_jabu)) || Game.big_poe;
 	Location_Access.dins_fairy = (Game.bomb_bag1 || Game.has_chus) && Game.lullaby;
-	Location_Access.g_fairy = Game.strength3 && Game.lullaby;
+	Location_Access.g_fairy = Game.golden_gauntlets && Game.lullaby;
 	Location_Access.lacs = false;
 	Location_Access.river_pillar = true;
 	Location_Access.river_grotto = true;
@@ -2373,12 +2386,12 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.target = Game.slingshot1;
 	Location_Access.theater = true;
 	Location_Access.kokiri_song_of_storms = Game.song_of_storms;
-	Location_Access.rolling_goron = Game.bomb_bag1 || Game.has_chus || Game.strength1;
-	Location_Access.goron_pot = (Game.bomb_bag1 || Game.strength1) && (Game.lullaby || Game.can_use_dins);
+	Location_Access.rolling_goron = Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet;
+	Location_Access.goron_pot = (Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins);
 	Location_Access.goron_dance = Game.lullaby && Game.sarias;
-	Location_Access.goron_maze_1 = Game.can_blast_or_smash || Game.strength2;
-	Location_Access.goron_maze_2 = Game.can_blast_or_smash || Game.strength2;
-	Location_Access.goron_maze_3 = Game.hammer || Game.strength2 || ((Game.bomb_bag1 || Game.has_chus) && Game.hover_boots);
+	Location_Access.goron_maze_1 = Game.can_blast_or_smash || Game.silver_gauntlets;
+	Location_Access.goron_maze_2 = Game.can_blast_or_smash || Game.silver_gauntlets;
+	Location_Access.goron_maze_3 = Game.hammer || Game.silver_gauntlets || ((Game.bomb_bag1 || Game.has_chus) && Game.hover_boots);
 	Location_Access.goron_link = Game.can_stop_link_the_goron;
 	Location_Access.trail_bombable = Game.can_blast_or_smash;
 	Location_Access.trail_dodongos_top = true;
@@ -2390,13 +2403,13 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.crater_peak_fairy = Game.can_blast_or_smash && Game.lullaby;
 	Location_Access.trade_quest = (((Game.ice_access || (Game.giants_wallet && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
-	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot1 || Game.hover_boots);
+	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
 	Location_Access.gerudo_archery_1 = Game.eponas && Game.bow1;
 	Location_Access.gerudo_archery_2 = Game.eponas && Game.bow1;
 	Location_Access.wasteland = (Game.can_cross_quicksand || Game.requiem) && Game.can_use_fire;
 	Location_Access.colossus_fairy = Game.can_enter_colossus && (Game.bomb_bag1 || Game.has_chus) && Game.lullaby;
 	Location_Access.colossus_bean = Game.can_enter_colossus;
-	Location_Access.man_on_roof = true;//Game.hookshot1;
+	Location_Access.man_on_roof = true;//Game.hookshot;
 	Location_Access.kakariko_grotto = true;
 	Location_Access.windmill = true;//Game.boomerang || Game.song_of_time;
 	Location_Access.anju = true;
@@ -2410,7 +2423,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.tokens_40 = false;
 	Location_Access.tokens_50 = false;
 	Location_Access.gravedigging_tour = true;
-	Location_Access.graveyard_box = Game.child_can_enter_river || Game.hookshot2 || Game.boomerang;
+	Location_Access.graveyard_box = Game.child_can_enter_river || Game.longshot || Game.boomerang;
 	Location_Access.shield_grave = true;
 	Location_Access.suns_grave = Game.suns_song;
 	Location_Access.fire_grave = Game.lullaby;
@@ -2442,20 +2455,20 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.ice_irons = Game.ice_access;
 	Location_Access.ice_bottom_of_fountain = Game.ice_access;
 	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.giants_wallet && Game.lullaby);
-	Location_Access.forest1 = Game.hookshot1;
-	Location_Access.forest2 = Game.hookshot1;
-	Location_Access.forest3 = Game.hookshot1 && (Game.song_of_time || Game.bow1 || ((Game.hover_boots || Game.strength1) && Game.current_forest_keys>=1));
-	Location_Access.forest4 = Game.hookshot1 && (Game.song_of_time || ((Game.hover_boots || Game.strength1) && Game.current_forest_keys>=1) || (Game.bow1/* && (Game.iron_boots || Game.golden_scale || Game.longshot)*/));
-	Location_Access.forest5 = Game.hookshot1 && (Game.song_of_time || ((Game.hover_boots || Game.strength1) && Game.current_forest_keys>=1) || (Game.bow1/* && (Game.iron_boots || Game.golden_scale || Game.longshot)*/));
-	Location_Access.forest6 = Game.hookshot1 && Game.current_forest_keys >= 1 && Game.bow1 && Game.strength1;
-	Location_Access.forest7 = Game.hookshot1 && Game.current_forest_keys >= 2 && Game.bow1 && Game.strength1;
-	Location_Access.forest8 = Game.hookshot1 && ((Game.bow1 && Game.strength1 && Game.current_forest_keys >=2) || ((Game.hover_boots || Game.strength1) && Game.current_forest_keys >=1));
-	Location_Access.forest9 = Game.hookshot1 && Game.strength1 && Game.bow1 && Game.current_forest_keys>=3;
-	Location_Access.forest10 = Game.hookshot1 && Game.strength1 && Game.current_forest_keys>=3;
-	Location_Access.forest11 = Game.hookshot1 && Game.strength1 && Game.bow1 && Game.current_forest_keys>=3;
-	Location_Access.forest12 = Game.hookshot1 && Game.strength1 && (Game.bow1 || Game.can_use_dins) && Game.current_forest_keys>=5;
-	Location_Access.forest13 = Game.hookshot1 && Game.strength1 && Game.bow1 && Game.current_forest_keys>=5;
-	Location_Access.forest14 = Game.hookshot1 && Game.strength1 && Game.bow1 && Game.current_forest_keys>=5 && Game.forest_boss_key;
+	Location_Access.forest1 = Game.hookshot;
+	Location_Access.forest2 = Game.hookshot;
+	Location_Access.forest3 = Game.hookshot && (Game.song_of_time || Game.bow1 || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1));
+	Location_Access.forest4 = Game.hookshot && (Game.song_of_time || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1) || (Game.bow1/* && (Game.iron_boots || Game.golden_scale || Game.longshot)*/));
+	Location_Access.forest5 = Game.hookshot && (Game.song_of_time || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1) || (Game.bow1/* && (Game.iron_boots || Game.golden_scale || Game.longshot)*/));
+	Location_Access.forest6 = Game.hookshot && Game.current_forest_keys >= 1 && Game.bow1 && Game.goron_bracelet;
+	Location_Access.forest7 = Game.hookshot && Game.current_forest_keys >= 2 && Game.bow1 && Game.goron_bracelet;
+	Location_Access.forest8 = Game.hookshot && ((Game.bow1 && Game.goron_bracelet && Game.current_forest_keys >=2) || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys >=1));
+	Location_Access.forest9 = Game.hookshot && Game.goron_bracelet && Game.bow1 && Game.current_forest_keys>=3;
+	Location_Access.forest10 = Game.hookshot && Game.goron_bracelet && Game.current_forest_keys>=3;
+	Location_Access.forest11 = Game.hookshot && Game.goron_bracelet && Game.bow1 && Game.current_forest_keys>=3;
+	Location_Access.forest12 = Game.hookshot && Game.goron_bracelet && (Game.bow1 || Game.can_use_dins) && Game.current_forest_keys>=5;
+	Location_Access.forest13 = Game.hookshot && Game.goron_bracelet && Game.bow1 && Game.current_forest_keys>=5;
+	Location_Access.forest14 = Game.hookshot && Game.goron_bracelet && Game.bow1 && Game.current_forest_keys>=5 && Game.forest_boss_key;
 	Location_Access.fire1 = Game.can_enter_fire_temple;
 	Location_Access.fire2 = Game.can_enter_fire_temple && Game.hammer;
 	Location_Access.fire3 = Game.can_enter_fire_temple && Game.hammer;
@@ -2467,7 +2480,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.fire9 = Game.can_climb_fire_temple && ((Game.current_fire_keys >= 4 && Game.bow1) || Game.current_fire_keys>=5);
 	Location_Access.fire10 = Game.can_climb_fire_temple && Game.current_fire_keys>=5;
 	Location_Access.fire11 = Game.can_climb_fire_temple && Game.current_fire_keys>=5 && (Game.bomb_bag1 || Game.has_chus);
-	Location_Access.fire12 = Game.can_climb_fire_temple && Game.current_fire_keys>=5 && Game.hookshot1;
+	Location_Access.fire12 = Game.can_climb_fire_temple && Game.current_fire_keys>=5 && Game.hookshot;
 	Location_Access.fire13 = Game.can_climb_fire_temple && Game.current_fire_keys>=6;
 	Location_Access.fire14 = Game.can_climb_fire_temple && (Game.current_fire_keys>=7 || (Game.current_fire_keys>=6)) && Game.hammer && (Game.song_of_time || Game.bomb_bag1 || Game.has_chus);
 	Location_Access.fire15 = Game.can_climb_fire_temple && (Game.current_fire_keys>=7 || (Game.current_fire_keys >= 6)) && (Game.bomb_bag1 || Game.has_chus);
@@ -2475,33 +2488,33 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.water2 = Game.can_enter_water;
 	Location_Access.water3 = Game.can_enter_water && Game.lullaby && (Game.bomb_bag1 || Game.has_chus);
 	Location_Access.water4 = Game.can_enter_water && Game.lullaby && (Game.bow1 || Game.can_use_dins);
-	Location_Access.water5 = Game.can_enter_water && Game.lullaby && Game.bow1 && Game.strength1 && (Game.hover_boots || Game.longshot);
+	Location_Access.water5 = Game.can_enter_water && Game.lullaby && Game.bow1 && Game.goron_bracelet && (Game.hover_boots || Game.longshot);
 	Location_Access.water6 = Game.middle_water;
 	Location_Access.water7 = Game.current_water_keys >= 2 && Game.lullaby;
 	Location_Access.water8 = Game.current_water_keys >= 2 && Game.lullaby && Game.song_of_time && Game.bow1;
-	Location_Access.water9 = Game.can_enter_water && Game.lullaby && ((Game.current_water_keys >= 2 && Game.song_of_time && Game.bow1) || Game.strength1);
+	Location_Access.water9 = Game.can_enter_water && Game.lullaby && ((Game.current_water_keys >= 2 && Game.song_of_time && Game.bow1) || Game.goron_bracelet);
 	Location_Access.water10 = Game.can_enter_water && Game.lullaby && Game.longshot && Game.current_water_keys >= 2;
 	Location_Access.water11 = Game.can_enter_water && Game.water_boss_key && Game.longshot ;
 	Location_Access.spirit1 = Game.requiem && (Game.slingshot1 || Game.boomerang || Game.has_chus);
 	Location_Access.spirit2 = Game.requiem && (Game.slingshot1 || Game.boomerang || Game.has_chus);
-	Location_Access.spirit3 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.strength2));
-	Location_Access.spirit4 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.strength2));
-	Location_Access.spirit5 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.strength2));
-	Location_Access.spirit6 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.strength2));
+	Location_Access.spirit3 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
+	Location_Access.spirit4 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
+	Location_Access.spirit5 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.silver_gauntlets));
+	Location_Access.spirit6 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.silver_gauntlets));
 	Location_Access.spirit7 = Game.current_spirit_keys >= 2;
-	Location_Access.spirit8 = Game.can_enter_adult_spirit && Game.hookshot1 && Game.lullaby;
-	Location_Access.spirit9 = Game.can_enter_adult_spirit && (Game.bow1 || Game.hookshot1 || (Game.bomb_bag1 || Game.has_chus));
+	Location_Access.spirit8 = Game.can_enter_adult_spirit && Game.hookshot && Game.lullaby;
+	Location_Access.spirit9 = Game.can_enter_adult_spirit && (Game.bow1 || Game.hookshot || (Game.bomb_bag1 || Game.has_chus));
 	Location_Access.spirit10 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 	Location_Access.spirit11 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 	Location_Access.spirit12 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby;
-	Location_Access.spirit13 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby && (Game.hookshot1 || Game.hover_boots);
+	Location_Access.spirit13 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby && (Game.hookshot || Game.hover_boots);
 	Location_Access.spirit14 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=2 && (Game.bomb_bag1 || Game.has_chus) && Game.mirror_shield;
 	Location_Access.spirit15 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=2 && (Game.bomb_bag1 || Game.has_chus) ;//&& Game.can_see;
 	Location_Access.spirit16 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=2 && (Game.bomb_bag1 || Game.has_chus) ;//&& Game.can_see;
 	Location_Access.spirit17 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=2 && (Game.bomb_bag1 || Game.has_chus);
-	Location_Access.spirit18 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=3 && Game.bow1 && Game.lullaby && Game.hookshot1;
+	Location_Access.spirit18 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=3 && Game.bow1 && Game.lullaby && Game.hookshot;
 	Location_Access.spirit19 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=3 && Game.mirror_shield;
-	Location_Access.spirit20 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=3 && Game.mirror_shield && (Game.bomb_bag1 || Game.has_chus) && Game.spirit_boss_key && Game.hookshot1;
+	Location_Access.spirit20 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=3 && Game.mirror_shield && (Game.bomb_bag1 || Game.has_chus) && Game.spirit_boss_key && Game.hookshot;
 	Location_Access.shadow1 = Game.can_enter_shadow;
 	Location_Access.shadow2 = Game.can_enter_shadow;
 	Location_Access.shadow3 = Game.can_cross_shadow_gap;
@@ -2512,7 +2525,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.shadow8 = Game.can_bomb_shadow_wall;
 	Location_Access.shadow9 = Game.can_bomb_shadow_wall;
 	Location_Access.shadow10 = Game.can_bomb_shadow_wall && Game.current_shadow_keys >=2;
-	Location_Access.shadow11 = Game.can_bomb_shadow_wall && Game.hookshot1 && Game.current_shadow_keys >=2;
+	Location_Access.shadow11 = Game.can_bomb_shadow_wall && Game.hookshot && Game.current_shadow_keys >=2;
 	Location_Access.shadow12 = Game.can_pass_shadow_hookshot_door && Game.current_shadow_keys >=3;
 	Location_Access.shadow13 = Game.can_pass_shadow_hookshot_door && Game.current_shadow_keys >=3;
 	Location_Access.shadow14 = Game.can_pass_shadow_hookshot_door && Game.current_shadow_keys >=3;
@@ -2520,14 +2533,14 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.shadow16 = Game.can_ride_shadow_boat && Game.can_use_dins && Game.current_shadow_keys >=4;
 	Location_Access.shadow17 = Game.can_ride_shadow_boat && Game.current_shadow_keys >=4;
 	Location_Access.shadow18 = Game.can_beat_shadow_boss && Game.current_shadow_keys >=5;
-	Location_Access.ganons1 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons2 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons3 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons4 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons5 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons6 = Game.can_enter_ganons && Game.strength3;
-	Location_Access.ganons7 = Game.can_enter_ganons && Game.strength3 ;//&& Game.can_see;
-	Location_Access.ganons8 = Game.can_enter_ganons && Game.strength3 && Game.lullaby && Game.current_ganons_keys >= 1;
+	Location_Access.ganons1 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons2 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons3 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons4 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons5 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons6 = Game.can_enter_ganons && Game.golden_gauntlets;
+	Location_Access.ganons7 = Game.can_enter_ganons && Game.golden_gauntlets ;//&& Game.can_see;
+	Location_Access.ganons8 = Game.can_enter_ganons && Game.golden_gauntlets && Game.lullaby && Game.current_ganons_keys >= 1;
 	Location_Access.ganons9 = Game.can_enter_ganons;
 	Location_Access.ganons10 = Game.can_enter_ganons && (Game.bomb_bag1 || Game.has_chus);//&& Game.can_see;
 	Location_Access.ganons11 = Game.can_enter_ganons;
@@ -2540,10 +2553,10 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.gtg2 = Game.can_save_carpenters && Game.bow1;
 	Location_Access.gtg3 = Game.can_save_carpenters;
 	Location_Access.gtg4 = Game.can_save_carpenters;
-	Location_Access.gtg5 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.strength2 ;//&& Game.can_see ;
-	Location_Access.gtg6 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.strength2 ;//&& Game.can_see ;
-	Location_Access.gtg7 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.strength2 ;//&& Game.can_see ;
-	Location_Access.gtg8 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.strength2 ;//&& Game.can_see ;
+	Location_Access.gtg5 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg6 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg7 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg8 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
 	Location_Access.gtg9 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;  //((Game.bomb_bag1 || Game.current_gtg_keys == 9) && Game.hammer));
 	Location_Access.gtg10 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;//&& Game.can_see;
 	Location_Access.gtg11 = Game.can_save_carpenters && Game.can_climb_gtg_hole;// && (Game.can_see || (Game.bomb_bag1 || Game.current_gtg_keys == 9)) ;
@@ -2557,7 +2570,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.gtg19 = Game.can_save_carpenters && Game.current_gtg_keys >= 4;
 	Location_Access.gtg20 = Game.can_save_carpenters && Game.current_gtg_keys >= 5;
 	Location_Access.gtg21 = Game.can_save_carpenters && Game.current_gtg_keys >= 7;
-	Location_Access.gtg22 = Game.can_save_carpenters && Game.iron_boots && Game.song_of_time && Game.hookshot1 /*&& Game.can_see*/;
+	Location_Access.gtg22 = Game.can_save_carpenters && Game.iron_boots && Game.song_of_time && Game.hookshot /*&& Game.can_see*/;
 	Location_Access.well1 = Game.song_of_storms ;//&& Game.can_see;
 	Location_Access.well2 = Game.song_of_storms && (Game.bomb_bag1 || Game.has_chus);
 	Location_Access.well3 = Game.song_of_storms && Game.lullaby;
@@ -2571,7 +2584,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.well11 = Game.song_of_storms ;//&& Game.can_see;
 	Location_Access.well12 = Game.song_of_storms && Game.current_well_keys >= 1;//&& Game.can_see ;
 	Location_Access.well13 = Game.song_of_storms && Game.current_well_keys >= 1;//&& Game.can_see ;
-	Location_Access.well14 = Game.song_of_storms && ((Game.bomb_bag1 || Game.has_chus) || (((/*Game.can_see &&*/ Game.current_well_keys >= 1) || Game.can_use_dins) && Game.strength1));
+	Location_Access.well14 = Game.song_of_storms && ((Game.bomb_bag1 || Game.has_chus) || (((/*Game.can_see &&*/ Game.current_well_keys >= 1) || Game.can_use_dins) && Game.goron_bracelet));
 	Location_Access.zeldasSpot = true;
 	Location_Access.eponasSpot = true;
 	Location_Access.sariasSpot = true;
@@ -2803,15 +2816,15 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (Game.magic1) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").style.opacity =1; }}
 	if (Game.light_arrows) {document.getElementById("gan_req2").style.opacity=1;}
 	if (Game.bow1) {document.getElementById("gan_req3").style.opacity=1; if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").style.opacity =1; }}
-	if (Game.hookshot1) {if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").style.opacity =1; } if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").style.opacity =1; } if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").style.opacity =1; }}
-	if (Game.strength1) {if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").style.opacity =1; }}
+	if (Game.hookshot) {if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").style.opacity =1; } if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").style.opacity =1; } if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").style.opacity =1; }}
+	if (Game.goron_bracelet) {if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").style.opacity =1; }}
 	if (Game.hammer) {if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").style.opacity =1; }}
 	if (Game.rutos_letter) {if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").style.opacity =1; }}
 	if (Game.boomerang) {if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").style.opacity =1; }}
 	if (Game.iron_boots) {if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").style.opacity =1; }}
 	if (Game.scale2) {if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").style.opacity =1; }}
-	if (Game.hookshot2) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =1; }}
-	if (Game.strength2) {if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").style.opacity =1; }}
+	if (Game.longshot) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =1; }}
+	if (Game.silver_gauntlets) {if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").style.opacity =1; }}
 	if (Game.mirror_shield) {if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").style.opacity =1; }}
 	if (Game.dins_fire) {if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").style.opacity =1; }}
 	if (Game.hover_boots) {if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").style.opacity =1; }}
@@ -2820,15 +2833,15 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (!Game.magic1) {document.getElementById("gan_req1").style.opacity = .2; if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").style.opacity =.2; }}
 	if (!Game.light_arrows) {document.getElementById("gan_req2").style.opacity = .2;}
 	if (!Game.bow1) {document.getElementById("gan_req3").style.opacity = .2; if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").style.opacity =.2; }}
-	if (!Game.hookshot1) {if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").style.opacity =.2; } if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").style.opacity =.2; } if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").style.opacity =.2; }}
-	if (!Game.strength1) {if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").style.opacity =.2; }}
+	if (!Game.hookshot) {if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").style.opacity =.2; } if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").style.opacity =.2; } if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").style.opacity =.2; }}
+	if (!Game.goron_bracelet) {if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").style.opacity =.2; }}
 	if (!Game.hammer) {if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").style.opacity =.2; }}
 	if (!Game.rutos_letter) {if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").style.opacity =.2; }}
 	if (!Game.boomerang) {if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").style.opacity =.2; }}
 	if (!Game.iron_boots) {if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").style.opacity =.2; }}
 	if (!Game.scale2) {if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").style.opacity =.2; }}
-	if (!Game.hookshot2) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =.2; }}
-	if (!Game.strength2) {if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").style.opacity =.2; }}
+	if (!Game.longshot) {if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").style.opacity =.2; }}
+	if (!Game.silver_gauntlets) {if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").style.opacity =.2; }}
 	if (!Game.mirror_shield) {if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").style.opacity =.2; }}
 	if (!Game.dins_fire) {if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").style.opacity =.2; }}
 	if (!Game.hover_boots) {if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").style.opacity =.2; }}
@@ -2851,7 +2864,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (Game.fire_arrows) {document.getElementById("firearrowsimg").style.opacity =1;}
 	if (Game.scale1) {document.getElementById("silverscaleimg").style.opacity =1;}
 	if (Game.lens_of_truth) {document.getElementById("lensimg").style.opacity =1;}
-	if (Game.strength3) {document.getElementById("goldengauntletsimg").style.opacity =1;}
+	if (Game.golden_gauntlets) {document.getElementById("goldengauntletsimg").style.opacity =1;}
 	if (Game.slingshot1) {document.getElementById("slingshotimg").style.opacity =1;}
 	
 	/**if (Game.minuet) {document.getElementById("min_note").style.opacity = 1;}
@@ -2904,7 +2917,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if (Game.bomb_bag1 && Game.lullaby && Game.can_see && Game.kokiri_sword) {}
 		else{
 			Game.logically_accessible -= 2;
-		if (!Game.bomb_bag1 && !Game.strength1) {Game.logically_accessible -=3*.75}
+		if (!Game.bomb_bag1 && !Game.goron_bracelet) {Game.logically_accessible -=3*.75}
 		else if (!Game.bomb_bag1) {Game.logically_accessible -=2*.75}
 		if (!Game.lullaby) {Game.logically_accessible -=5*.75}
 		else if (!Game.can_see && !Game.kokiri_sword) {Game.logically_accessible -=2*.75}
@@ -2921,9 +2934,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		var mult2 = 1;
 		var mult3 = 1;
 		var mult4 = 1;
-		if(!Game.strength1) {mult1 = .7; mult2 = .63; mult3 = .57; mult4 = .5;}
+		if(!Game.goron_bracelet) {mult1 = .7; mult2 = .63; mult3 = .57; mult4 = .5;}
 		if (Game.can_cross_shadow_gap) {Game.logically_accessible += 2*.58}
-		if (Game.can_bomb_shadow_wall) {Game.logically_accessible += 3*.64+2*.64*mult1; if (Game.strength1){Game.logically_accessible += 2*.64}}
+		if (Game.can_bomb_shadow_wall) {Game.logically_accessible += 3*.64+2*.64*mult1; if (Game.goron_bracelet){Game.logically_accessible += 2*.64}}
 		if (Game.can_pass_shadow_hookshot_door){Game.logically_accessible += 3*.67*mult2}
 		if (Game.can_ride_shadow_boat){Game.logically_accessible += 3*.72*mult3}
 		if (Game.can_beat_shadow_boss) {Game.logically_accessible += 1*mult4}
@@ -3062,7 +3075,7 @@ var tSeconds = 0;
 	Game.bow1 = false;
 	Game.bow2 = false;
 	Game.bow3 = false;
-	Game.hookshot1 = false;
+	Game.hookshot = false;
 	Game.longshot = false;
 	Game.iron_boots = false;
 	Game.hover_boots = false;
@@ -3071,9 +3084,9 @@ var tSeconds = 0;
 	Game.magic2 = false;
 	Game.dins_fire = false;
 	Game.fire_arrows = false;
-	Game.strength1 = false;
-	Game.strength2 = false;
-	Game.strength3 = false;
+	Game.goron_bracelet = false;
+	Game.silver_gauntlets = false;
+	Game.golden_gauntlets = false;
 	Game.mirror_shield = false;
 	Game.wallet1 = false;
 	Game.wallet2 = false;
@@ -4081,20 +4094,20 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = true; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.goron_bracelet = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength2 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.silver_gauntlets = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.longshot = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = true;}
@@ -4118,20 +4131,20 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = false; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.goron_bracelet = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength2 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.silver_gauntlets = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.longshot = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = false;}
@@ -4541,88 +4554,88 @@ function next_check(x) {
 		if (Game.has_chus && !detour(30,16,62)) {check(); return "Dodongos: Compass";}
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_compass") {
 		if (Game.has_chus && !detour(30,16,62)) {check(); return "Dodongos: Compass";}
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: Platform";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_bomb_flower_platform") {
 		if (Game.has_chus && !detour(30,16,62)) {check(); return "Dodongos: Bomb Bag";}
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_bomb_bag") {
 		if (Game.has_chus && !detour(30,16,62)) {check(); return "Dodongos: Bridge";}
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_end_of_bridge") {
 		if (Game.has_chus && !detour(30,16,62)) {check(); return "Dodongos: Above King";}
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_above_king") {
 		if ((dodongosRequired > .9 || !detour(30,16,62)) && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	if (x == "dodongos_king_dodongo") {
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
-		if (!Game.bolero && (Game.hover_boots || Game.hookshot1) && (Game.has_chus || Game.strength1 || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
+		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
 			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
-			if (!detour(15,15,59) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.strength2 || Game.hammer) {check(); return "Goron City: Maze 1";}
+			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
 		if (Game.minuet && (Game.has_chus || Game.hammer) && !checkedYet[253]) {check(); return "Meadow";}
-		if (Game.bolero && (Game.hookshot1 || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
+		if (Game.bolero && (Game.hookshot || Game.hover_boots) && !checkedYet[252]) {check(); return "Crater";}
 		return warp();
 	}
 	
