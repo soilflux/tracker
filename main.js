@@ -1350,6 +1350,7 @@ if (!WotHItems.includes("water_medallion")) { WotHItems.push("water_medallion");
 if (!WotHItems.includes("gen1")) { WotHItems.push("gen1");}
 if (!WotHItems.includes("gen2")) { WotHItems.push("gen2");}
 if (!WotHItems.includes("gen3")) { WotHItems.push("gen3");}
+if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
 	if (Known.bow1 && Known.bow2 && Known.bow3) {
 		if (ChecksLockedBy.bow1.includes(Location.bow2) && ChecksLockedBy.bow1.includes(Location.bow3)) {if (!WotHItems.includes("bow")) {WotHItems.push("bow")}}
 		if (ChecksLockedBy.bow2.includes(Location.bow1) && ChecksLockedBy.bow2.includes(Location.bow3)) {if (!WotHItems.includes("bow")) {WotHItems.push("bow")}}
