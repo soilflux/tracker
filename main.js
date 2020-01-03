@@ -840,7 +840,7 @@ for (i = 1; i <= 4; i++) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -848,13 +848,13 @@ for (i = 1; i <= 4; i++) {
 		Logic.forest_boss_key = bk;
 	}
 
-	if (Logic.current_fire_keys < 8 && ((Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+	if (Logic.current_fire_keys < 8 && ((Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || (Check["fire6"] != "small_key" && Check["fire6"] != "unknown"))) {
 		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
 		var done = false;
 		for (i = 0; i < fir_keys.length; i++) {
 			for (j = 0; j < fir_keys[i].length; j++) {
 				str = "fire" + fir_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || Check[str] == "unknown" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || tCheck["fire6"] == "unknown")))) {
 					Logic.min_fire_keys = i;
 					done = true;
 					break;
@@ -873,7 +873,7 @@ for (i = 1; i <= 4; i++) {
 				continue;
 			}
 			str = "fire" + i;
-			if (!Location_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+			if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -881,13 +881,13 @@ for (i = 1; i <= 4; i++) {
 		Logic.fire_boss_key = bk;
 	}
 	
-	if (Logic.current_water_keys < 6 && (Logic.longshot && Logic.iron_boots || (Check["water11"] != "small_key" && typeof(Check["water11"]) != "undefined"))) {
+	if (Logic.current_water_keys < 6 && (Logic.longshot && Logic.iron_boots || (Check["water11"] != "small_key" && Check["water11"] != "unknown"))) {
 		var wat_keys = [[1,2,3,4,5,6,9]]
 		var done = false;
 		for (i = 0; i < wat_keys.length; i++) {
 			for (j = 0; j < wat_keys[i].length; j++) {
 				str = "water" + wat_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || typeof(Check["water11"]) == "undefined")))) {
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || Check["water11"] == "unknown")))) {
 					Logic.min_water_keys = i;
 					done = true;
 					break;
@@ -5746,7 +5746,7 @@ function checksPutInLogicByItem(item) {
 		var bk = true;
 		for (i = 1; i <= 13; i++) {
 			str = "forest" + i;
-			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || typeof(Check[str]) == "undefined")) {
+			if (!Location_PutIn_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -5754,13 +5754,13 @@ function checksPutInLogicByItem(item) {
 		PutIn_Logic.forest_boss_key = bk;
 	}
 	
-	if (PutIn_Logic.current_fire_keys < 8 && ((PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (Check["fire6"] != "small_key" && typeof(Check["fire6"]) != "undefined"))) {
+	if (PutIn_Logic.current_fire_keys < 8 && ((PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (Check["fire6"] != "small_key" && Check["fire6"] != "unknown"))) {
 		var fir_keys = [[1,2,3], [4,5],[], [7,8],[9], [10,11,12], [13,14,15]]
 		var done = false;
 		for (i = 0; i < fir_keys.length; i++) {
 			for (j = 0; j < fir_keys[i].length; j++) {
 				str = "fire" + fir_keys[i][j];
-				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || typeof(Check[str]) == "undefined" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || typeof(Check["fire6"]) == "undefined")))) {
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || Check[str] == "unknown" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || Check["fire6"] == "unknown")))) {
 					PutIn_Logic.min_fire_keys = i;
 					done = true;
 					break;
@@ -5785,13 +5785,13 @@ function checksPutInLogicByItem(item) {
 		}
 		PutIn_Logic.fire_boss_key = bk;
 	}
-	if (PutIn_Logic.current_water_keys < 6 && (PutIn_Logic.longshot && PutIn_Logic.iron_boots || (Check["water11"] != "small_key" && typeof(Check["water11"]) != "undefined"))) {
+	if (PutIn_Logic.current_water_keys < 6 && (PutIn_Logic.longshot && PutIn_Logic.iron_boots || (Check["water11"] != "small_key" && Check["water11"] != "unknown"))) {
 		var wat_keys = [[1,2,3,4,5,6,9]]
 		var done = false;
 		for (i = 0; i < wat_keys.length; i++) {
 			for (j = 0; j < wat_keys[i].length; j++) {
 				str = "water" + wat_keys[i][j];
-				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || typeof(Check["water11"]) == "undefined")))) {
+				if (!(Location_PutIn_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water11"] == "small_key" || Check["water11"] == "unknown")))) {
 					PutIn_Logic.min_water_keys = i;
 					done = true;
 					break;
