@@ -4859,9 +4859,10 @@ function checksLockedByItem(item) {
 	Locked_Logic2.can_wear_goron_tunic = Locked_Logic2.goron_tunic || (Locked_Logic2.adults_wallet && (Locked_Logic2.bomb_bag || Locked_Logic2.goron_bracelet || Locked_Logic2.bow));
 	Locked_Logic2.can_wear_zora_tunic = Locked_Logic2.zora_tunic || (Locked_Logic2.giants_wallet && (Locked_Logic2.lullaby && Locked_Logic2.bottle));
 	
-	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 	var max = 0;
 	for (h = 1; h<3; h++) {
+		max = 0;
+		Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 		for (i = 1; i <= 14; i++) {
 			str = "forest" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
@@ -4883,9 +4884,10 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.forest14 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5 && Locked_Logic2.forest_boss_key;		
 	}
 	Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
-	max = 0;
-	Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
+
 	for (h = 1; h<3; h++) {
+		max = 0;
+		Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
 		for (i = 1; i <= 15; i++) {
 			str = "fire" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
@@ -4908,9 +4910,10 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.fire15 = Locked_Logic2.can_climb_fire_temple && (Locked_Logic2.fire_keys>=7 || (Locked_Logic2.fire_keys >= 6 && Locked_Logic2.hover_boots)) && Locked_Logic2.bomb_bag;
 	}
 	Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
-	max = 0;
-	Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
+
 	for (h = 1; h<3; h++) {
+		max = 0;
+		Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
 		for (i = 1; i <= 11; i++) {
 			str = "water" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
@@ -4929,9 +4932,9 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.water11 = Locked_Logic2.can_enter_water && Locked_Logic2.water_boss_key && Locked_Logic2.longshot ;
 	}
 	Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
-	max = 0;
-	Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
 	for (h = 1; h<3; h++) {
+		max = 0;
+		Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
 		for (i = 1; i <= 20; i++) {
 			str = "spirit" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
@@ -4959,9 +4962,9 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.spirit20 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.mirror_shield && Locked_Logic2.bomb_bag && Locked_Logic2.spirit_boss_key && Locked_Logic2.hookshot;
 	}
 	Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
-	max = 0;
-	Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
 	for (h = 1; h<3; h++) {
+		max = 0;
+		Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
 		for (i = 1; i <= 18; i++) {
 			str = "shadow" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
@@ -4987,6 +4990,7 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.shadow18 = Locked_Logic2.can_beat_shadow_boss && Locked_Logic2.shadow_keys >=5;
 	}
 	Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
+	console.log(Locked_Logic2.shadow_keys);
 	max = 0;
 	Locked_Logic2.current_ganons_keys = Locked_Logic2.forced_ganons_keys;
 	for (i = 1; i <= 16; i++) {
@@ -5282,8 +5286,6 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.jabu_map = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.jabu_compass = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.jabu_barinade = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
-	
-	
 	Location_Locked_Logic2.ganons1 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
 	Location_Locked_Logic2.ganons2 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
 	Location_Locked_Logic2.ganons3 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
@@ -5308,7 +5310,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.gtg6 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
 	Location_Locked_Logic2.gtg7 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
 	Location_Locked_Logic2.gtg8 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer)Check[str]);
+	Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
 	Location_Locked_Logic2.gtg10 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
 	Location_Locked_Logic2.gtg12 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
 	Location_Locked_Logic2.gtg11 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
