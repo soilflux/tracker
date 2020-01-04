@@ -4736,7 +4736,7 @@ function checksLockedByItem(item) {
 	
 	var temp = 6;
 	var tempArray = [];
-	temp = 12;
+	temp = 15;
 	while (temp > 0) {
     temp -= 1;
 	
