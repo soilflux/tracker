@@ -4734,9 +4734,9 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2[key] = false;
 	}
 	
-	var temp = 6;
+	
 	var tempArray = [];
-	temp = 15;
+	var temp = 8;
 	while (temp > 0) {
     temp -= 1;
 	
@@ -4862,42 +4862,130 @@ function checksLockedByItem(item) {
 	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 	var max = 0;
 	console.log(Locked_Logic2.forest_keys);
-	for (i = 1; i <= 14; i++) {
-		str = "forest" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h<10; h++) {
+		for (i = 1; i <= 14; i++) {
+			str = "forest" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.forest1 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.forest2 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.forest3 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || Locked_Logic2.bow || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1));
+		Location_Locked_Logic2.forest4 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1) || (Locked_Logic2.bow/* && (Locked_Logic2.iron_boots || Locked_Logic2.golden_scale || Locked_Logic2.longshot)*/));
+		Location_Locked_Logic2.forest5 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1) || (Locked_Logic2.bow/* && (Locked_Logic2.iron_boots || Locked_Logic2.golden_scale || Locked_Logic2.longshot)*/));
+		Location_Locked_Logic2.forest6 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.forest_keys >= 1 && Locked_Logic2.bow && Locked_Logic2.goron_bracelet;
+		Location_Locked_Logic2.forest7 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.forest_keys >= 2 && Locked_Logic2.bow && Locked_Logic2.goron_bracelet;
+		Location_Locked_Logic2.forest8 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && ((Locked_Logic2.bow && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys >=2) || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys >=1));
+		Location_Locked_Logic2.forest9 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=3;
+		Location_Locked_Logic2.forest10 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys>=3;
+		Location_Locked_Logic2.forest11 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=3;
+		Location_Locked_Logic2.forest12 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && (Locked_Logic2.bow || Locked_Logic2.can_use_dins) && Locked_Logic2.forest_keys>=5;
+		Location_Locked_Logic2.forest13 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5;
+		Location_Locked_Logic2.forest14 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5 && Locked_Logic2.forest_boss_key;		
 	}
 	Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
 	max = 0;
 	Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
-	for (i = 1; i <= 15; i++) {
-		str = "fire" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h<10; h++) {
+		for (i = 1; i <= 15; i++) {
+			str = "fire" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.fire1 = Locked_Logic2.can_enter_fire_temple;
+		Location_Locked_Logic2.fire2 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer;
+		Location_Locked_Logic2.fire3 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer;
+		Location_Locked_Logic2.fire4 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >=1;
+		Location_Locked_Logic2.fire5 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >=1 && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.fire6 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_boss_key && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && (Locked_Logic2.hover_boots || (Locked_Logic2.fire_keys >=7 && (Locked_Logic2.song_of_time || Locked_Logic2.bomb_bag)));
+		Location_Locked_Logic2.fire7 = Locked_Logic2.can_climb_fire_temple;
+		Location_Locked_Logic2.fire8 = Locked_Logic2.can_climb_fire_temple;
+		Location_Locked_Logic2.fire9 = Locked_Logic2.can_climb_fire_temple && ((Locked_Logic2.fire_keys >= 4 && Locked_Logic2.bow) || Locked_Logic2.fire_keys>=5);
+		Location_Locked_Logic2.fire10 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5;
+		Location_Locked_Logic2.fire11 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5 && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.fire12 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5 && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.fire13 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=6;
+		Location_Locked_Logic2.fire14 = Locked_Logic2.can_climb_fire_temple && (Locked_Logic2.fire_keys>=7 || (Locked_Logic2.fire_keys>=6 && Locked_Logic2.hover_boots)) && Locked_Logic2.hammer && (Locked_Logic2.song_of_time || Locked_Logic2.bomb_bag);
+		Location_Locked_Logic2.fire15 = Locked_Logic2.can_climb_fire_temple && (Locked_Logic2.fire_keys>=7 || (Locked_Logic2.fire_keys >= 6 && Locked_Logic2.hover_boots)) && Locked_Logic2.bomb_bag;
 	}
 	Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
 	max = 0;
 	Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
-	for (i = 1; i <= 11; i++) {
-		str = "water" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h<10; h++) {
+		for (i = 1; i <= 11; i++) {
+			str = "water" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.water1 = Locked_Logic2.can_enter_water;
+		Location_Locked_Logic2.water2 = Locked_Logic2.can_enter_water;
+		Location_Locked_Logic2.water3 = Locked_Logic2.middle_water && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.water4 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && (Locked_Logic2.bow || Locked_Logic2.can_use_dins);
+		Location_Locked_Logic2.water5 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && Locked_Logic2.bow && Locked_Logic2.goron_bracelet && (Locked_Logic2.hover_boots || Locked_Logic2.longshot);
+		Location_Locked_Logic2.water6 = Locked_Logic2.middle_water && Locked_Logic2.can_wear_zora_tunic;
+		Location_Locked_Logic2.water7 = Locked_Logic2.water_keys >= 5 && Locked_Logic2.lullaby;
+		Location_Locked_Logic2.water8 = Locked_Logic2.water_keys >= 5 && Locked_Logic2.lullaby && Locked_Logic2.song_of_time && Locked_Logic2.bow;
+		Location_Locked_Logic2.water9 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && ((Locked_Logic2.water_keys >= 5 && Locked_Logic2.song_of_time && Locked_Logic2.bow) || Locked_Logic2.goron_bracelet);
+		Location_Locked_Logic2.water10 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && Locked_Logic2.longshot && Locked_Logic2.water_keys >= 5 && ((Locked_Logic2.bomb_bag && Locked_Logic2.goron_bracelet) || Locked_Logic2.hover_boots);
+		Location_Locked_Logic2.water11 = Locked_Logic2.can_enter_water && Locked_Logic2.water_boss_key && Locked_Logic2.longshot ;
 	}
 	Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
 	max = 0;
 	Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
-	for (i = 1; i <= 20; i++) {
-		str = "spirit" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h<10; h++) {
+		for (i = 1; i <= 20; i++) {
+			str = "spirit" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.spirit1 = Locked_Logic2.requiem && (Locked_Logic2.slingshot || Locked_Logic2.boomerang);
+		Location_Locked_Logic2.spirit2 = Locked_Logic2.requiem && (Locked_Logic2.slingshot || Locked_Logic2.boomerang);
+		Location_Locked_Logic2.spirit3 = (Locked_Logic2.spirit_keys >=1 && Locked_Logic2.projectile_both);
+		Location_Locked_Logic2.spirit4 = (Locked_Logic2.spirit_keys >=1 && Locked_Logic2.projectile_both);
+		Location_Locked_Logic2.spirit5 = (Locked_Logic2.spirit_keys >=5 && Locked_Logic2.requiem && Locked_Logic2.bomb_bag) || (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.silver_gauntlets && Locked_Logic2.can_use_fire) || (Locked_Logic2.bomb_bag && Locked_Logic2.spirit_keys >=1 && Locked_Logic2.can_use_fire);
+		Location_Locked_Logic2.spirit6 = (Locked_Logic2.spirit_keys >=5 && Locked_Logic2.requiem && Locked_Logic2.bomb_bag) || (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.silver_gauntlets && Locked_Logic2.can_use_fire) || (Locked_Logic2.bomb_bag && Locked_Logic2.spirit_keys >=1 && Locked_Logic2.can_use_fire);
+		Location_Locked_Logic2.spirit7 = (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.longshot && Locked_Logic2.bomb_bag) || Locked_Logic2.spirit_keys >= 5;
+		Location_Locked_Logic2.spirit8 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.hookshot && Locked_Logic2.lullaby;
+		Location_Locked_Logic2.spirit9 = Locked_Logic2.can_enter_adult_spirit && (Locked_Logic2.bow || Locked_Logic2.hookshot || Locked_Logic2.bomb_bag);
+		Location_Locked_Logic2.spirit10 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3;
+		Location_Locked_Logic2.spirit11 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3;
+		Location_Locked_Logic2.spirit12 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3 && Locked_Logic2.lullaby;
+		Location_Locked_Logic2.spirit13 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3 && Locked_Logic2.lullaby && (Locked_Logic2.hookshot || Locked_Logic2.hover_boots);
+		Location_Locked_Logic2.spirit14 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag && Locked_Logic2.mirror_shield;
+		Location_Locked_Logic2.spirit15 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.spirit16 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.spirit17 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.spirit18 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.bow && Locked_Logic2.lullaby && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.spirit19 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.mirror_shield;
+		Location_Locked_Logic2.spirit20 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.mirror_shield && Locked_Logic2.bomb_bag && Locked_Logic2.spirit_boss_key && Locked_Logic2.hookshot;
 	}
 	Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
 	max = 0;
 	Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
-	for (i = 1; i <= 18; i++) {
-		str = "shadow" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h<10; h++) {
+		for (i = 1; i <= 18; i++) {
+			str = "shadow" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.shadow1 = Locked_Logic2.can_enter_shadow;
+		Location_Locked_Logic2.shadow2 = Locked_Logic2.can_enter_shadow;
+		Location_Locked_Logic2.shadow3 = Locked_Logic2.can_cross_shadow_gap;
+		Location_Locked_Logic2.shadow4 = Locked_Logic2.can_cross_shadow_gap;
+		Location_Locked_Logic2.shadow5 = Locked_Logic2.can_bomb_shadow_wall;
+		Location_Locked_Logic2.shadow6 = Locked_Logic2.can_bomb_shadow_wall;
+		Location_Locked_Logic2.shadow7 = Locked_Logic2.can_bomb_shadow_wall;
+		Location_Locked_Logic2.shadow8 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.goron_bracelet;
+		Location_Locked_Logic2.shadow9 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.goron_bracelet;
+		Location_Locked_Logic2.shadow10 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.shadow_keys >=2;
+		Location_Locked_Logic2.shadow11 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.hookshot && Locked_Logic2.shadow_keys >=2;
+		Location_Locked_Logic2.shadow12 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
+		Location_Locked_Logic2.shadow13 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
+		Location_Locked_Logic2.shadow14 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
+		Location_Locked_Logic2.shadow15 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
+		Location_Locked_Logic2.shadow16 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
+		Location_Locked_Logic2.shadow17 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
+		Location_Locked_Logic2.shadow18 = Locked_Logic2.can_beat_shadow_boss && Locked_Logic2.shadow_keys >=5;
 	}
 	Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
 	max = 0;
@@ -5195,84 +5283,8 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.jabu_map = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.jabu_compass = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.jabu_barinade = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
-	Location_Locked_Logic2.forest1 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.forest2 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.forest3 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || Locked_Logic2.bow || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1));
-	Location_Locked_Logic2.forest4 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1) || (Locked_Logic2.bow/* && (Locked_Logic2.iron_boots || Locked_Logic2.golden_scale || Locked_Logic2.longshot)*/));
-	Location_Locked_Logic2.forest5 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.song_of_time || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1) || (Locked_Logic2.bow/* && (Locked_Logic2.iron_boots || Locked_Logic2.golden_scale || Locked_Logic2.longshot)*/));
-	Location_Locked_Logic2.forest6 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.forest_keys >= 1 && Locked_Logic2.bow && Locked_Logic2.goron_bracelet;
-	Location_Locked_Logic2.forest7 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.forest_keys >= 2 && Locked_Logic2.bow && Locked_Logic2.goron_bracelet;
-	Location_Locked_Logic2.forest8 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && ((Locked_Logic2.bow && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys >=2) || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys >=1));
-	Location_Locked_Logic2.forest9 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=3;
-	Location_Locked_Logic2.forest10 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys>=3;
-	Location_Locked_Logic2.forest11 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=3;
-	Location_Locked_Logic2.forest12 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && (Locked_Logic2.bow || Locked_Logic2.can_use_dins) && Locked_Logic2.forest_keys>=5;
-	Location_Locked_Logic2.forest13 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5;
-	Location_Locked_Logic2.forest14 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5 && Locked_Logic2.forest_boss_key;
-	Location_Locked_Logic2.fire1 = Locked_Logic2.can_enter_fire_temple;
-	Location_Locked_Logic2.fire2 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer;
-	Location_Locked_Logic2.fire3 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.hammer;
-	Location_Locked_Logic2.fire4 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >=1;
-	Location_Locked_Logic2.fire5 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >=1 && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.fire6 = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_boss_key && Locked_Logic2.hammer && Locked_Logic2.can_wear_goron_tunic && (Locked_Logic2.hover_boots || (Locked_Logic2.fire_keys >=7 && (Locked_Logic2.song_of_time || Locked_Logic2.bomb_bag)));
-	Location_Locked_Logic2.fire7 = Locked_Logic2.can_climb_fire_temple;
-	Location_Locked_Logic2.fire8 = Locked_Logic2.can_climb_fire_temple;
-	Location_Locked_Logic2.fire9 = Locked_Logic2.can_climb_fire_temple && ((Locked_Logic2.fire_keys >= 4 && Locked_Logic2.bow) || Locked_Logic2.fire_keys>=5);
-	Location_Locked_Logic2.fire10 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5;
-	Location_Locked_Logic2.fire11 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5 && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.fire12 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=5 && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.fire13 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.fire_keys>=6;
-	Location_Locked_Logic2.fire14 = Locked_Logic2.can_climb_fire_temple && (Locked_Logic2.fire_keys>=7 || (Locked_Logic2.fire_keys>=6 && Locked_Logic2.hover_boots)) && Locked_Logic2.hammer && (Locked_Logic2.song_of_time || Locked_Logic2.bomb_bag);
-	Location_Locked_Logic2.fire15 = Locked_Logic2.can_climb_fire_temple && (Locked_Logic2.fire_keys>=7 || (Locked_Logic2.fire_keys >= 6 && Locked_Logic2.hover_boots)) && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.water1 = Locked_Logic2.can_enter_water;
-	Location_Locked_Logic2.water2 = Locked_Logic2.can_enter_water;
-	Location_Locked_Logic2.water3 = Locked_Logic2.middle_water && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.water4 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && (Locked_Logic2.bow || Locked_Logic2.can_use_dins);
-	Location_Locked_Logic2.water5 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && Locked_Logic2.bow && Locked_Logic2.goron_bracelet && (Locked_Logic2.hover_boots || Locked_Logic2.longshot);
-	Location_Locked_Logic2.water6 = Locked_Logic2.middle_water && Locked_Logic2.can_wear_zora_tunic;
-	Location_Locked_Logic2.water7 = Locked_Logic2.water_keys >= 5 && Locked_Logic2.lullaby;
-	Location_Locked_Logic2.water8 = Locked_Logic2.water_keys >= 5 && Locked_Logic2.lullaby && Locked_Logic2.song_of_time && Locked_Logic2.bow;
-	Location_Locked_Logic2.water9 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && ((Locked_Logic2.water_keys >= 5 && Locked_Logic2.song_of_time && Locked_Logic2.bow) || Locked_Logic2.goron_bracelet);
-	Location_Locked_Logic2.water10 = Locked_Logic2.can_enter_water && Locked_Logic2.lullaby && Locked_Logic2.longshot && Locked_Logic2.water_keys >= 5 && ((Locked_Logic2.bomb_bag && Locked_Logic2.goron_bracelet) || Locked_Logic2.hover_boots);
-	Location_Locked_Logic2.water11 = Locked_Logic2.can_enter_water && Locked_Logic2.water_boss_key && Locked_Logic2.longshot ;
-	Location_Locked_Logic2.spirit1 = Locked_Logic2.requiem && (Locked_Logic2.slingshot || Locked_Logic2.boomerang);
-	Location_Locked_Logic2.spirit2 = Locked_Logic2.requiem && (Locked_Logic2.slingshot || Locked_Logic2.boomerang);
-	Location_Locked_Logic2.spirit3 = (Locked_Logic2.spirit_keys >=1 && Locked_Logic2.projectile_both);
-	Location_Locked_Logic2.spirit4 = (Locked_Logic2.spirit_keys >=1 && Locked_Logic2.projectile_both);
-	Location_Locked_Logic2.spirit5 = (Locked_Logic2.spirit_keys >=5 && Locked_Logic2.requiem && Locked_Logic2.bomb_bag) || (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.silver_gauntlets && Locked_Logic2.can_use_fire) || (Locked_Logic2.bomb_bag && Locked_Logic2.spirit_keys >=1 && Locked_Logic2.can_use_fire);
-	Location_Locked_Logic2.spirit6 = (Locked_Logic2.spirit_keys >=5 && Locked_Logic2.requiem && Locked_Logic2.bomb_bag) || (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.silver_gauntlets && Locked_Logic2.can_use_fire) || (Locked_Logic2.bomb_bag && Locked_Logic2.spirit_keys >=1 && Locked_Logic2.can_use_fire);
-	Location_Locked_Logic2.spirit7 = (Locked_Logic2.spirit_keys >=3 && Locked_Logic2.longshot && Locked_Logic2.bomb_bag) || Locked_Logic2.spirit_keys >= 5;
-	Location_Locked_Logic2.spirit8 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.hookshot && Locked_Logic2.lullaby;
-	Location_Locked_Logic2.spirit9 = Locked_Logic2.can_enter_adult_spirit && (Locked_Logic2.bow || Locked_Logic2.hookshot || Locked_Logic2.bomb_bag);
-	Location_Locked_Logic2.spirit10 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3;
-	Location_Locked_Logic2.spirit11 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3;
-	Location_Locked_Logic2.spirit12 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3 && Locked_Logic2.lullaby;
-	Location_Locked_Logic2.spirit13 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=3 && Locked_Logic2.lullaby && (Locked_Logic2.hookshot || Locked_Logic2.hover_boots);
-	Location_Locked_Logic2.spirit14 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag && Locked_Logic2.mirror_shield;
-	Location_Locked_Logic2.spirit15 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.spirit16 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.spirit17 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=4 && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.spirit18 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.bow && Locked_Logic2.lullaby && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.spirit19 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.mirror_shield;
-	Location_Locked_Logic2.spirit20 = Locked_Logic2.can_enter_adult_spirit && Locked_Logic2.spirit_keys >=5 && Locked_Logic2.mirror_shield && Locked_Logic2.bomb_bag && Locked_Logic2.spirit_boss_key && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.shadow1 = Locked_Logic2.can_enter_shadow;
-	Location_Locked_Logic2.shadow2 = Locked_Logic2.can_enter_shadow;
-	Location_Locked_Logic2.shadow3 = Locked_Logic2.can_cross_shadow_gap;
-	Location_Locked_Logic2.shadow4 = Locked_Logic2.can_cross_shadow_gap;
-	Location_Locked_Logic2.shadow5 = Locked_Logic2.can_bomb_shadow_wall;
-	Location_Locked_Logic2.shadow6 = Locked_Logic2.can_bomb_shadow_wall;
-	Location_Locked_Logic2.shadow7 = Locked_Logic2.can_bomb_shadow_wall;
-	Location_Locked_Logic2.shadow8 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.goron_bracelet;
-	Location_Locked_Logic2.shadow9 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.goron_bracelet;
-	Location_Locked_Logic2.shadow10 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.shadow_keys >=2;
-	Location_Locked_Logic2.shadow11 = Locked_Logic2.can_bomb_shadow_wall && Locked_Logic2.hookshot && Locked_Logic2.shadow_keys >=2;
-	Location_Locked_Logic2.shadow12 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
-	Location_Locked_Logic2.shadow13 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
-	Location_Locked_Logic2.shadow14 = Locked_Logic2.can_pass_shadow_hookshot_door && Locked_Logic2.shadow_keys >=3;
-	Location_Locked_Logic2.shadow15 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
-	Location_Locked_Logic2.shadow16 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
-	Location_Locked_Logic2.shadow17 = Locked_Logic2.can_ride_shadow_boat && Locked_Logic2.shadow_keys >=4;
-	Location_Locked_Logic2.shadow18 = Locked_Logic2.can_beat_shadow_boss && Locked_Logic2.shadow_keys >=5;
+	
+	
 	Location_Locked_Logic2.ganons1 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
 	Location_Locked_Logic2.ganons2 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
 	Location_Locked_Logic2.ganons3 = Locked_Logic2.can_enter_ganons && Locked_Logic2.golden_gauntlets;
@@ -6510,10 +6522,10 @@ for (i=0; i < Items.length; i++) {
 	}
 function slowUpdate() {
 	for (i=0; i < Items.length; i++) {
-	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
+	if (Location[Items[i]] != null ) {ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);}
 	}
 	for (i=0; i < Items.length; i++) {
-	ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);
+	if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
 	}
 }
 
