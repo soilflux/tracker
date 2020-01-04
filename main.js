@@ -4861,8 +4861,7 @@ function checksLockedByItem(item) {
 	
 	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 	var max = 0;
-	console.log(Locked_Logic2.forest_keys);
-	for (h = 1; h<10; h++) {
+	for (h = 1; h<3; h++) {
 		for (i = 1; i <= 14; i++) {
 			str = "forest" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
@@ -4886,7 +4885,7 @@ function checksLockedByItem(item) {
 	Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
 	max = 0;
 	Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
-	for (h = 1; h<10; h++) {
+	for (h = 1; h<3; h++) {
 		for (i = 1; i <= 15; i++) {
 			str = "fire" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
@@ -4911,7 +4910,7 @@ function checksLockedByItem(item) {
 	Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
 	max = 0;
 	Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
-	for (h = 1; h<10; h++) {
+	for (h = 1; h<3; h++) {
 		for (i = 1; i <= 11; i++) {
 			str = "water" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
@@ -4932,7 +4931,7 @@ function checksLockedByItem(item) {
 	Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
 	max = 0;
 	Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
-	for (h = 1; h<10; h++) {
+	for (h = 1; h<3; h++) {
 		for (i = 1; i <= 20; i++) {
 			str = "spirit" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
@@ -4962,7 +4961,7 @@ function checksLockedByItem(item) {
 	Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
 	max = 0;
 	Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
-	for (h = 1; h<10; h++) {
+	for (h = 1; h<3; h++) {
 		for (i = 1; i <= 18; i++) {
 			str = "shadow" + i;
 			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
@@ -5309,7 +5308,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.gtg6 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
 	Location_Locked_Logic2.gtg7 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
 	Location_Locked_Logic2.gtg8 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
+	Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer)Check[str]);
 	Location_Locked_Logic2.gtg10 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
 	Location_Locked_Logic2.gtg12 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
 	Location_Locked_Logic2.gtg11 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
@@ -6528,7 +6527,12 @@ function slowUpdate() {
 	if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
 	}
 }
-
+for (i=0; i < Items.length; i++) {
+	ChecksLockedBy[Items[i]] = [];
+	}
+	for (i=0; i < Items.length; i++) {
+	ChecksPutInLogicBy[Items[i]] = [];
+	}
 function timerControl() {
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
