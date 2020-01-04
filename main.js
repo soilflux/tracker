@@ -4736,7 +4736,7 @@ function checksLockedByItem(item) {
 	
 	
 	var tempArray = [];
-	var temp = 8;
+	var temp = 10;
 	while (temp > 0) {
     temp -= 1;
 	
@@ -4990,7 +4990,6 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.shadow18 = Locked_Logic2.can_beat_shadow_boss && Locked_Logic2.shadow_keys >=5;
 	}
 	Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
-	console.log(Locked_Logic2.shadow_keys);
 	max = 0;
 	Locked_Logic2.current_ganons_keys = Locked_Logic2.forced_ganons_keys;
 	for (i = 1; i <= 16; i++) {
@@ -4999,20 +4998,60 @@ function checksLockedByItem(item) {
 		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
 	}
 	Locked_Logic2.ganons_keys = Math.min(Locked_Logic2.current_ganons_keys, max);
-	max = 0;
-	Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
-	for (i = 1; i <= 22; i++) {
-		str = "gtg" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h <= 3; h++) {
+		max = 0;
+		Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
+		for (i = 1; i <= 22; i++) {
+			str = "gtg" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.gtg1 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
+		Location_Locked_Logic2.gtg2 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
+		Location_Locked_Logic2.gtg3 = Locked_Logic2.can_save_carpenters;
+		Location_Locked_Logic2.gtg4 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.gtg5 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg6 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg7 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg8 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
+		Location_Locked_Logic2.gtg10 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.gtg12 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
+		Location_Locked_Logic2.gtg11 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
+		Location_Locked_Logic2.gtg13 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
+		Location_Locked_Logic2.gtg14 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
+		Location_Locked_Logic2.gtg15 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
+		Location_Locked_Logic2.gtg16 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.gtg17 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 3 ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.gtg18 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 4;
+		Location_Locked_Logic2.gtg19 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 6;
+		Location_Locked_Logic2.gtg20 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 7;
+		Location_Locked_Logic2.gtg21 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 9;
+		Location_Locked_Logic2.gtg22 = Locked_Logic2.can_save_carpenters && Locked_Logic2.iron_boots && Locked_Logic2.song_of_time && Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/;
 	}
 	Locked_Logic2.gtg_keys = Math.min(Locked_Logic2.current_gtg_keys, max);
-	max = 0;
-	Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
-	for (i = 1; i <= 14; i++) {
-		str = "well" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	for (h = 1; h <= 3; h++) {
+		max = 0;
+		Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
+		for (i = 1; i <= 14; i++) {
+			str = "well" + i;
+			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys -=1;}
+			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		}
+		Location_Locked_Logic2.well1 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.well5 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.well2 = Locked_Logic2.song_of_storms && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.well3 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby;
+		Location_Locked_Logic2.well4 = Locked_Logic2.song_of_storms;
+		Location_Locked_Logic2.well6 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.well11 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.well7 = Locked_Logic2.song_of_storms && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.well10 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby;
+		Location_Locked_Logic2.well8 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby ;//&& Locked_Logic2.kokiri_sword;
+		Location_Locked_Logic2.well9 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.well12 = Locked_Logic2.song_of_storms && Locked_Logic2.well_keys >= 3 ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.well13 = Locked_Logic2.song_of_storms && Locked_Logic2.well_keys >= 3 ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.well14 = Locked_Logic2.song_of_storms && (Locked_Logic2.bomb_bag || (((/*Locked_Logic2.can_see &&*/ Locked_Logic2.well_keys >= 3) || Locked_Logic2.can_use_dins) && Locked_Logic2.goron_bracelet));
 	}
 	Locked_Logic2.well_keys = Math.min(Locked_Logic2.current_well_keys, max);
 	
@@ -5302,42 +5341,6 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.ganons14 = Locked_Logic2.can_enter_ganons;
 	Location_Locked_Logic2.ganons15 = Locked_Logic2.can_enter_ganons && (Locked_Logic2.longshot || ((Locked_Logic2.fire_arrows && Locked_Logic2.magic) || (Locked_Logic2.hover_boots && Locked_Logic2.can_use_dins)));
 	Location_Locked_Logic2.ganons16 = Locked_Logic2.can_enter_ganons;
-	Location_Locked_Logic2.gtg1 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
-	Location_Locked_Logic2.gtg2 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
-	Location_Locked_Logic2.gtg3 = Locked_Logic2.can_save_carpenters;
-	Location_Locked_Logic2.gtg4 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.gtg5 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg6 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg7 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg8 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
-	Location_Locked_Logic2.gtg10 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.gtg12 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
-	Location_Locked_Logic2.gtg11 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
-	Location_Locked_Logic2.gtg13 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
-	Location_Locked_Logic2.gtg14 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
-	Location_Locked_Logic2.gtg15 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.song_of_time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.song_of_time));
-	Location_Locked_Logic2.gtg16 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.gtg17 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 3 ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.gtg18 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 4;
-	Location_Locked_Logic2.gtg19 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 6;
-	Location_Locked_Logic2.gtg20 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 7;
-	Location_Locked_Logic2.gtg21 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 9;
-	Location_Locked_Logic2.gtg22 = Locked_Logic2.can_save_carpenters && Locked_Logic2.iron_boots && Locked_Logic2.song_of_time && Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/;
-	Location_Locked_Logic2.well1 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.well5 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.well2 = Locked_Logic2.song_of_storms && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.well3 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby;
-	Location_Locked_Logic2.well4 = Locked_Logic2.song_of_storms;
-	Location_Locked_Logic2.well6 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.well11 = Locked_Logic2.song_of_storms ;//&& Locked_Logic2.can_see;
-	Location_Locked_Logic2.well7 = Locked_Logic2.song_of_storms && Locked_Logic2.bomb_bag;
-	Location_Locked_Logic2.well10 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby;
-	Location_Locked_Logic2.well8 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby ;//&& Locked_Logic2.kokiri_sword;
-	Location_Locked_Logic2.well9 = Locked_Logic2.song_of_storms && Locked_Logic2.lullaby ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.well12 = Locked_Logic2.song_of_storms && Locked_Logic2.well_keys >= 3 ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.well13 = Locked_Logic2.song_of_storms && Locked_Logic2.well_keys >= 3 ;//&& Locked_Logic2.can_see ;
-	Location_Locked_Logic2.well14 = Locked_Logic2.song_of_storms && (Locked_Logic2.bomb_bag || (((/*Locked_Logic2.can_see &&*/ Locked_Logic2.well_keys >= 3) || Locked_Logic2.can_use_dins) && Locked_Logic2.goron_bracelet));
 	Location_Locked_Logic2.zeldasSpot = true;
 	Location_Locked_Logic2.eponasSpot = true;
 	Location_Locked_Logic2.sariasSpot = true;
@@ -5580,7 +5583,7 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic[key] = false;
 	}
 	
-	var temp = 12;
+	var temp = 10;
 	var tempArray = [];
 	
 	while (temp > 0) {
@@ -5707,32 +5710,118 @@ function checksPutInLogicByItem(item) {
 	PutIn_Logic.can_wear_goron_tunic = PutIn_Logic.goron_tunic || (PutIn_Logic.adults_wallet && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.bow));
 	PutIn_Logic.can_wear_zora_tunic = PutIn_Logic.zora_tunic || (PutIn_Logic.giants_wallet && (PutIn_Logic.lullaby && PutIn_Logic.bottle));
 	
-	PutIn_Logic.current_forest_keys = PutIn_Logic.forced_forest_keys;
-	for (i = 1; i <= 14; i++) {
-		str = "forest" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_forest_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_forest_keys = PutIn_Logic.forced_forest_keys;
+		for (i = 1; i <= 14; i++) {
+			str = "forest" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_forest_keys +=1;}
+		}
+		Location_PutIn_Logic.forest1 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.forest2 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.forest3 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
+		Location_PutIn_Logic.forest4 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+		Location_PutIn_Logic.forest5 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+		Location_PutIn_Logic.forest6 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.forest7 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.forest8 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
+		Location_PutIn_Logic.forest9 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest10 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest11 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest12 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
+		Location_PutIn_Logic.forest13 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
+		Location_PutIn_Logic.forest14 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
 	}
-	PutIn_Logic.current_fire_keys = PutIn_Logic.forced_fire_keys;
-	for (i = 1; i <= 15; i++) {
-		str = "fire" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_fire_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_fire_keys = PutIn_Logic.forced_fire_keys;
+		for (i = 1; i <= 15; i++) {
+			str = "fire" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_fire_keys +=1;}
+		}
+		Location_PutIn_Logic.fire1 = PutIn_Logic.can_enter_fire_temple;
+		Location_PutIn_Logic.fire2 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
+		Location_PutIn_Logic.fire3 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
+		Location_PutIn_Logic.fire4 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1;
+		Location_PutIn_Logic.fire5 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1 && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.fire6 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_boss_key && PutIn_Logic.hammer && PutIn_Logic.can_wear_goron_tunic && (PutIn_Logic.hover_boots || (PutIn_Logic.fire_keys >=7 && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag)));
+		Location_PutIn_Logic.fire7 = PutIn_Logic.can_climb_fire_temple;
+		Location_PutIn_Logic.fire8 = PutIn_Logic.can_climb_fire_temple;
+		Location_PutIn_Logic.fire9 = PutIn_Logic.can_climb_fire_temple && ((PutIn_Logic.fire_keys >= 4 && PutIn_Logic.bow) || PutIn_Logic.fire_keys>=5);
+		Location_PutIn_Logic.fire10 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5;
+		Location_PutIn_Logic.fire11 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.fire12 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.fire13 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=6;
+		Location_PutIn_Logic.fire14 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys>=6 && PutIn_Logic.hover_boots)) && PutIn_Logic.hammer && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag);
+		Location_PutIn_Logic.fire15 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys >= 6 && PutIn_Logic.hover_boots)) && PutIn_Logic.bomb_bag;
 	}
-	
-	PutIn_Logic.current_water_keys = PutIn_Logic.forced_water_keys;
-	for (i = 1; i <= 11; i++) {
-		str = "water" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_water_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_water_keys = PutIn_Logic.forced_water_keys;
+		for (i = 1; i <= 11; i++) {
+			str = "water" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_water_keys +=1;}
+		}
+		Location_PutIn_Logic.water1 = PutIn_Logic.can_enter_water;
+		Location_PutIn_Logic.water2 = PutIn_Logic.can_enter_water;
+		Location_PutIn_Logic.water3 = PutIn_Logic.middle_water && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.water4 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && (PutIn_Logic.bow || PutIn_Logic.can_use_dins);
+		Location_PutIn_Logic.water5 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && (PutIn_Logic.hover_boots || PutIn_Logic.longshot);
+		Location_PutIn_Logic.water6 = PutIn_Logic.middle_water && PutIn_Logic.can_wear_zora_tunic;
+		Location_PutIn_Logic.water7 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby;
+		Location_PutIn_Logic.water8 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby && PutIn_Logic.song_of_time && PutIn_Logic.bow;
+		Location_PutIn_Logic.water9 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && ((PutIn_Logic.water_keys >= 5 && PutIn_Logic.song_of_time && PutIn_Logic.bow) || PutIn_Logic.goron_bracelet);
+		Location_PutIn_Logic.water10 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.longshot && PutIn_Logic.water_keys >= 5 && ((PutIn_Logic.bomb_bag && PutIn_Logic.goron_bracelet) || PutIn_Logic.hover_boots);
+		Location_PutIn_Logic.water11 = PutIn_Logic.can_enter_water && PutIn_Logic.water_boss_key && PutIn_Logic.longshot ;
 	}
-	
-	PutIn_Logic.current_spirit_keys = PutIn_Logic.forced_spirit_keys;
-	for (i = 1; i <= 20; i++) {
-		str = "spirit" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_spirit_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_spirit_keys = PutIn_Logic.forced_spirit_keys;
+		for (i = 1; i <= 20; i++) {
+			str = "spirit" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_spirit_keys +=1;}
+		}
+		Location_PutIn_Logic.spirit1 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
+		Location_PutIn_Logic.spirit2 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
+		Location_PutIn_Logic.spirit3 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
+		Location_PutIn_Logic.spirit4 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
+		Location_PutIn_Logic.spirit5 = (PutIn_Logic.spirit_keys >=5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
+		Location_PutIn_Logic.spirit6 = (PutIn_Logic.spirit_keys >=5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
+		Location_PutIn_Logic.spirit7 = (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.longshot && PutIn_Logic.bomb_bag) || PutIn_Logic.spirit_keys >= 5;
+		Location_PutIn_Logic.spirit8 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.hookshot && PutIn_Logic.lullaby;
+		Location_PutIn_Logic.spirit9 = PutIn_Logic.can_enter_adult_spirit && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
+		Location_PutIn_Logic.spirit10 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
+		Location_PutIn_Logic.spirit11 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
+		Location_PutIn_Logic.spirit12 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby;
+		Location_PutIn_Logic.spirit13 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
+		Location_PutIn_Logic.spirit14 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag && PutIn_Logic.mirror_shield;
+		Location_PutIn_Logic.spirit15 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.spirit16 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.spirit17 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.spirit18 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.bow && PutIn_Logic.lullaby && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.spirit19 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.mirror_shield;
+		Location_PutIn_Logic.spirit20 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.mirror_shield && PutIn_Logic.bomb_bag && PutIn_Logic.spirit_boss_key && PutIn_Logic.hookshot;	
 	}
-	PutIn_Logic.current_shadow_keys = PutIn_Logic.forced_shadow_keys;
-	for (i = 1; i <= 18; i++) {
-		str = "shadow" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_shadow_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_shadow_keys = PutIn_Logic.forced_shadow_keys;
+		for (i = 1; i <= 18; i++) {
+			str = "shadow" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_shadow_keys +=1;}
+		}
+		Location_PutIn_Logic.shadow1 = PutIn_Logic.can_enter_shadow;
+		Location_PutIn_Logic.shadow2 = PutIn_Logic.can_enter_shadow;
+		Location_PutIn_Logic.shadow3 = PutIn_Logic.can_cross_shadow_gap;
+		Location_PutIn_Logic.shadow4 = PutIn_Logic.can_cross_shadow_gap;
+		Location_PutIn_Logic.shadow5 = PutIn_Logic.can_bomb_shadow_wall;
+		Location_PutIn_Logic.shadow6 = PutIn_Logic.can_bomb_shadow_wall;
+		Location_PutIn_Logic.shadow7 = PutIn_Logic.can_bomb_shadow_wall;
+		Location_PutIn_Logic.shadow8 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.shadow9 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.shadow10 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.shadow_keys >=2;
+		Location_PutIn_Logic.shadow11 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot && PutIn_Logic.shadow_keys >=2;
+		Location_PutIn_Logic.shadow12 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+		Location_PutIn_Logic.shadow13 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+		Location_PutIn_Logic.shadow14 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
+		Location_PutIn_Logic.shadow15 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+		Location_PutIn_Logic.shadow16 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+		Location_PutIn_Logic.shadow17 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
+		Location_PutIn_Logic.shadow18 = PutIn_Logic.can_beat_shadow_boss && PutIn_Logic.shadow_keys >=5;
 	}
 	
 	PutIn_Logic.current_ganons_keys = PutIn_Logic.forced_ganons_keys;
@@ -5740,19 +5829,56 @@ function checksPutInLogicByItem(item) {
 		str = "ganons" + i;
 		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_ganons_keys +=1;}
 	}
-	
-	PutIn_Logic.current_gtg_keys = PutIn_Logic.forced_gtg_keys;
-	for (i = 1; i <= 22; i++) {
-		str = "gtg" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_gtg_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_gtg_keys = PutIn_Logic.forced_gtg_keys;
+		for (i = 1; i <= 22; i++) {
+			str = "gtg" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_gtg_keys +=1;}
+		}
+		Location_PutIn_Logic.gtg1 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
+		Location_PutIn_Logic.gtg2 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
+		Location_PutIn_Logic.gtg3 = PutIn_Logic.can_save_carpenters;
+		Location_PutIn_Logic.gtg4 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.gtg5 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.gtg6 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.gtg7 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.gtg8 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.gtg9 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow;  //((PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9) && PutIn_Logic.hammer));
+		Location_PutIn_Logic.gtg10 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.gtg12 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
+		Location_PutIn_Logic.gtg11 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
+		Location_PutIn_Logic.gtg13 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+		Location_PutIn_Logic.gtg14 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+		Location_PutIn_Logic.gtg15 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
+		Location_PutIn_Logic.gtg16 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.gtg17 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 3 ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.gtg18 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 4;
+		Location_PutIn_Logic.gtg19 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 6;
+		Location_PutIn_Logic.gtg20 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 7;
+		Location_PutIn_Logic.gtg21 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 9;
+		Location_PutIn_Logic.gtg22 = PutIn_Logic.can_save_carpenters && PutIn_Logic.iron_boots && PutIn_Logic.song_of_time && PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/;
 	}
-	
-	PutIn_Logic.current_well_keys = PutIn_Logic.forced_well_keys;
-	for (i = 1; i <= 14; i++) {
-		str = "well" + i;
-		if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_well_keys +=1;}
+	for (h= 1; h <= 3; h++) {
+		PutIn_Logic.current_well_keys = PutIn_Logic.forced_well_keys;
+		for (i = 1; i <= 14; i++) {
+			str = "well" + i;
+			if ((Check[str] == "small_key") && Location_PutIn_Logic[str]) {PutIn_Logic.current_well_keys +=1;}
+		}
+		Location_PutIn_Logic.well1 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.well5 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.well2 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.well3 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
+		Location_PutIn_Logic.well4 = PutIn_Logic.song_of_storms;
+		Location_PutIn_Logic.well6 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.well11 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
+		Location_PutIn_Logic.well7 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
+		Location_PutIn_Logic.well10 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
+		Location_PutIn_Logic.well8 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.kokiri_sword;
+		Location_PutIn_Logic.well9 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.well12 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys >= 3 ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.well13 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys >= 3 ;//&& PutIn_Logic.can_see ;
+		Location_PutIn_Logic.well14 = PutIn_Logic.song_of_storms && (PutIn_Logic.bomb_bag || (((/*PutIn_Logic.can_see &&*/ PutIn_Logic.well_keys == 3) || PutIn_Logic.can_use_dins) && PutIn_Logic.goron_bracelet));
 	}
-	
 	if (PutIn_Logic.current_forest_keys < 5) {
 		var for_keys = [[1,2,3,4,5], [6,8], [7], [9,10,11]]
 		var done = false;
@@ -6153,84 +6279,6 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.jabu_map = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.jabu_compass = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.jabu_barinade = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
-	Location_PutIn_Logic.forest1 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.forest2 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.forest3 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
-	Location_PutIn_Logic.forest4 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-	Location_PutIn_Logic.forest5 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.song_of_time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-	Location_PutIn_Logic.forest6 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.forest7 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.forest8 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
-	Location_PutIn_Logic.forest9 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest10 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest11 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest12 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
-	Location_PutIn_Logic.forest13 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
-	Location_PutIn_Logic.forest14 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
-	Location_PutIn_Logic.fire1 = PutIn_Logic.can_enter_fire_temple;
-	Location_PutIn_Logic.fire2 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
-	Location_PutIn_Logic.fire3 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
-	Location_PutIn_Logic.fire4 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1;
-	Location_PutIn_Logic.fire5 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=1 && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.fire6 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_boss_key && PutIn_Logic.hammer && PutIn_Logic.can_wear_goron_tunic && (PutIn_Logic.hover_boots || (PutIn_Logic.fire_keys >=7 && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag)));
-	Location_PutIn_Logic.fire7 = PutIn_Logic.can_climb_fire_temple;
-	Location_PutIn_Logic.fire8 = PutIn_Logic.can_climb_fire_temple;
-	Location_PutIn_Logic.fire9 = PutIn_Logic.can_climb_fire_temple && ((PutIn_Logic.fire_keys >= 4 && PutIn_Logic.bow) || PutIn_Logic.fire_keys>=5);
-	Location_PutIn_Logic.fire10 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5;
-	Location_PutIn_Logic.fire11 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.fire12 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=5 && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.fire13 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=6;
-	Location_PutIn_Logic.fire14 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys>=6 && PutIn_Logic.hover_boots)) && PutIn_Logic.hammer && (PutIn_Logic.song_of_time || PutIn_Logic.bomb_bag);
-	Location_PutIn_Logic.fire15 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys >= 6 && PutIn_Logic.hover_boots)) && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.water1 = PutIn_Logic.can_enter_water;
-	Location_PutIn_Logic.water2 = PutIn_Logic.can_enter_water;
-	Location_PutIn_Logic.water3 = PutIn_Logic.middle_water && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.water4 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && (PutIn_Logic.bow || PutIn_Logic.can_use_dins);
-	Location_PutIn_Logic.water5 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && (PutIn_Logic.hover_boots || PutIn_Logic.longshot);
-	Location_PutIn_Logic.water6 = PutIn_Logic.middle_water && PutIn_Logic.can_wear_zora_tunic;
-	Location_PutIn_Logic.water7 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.water8 = PutIn_Logic.water_keys >= 5 && PutIn_Logic.lullaby && PutIn_Logic.song_of_time && PutIn_Logic.bow;
-	Location_PutIn_Logic.water9 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && ((PutIn_Logic.water_keys >= 5 && PutIn_Logic.song_of_time && PutIn_Logic.bow) || PutIn_Logic.goron_bracelet);
-	Location_PutIn_Logic.water10 = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && PutIn_Logic.longshot && PutIn_Logic.water_keys >= 5 && ((PutIn_Logic.bomb_bag && PutIn_Logic.goron_bracelet) || PutIn_Logic.hover_boots);
-	Location_PutIn_Logic.water11 = PutIn_Logic.can_enter_water && PutIn_Logic.water_boss_key && PutIn_Logic.longshot ;
-	Location_PutIn_Logic.spirit1 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
-	Location_PutIn_Logic.spirit2 = PutIn_Logic.requiem && (PutIn_Logic.slingshot || PutIn_Logic.boomerang);
-	Location_PutIn_Logic.spirit3 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
-	Location_PutIn_Logic.spirit4 = (PutIn_Logic.spirit_keys >=1 && PutIn_Logic.projectile_both);
-	Location_PutIn_Logic.spirit5 = (PutIn_Logic.spirit_keys >=5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
-	Location_PutIn_Logic.spirit6 = (PutIn_Logic.spirit_keys >=5 && PutIn_Logic.requiem && PutIn_Logic.bomb_bag) || (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.silver_gauntlets && PutIn_Logic.can_use_fire) || (PutIn_Logic.bomb_bag && PutIn_Logic.spirit_keys >=1 && PutIn_Logic.can_use_fire);
-	Location_PutIn_Logic.spirit7 = (PutIn_Logic.spirit_keys >=3 && PutIn_Logic.longshot && PutIn_Logic.bomb_bag) || PutIn_Logic.spirit_keys >= 5;
-	Location_PutIn_Logic.spirit8 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.hookshot && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.spirit9 = PutIn_Logic.can_enter_adult_spirit && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
-	Location_PutIn_Logic.spirit10 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
-	Location_PutIn_Logic.spirit11 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3;
-	Location_PutIn_Logic.spirit12 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.spirit13 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=3 && PutIn_Logic.lullaby && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
-	Location_PutIn_Logic.spirit14 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag && PutIn_Logic.mirror_shield;
-	Location_PutIn_Logic.spirit15 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.spirit16 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.spirit17 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=4 && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.spirit18 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.bow && PutIn_Logic.lullaby && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.spirit19 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.mirror_shield;
-	Location_PutIn_Logic.spirit20 = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >=5 && PutIn_Logic.mirror_shield && PutIn_Logic.bomb_bag && PutIn_Logic.spirit_boss_key && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.shadow1 = PutIn_Logic.can_enter_shadow;
-	Location_PutIn_Logic.shadow2 = PutIn_Logic.can_enter_shadow;
-	Location_PutIn_Logic.shadow3 = PutIn_Logic.can_cross_shadow_gap;
-	Location_PutIn_Logic.shadow4 = PutIn_Logic.can_cross_shadow_gap;
-	Location_PutIn_Logic.shadow5 = PutIn_Logic.can_bomb_shadow_wall;
-	Location_PutIn_Logic.shadow6 = PutIn_Logic.can_bomb_shadow_wall;
-	Location_PutIn_Logic.shadow7 = PutIn_Logic.can_bomb_shadow_wall;
-	Location_PutIn_Logic.shadow8 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.shadow9 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.shadow10 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.shadow_keys >=2;
-	Location_PutIn_Logic.shadow11 = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot && PutIn_Logic.shadow_keys >=2;
-	Location_PutIn_Logic.shadow12 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
-	Location_PutIn_Logic.shadow13 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
-	Location_PutIn_Logic.shadow14 = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.shadow_keys >=3;
-	Location_PutIn_Logic.shadow15 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
-	Location_PutIn_Logic.shadow16 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
-	Location_PutIn_Logic.shadow17 = PutIn_Logic.can_ride_shadow_boat && PutIn_Logic.shadow_keys >=4;
-	Location_PutIn_Logic.shadow18 = PutIn_Logic.can_beat_shadow_boss && PutIn_Logic.shadow_keys >=5;
 	Location_PutIn_Logic.ganons1 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
 	Location_PutIn_Logic.ganons2 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
 	Location_PutIn_Logic.ganons3 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
@@ -6247,42 +6295,6 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.ganons14 = PutIn_Logic.can_enter_ganons;
 	Location_PutIn_Logic.ganons15 = PutIn_Logic.can_enter_ganons && (PutIn_Logic.longshot || ((PutIn_Logic.fire_arrows && PutIn_Logic.magic) || (PutIn_Logic.hover_boots && PutIn_Logic.can_use_dins)));
 	Location_PutIn_Logic.ganons16 = PutIn_Logic.can_enter_ganons;
-	Location_PutIn_Logic.gtg1 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
-	Location_PutIn_Logic.gtg2 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
-	Location_PutIn_Logic.gtg3 = PutIn_Logic.can_save_carpenters;
-	Location_PutIn_Logic.gtg4 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.gtg5 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.gtg6 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.gtg7 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.gtg8 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.gtg9 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow;  //((PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9) && PutIn_Logic.hammer));
-	Location_PutIn_Logic.gtg10 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.gtg12 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
-	Location_PutIn_Logic.gtg11 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
-	Location_PutIn_Logic.gtg13 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
-	Location_PutIn_Logic.gtg14 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
-	Location_PutIn_Logic.gtg15 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.song_of_time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.song_of_time));
-	Location_PutIn_Logic.gtg16 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.gtg17 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 3 ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.gtg18 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 4;
-	Location_PutIn_Logic.gtg19 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 6;
-	Location_PutIn_Logic.gtg20 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 7;
-	Location_PutIn_Logic.gtg21 = PutIn_Logic.can_save_carpenters && PutIn_Logic.gtg_keys >= 9;
-	Location_PutIn_Logic.gtg22 = PutIn_Logic.can_save_carpenters && PutIn_Logic.iron_boots && PutIn_Logic.song_of_time && PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/;
-	Location_PutIn_Logic.well1 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.well5 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.well2 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.well3 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.well4 = PutIn_Logic.song_of_storms;
-	Location_PutIn_Logic.well6 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.well11 = PutIn_Logic.song_of_storms ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.well7 = PutIn_Logic.song_of_storms && PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.well10 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.well8 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.kokiri_sword;
-	Location_PutIn_Logic.well9 = PutIn_Logic.song_of_storms && PutIn_Logic.lullaby ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.well12 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys >= 3 ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.well13 = PutIn_Logic.song_of_storms && PutIn_Logic.well_keys >= 3 ;//&& PutIn_Logic.can_see ;
-	Location_PutIn_Logic.well14 = PutIn_Logic.song_of_storms && (PutIn_Logic.bomb_bag || (((/*PutIn_Logic.can_see &&*/ PutIn_Logic.well_keys == 3) || PutIn_Logic.can_use_dins) && PutIn_Logic.goron_bracelet));
 	Location_PutIn_Logic.zeldasSpot = true;
 	Location_PutIn_Logic.eponasSpot = true;
 	Location_PutIn_Logic.sariasSpot = true;
