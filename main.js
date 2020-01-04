@@ -4736,7 +4736,7 @@ function checksLockedByItem(item) {
 	
 	var temp = 6;
 	var tempArray = [];
-	temp = 10;
+	temp = 12;
 	while (temp > 0) {
     temp -= 1;
 	
@@ -4861,6 +4861,7 @@ function checksLockedByItem(item) {
 	
 	Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 	var max = 0;
+	console.log(Locked_Logic2.forest_keys);
 	for (i = 1; i <= 14; i++) {
 		str = "forest" + i;
 		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
@@ -5566,7 +5567,7 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic[key] = false;
 	}
 	
-	var temp = 6;
+	var temp = 12;
 	var tempArray = [];
 	
 	while (temp > 0) {
