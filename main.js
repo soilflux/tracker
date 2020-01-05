@@ -1462,7 +1462,7 @@ if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
 						tempArray3.push(ChecksPutInLogicBy[tempArray[k]][l]);
 					}
 				}
-				if ((tempArray3.length < 15 && !tempArray[k].startsWith("bomb_bag")) ||(tempArray3.length < 5 && tempArray[k].startsWith("bomb_bag"))) {tempArray2.push.apply(tempArray2, tempArray3);}
+				if (tempArray3.length < 7) {tempArray2.push.apply(tempArray2, tempArray3);}
 			}
 			
 			document.getElementById("woth" + tempnumber2 + "_title").style.color= WotHColors[tempnumber2];
@@ -4736,7 +4736,7 @@ function checksLockedByItem(item) {
 	
 	
 	var tempArray = [];
-	var temp = 10;
+	var temp = 20;
 	while (temp > 0) {
     temp -= 1;
 	
@@ -5583,7 +5583,7 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic[key] = false;
 	}
 	
-	var temp = 10;
+	var temp = 20;
 	var tempArray = [];
 	
 	while (temp > 0) {
