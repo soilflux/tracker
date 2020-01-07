@@ -6560,10 +6560,20 @@ function timerControl() {
 function toggleHint(loc) {
 	var location = "";
 	var item = "";
+	var itemText = "";
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {location = loc.id.slice(5); item = Check[location];} else {item = loc.id.slice(0, -9); location = Location[item];}
+	if (item == "sos") {item = "song_of_storms";}
+	if (item == "suns") {item = "suns_song";}
+	if (item == "sot") {item = "song_of_time";}
+	if (item == "serenade") {itemText = "Serenade";} else if (item == "prelude") {itemText = "Prelude"} else {itemText = ItemNames[Items.indexOf(item)];}
 	if (item != "unknown" && location != undefined) {
 		Hinted[location] = !Hinted[location];
-		text = Names[Locations.indexOf(location)].split(":")[1].slice(1) + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+		if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
+			text = Names[Locations.indexOf(location)] + ":  " + itemText + "<br>";
+		}
+		else {
+			text = Names[Locations.indexOf(location)].split(":")[1].slice(1) + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+		}
 		if (Hinted[location]) {
 			var hintText = document.createElement("small");
 			hintText.innerHTML = text;
@@ -6573,6 +6583,7 @@ function toggleHint(loc) {
 			for (i = 0; i < document.getElementById("notes").children.length; i++) {
 				if (document.getElementById("notes").children[i].innerHTML == text) {
 					document.getElementById("notes").children[i].remove();
+					break;
 				}
 			}
 		}
