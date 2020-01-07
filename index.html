@@ -299,22 +299,22 @@
 	</div>
 	<div id="songColumn">
 		<small class="area_titles">Songs</small> <br /> <br />
-		<input id="zeldasSpot" class= "check_input" > </input><small id="text_zeldasSpot" class="check_text">Zelda</small><br id= "br_zeldasSpot" />
-		<input id="eponasSpot" class= "check_input" > </input><small id="text_eponasSpot" class="check_text">Malon</small><br id= "br_eponasSpot" />
-		<input id="sariasSpot" class= "check_input" > </input><small id="text_sariasSpot" class="check_text">Saria</small><br id= "br_sariasSpot" />
-		<input id="stormsSpot" class= "check_input" > </input><small id="text_stormsSpot" class="check_text">Windmill</small><br id= "br_stormsSpot" />
-		<input id="sunsSpot" class= "check_input" > </input><small id="text_sunsSpot" class="check_text">Grave</small><br id= "br_sunsSpot" />
-		<input id="boleroSpot" class= "check_input" > </input><small id="text_boleroSpot" class="check_text">Crater</small><br id= "br_boleroSpot" />
-		<input id="minuetSpot" class= "check_input" > </input><small id="text_minuetSpot" class="check_text">Meadow</small><br id= "br_minuetSpot" />
-		<input id="requiemSpot" class= "check_input" > </input><small id="text_requiemSpot" class="check_text">Colossus</small><br id= "br_requiemSpot" />
-		<input id="serenadeSpot" class= "check_input" > </input><small id="text_serenadeSpot" class="check_text">Ice</small><br id= "br_serenadeSpot" />
-		<input id="preludeSpot" class= "check_input" > </input><small id="text_preludeSpot" class="check_text">1Med</small><br id= "br_preludeSpot" />
-		<input id="nocturneSpot" class= "check_input" > </input><small id="text_nocturneSpot" class="check_text">3Med</small><br id= "br_nocturneSpot" />
-		<input id="oot" class= "check_input" > </input><small id="text_oot" class="check_text">OoT</small><br id= "br_oot" /><br />
+		<input id="zeldasSpot" class= "check_input" > </input><small id="text_zeldasSpot" class="check_text" onclick = "toggleHint(this)">Zelda</small><br id= "br_zeldasSpot" />
+		<input id="eponasSpot" class= "check_input" > </input><small id="text_eponasSpot" class="check_text" onclick = "toggleHint(this)">Malon</small><br id= "br_eponasSpot" />
+		<input id="sariasSpot" class= "check_input" > </input><small id="text_sariasSpot" class="check_text" onclick = "toggleHint(this)">Saria</small><br id= "br_sariasSpot" />
+		<input id="stormsSpot" class= "check_input" > </input><small id="text_stormsSpot" class="check_text" onclick = "toggleHint(this)">Windmill</small><br id= "br_stormsSpot" />
+		<input id="sunsSpot" class= "check_input" > </input><small id="text_sunsSpot" class="check_text" onclick = "toggleHint(this)">Grave</small><br id= "br_sunsSpot" />
+		<input id="boleroSpot" class= "check_input" > </input><small id="text_boleroSpot" class="check_text" onclick = "toggleHint(this)">Crater</small><br id= "br_boleroSpot" />
+		<input id="minuetSpot" class= "check_input" > </input><small id="text_minuetSpot" class="check_text" onclick = "toggleHint(this)">Meadow</small><br id= "br_minuetSpot" />
+		<input id="requiemSpot" class= "check_input" > </input><small id="text_requiemSpot" class="check_text" onclick = "toggleHint(this)">Colossus</small><br id= "br_requiemSpot" />
+		<input id="serenadeSpot" class= "check_input" > </input><small id="text_serenadeSpot" class="check_text" onclick = "toggleHint(this)">Ice</small><br id= "br_serenadeSpot" />
+		<input id="preludeSpot" class= "check_input" > </input><small id="text_preludeSpot" class="check_text" onclick = "toggleHint(this)">1Med</small><br id= "br_preludeSpot" />
+		<input id="nocturneSpot" class= "check_input" > </input><small id="text_nocturneSpot" class="check_text" onclick = "toggleHint(this)">3Med</small><br id= "br_nocturneSpot" />
+		<input id="oot" class= "check_input" > </input><small id="text_oot" class="check_text" onclick = "toggleHint(this)">OoT</small><br id= "br_oot" /><br />
 		
 		<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><span id = "for_med" class = "greendot" onclick = "highlight(this)"></span> <br />
 		<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
-		<br /><br /><small id = "notes" spellcheck="false">Unread: 30 40 50 OoT Frogs2 Mask</small><br /><br /><textarea spellcheck="false" rows="4" cols="17"></textarea><br /><br />
+		<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="4" cols="17"></textarea><br /><br />
 		
 		
 		
@@ -342,6 +342,7 @@
 		<br /> Progressive items use str, hoo, wal, and sca.
 		<br /> <b>Start with a capital letter to input hinted items. End with a capital letter to input peeked items.</b> Click an item's icon when the item has been obtained.
 		<br />Left click check text if it was irrelevant for logic. Use middle clicks<b>(or alt + left click)</b> and right clicks for boss keys and small keys, respectively.
+    <br /><b>Left click on the song check text, or the summary text on the right to toggle if you've found a hint for that check.</b>
 		<br /><br /> Input stones and forest+fire+water medallion into the top right two boxes. Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
 		<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
 		
@@ -401,45 +402,45 @@
 	  <!-- <br /><br /><textarea spellcheck="false"; class = "super_hint_input"></textarea>-->
 	  </div>
 	  <div id="checkSummaryColumn">
-		<small id="bomb_bag1_location" class="checkSummaryText">Bomb Bag -> </small><br />
-		<small id="bomb_bag2_location" class="checkSummaryText">Bomb Bag -> </small><br />
-		<small id="bomb_bag3_location" class="checkSummaryText">Bomb Bag -> </small><br />
-		<small id="boomerang_location" class="checkSummaryText">Boomerang -> </small><br />
-		<small id="bottle1_location" class="checkSummaryText">Bottle -> </small><br />
-		<small id="bottle2_location" class="checkSummaryText">Bottle -> </small><br />
-		<small id="bottle3_location" class="checkSummaryText">Bottle -> </small><br />
-		<small id="bow1_location" class="checkSummaryText">Bow -> </small><br />
-		<small id="bow2_location" class="checkSummaryText">Bow -> </small><br />
-		<small id="bow3_location" class="checkSummaryText">Bow -> </small><br />
-		<small id="dins_fire_location" class="checkSummaryText">Dins Fire -> </small><br />
-		<small id="farores_wind_location" class="checkSummaryText">Farores -> </small><br />
-		<small id="fire_arrows_location" class="checkSummaryText">Fire Arrows -> </small><br />
-		<small id="goron_tunic_location" class="checkSummaryText">Goron Tunic -> </small><br />
-		<small id="hammer_location" class="checkSummaryText">Hammer -> </small><br />
-		<small id="hookshot1_location" class="checkSummaryText">Hookshot -> </small><br />
-		<small id="hookshot2_location" class="checkSummaryText">Hookshot -> </small><br />
-		<small id="hover_boots_location" class="checkSummaryText">Hover Boots -> </small><br />
-		<small id="iron_boots_location" class="checkSummaryText">Iron Boots -> </small>
+		<small id="bomb_bag1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+		<small id="bomb_bag2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+		<small id="bomb_bag3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+		<small id="boomerang_location" class="checkSummaryText" onclick = "toggleHint(this)">Boomerang -> </small><br />
+		<small id="bottle1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+		<small id="bottle2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+		<small id="bottle3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+		<small id="bow1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+		<small id="bow2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+		<small id="bow3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+		<small id="dins_fire_location" class="checkSummaryText" onclick = "toggleHint(this)">Dins Fire -> </small><br />
+		<small id="farores_wind_location" class="checkSummaryText" onclick = "toggleHint(this)">Farores -> </small><br />
+		<small id="fire_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Fire Arrows -> </small><br />
+		<small id="goron_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Goron Tunic -> </small><br />
+		<small id="hammer_location" class="checkSummaryText" onclick = "toggleHint(this)">Hammer -> </small><br />
+		<small id="hookshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
+		<small id="hookshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
+		<small id="hover_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Hover Boots -> </small><br />
+		<small id="iron_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Iron Boots -> </small>
 	</div>
 	<div id="checkSummaryColumn2">
-		<small id="lens_of_truth_location" class="checkSummaryText">Lens -> </small><br />
-		<small id="rutos_letter_location" class="checkSummaryText">Letter -> </small><br />
-		<small id="light_arrows_location" class="checkSummaryText">Light Arrows -> </small><br />
-		<small id="magic1_location" class="checkSummaryText">Magic -> </small><br />
-		<small id="magic2_location" class="checkSummaryText">Magic -> </small><br />
-		<small id="mirror_shield_location" class="checkSummaryText">Mirror Shield -> </small><br />
-		<small id="scale1_location" class="checkSummaryText">Scale -> </small><br />
-		<small id="scale2_location" class="checkSummaryText">Scale -> </small><br />
-		<small id="slingshot1_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="slingshot2_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="slingshot3_location" class="checkSummaryText">Slingshot -> </small><br />
-		<small id="strength1_location" class="checkSummaryText">Strength -> </small><br />
-		<small id="strength2_location" class="checkSummaryText">Strength -> </small><br />
-		<small id="strength3_location" class="checkSummaryText">Strength -> </small><br />
-		<small id="trade_location" class="checkSummaryText">Trade -> </small><br />
-		<small id="wallet1_location" class="checkSummaryText">Wallet -> </small><br />
-		<small id="wallet2_location" class="checkSummaryText">Wallet -> </small><br />
-		<small id="zora_tunic_location" class="checkSummaryText">Zora Tunic -> </small>	
+		<small id="lens_of_truth_location" class="checkSummaryText" onclick = "toggleHint(this)">Lens -> </small><br />
+		<small id="rutos_letter_location" class="checkSummaryText" onclick = "toggleHint(this)">Letter -> </small><br />
+		<small id="light_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Light Arrows -> </small><br />
+		<small id="magic1_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
+		<small id="magic2_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
+		<small id="mirror_shield_location" class="checkSummaryText" onclick = "toggleHint(this)">Mirror Shield -> </small><br />
+		<small id="scale1_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
+		<small id="scale2_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
+		<small id="slingshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+		<small id="slingshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+		<small id="slingshot3_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+		<small id="strength1_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+		<small id="strength2_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+		<small id="strength3_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+		<small id="trade_location" class="checkSummaryText" onclick = "toggleHint(this)">Trade -> </small><br />
+		<small id="wallet1_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
+		<small id="wallet2_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
+		<small id="zora_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Zora Tunic -> </small>	
 	  </div>
 	</div>  
 	 
