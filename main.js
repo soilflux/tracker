@@ -2727,14 +2727,31 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
 			document.getElementById(str).innerHTML = backUp[temp-1];
-			var tempbool = false;
-			var tempbool2 = false;
 			if (!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) {document.getElementById(str).style.color = "chartreuse";}
-			if (woth1Locations.includes(key)) {document.getElementById(str).style.color = WotHColors[1];}
-			if (woth2Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[2] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[2]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[2];}}
-			if (woth3Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[3]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3] && !tempbool2) {var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(1), '<span style="color: '+WotHColors[3]+';">'+document.getElementById(str).innerHTML.charAt(1)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[3];}}
-			if (woth4Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[4] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[4]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3] && !tempbool2) {var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(1), '<span style="color: '+WotHColors[4]+';">'+document.getElementById(str).innerHTML.charAt(1)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[4];}}
-			if (woth5Locations.includes(key)) {if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[5] && !tempbool){var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(0), '<span style="color: '+WotHColors[5]+';">'+document.getElementById(str).innerHTML.charAt(0)+'</span>'); tempbool = true;} else if (document.getElementById(str).style.color != "chartreuse" && document.getElementById(str).style.color != WotHColors[3] && !tempbool2) {var str2 = document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace(document.getElementById(str).innerHTML.charAt(1), '<span style="color: '+WotHColors[5]+';">'+document.getElementById(str).innerHTML.charAt(1)+'</span>'); tempbool = true;} else{document.getElementById(str).style.color = WotHColors[5];}}
+			else {
+				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
+				var i;
+				var j;
+				var k;
+				var text = document.getElementById(str).innerHTML;
+				document.getElementById(str).innerHTML = ""
+				for (i = 0; i < text.length; i++) {
+					for (j = 0; j < woths.length; j++) {
+						if (woths[j]) {
+							let charElem = document.createElement("span");
+							charElem.style.color = WotHColors[j+1];
+							charElem.innerHTML = text[i];
+							document.getElementById(str).appendChild(charElem);
+							for (k = j + 1; k < woths.length; k++) {
+								if (woths[k]) {
+									woths[j] = false;
+								}
+							}
+							break;
+						}
+					}
+				}
+			}
 			if(document.getElementById(key) != null) {
 				if (temp <= 242) {Game.logically_accessible += 1;}
 				if (temp == 44 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
@@ -3212,7 +3229,7 @@ var tSeconds = 0;
 		"spirit1", "spirit2", "spirit3", "spirit4", "spirit5", "spirit6", "spirit7", "spirit8", "spirit9", "spirit10", "spirit11", "spirit12", "spirit13", "spirit14", "spirit15", "spirit16", "spirit17", "spirit18", "spirit19", "spirit20",
 		"shadow1", "shadow2", "shadow3", "shadow4", "shadow5", "shadow6", "shadow7", "shadow8", "shadow9", "shadow10", "shadow11", "shadow12", "shadow13", "shadow14", "shadow15", "shadow16", "shadow17", "shadow18",
 		"ganons1", "ganons2", "ganons3", "ganons4", "ganons5", "ganons6", "ganons7", "ganons8", "ganons9", "ganons10", "ganons11", "ganons12", "ganons13", "ganons14", "ganons15", "ganons16",
-		"gtg1", "gtg2", "gtg3", "gtg4", "gtg5", "gtg6", "gtg7", "gtg8", "gtg9", "gtg10", "gtg11", "gtg12", "gtg13", "gtg14", "gtg15", "gtg16", "gtg17",  "gtg18", "gtg19", "gtg20", "gtg21", "gtg22",
+		"gtg1", "gtg2", "gtg3", "gtg4", "gtg5", "gtg6", "gtg7", "gtg8", "gtg9", "gtg10", "gtg12", "gtg11", "gtg13", "gtg14", "gtg15", "gtg16", "gtg17",  "gtg18", "gtg19", "gtg20", "gtg21", "gtg22",
 		"well1", "well5", "well2", "well3", "well4", "well6", "well11", "well7", "well10", "well8", "well9", "well12", "well13", "well14",
 		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 		];
