@@ -2638,26 +2638,26 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	gs[33] = Location_Logic.gs_river_ladder;
 	gs[34] = Location_Logic.gs_river_near_grotto;
 	gs[35] = Location_Logic.gs_river_above_bridge;
-	gs[36] = Location_Logic.gs_domain;
-	gs[37] = Location_Logic.gs_fountain_above_log;
-	gs[38] = Location_Logic.gs_fountain_tree;
-	gs[39] = Location_Logic.gs_fountain_hidden_cave;
-	gs[40] = Location_Logic.gs_hylia_bean;
-	gs[41] = Location_Logic.gs_hylia_lab_wall;
-	gs[42] = Location_Logic.gs_hylia_island;
-	gs[43] = Location_Logic.gs_hylia_tree;
-	gs[44] = Location_Logic.gs_lab_crate;
-	gs[45] = Location_Logic.gs_valley_small_bridge;
-	gs[46] = Location_Logic.gs_valley_bean;
-	gs[47] = Location_Logic.gs_valley_tent;
-	gs[48] = Location_Logic.gs_valley_pillar;
-	gs[49] = Location_Logic.gs_fortress_archery;
-	gs[50] = Location_Logic.gs_fortress_top;
-	gs[51] = Location_Logic.gs_wasteland_structure;
-	gs[52] = Location_Logic.gs_colossus_bean;
-	gs[53] = Location_Logic.gs_colossus_tree;
-	gs[54] = Location_Logic.gs_colossus_hill;
-	gs[55] = Location_Logic.gs_zora_river_tree;
+	gs[36] = Location_Logic.gs_zora_river_tree;
+	gs[37] = Location_Logic.gs_domain;
+	gs[38] = Location_Logic.gs_fountain_above_log;
+	gs[39] = Location_Logic.gs_fountain_tree;
+	gs[40] = Location_Logic.gs_fountain_hidden_cave;
+	gs[41] = Location_Logic.gs_hylia_bean;
+	gs[42] = Location_Logic.gs_hylia_lab_wall;
+	gs[43] = Location_Logic.gs_hylia_island;
+	gs[44] = Location_Logic.gs_hylia_tree;
+	gs[45] = Location_Logic.gs_lab_crate;
+	gs[46] = Location_Logic.gs_valley_small_bridge;
+	gs[47] = Location_Logic.gs_valley_bean;
+	gs[48] = Location_Logic.gs_valley_tent;
+	gs[49] = Location_Logic.gs_valley_pillar;
+	gs[50] = Location_Logic.gs_fortress_archery;
+	gs[51] = Location_Logic.gs_fortress_top;
+	gs[52] = Location_Logic.gs_wasteland_structure;
+	gs[53] = Location_Logic.gs_colossus_bean;
+	gs[54] = Location_Logic.gs_colossus_tree;
+	gs[55] = Location_Logic.gs_colossus_hill;
 	gs[56] = Location_Logic.gs_ganons;
 	gs[57] = Location_Logic.gs_deku_basement_back;
 	gs[58] = Location_Logic.gs_deku_basement_gate;
@@ -2706,8 +2706,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 
 	Logic.gold_skulltulas = 0;
 	var i;
+	document.getElementById("skullsTextBlock").innerHTML = "";
 	for (i = 1; i<=100; i++) {
-		if (gs[i] == true) {Logic.gold_skulltulas +=1;};
+		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsTextBlock").innerHTML += gsText[i] + "<br />" ;};
 	}
 	document.getElementById("skulls_in_logic").innerHTML = "Skulls: " + Logic.gold_skulltulas;
 
@@ -3283,6 +3284,110 @@ var tSeconds = 0;
 		"Well: Fake Right", "Well: Center Small", "Well: Back Bomb", "Well: Water Left", "Well: Freestanding", "Well: Center Big", "Well: Fake Left", "Well: Front Bomb", "Well: Water Front", "Well: Dead Hand", "Well: Invisible", "Well: Locked 1", "Well: Locked 2", "Well: Basement",
 		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Medallion", "3 Medallion", "Ocarina of Time"
 		];
+		
+	var	gsText = [
+		"",
+		"Kokiri Child",
+		"Kokiri Soil",
+		"Kokiri Adult", 
+		"Market",
+		"Lost Woods Soil 1",
+		"Lost Woods Soil 2",
+		"Lost Woods Above Stage",
+		"Sacred Forest",
+		"Outside Kakariko",
+		"Field near Valley",
+		"Hyrule Castle Tree",
+		"Hyrule Castle Grotto",
+		"Lon Lon Tree", 
+		"Lon Lon Shed", 
+		"Lon Lon Window", 
+		"Lon Lon Back Wall", 
+		"Kakariko Construction", 
+		"Kakariko Skull House", 
+		"Kakariko Guard House",
+		"Kakariko Tree",
+		"Kakariko Tower",
+		"Kakariko Impa's House",
+		"Graveyard Wall", 
+		"Graveyard Box",
+		"Trail Soil",
+		"Trail Wall", 
+		"Trail Hail",
+		"Trail Dodo Top",
+		"Goron City Maze", 
+		"Goron City Center",
+		"Crater Crate",
+		"Crater Soil",
+		"River Ladder",
+		"River Near Grotto",
+		"River Above Bridge",
+		"River Tree",
+		"Domain",
+		"Fountain Above Log",
+		"Fountain Tree",
+		"Fountain Hidden Cave",
+		"Hylia Soil",
+		"Hylia Lab Wall",
+		"Hylia Island",
+		"Hylia Tree",
+		"Hylia Lab",
+		"Valley Small Bridge",
+		"Valley Soil",
+		"Valley Tent",
+		"Valley Pillar",
+		"Fortress Target",
+		"Fortress Wall",
+		"Wasteland",
+		"Colossus Soil",
+		"Colossus Tree", 
+		"Colossus Hill",
+		"Outside Ganon's",
+		"Deku Basement Back",
+		"Deku Gate",
+		"Deku Vines",
+		"Deku Compass",
+		"Dodongo's East",
+		"Dodongo's Stair Vines",
+		"Dodongo's Stair Nook",
+		"Dodongo's Scarecrow",
+		"Dodongo's Near King",
+		"Jabu Vines",
+		"Jabu Near Octo 1",
+		"Jabu Near Octo 2",
+		"Jabu Near Barinade",
+		"Forest First",
+		"Forest Lobby",
+		"Forest East Courtyard",
+		"Forest West Courtyard",
+		"Forest Basement",
+		"Fire Song of Time",
+		"Fire Bomb Wall",
+		"Fire Scarecrow 1", 
+		"Fire Scarecrow 2",
+		"Fire First Floor",
+		"Water South Basement",
+		"Water River",
+		"Water Central",
+		"Water Near BK",
+		"Water Before DL",
+		"Spirit Metal Fence",
+		"Spirit Before Child Knuckle",
+		"Spirit Bouldas",
+		"Spirit Lobby",
+		"Spirit Child Climb",
+		"Shadow Like Like",
+		"Shadow Crusher",
+		"Shadow Giant Pot",
+		"Shadow Near Boat", 
+		"Shadow 3 Pots",
+		"Well West Inner",
+		"Well East Inner",
+		"Well Cage",
+		"Ice Scythe",
+		"Ice Near HP",
+		"Ice Block Room"		
+	];
 		
 		var AreaNames= [
 		"",
@@ -4233,6 +4338,25 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 
 var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+var modal = document.getElementById("myModal2");
+
+var btn = document.getElementById("skulls_in_logic");
+
+var span = document.getElementsByClassName("close")[1];
 
 btn.onclick = function() {
   modal.style.display = "block";
