@@ -67,14 +67,14 @@ function Update() {
 				document.getElementById("normalColumn3").style.width="125px";
 				document.getElementById("chuButton").style.left="913px";
 				document.getElementById("woth_info").style.left="956px";
-				document.getElementById("timer").style.right="980px";
+				document.getElementById("timer").style.left="910px";
 				document.getElementById("skulls_in_logic").style.left="867px";
-				document.getElementById("forest_medallion").style.right="960px";
-				document.getElementById("fire_medallion").style.right="960px";
-				document.getElementById("water_medallion").style.right="960px";
-				document.getElementById("gen1_medallion").style.right="960px";
-				document.getElementById("gen2_medallion").style.right="960px";
-				document.getElementById("gen3_medallion").style.right="960px";
+				document.getElementById("forest_medallion").style.left="928px";
+				document.getElementById("fire_medallion").style.left="928px";
+				document.getElementById("water_medallion").style.left="928px";
+				document.getElementById("gen1_medallion").style.left="928px";
+				document.getElementById("gen2_medallion").style.left="928px";
+				document.getElementById("gen3_medallion").style.left="928px";
 				if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
 				if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
 				if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
@@ -202,14 +202,14 @@ function Update() {
 			document.getElementById("normalColumn3").style.width="132px";
 			document.getElementById("chuButton").style.left="933px";
 			document.getElementById("woth_info").style.left="976px";
-			document.getElementById("timer").style.right="960px";
+			document.getElementById("timer").style.left="930px";
 			document.getElementById("skulls_in_logic").style.left="889px";
-			document.getElementById("forest_medallion").style.right="940px";
-			document.getElementById("fire_medallion").style.right="940px";
-			document.getElementById("water_medallion").style.right="940px";
-			document.getElementById("gen1_medallion").style.right="940px";
-			document.getElementById("gen2_medallion").style.right="940px";
-			document.getElementById("gen3_medallion").style.right="940px";
+			document.getElementById("forest_medallion").style.left="908px";
+			document.getElementById("fire_medallion").style.left="908px";
+			document.getElementById("water_medallion").style.left="908px";
+			document.getElementById("gen1_medallion").style.left="908px";
+			document.getElementById("gen2_medallion").style.left="908px";
+			document.getElementById("gen3_medallion").style.left="908px";
 			for (const key of keys) {
 				if (temp == 114) {break; }	
 				if (document.getElementById(key) != null){document.getElementById(key).style.height="29px";}
@@ -2279,6 +2279,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.gs_river_ladder = Logic.silver_scale || Logic.bomb_bag;
 	Location_Logic.gs_river_near_grotto = Logic.hookshot;
 	Location_Logic.gs_river_above_bridge = Logic.hookshot;
+	Location_Logic.gs_zora_river_tree = true;
 	Location_Logic.gs_domain = Logic.lullaby && (Logic.hookshot || Logic.magic || Logic.bow);
 	Location_Logic.gs_fountain_above_log = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby)) && Logic.boomerang;
 	Location_Logic.gs_fountain_tree = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby))
@@ -2298,7 +2299,6 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Logic.gs_colossus_bean = Logic.bottle && Logic.requiem;
 	Location_Logic.gs_colossus_tree = Logic.hookshot && Logic.can_enter_colossus;
 	Location_Logic.gs_colossus_hill = (Logic.requiem && (Logic.bomb_bag || Logic.silver_scale)) || (Logic.longshot && Logic.can_enter_colossus);
-	Location_Logic.gs_zora_river_tree = true;
 	Location_Logic.gs_ganons = true;
 	Location_Logic.gs_deku_basement_back = Logic.boomerang && Logic.bomb_bag && Logic.slingshot;
 	Location_Logic.gs_deku_basement_gate = true;
