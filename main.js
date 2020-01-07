@@ -1085,7 +1085,6 @@ if (str.length > 3) {
 */
 	
 document.getElementById("text_next").innerHTML = next_check(lastCheck);
-var temptext = document.getElementById("notes").innerHTML;
 var temptext2 = "";	
 var peeked = false;
 for (const key of keys) {
@@ -1180,9 +1179,14 @@ for (const key of keys) {
 	if (document.getElementById(key).value == "noc" && !Known.nocturne) {Check[document.getElementById(key).id] = "nocturne";Location.nocturne = document.getElementById(key).id; Known.nocturne = true; if (!hinted && !peeked) {Game.nocturne = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Nocturne" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Nocturne"; backUp[temp-1] += ": Nocturne"; junkBS(document.getElementById(key)); continue;}
 	if (document.getElementById(key).value == "pre" && !Known.prelude) {Check[document.getElementById(key).id] = "prelude";Location.prelude = document.getElementById(key).id; Known.prelude = true; if (!hinted && !peeked) {Game.prelude = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[temp - 1] + ": Prelude" + "<br />";} var change = "text_" + document.getElementById(key).id; document.getElementById(change).innerHTML += ": Prelude"; backUp[temp-1] += ": Prelude"; junkBS(document.getElementById(key)); continue;}
 	}
-	
 }
-document.getElementById("notes").innerHTML = temptext2 + temptext;
+if (temptext2 != "") {
+	var hintText = document.createElement("small");
+	hintText.innerHTML = temptext2;
+	document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+	temptext2 = "";
+}
+
 
 if (Game.hookshot1 && Game.hookshot2) {
 	Game.longshot = true;
@@ -2792,7 +2796,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if(Location_Logic.spirit20 == true) {document.getElementById("spiritLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("spiritLogic").style.backgroundColor = "palevioletred";}
 	if(Location_Logic.shadow18 == true) {document.getElementById("shadowLogic").style.backgroundColor = "chartreuse";} else {document.getElementById("shadowLogic").style.backgroundColor = "palevioletred";}**/
 	
-	var temptext = document.getElementById("notes").innerHTML.split("Unread: ");
+	var temptext = document.getElementById("unread").innerHTML.split("Unread: ");
 	temptext[1] = "";
 	if (document.getElementById("tokens_30") != null) temptext[1] += "30 "; 
 	if (document.getElementById("tokens_40") != null) temptext[1] += "40 "; 
@@ -2801,7 +2805,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	if (document.getElementById("trade_quest") != null) temptext[1] += "Bigo "; 
 	if (document.getElementById("frogs_2") != null) temptext[1] += "Frogs2 "; 
 	if (document.getElementById("theater") != null) temptext[1] += "Mask ";  
-	document.getElementById("notes").innerHTML = temptext[0] + "Unread: " + temptext[1];
+	document.getElementById("unread").innerHTML = temptext[0] + "Unread: " + temptext[1];
 	
 	if (Game.forest_checks_remaining >=0 && (Game.forest_checks_remaining < Game.forest_logically_accessible)) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
 	if (Game.fire_checks_remaining >=0 && (Game.fire_checks_remaining < Game.fire_logically_accessible)) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
@@ -6551,6 +6555,28 @@ for (i=0; i < Items.length; i++) {
 function timerControl() {
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
+}
+
+function toggleHint(loc) {
+	var location = "";
+	var item = "";
+	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {location = loc.id.slice(5); item = Check[location];} else {item = loc.id.slice(0, -9); location = Location[item];}
+	if (item != "unknown" && location != undefined) {
+		Hinted[location] = !Hinted[location];
+		text = Names[Locations.indexOf(location)].split(":")[1].slice(1) + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+		if (Hinted[location]) {
+			var hintText = document.createElement("small");
+			hintText.innerHTML = text;
+			document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+		}
+		else {
+			for (i = 0; i < document.getElementById("notes").children.length; i++) {
+				if (document.getElementById("notes").children[i].innerHTML == text) {
+					document.getElementById("notes").children[i].remove();
+				}
+			}
+		}
+	}
 }
 
 setInterval(Update,250);
