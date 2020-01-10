@@ -67,7 +67,7 @@ function Update() {
 				document.getElementById("normalColumn3").style.width="125px";
 				document.getElementById("chuButton").style.left="913px";
 				document.getElementById("woth_info").style.left="956px";
-				document.getElementById("timer").style.left="910px";
+				document.getElementById("timer").style.left="800px";
 				document.getElementById("skulls_in_logic").style.left="867px";
 				document.getElementById("forest_medallion").style.left="928px";
 				document.getElementById("fire_medallion").style.left="928px";
@@ -202,14 +202,14 @@ function Update() {
 			document.getElementById("normalColumn3").style.width="132px";
 			document.getElementById("chuButton").style.left="933px";
 			document.getElementById("woth_info").style.left="976px";
-			document.getElementById("timer").style.left="930px";
+			document.getElementById("timer").style.left="820px";
 			document.getElementById("skulls_in_logic").style.left="889px";
-			document.getElementById("forest_medallion").style.left="908px";
-			document.getElementById("fire_medallion").style.left="908px";
-			document.getElementById("water_medallion").style.left="908px";
-			document.getElementById("gen1_medallion").style.left="908px";
-			document.getElementById("gen2_medallion").style.left="908px";
-			document.getElementById("gen3_medallion").style.left="908px";
+			document.getElementById("forest_medallion").style.left="948px";
+			document.getElementById("fire_medallion").style.left="948px";
+			document.getElementById("water_medallion").style.left="948px";
+			document.getElementById("gen1_medallion").style.left="948px";
+			document.getElementById("gen2_medallion").style.left="948px";
+			document.getElementById("gen3_medallion").style.left="948px";
 			for (const key of keys) {
 				if (temp == 114) {break; }	
 				if (document.getElementById(key) != null){document.getElementById(key).style.height="29px";}
