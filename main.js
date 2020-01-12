@@ -3725,7 +3725,11 @@ function junk(x) {
 		else if(str.startsWith("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
 		else if(str.startsWith("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
 		else if(str.startsWith("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
-		else {return;}
+		else {
+		if (x.style.color == "orange") {x.style.color = "pink";}
+		else {x.style.color = "orange";}
+		return;
+		}
 		Check[str]="small_key";
 	}
 	else if (type == 2 && event.altKey) {
