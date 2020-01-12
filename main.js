@@ -2775,9 +2775,11 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		}
 		else if (Location_Access[key] == true) {
 			document.getElementById(str).className= "access_check_text";
+			document.getElementById(str).style.color ="yellow";
 		}
 		else {
 			document.getElementById(str).className= "ool_check_text";
+			document.getElementById(str).style.color ="black";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
