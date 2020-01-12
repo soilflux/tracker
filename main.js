@@ -2723,16 +2723,17 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Game.ganons_logically_accessible=0;
 
 	temp = 0;
+	var colorChange = false;
 	for (const key of keys) {
 		if (temp == 256) {break; }
 		temp +=1;
 		str = "text_" + key;
-	
+		if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
 			document.getElementById(str).innerHTML = backUp[temp-1];
-			if (!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) {document.getElementById(str).style.color = "chartreuse";}
+			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
 				var i;
@@ -2778,6 +2779,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		else {
 			document.getElementById(str).className= "ool_check_text";
 		}
+		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
 	
 	document.getElementById("forest").innerHTML = "" + Game.forest_checks_remaining;
@@ -3673,6 +3675,7 @@ var tSeconds = 0;
 	var AreaWotHAge = new Array(35).fill(0);
 	var wothCount = new Array(35).fill(0);
 	var textBlock = '';
+	var circus = false;
 	
 	for (var i = 0; i < 244; i++) {
 		Check[Location[i]] = "unknown";
@@ -3713,7 +3716,7 @@ function junk(x) {
 		Check[str]="boss_key";
 	}
 	
-	else if (type == 2) {
+	else if (type == 2 && !event.altKey) {
 		if(str.startsWith("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
 		else if(str.startsWith("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
 		else if(str.startsWith("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
@@ -3724,6 +3727,11 @@ function junk(x) {
 		else if(str.startsWith("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {return;}
 		Check[str]="small_key";
+	}
+	else if (type == 2 && event.altKey) {
+		if (x.style.color == "orange") {x.style.color = "pink";}
+		else {x.style.color = "orange";}
+		return;
 	}
 	else {
 		Check[str]="junk";
@@ -6696,6 +6704,10 @@ for (i=0; i < Items.length; i++) {
 function timerControl() {
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
+}
+function circusControl() {
+	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals";}
+	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus";}
 }
 
 function toggleHint(loc) {
