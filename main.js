@@ -2728,7 +2728,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if (temp == 256) {break; }
 		temp +=1;
 		str = "text_" + key;
-		if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}
+		if (document.getElementById(str) != null) {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str) == null) {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
