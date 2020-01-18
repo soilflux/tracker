@@ -1044,8 +1044,8 @@ for (i = 1; i <= 4; i++) {
 	
 	var temp = 0;
 	var d = new Date();
-	if (paused == true) {initialTime +=250}
-	var tempTime = Math.floor((d.getTime() - initialTime)/1000);
+	if (!paused) {tempTime +=.250}
+	//var tempTime = Math.floor((d.getTime() - initialTime)/1000);
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
 	var tempSeconds = Math.floor((tempTime % 3600) % 60);
@@ -3204,6 +3204,8 @@ var tSeconds = 0;
 	Game.changetheme = 1;
 	
 	Game.has_chus = false;
+	
+	var tempTime = 0;
 	
 	var Locations = [
 		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "kokiri_song_of_storms",
