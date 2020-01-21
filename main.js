@@ -1044,8 +1044,9 @@ for (i = 1; i <= 4; i++) {
 	
 	var temp = 0;
 	var d = new Date();
-	if (!paused) {tempTime +=.250}
-	//var tempTime = Math.floor((d.getTime() - initialTime)/1000);
+	if (paused && pauseFlag) {pauseInitial = d.getTime(); pauseFlag = false;}
+	if (!paused && pauseFlag) {pauseTotal += d.getTime() - pauseInitial; pauseFlag = false;}
+	if (!paused) {var tempTime = Math.floor((d.getTime() - pauseTotal - initialTime)/1000);} else {var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)/1000);}
 	var tempHours = Math.floor(tempTime / 3600);
 	var tempMinutes = Math.floor((tempTime % 3600) / 60);
 	var tempSeconds = Math.floor((tempTime % 3600) % 60);
@@ -3063,6 +3064,9 @@ var knowMode = hookshotRequired + longshotRequired + ironsRequired + letterRequi
 
 Game.logically_accessible = 0;
 var d = new Date();
+var pauseTotal = 0;
+var pauseInitial = 0;
+var pauseFlag = false;
 var initialTime = d.getTime();
 var goodCheckPercent = 0;
 var timeStart = d.getTime();
@@ -6710,6 +6714,7 @@ for (i=0; i < Items.length; i++) {
 	ChecksPutInLogicBy[Items[i]] = [];
 	}
 function timerControl() {
+	pauseFlag = true;
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
 }
