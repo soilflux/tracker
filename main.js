@@ -4372,22 +4372,22 @@ window.onclick = function(event) {
   }
 }
 
-var modal = document.getElementById("myModal2");
+var modal2 = document.getElementById("myModal2");
 
 var btn = document.getElementById("skulls_in_logic");
 
 var span = document.getElementsByClassName("close")[1];
 
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal2.style.display = "block";
 }
 
 span.onclick = function() {
-  modal.style.display = "none";
+  modal2.style.display = "none";
 }
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modal2) {
+    modal2.style.display = "none";
   }
 }
 
