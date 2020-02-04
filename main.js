@@ -854,7 +854,7 @@ for (i = 1; i <= 4; i++) {
 		for (i = 0; i < fir_keys.length; i++) {
 			for (j = 0; j < fir_keys[i].length; j++) {
 				str = "fire" + fir_keys[i][j];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || Check[str] == "unknown" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || tCheck["fire6"] == "unknown")))) {
+				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || Check[str] == "unknown" || (Check[str] == "boss_key" && (Check["fire6"] == "small_key" || Check["fire6"] == "unknown")))) {
 					Logic.min_fire_keys = i;
 					done = true;
 					break;
