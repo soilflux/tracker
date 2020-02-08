@@ -330,6 +330,7 @@
 		<!--<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br /> -->
 		<button onClick="download()">Download Route</button><br /><br />
 		<button onclick="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br />
+		<br /><button id = "locationCodes">Location Codes</button><br /><br />
 		<small>Credits:</small><br />
 		<img src="./images/soli.png" class="pplpics" onclick = "highlight(this)"><br />
 		<img src="./images/beeluigi.png" class="pplpics" onclick = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onclick = "highlight(this)"><br />
@@ -348,53 +349,9 @@
 		<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
 		<br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
 		<br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
-		<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or xxx for nothing) into the white text area on their own line.
-		<br /> Location codes:
-		<br />	hyb = hylia bottle			
-		<br />crb = crater bean		
-		<br />grb = graveyard box		
-		<br />cob = colossus bean
-		<br />	fop = fountain peek			
-		<br />poe = poes				
-		<br />len = lens game			
-		<br />20s = 20 skulls
-		<br />	30s = 30 skulls				
-		<br />40s = 40 skulls			
-		<br />50s = 50 skulls			
-		<br />red = redead grave, 
-		<br /> 	coi = composers item		
-		<br />cos = composers song	
-		<br />sca = scarecrow			
-		<br />fla = top of fire
-		<br />	wbk = water bk				
-		<br />riv = water river		
-		<br />fin = gtg final			
-		<br />toi = toilet
-		<br /> 	dea = dead hand				
-		<br />was = wasteland 		
-		<br />pot = pot				
-		<br />dan = dancing
-		<br />	lef = left hand				
-		<br />rig = right hand		
-		<br />goh = gc hammer			
-		<br />gvh = gv hammer
-		<br /> 	cuc = cuccos				
-		<br />cra = crater song	 	
-		<br />mea = meadow song		
-		<br />1me = tot song
-		<br />	kin = king zora				
-		<br />jab = boomerang chest	
-		<br />sho = adult shooting 	
-		<br />ffl = forest floormaster
-		<br />  sfl = shadow floormaster
-		<br />3me = burning kak		
-		<br />ice = ice song			
-		<br />fou = fountain hinted
-		<br /> 	kid = saria kid			
-		<br />big = biggoron			
-		<br />mas = skull mask		
-		<br />fr2 = frogs 2
-		<br /> 	oot = oot song
+		<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
+		<br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
+       
 		
 		</p>
 		</div>
@@ -404,6 +361,60 @@
 		<div class="modal-content">
 		<span class="close">&times;</span>
 		<p id="skullsTextBlock">
+		</p>
+		</div>
+		</div>
+		
+		<div id="myModal3" class="modal">
+		<div class="modal-content">
+		<span class="close">&times;</span>
+		<p>
+		hylia bottle = hyb, rut, ruto, rutos, bottle, bot
+        <br />crater bean = crb, crater, craterbean
+        <br />graveyard box = grb, gybox, box, gybean
+        <br />colossus bean = cob, colossusbean, col, colo, colossus
+        <br />fountain peek = fop, icyp, fountainp 
+        <br />poes = poe, poes
+        <br />lens game = len, lens, lensgame, chestgame, cmg
+        <br />20 skulls = 20
+        <br />30 skulls = 30
+        <br />40 skulls = 40
+        <br />50 skulls = 50
+        <br />redead grave = red, redead
+        <br />composers item = coi, comp, composer
+        <br />composers song = cos, sun, suns
+        <br />scarecrow = sca, scarecrow, pierre
+        <br />top of fire = fla, hammer, flare, flaredancer
+        <br />water bk = wbk, waterbk
+        <br />water river = riv, river, riverch, riverchest
+        <br />gtg final = fin, gtgf, gtgfin, gtgfinal
+        <br />toilet = toi, toilet, gtgtoilet
+        <br />dead hand = dea, deadhand
+        <br />wasteland = was, waste, wasteland
+        <br />pot = pot
+        <br />dancing = dan, daru, darunia, dancin, dancing
+        <br />left hand = lef, mir, mirror, lefthand
+        <br />right hand = rig, sil, silver, silvers, righthand
+        <br />gc hammer = goh, gchammer, gcleft, maze3
+        <br />gv hammer = gvh, gvhammer
+        <br />cuccos = cuc, cucc, cucco, cuccos, chicken, chickens
+        <br />crater song = cra, bol, bolero
+        <br />meadow song = mea, min, minuet
+        <br />tot song = 1me, tot, pre, prelude
+        <br />king zora = kin, kz, kingzora
+        <br />boomerang chest = jab, jabu, boom, boomerang, rang, boo
+        <br />adult shooting = sho, archery
+		<br />horse back archery = hba, 1500
+        <br />forest floormaster = ffl, forestfloor, ffloor
+        <br />shadow floormaster = sfl, shadowfloor, shfloor
+        <br />burning kak = 3me, noc, nocturne
+        <br />ice song = ice, ser, serenade
+        <br />fountain hinted = fou, fountain, icy
+        <br />saria kid = kid, skullkid
+        <br />biggoron = big, bgs, trade
+        <br />skull mask = mas, skullmask, mask
+        <br />frogs 2 = fr2, frog, frogs, frogs2
+        <br />oot song = oot
 		</p>
 		</div>
 		</div>

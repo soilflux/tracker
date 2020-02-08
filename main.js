@@ -2831,7 +2831,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	var str = "";
 	for (var i= 0; i < hintNames.length; i++) {
 		for (var j=0; j < lines.length; j++) {
-			if (lines[j].startsWith(hintNames[i])) {
+			if (lines[j].startsWith(hintNames[i]) || lines[j].startsWith(hintNames2[i]) || lines[j].startsWith(hintNames3[i]) || lines[j].startsWith(hintNames4[i]) || lines[j].startsWith(hintNames5[i]) || lines[j].startsWith(hintNames6[i])) {
 				for (var k = 0; k < inputs.length; k++) {
 					str = inputs[k];
 					if (i < 5) {
@@ -2840,7 +2840,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 					else {
 						str = capitalizeFirstLetter(str);
 					}
-					if (lines[j].endsWith(inputs[k])) {if (document.getElementById(hintIndexes[i]) != null) {document.getElementById(hintIndexes[i]).value = str;}}
+					if (lines[j].endsWith(" " + inputs[k])) {if (document.getElementById(hintIndexes[i]) != null) {document.getElementById(hintIndexes[i]).value = str;}}
 				}
 			}
 		}
@@ -3474,9 +3474,14 @@ var tSeconds = 0;
 	var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens_of_truth", "trade", "light_arrows", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
 	var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens_of_truth", "prescription", "claim_check", "light_arrows", "lullaby", "eponas", "suns_song", "sarias", "song_of_storms", "minuet", "bolero", "requiem", "nocturne", "song_of_time"];
 	var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Hover Boots", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Lullaby", "Eponas", "Suns", "Sarias", "Song of Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Song of Time"];
-	var hintNames = ["hyb", "crb", "grb", "cob", "fop", "poe", "len", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dan", "lef", "rig", "goh", "gvh", "cuc", "cra", "mea", "1me", "kin", "jab", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
+	var hintNames = ["hyb", "crb", "grb", "cob", "fop", "poe", "len", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dan", "lef", "rig", "goh", "gvh", "cuc", "cra", "mea", "1me", "kin", "jab", "sho", "hba", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
+	var hintNames2 = ["rut", "crater", "gybox", "colossusbean", "fop", "poes", "lens", "20", "redead", "comp", "cos", "scarecrow", "hammer", "waterbk", "river", "gtgf", "toilet", "deadhand", "waste", "pot", "daru", "left", "right", "gchammer", "gvhammer", "cucc", "bol", "min", "tot", "kz", "jabu", "shooting", "1500", "forestfloor", "shadowfloor", "noc", "ser", "fountain", "skullkid", "bgs", "skullmask", "30", "40", "50", "frog", "oot"];
+	var hintNames3 = ["ruto", "craterbean", "box", "col", "fop", "poe", "lensgame", "20s", "red", "composer", "cos", "pierre", "flare", "wbk", "riverch", "gtgfin", "gtgtoilet", "dea", "wasteland", "pot", "darunia", "mir", "sil", "gcleft", "gvh", "cucco", "bolero", "minuet", "pre", "kingzora", "boom", "archery", "150", "ffloor", "shfloor", "nocturne", "serenade", "icy", "kid", "trade", "mask", "30s", "40s", "50s", "frogs", "oot"];
+	var hintNames4 = ["bottle", "crb", "gybean", "colo", "fop", "poe", "chestgame", "20s", "red", "coi", "cos", "sca", "flaredancer", "wbk", "riverchest", "gtgfinal", "toi", "dea", "wl", "pot", "dancin", "mirror", "silver", "maze3", "gvh", "cuccos", "cra", "mea", "prelude", "kin", "boomerang", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "frogs2", "oot"];
+	var hintNames5 = ["bot", "crb", "grb", "colossus", "fop", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dancing", "lefthand", "silvers", "maze3!", "gvh", "chickens", "cra", "mea", "1me", "kin", "rang", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
+	var hintNames6 = ["bot", "crb", "grb", "colossus", "fop", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dancing", "lefthand", "righthand", "maze3!", "gvh", "chicken", "cra", "mea", "1me", "kin", "boo", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
 	var hintIndexes = ["hylia_bottle", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "poes", "market_lens_game", "tokens_20", "suns_grave", "fire_grave", "sunsSpot", "fire12", "fire15", "water10","water8", "gtg21", "gtg22", "well11", "wasteland", "goron_pot", "goron_dance", "spirit7", "spirit14", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest8", "shadow17", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater", "tokens_30", "tokens_40", "tokens50", "frogs_2", "oot"];
-	var inputs = ["xxx", "bom", "boo", "bot", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor"];
+	var inputs = ["x", "bom", "boo", "bot", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor"];
 	
 	Logic.bottle = false;
 	Logic.big_poe = false;
@@ -4420,6 +4425,25 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal2) {
     modal2.style.display = "none";
+  }
+}
+
+var modal3 = document.getElementById("myModal3");
+
+var btn = document.getElementById("locationCodes");
+
+var span = document.getElementsByClassName("close")[2];
+
+btn.onclick = function() {
+  modal3.style.display = "block";
+}
+
+span.onclick = function() {
+  modal3.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none";
   }
 }
 
