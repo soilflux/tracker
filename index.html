@@ -312,20 +312,20 @@
 		<input id="nocturneSpot" class= "check_input" > </input><small id="text_nocturneSpot" class="check_text" onclick = "toggleHint(this)">3Med</small><br id= "br_nocturneSpot" />
 		<input id="oot" class= "check_input" > </input><small id="text_oot" class="check_text" onclick = "toggleHint(this)">OoT</small><br id= "br_oot" /><br />
 		
-		<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><span id = "for_med" class = "greendot" onclick = "highlight(this)"></span> <br />
+		<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
 		<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
-		<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="4" cols="17"></textarea><br /><br />
+		<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="10" cols="18" id = "hintInput"></textarea><br /><br />
 		
 		
 		
 		<br /><br />
 		<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child_1f9d2.png"></img><br /> 
-		<img id="chuButton" onclick="enableChus()" class="buttonpics" src="./images/chux.png"></img><br /><br />
 		
 		<small id="skulls_in_logic" class="check_text">Skulls: </small>
-		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><button id="myBtn">halp (Updated Feb 4)</button><br />
-		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="myBtn">halp (Updated Feb 8)</button><br />
+		<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />	
 		<button id="circusControl" onclick="circusControl()">Unleash Animals</button><br /><br />
+		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><br />
 		<!--<button id="safetyButton" onclick="safetyLevel()">Be Safe</button><br /> -->
 		<!--<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br /> -->
 		<button onClick="download()">Download Route</button><br /><br />
@@ -346,9 +346,55 @@
     <br /><b>Left click on the song check text, or the summary text on the right to toggle if you've found a hint for that check.</b>
 		<br /><br /> Input stones and forest+fire+water medallion into the top right two boxes. Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
 		<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
-    <br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
-    <br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
-		
+		<br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
+		<br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
+		<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or xxx for nothing) into the white text area on their own line.
+		<br /> Location codes:
+		<br />	hyb = hylia bottle			
+		<br />crb = crater bean		
+		<br />grb = graveyard box		
+		<br />cob = colossus bean
+		<br />	fop = fountain peek			
+		<br />poe = poes				
+		<br />len = lens game			
+		<br />20s = 20 skulls
+		<br />	30s = 30 skulls				
+		<br />40s = 40 skulls			
+		<br />50s = 50 skulls			
+		<br />red = redead grave, 
+		<br /> 	coi = composers item		
+		<br />cos = composers song	
+		<br />sca = scarecrow			
+		<br />fla = top of fire
+		<br />	wbk = water bk				
+		<br />riv = water river		
+		<br />fin = gtg final			
+		<br />toi = toilet
+		<br /> 	dea = dead hand				
+		<br />was = wasteland 		
+		<br />pot = pot				
+		<br />dan = dancing
+		<br />	lef = left hand				
+		<br />rig = right hand		
+		<br />goh = gc hammer			
+		<br />gvh = gv hammer
+		<br /> 	cuc = cuccos				
+		<br />cra = crater song	 	
+		<br />mea = meadow song		
+		<br />1me = tot song
+		<br />	kin = king zora				
+		<br />jab = boomerang chest	
+		<br />sho = adult shooting 	
+		<br />ffl = forest floormaster
+		<br />  sfl = shadow floormaster
+		<br />3me = burning kak		
+		<br />ice = ice song			
+		<br />fou = fountain hinted
+		<br /> 	kid = saria kid			
+		<br />big = biggoron			
+		<br />mas = skull mask		
+		<br />fr2 = frogs 2
+		<br /> 	oot = oot song
 		
 		</p>
 		</div>
