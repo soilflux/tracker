@@ -442,10 +442,9 @@ overflow: hidden;
 	margin-bottom:3px;
 	opacity: 1;
 }
-#chuButton {
-	top:385px;
-	left:913px;
-	position: absolute;
+#timerControl {
+ top:900px;
+ position: absolute;
 }
 #skulls_in_logic {
 	top:10px;
