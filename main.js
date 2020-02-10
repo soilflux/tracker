@@ -2834,13 +2834,14 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 			if (lines[j].startsWith(hintNames[i]) || lines[j].startsWith(hintNames2[i]) || lines[j].startsWith(hintNames3[i]) || lines[j].startsWith(hintNames4[i]) || lines[j].startsWith(hintNames5[i]) || lines[j].startsWith(hintNames6[i])) {
 				for (var k = 0; k < inputs.length; k++) {
 					str = inputs[k];
-					if (i < 5) {
+					if (i < 6) {
 						str = capitalizeThirdLetter(str);
 					}
 					else {
 						str = capitalizeFirstLetter(str);
 					}
-					if (lines[j].endsWith(" " + inputs[k])) {if (document.getElementById(hintIndexes[i]) != null) {document.getElementById(hintIndexes[i]).value = str;}}
+					if (k == 0) { if (lines[j].endsWith(" " + inputs[k]) && document.getElementById(hintIndexes[i]) != null) {document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown'));} }
+					else {if (lines[j].endsWith(" " + inputs[k])) {if (document.getElementById(hintIndexes[i]) != null) {document.getElementById(hintIndexes[i]).value = str;}}}
 				}
 			}
 		}
