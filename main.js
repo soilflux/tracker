@@ -2783,9 +2783,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		}
 		else {
 			if (hideInaccessible) {
-				document.getElementById(str).style.display = "none";
-				document.getElementById(key).style.display = "none";
-				document.getElementById(str2).style.display = "none";
+				if (document.getElementById(str) != null) {document.getElementById(str).style.display = "none";}
+				if (document.getElementById(key) != null) {document.getElementById(key).style.display = "none";}
+				if (document.getElementById(str2) != null) {document.getElementById(str2).style.display = "none";}
 			}
 			document.getElementById(str).className= "ool_check_text";
 			document.getElementById(str).style.color ="black";
