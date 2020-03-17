@@ -237,6 +237,9 @@ overflow: hidden;
 .no_span {
 	
 }
+#notes {
+	color: white;
+}
 .full_span{
 	display:inline-block;
 	width:40px;

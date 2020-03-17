@@ -1973,6 +1973,9 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		
 	}
 }
+
+	if(document.getElementById("forest_medallion").style.opacity < 1) {Logic.forest_medallion = false;} else  {Logic.forest_medallion = true;}
+
 	if (document.getElementById("text_" + Logic.forest_medallion_location) != null) {if (document.getElementById("text_" + Logic.forest_medallion_location).style.opacity == 1) {document.getElementById("forest_medallion").style.opacity=.2;}}
 	if (document.getElementById("text_" + Logic.forest_medallion_location) != null) {if (document.getElementById("text_" + Logic.forest_medallion_location).style.opacity == .2) {document.getElementById("forest_medallion").style.opacity=1;}}
 	if (document.getElementById("text_" + Logic.fire_medallion_location) != null) {if (document.getElementById("text_" + Logic.fire_medallion_location).style.opacity == 1) {document.getElementById("fire_medallion").style.opacity=.2;}}
