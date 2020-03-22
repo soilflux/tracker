@@ -1084,7 +1084,6 @@ if (str.length > 3) {
 */
 	
 document.getElementById("text_next").innerHTML = next_check(lastCheck);
-var temptext2 = "";	
 var peeked = false;
 for (const key of keys) {
 	if (temp == 256) {break; }
@@ -2844,6 +2843,8 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 						str = capitalizeFirstLetter(str);
 					}
 					if (k == 0) { if (lines[j].endsWith(" " + inputs[k]) && document.getElementById(hintIndexes[i]) != null) {document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown'));} }
+					else if (k == 1) { if (lines[j].endsWith(" " + inputs[k]) && document.getElementById(hintIndexes[i]) != null) {thisIsAKey = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsAKey = false; } }
+					else if (k == 2) { if (lines[j].endsWith(" " + inputs[k]) && document.getElementById(hintIndexes[i]) != null) {thisIsABossKey = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsABossKey = false; } }
 					else {if (lines[j].endsWith(" " + inputs[k])) {if (document.getElementById(hintIndexes[i]) != null) {document.getElementById(hintIndexes[i]).value = str;}}}
 				}
 			}
@@ -3001,7 +3002,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 		if (Game.can_ride_shadow_boat){Game.logically_accessible += 3*.72*mult3}
 		if (Game.can_beat_shadow_boss) {Game.logically_accessible += 1*mult4}
 	*/
-	
+	Game.logically_accessible = Number(Game.logically_accessible);
 	Game.logically_accessible=Game.logically_accessible.toFixed(0);
 	d = new Date();
 	timeFuture = d.getTime();
@@ -3056,7 +3057,9 @@ var woth2Locations = [];
 var woth3Locations = [];
 var woth4Locations = [];
 var woth5Locations = [];
-
+var thisIsAKey = false;
+var thisIsABossKey = false;
+var temptext2 = "";
 
 
 var age = "child";
@@ -3485,7 +3488,7 @@ var tSeconds = 0;
 	var hintNames5 = ["bot", "atz", "crb", "grb", "colossus", "fop", "hyliasun", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dancing", "lefthand", "silvers", "maze3!", "gvh", "chickens", "cra", "mea", "1me", "kin", "rang", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
 	var hintNames6 = ["bot", "atz", "crb", "grb", "colossus", "fop", "hyliasun", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "pot", "dancing", "lefthand", "righthand", "maze3!", "gvh", "chicken", "cra", "mea", "1me", "kin", "boo", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2", "oot"];
 	var hintIndexes = ["hylia_bottle", "hyrule_tektite_grotto", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "hylia_sun_shoot", "poes", "market_lens_game", "tokens_20", "suns_grave", "fire_grave", "sunsSpot", "fire12", "fire15", "water10","water8", "gtg21", "gtg22", "well11", "wasteland", "goron_pot", "goron_dance", "spirit7", "spirit14", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest8", "shadow17", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater", "tokens_30", "tokens_40", "tokens_50", "frogs_2", "oot"];
-	var inputs = ["x", "bom", "boo", "bot", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
+	var inputs = ["x", "sk", "bk", "bom", "boo", "bot", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 	
 	Logic.bottle = false;
 	Logic.big_poe = false;
@@ -3754,7 +3757,7 @@ function junk(x) {
 		Game.checks_remaining -= 1;
 	}
 	
-	else if(type == 1 || (type == 0 && event.altKey)) {
+	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey) {
 		if(str.startsWith("forest") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
 		else if(str.startsWith("fire") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
 		else if(str.startsWith("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
@@ -3762,10 +3765,11 @@ function junk(x) {
 		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
 		else if(str.startsWith("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {return;}
+		temptext2 += Names[temp - 1].split(': ')[1] + ":  Boss Key" + "<br />";
 		Check[str]="boss_key";
 	}
 	
-	else if (type == 2 && !event.altKey) {
+	else if ((type == 2 && !event.altKey) || thisIsAKey) {
 		if(str.startsWith("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
 		else if(str.startsWith("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
 		else if(str.startsWith("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
@@ -3780,6 +3784,7 @@ function junk(x) {
 		return;
 		}
 		Check[str]="small_key";
+		temptext2 += Names[temp - 1].split(': ')[1] + ":  Small Key" + "<br />";
 	}
 	else if (type == 2 && event.altKey) {
 		if (x.style.color == "orange") {x.style.color = "pink";}
