@@ -1359,6 +1359,7 @@ for (var i = 1; i <= 34; i++) {
 	AreaWotHAge[i] = 0;	
 	}
 }
+
 if (!WotHItems.includes("forest_medallion")) { WotHItems.push("forest_medallion");}
 if (!WotHItems.includes("fire_medallion")) { WotHItems.push("fire_medallion");}
 if (!WotHItems.includes("water_medallion")) { WotHItems.push("water_medallion");}
@@ -1374,15 +1375,20 @@ if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
 	if (ChecksLockedBy.magic1.includes(Location.magic2)) {if (!WotHItems.includes("magic1")) {WotHItems.push("magic1")}}
 	if (ChecksLockedBy.magic2.includes(Location.magic1)) {if (!WotHItems.includes("magic2")) {WotHItems.push("magic2")}}
 	for (var i = 0; i<Items.length; i++) {
-		if (Items[i] != null) {
 			for (var j = 0; j<WotHItems.length; j++){
 				if (Location[WotHItems[j]] != null) {
 					if (ChecksLockedBy[Items[i]].includes(Location[WotHItems[j]])) {
+						
 							if (!WotHItems.includes(Items[i])) {WotHItems.push(Items[i]);}
 					}
 				}
 			}
-		}
+	}
+	var temp = 6;
+	document.getElementById("confirmed_logically_required").innerHTML = "";
+	while (temp < WotHItems.length) {
+	document.getElementById("confirmed_logically_required").innerHTML += "<br />" + ItemNames[Items.indexOf(WotHItems[temp])]; 
+		temp++;
 	}
 	for (var i = 1; i <= 34; i++) {
 		
@@ -1441,7 +1447,7 @@ if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
 			if (Location.dins_fire != null && (Hinted[Location.dins_fire] == false || typeof Hinted[Location.dins_fire] == "undefined")) {if (Locations.indexOf(Location.dins_fire) >= AreaIndexes[i-1] && Locations.indexOf(Location.dins_fire) < AreaIndexes[i]) {if (WotHItems.includes("dins_fire")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Din's Fire"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.dins_fire.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("dins_fire"); }} 	
 			if (Location.fire_arrows != null && (Hinted[Location.fire_arrows] == false || typeof Hinted[Location.fire_arrows] == "undefined")) {if (Locations.indexOf(Location.fire_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.fire_arrows) < AreaIndexes[i]) {if (WotHItems.includes("fire_arrows")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Fire Arrows "; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.fire_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("fire_arrows"); }} 	
 			if (Location.lens_of_truth != null && (Hinted[Location.lens_of_truth] == false || typeof Hinted[Location.lens_of_truth] == "undefined")) {if (Locations.indexOf(Location.lens_of_truth) >= AreaIndexes[i-1] && Locations.indexOf(Location.lens_of_truth) < AreaIndexes[i]) {if (WotHItems.includes("lens_of_truth")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lens"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lens_of_truth.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("lens_of_truth"); }} 	
-			if (Location.light_arrows != null && (Hinted[Location.light_arrows] == false || typeof Hinted[Location.light_arrows] == "undefined")) {if (Locations.indexOf(Location.light_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.light_arrows) < AreaIndexes[i]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Light Arrows"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.light_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("light_arrows"); }} 	
+			//if (Location.light_arrows != null && (Hinted[Location.light_arrows] == false || typeof Hinted[Location.light_arrows] == "undefined")) {if (Locations.indexOf(Location.light_arrows) >= AreaIndexes[i-1] && Locations.indexOf(Location.light_arrows) < AreaIndexes[i]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Light Arrows"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.light_arrows.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("light_arrows"); }} 	
 			if (Location.prescription != null && (Hinted[Location.prescription] == false || typeof Hinted[Location.prescription] == "undefined")) {if (Locations.indexOf(Location.prescription) >= AreaIndexes[i-1] && Locations.indexOf(Location.prescription) < AreaIndexes[i]) {if (WotHItems.includes("prescription")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Prescription"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.prescription.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("prescription"); }} 	
 			if (Location.claim_check != null && (Hinted[Location.claim_check] == false || typeof Hinted[Location.claim_check] == "undefined")) {if (Locations.indexOf(Location.claim_check) >= AreaIndexes[i-1] && Locations.indexOf(Location.claim_check) < AreaIndexes[i]) {if (WotHItems.includes("claim_check")) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1;} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Claim Check"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.claim_check.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push("claim_check"); }} 	 
 			if (Location.lullaby != null && (Hinted[Location.lullaby] == false || typeof Hinted[Location.lullaby] == "undefined")) {if (Locations.indexOf(Location.lullaby) == SongIndexes[i-1] || Locations.indexOf(Location.lullaby) == SongIndexes2[i-1]) {document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "woth_item_text"; tempnumber3 +=1; document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "Lullaby"; for (var j = 0; j < Items.length; j++) {if (ChecksLockedBy.lullaby.includes(Location[Items[j]])){document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += ", " + ItemNames[j];}} document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1;}}
@@ -6744,7 +6750,7 @@ for (i=0; i < Items.length; i++) {
 	}
 function slowUpdate() {
 	for (i=0; i < Items.length; i++) {
-	if (Location[Items[i]] != null ) {ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);}
+	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
 	}
 	for (i=0; i < Items.length; i++) {
 	if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
