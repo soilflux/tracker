@@ -446,7 +446,7 @@ overflow: hidden;
 	opacity: 1;
 }
 #timerControl {
- top:900px;
+ top:970px;
  position: absolute;
 }
 #skulls_in_logic {
@@ -460,7 +460,7 @@ overflow: hidden;
 	font-size:42px;
 	color: white;
 	position: absolute;
-	top:770px;
+	top:850px;
 	right:960px;
 	font-family: calibri;
 }
