@@ -1387,8 +1387,10 @@ if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
 	var temp = 6;
 	document.getElementById("confirmed_logically_required").innerHTML = "";
 	while (temp < WotHItems.length) {
-	document.getElementById("confirmed_logically_required").innerHTML += "<br />" + ItemNames[Items.indexOf(WotHItems[temp])]; 
-		temp++;
+	if (!Known[WotHItems[temp]]) {
+		document.getElementById("confirmed_logically_required").innerHTML += "<br />" + ItemNames[Items.indexOf(WotHItems[temp])]; 
+	}
+	temp++;
 	}
 	for (var i = 1; i <= 34; i++) {
 		
