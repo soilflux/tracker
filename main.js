@@ -2377,7 +2377,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.richard = true;
 	Location_Access.market_bowling_1 = Game.bomb_bag1;
 	Location_Access.market_bowling_2 = Game.bomb_bag1;
-	Location_Access.market_lens_game = Game.can_see;
+	Location_Access.market_lens_game = true;
 	Location_Access.poes= (Game.bow1 && Game.eponas && (Game.bottle1 || Game.can_enter_jabu)) || Game.big_poe;
 	Location_Access.dins_fairy = (Game.bomb_bag1 || Game.has_chus) && Game.lullaby;
 	Location_Access.g_fairy = Game.golden_gauntlets && Game.lullaby;
@@ -2500,7 +2500,7 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.water2 = Game.can_enter_water;
 	Location_Access.water3 = Game.can_enter_water && Game.lullaby && (Game.bomb_bag1 || Game.has_chus);
 	Location_Access.water4 = Game.can_enter_water && Game.lullaby && (Game.bow1 || Game.can_use_dins);
-	Location_Access.water5 = Game.can_enter_water && Game.lullaby && Game.bow1 && Game.goron_bracelet && (Game.hover_boots || Game.longshot);
+	Location_Access.water5 = Game.can_enter_water && Game.lullaby && Game.bow1 && Game.goron_bracelet;
 	Location_Access.water6 = Game.middle_water;
 	Location_Access.water7 = Game.current_water_keys >= 2 && Game.lullaby;
 	Location_Access.water8 = Game.current_water_keys >= 2 && Game.lullaby && Game.song_of_time && Game.bow1;
@@ -2511,8 +2511,8 @@ if((tempstring.length == 6 && document.getElementById("markStones") == null) || 
 	Location_Access.spirit2 = Game.requiem && (Game.slingshot1 || Game.boomerang || Game.has_chus);
 	Location_Access.spirit3 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
 	Location_Access.spirit4 = Game.current_spirit_keys >= 1 && ((Game.projectile_child && Game.requiem) || (Game.projectile_adult && Game.silver_gauntlets));
-	Location_Access.spirit5 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.silver_gauntlets));
-	Location_Access.spirit6 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (Game.can_use_fire && Game.silver_gauntlets));
+	Location_Access.spirit5 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (((Game.can_use_fire || Game.bow) && Game.silver_gauntlets));
+	Location_Access.spirit6 = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag1 || Game.has_chus)) || (((Game.can_use_fire || Game.bow) && && Game.silver_gauntlets));
 	Location_Access.spirit7 = Game.current_spirit_keys >= 2;
 	Location_Access.spirit8 = Game.can_enter_adult_spirit && Game.hookshot && Game.lullaby;
 	Location_Access.spirit9 = Game.can_enter_adult_spirit && (Game.bow1 || Game.hookshot || (Game.bomb_bag1 || Game.has_chus));
