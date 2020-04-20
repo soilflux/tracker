@@ -3735,6 +3735,7 @@ var tSeconds = 0;
 	var textBlock = '';
 	var circus = false;
 	var hideInaccessible = true;
+	var coopmode = false;
 	if (localStorage.getItem("hideInaccessible") != null) {if (localStorage.getItem("hideInaccessible") == "false"){hideInaccessible = false; document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible"};}
 	for (var i = 0; i < 244; i++) {
 		Check[Location[i]] = "unknown";
@@ -3813,13 +3814,22 @@ function junk(x) {
 		var child = document.getElementById(delete1);
 		parent.removeChild(child);
 	}
-	if (document.getElementById(delete2) !== null) {
-		var child = document.getElementById(delete2);
-		parent.removeChild(child);
-	}	
-	if (document.getElementById(delete3) !== null) {
-		var child = document.getElementById(delete3);
-		parent.removeChild(child);
+	if (coopmode && type == 1) {
+		document.getElementById("text_" + str).style.className = "bk";
+	}
+	if (coopmode && type == 2) {
+		document.getElementById("text_" + str).style.className = "sk";
+	}
+	
+	if (!coopmode || type == 0){
+		if (document.getElementById(delete2) !== null) {
+			var child = document.getElementById(delete2);
+			parent.removeChild(child);
+		}	
+		if (document.getElementById(delete3) !== null) {
+			var child = document.getElementById(delete3);
+			parent.removeChild(child);
+		}
 	}
 	if (!hinted) {
 		lastCheck = str;
@@ -6775,6 +6785,10 @@ function circusControl() {
 function inaccessibleControl() {
 	if (hideInaccessible) {hideInaccessible = false; localStorage.setItem("hideInaccessible", hideInaccessible); document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible";}
 	else {hideInaccessible = true; localStorage.setItem("hideInaccessible", hideInaccessible); document.getElementById("inaccessibleControl").innerHTML = "Show Inaccessible";}
+}
+function coopControl() {
+	if (coopmode) {coopmode = false; document.getElementById("coopControl").innerHTML = "coopmode";}
+	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude";}
 }
 function toggleHint(loc) {
 	var location = "";
