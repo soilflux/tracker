@@ -1,3 +1,22 @@
+function weird_routing_stuff() {
+	var str = document.getElementById("next").value;
+	if (str.length == 3) {
+		for (var i = 0; i < Names.length; i++) {
+			if (document.getElementById("text_next").innerHTML == Names[i]) {
+				if (document.getElementById(Locations[i]).style.display == "none") {
+				document.getElementById("next").value = "";
+				str = "";
+				lastCheck = Locations[i];
+				}
+				else {
+				document.getElementById(Locations[i]).value = str;
+				}
+			}
+		}
+	}
+	
+	document.getElementById("text_next").innerHTML = next_check(lastCheck);
+}
 function hint() {
 	document.getElementById("next").style.display = "none"; document.getElementById("text_next").style.color = "pink";
 }

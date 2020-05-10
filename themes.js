@@ -6,7 +6,7 @@ function dark_soli() {
 	Game.bow_img= "./images/bow505050.png";
 	Game.goron_bracelet_img= "./images/strength1505050.png";
 	Game.lens_img = "./images/lens505050.png";
-	Game.golden_gauntlets_img = "./images/strength3505050.png";
+	Game.strength3_img = "./images/strength3505050.png";
 	Game.hammer_img= "./images/ham505050.png";
 	Game.iron_boots_img= "./images/ironboots505050.png";
 	Game.silver_scale_img=  "./images/silverscale505050.png"
@@ -122,7 +122,7 @@ function dark_soli() {
 	document.getElementById("silverscaleimg").src= Game.silver_scale_img;
 	document.getElementById("bottleimg").src= Game.bottle_img;
 	document.getElementById("slingshotimg").src= Game.slingshot_img;
-	document.getElementById("goldengauntletsimg").src= Game.golden_gauntlets_img;
+	document.getElementById("goldengauntletsimg").src= Game.strength3_img;
 	
 	var all = document.getElementsByClassName('songpics');
 	for (var i = 0; i < all.length; i++) {
@@ -143,7 +143,7 @@ function dark_normie() {
 	Game.bow_img= "./normal/bow.png";
 	Game.goron_bracelet_img= "./normal/strength1.png";
 	Game.lens_img = "./normal/lens.png";
-	Game.golden_gauntlets_img = "./normal/strength3.png";
+	Game.strength3_img = "./normal/strength3.png";
 	Game.hammer_img= "./normal/hammer.png";
 	Game.iron_boots_img= "./normal/ironboots.png";
 	Game.silver_scale_img=  "./normal/silverscale.png"
@@ -158,7 +158,7 @@ function dark_normie() {
 	Game.fire_arrows_img= "./normal/firearrows.png";
 	Game.farores_wind_img = "./normal/farores.png";
 	Game.bottle_img = "./normal/bottle.png";
-	Game.golden_gauntlets_img = "./normal/strength3.png";
+	Game.strength3_img = "./normal/strength3.png";
 	Game.lens_img = "./normal/lens.png";
 	Game.slingshot_img = "./normal/slingshot.png";
 	Game.lullaby_img = "./normal/lullaby.png";
@@ -393,6 +393,21 @@ function light_soli() {
 		document.getElementById("bottleimg").src="https://i.imgur.com/EU8ScXb.png";
 		document.getElementById("firearrowsimg").src="https://i.imgur.com/qvfA9cA.png";
 		document.getElementById("silverscaleimg").src="https://i.imgur.com/CG4IIo0.png";
+}
+
+function handleThemes() {
+	if(Game.theme == "dark" && Game.themeChange) {
+		if (Person.type == "soli") {dark_soli();}
+		else if (Person.type == "normie") {dark_normie();}
+		else if (Person.type = "tagnia") {dark_tagnia();}	
+		dark_theme();
+	}
+	if(Game.theme == "light" && Game.themeChange) {
+		if (Person.type == "soli") {light_soli();}
+		light_theme();
+	}
+	
+	if (Game.changetheme == 1) {Game.themeChange = true; Game.changetheme = 0;}
 }
 
 function dark_theme() {
