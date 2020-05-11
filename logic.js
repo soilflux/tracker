@@ -70,6 +70,7 @@ function refresh_logic_for_stuff() {
 	if(Known.stone_of_agony == true) {Logic.stone_of_agony = Location_Logic[Location.stone_of_agony];} else{Logic.stone_of_agony = false;}
 	if(Known.prescription == true) {Logic.prescription = Location_Logic[Location.prescription];} else{Logic.prescription = false;}
 	if(Known.claim_check == true) {Logic.claim_check = Location_Logic[Location.claim_check];} else{Logic.claim_check = false;}
+	Logic.trade = Logic.claim_check || Logic.prescription;
 	
 	if(Known.light_arrows == true) {Logic.light_arrows = Location_Logic[Location.light_arrows];}
 	
@@ -86,18 +87,16 @@ function refresh_logic_for_stuff() {
 	if(Known.nocturne == true) {Logic.nocturne = Location_Logic[Location.nocturne]; }
 	if(Known.prelude == true) {Logic.prelude = Location_Logic[Location.prelude]; }
 	
-	if (Game.hookshot1 && Game.hookshot2) {
-		Game.longshot = true;
-	}
-	if (Game.hookshot1 || Game.hookshot2) {
-		Game.hookshot = true;
-	}
+	Game.trade = Game.prescription || Game.claim_check;
+	
+	Game.longshot = Game.hookshot1 && Game.hookshot2;
+	Game.hookshot = Game.hookshot1 || Game.hookshot2;
 
-	if (Game.strength1 && Game.strength2 && Game.strength3) {Game.golden_gauntlets = true;}
+	Game.golden_gauntlets = Game.strength1 && Game.strength2 && Game.strength3;
 	if (Game.strength1 && Game.strength3) {Game.silver_gauntlets = true;}
 	if (Game.strength2 && Game.strength3) {Game.silver_gauntlets = true;}
 	if (Game.strength1 && Game.strength2) {Game.silver_gauntlets = true;}
-	if (Game.strength1 || Game.strength2 || Game.strength3) {Game.goron_bracelet = true;}
+	Game.goron_bracelet = Game.strength1 || Game.strength2 || Game.strength3;
 	
 	Logic.forest_boss_key = Logic.forced_forest_boss_key;
 	Logic.fire_boss_key = Logic.forced_fire_boss_key;

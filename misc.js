@@ -39,7 +39,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.strength3_img.substring(2))){Game.strength3 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = true;}
@@ -76,7 +76,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.strength3_img.substring(2))){Game.golden_gauntlets = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = false;}
@@ -396,4 +396,32 @@ function timer_stuff() {
 	if (tempHours > 0 && tempMinutes == 0) {document.getElementById("timer").innerHTML += "00:"} if (tempMinutes > 0) {if (tempMinutes < 10 && tempHours > 0) {document.getElementById("timer").innerHTML += "0";} document.getElementById("timer").innerHTML += tempMinutes + ":";}
 	if (tempSeconds < 10 && (tempMinutes > 0 || tempHours > 0)) {document.getElementById("timer").innerHTML += "0";}
 	document.getElementById("timer").innerHTML += tempSeconds;
+}
+
+document.onkeydown = function(e) {
+	if (e.ctrlKey && e.which == 90) {
+		Undo();
+	}
+}
+
+function Undo() {
+	if (Check[lastCheck[lastCheck.length-1]] != "unknown" && Check[lastCheck[lastCheck.length-1]] != "small_key" && Check[lastCheck[lastCheck.length-1]] != "boss_key")
+	{
+		Game.checks_remaining += 1;
+		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
+			document.getElementById("trade_location").innerHTML = "Trade -> ";
+			document.getElementById("trade_location").style.color = "black";
+		}
+		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
+			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML.split('-&gt; ')[0] + "-> ";
+			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").style.color = "black";
+		}
+	}
+	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
+	Game[Check[lastCheck[lastCheck.length-1]]] = false;
+	Known[Check[lastCheck[lastCheck.length-1]]] = false;
+	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
+	Check[lastCheck[lastCheck.length-1]] = "unknown";
+	lastCheck.pop();
+	Update();Update();Update();
 }
