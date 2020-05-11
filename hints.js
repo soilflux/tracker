@@ -167,7 +167,8 @@ function woth_and_barren_processing() {
 		document.getElementById("confirmed_logically_required").innerHTML = "";
 		while (temp < WotHItems.length) {
 		if (!Known[WotHItems[temp]]) {
-			document.getElementById("confirmed_logically_required").innerHTML += "<br />" + ItemNames[Items.indexOf(WotHItems[temp])]; 
+			if (document.getElementById("confirmed_logically_required").innerHTML != "") {document.getElementById("confirmed_logically_required").innerHTML += ", ";}
+			document.getElementById("confirmed_logically_required").innerHTML += ItemNames[Items.indexOf(WotHItems[temp])];
 		}
 		temp++;
 		}
