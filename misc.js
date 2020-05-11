@@ -405,8 +405,33 @@ document.onkeydown = function(e) {
 }
 
 function Undo() {
+	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.current_forest_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.current_fire_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.current_water_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.current_spirit_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.current_shadow_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.current_gtg_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.current_well_keys -= 1;}
+	}
+	
+	if (Check[lastCheck[lastCheck.length-1]] == "boss_key") {
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.forest_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.fire_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.water_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.spirit_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.shadow_boss_key = false;}
+	}
+
 	if (Check[lastCheck[lastCheck.length-1]] != "unknown" && Check[lastCheck[lastCheck.length-1]] != "small_key" && Check[lastCheck[lastCheck.length-1]] != "boss_key")
 	{
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.forest_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.fire_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.water_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.spirit_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.shadow_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.gtg_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.well_checks_remaining += 1;}
 		Game.checks_remaining += 1;
 		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
 			document.getElementById("trade_location").innerHTML = "Trade -> ";
