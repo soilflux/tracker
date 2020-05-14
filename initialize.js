@@ -60,6 +60,20 @@ var safetyMod = 1;
 var progressivePool = 30;
 var progressiveAvail = 5;
 
+var dekuPlacement = "unknown";
+var dodongosPlacement = "unknown";
+var jabuPlacement = "unknown";
+var forestPlacement = "unknown";
+var firePlacement = "unknown";
+var waterPlacement = "unknown";
+var spiritPlacement = "unknown";
+var shadowPlacement = "unknown";
+var pocketPlacement = "unknown";
+
+var dungIconSources = ["./normal/emerald.png", "./normal/ruby.png", "./normal/sapphire.png", "./normal/forest_medallion.png", "./normal/fire_medallion.png", "./normal/water_medallion.png", "./normal/shadow_medallion.png", "./normal/spirit_medallion.png", "./normal/light_medallion.png"];
+document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
+document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
+
 var dekuRequired = .73;
 var dodongosRequired = .73;
 var jabuRequired = .73;
@@ -106,13 +120,19 @@ var tSeconds = 0;
 	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 	Logic.brackets = false;
 	
-	document.getElementById("text_gen_med1").style.color = "yellow";
-	document.getElementById("text_gen_med2").style.color = "yellow";
-	document.getElementById("text_gen_med3").style.color = "yellow";
+	document.getElementById("text_dung7").style.color = "yellow";
+	document.getElementById("text_dung8").style.color = "yellow";
+	document.getElementById("text_dung9").style.color = "yellow";
 	
 	Game.unknown = false;
 	Game.small_key = true;
 	Game.boss_key = true;
+	
+	Game.emerald = false;
+	Game.ruby = false;
+	Game.sapphire = false;
+	
+	var hasChangedMedal = false;
 	
 	Game.kokiri_sword = false;
 	Game.farores_wind = false;

@@ -35,25 +35,25 @@ function dark_soli() {
 	Game.nocturne_img = "./images/nocturne505050.png";
 	Game.prelude_img = "./images/prelude505050.png";
 	Game.bombchu_img = "./images/chux.png"
-	if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
-	if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
-	if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
-	if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
-	if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
-	if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
-	if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
-	if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
-	if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
-	if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
-	if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
-	if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
-	if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
-	if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
-	if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
-	if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
-	if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
-	if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
-	if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_bag_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
+	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
+	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
+	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
+	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
+	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
+	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
+	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
+	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
+	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
+	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_bag_img; }
+	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
+	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
+	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_meter_img; }
+	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
+	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_bag_img; }
+	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
 	var temp = 0;
 	for (const key of Object.keys(Location_Logic)) {
 		if (temp == 256) {break; }	
@@ -65,12 +65,12 @@ function dark_soli() {
 		document.getElementById("woth_info").style.left="956px";
 		document.getElementById("timer").style.left="800px";
 		document.getElementById("skulls_in_logic").style.left="867px";
-		document.getElementById("forest_medallion").style.left="928px";
-		document.getElementById("fire_medallion").style.left="928px";
-		document.getElementById("water_medallion").style.left="928px";
-		document.getElementById("gen1_medallion").style.left="928px";
-		document.getElementById("gen2_medallion").style.left="928px";
-		document.getElementById("gen3_medallion").style.left="928px";
+		document.getElementById("dung4_icon").style.left="928px";
+		document.getElementById("dung5_icon").style.left="928px";
+		document.getElementById("dung6_icon").style.left="928px";
+		document.getElementById("dung7_icon").style.left="928px";
+		document.getElementById("dung8_icon").style.left="928px";
+		document.getElementById("dung9_icon").style.left="928px";
 		if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
 		if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
 		if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
@@ -174,25 +174,25 @@ function dark_normie() {
 	Game.nocturne_img = "./normal/nocturne.png";
 	Game.prelude_img = "./normal/prelude.png";
 	Game.bombchu_img = "./normal/bombchu.png";
-	if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
-	if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
-	if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
-	if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
-	if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
-	if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
-	if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
-	if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
-	if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
-	if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
-	if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
-	if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
-	if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
-	if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
-	if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
-	if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
-	if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
-	if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
-	if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_bag_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
+	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
+	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
+	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
+	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
+	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
+	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
+	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
+	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
+	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
+	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_bag_img; }
+	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
+	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
+	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_meter_img; }
+	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
+	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_bag_img; }
+	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
 	var temp = 0;
 	document.getElementById("normalColumn1").style.width="132px";
 	document.getElementById("normalColumn2").style.width="132px";
@@ -200,12 +200,12 @@ function dark_normie() {
 	document.getElementById("woth_info").style.left="976px";
 	document.getElementById("timer").style.left="820px";
 	document.getElementById("skulls_in_logic").style.left="889px";
-	document.getElementById("forest_medallion").style.left="948px";
-	document.getElementById("fire_medallion").style.left="948px";
-	document.getElementById("water_medallion").style.left="948px";
-	document.getElementById("gen1_medallion").style.left="948px";
-	document.getElementById("gen2_medallion").style.left="948px";
-	document.getElementById("gen3_medallion").style.left="948px";
+	document.getElementById("dung4_icon").style.left="948px";
+	document.getElementById("dung5_icon").style.left="948px";
+	document.getElementById("dung6_icon").style.left="948px";
+	document.getElementById("dung7_icon").style.left="948px";
+	document.getElementById("dung8_icon").style.left="948px";
+	document.getElementById("dung9_icon").style.left="948px";
 	for (const key of Object.keys(Location_Logic)) {
 		if (temp == 114) {break; }	
 		if (document.getElementById(key) != null){document.getElementById(key).style.height="29px";}
@@ -290,25 +290,25 @@ function dark_tagnia() {
 	Game.dins_fire_img= "https://i.imgur.com/QlwigGB.png";
 	Game.magic_meter_img= "https://i.imgur.com/XRsHr3v.png";
 	Game.hover_boots_img= "https://i.imgur.com/INd88ZQ.png";
-	if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
-	if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
-	if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
-	if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
-	if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
-	if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
-	if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
-	if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
-	if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
-	if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
-	if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
-	if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
-	if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
-	if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
-	if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
-	if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
-	if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
-	if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
-	if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_bag_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
+	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
+	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
+	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
+	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
+	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
+	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
+	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
+	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
+	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
+	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_bag_img; }
+	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
+	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
+	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_meter_img; }
+	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
+	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_bag_img; }
+	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
 	document.getElementById("gan_req2").src="https://i.imgur.com/1TgxgFJ.png";
 	document.getElementById("gan_req1").src=Game.magic_meter_img;
 	document.getElementById("gan_req3").src=Game.bow_img;
@@ -355,25 +355,25 @@ function light_soli() {
 		Game.dins_fire_img= "https://i.imgur.com/zcRc5ZI.png";
 		Game.magic_meter_img= "https://i.imgur.com/uAyOlX8.png";
 		Game.hover_boots_img= "https://i.imgur.com/DSzo0JN.png";
-		if(document.getElementById("dod_req1") != null) {document.getElementById("dod_req1").src = Game.bomb_bag_img; }
-		if(document.getElementById("jab_req1") != null) {document.getElementById("jab_req1").src = Game.letter_img; }
-		if(document.getElementById("jab_req2") != null) {document.getElementById("jab_req2").src = Game.boomerang_img; }
-		if(document.getElementById("for_req1") != null) {document.getElementById("for_req1").src = Game.hookshot_img; }
-		if(document.getElementById("for_req2") != null) {document.getElementById("for_req2").src = Game.bow_img; }
-		if(document.getElementById("for_req3") != null) {document.getElementById("for_req3").src = Game.goron_bracelet_img; }
-		if(document.getElementById("fir_req1") != null) {document.getElementById("fir_req1").src = Game.hammer_img; }
-		if(document.getElementById("wat_req1") != null) {document.getElementById("wat_req1").src = Game.iron_boots_img; }
-		if(document.getElementById("wat_req2") != null) {document.getElementById("wat_req2").src = Game.golden_scale_img; }
-		if(document.getElementById("wat_req3") != null) {document.getElementById("wat_req3").src = Game.longshot_img; }
-		if(document.getElementById("spi_req1") != null) {document.getElementById("spi_req1").src = Game.silver_gauntlets_img; }
-		if(document.getElementById("spi_req2") != null) {document.getElementById("spi_req2").src = Game.mirror_shield_img; }
-		if(document.getElementById("spi_req3") != null) {document.getElementById("spi_req3").src = Game.bomb_bag_img; }
-		if(document.getElementById("spi_req4") != null) {document.getElementById("spi_req4").src = Game.hookshot_img; }
-		if(document.getElementById("sha_req1") != null) {document.getElementById("sha_req1").src = Game.dins_fire_img; }
-		if(document.getElementById("sha_req2") != null) {document.getElementById("sha_req2").src = Game.magic_meter_img; }
-		if(document.getElementById("sha_req3") != null) {document.getElementById("sha_req3").src = Game.hover_boots_img; }
-		if(document.getElementById("sha_req4") != null) {document.getElementById("sha_req4").src = Game.bomb_bag_img; }
-		if(document.getElementById("sha_req5") != null) {document.getElementById("sha_req5").src = Game.hookshot_img; }
+		if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_bag_img; }
+		if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+		if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
+		if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
+		if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
+		if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
+		if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
+		if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
+		if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
+		if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
+		if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
+		if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
+		if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_bag_img; }
+		if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
+		if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
+		if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_meter_img; }
+		if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
+		if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_bag_img; }
+		if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
 		document.getElementById("gan_req2").src="https://i.imgur.com/NsuqX43.png";
 		document.getElementById("gan_req1").src="https://i.imgur.com/uAyOlX8.png";
 		document.getElementById("gan_req3").src="https://i.imgur.com/muCeqKm.png";
@@ -418,12 +418,12 @@ function dark_theme() {
 	for (var i = 0; i < all.length; i++) {
 	all[i].style.color = 'chartreuse';
 	}
-	if(document.getElementById('text_kok_eme') != null) {document.getElementById('text_kok_eme').style.color = 'lightgreen';}
-	if(document.getElementById('text_gor_rub') != null) {document.getElementById('text_gor_rub').style.color = '#ff4d4d';}
-	if(document.getElementById('text_zor_sap') != null) {document.getElementById('text_zor_sap').style.color = 'lightblue';}
-	if(document.getElementById('text_for_med') != null) {document.getElementById('text_for_med').style.color = 'lightgreen';}
-	if(document.getElementById('text_fir_med') != null) {document.getElementById('text_fir_med').style.color = '#ff4d4d';}
-	if(document.getElementById('text_wat_med') != null) {document.getElementById('text_wat_med').style.color = 'lightblue';}
+	if(document.getElementById('text_dung1') != null) {document.getElementById('text_dung1').style.color = 'lightgreen';}
+	if(document.getElementById('text_dung2') != null) {document.getElementById('text_dung2').style.color = '#ff4d4d';}
+	if(document.getElementById('text_dung3') != null) {document.getElementById('text_dung3').style.color = 'lightblue';}
+	if(document.getElementById('text_dung4') != null) {document.getElementById('text_dung4').style.color = 'lightgreen';}
+	if(document.getElementById('text_dung5') != null) {document.getElementById('text_dung5').style.color = '#ff4d4d';}
+	if(document.getElementById('text_dung6') != null) {document.getElementById('text_dung6').style.color = 'lightblue';}
 	if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#660000';}
 	document.body.style.backgroundColor = "#505050";
 }
@@ -437,12 +437,12 @@ function light_theme() {
 	for (var i = 0; i < all.length; i++) {
 	all[i].style.color = 'darkgreen';
 	}
-	if(document.getElementById('text_kok_eme') != null) {document.getElementById('text_kok_eme').style.color = 'green';}
-	if(document.getElementById('text_gor_rub') != null) {document.getElementById('text_gor_rub').style.color = 'red';}
-	if(document.getElementById('text_zor_sap') != null) {document.getElementById('text_zor_sap').style.color = 'blue';}
-	if(document.getElementById('text_for_med') != null) {document.getElementById('text_for_med').style.color = 'green';}
-	if(document.getElementById('text_fir_med') != null) {document.getElementById('text_fir_med').style.color = 'red';}
-	if(document.getElementById('text_wat_med') != null) {document.getElementById('text_wat_med').style.color = 'blue';}
+	if(document.getElementById('text_dung1') != null) {document.getElementById('text_dung1').style.color = 'green';}
+	if(document.getElementById('text_dung2') != null) {document.getElementById('text_dung2').style.color = 'red';}
+	if(document.getElementById('text_dung3') != null) {document.getElementById('text_dung3').style.color = 'blue';}
+	if(document.getElementById('text_dung4') != null) {document.getElementById('text_dung4').style.color = 'green';}
+	if(document.getElementById('text_dung5') != null) {document.getElementById('text_dung5').style.color = 'red';}
+	if(document.getElementById('text_dung6') != null) {document.getElementById('text_dung6').style.color = 'blue';}
 	if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#990000';}
 	document.body.style.backgroundColor = "white";
 }

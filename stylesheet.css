@@ -75,49 +75,49 @@ color: red;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.forest_medallion{
+.dung4{
 	vertical-align:top;
 	color: green;
 	font-size:30px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.fire_medallion{
+.dung5{
 	vertical-align:top;
 	color: red;
 	font-size:30px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.water_medallion{
+.dung6{
 	vertical-align:top;
 	color: blue;
 	font-size:30px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.shadow_medallion{
+.dung7{
 	vertical-align:top;
 	font-size:30px;
 	color: rgb(238, 130, 238);
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.spirit_medallion{
+.dung8{
 	vertical-align:top;
 	font-size:30px;
 	color: rgb(255, 165, 0);
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.generic_medallion{
+.dung9{
 	vertical-align:top;
 	font-size:30px;
 	color: black;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.greenstone{
+.dung1{
 	vertical-align:top;
 	font-size:24px;
 	text-transform:uppercase;
@@ -127,7 +127,7 @@ color: red;
 	font-weight:100;
 	opacity:.8;
 }
-.redstone{
+.dung2{
 	vertical-align:top;
 	font-size:24px;
 	text-transform:uppercase;
@@ -137,7 +137,7 @@ color: red;
 	font-weight:100;
 	opacity:.8;
 }
-.bluestone{
+.dung3{
 	vertical-align:top;
 	font-size:24px;
 	text-transform:uppercase;
@@ -146,6 +146,12 @@ color: red;
 	font-style:italic;
 	font-weight:100;
 	opacity:.8;
+}
+.stones {
+	height:20px;
+	width:20px;
+	margin-bottom: 7px;
+	margin-top: 5px;
 }
 .requirements {
 	height:30px;
@@ -645,7 +651,13 @@ margin:1.5%;
 margin-top:0%;
 }
 #markStones {
-	margin-left:59px;
+margin-left: 4px;
+margin-top: 6px;
+margin-right:60px;
+}
+#markMedallions {
+margin-top: 6px;
+width: 80px;
 }
 #forceOutOfLogic{
 	color:pink;
