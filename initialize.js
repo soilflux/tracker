@@ -342,7 +342,7 @@ var tSeconds = 0;
 		"Kakariko: Roof", "Kakariko: Back Grotto", "Kakariko: Windmill", "Kakariko: Anju", "Kakariko: Cow", "Kakariko: Archery", "Kakariko: Redead Gr.", "Kakariko: Chickens", "Kakariko: 10", "Kakariko: 20", "Kakariko: 30", "Kakariko: 40", "Kakariko: 50",
 		"Graveyard: Shield", "Graveyard: Digging", "Graveyard: Suns", "Graveyard: Fire", "Graveyard: Box", "Graveyard: Race 1", "Graveyard: Race 2",
 		"River: Pillar", "River: Grotto", "River: Ledge", "River: Frogs 1", "River: Frogs 2",
-		"Domain: Divin'", "Domain: Lit", "Domain: King",
+		"Domain: Divin'", "Domain: Torches", "Domain: King",
 		"Colossus: Bean", "Colossus: Fairy",
 		"Wasteland: Check",
 		"Fortress: Roof", "Fortress: Archery 1", "Fortress: Archery 2",

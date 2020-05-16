@@ -93,9 +93,12 @@ function refresh_logic_for_stuff() {
 	Game.hookshot = Game.hookshot1 || Game.hookshot2;
 
 	Game.golden_gauntlets = Game.strength1 && Game.strength2 && Game.strength3;
+	
+	Game.silver_gauntlets = false;
 	if (Game.strength1 && Game.strength3) {Game.silver_gauntlets = true;}
-	if (Game.strength2 && Game.strength3) {Game.silver_gauntlets = true;}
-	if (Game.strength1 && Game.strength2) {Game.silver_gauntlets = true;}
+	else if (Game.strength2 && Game.strength3) {Game.silver_gauntlets = true;}
+	else if (Game.strength1 && Game.strength2) {Game.silver_gauntlets = true;}
+	
 	Game.goron_bracelet = Game.strength1 || Game.strength2 || Game.strength3;
 	
 	Logic.forest_boss_key = Logic.forced_forest_boss_key;

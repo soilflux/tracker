@@ -26,20 +26,20 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = true; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.goron_bracelet = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.silver_gauntlets = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.longshot = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot1 = true; Game.hookshot2 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true; Game.strength3 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = true;}
@@ -49,9 +49,9 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.sot = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.sos = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns_song = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.song_of_time = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.song_of_storms = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = true;}
@@ -63,20 +63,20 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = false; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = false; Game.hookshot2 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.goron_bracelet = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = false; Game.strength2 = false; Game.strength3 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.silver_gauntlets = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength2 = false; Game.strength3 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.longshot = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.golden_gauntlets = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = false;}
@@ -86,9 +86,9 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.sot = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.sos = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = Game.suns_song = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.sot = Game.song_of_time = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.sos = Game.song_of_storms = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = false;}
