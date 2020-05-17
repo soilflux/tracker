@@ -149,12 +149,12 @@ function stone_medallion_input() {
 		
 		if (i == 1) {str = document.getElementById("markStones").value.substring(2,4);} 
 		else if (i == 2) {str = document.getElementById("markStones").value.substring(4,6);} 
-		else if (i == 3) {str = document.getElementById("markMedallions").value.substring(0,2);}
-		else if (i == 4) {str = document.getElementById("markMedallions").value.substring(2,4);}
-		else if (i == 5) {str = document.getElementById("markMedallions").value.substring(4,6);}
-		else if (i == 6) {str = document.getElementById("markMedallions").value.substring(6,8);}
-		else if (i == 7) {str = document.getElementById("markMedallions").value.substring(8,10);}
-		else if (i == 8) {str = document.getElementById("markMedallions").value.substring(10,12);}
+		else if (i == 3) {str = document.getElementById("markMedallions").value.substring(0,2); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(2,4);} }
+		else if (i == 4) {str = document.getElementById("markMedallions").value.substring(2,4); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(4,6);} }
+		else if (i == 5) {str = document.getElementById("markMedallions").value.substring(4,6); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(6,8);} }
+		else if (i == 6) {str = document.getElementById("markMedallions").value.substring(6,8); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(8,10);} }
+		else if (i == 7) {str = document.getElementById("markMedallions").value.substring(8,10); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(10,12);} }
+		else if (i == 8) {str = document.getElementById("markMedallions").value.substring(10,12); if (document.getElementById("markMedallions").value.length >= 12){str = document.getElementById("markMedallions").value.substring(0,2);} }
 	}
 	
 	if (Logic.dung7 != "unknown") {Logic.shadow_medallion = Logic.dung7; document.getElementById("text_dung7").style.color = "rgb(238, 130, 238)"; document.getElementById("dung7_icon").src = "./normal/shadow_medallion.png";}
