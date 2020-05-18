@@ -438,6 +438,10 @@ function Undo() {
 			document.getElementById("trade_location").innerHTML = "Trade -> ";
 			document.getElementById("trade_location").style.color = "black";
 		}
+		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "sot" || Check[lastCheck[lastCheck.length-1]] == "sos" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
+			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
+			Game.checks_remaining -= 1;
+		}
 		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML.split('-&gt; ')[0] + "-> ";
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").style.color = "black";

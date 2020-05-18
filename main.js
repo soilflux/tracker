@@ -20,5 +20,5 @@ function Update() {
 	handleItemHighlights(); //add or remove transparency if player has or does not have items, respectively
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
-
+	console.log(document.getElementById("text_zeldasSpot").innerHTML);
 }
