@@ -87,8 +87,8 @@ function checksLockedByItem(item) {
 	if(Known.eponas == true) {Locked_Logic2.eponas = Location_Locked_Logic2[Location.eponas]; } else {Locked_Logic2.eponas = true;} if(item == "eponas") {Locked_Logic2.eponas = false;}  
 	if(Known.sarias == true) {Locked_Logic2.sarias = Location_Locked_Logic2[Location.sarias]; } else {Locked_Logic2.sarias = true;} if(item == "sarias") {Locked_Logic2.sarias = false;} 
 	if(Known.suns_song == true) {Locked_Logic2.suns_song = Location_Locked_Logic2[Location.suns_song]; } else {Locked_Logic2.suns_song = true;} if(item == "suns_song") {Locked_Logic2.suns_song = false;} 
-	if(Known.song_of_time == true) {Locked_Logic2.song_of_time = Location_Locked_Logic2[Location.song_of_time]; } else {Locked_Logic2.song_of_time = true;} if(item == "song_of_time") {Locked_Logic2.song_of_time = false;} 
-	if(Known.song_of_storms == true) {Locked_Logic2.song_of_storms = Location_Locked_Logic2[Location.song_of_storms]; } else {Locked_Logic2.song_of_storms = true;} if(item == "song_of_storms") {Locked_Logic2.song_of_storms = false;} 
+	if(Known.time == true) {Locked_Logic2.song_of_time = Location_Locked_Logic2[Location.song_of_time]; } else {Locked_Logic2.song_of_time = true;} if(item == "song_of_time") {Locked_Logic2.song_of_time = false;} 
+	if(Known.storms == true) {Locked_Logic2.song_of_storms = Location_Locked_Logic2[Location.song_of_storms]; } else {Locked_Logic2.song_of_storms = true;} if(item == "song_of_storms") {Locked_Logic2.song_of_storms = false;} 
 	if(Known.minuet == true) {Locked_Logic2.minuet = Location_Locked_Logic2[Location.minuet]; } else {Locked_Logic2.minuet = true;} if(item == "minuet") {Locked_Logic2.minuet = false;} 
 	if(Known.bolero == true) {Locked_Logic2.bolero = Location_Locked_Logic2[Location.bolero]; } else {Locked_Logic2.bolero = true;} if(item == "bolero") {Locked_Logic2.bolero = false;} 
 	if(Known.serenade == true) {Locked_Logic2.serenade = Location_Locked_Logic2[Location.serenade]; }  

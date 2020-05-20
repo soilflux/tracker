@@ -50,8 +50,8 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns_song = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.song_of_time = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.song_of_storms = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.time = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.storms = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = true;}
@@ -87,8 +87,8 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = Game.suns_song = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.sot = Game.song_of_time = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.sos = Game.song_of_storms = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.time = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.storms = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = false;}
@@ -438,7 +438,7 @@ function Undo() {
 			document.getElementById("trade_location").innerHTML = "Trade -> ";
 			document.getElementById("trade_location").style.color = "black";
 		}
-		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "sot" || Check[lastCheck[lastCheck.length-1]] == "sos" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
+		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "time" || Check[lastCheck[lastCheck.length-1]] == "storms" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
 			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
 			Game.checks_remaining -= 1;
 		}

@@ -239,7 +239,7 @@ function next_check(x) {
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -252,7 +252,7 @@ function next_check(x) {
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: Platform";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -265,7 +265,7 @@ function next_check(x) {
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -278,7 +278,7 @@ function next_check(x) {
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -291,7 +291,7 @@ function next_check(x) {
 		if (dodongosRequired > .9 && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -303,7 +303,7 @@ function next_check(x) {
 		if ((dodongosRequired > .9 || !detour(30,16,62)) && Game.has_chus) {check(); return "Dodongos: King";}
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
@@ -314,7 +314,7 @@ function next_check(x) {
 	if (x == "dodongos_king_dodongo") {
 		if (!detour(0,19,77)) {check(); return "Kakariko: Roof";} if (!detour(0,19,79)) {check(); return "Kakariko: Windmill";} if (!checkedYet[248]) {check(); return "Windmill";}
 		if (!Game.bolero && (Game.hover_boots || Game.hookshot) && (Game.has_chus || Game.goron_bracelet || Game.bow || Game.can_use_dins) && !checkedYet[250]) {
-			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.song_of_storms) {hint(); return "Trail: Gr. Hint"}
+			if (!detour(8,17,69) && Game.has_chus) {check(); return "Trail: Wall"} if (!detour(0,17,68)) {check(); return "Trail: Top"} if (!detour(20,17,70) && Game.storms) {hint(); return "Trail: Gr. Hint"}
 			if (!detour(15,15,59) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 3!";} if (!detour(20,15,57) && Game.has_chus || Game.silver_gauntlets || Game.hammer) {check(); return "Goron City: Maze 1";}
 			if (!detour(3,18,73) && !Game.hover_boots) {peak(); return "Peak Crater Bean";} if (!detour(3,18,73) && Game.hover_boots) {check(); return "Crater: Bean";} if (!checkedYet[252]) {check(); return "Crater";}
 		}
