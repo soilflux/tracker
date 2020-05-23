@@ -147,16 +147,35 @@ color: red;
 	font-weight:100;
 	opacity:.8;
 }
+.empty {
+	height:0px;
+	width:0px;
+}
 .stones {
-	height:20px;
-	width:20px;
-	margin-bottom: 7px;
-	margin-top: 5px;
+	height:25px;
+	width:25px;
+	margin-bottom: 6px;
+	margin-top: 0px;
+}
+.medallions {
+	height:25px;
+	width:25px;
+	margin-bottom: 4px;
+	margin-top: 6px;
+}
+#medallionPic {
+	margin-top: 4px;
+	margin-right:4px;
+}
+#med_background {
+	background-image: url("./normal/background.png");
+	filter: drop-shadow(14px 0 5px gold);
+	border-radius: 1%;
 }
 .requirements {
 	height:30px;
 	width: 30px;
-	margin-left:4px;
+	margin-left:0px;
 	margin-right:0px;
 	margin-top:2px;
 	opacity: 0.2;
@@ -197,8 +216,8 @@ color: red;
 	columns: 5
 }
 .area_titles {
-	font-size: 22px;
-	text-align: left;
+	font-size: 20px;
+	float: left;
 	font-weight: 3000;
 	text-shadow:
 		-1px -1px 0 #000,
@@ -209,22 +228,33 @@ color: red;
 .column {
 	margin-top:10px;
   float: left;
-  width: 122px;
+  width: 90px;
 }
 #checkSummaryColumn {
-	margin-top:10px;
+	top:1500px;
+	left:5px;
+	position:absolute;
 	float: left;
 	width: 300px;
 }
-#checkSummaryColumn2 {
-	margin-top:10px;
+#extra_column {
+	width: 75px;
 	float: left;
-	width: 300px;
+	margin-top:10px;
+}
+#song_background {
+	margin-top:41px;
+	margin-right:2px;
+	height:252px;
+	border-radius:2.5%;
+	filter: drop-shadow(-10px 0 5px white);
+	border: 1px ridge #202020;
+	background-image: url("./normal/background.png");
 }
 #info_column {
 	margin-top:10px;
 	float: left;
-	width: 295px;
+	width: 275px;
 }
 .pplpics {
 	height:12px;
@@ -235,17 +265,12 @@ color: red;
 #songcolumn {
 	margin-top:10px;
 	float: left;
-	width: 165px;
+	width: 130px;
 }
 .dungcolumn {
 	margin-top:10px;
   float: left;
-  width: 136px;
-}
-.minidungcolumn {
-	margin-top:10px;
-  float: left;
-  width: 133px;
+  width:100px;
 }
 .no_span {
 	
@@ -271,15 +296,15 @@ color: red;
 	height:22px;
 	width: 30px;
 	vertical-align: top;
-	margin-bottom: 3px;
+	margin-bottom: 2px;
 	padding: 0;
 	border: none;
 }
 .picture_input {
-	height:20px;
-	width: 28px;
+	width: 30px;
+	height:22px;
+	margin-bottom:2px;
 	vertical-align: top;
-	margin-bottom: 3px;
 	padding: 0;
 	border: none;
 }
@@ -291,6 +316,7 @@ color: red;
 }
 .check_text {
 	font-size: 16px;
+	letter-spacing: 0px;
 }
 .logic_check_text{
 	font-size: 16px;
@@ -298,8 +324,9 @@ color: red;
 	font-weight:bold;
 	display: inline-block;
 	margin-top:2px;
-	margin-bottom:5px;
+	margin-bottom:1px;
 	vertical-align: top;
+	letter-spacing: -1px;
 }
 .logic_check_text2{
 	vertical-align: top;
@@ -315,9 +342,10 @@ color: red;
 	color: 						yellow;
 	font-weight:normal;
 	margin-top:2px;
-	margin-bottom:5px;
+	margin-bottom:1px;
 	display: inline-block;
 	opacity: .5;
+	letter-spacing: -1px;
 }
 .ool_check_text{
 	vertical-align: top;
@@ -326,8 +354,9 @@ color: red;
 	color: 	black;
 	display: inline-block;
 	margin-top:2px;
-	margin-bottom:5px;
+	margin-bottom:1px;
 	opacity: .5;
+	letter-spacing: -1px;
 }
 .ool_check_text2{
 	vertical-align: top;
@@ -337,6 +366,24 @@ color: red;
 	display: inline-block;
 	margin-bottom:2px;
 }
+#timerControl {
+	display:none;	
+}
+#linsoControl {
+	display:none;
+}
+#linso_background {
+	display:none;
+	position:absolute;
+	left:1015px;
+	top: -20px;
+}
+#linso11 {
+	position:absolute;
+	right:-133px;
+	top: 8px;
+}
+
 .modal {
   display: none;
   position: fixed; 
@@ -390,36 +437,38 @@ color: red;
 	display: inline-block;
 }
 .superdot {
-  height: 20px;
-  width: 20px;
-  margin-left:3px;
+  height: 18px;
+  width: 18px;
+  margin-left:2px;
+  margin-top: 2px;
+  margin-bottom: 10px;
   vertical-align: center;
   text-align: center;
-  font-size:18px;
+  font-size:16px;
   color:orange;
   background-color: blue;
   border-radius: 50%;
   display: inline-block;
 }
 .superdotSK {
-  height: 20px;
-  width: 20px;
-  margin-left:3px;
+  height: 18px;
+  width: 18px;
+  margin-left:2px;
   vertical-align: center;
   text-align: center;
-  font-size:18px;
+  font-size:16px;
   color:black;
   background-color: gray;
   border-radius: 50%;
   display: inline-block;
 }
 .superdotBK {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   margin-left:3px;
   vertical-align: center;
   text-align: center;
-  font-size:18px;
+  font-size:16px;
   color:white;
   background-color: red;
   border-radius: 50%;
@@ -434,8 +483,8 @@ color: red;
   display: inline-block;
 }
 .songpics {
-	height:26px;
-	width: 26px;
+	height:40px;
+	width: 40px;
 	margin-left:8px;
 	margin-right:0px;
 	margin-top:5px;
@@ -461,12 +510,13 @@ color: red;
 #timerControl {
  top:970px;
  position: absolute;
+ right:1180px;
 }
 #skulls_in_logic {
-	top:10px;
+	top:30px;
 	font-size: 18px;
 	color: gold;
-	left:854px;
+	left:600px;
 	position: absolute;
 }
 #timer {
@@ -474,7 +524,7 @@ color: red;
 	color: white;
 	position: absolute;
 	top:850px;
-	right:960px;
+	left:400px;
 	font-family: calibri;
 }
 #forest_medallion {
@@ -514,8 +564,8 @@ color: red;
 	opacity: .2;
 }
 #woth_info {
-	top:550px;
-	left: 980px;
+	top:560px;
+	left: 830px;
 	position: absolute;
 }
 .woth_info_text {
@@ -653,7 +703,7 @@ margin-top:0%;
 #markStones {
 margin-left: 4px;
 margin-top: 6px;
-margin-right:60px;
+margin-right:15px;
 }
 #markMedallions {
 margin-top: 6px;
@@ -707,7 +757,72 @@ display:inline;
 @-webkit-keyframes orbit { 
 from { -webkit-transform:rotate(0deg) } 
 to { -webkit-transform:rotate(360deg) } }
-
+/*#forest {
+	border: 3px solid #88FA4E;
+}
+#forestSKs {
+	border: 3px solid #88FA4E;
+}
+#forestBKs {
+	border: 3px solid #88FA4E;
+}
+#fire {
+	border: 3px solid #FE3213;
+}
+#fireSKs {
+	border: 3px solid #FE3213;
+}
+#fireBKs {
+	border: 3px solid #FE3213;
+}
+#water {
+	border: 3px solid #131BFE;
+}
+#waterSKs {
+	border: 3px solid #131BFE;
+}
+#waterBKs {
+	border: 3px solid #131BFE;
+}
+#spirit {
+	border: 3px solid #8C9B03;
+}
+#spiritSKs {
+	border: 3px solid #8C9B03;
+}
+#spiritBKs {
+	border: 3px solid #8C9B03;
+}
+#shadow {
+	border: 3px solid #69008E;
+}
+#shadowSKs {
+	border: 3px solid #69008E;
+}
+#shadowBKs {
+	border: 3px solid #69008E;
+}
+#gtg {
+	border: 3px solid #FE8B08;
+}
+#gtgSKs {
+	border: 3px solid #FE8B08;
+}
+#well{
+	border: 3px solid #DE86FE;
+}
+#wellSKs {
+	border: 3px solid #DE86FE;
+}
+#ganons {
+	border: 3px solid #990000;
+}
+#ganonsSKs {
+	border: 3px solid #990000;
+}
+#ganonsBKs {
+	border: 3px solid #990000;
+}*/
 #title_kokiri {
 color:#20EA01;
 }

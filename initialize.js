@@ -70,7 +70,7 @@ var spiritPlacement = "unknown";
 var shadowPlacement = "unknown";
 var pocketPlacement = "unknown";
 
-var dungIconSources = ["./normal/emerald.png", "./normal/ruby.png", "./normal/sapphire.png", "./normal/forest_medallion.png", "./normal/fire_medallion.png", "./normal/water_medallion.png", "./normal/shadow_medallion.png", "./normal/spirit_medallion.png", "./normal/light_medallion.png"];
+var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", "./normal/items/sapphire.png", "./normal/items/forest.png", "./normal/items/fire.png", "./normal/items/water.png", "./normal/items/shadow.png", "./normal/items/spirit.png", "./normal/items/light.png"];
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 
@@ -237,7 +237,7 @@ var tSeconds = 0;
 	Game.well_logically_accessible=0;
 	Game.ganons_logically_accessible=0;
 	
-	Game.bomb_bag_img= "./images/explosive505050.png";
+	Game.bomb_img= "./images/explosive505050.png";
 	Game.letter_img= "./images/letter505050.png";
 	Game.boomerang_img= "./images/boomerang505050.png";
 	Game.hookshot_img= "./images/hookshot505050.png";
@@ -251,7 +251,7 @@ var tSeconds = 0;
 	Game.silver_gauntlets_img= "./images/strength2505050.png";
 	Game.mirror_shield_img= "./images/mirrorshield505050.png";
 	Game.dins_fire_img= "./images/dinsfirenew505050.png";
-	Game.magic_meter_img= "./images/magic505050.png";
+	Game.magic_img= "./images/magic505050.png";
 	Game.hover_boots_img= "./images/hovers505050.png";
 	Game.theme = "dark";
 	Game.themeChange = false;
@@ -691,6 +691,9 @@ var tSeconds = 0;
 	var woth4 = "unknown";
 	var woth5 = "unknown";	
 	
+	
+	
+	
 	var WotHItems = [];
 	var WotH = new Array(35).fill(0);
     var checkedYet = new Array(256).fill(false);
@@ -779,6 +782,57 @@ for (i=0; i < Items.length; i++) {
 var childRoute1Value = 0;
 var childRoute1 = ["ocarina_game", "lost_woods_grotto", "lost_woods_scrub_grotto", "wolfos_grotto", "bridge_scrub", "target", "skull_kid", "kokiri_song_of_storms", "rolling_goron", "goron_dance", "goron_pot", "river_pillar", "river_grotto", "river_ledge", "frogs_1", "frogs_2", "zora_diving", "zora_torches", "hylia_child_fishing"];
 var childRoute2 = ["market_slingshot_game", "market_bowling_1", "market_bowling_2","dins_fairy","market_lens_game"];
+
+location_logic();
+
+var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "bottle", "bottle", "bottle", "bottle", "egg", "egg", "kokiri_sword", "master_sword", "biggoron_sword", "", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
+var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
+
+var linso = false;
+handleThemes();
+handleThemes();
+var temp = 0;
+var tempTop = -32;
+for (var i = 1; i <= 9; i++) {
+if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;}
+	for (var j = 1; j <= 6; j++) {
+		if (linsoOrder[temp] == "") {temp += 1; continue;}
+		var elem = document.createElement("IMG");
+		elem.id = "linso" + i + j;
+		elem.style.height = "35px";
+		elem.style.width = "35px";
+		elem.src = Game[linsoOrder[temp] + "_img"];
+		Game[linsoOrder[temp]] = false;
+		if (linsoOrder[temp] == "kokiri_boots" || linsoOrder[temp] == "kokiri_tunic") {Game[linsoOrder[temp]] = true;}
+		elem.style.position = "absolute";
+		elem.style.left = 928 + 75 + j*41 + "px";
+		elem.style.top = tempTop + i*40 + "px";
+		elem.style.opacity = .3;
+		elem.style.filter = "grayscale(100%)";
+		elem.style.display = "none";
+		document.body.appendChild(elem); 
+		temp += 1;
+	}
+}
+temp = 0;
+tempTop = -24;
+for (var i = 1; i <= 12; i++) {
+	if (linsoOrder[temp] == "") {temp += 1; continue;}
+	var elem = document.createElement("IMG");
+	elem.id = "linsoS" + i;
+	elem.style.height = "35px";
+	elem.style.width = "35px";
+	elem.src = Game[linsoOrder2[temp] + "_img"];
+	elem.style.position = "absolute";
+	elem.style.left = 1218 + 75 + "px";
+	elem.style.top = tempTop + i*31 + "px";
+	elem.style.opacity = .3;
+	elem.style.filter = "grayscale(100%)";
+	elem.style.display = "none";
+	document.body.appendChild(elem); 
+	temp += 1;
+}
+
 
 setInterval(slowUpdate,5000);
 setInterval(Update,250);

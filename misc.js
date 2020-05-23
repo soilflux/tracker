@@ -23,7 +23,7 @@ function highlight(x) {
 		if (x.style.opacity == 1) {Logic.forest_medallion = true;}
 	}
 	else if (document.getElementById(x.id).style.opacity == 1) {
-		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = true; }
+		if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = true; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = true;}
@@ -32,7 +32,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){Game.magic1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot1 = true; Game.hookshot2 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
@@ -50,8 +50,8 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns_song = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.time = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.storms = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = true;}
@@ -60,7 +60,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.prelude_img.substring(2))){Game.prelude = true;}
 	}
 	else {
-		if (document.getElementById(x.id).src.endsWith(Game.bomb_bag_img.substring(2))){Game.bomb_bag1 = false; }
+		if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = false; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = false; Game.hookshot2 = false;}
@@ -69,7 +69,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength2 = false; Game.strength3 = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.magic_meter_img.substring(2))){Game.magic1 = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){Game.magic1 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
@@ -87,8 +87,8 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = Game.suns_song = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sot_img.substring(2))){Game.time = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.sos_img.substring(2))){Game.storms = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = false;}
@@ -236,6 +236,11 @@ function timerControl() {
 function circusControl() {
 	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals";}
 	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus";}
+}
+
+function linsoControl() {
+	if (linso) {linso = false; document.getElementById("linsoControl").innerHTML = "Show LinSo Tracker";}
+	else {linso = true; document.getElementById("linsoControl").innerHTML = "Hide LinSo Tracker";}
 }
 
 function inaccessibleControl() {
@@ -402,6 +407,12 @@ function timer_stuff() {
 document.onkeydown = function(e) {
 	if (e.ctrlKey && e.which == 90) {
 		Undo();
+	}
+}
+
+document.onkeydown = function(e) {
+	if (e.altKey && e.which == 90) {
+		timerControl();
 	}
 }
 

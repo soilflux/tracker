@@ -112,44 +112,47 @@ function refresh_logic_for_stuff() {
 	if(Game.spirit_boss_key == true) {Logic.spirit_boss_key = Location_Logic[Location.spirit_boss_key]; }
 	if(Game.shadow_boss_key == true) {Logic.shadow_boss_key = Location_Logic[Location.shadow_boss_key]; }
 	
-	Game.forest_medallion = false; 
-	if(Logic.forest_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.deku_queen_gohma;}
-	else if(Logic.forest_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.dodongos_king_dodongo;}
-	else if(Logic.forest_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.jabu_barinade;}
-	else if(Logic.forest_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.forest14;}
-	else if(Logic.forest_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.fire6;}
-	else if(Logic.forest_medallion_location == "water") {if (Check.water11 != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.water11;}
-	else if(Logic.forest_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.spirit20;}
-	else if(Logic.forest_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.forest_medallion = true;} Logic.forest_medallion = Location_Logic.shadow18;}
-	else if(Logic.forest_medallion_location == "pocket") {Game.forest_medallion = true; Logic.forest_medallion = true;}
+	Game.forest = false; 
+	if(Logic.forest_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.deku_queen_gohma;}
+	else if(Logic.forest_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.dodongos_king_dodongo;}
+	else if(Logic.forest_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.jabu_barinade;}
+	else if(Logic.forest_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.forest14;}
+	else if(Logic.forest_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.fire6;}
+	else if(Logic.forest_medallion_location == "water") {if (Check.water11 != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.water11;}
+	else if(Logic.forest_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.spirit20;}
+	else if(Logic.forest_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.forest = true;} Logic.forest_medallion = Location_Logic.shadow18;}
+	else if(Logic.forest_medallion_location == "pocket") {Game.forest = true; Logic.forest_medallion = true;}
 	else {Logic.forest_medallion_location == "unknown"; Logic.forest_medallion = false;}
 	
-	Game.fire_medallion = false; 
-	if(Logic.fire_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.deku_queen_gohma;}
-	else if(Logic.fire_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.dodongos_king_dodongo;}
-	else if(Logic.fire_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.jabu_barinade;}
-	else if(Logic.fire_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.forest14;}
-	else if(Logic.fire_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.fire6;}
-	else if(Logic.fire_medallion_location == "water") {if (Check.water11 != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.water11;}
-	else if(Logic.fire_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.spirit20;}
-	else if(Logic.fire_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.fire_medallion = true;} Logic.fire_medallion = Location_Logic.shadow18;}
-	else if(Logic.fire_medallion_location == "pocket") {Game.fire_medallion = true; Logic.fire_medallion = true;}
+	Game.fire = false; 
+	if(Logic.fire_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.deku_queen_gohma;}
+	else if(Logic.fire_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.dodongos_king_dodongo;}
+	else if(Logic.fire_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.jabu_barinade;}
+	else if(Logic.fire_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.forest14;}
+	else if(Logic.fire_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.fire6;}
+	else if(Logic.fire_medallion_location == "water") {if (Check.water11 != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.water11;}
+	else if(Logic.fire_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.spirit20;}
+	else if(Logic.fire_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.fire = true;} Logic.fire_medallion = Location_Logic.shadow18;}
+	else if(Logic.fire_medallion_location == "pocket") {Game.fire = true; Logic.fire_medallion = true;}
 	else {Logic.fire_medallion_location == "unknown"; Logic.fire_medallion = false;}
 	
-	Game.water_medallion = false; 
-	if(Logic.water_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.deku_queen_gohma;}
-	else if(Logic.water_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.dodongos_king_dodongo;}
-	else if(Logic.water_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.jabu_barinade;}
-	else if(Logic.water_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.forest14;}
-	else if(Logic.water_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.fire6;}
-	else if(Logic.water_medallion_location == "water") {if (Check.water11 != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.water11;}
-	else if(Logic.water_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.spirit20;}
-	else if(Logic.water_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.water_medallion = true;} Logic.water_medallion = Location_Logic.shadow18;}
-	else if(Logic.water_medallion_location == "pocket") {Game.water_medallion = true; Logic.water_medallion = true;}
+	Game.water = false; 
+	if(Logic.water_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.deku_queen_gohma;}
+	else if(Logic.water_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.dodongos_king_dodongo;}
+	else if(Logic.water_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.jabu_barinade;}
+	else if(Logic.water_medallion_location == "forest") {if (Check.forest14 != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.forest14;}
+	else if(Logic.water_medallion_location == "fire") {if (Check.fire6 != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.fire6;}
+	else if(Logic.water_medallion_location == "water") {if (Check.water11 != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.water11;}
+	else if(Logic.water_medallion_location == "spirit") {if (Check.spirit20 != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.spirit20;}
+	else if(Logic.water_medallion_location == "shadow") {if (Check.shadow18 != "unknown") {Game.water = true;} Logic.water_medallion = Location_Logic.shadow18;}
+	else if(Logic.water_medallion_location == "pocket") {Game.water = true; Logic.water_medallion = true;}
 	else {Logic.water_medallion_location == "unknown"; Logic.water_medallion = false;}
 	
 	Logic.shadow_medallion = false;
+	Game.shadow_medallion = false;
 	Logic.spirit_medallion = false;
+	Game.spirit_medallion = false;
+	Game.light_medallion = false;
 	for (var i = 1; i <=3; i++) {
 		str = "generic" + i;
 		str2 = "gen" + i;
@@ -482,7 +485,6 @@ function refresh_logic_for_stuff() {
 		}
 }
 }
-
 function force_stuff_in_or_out_of_logic() {
 	var i;
 	for (i = 1; i <= 4; i++) {
@@ -628,7 +630,7 @@ function logic_shortcuts() {
 	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer);
 	Game.crater_top = Game.crater_by_city || Game.hammer;
 	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
-	Game.can_enter_ganons = Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3;
+	Game.can_enter_ganons = Game.forest && Game.fire && Game.water && Game.gen1 && Game.gen2 && Game.gen3;
 	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow1 || Game.hookshot || Game.bomb_bag1);
 	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.scale2);
 	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow1 || Game.can_use_dins);
@@ -640,7 +642,15 @@ function logic_shortcuts() {
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
 	Game.giants_wallet = Game.wallet1 && Game.wallet2;
 }
-
+function linSoClick(x) {
+	var str = x.src.substring(0,x.src.length-4);
+	if (str == "hookshot" && Game.hookshot && !Game.longshot) {x.src = Game.longshot_img; Game.hookshot2 = true;}
+	else if (str == "hookshot" && Game.hookshot) {x.src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; Game.hookshot1 = false; Game.hookshot2 = false;}
+	else if (str == "hookshot") {x.style.filter = "none"; Game.hookshot1 = true;}
+	else if (x.style.filter == "none") {x.style.filter = "grayscale(100%)"; Game[str] = false;}
+	else {x.style.filter = "none"; Game[str] = true;}
+	temp += 1;
+}
 function location_logic(){
 	Location_Logic.mido_1 = true;
 	Location_Logic.mido_2 = true;
@@ -1285,7 +1295,7 @@ function location_logic(){
 	Location_Access.minuetSpot = true;
 	Location_Access.requiemSpot = Game.can_enter_colossus;
 	Location_Access.serenadeSpot = Game.ice_access;
-	Location_Access.preludeSpot = Game.forest_medallion;
-	Location_Access.nocturneSpot = Game.forest_medallion && Game.fire_medallion && Game.water_medallion;
+	Location_Access.preludeSpot = Game.forest;
+	Location_Access.nocturneSpot = Game.forest && Game.fire && Game.water;
 	Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
 }
