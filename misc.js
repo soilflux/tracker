@@ -405,14 +405,11 @@ function timer_stuff() {
 }
 
 document.onkeydown = function(e) {
-	if (e.ctrlKey && e.which == 90) {
-		Undo();
-	}
-}
-
-document.onkeydown = function(e) {
 	if (e.altKey && e.which == 90) {
 		timerControl();
+	}
+	if (e.ctrlKey && e.which == 90) {
+		Undo();
 	}
 }
 
