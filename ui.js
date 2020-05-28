@@ -558,7 +558,7 @@ function update_logic_info() {
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
 			document.getElementById(str).innerHTML = backUp[i];
-			if (i >= 367 && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
+			if (i >= 375 && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
@@ -582,7 +582,7 @@ function update_logic_info() {
 				}
 			}
 			if(document.getElementById(key).style.display != "none") {
-				if (i < 367) {Game.logically_accessible += 1;}
+				if (i < 375) {Game.logically_accessible += 1;}
 				if (i == AreaIndexes[12] - 1 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
 			    if (i == AreaIndexes[16] - 1 && Game.dodongos_checks_remaining == 0) {Game.logically_accessible -= 1;}
 				if (i == AreaIndexes[26] - 1 && Game.jabu_checks_remaining == 0) {Game.logically_accessible -= 1;}
