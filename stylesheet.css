@@ -231,9 +231,8 @@ color: red;
   width: 90px;
 }
 #checkSummaryColumn {
-	top:1500px;
-	left:5px;
-	position:absolute;
+	left:20px;
+	position:relative;
 	float: left;
 	width: 300px;
 }
@@ -252,9 +251,16 @@ color: red;
 	background-image: url("./normal/background.png");
 }
 #info_column {
+	position:relative;
 	margin-top:10px;
 	float: left;
-	width: 275px;
+	width: 235px;
+}
+#linsoColumn {
+	position: relative;
+	margin-top:10px;
+	float: left;
+	width: 320px;
 }
 .pplpics {
 	height:12px;
@@ -370,13 +376,6 @@ color: red;
 	display:none;	
 }
 #linsoControl {
-	display:none;
-}
-#linso_background {
-	display:none;
-	position:absolute;
-	left:1015px;
-	top: -20px;
 }
 #linso11 {
 	position:absolute;
@@ -927,10 +926,26 @@ color:#8C9B03;
 #title_shadow {
 color:#69008E;
 }
-#title_botw {
+#title_well {
 color:#DE86FE;
 }
 #title_gtg {
 color:#FE8B08;
+}
+.half_break {
+	line-height: 50%;
+}
+.settingsOptions {
+	font-size: 1.1em;
+	position:absolute;
+    left:0;
+    right:0;
+}
+.settingsLabels{
+	font-size: 1.1em;
+	color: white;
+	position:absolute;
+	left:-130px;
+    right:0;
 }
 

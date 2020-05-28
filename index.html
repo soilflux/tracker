@@ -6,344 +6,151 @@
       <title>Ctrl + Z = Undo!</title>
     </head>
     <body oncontextmenu="return false;">
-	<div class="row">
-      <div id="normalColumn1" class="column">
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png);"  id="mido_1" class= "picture_input" > </input><small id="text_mido_1" class="check_text" onmousedown = "junk(this)">TL</small><br id= "br_mido_1" />
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png); " id="mido_2" class= "picture_input" > </input><small id="text_mido_2" class="check_text" onmousedown = "junk(this)">TR</small><br id= "br_mido_2" />
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png); " id="mido_3" class= "picture_input" > </input><small id="text_mido_3" class="check_text" onmousedown = "junk(this)">BR</small><br id= "br_mido_3" />
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png); " id="mido_4" class= "picture_input" > </input><small id="text_mido_4" class="check_text" onmousedown = "junk(this)">BL</small><br id= "br_mido_4" />
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png); " id="kokiri_sword" class= "picture_input" > </input><small id="text_kokiri_sword" class="check_text" onmousedown = "junk(this)">Sword</small><br id= "br_kokiri_sword" />
-		<input style="background-image: url(https://i.imgur.com/c3nWMsM.png); " id="kokiri_song_of_storms" class= "picture_input" > </input><small id="text_kokiri_song_of_storms" class="check_text" onmousedown = "junk(this)">Storms</small><br id= "br_kokiri_song_of_storms" />
-		<br id="kokiri_break"/>
-		<input style="background-image: url(https://i.imgur.com/lxT1gSk.png); " id="talons_chickens" class= "picture_input" > </input><small id="text_talons_chickens" class="check_text" onmousedown = "junk(this)">Talon</small><br id= "br_talons_chickens" />
-		<input style="background-image: url(https://i.imgur.com/lxT1gSk.png); " id="back_of_ranch" class= "picture_input" > </input><small id="text_back_of_ranch" class="check_text" onmousedown = "junk(this)">BoR</small><br id= "br_back_of_ranch" />
-		<br id="ranch_break"/>
-		<input style="background-image: url(https://i.imgur.com/sjT5Hai.png); " id="hyrule_forest_boulder" class= "picture_input" > </input><small id="text_hyrule_forest_boulder" class="check_text" onmousedown = "junk(this)">Remote</small><br id= "br_hyrule_forest_boulder" />
-		<input style="background-image: url(https://i.imgur.com/sjT5Hai.png); " id="hyrule_open_grotto" class= "picture_input" > </input><small id="text_hyrule_open_grotto" class="check_text" onmousedown = "junk(this)">Open</small><br id= "br_hyrule_open_grotto" />
-		<input style="background-image: url(https://i.imgur.com/sjT5Hai.png); " id="hyrule_hp_scrub" class= "picture_input" > </input><small id="text_hyrule_hp_scrub" class="check_text" onmousedown = "junk(this)">Scrub</small><br id= "br_hyrule_hp_scrub" />
-		<input style="background-image: url(https://i.imgur.com/sjT5Hai.png); " id="hyrule_boulder_of_destiny" class= "picture_input" > </input><small id="text_hyrule_boulder_of_destiny" class="check_text" onmousedown = "junk(this)">Market</small><br id= "br_hyrule_boulder_of_destiny" />
-		<input style="background-image: url(https://i.imgur.com/sjT5Hai.png); " id="hyrule_tektite_grotto" class= "picture_input" > </input><small id="text_hyrule_tektite_grotto" class="check_text" onmousedown = "junk(this)">Tektite</small><br id= "br_hyrule_tektite_grotto" />
-		<br id="field_break"/>
-		<input style="background-image: url(https://i.imgur.com/sEKZt65.png); " id="gerudovalley_box" class= "picture_input" > </input><small id="text_gerudovalley_box" class="check_text" onmousedown = "junk(this)">Box</small><br id= "br_gerudovalley_box" />
-		<input style="background-image: url(https://i.imgur.com/sEKZt65.png); " id="gerudovalley_waterfall" class= "picture_input" > </input><small id="text_gerudovalley_waterfall" class="check_text" onmousedown = "junk(this)">Water</small><br id= "br_gerudovalley_waterfall" />
-		<input style="background-image: url(https://i.imgur.com/sEKZt65.png); " id="gerudo_hammer" class= "picture_input" > </input><small id="text_gerudo_hammer" class="check_text" onmousedown = "junk(this)">Rocks</small><br id= "br_gerudo_hammer" />
-		<br id="valley_break"/>
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_child_fishing" class= "picture_input" > </input><small id="text_hylia_child_fishing" class="check_text" onmousedown = "junk(this)">C Fish</small><br id= "br_hylia_child_fishing" />
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_bottle" class= "picture_input" > </input><small id="text_hylia_bottle" class="check_text" onmousedown = "junk(this)">Bottle</small><br id= "br_hylia_bottle" />
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_adult_fishing" class= "picture_input" > </input><small id="text_hylia_adult_fishing" class="check_text" onmousedown = "junk(this)">A Fish</small><br id= "br_hylia_adult_fishing" />
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_lab_top" class= "picture_input" > </input><small id="text_hylia_lab_top" class="check_text" onmousedown = "junk(this)">Labtop</small><br id= "br_hylia_lab_top" />
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_lab_dive" class= "picture_input" > </input><small id="text_hylia_lab_dive" class="check_text" onmousedown = "junk(this)">Divin'</small><br id= "br_hylia_lab_dive" />
-		<input style="background-image: url(https://i.imgur.com/BofwN1y.png); " id="hylia_sun_shoot" class= "picture_input" > </input><small id="text_hylia_sun_shoot" class="check_text" onmousedown = "junk(this)">Sun</small><br id= "br_hylia_sun_shoot" />
-		<br id="hylia_break"/>
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="market_slingshot_game" class= "picture_input" > </input><small id="text_market_slingshot_game" class="check_text" onmousedown = "junk(this)">Sling</small><br id= "br_market_slingshot_game" />
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="richard" class= "picture_input" > </input><small id="text_richard" class="check_text" onmousedown = "junk(this)">Rich</small><br id= "br_richard" />
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="market_bowling_1" class= "picture_input" > </input><small id="text_market_bowling_1" class="check_text" onmousedown = "junk(this)">Bowl 1</small><br id= "br_market_bowling_1" />
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="market_bowling_2" class= "picture_input" > </input><small id="text_market_bowling_2" class="check_text" onmousedown = "junk(this)">Bowl 2</small><br id= "br_market_bowling_2" />
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="market_lens_game" class= "picture_input" > </input><small id="text_market_lens_game" class="check_text" onmousedown = "junk(this)">Lens</small><br id= "br_market_lens_game" />
-		<input style="background-image: url(https://i.imgur.com/hrb0r0b.png); " id="poes" class= "picture_input" > </input><small id="text_poes" class="check_text" onmousedown = "junk(this)">Poes</small><br id= "br_poes" />
-		<br id="market_break"/>
-		<input style="background-image: url(https://i.imgur.com/sYlOOIK.png); " id="dins_fairy" class= "picture_input" > </input><small id="text_dins_fairy" class="check_text" onmousedown = "junk(this)">D.Fairy</small><br id= "br_dins_fairy" />
-		<br id="dfairy_break"/>
-		<input style="background-image: url(https://i.imgur.com/s7mKEc9.png); " id="g_fairy" class= "picture_input" > </input><small id="text_g_fairy" class="check_text" onmousedown = "junk(this)">G.Fairy</small><br id= "br_g_fairy" />
-		<br id="gfairy_break"/>
-		<input style="background-image: url(https://i.imgur.com/fEshagY.jpg); " id="lacs" class= "picture_input" > </input><small id="text_lacs" class="check_text" onmousedown = "junk(this)">LACS</small><br id= "br_lacs" />
-		<br id="tot_break"/>
-		<input style="background-image: url(https://i.imgur.com/5lUtq7c.png); " id="fountain_fairy" class= "picture_input" > </input><small id="text_fountain_fairy" class="check_text" onmousedown = "junk(this)">Fairy</small><br id= "br_fountain_fairy" />
-		<input style="background-image: url(https://i.imgur.com/5lUtq7c.png); " id="ice_glacier_hp" class= "picture_input" > </input><small id="text_ice_glacier_hp" class="check_text" onmousedown = "junk(this)">Glacier</small><br id= "br_ice_glacier_hp" />
-		<input style="background-image: url(https://i.imgur.com/5lUtq7c.png); " id="ice_bottom_of_fountain" class= "picture_input" > </input><small id="text_ice_bottom_of_fountain" class="check_text" onmousedown = "junk(this)">Divin'</small><br id= "br_ice_bottom_of_fountain" />
-		<br id="fountain_break"/>
-		<input style="background-image: url(https://i.imgur.com/zjCXaML.png); " id="ice_map" class= "picture_input" > </input><small id="text_ice_map" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_ice_map" />
-		<input style="background-image: url(https://i.imgur.com/zjCXaML.png); " id="ice_compass" class= "picture_input" > </input><small id="text_ice_compass" class="check_text" onmousedown = "junk(this)">Comp</small><br id= "br_ice_compass" />
-		<input style="background-image: url(https://i.imgur.com/zjCXaML.png); " id="ice_hp" class= "picture_input" > </input><small id="text_ice_hp" class="check_text" onmousedown = "junk(this)">HP</small><br id= "br_ice_hp" />
-		<input style="background-image: url(https://i.imgur.com/zjCXaML.png); " id="ice_irons" class= "picture_input" > </input><small id="text_ice_irons" class="check_text" onmousedown = "junk(this)">Irons</small><br id= "br_ice_irons" />
-	  </div>
-	  
-	  <div id="normalColumn2" class="column">
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_lobby" class= "picture_input" > </input><small id="text_deku_lobby" class="check_text" onmousedown = "junk(this)">Lobby</small><br id= "br_deku_lobby" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_slingshot" class= "picture_input" > </input><small id="text_deku_slingshot" class="check_text" onmousedown = "junk(this)">Sling 1</small><br id= "br_deku_slingshot" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_slingshot_room_side" class= "picture_input" > </input><small id="text_deku_slingshot_room_side" class="check_text" onmousedown = "junk(this)">Sling 2</small><br id= "br_deku_slingshot_room_side" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_compass" class= "picture_input" > </input><small id="text_deku_compass" class="check_text" onmousedown = "junk(this)">Comp 1</small><br id= "br_deku_compass" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_compass_room_side" class= "picture_input" > </input><small id="text_deku_compass_room_side" class="check_text" onmousedown = "junk(this)">Comp 2</small><br id= "br_deku_compass_room_side" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_basement" class= "picture_input" > </input><small id="text_deku_basement" class="check_text" onmousedown = "junk(this)">Base</small><br id= "br_deku_basement" />
-		<input style="background-image: url(https://i.imgur.com/9BaI5JJ.png); " id="deku_queen_gohma" class= "picture_input" > </input><small id="text_deku_queen_gohma" class="check_text" onmousedown = "junk(this)">Queen</small><br id= "br_deku_queen_gohma" />
-		<br id="deku_break"/>
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="ocarina_game" class= "picture_input" > </input><small id="text_ocarina_game" class="check_text" onmousedown = "junk(this)">Mem'ry</small><br id= "br_ocarina_game" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="lost_woods_grotto" class= "picture_input" > </input><small id="text_lost_woods_grotto" class="check_text" onmousedown = "junk(this)">Generic</small><br id= "br_lost_woods_grotto" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="lost_woods_scrub_grotto" class= "picture_input" > </input><small id="text_lost_woods_scrub_grotto" class="check_text" onmousedown = "junk(this)">Scrub Gr</small><br id= "br_lost_woods_scrub_grotto" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="bridge_scrub" class= "picture_input" > </input><small id="text_bridge_scrub" class="check_text" onmousedown = "junk(this)">Br Scrub</small><br id= "br_bridge_scrub" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="target" class= "picture_input" > </input><small id="text_target" class="check_text" onmousedown = "junk(this)">Target</small><br id= "br_target" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="skull_kid" class= "picture_input" > </input><small id="text_skull_kid" class="check_text" onmousedown = "junk(this)">Saria Kid</small><br id= "br_skull_kid" />
-		<input style="background-image: url(https://i.imgur.com/mv5QLem.png); " id="theater" class= "picture_input" > </input><small id="text_theater" class="check_text" onmousedown = "junk(this)">Mask</small><br id= "br_theater" />
-		<br id="lostwoods_break"/>
-		<input style="background-image: url(https://i.imgur.com/S4OentL.png); " id="wolfos_grotto" class= "picture_input" > </input><small id="text_wolfos_grotto" class="check_text" onmousedown = "junk(this)">Wolfos</small><br id= "br_wolfos_grotto" />
-		<br id="sfm_break"/>
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="rolling_goron" class= "picture_input" > </input><small id="text_rolling_goron" class="check_text" onmousedown = "junk(this)">Big Rollin'</small><br id= "br_rolling_goron" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_dance" class= "picture_input" > </input><small id="text_goron_dance" class="check_text" onmousedown = "junk(this)">Dancin'</small><br id= "br_goron_dance" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_pot" class= "picture_input" > </input><small id="text_goron_pot" class="check_text" onmousedown = "junk(this)">Chuckin'</small><br id= "br_goron_pot" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_maze_1" class= "picture_input" > </input><small id="text_goron_maze_1" class="check_text" onmousedown = "junk(this)">Maze 1</small><br id= "br_goron_maze_1" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_maze_2" class= "picture_input" > </input><small id="text_goron_maze_2" class="check_text" onmousedown = "junk(this)">Maze 2</small><br id= "br_goron_maze_2" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_maze_3" class= "picture_input" > </input><small id="text_goron_maze_3" class="check_text" onmousedown = "junk(this)">Maze 3!</small><br id= "br_goron_maze_3" />
-		<input style="background-image: url(https://i.imgur.com/i37Ey8I.png); " id="goron_link" class= "picture_input" > </input><small id="text_goron_link" class="check_text" onmousedown = "junk(this)">Lil Rollin'</small><br id= "br_goron_link" />
-		<br id="gcity_break"/>
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_map" class= "picture_input" > </input><small id="text_dodongos_map" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_dodongos_map" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_compass" class= "picture_input" > </input><small id="text_dodongos_compass" class="check_text" onmousedown = "junk(this)">Comp</small><br id= "br_dodongos_compass" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_bomb_flower_platform" class= "picture_input" > </input><small id="text_dodongos_bomb_flower_platform" class="check_text" onmousedown = "junk(this)">Plat</small><br id= "br_dodongos_bomb_flower_platform" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_bomb_bag" class= "picture_input" > </input><small id="text_dodongos_bomb_bag" class="check_text" onmousedown = "junk(this)">B Bag</small><br id= "br_dodongos_bomb_bag" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_end_of_bridge" class= "picture_input" > </input><small id="text_dodongos_end_of_bridge" class="check_text" onmousedown = "junk(this)">Bridge</small><br id= "br_dodongos_end_of_bridge" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_above_king" class= "picture_input" > </input><small id="text_dodongos_above_king" class="check_text" onmousedown = "junk(this)">Above</small><br id= "br_dodongos_above_king" />
-		<input style="background-image: url(https://i.imgur.com/9btLMfb.png); " id="dodongos_king_dodongo" class= "picture_input" > </input><small id="text_dodongos_king_dodongo" class="check_text" onmousedown = "junk(this)">King</small><br id= "br_dodongos_king_dodongo" />
-		<br id="dodongos_break"/>
-		<input style="background-image: url(https://i.imgur.com/lrJt7JH.png); " id="trail_bombable" class= "picture_input" > </input><small id="text_trail_bombable" class="check_text" onmousedown = "junk(this)">Wall</small><br id= "br_trail_bombable" />
-		<input style="background-image: url(https://i.imgur.com/lrJt7JH.png); " id="trail_dodongos_top" class= "picture_input" > </input><small id="text_trail_dodongos_top" class="check_text" onmousedown = "junk(this)">Top</small><br id= "br_trail_dodongos_top" />
-		<input style="background-image: url(https://i.imgur.com/lrJt7JH.png); " id="trail_song_of_storms" class= "picture_input" > </input><small id="text_trail_song_of_storms" class="check_text" onmousedown = "junk(this)">SoS</small><br id= "br_trail_song_of_storms" />
-		<input style="background-image: url(https://i.imgur.com/lrJt7JH.png); " id="crater_peak_fairy" class= "picture_input" > </input><small id="text_crater_peak_fairy" class="check_text" onmousedown = "junk(this)">Fairy</small><br id= "br_crater_peak_fairy" />
-		<input style="background-image: url(https://i.imgur.com/lrJt7JH.png); " id="trade_quest" class= "picture_input" > </input><small id="text_trade_quest" class="check_text" onmousedown = "junk(this)">Trade</small><br id= "br_trade_quest" />
-		<br id="trail_break"/>
-		<input style="background-image: url(https://i.imgur.com/Wf1f3BM.png); " id="crater_bean" class= "picture_input" > </input><small id="text_crater_bean" class="check_text" onmousedown = "junk(this)">Bean</small><br id= "br_crater_bean" />
-		<input style="background-image: url(https://i.imgur.com/Wf1f3BM.png); " id="crater_hammer_fairy" class= "picture_input" > </input><small id="text_crater_hammer_fairy" class="check_text" onmousedown = "junk(this)">Fairy</small><br id= "br_crater_hammer_fairy" />
-		<input style="background-image: url(https://i.imgur.com/Wf1f3BM.png); " id="crater_grotto" class= "picture_input" > </input><small id="text_crater_grotto" class="check_text" onmousedown = "junk(this)">Grotto</small><br id= "br_crater_grotto" />
-		<input style="background-image: url(https://i.imgur.com/Wf1f3BM.png); " id="crater_nook_hp" class= "picture_input" > </input><small id="text_crater_nook_hp" class="check_text" onmousedown = "junk(this)">Nook</small><br id= "br_crater_nook_hp" />
-	</div>	
-	
-	<div id="normalColumn3" class="column">
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="man_on_roof" class= "picture_input" > </input><small id="text_man_on_roof" class="check_text" onmousedown = "junk(this)">Roof</small><br id= "br_man_on_roof" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="kakariko_grotto" class= "picture_input" > </input><small id="text_kakariko_grotto" class="check_text" onmousedown = "junk(this)">Rear Gr</small><br id= "br_kakariko_grotto" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="windmill" class= "picture_input" > </input><small id="text_windmill" class="check_text" onmousedown = "junk(this)">Windmill</small><br id= "br_windmill" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="anju" class= "picture_input" > </input><small id="text_anju" class="check_text" onmousedown = "junk(this)">Anj</small><br id= "br_anju" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="cow_house" class= "picture_input" > </input><small id="text_cow_house" class="check_text" onmousedown = "junk(this)">Cow</small><br id= "br_cow_house" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="archery_game" class= "picture_input" > </input><small id="text_archery_game" class="check_text" onmousedown = "junk(this)">Arch'ry</small><br id= "br_archery_game" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="redead_grotto" class= "picture_input" > </input><small id="text_redead_grotto" class="check_text" onmousedown = "junk(this)">Front Gr</small><br id= "br_redead_grotto" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="anjus_chickens" class= "picture_input" > </input><small id="text_anjus_chickens" class="check_text" onmousedown = "junk(this)">Cuccos</small><br id= "br_anjus_chickens" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="tokens_10" class= "picture_input" > </input><small id="text_tokens_10" class="check_text" onmousedown = "junk(this)">10!</small><br id= "br_tokens_10" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="tokens_20" class= "picture_input" > </input><small id="text_tokens_20" class="check_text" onmousedown = "junk(this)">20!!</small><br id= "br_tokens_20" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="tokens_30" class= "picture_input" > </input><small id="text_tokens_30" class="check_text" onmousedown = "junk(this)">30!!!</small><br id= "br_tokens_30" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="tokens_40" class= "picture_input" > </input><small id="text_tokens_40" class="check_text" onmousedown = "junk(this)">40!!!!</small><br id= "br_tokens_40" />
-		<input style="background-image: url(https://i.imgur.com/M5hCjWo.png); " id="tokens_50" class= "picture_input" > </input><small id="text_tokens_50" class="check_text" onmousedown = "junk(this)">50!!!!!</small><br id= "br_tokens_50" />
-		<br id="kakariko_break"/>
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="shield_grave" class= "picture_input" > </input><small id="text_shield_grave" class="check_text" onmousedown = "junk(this)">Shield</small><br id= "br_shield_grave" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="gravedigging_tour" class= "picture_input" > </input><small id="text_gravedigging_tour" class="check_text" onmousedown = "junk(this)">Tour</small><br id= "br_gravedigging_tour" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="suns_grave" class= "picture_input" > </input><small id="text_suns_grave" class="check_text" onmousedown = "junk(this)">Redead</small><br id= "br_suns_grave" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="fire_grave" class= "picture_input" > </input><small id="text_fire_grave" class="check_text" onmousedown = "junk(this)">Fire</small><br id= "br_fire_grave" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="graveyard_box" class= "picture_input" > </input><small id="text_graveyard_box" class="check_text" onmousedown = "junk(this)">Box</small><br id= "br_graveyard_box" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="race_1" class= "picture_input" > </input><small id="text_race_1" class="check_text" onmousedown = "junk(this)">Race 1</small><br id= "br_race_1" />
-		<input style="background-image: url(https://i.imgur.com/bOYOCRS.png); " id="race_2" class= "picture_input" > </input><small id="text_race_2" class="check_text" onmousedown = "junk(this)">Race 2</small><br id= "br_race_2" />
-		<br id="graveyard_break"/>
-		<input style="background-image: url(https://i.imgur.com/hm7rWKb.png); " id="river_pillar" class= "picture_input" > </input><small id="text_river_pillar" class="check_text" onmousedown = "junk(this)">Pillar</small><br id= "br_river_pillar" />
-		<input style="background-image: url(https://i.imgur.com/hm7rWKb.png); " id="river_grotto" class= "picture_input" > </input><small id="text_river_grotto" class="check_text" onmousedown = "junk(this)">Grotto</small><br id= "br_river_grotto" />
-		<input style="background-image: url(https://i.imgur.com/hm7rWKb.png); " id="river_ledge" class= "picture_input" > </input><small id="text_river_ledge" class="check_text" onmousedown = "junk(this)">Ledge</small><br id= "br_river_ledge" />
-		<input style="background-image: url(https://i.imgur.com/hm7rWKb.png); " id="frogs_1" class= "picture_input" > </input><small id="text_frogs_1" class="check_text" onmousedown = "junk(this)">Frogs 1</small><br id= "br_frogs_1" />
-		<input style="background-image: url(https://i.imgur.com/hm7rWKb.png); " id="frogs_2" class= "picture_input" > </input><small id="text_frogs_2" class="check_text" onmousedown = "junk(this)">Frogs 2</small><br id= "br_frogs_2" />
-		<br id="river_break"/>
-		<input style="background-image: url(https://i.imgur.com/9BwSTvK.png); " id="zora_diving" class= "picture_input" > </input><small id="text_zora_diving" class="check_text" onmousedown = "junk(this)">Divin'</small><br id= "br_zora_diving" />
-		<input style="background-image: url(https://i.imgur.com/9BwSTvK.png); " id="zora_torches" class= "picture_input" > </input><small id="text_zora_torches" class="check_text" onmousedown = "junk(this)">Torches</small><br id= "br_zora_torches" />
-		<input style="background-image: url(https://i.imgur.com/9BwSTvK.png); " id="thaw_king" class= "picture_input" > </input><small id="text_thaw_king" class="check_text" onmousedown = "junk(this)">King</small><br id= "br_thaw_king" />
-		<br id="domain_break"/>
-		<input style="background-image: url(https://i.imgur.com/kf4Nhow.png); " id="colossus_bean" class= "picture_input" > </input><small id="text_colossus_bean" class="check_text" onmousedown = "junk(this)">Bean</small><br id= "br_colossus_bean" />
-		<input style="background-image: url(https://i.imgur.com/kf4Nhow.png); " id="colossus_fairy" class= "picture_input" > </input><small id="text_colossus_fairy" class="check_text" onmousedown = "junk(this)">Fairy</small><br id= "br_colossus_fairy" />
-		<br id="colossus_break"/>
-		<input style="background-image: url(https://i.imgur.com/gQAN9po.png); " id="wasteland" class= "picture_input" > </input><small id="text_wasteland" class="check_text" onmousedown = "junk(this)">Check</small><br id= "br_wasteland" />
-		<br id="wasteland_break"/>
-		<input style="background-image: url(https://i.imgur.com/O8YMJ5E.png); " id="gerudo_roof" class= "picture_input" > </input><small id="text_gerudo_roof" class="check_text" onmousedown = "junk(this)">Roof</small><br id= "br_gerudo_roof" />
-		<input style="background-image: url(https://i.imgur.com/O8YMJ5E.png); " id="gerudo_archery_1" class= "picture_input" > </input><small id="text_gerudo_archery_1" class="check_text" onmousedown = "junk(this)">Arch'ry 1</small><br id= "br_gerudo_archery_1" />
-		<input style="background-image: url(https://i.imgur.com/O8YMJ5E.png); " id="gerudo_archery_2" class= "picture_input" > </input><small id="text_gerudo_archery_2" class="check_text" onmousedown = "junk(this)">Arch'ry 2</small><br id= "br_gerudo_archery_2" />
-		<br id="fortress_break" />
-		<input style="background-image: url(https://i.imgur.com/5RniyE6.png); " id="jabu_boomerang" class= "picture_input" > </input><small id="text_jabu_boomerang" class="check_text" onmousedown = "junk(this)">Boom</small><br id= "br_jabu_boomerang" />
-		<input style="background-image: url(https://i.imgur.com/5RniyE6.png); " id="jabu_map" class= "picture_input" > </input><small id="text_jabu_map" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_jabu_map" />
-		<input style="background-image: url(https://i.imgur.com/5RniyE6.png); " id="jabu_compass" class= "picture_input" > </input><small id="text_jabu_compass" class="check_text" onmousedown = "junk(this)">Comp</small><br id= "br_jabu_compass" />
-		<input style="background-image: url(https://i.imgur.com/5RniyE6.png); " id="jabu_barinade" class= "picture_input" > </input><small id="text_jabu_barinade" class="check_text" onmousedown = "junk(this)">Barinade</small><br id= "br_jabu_barinade" />
-	</div>	
-
-	<div class="dungColumn" id="dung1">
-		<small id="title_forest" class="area_titles">For</small><span id= "forest" class="superdot" onclick = "junkUltra(this)">8</span><span id= "forestSKs" class="superdotSK">5</span><span id= "forestBKs" class="superdotBK">1</span> <br />
-		<!--<input id="gs_forest_first" class= "check_input" > </input><small id="text_gs_forest_first" class="check_text" onmousedown = "junk(this)">GS:First</small><br id= "br_gs_forest_first" />-->
-		<input id="forest1" class= "check_input" > </input><small id="text_forest1" class="check_text" onmousedown = "junk(this)">First</small><br id= "br_forest1" />
-		<!--<input id="gs_forest_lobby" class= "check_input" > </input><small id="text_gs_forest_lobby" class="check_text" onmousedown = "junk(this)">GS:Lobby</small><br id= "br_gs_forest_lobby" />-->
-		<input id="forest2" class= "check_input" > </input><small id="text_forest2" class="check_text" onmousedown = "junk(this)">Stalfos</small><br id= "br_forest2" />
-		<input id="forest3" class= "check_input" > </input><small id="text_forest3" class="check_text" onmousedown = "junk(this)">C.Mid</small><br id= "br_forest3" />
-		<!--<input id="gs_forest_outdoor_east" class= "check_input" > </input><small id="text_gs_forest_outdoor_east" class="check_text" onmousedown = "junk(this)">GS:Scare</small><br id= "br_gs_forest_outdoor_east" />-->
-		<input id="forest4" class= "check_input" > </input><small id="text_forest4" class="check_text" onmousedown = "junk(this)">C.High</small><br id= "br_forest4" />
-		<input id="forest5" class= "check_input" > </input><small id="text_forest5" class="check_text" onmousedown = "junk(this)">C.Low</small><br id= "br_forest5" />
-		<input id="forest6" class= "check_input" > </input><small id="text_forest6" class="check_text" onmousedown = "junk(this)">Shoot</small><br id= "br_forest6" />
-		<input id="forest7" class= "check_input" > </input><small id="text_forest7" class="check_text" onmousedown = "junk(this)">BK</small><br id= "br_forest7" />
-		<!--<input id="gs_forest_outdoor_east" class= "check_input" > </input><small id="text_gs_forest_outdoor_east" class="check_text" onmousedown = "junk(this)">GS:West</small><br id= "br_gs_forest_outdoor_east" />-->
-		<input id="forest8" class= "check_input" > </input><small id="text_forest8" class="check_text" onmousedown = "junk(this)">Floormasta</small><br id= "br_forest8" />
-		<input id="forest9" class= "check_input" > </input><small id="text_forest9" class="check_text" onmousedown = "junk(this)">Red</small><br id= "br_forest9" />
-		<input id="forest10" class= "check_input" > </input><small id="text_forest10" class="check_text" onmousedown = "junk(this)">Bow</small><br id= "br_forest10" />
-		<input id="forest11" class= "check_input" > </input><small id="text_forest11" class="check_text" onmousedown = "junk(this)">Blue</small><br id= "br_forest11" />
-		<input id="forest12" class= "check_input" > </input><small id="text_forest12" class="check_text" onmousedown = "junk(this)">Falling</small><br id= "br_forest12" />
-	    <input id="forest13" class= "check_input" > </input><small id="text_forest13" class="check_text" onmousedown = "junk(this)">Near Boss</small><br id= "br_forest13" />
-		<!--<input id="gs_forest_outdoor_east" class= "check_input" > </input><small id="text_gs_forest_outdoor_east" class="check_text" onmousedown = "junk(this)">GS:Boss</small><br id= "br_gs_forest_outdoor_east" />-->
-		<input id="forest14" class= "check_input" > </input><small id="text_forest14" class="check_text" onmousedown = "junk(this)">Phantom G</small><br id= "br_forest14" />
-		<br /><small id="title_fire" class="area_titles">Fir</small><span id= "fire" class="superdot" onclick = "junkUltra(this)">6</span><span id= "fireSKs" class="superdotSK">8</span><span id= "fireBKs" class="superdotBK">1</span> <br />
-		<input id="fire1" class= "check_input" > </input><small id="text_fire1" class="check_text" onmousedown = "junk(this)">Near Boss</small><br id= "br_fire1" />
-		<input id="fire2" class= "check_input" > </input><small id="text_fire2" class="check_text" onmousedown = "junk(this)">Hammer 1</small><br id= "br_fire2" />
-		<input id="fire3" class= "check_input" > </input><small id="text_fire3" class="check_text" onmousedown = "junk(this)">Hammer 2</small><br id= "br_fire3" />
-		<input id="fire4" class= "check_input" > </input><small id="text_fire4" class="check_text" onmousedown = "junk(this)">Lava Open</small><br id= "br_fire4" />
-		<input id="fire5" class= "check_input" > </input><small id="text_fire5" class="check_text" onmousedown = "junk(this)">Lava Bomb</small><br id= "br_fire5" />
-		<input id="fire6" class= "check_input" > </input><small id="text_fire6" class="check_text" onmousedown = "junk(this)">Volva</small><br id= "br_fire6" />
-		<input id="fire7" class= "check_input" > </input><small id="text_fire7" class="check_text" onmousedown = "junk(this)">Lower</small><br id= "br_fire7" />
-		<input id="fire8" class= "check_input" > </input><small id="text_fire8" class="check_text" onmousedown = "junk(this)">Side Room</small><br id= "br_fire8" />
-		<input id="fire9" class= "check_input" > </input><small id="text_fire9" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_fire9" />
-		<input id="fire10" class= "check_input" > </input><small id="text_fire10" class="check_text" onmousedown = "junk(this)">Upper</small><br id= "br_fire10" />
-		<input id="fire11" class= "check_input" > </input><small id="text_fire11" class="check_text" onmousedown = "junk(this)">Bombable</small><br id= "br_fire11" />
-		<input id="fire12" class= "check_input" > </input><small id="text_fire12" class="check_text" onmousedown = "junk(this)">Scarecrow</small><br id= "br_fire12" />
-		<input id="fire13" class= "check_input" > </input><small id="text_fire13" class="check_text" onmousedown = "junk(this)">Comp</small><br id= "br_fire13" />
-		<input id="fire14" class= "check_input" > </input><small id="text_fire14" class="check_text" onmousedown = "junk(this)">SoT</small><br id= "br_fire14" />
-		<input id="fire15" class= "check_input" > </input><small id="text_fire15" class="check_text" onmousedown = "junk(this)">MEGA</small><br id= "br_fire15" />
-		<br /><small id="title_water" class="area_titles">Wat</small><span id= "water" class="superdot" onclick = "junkUltra(this)">4</span><span id= "waterSKs" class="superdotSK">6</span><span id= "waterBKs" class="superdotBK">1</span><br />
-		<input id="water1" class= "check_input" > </input><small id="text_water1" class="check_text" onmousedown = "junk(this)">Compass</small><br id= "br_water1" />
-		<input id="water2" class= "check_input" > </input><small id="text_water2" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_water2" />
-		<input id="water3" class= "check_input" > </input><small id="text_water3" class="check_text" onmousedown = "junk(this)">Cracked</small><br id= "br_water3" />
-		<input id="water4" class= "check_input" > </input><small id="text_water4" class="check_text" onmousedown = "junk(this)">Torches</small><br id= "br_water4" />
-		<input id="water5" class= "check_input" > </input><small id="text_water5" class="check_text" onmousedown = "junk(this)">Bow Block</small><br id= "br_water5" />
-		<input id="water6" class= "check_input" > </input><small id="text_water6" class="check_text" onmousedown = "junk(this)">Pillar</small><br id= "br_water6" />
-		<input id="water7" class= "check_input" > </input><small id="text_water7" class="check_text" onmousedown = "junk(this)">D Link</small><br id= "br_water7" />
-		<input id="water8" class= "check_input" > </input><small id="text_water8" class="check_text" onmousedown = "junk(this)">Riva</small><br id= "br_water8" />
-		<input id="water9" class= "check_input" > </input><small id="text_water9" class="check_text" onmousedown = "junk(this)">Dragin</small><br id= "br_water9" />
-		<input id="water10" class= "check_input" > </input><small id="text_water10" class="check_text" onmousedown = "junk(this)">BK</small><br id= "br_water10" />
-		<input id="water11" class= "check_input" > </input><small id="text_water11" class="check_text" onmousedown = "junk(this)">Morpha</small><br id= "br_water11" />
-	</div>
-	<div class="dungColumn" id="dung2">	
-		<small id="title_spirit" class="area_titles">Spi</small><span id= "spirit" class="superdot" onclick = "junkUltra(this)">14</span><span id= "spiritSKs" class="superdotSK">5</span><span id= "spiritBKs" class="superdotBK">1</span> <br />
-		<input id="spirit1" class= "check_input" > </input><small id="text_spirit1" class="check_text" onmousedown = "junk(this)">Ch L.</small><br id= "br_spirit1" />
-		<input id="spirit2" class= "check_input" > </input><small id="text_spirit2" class="check_text" onmousedown = "junk(this)">Ch R.</small><br id= "br_spirit2" />
-		<input id="spirit3" class= "check_input" > </input><small id="text_spirit3" class="check_text" onmousedown = "junk(this)">Ch Climb 1</small><br id= "br_spirit3" />
-		<input id="spirit4" class= "check_input" > </input><small id="text_spirit4" class="check_text" onmousedown = "junk(this)">Ch Climb 2</small><br id= "br_spirit4" />
-		<input id="spirit5" class= "check_input" > </input><small id="text_spirit5" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_spirit5" />
-		<input id="spirit6" class= "check_input" > </input><small id="text_spirit6" class="check_text" onmousedown = "junk(this)">Sun Room</small><br id= "br_spirit6" />
-		<input id="spirit7" class= "check_input" > </input><small id="text_spirit7" class="check_text" onmousedown = "junk(this)">Silvers</small><br id= "br_spirit7" />
-		<input id="spirit8" class= "check_input" > </input><small id="text_spirit8" class="check_text" onmousedown = "junk(this)">Ad L.</small><br id= "br_spirit8" />
-		<input id="spirit9" class= "check_input" > </input><small id="text_spirit9" class="check_text" onmousedown = "junk(this)">Ad R.</small><br id= "br_spirit9" />
-		<input id="spirit10" class= "check_input" > </input><small id="text_spirit10" class="check_text" onmousedown = "junk(this)">Mirror 1</small><br id= "br_spirit10" />
-		<input id="spirit11" class= "check_input" > </input><small id="text_spirit11" class="check_text" onmousedown = "junk(this)">Mirror 2</small><br id= "br_spirit11" />
-		<input id="spirit12" class= "check_input" > </input><small id="text_spirit12" class="check_text" onmousedown = "junk(this)">Lul Hand</small><br id= "br_spirit12" />
-		<input id="spirit13" class= "check_input" > </input><small id="text_spirit13" class="check_text" onmousedown = "junk(this)">Lul High</small><br id= "br_spirit13" />
-		<input id="spirit14" class= "check_input" > </input><small id="text_spirit14" class="check_text" onmousedown = "junk(this)">4 Armos</small><br id= "br_spirit14" />
-		<input id="spirit15" class= "check_input" > </input><small id="text_spirit15" class="check_text" onmousedown = "junk(this)">Invisi 1</small><br id= "br_spirit15" />
-		<input id="spirit16" class= "check_input" > </input><small id="text_spirit16" class="check_text" onmousedown = "junk(this)">Invisi 2</small><br id= "br_spirit16" />
-		<input id="spirit17" class= "check_input" > </input><small id="text_spirit17" class="check_text" onmousedown = "junk(this)">Mirror</small><br id= "br_spirit17" />
-		<input id="spirit18" class= "check_input" > </input><small id="text_spirit18" class="check_text" onmousedown = "junk(this)">BK</small><br id= "br_spirit18" />
-		<input id="spirit19" class= "check_input" > </input><small id="text_spirit19" class="check_text" onmousedown = "junk(this)">Tippy Top</small><br id= "br_spirit19" />
-		<input id="spirit20" class= "check_input" > </input><small id="text_spirit20" class="check_text" onmousedown = "junk(this)">Twinrova</small><br id= "br_spirit20" />
-		<br /><small id="title_shadow" class="area_titles">Sha</small><span id= "shadow" class="superdot" onclick = "junkUltra(this)">12</span><span id= "shadowSKs" class="superdotSK">5</span><span id= "shadowBKs" class="superdotBK">1</span><br />
-		<input id="shadow1" class= "check_input" > </input><small id="text_shadow1" class="check_text" onmousedown = "junk(this)">Map</small><br id= "br_shadow1" />
-		<input id="shadow2" class= "check_input" > </input><small id="text_shadow2" class="check_text" onmousedown = "junk(this)">Hovers</small><br id= "br_shadow2" />
-		<input id="shadow3" class= "check_input" > </input><small id="text_shadow3" class="check_text" onmousedown = "junk(this)">Comp</small><br id= "br_shadow3" />
-		<input id="shadow4" class= "check_input" > </input><small id="text_shadow4" class="check_text" onmousedown = "junk(this)">Early Silvs</small><br id= "br_shadow4" />
-		<input id="shadow5" class= "check_input" > </input><small id="text_shadow5" class="check_text" onmousedown = "junk(this)">Spinning 1</small><br id= "br_shadow5" />
-		<input id="shadow6" class= "check_input" > </input><small id="text_shadow6" class="check_text" onmousedown = "junk(this)">Spinning 2</small><br id= "br_shadow6" />
-		<input id="shadow7" class= "check_input" > </input><small id="text_shadow7" class="check_text" onmousedown = "junk(this)">Spike L.</small><br id= "br_shadow7" />
-		<input id="shadow8" class= "check_input" > </input><small id="text_shadow8" class="check_text" onmousedown = "junk(this)">Spike U.</small><br id= "br_shadow8" />
-		<input id="shadow9" class= "check_input" > </input><small id="text_shadow9" class="check_text" onmousedown = "junk(this)">Spike U. 2</small><br id= "br_shadow9" />
-		<input id="shadow10" class= "check_input" > </input><small id="text_shadow10" class="check_text" onmousedown = "junk(this)">Mid Silvs</small><br id= "br_shadow10" />
-		<input id="shadow11" class= "check_input" > </input><small id="text_shadow11" class="check_text" onmousedown = "junk(this)">Pot</small><br id= "br_shadow11" />
-		<input id="shadow12" class= "check_input" > </input><small id="text_shadow12" class="check_text" onmousedown = "junk(this)">Wind</small><br id= "br_shadow12" />
-		<input id="shadow13" class= "check_input" > </input><small id="text_shadow13" class="check_text" onmousedown = "junk(this)">Bombable</small><br id= "br_shadow13" />
-		<input id="shadow14" class= "check_input" > </input><small id="text_shadow14" class="check_text" onmousedown = "junk(this)">Gibdos</small><br id= "br_shadow14" />
-		<input id="shadow15" class= "check_input" > </input><small id="text_shadow15" class="check_text" onmousedown = "junk(this)">Dins 1</small><br id= "br_shadow15" />
-		<input id="shadow16" class= "check_input" > </input><small id="text_shadow16" class="check_text" onmousedown = "junk(this)">Dins 2</small><br id= "br_shadow16" />
-		<input id="shadow17" class= "check_input" > </input><small id="text_shadow17" class="check_text" onmousedown = "junk(this)">Floormaster</small><br id= "br_shadow17" />
-		<input id="shadow18" class= "check_input" > </input><small id="text_shadow18" class="check_text" onmousedown = "junk(this)">Bongo</small><br id= "br_shadow18" />
-		<br /><small id="title_ganons" class="area_titles">Gan</small><span id= "ganons" class="superdot" onclick = "junkUltra(this)">13</span><span id= "ganonsSKs" class="superdotSK">2</span><span id= "ganonsBKs" class="superdotBK">1</span> <br />
-		<input id="ganons1" class= "check_input" > </input><small id="text_ganons1" class="check_text" onmousedown = "junk(this)">Light 1</small><br id= "br_ganons1" />
-		<input id="ganons2" class= "check_input" > </input><small id="text_ganons2" class="check_text" onmousedown = "junk(this)">Light 2</small><br id= "br_ganons2" />
-		<input id="ganons3" class= "check_input" > </input><small id="text_ganons3" class="check_text" onmousedown = "junk(this)">Light 3</small><br id= "br_ganons3" />
-		<input id="ganons4" class= "check_input" > </input><small id="text_ganons4" class="check_text" onmousedown = "junk(this)">Light 4</small><br id= "br_ganons4" />
-		<input id="ganons5" class= "check_input" > </input><small id="text_ganons5" class="check_text" onmousedown = "junk(this)">Light 5</small><br id= "br_ganons5" />
-		<input id="ganons6" class= "check_input" > </input><small id="text_ganons6" class="check_text" onmousedown = "junk(this)">Light 6</small><br id= "br_ganons6" />
-		<input id="ganons7" class= "check_input" > </input><small id="text_ganons7" class="check_text" onmousedown = "junk(this)">Light Clear</small><br id= "br_ganons7" />
-		<input id="ganons8" class= "check_input" > </input><small id="text_ganons8" class="check_text" onmousedown = "junk(this)">Light Lul</small><br id= "br_ganons8" />
-		<input id="ganons9" class= "check_input" > </input><small id="text_ganons9" class="check_text" onmousedown = "junk(this)">Spirit 1</small><br id= "br_ganons9" />
-		<input id="ganons10" class= "check_input" > </input><small id="text_ganons10" class="check_text" onmousedown = "junk(this)">Spirit 2</small><br id= "br_ganons10" />
-		<input id="ganons11" class= "check_input" > </input><small id="text_ganons11" class="check_text" onmousedown = "junk(this)">Forest</small><br id= "br_ganons11" />
-		<input id="ganons12" class= "check_input" > </input><small id="text_ganons12" class="check_text" onmousedown = "junk(this)">Water 1</small><br id= "br_ganons12" />
-		<input id="ganons13" class= "check_input" > </input><small id="text_ganons13" class="check_text" onmousedown = "junk(this)">Water 2</small><br id= "br_ganons13" />
-		<input id="ganons14" class= "check_input" > </input><small id="text_ganons14" class="check_text" onmousedown = "junk(this)">Shadow 1</small><br id= "br_ganons14" />
-		<input id="ganons15" class= "check_input" > </input><small id="text_ganons15" class="check_text" onmousedown = "junk(this)">Shadow 2</small><br id= "br_ganons15" />
-		<input id="ganons16" class= "check_input" > </input><small id="text_ganons16" class="check_text" onmousedown = "junk(this)">BK</small><br id= "br_ganons16" />
-	</div>
-	<div class="dungColumn" id="dung3">
-		<small id="title_gtg" class="area_titles">GTG</small><span id= "gtg" class="superdot" onclick = "junkUltra(this)">13</span><span id= "gtgSKs" class="superdotSK">9</span> <br />
-		<input id="gtg1" class= "check_input" > </input><small id="text_gtg1" class="check_text" onmousedown = "junk(this)">Lobby L.</small><br id= "br_gtg1" />
-		<input id="gtg2" class= "check_input" > </input><small id="text_gtg2" class="check_text" onmousedown = "junk(this)">Lobby R.</small><br id= "br_gtg2" />
-		<input id="gtg3" class= "check_input" > </input><small id="text_gtg3" class="check_text" onmousedown = "junk(this)">Stalfos</small><br id= "br_gtg3" />
-		<input id="gtg4" class= "check_input" > </input><small id="text_gtg4" class="check_text" onmousedown = "junk(this)">Wolfos</small><br id= "br_gtg4" />
-		<input id="gtg5" class= "check_input" > </input><small id="text_gtg5" class="check_text" onmousedown = "junk(this)">Silvers 1</small><br id= "br_gtg5" />
-		<input id="gtg6" class= "check_input" > </input><small id="text_gtg6" class="check_text" onmousedown = "junk(this)">Silvers 2</small><br id= "br_gtg6" />
-		<input id="gtg7" class= "check_input" > </input><small id="text_gtg7" class="check_text" onmousedown = "junk(this)">Silvers 3</small><br id= "br_gtg7" />
-		<input id="gtg8" class= "check_input" > </input><small id="text_gtg8" class="check_text" onmousedown = "junk(this)">Silvers 4</small><br id= "br_gtg8" />
-		<input id="gtg9" class= "check_input" > </input><small id="text_gtg9" class="check_text" onmousedown = "junk(this)">Eyes</small><br id= "br_gtg9" />
-		<input id="gtg10" class= "check_input" > </input><small id="text_gtg10" class="check_text" onmousedown = "junk(this)">Above</small><br id= "br_gtg10" />
-		<input id="gtg12" class= "check_input" > </input><small id="text_gtg12" class="check_text" onmousedown = "junk(this)">Enemies</small><br id= "br_gtg12" />
-		<input id="gtg11" class= "check_input" > </input><small id="text_gtg11" class="check_text" onmousedown = "junk(this)">Fire</small><br id= "br_gtg11" />
-		<input id="gtg13" class= "check_input" > </input><small id="text_gtg13" class="check_text" onmousedown = "junk(this)">R. 1</small><br id= "br_gtg13" />
-		<input id="gtg14" class= "check_input" > </input><small id="text_gtg14" class="check_text" onmousedown = "junk(this)">R. 2</small><br id= "br_gtg14" />
-		<input id="gtg15" class= "check_input" > </input><small id="text_gtg15" class="check_text" onmousedown = "junk(this)">R. 3</small><br id= "br_gtg15" />
-		<input id="gtg16" class= "check_input" > </input><small id="text_gtg16" class="check_text" onmousedown = "junk(this)">Beamos</small><br id= "br_gtg16" />
-		<input id="gtg17" class= "check_input" > </input><small id="text_gtg17" class="check_text" onmousedown = "junk(this)">L. 1</small><br id= "br_gtg17" />
-		<input id="gtg18" class= "check_input" > </input><small id="text_gtg18" class="check_text" onmousedown = "junk(this)">L. 2</small><br id= "br_gtg18" />
-		<input id="gtg19" class= "check_input" > </input><small id="text_gtg19" class="check_text" onmousedown = "junk(this)">L. 3</small><br id= "br_gtg19" />
-		<input id="gtg20" class= "check_input" > </input><small id="text_gtg20" class="check_text" onmousedown = "junk(this)">L. 4</small><br id= "br_gtg20" />
-		<input id="gtg21" class= "check_input" > </input><small id="text_gtg21" class="check_text" onmousedown = "junk(this)">Final</small><br id= "br_gtg21" />
-		<input id="gtg22" class= "check_input" > </input><small id="text_gtg22" class="check_text" onmousedown = "junk(this)">Toilet</small><br id= "br_gtg22" />
-		<br /><small id="title_botw" class="area_titles">Well</small><span id= "well" class="superdot" onclick = "junkUltra(this)">11</span><span id= "wellSKs" class="superdotSK">3</span> <br />
-		<input id="well1" class= "check_input" > </input><small id="text_well1" class="check_text" onmousedown = "junk(this)">Fake R.</small><br id= "br_well1" />
-		<input id="well5" class= "check_input" > </input><small id="text_well5" class="check_text" onmousedown = "junk(this)">C. Small</small><br id= "br_well5" />
-		<input id="well2" class= "check_input" > </input><small id="text_well2" class="check_text" onmousedown = "junk(this)">B. Bomb</small><br id= "br_well2" />
-		<input id="well3" class= "check_input" > </input><small id="text_well3" class="check_text" onmousedown = "junk(this)">Water L.</small><br id= "br_well3" />
-		<input id="well4" class= "check_input" > </input><small id="text_well4" class="check_text" onmousedown = "junk(this)">Coffin</small><br id= "br_well4" />
-		<input id="well6" class= "check_input" > </input><small id="text_well6" class="check_text" onmousedown = "junk(this)">C. Big</small><br id= "br_well6" />
-		<input id="well11" class= "check_input" > </input><small id="text_well11" class="check_text" onmousedown = "junk(this)">Fake L.</small><br id= "br_well11" />
-		<input id="well7" class= "check_input" > </input><small id="text_well7" class="check_text" onmousedown = "junk(this)">F. Bomb</small><br id= "br_well7" />
-		<input id="well10" class= "check_input" > </input><small id="text_well10" class="check_text" onmousedown = "junk(this)">Water F.</small><br id= "br_well10" />
-		<input id="well8" class= "check_input" > </input><small id="text_well8" class="check_text" onmousedown = "junk(this)">Dead</small><br id= "br_well8" />
-		<input id="well9" class= "check_input" > </input><small id="text_well9" class="check_text" onmousedown = "junk(this)">Invisi</small><br id= "br_well9" />
-		<input id="well12" class= "check_input" > </input><small id="text_well12" class="check_text" onmousedown = "junk(this)">Locked 1</small><br id= "br_well12" />
-		<input id="well13" class= "check_input" > </input><small id="text_well13" class="check_text" onmousedown = "junk(this)">Locked 2</small><br id= "br_well13" />
-		<input id="well14" class= "check_input" > </input><small id="text_well14" class="check_text" onmousedown = "junk(this)">Base</small><br id= "br_well14" />
-	</div>
-	<div id="songColumn">
-		<small class="area_titles">Songs</small> <br /> <br />
-		<input id="zeldasSpot" class= "check_input" > </input><small id="text_zeldasSpot" class="check_text" onclick = "toggleHint(this)">Zelda</small><br id= "br_zeldasSpot" />
-		<input id="eponasSpot" class= "check_input" > </input><small id="text_eponasSpot" class="check_text" onclick = "toggleHint(this)">Malon</small><br id= "br_eponasSpot" />
-		<input id="sariasSpot" class= "check_input" > </input><small id="text_sariasSpot" class="check_text" onclick = "toggleHint(this)">Saria</small><br id= "br_sariasSpot" />
-		<input id="stormsSpot" class= "check_input" > </input><small id="text_stormsSpot" class="check_text" onclick = "toggleHint(this)">Windmill</small><br id= "br_stormsSpot" />
-		<input id="sunsSpot" class= "check_input" > </input><small id="text_sunsSpot" class="check_text" onclick = "toggleHint(this)">Grave</small><br id= "br_sunsSpot" />
-		<input id="boleroSpot" class= "check_input" > </input><small id="text_boleroSpot" class="check_text" onclick = "toggleHint(this)">Crater</small><br id= "br_boleroSpot" />
-		<input id="minuetSpot" class= "check_input" > </input><small id="text_minuetSpot" class="check_text" onclick = "toggleHint(this)">Meadow</small><br id= "br_minuetSpot" />
-		<input id="requiemSpot" class= "check_input" > </input><small id="text_requiemSpot" class="check_text" onclick = "toggleHint(this)">Colossus</small><br id= "br_requiemSpot" />
-		<input id="serenadeSpot" class= "check_input" > </input><small id="text_serenadeSpot" class="check_text" onclick = "toggleHint(this)">Ice</small><br id= "br_serenadeSpot" />
-		<input id="preludeSpot" class= "check_input" > </input><small id="text_preludeSpot" class="check_text" onclick = "toggleHint(this)">1Med</small><br id= "br_preludeSpot" />
-		<input id="nocturneSpot" class= "check_input" > </input><small id="text_nocturneSpot" class="check_text" onclick = "toggleHint(this)">3Med</small><br id= "br_nocturneSpot" />
-		<input id="oot" class= "check_input" > </input><small id="text_oot" class="check_text" onclick = "toggleHint(this)">OoT</small><br id= "br_oot" /><br />
+		<div id ="row" class="row">
+			<div id="normalColumn1" class="column"></div>
+			<div id="normalColumn2" class="column"></div>	
+			<div id="normalColumn3" class="column"></div>	
+			<div class="dungColumn" id="dung1"></div>
+			<div class="dungColumn" id="dung2"></div>
+			<div class="dungColumn" id="dung3"></div>
+			<div id="songColumn"><small class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
+				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
+				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
+				<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="14" cols="14" id = "hintInput"></textarea><br /><br />
+				
+				
+				
+				<br /><br />
+				<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child_1f9d2.png"></img><br /> 
+				
+				<small id="skulls_in_logic" class="check_text">Skulls: </small>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="myBtn">halp (Updated Feb 8)</button><br />
+				<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />	
+				<button id="coopControl" onclick="coopControl()">co-op mode</button><br />			
+				<button id="circusControl" onclick="circusControl()">Unleash Animals</button><br />
+				<!--<button id="linsoControl" onclick="linsoControl()">Show LinSo Tracker</button><br /> -->
+				<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><br />
+				<!--<button id="safetyButton" onclick="safetyLevel()">Be Safe</button><br /> -->
+				<!--<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br /> -->
+				<button onClick="download()">Download Route</button><br /><br />
+				<button onclick="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br />
+				<br /><button id = "locationCodes">Location Codes</button><br /><br />
+				<small>Credits:</small><br />
+				<img src="./images/soli.png" class="pplpics" onclick = "highlight(this)"><br />
+				<img src="./images/beeluigi.png" class="pplpics" onclick = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onclick = "highlight(this)"><br />
+				<img src="./images/cola.png" class="pplpics" onclick = "highlight(this)">3 seeds a day<br />
+				<img src="./images/tagnia.png" class="pplpics" onclick = "highlight(this)">theme has zero users<br />
+				<img src="./images/juwk.png" class="pplpics" onclick = "highlight(this)">clownslayer<br />
+			</div>
+			<div id="info_column">
+			  <small id="checks_remaining" class="check_text"> Remaining:196      </small><small id="logically_accessible" class="check_text">In Logic:  </small><small id="good_check_percent" class="check_text"> </small><br />
+			  <input id="next" class= "check_input" > </input><small id="text_next" class="check_text" onmousedown = "junk_next()">Kokiri: Mido's 1</small><br />
+			  <small id="time_difference" class="check_text"></small>
+			  <small id="skip_req" class="check_text"></small>
+			  <small id="skip_value" class="check_text"></small>
+			  <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dung4">???</small><img id="dung4_req1" onclick = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onclick = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onclick = "highlight(this)"><img id="dung4_req4" onclick = "highlight(this)"><img id="dung4_req5" onclick = "highlight(this)">
+			  <br />
+			  <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dung5">???</small><img id="dung5_req1" onclick = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onclick = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onclick = "highlight(this)"><img id="dung5_req4" onclick = "highlight(this)"><img id="dung5_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/water.png" id = "dung6_icon" class = "medallions"><small id="text_dung6" class="dung6">???</small><img id="dung6_req1" onclick = "highlight(this)"><small class="track_text" id="dung6_text2" ></small><img id="dung6_req2" onclick = "highlight(this)"><small class="track_text" id="dung6_text3" ></small><img id="dung6_req3" onclick = "highlight(this)"><img id="dung6_req4" onclick = "highlight(this)"><img id="dung6_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung7_icon" class = "medallions"><small id="text_dung7" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung7_req1" onclick = "highlight(this)"><small class="track_text" id="dung7_text2" ></small><img id="dung7_req2" onclick = "highlight(this)"><small class="track_text" id="dung7_text3" ></small><img id="dung7_req3" onclick = "highlight(this)"><img id="dung7_req4" onclick = "highlight(this)"><img id="dung7_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung8_icon"class = "medallions"><small id="text_dung8" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung8_req1" onclick = "highlight(this)"><small class="track_text" id="dung8_text2" ></small><img id="dung8_req2" onclick = "highlight(this)"><small class="track_text" id="dung8_text3" ></small><img id="dung8_req3" onclick = "highlight(this)"><img id="dung8_req4" onclick = "highlight(this)"><img id="dung8_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung9_icon" class = "medallions"><small id="text_dung9" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung9_req1" onclick = "highlight(this)"><small class="track_text" id="dung9_text2" ></small><img id="dung9_req2" onclick = "highlight(this)"><small class="track_text" id="dung9_text3" ></small><img id="dung9_req3" onclick = "highlight(this)"><img id="dung9_req4" onclick = "highlight(this)"><img id="dung9_req5" onclick = "highlight(this)"><br />
+			  <small id="text_gan" >GAN</small><img src="https://i.imgur.com/uAyOlX8.png" id="gan_req1" class="requirements"  onclick = "highlight(this)"><img src="https://i.imgur.com/NsuqX43.png" id="gan_req2" class="requirements" onclick = "highlight(this)"><img src="https://i.imgur.com/muCeqKm.png" id="gan_req3" class="requirements" onclick = "highlight(this)">
+			  <br /><img src="https://i.imgur.com/YR9myZe.png" id="lullabyimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/w3nXfAG.png" id="eponasimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/fv5lW8e.png" id="sariasimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/dcKwhmK.png" id="sunsimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/RbWhLBu.png" id="sotimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/95t5vSg.png" id="sosimg" class="songpics" onclick = "highlight(this)">
+			  <br /><img src="https://i.imgur.com/LJeEBv1.png" id="minuetimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/lgiLXiB.png" id="boleroimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/cLZzDJg.png" id="serenadeimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/n38tJMR.png" id="requiemimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/n7G7lp9.png" id="nocturneimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/UYT3RVO.png" id="preludeimg" class="songpics" onclick = "highlight(this)">
+			  <br /><img src = "./normal/items/emerald.png" id = "dung1_icon" class = "stones"><small id="text_dung1" class="dung1" ></small><img id="dung1_req1" onclick = "highlight(this)"><small class="track_text" id="dung1_text2" ></small><img id="dung1_req2" onclick = "highlight(this)"><small class="track_text" id="dung1_text3" ></small><img id="dung1_req3" onclick = "highlight(this)"><img id="dung1_req4" onclick = "highlight(this)"><img id="dung1_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dung2"></small><img id="dung2_req1" onclick = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onclick = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onclick = "highlight(this)"><img id="dung2_req4" onclick = "highlight(this)"><img id="dung2_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dung3"></small><img id="dung3_req1" onclick = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onclick = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onclick = "highlight(this)"><img id="dung3_req4" onclick = "highlight(this)"><img id="dung3_req5" onclick = "highlight(this)"><br />
+			 <small class="hint_text" id="barren_text">Barren</small> 
+			  <br /> <input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input>  
+			 <br /><small class="hint_text" id="woth_text" >WOTH</small>
+			  <br /><input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input> 
+			   <div id = "woth_info">
+				<small id="woth1_title" class="woth_info_title"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
+				<br /><small id="woth2_title" class="woth_info_title"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
+				<br /><small id="woth3_title" class="woth_info_title"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
+				<br /><small id="woth4_title" class="woth_info_title"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
+				<br /><small id="woth5_title" class="woth_info_title"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
+				<br /><br /><br /><small id="confirmed_logically_required" style = "color:lightblue";></small>
+			  </div>
+			  <small id = "timer"></small>
+			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br /><br />
+				<small id="forceIntoLogic">Force into Logic</small><br />
+				<input id="forceLogic1" class= "check_input"></input>
+				<input id="forceLogic2" class= "check_input"></input>
+				<input id="forceLogic3" class= "check_input"></input>
+				<input id="forceLogic4" class= "check_input"></input>
+				<br />
+				<small id="forceOutOfLogic">Force out of Logic</small><br />
+				<input id="forceOutOfLogic1" class= "check_input"></input>
+				<input id="forceOutOfLogic2" class= "check_input"></input>
+				<input id="forceOutOfLogic3" class= "check_input"></input>
+				<input id="forceOutOfLogic4" class= "check_input"></input><br><br><br>
+				<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
+				<select class="settingsOptions" id="skullSanity">
+				  <option value="OFF">OFF</option>
+				  <option value="DUNGEON">DUNGEON</option>
+				  <option value="ALL">ALL</option>
+				</select><br><br class="half_break">
+				<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
+				<select class="settingsOptions" id="scrubSanity">
+				  <option value="OFF">OFF</option>
+				  <option value="ON">ON</option>
+				</select><br><br class="half_break">
+				<label class="settingsLabels" for="scrubSanity">BRIDGE</label>
+				<select class="settingsOptions" id="ganonsBridge">
+				  <option value="All MED">All MED</option>
+				  <option value="ALWAYS">ALWAYS</option>
+				</select><br><br class="half_break">
+			 
+			  <!-- <br /><br /><textarea spellcheck="false"; class = "super_hint_input"></textarea>-->
+			  </div>
+			  
+			  <!--<div id="linsoColumn"><img id ="linso_background" src="./images/background.png"></div>-->
+			  
+			  <div id="checkSummaryColumn">
+				<small id="bomb_bag1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+				<small id="bomb_bag2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+				<small id="bomb_bag3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
+				<small id="boomerang_location" class="checkSummaryText" onclick = "toggleHint(this)">Boomerang -> </small><br />
+				<small id="bottle1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+				<small id="bottle2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+				<small id="bottle3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
+				<small id="bow1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+				<small id="bow2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+				<small id="bow3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
+				<small id="dins_fire_location" class="checkSummaryText" onclick = "toggleHint(this)">Dins Fire -> </small><br />
+				<small id="farores_wind_location" class="checkSummaryText" onclick = "toggleHint(this)">Farores -> </small><br />
+				<small id="fire_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Fire Arrows -> </small><br />
+				<small id="goron_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Goron Tunic -> </small><br />
+				<small id="hammer_location" class="checkSummaryText" onclick = "toggleHint(this)">Hammer -> </small><br />
+				<small id="hookshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
+				<small id="hookshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
+				<small id="hover_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Hover Boots -> </small><br />
+				<small id="iron_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Iron Boots -> </small><br />
+				<small id="lens_of_truth_location" class="checkSummaryText" onclick = "toggleHint(this)">Lens -> </small><br />
+				<small id="rutos_letter_location" class="checkSummaryText" onclick = "toggleHint(this)">Letter -> </small><br />
+				<small id="light_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Light Arrows -> </small><br />
+				<small id="magic1_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
+				<small id="magic2_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
+				<small id="mirror_shield_location" class="checkSummaryText" onclick = "toggleHint(this)">Mirror Shield -> </small><br />
+				<small id="scale1_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
+				<small id="scale2_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
+				<small id="slingshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+				<small id="slingshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+				<small id="slingshot3_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
+				<small id="strength1_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+				<small id="strength2_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+				<small id="strength3_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
+				<small id="trade_location" class="checkSummaryText" onclick = "toggleHint(this)">Trade -> </small><br />
+				<small id="wallet1_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
+				<small id="wallet2_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
+				<small id="zora_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Zora Tunic -> </small>	
+			</div>
+			 
+		</div>
 		
-		<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
-		<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
-		<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="14" cols="14" id = "hintInput"></textarea><br /><br />
-		
-		
-		
-		<br /><br />
-		<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child_1f9d2.png"></img><br /> 
-		
-		<small id="skulls_in_logic" class="check_text">Skulls: </small>
-		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="myBtn">halp (Updated Feb 8)</button><br />
-		<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />	
-		<button id="coopControl" onclick="coopControl()">co-op mode</button><br />	
-		<button id="circusControl" onclick="circusControl()">Unleash Animals</button><br /><br />
-		<button id="linsoControl" onclick="linsoControl()">Show LinSo Tracker</button><br />
-		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><br />
-		<!--<button id="safetyButton" onclick="safetyLevel()">Be Safe</button><br /> -->
-		<!--<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br /> -->
-		<button onClick="download()">Download Route</button><br /><br />
-		<button onclick="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br />
-		<br /><button id = "locationCodes">Location Codes</button><br /><br />
-		<small>Credits:</small><br />
-		<img src="./images/soli.png" class="pplpics" onclick = "highlight(this)"><br />
-		<img src="./images/beeluigi.png" class="pplpics" onclick = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onclick = "highlight(this)"><br />
-		<img src="./images/cola.png" class="pplpics" onclick = "highlight(this)">3 seeds a day<br />
-		<img src="./images/tagnia.png" class="pplpics" onclick = "highlight(this)">theme has zero users<br />
-		<img src="./images/juwk.png" class="pplpics" onclick = "highlight(this)">clownslayer<br />
 		<div id="myModal" class="modal">
 		<div class="modal-content">
 		<span class="close">&times;</span>
@@ -436,97 +243,9 @@
 			
 		</div>
 	  </div>-->
-	  <div id="info_column">
-	  <small id="checks_remaining" class="check_text"> Remaining:196      </small><small id="logically_accessible" class="check_text">In Logic:  </small><small id="good_check_percent" class="check_text"> </small><br />
-	  <input id="next" class= "check_input" > </input><small id="text_next" class="check_text" onmousedown = "junk_next()">Kokiri: Mido's 1</small><br />
-	  <small id="time_difference" class="check_text"></small>
-	  <small id="skip_req" class="check_text"></small>
-	  <small id="skip_value" class="check_text"></small>
-	  <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dung4">???</small><img id="dung4_req1" onclick = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onclick = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onclick = "highlight(this)"><img id="dung4_req4" onclick = "highlight(this)"><img id="dung4_req5" onclick = "highlight(this)">
-	  <br />
-	  <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dung5">???</small><img id="dung5_req1" onclick = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onclick = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onclick = "highlight(this)"><img id="dung5_req4" onclick = "highlight(this)"><img id="dung5_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/water.png" id = "dung6_icon" class = "medallions"><small id="text_dung6" class="dung6">???</small><img id="dung6_req1" onclick = "highlight(this)"><small class="track_text" id="dung6_text2" ></small><img id="dung6_req2" onclick = "highlight(this)"><small class="track_text" id="dung6_text3" ></small><img id="dung6_req3" onclick = "highlight(this)"><img id="dung6_req4" onclick = "highlight(this)"><img id="dung6_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/light.png" id = "dung7_icon" class = "medallions"><small id="text_dung7" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung7_req1" onclick = "highlight(this)"><small class="track_text" id="dung7_text2" ></small><img id="dung7_req2" onclick = "highlight(this)"><small class="track_text" id="dung7_text3" ></small><img id="dung7_req3" onclick = "highlight(this)"><img id="dung7_req4" onclick = "highlight(this)"><img id="dung7_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/light.png" id = "dung8_icon"class = "medallions"><small id="text_dung8" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung8_req1" onclick = "highlight(this)"><small class="track_text" id="dung8_text2" ></small><img id="dung8_req2" onclick = "highlight(this)"><small class="track_text" id="dung8_text3" ></small><img id="dung8_req3" onclick = "highlight(this)"><img id="dung8_req4" onclick = "highlight(this)"><img id="dung8_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/light.png" id = "dung9_icon" class = "medallions"><small id="text_dung9" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung9_req1" onclick = "highlight(this)"><small class="track_text" id="dung9_text2" ></small><img id="dung9_req2" onclick = "highlight(this)"><small class="track_text" id="dung9_text3" ></small><img id="dung9_req3" onclick = "highlight(this)"><img id="dung9_req4" onclick = "highlight(this)"><img id="dung9_req5" onclick = "highlight(this)"><br />
-	  <small id="text_gan" >GAN</small><img src="https://i.imgur.com/uAyOlX8.png" id="gan_req1" class="requirements"  onclick = "highlight(this)"><img src="https://i.imgur.com/NsuqX43.png" id="gan_req2" class="requirements" onclick = "highlight(this)"><img src="https://i.imgur.com/muCeqKm.png" id="gan_req3" class="requirements" onclick = "highlight(this)">
-	  <br /><img src="https://i.imgur.com/YR9myZe.png" id="lullabyimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/w3nXfAG.png" id="eponasimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/fv5lW8e.png" id="sariasimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/dcKwhmK.png" id="sunsimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/RbWhLBu.png" id="sotimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/95t5vSg.png" id="sosimg" class="songpics" onclick = "highlight(this)">
-	  <br /><img src="https://i.imgur.com/LJeEBv1.png" id="minuetimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/lgiLXiB.png" id="boleroimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/cLZzDJg.png" id="serenadeimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/n38tJMR.png" id="requiemimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/n7G7lp9.png" id="nocturneimg" class="songpics" onclick = "highlight(this)"><img src="https://i.imgur.com/UYT3RVO.png" id="preludeimg" class="songpics" onclick = "highlight(this)">
-	  <br /><img src = "./normal/items/emerald.png" id = "dung1_icon" class = "stones"><small id="text_dung1" class="dung1" ></small><img id="dung1_req1" onclick = "highlight(this)"><small class="track_text" id="dung1_text2" ></small><img id="dung1_req2" onclick = "highlight(this)"><small class="track_text" id="dung1_text3" ></small><img id="dung1_req3" onclick = "highlight(this)"><img id="dung1_req4" onclick = "highlight(this)"><img id="dung1_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dung2"></small><img id="dung2_req1" onclick = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onclick = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onclick = "highlight(this)"><img id="dung2_req4" onclick = "highlight(this)"><img id="dung2_req5" onclick = "highlight(this)"><br />
-	  <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dung3"></small><img id="dung3_req1" onclick = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onclick = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onclick = "highlight(this)"><img id="dung3_req4" onclick = "highlight(this)"><img id="dung3_req5" onclick = "highlight(this)"><br />
-	 <small class="hint_text" id="barren_text">Barren</small> 
-	  <br /> <input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input>  
-	 <br /><small class="hint_text" id="woth_text" >WOTH</small>
-	  <br /><input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input> 
-	  <br /> 
-	   <div id = "woth_info">
-		<br /><small id="woth1_title" class="woth_info_title"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
-		<br /><small id="woth2_title" class="woth_info_title"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
-		<br /><small id="woth3_title" class="woth_info_title"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
-		<br /><small id="woth4_title" class="woth_info_title"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
-		<br /><small id="woth5_title" class="woth_info_title"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
-		<br /><br /><br /><small id="confirmed_logically_required" style = "color:lightblue";></small>
-	  </div>
-	  <small id = "timer"></small>
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-		<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br /><br />
-		<small id="forceIntoLogic">Force into Logic</small><br />
-		<input id="forceLogic1" class= "check_input"></input>
-		<input id="forceLogic2" class= "check_input"></input>
-		<input id="forceLogic3" class= "check_input"></input>
-		<input id="forceLogic4" class= "check_input"></input>
-		<br />
-		<small id="forceOutOfLogic">Force out of Logic</small><br />
-		<input id="forceOutOfLogic1" class= "check_input"></input>
-		<input id="forceOutOfLogic2" class= "check_input"></input>
-		<input id="forceOutOfLogic3" class= "check_input"></input>
-		<input id="forceOutOfLogic4" class= "check_input"></input>
-	 
-	  <!-- <br /><br /><textarea spellcheck="false"; class = "super_hint_input"></textarea>-->
-	  </div>
-	  <div id="checkSummaryColumn">
-		<small id="bomb_bag1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
-		<small id="bomb_bag2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
-		<small id="bomb_bag3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bomb Bag -> </small><br />
-		<small id="boomerang_location" class="checkSummaryText" onclick = "toggleHint(this)">Boomerang -> </small><br />
-		<small id="bottle1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
-		<small id="bottle2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
-		<small id="bottle3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bottle -> </small><br />
-		<small id="bow1_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
-		<small id="bow2_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
-		<small id="bow3_location" class="checkSummaryText" onclick = "toggleHint(this)">Bow -> </small><br />
-		<small id="dins_fire_location" class="checkSummaryText" onclick = "toggleHint(this)">Dins Fire -> </small><br />
-		<small id="farores_wind_location" class="checkSummaryText" onclick = "toggleHint(this)">Farores -> </small><br />
-		<small id="fire_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Fire Arrows -> </small><br />
-		<small id="goron_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Goron Tunic -> </small><br />
-		<small id="hammer_location" class="checkSummaryText" onclick = "toggleHint(this)">Hammer -> </small><br />
-		<small id="hookshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
-		<small id="hookshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Hookshot -> </small><br />
-		<small id="hover_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Hover Boots -> </small><br />
-		<small id="iron_boots_location" class="checkSummaryText" onclick = "toggleHint(this)">Iron Boots -> </small><br />
-		<small id="lens_of_truth_location" class="checkSummaryText" onclick = "toggleHint(this)">Lens -> </small><br />
-		<small id="rutos_letter_location" class="checkSummaryText" onclick = "toggleHint(this)">Letter -> </small><br />
-		<small id="light_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Light Arrows -> </small><br />
-		<small id="magic1_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
-		<small id="magic2_location" class="checkSummaryText" onclick = "toggleHint(this)">Magic -> </small><br />
-		<small id="mirror_shield_location" class="checkSummaryText" onclick = "toggleHint(this)">Mirror Shield -> </small><br />
-		<small id="scale1_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
-		<small id="scale2_location" class="checkSummaryText" onclick = "toggleHint(this)">Scale -> </small><br />
-		<small id="slingshot1_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
-		<small id="slingshot2_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
-		<small id="slingshot3_location" class="checkSummaryText" onclick = "toggleHint(this)">Slingshot -> </small><br />
-		<small id="strength1_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
-		<small id="strength2_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
-		<small id="strength3_location" class="checkSummaryText" onclick = "toggleHint(this)">Strength -> </small><br />
-		<small id="trade_location" class="checkSummaryText" onclick = "toggleHint(this)">Trade -> </small><br />
-		<small id="wallet1_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
-		<small id="wallet2_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
-		<small id="zora_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Zora Tunic -> </small>	
-	</div>
-		<img id ="linso_background" src="./images/background.png">
-	</div>  
-	
+	  
+	  
+</body>
 	<script src="misc.js"></script>
 	<script src="logic.js"></script>
 	<script src="hints.js"></script>
@@ -537,7 +256,4 @@
 	<script src="themes.js"></script>
 	<script src="main.js"></script>
 	<script src="initialize.js"></script>	
-	
-	
-    </body>
   </html>

@@ -25,7 +25,7 @@ function dark_soli() {
 	Game.lullaby_img = "./images/lullaby505050.png";
 	Game.eponas_img = "./images/eponas505050.png";
 	Game.sarias_img = "./images/sarias505050.png";
-	Game.suns_img = "./images/suns505050.png";
+	Game.suns_song_img = "./images/suns505050.png";
 	Game.time_img = "./images/sot505050.png";
 	Game.storms_img = "./images/sos505050.png";
 	Game.minuet_img = "./images/minuet505050.png";
@@ -107,7 +107,7 @@ function dark_soli() {
 	document.getElementById("lullabyimg").src=Game.lullaby_img;
 	document.getElementById("eponasimg").src=Game.eponas_img;
 	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_img;
+	document.getElementById("sunsimg").src=Game.suns_song_img;
 	document.getElementById("sotimg").src=Game.time_img;
 	document.getElementById("sosimg").src=Game.storms_img;
 	document.getElementById("minuetimg").src=Game.minuet_img;
@@ -153,6 +153,7 @@ function dark_normie() {
 	Game.mirror_shield_img= "./normal/items/mirror_shield.png";
 	Game.dins_fire_img= "./normal/items/dins_fire.png";
 	Game.magic_img= "./normal/items/magic.png";
+	Game.magic_2_img =".normal/items/magic_2.png";
 	Game.hover_boots_img= "./normal/items/hover_boots.png";
 	Game.light_arrows_img= "./normal/items/light_arrows.png";
 	Game.fire_arrows_img= "./normal/items/fire_arrows.png";
@@ -162,7 +163,7 @@ function dark_normie() {
 	Game.lullaby_img = "./normal/items/lullaby.png";
 	Game.eponas_img = "./normal/items/eponas.png";
 	Game.sarias_img = "./normal/items/sarias.png";
-	Game.suns_img = "./normal/items/suns.png";
+	Game.suns_song_img = "./normal/items/suns_song.png";
 	Game.time_img = "./normal/items/time.png";
 	Game.storms_img = "./normal/items/storms.png";
 	Game.minuet_img = "./normal/items/minuet.png";
@@ -191,12 +192,11 @@ function dark_normie() {
 	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
 	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_img; }
 	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
-	var temp = 0;
 	document.getElementById("normalColumn1").style.width="97px";
 	document.getElementById("normalColumn2").style.width="97px";
 	document.getElementById("normalColumn3").style.width="97px";
-	document.getElementById("woth_info").style.left="765px";
-	document.getElementById("timer").style.left="610px";
+	document.getElementById("woth_info").style.left="0px";
+	document.getElementById("timer").style.left="-120px";
 	document.getElementById("skulls_in_logic").style.left="895px";
 	document.getElementById("dung4_icon").style.left="948px";
 	document.getElementById("dung5_icon").style.left="948px";
@@ -204,37 +204,36 @@ function dark_normie() {
 	document.getElementById("dung7_icon").style.left="948px";
 	document.getElementById("dung8_icon").style.left="948px";
 	document.getElementById("dung9_icon").style.left="948px";
-	for (const key of Object.keys(Location_Logic)) {
-		if (temp == 114) {break; }	
+	for (var i = 0; i < Locations.length; i++) {
+		var key = Locations[i];
 		if (document.getElementById(key) != null){document.getElementById(key).style.height="22px";}
 		if (document.getElementById(key) != null){document.getElementById(key).style.width="30px";}
-		if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kokiri.jpg')";}
-		if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/cow.jpg')";}
-		if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Hyrule_Field_(Ocarina_of_Time).jpg')";}
-		if (temp >= 13 && temp <=15) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Gerudo_Valley.jpg')";}
-		if (temp >= 16 && temp <=21) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Lake_Hylia_(Ocarina_of_Time).jpg')";}
-		if (temp >= 22 && temp <=27) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/market.jpg')";}
-		if (temp >= 28 && temp <=28) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dinsfairy.jpg')";}
-		if (temp >= 29 && temp <=29) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/gfairy.jpg')";}
-		if (temp >= 30 && temp <=30) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/la.jpg')";}
-		if (temp >= 31 && temp <=33) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fountain.jpg')";}
-		if (temp >= 34 && temp <=37) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ice.jpg')";}
-		if (temp >= 38 && temp <=44) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/deku.jpg')";}
-		if (temp >= 45 && temp <=51) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Skull_Kid_(Ocarina_of_Time).jpg')";}
-		if (temp >= 52 && temp <=52) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/sfm.jpg')";}
-		if (temp >= 53 && temp <=59) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/goron.jpg')";}
-		if (temp >= 60 && temp <=66) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/0272-Dodongos-Cavern.jpg')";}
-		if (temp >= 67 && temp <=71) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/OoT_Death_Mountain_Trail.jpg')";}
-		if (temp >= 72 && temp <=75) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/crater.jpg')";}
-		if (temp >= 76 && temp <=88) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kakiriko.jpg')";}
-		if (temp >= 89 && temp <=95) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/graveyard.jpg')";}
-		if (temp >= 96 && temp <=100) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/river.jpg')";}
-		if (temp >= 101 && temp <=103) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ZoraThroneRoomOoT.jpg')";}
-		if (temp >= 104 && temp <=105) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Desertcolossus2.jpg')";}
-		if (temp >= 106 && temp <=106) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/Haunted_Wasteland.jpg')";}
-		if (temp >= 107 && temp <=109) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
-		if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
-	temp +=1;
+		if (i < AreaIndexes[1]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kokiri.jpg')";}
+		else if (i < AreaIndexes[2]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ranch.jpg')";}
+		else if (i < AreaIndexes[3]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/field.jpg')";}
+		else if (i < AreaIndexes[4]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/valley.jpg')";}
+		else if (i < AreaIndexes[5]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/hylia.jpg')";}
+		else if (i < AreaIndexes[6]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/market.jpg')";}
+		else if (i < AreaIndexes[7]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/hyrule_castle.jpg')";}
+		else if (i < AreaIndexes[8]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ogc.jpg')";}
+		else if (i < AreaIndexes[9]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/tot.jpg')";}
+		else if (i < AreaIndexes[10]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fountain.jpg')";}
+		else if (i < AreaIndexes[11]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ice.jpg')";}
+		else if (i < AreaIndexes[12]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/deku.jpg')";}
+		else if (i < AreaIndexes[13]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/lost_woods.jpg')";}
+		else if (i < AreaIndexes[14]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/sfm.jpg')";}
+		else if (i < AreaIndexes[15]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/goron.jpg')";}
+		else if (i < AreaIndexes[16]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dodongos.jpg')";}
+		else if (i < AreaIndexes[17]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dmt.jpg')";}
+		else if (i < AreaIndexes[18]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dmc.jpg')";}
+		else if (i < AreaIndexes[19]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kakariko.jpg')";}
+		else if (i < AreaIndexes[20]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/graveyard.jpg')";}
+		else if (i < AreaIndexes[21]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/river.jpg')";}
+		else if (i < AreaIndexes[22]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/domain.jpg')";}
+		else if (i < AreaIndexes[23]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/colossus.jpg')";}
+		else if (i < AreaIndexes[24]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/wasteland.jpg')";}
+		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
+		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
 	}
 	document.getElementById("chuButton").src= Game.chu_img;
 	document.getElementById("chuButton").style.opacity = .4;
@@ -244,7 +243,7 @@ function dark_normie() {
 	document.getElementById("lullabyimg").src=Game.lullaby_img;
 	document.getElementById("eponasimg").src=Game.eponas_img;
 	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_img;
+	document.getElementById("sunsimg").src=Game.suns_song_img;
 	document.getElementById("sotimg").src=Game.time_img;
 	document.getElementById("sosimg").src=Game.storms_img;
 	document.getElementById("minuetimg").src=Game.minuet_img;

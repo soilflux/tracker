@@ -29,9 +29,10 @@ var thisIsAKey = false;
 var thisIsABossKey = false;
 var temptext2 = "";
 
-var AreaIndexes = [0,6,8,13,16,22,28,29,30,31,34,38,45,52,53,60,67,72,76,89,96,101,104,106,107,110,114,128,143,154,174,192,208,230,244];
-	var SongIndexes = [0,245,255,0,0,0,244,0,253,0,252,0,0,246,0,0,0,249,247,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
-	var SongIndexes2 = [0,245,255,0,0,0,244,0,253,0,252,0,0,250,0,0,0,249,254,248,0,0,251,0,0,0,0,0,0,0,0,0,0,0];
+var dungeonSkullSanity = false;
+var scrubSanity = false;
+
+
 		
 	var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 	
@@ -265,53 +266,85 @@ var tSeconds = 0;
 	var tempSeconds = 0;
 	
 	var Locations = [
-		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "kokiri_song_of_storms",
-		"talons_chickens", "back_of_ranch",
-		"hyrule_forest_boulder", "hyrule_open_grotto", "hyrule_hp_scrub", "hyrule_boulder_of_destiny", "hyrule_tektite_grotto",
-		"gerudovalley_box", "gerudovalley_waterfall", "gerudo_hammer",
-		"hylia_child_fishing", "hylia_bottle", "hylia_adult_fishing", "hylia_lab_top", "hylia_lab_dive", "hylia_sun_shoot",
-		"market_slingshot_game", "richard", "market_bowling_1", "market_bowling_2","market_lens_game","poes",
-		"dins_fairy",
-		"g_fairy",
+		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "gs_kokiri_child", "gs_kokiri_bean", "gs_kokiri_adult", "kokiri_song_of_storms",
+		"talons_chickens", "gs_lon_lon_tree", "back_of_ranch", "scrub_ranch_1", "scrub_ranch_2", "scrub_ranch_3", "gs_lon_lon_window", "gs_lon_lon_shed", "gs_lon_lon_back_wall", 
+		"hyrule_forest_boulder", "hyrule_open_grotto", "hyrule_hp_scrub", "hyrule_boulder_of_destiny", "hyrule_tektite_grotto", "gs_outside_kakariko", "gs_near_gerudo",
+		"gerudovalley_box", "gerudovalley_waterfall", "gs_valley_small_bridge", "gs_valley_bean", "gs_valley_pillar", "gs_valley_tent", "gerudo_hammer", "scrub_gv_1", "scrub_gv_2",
+		"scrub_lake_1", "scrub_lake_2", "scrub_lake_3", "hylia_child_fishing", "hylia_bottle", "gs_hylia_bean", "gs_hylia_lab_wall", "gs_hylia_island", "hylia_adult_fishing", "hylia_lab_top", "gs_hylia_lab_crate", "hylia_lab_dive", "gs_hylia_tree", "hylia_sun_shoot",
+		"gs_market", "market_slingshot_game", "richard", "market_bowling_1", "market_bowling_2","market_lens_game","poes",
+		"gs_hyrule_castle_tree", "dins_fairy", "gs_hyrule_castle_grotto",
+		"gs_ganons", "g_fairy",
 		"lacs",
-		"fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain",
-		"ice_map", "ice_compass", "ice_hp", "ice_irons",
-		"deku_lobby", "deku_slingshot", "deku_slingshot_room_side", "deku_compass", "deku_compass_room_side", "deku_basement", "deku_queen_gohma",
-		"ocarina_game", "lost_woods_grotto", "lost_woods_scrub_grotto", "bridge_scrub", "target", "skull_kid", "theater",
-		"wolfos_grotto",
-		"rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "goron_maze_3", "goron_link",
-		"dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king", "dodongos_king_dodongo",
-		"trail_bombable", "trail_dodongos_top", "trail_song_of_storms", "crater_peak_fairy", "trade_quest",
-		"crater_bean", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp",
-		"man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
-		"shield_grave", "gravedigging_tour", "suns_grave", "fire_grave", "graveyard_box", "race_1", "race_2",
-		"river_pillar", "river_grotto", "river_ledge", "frogs_1", "frogs_2",
-		"zora_diving", "zora_torches", "thaw_king",
-		"colossus_bean", "colossus_fairy",
-		"wasteland",
-		"gerudo_roof", "gerudo_archery_1", "gerudo_archery_2",
-		"jabu_boomerang", "jabu_map", "jabu_compass", "jabu_barinade",
-		"forest1", "forest2", "forest3", "forest4", "forest5", "forest6", "forest7", "forest8", "forest9", "forest10", "forest11", "forest12", "forest13", "forest14",
-		"fire1", "fire2", "fire3", "fire4", "fire5", "fire6", "fire7", "fire8", "fire9", "fire10", "fire11", "fire12", "fire13", "fire14", "fire15",
-		"water1", "water2", "water3", "water4", "water5", "water6", "water7", "water8", "water9", "water10", "water11",
-		"spirit1", "spirit2", "spirit3", "spirit4", "spirit5", "spirit6", "spirit7", "spirit8", "spirit9", "spirit10", "spirit11", "spirit12", "spirit13", "spirit14", "spirit15", "spirit16", "spirit17", "spirit18", "spirit19", "spirit20",
-		"shadow1", "shadow2", "shadow3", "shadow4", "shadow5", "shadow6", "shadow7", "shadow8", "shadow9", "shadow10", "shadow11", "shadow12", "shadow13", "shadow14", "shadow15", "shadow16", "shadow17", "shadow18",
-		"ganons1", "ganons2", "ganons3", "ganons4", "ganons5", "ganons6", "ganons7", "ganons8", "ganons9", "ganons10", "ganons11", "ganons12", "ganons13", "ganons14", "ganons15", "ganons16",
+		"gs_fountain_above_log", "gs_fountain_tree", "fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain", "gs_fountain_hidden_cave",
+		"gs_ice_spinning_scythe", "ice_map", "ice_compass", "gs_ice_hp_room", "ice_hp", "gs_ice_block_room", "ice_irons",
+		"deku_lobby", "deku_slingshot", "deku_slingshot_room_side", "deku_compass", "deku_compass_room_side", "gs_deku_compass", "gs_deku_basement_gate", "gs_deku_basement_vines", "deku_basement", "gs_deku_basement_back", "deku_queen_gohma",
+		"ocarina_game", "lost_woods_grotto", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "bridge_scrub", "target", "skull_kid", "gs_lost_woods_above_stage", "theater",
+		"wolfos_grotto", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2",
+		"rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3",
+		"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king", "dodongos_king_dodongo",
+		"gs_trail_bombable_wall", "trail_bombable", "trail_dodongos_top", "trail_song_of_storms", "trail_peak_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_bean",
+		"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp", "gs_crater_bean", "gs_crater_crate", 
+		"man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
+		"shield_grave", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "suns_grave", "fire_grave", "graveyard_box", "race_1", "race_2",
+		"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2",
+		"zora_diving", "zora_torches", "thaw_king", "gs_domain",
+		"colossus_bean", "colossus_fairy", "gs_colossus_bean", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", 
+		"gs_wasteland", "wasteland",
+		"gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
+		"gs_jabu_vines", "scrub_jabu", "jabu_boomerang", "jabu_map", "jabu_compass", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
+		"forest1", "gs_forest_first", "gs_forest_lobby", "forest2", "forest3", "gs_forest_outdoor_east", "forest4", "forest5", "forest6", "forest7", "forest8", "gs_forest_outdoor_west", "forest9", "forest10", "forest11", "forest12", "forest13", "gs_forest_basement", "forest14",
+		"fire1", "gs_fire_basement", "fire2", "fire3", "fire4", "gs_fire_song_of_time", "fire5", "fire6", "fire7", "gs_fire_bomb_wall", "fire8", "fire9", "fire10", "gs_fire_scarecrow_1", "gs_fire_scarecrow_2", "fire11", "fire12", "fire13", "fire14", "fire15",
+		"water1", "water2", "water3", "water4", "gs_water_south_basement", "water5", "gs_water_central", "water6", "gs_water_platform_room", "water7", "gs_water_river", "water8", "water9", "gs_water_near_boss_key", "water10", "water11",
+		"spirit1", "spirit2", "gs_spirit_metal_fence", "spirit3", "gs_child_climb", "spirit4", "spirit5", "spirit6", "gs_spirit_before_child_knuckle", "spirit7", "spirit8", "gs_spirit_boulder_room", "spirit9", "spirit10", "spirit11", "spirit12", "spirit13", "gs_spirit_lobby", "spirit14", "spirit15", "spirit16", "spirit17", "spirit18", "spirit19", "spirit20",
+		"shadow1", "shadow2", "shadow3", "shadow4", "gs_shadow_like_like", "shadow5", "shadow6", "shadow7", "gs_shadow_crusher", "shadow8", "shadow9", "shadow10", "gs_shadow_giant_pot", "shadow11", "shadow12", "shadow13", "shadow14", "gs_shadow_near_boat", "shadow15", "shadow16", "gs_shadow_three_pots", "shadow17", "shadow18",
+		"scrub_ganons_1", "scrub_ganons_2", "scrub_ganons_3", "scrub_ganons_4", "ganons1", "ganons2", "ganons3", "ganons4", "ganons5", "ganons6", "ganons7", "ganons8", "ganons9", "ganons10", "ganons11", "ganons12", "ganons13", "ganons14", "ganons15", "ganons16",
 		"gtg1", "gtg2", "gtg3", "gtg4", "gtg5", "gtg6", "gtg7", "gtg8", "gtg9", "gtg10", "gtg12", "gtg11", "gtg13", "gtg14", "gtg15", "gtg16", "gtg17",  "gtg18", "gtg19", "gtg20", "gtg21", "gtg22",
-		"well1", "well5", "well2", "well3", "well4", "well6", "well11", "well7", "well10", "well8", "well9", "well12", "well13", "well14",
+		"well1", "well5", "well2", "well3", "well4", "well6", "well11", "well7", "well10", "well8", "well9", "gs_well_west_inner", "gs_well_east_inner", "well12", "well13", "gs_well_like_like", "well14",
 		"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
-		];
+	];
 		
-		var backUp = [];
+	var Names = [
+		"TL", "TR", "BR", "BL", "Sword", "Near Exit", "Soil", "Adult", "Storms",
+		"Talon", "Tree", "Back", "Left", "Center", "Right", "Window", "Shed", "Back Wall", 
+		"Remote", "Open", "Scrub", "Market", "Tektite", "Near Kak", "Near GV",
+		"Box", "Water", "Bridge", "Soil", "Pillar", "Tent", "Rocks", "Left", "Right",
+		"Left", "Center", "Right", "C Fish", "Bottle", "Soil", "Lab Wall", "Island", "A Fish", "Labtop", "Crate", "Divin'", "Tree", "Sun",
+		"Guard", "Sling", "Rich", "Bowl 1", "Bowl 2", "Lens", "Poes",
+		"Tree", "D Fairy", "Storms",
+		"Skull", "G Fairy",
+		"LACS",
+		"Log", "Tree", "Fairy", "Glacier", "Divin'", "Cave",
+		"Spinning", "Map", "Comp", "HP", "HP", "Blocks", "Irons",
+		"Lobby", "Sling 1", "Sling 2", "Comp 1", "Comp 2", "Comp", "Gate", "Vines", "Base", "Back", "Queen",
+		"Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr", "Scrub Gr+", "Br Soil", "Br Scrub", "Target", "Saria Kid", "Abv Stage", "Mask",
+		"Wolfos", "Skull", "Left", "Right",
+		"Big Rollin'", "Dancin'", "Chuckin'", "Maze 1", "Maze 2", "Maze", "Maze 3!", "Center", "Lil Rollin", "Left", "Center", "Right",
+		"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Comp", "Plat", "Left", "Right", "B Bag", "Bridge", "Above", "King",
+		"Bombable", "Wall", "Top", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil",
+		"Bean", "Left", "Center", "Right", "Fairy", "Grotto", "Nook", "Soil", "Crate", 
+		"Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Red Gr", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "10!", "20!!", "30!!!", "40!!!!", "50!!!!!",
+		"Shield", "Tour", "Soil", "Wall", "Redead", "Fire", "Box", "Race 1", "Race 2",
+		"Tree", "Left", "Right", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2",
+		"Divin'", "Torches", "King", "Skull",
+		"Bean", "Fairy", "Soil", "Hill", "Tree", "Left", "Right", 
+		"Skull", "Check",
+		"Fort", "Roof", "1000", "1500", "Target", 
+		"Vines", "Scrub", "Boom", "Map", "Comp", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
+		"First", "First", "Lobby", "Stalfos", "C Mid", "C Mid", "C High", "C Low", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom G",
+		"Near Boss", "Base", "Hammer 1", "Hammer 2", "Lava Open", "SoT", "Lava Bomb", "Volva", "Lower", "Bomb Wall", "Side Room", "Map", "Upper", "Bombable", "Crow 1", "Crow 2", "Crow", "Comp", "SoT", "MEGA",
+		"Comp", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
+		"Ch L", "Ch R", "Fence", "Ch Climb", "Ch Climb 1", "Ch Climb 2", "Map", "Sun Room", "B4 Knuck", "Silvers", "Ad L", "SoT", "Ad R", "Mirror 1", "Mirror 2", "Lul Hand", "Lul High", "Main Room", "4 Armos", "Invisi 1", "Invisi 2", "Mirror", "BK", "Tippy Top", "Twinrova",
+		"Map", "Hovers", "Comp", "Early Silvs", "Spinning", "Spinning 1", "Spinning 2", "Spikes L", "Spikes", "Spikes U1", "Spikes U2", "Mid Silvs", "Pot", "Pot", "Wind", "Bombable", "Gibdos", "Near Boat", "Dins 1", "Dins 2", "3 Pots", "Floor", "Bongo",
+		"Scrub L", "Scrub LM", "Scrub RM", "Scrub R", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
+		"Lobby L", "Lobby R", "Stalfos", "Wolfos", "Silvers 1", "Silvers 2", "Silvers 3", "Silvers 4", "Eyes", "Above", "Enemies", "Fire", "F Standing", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
+		"Fake R", "C Small", "B Bomb", "Water L", "Coffin", "C Big", "Fake L", "F Bomb", "Water F", "D Hand", "Invisi", "Door L", "Door R", "Locked 1", "Locked 2", "Like Like", "Base",
+		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Med", "3 Med", "OoT"
+	];
+	
+	var AreaIndexes = [0,9,18,25,34,48,55,58,60,61,67,74,85,98,102,114,129,138,147,166,175,186,190,197,199,204,213,232,252,268,293,316,336,358,375];
+	var SongIndexes = [0,376,386,0,0,0,375,0,384,0,383,0,0,377,0,0,0,380,378,379,0,0,382,0,0,0,0,0,0,0,0,0,0,0];
+	var SongIndexes2 = [0,376,386,0,0,0,375,0,384,0,383,0,0,381,0,0,0,380,385,379,0,0,382,0,0,0,0,0,0,0,0,0,0,0];
 		
-		for (var i = 0; i < Locations.length; i++) {
-			Check[Locations[i]] = "unknown";
-			backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
-		}
-		
-		for (var i = 0; i < Items.length; i++) {
-			Location[Items[i]] = "unknown";
-		}
 		
 		Location.med1 = "unknown";
 		Location.med2 = "unknown";
@@ -320,7 +353,7 @@ var tSeconds = 0;
 		Location.med5 = "unknown";
 		Location.med6 = "unknown";
 		
-		var Names = [
+		/*var Names = [
 		"Kokiri: Mido's 1", "Kokiri: Mido's 2", "Kokiri: Mido's 3", "Kokiri: Mido's 4", "Kokiri: Sword", "Kokiri: SoS",
 		"Ranch: T's Chicks", "Ranch: Back",
 		"Field: Remote Gr.", "Field: Open Gr.", "Field: Scrub Gr.", "Field: Near Market", "Field: Tektite(ATZ)",
@@ -356,7 +389,7 @@ var tSeconds = 0;
 		"GTG: Lobby Left", "GTG: Lobby Right", "GTG: Stalfos", "GTG: Wolfos", "GTG: Silvers 1", "GTG: Silvers 2", "GTG: Silvers 3", "GTG: Silvers 4", "GTG: Eyes", "GTG: Above Eyes", "GTG: Keese+Slugs", "GTG: Hammer", "GTG: Freestanding", "GTG: Right 1", "GTG: Right 2", "GTG: Beamos", "GTG: Left 1",  "GTG: Left 2", "GTG: Left 3", "GTG: Left 4", "GTG: Final", "GTG: Toilet",
 		"Well: Fake Right", "Well: Center Small", "Well: Back Bomb", "Well: Water Left", "Well: Freestanding", "Well: Center Big", "Well: Fake Left", "Well: Front Bomb", "Well: Water Front", "Well: Dead Hand", "Well: Invisible", "Well: Locked 1", "Well: Locked 2", "Well: Basement",
 		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Medallion", "3 Medallion", "Ocarina of Time"
-		];
+		];*/
 		
 	var	gsText = [
 		"",
@@ -783,55 +816,164 @@ var childRoute1Value = 0;
 var childRoute1 = ["ocarina_game", "lost_woods_grotto", "lost_woods_scrub_grotto", "wolfos_grotto", "bridge_scrub", "target", "skull_kid", "kokiri_song_of_storms", "rolling_goron", "goron_dance", "goron_pot", "river_pillar", "river_grotto", "river_ledge", "frogs_1", "frogs_2", "zora_diving", "zora_torches", "hylia_child_fishing"];
 var childRoute2 = ["market_slingshot_game", "market_bowling_1", "market_bowling_2","dins_fairy","market_lens_game"];
 
+var parent = document.getElementById("normalColumn1");
+var background = "url('./normal/areas/kokiri.jpg')";
+for (var i = 0; i<Locations.length; i++) {
+	if (i == AreaIndexes[1]) {background = "url('./normal/areas/ranch.jpg')"; var elem = document.createElement("br"); elem.id = "kokiri_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[2]) {background = "url('./normal/areas/field.jpg')"; var elem = document.createElement("br"); elem.id = "ranch_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[3]) {background = "url('./normal/areas/valley.jpg')"; var elem = document.createElement("br"); elem.id = "field_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[4]) {background = "url('./normal/areas/hylia.jpg')"; var elem = document.createElement("br"); elem.id = "valley_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[5]) {background = "url('./normal/areas/market.jpg')"; var elem = document.createElement("br"); elem.id = "hylia_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[6]) {background = "url('./normal/areas/hyrule_castle.jpg')"; var elem = document.createElement("br"); elem.id = "market_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[7]) {background = "url('./normal/areas/ogc.jpg')"; var elem = document.createElement("br"); elem.id = "hyrule_castle_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[8]) {background = "url('./normal/areas/tot.jpg')"; var elem = document.createElement("br"); elem.id = "ogc_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[9]) {background = "url('./normal/areas/fountain.jpg')"; var elem = document.createElement("br"); elem.id = "tot_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[10]) {background = "url('./normal/areas/ice.jpg')"; var elem = document.createElement("br"); elem.id = "fountain_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[11]) {background = "url('./normal/areas/deku.jpg')"; parent = document.getElementById("normalColumn2");}
+	if (i == AreaIndexes[12]) {background = "url('./normal/areas/lost_woods.jpg')"; var elem = document.createElement("br"); elem.id = "deku_break"; parent.appendChild(elem);}
+	if (i == AreaIndexes[13]) {background = "url('./normal/areas/sfm.jpg')"; var elem = document.createElement("br"); elem.id = "lost_woods_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[14]) {background = "url('./normal/areas/goron.jpg')"; var elem = document.createElement("br"); elem.id = "sfm_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[15]) {background = "url('./normal/areas/dodongos.jpg')"; var elem = document.createElement("br"); elem.id = "goron_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[16]) {background = "url('./normal/areas/dmt.jpg')"; var elem = document.createElement("br"); elem.id = "dodongos_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[17]) {background = "url('./normal/areas/dmc.jpg')"; var elem = document.createElement("br"); elem.id = "dmt_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[18]) {background = "url('./normal/areas/kakariko.jpg')"; parent = document.getElementById("normalColumn3");}
+	if (i == AreaIndexes[19]) {background = "url('./normal/areas/graveyard.jpg')"; var elem = document.createElement("br"); elem.id = "kakariko_break"; parent.appendChild(elem);}
+	if (i == AreaIndexes[20]) {background = "url('./normal/areas/river.jpg')"; var elem = document.createElement("br"); elem.id = "graveyard_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[21]) {background = "url('./normal/areas/domain.jpg')"; var elem = document.createElement("br"); elem.id = "river_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[22]) {background = "url('./normal/areas/colossus.jpg')"; var elem = document.createElement("br"); elem.id = "domain_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[23]) {background = "url('./normal/areas/wasteland.jpg')"; var elem = document.createElement("br"); elem.id = "colossus_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[24]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.id = "wasteland_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[25]) {background = "url('./normal/areas/jabu.jpg')"; var elem = document.createElement("br"); elem.id = "fortress_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[26]) {
+		parent = document.getElementById("dung1");
+		var elem = document.createElement("small"); elem.id = "title_forest"; elem.className = "area_titles"; elem.innerHTML = "For"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "forest"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "forestSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "forestBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[27]) {
+		var elem = document.createElement("small"); elem.id = "title_fire"; elem.className = "area_titles"; elem.innerHTML = "Fir"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "fire"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "6"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "fireSKs"; elem.className = "superdotSK"; elem.innerHTML = "8"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "fireBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[28]) {
+		var elem = document.createElement("small"); elem.id = "title_water"; elem.className = "area_titles"; elem.innerHTML = "Wat"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "water"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "4"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "waterSKs"; elem.className = "superdotSK"; elem.innerHTML = "6"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "waterBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[29]) {
+		parent = document.getElementById("dung2");
+		var elem = document.createElement("small"); elem.id = "title_spirit"; elem.className = "area_titles"; elem.innerHTML = "Spi"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "spirit"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "spiritSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "spiritBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[30]) {
+		var elem = document.createElement("small"); elem.id = "title_shadow"; elem.className = "area_titles"; elem.innerHTML = "Sha"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "shadow"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "shadowSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "shadowBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[31]) {
+		var elem = document.createElement("small"); elem.id = "title_ganons"; elem.className = "area_titles"; elem.innerHTML = "Gan"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "ganons"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "ganonsSKs"; elem.className = "superdotSK"; elem.innerHTML = "2"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[32]) {
+		parent = document.getElementById("dung3");
+		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "gtg"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "13"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "gtgSKs"; elem.className = "superdotSK"; elem.innerHTML = "9"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[33]) {
+		var elem = document.createElement("small"); elem.id = "title_well"; elem.className = "area_titles"; elem.innerHTML = "Well"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "well"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "11"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "wellSKs"; elem.className = "superdotSK"; elem.innerHTML = "3"; parent.appendChild(elem);
+		var elem = document.createElement("br"); parent.appendChild(elem);
+	}
+	if (i < AreaIndexes[34]) {
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; if (i < AreaIndexes[26]) {elem.style.backgroundImage = background;} parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.innerHTML = elem.innerHTML.italics();} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
+	}
+	else {
+		parent = document.getElementById("songs");
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "check_input"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onclick = toggleHint; elem.innerHTML = Names[i]; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
+	}
+}
+
+var backUp = [];
+		
+for (var i = 0; i < Locations.length; i++) {
+	Check[Locations[i]] = "unknown";
+	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
+}
+
+for (var i = 0; i < Items.length; i++) {
+	Location[Items[i]] = "unknown";
+}
+
 location_logic();
 
-var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "bottle", "bottle", "bottle", "bottle", "egg", "egg", "kokiri_sword", "master_sword", "biggoron_sword", "", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
-var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
+/*var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "bottle", "bottle", "bottle", "bottle", "egg", "egg", "kokiri_sword", "master_sword", "biggoron_sword", "", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
+var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns_song", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
 var linso = false;
 handleThemes();
 handleThemes();
-var temp = 0;
+var linsoOrderIncrement = 0;
 var tempTop = -32;
 for (var i = 1; i <= 9; i++) {
 if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;}
 	for (var j = 1; j <= 6; j++) {
-		if (linsoOrder[temp] == "") {temp += 1; continue;}
+		if (linsoOrder[linsoOrderIncrement] == "") {linsoOrderIncrement += 1; continue;}
 		var elem = document.createElement("IMG");
 		elem.id = "linso" + i + j;
 		elem.style.height = "35px";
 		elem.style.width = "35px";
-		elem.src = Game[linsoOrder[temp] + "_img"];
-		Game[linsoOrder[temp]] = false;
-		if (linsoOrder[temp] == "kokiri_boots" || linsoOrder[temp] == "kokiri_tunic") {Game[linsoOrder[temp]] = true;}
+		elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];
+		Game[linsoOrder[linsoOrderIncrement]] = false;
+		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
 		elem.style.position = "absolute";
-		elem.style.left = 928 + 75 + j*41 + "px";
+		elem.style.left = -32 + j*41 + "px";
 		elem.style.top = tempTop + i*40 + "px";
 		elem.style.opacity = .3;
 		elem.style.filter = "grayscale(100%)";
-		elem.style.display = "none";
-		document.body.appendChild(elem); 
-		temp += 1;
+		elem.onclick = linSoClick;
+		//elem.style.display = "none";
+		document.getElementById("linsoColumn").appendChild(elem); 
+		linsoOrderIncrement += 1;
 	}
 }
-temp = 0;
-tempTop = -24;
+var linsoOrderIncrement = 0;
+tempTop = -21;
 for (var i = 1; i <= 12; i++) {
-	if (linsoOrder[temp] == "") {temp += 1; continue;}
+	if (linsoOrder[linsoOrderIncrement] == "") {linsoOrderIncrement += 1; continue;}
 	var elem = document.createElement("IMG");
 	elem.id = "linsoS" + i;
 	elem.style.height = "35px";
 	elem.style.width = "35px";
-	elem.src = Game[linsoOrder2[temp] + "_img"];
+	elem.src = Game[linsoOrder2[linsoOrderIncrement] + "_img"];
 	elem.style.position = "absolute";
-	elem.style.left = 1218 + 75 + "px";
+	elem.style.left = 258 + "px";
 	elem.style.top = tempTop + i*31 + "px";
 	elem.style.opacity = .3;
 	elem.style.filter = "grayscale(100%)";
-	elem.style.display = "none";
-	document.body.appendChild(elem); 
-	temp += 1;
-}
+	elem.onclick = linSoClick;
+	document.getElementById("linsoColumn").appendChild(elem);
+	linsoOrderIncrement += 1;
+}*/
 
 
 setInterval(slowUpdate,5000);

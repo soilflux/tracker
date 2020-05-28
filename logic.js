@@ -101,6 +101,8 @@ function refresh_logic_for_stuff() {
 	
 	Game.goron_bracelet = Game.strength1 || Game.strength2 || Game.strength3;
 	
+	Game.magic = Game.magic1 || Game.magic2;
+	
 	Logic.forest_boss_key = Logic.forced_forest_boss_key;
 	Logic.fire_boss_key = Logic.forced_fire_boss_key;
 	Logic.water_boss_key = Logic.forced_water_boss_key;
@@ -594,7 +596,7 @@ function logic_shortcuts() {
 	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||(Logic.hammer && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && Logic.hammer);
 	Logic.crater_top = Logic.crater_by_city || Logic.hammer;
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
-	Logic.can_enter_ganons = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3;
+	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS";
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
 	Logic.middle_water = Logic.can_enter_water && Logic.lullaby && (Logic.bow || Logic.can_use_dins);
@@ -642,14 +644,8 @@ function logic_shortcuts() {
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
 	Game.giants_wallet = Game.wallet1 && Game.wallet2;
 }
-function linSoClick(x) {
-	var str = x.src.substring(0,x.src.length-4);
-	if (str == "hookshot" && Game.hookshot && !Game.longshot) {x.src = Game.longshot_img; Game.hookshot2 = true;}
-	else if (str == "hookshot" && Game.hookshot) {x.src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; Game.hookshot1 = false; Game.hookshot2 = false;}
-	else if (str == "hookshot") {x.style.filter = "none"; Game.hookshot1 = true;}
-	else if (x.style.filter == "none") {x.style.filter = "grayscale(100%)"; Game[str] = false;}
-	else {x.style.filter = "none"; Game[str] = true;}
-	temp += 1;
+function refreshSettings() {
+	
 }
 function location_logic(){
 	Location_Logic.mido_1 = true;
@@ -908,45 +904,45 @@ function location_logic(){
 	Location_Logic.preludeSpot = Logic.forest_medallion;
 	Location_Logic.nocturneSpot = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion;
 	Location_Logic.oot = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire;
-	Location_Logic.scrub_dc1 = Logic.can_enter_dodongos;
-	Location_Logic.scrub_dc2 = Logic.can_enter_dodongos;
-	Location_Logic.scrub_dc3 = Logic.bomb_bag;
-	Location_Logic.scrub_dc4 = Logic.bomb_bag;
+	Location_Logic.scrub_dodongos_1 = Logic.can_enter_dodongos;
+	Location_Logic.scrub_dodongos_2 = Logic.can_enter_dodongos;
+	Location_Logic.scrub_dodongos_3 = Logic.bomb_bag;
+	Location_Logic.scrub_dodongos_4 = Logic.bomb_bag;
 	Location_Logic.scrub_jabu = Logic.can_enter_jabu;
-	Location_Logic.scrub_ganons1 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons2 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons3 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons4 = Logic.can_enter_ganons;
-	Location_Logic.scrub_river1 = Logic.storms;
-	Location_Logic.scrub_river2 = Logic.storms;
-	Location_Logic.scrub_sfm1 = Logic.storms;
-	Location_Logic.scrub_sfm2 = Logic.storms;
-	Location_Logic.scrub_lake1 = true;
-	Location_Logic.scrub_lake2 = true;
-	Location_Logic.scrub_lake3 = true;
-	Location_Logic.scrub_lw1 = true;
-	Location_Logic.scrub_lw2 = true;
-	Location_Logic.scrub_lw3 = Logic.can_blast_or_smash;
-	Location_Logic.scrub_colossus1 = Logic.silver_gauntlets;
-	Location_Logic.scrub_colossus2 = Logic.silver_gauntlets;
-	Location_Logic.scrub_crater1 = Logic.hammer;
-	Location_Logic.scrub_crater2 = Logic.hammer;
-	Location_Logic.scrub_crater3 = Logic.hammer;
-	Location_Logic.scrub_goron1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_goron2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
+	Location_Logic.scrub_ganons_1 = Logic.can_enter_ganons;
+	Location_Logic.scrub_ganons_2 = Logic.can_enter_ganons;
+	Location_Logic.scrub_ganons_3 = Logic.can_enter_ganons;
+	Location_Logic.scrub_ganons_4 = Logic.can_enter_ganons;
+	Location_Logic.scrub_river_1 = Logic.storms;
+	Location_Logic.scrub_river_2 = Logic.storms;
+	Location_Logic.scrub_sfm_1 = Logic.storms;
+	Location_Logic.scrub_sfm_2 = Logic.storms;
+	Location_Logic.scrub_lake_1 = true;
+	Location_Logic.scrub_lake_2 = true;
+	Location_Logic.scrub_lake_3 = true;
+	Location_Logic.scrub_lw_1 = true;
+	Location_Logic.scrub_lw_2 = true;
+	Location_Logic.scrub_lw_3 = Logic.can_blast_or_smash;
+	Location_Logic.scrub_colossus_1 = Logic.silver_gauntlets;
+	Location_Logic.scrub_colossus_2 = Logic.silver_gauntlets;
+	Location_Logic.scrub_crater_1 = Logic.hammer;
+	Location_Logic.scrub_crater_2 = Logic.hammer;
+	Location_Logic.scrub_crater_3 = Logic.hammer;
+	Location_Logic.scrub_goron_1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
+	Location_Logic.scrub_goron_2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_ranch1 = Logic.bomb_bag;
-	Location_Logic.scrub_ranch2 = Logic.bomb_bag;
-	Location_Logic.scrub_ranch3 = Logic.bomb_bag;
-	Location_Logic.scrub_gv1 = Logic.fortress_access && Logic.storms;
-	Location_Logic.scrub_gv2 = Logic.fortress_access && Logic.storms;
+	Location_Logic.scrub_ranch_1 = Logic.bomb_bag;
+	Location_Logic.scrub_ranch_2 = Logic.bomb_bag;
+	Location_Logic.scrub_ranch_3 = Logic.bomb_bag;
+	Location_Logic.scrub_gv_1 = Logic.fortress_access && Logic.storms;
+	Location_Logic.scrub_gv_2 = Logic.fortress_access && Logic.storms;
 
 	Location_Logic.gs_kokiri_child = true;
 	Location_Logic.gs_kokiri_bean = Logic.bottle;
 	Location_Logic.gs_kokiri_adult = Logic.hookshot;
 	Location_Logic.gs_market = true;
-	Location_Logic.gs_lost_woods_bean1 = Logic.bottle;
-	Location_Logic.gs_lost_woods_bean2 = Logic.bottle;
+	Location_Logic.gs_lost_woods_bean_1 = Logic.bottle;
+	Location_Logic.gs_lost_woods_bean_2 = Logic.bottle;
 	Location_Logic.gs_lost_woods_above_stage = (Logic.bomb_bag || Logic.silver_scale) && (Logic.sarias || Logic.minuet);
 	Location_Logic.gs_sacred_forest = Logic.hookshot && (Logic.sarias || Logic.minuet);
 	Location_Logic.gs_outside_kakariko = (Logic.boomerang && Logic.bomb_bag) || (Logic.can_blast_or_smash && Logic.hookshot)
@@ -964,19 +960,19 @@ function location_logic(){
 	Location_Logic.gs_kakariko_tower = Logic.bomb_bag || Logic.slingshot;
 	Location_Logic.gs_kakariko_impas = Logic.hookshot;
 	Location_Logic.gs_graveyard_wall = Logic.boomerang;
-	Location_Logic.gs_graveyard_bean = Logic.bottle;
+	Location_Logic.gs_graveyard_soil = Logic.bottle;
 	Location_Logic.gs_trail_bean = Logic.bottle && (Logic.bomb_bag || Logic.goron_bracelet);
 	Location_Logic.gs_trail_bombable_wall = Logic.can_blast_or_smash;
 	Location_Logic.gs_trail_hail_path = Logic.hammer;
 	Location_Logic.gs_trail_above_dodongos = Logic.hammer;
-	Location_Logic.gs_goron_city_center = true;
-	Location_Logic.gs_goron_city_maze = Logic.bomb_bag;
+	Location_Logic.gs_goron_center = true;
+	Location_Logic.gs_goron_maze = Logic.bomb_bag;
 	Location_Logic.gs_crater_crate = Logic.can_blast_or_smash;
 	Location_Logic.gs_crater_bean = Logic.bottle && Logic.bolero;
 	Location_Logic.gs_river_ladder = Logic.silver_scale || Logic.bomb_bag;
 	Location_Logic.gs_river_near_grotto = Logic.hookshot;
 	Location_Logic.gs_river_above_bridge = Logic.hookshot;
-	Location_Logic.gs_zora_river_tree = true;
+	Location_Logic.gs_river_tree = true;
 	Location_Logic.gs_domain = Logic.lullaby && (Logic.hookshot || Logic.magic || Logic.bow);
 	Location_Logic.gs_fountain_above_log = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby)) && Logic.boomerang;
 	Location_Logic.gs_fountain_tree = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby))
@@ -985,14 +981,14 @@ function location_logic(){
 	Location_Logic.gs_hylia_lab_wall = Logic.boomerang;
 	Location_Logic.gs_hylia_island = true;
 	Location_Logic.gs_hylia_tree = Logic.longshot;
-	Location_Logic.gs_lab_crate = Logic.iron_boots && Logic.hookshot;
+	Location_Logic.gs_hylia_lab_crate = Logic.iron_boots && Logic.hookshot;
 	Location_Logic.gs_valley_small_bridge = Logic.boomerang;
 	Location_Logic.gs_valley_bean = Logic.bottle;
 	Location_Logic.gs_valley_tent = Logic.fortress_access && Logic.hookshot;
 	Location_Logic.gs_valley_pillar = Logic.fortress_access && Logic.hookshot;
 	Location_Logic.gs_fortress_archery = Logic.fortress_access && Logic.hookshot;
 	Location_Logic.gs_fortress_top = Logic.fortress_access;
-	Location_Logic.gs_wasteland_structure = Logic.hookshot && Logic.can_cross_quicksand;
+	Location_Logic.gs_wasteland = Logic.hookshot && Logic.can_cross_quicksand;
 	Location_Logic.gs_colossus_bean = Logic.bottle && Logic.requiem;
 	Location_Logic.gs_colossus_tree = Logic.hookshot && Logic.can_enter_colossus;
 	Location_Logic.gs_colossus_hill = (Logic.requiem && (Logic.bomb_bag || Logic.silver_scale)) || (Logic.longshot && Logic.can_enter_colossus);
@@ -1002,13 +998,13 @@ function location_logic(){
 	Location_Logic.gs_deku_basement_vines = Logic.slingshot || Logic.boomerang || Logic.bomb_bag || Logic.can_use_dins;
 	Location_Logic.gs_deku_compass = true;
 	Location_Logic.gs_dodongos_east_side = Logic.can_enter_dodongos;
-	Location_Logic.gs_dodongos_stair_room = Logic.dodongos_climb;
+	Location_Logic.gs_dodongos_stair_viness = Logic.dodongos_climb;
 	Location_Logic.gs_dodongos_above_stairs = (Logic.dodongos_climb && Logic.hookshot) || (Logic.boomerang && (Logic.bomb_bag || Logic.goron_bracelet));
 	Location_Logic.gs_dodongos_scarecrow = Logic.can_enter_dodongos && Logic.hookshot;
 	Location_Logic.gs_dodongos_before_king = Logic.bomb_bag;
 	Location_Logic.gs_jabu_vines = Logic.can_enter_jabu;
-	Location_Logic.gs_jabu_near_octo1 = Logic.can_enter_jabu && Logic.boomerang;
-	Location_Logic.gs_jabu_near_octo2 = Logic.can_enter_jabu && Logic.boomerang;
+	Location_Logic.gs_jabu_near_octo_1 = Logic.can_enter_jabu && Logic.boomerang;
+	Location_Logic.gs_jabu_near_octo_2 = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.gs_jabu_near_boss = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.gs_forest_first = (Logic.minuet || Logic.sarias) && Logic.hookshot;
 	Location_Logic.gs_forest_lobby = (Logic.minuet || Logic.sarias) && Logic.hookshot;
@@ -1017,8 +1013,8 @@ function location_logic(){
 	Location_Logic.gs_forest_basement = (Logic.minuet || Logic.sarias) && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
 	Location_Logic.gs_fire_song_of_time = Logic.can_enter_fire_temple && Logic.fire_keys >= 1 && Logic.time;
 	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
-	Location_Logic.gs_fire_scarecrow1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
-	Location_Logic.gs_fire_scarecrow2 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
+	Location_Logic.gs_fire_scarecrow_1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
+	Location_Logic.gs_fire_scarecrow_2 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
 	Location_Logic.gs_fire_basement = Logic.can_enter_fire_temple && Logic.hammer;
 	Location_Logic.gs_water_south_basement = Logic.can_enter_water && Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.gs_water_river = Logic.can_enter_water && Logic.time && Logic.water_keys >= 5;
@@ -1028,8 +1024,8 @@ function location_logic(){
 	Location_Logic.gs_spirit_metal_fence = Logic.requiem && (Logic.boomerang || Logic.slingshot);
 	Location_Logic.gs_spirit_before_child_knuckle = (Logic.bomb_bag && Logic.boomerang && Logic.hookshot && Logic.spirit_keys >= 1) || (Logic.boomerang && Logic.spirit_keys == 5 && Logic.bomb_bag && Logic.requiem) || (Logic.hookshot && Logic.silver_gauntlets && Logic.spirit_keys >= 3);
 	Location_Logic.gs_spirit_boulder_room = Logic.can_enter_adult_spirit && Logic.time && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
-	Location_Logic.gs_spirit_temple_lobby = Logic.can_enter_adult_spirit && Logic.spirit_keys >= 3 && (Logic.hookshot || Logic.hover_boots);
-	Location_Logic.gs_spirit_bomb_for_light_room = Logic.spirit_keys >= 1;
+	Location_Logic.gs_spirit_lobby = Logic.can_enter_adult_spirit && Logic.spirit_keys >= 3 && (Logic.hookshot || Logic.hover_boots);
+	Location_Logic.gs_spirit_child_climb = Logic.spirit_keys >= 1;
 	Location_Logic.gs_shadow_like_like = Logic.can_bomb_shadow_wall;
 	Location_Logic.gs_shadow_crusher = Logic.can_bomb_shadow_wall && Logic.hookshot;
 	Location_Logic.gs_shadow_giant_pot = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2 && Logic.hookshot;
