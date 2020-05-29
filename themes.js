@@ -197,7 +197,7 @@ function dark_normie() {
 	document.getElementById("normalColumn3").style.width="97px";
 	document.getElementById("woth_info").style.left="0px";
 	document.getElementById("timer").style.left="-120px";
-	document.getElementById("skulls_in_logic").style.left="895px";
+	document.getElementById("skulls_in_logic").style.left="892px";
 	document.getElementById("dung4_icon").style.left="948px";
 	document.getElementById("dung5_icon").style.left="948px";
 	document.getElementById("dung6_icon").style.left="948px";

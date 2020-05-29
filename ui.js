@@ -228,7 +228,6 @@ function junk() {
 		if (temp == 44 && Game.deku_checks_remaining == 0) {Game.checks_remaining +=1;}
 		if (temp == 66 && Game.dodongos_checks_remaining == 0) {Game.checks_remaining +=1;}
 		if (temp == 113 && Game.jabu_checks_remaining == 0) {Game.checks_remaining +=1;}
-		Game.checks_remaining -= 1;
 	}
 	
 	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey) {
@@ -267,7 +266,6 @@ function junk() {
 	}
 	else {
 		Check[str]="junk";
-		Game.checks_remaining -=1;
 	}
 	
 	if (document.getElementById(str).style.display != "none") {
@@ -293,7 +291,9 @@ function junk() {
 	Update();Update();Update();
 }	
 
-function junkUltra(x) {
+function junkUltra() {
+	var x = event.target;
+	
 	if (x.id == "forest") {var temp = 14; var temp2 = Game.forest_checks_remaining; Game.forest_checks_remaining = 0; Logic.forced_forest_keys = 5 - Game.current_forest_keys; if (Game.forest_boss_key == false) {Logic.forced_forest_boss_key = true;}}
 	if (x.id == "fire") {var temp = 15; var temp2 = Game.fire_checks_remaining; Game.fire_checks_remaining = 0; Logic.forced_fire_keys = 8 - Game.current_fire_keys; if (Game.fire_boss_key == false) {Logic.forced_fire_boss_key = true;}}
 	if (x.id == "water") {var temp = 11; var temp2 = Game.water_checks_remaining; Game.water_checks_remaining = 0; Logic.forced_water_keys = 6 - Game.current_water_keys; if (Game.water_boss_key == false) {Logic.forced_water_boss_key = true;}}
@@ -308,7 +308,6 @@ function junkUltra(x) {
 		document.getElementById("text_" + x.id + i).style.display = "none";
 		document.getElementById("br_" + x.id + i).style.display = "none";
 	}
-		Game.checks_remaining -= temp2;
 	Update();Update();Update();
 }
 
@@ -335,7 +334,6 @@ function junkItem(x) {
 	document.getElementById(str2).value = "";
 	
 	lastCheck.push(str2);
-	Game.checks_remaining -=1;
 	Update();Update();Update();
 }
 
@@ -535,6 +533,7 @@ function update_logic_info() {
 
 	temp = 0;
 	var colorChange = false;
+	Game.checks_remaining = 0;
 	for (var i = 0; i < Locations.length; i++) {
 		if (i < AreaIndexes[34]) {
 			document.getElementById(Locations[i]).style.display = "none";
@@ -549,9 +548,12 @@ function update_logic_info() {
 		
 		str = "text_" + key;
 		str2 = "br_" + key;
-		if (Check[key] == "unknown") {document.getElementById(str).style.display = "inline-block";}
-		if (Check[key] == "unknown") {document.getElementById(key).style.display = "inline-block";}
-		if (Check[key] == "unknown") {document.getElementById(str2).style.display = "inline-block";}
+		if (Check[key] == "unknown") {
+			document.getElementById(str).style.display = "inline-block";
+			document.getElementById(key).style.display = "inline-block";
+			document.getElementById(str2).style.display = "inline-block";
+			if (i < AreaIndexes[34]) {Game.checks_remaining += 1;}
+			}
 		
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
@@ -611,6 +613,13 @@ function update_logic_info() {
 		}
 		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
+	
+	Game.checks_remaining -= (5 - Game.current_forest_keys) + (8 - Game.current_fire_keys) + (6 - Game.current_water_keys) + (5 - Game.current_spirit_keys) + (5 - Game.current_shadow_keys) + (9 - Game.current_gtg_keys) + (3 - Game.current_well_keys) + (2 - Game.current_ganons_keys);
+	if (!Game.forest_boss_key) {Game.checks_remaining -= 1;}
+	if (!Game.fire_boss_key) {Game.checks_remaining -= 1;}
+	if (!Game.water_boss_key) {Game.checks_remaining -= 1;}
+	if (!Game.spirit_boss_key) {Game.checks_remaining -= 1;}
+	if (!Game.shadow_boss_key) {Game.checks_remaining -= 1;}
 	
 	Game.logically_accessible = Number(Game.logically_accessible);
 	Game.logically_accessible=Game.logically_accessible.toFixed(0);

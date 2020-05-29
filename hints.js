@@ -284,171 +284,138 @@ function woth_and_barren_processing() {
 		if (AreaAge[i] == 10) {
 			hinted = true;
 			if (i == 1) {
-				if(Check[Locations[0]] == "unknown") {document.getElementById("text_" + Locations[0]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[1]] == "unknown") {document.getElementById("text_" + Locations[1]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[2]] == "unknown") {document.getElementById("text_" + Locations[2]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[3]] == "unknown") {document.getElementById("text_" + Locations[3]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[4]] == "unknown") {document.getElementById("text_" + Locations[4]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[5]] == "unknown") {document.getElementById("text_" + Locations[5]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 2) {
-				if(Check[Locations[6]] == "unknown") {document.getElementById("text_" + Locations[6]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[7]] == "unknown") {document.getElementById("text_" + Locations[7]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 3) {
-				if(Check[Locations[8]] == "unknown") {document.getElementById("text_" + Locations[8]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[9]] == "unknown") {document.getElementById("text_" + Locations[9]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[10]] == "unknown") {document.getElementById("text_" + Locations[10]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[11]] == "unknown") {document.getElementById("text_" + Locations[11]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[12]] == "unknown") {document.getElementById("text_" + Locations[12]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 4) {
-				if(Check[Locations[13]] == "unknown") {document.getElementById("text_" + Locations[13]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[14]] == "unknown") {document.getElementById("text_" + Locations[14]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[15]] == "unknown") {document.getElementById("text_" + Locations[15]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 5) {
-				if(Check[Locations[16]] == "unknown") {document.getElementById("text_" + Locations[16]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[17]] == "unknown") {document.getElementById("text_" + Locations[17]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[18]] == "unknown") {document.getElementById("text_" + Locations[18]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[19]] == "unknown") {document.getElementById("text_" + Locations[19]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[20]] == "unknown") {document.getElementById("text_" + Locations[20]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[21]] == "unknown") {document.getElementById("text_" + Locations[21]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 6) {
-				if(Check[Locations[22]] == "unknown") {document.getElementById("text_" + Locations[22]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[23]] == "unknown") {document.getElementById("text_" + Locations[23]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[24]] == "unknown") {document.getElementById("text_" + Locations[24]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[25]] == "unknown") {document.getElementById("text_" + Locations[25]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[26]] == "unknown") {document.getElementById("text_" + Locations[26]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[27]] == "unknown") {document.getElementById("text_" + Locations[27]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 7) {
-				if(Check[Locations[28]] == "unknown") {document.getElementById("text_" + Locations[28]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 8) {
-				if(Check[Locations[29]] == "unknown") {document.getElementById("text_" + Locations[29]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 9) {
-				if(Check[Locations[30]] == "unknown") {document.getElementById("text_" + Locations[30]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 10) {
-				if(Check[Locations[31]] == "unknown") {document.getElementById("text_" + Locations[31]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[32]] == "unknown") {document.getElementById("text_" + Locations[32]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[33]] == "unknown") {document.getElementById("text_" + Locations[33]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 11) {
-				if(Check[Locations[34]] == "unknown") {document.getElementById("text_" + Locations[34]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[35]] == "unknown") {document.getElementById("text_" + Locations[35]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[36]] == "unknown") {document.getElementById("text_" + Locations[36]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[37]] == "unknown") {document.getElementById("text_" + Locations[37]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 12) {
-				if(Check[Locations[38]] == "unknown") {document.getElementById("text_" + Locations[38]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[39]] == "unknown") {document.getElementById("text_" + Locations[39]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[40]] == "unknown") {document.getElementById("text_" + Locations[40]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[41]] == "unknown") {document.getElementById("text_" + Locations[41]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[42]] == "unknown") {document.getElementById("text_" + Locations[42]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[43]] == "unknown") {document.getElementById("text_" + Locations[43]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 				Game.deku_checks_remaining = 0;
 				Game.checks_remaining -= 1;
 			}
 			if (i == 13) {
-				if(Check[Locations[45]] == "unknown") {document.getElementById("text_" + Locations[45]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[46]] == "unknown") {document.getElementById("text_" + Locations[46]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[47]] == "unknown") {document.getElementById("text_" + Locations[47]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[48]] == "unknown") {document.getElementById("text_" + Locations[48]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[49]] == "unknown") {document.getElementById("text_" + Locations[49]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[50]] == "unknown") {document.getElementById("text_" + Locations[50]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[51]] == "unknown") {document.getElementById("text_" + Locations[51]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 14) {
-				if(Check[Locations[52]] == "unknown") {document.getElementById("text_" + Locations[52]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 15) {
-				if(Check[Locations[53]] == "unknown") {document.getElementById("text_" + Locations[53]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[54]] == "unknown") {document.getElementById("text_" + Locations[54]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[55]] == "unknown") {document.getElementById("text_" + Locations[55]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[56]] == "unknown") {document.getElementById("text_" + Locations[56]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[57]] == "unknown") {document.getElementById("text_" + Locations[57]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[58]] == "unknown") {document.getElementById("text_" + Locations[58]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[59]] == "unknown") {document.getElementById("text_" + Locations[59]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 16) {
-				if(Check[Locations[60]] == "unknown") {document.getElementById("text_" + Locations[60]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[61]] == "unknown") {document.getElementById("text_" + Locations[61]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[62]] == "unknown") {document.getElementById("text_" + Locations[62]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[63]] == "unknown") {document.getElementById("text_" + Locations[63]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[64]] == "unknown") {document.getElementById("text_" + Locations[64]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[65]] == "unknown") {document.getElementById("text_" + Locations[65]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 				Game.dodongos_checks_remaining = 0;
 				Game.checks_remaining -= 1;
 			}
 			if (i == 17) {
-				if(Check[Locations[67]] == "unknown") {document.getElementById("text_" + Locations[67]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[68]] == "unknown") {document.getElementById("text_" + Locations[68]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[69]] == "unknown") {document.getElementById("text_" + Locations[69]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[70]] == "unknown") {document.getElementById("text_" + Locations[70]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[71]] == "unknown") {document.getElementById("text_" + Locations[71]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 18) {
-				if(Check[Locations[72]] == "unknown") {document.getElementById("text_" + Locations[72]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[73]] == "unknown") {document.getElementById("text_" + Locations[73]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[74]] == "unknown") {document.getElementById("text_" + Locations[74]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[75]] == "unknown") {document.getElementById("text_" + Locations[75]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 19) {
-				if(Check[Locations[76]] == "unknown") {document.getElementById("text_" + Locations[76]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[77]] == "unknown") {document.getElementById("text_" + Locations[77]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[78]] == "unknown") {document.getElementById("text_" + Locations[78]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[79]] == "unknown") {document.getElementById("text_" + Locations[79]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[80]] == "unknown") {document.getElementById("text_" + Locations[80]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[81]] == "unknown") {document.getElementById("text_" + Locations[81]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[82]] == "unknown") {document.getElementById("text_" + Locations[82]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[83]] == "unknown") {document.getElementById("text_" + Locations[83]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[84]] == "unknown") {document.getElementById("text_" + Locations[84]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[85]] == "unknown") {document.getElementById("text_" + Locations[85]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[86]] == "unknown") {document.getElementById("text_" + Locations[86]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[87]] == "unknown") {document.getElementById("text_" + Locations[87]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[88]] == "unknown") {document.getElementById("text_" + Locations[88]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 20) {
-				if(Check[Locations[89]] == "unknown") {document.getElementById("text_" + Locations[89]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[90]] == "unknown") {document.getElementById("text_" + Locations[90]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[91]] == "unknown") {document.getElementById("text_" + Locations[91]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[92]] == "unknown") {document.getElementById("text_" + Locations[92]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[93]] == "unknown") {document.getElementById("text_" + Locations[93]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[94]] == "unknown") {document.getElementById("text_" + Locations[94]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[95]] == "unknown") {document.getElementById("text_" + Locations[95]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 21) {
-				if(Check[Locations[96]] == "unknown") {document.getElementById("text_" + Locations[96]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[97]] == "unknown") {document.getElementById("text_" + Locations[97]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[98]] == "unknown") {document.getElementById("text_" + Locations[98]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[99]] == "unknown") {document.getElementById("text_" + Locations[99]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[100]] == "unknown") {document.getElementById("text_" + Locations[100]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 22) {
-				if(Check[Locations[101]] == "unknown") {document.getElementById("text_" + Locations[101]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[102]] == "unknown") {document.getElementById("text_" + Locations[102]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[103]] == "unknown") {document.getElementById("text_" + Locations[103]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 23) {
-				if(Check[Locations[104]] == "unknown") {document.getElementById("text_" + Locations[104]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[105]] == "unknown") {document.getElementById("text_" + Locations[105]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 24) {
-				if(Check[Locations[106]] == "unknown") {document.getElementById("text_" + Locations[106]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 25) {
-				if(Check[Locations[107]] == "unknown") {document.getElementById("text_" + Locations[107]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[108]] == "unknown") {document.getElementById("text_" + Locations[108]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[109]] == "unknown") {document.getElementById("text_" + Locations[109]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 			}
 			if (i == 26) {
-				if(Check[Locations[110]] == "unknown") {document.getElementById("text_" + Locations[110]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[111]] == "unknown") {document.getElementById("text_" + Locations[111]).dispatchEvent(new Event('mousedown'));}
-				if(Check[Locations[112]] == "unknown") {document.getElementById("text_" + Locations[112]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
+					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				}
 				Game.jabu_checks_remaining = 0;
 				Game.checks_remaining -= 1;
 			}

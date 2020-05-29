@@ -441,7 +441,6 @@ function Undo() {
 		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.shadow_checks_remaining += 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.gtg_checks_remaining += 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.well_checks_remaining += 1;}
-		Game.checks_remaining += 1;
 		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
 			document.getElementById("trade_location").innerHTML = "Trade -> ";
 			document.getElementById("trade_location").style.color = "black";
