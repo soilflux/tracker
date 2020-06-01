@@ -304,6 +304,7 @@ color: red;
 	width: 30px;
 	vertical-align: top;
 	margin-bottom: 2px;
+	margin-right:2px;
 	padding: 0;
 	border: none;
 }
@@ -311,6 +312,7 @@ color: red;
 	width: 30px;
 	height:22px;
 	margin-bottom:2px;
+	margin-right:2px;
 	vertical-align: top;
 	padding: 0;
 	border: none;
