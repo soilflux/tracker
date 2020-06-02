@@ -413,6 +413,8 @@ document.onkeydown = function(e) {
 	}
 }
 
+document.body.onmousedown = function(e) { if (e.button === 1) return false; }
+
 function Undo() {
 	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
 		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.current_forest_keys -= 1;}

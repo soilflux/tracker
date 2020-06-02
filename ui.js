@@ -19,7 +19,7 @@ function process_inputs() {
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
 
-		if (i <= 374) { 
+		if (i <= lastItem) { 
 	 
 		if (document.getElementById(key).value == "far" && !Known.farores_wind) {Check[document.getElementById(key).id] = "farores_wind"; Location.farores_wind = document.getElementById(key).id; document.getElementById("farores_wind_location").innerHTML = "Farores -> " + AreaNames[AreaNamesIndex] + ": " + Names[i]; Known.farores_wind = true; if (!hinted && !peeked) {Game.farores_wind = true;} if (hinted) {Hinted[key] = true;} if (hinted || peeked) {temptext2 += Names[i] + ":  Farores" + "<br />";} junkItem(document.getElementById(key)); continue;}
 		
@@ -237,7 +237,10 @@ function junk() {
 		else if(str.startsWith("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
 		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
 		else if(str.startsWith("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
-		else {return;}
+		else {
+			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
+			return;
+		}
 		if (thisIsABossKey) {temptext2 += Names[temp].split(': ')[1] + ":  Boss Key" + "<br />";}
 		Check[str]="boss_key";
 	}
@@ -543,6 +546,8 @@ function update_logic_info() {
 		if (document.getElementById("skullSanity").value != "ALL" && document.getElementById("skullSanity").value != "DUNGEON" && (Locations[i].startsWith("gs_deku") || Locations[i].startsWith("gs_dodongos") || Locations[i].startsWith("gs_jabu") || Locations[i].startsWith("gs_forest") || Locations[i].startsWith("gs_fire") || Locations[i].startsWith("gs_water") || Locations[i].startsWith("gs_spirit") || Locations[i].startsWith("gs_shadow") || Locations[i].startsWith("gs_ice") || Locations[i].startsWith("gs_well"))) {continue;}
 		if (document.getElementById("skullSanity").value != "ALL" && Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well"))) {continue;}
 		if (document.getElementById("scrubSanity").value != "ON" && Locations[i].startsWith("scrub_")) {continue;}
+		if (document.getElementById("shopSanity").value != "4" && Locations[i].startsWith("shop_")) {continue;}
+		if (document.getElementById("ganonBKSetting").value == "LACS" && Locations[i].startsWith("lacs")) {continue;}
 		
 		var key = Locations[i];
 		
@@ -560,7 +565,7 @@ function update_logic_info() {
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
 			document.getElementById(str).innerHTML = backUp[i];
-			if (i >= 375 && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
+			if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
@@ -584,7 +589,7 @@ function update_logic_info() {
 				}
 			}
 			if(document.getElementById(key).style.display != "none") {
-				if (i < 375) {Game.logically_accessible += 1;}
+				if (i <= lastItem) {Game.logically_accessible += 1;}
 				if (i == AreaIndexes[12] - 1 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
 			    if (i == AreaIndexes[16] - 1 && Game.dodongos_checks_remaining == 0) {Game.logically_accessible -= 1;}
 				if (i == AreaIndexes[26] - 1 && Game.jabu_checks_remaining == 0) {Game.logically_accessible -= 1;}
