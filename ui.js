@@ -531,6 +531,15 @@ function update_logic_info() {
 	Game.gtg_logically_accessible=0;
 	Game.well_logically_accessible=0;
 	Game.ganons_logically_accessible=0;
+	
+	Game.forest_checks_remaining = 0;
+	Game.fire_checks_remaining = 0;
+	Game.water_checks_remaining = 0;
+	Game.spirit_checks_remaining = 0;
+	Game.shadow_checks_remaining = 0;
+	Game.gtg_checks_remaining = 0;
+	Game.well_checks_remaining = 0;
+	Game.ganons_checks_remaining = 0;
 
 	temp = 0;
 	var colorChange = false;
@@ -555,8 +564,18 @@ function update_logic_info() {
 			document.getElementById(str).style.display = "inline-block";
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";
-			if (i < AreaIndexes[34]) {Game.checks_remaining += 1;}
+			if (i < AreaIndexes[34]) {
+				if (Locations[i].includes("forest")) {Game.forest_checks_remaining += 1;}
+				else if (Locations[i].includes("fire")) {Game.fire_checks_remaining += 1;}
+				else if (Locations[i].includes("water")) {Game.water_checks_remaining += 1;}
+				else if (Locations[i].includes("spirit")) {Game.spirit_checks_remaining += 1;}
+				else if (Locations[i].includes("shadow")) {Game.shadow_checks_remaining += 1;}
+				else if (Locations[i].includes("gtg")) {Game.gtg_checks_remaining += 1;}
+				else if (Locations[i].includes("well")) {Game.well_checks_remaining += 1;}
+				else if (Locations[i].includes("ganons")) {Game.ganons_checks_remaining += 1;}
+				else {Game.checks_remaining += 1;}
 			}
+		}
 		
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
@@ -617,12 +636,23 @@ function update_logic_info() {
 		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
 	
-	Game.checks_remaining -= (5 - Game.current_forest_keys) + (8 - Game.current_fire_keys) + (6 - Game.current_water_keys) + (5 - Game.current_spirit_keys) + (5 - Game.current_shadow_keys) + (9 - Game.current_gtg_keys) + (3 - Game.current_well_keys) + (2 - Game.current_ganons_keys);
-	if (!Game.forest_boss_key) {Game.checks_remaining -= 1;}
-	if (!Game.fire_boss_key) {Game.checks_remaining -= 1;}
-	if (!Game.water_boss_key) {Game.checks_remaining -= 1;}
-	if (!Game.spirit_boss_key) {Game.checks_remaining -= 1;}
-	if (!Game.shadow_boss_key) {Game.checks_remaining -= 1;}
+	
+	Game.forest_checks_remaining -= 5 - Game.current_forest_keys;
+	Game.fire_checks_remaining -= 8 - Game.current_fire_keys
+	Game.water_checks_remaining -= 6 - Game.current_water_keys
+	Game.spirit_checks_remaining -= 5 - Game.current_spirit_keys
+	Game.shadow_checks_remaining -= 5 - Game.current_shadow_keys
+	Game.gtg_checks_remaining -= 9 - Game.current_gtg_keys
+	Game.well_checks_remaining -= 3 - Game.current_well_keys
+	Game.ganons_checks_remaining -= 2 - Game.current_ganons_keys;
+	
+	if (!Game.forest_boss_key) {Game.forest_checks_remaining -= 1;}
+	if (!Game.fire_boss_key) {Game.fire_checks_remaining -= 1;}
+	if (!Game.water_boss_key) {Game.water_checks_remaining -= 1;}
+	if (!Game.spirit_boss_key) {Game.spirit_checks_remaining -= 1;}
+	if (!Game.shadow_boss_key) {Game.shadow_checks_remaining -= 1;}
+	
+	Game.checks_remaining += Game.forest_checks_remaining + Game.fire_checks_remaining + Game.water_checks_remaining + Game.spirit_checks_remaining + Game.shadow_checks_remaining + Game.gtg_checks_remaining + Game.well_checks_remaining + Game.ganons_checks_remaining;
 	
 	Game.logically_accessible = Number(Game.logically_accessible);
 	Game.logically_accessible=Game.logically_accessible.toFixed(0);
