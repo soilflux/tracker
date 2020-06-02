@@ -210,33 +210,31 @@ function linSoClick() {
 function junk() {
 	var type = event.button;
 	var str = event.target.id;
+	console.log(event.target);
 	str = str.substring('text_'.length);
 	var temp = Locations.indexOf(str);
 	
 	if(type == 0 && !event.altKey) {
-		if(str.startsWith("forest") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
-		else if(str.startsWith("fire") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
-		else if(str.startsWith("water") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
-		else if(str.startsWith("spirit") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
-		else if(str.startsWith("shadow") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
-		else if(str.startsWith("ganons") && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -=1;}
-		else if(str.startsWith("gtg") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
-		else if(str.startsWith("well") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
+		if(str.includes("forest") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
+		else if(str.includes("fire") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
+		else if(str.includes("water") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
+		else if(str.includes("spirit") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
+		else if(str.includes("shadow") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
+		else if(str.includes("ganons") && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -=1;}
+		else if(str.includes("gtg") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
+		else if(str.includes("well") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
 		else if(temp < AreaIndexes[26]){}
 		else {return;}
 		Check[str]="junk";
-		if (temp == 44 && Game.deku_checks_remaining == 0) {Game.checks_remaining +=1;}
-		if (temp == 66 && Game.dodongos_checks_remaining == 0) {Game.checks_remaining +=1;}
-		if (temp == 113 && Game.jabu_checks_remaining == 0) {Game.checks_remaining +=1;}
 	}
 	
 	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey) {
-		if(str.startsWith("forest") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
-		else if(str.startsWith("fire") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
-		else if(str.startsWith("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
-		else if(str.startsWith("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
-		else if(str.startsWith("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
-		else if(str.startsWith("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
+		if(str.includes("forest") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
+		else if(str.includes("fire") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
+		else if(str.includes("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
+		else if(str.includes("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
+		else if(str.includes("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
+		else if(str.includes("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {
 			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 			return;
@@ -246,14 +244,14 @@ function junk() {
 	}
 	
 	else if ((type == 2 && !event.altKey) || thisIsAKey) {
-		if(str.startsWith("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
-		else if(str.startsWith("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
-		else if(str.startsWith("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
-		else if(str.startsWith("spirit") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
-		else if(str.startsWith("shadow") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
-		else if(str.startsWith("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
-		else if(str.startsWith("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
-		else if(str.startsWith("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
+		if(str.includes("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
+		else if(str.includes("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
+		else if(str.includes("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
+		else if(str.includes("spirit") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
+		else if(str.includes("shadow") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
+		else if(str.includes("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
+		else if(str.includes("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
+		else if(str.includes("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {
 		if (event.target.style.color == "orange") {event.target.style.color = "pink";}
 		else {event.target.style.color = "orange";}

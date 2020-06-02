@@ -739,8 +739,8 @@ function location_logic(){
 	Location_Logic.tokens_50 = Logic.gold_skulltulas >= 50;
 	Location_Logic.shield_grave = true;
 	Location_Logic.gravedigging_tour = true;
-	Location_Logic.suns_grave = Logic.suns_song;
-	Location_Logic.fire_grave = Logic.lullaby && Logic.can_use_fire;
+	Location_Logic.redead_grave = Logic.suns_song;
+	Location_Logic.composers_grave = Logic.lullaby && Logic.can_use_fire;
 	Location_Logic.graveyard_box = Logic.child_can_enter_river || Logic.longshot;
 	Location_Logic.race_1 = true;
 	Location_Logic.race_2 = true;
@@ -1024,7 +1024,7 @@ function location_logic(){
 	Location_Logic.gs_colossus_bean = Logic.bottle && Logic.requiem;
 	Location_Logic.gs_colossus_tree = Logic.hookshot && Logic.can_enter_colossus;
 	Location_Logic.gs_colossus_hill = (Logic.requiem && (Logic.bomb_bag || Logic.silver_scale)) || (Logic.longshot && Logic.can_enter_colossus);
-	Location_Logic.gs_ganons = true;
+	Location_Logic.gs_ogc = true;
 	Location_Logic.gs_deku_basement_back = Logic.boomerang && Logic.bomb_bag && Logic.slingshot;
 	Location_Logic.gs_deku_basement_gate = true;
 	Location_Logic.gs_deku_basement_vines = Logic.slingshot || Logic.boomerang || Logic.bomb_bag || Logic.can_use_dins;
@@ -1154,8 +1154,8 @@ function location_logic(){
 	Location_Access.gravedigging_tour = true;
 	Location_Access.graveyard_box = true;//Game.child_can_enter_river || Game.longshot || Game.boomerang;
 	Location_Access.shield_grave = true;
-	Location_Access.suns_grave = Game.suns_song;
-	Location_Access.fire_grave = Game.lullaby;
+	Location_Access.redead_grave = Game.suns_song;
+	Location_Access.composers_grave = Game.lullaby;
 	Location_Access.race_1 = true;
 	Location_Access.race_2 = true;
 	Location_Access.deku_lobby = true;
