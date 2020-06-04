@@ -930,7 +930,7 @@ function location_logic(){
 	Location_Logic.scrub_crater_3 = Logic.hammer;
 	Location_Logic.scrub_goron_1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron_2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_goron3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
+	Location_Logic.scrub_goron_3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_ranch_1 = Logic.bomb_bag;
 	Location_Logic.scrub_ranch_2 = Logic.bomb_bag;
 	Location_Logic.scrub_ranch_3 = Logic.bomb_bag;
