@@ -227,6 +227,11 @@ var tSeconds = 0;
 	Game.gtg_checks_remaining = 13;
 	Game.well_checks_remaining = 11;
 	Game.ganons_checks_remaining = 14;
+	Game.forest_boss_key = false;
+	Game.fire_boss_key = false;
+	Game.water_boss_key = false;
+	Game.spirit_boss_key = false;
+	Game.shadow_boss_key = false;
 	
 	Game.checks_remaining=196;
 	Game.logically_accessible=35;

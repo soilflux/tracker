@@ -295,20 +295,21 @@ function junk() {
 function junkUltra() {
 	var x = event.target;
 	
-	if (x.id == "forest") {var temp = 14; var temp2 = Game.forest_checks_remaining; Game.forest_checks_remaining = 0; Logic.forced_forest_keys = 5 - Game.current_forest_keys; if (Game.forest_boss_key == false) {Logic.forced_forest_boss_key = true;}}
-	if (x.id == "fire") {var temp = 15; var temp2 = Game.fire_checks_remaining; Game.fire_checks_remaining = 0; Logic.forced_fire_keys = 8 - Game.current_fire_keys; if (Game.fire_boss_key == false) {Logic.forced_fire_boss_key = true;}}
-	if (x.id == "water") {var temp = 11; var temp2 = Game.water_checks_remaining; Game.water_checks_remaining = 0; Logic.forced_water_keys = 6 - Game.current_water_keys; if (Game.water_boss_key == false) {Logic.forced_water_boss_key = true;}}
-	if (x.id == "spirit") {var temp = 20; var temp2 = Game.spirit_checks_remaining; Game.spirit_checks_remaining = 0; Logic.forced_spirit_keys = 5 - Game.current_spirit_keys; if (Game.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true;}}
-	if (x.id == "shadow") {var temp = 18; var temp2 = Game.shadow_checks_remaining; Game.shadow_checks_remaining = 0; Logic.forced_shadow_keys = 5 - Game.current_shadow_keys; if (Game.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true;}}
-	if (x.id == "ganons") {var temp = 16; var temp2 = Game.ganons_checks_remaining; Game.ganons_checks_remaining = 0; Logic.forced_ganons_keys = 2 - Game.current_ganons_keys; if (Game.ganons_boss_key == false) {Logic.ganons_boss_key = true;}}
-	if (x.id == "gtg") {var temp = 22; var temp2 = Game.gtg_checks_remaining; Game.gtg_checks_remaining = 0; Logic.forced_gtg_keys = 5 - Game.current_gtg_keys;}
-	if (x.id == "well") {var temp = 14; var temp2 = Game.well_checks_remaining; Game.well_checks_remaining = 0; Logic.forced_well_keys = 5 - Game.current_well_keys;}
-	for (var i = 1; i <= temp; i++){
-		Check[x.id + i] = "junk";
-		document.getElementById(x.id + i).style.display = "none";
-		document.getElementById("text_" + x.id + i).style.display = "none";
-		document.getElementById("br_" + x.id + i).style.display = "none";
+	if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Game.current_forest_keys; Game.current_forest_keys = 5; if (Game.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Game.forest_boss_key = true;}}
+	if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Game.current_fire_keys; Game.current_fire_keys = 8; if (Game.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Game.fire_boss_key = true;}}
+	if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Game.current_water_keys; Game.current_water_keys = 6; if (Game.water_boss_key == false) {Logic.forced_water_boss_key = true; Game.water_boss_key = true;}}
+	if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Game.current_spirit_keys; Game.current_spirit_keys = 5; if (Game.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Game.spirit_boss_key = true;}}
+	if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Game.current_shadow_keys; Game.current_shadow_keys = 5; if (Game.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Game.shadow_boss_key = true;}}
+	if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Game.current_ganons_keys; Game.current_ganons_keys = 2; if (Game.ganons_boss_key == false) {Logic.ganons_boss_key = true; Game.ganons_boss_key = true;}}
+	if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Game.current_gtg_keys; Game.current_gtg_keys = 9;}
+	if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Game.current_well_keys; Game.current_well_keys = 3;}
+	for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
+		Check[Locations[i]] = "junk";
+		document.getElementById(Locations[i]).style.display = "none";
+		document.getElementById("text_" + Locations[i]).style.display = "none";
+		document.getElementById("br_" + Locations[i]).style.display = "none";
 	}
+	console.log(Game.forest_boss_key);
 	Update();Update();Update();
 }
 
