@@ -587,22 +587,22 @@ function update_logic_info() {
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
-				var i;
 				var j;
 				var k;
+				var l;
 				var text = document.getElementById(str).innerHTML;
 				document.getElementById(str).innerHTML = "";
-				for (i = 0; i < text.length; i++) {
-					for (j = 0; j < woths.length; j++) {
-						if (woths[j]) {
-						    let temptext = '<span style = "color: ' + WotHColors[j+1] + '">' + text[i] + '</span>';
-							for (k = j+1; k <woths.length; k++) {
-								if (woths[k]) {woths[j] = false;}
+				for (j = 0; j < text.length; j++) {
+					for (k = 0; k < woths.length; k++) {
+						if (woths[k]) {
+						    let temptext = '<span style = "color: ' + WotHColors[k+1] + '">' + text[j] + '</span>';
+							for (l = k+1; l <woths.length; l++) {
+								if (woths[l]) {woths[k] = false;}
 							}
 							document.getElementById(str).innerHTML += temptext;
 							break;
 						}	
-						if (j == woths.length -1) {document.getElementById(str).innerHTML += text[i];}
+						//if (k == woths.length -1) {document.getElementById(str).innerHTML += text[j];}
 					}
 				}
 			}

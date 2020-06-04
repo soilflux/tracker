@@ -1,12 +1,6 @@
 function checksLockedByItem(item) {
-	const keys3 = Object.keys(Location_Locked_Logic2);
-	
-	for (const key of keys3) {
-		temp += 1;
-		if (temp == 256) {break;} 
-		Location_Locked_Logic2[key] = false;
-	}
-	
+
+	for (var i = 0; i < Locations.length; i++) {Location_Locked_Logic2[Locations[i]] = false;}
 	
 	var tempArray = [];
 	var temp = 20;
@@ -136,10 +130,9 @@ function checksLockedByItem(item) {
 	for (h = 1; h<3; h++) {
 		max = 0;
 		Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
-		for (i = 1; i <= 14; i++) {
-			str = "forest" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_forest_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_forest_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
 
@@ -157,15 +150,19 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.forest12 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && (Locked_Logic2.bow || Locked_Logic2.can_use_dins) && Locked_Logic2.forest_keys>=5;
 		Location_Locked_Logic2.forest13 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5;
 		Location_Locked_Logic2.forest14 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && Locked_Logic2.goron_bracelet && Locked_Logic2.bow && Locked_Logic2.forest_keys>=5 && Locked_Logic2.forest_boss_key;		
+		Location_Locked_Logic2.gs_forest_first = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.gs_forest_lobby = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.gs_forest_outdoor_east = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && ((Locked_Logic2.bow || Locked_Logic2.song_of_time) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots));
+		Location_Locked_Logic2.gs_forest_outdoor_west = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (((Locked_Logic2.bow || Locked_Logic2.song_of_time) && Locked_Logic2.longshot) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots) || (Locked_Logic2.forest_keys >= 2 && Locked_Logic2.goron_bracelet && Locked_Logic2.bow))
+		Location_Locked_Logic2.gs_forest_basement = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.bow && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys >= 5;
 	}
 
 	for (h = 1; h<3; h++) {
 		max = 0;
 		Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
-		for (i = 1; i <= 15; i++) {
-			str = "fire" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_fire_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_fire_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
 		
@@ -189,10 +186,9 @@ function checksLockedByItem(item) {
 	for (h = 1; h<3; h++) {
 		max = 0;
 		Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
-		for (i = 1; i <= 11; i++) {
-			str = "water" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_water_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_water_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
 
@@ -211,10 +207,9 @@ function checksLockedByItem(item) {
 	for (h = 1; h<3; h++) {
 		max = 0;
 		Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
-		for (i = 1; i <= 20; i++) {
-			str = "spirit" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_spirit_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_spirit_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
 
@@ -242,10 +237,9 @@ function checksLockedByItem(item) {
 	for (h = 1; h<3; h++) {
 		max = 0;
 		Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
-		for (i = 1; i <= 18; i++) {
-			str = "shadow" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_shadow_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_shadow_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
 
@@ -270,19 +264,18 @@ function checksLockedByItem(item) {
 	}
 	max = 0;
 	Locked_Logic2.current_ganons_keys = Locked_Logic2.forced_ganons_keys;
-	for (i = 1; i <= 16; i++) {
-		str = "ganons" + i;
-		if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_ganons_keys -=1;}
-		if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+	
+	for (i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
+		if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_ganons_keys -=1;}
+		if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 	}
 	Locked_Logic2.ganons_keys = Math.min(Locked_Logic2.current_ganons_keys, max);
 	for (h = 1; h <= 3; h++) {
 		max = 0;
 		Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
-		for (i = 1; i <= 22; i++) {
-			str = "gtg" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_gtg_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[32]; i < AreaIndexes[33]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_gtg_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.gtg_keys = Math.min(Locked_Logic2.current_gtg_keys, max);
 
@@ -312,10 +305,9 @@ function checksLockedByItem(item) {
 	for (h = 1; h <= 3; h++) {
 		max = 0;
 		Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
-		for (i = 1; i <= 14; i++) {
-			str = "well" + i;
-			if (Check[str] == "small_key" && !Location_Locked_Logic2[str]) {Locked_Logic2.current_well_keys -=1;}
-			if ((Check[str] == "small_key" || Check[str] == "unknown") && Location_Locked_Logic2[str]) {max += 1;}
+		for (i = AreaIndexes[33]; i < AreaIndexes[34]; i++) {
+			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_well_keys -=1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.well_keys = Math.min(Locked_Logic2.current_well_keys, max);
 
@@ -343,9 +335,11 @@ function checksLockedByItem(item) {
 
 	if (!Locked_Logic2.forest_boss_key) {
 		var bk = false;
-		for (i = 1; i <= 13; i++) {
-			str = "forest" + i;
-			if (Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+		for (i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
+			if (Locations[i] == "forest14") {
+				continue;
+			}
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
 				bk = true;
 				break;
 			}
@@ -355,12 +349,11 @@ function checksLockedByItem(item) {
 	
 	if (!Locked_Logic2.fire_boss_key) {
 		var bk = false;
-		for (i = 1; i <= 15; i++) {
-			if (i == 6) {
+		for (i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
+			if (Locations[i] == "fire6") {
 				continue;
 			}
-			str = "fire" + i;
-			if (Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
 				bk = true;
 				break;
 			}
@@ -369,9 +362,11 @@ function checksLockedByItem(item) {
 	}
 	if (!Locked_Logic2.water_boss_key) {
 		var bk = false;
-		for (i = 1; i <= 10; i++) {
-			str = "water" + i;
-			if (Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+		for (i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
+			if (Locations[i] == "water11") {
+				continue;
+			}
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
 				bk = true;
 				break;
 			}
@@ -380,9 +375,11 @@ function checksLockedByItem(item) {
 	}
 	if (!Locked_Logic2.spirit_boss_key) {
 		var bk = false;
-		for (i = 1; i <= 19; i++) {
-			str = "spirit" + i;
-			if (Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+		for (i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
+			if (Locations[i] == "spirit20") {
+				continue;
+			}
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
 				bk = true;
 				break;
 			}
@@ -391,9 +388,11 @@ function checksLockedByItem(item) {
 	}
 	if (!Locked_Logic2.shadow_boss_key) {
 		var bk = false;
-		for (i = 1; i <= 17; i++) {
-			str = "shadow" + i;
-			if (Location_Locked_Logic2[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
+		for (i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
+			if (Locations[i] == "shadow18") {
+				continue;
+			}
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
 				bk = false;
 				break;
 			}
@@ -505,13 +504,13 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.kokiri_song_of_storms = Locked_Logic2.song_of_storms;
 	Location_Locked_Logic2.talons_chickens = true;
 	Location_Locked_Logic2.back_of_ranch = true;
-	Location_Locked_Logic2.hyrule_forest_boulder = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.hyrule_remote_grotto = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.hyrule_open_grotto = true;
 	Location_Locked_Logic2.hyrule_hp_scrub = Locked_Logic2.can_blast_or_smash;;
 	Location_Locked_Logic2.hyrule_boulder_of_destiny = Locked_Logic2.can_blast_or_smash;;
 	Location_Locked_Logic2.hyrule_tektite_grotto = Locked_Logic2.can_blast_or_smash && (Locked_Logic2.golden_scale || Locked_Logic2.iron_boots);
 	Location_Locked_Logic2.gerudovalley_box = true;
-	Location_Locked_Logic2.gerudovalley_waterfall = true;
+	Location_Locked_Logic2.gerudovalley_fall = true;
 	Location_Locked_Logic2.gerudo_hammer = Locked_Logic2.fortress_access && Locked_Logic2.hammer;
 	Location_Locked_Logic2.hylia_child_fishing = true;
 	Location_Locked_Logic2.hylia_bottle = Locked_Logic2.silver_scale;
@@ -588,8 +587,8 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.tokens_50 = Locked_Logic2.gold_skulltulas >= 50;
 	Location_Locked_Logic2.shield_grave = true;
 	Location_Locked_Logic2.gravedigging_tour = true;
-	Location_Locked_Logic2.suns_grave = Locked_Logic2.suns_song;
-	Location_Locked_Logic2.fire_grave = Locked_Logic2.lullaby && Locked_Logic2.can_use_fire;
+	Location_Locked_Logic2.composers_grave = Locked_Logic2.suns_song;
+	Location_Locked_Logic2.redead_grave = Locked_Logic2.lullaby && Locked_Logic2.can_use_fire;
 	Location_Locked_Logic2.graveyard_box = Locked_Logic2.child_can_enter_river || Locked_Logic2.longshot;
 	Location_Locked_Logic2.race_1 = true;
 	Location_Locked_Logic2.race_2 = true;
@@ -639,7 +638,71 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.preludeSpot = Locked_Logic2.forest_medallion;
 	Location_Locked_Logic2.nocturneSpot = Locked_Logic2.forest_medallion && Locked_Logic2.fire_medallion && Locked_Logic2.water_medallion;
 	Location_Locked_Logic2.oot = Locked_Logic2.kokiri_emerald && Locked_Logic2.goron_ruby && Locked_Logic2.zora_sapphire;
-	
+	Location_Locked_Logic2.scrub_dodongos_1 = Locked_Logic2.can_enter_dodongos;
+	Location_Locked_Logic2.scrub_dodongos_2 = Locked_Logic2.can_enter_dodongos;
+	Location_Locked_Logic2.scrub_dodongos_3 = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.scrub_dodongos_4 = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.scrub_jabu = Locked_Logic2.can_enter_jabu;
+	Location_Locked_Logic2.scrub_ganons_1 = Locked_Logic2.can_enter_ganons;
+	Location_Locked_Logic2.scrub_ganons_2 = Locked_Logic2.can_enter_ganons;
+	Location_Locked_Logic2.scrub_ganons_3 = Locked_Logic2.can_enter_ganons;
+	Location_Locked_Logic2.scrub_ganons_4 = Locked_Logic2.can_enter_ganons;
+	Location_Locked_Logic2.scrub_river_1 = Locked_Logic2.storms;
+	Location_Locked_Logic2.scrub_river_2 = Locked_Logic2.storms;
+	Location_Locked_Logic2.scrub_sfm_1 = Locked_Logic2.storms;
+	Location_Locked_Logic2.scrub_sfm_2 = Locked_Logic2.storms;
+	Location_Locked_Logic2.scrub_lake_1 = true;
+	Location_Locked_Logic2.scrub_lake_2 = true;
+	Location_Locked_Logic2.scrub_lake_3 = true;
+	Location_Locked_Logic2.scrub_lw_1 = true;
+	Location_Locked_Logic2.scrub_lw_2 = true;
+	Location_Locked_Logic2.scrub_lw_3 = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.scrub_colossus_1 = Locked_Logic2.silver_gauntlets;
+	Location_Locked_Logic2.scrub_colossus_2 = Locked_Logic2.silver_gauntlets;
+	Location_Locked_Logic2.scrub_crater_1 = Locked_Logic2.hammer;
+	Location_Locked_Logic2.scrub_crater_2 = Locked_Logic2.hammer;
+	Location_Locked_Logic2.scrub_crater_3 = Locked_Logic2.hammer;
+	Location_Locked_Logic2.scrub_goron_1 = Locked_Logic2.time || (Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hookshot);
+	Location_Locked_Logic2.scrub_goron_2 = Locked_Logic2.time || (Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hookshot);
+	Location_Locked_Logic2.scrub_goron_3 = Locked_Logic2.time || (Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.hookshot);
+	Location_Locked_Logic2.scrub_ranch_1 = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.scrub_ranch_2 = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.scrub_ranch_3 = Locked_Logic2.bomb_bag;
+	Location_Locked_Logic2.scrub_gv_1 = Locked_Logic2.fortress_access && Locked_Logic2.storms;
+	Location_Locked_Logic2.scrub_gv_2 = Locked_Logic2.fortress_access && Locked_Logic2.storms;
+	Location_Locked_Logic2.shop_kokiri_TL = Locked_Logic2[Shop_Logic.shop_kokiri_TL];
+	Location_Locked_Logic2.shop_kokiri_TR = Locked_Logic2[Shop_Logic.shop_kokiri_TR];
+	Location_Locked_Logic2.shop_kokiri_BR = Locked_Logic2[Shop_Logic.shop_kokiri_BR];
+	Location_Locked_Logic2.shop_kokiri_BL = Locked_Logic2[Shop_Logic.shop_kokiri_BL];
+	Location_Locked_Logic2.shop_market_bazaar_TL = Locked_Logic2[Shop_Logic.shop_market_bazaar_TL];
+	Location_Locked_Logic2.shop_market_bazaar_TR = Locked_Logic2[Shop_Logic.shop_market_bazaar_TR];
+	Location_Locked_Logic2.shop_market_bazaar_BR = Locked_Logic2[Shop_Logic.shop_market_bazaar_BR];
+	Location_Locked_Logic2.shop_market_bazaar_BL = Locked_Logic2[Shop_Logic.shop_market_bazaar_BL];
+	Location_Locked_Logic2.shop_market_potion_TL = Locked_Logic2[Shop_Logic.shop_market_potion_TL];
+	Location_Locked_Logic2.shop_market_potion_TR = Locked_Logic2[Shop_Logic.shop_market_potion_TR];
+	Location_Locked_Logic2.shop_market_potion_BR = Locked_Logic2[Shop_Logic.shop_market_potion_BR];
+	Location_Locked_Logic2.shop_market_potion_BL = Locked_Logic2[Shop_Logic.shop_market_potion_BL];
+	Location_Locked_Logic2.shop_market_chu_TL = Locked_Logic2[Shop_Logic.shop_market_chu_TL];
+	Location_Locked_Logic2.shop_market_chu_TR = Locked_Logic2[Shop_Logic.shop_market_chu_TR];
+	Location_Locked_Logic2.shop_market_chu_BR = Locked_Logic2[Shop_Logic.shop_market_chu_BR];
+	Location_Locked_Logic2.shop_market_chu_BL = Locked_Logic2[Shop_Logic.shop_market_chu_BL];
+	Location_Locked_Logic2.shop_kakariko_bazaar_TL = Locked_Logic2[Shop_Logic.shop_kakariko_bazaar_TL];
+	Location_Locked_Logic2.shop_kakariko_bazaar_TR = Locked_Logic2[Shop_Logic.shop_kakariko_bazaar_TR];
+	Location_Locked_Logic2.shop_kakariko_bazaar_BR = Locked_Logic2[Shop_Logic.shop_kakariko_bazaar_BR];
+	Location_Locked_Logic2.shop_kakariko_bazaar_BL = Locked_Logic2[Shop_Logic.shop_kakariko_bazaar_BL];
+	Location_Locked_Logic2.shop_kakariko_potion_TL = Locked_Logic2[Shop_Logic.shop_kakariko_potion_TL];
+	Location_Locked_Logic2.shop_kakariko_potion_TR = Locked_Logic2[Shop_Logic.shop_kakariko_potion_TR];
+	Location_Locked_Logic2.shop_kakariko_potion_BR = Locked_Logic2[Shop_Logic.shop_kakariko_potion_BR];
+	Location_Locked_Logic2.shop_kakariko_potion_BL = Locked_Logic2[Shop_Logic.shop_kakariko_potion_BL];
+	Location_Locked_Logic2.shop_goron_TL = Locked_Logic2[Shop_Logic.shop_goron_TL] && (Locked_Logic2.lullaby || Locked_Logic2.can_stop_link_the_goron || Locked_Logic2.bomb_bag || Locked_Logic2.can_use_dins);
+	Location_Locked_Logic2.shop_goron_TR = Locked_Logic2[Shop_Logic.shop_goron_TR] && (Locked_Logic2.lullaby || Locked_Logic2.can_stop_link_the_goron || Locked_Logic2.bomb_bag || Locked_Logic2.can_use_dins);
+	Location_Locked_Logic2.shop_goron_BR = Locked_Logic2[Shop_Logic.shop_goron_BR] && (Locked_Logic2.lullaby || Locked_Logic2.can_stop_link_the_goron || Locked_Logic2.bomb_bag || Locked_Logic2.can_use_dins);
+	Location_Locked_Logic2.shop_goron_BL = Locked_Logic2[Shop_Logic.shop_goron_BL] && (Locked_Logic2.lullaby || Locked_Logic2.can_stop_link_the_goron || Locked_Logic2.bomb_bag || Locked_Logic2.can_use_dins);
+	Location_Locked_Logic2.shop_domain_TL = Locked_Logic2[Shop_Logic.shop_domain_TL] && ((Locked_Logic2.bomb_bag && Locked_Logic2.lullaby) || Locked_Logic2.silver_scale || (Locked_Logic2.lullaby && ((Locked_Logic2.can_enter_ganons && Locked_Logic2.bottle) || Locked_Logic2.can_enter_jabu || (Locked_Logic2.giants_wallet && Locked_Logic2.bottle))));
+	Location_Locked_Logic2.shop_domain_TR = Locked_Logic2[Shop_Logic.shop_domain_TR] && ((Locked_Logic2.bomb_bag && Locked_Logic2.lullaby) || Locked_Logic2.silver_scale || (Locked_Logic2.lullaby && ((Locked_Logic2.can_enter_ganons && Locked_Logic2.bottle) || Locked_Logic2.can_enter_jabu || (Locked_Logic2.giants_wallet && Locked_Logic2.bottle))));
+	Location_Locked_Logic2.shop_domain_BR = Locked_Logic2[Shop_Logic.shop_domain_BR] && ((Locked_Logic2.bomb_bag && Locked_Logic2.lullaby) || Locked_Logic2.silver_scale || (Locked_Logic2.lullaby && ((Locked_Logic2.can_enter_ganons && Locked_Logic2.bottle) || Locked_Logic2.can_enter_jabu || (Locked_Logic2.giants_wallet && Locked_Logic2.bottle))));
+	Location_Locked_Logic2.shop_domain_BL = Locked_Logic2[Shop_Logic.shop_domain_BL] && ((Locked_Logic2.bomb_bag && Locked_Logic2.lullaby) || Locked_Logic2.silver_scale || (Locked_Logic2.lullaby && ((Locked_Logic2.can_enter_ganons && Locked_Logic2.bottle) || Locked_Logic2.can_enter_jabu || (Locked_Logic2.giants_wallet && Locked_Logic2.bottle))));
+
 	Location_Locked_Logic2.gs_kokiri_child = true;
 	Location_Locked_Logic2.gs_kokiri_bean = Locked_Logic2.bottle;
 	Location_Locked_Logic2.gs_kokiri_adult = Locked_Logic2.hookshot;
@@ -709,11 +772,6 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.gs_jabu_near_octo1 = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.gs_jabu_near_octo2 = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
 	Location_Locked_Logic2.gs_jabu_near_boss = Locked_Logic2.can_enter_jabu && Locked_Logic2.boomerang;
-	Location_Locked_Logic2.gs_forest_first = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.gs_forest_lobby = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
-	Location_Locked_Logic2.gs_forest_outdoor_east = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && ((Locked_Logic2.bow || Locked_Logic2.song_of_time) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots));
-	Location_Locked_Logic2.gs_forest_outdoor_west = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (((Locked_Logic2.bow || Locked_Logic2.song_of_time) && Locked_Logic2.longshot) || (Locked_Logic2.forest_keys >= 1 && Locked_Logic2.hover_boots) || (Locked_Logic2.forest_keys >= 2 && Locked_Logic2.goron_bracelet && Locked_Logic2.bow))
-	Location_Locked_Logic2.gs_forest_basement = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.bow && Locked_Logic2.goron_bracelet && Locked_Logic2.forest_keys >= 5;
 	Location_Locked_Logic2.gs_fire_song_of_time = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >= 1 && Locked_Logic2.song_of_time;
 	Location_Locked_Logic2.gs_fire_bomb_wall = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.goron_bracelet && Locked_Logic2.bomb_bag;
 	Location_Locked_Logic2.gs_fire_scarecrow1 = Locked_Logic2.can_climb_fire_temple && Locked_Logic2.goron_bracelet && Locked_Logic2.fire_keys >=5 && Locked_Logic2.hookshot;
@@ -852,10 +910,8 @@ function checksLockedByItem(item) {
 	var temp = 0;
 	var tempArray = [];
 	
-	for (const key of keys3) {
-		temp += 1;
-		if (!Location_Locked_Logic2[key]) {tempArray.push(key);}
-		if (temp == 256) {break;} 
+	for (var i = 0; i < Locations.length; i++) {
+		if (!Location_Locked_Logic2[Locations[i]]) {tempArray.push(Locations[i]);}
 	}
 	return tempArray;
 	

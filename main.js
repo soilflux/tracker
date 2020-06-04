@@ -1,5 +1,4 @@
 function Update() {
-	
 	handleThemes(); //change themes as needed
 	refresh_logic_for_stuff(); //puts something in or out of logic based on whether its location is in or out of logic 
 	force_stuff_in_or_out_of_logic(); //implements the force out of logic and force into logic boxes

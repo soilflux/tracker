@@ -10,7 +10,7 @@ function woth_and_barren_processing() {
 		if (str == "llr" || str == "ranch" || str == "lon" || str == "ran") {if (Area[2] == "4woth") {Area[2] = "5woth";} else if (Area[2] == "3woth") {Area[2] = "4woth";} else if (Area[2] == "2woth") {Area[2] = "3woth";} else if (Area[2] == "woth") {Area[2] = "2woth";} else {Area[2] = "woth";}} 
 		if (str == "fie" || str == "hf" || str == "field") {if (Area[3] == "4woth") {Area[3] = "5woth";} else if (Area[3] == "3woth") {Area[3] = "4woth";} else if (Area[3] == "2woth") {Area[3] = "3woth";} else if (Area[3] == "woth") {Area[3] = "2woth";} else {Area[3] = "woth";}} 
 		if (str == "gv" || str == "val" || str == "valley") {if (Area[4] == "4woth") {Area[4] = "5woth";} else if (Area[4] == "3woth") {Area[4] = "4woth";} else if (Area[4] == "2woth") {Area[4] = "3woth";} else if (Area[4] == "woth") {Area[4] = "2woth";} else {Area[4] = "woth";}} 
-		if (str == "hyl" || str == "hylia" || str == "lh") {if (Area[5] == "4woth") {Area[5] = "5woth";} else if (Area[5] == "3woth") {Area[5] = "4woth";} else if (Area[5] == "2woth") {Area[5] = "3woth";} else if (Area[5] == "woth") {Area[5] = "2woth";} else {Area[5] = "woth";}} 
+		if (str == "hyl" || str == "hylia" || str == "lh" || str == "lake") {if (Area[5] == "4woth") {Area[5] = "5woth";} else if (Area[5] == "3woth") {Area[5] = "4woth";} else if (Area[5] == "2woth") {Area[5] = "3woth";} else if (Area[5] == "woth") {Area[5] = "2woth";} else {Area[5] = "woth";}} 
 		if (str == "mkt" || str == "market" || str == "mar") {if (Area[6] == "4woth") {Area[6] = "5woth";} else if (Area[6] == "3woth") {Area[6] = "4woth";} else if (Area[6] == "2woth") {Area[6] = "3woth";} else if (Area[6] == "woth") {Area[6] = "2woth";} else {Area[6] = "woth";}} 
 		if (str == "hyr c" || str == "hcast" || str == "hc") {if (Area[7] == "4woth") {Area[7] = "5woth";} else if (Area[7] == "3woth") {Area[7] = "4woth";} else if (Area[7] == "2woth") {Area[7] = "3woth";} else if (Area[7] == "woth") {Area[7] = "2woth";} else {Area[7] = "woth";}} 
 		if (str == "ogc" || str == "out g" || str == "gfairy" || str == "og" || str == "out") {if (Area[8] == "4woth") {Area[8] = "5woth";} else if (Area[8] == "3woth") {Area[8] = "4woth";} else if (Area[8] == "2woth") {Area[8] = "3woth";} else if (Area[8] == "woth") {Area[8] = "2woth";} else {Area[8] = "woth";}} 
@@ -46,7 +46,7 @@ function woth_and_barren_processing() {
 			if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
 			if (str2 == "fie" || str2 == "hf" || str2 == "field") {Area[3] = "barren";} 
 			if (str2 == "gv" || str2 == "val" || str2 == "valley") {Area[4] = "barren";} 
-			if (str2 == "hyl" || str2 == "hylia" || str2 == "lh") {Area[5] = "barren";} 
+			if (str2 == "hyl" || str2 == "hylia" || str2 == "lh" || str2 == "lake") {Area[5] = "barren";} 
 			if (str2 == "mkt" || str2 == "market" || str2 == "mar") {Area[6] = "barren";} 
 			if (str2 == "hyr c" || str2 == "hcast" || str2 == "hc") {Area[7] = "barren";} 
 			if (str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
