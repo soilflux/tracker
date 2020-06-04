@@ -75,6 +75,13 @@ color: red;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
+.linsodung {
+	font-size : "30px";
+	font-family : "Consolas, Courier, monospace";
+	color : "white";
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 .dung4{
 	vertical-align:top;
 	color: green;
@@ -261,7 +268,7 @@ color: red;
 	position: relative;
 	margin-top:10px;
 	float: left;
-	width: 320px;
+	width: 280px;
 }
 .pplpics {
 	height:12px;

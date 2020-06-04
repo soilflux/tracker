@@ -1,6 +1,6 @@
 function dark_soli() {
 	Game.bomb_img= "./images/explosive505050.png";
-	Game.letter_img= "./images/letter505050.png";
+	Game.rutos_letter_img= "./images/letter505050.png";
 	Game.boomerang_img= "./images/boomerang505050.png";
 	Game.hookshot_img= "./images/hookshot505050.png";
 	Game.bow_img= "./images/bow505050.png";
@@ -36,7 +36,7 @@ function dark_soli() {
 	Game.prelude_img = "./images/prelude505050.png";
 	Game.chu_img = "./images/chux.png"
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
 	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
 	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
@@ -137,7 +137,7 @@ function dark_soli() {
 
 function dark_normie() {
 	Game.bomb_img= "./normal/items/bomb.png";
-	Game.letter_img= "./normal/items/rutos_letter.png";
+	Game.rutos_letter_img= "./normal/items/rutos_letter.png";
 	Game.boomerang_img= "./normal/items/boomerang.png";
 	Game.hookshot_img= "./normal/items/hookshot.png";
 	Game.bow_img= "./normal/items/bow.png";
@@ -174,7 +174,7 @@ function dark_normie() {
 	Game.prelude_img = "./normal/items/prelude.png";
 	Game.chu_img = "./normal/items/chu.png";
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
 	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
 	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
@@ -269,7 +269,7 @@ function dark_normie() {
 	}
 	document.getElementById("iWantToRemoveThisButton").innerHTML="tagnia";
 	
-	Game.adults_wallet_img = "./normal/items/adults_wallet.png";
+	Game.wallet1_img = "./normal/items/adults_wallet.png";
 	Game.agony_img = "./normal/items/agony.png";
 	Game.antidote_img = "./normal/items/antidote.png";
 	Game.arrows30_img = "./normal/items/arrows30.png";
@@ -296,7 +296,7 @@ function dark_normie() {
 	Game.fish_img = "./normal/items/fish.png";
 	Game.gerudo_card_img = "./normal/items/gerudo_card.png";
 	Game.gerudo_mask_img = "./normal/items/gerudo_mask.png";
-	Game.giants_wallet_img = "./normal/items/giants_wallet.png";
+	Game.wallet2_img = "./normal/items/giants_wallet.png";
 	Game.goron_mask_img = "./normal/items/goron_mask.png";
 	Game.goron_tunic_img = "./normal/items/goron_tunic.png";
 	Game.green_potion_img = "./normal/items/green_potion.png";
@@ -347,7 +347,7 @@ function dark_normie() {
 
 function dark_tagnia() {
 	Game.bomb_img= "https://i.imgur.com/TjVjKRn.png";
-	Game.letter_img= "https://i.imgur.com/RAP8wMy.png";
+	Game.rutos_letter_img= "https://i.imgur.com/RAP8wMy.png";
 	Game.boomerang_img= "https://i.imgur.com/kdy5BRJ.png";
 	Game.hookshot_img= "https://i.imgur.com/wZLWSuW.png";
 	Game.bow_img= "https://i.imgur.com/gtzNOGr.png";
@@ -363,7 +363,7 @@ function dark_tagnia() {
 	Game.magic_img= "https://i.imgur.com/XRsHr3v.png";
 	Game.hover_boots_img= "https://i.imgur.com/INd88ZQ.png";
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
 	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
 	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
@@ -413,7 +413,7 @@ function dark_tagnia() {
 
 function light_soli() {
 	Game.bomb_img= "https://i.imgur.com/TszSBld.png";
-		Game.letter_img= "https://i.imgur.com/WAY6Qpc.png";
+		Game.rutos_letter_img= "https://i.imgur.com/WAY6Qpc.png";
 		Game.boomerang_img= "https://i.imgur.com/jH5MR3n.png";
 		Game.hookshot_img= "https://i.imgur.com/HHCTVla.png";
 		Game.bow_img= "https://i.imgur.com/muCeqKm.png";
@@ -428,7 +428,7 @@ function light_soli() {
 		Game.magic_img= "https://i.imgur.com/uAyOlX8.png";
 		Game.hover_boots_img= "https://i.imgur.com/DSzo0JN.png";
 		if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-		if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.letter_img; }
+		if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 		if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
 		if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
 		if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }

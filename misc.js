@@ -36,7 +36,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot1 = true; Game.hookshot2 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true; Game.strength3 = true;}
@@ -73,7 +73,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.letter_img.substring(2))){Game.rutos_letter = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = false;}
@@ -234,13 +234,13 @@ function timerControl() {
 }
 
 function circusControl() {
-	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals";}
-	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus";}
+	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; Game.circus = false;;}
+	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; Game.circus = true;}
 }
 
 function linsoControl() {
-	if (linso) {linso = false; document.getElementById("linsoControl").innerHTML = "Show LinSo Tracker";}
-	else {linso = true; document.getElementById("linsoControl").innerHTML = "Hide LinSo Tracker";}
+	if (linso) {linso = false; document.getElementById("linsoControl").innerHTML = "Show LinSo";}
+	else {linso = true; document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
 }
 
 function inaccessibleControl() {
@@ -315,14 +315,14 @@ function gs_array_builder() {
 	gs[26] = Location_Logic.gs_trail_bombable_wall;
 	gs[27] = Location_Logic.gs_trail_hail_path;
 	gs[28] = Location_Logic.gs_trail_above_dodongos;
-	gs[29] = Location_Logic.gs_goron_city_center;
-	gs[30] = Location_Logic.gs_goron_city_maze;
+	gs[29] = Location_Logic.gs_goron_center;
+	gs[30] = Location_Logic.gs_goron_maze;
 	gs[31] = Location_Logic.gs_crater_crate;
 	gs[32] = Location_Logic.gs_crater_bean;
 	gs[33] = Location_Logic.gs_river_ladder;
 	gs[34] = Location_Logic.gs_river_near_grotto;
 	gs[35] = Location_Logic.gs_river_above_bridge;
-	gs[36] = Location_Logic.gs_zora_river_tree;
+	gs[36] = Location_Logic.gs_river_tree;
 	gs[37] = Location_Logic.gs_domain;
 	gs[38] = Location_Logic.gs_fountain_above_log;
 	gs[39] = Location_Logic.gs_fountain_tree;
@@ -331,18 +331,18 @@ function gs_array_builder() {
 	gs[42] = Location_Logic.gs_hylia_lab_wall;
 	gs[43] = Location_Logic.gs_hylia_island;
 	gs[44] = Location_Logic.gs_hylia_tree;
-	gs[45] = Location_Logic.gs_lab_crate;
+	gs[45] = Location_Logic.gs_hylia_lab_crate;
 	gs[46] = Location_Logic.gs_valley_small_bridge;
 	gs[47] = Location_Logic.gs_valley_bean;
 	gs[48] = Location_Logic.gs_valley_tent;
 	gs[49] = Location_Logic.gs_valley_pillar;
 	gs[50] = Location_Logic.gs_fortress_archery;
 	gs[51] = Location_Logic.gs_fortress_top;
-	gs[52] = Location_Logic.gs_wasteland_structure;
+	gs[52] = Location_Logic.gs_wasteland;
 	gs[53] = Location_Logic.gs_colossus_bean;
 	gs[54] = Location_Logic.gs_colossus_tree;
 	gs[55] = Location_Logic.gs_colossus_hill;
-	gs[56] = Location_Logic.gs_ganons;
+	gs[56] = Location_Logic.gs_ogc;
 	gs[57] = Location_Logic.gs_deku_basement_back;
 	gs[58] = Location_Logic.gs_deku_basement_gate;
 	gs[59] = Location_Logic.gs_deku_basement_vines;

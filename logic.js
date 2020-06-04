@@ -95,6 +95,10 @@ function refresh_logic_for_stuff() {
 	Game.golden_gauntlets = Game.strength1 && Game.strength2 && Game.strength3;
 	
 	Game.silver_gauntlets = false;
+	
+	Game.adults_wallet = Game.wallet1;
+	Game.giants_wallet = Game.wallet2;
+	
 	if (Game.strength1 && Game.strength3) {Game.silver_gauntlets = true;}
 	else if (Game.strength2 && Game.strength3) {Game.silver_gauntlets = true;}
 	else if (Game.strength1 && Game.strength2) {Game.silver_gauntlets = true;}
@@ -617,7 +621,7 @@ function logic_shortcuts() {
 	Game.can_use_farores = Game.farores_wind && Game.magic1;
 	Game.can_see = Game.lens_of_truth && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
-	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.giants_wallet);
+	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.wallet2);
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);
 	Game.can_enter_shadow= Game.nocturne && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
@@ -642,10 +646,7 @@ function logic_shortcuts() {
 	Game.can_wear_goron_tunic = true;
 	Game.can_wear_zora_tunic = true;
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
-	Game.giants_wallet = Game.wallet1 && Game.wallet2;
-}
-function refreshSettings() {
-	
+	Game.wallet2 = Game.wallet1 && Game.wallet2;
 }
 function location_logic(){
 	Location_Logic.mido_1 = true;
@@ -1130,7 +1131,7 @@ function location_logic(){
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
 	Location_Access.crater_peak_fairy = Game.can_blast_or_smash && Game.lullaby;
-	Location_Access.trade_quest = (((Game.ice_access || (Game.giants_wallet && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
+	Location_Access.trade_quest = (((Game.ice_access || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
 	Location_Access.gerudo_archery_1 = Game.eponas && Game.bow1;
@@ -1183,7 +1184,7 @@ function location_logic(){
 	Location_Access.ice_compass = Game.ice_access;
 	Location_Access.ice_irons = Game.ice_access;
 	Location_Access.ice_bottom_of_fountain = Game.ice_access;
-	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.giants_wallet && Game.lullaby);
+	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.wallet2 && Game.lullaby);
 	Location_Access.forest1 = Game.hookshot;
 	Location_Access.forest2 = Game.hookshot;
 	Location_Access.forest3 = Game.hookshot && (Game.time || Game.bow1 || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1));
@@ -1354,8 +1355,8 @@ function location_logic(){
 	Location_Access.shop_goron_TR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BL = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
-	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
+	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
 }

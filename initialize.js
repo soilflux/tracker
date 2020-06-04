@@ -245,7 +245,7 @@ var tSeconds = 0;
 	Game.ganons_logically_accessible=0;
 	
 	Game.bomb_img= "./images/explosive505050.png";
-	Game.letter_img= "./images/letter505050.png";
+	Game.rutos_letter_img= "./images/letter505050.png";
 	Game.boomerang_img= "./images/boomerang505050.png";
 	Game.hookshot_img= "./images/hookshot505050.png";
 	Game.bow_img= "./images/bow505050.png";
@@ -934,7 +934,7 @@ for (var i = 0; i < Items.length; i++) {
 
 location_logic();
 
-/*var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "bottle", "bottle", "bottle", "bottle", "egg", "egg", "kokiri_sword", "master_sword", "biggoron_sword", "", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
+var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns_song", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
 var linso = false;
@@ -942,15 +942,29 @@ handleThemes();
 handleThemes();
 var linsoOrderIncrement = 0;
 var tempTop = -32;
-for (var i = 1; i <= 9; i++) {
-if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;}
+for (var i = 1; i <= 10; i++) {
+if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;} if (i == 10) {tempTop -= 6;}
 	for (var j = 1; j <= 6; j++) {
+		if (i > 9) {
+			var elem = document.createElement("small");
+			elem.id = "linso" + i + j;
+			elem.style.position = "absolute";
+			elem.className = "linsodung";
+			elem.style.left = -29 + j*41 + "px";
+			elem.style.top = tempTop + i*40 + "px";
+			elem.style.opacity = 1;
+			document.getElementById("linsoColumn").appendChild(elem); 
+			continue;
+		}
 		if (linsoOrder[linsoOrderIncrement] == "") {linsoOrderIncrement += 1; continue;}
 		var elem = document.createElement("IMG");
 		elem.id = "linso" + i + j;
 		elem.style.height = "35px";
 		elem.style.width = "35px";
-		elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];
+		if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) {elem.src = Game.bottle_img;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("egg")) {elem.src = Game.egg_img;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png";}
+		else {elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Game[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
 		elem.style.position = "absolute";
@@ -981,7 +995,7 @@ for (var i = 1; i <= 12; i++) {
 	elem.onclick = linSoClick;
 	document.getElementById("linsoColumn").appendChild(elem);
 	linsoOrderIncrement += 1;
-}*/
+}
 
 
 setInterval(slowUpdate,5000);
