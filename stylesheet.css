@@ -238,6 +238,7 @@ color: red;
   width: 90px;
 }
 #checkSummaryColumn {
+	margin-top:10px;
 	left:20px;
 	position:relative;
 	float: left;

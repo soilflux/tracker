@@ -239,8 +239,8 @@ function circusControl() {
 }
 
 function linsoControl() {
-	if (linso) {linso = false; document.getElementById("linsoControl").innerHTML = "Show LinSo";}
-	else {linso = true; document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
+	if (linso) {linso = false; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Show LinSo";}
+	else {linso = true; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
 }
 
 function inaccessibleControl() {
@@ -250,7 +250,7 @@ function inaccessibleControl() {
 
 function coopControl() {
 	if (coopmode) {coopmode = false; document.getElementById("coopControl").innerHTML = "coopmode";}
-	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude";}
+	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "ALWAYS"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("shopSanity").value = 4;} 
 }
 
 function toggleHint(loc) {

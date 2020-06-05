@@ -118,7 +118,9 @@ var timeLost =0;
 var tMinutes = 0;
 var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
-	
+	var linso = false;
+	if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso");}
+	if (linso) {document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
 	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 	Logic.brackets = false;
 	
@@ -937,7 +939,6 @@ location_logic();
 var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "shadow", "spirit", "light"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns_song", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
-var linso = false;
 handleThemes();
 handleThemes();
 var linsoOrderIncrement = 0;

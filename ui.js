@@ -214,8 +214,8 @@ function linSoClick() {
 function junk() {
 	var type = event.button;
 	var str = event.target.id;
-	console.log(event.target);
 	str = str.substring('text_'.length);
+	if (Check[str] != "unknown") {return;}
 	var temp = Locations.indexOf(str);
 	
 	if(type == 0 && !event.altKey) {
@@ -585,7 +585,7 @@ function update_logic_info() {
 		
 		str = "text_" + key;
 		str2 = "br_" + key;
-		if (Check[key] == "unknown") {
+		if (Check[key] == "unknown" || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
 			document.getElementById(str).style.display = "inline-block";
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";

@@ -70,7 +70,7 @@
 				<br /><br /><br /><small id="confirmed_logically_required" style = "color:lightblue";></small>
 			  </div>
 			  <small id = "timer"></small>
-			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
 				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br /><br />
 				<small id="forceIntoLogic">Force into Logic</small><br />
 				<input id="forceLogic1" class= "check_input"></input>
@@ -95,17 +95,17 @@
 				  <option value="OFF">OFF</option>
 				  <option value="ON">ON</option>
 				</select><br><br class="half_break">
-				<label class="settingsLabels" for="scrubSanity">SHOPSANITY</label>
+				<label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
 				<select class="settingsOptions" id="shopSanity">
 				  <option value="0">0</option>
 				  <option value="4">4</option>
 				</select><br><br class="half_break">
-				<label class="settingsLabels" for="scrubSanity">BRIDGE</label>
+				<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
 				<select class="settingsOptions" id="ganonsBridge">
 				  <option value="All MED">All MED</option>
 				  <option value="ALWAYS">ALWAYS</option>
 				</select><br><br class="half_break">
-				<label class="settingsLabels" for="scrubSanity">GANON BK</label>
+				<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
 				<select class="settingsOptions" id="ganonBKSetting">
 				  <option value="NONE">NONE</option>
 				  <option value="LACS">LACS</option>
@@ -164,90 +164,7 @@
 			 
 		</div>
 		
-		<div id="myModal" class="modal">
-		<div class="modal-content">
-		<span class="close">&times;</span>
-		<p>Input the first three letters of the common name for items/songs next to checks. Exceptions are lul, sot, sos for zelda's lullaby, song of time, and song of storms. 
-		<br /> Progressive items use str, hoo, wal, and sca.
-		<br /> <b>Start with a capital letter to input hinted items. End with a capital letter to input peeked items.</b> Click an item's icon when the item has been obtained.
-		<br />Left click check text if it was irrelevant for logic. Use middle clicks<b>(or alt + left click)</b> and right clicks for boss keys and small keys, respectively.
-    <br /><b>Left click on the song check text, or the summary text on the right to toggle if you've found a hint for that check.</b>
-		<br /><br /> Input stones and forest+fire+water medallion into the top right two boxes. Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
-		<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
-		<br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
-		<br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
-		<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
-		<br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
-       
 		
-		</p>
-		</div>
-		</div>
-		
-		<div id="myModal2" class="modal">
-		<div class="modal-content">
-		<span class="close">&times;</span>
-		<p id="skullsTextBlock">
-		</p>
-		</div>
-		</div>
-		
-		<div id="myModal3" class="modal">
-		<div class="modal-content">
-		<span class="close">&times;</span>
-		<p>
-		hylia bottle = hyb, rut, ruto, rutos, bottle, bot
-		<br />atz grotto = atz
-        <br />crater bean = crb, crater, craterbean
-        <br />graveyard box = grb, gybox, box, gybean
-        <br />colossus bean = cob, colossusbean, col, colo, colossus
-        <br />fountain peek = fop, icyp, fountainp 
-		<br />hylia sun = hyliasun, shootthesun, sunshoot, shootsun, ss, hss
-        <br />poes = poe, poes
-        <br />lens game = len, lens, lensgame, chestgame, cmg
-        <br />20 skulls = 20
-        <br />30 skulls = 30
-        <br />40 skulls = 40
-        <br />50 skulls = 50
-        <br />redead grave = red, redead
-        <br />composers item = coi, comp, composer
-        <br />composers song = cos, sun, suns
-        <br />scarecrow = sca, scarecrow, pierre
-        <br />top of fire = fla, hammer, flare, flaredancer
-        <br />water bk = wbk, waterbk
-        <br />water river = riv, river, riverch, riverchest
-        <br />gtg final = fin, gtgf, gtgfin, gtgfinal
-        <br />toilet = toi, toilet, gtgtoilet
-        <br />dead hand = dea, deadhand
-        <br />wasteland = was, waste, wasteland
-		<br />colossus song = ws, req, wls, desert, wastesong, colosong
-        <br />pot = pot
-        <br />dancing = dan, daru, darunia, dancin, dancing
-        <br />left hand = lef, mir, mirror, lefthand
-        <br />right hand = rig, sil, silver, silvers, righthand
-        <br />gc hammer = goh, gchammer, gcleft, maze3
-        <br />gv hammer = gvh, gvhammer
-        <br />cuccos = cuc, cucc, cucco, cuccos, chicken, chickens
-        <br />crater song = cra, bol, bolero
-        <br />meadow song = mea, min, minuet
-        <br />tot song = 1me, tot, pre, prelude
-        <br />king zora = kin, kz, kingzora
-        <br />boomerang chest = jab, jabu, boom, boomerang, rang, boo
-        <br />adult shooting = sho, shooting, archery, shoo
-		<br />horse back archery = hba, 1500
-        <br />forest floormaster = ffl, forestfloor, ffloor
-        <br />shadow floormaster = sfl, shadowfloor, shfloor
-        <br />burning kak = 3me, noc, nocturne
-        <br />ice song = ice, ser, serenade
-        <br />fountain hinted = fou, fountain, icy
-        <br />saria kid = kid, skullkid
-        <br />biggoron = big, bgs, trade
-        <br />skull mask = mas, skullmask, mask
-        <br />frogs 2 = fr2, frog, frogs, frogs2
-        <br />oot song = oot
-		</p>
-		</div>
-		</div>
 	  <!--<input spellcheck="false" id="go_input" type "number" class = "meh_input"></input>-->
 	</div>
 
@@ -256,7 +173,90 @@
 			
 		</div>
 	  </div>-->
-	  
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Input the first three letters of the common name for items/songs next to checks. Exceptions are lul, sot, sos for zelda's lullaby, song of time, and song of storms. 
+			<br /> Progressive items use str, hoo, wal, and sca.
+			<br /> <b>Start with a capital letter to input hinted items. End with a capital letter to input peeked items.</b> Click an item's icon when the item has been obtained.
+			<br />Left click check text if it was irrelevant for logic. Use middle clicks<b>(or alt + left click)</b> and right clicks for boss keys and small keys, respectively.
+			<br /><b>Left click on the song check text, or the summary text on the right to toggle if you've found a hint for that check.</b>
+			<br /><br /> Input stones and forest+fire+water medallion into the top right two boxes. Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
+			<br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the top right box.
+			<br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
+			<br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
+			<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
+			<br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
+       
+		
+			</p>
+		</div>
+	</div>
+		
+	<div id="myModal2" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p id="skullsTextBlock">
+			</p>
+		</div>
+	</div>
+		
+	<div id="myModal3" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>
+				hylia bottle = hyb, rut, ruto, rutos, bottle, bot
+				<br />atz grotto = atz
+				<br />crater bean = crb, crater, craterbean
+				<br />graveyard box = grb, gybox, box, gybean
+				<br />colossus bean = cob, colossusbean, col, colo, colossus
+				<br />fountain peek = fop, icyp, fountainp 
+				<br />hylia sun = hyliasun, shootthesun, sunshoot, shootsun, ss, hss
+				<br />poes = poe, poes
+				<br />lens game = len, lens, lensgame, chestgame, cmg
+				<br />20 skulls = 20
+				<br />30 skulls = 30
+				<br />40 skulls = 40
+				<br />50 skulls = 50
+				<br />redead grave = red, redead
+				<br />composers item = coi, comp, composer
+				<br />composers song = cos, sun, suns
+				<br />scarecrow = sca, scarecrow, pierre
+				<br />top of fire = fla, hammer, flare, flaredancer
+				<br />water bk = wbk, waterbk
+				<br />water river = riv, river, riverch, riverchest
+				<br />gtg final = fin, gtgf, gtgfin, gtgfinal
+				<br />toilet = toi, toilet, gtgtoilet
+				<br />dead hand = dea, deadhand
+				<br />wasteland = was, waste, wasteland
+				<br />colossus song = ws, req, wls, desert, wastesong, colosong
+				<br />pot = pot
+				<br />dancing = dan, daru, darunia, dancin, dancing
+				<br />left hand = lef, mir, mirror, lefthand
+				<br />right hand = rig, sil, silver, silvers, righthand
+				<br />gc hammer = goh, gchammer, gcleft, maze3
+				<br />gv hammer = gvh, gvhammer
+				<br />cuccos = cuc, cucc, cucco, cuccos, chicken, chickens
+				<br />crater song = cra, bol, bolero
+				<br />meadow song = mea, min, minuet
+				<br />tot song = 1me, tot, pre, prelude
+				<br />king zora = kin, kz, kingzora
+				<br />boomerang chest = jab, jabu, boom, boomerang, rang, boo
+				<br />adult shooting = sho, shooting, archery, shoo
+				<br />horse back archery = hba, 1500
+				<br />forest floormaster = ffl, forestfloor, ffloor
+				<br />shadow floormaster = sfl, shadowfloor, shfloor
+				<br />burning kak = 3me, noc, nocturne
+				<br />ice song = ice, ser, serenade
+				<br />fountain hinted = fou, fountain, icy
+				<br />saria kid = kid, skullkid
+				<br />biggoron = big, bgs, trade
+				<br />skull mask = mas, skullmask, mask
+				<br />frogs 2 = fr2, frog, frogs, frogs2
+				<br />oot song = oot
+			</p>
+		</div>
+	</div> 
 	  
 </body>
 	<script src="misc.js"></script>
