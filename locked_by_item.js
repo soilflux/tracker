@@ -80,7 +80,7 @@ function checksLockedByItem(item) {
 	if(Known.lullaby == true) {Locked_Logic2.lullaby = Location_Locked_Logic2[Location.lullaby]; } else {Locked_Logic2.lullaby = true;} if(item == "lullaby") {Locked_Logic2.lullaby = false;} 
 	if(Known.eponas == true) {Locked_Logic2.eponas = Location_Locked_Logic2[Location.eponas]; } else {Locked_Logic2.eponas = true;} if(item == "eponas") {Locked_Logic2.eponas = false;}  
 	if(Known.sarias == true) {Locked_Logic2.sarias = Location_Locked_Logic2[Location.sarias]; } else {Locked_Logic2.sarias = true;} if(item == "sarias") {Locked_Logic2.sarias = false;} 
-	if(Known.suns_song == true) {Locked_Logic2.suns_song = Location_Locked_Logic2[Location.suns_song]; } else {Locked_Logic2.suns_song = true;} if(item == "suns_song") {Locked_Logic2.suns_song = false;} 
+	if(Known.suns == true) {Locked_Logic2.suns = Location_Locked_Logic2[Location.suns]; } else {Locked_Logic2.suns = true;} if(item == "suns") {Locked_Logic2.suns = false;} 
 	if(Known.time == true) {Locked_Logic2.song_of_time = Location_Locked_Logic2[Location.song_of_time]; } else {Locked_Logic2.song_of_time = true;} if(item == "song_of_time") {Locked_Logic2.song_of_time = false;} 
 	if(Known.storms == true) {Locked_Logic2.song_of_storms = Location_Locked_Logic2[Location.song_of_storms]; } else {Locked_Logic2.song_of_storms = true;} if(item == "song_of_storms") {Locked_Logic2.song_of_storms = false;} 
 	if(Known.minuet == true) {Locked_Logic2.minuet = Location_Locked_Logic2[Location.minuet]; } else {Locked_Logic2.minuet = true;} if(item == "minuet") {Locked_Logic2.minuet = false;} 
@@ -587,7 +587,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.tokens_50 = Locked_Logic2.gold_skulltulas >= 50;
 	Location_Locked_Logic2.shield_grave = true;
 	Location_Locked_Logic2.gravedigging_tour = true;
-	Location_Locked_Logic2.composers_grave = Locked_Logic2.suns_song;
+	Location_Locked_Logic2.composers_grave = Locked_Logic2.suns;
 	Location_Locked_Logic2.redead_grave = Locked_Logic2.lullaby && Locked_Logic2.can_use_fire;
 	Location_Locked_Logic2.graveyard_box = Locked_Logic2.child_can_enter_river || Locked_Logic2.longshot;
 	Location_Locked_Logic2.race_1 = true;
@@ -596,7 +596,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.river_grotto = true;
 	Location_Locked_Logic2.river_ledge = Locked_Logic2.child_can_enter_river || Locked_Logic2.hover_boots;
 	Location_Locked_Logic2.frogs_1 = Locked_Logic2.child_can_enter_river && Locked_Logic2.song_of_storms;
-	Location_Locked_Logic2.frogs_2 = Locked_Logic2.child_can_enter_river && (Locked_Logic2.song_of_storms && Locked_Logic2.lullaby && Locked_Logic2.eponas && Locked_Logic2.sarias && Locked_Logic2.suns_song && Locked_Logic2.song_of_time);
+	Location_Locked_Logic2.frogs_2 = Locked_Logic2.child_can_enter_river && (Locked_Logic2.song_of_storms && Locked_Logic2.lullaby && Locked_Logic2.eponas && Locked_Logic2.sarias && Locked_Logic2.suns && Locked_Logic2.song_of_time);
 	Location_Locked_Logic2.zora_diving = (Locked_Logic2.lullaby && Locked_Logic2.bomb_bag) || Locked_Logic2.silver_scale;
 	Location_Locked_Logic2.zora_torches = (Locked_Logic2.lullaby && Locked_Logic2.bomb_bag) || Locked_Logic2.silver_scale;
 	Location_Locked_Logic2.thaw_king = Locked_Logic2.ice_access || (Locked_Logic2.bottle && (Locked_Logic2.giants_wallet || Locked_Logic2.can_enter_ganons) && Locked_Logic2.lullaby);

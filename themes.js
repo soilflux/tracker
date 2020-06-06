@@ -25,7 +25,7 @@ function dark_soli() {
 	Game.lullaby_img = "./images/lullaby505050.png";
 	Game.eponas_img = "./images/eponas505050.png";
 	Game.sarias_img = "./images/sarias505050.png";
-	Game.suns_song_img = "./images/suns505050.png";
+	Game.suns_img = "./images/suns505050.png";
 	Game.time_img = "./images/sot505050.png";
 	Game.storms_img = "./images/sos505050.png";
 	Game.minuet_img = "./images/minuet505050.png";
@@ -107,7 +107,7 @@ function dark_soli() {
 	document.getElementById("lullabyimg").src=Game.lullaby_img;
 	document.getElementById("eponasimg").src=Game.eponas_img;
 	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_song_img;
+	document.getElementById("sunsimg").src=Game.suns_img;
 	document.getElementById("sotimg").src=Game.time_img;
 	document.getElementById("sosimg").src=Game.storms_img;
 	document.getElementById("minuetimg").src=Game.minuet_img;
@@ -163,7 +163,7 @@ function dark_normie() {
 	Game.lullaby_img = "./normal/items/lullaby.png";
 	Game.eponas_img = "./normal/items/eponas.png";
 	Game.sarias_img = "./normal/items/sarias.png";
-	Game.suns_song_img = "./normal/items/suns_song.png";
+	Game.suns_img = "./normal/items/suns.png";
 	Game.time_img = "./normal/items/time.png";
 	Game.storms_img = "./normal/items/storms.png";
 	Game.minuet_img = "./normal/items/minuet.png";
@@ -243,7 +243,7 @@ function dark_normie() {
 	document.getElementById("lullabyimg").src=Game.lullaby_img;
 	document.getElementById("eponasimg").src=Game.eponas_img;
 	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_song_img;
+	document.getElementById("sunsimg").src=Game.suns_img;
 	document.getElementById("sotimg").src=Game.time_img;
 	document.getElementById("sosimg").src=Game.storms_img;
 	document.getElementById("minuetimg").src=Game.minuet_img;

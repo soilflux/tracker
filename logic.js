@@ -77,7 +77,7 @@ function refresh_logic_for_stuff() {
 	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[Location.lullaby]; }
 	if(Known.eponas == true) {Logic.eponas = Location_Logic[Location.eponas]; }
 	if(Known.sarias == true) {Logic.sarias = Location_Logic[Location.sarias]; }
-	if(Known.suns_song == true) {Logic.suns_song = Location_Logic[Location.suns_song]; }
+	if(Known.suns == true) {Logic.suns = Location_Logic[Location.suns]; }
 	if(Known.time == true) {Logic.time = Location_Logic[Location.song_of_time]; }
 	if(Known.storms == true) {Logic.storms = Location_Logic[Location.song_of_storms]; }
 	if(Known.minuet == true) {Logic.minuet = Location_Logic[Location.minuet]; }
@@ -524,7 +524,7 @@ function force_stuff_in_or_out_of_logic() {
 		if(document.getElementById(str).value == "lul") {Logic.lullaby = true;}
 		if(document.getElementById(str).value == "epo") {Logic.eponas = true;}
 		if(document.getElementById(str).value == "sar") {Logic.sarias = true;}
-		if(document.getElementById(str).value == "sun") {Logic.suns_song = true;}
+		if(document.getElementById(str).value == "sun") {Logic.suns = true;}
 		if(document.getElementById(str).value == "sot") {Logic.time = true;}
 		if(document.getElementById(str).value == "sos") {Logic.storms = true;}
 		if(document.getElementById(str).value == "min") {Logic.minuet = true;}
@@ -563,7 +563,7 @@ function force_stuff_in_or_out_of_logic() {
 		if(document.getElementById(str).value == "lul") {Logic.lullaby = false;}
 		if(document.getElementById(str).value == "epo") {Logic.eponas = false;}
 		if(document.getElementById(str).value == "sar") {Logic.sarias = false;}
-		if(document.getElementById(str).value == "sun") {Logic.suns_song = false;}
+		if(document.getElementById(str).value == "sun") {Logic.suns = false;}
 		if(document.getElementById(str).value == "sot") {Logic.time = false;}
 		if(document.getElementById(str).value == "sos") {Logic.storms = false;}
 		if(document.getElementById(str).value == "min") {Logic.minuet = false;}
@@ -740,7 +740,7 @@ function location_logic(){
 	Location_Logic.tokens_50 = Logic.gold_skulltulas >= 50;
 	Location_Logic.shield_grave = true;
 	Location_Logic.gravedigging_tour = true;
-	Location_Logic.redead_grave = Logic.suns_song;
+	Location_Logic.redead_grave = Logic.suns;
 	Location_Logic.composers_grave = Logic.lullaby && Logic.can_use_fire;
 	Location_Logic.graveyard_box = Logic.child_can_enter_river || Logic.longshot;
 	Location_Logic.race_1 = true;
@@ -749,7 +749,7 @@ function location_logic(){
 	Location_Logic.river_grotto = true;
 	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
 	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.storms;
-	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns_song && Logic.time);
+	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns && Logic.time);
 	Location_Logic.zora_diving = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
 	Location_Logic.zora_torches = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
 	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && (Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby);
@@ -1104,7 +1104,7 @@ function location_logic(){
 	Location_Access.river_grotto = true;
 	Location_Access.river_ledge = true;
 	Location_Access.frogs_1 = Game.child_can_enter_river && Game.storms;
-	Location_Access.frogs_2 = Game.child_can_enter_river && (Game.storms && Game.lullaby && Game.eponas && Game.sarias && Game.suns_song && Game.time);
+	Location_Access.frogs_2 = Game.child_can_enter_river && (Game.storms && Game.lullaby && Game.eponas && Game.sarias && Game.suns && Game.time);
 	Location_Access.zora_diving = Game.child_can_enter_river;
 	Location_Access.zora_torches = Game.child_can_enter_river;
 	Location_Access.ocarina_game = true;
@@ -1155,7 +1155,7 @@ function location_logic(){
 	Location_Access.gravedigging_tour = true;
 	Location_Access.graveyard_box = true;//Game.child_can_enter_river || Game.longshot || Game.boomerang;
 	Location_Access.shield_grave = true;
-	Location_Access.redead_grave = Game.suns_song;
+	Location_Access.redead_grave = Game.suns;
 	Location_Access.composers_grave = Game.lullaby;
 	Location_Access.race_1 = true;
 	Location_Access.race_2 = true;

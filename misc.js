@@ -49,7 +49,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.suns_song_img.substring(2))){Game.suns_song = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = true;}
@@ -86,7 +86,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.suns_song_img.substring(2))){Game.suns_song = Game.suns_song = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = Game.suns = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = false;}
@@ -259,7 +259,7 @@ function toggleHint(loc) {
 	var itemText = "";
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {location = loc.id.slice(5); item = Check[location];} else {item = loc.id.slice(0, -9); location = Location[item];}
 	if (item == "sos") {item = "song_of_storms";}
-	if (item == "suns") {item = "suns_song";}
+	if (item == "suns") {item = "suns";}
 	if (item == "sot") {item = "song_of_time";}
 	if (item == "serenade") {itemText = "Serenade";} else if (item == "prelude") {itemText = "Prelude"} else {itemText = ItemNames[Items.indexOf(item)];}
 	if (item != "unknown" && location != undefined) {

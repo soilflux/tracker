@@ -82,7 +82,7 @@ function checksPutInLogicByItem(item) {
 	if(Known.lullaby == true) {PutIn_Logic.lullaby = Location_PutIn_Logic[Location.lullaby]; } if (item == "lullaby") {PutIn_Logic.lullaby = false;}
 	if(Known.eponas == true) {PutIn_Logic.eponas = Location_PutIn_Logic[Location.eponas]; } if (item == "eponas") {PutIn_Logic.eponas = false;}
 	if(Known.sarias == true) {PutIn_Logic.sarias = Location_PutIn_Logic[Location.sarias]; } if (item == "sarias") {PutIn_Logic.sarias = false;}
-	if(Known.suns_song == true) {PutIn_Logic.suns_song = Location_PutIn_Logic[Location.suns_song]; } if (item == "suns_song") {PutIn_Logic.suns_song = false;}
+	if(Known.suns == true) {PutIn_Logic.suns = Location_PutIn_Logic[Location.suns]; } if (item == "suns") {PutIn_Logic.suns = false;}
 	if(Known.time == true) {PutIn_Logic.time = Location_PutIn_Logic[Location.song_of_time]; } if (item == "song_of_time") {PutIn_Logic.time = false;}
 	if(Known.storms == true) {PutIn_Logic.storms = Location_PutIn_Logic[Location.song_of_storms]; } if (item == "song_of_storms") {PutIn_Logic.storms = false;}
 	if(Known.minuet == true) {PutIn_Logic.minuet = Location_PutIn_Logic[Location.minuet]; } if (item == "minuet") {PutIn_Logic.minuet = false;}
@@ -707,7 +707,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.tokens_50 = PutIn_Logic.gold_skulltulas >= 50;
 	Location_PutIn_Logic.shield_grave = true;
 	Location_PutIn_Logic.gravedigging_tour = true;
-	Location_PutIn_Logic.composers_grave = PutIn_Logic.suns_song;
+	Location_PutIn_Logic.composers_grave = PutIn_Logic.suns;
 	Location_PutIn_Logic.redead_grave = PutIn_Logic.lullaby && PutIn_Logic.can_use_fire;
 	Location_PutIn_Logic.graveyard_box = PutIn_Logic.child_can_enter_river || PutIn_Logic.longshot;
 	Location_PutIn_Logic.race_1 = true;
@@ -716,7 +716,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.river_grotto = true;
 	Location_PutIn_Logic.river_ledge = PutIn_Logic.child_can_enter_river || PutIn_Logic.hover_boots;
 	Location_PutIn_Logic.frogs_1 = PutIn_Logic.child_can_enter_river && PutIn_Logic.storms;
-	Location_PutIn_Logic.frogs_2 = PutIn_Logic.child_can_enter_river && (PutIn_Logic.storms && PutIn_Logic.lullaby && PutIn_Logic.eponas && PutIn_Logic.sarias && PutIn_Logic.suns_song && PutIn_Logic.time);
+	Location_PutIn_Logic.frogs_2 = PutIn_Logic.child_can_enter_river && (PutIn_Logic.storms && PutIn_Logic.lullaby && PutIn_Logic.eponas && PutIn_Logic.sarias && PutIn_Logic.suns && PutIn_Logic.time);
 	Location_PutIn_Logic.zora_diving = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
 	Location_PutIn_Logic.zora_torches = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
 	Location_PutIn_Logic.thaw_king = PutIn_Logic.ice_access || (PutIn_Logic.bottle && (PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby);
