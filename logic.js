@@ -719,7 +719,7 @@ function location_logic(){
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_storms = Logic.storms;
-	Location_Logic.crater_peak_fairy = Logic.can_blast_or_smash && Logic.lullaby;
+	Location_Logic.trail_fairy = Logic.can_blast_or_smash && Logic.lullaby;
 	Location_Logic.trade_quest = Location_Logic.trade_quest = (((Logic.ice_access || ((Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
@@ -1130,7 +1130,7 @@ function location_logic(){
 	Location_Access.crater_hammer_fairy = Game.crater_by_city && Game.hammer && Game.lullaby;
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
-	Location_Access.crater_peak_fairy = Game.can_blast_or_smash && Game.lullaby;
+	Location_Access.trail_fairy = Game.can_blast_or_smash && Game.lullaby;
 	Location_Access.trade_quest = (((Game.ice_access || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
