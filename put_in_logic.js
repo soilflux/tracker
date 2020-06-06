@@ -83,8 +83,8 @@ function checksPutInLogicByItem(item) {
 	if(Known.eponas == true) {PutIn_Logic.eponas = Location_PutIn_Logic[Location.eponas]; } if (item == "eponas") {PutIn_Logic.eponas = false;}
 	if(Known.sarias == true) {PutIn_Logic.sarias = Location_PutIn_Logic[Location.sarias]; } if (item == "sarias") {PutIn_Logic.sarias = false;}
 	if(Known.suns == true) {PutIn_Logic.suns = Location_PutIn_Logic[Location.suns]; } if (item == "suns") {PutIn_Logic.suns = false;}
-	if(Known.time == true) {PutIn_Logic.time = Location_PutIn_Logic[Location.song_of_time]; } if (item == "song_of_time") {PutIn_Logic.time = false;}
-	if(Known.storms == true) {PutIn_Logic.storms = Location_PutIn_Logic[Location.song_of_storms]; } if (item == "song_of_storms") {PutIn_Logic.storms = false;}
+	if(Known.time == true) {PutIn_Logic.time = Location_PutIn_Logic[Location.time]; } if (item == "time") {PutIn_Logic.time = false;}
+	if(Known.storms == true) {PutIn_Logic.storms = Location_PutIn_Logic[Location.storms]; } if (item == "storms") {PutIn_Logic.storms = false;}
 	if(Known.minuet == true) {PutIn_Logic.minuet = Location_PutIn_Logic[Location.minuet]; } if (item == "minuet") {PutIn_Logic.minuet = false;}
 	if(Known.bolero == true) {PutIn_Logic.bolero = Location_PutIn_Logic[Location.bolero]; } if (item == "bolero") {PutIn_Logic.bolero = false;}
 	if(Known.serenade == true) {PutIn_Logic.serenade = Location_PutIn_Logic[Location.serenade]; } if (item == "serenade") {PutIn_Logic.serenade = false;}
@@ -209,7 +209,7 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic.fire13 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.fire_keys>=6;
 		Location_PutIn_Logic.fire14 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys>=6 && PutIn_Logic.hover_boots)) && PutIn_Logic.hammer && (PutIn_Logic.time || PutIn_Logic.bomb_bag);
 		Location_PutIn_Logic.fire15 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys >= 6 && PutIn_Logic.hover_boots)) && PutIn_Logic.bomb_bag;
-		Location_PutIn_Logic.gs_fire_song_of_time = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >= 1 && PutIn_Logic.time;
+		Location_PutIn_Logic.gs_fire_time = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >= 1 && PutIn_Logic.time;
 		Location_PutIn_Logic.gs_fire_bomb_wall = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.bomb_bag;
 		Location_PutIn_Logic.gs_fire_scarecrow1 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
 		Location_PutIn_Logic.gs_fire_scarecrow2 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
@@ -621,7 +621,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.mido_3 = true;
 	Location_PutIn_Logic.mido_4 = true;
 	Location_PutIn_Logic.kokiri_sword = true;
-	Location_PutIn_Logic.kokiri_song_of_storms = PutIn_Logic.storms;
+	Location_PutIn_Logic.kokiri_storms = PutIn_Logic.storms;
 	Location_PutIn_Logic.talons_chickens = true;
 	Location_PutIn_Logic.back_of_ranch = true;
 	Location_PutIn_Logic.hyrule_remote_grotto = PutIn_Logic.can_blast_or_smash;
@@ -685,7 +685,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.dodongos_king_dodongo = PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.trail_bombable = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.trail_dodongos_top = true;
-	Location_PutIn_Logic.trail_song_of_storms = PutIn_Logic.storms;
+	Location_PutIn_Logic.trail_storms = PutIn_Logic.storms;
 	Location_PutIn_Logic.crater_peak_fairy = PutIn_Logic.can_blast_or_smash && PutIn_Logic.lullaby;
 	Location_PutIn_Logic.trade_quest = Location_PutIn_Logic.trade_quest = (((PutIn_Logic.ice_access || ((PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby && PutIn_Logic.bottle)) && PutIn_Logic.prescription) || PutIn_Logic.claim_check) && PutIn_Logic.crater_top;
 	Location_PutIn_Logic.crater_bean = (PutIn_Logic.bolero && PutIn_Logic.child_can_enter_river) || (PutIn_Logic.hover_boots && PutIn_Logic.crater_by_city);
@@ -1020,7 +1020,7 @@ function checksPutInLogicByItem(item) {
 	gs[72] = Location_PutIn_Logic.gs_forest_outdoor_east;
 	gs[73] = Location_PutIn_Logic.gs_forest_outdoor_west;
 	gs[74] = Location_PutIn_Logic.gs_forest_basement;
-	gs[75] = Location_PutIn_Logic.gs_fire_song_of_time;
+	gs[75] = Location_PutIn_Logic.gs_fire_time;
 	gs[76] = Location_PutIn_Logic.gs_fire_bomb_wall;
 	gs[77] = Location_PutIn_Logic.gs_fire_scarecrow1;
 	gs[78] = Location_PutIn_Logic.gs_fire_scarecrow2;

@@ -258,9 +258,9 @@ function toggleHint(loc) {
 	var item = "";
 	var itemText = "";
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {location = loc.id.slice(5); item = Check[location];} else {item = loc.id.slice(0, -9); location = Location[item];}
-	if (item == "sos") {item = "song_of_storms";}
+	if (item == "sos") {item = "storms";}
 	if (item == "suns") {item = "suns";}
-	if (item == "sot") {item = "song_of_time";}
+	if (item == "sot") {item = "time";}
 	if (item == "serenade") {itemText = "Serenade";} else if (item == "prelude") {itemText = "Prelude"} else {itemText = ItemNames[Items.indexOf(item)];}
 	if (item != "unknown" && location != undefined) {
 		Hinted[location] = !Hinted[location];
@@ -361,7 +361,7 @@ function gs_array_builder() {
 	gs[72] = Location_Logic.gs_forest_outdoor_east;
 	gs[73] = Location_Logic.gs_forest_outdoor_west;
 	gs[74] = Location_Logic.gs_forest_basement;
-	gs[75] = Location_Logic.gs_fire_song_of_time;
+	gs[75] = Location_Logic.gs_fire_time;
 	gs[76] = Location_Logic.gs_fire_bomb_wall;
 	gs[77] = Location_Logic.gs_fire_scarecrow1;
 	gs[78] = Location_Logic.gs_fire_scarecrow2;

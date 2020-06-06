@@ -654,7 +654,7 @@ function location_logic(){
 	Location_Logic.mido_3 = true;
 	Location_Logic.mido_4 = true;
 	Location_Logic.kokiri_sword = true;
-	Location_Logic.kokiri_song_of_storms = Logic.storms;
+	Location_Logic.kokiri_storms = Logic.storms;
 	Location_Logic.talons_chickens = true;
 	Location_Logic.back_of_ranch = true;
 	Location_Logic.hyrule_remote_grotto = Logic.can_blast_or_smash;
@@ -718,7 +718,7 @@ function location_logic(){
 	Location_Logic.dodongos_king_dodongo = Logic.bomb_bag;
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
-	Location_Logic.trail_song_of_storms = Logic.storms;
+	Location_Logic.trail_storms = Logic.storms;
 	Location_Logic.crater_peak_fairy = Logic.can_blast_or_smash && Logic.lullaby;
 	Location_Logic.trade_quest = Location_Logic.trade_quest = (((Logic.ice_access || ((Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
@@ -1044,7 +1044,7 @@ function location_logic(){
 	Location_Logic.gs_forest_outdoor_east = (Logic.minuet || Logic.sarias) && Logic.hookshot && ((Logic.bow || Logic.time) || (Logic.forest_keys >= 1 && Logic.hover_boots));
 	Location_Logic.gs_forest_outdoor_west = (Logic.minuet || Logic.sarias) && Logic.hookshot && (((Logic.bow || Logic.time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
 	Location_Logic.gs_forest_basement = (Logic.minuet || Logic.sarias) && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
-	Location_Logic.gs_fire_song_of_time = Logic.can_enter_fire_temple && Logic.fire_keys >= 1 && Logic.time;
+	Location_Logic.gs_fire_time = Logic.can_enter_fire_temple && Logic.fire_keys >= 1 && Logic.time;
 	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
 	Location_Logic.gs_fire_scarecrow_1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
 	Location_Logic.gs_fire_scarecrow_2 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
@@ -1115,7 +1115,7 @@ function location_logic(){
 	Location_Access.skull_kid = Game.sarias;
 	Location_Access.target = Game.slingshot1;
 	Location_Access.theater = true;
-	Location_Access.kokiri_song_of_storms = Game.storms;
+	Location_Access.kokiri_storms = Game.storms;
 	Location_Access.rolling_goron = Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet;
 	Location_Access.goron_pot = (Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins);
 	Location_Access.goron_dance = Game.lullaby && Game.sarias;
@@ -1125,7 +1125,7 @@ function location_logic(){
 	Location_Access.goron_link = Game.can_stop_link_the_goron;
 	Location_Access.trail_bombable = Game.can_blast_or_smash;
 	Location_Access.trail_dodongos_top = true;
-	Location_Access.trail_song_of_storms = Game.storms;
+	Location_Access.trail_storms = Game.storms;
 	Location_Access.crater_bean = Game.bolero || Game.crater_top;
 	Location_Access.crater_hammer_fairy = Game.crater_by_city && Game.hammer && Game.lullaby;
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
