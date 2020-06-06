@@ -21,6 +21,7 @@ function process_inputs() {
 		
 		for (var j = 3; j < inputs.length; j++) {
 			if (document.getElementById(key).value == inputs[j]) {
+				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
 					else {var duplicate = k + "";}
