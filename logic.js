@@ -78,8 +78,8 @@ function refresh_logic_for_stuff() {
 	if(Known.eponas == true) {Logic.eponas = Location_Logic[Location.eponas]; }
 	if(Known.sarias == true) {Logic.sarias = Location_Logic[Location.sarias]; }
 	if(Known.suns == true) {Logic.suns = Location_Logic[Location.suns]; }
-	if(Known.time == true) {Logic.time = Location_Logic[Location.song_of_time]; }
-	if(Known.storms == true) {Logic.storms = Location_Logic[Location.song_of_storms]; }
+	if(Known.time == true) {Logic.time = Location_Logic[Location.time]; }
+	if(Known.storms == true) {Logic.storms = Location_Logic[Location.storms]; }
 	if(Known.minuet == true) {Logic.minuet = Location_Logic[Location.minuet]; }
 	if(Known.bolero == true) {Logic.bolero = Location_Logic[Location.bolero]; }
 	if(Known.serenade == true) {Logic.serenade = Location_Logic[Location.serenade]; }
