@@ -292,7 +292,7 @@ var tSeconds = 0;
 	var tempSeconds = 0;
 	
 	var Locations = [
-		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_bean", "gs_kokiri_adult", "kokiri_storms",
+		"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_soil", "gs_kokiri_adult", "kokiri_storms",
 		"talons_chickens", "gs_lon_lon_tree", "back_of_ranch", "scrub_ranch_1", "scrub_ranch_2", "scrub_ranch_3", "gs_lon_lon_window", "gs_lon_lon_shed", "gs_lon_lon_back_wall", 
 		"hyrule_remote_grotto", "hyrule_open_grotto", "hyrule_hp_scrub", "hyrule_boulder_of_destiny", "hyrule_tektite_grotto", "gs_outside_kakariko", "gs_near_gerudo",
 		"gerudovalley_box", "gerudovalley_fall", "gs_valley_small_bridge", "gs_valley_bean", "gs_valley_pillar", "gs_valley_tent", "gerudo_hammer", "scrub_gv_1", "scrub_gv_2",
@@ -307,14 +307,14 @@ var tSeconds = 0;
 		"ocarina_game", "lost_woods_grotto", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "bridge_scrub", "target", "skull_kid", "gs_lost_woods_above_stage", "theater",
 		"wolfos_grotto", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2",
 		"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3",
-		"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king", "dodongos_king_dodongo",
-		"gs_trail_bombable_wall", "trail_bombable", "trail_dodongos_top", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_bean",
-		"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp", "gs_crater_bean", "gs_crater_crate", 
-		"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
+		"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo",
+		"gs_trail_bombable_wall", "trail_bombable", "trail_dodongos_top", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil",
+		"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp", "gs_crater_soil", "gs_crater_crate", 
+		"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
 		"shield_grave", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave", "graveyard_box", "race_1", "race_2",
 		"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2",
 		"shop_domain_TL", "shop_domain_TR", "shop_domain_BR", "shop_domain_BL", "zora_diving", "zora_torches", "thaw_king", "gs_domain",
-		"colossus_bean", "colossus_fairy", "gs_colossus_bean", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", 
+		"colossus_bean", "colossus_fairy", "gs_colossus_soil", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", 
 		"gs_wasteland", "wasteland",
 		"gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
 		"gs_jabu_vines", "scrub_jabu", "jabu_boomerang", "jabu_map", "jabu_compass", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
@@ -345,7 +345,7 @@ var tSeconds = 0;
 		"Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr", "Scrub Gr+", "Br Soil", "Br Scrub", "Target", "Saria Kid", "Abv Stage", "Mask",
 		"Wolfos", "Skull", "Left", "Right",
 		"Shop TL", "Shop TR", "Shop BR", "Shop BL", "Big Rollin'", "Dancin'", "Chuckin'", "Maze 1", "Maze 2", "Maze", "Maze 3!", "Center", "Lil Rollin", "Left", "Center", "Right",
-		"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Comp", "Plat", "Left", "Right", "B Bag", "Bridge", "Above", "King",
+		"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Comp", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King",
 		"Bombable", "Wall", "Top", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil",
 		"Bean", "Left", "Center", "Right", "Fairy", "Grotto", "Nook", "Soil", "Crate", 
 		"Bazaar TL", "Bazaar TR", "Bazaar BR", "Bazaar BL", "Potion TL", "Potion TR", "Potion BR", "Potion BL", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Red Gr", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "10!", "20!!", "30!!!", "40!!!!", "50!!!!!",
@@ -367,9 +367,9 @@ var tSeconds = 0;
 		"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Med", "3 Med", "OoT"
 	];
 	
-	var AreaIndexes = [0,13,22,29,38,52,71,74,76,77,83,90,101,114,118,134,149,158,167,194,203,214,222,229,231,236,245,264,284,300,325,348,368,390,407];
-	var SongIndexes = [0,408,418,0,0,0,407,0,416,0,415,0,0,409,0,0,0,412,410,411,0,0,414,0,0,0,0,0,0,0,0,0,0,0];
-	var SongIndexes2 = [0,408,418,0,0,0,407,0,416,0,415,0,0,413,0,0,0,412,417,411,0,0,414,0,0,0,0,0,0,0,0,0,0,0];
+	var AreaIndexes = [0,13,22,29,38,52,71,74,76,77,83,90,101,114,118,134,150,159,168,195,204,215,223,230,232,237,246,265,285,301,326,349,369,391,408];
+	var SongIndexes = [0,409,419,0,0,0,408,0,417,0,416,0,0,410,0,0,0,413,411,412,0,0,415,0,0,0,0,0,0,0,0,0,0,0];
+	var SongIndexes2 = [0,409,419,0,0,0,408,0,417,0,416,0,0,414,0,0,0,413,418,412,0,0,415,0,0,0,0,0,0,0,0,0,0,0];
 		
 	var lastItem = 406;
     var lastSong = 418;

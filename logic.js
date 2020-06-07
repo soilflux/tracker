@@ -971,7 +971,7 @@ function location_logic(){
 	Location_Logic.shop_domain_BL = Logic[Shop_Logic.shop_domain_BL] && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale || (Logic.lullaby && ((Logic.can_enter_ganons && Logic.bottle) || Logic.can_enter_jabu || (Logic.giants_wallet && Logic.bottle))));
 
 	Location_Logic.gs_kokiri_child = true;
-	Location_Logic.gs_kokiri_bean = Logic.bottle;
+	Location_Logic.gs_kokiri_soil = Logic.bottle;
 	Location_Logic.gs_kokiri_adult = Logic.hookshot;
 	Location_Logic.gs_market = true;
 	Location_Logic.gs_lost_woods_bean_1 = Logic.bottle;
@@ -994,14 +994,14 @@ function location_logic(){
 	Location_Logic.gs_kakariko_impas = Logic.hookshot;
 	Location_Logic.gs_graveyard_wall = Logic.boomerang;
 	Location_Logic.gs_graveyard_soil = Logic.bottle;
-	Location_Logic.gs_trail_bean = Logic.bottle && (Logic.bomb_bag || Logic.goron_bracelet);
+	Location_Logic.gs_trail_soil = Logic.bottle && (Logic.bomb_bag || Logic.goron_bracelet);
 	Location_Logic.gs_trail_bombable_wall = Logic.can_blast_or_smash;
 	Location_Logic.gs_trail_hail_path = Logic.hammer;
 	Location_Logic.gs_trail_above_dodongos = Logic.hammer;
 	Location_Logic.gs_goron_center = true;
 	Location_Logic.gs_goron_maze = Logic.bomb_bag;
 	Location_Logic.gs_crater_crate = Logic.can_blast_or_smash;
-	Location_Logic.gs_crater_bean = Logic.bottle && Logic.bolero;
+	Location_Logic.gs_crater_soil = Logic.bottle && Logic.bolero;
 	Location_Logic.gs_river_ladder = Logic.silver_scale || Logic.bomb_bag;
 	Location_Logic.gs_river_near_grotto = Logic.hookshot;
 	Location_Logic.gs_river_above_bridge = Logic.hookshot;
@@ -1022,7 +1022,7 @@ function location_logic(){
 	Location_Logic.gs_fortress_archery = Logic.fortress_access && Logic.hookshot;
 	Location_Logic.gs_fortress_top = Logic.fortress_access;
 	Location_Logic.gs_wasteland = Logic.hookshot && Logic.can_cross_quicksand;
-	Location_Logic.gs_colossus_bean = Logic.bottle && Logic.requiem;
+	Location_Logic.gs_colossus_soil = Logic.bottle && Logic.requiem;
 	Location_Logic.gs_colossus_tree = Logic.hookshot && Logic.can_enter_colossus;
 	Location_Logic.gs_colossus_hill = (Logic.requiem && (Logic.bomb_bag || Logic.silver_scale)) || (Logic.longshot && Logic.can_enter_colossus);
 	Location_Logic.gs_ogc = true;
@@ -1031,7 +1031,7 @@ function location_logic(){
 	Location_Logic.gs_deku_basement_vines = Logic.slingshot || Logic.boomerang || Logic.bomb_bag || Logic.can_use_dins;
 	Location_Logic.gs_deku_compass = true;
 	Location_Logic.gs_dodongos_east_side = Logic.can_enter_dodongos;
-	Location_Logic.gs_dodongos_stair_viness = Logic.dodongos_climb;
+	Location_Logic.gs_dodongos_stair_vines = Logic.dodongos_climb;
 	Location_Logic.gs_dodongos_above_stairs = (Logic.dodongos_climb && Logic.hookshot) || (Logic.boomerang && (Logic.bomb_bag || Logic.goron_bracelet));
 	Location_Logic.gs_dodongos_scarecrow = Logic.can_enter_dodongos && Logic.hookshot;
 	Location_Logic.gs_dodongos_before_king = Logic.bomb_bag;

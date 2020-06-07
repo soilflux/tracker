@@ -237,6 +237,15 @@ color: red;
   float: left;
   width: 90px;
 }
+#inputConfig {
+	width:200px;
+	float:left;
+}
+#skullsInLogicList {
+	float: left;
+	width: 180px;
+	color: gold;
+}
 #checkSummaryColumn {
 	margin-top:10px;
 	left:20px;

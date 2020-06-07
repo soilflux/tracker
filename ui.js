@@ -504,8 +504,9 @@ function update_logic_info() {
 	Logic.gold_skulltulas = 0;
 	var i;
 	document.getElementById("skullsTextBlock").innerHTML = "";
+	document.getElementById("skullsInLogicList").innerHTML = "";
 	for (i = 1; i<=100; i++) {
-		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsTextBlock").innerHTML += gsText[i] + "<br />" ;};
+		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsTextBlock").innerHTML += gsText[i] + "<br />" ; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
 	document.getElementById("skulls_in_logic").innerHTML = "Skulls: " + Logic.gold_skulltulas;
 

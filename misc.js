@@ -288,11 +288,11 @@ function toggleHint(loc) {
 
 function gs_array_builder() {
 	gs[1] = Location_Logic.gs_kokiri_child;
-	gs[2] = Location_Logic.gs_kokiri_bean;
+	gs[2] = Location_Logic.gs_kokiri_soil;
 	gs[3] = Location_Logic.gs_kokiri_adult;
 	gs[4] = Location_Logic.gs_market;
-	gs[5] = Location_Logic.gs_lost_woods_bean1;
-	gs[6] = Location_Logic.gs_lost_woods_bean2;
+	gs[5] = Location_Logic.gs_lost_woods_bean_1;
+	gs[6] = Location_Logic.gs_lost_woods_bean_2;
 	gs[7] = Location_Logic.gs_lost_woods_above_stage;
 	gs[8] = Location_Logic.gs_sacred_forest;
 	gs[9] = Location_Logic.gs_outside_kakariko;
@@ -310,15 +310,15 @@ function gs_array_builder() {
 	gs[21] = Location_Logic.gs_kakariko_tower;
 	gs[22] = Location_Logic.gs_kakariko_impas;
 	gs[23] = Location_Logic.gs_graveyard_wall;
-	gs[24] = Location_Logic.gs_graveyard_bean;
-	gs[25] = Location_Logic.gs_trail_bean;
+	gs[24] = Location_Logic.gs_graveyard_soil;
+	gs[25] = Location_Logic.gs_trail_soil;
 	gs[26] = Location_Logic.gs_trail_bombable_wall;
 	gs[27] = Location_Logic.gs_trail_hail_path;
 	gs[28] = Location_Logic.gs_trail_above_dodongos;
 	gs[29] = Location_Logic.gs_goron_center;
 	gs[30] = Location_Logic.gs_goron_maze;
 	gs[31] = Location_Logic.gs_crater_crate;
-	gs[32] = Location_Logic.gs_crater_bean;
+	gs[32] = Location_Logic.gs_crater_soil;
 	gs[33] = Location_Logic.gs_river_ladder;
 	gs[34] = Location_Logic.gs_river_near_grotto;
 	gs[35] = Location_Logic.gs_river_above_bridge;
@@ -339,7 +339,7 @@ function gs_array_builder() {
 	gs[50] = Location_Logic.gs_fortress_archery;
 	gs[51] = Location_Logic.gs_fortress_top;
 	gs[52] = Location_Logic.gs_wasteland;
-	gs[53] = Location_Logic.gs_colossus_bean;
+	gs[53] = Location_Logic.gs_colossus_soil;
 	gs[54] = Location_Logic.gs_colossus_tree;
 	gs[55] = Location_Logic.gs_colossus_hill;
 	gs[56] = Location_Logic.gs_ogc;
@@ -348,13 +348,13 @@ function gs_array_builder() {
 	gs[59] = Location_Logic.gs_deku_basement_vines;
 	gs[60] = Location_Logic.gs_deku_compass;
 	gs[61] = Location_Logic.gs_dodongos_east_side;
-	gs[62] = Location_Logic.gs_dodongos_stair_room;
+	gs[62] = Location_Logic.gs_dodongos_stair_vines;
 	gs[63] = Location_Logic.gs_dodongos_above_stairs;
 	gs[64] = Location_Logic.gs_dodongos_scarecrow;
 	gs[65] = Location_Logic.gs_dodongos_before_king;
 	gs[66] = Location_Logic.gs_jabu_vines;
-	gs[67] = Location_Logic.gs_jabu_near_octo1;
-	gs[68] = Location_Logic.gs_jabu_near_octo2;
+	gs[67] = Location_Logic.gs_jabu_near_octo_1;
+	gs[68] = Location_Logic.gs_jabu_near_octo_2;
 	gs[69] = Location_Logic.gs_jabu_near_boss;
 	gs[70] = Location_Logic.gs_forest_first;
 	gs[71] = Location_Logic.gs_forest_lobby;
@@ -363,8 +363,8 @@ function gs_array_builder() {
 	gs[74] = Location_Logic.gs_forest_basement;
 	gs[75] = Location_Logic.gs_fire_time;
 	gs[76] = Location_Logic.gs_fire_bomb_wall;
-	gs[77] = Location_Logic.gs_fire_scarecrow1;
-	gs[78] = Location_Logic.gs_fire_scarecrow2;
+	gs[77] = Location_Logic.gs_fire_scarecrow_1;
+	gs[78] = Location_Logic.gs_fire_scarecrow_2;
 	gs[79] = Location_Logic.gs_fire_basement;
 	gs[80] = Location_Logic.gs_water_south_basement;
 	gs[81] = Location_Logic.gs_water_river;
@@ -374,8 +374,8 @@ function gs_array_builder() {
 	gs[85] = Location_Logic.gs_spirit_metal_fence;
 	gs[86] = Location_Logic.gs_spirit_before_child_knuckle;
 	gs[87] = Location_Logic.gs_spirit_boulder_room;
-	gs[88] = Location_Logic.gs_spirit_temple_lobby;
-	gs[89] = Location_Logic.gs_spirit_bomb_for_light_room;
+	gs[88] = Location_Logic.gs_spirit_lobby;
+	gs[89] = Location_Logic.gs_spirit_child_climb;
 	gs[90] = Location_Logic.gs_shadow_like_like;
 	gs[91] = Location_Logic.gs_shadow_crusher;
 	gs[92] = Location_Logic.gs_shadow_giant_pot;

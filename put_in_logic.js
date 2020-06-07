@@ -211,8 +211,8 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic.fire15 = PutIn_Logic.can_climb_fire_temple && (PutIn_Logic.fire_keys>=7 || (PutIn_Logic.fire_keys >= 6 && PutIn_Logic.hover_boots)) && PutIn_Logic.bomb_bag;
 		Location_PutIn_Logic.gs_fire_time = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >= 1 && PutIn_Logic.time;
 		Location_PutIn_Logic.gs_fire_bomb_wall = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.bomb_bag;
-		Location_PutIn_Logic.gs_fire_scarecrow1 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
-		Location_PutIn_Logic.gs_fire_scarecrow2 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.gs_fire_scarecrow_1 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.gs_fire_scarecrow_2 = PutIn_Logic.can_climb_fire_temple && PutIn_Logic.goron_bracelet && PutIn_Logic.fire_keys >=5 && PutIn_Logic.hookshot;
 		Location_PutIn_Logic.gs_fire_basement = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
 	}
 	for (h= 1; h <= 3; h++) {
@@ -301,8 +301,8 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic.gs_spirit_metal_fence = PutIn_Logic.requiem && (PutIn_Logic.boomerang || PutIn_Logic.slingshot);
 		Location_PutIn_Logic.gs_spirit_before_child_knuckle = (PutIn_Logic.bomb_bag && PutIn_Logic.boomerang && PutIn_Logic.hookshot && PutIn_Logic.spirit_keys >= 1) || (PutIn_Logic.boomerang && PutIn_Logic.spirit_keys >= 5 && PutIn_Logic.bomb_bag && PutIn_Logic.requiem) || (PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets && PutIn_Logic.spirit_keys >= 3);
 		Location_PutIn_Logic.gs_spirit_boulder_room = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.time && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
-		Location_PutIn_Logic.gs_spirit_temple_lobby = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >= 3 && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
-		Location_PutIn_Logic.gs_spirit_bomb_for_light_room = PutIn_Logic.spirit_keys >= 1;
+		Location_PutIn_Logic.gs_spirit_lobby = PutIn_Logic.can_enter_adult_spirit && PutIn_Logic.spirit_keys >= 3 && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots);
+		Location_PutIn_Logic.gs_spirit_child_climb = PutIn_Logic.spirit_keys >= 1;
 	}
 	for (h= 1; h <= 3; h++) {
 		PutIn_Logic.current_shadow_keys = PutIn_Logic.forced_shadow_keys;
@@ -874,11 +874,11 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.oot = PutIn_Logic.kokiri_emerald && PutIn_Logic.goron_ruby && PutIn_Logic.zora_sapphire;
 	
 	Location_PutIn_Logic.gs_kokiri_child = true;
-	Location_PutIn_Logic.gs_kokiri_bean = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_kokiri_soil = PutIn_Logic.bottle;
 	Location_PutIn_Logic.gs_kokiri_adult = PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_market = true;
-	Location_PutIn_Logic.gs_lost_woods_bean1 = PutIn_Logic.bottle;
-	Location_PutIn_Logic.gs_lost_woods_bean2 = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_lost_woods_bean_1 = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_lost_woods_bean_2 = PutIn_Logic.bottle;
 	Location_PutIn_Logic.gs_lost_woods_above_stage = (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale) && (PutIn_Logic.sarias || PutIn_Logic.minuet);
 	Location_PutIn_Logic.gs_sacred_forest = PutIn_Logic.hookshot && (PutIn_Logic.sarias || PutIn_Logic.minuet);
 	Location_PutIn_Logic.gs_outside_kakariko = (PutIn_Logic.boomerang && PutIn_Logic.bomb_bag) || (PutIn_Logic.can_blast_or_smash && PutIn_Logic.hookshot)
@@ -896,15 +896,15 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_kakariko_tower = PutIn_Logic.bomb_bag || PutIn_Logic.slingshot;
 	Location_PutIn_Logic.gs_kakariko_impas = PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_graveyard_wall = PutIn_Logic.boomerang;
-	Location_PutIn_Logic.gs_graveyard_bean = PutIn_Logic.bottle;
-	Location_PutIn_Logic.gs_trail_bean = PutIn_Logic.bottle && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet);
+	Location_PutIn_Logic.gs_graveyard_soil = PutIn_Logic.bottle;
+	Location_PutIn_Logic.gs_trail_soil = PutIn_Logic.bottle && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet);
 	Location_PutIn_Logic.gs_trail_bombable_wall = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.gs_trail_hail_path = PutIn_Logic.hammer;
 	Location_PutIn_Logic.gs_trail_above_dodongos = PutIn_Logic.hammer;
 	Location_PutIn_Logic.gs_goron_center = true;
 	Location_PutIn_Logic.gs_goron_maze = PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.gs_crater_crate = PutIn_Logic.can_blast_or_smash;
-	Location_PutIn_Logic.gs_crater_bean = PutIn_Logic.bottle && PutIn_Logic.bolero;
+	Location_PutIn_Logic.gs_crater_soil = PutIn_Logic.bottle && PutIn_Logic.bolero;
 	Location_PutIn_Logic.gs_river_ladder = PutIn_Logic.silver_scale || PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.gs_river_near_grotto = PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_river_above_bridge = PutIn_Logic.hookshot;
@@ -924,7 +924,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_fortress_archery = PutIn_Logic.fortress_access && PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_fortress_top = PutIn_Logic.fortress_access;
 	Location_PutIn_Logic.gs_wasteland = PutIn_Logic.hookshot && PutIn_Logic.can_cross_quicksand;
-	Location_PutIn_Logic.gs_colossus_bean = PutIn_Logic.bottle && PutIn_Logic.requiem;
+	Location_PutIn_Logic.gs_colossus_soil = PutIn_Logic.bottle && PutIn_Logic.requiem;
 	Location_PutIn_Logic.gs_colossus_tree = PutIn_Logic.hookshot && PutIn_Logic.can_enter_colossus;
 	Location_PutIn_Logic.gs_colossus_hill = (PutIn_Logic.requiem && (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale)) || (PutIn_Logic.longshot && PutIn_Logic.can_enter_colossus);
 	Location_PutIn_Logic.gs_river_tree = true;
@@ -934,24 +934,24 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_deku_basement_vines = PutIn_Logic.slingshot || PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.can_use_dins;
 	Location_PutIn_Logic.gs_deku_compass = true;
 	Location_PutIn_Logic.gs_dodongos_east_side = PutIn_Logic.can_enter_dodongos;
-	Location_PutIn_Logic.gs_dodongos_stair_room = PutIn_Logic.dodongos_climb;
+	Location_PutIn_Logic.gs_dodongos_stair_vines = PutIn_Logic.dodongos_climb;
 	Location_PutIn_Logic.gs_dodongos_above_stairs = (PutIn_Logic.dodongos_climb && PutIn_Logic.hookshot) || (PutIn_Logic.boomerang && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet));
 	Location_PutIn_Logic.gs_dodongos_scarecrow = PutIn_Logic.can_enter_dodongos && PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_dodongos_before_king = PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.gs_jabu_vines = PutIn_Logic.can_enter_jabu;
-	Location_PutIn_Logic.gs_jabu_near_octo1 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
-	Location_PutIn_Logic.gs_jabu_near_octo2 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_jabu_near_octo_1 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_jabu_near_octo_2 = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.gs_jabu_near_boss = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.gs_ice_spinning_scythe = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_ice_hp_room = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_ice_block_room = PutIn_Logic.ice_access && PutIn_Logic.hookshot;
 	
 	gs[1] = Location_PutIn_Logic.gs_kokiri_child;
-	gs[2] = Location_PutIn_Logic.gs_kokiri_bean;
+	gs[2] = Location_PutIn_Logic.gs_kokiri_soil;
 	gs[3] = Location_PutIn_Logic.gs_kokiri_adult;
 	gs[4] = Location_PutIn_Logic.gs_market;
-	gs[5] = Location_PutIn_Logic.gs_lost_woods_bean1;
-	gs[6] = Location_PutIn_Logic.gs_lost_woods_bean2;
+	gs[5] = Location_PutIn_Logic.gs_lost_woods_bean_1;
+	gs[6] = Location_PutIn_Logic.gs_lost_woods_bean_2;
 	gs[7] = Location_PutIn_Logic.gs_lost_woods_above_stage;
 	gs[8] = Location_PutIn_Logic.gs_sacred_forest;
 	gs[9] = Location_PutIn_Logic.gs_outside_kakariko;
@@ -969,15 +969,15 @@ function checksPutInLogicByItem(item) {
 	gs[21] = Location_PutIn_Logic.gs_kakariko_tower;
 	gs[22] = Location_PutIn_Logic.gs_kakariko_impas;
 	gs[23] = Location_PutIn_Logic.gs_graveyard_wall;
-	gs[24] = Location_PutIn_Logic.gs_graveyard_bean;
-	gs[25] = Location_PutIn_Logic.gs_trail_bean;
+	gs[24] = Location_PutIn_Logic.gs_graveyard_soil;
+	gs[25] = Location_PutIn_Logic.gs_trail_soil;
 	gs[26] = Location_PutIn_Logic.gs_trail_bombable_wall;
 	gs[27] = Location_PutIn_Logic.gs_trail_hail_path;
 	gs[28] = Location_PutIn_Logic.gs_trail_above_dodongos;
 	gs[29] = Location_PutIn_Logic.gs_goron_center;
 	gs[30] = Location_PutIn_Logic.gs_goron_maze;
 	gs[31] = Location_PutIn_Logic.gs_crater_crate;
-	gs[32] = Location_PutIn_Logic.gs_crater_bean;
+	gs[32] = Location_PutIn_Logic.gs_crater_soil;
 	gs[33] = Location_PutIn_Logic.gs_river_ladder;
 	gs[34] = Location_PutIn_Logic.gs_river_near_grotto;
 	gs[35] = Location_PutIn_Logic.gs_river_above_bridge;
@@ -997,7 +997,7 @@ function checksPutInLogicByItem(item) {
 	gs[49] = Location_PutIn_Logic.gs_fortress_archery;
 	gs[50] = Location_PutIn_Logic.gs_fortress_top;
 	gs[51] = Location_PutIn_Logic.gs_wasteland;
-	gs[52] = Location_PutIn_Logic.gs_colossus_bean;
+	gs[52] = Location_PutIn_Logic.gs_colossus_soil;
 	gs[53] = Location_PutIn_Logic.gs_colossus_tree;
 	gs[54] = Location_PutIn_Logic.gs_colossus_hill;
 	gs[55] = Location_PutIn_Logic.gs_river_tree;
@@ -1007,13 +1007,13 @@ function checksPutInLogicByItem(item) {
 	gs[59] = Location_PutIn_Logic.gs_deku_basement_vines;
 	gs[60] = Location_PutIn_Logic.gs_deku_compass;
 	gs[61] = Location_PutIn_Logic.gs_dodongos_east_side;
-	gs[62] = Location_PutIn_Logic.gs_dodongos_stair_room;
+	gs[62] = Location_PutIn_Logic.gs_dodongos_stair_vines;
 	gs[63] = Location_PutIn_Logic.gs_dodongos_above_stairs;
 	gs[64] = Location_PutIn_Logic.gs_dodongos_scarecrow;
 	gs[65] = Location_PutIn_Logic.gs_dodongos_before_king;
 	gs[66] = Location_PutIn_Logic.gs_jabu_vines;
-	gs[67] = Location_PutIn_Logic.gs_jabu_near_octo1;
-	gs[68] = Location_PutIn_Logic.gs_jabu_near_octo2;
+	gs[67] = Location_PutIn_Logic.gs_jabu_near_octo_1;
+	gs[68] = Location_PutIn_Logic.gs_jabu_near_octo_2;
 	gs[69] = Location_PutIn_Logic.gs_jabu_near_boss;
 	gs[70] = Location_PutIn_Logic.gs_forest_first;
 	gs[71] = Location_PutIn_Logic.gs_forest_lobby;
@@ -1022,8 +1022,8 @@ function checksPutInLogicByItem(item) {
 	gs[74] = Location_PutIn_Logic.gs_forest_basement;
 	gs[75] = Location_PutIn_Logic.gs_fire_time;
 	gs[76] = Location_PutIn_Logic.gs_fire_bomb_wall;
-	gs[77] = Location_PutIn_Logic.gs_fire_scarecrow1;
-	gs[78] = Location_PutIn_Logic.gs_fire_scarecrow2;
+	gs[77] = Location_PutIn_Logic.gs_fire_scarecrow_1;
+	gs[78] = Location_PutIn_Logic.gs_fire_scarecrow_2;
 	gs[79] = Location_PutIn_Logic.gs_fire_basement;
 	gs[80] = Location_PutIn_Logic.gs_water_south_basement;
 	gs[81] = Location_PutIn_Logic.gs_water_river;
@@ -1033,8 +1033,8 @@ function checksPutInLogicByItem(item) {
 	gs[85] = Location_PutIn_Logic.gs_spirit_metal_fence;
 	gs[86] = Location_PutIn_Logic.gs_spirit_before_child_knuckle;
 	gs[87] = Location_PutIn_Logic.gs_spirit_boulder_room;
-	gs[88] = Location_PutIn_Logic.gs_spirit_temple_lobby;
-	gs[89] = Location_PutIn_Logic.gs_spirit_bomb_for_light_room;
+	gs[88] = Location_PutIn_Logic.gs_spirit_lobby;
+	gs[89] = Location_PutIn_Logic.gs_spirit_child_climb;
 	gs[90] = Location_PutIn_Logic.gs_shadow_like_like;
 	gs[91] = Location_PutIn_Logic.gs_shadow_crusher;
 	gs[92] = Location_PutIn_Logic.gs_shadow_giant_pot;
