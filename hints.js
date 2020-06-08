@@ -420,38 +420,35 @@ function woth_and_barren_processing() {
 				Game.checks_remaining -= 1;
 			}
 			if (i == 27) {
-				Game.checks_remaining -= Game.forest_checks_remaining;
-				Game.forest_checks_remaining = 0;
+				document.getElementById("forest").style.backgroundColor = "red";
 			}
 			if (i == 28) {
-				Game.checks_remaining -= Game.fire_checks_remaining;
-				Game.fire_checks_remaining = 0;
+				document.getElementById("fire").style.backgroundColor = "red";
 			}
 			if (i == 29) {
-				Game.checks_remaining -= Game.water_checks_remaining;
-				Game.water_checks_remaining = 0;
+				document.getElementById("water").style.backgroundColor = "red";
 			}
 			if (i == 30) {
-				Game.checks_remaining -= Game.spirit_checks_remaining;
-				Game.spirit_checks_remaining = 0;
+				document.getElementById("spirit").style.backgroundColor = "red";
 			}
 			if (i == 31) {
-				Game.checks_remaining -= Game.shadow_checks_remaining;
-				Game.shadow_checks_remaining = 0;
+				document.getElementById("shadow").style.backgroundColor = "red";
 			}
 			if (i == 32) {
 				document.getElementById("ganons").click();
 			}
 			if (i == 33) {
-				Game.checks_remaining -= Game.gtg_checks_remaining;
-				Game.gtg_checks_remaining = 0;
+				document.getElementById("gtg").click();
 			}
 			if (i == 34) {
-				Game.checks_remaining -= Game.well_checks_remaining;
-				Game.well_checks_remaining = 0;
+				document.getElementById("well").click();
 			}
 			hinted = false;
 		}
+	}
+	var array = ["forest", "fire", "water", "spirit", "shadow"];
+	for (var i = 0; i < array.length; i++) {
+		if (document.getElementById(array[i]).style.backgroundColor == "red" && (Logic.emerald == array[i] || Logic.ruby == array[i] || Logic.sapphire == array[i]) && (Check.oot == "minuet" || Check.oot == "serenade" || Check.oot == "prelude" || (Check.oot == "bolero" && (Check.crater_bean == "junk" && Game.hookshot) || Game.hover_boots) || (Check.oot == "suns" && Check.redead_grave == "junk") || (Check.oot == "sarias" && Check.goron_dance == "junk" && Check.saria_kid == "junk"))) {document.getElementById(array[i]).click(); if (Logic.emerald == array[i]) {Game.emerald = false;} if (Logic.ruby == array[i]) {Game.ruby = false;} if (Logic.sapphire == array[i]) {Game.sapphire = false;}}
 	}
 }
 

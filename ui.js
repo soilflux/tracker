@@ -294,7 +294,6 @@ function junkUltra() {
 		document.getElementById("text_" + Locations[i]).style.display = "none";
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 	}
-	console.log(Game.forest_boss_key);
 	Update();Update();Update();
 }
 
