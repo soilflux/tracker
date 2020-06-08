@@ -173,6 +173,7 @@ function dark_normie() {
 	Game.nocturne_img = "./normal/items/nocturne.png";
 	Game.prelude_img = "./normal/items/prelude.png";
 	Game.chu_img = "./normal/items/chu.png";
+
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
 	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
@@ -346,6 +347,7 @@ function dark_normie() {
 	Game.spirit_img = "./normal/items/spirit.png";
 	Game.light_img = "./normal/items/light.png";
 	
+	ItemImages = [Game.farores_wind_img, Game.slingshot_img, Game.slingshot_img, Game.slingshot_img, Game.boomerang_img, Game.silver_scale_img, Game.golden_scale_img, Game.rutos_letter_img, Game.bottle_img, Game.bottle_img, Game.bottle_img, Game.bomb_img, Game.bomb_img, Game.bomb_img, Game.hammer_img, Game.bow_img, Game.bow_img, Game.bow_img, Game.hookshot_img, Game.hookshot_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.mirror_shield_img, Game.magic_img, Game.magic_img, Game.iron_boots_img, Game.hover_boots_img, Game.wallet1_img, Game.wallet2_img, Game.goron_tunic_img, Game.zora_tunic_img, Game.dins_fire_img, Game.fire_arrows_img, Game.lens_img, Game.prescription_img, Game.claim_check_img, Game.light_arrows_img, Game.lullaby_img, Game.eponas_img, Game.suns_img, Game.sarias_img, Game.storms_img, Game.minuet_img, Game.bolero_img, Game.requiem_img, Game.nocturne_img, Game.time_img];
 }
 
 function dark_tagnia() {
