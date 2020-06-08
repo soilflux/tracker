@@ -197,7 +197,8 @@ function dark_normie() {
 	document.getElementById("normalColumn3").style.width="97px";
 	document.getElementById("woth_info").style.left="0px";
 	document.getElementById("timer").style.left="-130px";
-	document.getElementById("skulls_in_logic").style.left="892px";
+	document.getElementById("tokens_acquired").style.left="732px";
+	document.getElementById("skulls_in_logic").style.left="871px";
 	document.getElementById("dung4_icon").style.left="948px";
 	document.getElementById("dung5_icon").style.left="948px";
 	document.getElementById("dung6_icon").style.left="948px";
@@ -286,10 +287,12 @@ function dark_normie() {
 	Game.broken_sword_img = "./normal/items/broken_sword.png";
 	Game.bugs_img = "./normal/items/bugs.png";
 	Game.bunny_hood_img = "./normal/items/bunny_hood.png";
-	Game.chicken_img = "./normal/items/chicken.png";
+	Game.chicken1_img = "./normal/items/chicken1.png";
+	Game.chicken2_img = "./normal/items/chicken2.png";
 	Game.claim_check_img = "./normal/items/claim_check.png";
 	Game.deku_shield_img = "./normal/items/deku_shield.png";
-	Game.egg_img = "./normal/items/egg.png";
+	Game.egg1_img = "./normal/items/egg1.png";
+	Game.egg2_img = "./normal/items/egg2.png";
 	Game.eyeball_frog_img = "./normal/items/eyeball_frog.png";
 	Game.eyedrops_img = "./normal/items/eyedrops.png";
 	Game.fairy_img = "./normal/items/fairy.png";

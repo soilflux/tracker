@@ -253,6 +253,13 @@ function coopControl() {
 	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "ALWAYS"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("shopSanity").value = 4;} 
 }
 
+function linso_counter() {
+	if (event.button == 0 || token_click == 0) {Game.tokens += 1;}
+	if (event.button == 2 || token_click == 2) {Game.tokens -= 1;}
+	document.getElementById("linso_counter").innerHTML = "" + Game.tokens;
+	token_click = 4;
+}
+
 function toggleHint(loc) {
 	var location = "";
 	var item = "";
@@ -410,6 +417,12 @@ document.onkeydown = function(e) {
 	}
 	if (e.ctrlKey && e.which == 90) {
 		Undo();
+	}
+	if (e.which == 187) {
+		token_click = 0; linso_counter();
+	}
+	if (e.which == 189) {
+		token_click = 2; linso_counter();
 	}
 }
 

@@ -82,6 +82,14 @@ color: red;
 	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+.linso_counter {
+	font-size:30px;
+	color: gold;
+	text-align: left;
+	position: absolute;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 .dung4{
 	vertical-align:top;
 	color: green;
@@ -273,6 +281,25 @@ color: red;
 	float: left;
 	width: 237px;
 
+}
+#patchNotesColumn {
+	width: 400px;
+}
+.patchNotes {
+	font-size: 12px;
+	color:lightblue;
+}
+.patchNotesTitle {
+	font-size: 14px;
+	font-weight: bold;
+	color:lightblue;
+}
+#alternateTrackerColumn {
+	position: relative;
+	margin-top:10px;
+	height:500px;
+	float: left;
+	width: 280px;
 }
 #linsoColumn {
 	position: relative;
@@ -534,6 +561,15 @@ color: red;
 #skulls_in_logic {
 	top:30px;
 	font-size: 18px;
+	font-weight: bold;
+	color: gold;
+	left:600px;
+	position: absolute;
+}
+#tokens_acquired {
+	top:30px;
+	font-size: 18px;
+	font-weight: bold;
 	color: gold;
 	left:600px;
 	position: absolute;
