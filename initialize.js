@@ -363,7 +363,7 @@ var tSeconds = 0;
 		"First", "First", "Lobby", "Stalfos", "C Mid", "C Mid", "C High", "C Low", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
 		"Near Boss", "Base", "Hammer 1", "Hammer 2", "Lav Open", "SoT", "Lav Bomb", "Volva", "Lower", "Bomb Wall", "Side Room", "Map", "Upper", "Bombable", "Crow 1", "Crow 2", "Crow", "Comp", "SoT", "MEGA",
 		"Comp", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
-		"Ch L", "Ch R", "Fence", "Ch Climb 1", "Ch Climb", "Ch Climb 2", "Map", "Sun Room", "B4 Knuck", "Silvers", "Ad L", "SoT", "Ad R", "Mirror 1", "Mirror 2", "Lul Hand", "Lul High", "Main Room", "4 Armos", "Invisi 1", "Invisi 2", "Mirror", "BK", "Tippy Top", "Twinrova",
+		"C L", "C R", "Fence", "C Climb 1", "C Climb", "C Climb 2", "Map", "Sun Room", "B4 Knuck", "Silvers", "A L", "SoT", "A R", "Mirror 1", "Mirror 2", "Lul Hand", "Lul High", "Main Room", "4 Armos", "Invisi 1", "Invisi 2", "Mirror", "BK", "Tippy Top", "Twinrova",
 		"Map", "Hovers", "Comp", "Early Silvs", "Spinning", "Spinning 1", "Spinning 2", "Spikes L", "Spikes", "Spikes U1", "Spikes U2", "Mid Silvs", "Pot", "Pot", "Wind", "Bombable", "Gibdos", "Near Boat", "Dins 1", "Dins 2", "3 Pots", "Floor", "Bongo",
 		"Scrub L", "Scrub LM", "Scrub RM", "Scrub R", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
 		"Lobby L", "Lobby R", "Stalfos", "Wolfos", "Silvers 1", "Silvers 2", "Silvers 3", "Silvers 4", "Eyes", "Above", "Enemies", "Fire", "F Standing", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
