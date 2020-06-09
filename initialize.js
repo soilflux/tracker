@@ -375,7 +375,7 @@ var tSeconds = 0;
 	var SongIndexes = [0,409,419,0,0,0,408,0,417,0,416,0,0,410,0,0,0,413,411,412,0,0,415,0,0,0,0,0,0,0,0,0,0,0];
 	var SongIndexes2 = [0,409,419,0,0,0,408,0,417,0,416,0,0,414,0,0,0,413,418,412,0,0,415,0,0,0,0,0,0,0,0,0,0,0];
 		
-	var lastItem = 406;
+	var lastItem = 407;
     var lastSong = 418;
 		
 		Location.med1 = "unknown";
@@ -1014,6 +1014,18 @@ for (var i = 1; i <= 12; i++) {
 	linsoOrderIncrement += 1;
 }
 
+for (var i = 1; i <= 12; i++) {
+	var elem = document.createElement("IMG");
+	elem.id = "linsoC" + i;
+	elem.style.height = "15px";
+	elem.style.width = "15px";
+	elem.src = "./normal/check.png";
+	elem.style.position = "absolute";
+	elem.style.left = 278 + "px";
+	elem.style.top = tempTop + i*31 + "px";
+	elem.style.opacity = 0;
+	document.getElementById("linsoColumn").appendChild(elem);
+}
 
 setInterval(slowUpdate,5000);
 setInterval(Update,250);
