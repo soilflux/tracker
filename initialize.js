@@ -139,7 +139,7 @@ var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	var linso = false;
 	if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso");}
-	if (linso) {document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
+	if (linso) {document.getElementById("linsoControl").innerHTML = "Hide LinSo"; document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";}
 	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 	Logic.brackets = false;
 	

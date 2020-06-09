@@ -240,8 +240,8 @@ function circusControl() {
 }
 
 function linsoControl() {
-	if (linso) {linso = false; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Show LinSo";}
-	else {linso = true; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Hide LinSo";}
+	if (linso) {linso = false; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Show LinSo"; document.getElementById("info_column").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";}
+	else {linso = true; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Hide LinSo"; document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";}
 }
 
 function inaccessibleControl() {
