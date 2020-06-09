@@ -490,12 +490,17 @@ function refreshLinSo() {
 	if (linso) {
 		document.getElementById("linsoColumn").style.display = "inline-block";
 		var temp = 0;
-		for (var i = 1; i <= 10; i++) {
+		for (var i = 1; i <= 11; i++) {
 			for (var j = 1; j <= 6; j++) {
-				if (i > 9) {
+				if (i == 10 && j >= 4) {
+					document.getElementById("linso" + i + j).innerHTML = document.getElementById("text_dung" + (j-3)).innerHTML.toUpperCase();
+					continue;
+				}
+				if (i == 11) {
 					document.getElementById("linso" + i + j).innerHTML = document.getElementById("text_dung" + (3 + j)).innerHTML.toUpperCase();
 					continue;
 				}
+				if (i > 9) {continue;}
 				if (linsoOrder[temp] == "" || linsoOrder[temp] == "skull_counter") {temp += 1; continue;}
 				if (linsoOrder[temp] == "hookshot") {if (Game.hookshot1 && !Game.hookshot2)  {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.hookshot1 && Game.hookshot2){document.getElementById("linso" + i + j).src = Game.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;} }
 				else if (linsoOrder[temp] == "silver_scale") {if (Game.scale1 && !Game.scale2)  {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.scale1 && Game.scale2){document.getElementById("linso" + i + j).src = Game.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}

@@ -946,15 +946,16 @@ handleThemes();
 handleThemes();
 var linsoOrderIncrement = 0;
 var tempTop = -32;
-for (var i = 1; i <= 10; i++) {
-if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;} if (i == 10) {tempTop -= 6;}
+for (var i = 1; i <= 11; i++) {
+if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -= 55;} if (i == 11) {tempTop += 8;}
 	for (var j = 1; j <= 6; j++) {
 		if (i > 9) {
+			if (i == 10 && j < 4) {continue;}
 			var elem = document.createElement("small");
 			elem.id = "linso" + i + j;
 			elem.style.position = "absolute";
-			elem.className = "linsodung";
-			elem.style.left = -29 + j*41 + "px";
+			if (i == 10) {elem.className = "linsostone";} else {elem.className = "linsomed";}
+			if (i == 10) {elem.style.left = -25 + j*41 + "px";} else {elem.style.left = -28 + j*41 + "px";}
 			elem.style.top = tempTop + i*40 + "px";
 			elem.style.opacity = 1;
 			document.getElementById("linsoColumn").appendChild(elem); 

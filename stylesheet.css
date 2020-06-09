@@ -75,10 +75,17 @@ color: red;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
-.linsodung {
-	font-size : "30px";
-	font-family : "Consolas, Courier, monospace";
-	color : "white";
+.linsomed {
+	font-size : 16px;
+	font-family : "Consolas", Courier, monospace;
+	color : white;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+.linsostone {
+	font-size : 12px;
+	font-family : "Consolas", Courier, monospace;
+	color : black;
 	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
