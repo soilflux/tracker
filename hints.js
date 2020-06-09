@@ -198,7 +198,18 @@ function woth_and_barren_processing() {
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows") {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined")) {
-						if (Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) {
+						if ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1]) {
+						    if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
+							else if (Items[k] == "slingshot2" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot1)) || (Logic.slingshot3 && ChecksPutInLogicBy.slingshot2.includes(Location.slingshot3)))){continue}
+							else if (Items[k] == "slingshot3" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot1)) || (Logic.slingshot2 && ChecksPutInLogicBy.slingshot3.includes(Location.slingshot2)))){continue}
+							else if (Items[k] == "bomb_bag1" && ((Logic.bomb_bag2 && !ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag2)) || (Logic.bomb_bag3 && ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag3)))){continue}
+							else if (Items[k] == "bomb_bag2" && ((Logic.bomb_bag1 && !ChecksPutInLogicBy.bomb_bag2.includes(Location.bomb_bag1)) || (Logic.bomb_bag3 && ChecksPutInLogicBy.bomb_bag2.includes(Location.bomb_bag3)))){continue}
+							else if (Items[k] == "bomb_bag3" && ((Logic.bomb_bag1 && !ChecksPutInLogicBy.bomb_bag3.includes(Location.bomb_bag1)) || (Logic.bomb_bag2 && ChecksPutInLogicBy.bomb_bag3.includes(Location.bomb_bag2)))){continue}
+							else if (Items[k] == "bow1" && ((Logic.bow2 && !ChecksPutInLogicBy.bow1.includes(Location.bow2)) || (Logic.bow3 && ChecksPutInLogicBy.bow1.includes(Location.bow3)))){continue}
+							else if (Items[k] == "bow2" && ((Logic.bow1 && !ChecksPutInLogicBy.bow2.includes(Location.bow1)) || (Logic.bow3 && ChecksPutInLogicBy.bow2.includes(Location.bow3)))){continue}
+							else if (Items[k] == "bow3" && ((Logic.bow1 && !ChecksPutInLogicBy.bow3.includes(Location.bow1)) || (Logic.bow2 && ChecksPutInLogicBy.bow3.includes(Location.bow2)))){continue}
+							else if (Items[k] == "magic1" && Logic.magic2 && !ChecksPutInLogicBy.magic1.includes(Location.magic2)){continue}
+							else if (Items[k] == "magic2" && Logic.magic1 && !ChecksPutInLogicBy.magic2.includes(Location.magic1)){continue}
 							document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							if (WotHItems.includes(Items[k])) {
 								document.getElementById("wothMajor" + k).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
