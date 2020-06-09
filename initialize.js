@@ -978,7 +978,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;} if (i == 10) {tempTop -=
 		elem.style.height = "35px";
 		elem.style.width = "35px";
 		if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) {elem.src = Game.bottle_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png";}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; elem.onclick = circusControl;}
 		else {elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Game[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
@@ -987,7 +987,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 6;} if (i == 10) {tempTop -=
 		elem.style.top = tempTop + i*40 + "px";
 		elem.style.opacity = .3;
 		elem.style.filter = "grayscale(100%)";
-		elem.onclick = linSoClick;
+		if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.onclick = linSoClick;}
 		//elem.style.display = "none";
 		document.getElementById("linsoColumn").appendChild(elem); 
 		linsoOrderIncrement += 1;

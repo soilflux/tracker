@@ -236,6 +236,7 @@ function timerControl() {
 function circusControl() {
 	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; Game.circus = false;;}
 	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; Game.circus = true;}
+	Update();
 }
 
 function linsoControl() {
@@ -423,6 +424,9 @@ document.onkeydown = function(e) {
 	}
 	if (e.which == 189) {
 		token_click = 2; linso_counter();
+	}
+	if (e.ctrlKey && e.which == 65) {
+		circusControl();
 	}
 }
 
