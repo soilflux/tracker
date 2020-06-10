@@ -161,6 +161,10 @@ function linSoClick() {
 	else if (str.endsWith("silver_scale")) {Game.scale1 = true;}
 	else if (str.endsWith("magic") && Game.magic) {Game.magic2 = true;}
 	else if (str.endsWith("magic_2")) {Game.magic1 = false; Game.magic2 = false;}
+	else if (str.endsWith("adults_wallet") && Game.adults_wallet) {Game.wallet2 = true;}
+	else if (str.endsWith("giants_wallet") && Game.wallet3) {Game.wallet1 = false; Game.wallet2 = false; Game.wallet3 = false; }
+	else if (str.endsWith("giants_wallet") && Game.giants_wallet) {Game.wallet3 = true;}
+	else if (str.endsWith("adults_wallet")) {Game.wallet1 = true;}
 	else if (str.endsWith("magic")) {Game.magic1 = true;}
 	else if (str.endsWith("bomb")) {if (Game.bomb_bag1) {Game.bomb_bag1 = false; Game.bomb_bag2 = false; Game.bomb_bag3 = false;} else {Game.bomb_bag1 = true;}}
 	else if (str.endsWith("claim_check") && Game.claim_check) {Game.claim_check = false;}
@@ -187,8 +191,8 @@ function linSoClick() {
 	else if (str.endsWith("chicken2") && Game.chicken2) {Game.chicken2 = false; Game.zeldas_letter = true;}
 	else if (str.endsWith("egg2") && Game.egg2) {Game.egg2 = false; Game.chicken2 = true;}
 	else if (str.endsWith("egg2")) {Game.egg2 = true;}
-	else if (event.target.style.filter == "none") {Game[str] = false;}
-	else {Game[str] = true;}
+	else if (event.target.style.filter == "none") {Game[str] = false; Game[str+1] = false;}
+	else {Game[str] = true; Game[str+1] = true;}
 	Update();
 }
 
@@ -507,7 +511,7 @@ function refreshLinSo() {
 				if (linsoOrder[temp] == "" || linsoOrder[temp] == "skull_counter") {temp += 1; continue;}
 				if (linsoOrder[temp] == "hookshot") {if (Game.hookshot1 && !Game.hookshot2)  {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.hookshot1 && Game.hookshot2){document.getElementById("linso" + i + j).src = Game.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;} }
 				else if (linsoOrder[temp] == "silver_scale") {if (Game.scale1 && !Game.scale2)  {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.scale1 && Game.scale2){document.getElementById("linso" + i + j).src = Game.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "adults_wallet") {if (Game.wallet2)  {document.getElementById("linso" + i + j).src = Game.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.wallet1){document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "adults_wallet") {if (Game.wallet3) {document.getElementById("linso103").style.opacity = 1;} else{document.getElementById("linso103").style.opacity = 0;} if (Game.wallet2)  { document.getElementById("linso" + i + j).src = Game.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.wallet1){document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "goron_bracelet") {if (Game.strength3)  {document.getElementById("linso" + i + j).src = Game.golden_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.strength2){document.getElementById("linso" + i + j).src = Game.silver_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.strength1){document.getElementById("linso" + i + j).src = Game.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "bomb") {if (Game.bomb_bag1) {document.getElementById("linso" + i + j).src = Game.bomb_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.bomb_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "magic") {if (Game.magic2)  {document.getElementById("linso" + i + j).src = Game.magic_2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.magic){document.getElementById("linso" + i + j).src = Game.magic_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.magic_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
@@ -535,7 +539,7 @@ function refreshLinSo() {
 				else if (linsoOrder[temp] == "egg2" && Game.chicken2) {document.getElementById("linso" + i + j).src = Game.chicken2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
 				else if (linsoOrder[temp] == "egg2" && Game.egg2) {document.getElementById("linso" + i + j).src = Game.egg2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
 				else if (linsoOrder[temp] == "egg2") {document.getElementById("linso" + i + j).src = Game.egg2_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
-				else if (Game[linsoOrder[temp]]) {document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (Game[linsoOrder[temp]] || (Game[linsoOrder[temp] + 1])) {document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
 				else {document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
 				temp += 1;
 			}

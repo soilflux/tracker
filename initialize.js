@@ -196,6 +196,7 @@ var tSeconds = 0;
 	Game.mirror_shield = false;
 	Game.wallet1 = false;
 	Game.wallet2 = false;
+	Game.wallet3 = false;
 	Game.goron_tunic = false;
 	Game.zora_tunic = false;
 	Game.lens_of_truth = false;
@@ -950,7 +951,20 @@ for (var i = 1; i <= 11; i++) {
 if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -= 55;} if (i == 11) {tempTop += 8;}
 	for (var j = 1; j <= 6; j++) {
 		if (i > 9) {
-			if (i == 10 && j < 4) {continue;}
+			if (i == 10 && j < 3) {continue;}
+			if (i == 10 && j == 3) {
+				var elem = document.createElement("small");
+				elem.id = "linso" + i + j;
+				elem.style.position = "absolute";
+				elem.style.left = 57 + j*41 + "px";
+				elem.style.top = tempTop - 81 + i*40 + "px";
+				elem.style.fontWeight = "bold";
+				elem.style.color = "hotpink";
+				elem.style.opacity = 0;
+				elem.innerHTML = 999;
+				document.getElementById("linsoColumn").appendChild(elem); 
+				continue;
+			}
 			var elem = document.createElement("small");
 			elem.id = "linso" + i + j;
 			elem.style.position = "absolute";
@@ -988,7 +1002,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		elem.style.top = tempTop + i*40 + "px";
 		elem.style.opacity = .3;
 		elem.style.filter = "grayscale(100%)";
-		if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.onclick = linSoClick;}
+		if (linsoOrder[linsoOrderIncrement] == "skull_token") {elem.onmousedown = linso_counter;} else if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.onclick = linSoClick;}
 		//elem.style.display = "none";
 		document.getElementById("linsoColumn").appendChild(elem); 
 		linsoOrderIncrement += 1;
