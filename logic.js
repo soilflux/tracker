@@ -66,7 +66,7 @@ function refresh_logic_for_stuff() {
 	
 	if(Known.goron_tunic == true) {Logic.goron_tunic = Location_Logic[Location.goron_tunic];} else{Logic.goron_tunic = false;}
 	if(Known.zora_tunic == true) {Logic.zora_tunic = Location_Logic[Location.zora_tunic];} else{Logic.zora_tunic = false;}
-	if(Known.lens_of_truth == true) {Logic.lens_of_truth = Location_Logic[Location.lens_of_truth];} else{Logic.lens_of_truth = false;}
+	if(Known.lens == true) {Logic.lens = Location_Logic[Location.lens];} else{Logic.lens = false;}
 	if(Known.stone_of_agony == true) {Logic.stone_of_agony = Location_Logic[Location.stone_of_agony];} else{Logic.stone_of_agony = false;}
 	if(Known.prescription == true) {Logic.prescription = Location_Logic[Location.prescription];} else{Logic.prescription = false;}
 	if(Known.claim_check == true) {Logic.claim_check = Location_Logic[Location.claim_check];} else{Logic.claim_check = false;}
@@ -515,7 +515,7 @@ function force_stuff_in_or_out_of_logic() {
 		if(document.getElementById(str).value == "mag") {Logic.magic = true;}
 		if(document.getElementById(str).value == "din") {Logic.dins_fire = true;}
 		if(document.getElementById(str).value == "fir") {Logic.fire_arrows = true;}
-		if(document.getElementById(str).value == "len") {Logic.lens_of_truth = true;}
+		if(document.getElementById(str).value == "len") {Logic.lens = true;}
 		if(document.getElementById(str).value == "pre") {Logic.prescription = true;}
 		if(document.getElementById(str).value == "cla") {Logic.claim_check = true;}
 		if(document.getElementById(str).value == "1me") {Logic.forest_medallion = true;}
@@ -554,7 +554,7 @@ function force_stuff_in_or_out_of_logic() {
 		if(document.getElementById(str).value == "mag") {Logic.magic = false;}
 		if(document.getElementById(str).value == "din") {Logic.dins_fire = false;}
 		if(document.getElementById(str).value == "fir") {Logic.fire_arrows = false;}
-		if(document.getElementById(str).value == "len") {Logic.lens_of_truth = false;}
+		if(document.getElementById(str).value == "len") {Logic.lens = false;}
 		if(document.getElementById(str).value == "pre") {Logic.prescription = false;}
 		if(document.getElementById(str).value == "cla") {Logic.claim_check = false;}
 		if(document.getElementById(str).value == "1me") {Logic.forest_medallion = false;}
@@ -583,7 +583,7 @@ function logic_shortcuts() {
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
 	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
 	Logic.can_use_farores = Logic.farores_wind && Logic.magic;
-	Logic.can_see = Logic.lens_of_truth && Logic.magic;
+	Logic.can_see = Logic.lens && Logic.magic;
 	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
 	Logic.can_enter_dodongos = Logic.can_blast_or_smash || Logic.goron_bracelet;
 	Logic.dodongos_climb = Logic.can_enter_dodongos && (Logic.bomb_bag || Logic.goron_bracelet || Logic.can_use_dins);
@@ -619,7 +619,7 @@ function logic_shortcuts() {
 	Game.can_use_fire = (Game.dins_fire || (Game.bow1 && Game.fire_arrows)) && Game.magic1;
 	Game.can_use_dins = Game.dins_fire && Game.magic1;
 	Game.can_use_farores = Game.farores_wind && Game.magic1;
-	Game.can_see = Game.lens_of_truth && Game.magic1;
+	Game.can_see = Game.lens && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.wallet2);
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);

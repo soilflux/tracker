@@ -210,17 +210,17 @@ function woth_and_barren_processing() {
 							else if (Items[k] == "bow3" && ((Logic.bow1 && !ChecksPutInLogicBy.bow3.includes(Location.bow1)) || (Logic.bow2 && ChecksPutInLogicBy.bow3.includes(Location.bow2)))){continue}
 							else if (Items[k] == "magic1" && Logic.magic2 && !ChecksPutInLogicBy.magic1.includes(Location.magic2)){continue}
 							else if (Items[k] == "magic2" && Logic.magic1 && !ChecksPutInLogicBy.magic2.includes(Location.magic1)){continue}
-							document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
+							else if (Items[k] == "goron_tunic" && Logic.can_stop_link_the_goron && ((Logic.bomb_bag1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bomb_bag1)) || (Logic.bomb_bag2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bomb_bag2)) || (Logic.bomb_bag3 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bomb_bag3)) || (Logic.bow1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bow1)) || (Logic.bow2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bow2)) || (Logic.bow3 && !ChecksPutInLogicBy.goron_tunic.includes(Location.bow3)) || (Logic.strength1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.strength1)) || (Logic.strength2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.strength2)) || (Logic.strength3 && !ChecksPutInLogicBy.goron_tunic.includes(Location.strength3))) && (Logic.wallet1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet1) || Logic.wallet2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet2))){continue}
+							document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + tempnumber2 + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							if (WotHItems.includes(Items[k])) {
-								document.getElementById("wothMajor" + k).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
+								document.getElementById("wothMajor" + k + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
 								tempnumber3 +=1;
 								} 
 							for (var j = 0; j < Items.length; j++) {
 								if (ChecksLockedBy[Items[k]].includes(Location[Items[j]])){
-									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += "<img id = 'wothMinor" + j + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
+									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += "<img id = 'wothMinor" + j + tempnumber2 + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
 									if (WotHItems.includes(Items[j])) {
-										document.getElementById("wothMinor" + j).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
-										tempnumber3 +=1;
+										document.getElementById("wothMinor" + j + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
 									} 
 								}
 							} 

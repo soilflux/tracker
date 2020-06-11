@@ -73,7 +73,7 @@ function checksPutInLogicByItem(item) {
 	
 	if(Known.goron_tunic == true) {PutIn_Logic.goron_tunic = Location_PutIn_Logic[Location.goron_tunic];} if (item == "goron_tunic") {PutIn_Logic.goron_tunic = false;}
 	if(Known.zora_tunic == true) {PutIn_Logic.zora_tunic = Location_PutIn_Logic[Location.zora_tunic];} if (item == "zora_tunic") {PutIn_Logic.zora_tunic = false;}
-	if(Known.lens_of_truth == true) {PutIn_Logic.lens_of_truth = Location_PutIn_Logic[Location.lens_of_truth];}  if (item == "lens_of_truth") {PutIn_Logic.lens_of_truth = false;}
+	if(Known.lens == true) {PutIn_Logic.lens = Location_PutIn_Logic[Location.lens];}  if (item == "lens") {PutIn_Logic.lens = false;}
 	if(Known.prescription == true) {PutIn_Logic.prescription = Location_PutIn_Logic[Location.prescription];} if (item == "prescription") {PutIn_Logic.prescription = false;}
 	if(Known.claim_check == true) {PutIn_Logic.claim_check = Location_PutIn_Logic[Location.claim_check];} if (item == "claim_check") {PutIn_Logic.claim_check = false;}
 	
@@ -101,7 +101,7 @@ function checksPutInLogicByItem(item) {
 	PutIn_Logic.can_use_fire = (PutIn_Logic.dins_fire || (PutIn_Logic.bow && PutIn_Logic.fire_arrows)) && PutIn_Logic.magic;
 	PutIn_Logic.can_use_dins = PutIn_Logic.dins_fire && PutIn_Logic.magic;
 	PutIn_Logic.can_use_farores = PutIn_Logic.farores_wind && PutIn_Logic.magic;
-	PutIn_Logic.can_see = PutIn_Logic.lens_of_truth && PutIn_Logic.magic;
+	PutIn_Logic.can_see = PutIn_Logic.lens && PutIn_Logic.magic;
 	PutIn_Logic.can_blast_or_smash = PutIn_Logic.bomb_bag || PutIn_Logic.hammer;
 	PutIn_Logic.can_enter_dodongos = PutIn_Logic.can_blast_or_smash || PutIn_Logic.goron_bracelet;
 	PutIn_Logic.dodongos_climb = PutIn_Logic.can_enter_dodongos && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.can_use_dins);

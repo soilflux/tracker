@@ -72,7 +72,7 @@ function checksLockedByItem(item) {
 	
 	if(Known.goron_tunic == true) {Locked_Logic2.goron_tunic = Location_Locked_Logic2[Location.goron_tunic];}  else {Locked_Logic2.goron_tunic = true;} if(item == "goron_tunic") {Locked_Logic2.goron_tunic = false;} 
 	if(Known.zora_tunic == true) {Locked_Logic2.zora_tunic = Location_Locked_Logic2[Location.zora_tunic];} else {Locked_Logic2.zora_tunic = true;}  if(item == "zora_tunic") {Locked_Logic2.zora_tunic = false;} 
-	if(Known.lens_of_truth == true) {Locked_Logic2.lens_of_truth = Location_Locked_Logic2[Location.lens_of_truth];} else {Locked_Logic2.lens_of_truth = true;} if(item == "lens_of_truth") {Locked_Logic2.lens_of_truth = false;} 
+	if(Known.lens == true) {Locked_Logic2.lens = Location_Locked_Logic2[Location.lens];} else {Locked_Logic2.lens = true;} if(item == "lens") {Locked_Logic2.lens = false;} 
 	if(Known.prescription == true) {Locked_Logic2.prescription = Location_Locked_Logic2[Location.prescription];} else if (Known.claim_check == true) {Locked_Logic2.prescription = false;} else {Locked_Logic2.prescription = true;} if(item == "prescription") {Locked_Logic2.prescription = false;} 
 	if(Known.claim_check == true) {Locked_Logic2.claim_check = Location_Locked_Logic2[Location.claim_check];} else if (Known.prescription == true) {Locked_Logic2.claim_check = false;} else {Locked_Logic2.claim_check = true;} if(item == "claim_check") {Locked_Logic2.claim_check = false;} 
 	
@@ -99,7 +99,7 @@ function checksLockedByItem(item) {
 	Locked_Logic2.can_use_fire = (Locked_Logic2.dins_fire || (Locked_Logic2.bow && Locked_Logic2.fire_arrows)) && Locked_Logic2.magic;
 	Locked_Logic2.can_use_dins = Locked_Logic2.dins_fire && Locked_Logic2.magic;
 	Locked_Logic2.can_use_farores = Locked_Logic2.farores_wind && Locked_Logic2.magic;
-	Locked_Logic2.can_see = Locked_Logic2.lens_of_truth && Locked_Logic2.magic;
+	Locked_Logic2.can_see = Locked_Logic2.lens && Locked_Logic2.magic;
 	Locked_Logic2.can_blast_or_smash = Locked_Logic2.bomb_bag || Locked_Logic2.hammer;
 	Locked_Logic2.can_enter_dodongos = Locked_Logic2.can_blast_or_smash || Locked_Logic2.goron_bracelet;
 	Locked_Logic2.dodongos_climb = Locked_Logic2.can_enter_dodongos && (Locked_Logic2.bomb_bag || Locked_Logic2.goron_bracelet || Locked_Logic2.can_use_dins);

@@ -38,7 +38,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
-		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = true;}
+		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true; Game.strength3 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = true;}
@@ -75,7 +75,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
-		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens_of_truth = false;}
+		if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = false;}
