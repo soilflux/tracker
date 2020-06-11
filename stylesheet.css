@@ -639,6 +639,17 @@ color: red;
 	position: absolute;
 	opacity: .2;
 }
+#linsoLight{
+	animation: rotation 6s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 #woth_info {
 	top:560px;
 	left: 830px;

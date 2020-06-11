@@ -138,6 +138,8 @@ var tMinutes = 0;
 var tSeconds = 0;
 //document.getElementById("go_input").value = 9;
 	var linso = false;
+	var linsoGoMode = false;
+	var linsoLightRotation = 0;
 	if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso");}
 	if (linso) {document.getElementById("linsoControl").innerHTML = "Hide LinSo"; document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";}
 	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
@@ -993,17 +995,25 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		elem.style.height = "35px";
 		elem.style.width = "35px";
 		if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) {elem.src = Game.bottle_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; elem.onclick = circusControl;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; elem.onclick = toggleLinsoGoMode;}
 		else {elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Game[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
 		elem.style.position = "absolute";
 		elem.style.left = -32 + j*41 + "px";
 		elem.style.top = tempTop + i*40 + "px";
-		elem.style.opacity = .3;
-		elem.style.filter = "grayscale(100%)";
+		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.style.opacity = 0;} else {elem.style.opacity = .3; elem.style.filter = "grayscale(100%)";}
 		if (linsoOrder[linsoOrderIncrement] == "skull_token") {elem.onmousedown = linso_counter;} else if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.onclick = linSoClick;}
-		//elem.style.display = "none";
+		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
+			var elem2 = document.createElement("IMG");
+			elem2.style.position = "absolute";
+			elem2.style.left = -82 + j*41 + "px";
+			elem2.style.top = tempTop -  50 + i*40 + "px";
+			elem2.id = "linsoLight";
+			elem2.src = "./normal/linsoLight.png";
+			elem2.style.opacity = 0;
+			document.getElementById("linsoColumn").appendChild(elem2); 
+		}
 		document.getElementById("linsoColumn").appendChild(elem); 
 		linsoOrderIncrement += 1;
 		}
@@ -1040,6 +1050,7 @@ for (var i = 1; i <= 12; i++) {
 	elem.style.opacity = 0;
 	document.getElementById("linsoColumn").appendChild(elem);
 }
+
 
 setInterval(slowUpdate,5000);
 setInterval(Update,250);

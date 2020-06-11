@@ -234,8 +234,9 @@ function timerControl() {
 }
 
 function circusControl() {
-	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; Game.circus = false;;}
-	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; Game.circus = true;}
+	if (!linsoGoMode) {document.getElementById("linso54").src = "./circus-tent_1f3aa.png";}
+	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}}
+	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 1;}}
 	Update();
 }
 
