@@ -297,13 +297,13 @@ color: red;
 	color:lightblue;
 }
 .wothImages {
-	margin-bottom:2px;
-	height: 23px;
-	width: 23px;
+	margin-bottom:0px;
+	height: 18px;
+	width: 18px;
 }
 .wothMajorImages {
-	height: 30px;
-	width: 30px;
+	height: 18px;
+	width: 18px;
 }
 .customizeTitles{
 	font-size: 18px;
