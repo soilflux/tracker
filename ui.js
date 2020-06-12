@@ -19,8 +19,10 @@ function process_inputs() {
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
 		
-		for (var j = 3; j < inputs.length; j++) {
+		for (var j = 1; j < inputs.length; j++) {
 			if (document.getElementById(key).value == inputs[j]) {
+				if (j == 1) {thisIsAKey = true; document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); thisIsAKey = false; continue;}
+				if (j == 2) {thisIsABossKey = true; document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); thisIsABossKey = false; continue;}
 				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
@@ -228,7 +230,8 @@ function junk() {
 			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 			return;
 		}
-		if (thisIsABossKey) {temptext2 += Names[temp].split(': ')[1] + ":  Boss Key" + "<br />";}
+		console.log(Names[temp]);
+		if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
 		Check[str]="boss_key";
 	}
 	
@@ -247,7 +250,7 @@ function junk() {
 		return;
 		}
 		Check[str]="small_key";
-		if (thisIsAKey) {temptext2 += Names[temp].split(': ')[1] + ":  Small Key" + "<br />";}
+		if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 	}
 	else if (type == 2 && event.altKey) {
 		if (x.style.color == "orange") {x.style.color = "pink";}
