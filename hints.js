@@ -163,12 +163,14 @@ function woth_and_barren_processing() {
 					}
 				}
 		}
+		for ( var d = 1; d <= 12; d++) {
+			document.getElementById("confirmed_logically_required_" + d).style.display = "none";
+		}
 		var temp = 6;
-		document.getElementById("confirmed_logically_required").innerHTML = "";
 		while (temp < WotHItems.length) {
 		if (!Known[WotHItems[temp]]) {
-			if (document.getElementById("confirmed_logically_required").innerHTML != "") {document.getElementById("confirmed_logically_required").innerHTML += ", ";}
-			document.getElementById("confirmed_logically_required").innerHTML += ItemNames[Items.indexOf(WotHItems[temp])];
+			document.getElementById("confirmed_logically_required_" + (temp - 5)).src = ItemImages[Items.indexOf(WotHItems[temp])];
+			document.getElementById("confirmed_logically_required_" + (temp - 5)).style.display = "inline-block";
 		}
 		temp++;
 		}

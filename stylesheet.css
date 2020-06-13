@@ -301,6 +301,12 @@ color: red;
 	height: 22px;
 	width: 22px;
 }
+.confirmedWothImages {
+	margin-bottom:0px;
+	height: 22px;
+	width: 22px;
+	-webkit-filter: drop-shadow(0px 0px 5px lightblue);
+}
 .wothMajorImages {
 	height: 22px;
 	width: 22px;
@@ -651,9 +657,10 @@ color: red;
   }
 }
 #woth_info {
-	top:560px;
+	margin-top:0px;
+	padding-top: 0px;
+	text-align:top;
 	left: 830px;
-	position: absolute;
 }
 .woth_info_text {
 	font-size: 14px;
@@ -665,7 +672,12 @@ color: red;
 	font-style: italic;
 }
 .woth_info_title {
-	font-size: 18px;
+	font-size: 16px;
+}
+#confirmed_logically_required {
+	position: absolute;
+	left:  720px;
+	top: 890px;
 }
 #ageButton {
 	display: none;

@@ -151,6 +151,7 @@ function linSoClick() {
 	var str = event.target.src.split("/");
 	str = str[str.length-1];
 	str = str.substring(0,str.length-4);
+	if (str.endsWith("forest") || str.endsWith("fire") || str.endsWith("water")){return;}
 	if (str.endsWith("hookshot") && Game.hookshot)  {Game.hookshot2 = true;}
 	else if (str.endsWith("longshot")) {Game.hookshot1 = false; Game.hookshot2 = false;}
 	else if (str.endsWith("hookshot")) {Game.hookshot1 = true;}

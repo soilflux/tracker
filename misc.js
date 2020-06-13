@@ -241,8 +241,22 @@ function circusControl() {
 }
 
 function linsoControl() {
-	if (linso) {linso = false; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Show LinSo"; document.getElementById("info_column").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";}
-	else {linso = true; localStorage.setItem("linso", linso); document.getElementById("linsoControl").innerHTML = "Hide LinSo"; document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";}
+	if (linso) {
+		linso = false; 
+		localStorage.setItem("linso", linso); 
+		document.getElementById("linsoControl").innerHTML = "Show LinSo"; 
+		document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info")); 
+		document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
+		document.getElementById("confirmed_logically_required").style.top = "890px"; document.getElementById("confirmed_logically_required").style.left = "720px";
+	}
+	else {
+		linso = true; 
+		localStorage.setItem("linso", linso); 
+		document.getElementById("linsoControl").innerHTML = "Hide LinSo"; 
+		document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); 
+		document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
+		document.getElementById("confirmed_logically_required").style.top = "680px"; document.getElementById("confirmed_logically_required").style.left = "970px";
+	}
 }
 
 function inaccessibleControl() {
