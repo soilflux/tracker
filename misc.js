@@ -255,7 +255,7 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Hide LinSo"; 
 		document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
-		document.getElementById("confirmed_logically_required").style.top = "680px"; document.getElementById("confirmed_logically_required").style.left = "970px";
+		document.getElementById("confirmed_logically_required").style.top = "676px"; document.getElementById("confirmed_logically_required").style.left = "970px";
 	}
 }
 
