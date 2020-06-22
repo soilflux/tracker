@@ -290,7 +290,14 @@ color: red;
 
 }
 #patchNotesColumn {
-	width: 400px;
+	position: absolute;
+	left: 970px;
+	top: 720px;
+}
+#settingsColumn {
+	position: absolute;
+	left: 1100px;
+	top: 1300px;
 }
 .patchNotes {
 	font-size: 12px;

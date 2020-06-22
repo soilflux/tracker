@@ -86,32 +86,6 @@
 				<input id="forceOutOfLogic3" class= "check_input"></input>
 				<input id="forceOutOfLogic4" class= "check_input"></input><br><br><br>
 				
-				<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
-				<select class="settingsOptions" id="skullSanity">
-				  <option value="OFF">OFF</option>
-				  <option value="DUNGEON">DUNGEON</option>
-				  <option value="ALL">ALL</option>
-				</select><br><br class="half_break">
-				<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
-				<select class="settingsOptions" id="scrubSanity">
-				  <option value="OFF">OFF</option>
-				  <option value="ON">ON</option>
-				</select><br><br class="half_break">
-				<label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
-				<select class="settingsOptions" id="shopSanity">
-				  <option value="OFF">OFF</option>
-				  <option value="4">4</option>
-				</select><br><br class="half_break">
-				<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
-				<select class="settingsOptions" id="ganonsBridge">
-				  <option value="All MED">All MED</option>
-				  <option value="ALWAYS">ALWAYS</option>
-				</select><br><br class="half_break">
-				<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
-				<select class="settingsOptions" id="ganonBKSetting">
-				  <option value="NONE">NONE</option>
-				  <option value="LACS">LACS</option>
-				</select><br><br class="half_break">
 			
 				<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />	
 				<button id="coopControl" onclick="coopControl()">co-op mode</button><br />			
@@ -162,18 +136,6 @@
 				<small id="wallet1_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
 				<small id="wallet2_location" class="checkSummaryText" onclick = "toggleHint(this)">Wallet -> </small><br />
 				<small id="zora_tunic_location" class="checkSummaryText" onclick = "toggleHint(this)">Zora Tunic -> </small>	
-			</div>
-	        <div id =" patchNotesColumn">
-				<small class = "patchNotesTitle">Patch Notes</small><br>
-				<small class = "patchNotes">9: Added LinSo Go Mode Animation</small><br>
-				<small class = "patchNotes">8: Ctrl + A = Toggle Animals</small><br>
-				<small class = "patchNotes">7: Redid WotH Area Item Display</small><br>
-				<small class = "patchNotes">6: New Implementation for Barren Dungeons</small><br>
-				<small class = "patchNotes">5: Hotkey for Incrementing Token Counter(- and =)</small><br>
-				<small class = "patchNotes">4: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
-				<small class = "patchNotes">3: Fixed Unleash Animals</small><br>
-				<small class = "patchNotes">2: Custom Item Inputs (scroll down) </small><br>
-				<small class = "patchNotes">1: Hotkey for Pausing Timer (alt + Z)</small><br>
 			</div>
 			 
 		</div>
@@ -284,6 +246,46 @@
 		<img id = "confirmed_logically_required_14" class = "confirmedWothImages">
 		<img id = "confirmed_logically_required_15" class = "confirmedWothImages">
 	</div>
+	<div id ="patchNotesColumn">
+				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes">9: Added LinSo Go Mode Animation</small><br>
+				<small class = "patchNotes">8: Ctrl + A = Toggle Animals</small><br>
+				<small class = "patchNotes">7: Redid WotH Area Item Display</small><br>
+				<small class = "patchNotes">6: New Implementation for Barren Dungeons</small><br>
+				<small class = "patchNotes">5: Hotkey for Incrementing Token Counter(- and =)</small><br>
+				<small class = "patchNotes">4: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
+				<small class = "patchNotes">3: Fixed Unleash Animals</small><br>
+				<small class = "patchNotes">2: Custom Item Inputs (scroll down) </small><br>
+				<small class = "patchNotes">1: Hotkey for Pausing Timer (alt + Z)</small><br>
+	</div>
+	<div id = "settingsColumn">
+		<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
+		<select class="settingsOptions" id="skullSanity">
+		  <option value="OFF">OFF</option>
+		  <option value="DUNGEON">DUNGEON</option>
+		  <option value="ALL">ALL</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
+		<select class="settingsOptions" id="scrubSanity">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
+		<select class="settingsOptions" id="shopSanity">
+		  <option value="OFF">OFF</option>
+		  <option value="4">4</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
+		<select class="settingsOptions" id="ganonsBridge">
+		  <option value="All MED">All MED</option>
+		  <option value="ALWAYS">ALWAYS</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
+		<select class="settingsOptions" id="ganonBKSetting">
+		  <option value="NONE">NONE</option>
+		  <option value="LACS">LACS</option>
+		</select><br><br class="half_break">
+	<div>
 </body>
 	<script src="misc.js"></script>
 	<script src="logic.js"></script>
