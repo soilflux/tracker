@@ -53,7 +53,7 @@ function checksLockedByItem(item) {
 	
 	if(Known.mirror_shield == true) {Locked_Logic2.mirror_shield = Location_Locked_Logic2[Location.mirror_shield];} else {Locked_Logic2.mirror_shield = true;} if(item == "mirror_shield") {Locked_Logic2.mirror_shield = false;}   
 	
-	if(Known.big_poe == true) {Locked_Logic2.big_poe = Location_Locked_Logic2[Location.big1];} else {Locked_Logic2.big_poe = true;} if(item == "big_poe") {Locked_Logic2.big_poe = false;}  
+	if(Known.big_poe == true) {Locked_Logic2.big_poe = Location_Locked_Logic2[Location.big_poe];} else {Locked_Logic2.big_poe = true;} if(item == "big_poe") {Locked_Logic2.big_poe = false;}  
 	
 	if(Known.iron_boots == true) {Locked_Logic2.iron_boots = Location_Locked_Logic2[Location.iron_boots];} else {Locked_Logic2.iron_boots = true;} if(item == "iron_boots") {Locked_Logic2.iron_boots = false;} 
 	if(Known.hover_boots == true) {Locked_Logic2.hover_boots = Location_Locked_Logic2[Location.hover_boots];} else {Locked_Logic2.hover_boots = true;} if(item == "hover_boots") {Locked_Logic2.hover_boots = false;} 

@@ -54,7 +54,7 @@ function checksPutInLogicByItem(item) {
 	
 	if(Known.mirror_shield == true) {PutIn_Logic.mirror_shield = Location_PutIn_Logic[Location.mirror_shield];} if (item == "mirror_shield") {PutIn_Logic.mirror_shield = false;}
 	
-	if(Known.big_poe == true) {PutIn_Logic.big_poe = Location_PutIn_Logic[Location.big1];} if (item == "big1") {PutIn_Logic.big1 = false;}
+	if(Known.big_poe == true) {PutIn_Logic.big_poe = Location_PutIn_Logic[Location.big_poe];} if (item == "big_poe") {PutIn_Logic.big_poe = false;}
 	
 	if(Known.iron_boots == true) {PutIn_Logic.iron_boots = Location_PutIn_Logic[Location.iron_boots];} if (item == "iron_boots") {PutIn_Logic.iron_boots = false;}
 	if(Known.hover_boots == true) {PutIn_Logic.hover_boots = Location_PutIn_Logic[Location.hover_boots];} if (item == "hover_boots") {PutIn_Logic.hover_boots = false;}
