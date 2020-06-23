@@ -85,17 +85,17 @@ color: red;
 .linsostone {
 	font-size : 12px;
 	font-family : "Consolas", Courier, monospace;
-	color : black;
+	color : white;
 	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: white;
 }
 .linso_counter {
 	font-size:30px;
-	color: gold;
+	color: rgb(255,215,0);
 	text-align: left;
 	position: absolute;
 	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(255,255,255);
 }
 .dung4{
 	vertical-align:top;
@@ -538,7 +538,7 @@ color: red;
   text-align: center;
   font-size:16px;
   color:black;
-  background-color: gray;
+  background-color: lightgray;
   border-radius: 50%;
   display: inline-block;
 }
@@ -1028,10 +1028,10 @@ color:#FE3213;
 color:rgb(54, 130, 250);
 }
 #title_spirit {
-color:#8C9B03;
+color:rgb(155,161,0);
 }
 #title_shadow {
-color:#69008E;
+color:rgb(171,0,231);
 }
 #title_well {
 color:#DE86FE;
