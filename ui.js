@@ -232,7 +232,6 @@ function junk() {
 			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 			return;
 		}
-		console.log(Names[temp]);
 		if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
 		Check[str]="boss_key";
 	}
