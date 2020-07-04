@@ -87,6 +87,10 @@ function refresh_logic_for_stuff() {
 	if(Known.nocturne == true) {Logic.nocturne = Location_Logic[Location.nocturne]; }
 	if(Known.prelude == true) {Logic.prelude = Location_Logic[Location.prelude]; }
 	
+	
+	
+	Game.bomb_bag = Game.bomb_bag1;
+	
 	Game.trade = Game.prescription || Game.claim_check;
 	
 	Game.longshot = Game.hookshot1 && Game.hookshot2;
@@ -647,6 +651,7 @@ function logic_shortcuts() {
 	Game.can_wear_zora_tunic = true;
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
 	Game.wallet2 = Game.wallet1 && Game.wallet2;
+	Game.bottle = Game.bottle1 || Game.can_enter_jabu;
 }
 function location_logic(){
 	Location_Logic.mido_1 = true;
@@ -1327,6 +1332,38 @@ function location_logic(){
 	Location_Access.preludeSpot = Game.forest;
 	Location_Access.nocturneSpot = Game.forest && Game.fire && Game.water;
 	Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+	Location_Access.scrub_dodongos_1 = Game.can_enter_dodongos;
+	Location_Access.scrub_dodongos_2 = Game.can_enter_dodongos;
+	Location_Access.scrub_dodongos_3 = Game.bomb_bag;
+	Location_Access.scrub_dodongos_4 = Game.bomb_bag;
+	Location_Access.scrub_jabu = Game.can_enter_jabu;
+	Location_Access.scrub_ganons_1 = Game.can_enter_ganons;
+	Location_Access.scrub_ganons_2 = Game.can_enter_ganons;
+	Location_Access.scrub_ganons_3 = Game.can_enter_ganons;
+	Location_Access.scrub_ganons_4 = Game.can_enter_ganons;
+	Location_Access.scrub_river_1 = Game.storms;
+	Location_Access.scrub_river_2 = Game.storms;
+	Location_Access.scrub_sfm_1 = Game.storms;
+	Location_Access.scrub_sfm_2 = Game.storms;
+	Location_Access.scrub_lake_1 = true;
+	Location_Access.scrub_lake_2 = true;
+	Location_Access.scrub_lake_3 = true;
+	Location_Access.scrub_lw_1 = true;
+	Location_Access.scrub_lw_2 = true;
+	Location_Access.scrub_lw_3 = Game.can_blast_or_smash;
+	Location_Access.scrub_colossus_1 = Game.silver_gauntlets;
+	Location_Access.scrub_colossus_2 = Game.silver_gauntlets;
+	Location_Access.scrub_crater_1 = Game.hammer;
+	Location_Access.scrub_crater_2 = Game.hammer;
+	Location_Access.scrub_crater_3 = Game.hammer;
+	Location_Access.scrub_goron_1 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
+	Location_Access.scrub_goron_2 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
+	Location_Access.scrub_goron_3 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
+	Location_Access.scrub_ranch_1 = Game.bomb_bag;
+	Location_Access.scrub_ranch_2 = Game.bomb_bag;
+	Location_Access.scrub_ranch_3 = Game.bomb_bag;
+	Location_Access.scrub_gv_1 = Game.fortress_access && Game.storms;
+	Location_Access.scrub_gv_2 = Game.fortress_access && Game.storms;
 	Location_Access.shop_kokiri_TL = true;
 	Location_Access.shop_kokiri_TR = true;
 	Location_Access.shop_kokiri_BR = true;
