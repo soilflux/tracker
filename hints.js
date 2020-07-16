@@ -163,7 +163,7 @@ function woth_and_barren_processing() {
 					}
 				}
 		}
-		for ( var d = 1; d <= 34; d++) {
+		for ( var d = 1; d <= 52; d++) {
 			document.getElementById("confirmed_logically_required_" + d).style.display = "none";
 		}
 		var temp = 6;
