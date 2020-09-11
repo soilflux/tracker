@@ -297,11 +297,12 @@ function junkUltra() {
 	if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Game.current_gtg_keys; Game.current_gtg_keys = 9;}
 	if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Game.current_well_keys; Game.current_well_keys = 3;}
 	for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
-		Check[Locations[i]] = "junk";
+		if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
 		document.getElementById(Locations[i]).style.display = "none";
 		document.getElementById("text_" + Locations[i]).style.display = "none";
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 	}
+	slowUpdate();
 	Update();Update();Update();
 }
 

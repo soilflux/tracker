@@ -219,6 +219,7 @@ function isUpperCase(str) {
 }
 
 function slowUpdate() {
+	WotHItems = [];
 	for (i=0; i < Items.length; i++) {
 	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
 	}

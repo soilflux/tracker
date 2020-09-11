@@ -1,5 +1,4 @@
 function checksLockedByItem(item) {
-
 	for (var i = 0; i < Locations.length; i++) {Location_Locked_Logic2[Locations[i]] = false;}
 	
 	var tempArray = [];
@@ -132,10 +131,9 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_forest_keys = Locked_Logic2.forced_forest_keys;
 		for (i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_forest_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.forest_keys = Math.min(Locked_Logic2.current_forest_keys, max);
-
 		Location_Locked_Logic2.forest1 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
 		Location_Locked_Logic2.forest2 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot;
 		Location_Locked_Logic2.forest3 = (Locked_Logic2.minuet || Locked_Logic2.sarias) && Locked_Logic2.hookshot && (Locked_Logic2.time || Locked_Logic2.bow || (Locked_Logic2.hover_boots && Locked_Logic2.forest_keys>=1));
@@ -162,7 +160,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_fire_keys = Locked_Logic2.forced_fire_keys;
 		for (i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_fire_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.fire_keys = Math.min(Locked_Logic2.current_fire_keys, max);
 		
@@ -188,7 +186,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_water_keys = Locked_Logic2.forced_water_keys;
 		for (i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_water_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.water_keys = Math.min(Locked_Logic2.current_water_keys, max);
 
@@ -209,7 +207,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_spirit_keys = Locked_Logic2.forced_spirit_keys;
 		for (i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_spirit_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.spirit_keys = Math.min(Locked_Logic2.current_spirit_keys, max);
 
@@ -239,7 +237,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_shadow_keys = Locked_Logic2.forced_shadow_keys;
 		for (i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_shadow_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.shadow_keys = Math.min(Locked_Logic2.current_shadow_keys, max);
 
@@ -267,7 +265,7 @@ function checksLockedByItem(item) {
 	
 	for (i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
 		if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_ganons_keys -=1;}
-		if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+		if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 	}
 	Locked_Logic2.ganons_keys = Math.min(Locked_Logic2.current_ganons_keys, max);
 	for (h = 1; h <= 3; h++) {
@@ -275,7 +273,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_gtg_keys = Locked_Logic2.forced_gtg_keys;
 		for (i = AreaIndexes[32]; i < AreaIndexes[33]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_gtg_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.gtg_keys = Math.min(Locked_Logic2.current_gtg_keys, max);
 
@@ -307,7 +305,7 @@ function checksLockedByItem(item) {
 		Locked_Logic2.current_well_keys = Locked_Logic2.forced_well_keys;
 		for (i = AreaIndexes[33]; i < AreaIndexes[34]; i++) {
 			if (Check[Locations[i]] == "small_key" && !Location_Locked_Logic2[Locations[i]]) {Locked_Logic2.current_well_keys -=1;}
-			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
+			if ((Check[Locations[i]] == "small_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra") && Location_Locked_Logic2[Locations[i]]) {max += 1;}
 		}
 		Locked_Logic2.well_keys = Math.min(Locked_Logic2.current_well_keys, max);
 
@@ -331,29 +329,26 @@ function checksLockedByItem(item) {
 	Locked_Logic2.water_boss_key = false;
 	Locked_Logic2.shadow_boss_key = false;
 	Locked_Logic2.spirit_boss_key = false;
-
-
 	if (!Locked_Logic2.forest_boss_key) {
 		var bk = false;
 		for (i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
 			if (Locations[i] == "forest14") {
 				continue;
 			}
-			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra")) {
 				bk = true;
 				break;
 			}
 		}
 		Locked_Logic2.forest_boss_key = bk;
 	}
-	
 	if (!Locked_Logic2.fire_boss_key) {
 		var bk = false;
 		for (i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
 			if (Locations[i] == "fire6") {
 				continue;
 			}
-			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra")) {
 				bk = true;
 				break;
 			}
@@ -366,7 +361,7 @@ function checksLockedByItem(item) {
 			if (Locations[i] == "water11") {
 				continue;
 			}
-			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra")) {
 				bk = true;
 				break;
 			}
@@ -379,7 +374,7 @@ function checksLockedByItem(item) {
 			if (Locations[i] == "spirit20") {
 				continue;
 			}
-			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra")) {
 				bk = true;
 				break;
 			}
@@ -392,7 +387,7 @@ function checksLockedByItem(item) {
 			if (Locations[i] == "shadow18") {
 				continue;
 			}
-			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown")) {
+			if (Location_Locked_Logic2[Locations[i]] && (Check[Locations[i]] == "boss_key" || Check[Locations[i]] == "unknown" || Check[Locations[i]] == "ultra")) {
 				bk = false;
 				break;
 			}
@@ -404,11 +399,11 @@ function checksLockedByItem(item) {
 	Locked_Logic2.water_boss_key = Locked_Logic2.forced_water_boss_key;
 	Locked_Logic2.spirit_boss_key = Locked_Logic2.forced_spirit_boss_key;
 	Locked_Logic2.shadow_boss_key = Locked_Logic2.forced_shadow_boss_key; */
-	if(Game.forest_boss_key == true) {Locked_Logic2.forest_boss_key = Location_Locked_Logic2[Location.forest_boss_key]; }
-	if(Game.fire_boss_key == true) {Locked_Logic2.fire_boss_key = Location_Locked_Logic2[Location.fire_boss_key]; }
-	if(Game.water_boss_key == true) {Locked_Logic2.water_boss_key = Location_Locked_Logic2[Location.water_boss_key]; }
-	if(Game.spirit_boss_key == true) {Locked_Logic2.spirit_boss_key = Location_Locked_Logic2[Location.spirit_boss_key]; }
-	if(Game.shadow_boss_key == true) {Locked_Logic2.shadow_boss_key = Location_Locked_Logic2[Location.shadow_boss_key]; }
+	if(Game.forest_boss_key == true && Location.forest_boss_key != null) {Locked_Logic2.forest_boss_key = Location_Locked_Logic2[Location.forest_boss_key]; }
+	if(Game.fire_boss_key == true && Location.fire_boss_key != null) {Locked_Logic2.fire_boss_key = Location_Locked_Logic2[Location.fire_boss_key]; }
+	if(Game.water_boss_key == true && Location.water_boss_key != null) {Locked_Logic2.water_boss_key = Location_Locked_Logic2[Location.water_boss_key]; }
+	if(Game.spirit_boss_key == true && Location.spirit_boss_key != null) {Locked_Logic2.spirit_boss_key = Location_Locked_Logic2[Location.spirit_boss_key]; }
+	if(Game.shadow_boss_key == true && Location.shadow_boss_key != null) {Locked_Logic2.shadow_boss_key = Location_Locked_Logic2[Location.shadow_boss_key]; }
 	Locked_Logic2.forest_medallion = true;
 	Locked_Logic2.fire_medallion = true;
 	Locked_Logic2.water_medallion = true;
