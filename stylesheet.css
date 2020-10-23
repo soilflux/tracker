@@ -261,7 +261,7 @@ color: red;
 	width: 180px;
 	color: gold;
 }
-#checkSummaryColumn {
+.checkSummaryColumn {
 	margin-top:10px;
 	left:20px;
 	position:relative;
@@ -292,7 +292,7 @@ color: red;
 #patchNotesColumn {
 	position: absolute;
 	left: 970px;
-	top: 720px;
+	top: 760px;
 }
 #settingsColumn {
 	position: absolute;
@@ -654,6 +654,7 @@ color: red;
 }
 #linsoLight{
 	animation: rotation 6s infinite linear;
+	pointer-events: none;
 }
 @keyframes rotation {
   from {
