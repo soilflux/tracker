@@ -121,6 +121,7 @@
 			</div>
 			
 			<div id="checkSummaryColumn2" class="checkSummaryColumn">
+				<small id="kokiri_sword_location" class="checkSummaryText" onclick = "toggleHint(this)">Kokiri Sword -></small><br />
 				<small id="lens_location" class="checkSummaryText" onclick = "toggleHint(this)">Lens -> </small><br />
 				<small id="rutos_letter_location" class="checkSummaryText" onclick = "toggleHint(this)">Letter -> </small><br />
 				<small id="light_arrows_location" class="checkSummaryText" onclick = "toggleHint(this)">Light Arrows -> </small><br />
@@ -288,6 +289,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes">12: Added setting for Deku access</small><br>
 				<small class = "patchNotes">11: Bug Fix 1: Biggoron Sword now clickable on LinSo, 2: alt hint input works for single redead and composers grave</small><br>
 				<small class = "patchNotes">10: Bug Fix: WotH tracking will no longer break due to using dungeon full clear shortcut (still breaks if an impossible key layout is input :D)</small><br>
 				<small class = "patchNotes">9: Added LinSo Go Mode Animation</small><br>
@@ -301,6 +303,11 @@
 				<small class = "patchNotes">1: Hotkey for Pausing Timer (alt + Z)</small><br>
 	</div>
 	<div id = "settingsColumn">
+		<label class="settingsLabels" for="closedDeku">DEKU</label>
+		<select class="settingsOptions" id="closedDeku">
+		  <option value="CLOSED">CLOSED</option>
+		  <option value="OPEN">OPEN</option>
+		</select><br><br class="half_break">
 		<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
 		<select class="settingsOptions" id="skullSanity">
 		  <option value="OFF">OFF</option>

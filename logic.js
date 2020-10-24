@@ -459,7 +459,7 @@ function refresh_logic_for_stuff() {
 	if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
 	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
 	
-	for(var i = 0; i <= 36; i++){
+	for(var i = 0; i <= 37; i++){
 		str = checkSummary[i] + "_location";
 		
 		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {var exception = true;} else {var exception = false;}
@@ -613,6 +613,7 @@ function logic_shortcuts() {
 	Logic.projectile_adult = Logic.bomb_bag || Logic.bow || Logic.hookshot;
 	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow));
 	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (Logic.lullaby && Logic.bottle));
+	if (document.getElementById("closedDeku").value != "CLOSED") {Logic.deku_access = true;} else {Logic.deku_access = Logic.kokiri_sword;}
 
 	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag1 || Game.has_chus || Game.scale1)
 	Game.child_can_enter_river = Game.bomb_bag1 || Game.has_chus || Game.scale1;
@@ -692,13 +693,13 @@ function location_logic(){
 	Location_Logic.ice_compass = Logic.ice_access;
 	Location_Logic.ice_hp = Logic.ice_access;
 	Location_Logic.ice_irons = Logic.ice_access;
-	Location_Logic.deku_lobby = true;
-	Location_Logic.deku_slingshot = true;
-	Location_Logic.deku_slingshot_room_side = true;
-	Location_Logic.deku_compass = true;
-	Location_Logic.deku_compass_room_side = true;
-	Location_Logic.deku_basement = true;
-	Location_Logic.deku_queen_gohma = Logic.slingshot;
+	Location_Logic.deku_lobby = Logic.deku_access;
+	Location_Logic.deku_slingshot = Logic.deku_access;
+	Location_Logic.deku_slingshot_room_side = Logic.deku_access;
+	Location_Logic.deku_compass = Logic.deku_access;
+	Location_Logic.deku_compass_room_side = Logic.deku_access;
+	Location_Logic.deku_basement = Logic.deku_access;
+	Location_Logic.deku_queen_gohma = Logic.deku_access && Logic.slingshot;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
 	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;

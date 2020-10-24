@@ -9,6 +9,7 @@ function dark_soli() {
 	Game.golden_gauntlets_img = "./images/strength3505050.png";
 	Game.hammer_img= "./images/ham505050.png";
 	Game.iron_boots_img= "./images/ironboots505050.png";
+	Game.kokiri_sword_img= "./normal/items/kokiri_sword.png";
 	Game.silver_scale_img=  "./images/silverscale505050.png"
 	Game.golden_scale_img= "./images/goldenscale505050.png";
 	Game.longshot_img= "./images/longshot505050.png";
@@ -34,7 +35,9 @@ function dark_soli() {
 	Game.requiem_img = "./images/requiem505050.png";
 	Game.nocturne_img = "./images/nocturne505050.png";
 	Game.prelude_img = "./images/prelude505050.png";
-	Game.chu_img = "./images/chux.png"
+	Game.chu_img = "./images/chux.png";
+	
+	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Game.kokiri_sword_img; }
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
 	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
@@ -146,6 +149,7 @@ function dark_normie() {
 	Game.golden_gauntlets_img = "./normal/items/golden_gauntlets.png";
 	Game.hammer_img= "./normal/items/hammer.png";
 	Game.iron_boots_img= "./normal/items/iron_boots.png";
+	Game.kokiri_sword_img= "./normal/items/kokiri_sword.png";
 	Game.silver_scale_img=  "./normal/items/silver_scale.png"
 	Game.golden_scale_img= "./normal/items/golden_scale.png";
 	Game.longshot_img= "./normal/items/longshot.png";
@@ -173,7 +177,8 @@ function dark_normie() {
 	Game.nocturne_img = "./normal/items/nocturne.png";
 	Game.prelude_img = "./normal/items/prelude.png";
 	Game.chu_img = "./normal/items/chu.png";
-
+	
+	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Game.kokiri_sword_img; }
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
 	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
 	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
