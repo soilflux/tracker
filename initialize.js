@@ -32,6 +32,15 @@ var temptext2 = "";
 var dungeonSkullSanity = false;
 var scrubSanity = false;
 
+if (localStorage.getItem("scrubSanity")) {document.getElementById("scrubSanity").value= localStorage.getItem("scrubSanity");}
+if (localStorage.getItem("shopSanity")) {document.getElementById("shopSanity").value = localStorage.getItem("shopSanity");}
+if (localStorage.getItem("skullSanity")) {document.getElementById("skullSanity").value = localStorage.getItem("skullSanity");}
+if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").value	= localStorage.getItem("closedDeku");}
+if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value	= localStorage.getItem("ganonBKSetting");}
+if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
+if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
+if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
+
 var Shop_Logic = {};
 
 		

@@ -20,5 +20,6 @@ function Update() {
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
 	refreshLinSo();
+	saveStuff(); //save current settings for next use of tracker
 	updateInputs(); //implements custom inputs
 }

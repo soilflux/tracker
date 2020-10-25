@@ -653,6 +653,7 @@ function logic_shortcuts() {
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag1;
 	Game.wallet2 = Game.wallet1 && Game.wallet2;
 	Game.bottle = Game.bottle1 || Game.can_enter_jabu;
+	if (document.getElementById("closedDeku").value != "CLOSED") {Game.deku_access = true;} else {Game.deku_access = Game.kokiri_sword;}
 }
 function location_logic(){
 	Location_Logic.mido_1 = true;
@@ -1165,13 +1166,13 @@ function location_logic(){
 	Location_Access.composers_grave = Game.lullaby;
 	Location_Access.race_1 = true;
 	Location_Access.race_2 = true;
-	Location_Access.deku_lobby = true;
-	Location_Access.deku_slingshot = true;
-	Location_Access.deku_slingshot_room_side = true;
-	Location_Access.deku_compass = true;
-	Location_Access.deku_compass_room_side = true;
-	Location_Access.deku_basement = true;
-	Location_Access.deku_queen_gohma = true;
+	Location_Access.deku_lobby = Game.deku_access;
+	Location_Access.deku_slingshot = Game.deku_access;
+	Location_Access.deku_slingshot_room_side = Game.deku_access;
+	Location_Access.deku_compass = Game.deku_access;
+	Location_Access.deku_compass_room_side = Game.deku_access;
+	Location_Access.deku_basement = Game.deku_access;
+	Location_Access.deku_queen_gohma = Game.deku_access;
 	Location_Access.dodongos_map = Game.can_enter_dodongos;
 	Location_Access.dodongos_compass = Game.can_enter_dodongos;
 	Location_Access.dodongos_bomb_flower_platform = Game.dodongos_climb;

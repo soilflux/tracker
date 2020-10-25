@@ -189,6 +189,11 @@ color: red;
 	margin-top: 4px;
 	margin-right:4px;
 }
+#triforcePic {
+	margin-top: 1px;
+	margin-right:4px;
+	display: none;
+}
 #med_background {
 	background-image: url("./normal/background.png");
 	filter: drop-shadow(14px 0 5px gold);
@@ -293,6 +298,12 @@ color: red;
 	position: absolute;
 	left: 970px;
 	top: 760px;
+}
+#pieceDungeons {
+	width:92px;
+	margin-left:0px;
+	margin-top:2px;
+	display: none;
 }
 #settingsColumn {
 	position: absolute;

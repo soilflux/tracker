@@ -73,7 +73,7 @@
 			  </div>
 			  <small id = "timer"></small>
 			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
-				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br /><br />
+				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input><br /><br />
 				<small id="forceIntoLogic">Force into Logic</small><br />
 				<input id="forceLogic1" class= "check_input"></input>
 				<input id="forceLogic2" class= "check_input"></input>
@@ -303,6 +303,18 @@
 				<small class = "patchNotes">1: Hotkey for Pausing Timer (alt + Z)</small><br>
 	</div>
 	<div id = "settingsColumn">
+		<label class="settingsLabels" for="presets">PRESETS</label>
+		<select class="settingsOptions" id="presets">
+		  <option value="NONE">NONE</option>
+		  <option value="S3">S3</option>
+		  <option value="S4">S4</option>
+		  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="bosskeys">BOSSKEYS</label>
+		<select class="settingsOptions" id="bosskeys">
+	      <option value="DUNGEON_ONLY">DUNGEON ONLY</option>
+		  <option value="REMOVE">REMOVE</option>
+		</select><br><br class="half_break">
 		<label class="settingsLabels" for="closedDeku">DEKU</label>
 		<select class="settingsOptions" id="closedDeku">
 		  <option value="CLOSED">CLOSED</option>

@@ -23,6 +23,7 @@ function highlight(x) {
 		if (x.style.opacity == 1) {Logic.forest_medallion = true;}
 	}
 	else if (document.getElementById(x.id).style.opacity == 1) {
+		if (document.getElementById(x.id).src.endsWith(Game.kokiri_sword_img.substring(2))){Game.kokiri_sword = true; }
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = true; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = true;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = true;}
@@ -60,6 +61,7 @@ function highlight(x) {
 		if (document.getElementById(x.id).src.endsWith(Game.prelude_img.substring(2))){Game.prelude = true;}
 	}
 	else {
+		if (document.getElementById(x.id).src.endsWith(Game.kokiri_sword_img.substring(2))){Game.kokiri_sword = false; }
 		if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = false; }
 		if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = false;}
 		if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = false;}
@@ -239,6 +241,17 @@ function circusControl() {
 	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}}
 	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 1;}}
 	Update();
+}
+
+function saveStuff() {
+	localStorage.setItem("scrubSanity", document.getElementById("scrubSanity").value);
+	localStorage.setItem("shopSanity", document.getElementById("shopSanity").value);
+	localStorage.setItem("skullSanity", document.getElementById("skullSanity").value);
+	localStorage.setItem("closedDeku", document.getElementById("closedDeku").value);
+	localStorage.setItem("ganonBKSetting", document.getElementById("ganonBKSetting").value);
+	localStorage.setItem("ganonsBridge", document.getElementById("ganonsBridge").value);
+	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
+	localStorage.setItem("presets", document.getElementById("presets").value);
 }
 
 function linsoControl() {

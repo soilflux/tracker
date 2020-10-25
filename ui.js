@@ -572,6 +572,16 @@ function updateInputs() {
 	}
 }
 function update_logic_info() {
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("closedDeku").value = "CLOSED";}
+	if (document.getElementById("presets").value == "S3") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("closedDeku").value = "OPEN";}
+	if (document.getElementById("presets").value == "S4") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("closedDeku").value = "CLOSED";}
+		
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block";}
+	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
+	
+	if (document.getElementById("bosskeys").value == "REMOVE") {Game.forest_boss_key = true; Game.fire_boss_key = true; Game.water_boss_key = true; Game.spirit_boss_key = true; Game.shadow_boss_key = true;}
+	else {Game.forest_boss_key = false; Game.fire_boss_key = false; Game.water_boss_key = false; Game.spirit_boss_key = false; Game.shadow_boss_key = false;}
+	
 	Logic.gold_skulltulas = 0;
 	var i;
 	document.getElementById("skullsInLogicList").innerHTML = "";
@@ -609,6 +619,7 @@ function update_logic_info() {
 			document.getElementById("text_" + Locations[i]).style.display = "none";
 			document.getElementById("br_" + Locations[i]).style.display = "none";
 		}
+		
 		if (document.getElementById("skullSanity").value != "ALL" && document.getElementById("skullSanity").value != "DUNGEON" && (Locations[i].startsWith("gs_deku") || Locations[i].startsWith("gs_dodongos") || Locations[i].startsWith("gs_jabu") || Locations[i].startsWith("gs_forest") || Locations[i].startsWith("gs_fire") || Locations[i].startsWith("gs_water") || Locations[i].startsWith("gs_spirit") || Locations[i].startsWith("gs_shadow") || Locations[i].startsWith("gs_ice") || Locations[i].startsWith("gs_well"))) {continue;}
 		if (document.getElementById("skullSanity").value != "ALL" && Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well"))) {continue;}
 		if (document.getElementById("scrubSanity").value != "ON" && Locations[i].startsWith("scrub_")) {continue;}
@@ -640,6 +651,8 @@ function update_logic_info() {
 		if(document.getElementById(str).style.display == "none") {continue;}
 		if(Location_Logic[key] == true) {
 			document.getElementById(str).className= "logic_check_text";
+			document.getElementById(str).style.fontWeight = "bold";
+			document.getElementById(str).style.opacity = 1;
 			document.getElementById(str).innerHTML = backUp[i];
 			if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
@@ -681,6 +694,8 @@ function update_logic_info() {
 		}
 		else if (Location_Access[key] == true) {
 			document.getElementById(str).className= "access_check_text";
+			document.getElementById(str).style.opacity = .5;
+			document.getElementById(str).style.fontWeight = "normal";
 			document.getElementById(str).style.color ="yellow";
 		}
 		else {
@@ -690,11 +705,20 @@ function update_logic_info() {
 				if (document.getElementById(str2).style.display != "none") {document.getElementById(str2).style.display = "none";}
 			}
 			document.getElementById(str).className= "ool_check_text";
+			document.getElementById(str).style.opacity = .5;
+			document.getElementById(str).style.fontWeight = "normal";
 			document.getElementById(str).style.color ="black";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
-	
+	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; document.getElementById("text_deku_lobby").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_map").style.color = "#FFD700"; document.getElementById("text_dodongos_map").style.opacity = 1; document.getElementById("text_dodongos_map").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("ja")) {document.getElementById("text_jabu_map").style.color = "#FFD700"; document.getElementById("text_jabu_map").style.opacity = 1; document.getElementById("text_jabu_map").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("fo")) {document.getElementById("text_forest6").style.color = "#FFD700"; document.getElementById("text_forest6").style.opacity = 1; document.getElementById("text_forest6").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("fi")) {document.getElementById("text_fire6").style.color = "#FFD700"; document.getElementById("text_fire6").style.opacity = 1; document.getElementById("text_fire6").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("wa")) {document.getElementById("text_water11").style.color = "#FFD700"; document.getElementById("text_water11").style.opacity = 1; document.getElementById("text_water11").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow3").style.color = "#FFD700"; document.getElementById("text_shadow3").style.opacity = 1; document.getElementById("text_shadow3").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit19").style.color = "#FFD700"; document.getElementById("text_spirit19").style.opacity = 1; document.getElementById("text_spirit19").style.fontWeight = "bold";}
 	
 	Game.forest_checks_remaining -= 5 - Game.current_forest_keys;
 	Game.fire_checks_remaining -= 8 - Game.current_fire_keys
