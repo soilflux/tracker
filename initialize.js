@@ -28,6 +28,8 @@ var woth5Locations = [];
 var thisIsAKey = false;
 var thisIsABossKey = false;
 var temptext2 = "";
+var removeBKFlag = false;
+
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;

@@ -579,8 +579,8 @@ function update_logic_info() {
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block";}
 	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
 	
-	if (document.getElementById("bosskeys").value == "REMOVE") {Game.forest_boss_key = true; Game.fire_boss_key = true; Game.water_boss_key = true; Game.spirit_boss_key = true; Game.shadow_boss_key = true;}
-	else {Game.forest_boss_key = false; Game.fire_boss_key = false; Game.water_boss_key = false; Game.spirit_boss_key = false; Game.shadow_boss_key = false;}
+	if (document.getElementById("bosskeys").value == "REMOVE") {Game.forest_boss_key = true; Game.fire_boss_key = true; Game.water_boss_key = true; Game.spirit_boss_key = true; Game.shadow_boss_key = true; removeBKFlag = true;}
+	else if (removeBKFlag) {removeBKFlag = false; Game.forest_boss_key = false; Game.fire_boss_key = false; Game.water_boss_key = false; Game.spirit_boss_key = false; Game.shadow_boss_key = false;}
 	
 	Logic.gold_skulltulas = 0;
 	var i;
