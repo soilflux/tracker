@@ -604,7 +604,10 @@ function logic_shortcuts() {
 	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||(Logic.hammer && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && Logic.hammer);
 	Logic.crater_top = Logic.crater_by_city || Logic.hammer;
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
-	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS";
+	
+	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.gen1) {Logic.medalCount += 1;} if (Logic.gen2) {Logic.medalCount += 1;} if (Logic.gen3) {Logic.medalCount += 1;}
+	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Logic.medalCount >= 3)
+	
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
 	Logic.middle_water = Logic.can_enter_water && Logic.lullaby && (Logic.bow || Logic.can_use_dins);
