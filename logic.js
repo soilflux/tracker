@@ -669,6 +669,7 @@ function location_logic(){
 	Location_Logic.hyrule_hp_scrub = Logic.can_blast_or_smash;;
 	Location_Logic.hyrule_boulder_of_destiny = Logic.can_blast_or_smash;;
 	Location_Logic.hyrule_tektite_grotto = Logic.can_blast_or_smash && (Logic.golden_scale || Logic.iron_boots);
+	Location_Logic.hyrule_ocarina = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire;
 	Location_Logic.gerudovalley_box = true;
 	Location_Logic.gerudovalley_fall = true;
 	Location_Logic.gerudo_hammer = Logic.fortress_access && Logic.hammer;
@@ -701,6 +702,7 @@ function location_logic(){
 	Location_Logic.deku_compass_room_side = Logic.deku_access;
 	Location_Logic.deku_basement = Logic.deku_access;
 	Location_Logic.deku_queen_gohma = Logic.deku_access && Logic.slingshot;
+	Location_Logic.lost_woods_fairy_ocarina = true;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
 	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
@@ -1090,6 +1092,7 @@ function location_logic(){
 	Location_Access.hyrule_hp_scrub = Game.can_blast_or_smash;;
 	Location_Access.hyrule_boulder_of_destiny = Game.can_blast_or_smash;;
 	Location_Access.hyrule_tektite_grotto = Game.can_blast_or_smash;
+	Location_Access.hyrule_ocarina = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
 	Location_Access.gerudovalley_box = true;
 	Location_Access.gerudovalley_fall = true;
 	Location_Access.hylia_child_fishing = true;
@@ -1114,6 +1117,7 @@ function location_logic(){
 	Location_Access.frogs_2 = Game.child_can_enter_river && (Game.storms && Game.lullaby && Game.eponas && Game.sarias && Game.suns && Game.time);
 	Location_Access.zora_diving = Game.child_can_enter_river;
 	Location_Access.zora_torches = Game.child_can_enter_river;
+	Location_Access.lost_woods_fairy_ocarina = true;
 	Location_Access.ocarina_game = true;
 	Location_Access.lost_woods_grotto = Game.can_blast_or_smash;
 	Location_Access.lost_woods_scrub_grotto = Game.can_blast_or_smash;
