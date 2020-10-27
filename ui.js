@@ -572,8 +572,8 @@ function updateInputs() {
 	}
 }
 function update_logic_info() {
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "ON"; document.getElementById("ganonsBridge").value = "ALL MED"; document.getElementById("closedDeku").value = "CLOSED";}
-	if (document.getElementById("presets").value == "S3") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL MED"; document.getElementById("closedDeku").value = "OPEN";}
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "ON"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED";}
+	if (document.getElementById("presets").value == "S3") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN";}
 	if (document.getElementById("presets").value == "S4") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "ON"; document.getElementById("ganonsBridge").value = "3_MEDALS"; document.getElementById("closedDeku").value = "CLOSED";}
 		
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block";}
