@@ -144,15 +144,9 @@ function whoAmI() {
 		Game.themeChange = true;
 		Update();
 	}
-	else if (Person.type == "tagnia") {
+	else if (Person.type == "normie") {
 		Person.type = "soli";
 		localStorage.setItem("type", "soli");
-		Game.themeChange = true;
-		Update();
-	}
-	else if (Person.type == "normie") {
-		Person.type = "tagnia";
-		localStorage.setItem("type", "tagnia");
 		Game.themeChange = true;
 		Update();
 	}

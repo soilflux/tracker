@@ -154,6 +154,7 @@ var tSeconds = 0;
 	if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso");}
 	if (linso) {linso = false; linsoControl();}
 	if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
+	Person.type = "normie";
 	Logic.brackets = false;
 	
 	document.getElementById("text_dung7").style.color = "yellow";
