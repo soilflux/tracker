@@ -573,6 +573,9 @@ color: red;
   border-radius: 50%;
   display: inline-block;
 }
+#song_title {
+	color: white;
+}
 .songpics {
 	height:40px;
 	width: 40px;

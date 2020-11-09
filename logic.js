@@ -606,7 +606,8 @@ function logic_shortcuts() {
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
 	
 	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.gen1) {Logic.medalCount += 1;} if (Logic.gen2) {Logic.medalCount += 1;} if (Logic.gen3) {Logic.medalCount += 1;}
-	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Logic.medalCount >= 2)
+	Logic.stoneCount = 0; if (Logic.kokiri_emerald) {Logic.stoneCount += 1;} if (Logic.goron_ruby) {Logic.stoneCount += 1;} if (Logic.zora_sapphire) {Logic.stoneCount += 1;}
+	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Logic.stoneCount == 3)
 	
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
@@ -644,7 +645,11 @@ function logic_shortcuts() {
 	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer);
 	Game.crater_top = Game.crater_by_city || Game.hammer;
 	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
-	Game.can_enter_ganons = Game.forest && Game.fire && Game.water && Game.gen1 && Game.gen2 && Game.gen3;
+	
+	Game.medalCount = 0; if (Game.forest_medallion) {Game.medalCount += 1;} if (Game.fire_medallion) {Game.medalCount += 1;} if (Game.water_medallion) {Game.medalCount += 1;} if (Game.gen1) {Game.medalCount += 1;} if (Game.gen2) {Game.medalCount += 1;} if (Game.gen3) {Game.medalCount += 1;}
+	Game.stoneCount = 0; if (Game.kokiri_emerald) {Game.stoneCount += 1;} if (Game.goron_ruby) {Game.stoneCount += 1;} if (Game.zora_sapphire) {Game.stoneCount += 1;}
+	Game.can_enter_ganons = (Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Game.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Game.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Game.stoneCount == 3) 
+	 
 	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow1 || Game.hookshot || Game.bomb_bag1);
 	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.scale2);
 	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow1 || Game.can_use_dins);

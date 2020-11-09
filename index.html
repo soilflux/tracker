@@ -13,7 +13,7 @@
 			<div class="dungColumn" id="dung1"></div>
 			<div class="dungColumn" id="dung2"></div>
 			<div class="dungColumn" id="dung3"></div>
-			<div id="songColumn"><small class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
+			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
 				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
 				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
 				<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="14" cols="14" id = "hintInput"></textarea><br /><br />
@@ -290,6 +290,8 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes">18: finally made the herculean effort to edit songs title to white so it looks reasonable</small><br>
+				<small class = "patchNotes">17: sgl preset</small><br>
 				<small class = "patchNotes">16: fixed s4 preset: added 2 Med setting for ganon's bridge and ganon's will only auto-clear in s3 preset</small><br>
 				<small class = "patchNotes">15: 3 Med setting for ganon's bridge</small><br>
 				<small class = "patchNotes">14: Setting for shuffling ocarinas</small><br>
@@ -312,6 +314,7 @@
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
 		  <option value="S3">S3</option>
+		  <option value="SGL">SGL</option>
 		  <option value="S4">S4</option>
 		  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
 		</select><br><br class="half_break">
@@ -348,6 +351,7 @@
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
 		<select class="settingsOptions" id="ganonsBridge">
+		  <option value="3_STONES">3 STONES</option>
 		  <option value="2_MEDALS">2 MEDALS</option>
 		  <option value="3_MEDALS">3 MEDALS</option>
 		  <option value="ALL_MED">ALL MED</option>
