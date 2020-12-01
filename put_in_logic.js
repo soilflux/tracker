@@ -6,6 +6,7 @@ function checksPutInLogicByItem(item) {
 	
 	while (temp > 0) {
     temp -= 1;
+	if(Known.kokiri_sword == true) {PutIn_Logic.kokiri_sword = Location_PutIn_Logic[Location.kokiri_sword];} if (item == "kokiri_sword") {PutIn_Logic.kokiri_sword = false;}
 	
 	if(Known.farores_wind == true) {PutIn_Logic.farores_wind = Location_PutIn_Logic[Location.farores_wind];} if (item == "farores_wind") {PutIn_Logic.farores_wind = false;}
 	 
@@ -92,10 +93,11 @@ function checksPutInLogicByItem(item) {
 	if(Known.nocturne == true) {PutIn_Logic.nocturne = Location_PutIn_Logic[Location.nocturne]; } if (item == "nocturne") {PutIn_Logic.nocturne = false;}
 	if(Known.prelude == true) {PutIn_Logic.prelude = Location_PutIn_Logic[Location.prelude]; } if (item == "prelude") {PutIn_Logic.prelude = false;}  
 	
-	PutIn_Logic.can_enter_jabu = PutIn_Logic.rutos_letter && ((PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale) && (PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.slingshot);
-	PutIn_Logic.child_can_enter_river = PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale;
-	PutIn_Logic.fortress_access = PutIn_Logic.eponas || PutIn_Logic.longshot;
-	PutIn_Logic.can_save_carpenters = PutIn_Logic.fortress_access && ((PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.hover_boots) || true) /*fast carpenter fix**/;
+	PutIn_Logic.child_can_enter_river = PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	PutIn_Logic.child_can_enter_domain = (PutIn_Logic.child_can_enter_river && PutIn_Logic.lullaby) || PutIn_Logic.silver_scale || Spawn.child_zd;
+	PutIn_Logic.can_enter_jabu = PutIn_Logic.rutos_letter && PutIn_Logic.child_can_enter_domain && (PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.slingshot);
+	PutIn_Logic.fortress_access = PutIn_Logic.eponas || PutIn_Logic.longshot || Spawn.adult_gf || (Spawn.child_gv_gf && PutIn_Logic.kokiri_sword);
+	PutIn_Logic.can_save_carpenters = (Spawn.child_gv_gf && PutIn_Logic.kokiri_sword) || (PutIn_Logic.fortress_access && ((PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.hover_boots) || true)) /*fast carpenter fix**/;
 	PutIn_Logic.can_cross_quicksand = PutIn_Logic.fortress_access && (PutIn_Logic.longshot || PutIn_Logic.hover_boots);
 	PutIn_Logic.can_enter_colossus = (PutIn_Logic.can_cross_quicksand && (PutIn_Logic.brackets || PutIn_Logic.can_see)) || PutIn_Logic.requiem;
 	PutIn_Logic.can_use_fire = (PutIn_Logic.dins_fire || (PutIn_Logic.bow && PutIn_Logic.fire_arrows)) && PutIn_Logic.magic;
@@ -105,28 +107,34 @@ function checksPutInLogicByItem(item) {
 	PutIn_Logic.can_blast_or_smash = PutIn_Logic.bomb_bag || PutIn_Logic.hammer;
 	PutIn_Logic.can_enter_dodongos = PutIn_Logic.can_blast_or_smash || PutIn_Logic.goron_bracelet;
 	PutIn_Logic.dodongos_climb = PutIn_Logic.can_enter_dodongos && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.can_use_dins);
-	PutIn_Logic.can_enter_shadow = PutIn_Logic.nocturne && PutIn_Logic.can_use_dins && (PutIn_Logic.hover_boots || PutIn_Logic.hookshot) ;//&& PutIn_Logic.can_see;
+	PutIn_Logic.can_enter_shadow = (PutIn_Logic.nocturne || Spawn.adult_nocturne) && PutIn_Logic.can_use_dins && (PutIn_Logic.hover_boots || PutIn_Logic.hookshot) ;//&& PutIn_Logic.can_see;
 	PutIn_Logic.can_cross_shadow_gap= PutIn_Logic.can_enter_shadow && PutIn_Logic.hover_boots;
 	PutIn_Logic.can_bomb_shadow_wall = PutIn_Logic.can_cross_shadow_gap && PutIn_Logic.bomb_bag;
 	PutIn_Logic.can_pass_shadow_hookshot_door = PutIn_Logic.can_bomb_shadow_wall && PutIn_Logic.hookshot;
 	PutIn_Logic.can_ride_shadow_boat = PutIn_Logic.can_pass_shadow_hookshot_door && PutIn_Logic.lullaby;
 	PutIn_Logic.can_beat_shadow_boss = PutIn_Logic.can_ride_shadow_boat && (PutIn_Logic.bow || PutIn_Logic.longshot);
 	PutIn_Logic.can_stop_link_the_goron = PutIn_Logic.bomb_bag || PutIn_Logic.bow || PutIn_Logic.goron_bracelet;
-	PutIn_Logic.ice_access = PutIn_Logic.rutos_letter && PutIn_Logic.lullaby && PutIn_Logic.child_can_enter_river;
+	PutIn_Logic.ice_access = PutIn_Logic.rutos_letter && (PutIn_Logic.lullaby || Spawn.adult_zd) && PutIn_Logic.child_can_enter_river;
 	PutIn_Logic.reverse_crater = (PutIn_Logic.hover_boots || PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river) && PutIn_Logic.bolero;
 	PutIn_Logic.can_enter_fire_temple = (PutIn_Logic.crater_by_city && (PutIn_Logic.hookshot || PutIn_Logic.hover_boots)) || PutIn_Logic.bolero
-	PutIn_Logic.crater_by_city = PutIn_Logic.bow || PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.reverse_crater ||(PutIn_Logic.hammer && PutIn_Logic.hover_boots) || (PutIn_Logic.longshot && PutIn_Logic.goron_tunic && PutIn_Logic.hammer);
-	PutIn_Logic.crater_top = PutIn_Logic.crater_by_city || PutIn_Logic.hammer;
+	PutIn_Logic.crater_by_city = PutIn_Logic.bow || PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.reverse_crater ||((PutIn_Logic.hammer || Spawn.adult_upper_dmc) && PutIn_Logic.hover_boots) || (PutIn_Logic.longshot && PutIn_Logic.goron_tunic && (PutIn_Logic.hammer || Spawn.adult_upper_dmc)) || Spawn.adult_lower_dmc;
+	PutIn_Logic.crater_top = PutIn_Logic.crater_by_city || PutIn_Logic.hammer || Spawn.adult_upper_dmc;
 	PutIn_Logic.can_enter_adult_spirit = PutIn_Logic.can_enter_colossus && PutIn_Logic.silver_gauntlets;
-	PutIn_Logic.can_enter_ganons = PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion && PutIn_Logic.gen1 && PutIn_Logic.gen2 && PutIn_Logic.gen3;
+	PutIn_Logic.can_pass_mido_as_adult = PutIn_Logic.minuet || PutIn_Logic.sarias || Spawn.adult_meadow;
+	
+	PutIn_Logic.medalCount = 0; if (PutIn_Logic.forest_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.fire_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.water_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen1) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen2) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen3) {PutIn_Logic.medalCount += 1;}
+	PutIn_Logic.stoneCount = 0; if (PutIn_Logic.kokiri_emerald) {PutIn_Logic.stoneCount += 1;} if (PutIn_Logic.goron_ruby) {PutIn_Logic.stoneCount += 1;} if (PutIn_Logic.zora_sapphire) {PutIn_Logic.stoneCount += 1;}
+	PutIn_Logic.can_enter_ganons = (PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion && PutIn_Logic.gen1 && PutIn_Logic.gen2 && PutIn_Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && PutIn_Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && PutIn_Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && PutIn_Logic.stoneCount == 3)
+	
 	PutIn_Logic.can_climb_fire_temple = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=3 && PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
 	PutIn_Logic.can_enter_water = PutIn_Logic.hookshot && PutIn_Logic.iron_boots;
 	PutIn_Logic.middle_water = PutIn_Logic.can_enter_water && PutIn_Logic.lullaby && (PutIn_Logic.bow || PutIn_Logic.can_use_dins);
 	PutIn_Logic.projectile_both = PutIn_Logic.bomb_bag || ((PutIn_Logic.slingshot || PutIn_Logic.boomerang) && (PutIn_Logic.bow || PutIn_Logic.hookshot));
 	PutIn_Logic.projectile_child = PutIn_Logic.bomb_bag || PutIn_Logic.slingshot || PutIn_Logic.boomerang;
 	PutIn_Logic.projectile_adult = PutIn_Logic.bomb_bag || PutIn_Logic.bow || PutIn_Logic.hookshot;
-	PutIn_Logic.can_wear_goron_tunic = PutIn_Logic.goron_tunic || (PutIn_Logic.adults_wallet && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.bow));
-	PutIn_Logic.can_wear_zora_tunic = PutIn_Logic.zora_tunic || (PutIn_Logic.giants_wallet && (PutIn_Logic.lullaby && PutIn_Logic.bottle));
+	PutIn_Logic.can_wear_goron_tunic = PutIn_Logic.goron_tunic || (PutIn_Logic.adults_wallet && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet || PutIn_Logic.bow || Spawn.adult_gc_shop));
+	PutIn_Logic.can_wear_zora_tunic = PutIn_Logic.zora_tunic || (PutIn_Logic.giants_wallet && (((PutIn_Logic.lullaby || Spawn.adult_zd) && PutIn_Logic.bottle) || Spawn.adult_zd_shop));
+	if (document.getElementById("closedDeku").value != "CLOSED") {PutIn_Logic.deku_access = true;} else {PutIn_Logic.deku_access = PutIn_Logic.kokiri_sword;}
 	
 	for (h= 1; h <= 3; h++) {
 		PutIn_Logic.current_forest_keys = PutIn_Logic.forced_forest_keys;
@@ -151,25 +159,25 @@ function checksPutInLogicByItem(item) {
 			if (!done) {PutIn_Logic.min_forest_keys = 5;}
 		}
 		PutIn_Logic.forest_keys = Math.max(PutIn_Logic.min_forest_keys,PutIn_Logic.current_forest_keys);
-		Location_PutIn_Logic.forest1 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-		Location_PutIn_Logic.forest2 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-		Location_PutIn_Logic.forest3 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
-		Location_PutIn_Logic.forest4 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-		Location_PutIn_Logic.forest5 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-		Location_PutIn_Logic.forest6 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-		Location_PutIn_Logic.forest7 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-		Location_PutIn_Logic.forest8 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
-		Location_PutIn_Logic.forest9 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-		Location_PutIn_Logic.forest10 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
-		Location_PutIn_Logic.forest11 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-		Location_PutIn_Logic.forest12 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
-		Location_PutIn_Logic.forest13 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
-		Location_PutIn_Logic.forest14 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
-		Location_PutIn_Logic.gs_forest_first = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-		Location_PutIn_Logic.gs_forest_lobby = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-		Location_PutIn_Logic.gs_forest_outdoor_east = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow || PutIn_Logic.time) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots));
-		Location_PutIn_Logic.gs_forest_outdoor_west = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (((PutIn_Logic.bow || PutIn_Logic.time) && PutIn_Logic.longshot) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots) || (PutIn_Logic.forest_keys >= 2 && PutIn_Logic.goron_bracelet && PutIn_Logic.bow))
-		Location_PutIn_Logic.gs_forest_basement = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >= 5;
+		Location_PutIn_Logic.forest1 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.forest2 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.forest3 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
+		Location_PutIn_Logic.forest4 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+		Location_PutIn_Logic.forest5 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+		Location_PutIn_Logic.forest6 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.forest7 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+		Location_PutIn_Logic.forest8 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
+		Location_PutIn_Logic.forest9 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest10 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest11 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+		Location_PutIn_Logic.forest12 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
+		Location_PutIn_Logic.forest13 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
+		Location_PutIn_Logic.forest14 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
+		Location_PutIn_Logic.gs_forest_first = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.gs_forest_lobby = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+		Location_PutIn_Logic.gs_forest_outdoor_east = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && ((PutIn_Logic.bow || PutIn_Logic.time) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots));
+		Location_PutIn_Logic.gs_forest_outdoor_west = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (((PutIn_Logic.bow || PutIn_Logic.time) && PutIn_Logic.longshot) || (PutIn_Logic.forest_keys >= 1 && PutIn_Logic.hover_boots) || (PutIn_Logic.forest_keys >= 2 && PutIn_Logic.goron_bracelet && PutIn_Logic.bow))
+		Location_PutIn_Logic.gs_forest_basement = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >= 5;
 	}
 	for (h= 1; h <= 3; h++) {
 		PutIn_Logic.current_fire_keys = PutIn_Logic.forced_fire_keys;
@@ -634,7 +642,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gerudo_hammer = PutIn_Logic.fortress_access && PutIn_Logic.hammer;
 	Location_PutIn_Logic.hylia_child_fishing = true;
 	Location_PutIn_Logic.hylia_bottle = PutIn_Logic.silver_scale;
-	Location_PutIn_Logic.hylia_adult_fishing = PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river;
+	Location_PutIn_Logic.hylia_adult_fishing = PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river || Spawn.adult_fishing;
 	Location_PutIn_Logic.hylia_lab_top = PutIn_Logic.hookshot || PutIn_Logic.child_can_enter_river;
 	Location_PutIn_Logic.hylia_lab_dive = PutIn_Logic.golden_scale;
 	Location_PutIn_Logic.hylia_sun_shoot = PutIn_Logic.longshot && PutIn_Logic.bow;
@@ -644,8 +652,8 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.market_bowling_2 = PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.market_lens_game = PutIn_Logic.can_see;
 	Location_PutIn_Logic.poes= (PutIn_Logic.bow && PutIn_Logic.eponas && PutIn_Logic.bottle) || PutIn_Logic.big_poe;
-	Location_PutIn_Logic.dins_fairy = PutIn_Logic.bomb_bag && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.g_fairy = PutIn_Logic.golden_gauntlets && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.dins_fairy = (PutIn_Logic.bomb_bag || Spawn.child_hyrule_fairy) && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.g_fairy = (PutIn_Logic.golden_gauntlets || Spawn.adult_ogc) && PutIn_Logic.lullaby;
 	Location_PutIn_Logic.lacs = PutIn_Logic.shadow_medallion && PutIn_Logic.spirit_medallion;
 	Location_PutIn_Logic.fountain_fairy = PutIn_Logic.ice_access && PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.ice_glacier_hp = PutIn_Logic.ice_access;
@@ -654,24 +662,24 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.ice_compass = PutIn_Logic.ice_access;
 	Location_PutIn_Logic.ice_hp = PutIn_Logic.ice_access;
 	Location_PutIn_Logic.ice_irons = PutIn_Logic.ice_access;
-	Location_PutIn_Logic.deku_lobby = true;
-	Location_PutIn_Logic.deku_slingshot = true;
-	Location_PutIn_Logic.deku_slingshot_room_side = true;
-	Location_PutIn_Logic.deku_compass = true;
-	Location_PutIn_Logic.deku_compass_room_side = true;
-	Location_PutIn_Logic.deku_basement = true;
-	Location_PutIn_Logic.deku_queen_gohma = PutIn_Logic.slingshot;
+	Location_PutIn_Logic.deku_lobby = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_slingshot = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_slingshot_room_side = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_compass = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_compass_room_side = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_basement = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.deku_queen_gohma = PutIn_Logic.deku_access && PutIn_Logic.slingshot;
 	Location_PutIn_Logic.ocarina_game = true;
 	Location_PutIn_Logic.lost_woods_grotto = PutIn_Logic.can_blast_or_smash;
-	Location_PutIn_Logic.lost_woods_scrub_grotto = PutIn_Logic.bomb_bag || (PutIn_Logic.sarias || PutIn_Logic.minuet) && PutIn_Logic.hammer;
+	Location_PutIn_Logic.lost_woods_scrub_grotto = PutIn_Logic.bomb_bag || PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hammer;
 	Location_PutIn_Logic.bridge_scrub = true;
 	Location_PutIn_Logic.target = PutIn_Logic.slingshot;
 	Location_PutIn_Logic.skull_kid = PutIn_Logic.sarias;
 	Location_PutIn_Logic.theater = true;
-	Location_PutIn_Logic.wolfos_grotto = PutIn_Logic.bomb_bag || (PutIn_Logic.sarias || PutIn_Logic.minuet) && PutIn_Logic.hammer;
+	Location_PutIn_Logic.wolfos_grotto = PutIn_Logic.bomb_bag || PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hammer;
 	Location_PutIn_Logic.rolling_goron = PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.goron_dance = PutIn_Logic.lullaby && PutIn_Logic.sarias;
-	Location_PutIn_Logic.goron_pot = (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet) && (PutIn_Logic.lullaby || PutIn_Logic.can_use_dins);
+	Location_PutIn_Logic.goron_dance = (PutIn_Logic.lullaby || Spawn.child_lower_dmc) && PutIn_Logic.sarias;
+	Location_PutIn_Logic.goron_pot = PutIn_Logic.bomb_bag && (PutIn_Logic.lullaby || PutIn_Logic.can_use_dins || PutIn_Logic.child_lower_dmc);
 	Location_PutIn_Logic.goron_maze_1 = PutIn_Logic.can_blast_or_smash || PutIn_Logic.silver_gauntlets;
 	Location_PutIn_Logic.goron_maze_2 = PutIn_Logic.can_blast_or_smash || PutIn_Logic.silver_gauntlets;
 	Location_PutIn_Logic.goron_maze_3 = PutIn_Logic.hammer || PutIn_Logic.silver_gauntlets;
@@ -686,12 +694,12 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.trail_bombable = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.trail_dodongos_top = true;
 	Location_PutIn_Logic.trail_storms = PutIn_Logic.storms;
-	Location_PutIn_Logic.trail_fairy = PutIn_Logic.can_blast_or_smash && PutIn_Logic.lullaby;
-	Location_PutIn_Logic.trade_quest = Location_PutIn_Logic.trade_quest = (((PutIn_Logic.ice_access || ((PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby && PutIn_Logic.bottle)) && PutIn_Logic.prescription) || PutIn_Logic.claim_check) && PutIn_Logic.crater_top;
+	Location_PutIn_Logic.trail_fairy = (PutIn_Logic.can_blast_or_smash || Spawn.child_upper_dmc_fairy || Spawn.adult_upper_dmc_fairy) && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.trade_quest = Location_PutIn_Logic.trade_quest = (((PutIn_Logic.ice_access || ((PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && (PutIn_Logic.lullaby || Spawn.adult_zd) && PutIn_Logic.bottle)) && PutIn_Logic.prescription) || PutIn_Logic.claim_check) && PutIn_Logic.crater_top;
 	Location_PutIn_Logic.crater_bean = (PutIn_Logic.bolero && PutIn_Logic.child_can_enter_river) || (PutIn_Logic.hover_boots && PutIn_Logic.crater_by_city);
-	Location_PutIn_Logic.crater_hammer_fairy = PutIn_Logic.crater_by_city && PutIn_Logic.hammer && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.crater_hammer_fairy = ((PutIn_Logic.crater_by_city && PutIn_Logic.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && PutIn_Logic.lullaby;
 	Location_PutIn_Logic.crater_grotto = PutIn_Logic.can_blast_or_smash;
-	Location_PutIn_Logic.crater_nook_hp = PutIn_Logic.crater_top;
+	Location_PutIn_Logic.crater_nook_hp = PutIn_Logic.crater_top || Spawn.child_upper_dmc;
 	Location_PutIn_Logic.man_on_roof = true;//PutIn_Logic.hookshot;
 	Location_PutIn_Logic.kakariko_grotto = true;
 	Location_PutIn_Logic.windmill = true;//PutIn_Logic.boomerang || PutIn_Logic.time;
@@ -717,9 +725,9 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.river_ledge = PutIn_Logic.child_can_enter_river || PutIn_Logic.hover_boots;
 	Location_PutIn_Logic.frogs_1 = PutIn_Logic.child_can_enter_river && PutIn_Logic.storms;
 	Location_PutIn_Logic.frogs_2 = PutIn_Logic.child_can_enter_river && (PutIn_Logic.storms && PutIn_Logic.lullaby && PutIn_Logic.eponas && PutIn_Logic.sarias && PutIn_Logic.suns && PutIn_Logic.time);
-	Location_PutIn_Logic.zora_diving = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
-	Location_PutIn_Logic.zora_torches = (PutIn_Logic.lullaby && PutIn_Logic.bomb_bag) || PutIn_Logic.silver_scale;
-	Location_PutIn_Logic.thaw_king = PutIn_Logic.ice_access || (PutIn_Logic.bottle && (PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && PutIn_Logic.lullaby);
+	Location_PutIn_Logic.zora_diving = PutIn_Logic.child_can_enter_domain;
+	Location_PutIn_Logic.zora_torches = PutIn_Logic.child_can_enter_domain;
+	Location_PutIn_Logic.thaw_king = PutIn_Logic.ice_access || (PutIn_Logic.bottle && (PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && (PutIn_Logic.lullaby || Spawn.adult_zd));
 	Location_PutIn_Logic.colossus_bean = PutIn_Logic.requiem && PutIn_Logic.child_can_enter_river;
 	Location_PutIn_Logic.colossus_fairy = PutIn_Logic.can_enter_colossus && PutIn_Logic.bomb_bag && PutIn_Logic.lullaby;
 	Location_PutIn_Logic.wasteland = PutIn_Logic.can_cross_quicksand && PutIn_Logic.can_use_fire;
@@ -730,20 +738,20 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.jabu_map = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.jabu_compass = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
 	Location_PutIn_Logic.jabu_barinade = PutIn_Logic.can_enter_jabu && PutIn_Logic.boomerang;
-	Location_PutIn_Logic.forest1 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.forest2 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot;
-	Location_PutIn_Logic.forest3 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
-	Location_PutIn_Logic.forest4 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-	Location_PutIn_Logic.forest5 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
-	Location_PutIn_Logic.forest6 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.forest7 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
-	Location_PutIn_Logic.forest8 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
-	Location_PutIn_Logic.forest9 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest10 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest11 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
-	Location_PutIn_Logic.forest12 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
-	Location_PutIn_Logic.forest13 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
-	Location_PutIn_Logic.forest14 = (PutIn_Logic.minuet || PutIn_Logic.sarias) && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
+	Location_PutIn_Logic.forest1 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.forest2 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.forest3 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || PutIn_Logic.bow || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1));
+	Location_PutIn_Logic.forest4 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+	Location_PutIn_Logic.forest5 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && (PutIn_Logic.time || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys>=1) || (PutIn_Logic.bow/* && (PutIn_Logic.iron_boots || PutIn_Logic.golden_scale || PutIn_Logic.longshot)*/));
+	Location_PutIn_Logic.forest6 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 1 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.forest7 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.forest_keys >= 2 && PutIn_Logic.bow && PutIn_Logic.goron_bracelet;
+	Location_PutIn_Logic.forest8 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && ((PutIn_Logic.bow && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys >=2) || (PutIn_Logic.hover_boots && PutIn_Logic.forest_keys >=1));
+	Location_PutIn_Logic.forest9 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest10 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest11 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=3;
+	Location_PutIn_Logic.forest12 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.can_use_dins) && PutIn_Logic.forest_keys>=5;
+	Location_PutIn_Logic.forest13 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5;
+	Location_PutIn_Logic.forest14 = PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hookshot && PutIn_Logic.goron_bracelet && PutIn_Logic.bow && PutIn_Logic.forest_keys>=5 && PutIn_Logic.forest_boss_key;
 	Location_PutIn_Logic.fire1 = PutIn_Logic.can_enter_fire_temple;
 	Location_PutIn_Logic.fire2 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
 	Location_PutIn_Logic.fire3 = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.hammer;
@@ -816,13 +824,13 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.ganons6 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets;
 	Location_PutIn_Logic.ganons7 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets ;//&& PutIn_Logic.can_see;
 	Location_PutIn_Logic.ganons8 = PutIn_Logic.can_enter_ganons && PutIn_Logic.golden_gauntlets && PutIn_Logic.lullaby && PutIn_Logic.ganons_keys >= 1;
-	Location_PutIn_Logic.ganons9 = PutIn_Logic.can_enter_ganons;
-	Location_PutIn_Logic.ganons10 = PutIn_Logic.can_enter_ganons && PutIn_Logic.bomb_bag;//&& PutIn_Logic.can_see;
+	Location_PutIn_Logic.ganons9 = PutIn_Logic.can_enter_ganons && PutIn_Logic.hookshot;
+	Location_PutIn_Logic.ganons10 = PutIn_Logic.can_enter_ganons && PutIn_Logic.hookshot && PutIn_Logic.bomb_bag;//&& PutIn_Logic.can_see;
 	Location_PutIn_Logic.ganons11 = PutIn_Logic.can_enter_ganons;
 	Location_PutIn_Logic.ganons12 = PutIn_Logic.can_enter_ganons;
 	Location_PutIn_Logic.ganons13 = PutIn_Logic.can_enter_ganons;
-	Location_PutIn_Logic.ganons14 = PutIn_Logic.can_enter_ganons;
-	Location_PutIn_Logic.ganons15 = PutIn_Logic.can_enter_ganons && (PutIn_Logic.longshot || ((PutIn_Logic.fire_arrows && PutIn_Logic.magic) || (PutIn_Logic.hover_boots && PutIn_Logic.can_use_dins)));
+	Location_PutIn_Logic.ganons14 = PutIn_Logic.can_enter_ganons && ((PutIn_Logic.bow && PutIn_Logic.fire_arrows && PutIn_Logic.magic) || PutIn_Logic.hookshot || PutIn_Logic.time);
+	Location_PutIn_Logic.ganons15 = PutIn_Logic.can_enter_ganons && ((PutIn_Logic.bow && PutIn_Logic.fire_arrows && PutIn_Logic.magic) || (PutIn_Logic.longshot && (PutIn_Logic.hover_boots || PutIn_Logic.can_use_dins)));
 	Location_PutIn_Logic.ganons16 = PutIn_Logic.can_enter_ganons;
 	Location_PutIn_Logic.gtg1 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
 	Location_PutIn_Logic.gtg2 = PutIn_Logic.can_save_carpenters && PutIn_Logic.bow;
@@ -866,7 +874,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.stormsSpot = true;
 	Location_PutIn_Logic.sunsSpot = PutIn_Logic.lullaby;
 	Location_PutIn_Logic.boleroSpot = PutIn_Logic.can_enter_fire_temple;
-	Location_PutIn_Logic.minuetSpot = PutIn_Logic.minuet || PutIn_Logic.sarias;
+	Location_PutIn_Logic.minuetSpot = PutIn_Logic.can_pass_mido_as_adult;
 	Location_PutIn_Logic.requiemSpot = PutIn_Logic.can_enter_colossus;
 	Location_PutIn_Logic.serenadeSpot = PutIn_Logic.ice_access;
 	Location_PutIn_Logic.preludeSpot = PutIn_Logic.forest_medallion;
@@ -879,8 +887,8 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_market = true;
 	Location_PutIn_Logic.gs_lost_woods_bean_1 = PutIn_Logic.bottle;
 	Location_PutIn_Logic.gs_lost_woods_bean_2 = PutIn_Logic.bottle;
-	Location_PutIn_Logic.gs_lost_woods_above_stage = (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale) && (PutIn_Logic.sarias || PutIn_Logic.minuet);
-	Location_PutIn_Logic.gs_sacred_forest = PutIn_Logic.hookshot && (PutIn_Logic.sarias || PutIn_Logic.minuet);
+	Location_PutIn_Logic.gs_lost_woods_above_stage = PutIn_Logic.child_can_enter_river && PutIn_Logic.can_pass_mido_as_adult;
+	Location_PutIn_Logic.gs_sacred_forest = PutIn_Logic.hookshot && PutIn_Logic.can_pass_mido_as_adult;
 	Location_PutIn_Logic.gs_outside_kakariko = (PutIn_Logic.boomerang && PutIn_Logic.bomb_bag) || (PutIn_Logic.can_blast_or_smash && PutIn_Logic.hookshot)
 	Location_PutIn_Logic.gs_near_gerudo = (PutIn_Logic.hammer && PutIn_Logic.can_use_fire && PutIn_Logic.hookshot) || (PutIn_Logic.can_use_dins && PutIn_Logic.bomb_bag && PutIn_Logic.boomerang);
 	Location_PutIn_Logic.gs_hyrule_castle_tree = true;
@@ -903,14 +911,14 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_trail_above_dodongos = PutIn_Logic.hammer;
 	Location_PutIn_Logic.gs_goron_center = true;
 	Location_PutIn_Logic.gs_goron_maze = PutIn_Logic.bomb_bag;
-	Location_PutIn_Logic.gs_crater_crate = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.gs_crater_crate = PutIn_Logic.can_blast_or_smash || Spawn.child_upper_dmc;
 	Location_PutIn_Logic.gs_crater_soil = PutIn_Logic.bottle && PutIn_Logic.bolero;
-	Location_PutIn_Logic.gs_river_ladder = PutIn_Logic.silver_scale || PutIn_Logic.bomb_bag;
+	Location_PutIn_Logic.gs_river_ladder = PutIn_Logic.child_can_enter_river;
 	Location_PutIn_Logic.gs_river_near_grotto = PutIn_Logic.hookshot;
 	Location_PutIn_Logic.gs_river_above_bridge = PutIn_Logic.hookshot;
-	Location_PutIn_Logic.gs_domain = PutIn_Logic.lullaby && (PutIn_Logic.hookshot || PutIn_Logic.magic || PutIn_Logic.bow);
-	Location_PutIn_Logic.gs_fountain_above_log = PutIn_Logic.rutos_letter && (PutIn_Logic.silver_scale || (PutIn_Logic.bomb_bag && PutIn_Logic.lullaby)) && PutIn_Logic.boomerang;
-	Location_PutIn_Logic.gs_fountain_tree = PutIn_Logic.rutos_letter && (PutIn_Logic.silver_scale || (PutIn_Logic.bomb_bag && PutIn_Logic.lullaby))
+	Location_PutIn_Logic.gs_domain = (PutIn_Logic.lullaby || Spawn.adult_zd) && (PutIn_Logic.hookshot || PutIn_Logic.magic || PutIn_Logic.bow);
+	Location_PutIn_Logic.gs_fountain_above_log = PutIn_Logic.rutos_letter && PutIn_Logic.child_can_enter_domain && PutIn_Logic.boomerang;
+	Location_PutIn_Logic.gs_fountain_tree = PutIn_Logic.rutos_letter && PutIn_Logic.child_can_enter_domain;
 	Location_PutIn_Logic.gs_fountain_hidden_cave = PutIn_Logic.ice_access && PutIn_Logic.silver_gauntlets && PutIn_Logic.hookshot && PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.gs_hylia_bean = PutIn_Logic.bottle;
 	Location_PutIn_Logic.gs_hylia_lab_wall = PutIn_Logic.boomerang;
@@ -929,10 +937,10 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_colossus_hill = (PutIn_Logic.requiem && (PutIn_Logic.bomb_bag || PutIn_Logic.silver_scale)) || (PutIn_Logic.longshot && PutIn_Logic.can_enter_colossus);
 	Location_PutIn_Logic.gs_river_tree = true;
 	Location_PutIn_Logic.gs_ogc = true;
-	Location_PutIn_Logic.gs_deku_basement_back = PutIn_Logic.boomerang && PutIn_Logic.bomb_bag && PutIn_Logic.slingshot;
-	Location_PutIn_Logic.gs_deku_basement_gate = true;
-	Location_PutIn_Logic.gs_deku_basement_vines = PutIn_Logic.slingshot || PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.can_use_dins;
-	Location_PutIn_Logic.gs_deku_compass = true;
+	Location_PutIn_Logic.gs_deku_basement_back = PutIn_Logic.deku_access && PutIn_Logic.boomerang && PutIn_Logic.bomb_bag && PutIn_Logic.slingshot;
+	Location_PutIn_Logic.gs_deku_basement_gate = PutIn_Logic.deku_access;
+	Location_PutIn_Logic.gs_deku_basement_vines = PutIn_Logic.deku_access && (PutIn_Logic.slingshot || PutIn_Logic.boomerang || PutIn_Logic.bomb_bag || PutIn_Logic.can_use_dins);
+	Location_PutIn_Logic.gs_deku_compass = PutIn_Logic.deku_access;
 	Location_PutIn_Logic.gs_dodongos_east_side = PutIn_Logic.can_enter_dodongos;
 	Location_PutIn_Logic.gs_dodongos_stair_vines = PutIn_Logic.dodongos_climb;
 	Location_PutIn_Logic.gs_dodongos_above_stairs = (PutIn_Logic.dodongos_climb && PutIn_Logic.hookshot) || (PutIn_Logic.boomerang && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet));
