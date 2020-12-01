@@ -21,7 +21,7 @@
 				
 				
 				<br /><br />
-				<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child_1f9d2.png"></img><br /> 
+				<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child.png"></img><br /> 
 				<small id="tokens_acquired" class="check_text">Tokens: </small>
 				<small id="skulls_in_logic" class="check_text">Skulls: </small>
 				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -73,7 +73,8 @@
 			  </div>
 			  <small id = "timer"></small>
 			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
-				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input><br /><br />
+				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input><br />
+				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br /><br />
 				<small id="forceIntoLogic">Force into Logic</small><br />
 				<input id="forceLogic1" class= "check_input"></input>
 				<input id="forceLogic2" class= "check_input"></input>
@@ -232,6 +233,7 @@
 	</div> 
 	<div id ="row2" class="row">
 		<div id = "inputConfig"><small class = "customizeTitles">Custom Item Inputs</small><br><br class ="half_break"></div>
+		<div id = "inputConfig2"><small class = "customizeTitles">Custom Spawn Inputs</small><br><br class ="half_break"></div>
 		<div id = "skullsInLogicList"></div>
 	</div>
 	<div id="confirmed_logically_required">
@@ -289,7 +291,8 @@
 		<img id = "confirmed_logically_required_52" class = "confirmedWothImages">
 	</div>
 	<div id ="patchNotesColumn">
-				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotesTitle">Patch Notes (if something breaks or you have suggestions, please tell me (soli#9369 on discord)) </small><br>
+				<small class = "patchNotes">19: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "yellow">bee</span>luigi's spawns sheet for reference</a></small><br>
 				<small class = "patchNotes">18: finally made the herculean effort to edit songs title to white so it looks reasonable</small><br>
 				<small class = "patchNotes">17: sgl preset</small><br>
 				<small class = "patchNotes">16: fixed s4 preset: added 2 Med setting for ganon's bridge and ganon's will only auto-clear in s3 preset</small><br>

@@ -116,6 +116,7 @@ function woth_and_barren_processing() {
 			AreaWotHAge[i] = 4;
 		}
 		else if (Area[i] == "5woth" && AreaWotHAge[i] != 5) {		
+		
 			if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {woth1 = AreaNames[i];}
 			else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {woth2 = AreaNames[i];}
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}

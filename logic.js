@@ -579,9 +579,9 @@ function force_stuff_in_or_out_of_logic() {
 
 function logic_shortcuts() {
 	Logic.can_enter_jabu = Logic.rutos_letter && ((Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale) && (Logic.boomerang || Logic.bomb_bag || Logic.slingshot);
-	Logic.child_can_enter_river = Logic.bomb_bag || Logic.silver_scale;
-	Logic.fortress_access = Logic.eponas || Logic.longshot;
-	Logic.can_save_carpenters = Logic.fortress_access && ((Logic.bow || Logic.hookshot || Logic.hover_boots) || true) /*fast carpenter fix**/;
+	Logic.child_can_enter_river = Logic.bomb_bag || Logic.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	Logic.fortress_access = Logic.eponas || Logic.longshot || Spawn.adult_gf;
+	Logic.can_save_carpenters = (Spawn.child_gv_gf && Logic.kokiri_sword) || (Logic.fortress_access && ((Logic.bow || Logic.hookshot || Logic.hover_boots) || true)) /*fast carpenter fix**/;
 	Logic.can_cross_quicksand = Logic.fortress_access && (Logic.longshot || Logic.hover_boots);
 	Logic.can_enter_colossus = (Logic.can_cross_quicksand && (Logic.brackets || Logic.can_see)) || Logic.requiem;
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
@@ -591,19 +591,20 @@ function logic_shortcuts() {
 	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
 	Logic.can_enter_dodongos = Logic.can_blast_or_smash || Logic.goron_bracelet;
 	Logic.dodongos_climb = Logic.can_enter_dodongos && (Logic.bomb_bag || Logic.goron_bracelet || Logic.can_use_dins);
-	Logic.can_enter_shadow = Logic.nocturne && Logic.can_use_dins && (Logic.hover_boots || Logic.hookshot) ;//&& Logic.can_see;
+	Logic.can_enter_shadow = (Logic.nocturne || Spawn.adult_nocturne) && Logic.can_use_dins && (Logic.hover_boots || Logic.hookshot) ;//&& Logic.can_see;
 	Logic.can_cross_shadow_gap= Logic.can_enter_shadow && Logic.hover_boots;
 	Logic.can_bomb_shadow_wall = Logic.can_cross_shadow_gap && Logic.bomb_bag;
 	Logic.can_pass_shadow_hookshot_door = Logic.can_bomb_shadow_wall && Logic.hookshot;
 	Logic.can_ride_shadow_boat = Logic.can_pass_shadow_hookshot_door && Logic.lullaby;
 	Logic.can_beat_shadow_boss = Logic.can_ride_shadow_boat && (Logic.bow || Logic.longshot);
 	Logic.can_stop_link_the_goron = Logic.bomb_bag || Logic.bow || Logic.goron_bracelet;
-	Logic.ice_access = Logic.rutos_letter && Logic.lullaby && Logic.child_can_enter_river;
+	Logic.ice_access = Logic.rutos_letter && (Logic.lullaby || Spawn.adult_domain) && Logic.child_can_enter_river;
 	Logic.reverse_crater = (Logic.hover_boots || Logic.hookshot || Logic.child_can_enter_river) && Logic.bolero;
 	Logic.can_enter_fire_temple = (Logic.crater_by_city && (Logic.hookshot || Logic.hover_boots)) || Logic.bolero
-	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||(Logic.hammer && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && Logic.hammer);
-	Logic.crater_top = Logic.crater_by_city || Logic.hammer;
+	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||(Logic.hammer && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && Logic.hammer) || Spawn.adult_lower_dmc;
+	Logic.crater_top = Logic.crater_by_city || Logic.hammer || Spawn.adult_upper_dmc;
 	Logic.can_enter_adult_spirit = Logic.can_enter_colossus && Logic.silver_gauntlets;
+	Logic.can_pass_mido_as_adult = Logic.minuet || Logic.sarias || Spawn.adult_meadow;
 	
 	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.gen1) {Logic.medalCount += 1;} if (Logic.gen2) {Logic.medalCount += 1;} if (Logic.gen3) {Logic.medalCount += 1;}
 	Logic.stoneCount = 0; if (Logic.kokiri_emerald) {Logic.stoneCount += 1;} if (Logic.goron_ruby) {Logic.stoneCount += 1;} if (Logic.zora_sapphire) {Logic.stoneCount += 1;}
@@ -615,14 +616,14 @@ function logic_shortcuts() {
 	Logic.projectile_both = Logic.bomb_bag || ((Logic.slingshot || Logic.boomerang) && (Logic.bow || Logic.hookshot));
 	Logic.projectile_child = Logic.bomb_bag || Logic.slingshot || Logic.boomerang;
 	Logic.projectile_adult = Logic.bomb_bag || Logic.bow || Logic.hookshot;
-	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow));
-	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (Logic.lullaby && Logic.bottle));
+	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow || Spawn.adult_gc_shop));
+	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && ((Logic.lullaby && Logic.bottle) || Spawn.adult_domain_shop));
 	if (document.getElementById("closedDeku").value != "CLOSED") {Logic.deku_access = true;} else {Logic.deku_access = Logic.kokiri_sword;}
 
 	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag1 || Game.has_chus || Game.scale1)
-	Game.child_can_enter_river = Game.bomb_bag1 || Game.has_chus || Game.scale1;
-	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem;
-	Game.can_save_carpenters = Game.fortress_access && ((Game.bow1 || Game.hookshot || Game.hover_boots) || true) /*fast carpenter fix**/;
+	Game.child_can_enter_river = Game.bomb_bag1 || Game.has_chus || Game.scale1 || Spawn.child_zd || Spawn.child_zr;
+	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem || Spawn.adult_gf;
+	Game.can_save_carpenters = (Spawn.child_gv_gf && Game.kokiri_sword) || (Game.fortress_access && ((Game.bow1 || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
 	Game.can_use_fire = (Game.dins_fire || (Game.bow1 && Game.fire_arrows)) && Game.magic1;
@@ -632,7 +633,7 @@ function logic_shortcuts() {
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.wallet2);
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);
-	Game.can_enter_shadow= Game.nocturne && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
+	Game.can_enter_shadow= (Game.nocturne || Spawn.adult_nocturne) && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
 	Game.can_bomb_shadow_wall = Game.can_cross_shadow_gap && (Game.bomb_bag1 || Game.has_chus);
 	Game.can_pass_shadow_hookshot_door = Game.can_bomb_shadow_wall && Game.hookshot;
@@ -642,8 +643,8 @@ function logic_shortcuts() {
 	Game.ice_access = Game.rutos_letter && (Game.lullaby || Game.hover_boots) && Game.child_can_enter_river;
 	Game.reverse_crater = (Game.hover_boots || Game.hookshot || Game.child_can_enter_river) && Game.bolero;
 	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot || Game.hover_boots)) || Game.bolero;
-	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer);
-	Game.crater_top = Game.crater_by_city || Game.hammer;
+	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer) || Spawn.adult_lower_dmc;
+	Game.crater_top = Game.crater_by_city || Game.hammer || Spawn.adult_upper_dmc;
 	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
 	
 	Game.medalCount = 0; if (Game.forest_medallion) {Game.medalCount += 1;} if (Game.fire_medallion) {Game.medalCount += 1;} if (Game.water_medallion) {Game.medalCount += 1;} if (Game.gen1) {Game.medalCount += 1;} if (Game.gen2) {Game.medalCount += 1;} if (Game.gen3) {Game.medalCount += 1;}
@@ -683,7 +684,7 @@ function location_logic(){
 	Location_Logic.gerudo_hammer = Logic.fortress_access && Logic.hammer;
 	Location_Logic.hylia_child_fishing = true;
 	Location_Logic.hylia_bottle = Logic.silver_scale;
-	Location_Logic.hylia_adult_fishing = Logic.hookshot || Logic.child_can_enter_river;
+	Location_Logic.hylia_adult_fishing = Logic.hookshot || Logic.child_can_enter_river || Spawn.adult_fishing;
 	Location_Logic.hylia_lab_top = Logic.hookshot || Logic.child_can_enter_river;
 	Location_Logic.hylia_lab_dive = Logic.golden_scale;
 	Location_Logic.hylia_sun_shoot = Logic.longshot && Logic.bow;
@@ -693,8 +694,8 @@ function location_logic(){
 	Location_Logic.market_bowling_2 = Logic.bomb_bag;
 	Location_Logic.market_lens_game = Logic.can_see;
 	Location_Logic.poes= (Logic.bow && Logic.eponas && Logic.bottle) || Logic.big_poe;
-	Location_Logic.dins_fairy = Logic.bomb_bag && Logic.lullaby;
-	Location_Logic.g_fairy = Logic.golden_gauntlets && Logic.lullaby;
+	Location_Logic.dins_fairy = (Logic.bomb_bag || Spawn.child_hyrule_fairy) && Logic.lullaby;
+	Location_Logic.g_fairy = (Logic.golden_gauntlets || Spawn.adult_ogc) && Logic.lullaby;
 	Location_Logic.lacs = Logic.shadow_medallion && Logic.spirit_medallion;
 	Location_Logic.fountain_fairy = Logic.ice_access && Logic.bomb_bag;
 	Location_Logic.ice_glacier_hp = Logic.ice_access;
@@ -713,15 +714,15 @@ function location_logic(){
 	Location_Logic.lost_woods_fairy_ocarina = true;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lost_woods_grotto = Logic.can_blast_or_smash;
-	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
+	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.can_pass_mido_as_adult && Logic.hammer);
 	Location_Logic.bridge_scrub = true;
 	Location_Logic.target = Logic.slingshot;
 	Location_Logic.skull_kid = Logic.sarias;
 	Location_Logic.theater = true;
-	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.sarias || Logic.minuet) && Logic.hammer;
+	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.can_pass_mido_as_adult && Logic.hammer);
 	Location_Logic.rolling_goron = Logic.bomb_bag;
-	Location_Logic.goron_dance = Logic.lullaby && Logic.sarias;
-	Location_Logic.goron_pot = (Logic.bomb_bag || Logic.goron_bracelet) && (Logic.lullaby || Logic.can_use_dins);
+	Location_Logic.goron_dance = (Logic.lullaby || Spawn.child_lower_dmc) && Logic.sarias;
+	Location_Logic.goron_pot = (Logic.bomb_bag || Logic.goron_bracelet) && (Logic.lullaby || Logic.can_use_dins || Spawn.child_lower_dmc);
 	Location_Logic.goron_maze_1 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
 	Location_Logic.goron_maze_2 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
 	Location_Logic.goron_maze_3 = Logic.hammer || Logic.silver_gauntlets;
@@ -736,12 +737,12 @@ function location_logic(){
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_storms = Logic.storms;
-	Location_Logic.trail_fairy = Logic.can_blast_or_smash && Logic.lullaby;
+	Location_Logic.trail_fairy = (Logic.can_blast_or_smash || Spawn.child_upper_dmc_fairy) && Logic.lullaby;
 	Location_Logic.trade_quest = Location_Logic.trade_quest = (((Logic.ice_access || ((Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
-	Location_Logic.crater_hammer_fairy = Logic.crater_by_city && Logic.hammer && Logic.lullaby;
+	Location_Logic.crater_hammer_fairy = ((Logic.crater_by_city && Logic.hammer) || Spawn.child_lower_dmc_fairy) && Logic.lullaby;
 	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
-	Location_Logic.crater_nook_hp = Logic.crater_top;
+	Location_Logic.crater_nook_hp = Logic.crater_top || Spawn.child_upper_dmc;
 	Location_Logic.man_on_roof = true;//Logic.hookshot;
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.time;
@@ -767,9 +768,9 @@ function location_logic(){
 	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
 	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.storms;
 	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns && Logic.time);
-	Location_Logic.zora_diving = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
-	Location_Logic.zora_torches = (Logic.lullaby && Logic.bomb_bag) || Logic.silver_scale;
-	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && (Logic.giants_wallet || Logic.can_enter_ganons) && Logic.lullaby);
+	Location_Logic.zora_diving = ((Logic.lullaby && Logic.bomb_bag) || Spawn.child_zr) || Logic.silver_scale || Spawn.child_zd;
+	Location_Logic.zora_torches = ((Logic.lullaby && Logic.bomb_bag) || Spawn.child_zr) || Logic.silver_scale || Spawn.child_zd;
+	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && (Logic.giants_wallet || Logic.can_enter_ganons) && (Logic.lullaby || Spawn.adult_domain));
 	Location_Logic.colossus_bean = Logic.requiem && Logic.child_can_enter_river;
 	Location_Logic.colossus_fairy = Logic.can_enter_colossus && Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.wasteland = Logic.can_cross_quicksand && Logic.can_use_fire;
@@ -780,20 +781,20 @@ function location_logic(){
 	Location_Logic.jabu_map = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_compass = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.jabu_barinade = Logic.can_enter_jabu && Logic.boomerang;
-	Location_Logic.forest1 = (Logic.minuet || Logic.sarias) && Logic.hookshot;
-	Location_Logic.forest2 = (Logic.minuet || Logic.sarias) && Logic.hookshot;
-	Location_Logic.forest3 = (Logic.minuet || Logic.sarias) && Logic.hookshot && (Logic.time || Logic.bow || (Logic.hover_boots && Logic.forest_keys>=1));
-	Location_Logic.forest4 = (Logic.minuet || Logic.sarias) && Logic.hookshot && (Logic.time || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.bow/* && (Logic.iron_boots || Logic.golden_scale || Logic.longshot)*/));
-	Location_Logic.forest5 = (Logic.minuet || Logic.sarias) && Logic.hookshot && (Logic.time || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.bow/* && (Logic.iron_boots || Logic.golden_scale || Logic.longshot)*/));
-	Location_Logic.forest6 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.forest_keys >= 1 && Logic.bow && Logic.goron_bracelet;
-	Location_Logic.forest7 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.forest_keys >= 2 && Logic.bow && Logic.goron_bracelet;
-	Location_Logic.forest8 = (Logic.minuet || Logic.sarias) && Logic.hookshot && ((Logic.bow && Logic.goron_bracelet && Logic.forest_keys >=2) || (Logic.hover_boots && Logic.forest_keys >=1));
-	Location_Logic.forest9 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
-	Location_Logic.forest10 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && Logic.forest_keys>=3;
-	Location_Logic.forest11 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
-	Location_Logic.forest12 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5;
-	Location_Logic.forest13 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5;
-	Location_Logic.forest14 = (Logic.minuet || Logic.sarias) && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5 && Logic.forest_boss_key;
+	Location_Logic.forest1 = Logic.can_pass_mido_as_adult && Logic.hookshot;
+	Location_Logic.forest2 = Logic.can_pass_mido_as_adult && Logic.hookshot;
+	Location_Logic.forest3 = Logic.can_pass_mido_as_adult && Logic.hookshot && (Logic.time || Logic.bow || (Logic.hover_boots && Logic.forest_keys>=1));
+	Location_Logic.forest4 = Logic.can_pass_mido_as_adult && Logic.hookshot && (Logic.time || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.bow/* && (Logic.iron_boots || Logic.golden_scale || Logic.longshot)*/));
+	Location_Logic.forest5 = Logic.can_pass_mido_as_adult && Logic.hookshot && (Logic.time || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.bow/* && (Logic.iron_boots || Logic.golden_scale || Logic.longshot)*/));
+	Location_Logic.forest6 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.forest_keys >= 1 && Logic.bow && Logic.goron_bracelet;
+	Location_Logic.forest7 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.forest_keys >= 2 && Logic.bow && Logic.goron_bracelet;
+	Location_Logic.forest8 = Logic.can_pass_mido_as_adult && Logic.hookshot && ((Logic.bow && Logic.goron_bracelet && Logic.forest_keys >=2) || (Logic.hover_boots && Logic.forest_keys >=1));
+	Location_Logic.forest9 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
+	Location_Logic.forest10 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && Logic.forest_keys>=3;
+	Location_Logic.forest11 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
+	Location_Logic.forest12 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5;
+	Location_Logic.forest13 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5;
+	Location_Logic.forest14 = Logic.can_pass_mido_as_adult && Logic.hookshot && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5 && Logic.forest_boss_key;
 	Location_Logic.fire1 = Logic.can_enter_fire_temple;
 	Location_Logic.fire2 = Logic.can_enter_fire_temple && Logic.hammer;
 	Location_Logic.fire3 = Logic.can_enter_fire_temple && Logic.hammer;
@@ -916,7 +917,7 @@ function location_logic(){
 	Location_Logic.stormsSpot = true;
 	Location_Logic.sunsSpot = Logic.lullaby;
 	Location_Logic.boleroSpot = Logic.can_enter_fire_temple;
-	Location_Logic.minuetSpot = Logic.minuet || Logic.sarias;
+	Location_Logic.minuetSpot = Logic.can_pass_mido_as_adult;
 	Location_Logic.requiemSpot = Logic.can_enter_colossus;
 	Location_Logic.serenadeSpot = Logic.ice_access;
 	Location_Logic.preludeSpot = Logic.forest_medallion;
@@ -993,8 +994,8 @@ function location_logic(){
 	Location_Logic.gs_market = true;
 	Location_Logic.gs_lost_woods_bean_1 = Logic.bottle;
 	Location_Logic.gs_lost_woods_bean_2 = Logic.bottle;
-	Location_Logic.gs_lost_woods_above_stage = (Logic.bomb_bag || Logic.silver_scale) && (Logic.sarias || Logic.minuet);
-	Location_Logic.gs_sacred_forest = Logic.hookshot && (Logic.sarias || Logic.minuet);
+	Location_Logic.gs_lost_woods_above_stage = (Logic.bomb_bag || Logic.silver_scale) && Logic.can_pass_mido_as_adult;
+	Location_Logic.gs_sacred_forest = Logic.hookshot && Logic.can_pass_mido_as_adult;
 	Location_Logic.gs_outside_kakariko = (Logic.boomerang && Logic.bomb_bag) || (Logic.can_blast_or_smash && Logic.hookshot)
 	Location_Logic.gs_near_gerudo = (Logic.hammer && Logic.can_use_fire && Logic.hookshot) || (Logic.can_use_dins && Logic.bomb_bag && Logic.boomerang);
 	Location_Logic.gs_hyrule_castle_tree = true;
@@ -1017,15 +1018,15 @@ function location_logic(){
 	Location_Logic.gs_trail_above_dodongos = Logic.hammer;
 	Location_Logic.gs_goron_center = true;
 	Location_Logic.gs_goron_maze = Logic.bomb_bag;
-	Location_Logic.gs_crater_crate = Logic.can_blast_or_smash;
+	Location_Logic.gs_crater_crate = Logic.can_blast_or_smash || Spawn.child_upper_dmc;
 	Location_Logic.gs_crater_soil = Logic.bottle && Logic.bolero;
 	Location_Logic.gs_river_ladder = Logic.silver_scale || Logic.bomb_bag;
 	Location_Logic.gs_river_near_grotto = Logic.hookshot;
 	Location_Logic.gs_river_above_bridge = Logic.hookshot;
 	Location_Logic.gs_river_tree = true;
-	Location_Logic.gs_domain = Logic.lullaby && (Logic.hookshot || Logic.magic || Logic.bow);
-	Location_Logic.gs_fountain_above_log = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby)) && Logic.boomerang;
-	Location_Logic.gs_fountain_tree = Logic.rutos_letter && (Logic.silver_scale || (Logic.bomb_bag && Logic.lullaby))
+	Location_Logic.gs_domain = (Logic.lullaby || Spawn.adult_domain) && (Logic.hookshot || Logic.magic || Logic.bow);
+	Location_Logic.gs_fountain_above_log = Logic.rutos_letter && (Logic.silver_scale || Spawn.child_zd || (Logic.bomb_bag && Logic.lullaby)) && Logic.boomerang;
+	Location_Logic.gs_fountain_tree = Logic.rutos_letter && (Logic.silver_scale || Spawn.child_zd || (Logic.bomb_bag && Logic.lullaby))
 	Location_Logic.gs_fountain_hidden_cave = Logic.ice_access && Logic.silver_gauntlets && Logic.hookshot && Logic.can_blast_or_smash;
 	Location_Logic.gs_hylia_bean = Logic.bottle;
 	Location_Logic.gs_hylia_lab_wall = Logic.boomerang;
@@ -1056,11 +1057,11 @@ function location_logic(){
 	Location_Logic.gs_jabu_near_octo_1 = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.gs_jabu_near_octo_2 = Logic.can_enter_jabu && Logic.boomerang;
 	Location_Logic.gs_jabu_near_boss = Logic.can_enter_jabu && Logic.boomerang;
-	Location_Logic.gs_forest_first = (Logic.minuet || Logic.sarias) && Logic.hookshot;
-	Location_Logic.gs_forest_lobby = (Logic.minuet || Logic.sarias) && Logic.hookshot;
-	Location_Logic.gs_forest_outdoor_east = (Logic.minuet || Logic.sarias) && Logic.hookshot && ((Logic.bow || Logic.time) || (Logic.forest_keys >= 1 && Logic.hover_boots));
-	Location_Logic.gs_forest_outdoor_west = (Logic.minuet || Logic.sarias) && Logic.hookshot && (((Logic.bow || Logic.time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
-	Location_Logic.gs_forest_basement = (Logic.minuet || Logic.sarias) && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
+	Location_Logic.gs_forest_first = Logic.can_pass_mido_as_adult && Logic.hookshot;
+	Location_Logic.gs_forest_lobby = Logic.can_pass_mido_as_adult && Logic.hookshot;
+	Location_Logic.gs_forest_outdoor_east = Logic.can_pass_mido_as_adult && Logic.hookshot && ((Logic.bow || Logic.time) || (Logic.forest_keys >= 1 && Logic.hover_boots));
+	Location_Logic.gs_forest_outdoor_west = Logic.can_pass_mido_as_adult && Logic.hookshot && (((Logic.bow || Logic.time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
+	Location_Logic.gs_forest_basement = Logic.can_pass_mido_as_adult && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
 	Location_Logic.gs_fire_time = Logic.can_enter_fire_temple && Logic.fire_keys >= 1 && Logic.time;
 	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
 	Location_Logic.gs_fire_scarecrow_1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
@@ -1115,8 +1116,8 @@ function location_logic(){
 	Location_Access.market_bowling_2 = Game.bomb_bag1;
 	Location_Access.market_lens_game = true;
 	Location_Access.poes= (Game.bow1 && Game.eponas && (Game.bottle1 || Game.can_enter_jabu)) || Game.big_poe;
-	Location_Access.dins_fairy = (Game.bomb_bag1 || Game.has_chus) && Game.lullaby;
-	Location_Access.g_fairy = Game.strength3 && Game.lullaby;
+	Location_Access.dins_fairy = (Game.bomb_bag1 || Game.has_chus || Spawn.child_hyrule_fairy) && Game.lullaby;
+	Location_Access.g_fairy = (Game.strength3 || Spawn.adult_ogc) && Game.lullaby;
 	Location_Access.lacs = false;
 	Location_Access.river_pillar = true;
 	Location_Access.river_grotto = true;
@@ -1136,8 +1137,8 @@ function location_logic(){
 	Location_Access.theater = true;
 	Location_Access.kokiri_storms = Game.storms;
 	Location_Access.rolling_goron = Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet;
-	Location_Access.goron_pot = (Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins);
-	Location_Access.goron_dance = Game.lullaby && Game.sarias;
+	Location_Access.goron_pot = (Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc);
+	Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc) && Game.sarias;
 	Location_Access.goron_maze_1 = Game.can_blast_or_smash || Game.silver_gauntlets;
 	Location_Access.goron_maze_2 = Game.can_blast_or_smash || Game.silver_gauntlets;
 	Location_Access.goron_maze_3 = Game.hammer || Game.silver_gauntlets || ((Game.bomb_bag1 || Game.has_chus) && Game.hover_boots);
@@ -1146,10 +1147,10 @@ function location_logic(){
 	Location_Access.trail_dodongos_top = true;
 	Location_Access.trail_storms = Game.storms;
 	Location_Access.crater_bean = Game.bolero || Game.crater_top;
-	Location_Access.crater_hammer_fairy = Game.crater_by_city && Game.hammer && Game.lullaby;
-	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero;
+	Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy) && Game.lullaby;
+	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
-	Location_Access.trail_fairy = Game.can_blast_or_smash && Game.lullaby;
+	Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy) && Game.lullaby;
 	Location_Access.trade_quest = (((Game.ice_access || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
@@ -1203,7 +1204,7 @@ function location_logic(){
 	Location_Access.ice_compass = Game.ice_access;
 	Location_Access.ice_irons = Game.ice_access;
 	Location_Access.ice_bottom_of_fountain = Game.ice_access;
-	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.wallet2 && Game.lullaby);
+	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.wallet2 && (Game.lullaby || Game.hover_boots || Spawn.adult_domain));
 	Location_Access.forest1 = Game.hookshot;
 	Location_Access.forest2 = Game.hookshot;
 	Location_Access.forest3 = Game.hookshot && (Game.time || Game.bow1 || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1));

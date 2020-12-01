@@ -148,6 +148,29 @@ function stone_medallion_input() {
 	Logic.generic3 = Logic.dung9;		
 }
 
+function spawnInputs() {
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "dmcf") {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "dmcl") {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "dmtf") {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true;} else {Spawn.child_upper_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "dmcu") {Spawn.child_upper_dmc = true;} else {Spawn.child_lower_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "gf") {Spawn.child_gv_gf = true;} else {Spawn.child_gv_gf = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "hf") {Spawn.child_hyrule_fairy = true;} else {Spawn.child_hyrule_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "zd") {Spawn.child_zd = true;} else {Spawn.child_zd = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == "zr") {Spawn.child_zr = true;} else {Spawn.child_zr = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "dmcf") {Spawn.adult_lower_dmc_fairy = true; Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc_fairy = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "dmcl") {Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "dmtf") {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true;} else {Spawn.adult_upper_dmc_fairy = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "dmcu") {Spawn.adult_upper_dmc = true;} else {Spawn.adult_upper_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "gf") {Spawn.adult_gf = true;} else {Spawn.adult_gf = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "gcshop") {Spawn.adult_gc_shop = true;} else {Spawn.adult_gc_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "noct") {Spawn.adult_nocturne = true;} else {Spawn.adult_nocturne = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "fish") {Spawn.adult_fishing = true;} else {Spawn.adult_fishing = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "sfm") {Spawn.adult_meadow = true;} else {Spawn.adult_meadow = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "zdshop") {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "zd") {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == "ogc") {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
+}
+
 function linSoClick() {
 	var str = event.target.src.split("/");
 	str = str[str.length-1];

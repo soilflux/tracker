@@ -9,6 +9,7 @@ function Update() {
 	woth_and_barren_processing(); //do various things based on woth and barrens;
 	if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
 	stone_medallion_input(); //handle stones and medallions input
+	spawnInputs(); //handle child and adult spawn input
 	location_logic(); //updates logic and accessibility for all locations
 	gs_array_builder(); //just moves gs logic into an array
 	update_logic_info(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
