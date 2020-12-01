@@ -19,6 +19,9 @@ button {
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 a {
+color:lightgreen
+}
+.black {
   color: black;
 }
 .yellow {
