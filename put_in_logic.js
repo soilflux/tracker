@@ -6,6 +6,7 @@ function checksPutInLogicByItem(item) {
 	
 	while (temp > 0) {
     temp -= 1;
+	if(Known.kokiri_sword == true) {PutIn_Logic.kokiri_sword = Location_PutIn_Logic[Location.kokiri_sword];} if (item == "kokiri_sword") {PutIn_Logic.kokiri_sword = false;}
 	
 	if(Known.farores_wind == true) {PutIn_Logic.farores_wind = Location_PutIn_Logic[Location.farores_wind];} if (item == "farores_wind") {PutIn_Logic.farores_wind = false;}
 	 

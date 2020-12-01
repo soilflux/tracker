@@ -5,6 +5,8 @@ function checksLockedByItem(item) {
 	var temp = 20;
 	while (temp > 0) {
     temp -= 1;
+		
+	if(Known.kokiri_sword == true) {Locked_Logic2.kokiri_sword = Location_Locked_Logic2[Location.kokiri_sword];} else{Locked_Logic2.kokiri_sword = true;} if (item == "kokiri_sword") {Locked_Logic2.kokiri_sword = false;}
 	
 	if(Known.farores_wind == true) {Locked_Logic2.farores_wind = Location_Locked_Logic2[Location.farores_wind];} else {Locked_Logic2.farores_wind = true;} if(item == "farores_wind") {Locked_Logic2.farores_wind = false;} 
 	 
