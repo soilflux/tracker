@@ -148,28 +148,28 @@ function stone_medallion_input() {
 	Logic.generic3 = Logic.dung9;		
 }
 
-function spawnInputs() {
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[0].toLowerCase()) {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[1].toLowerCase()) {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[2].toLowerCase()) {Spawn.child_upper_dmc = true;} else {Spawn.child_upper_dmc = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[3].toLowerCase()) {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true;} else {Spawn.child_upper_dmc_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[4].toLowerCase()) {Spawn.child_gv_gf = true;} else {Spawn.child_gv_gf = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[7].toLowerCase()) {Spawn.child_hyrule_fairy = true;} else {Spawn.child_hyrule_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[5].toLowerCase()) {Spawn.child_zd = true;} else {Spawn.child_zd = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == locationInputs[6].toLowerCase()) {Spawn.child_zr = true;} else {Spawn.child_zr = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[0].toLowerCase()) {Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[1].toLowerCase()) {Spawn.adult_lower_dmc_fairy = true; Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc_fairy = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[2].toLowerCase()) {Spawn.adult_upper_dmc = true;} else {Spawn.adult_upper_dmc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[3].toLowerCase()) {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true;} else {Spawn.adult_upper_dmc_fairy = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[4].toLowerCase()) {Spawn.adult_gf = true;} else {Spawn.adult_gf = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[12].toLowerCase()) {Spawn.adult_gc_shop = true;} else {Spawn.adult_gc_shop = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[9].toLowerCase()) {Spawn.adult_nocturne = true;} else {Spawn.adult_nocturne = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[10].toLowerCase()) {Spawn.adult_fishing = true;} else {Spawn.adult_fishing = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[8].toLowerCase()) {Spawn.adult_meadow = true;} else {Spawn.adult_meadow = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[5].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[13].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[11].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[14].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
+function spawn_inputs() {
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[0].toLowerCase()) {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[1].toLowerCase()) {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[2].toLowerCase()) {Spawn.child_upper_dmc = true;} else {Spawn.child_upper_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[3].toLowerCase()) {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true;} else {Spawn.child_upper_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[4].toLowerCase()) {Spawn.child_gv_gf = true;} else {Spawn.child_gv_gf = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[7].toLowerCase()) {Spawn.child_hyrule_fairy = true;} else {Spawn.child_hyrule_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[5].toLowerCase()) {Spawn.child_zd = true;} else {Spawn.child_zd = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[6].toLowerCase()) {Spawn.child_zr = true;} else {Spawn.child_zr = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[0].toLowerCase()) {Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[1].toLowerCase()) {Spawn.adult_lower_dmc_fairy = true; Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc_fairy = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[2].toLowerCase()) {Spawn.adult_upper_dmc = true;} else {Spawn.adult_upper_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[3].toLowerCase()) {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true;} else {Spawn.adult_upper_dmc_fairy = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[4].toLowerCase()) {Spawn.adult_gf = true;} else {Spawn.adult_gf = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[12].toLowerCase()) {Spawn.adult_gc_shop = true;} else {Spawn.adult_gc_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[9].toLowerCase()) {Spawn.adult_nocturne = true;} else {Spawn.adult_nocturne = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[10].toLowerCase()) {Spawn.adult_fishing = true;} else {Spawn.adult_fishing = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[8].toLowerCase()) {Spawn.adult_meadow = true;} else {Spawn.adult_meadow = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[5].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[13].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[11].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[14].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
 }
 
 function linSoClick() {
@@ -594,9 +594,9 @@ function updateInputs() {
 		inputs[i] = document.getElementById(inputNames[i]).value;
 		localStorage.setItem(inputNames[i], inputs[i]);
 	}
-	for (var i = 0; i < locationInputs.length; i++) {
-		locationInputs[i] = document.getElementById(spawnNames[i]).value;
-		localStorage.setItem(spawnNames[i], locationInputs[i]);
+	for (var i = 0; i < spawnInputs.length; i++) {
+		spawnInputs[i] = document.getElementById(spawnNames[i]).value;
+		localStorage.setItem(spawnNames[i], spawnInputs[i]);
 	}
 }
 function update_logic_info() {
