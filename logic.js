@@ -1010,7 +1010,7 @@ function location_logic(){
 	Location_Logic.gs_kakariko_guard_house = true;
 	Location_Logic.gs_kakariko_tree = true;
 	Location_Logic.gs_kakariko_tower = Logic.bomb_bag || Logic.slingshot;
-	Location_Logic.gs_kakariko_impas = Logic.hookshot;
+	Location_Logic.gs_kakariko_impas = Logic.hookshot || Spawn.adult_kak_roof;
 	Location_Logic.gs_graveyard_wall = Logic.boomerang;
 	Location_Logic.gs_graveyard_soil = Logic.bottle;
 	Location_Logic.gs_trail_soil = Logic.bottle && (Logic.bomb_bag || Logic.goron_bracelet);

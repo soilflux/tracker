@@ -169,6 +169,7 @@ function spawnInputs() {
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[5].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[13].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[11].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == locationInputs[14].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
 }
 
 function linSoClick() {
