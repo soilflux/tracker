@@ -4,7 +4,6 @@ function Update() {
 	force_stuff_in_or_out_of_logic(); //implements the force out of logic and force into logic boxes
 	logic_shortcuts(); //combines multiple pieces of logic into one variable
 	timer_stuff(); //implements a timer to use as an alternative to stuff like livesplit
-	weird_routing_stuff(); //doesn't do anything yet
 	process_inputs(); //handle hinted, peeked and picked up things
 	woth_and_barren_processing(); //do various things based on woth and barrens;
 	if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
