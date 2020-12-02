@@ -637,6 +637,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.hyrule_hp_scrub = PutIn_Logic.can_blast_or_smash;;
 	Location_PutIn_Logic.hyrule_boulder_of_destiny = PutIn_Logic.can_blast_or_smash;;
 	Location_PutIn_Logic.hyrule_tektite_grotto = PutIn_Logic.can_blast_or_smash && (PutIn_Logic.golden_scale || PutIn_Logic.iron_boots);
+	Location_PutIn_Logic.hyrule_ocarina = PutIn_Logic.kokiri_emerald && PutIn_Logic.goron_ruby && PutIn_Logic.zora_sapphire;
 	Location_PutIn_Logic.gerudovalley_box = true;
 	Location_PutIn_Logic.gerudovalley_fall = true;
 	Location_PutIn_Logic.gerudo_hammer = PutIn_Logic.fortress_access && PutIn_Logic.hammer;
@@ -669,6 +670,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.deku_compass_room_side = PutIn_Logic.deku_access;
 	Location_PutIn_Logic.deku_basement = PutIn_Logic.deku_access;
 	Location_PutIn_Logic.deku_queen_gohma = PutIn_Logic.deku_access && PutIn_Logic.slingshot;
+	Location_PutIn_Logic.lost_woods_fairy_ocarina = true;
 	Location_PutIn_Logic.ocarina_game = true;
 	Location_PutIn_Logic.lost_woods_grotto = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.lost_woods_scrub_grotto = PutIn_Logic.bomb_bag || PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hammer;
@@ -715,8 +717,8 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.tokens_50 = PutIn_Logic.gold_skulltulas >= 50;
 	Location_PutIn_Logic.shield_grave = true;
 	Location_PutIn_Logic.gravedigging_tour = true;
-	Location_PutIn_Logic.composers_grave = PutIn_Logic.suns;
-	Location_PutIn_Logic.redead_grave = PutIn_Logic.lullaby && PutIn_Logic.can_use_fire;
+	Location_PutIn_Logic.redead_grave = PutIn_Logic.suns;
+	Location_PutIn_Logic.composers_grave = PutIn_Logic.lullaby && PutIn_Logic.can_use_fire;
 	Location_PutIn_Logic.graveyard_box = PutIn_Logic.child_can_enter_river || PutIn_Logic.longshot;
 	Location_PutIn_Logic.race_1 = true;
 	Location_PutIn_Logic.race_2 = true;

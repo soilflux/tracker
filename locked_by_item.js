@@ -513,6 +513,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.hyrule_hp_scrub = Locked_Logic2.can_blast_or_smash;;
 	Location_Locked_Logic2.hyrule_boulder_of_destiny = Locked_Logic2.can_blast_or_smash;;
 	Location_Locked_Logic2.hyrule_tektite_grotto = Locked_Logic2.can_blast_or_smash && (Locked_Logic2.golden_scale || Locked_Logic2.iron_boots);
+	Location_Locked_Logic2.hyrule_ocarina	= Locked_Logic2.kokiri_emerald && Locked_Logic2.goron_ruby && Locked_Logic2.zora_sapphire;
 	Location_Locked_Logic2.gerudovalley_box = true;
 	Location_Locked_Logic2.gerudovalley_fall = true;
 	Location_Locked_Logic2.gerudo_hammer = Locked_Logic2.fortress_access && Locked_Logic2.hammer;
@@ -545,6 +546,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.deku_compass_room_side = Locked_Logic2.deku_access;
 	Location_Locked_Logic2.deku_basement = Locked_Logic2.deku_access;
 	Location_Locked_Logic2.deku_queen_gohma = Locked_Logic2.deku_access && Locked_Logic2.slingshot;
+	Location_Locked_Logic2.lost_woods_fairy_ocarina = true;
 	Location_Locked_Logic2.ocarina_game = true;
 	Location_Locked_Logic2.lost_woods_grotto = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.lost_woods_scrub_grotto = Locked_Logic2.bomb_bag || Locked_Logic2.can_pass_mido_as_adult && Locked_Logic2.hammer;
@@ -591,8 +593,8 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.tokens_50 = Locked_Logic2.gold_skulltulas >= 50;
 	Location_Locked_Logic2.shield_grave = true;
 	Location_Locked_Logic2.gravedigging_tour = true;
-	Location_Locked_Logic2.composers_grave = Locked_Logic2.suns;
-	Location_Locked_Logic2.redead_grave = Locked_Logic2.lullaby && Locked_Logic2.can_use_fire;
+	Location_Locked_Logic2.redead_grave = Locked_Logic2.suns;
+	Location_Locked_Logic2.composers_grave = Locked_Logic2.lullaby && Locked_Logic2.can_use_fire;
 	Location_Locked_Logic2.graveyard_box = Locked_Logic2.child_can_enter_river || Locked_Logic2.longshot;
 	Location_Locked_Logic2.race_1 = true;
 	Location_Locked_Logic2.race_2 = true;
