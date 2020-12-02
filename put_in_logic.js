@@ -904,7 +904,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gs_kakariko_guard_house = true;
 	Location_PutIn_Logic.gs_kakariko_tree = true;
 	Location_PutIn_Logic.gs_kakariko_tower = PutIn_Logic.bomb_bag || PutIn_Logic.slingshot;
-	Location_PutIn_Logic.gs_kakariko_impas = PutIn_Logic.hookshot;
+	Location_PutIn_Logic.gs_kakariko_impas = PutIn_Logic.hookshot || Spawn.adult_kak_roof;
 	Location_PutIn_Logic.gs_graveyard_wall = PutIn_Logic.boomerang;
 	Location_PutIn_Logic.gs_graveyard_soil = PutIn_Logic.bottle;
 	Location_PutIn_Logic.gs_trail_soil = PutIn_Logic.bottle && (PutIn_Logic.bomb_bag || PutIn_Logic.goron_bracelet);

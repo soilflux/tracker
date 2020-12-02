@@ -730,7 +730,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.gs_kakariko_guard_house = true;
 	Location_Locked_Logic2.gs_kakariko_tree = true;
 	Location_Locked_Logic2.gs_kakariko_tower = Locked_Logic2.bomb_bag || Locked_Logic2.slingshot;
-	Location_Locked_Logic2.gs_kakariko_impas = Locked_Logic2.hookshot;
+	Location_Locked_Logic2.gs_kakariko_impas = Locked_Logic2.hookshot || Spawn.adult_kak_roof;
 	Location_Locked_Logic2.gs_graveyard_wall = Locked_Logic2.boomerang;
 	Location_Locked_Logic2.gs_graveyard_soil = Locked_Logic2.bottle;
 	Location_Locked_Logic2.gs_trail_soil = Locked_Logic2.bottle && (Locked_Logic2.bomb_bag || Locked_Logic2.goron_bracelet);
