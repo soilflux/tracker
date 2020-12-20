@@ -50,14 +50,14 @@ color: red;
 	margin-left:42px;
 }
 .track_text {
-	font-size:30px;
+	font-size:26px;
 	margin-left:3px;
 	margin-right:3px;
 	vertical-align:top;
 }
 #checks_remaining {
 	color:blue;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: bold;
 	
 }
@@ -72,14 +72,15 @@ color: red;
 }
 #logically_accessible{
 	color:darkgreen;
-	font-size: 18px;
+	font-size: 17px;
+	float: right;
 	font-weight: bold;
 	
 }
 #text_gan {
 	vertical-align:top;
 	color: #990000;
-	font-size:30px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
@@ -108,72 +109,69 @@ color: red;
 .dung4{
 	vertical-align:top;
 	color: green;
-	font-size:30px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung5{
 	vertical-align:top;
 	color: red;
-	font-size:30px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung6{
 	vertical-align:top;
 	color: blue;
-	font-size:30px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung7{
 	vertical-align:top;
-	font-size:30px;
+	font-size:26px;
 	color: rgb(238, 130, 238);
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung8{
 	vertical-align:top;
-	font-size:30px;
+	font-size:26px;
 	color: rgb(255, 165, 0);
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung9{
 	vertical-align:top;
-	font-size:30px;
+	font-size:26px;
 	color: black;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
 .dung1{
 	vertical-align:top;
-	font-size:24px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 	color: green;
-	font-style:italic;
 	font-weight:100;
 	opacity:.8;
 }
 .dung2{
 	vertical-align:top;
-	font-size:24px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 	color: red;
-	font-style:italic;
 	font-weight:100;
 	opacity:.8;
 }
 .dung3{
 	vertical-align:top;
-	font-size:24px;
+	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 	color: blue;
-	font-style:italic;
 	font-weight:100;
 	opacity:.8;
 }
@@ -194,13 +192,13 @@ color: red;
 	height:25px;
 	width:25px;
 	margin-bottom: 6px;
-	margin-top: 0px;
+	margin-top: 2px;
 }
 .medallions {
 	height:25px;
 	width:25px;
 	margin-bottom: 4px;
-	margin-top: 6px;
+	margin-top: 2px;
 }
 #medallionPic {
 	margin-top: 4px;
@@ -217,8 +215,8 @@ color: red;
 	border-radius: 1%;
 }
 .requirements {
-	height:30px;
-	width: 30px;
+	height:26px;
+	width: 26px;
 	margin-left:0px;
 	margin-right:0px;
 	margin-top:2px;
@@ -318,7 +316,7 @@ color: red;
 #patchNotesColumn {
 	position: absolute;
 	left: 970px;
-	top: 760px;
+	top: 930px;
 }
 #pieceDungeons {
 	width:92px;
@@ -635,19 +633,17 @@ color: red;
 }
 #skulls_in_logic {
 	top:30px;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: bold;
 	color: gold;
-	left:600px;
-	position: absolute;
+	float: right;
+
 }
 #tokens_acquired {
 	top:30px;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: bold;
 	color: gold;
-	left:600px;
-	position: absolute;
 }
 #timer {
 	font-size:42px;
