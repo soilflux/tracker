@@ -30,6 +30,7 @@ var thisIsAKey = false;
 var thisIsABossKey = false;
 var temptext2 = "";
 var removeBKFlag = false;
+var mouseInputs_locations = [];
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
@@ -125,8 +126,6 @@ var tSeconds = 0;
 var linso = false;
 var linsoGoMode = false;
 var linsoLightRotation = 0;
-if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso");}
-if (linso) {linso = false; linsoControl();}
 if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 Person.type = "normie";
 Logic.brackets = false;
@@ -930,7 +929,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i < AreaIndexes[34]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; if (i < AreaIndexes[26]) {elem.style.backgroundImage = background;} parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; elem.onmousedown = mouse_input; if (i < AreaIndexes[26]) {elem.style.backgroundImage = background;} parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
@@ -1067,8 +1066,10 @@ for (var i = 1; i <= 12; i++) {
 	elem.style.opacity = 0;
 	document.getElementById("linsoColumn").appendChild(elem);
 }
-
-
+var linsoString = false;
+if (localStorage.getItem("linso")) {linsoString = localStorage.getItem("linso");}
+if (linsoString == "true") {linso = true;}
+linsoControl(); linsoControl();
 setInterval(slowUpdate,5000);
 setInterval(Update,250);
 Update();Update();Update();

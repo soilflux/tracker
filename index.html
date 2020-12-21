@@ -68,13 +68,14 @@
 					<small id="woth3_title" class="woth_info_title"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
 					<small id="woth4_title" class="woth_info_title"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
 					<small id="woth5_title" class="woth_info_title"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
-					<br /><br /><br /></small>
+					</small>
 				  </div>
 			  </div>
 			  <small id = "timer"></small>
-			  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
-				<img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input><br />
-				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br /><br />
+			  <br><br><br><br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br><br><br><br><br><br>
+				<div id = "dungSpawn_inputs">
+				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
+				</div>
 				<small id="forceIntoLogic">Force into Logic</small><br />
 				<input id="forceLogic1" class= "check_input"></input>
 				<input id="forceLogic2" class= "check_input"></input>
@@ -292,6 +293,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes (if something breaks or you have suggestions, please tell me (soli#9369 on discord)) </small><br>
+				<small class = "patchNotes">21: Mouse Only Inputs! (cola buff) Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)</small><br>
 				<small class = "patchNotes">20: "In Logic:" displays stay aligned. woths and barrens quantity scale by preset </small><br>
 				<small class = "patchNotes">19: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a></small><br>
 				<small class = "patchNotes">18: finally made the herculean effort to edit songs title to white so it looks reasonable</small><br>
@@ -366,7 +368,17 @@
 		  <option value="NONE">NONE</option>
 		  <option value="LACS">LACS</option>
 		</select><br><br class="half_break">
-	<div>
+	</div>
+	<div id = "mouseInputs">
+	<small id = "mouseInputs_locations"></small><br>
+	<img id = "mouseInputs_boomerang" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_hammer" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_mirror_shield" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_kokiri_sword" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_lens" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_hookshot" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_magic" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bottle" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_scale" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_strength" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bomb_bag" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_chus" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_slingshot" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bow" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_magicspell" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_magicarrows" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_boots" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_goronzora" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_wallet" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_prescription" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_claim_check" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	</div>
 </body>
 	<script src="misc.js"></script>
 	<script src="logic.js"></script>

@@ -1,4 +1,10 @@
 function process_inputs() {
+	document.getElementById("mouseInputs_locations").innerHTML = "";
+	for (var i = 0; i < mouseInputs_locations.length; i++) {
+		if (i > 0) {document.getElementById("mouseInputs_locations").innerHTML += ", ";}
+		document.getElementById("mouseInputs_locations").innerHTML += mouseInputs_locations[i];
+	}
+	
 	var peeked = false;
 	for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
@@ -771,4 +777,23 @@ function update_logic_info() {
 	Game.logically_accessible=Game.logically_accessible.toFixed(0);
 	document.getElementById("checks_remaining").innerHTML="Remaining: "+Game.checks_remaining;
 	document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Game.logically_accessible;
+}
+function mouse_input() {
+	if (event.button == 2 && Check[event.target.id] == "unknown") {
+		mouseInputs_locations.push(Names[Locations.indexOf(event.target.id)]);
+		Check[event.target.id] = "junk";	
+	}
+}
+function mouse_input2() {
+	var item = "";
+	if (mouseInputs_locations.length == 0) {return;}
+	if (event.target.id == "mouseInputs_magicspell") {if (event.button == 2) {item = "farores_wind";} else {item = "dins_fire";}}
+	else if (event.target.id == "mouseInputs_boots") {if (event.button == 2) {item = "hover_boots";} else {item = "iron_boots";}}
+	else if (event.target.id == "mouseInputs_magicarrows") {console.log(event.target.value);if (event.button == 2) {item = "light_arrows";} else {item = "fire_arrows";}}
+	else if (event.target.id == "mouseInputs_goronzora") {if (event.button == 2) {item = "zora_tunic";} else {item = "goron_tunic";}}
+	else if (event.target.id == "mouseInputs_bottle") {if (event.button == 2) {item = "rutos_letter";} else {item = "bottle";}}
+	else {item = event.target.id.replace("mouseInputs_","");}
+	Check[Locations[Names.indexOf(mouseInputs_locations[0])]] = "unknown";
+	document.getElementById(Locations[Names.indexOf(mouseInputs_locations[0])]).value = inputs[Items2.indexOf(item)];
+	mouseInputs_locations.shift();
 }
