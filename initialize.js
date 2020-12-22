@@ -321,6 +321,7 @@ var Locations = [
 	"well1", "well5", "well2", "well3", "well4", "well6", "well11", "well7", "well10", "well8", "well9", "gs_well_west_inner", "gs_well_east_inner", "well12", "well13", "gs_well_like_like", "well14",
 	"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 ];
+soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
 var Names = [
 	"TL", "TR", "BR", "BL", "Sword", "Shop TL", "Shop TR", "Shop BR", "Shop BL", "Near Exit", "Soil", "Adult", "Storms",
@@ -364,8 +365,8 @@ var AreaIndexes = [0,13,22,30,39,53,72,75,77,78,84,91,102,116,120,136,152,161,17
 var SongIndexes = [1000,411,421,1000,1000,1000,410,1000,419,1000,418,1000,1000,412,1000,1000,10000,415,413,414,1000,1000,417,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 var SongIndexes2 = [1000,411,421,1000,1000,1000,410,1000,419,1000,418,1000,1000,416,1000,1000,1000,415,420,414,1000,1000,417,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 	
-var lastItem = 407;
-var lastSong = 418;
+var lastItem = 409;
+var lastSong = 421;
 	
 	Location.med1 = "unknown";
 	Location.med2 = "unknown";

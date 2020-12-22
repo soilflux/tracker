@@ -455,6 +455,19 @@ document.onkeydown = function(e) {
 
 document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 
+function refreshVersion() {
+	var version = 21;
+	var elements = document.getElementsByClassName('patchNotes');
+	var currentVersion = parseInt(elements[1].id.substring(2));
+	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
+	for (var i = version; i <= currentVersion; i++) {
+		document.getElementById("pn" + i).style.color = "orange";
+		document.getElementById("pn" + i).style.fontWeight = "bold";
+		document.getElementById("pn" + i).style.fontSize = "20px";
+	}
+	localStorage.setItem("version",currentVersion+1);
+}
+
 function Undo() {
 	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
 		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.current_forest_keys -= 1;}

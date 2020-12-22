@@ -22,4 +22,5 @@ function Update() {
 	refreshLinSo();
 	saveStuff(); //save current settings for next use of tracker
 	updateInputs(); //implements custom inputs
+	refreshVersion(); //will highlight patch notes that haven't been read yet
 }

@@ -534,8 +534,8 @@ function toggleLinsoGoMode() {
 function refreshLinSo() {
 	if (linso) {
 		document.getElementById("linsoColumn").style.display = "inline-block";
-		for (var i = 1; i <= 12; i++) {
-			if (Check[Locations[lastItem + i]] != "unknown") {document.getElementById("linsoC" + i).style.opacity = 1;} else {document.getElementById("linsoC" + i).style.opacity = 0;}
+		for (var i = 0; i <= 11; i++) {
+			if (Check[Locations[lastItem + i+1]] != "unknown") {document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 1;} else {document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 0;}
 		}
 		var temp = 0;
 		for (var i = 1; i <= 11; i++) {
