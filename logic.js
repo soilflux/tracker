@@ -464,12 +464,13 @@ function refresh_logic_for_stuff() {
 		
 		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {var exception = true;} else {var exception = false;}
 		
-		if (Logic[checkSummary[i]] || exception) {document.getElementById(str).className = "logic_check_text2";}
+		if (nerfed) {document.getElementById(str).className = "logic_check_text2"; document.getElementById(str).style.color = "white"; }
+		else if (Logic[checkSummary[i]] || exception) {document.getElementById(str).className = "logic_check_text2";}
 		else {document.getElementById(str).className = "ool_check_text2";}
 	}
 	
 	for(var i = 0; i < checkSummary.length; i++) {
-		if (i <= 36 ){
+		if (i <= 37 ){
 			str = checkSummary[i] + "_location";
 			if (checkSummary[i] == "trade") {
 				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
@@ -483,9 +484,14 @@ function refresh_logic_for_stuff() {
 		else {
 			str = checkSummary[i];
 		}
-		if (Game[checkSummary[i]] || i > 36) { 
-			if (i <= 36) {
-				if (Logic[checkSummary[i]]) {
+		if (Game[checkSummary[i]] || i > 37) { 
+			if (i <= 37) {
+				if (nerfed) {
+					document.getElementById(str).style.fontWeight = "normal";
+					document.getElementById(str).style.fontSize = "14px";
+					document.getElementById(str).style.color = "white";
+				}
+				else if (Logic[checkSummary[i]]) {
 					document.getElementById(str).style.color = "chartreuse";
 				}
 				else {

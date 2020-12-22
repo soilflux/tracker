@@ -624,7 +624,7 @@ function update_logic_info() {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
 	document.getElementById("tokens_acquired").innerHTML = "Tokens: " + Game.tokens;
-	document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;
+	if (!nerfed) {document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;} else {document.getElementById("skulls_in_logic").innerHTML = "In Logic: ??"}
 
 	Game.logically_accessible = 0;
 	Game.forest_logically_accessible=0;
@@ -785,7 +785,7 @@ function update_logic_info() {
 	Game.logically_accessible = Number(Game.logically_accessible);
 	Game.logically_accessible=Game.logically_accessible.toFixed(0);
 	document.getElementById("checks_remaining").innerHTML="Remaining: "+Game.checks_remaining;
-	document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Game.logically_accessible;
+	if (!nerfed) {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Game.logically_accessible;} else {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: ??"}
 }
 function mouse_input() {
 	if (event.button == 2 && Check[event.target.id] == "unknown") {
