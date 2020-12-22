@@ -31,6 +31,7 @@ var thisIsABossKey = false;
 var temptext2 = "";
 var removeBKFlag = false;
 var mouseInputs_locations = [];
+var nerfed = false;
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;

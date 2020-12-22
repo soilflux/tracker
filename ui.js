@@ -729,10 +729,19 @@ function update_logic_info() {
 			}
 		}
 		else if (Location_Access[key] == true) {
+			if (!nerfed){
 			document.getElementById(str).className= "access_check_text";
 			document.getElementById(str).style.opacity = .5;
 			document.getElementById(str).style.fontWeight = "normal";
 			document.getElementById(str).style.color ="yellow";
+			}
+			else {
+				document.getElementById(str).className= "logic_check_text";
+				document.getElementById(str).style.fontWeight = "bold";
+				document.getElementById(str).style.opacity = 1;
+				document.getElementById(str).style.color = "chartreuse";
+				document.getElementById(str).innerHTML = backUp[i];
+			}
 		}
 		else {
 			if (hideInaccessible) {

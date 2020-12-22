@@ -237,6 +237,12 @@ function circusControl() {
 	Update();
 }
 
+function nerfControl() {
+	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf my Tracker"; document.getElementById("woth_info").style.display = "inline-block";}
+	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Unleash Power"; document.getElementById("woth_info").style.display = "none";}
+	Update();
+}
+
 function saveStuff() {
 	localStorage.setItem("scrubSanity", document.getElementById("scrubSanity").value);
 	localStorage.setItem("shopSanity", document.getElementById("shopSanity").value);
