@@ -238,7 +238,7 @@ function circusControl() {
 }
 
 function nerfControl() {
-	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf my Tracker"; document.getElementById("woth_info").style.display = "inline-block";}
+	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; document.getElementById("woth_info").style.display = "inline-block";}
 	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Unleash Power"; document.getElementById("woth_info").style.display = "none";}
 	Update();
 }
