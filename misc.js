@@ -218,6 +218,7 @@ function timerControl() {
 	pauseFlag = true;
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
+	timer_stuff();
 }
 
 function circusControl() {
@@ -421,6 +422,7 @@ function timer_stuff() {
 	if (paused && pauseFlag) {pauseInitial = d.getTime(); pauseFlag = false;}
 	if (!paused && pauseFlag) {pauseTotal += d.getTime() - pauseInitial; pauseFlag = false;}
 	if (!paused) {var tempTime = Math.floor((d.getTime() - pauseTotal - initialTime)/1000);} else {var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)/1000);}
+	if (paused && !timerInitialized) {var temptime = 0;} else if (!paused && !timerInitialized) {timerInitialized = true;}
 	tempHours = Math.floor(tempTime / 3600);
 	tempMinutes = Math.floor((tempTime % 3600) / 60);
 	tempSeconds = Math.floor((tempTime % 3600) % 60);
@@ -432,7 +434,7 @@ function timer_stuff() {
 }
 
 document.onkeydown = function(e) {
-	if (e.altKey && e.which == 90) {
+	if (e.which == 19) {
 		timerControl();
 	}
 	if (e.ctrlKey && e.which == 90) {
