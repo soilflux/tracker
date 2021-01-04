@@ -1,7 +1,7 @@
 function checksPutInLogicByItem(item) {
 	for (var i = 0; i < Locations.length; i++) {Location_PutIn_Logic[Locations[i]] = false;}
 	
-	var temp = 20;
+	var temp = 8;
 	var tempArray = [];
 	
 	while (temp > 0) {

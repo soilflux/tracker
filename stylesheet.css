@@ -309,6 +309,10 @@ color: red;
 	width:200px;
 	float:left;
 }
+#inputConfig3{
+	width:200px;
+	float:left;
+}
 #skullsInLogicList {
 	float: left;
 	width: 180px;
@@ -436,6 +440,10 @@ color: red;
   display: table;
   clear: both;
 }
+#row2 {
+	position: absolute;
+	top: 1750px;
+}
 .check_input {
 	height:22px;
 	width: 30px;
@@ -465,6 +473,15 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-top:3px;
+}
+.custom_spawn {
+	width: 55px;
+	height:22px;
+	margin-bottom:2px;
+	margin-right:2px;
+	vertical-align: top;
+	padding: 0;
+	border: none;
 }
 .check_text {
 	font-size: 16px;
@@ -678,8 +695,8 @@ color: red;
 	font-size:42px;
 	color: white;
 	position: absolute;
-	top:800px;
-	left:800px;
+	top:820px;
+	left:900px;
 	font-family: calibri;
 }
 #forest_medallion {

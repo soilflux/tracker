@@ -76,9 +76,19 @@ for (var i = 0; i < inputs.length; i++) {
 var parent = document.getElementById("inputConfig2");
 for (var i = 0; i < spawnInputs.length; i++) {
 	if (localStorage.getItem(spawnNames[i])) {spawnInputs[i] = localStorage.getItem(spawnNames[i]);}
-	var elem = document.createElement("input"); elem.id = spawnNames[i]; elem.value = spawnInputs[i]; elem.className = "mark_spawn"; parent.appendChild(elem);
+	var elem = document.createElement("input"); elem.id = spawnNames[i]; elem.value = spawnInputs[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
 	var elem = document.createElement("small"); elem.id = "text_" + spawnNames[i]; elem.className = "check_text"; elem.innerHTML = spawnNames[i]; parent.appendChild(elem);
 	var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
+}
+
+controllerConfigNames =["","",""];
+controllerConfigDescriptions =["Junk","Key","Item"];
+var parent = document.getElementById("inputConfig3");
+for (var i = 0; i < controllerConfigNames.length; i++) {
+	if (localStorage.getItem(controllerConfigNames[i])) {controllerConfigNames[i] = localStorage.getItem(controllerConfigNames[i]);}
+	var elem = document.createElement("input"); elem.id = controllerConfigDescriptions[i]; elem.value = controllerConfigNames[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
+	var elem = document.createElement("small"); elem.id = "text_" + controllerConfigDescriptions[i]; elem.className = "check_text"; elem.innerHTML = controllerConfigDescriptions[i]; parent.appendChild(elem);
+	var elem = document.createElement("br"); elem.id = "br_" + controllerConfigDescriptions[i]; parent.appendChild(elem);
 }
 
 for (var i = 3; i < Items2.length; i++) {
@@ -1071,7 +1081,78 @@ for (var i = 1; i <= 12; i++) {
 var linsoString = false;
 if (localStorage.getItem("linso")) {linsoString = localStorage.getItem("linso");}
 if (linsoString == "true") {linso = true;}
+
+var haveEvents = 'ongamepadconnected' in window;
+var controllers = {};
+
+function connecthandler(e) {
+  addgamepad(e.gamepad);
+}
+
+function addgamepad(gamepad) {
+  controllers[gamepad.index] = gamepad;
+}
+
+function disconnecthandler(e) {
+  removegamepad(e.gamepad);
+}
+
+var pressCooldown = 0;
+function updateControllerStatus() {
+	if (pressCooldown != 0 ) {
+		pressCooldown -= 1;
+		return;
+	}
+	if (!haveEvents) {
+		scangamepads();
+	}
+
+  var i = 0;
+  var j;
+
+  for (j in controllers) {
+    var controller = controllers[j];
+
+    for (i = 0; i < controller.buttons.length; i++) {
+      var val = controller.buttons[i];
+      var pressed = val == 1.0;
+      if (typeof(val) == "object") {
+        pressed = val.pressed;
+        val = val.value;
+      }
+      if (pressed) {
+		pressCooldown = 10;
+		console.log(i+"");	
+      } else {
+		  
+      }
+    }
+  }
+}
+
+function scangamepads() {
+  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+  for (var i = 0; i < gamepads.length; i++) {
+    if (gamepads[i]) {
+      if (gamepads[i].index in controllers) {
+        controllers[gamepads[i].index] = gamepads[i];
+      } else {
+        addgamepad(gamepads[i]);
+      }
+    }
+  }
+}
+
+window.addEventListener("gamepadconnected", connecthandler);
+window.addEventListener("gamepaddisconnected", disconnecthandler);
+
+if (!haveEvents) {
+ setInterval(scangamepads, 500);
+}
+
 linsoControl(); linsoControl();
-setInterval(slowUpdate,5000);
-setInterval(Update,250);
-Update();Update();Update();
+setInterval(slowUpdate,60000);
+setInterval(midUpdate,3000);
+setInterval(fastUpdate,500);
+setInterval(updateControllerStatus,1000/60);
+Update(); midUpdate(); midUpdate(); midUpdate(); fastUpdate();

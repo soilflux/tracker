@@ -214,16 +214,6 @@ function isUpperCase(str) {
     return str === str.toUpperCase();
 }
 
-function slowUpdate() {
-	WotHItems = [];
-	for (i=0; i < Items.length; i++) {
-	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
-	}
-	for (i=0; i < Items.length; i++) {
-	if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
-	}
-}
-
 function timerControl() {
 	pauseFlag = true;
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
@@ -261,7 +251,7 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Show LinSo"; 
 		document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
-		document.getElementById("confirmed_logically_required").style.top = "820px"; document.getElementById("confirmed_logically_required").style.left = "735px";
+		document.getElementById("confirmed_logically_required").style.top = "850px"; document.getElementById("confirmed_logically_required").style.left = "735px";
 	}
 	else {
 		linso = true; 

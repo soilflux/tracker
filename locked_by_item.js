@@ -1,8 +1,9 @@
 function checksLockedByItem(item) {
-	for (var i = 0; i < Locations.length; i++) {Location_Locked_Logic2[Locations[i]] = false;}
+	var l = Locations.length;
+	for (var i = 0; i < l; i++) {Location_Locked_Logic2[Locations[i]] = false;}
 	
 	var tempArray = [];
-	var temp = 20;
+	var temp = 8;
 	while (temp > 0) {
     temp -= 1;
 		
@@ -916,7 +917,8 @@ function checksLockedByItem(item) {
 	var temp = 0;
 	var tempArray = [];
 	
-	for (var i = 0; i < Locations.length; i++) {
+	var l = Locations.length;
+	for (var i = 0; i < l; i++) {
 		if (!Location_Locked_Logic2[Locations[i]]) {tempArray.push(Locations[i]);}
 	}
 	return tempArray;

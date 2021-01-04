@@ -65,7 +65,7 @@ function process_inputs() {
 	}
 }
 
-function stone_medallion_input() {
+function stone_medallion_input() {	
 	var str = document.getElementById("markStones").value.substring(0,2);
 		
 	if (!hasChangedMedal) {
@@ -312,7 +312,7 @@ function junk() {
 	}
 	
 	lastCheck.push(str);
-	Update();Update();Update();
+	Update();
 }	
 
 function junkUltra() {
@@ -333,7 +333,7 @@ function junkUltra() {
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 	}
 	slowUpdate();
-	Update();Update();Update();
+	Update();
 }
 
 function junkItem(x) {
@@ -359,7 +359,7 @@ function junkItem(x) {
 	document.getElementById(str2).value = "";
 	
 	lastCheck.push(str2);
-	Update();Update();Update();
+	Update();
 }
 
 function junkSong(x) {
@@ -369,7 +369,7 @@ function junkSong(x) {
 	document.getElementById(str2).value = "";
 	
 	lastCheck.push(str2);
-	Update();Update();Update();
+	Update();
 }
 
 function check_circle_info() {
@@ -606,10 +606,10 @@ function updateInputs() {
 	}
 }
 function update_logic_info() {
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "ON"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
 	if (document.getElementById("presets").value == "S3") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
 	if (document.getElementById("presets").value == "SGL") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "S4") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "ON"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
+	if (document.getElementById("presets").value == "S4") {document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
 		
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block";}
 	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
@@ -790,7 +790,14 @@ function update_logic_info() {
 function mouse_input() {
 	if (event.button == 2 && Check[event.target.id] == "unknown") {
 		mouseInputs_locations.push(Names[Locations.indexOf(event.target.id)]);
-		Check[event.target.id] = "junk";	
+		str = event.target.id;
+		str2 = "text_" + str;
+		str3 = "br_" + str;
+		Check[str] = "junk";
+		document.getElementById(str).style.display = "none";
+		document.getElementById(str2).style.display = "none";
+		document.getElementById(str3).style.display = "none";
+		Update();
 	}
 }
 function mouse_input2() {
@@ -805,4 +812,5 @@ function mouse_input2() {
 	Check[Locations[Names.indexOf(mouseInputs_locations[0])]] = "unknown";
 	document.getElementById(Locations[Names.indexOf(mouseInputs_locations[0])]).value = inputs[Items2.indexOf(item)];
 	mouseInputs_locations.shift();
+	Update();
 }
