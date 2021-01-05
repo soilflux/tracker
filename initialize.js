@@ -1129,7 +1129,7 @@ function updateControllerStatus() {
         val = val.value;
       }
       if (pressed && pressCooldown[i] == 0) {
-		pressCooldown[i] = 60;
+		pressCooldown[i] = 120;
 		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
 		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
 		if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i; localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
@@ -1147,7 +1147,7 @@ function updateControllerStatus() {
 					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				
+				acceptControllerInput = false;
 			}
 			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1160,7 +1160,7 @@ function updateControllerStatus() {
 					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				
+				acceptControllerInput = false;
 			}
 			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1173,10 +1173,10 @@ function updateControllerStatus() {
 					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
-				nextChecks.splice(nextIndex,1);
+				acceptControllerInput = false;
 				
 			}
-			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {nextChecks.splice(nextIndex,1);}
+			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {nextChecks.splice(nextIndex,1); acceptControllerInput = false;}
 			midUpdate();
 		}
 		if (document.getElementById(controllerConfigDescriptions[4]).value == i) {acceptControllerInput = true;}
