@@ -238,14 +238,14 @@ function junk() {
 	var temp = Locations.indexOf(str);
 	
 	if(type == 0 && !event.altKey) {
-		if(str.includes("forest") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
-		else if(str.includes("fire") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
-		else if(str.includes("water") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
-		else if(str.includes("spirit") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
-		else if(str.includes("shadow") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
-		else if(str.includes("ganons") && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -=1;}
-		else if(str.includes("gtg") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
-		else if(str.includes("well") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
+		if(str.includes("forest_") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
+		else if(str.includes("fire_") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
+		else if(str.includes("water_") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
+		else if(str.includes("spirit_") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
+		else if(str.includes("shadow_") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
+		else if(str.includes("ganons_") && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -=1;}
+		else if(str.includes("gtg_") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
+		else if(str.includes("well_") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
 		else if(temp < AreaIndexes[26]){}
 		else {return;}
 		Check[str]="junk";
@@ -339,16 +339,16 @@ function junkUltra() {
 function junkItem(x) {
 	var str2 = x.id;
 	var temp = true;
-	if (str2.startsWith('shadow') || str2.startsWith('spirit') || str2.startsWith('forest') || str2.startsWith('fire') || str2.startsWith('water') || str2.startsWith('gtg') || str2.startsWith('well')|| str2.startsWith('ganons')) {
+	if (str2.includes('shadow_') || str2.includes('spirit_') || str2.includes('forest_') || str2.includes('fire_') || str2.includes('water_') || str2.includes('gtg_') || str2.includes('well_')|| str2.includes('ganons_')) {
 		temp = false;
-		if(str2.startsWith('forest') && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('fire') && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('water') && Game.water_checks_remaining != 0) {Game.water_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('shadow') && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('spirit') && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('ganons') && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('gtg') && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -= 1; temp = true;}
-		if(str2.startsWith('well') && Game.well_checks_remaining != 0) {Game.well_checks_remaining -= 1; temp = true;}
+		if(str2.includes('forest_') && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -= 1; temp = true;}
+		if(str2.includes('fire_') && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -= 1; temp = true;}
+		if(str2.includes('water_') && Game.water_checks_remaining != 0) {Game.water_checks_remaining -= 1; temp = true;}
+		if(str2.includes('shadow_') && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -= 1; temp = true;}
+		if(str2.includes('spirit_') && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -= 1; temp = true;}
+		if(str2.includes('ganons_') && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -= 1; temp = true;}
+		if(str2.includes('gtg_') && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -= 1; temp = true;}
+		if(str2.includes('well_') && Game.well_checks_remaining != 0) {Game.well_checks_remaining -= 1; temp = true;}
 	}
 	if (!temp) {return;}
 	
@@ -502,11 +502,11 @@ function handleDungeonHighlights() {
 	if (Check.deku_queen_gohma != "unknown") {if (document.getElementById("text_" + dekuPlacement) != null) {document.getElementById("text_" + dekuPlacement).style.opacity=.2}}
 	if (Check.dodongos_king_dodongo != "unknown") {if (document.getElementById("text_" + dodongosPlacement) != null) {document.getElementById("text_" + dodongosPlacement).style.opacity=.2}}
 	if (Check.jabu_barinade != "unknown") {if (document.getElementById("text_" + jabuPlacement) != null) {document.getElementById("text_" + jabuPlacement).style.opacity=.2}}
-	if (Check.forest14 != "unknown") {if (document.getElementById("text_" + forestPlacement) != null) {document.getElementById("text_" + forestPlacement).style.opacity=.2}}
-	if (Check.fire6 != "unknown") {if (document.getElementById("text_" + firePlacement) != null) {document.getElementById("text_" + firePlacement).style.opacity=.2}}
-	if (Check.water11 != "unknown") {if (document.getElementById("text_" + waterPlacement) != null) {document.getElementById("text_" + waterPlacement).style.opacity=.2}}
-	if (Check.spirit20 != "unknown") {if (document.getElementById("text_" + spiritPlacement) != null) {document.getElementById("text_" + spiritPlacement).style.opacity=.2}}
-	if (Check.shadow18 != "unknown") {if (document.getElementById("text_" + shadowPlacement) != null) {document.getElementById("text_" + shadowPlacement).style.opacity=.2}}
+	if (Check.forest_phantomGanon != "unknown") {if (document.getElementById("text_" + forestPlacement) != null) {document.getElementById("text_" + forestPlacement).style.opacity=.2}}
+	if (Check.fire_volvagia != "unknown") {if (document.getElementById("text_" + firePlacement) != null) {document.getElementById("text_" + firePlacement).style.opacity=.2}}
+	if (Check.water_morpha != "unknown") {if (document.getElementById("text_" + waterPlacement) != null) {document.getElementById("text_" + waterPlacement).style.opacity=.2}}
+	if (Check.spirit_twinrova != "unknown") {if (document.getElementById("text_" + spiritPlacement) != null) {document.getElementById("text_" + spiritPlacement).style.opacity=.2}}
+	if (Check.shadow_bongo != "unknown") {if (document.getElementById("text_" + shadowPlacement) != null) {document.getElementById("text_" + shadowPlacement).style.opacity=.2}}
 	if (document.getElementById("text_" + pocketPlacement) != null) {document.getElementById("text_" + pocketPlacement).style.opacity=.2}
 }
 
@@ -671,14 +671,14 @@ function update_logic_info() {
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";
 			if (i < AreaIndexes[34]) {
-				if (Locations[i].includes("forest")) {Game.forest_checks_remaining += 1;}
-				else if (Locations[i].includes("fire")) {Game.fire_checks_remaining += 1;}
-				else if (Locations[i].includes("water")) {Game.water_checks_remaining += 1;}
-				else if (Locations[i].includes("spirit")) {Game.spirit_checks_remaining += 1;}
-				else if (Locations[i].includes("shadow")) {Game.shadow_checks_remaining += 1;}
-				else if (Locations[i].includes("gtg")) {Game.gtg_checks_remaining += 1;}
-				else if (Locations[i].includes("well")) {Game.well_checks_remaining += 1;}
-				else if (Locations[i].includes("ganons")) {Game.ganons_checks_remaining += 1;}
+				if (Locations[i].includes("forest_")) {Game.forest_checks_remaining += 1;}
+				else if (Locations[i].includes("fire_")) {Game.fire_checks_remaining += 1;}
+				else if (Locations[i].includes("water_")) {Game.water_checks_remaining += 1;}
+				else if (Locations[i].includes("spirit_")) {Game.spirit_checks_remaining += 1;}
+				else if (Locations[i].includes("shadow_")) {Game.shadow_checks_remaining += 1;}
+				else if (Locations[i].includes("gtg_")) {Game.gtg_checks_remaining += 1;}
+				else if (Locations[i].includes("well_")) {Game.well_checks_remaining += 1;}
+				else if (Locations[i].includes("ganons_")) {Game.ganons_checks_remaining += 1;}
 				else {Game.checks_remaining += 1;}
 			}
 		}
@@ -759,11 +759,11 @@ function update_logic_info() {
 	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; document.getElementById("text_deku_lobby").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_map").style.color = "#FFD700"; document.getElementById("text_dodongos_map").style.opacity = 1; document.getElementById("text_dodongos_map").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("ja")) {document.getElementById("text_jabu_map").style.color = "#FFD700"; document.getElementById("text_jabu_map").style.opacity = 1; document.getElementById("text_jabu_map").style.fontWeight = "bold";}
-	if (document.getElementById("pieceDungeons").value.includes("fo")) {document.getElementById("text_forest6").style.color = "#FFD700"; document.getElementById("text_forest6").style.opacity = 1; document.getElementById("text_forest6").style.fontWeight = "bold";}
-	if (document.getElementById("pieceDungeons").value.includes("fi")) {document.getElementById("text_fire6").style.color = "#FFD700"; document.getElementById("text_fire6").style.opacity = 1; document.getElementById("text_fire6").style.fontWeight = "bold";}
-	if (document.getElementById("pieceDungeons").value.includes("wa")) {document.getElementById("text_water11").style.color = "#FFD700"; document.getElementById("text_water11").style.opacity = 1; document.getElementById("text_water11").style.fontWeight = "bold";}
-	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow3").style.color = "#FFD700"; document.getElementById("text_shadow3").style.opacity = 1; document.getElementById("text_shadow3").style.fontWeight = "bold";}
-	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit19").style.color = "#FFD700"; document.getElementById("text_spirit19").style.opacity = 1; document.getElementById("text_spirit19").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("fo")) {document.getElementById("text_forest_blockRoom").style.color = "#FFD700"; document.getElementById("text_forest_blockRoom").style.opacity = 1; document.getElementById("text_forest_blockRoom").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("fi")) {document.getElementById("text_fire_volvagia").style.color = "#FFD700"; document.getElementById("text_fire_volvagia").style.opacity = 1; document.getElementById("text_fire_volvagia").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("wa")) {document.getElementById("text_water_morpha").style.color = "#FFD700"; document.getElementById("text_water_morpha").style.opacity = 1; document.getElementById("text_water_morpha").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1; document.getElementById("text_shadow_compass").style.fontWeight = "bold";}
+	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit_tippyTop").style.color = "#FFD700"; document.getElementById("text_spirit_tippyTop").style.opacity = 1; document.getElementById("text_spirit_tippyTop").style.fontWeight = "bold";}
 	
 	Game.forest_checks_remaining -= 5 - Game.current_forest_keys;
 	Game.fire_checks_remaining -= 8 - Game.current_fire_keys
