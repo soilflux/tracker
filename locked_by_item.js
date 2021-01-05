@@ -298,7 +298,7 @@ function checksLockedByItem(item) {
 		Location_Locked_Logic2.gtg_eyes = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
 		Location_Locked_Logic2.gtg_aboveEyes = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
 		Location_Locked_Logic2.gtg_keese = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
-		Location_Locked_Logic2.gtg_fireChest = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
+		Location_Locked_Logic2.gtg_flamesChest = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
 		Location_Locked_Logic2.gtg_freestanding = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
 		Location_Locked_Logic2.gtg_right2 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
 		Location_Locked_Logic2.gtg_right3 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));

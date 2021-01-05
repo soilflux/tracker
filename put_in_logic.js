@@ -398,7 +398,7 @@ function checksPutInLogicByItem(item) {
 		Location_PutIn_Logic.gtg_eyes = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow;  //((PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9) && PutIn_Logic.hammer));
 		Location_PutIn_Logic.gtg_aboveEyes = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow ;//&& PutIn_Logic.can_see;
 		Location_PutIn_Logic.gtg_keese = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
-		Location_PutIn_Logic.gtg_fireChest = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
+		Location_PutIn_Logic.gtg_flamesChest = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
 		Location_PutIn_Logic.gtg_freestanding = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.time));
 		Location_PutIn_Logic.gtg_right2 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.time));
 		Location_PutIn_Logic.gtg_right3 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.time));
@@ -844,7 +844,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.gtg_silvers4 = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.silver_gauntlets ;//&& PutIn_Logic.can_see ;
 	Location_PutIn_Logic.gtg_eyes = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow;  //((PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9) && PutIn_Logic.hammer));
 	Location_PutIn_Logic.gtg_aboveEyes = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.bow ;//&& PutIn_Logic.can_see;
-	Location_PutIn_Logic.gtg_fireChest = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
+	Location_PutIn_Logic.gtg_flamesChest = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot/*&& PutIn_Logic.can_see*/;
 	Location_PutIn_Logic.gtg_keese = PutIn_Logic.can_save_carpenters && PutIn_Logic.hookshot && PutIn_Logic.hammer;// && (PutIn_Logic.can_see || (PutIn_Logic.bomb_bag || PutIn_Logic.gtg_keys == 9)) ;
 	Location_PutIn_Logic.gtg_freestanding = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.time));
 	Location_PutIn_Logic.gtg_right2 = PutIn_Logic.can_save_carpenters && (PutIn_Logic.gtg_keys >= 9 || (PutIn_Logic.bomb_bag && PutIn_Logic.time) || (PutIn_Logic.hookshot /*&& PutIn_Logic.can_see*/ && PutIn_Logic.time));

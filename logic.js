@@ -893,7 +893,7 @@ function location_logic(){
 	Location_Logic.gtg_eyes = Logic.can_save_carpenters && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys == 9) && Logic.hammer));
 	Location_Logic.gtg_aboveEyes = Logic.can_save_carpenters && Logic.hookshot && Logic.bow ;//&& Logic.can_see;
 	Location_Logic.gtg_keese = Logic.can_save_carpenters && Logic.hookshot/*&& Logic.can_see*/;
-	Location_Logic.gtg_fireChest = Logic.can_save_carpenters && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys == 9)) ;
+	Location_Logic.gtg_flamesChest = Logic.can_save_carpenters && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys == 9)) ;
 	Location_Logic.gtg_freestanding = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
 	Location_Logic.gtg_right2 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
 	Location_Logic.gtg_right3 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
@@ -1317,7 +1317,7 @@ function location_logic(){
 	Location_Access.gtg_eyes = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;  //((Game.bomb_bag1 || Game.current_gtg_keys == 9) && Game.hammer));
 	Location_Access.gtg_aboveEyes = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;//&& Game.can_see;
 	Location_Access.gtg_keese = Game.can_save_carpenters && Game.can_climb_gtg_hole;// && (Game.can_see || (Game.bomb_bag1 || Game.current_gtg_keys == 9)) ;
-	Location_Access.gtg_fireChest = Game.can_save_carpenters && Game.can_climb_gtg_hole/*&& Game.can_see*/;
+	Location_Access.gtg_flamesChest = Game.can_save_carpenters && Game.can_climb_gtg_hole/*&& Game.can_see*/;
 	Location_Access.gtg_freestanding = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
 	Location_Access.gtg_right2 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
 	Location_Access.gtg_right3 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
