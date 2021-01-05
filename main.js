@@ -4,12 +4,21 @@ function Update() {
 	handleItemHighlights(); //add or remove transparency if player has or does not have items, respectively
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
+	for (var i = 0; i < nextChecks.length; i++) {
+		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
+		if (document.getElementById("text_" + nextChecks[i]).style.color != "black") {nextIndex = i; break;}
+		if (i == nextChecks.length - 1) {i = 420;}
+	}
+	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
+	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
+	
 }
 
 function fastUpdate() {
 	timer_stuff(); //implements a timer to use as an alternative to stuff like livesplit
 	stone_medallion_input(); //handle stones and medallions input
 	process_inputs(); //handle hinted, peeked and picked up things
+	if (acceptControllerInput && controllerInputWindowCountdown != 0) {controllerInputWindowCountdown -= 1;} else {controllerInputWindowCountdown = 2; acceptControllerInput = false;}
 }
 
 function midUpdate() {
@@ -44,6 +53,13 @@ function midUpdate() {
 		i = 1000000;
 	}
 	}
+	for (var i = 0; i < nextChecks.length; i++) {
+		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
+		if (document.getElementById("text_" + nextChecks[i]).style.color != "black") {nextIndex = i; break;}
+		if (i == nextChecks.length - 1) {nextIndex = 420;}
+	}
+	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
+	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
 	Update();
 }
 

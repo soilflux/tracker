@@ -33,6 +33,11 @@ var temptext2 = "";
 var removeBKFlag = false;
 var mouseInputs_locations = [];
 var nerfed = false;
+var next = document.getElementById("next_check_prediction");
+var nextChecks = [];
+var nextIndex = 0;
+var acceptControllerInput = false;
+var controllerInputWindowCountdown = 2;
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
@@ -58,7 +63,7 @@ var hintNames3 = ["ruto", "atz", "craterbean", "box", "col", "fop", "sunshoot", 
 var hintNames4 = ["bottle", "atz", "crb", "gybean", "colo", "fop", "shootsun", "poe", "chestgame", "20s", "red", "coi", "cos", "sca", "flaredancer", "wbk", "riverchest", "gtgfinal", "toi", "dea", "wl", "desert", "pot", "dancin", "mirror", "silver", "maze3", "gvh", "cuccos", "cra", "mea", "prelude", "kin", "boomerang", "sho", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "frogs2","thr", "ootsong"];
 var hintNames5 = ["bot", "atz", "crb", "grb", "colossus", "fop", "ss", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "colosong", "pot", "dancing", "lefthand", "silvers", "maze3!", "gvh", "chickens", "cra", "mea", "1me", "kin", "rang", "shooting", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","thrown", "oot"];
 var hintNames6 = ["bot", "atz", "crb", "grb", "colossus", "fop", "hss", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "wastesong", "pot", "dancing", "lefthand", "righthand", "maze3!", "gvh", "chicken", "cra", "mea", "1me", "kin", "boo", "shoo", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","ootitem", "oot"];
-var hintIndexes = ["hylia_bottle", "hyrule_tektite_grotto", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "hylia_sun_shoot", "poes", "market_lens_game", "tokens_20", "redead_grave", "composers_grave", "sunsSpot", "fire12", "fire15", "water10","water8", "gtg21", "gtg22", "well8", "wasteland", "requiemSpot", "goron_pot", "goron_dance", "spirit17", "spirit7", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest8", "shadow17", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater", "tokens_30", "tokens_40", "tokens_50", "frogs_2", "hyrule_ocarina", "oot"];
+var hintIndexes = ["hylia_bottle", "hyrule_tektite_grotto", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "hylia_sun_shoot", "poes", "market_lens_game", "tokens_20", "redead_grave", "composers_grave", "sunsSpot", "fire12", "fire15", "water10","water8", "gtg_final", "gtg_toilet", "well8", "wasteland", "requiemSpot", "goron_pot", "goron_dance", "spirit17", "spirit7", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest8", "shadow17", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater", "tokens_30", "tokens_40", "tokens_50", "frogs_2", "hyrule_ocarina", "oot"];
 
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
@@ -82,13 +87,13 @@ for (var i = 0; i < spawnInputs.length; i++) {
 	var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
 }
 
-controllerConfigNames =["","",""];
-controllerConfigDescriptions =["Junk","Key","Item"];
+controllerConfigNames =["","","","",""];
+controllerConfigDescriptions =["controllerJunk","controllerKey","controllerItem","controllerSkip","controllerAcceptInputs"];
 var parent = document.getElementById("inputConfig3");
 for (var i = 0; i < controllerConfigNames.length; i++) {
 	if (localStorage.getItem(controllerConfigNames[i])) {controllerConfigNames[i] = localStorage.getItem(controllerConfigNames[i]);}
 	var elem = document.createElement("input"); elem.id = controllerConfigDescriptions[i]; elem.value = controllerConfigNames[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
-	var elem = document.createElement("small"); elem.id = "text_" + controllerConfigDescriptions[i]; elem.className = "check_text"; elem.innerHTML = controllerConfigDescriptions[i]; parent.appendChild(elem);
+	var elem = document.createElement("small"); elem.id = "text_" + controllerConfigDescriptions[i]; elem.className = "check_text"; elem.innerHTML = controllerConfigDescriptions[i].substring(10); parent.appendChild(elem);
 	var elem = document.createElement("br"); elem.id = "br_" + controllerConfigDescriptions[i]; parent.appendChild(elem);
 }
 
@@ -329,7 +334,7 @@ var Locations = [
 	"spirit1", "spirit2", "gs_spirit_metal_fence", "spirit3", "gs_spirit_child_climb", "spirit4", "spirit5", "spirit6", "gs_spirit_before_child_knuckle", "spirit7", "spirit8", "gs_spirit_boulder_room", "spirit9", "spirit10", "spirit11", "spirit12", "spirit13", "gs_spirit_lobby", "spirit14", "spirit15", "spirit16", "spirit17", "spirit18", "spirit19", "spirit20",
 	"shadow1", "shadow2", "shadow3", "shadow4", "gs_shadow_like_like", "shadow5", "shadow6", "shadow7", "gs_shadow_crusher", "shadow8", "shadow9", "shadow10", "gs_shadow_giant_pot", "shadow11", "shadow12", "shadow13", "shadow14", "gs_shadow_near_boat", "shadow15", "shadow16", "gs_shadow_three_pots", "shadow17", "shadow18",
 	"scrub_ganons_1", "scrub_ganons_2", "scrub_ganons_3", "scrub_ganons_4", "ganons1", "ganons2", "ganons3", "ganons4", "ganons5", "ganons6", "ganons7", "ganons8", "ganons9", "ganons10", "ganons11", "ganons12", "ganons13", "ganons14", "ganons15", "ganons16",
-	"gtg1", "gtg2", "gtg3", "gtg4", "gtg5", "gtg6", "gtg7", "gtg8", "gtg9", "gtg10", "gtg12", "gtg11", "gtg13", "gtg14", "gtg15", "gtg16", "gtg17",  "gtg18", "gtg19", "gtg20", "gtg21", "gtg22",
+	"gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_fireChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1",  "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
 	"well1", "well5", "well2", "well3", "well4", "well6", "well11", "well7", "well10", "well8", "well9", "gs_well_west_inner", "gs_well_east_inner", "well12", "well13", "gs_well_like_like", "well14",
 	"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 ];
@@ -788,6 +793,7 @@ var woth4 = "unknown";
 var woth5 = "unknown";	
 
 var WotHItems = [];
+var pressCooldown = new Array(35).fill(0);
 var WotH = new Array(35).fill(0);
 var checkedYet = new Array(256).fill(false);
 var readYet = new Array(42).fill(false);
@@ -930,7 +936,7 @@ for (var i = 0; i<Locations.length; i++) {
 	}
 	if (i == AreaIndexes[32]) {
 		parent = document.getElementById("dung3");
-		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; elem.onmousedown = route_gtg; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "gtg"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "13"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "gtgSKs"; elem.className = "superdotSK"; elem.innerHTML = "9"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1098,12 +1104,12 @@ function disconnecthandler(e) {
   removegamepad(e.gamepad);
 }
 
-var pressCooldown = 0;
+if (localStorage.getItem(controllerConfigDescriptions[0])) {document.getElementById(controllerConfigDescriptions[0]).value = localStorage.getItem(controllerConfigDescriptions[0]);}
+if (localStorage.getItem(controllerConfigDescriptions[1])) {document.getElementById(controllerConfigDescriptions[1]).value = localStorage.getItem(controllerConfigDescriptions[1]);}
+if (localStorage.getItem(controllerConfigDescriptions[2])) {document.getElementById(controllerConfigDescriptions[2]).value = localStorage.getItem(controllerConfigDescriptions[2]);}
+if (localStorage.getItem(controllerConfigDescriptions[3])) {document.getElementById(controllerConfigDescriptions[3]).value = localStorage.getItem(controllerConfigDescriptions[3]);}
+if (localStorage.getItem(controllerConfigDescriptions[4])) {document.getElementById(controllerConfigDescriptions[4]).value = localStorage.getItem(controllerConfigDescriptions[4]);}
 function updateControllerStatus() {
-	if (pressCooldown != 0 ) {
-		pressCooldown -= 1;
-		return;
-	}
 	if (!haveEvents) {
 		scangamepads();
 	}
@@ -1115,15 +1121,65 @@ function updateControllerStatus() {
     var controller = controllers[j];
 
     for (i = 0; i < controller.buttons.length; i++) {
+	  if (pressCooldown[i] > 0) {pressCooldown[i] -= 1;}
       var val = controller.buttons[i];
       var pressed = val == 1.0;
       if (typeof(val) == "object") {
         pressed = val.pressed;
         val = val.value;
       }
-      if (pressed) {
-		pressCooldown = 10;
-		console.log(i+"");	
+      if (pressed && pressCooldown[i] == 0) {
+		pressCooldown[i] = 60;
+		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
+		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
+		if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i; localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
+		if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i; localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
+		if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i; localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
+		if (acceptControllerInput && nextChecks.length > 0 && nextIndex != 420){
+			if (document.getElementById(controllerConfigDescriptions[0]).value == i) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 0,
+					buttons: 2,
+					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
+				
+			}
+			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 2,
+					buttons: 2,
+					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
+				
+			}
+			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 2,
+					buttons: 2,
+					clientX: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
+				nextChecks.splice(nextIndex,1);
+				
+			}
+			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {nextChecks.splice(nextIndex,1);}
+			midUpdate();
+		}
+		if (document.getElementById(controllerConfigDescriptions[4]).value == i) {acceptControllerInput = true;}
       } else {
 		  
       }
@@ -1152,7 +1208,7 @@ if (!haveEvents) {
 }
 
 linsoControl(); linsoControl();
-setInterval(slowUpdate,60000);
+setInterval(slowUpdate,10000);
 setInterval(midUpdate,3000);
 setInterval(fastUpdate,500);
 setInterval(updateControllerStatus,1000/60);

@@ -256,8 +256,8 @@ function refresh_logic_for_stuff() {
 	}
 	
 	Logic.current_gtg_keys = Logic.forced_gtg_keys;
-	for (i = 1; i <= 22; i++) {
-		str = "gtg" + i;
+	for (i = AreaIndexes[32]; i <= AreaIndexes[33]; i++) {
+		str = Locations[i];
 		if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_gtg_keys +=1;}
 	}
 	
@@ -427,11 +427,11 @@ function refresh_logic_for_stuff() {
 	}
 	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
 	if (Logic.current_gtg_keys < 9) {
-		var ger_keys = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,22], [],[],[17],[18],[],[19],[20]]
+		var ger_keys = [["lobbyLeft","lobbyRight","stalfos","wolfos","silvers1","silvers2","silvers3","silvers4","eyes","aboveEyes","keese","fireChest","freestanding","right2","right3","beamos","toilet"], [],[],["left1"],["left2"],[],["left3"],["left4"]]
 		var done = false;
 		for (i = 0; i < ger_keys.length; i++) {
 			for (j = 0; j < ger_keys[i].length; j++) {
-				str = "gtg" + ger_keys[i][j];
+				str = "gtg_" + ger_keys[i][j];
 				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
 					Logic.min_gtg_keys = i;
 					done = true;
@@ -882,28 +882,28 @@ function location_logic(){
 	Location_Logic.ganons14 = Logic.can_enter_ganons && ((Logic.bow && Logic.fire_arrows && Logic.magic) || Logic.hookshot || Logic.hover_boots || Logic.time);
 	Location_Logic.ganons15 = Logic.can_enter_ganons && ((Logic.bow && Logic.fire_arrows && Logic.magic) || (Logic.longshot && (Logic.hover_boots || Logic.can_use_dins)));
 	Location_Logic.ganons16 = Logic.can_enter_ganons;
-	Location_Logic.gtg1 = Logic.can_save_carpenters && Logic.bow;
-	Location_Logic.gtg2 = Logic.can_save_carpenters && Logic.bow;
-	Location_Logic.gtg3 = Logic.can_save_carpenters;
-	Location_Logic.gtg4 = Logic.can_save_carpenters && Logic.hookshot;
-	Location_Logic.gtg5 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg6 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg7 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg8 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg9 = Logic.can_save_carpenters && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys == 9) && Logic.hammer));
-	Location_Logic.gtg10 = Logic.can_save_carpenters && Logic.hookshot && Logic.bow ;//&& Logic.can_see;
-	Location_Logic.gtg12 = Logic.can_save_carpenters && Logic.hookshot/*&& Logic.can_see*/;
-	Location_Logic.gtg11 = Logic.can_save_carpenters && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys == 9)) ;
-	Location_Logic.gtg13 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg14 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg15 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg16 = Logic.can_save_carpenters && Logic.bomb_bag;
-	Location_Logic.gtg17 = Logic.can_save_carpenters && Logic.gtg_keys >= 3 ;//&& Logic.can_see;
-	Location_Logic.gtg18 = Logic.can_save_carpenters && Logic.gtg_keys >= 4;
-	Location_Logic.gtg19 = Logic.can_save_carpenters && Logic.gtg_keys >= 6;
-	Location_Logic.gtg20 = Logic.can_save_carpenters && Logic.gtg_keys >= 7;
-	Location_Logic.gtg21 = Logic.can_save_carpenters && Logic.gtg_keys >= 9;
-	Location_Logic.gtg22 = Logic.can_save_carpenters && Logic.iron_boots && Logic.time && Logic.hookshot /*&& Logic.can_see*/;
+	Location_Logic.gtg_lobbyLeft = Logic.can_save_carpenters && Logic.bow;
+	Location_Logic.gtg_lobbyRight = Logic.can_save_carpenters && Logic.bow;
+	Location_Logic.gtg_stalfos = Logic.can_save_carpenters;
+	Location_Logic.gtg_wolfos = Logic.can_save_carpenters && Logic.hookshot;
+	Location_Logic.gtg_silvers1 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
+	Location_Logic.gtg_silvers2 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
+	Location_Logic.gtg_silvers3 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
+	Location_Logic.gtg_silvers4 = Logic.can_save_carpenters && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
+	Location_Logic.gtg_eyes = Logic.can_save_carpenters && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys == 9) && Logic.hammer));
+	Location_Logic.gtg_aboveEyes = Logic.can_save_carpenters && Logic.hookshot && Logic.bow ;//&& Logic.can_see;
+	Location_Logic.gtg_keese = Logic.can_save_carpenters && Logic.hookshot/*&& Logic.can_see*/;
+	Location_Logic.gtg_fireChest = Logic.can_save_carpenters && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys == 9)) ;
+	Location_Logic.gtg_freestanding = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_right2 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_right3 = Logic.can_save_carpenters && (Logic.gtg_keys == 9 || (Logic.bomb_bag && Logic.time) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_beamos = Logic.can_save_carpenters && Logic.bomb_bag;
+	Location_Logic.gtg_left1 = Logic.can_save_carpenters && Logic.gtg_keys >= 3 ;//&& Logic.can_see;
+	Location_Logic.gtg_left2 = Logic.can_save_carpenters && Logic.gtg_keys >= 4;
+	Location_Logic.gtg_left3 = Logic.can_save_carpenters && Logic.gtg_keys >= 6;
+	Location_Logic.gtg_left4 = Logic.can_save_carpenters && Logic.gtg_keys >= 7;
+	Location_Logic.gtg_final = Logic.can_save_carpenters && Logic.gtg_keys >= 9;
+	Location_Logic.gtg_toilet = Logic.can_save_carpenters && Logic.iron_boots && Logic.time && Logic.hookshot /*&& Logic.can_see*/;
 	Location_Logic.well1 = Logic.storms ;//&& Logic.can_see;
 	Location_Logic.well5 = Logic.storms ;//&& Logic.can_see;
 	Location_Logic.well2 = Logic.storms && Logic.bomb_bag;
@@ -1306,28 +1306,28 @@ function location_logic(){
 	Location_Access.ganons14 = Game.can_enter_ganons;
 	Location_Access.ganons15 = Game.can_enter_ganons && (Game.longshot || ((Game.fire_arrows && Game.magic) || (Game.hover_boots && Game.can_use_dins)));
 	Location_Access.ganons16 = Game.can_enter_ganons;
-	Location_Access.gtg1 = Game.can_save_carpenters && Game.bow1;
-	Location_Access.gtg2 = Game.can_save_carpenters && Game.bow1;
-	Location_Access.gtg3 = Game.can_save_carpenters;
-	Location_Access.gtg4 = Game.can_save_carpenters;
-	Location_Access.gtg5 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
-	Location_Access.gtg6 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
-	Location_Access.gtg7 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
-	Location_Access.gtg8 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
-	Location_Access.gtg9 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;  //((Game.bomb_bag1 || Game.current_gtg_keys == 9) && Game.hammer));
-	Location_Access.gtg10 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;//&& Game.can_see;
-	Location_Access.gtg11 = Game.can_save_carpenters && Game.can_climb_gtg_hole;// && (Game.can_see || (Game.bomb_bag1 || Game.current_gtg_keys == 9)) ;
-	Location_Access.gtg12 = Game.can_save_carpenters && Game.can_climb_gtg_hole/*&& Game.can_see*/;
-	Location_Access.gtg13 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
-	Location_Access.gtg14 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
-	Location_Access.gtg15 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
-	Location_Access.gtg16 = Game.can_save_carpenters && (Game.bomb_bag1 || Game.has_chus);
-	Location_Access.gtg17 = Game.can_save_carpenters && Game.current_gtg_keys >= 1 ;//&& Game.can_see;
-	Location_Access.gtg18 = Game.can_save_carpenters && Game.current_gtg_keys >= 2;
-	Location_Access.gtg19 = Game.can_save_carpenters && Game.current_gtg_keys >= 4;
-	Location_Access.gtg20 = Game.can_save_carpenters && Game.current_gtg_keys >= 5;
-	Location_Access.gtg21 = Game.can_save_carpenters && Game.current_gtg_keys >= 7;
-	Location_Access.gtg22 = Game.can_save_carpenters && Game.iron_boots && Game.time && Game.hookshot /*&& Game.can_see*/;
+	Location_Access.gtg_lobbyLeft = Game.can_save_carpenters && Game.bow1;
+	Location_Access.gtg_lobbyRight = Game.can_save_carpenters && Game.bow1;
+	Location_Access.gtg_stalfos = Game.can_save_carpenters;
+	Location_Access.gtg_wolfos= Game.can_save_carpenters;
+	Location_Access.gtg_silvers1 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg_silvers2 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg_silvers3 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg_silvers4 = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.silver_gauntlets ;//&& Game.can_see ;
+	Location_Access.gtg_eyes = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;  //((Game.bomb_bag1 || Game.current_gtg_keys == 9) && Game.hammer));
+	Location_Access.gtg_aboveEyes = Game.can_save_carpenters && Game.can_climb_gtg_hole && Game.bow1;//&& Game.can_see;
+	Location_Access.gtg_keese = Game.can_save_carpenters && Game.can_climb_gtg_hole;// && (Game.can_see || (Game.bomb_bag1 || Game.current_gtg_keys == 9)) ;
+	Location_Access.gtg_fireChest = Game.can_save_carpenters && Game.can_climb_gtg_hole/*&& Game.can_see*/;
+	Location_Access.gtg_freestanding = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
+	Location_Access.gtg_right2 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
+	Location_Access.gtg_right3 = Game.can_save_carpenters && (Game.current_gtg_keys >= 2 || ((Game.bomb_bag1 || Game.has_chus) && Game.time) || (Game.can_climb_gtg_hole /*&& Game.can_see*/ && Game.time));
+	Location_Access.gtg_beamos = Game.can_save_carpenters && (Game.bomb_bag1 || Game.has_chus);
+	Location_Access.gtg_left1 = Game.can_save_carpenters && Game.current_gtg_keys >= 1 ;//&& Game.can_see;
+	Location_Access.gtg_left2 = Game.can_save_carpenters && Game.current_gtg_keys >= 2;
+	Location_Access.gtg_left3 = Game.can_save_carpenters && Game.current_gtg_keys >= 4;
+	Location_Access.gtg_left4 = Game.can_save_carpenters && Game.current_gtg_keys >= 5;
+	Location_Access.gtg_final = Game.can_save_carpenters && Game.current_gtg_keys >= 7;
+	Location_Access.gtg_toilet = Game.can_save_carpenters && Game.iron_boots && Game.time && Game.hookshot /*&& Game.can_see*/;
 	Location_Access.well1 = Game.storms ;//&& Game.can_see;
 	Location_Access.well2 = Game.storms && (Game.bomb_bag1 || Game.has_chus);
 	Location_Access.well3 = Game.storms && Game.lullaby;

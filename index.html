@@ -295,6 +295,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes (if something breaks or you have suggestions, please tell me (soli#9369 on discord)) </small><br>
+				<small class = "patchNotes"><span id = "pn27" class="patchNotes">27</span>: Added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key or item button. This sequence continues until there are no more accessible checks in dungeon. (currently only implemented for gtg)</small><br>
 				<small class = "patchNotes"><span id = "pn26" class="patchNotes">26</span>: Timer now starts paused and the hotkey for it has been changed to the pause key</small><br>
 				<small class = "patchNotes"><span id = "pn25" class="patchNotes">25</span>: Removed shuffle ocarinas from s4 preset</small><br>
 				<small class = "patchNotes"><span id = "pn24" class="patchNotes">24</span>: Massive reduction in resource usage and inconsistent lagginess at the cost of a small delay on logic updates</small><br>
@@ -384,7 +385,7 @@
 	<img id = "mouseInputs_scale" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_strength" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bomb_bag" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_chus" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_slingshot" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bow" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_magicspell" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_magicarrows" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_boots" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_goronzora" class = "mouseInputsImage" onmousedown = mouse_input2()>
-	<img id = "mouseInputs_wallet" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_prescription" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_claim_check" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<img id = "mouseInputs_wallet" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_prescription" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_claim_check" class = "mouseInputsImage" onmousedown = mouse_input2()><small id = "next_check_prediction"></small>
 	</div>
 </body>
 	<script src="misc.js"></script>
@@ -393,7 +394,7 @@
 	<script src="ui.js"></script>
 	<script src="put_in_logic.js"></script>
 	<script src="locked_by_item.js"></script> 
-	<!--<script src="weirdroutingstuff.js"></script>-->
+	<script src="next_check_predictions.js"></script>
 	<script src="themes.js"></script>
 	<script src="main.js"></script>
 	<script src="initialize.js"></script>	

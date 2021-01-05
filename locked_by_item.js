@@ -287,28 +287,28 @@ function checksLockedByItem(item) {
 		}
 		Locked_Logic2.gtg_keys = Math.min(Locked_Logic2.current_gtg_keys, max);
 
-		Location_Locked_Logic2.gtg1 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
-		Location_Locked_Logic2.gtg2 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
-		Location_Locked_Logic2.gtg3 = Locked_Logic2.can_save_carpenters;
-		Location_Locked_Logic2.gtg4 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot;
-		Location_Locked_Logic2.gtg5 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-		Location_Locked_Logic2.gtg6 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-		Location_Locked_Logic2.gtg7 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-		Location_Locked_Logic2.gtg8 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
-		Location_Locked_Logic2.gtg9 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
-		Location_Locked_Logic2.gtg10 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
-		Location_Locked_Logic2.gtg12 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
-		Location_Locked_Logic2.gtg11 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
-		Location_Locked_Logic2.gtg13 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
-		Location_Locked_Logic2.gtg14 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
-		Location_Locked_Logic2.gtg15 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
-		Location_Locked_Logic2.gtg16 = Locked_Logic2.can_save_carpenters && Locked_Logic2.bomb_bag;
-		Location_Locked_Logic2.gtg17 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 3 ;//&& Locked_Logic2.can_see;
-		Location_Locked_Logic2.gtg18 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 4;
-		Location_Locked_Logic2.gtg19 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 6;
-		Location_Locked_Logic2.gtg20 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 7;
-		Location_Locked_Logic2.gtg21 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 9;
-		Location_Locked_Logic2.gtg22 = Locked_Logic2.can_save_carpenters && Locked_Logic2.iron_boots && Locked_Logic2.time && Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/;
+		Location_Locked_Logic2.gtg_lobbyLeft = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
+		Location_Locked_Logic2.gtg_lobbyRight = Locked_Logic2.can_save_carpenters && Locked_Logic2.bow;
+		Location_Locked_Logic2.gtg_stalfos = Locked_Logic2.can_save_carpenters;
+		Location_Locked_Logic2.gtg_wolfos = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot;
+		Location_Locked_Logic2.gtg_silvers1 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg_silvers2 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg_silvers3 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg_silvers4 = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.silver_gauntlets ;//&& Locked_Logic2.can_see ;
+		Location_Locked_Logic2.gtg_eyes = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow;  //((Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9) && Locked_Logic2.hammer));
+		Location_Locked_Logic2.gtg_aboveEyes = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.bow ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.gtg_keese = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot/*&& Locked_Logic2.can_see*/;
+		Location_Locked_Logic2.gtg_fireChest = Locked_Logic2.can_save_carpenters && Locked_Logic2.hookshot && Locked_Logic2.hammer;// && (Locked_Logic2.can_see || (Locked_Logic2.bomb_bag || Locked_Logic2.gtg_keys == 9)) ;
+		Location_Locked_Logic2.gtg_freestanding = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
+		Location_Locked_Logic2.gtg_right2 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
+		Location_Locked_Logic2.gtg_right3 = Locked_Logic2.can_save_carpenters && (Locked_Logic2.gtg_keys >= 9 || (Locked_Logic2.bomb_bag && Locked_Logic2.time) || (Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/ && Locked_Logic2.time));
+		Location_Locked_Logic2.gtg_beamos = Locked_Logic2.can_save_carpenters && Locked_Logic2.bomb_bag;
+		Location_Locked_Logic2.gtg_left1 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 3 ;//&& Locked_Logic2.can_see;
+		Location_Locked_Logic2.gtg_left2 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 4;
+		Location_Locked_Logic2.gtg_left3 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 6;
+		Location_Locked_Logic2.gtg_left4 = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 7;
+		Location_Locked_Logic2.gtg_final = Locked_Logic2.can_save_carpenters && Locked_Logic2.gtg_keys >= 9;
+		Location_Locked_Logic2.gtg_toilet = Locked_Logic2.can_save_carpenters && Locked_Logic2.iron_boots && Locked_Logic2.time && Locked_Logic2.hookshot /*&& Locked_Logic2.can_see*/;
 	}
 	for (h = 1; h <= 3; h++) {
 		max = 0;
