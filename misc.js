@@ -513,5 +513,5 @@ function Undo() {
 	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
 	Check[lastCheck[lastCheck.length-1]] = "unknown";
 	lastCheck.pop();
-	Update();Update();Update();
+	midUpdate();
 }

@@ -41,8 +41,8 @@ function route_shadow() {
 function route_well() {
 	nextChecks.length = 0;
 	nextIndex = 0;
-	if (event.button == 2) {nextChecks.push("well_backBombable", "well_coffin", "well_centerBig", "well_fakeLeft", "well_frontBombable", "well_waterFront", "well_invisible", "well_deadHand", "well_waterFront", "well_fakeRight", "well_centerSmall", "well_locked1", "well_locked2", "well_basement");}
-	if (event.button == 0) {nextChecks.push("well_backBombable", "well_coffin", "well_centerBig", "well_fakeLeft", "well_frontBombable", "well_waterFront", "well_invisible", "well_deadHand", "well_waterFront", "well_fakeRight", "well_centerSmall", "well_locked1", "well_locked2", "well_basement");}
+	if (event.button == 2) {nextChecks.push("well_backBombable", "well_waterLeft", "well_coffin", "well_centerBig", "well_fakeLeft", "well_frontBombable", "well_waterFront", "well_invisible", "well_deadHand", "well_waterFront", "well_fakeRight", "well_centerSmall", "well_locked1", "well_locked2", "well_basement");}
+	if (event.button == 0) {nextChecks.push("well_backBombable", "well_waterLeft", "well_coffin", "well_centerBig", "well_fakeLeft", "well_frontBombable", "well_waterFront", "well_invisible", "well_deadHand", "well_waterFront", "well_fakeRight", "well_centerSmall", "well_locked1", "well_locked2", "well_basement");}
 	Update();
 }
 
