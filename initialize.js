@@ -793,7 +793,6 @@ var woth4 = "unknown";
 var woth5 = "unknown";	
 
 var WotHItems = [];
-var pressCooldown = new Array(35).fill(0);
 var WotH = new Array(35).fill(0);
 var checkedYet = new Array(256).fill(false);
 var readYet = new Array(42).fill(false);
@@ -1122,15 +1121,13 @@ function updateControllerStatus() {
     var controller = controllers[j];
 
     for (i = 0; i < controller.buttons.length; i++) {
-	  if (pressCooldown[i] > 0) {pressCooldown[i] -= 1;}
       var val = controller.buttons[i];
       var pressed = val == 1.0;
       if (typeof(val) == "object") {
         pressed = val.pressed;
         val = val.value;
       }
-      if (pressed && pressCooldown[i] == 0) {
-		pressCooldown[i] = 120;
+      if (pressed) {
 		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
 		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
 		if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i; localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
