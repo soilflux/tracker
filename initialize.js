@@ -793,6 +793,7 @@ var woth4 = "unknown";
 var woth5 = "unknown";	
 
 var WotHItems = [];
+var pressCooldown = new Array(35).fill(false);
 var WotH = new Array(35).fill(0);
 var checkedYet = new Array(256).fill(false);
 var readYet = new Array(42).fill(false);
@@ -1127,7 +1128,7 @@ function updateControllerStatus() {
         pressed = val.pressed;
         val = val.value;
       }
-      if (pressed) {
+      if (pressed && pressCooldown[i] == false) {
 		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
 		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
 		if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i; localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
@@ -1147,6 +1148,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				acceptControllerInput = false;
+				pressCooldown[i] = true;
 			}
 			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1160,6 +1162,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				acceptControllerInput = false;
+				pressCooldown[i] = true;
 			}
 			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1173,6 +1176,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				acceptControllerInput = false;
+				pressCooldown[i] = true;
 			}
 			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1186,15 +1190,19 @@ function updateControllerStatus() {
 				});
 				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
 				acceptControllerInput = false;
+				pressCooldown[i] = true;
 				
 			}
 			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {nextChecks.splice(nextIndex,1); acceptControllerInput = false;}
+			pressCooldown[i] = true;
 			midUpdate();
 		}
 		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput = true;}
+      } else if (!pressed) {
+		  pressCooldown[i] = false;
       } else {
 		  
-      }
+	  }
     }
   }
 }
