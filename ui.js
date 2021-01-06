@@ -2,7 +2,7 @@ function process_inputs() {
 	document.getElementById("mouseInputs_locations").innerHTML = "";
 	for (var i = 0; i < mouseInputs_locations.length; i++) {
 		if (i > 0) {document.getElementById("mouseInputs_locations").innerHTML += ", ";}
-		document.getElementById("mouseInputs_locations").innerHTML += mouseInputs_locations[i];
+		document.getElementById("mouseInputs_locations").innerHTML += Names[Locations.indexOf(mouseInputs_locations[i])];
 	}
 	
 	var peeked = false;
@@ -789,7 +789,7 @@ function update_logic_info() {
 }
 function mouse_input() {
 	if (event.button == 2 && Check[event.target.id] == "unknown") {
-		mouseInputs_locations.push(Names[Locations.indexOf(event.target.id)]);
+		mouseInputs_locations.push(event.target.id);
 		str = event.target.id;
 		str2 = "text_" + str;
 		str3 = "br_" + str;
@@ -809,8 +809,8 @@ function mouse_input2() {
 	else if (event.target.id == "mouseInputs_goronzora") {if (event.button == 2) {item = "zora_tunic";} else {item = "goron_tunic";}}
 	else if (event.target.id == "mouseInputs_bottle") {if (event.button == 2) {item = "rutos_letter";} else {item = "bottle";}}
 	else {item = event.target.id.replace("mouseInputs_","");}
-	Check[Locations[Names.indexOf(mouseInputs_locations[0])]] = "unknown";
-	document.getElementById(Locations[Names.indexOf(mouseInputs_locations[0])]).value = inputs[Items2.indexOf(item)];
+	Check[mouseInputs_locations[0]] = "unknown";
+	document.getElementById(mouseInputs_locations[0]).value = inputs[Items2.indexOf(item)];
 	mouseInputs_locations.shift();
 	Update();
 }
