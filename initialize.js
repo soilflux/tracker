@@ -1230,4 +1230,4 @@ setInterval(slowUpdate,10000);
 setInterval(midUpdate,3000);
 setInterval(fastUpdate,400);
 setInterval(updateControllerStatus,1000/60);
-Update(); midUpdate(); midUpdate(); midUpdate(); fastUpdate();
+Update(); midUpdate(); midUpdate(); fastUpdate();

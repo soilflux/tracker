@@ -177,7 +177,7 @@ function spawn_inputs() {
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("domain")].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("domain shop")].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("ogc fairy")].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("ogc fairy(can enter ool)")].toLowerCase()) {Spawn.adult_ogc_ool = true; Spawn.adult_ogc = true;} else {Spawn.adult_ogc_ool = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("ogc fairy(ool)")].toLowerCase()) {Spawn.adult_ogc_ool = true; Spawn.adult_ogc = true;} else {Spawn.adult_ogc_ool = false;}
 	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("kak rooftop")].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
 }
 
