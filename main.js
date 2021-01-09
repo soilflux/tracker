@@ -60,7 +60,6 @@ function midUpdate() {
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
 	Update();
-	stone_medallion_input();
 }
 
 function slowUpdate() {
