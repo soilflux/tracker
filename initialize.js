@@ -69,7 +69,7 @@ var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Boomerang", "Bot
 var inputs = ["x", "sk", "bk", "bom", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
-var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(can enter ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(can enter ool)", "goron shop", "domain shop", "kak rooftop"];
+var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
