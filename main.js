@@ -18,8 +18,7 @@ function fastUpdate() {
 	timer_stuff(); //implements a timer to use as an alternative to stuff like livesplit
 	stone_medallion_input(); //handle stones and medallions input
 	process_inputs(); //handle hinted, peeked and picked up things
-	if (acceptControllerInput && controllerInputWindowCountdown != 0) {controllerInputWindowCountdown -= 1;} else {controllerInputWindowCountdown = 2; acceptControllerInput = false;}
-}
+	}
 
 function midUpdate() {
 	var i = 0;
@@ -61,6 +60,7 @@ function midUpdate() {
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
 	Update();
+	stone_medallion_input();
 }
 
 function slowUpdate() {

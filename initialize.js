@@ -36,8 +36,7 @@ var nerfed = false;
 var next = document.getElementById("next_check_prediction");
 var nextChecks = [];
 var nextIndex = 0;
-var acceptControllerInput = false;
-var controllerInputWindowCountdown = 2;
+var acceptControllerInput = [false,false,false,false,false,false];
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
@@ -1135,7 +1134,7 @@ function updateControllerStatus() {
 		if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i; localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
 		if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i; localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
 		if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i; localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
-		if (acceptControllerInput && nextChecks.length > 0 && nextIndex != 420){
+		if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
 			if (document.getElementById(controllerConfigDescriptions[0]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
 					bubbles: true,
@@ -1147,9 +1146,7 @@ function updateControllerStatus() {
 					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput = false;
 				pressCooldown[i][j] = true;
-				console.log(pressCooldown[i][j]);
 			}
 			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1162,7 +1159,6 @@ function updateControllerStatus() {
 					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput = false;
 				pressCooldown[i][j] = true;
 			}
 			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
@@ -1176,8 +1172,7 @@ function updateControllerStatus() {
 					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput = false;
-				 pressCooldown[i][j] = true;
+				pressCooldown[i][j] = true;
 			}
 			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1190,15 +1185,15 @@ function updateControllerStatus() {
 					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
 				});
 				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput = false;
-				 pressCooldown[i][j] = true;
+				pressCooldown[i][j] = true;
 				
 			}
-			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {nextChecks.splice(nextIndex,1); acceptControllerInput = false;  pressCooldown[i][j] = true;}
+			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {nextChecks.splice(nextIndex,1); pressCooldown[i][j] = true;}
 			midUpdate();
 		}
-		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput = true;}
+		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true;}
       } else if (!pressed) {
+		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;
       } else {
 		  
