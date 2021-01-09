@@ -68,8 +68,8 @@ var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "boomerang", "bottle"
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "sk", "bk", "bom", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "pre", "cla", "wal", "zor", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
-var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc", "gcshop", "zdshop", "kakr" ];
-var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy", "goron shop", "domain shop", "kak rooftop"];
+var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
+var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(can enter ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(can enter ool)", "goron shop", "domain shop", "kak rooftop"];
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
@@ -764,6 +764,7 @@ Spawn.child_lower_dmc = false;
 Spawn.child_lower_dmc_fairy = false;
 Spawn.child_upper_dmc = false;
 Spawn.child_upper_dmc_fairy = false;
+Spawn.child_upper_dmc_ool = false;
 Spawn.child_gv_gf = false;
 //Spawn.child_nocturne = false;
 Spawn.child_hyrule_fairy = false;
@@ -773,7 +774,8 @@ Spawn.child_zr = false;
 Spawn.adult_lower_dmc = false;
 Spawn.adult_lower_dmc_fairy = false;
 Spawn.adult_upper_dmc = false;
-Spawn.adult_lower_dmc_fairy = false;
+Spawn.adult_upper_dmc_fairy = false;
+Spawn.adult_upper_dmc_fairy_ool = false;
 Spawn.adult_gf = false;
 Spawn.adult_gc_shop = false;
 Spawn.adult_nocturne = false;
@@ -782,6 +784,7 @@ Spawn.adult_meadow = false;
 Spawn.adult_domain_shop = false;
 Spawn.adult_domain = false;
 Spawn.adult_ogc = false;
+Spawn.adult_ogc_ool = false;
 Spawn.adult_kak_roof = false;
 
   

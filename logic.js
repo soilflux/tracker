@@ -630,7 +630,7 @@ function logic_shortcuts() {
 	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag1 || Game.has_chus || Game.scale1)
 	Game.child_can_enter_river = Game.bomb_bag1 || Game.has_chus || Game.scale1 || Spawn.child_zd || Spawn.child_zr;
 	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem || Spawn.adult_gf;
-	Game.can_save_carpenters = (Spawn.child_gv_gf && Game.kokiri_sword) || (Game.fortress_access && ((Game.bow1 || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
+	Game.can_save_carpenters = (Spawn.child_gv_gf) || (Game.fortress_access && ((Game.bow1 || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
 	Game.can_use_fire = (Game.dins_fire || (Game.bow1 && Game.fire_arrows)) && Game.magic1;
@@ -1154,10 +1154,10 @@ function location_logic(){
 	Location_Access.trail_dodongos_top = true;
 	Location_Access.trail_storms = Game.storms;
 	Location_Access.crater_bean = Game.bolero || Game.crater_top;
-	Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy) && Game.lullaby;
+	Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && Game.lullaby;
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
-	Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy) && Game.lullaby;
+	Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
 	Location_Access.trade_quest = (((Game.ice_access || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);

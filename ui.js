@@ -155,27 +155,30 @@ function stone_medallion_input() {
 }
 
 function spawn_inputs() {
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[0].toLowerCase()) {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[1].toLowerCase()) {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[2].toLowerCase()) {Spawn.child_upper_dmc = true;} else {Spawn.child_upper_dmc = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[3].toLowerCase()) {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true;} else {Spawn.child_upper_dmc_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[4].toLowerCase()) {Spawn.child_gv_gf = true;} else {Spawn.child_gv_gf = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[7].toLowerCase()) {Spawn.child_hyrule_fairy = true;} else {Spawn.child_hyrule_fairy = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[5].toLowerCase()) {Spawn.child_zd = true;} else {Spawn.child_zd = false;}
-	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[6].toLowerCase()) {Spawn.child_zr = true;} else {Spawn.child_zr = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[0].toLowerCase()) {Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[1].toLowerCase()) {Spawn.adult_lower_dmc_fairy = true; Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc_fairy = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[2].toLowerCase()) {Spawn.adult_upper_dmc = true;} else {Spawn.adult_upper_dmc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[3].toLowerCase()) {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true;} else {Spawn.adult_upper_dmc_fairy = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[4].toLowerCase()) {Spawn.adult_gf = true;} else {Spawn.adult_gf = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[12].toLowerCase()) {Spawn.adult_gc_shop = true;} else {Spawn.adult_gc_shop = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[9].toLowerCase()) {Spawn.adult_nocturne = true;} else {Spawn.adult_nocturne = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[10].toLowerCase()) {Spawn.adult_fishing = true;} else {Spawn.adult_fishing = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[8].toLowerCase()) {Spawn.adult_meadow = true;} else {Spawn.adult_meadow = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[5].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[13].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[11].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
-	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[14].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by Goron City")].toLowerCase()) {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC fountain")].toLowerCase()) {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by trail")].toLowerCase()) {Spawn.child_upper_dmc = true;} else {Spawn.child_upper_dmc = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("trail fairy")].toLowerCase()) {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true;} else {Spawn.child_upper_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("trail fairy(can enter ool)")].toLowerCase()) {Spawn.child_upper_dmc = true; Spawn.child_upper_dmc_fairy = true; Spawn.child_upper_dmc_fairy_ool = true;} else {Spawn.child_upper_dmc_fairy = false;  Spawn.child_upper_dmc_fairy_ool = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fortress")].toLowerCase()) {Spawn.child_gv_gf = true;} else {Spawn.child_gv_gf = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("dins fairy")].toLowerCase()) {Spawn.child_hyrule_fairy = true;} else {Spawn.child_hyrule_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("domain")].toLowerCase()) {Spawn.child_zd = true;} else {Spawn.child_zd = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("river")].toLowerCase()) {Spawn.child_zr = true;} else {Spawn.child_zr = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by Goron City")].toLowerCase()) {Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC fountain")].toLowerCase()) {Spawn.adult_lower_dmc_fairy = true; Spawn.adult_lower_dmc = true;} else {Spawn.adult_lower_dmc_fairy = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by trail")].toLowerCase()) {Spawn.adult_upper_dmc = true;} else {Spawn.adult_upper_dmc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("trail fairy")].toLowerCase()) {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true;} else {Spawn.adult_upper_dmc_fairy = false;}
+	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("trail fairy(can enter ool)")].toLowerCase()) {Spawn.adult_upper_dmc = true; Spawn.adult_upper_dmc_fairy = true; Spawn.adult_upper_dmc_fairy_ool = true;} else {Spawn.adult_upper_dmc_fairy = false;  Spawn.adult_upper_dmc_fairy_ool = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fortress")].toLowerCase()) {Spawn.adult_gf = true;} else {Spawn.adult_gf = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("goron shop")].toLowerCase()) {Spawn.adult_gc_shop = true;} else {Spawn.adult_gc_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("nocturne")].toLowerCase()) {Spawn.adult_nocturne = true;} else {Spawn.adult_nocturne = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fishing")].toLowerCase()) {Spawn.adult_fishing = true;} else {Spawn.adult_fishing = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("sfm")].toLowerCase()) {Spawn.adult_meadow = true;} else {Spawn.adult_meadow = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("domain")].toLowerCase()) {Spawn.adult_zd = true;} else {Spawn.adult_zd = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("domain shop")].toLowerCase()) {Spawn.adult_zd_shop = true; Spawn.adult_zd = true;} else {Spawn.adult_zd_shop = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("ogc fairy")].toLowerCase()) {Spawn.adult_ogc = true;} else {Spawn.adult_ogc = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("ogc fairy(can enter ool)")].toLowerCase()) {Spawn.adult_ogc_ool = true; Spawn.adult_ogc = true;} else {Spawn.adult_ogc_ool = false;}
+	if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("kak rooftop")].toLowerCase()) {Spawn.adult_kak_roof = true;} else {Spawn.adult_kak_roof = false;}
 }
 
 function linSoClick() {
