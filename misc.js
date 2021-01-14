@@ -279,6 +279,7 @@ function linso_counter() {
 	if (event.button == 2 || token_click == 2) {Game.tokens -= 1;}
 	document.getElementById("linso_counter").innerHTML = "" + Game.tokens;
 	token_click = 4;
+	midUpdate();
 }
 
 function toggleHint(loc) {

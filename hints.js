@@ -450,7 +450,6 @@ function trackUnreadHints() {
 	if (Check.oot == "unknown") temptext[1] += "OoT "; 
 	if (Check.trade_quest == "unknown") temptext[1] += "Bigo "; 
 	if (Check.frogs_2 == "unknown") temptext[1] += "Frogs2 "; 
-	if (Check.theater == "unknown") temptext[1] += "Mask ";  
 	document.getElementById("unread").innerHTML = temptext[0] + "Unread: " + temptext[1];
 }
 
