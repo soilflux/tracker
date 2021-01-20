@@ -8,14 +8,14 @@ function route_deku() {
 function route_dodongos() {
 	nextChecks.length = 0;
 	nextIndex = 0;
-	nextChecks.push("dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king");
+	nextChecks.push("trail_dodongos_top", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "dodongos_bomb_bag", "dodongos_end_of_bridge", "dodongos_above_king");
 	Update();
 }
 
 function route_jabu() {
 	nextChecks.length = 0;
 	nextIndex = 0;
-	nextChecks.push("jabu_map", "jabu_compass", "jabu_boomerang", "jabu_barinade");
+	nextChecks.push("jabu_map", "jabu_compass", "jabu_boomerang", "jabu_barinade","fountain_fairy");
 	Update();
 }
 
@@ -70,15 +70,15 @@ function route_well() {
 function route_ice() {
 	nextChecks.length = 0;
 	nextIndex = 0;
-	nextChecks.push("ice_glacier_hp", "ice_bottom_of_fountain", "ice_map", "ice_hp", "ice_compass", "ice_irons");
+	nextChecks.push("fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain", "ice_map", "ice_hp", "ice_compass", "ice_irons");
 	Update();
 }
 
 function route_gtg() {
 	nextChecks.length = 0;
 	nextIndex = 0;
-	if (event.button == 2) {nextChecks.push("gtg_lobbyLeft", "gtg_lobbyRight", "gtg_beamos", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_keese", "gtg_flamesChest","gtg_left1", "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_left1", "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final","gtg_toilet");}
-	if (event.button == 0) {nextChecks.push("gtg_lobbyRight", "gtg_lobbyLeft", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1", "gtg_left2", "gtg_left3","gtg_left4", "gtg_final","gtg_toilet");}
+	if (event.button == 2) {nextChecks.push("gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gtg_lobbyLeft", "gtg_lobbyRight", "gtg_beamos", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_keese", "gtg_flamesChest","gtg_left1", "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_left1", "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final","gtg_toilet", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2");}
+	if (event.button == 0) {nextChecks.push("gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gtg_lobbyRight", "gtg_lobbyLeft", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1", "gtg_left2", "gtg_left3","gtg_left4", "gtg_final","gtg_toilet", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2");}
 	Update();
 }
 

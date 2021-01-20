@@ -255,12 +255,12 @@ function junk() {
 	}
 	
 	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey) {
-		if(str.includes("forest") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
-		else if(str.includes("fire") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
-		else if(str.includes("water") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
-		else if(str.includes("spirit") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
-		else if(str.includes("shadow") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
-		else if(str.includes("ganons") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
+		if(str.includes("forest_") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
+		else if(str.includes("fire_") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
+		else if(str.includes("water_") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
+		else if(str.includes("spirit_") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
+		else if(str.includes("shadow_") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
+		else if(str.includes("ganons_") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {
 			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 			return;
