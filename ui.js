@@ -270,14 +270,14 @@ function junk() {
 	}
 	
 	else if ((type == 2 && !event.altKey) || thisIsAKey) {
-		if(str.includes("forest") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
-		else if(str.includes("fire") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
-		else if(str.includes("water") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
-		else if(str.includes("spirit") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
-		else if(str.includes("shadow") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
-		else if(str.includes("gtg") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
-		else if(str.includes("well") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
-		else if(str.includes("ganons") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
+		if(str.includes("forest_") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
+		else if(str.includes("fire_") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
+		else if(str.includes("water_") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
+		else if(str.includes("spirit_") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
+		else if(str.includes("shadow_") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
+		else if(str.includes("gtg_") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
+		else if(str.includes("well_") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
+		else if(str.includes("ganons_") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {
 		if (event.target.style.color == "orange") {event.target.style.color = "pink";}
 		else {event.target.style.color = "orange";}
