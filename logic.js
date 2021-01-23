@@ -474,11 +474,11 @@ function refresh_logic_for_stuff() {
 			str = checkSummary[i] + "_location";
 			if (checkSummary[i] == "trade") {
 				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
-				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "16px";}
+				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "14px";}
 			}
 			else {
 				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
-				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "16px";}
+				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "14px";}
 			}
 		}
 		else {
@@ -495,7 +495,7 @@ function refresh_logic_for_stuff() {
 					document.getElementById(str).style.color = "chartreuse";
 				}
 				else {
-					document.getElementById(str).style.color = "black";
+					document.getElementById(str).style.color = "yellow";
 				}
 			}
 		}
