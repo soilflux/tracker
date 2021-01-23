@@ -615,7 +615,7 @@ function logic_shortcuts() {
 	
 	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.gen1) {Logic.medalCount += 1;} if (Logic.gen2) {Logic.medalCount += 1;} if (Logic.gen3) {Logic.medalCount += 1;}
 	Logic.stoneCount = 0; if (Logic.kokiri_emerald) {Logic.stoneCount += 1;} if (Logic.goron_ruby) {Logic.stoneCount += 1;} if (Logic.zora_sapphire) {Logic.stoneCount += 1;}
-	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Logic.stoneCount == 3)
+	Logic.can_enter_ganons = (Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion && Logic.gen1 && Logic.gen2 && Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "4_MEDALS" && Logic.medalCount >= 4) || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Logic.stoneCount == 3)
 	
 	Logic.can_climb_fire_temple = Logic.can_enter_fire_temple && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Logic.can_enter_water = Logic.hookshot && Logic.iron_boots;
@@ -636,6 +636,7 @@ function logic_shortcuts() {
 	Game.can_use_fire = (Game.dins_fire || (Game.bow1 && Game.fire_arrows)) && Game.magic1;
 	Game.can_use_dins = Game.dins_fire && Game.magic1;
 	Game.can_use_farores = Game.farores_wind && Game.magic1;
+	Game.can_use_bottle = (Game.bottle1 || (Game.rutos_letter && Game.child_can_enter_river));
 	Game.can_see = Game.lens && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.wallet2);
@@ -647,7 +648,7 @@ function logic_shortcuts() {
 	Game.can_ride_shadow_boat = Game.can_pass_shadow_hookshot_door && Game.lullaby;
 	Game.can_beat_shadow_boss = Game.can_ride_shadow_boat && (Game.bow1 || Game.longshot);
 	Game.can_stop_link_the_goron = Game.bomb_bag1 || Game.bow1 || Game.goron_bracelet || Game.has_chus;
-	Game.ice_access = Game.rutos_letter && (Game.lullaby || Game.hover_boots) && Game.child_can_enter_river;
+	Game.ice_access = ((Game.rutos_letter && Game.child_can_enter_river) || Rules.kzSkip) && (Game.lullaby || Game.hover_boots);
 	Game.reverse_crater = (Game.hover_boots || Game.hookshot || Game.child_can_enter_river) && Game.bolero;
 	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot || Game.hover_boots)) || Game.bolero;
 	Game.crater_by_city = Game.bow1 || Game.bomb_bag1 || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer) || Spawn.adult_lower_dmc;
@@ -656,7 +657,7 @@ function logic_shortcuts() {
 	
 	Game.medalCount = 0; if (Game.forest_medallion) {Game.medalCount += 1;} if (Game.fire_medallion) {Game.medalCount += 1;} if (Game.water_medallion) {Game.medalCount += 1;} if (Game.gen1) {Game.medalCount += 1;} if (Game.gen2) {Game.medalCount += 1;} if (Game.gen3) {Game.medalCount += 1;}
 	Game.stoneCount = 0; if (Game.kokiri_emerald) {Game.stoneCount += 1;} if (Game.goron_ruby) {Game.stoneCount += 1;} if (Game.zora_sapphire) {Game.stoneCount += 1;}
-	Game.can_enter_ganons = (Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Game.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Game.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Game.stoneCount == 3) 
+	Game.can_enter_ganons = (Game.forest_medallion && Game.fire_medallion && Game.water_medallion && Game.gen1 && Game.gen2 && Game.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "4_MEDALS" && Game.medalCount >= 4) || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Game.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Game.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Game.stoneCount == 3) 
 	 
 	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow1 || Game.hookshot || Game.bomb_bag1);
 	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.scale2);
@@ -1158,7 +1159,7 @@ function location_logic(){
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
 	Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
-	Location_Access.trade_quest = (((Game.ice_access || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
+	Location_Access.trade_quest = (((Location_Access.thaw_king || (Game.wallet2 && Game.lullaby && (Game.bottle1 || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
 	Location_Access.gerudo_archery_1 = Game.eponas && Game.bow1;
@@ -1206,12 +1207,12 @@ function location_logic(){
 	Location_Access.jabu_barinade = Game.can_enter_jabu && Game.boomerang;
 	Location_Access.fountain_fairy = Game.ice_access && (Game.bomb_bag1|| Game.has_chus);
 	Location_Access.ice_glacier_hp = Game.ice_access;
-	Location_Access.ice_map = Game.ice_access;
-	Location_Access.ice_hp = Game.ice_access;
-	Location_Access.ice_compass = Game.ice_access;
-	Location_Access.ice_irons = Game.ice_access;
+	Location_Access.ice_map = Game.ice_access && Game.can_use_bottle;
+	Location_Access.ice_hp = Game.ice_access && Game.can_use_bottle;
+	Location_Access.ice_compass = Game.ice_access && Game.can_use_bottle;
+	Location_Access.ice_irons = Game.ice_access && Game.can_use_bottle;
 	Location_Access.ice_bottom_of_fountain = Game.ice_access;
-	Location_Access.thaw_king = Game.ice_access || (document.getElementById("bottleimg").style.opacity == 1 && Game.wallet2 && (Game.lullaby || Game.hover_boots || Spawn.adult_zd));
+	Location_Access.thaw_king = (Game.ice_access && Game.can_use_bottle) || (Game.can_use_bottle && Game.wallet2 && (Game.lullaby || Game.hover_boots || Spawn.adult_zd));
 	Location_Access.forest_first = Game.hookshot;
 	Location_Access.forest_stalfos = Game.hookshot;
 	Location_Access.forest_midCourtyard = Game.hookshot && (Game.time || Game.bow1 || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1));

@@ -787,6 +787,9 @@ Spawn.adult_ogc = false;
 Spawn.adult_ogc_ool = false;
 Spawn.adult_kak_roof = false;
 
+//RULES
+Rules = {};
+Rules.kzSkip = false;
   
 var woth1 = "unknown";
 var woth2 = "unknown";
