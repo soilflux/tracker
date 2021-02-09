@@ -468,6 +468,7 @@ color: red;
 	vertical-align: top;
 	padding: 0;
 	border: none;
+	color: lime;
 }
 .layout_input {
 	width: 55px;
@@ -1146,4 +1147,14 @@ color:#FE8B08;
 	left:-150px;
     right:0;
 }
+.configOptions {
+	font-size: 1.1em;
 
+}
+.configLabels{
+	font-size: 1.1em;
+	color: white;
+	position:relative;
+	left:0px;
+    right:0;
+}

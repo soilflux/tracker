@@ -803,7 +803,6 @@ function mouse_input() {
 		document.getElementById(str3).style.display = "none";
 		Update();
 	}
-	console.log(event.target.id);
 	if (event.button == 1 && event.target.id.includes("dodongos_")) {route_dodongos();}
 	if (event.button == 1 && event.target.id.includes("deku_")) {route_deku();}
 	if (event.button == 1 && event.target.id.includes("jabu_")) {route_jabu();}

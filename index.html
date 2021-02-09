@@ -170,7 +170,13 @@
 			<br /> Click the <b>Unleash Animals</b> button to color checks that are currently locked by unconfirmed woth items.
 			<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
 			<br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
-       
+			<br /><br /> For experienced users who play on emulator, it's recommended that you use your controller to input checks(controller config can be found near the bottom of the page)
+			<br />Example Usage: Left or Right Click a dungeon name(above the checks for that dungeon) This will predict your route through the dungeon above the stone/medal input.
+			<br> Once you enter the animation for recieving an item (i.e. opening a chest) start holding your configured "Accept Inputs" button. 
+			<br> Then, react to the kind of item you get (junk, logically relevant item, key, bosskey) and press your configured input for it (i.e. a direction on the c-stick for each type)
+			<br> This window can be somewhat tight so it takes some practice. After inputting a logically relevant item, you can specify what you got later using the mouse input section above stone/medal inputs.
+			<br> A cool benefit of using this method is that the time you collect checks will be precisely tracked in the log, which can be used for reviewing your execution and comparing to others who use the tracker(not many).
+			<br> Note: this method is only implemented for dungeons and still has some kinks to work out.
 		
 			</p>
 		</div>
@@ -235,8 +241,18 @@
 	</div> 
 	<div id ="row2" class="row">
 		<div id = "inputConfig"><small class = "customizeTitles">Custom Item Inputs</small><br><br class ="half_break"></div>
+		
 		<div id = "inputConfig2"><small class = "customizeTitles">Custom Spawn Inputs</small><br><br class ="half_break"></div>
-		<div id = "inputConfig3"><small class = "customizeTitles">Controller Configuration</small><br><br class ="half_break"></div>
+		
+		<div id = "inputConfig3"><small class = "customizeTitles">Controller Configuration</small>
+			<label class="configLabels" for="readAxes">READ AXES</label>
+			<select class="configOptions" id="readAxes">
+			  <option value="YES">YES</option>
+			  <option value="NO">NO</option>
+			</select><br><br class="half_break">
+		</div>
+		
+		
 		<div id = "skullsInLogicList"></div>
 	</div>
 	<div id="confirmed_logically_required">
@@ -295,6 +311,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes (if something breaks or you have suggestions, please tell me (soli#9369 on discord)) </small><br>
+				<small class = "patchNotes"><span id = "pn38" class="patchNotes">38</span>: added axes support for controller input(might not work with your controller atm). Updated halp to explain how to fluidly use your controller to track checks. changed text color within input boxes so it can actually be seen (french spinoff did this forever ago) fun fact: the displayed date for the last update of halp didn't need to be changed because it was exactly one year ago.</small><br>
 				<small class = "patchNotes"><span id = "pn37" class="patchNotes">37</span>: less progression preset updated for the triforce of time adventure rush freaky friday today (jan 29). I hope the 6 entrants enjoy</small><br>
 				<small class = "patchNotes"><span id = "pn36" class="patchNotes">36</span>: added weekly preset</small><br>
 				<small class = "patchNotes"><span id = "pn35" class="patchNotes">35</span>: dealt with the undying blink</small><br>

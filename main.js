@@ -5,8 +5,8 @@ function Update() {
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
 	for (var i = 0; i < nextChecks.length; i++) {
-		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
-		if (document.getElementById("text_" + nextChecks[i]).style.color != "black") {nextIndex = i; break;}
+		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
+		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
 		if (i == nextChecks.length - 1) {i = 420;}
 	}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
@@ -38,7 +38,6 @@ function midUpdate() {
 		spawn_inputs(); //handle child and adult spawn input
 		handleAlternateHintInput(); //implements inputting hints into the note box
 		trackUnreadHints(); //updates which hints are still unread
-		console.log("hi");
 		if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
 		if (i >=1 && Game.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
@@ -54,8 +53,8 @@ function midUpdate() {
 		}
 	}
 	for (var i = 0; i < nextChecks.length; i++) {
-		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
-		if (document.getElementById("text_" + nextChecks[i]).style.color != "black") {nextIndex = i; break;}
+		if (Check[nextChecks[i]] != "unknown") {console.log("hi");nextChecks.splice(i,1); continue;}
+		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
 		if (i == nextChecks.length - 1) {nextIndex = 420;}
 	}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}

@@ -1133,6 +1133,7 @@ function updateControllerStatus() {
         pressed = val.pressed;
         val = val.value;
       }
+	  
       if (pressed && pressCooldown[i][j] == false) {
 		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
 		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
@@ -1153,6 +1154,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				pressCooldown[i][j] = true;
+				acceptControllerInput[j] = false;
 			}
 			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1166,6 +1168,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				pressCooldown[i][j] = true;
+				acceptControllerInput[j] = false;
 			}
 			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1179,6 +1182,7 @@ function updateControllerStatus() {
 				});
 				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
 				pressCooldown[i][j] = true;
+				acceptControllerInput[j] = false;
 			}
 			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1192,12 +1196,12 @@ function updateControllerStatus() {
 				});
 				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
 				pressCooldown[i][j] = true;
-				
+				acceptControllerInput[j] = false;
 			}
-			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {nextChecks.splice(nextIndex,1); pressCooldown[i][j] = true;}
+			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {console.log("hi"); nextChecks.splice(nextIndex,1); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
 			midUpdate();
 		}
-		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true;}
+		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
       } else if (!pressed) {
 		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;
@@ -1205,6 +1209,77 @@ function updateControllerStatus() {
 		  
 	  }
     }
+		if (document.getElementById("readAxes").value == "YES") {
+			for (i =0; i < 6; i++) {
+				if (i == 4 || i == 3) continue;
+				if (controller.axes[i] > .7 || controller.axes[i] < -.7) {
+					if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
+					if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
+					if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
+					if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
+					if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
+					if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
+				}
+				if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
+			if (document.getElementById(controllerConfigDescriptions[0]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] > .65))) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 0,
+					buttons: 2,
+					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
+				acceptControllerInput[j] = false;
+			}
+			if (document.getElementById(controllerConfigDescriptions[1]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[1]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[1]).value.includes("-") && controller.axes[i] > .65))) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 2,
+					buttons: 2,
+					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
+				acceptControllerInput[j] = false;
+			}
+			if (document.getElementById(controllerConfigDescriptions[2]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[2]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[2]).value.includes("-") && controller.axes[i] > .65))) {
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 1,
+					buttons: 2,
+					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
+				acceptControllerInput[j] = false;
+			}
+			if (document.getElementById(controllerConfigDescriptions[3]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[3]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[3]).value.includes("-") && controller.axes[i] > .65))) {
+				console.log(nextChecks[nextIndex]);
+				var ev1 = new MouseEvent("mousedown", {
+					bubbles: true,
+					cancelable: false,
+					view: window,
+					button: 2,
+					buttons: 2,
+					clientX: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().x,
+					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
+				});
+				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
+				acceptControllerInput[j] = false;
+				
+			}
+			if (document.getElementById(controllerConfigDescriptions[4]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[4]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[4]).value.includes("-") && controller.axes[i] > .65))) {nextChecks.splice(nextIndex,1); acceptControllerInput[j] = false;}
+			midUpdate();
+			}
+		}
+	}
   }
 }
 
