@@ -313,7 +313,7 @@ function junk() {
 			document.getElementById("br_" + str).style.display = "none";
 		}
 	}
-	
+	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
 	Update();
 }	
@@ -335,6 +335,7 @@ function junkUltra() {
 		document.getElementById("text_" + Locations[i]).style.display = "none";
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 	}
+	midUpdate();
 	slowUpdate();
 	Update();
 }
@@ -362,7 +363,7 @@ function junkItem(x) {
 	document.getElementById(str2).value = "";
 	
 	lastCheck.push(str2);
-	Update();
+	midUpdate();
 }
 
 function junkSong(x) {
@@ -690,9 +691,16 @@ function update_logic_info() {
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		if(Location_Logic[key] == true) {
-			document.getElementById(str).className= "logic_check_text";
-			document.getElementById(str).style.fontWeight = "bold";
-			document.getElementById(str).style.opacity = 1;
+			if (Location_Access[key] == true) {document.getElementById(str).className= "logic_check_text"; 
+				document.getElementById(str).style.fontWeight = "bold";
+				document.getElementById(str).style.opacity = 1;
+			}
+			else {
+				document.getElementById(str).className= "known_check_text";
+				document.getElementById(str).style.fontWeight = "normal";
+				//document.getElementById(str).style.fontStyle = "italic";
+				document.getElementById(str).style.opacity = .5;
+			}
 			document.getElementById(str).innerHTML = backUp[i];
 			if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}

@@ -1175,11 +1175,11 @@ function location_logic(){
 	Location_Access.redead_grotto = Game.can_blast_or_smash;
 	Location_Access.archery_game = Game.bow1;
 	Location_Access.anjus_chickens = true;
-	Location_Access.tokens_10 = false;
-	Location_Access.tokens_20 = false;
-	Location_Access.tokens_30 = false;
-	Location_Access.tokens_40 = false;
-	Location_Access.tokens_50 = false;
+	Location_Access.tokens_10 = Logic.gold_skulltulas >= 10; //these are temporary because access logic for skulls isn't done yet
+	Location_Access.tokens_20 = Logic.gold_skulltulas >= 20;
+	Location_Access.tokens_30 = Logic.gold_skulltulas >= 30;
+	Location_Access.tokens_40 = Logic.gold_skulltulas >= 40;
+	Location_Access.tokens_50 = Logic.gold_skulltulas >= 50;
 	Location_Access.gravedigging_tour = true;
 	Location_Access.graveyard_box = true;//Game.child_can_enter_river || Game.longshot || Game.boomerang;
 	Location_Access.shield_grave = true;
