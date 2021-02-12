@@ -1145,7 +1145,7 @@ function location_logic(){
 	Location_Access.theater = true;
 	Location_Access.kokiri_storms = Game.storms;
 	Location_Access.rolling_goron = Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet;
-	Location_Access.goron_pot = (Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc);
+	Location_Access.goron_pot = ((Game.bomb_bag1 || Game.goron_bracelet) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc) || Game.has_chus);
 	Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc) && Game.sarias;
 	Location_Access.goron_maze_1 = Game.can_blast_or_smash || Game.silver_gauntlets;
 	Location_Access.goron_maze_2 = Game.can_blast_or_smash || Game.silver_gauntlets;
