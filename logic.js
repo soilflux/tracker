@@ -960,9 +960,9 @@ function location_logic(){
 	Location_Logic.scrub_goron_1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron_2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron_3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_ranch_1 = Logic.bomb_bag;
-	Location_Logic.scrub_ranch_2 = Logic.bomb_bag;
-	Location_Logic.scrub_ranch_3 = Logic.bomb_bag;
+	Location_Logic.scrub_ranch_1 = true;
+	Location_Logic.scrub_ranch_2 = true;
+	Location_Logic.scrub_ranch_3 = true;
 	Location_Logic.scrub_gv_1 = Logic.fortress_access && Logic.storms;
 	Location_Logic.scrub_gv_2 = Logic.fortress_access && Logic.storms;
 	Location_Logic.shop_kokiri_TL = Logic[Shop_Logic.shop_kokiri_TL];
@@ -1384,9 +1384,9 @@ function location_logic(){
 	Location_Access.scrub_goron_1 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
 	Location_Access.scrub_goron_2 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
 	Location_Access.scrub_goron_3 = Game.time || (Game.can_wear_goron_tunic && Game.hookshot);
-	Location_Access.scrub_ranch_1 = Game.bomb_bag;
-	Location_Access.scrub_ranch_2 = Game.bomb_bag;
-	Location_Access.scrub_ranch_3 = Game.bomb_bag;
+	Location_Access.scrub_ranch_1 = true;
+	Location_Access.scrub_ranch_2 = true;
+	Location_Access.scrub_ranch_3 = true;
 	Location_Access.scrub_gv_1 = Game.fortress_access && Game.storms;
 	Location_Access.scrub_gv_2 = Game.fortress_access && Game.storms;
 	Location_Access.shop_kokiri_TL = true;
@@ -1417,8 +1417,8 @@ function location_logic(){
 	Location_Access.shop_goron_TR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BL = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
-	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
-	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
-	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
-	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.scale1 || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.scale1 || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.scale1 || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
+	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.scale1 || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.wallet2 && Game.bottle)));
 }
