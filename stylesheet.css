@@ -318,6 +318,10 @@ color: red;
 	width: 180px;
 	color: gold;
 }
+#credits{
+	width:200px;
+	float:left;
+}
 .checkSummaryColumn {
 	margin-top:10px;
 	left:20px;
