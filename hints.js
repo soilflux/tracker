@@ -217,7 +217,7 @@ function woth_and_barren_processing() {
 							else if (Items[k] == "goron_tunic" && Logic.can_stop_link_the_goron && !ChecksPutInLogicBy.goron_tunic.includes("goron_link") && (Logic.wallet1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet1) || Logic.wallet2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet2))){continue}
 							//else if (Items[k] == "fire_arrows" && Logic.dins_fire && !ChecksPutInLogicBy.fire_arrows.includes(Location.dins_fire)){continue}
 							document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + tempnumber2 + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
-							if (WotHItems.includes(Items[k])) {
+							if (WotHItems.includes(Items[k]) && !nerfed) {
 								document.getElementById("wothMajor" + k + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
 								tempnumber3 +=1;
 								} 
