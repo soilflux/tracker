@@ -641,7 +641,7 @@ function logic_shortcuts() {
 	Game.can_see = Game.lens && Game.magic1;
 	Game.can_blast_or_smash = Game.bomb_bag1 || Game.hammer || Game.has_chus;
 	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle1 || Game.can_enter_jabu) && Game.wallet2);
-	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins);
+	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag1 || Game.has_chus || Game.goron_bracelet || Game.can_use_dins || Game.bow1);
 	Game.can_enter_shadow= (Game.nocturne || Spawn.adult_nocturne) && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
 	Game.can_bomb_shadow_wall = Game.can_cross_shadow_gap && (Game.bomb_bag1 || Game.has_chus);
