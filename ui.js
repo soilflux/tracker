@@ -40,7 +40,12 @@ function process_inputs() {
 							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
 							Known[Items2[j] + duplicate] = true; 
 							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
-							if (!hinted && !peeked && duplicate == "") {Game[Items2[j]] = true;} else if (!hinted && !peeked && duplicate != "" && Game[Items2[j] + "1"] != true) {Game[Items2[j] + "1"] = true} 
+							if (!hinted && !peeked){
+								if (duplicate == "") {Game[Items2[j]] = true;} 
+								else if (Game[Items2[j] + "1"] != true) {Game[Items2[j] + "1"] = true} 
+								else if (Game[Items2[j] + "2"] != true) {Game[Items2[j] + "2"] = true} 
+								else if (Game[Items2[j] + "3"] != true) {Game[Items2[j] + "3"] = true} 
+							}
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted || peeked) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
 							junkItem(document.getElementById(key)); 
