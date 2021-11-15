@@ -222,7 +222,7 @@ function woth_and_barren_processing() {
 								tempnumber3 +=1;
 								} 
 							for (var j = 0; j < Items.length; j++) {
-								if (ChecksLockedBy[Items[k]].includes(Location[Items[j]])){
+								if (ChecksLockedBy[Items[k]].includes(Location[Items[j]]) && !nerfed){
 									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += "<img id = 'wothMinor" + j + tempnumber2 + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
 									if (WotHItems.includes(Items[j])) {
 										document.getElementById("wothMinor" + j + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 

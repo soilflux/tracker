@@ -229,8 +229,8 @@ function circusControl() {
 }
 
 function nerfControl() {
-	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; document.getElementById("woth_info").style.display = "inline-block";}
-	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Unleash Power"; document.getElementById("woth_info").style.display = "none";}
+	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; document.getElementById("circusControl").style.display = "inline-block"; document.getElementById("skullsInLogicList").style.display = "inline-block"; document.getElementById("confirmed_logically_required").style.display = "inline-block";}
+	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; document.getElementById("circusControl").style.display = "none"; document.getElementById("skullsInLogicList").style.display = "none"; document.getElementById("confirmed_logically_required").style.display = "none";}
 	Update();
 }
 

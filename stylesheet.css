@@ -37,6 +37,9 @@ color: silver;
 .bk {
 color: red;
 }
+#circusControl {
+	display:none
+}
 #timerControl {
 	margin-left:90px;
 }
@@ -314,6 +317,7 @@ color: red;
 	float:left;
 }
 #skullsInLogicList {
+	display: none;
 	float: left;
 	width: 180px;
 	color: gold;
@@ -789,6 +793,7 @@ color: red;
 	font-size: 16px;
 }
 #confirmed_logically_required {
+	display: none;
 	position: absolute;
 	left:  720px;
 	top: 890px;
