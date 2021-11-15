@@ -760,6 +760,21 @@ function update_logic_info() {
 				document.getElementById(str).innerHTML = backUp[i];
 			}
 		}
+		else if (Location_Could_Access[key] == true || Location_Could_Peek[key] == true) {
+			if (!nerfed){
+			document.getElementById(str).className= "access_check_text";
+			document.getElementById(str).style.opacity = .2;
+			document.getElementById(str).style.fontWeight = "normal";
+			document.getElementById(str).style.color ="yellow";
+			}
+			else {
+				document.getElementById(str).className= "logic_check_text";
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.color = "chartreuse";
+				document.getElementById(str).innerHTML = backUp[i];
+			}
+		}
 		else {
 			if (hideInaccessible) {
 				if (document.getElementById(str).style.display != "none") {document.getElementById(str).style.display = "none";}
