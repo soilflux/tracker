@@ -16,7 +16,7 @@
 			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
 				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
 				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
-				<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="14" cols="14" id = "hintInput"></textarea><br /><br />
+				<br /><br /><span id = "notes" spellcheck="false"><small id = "unread">Unread: 30 40 50 OoT Frogs2 Mask<br /></small></span><br /><textarea spellcheck="false" rows="14" cols="13" id = "hintInput"></textarea><br /><br />
 				
 				
 				
@@ -53,7 +53,9 @@
 			 <small class="hint_text" id="barren_text">Barren</small> 
 			  <br /> <input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input>  
 			 <br /><small class="hint_text" id="woth_text" >WOTH</small>
-			  <br /><input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input> 
+			  <br /><input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input> <br>
+			  <div id = "path_hints_div"><text style="color:#FFFFFF";>&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&nbsp;&#8595;</text><br />
+			   <input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input></div>
 			   <div id = "soli_woth_info">
 				   <div id = "woth_info">
 					<small id="woth1_title" class="woth_info_title"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
@@ -67,8 +69,9 @@
 			  <small id = "timer"></small>
 			  <br><br><br><br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br><br><br><br><br><br>
 				<div id = "dungSpawn_inputs">
-				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
+				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><img id = "stonePic" class = "stones"></img><input id="markStones" class= "layout_input"> </input><img id = "medallionPic" class = "medallions"></img><input id="markMedallions" class="layout_input" > </input><img src = "./normal/frogsong.png"></img><br /><br /><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
 				</div>
+				
 				<small id="forceIntoLogic">Force into Logic</small><br />
 				<input id="forceLogic1" class= "check_input"></input>
 				<input id="forceLogic2" class= "check_input"></input>
@@ -359,10 +362,11 @@
 		<label class="settingsLabels" for="presets">PRESETS</label>
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
+		  <option value="S5">S5</option>
 		  <option value="WEEKLY">WEEKLY</option>
-		  <option value="S3">S3</option>
 		  <option value="SGL">SGL</option>
 		  <option value="S4">S4</option>
+		  <option value="S3">S3</option>
 		  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>

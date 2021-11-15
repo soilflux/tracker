@@ -1300,6 +1300,12 @@ function scangamepads() {
   }
 }
 
+window.onbeforeunload = popup;
+function popup() {
+  return '';
+}
+document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
+
 window.addEventListener("gamepadconnected", connecthandler);
 window.addEventListener("gamepaddisconnected", disconnecthandler);
 
