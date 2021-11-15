@@ -224,13 +224,13 @@ function timerControl() {
 function circusControl() {
 	if (!linsoGoMode) {document.getElementById("linso54").src = "./circus-tent_1f3aa.png";}
 	if (circus) {circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}}
-	else {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 1;}}
+	else if (!nerfed) {circus = true; document.getElementById("circusControl").innerHTML = "Send Back to Circus"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 1;}}
 	Update();
 }
 
 function nerfControl() {
 	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; document.getElementById("circusControl").style.display = "inline-block"; document.getElementById("skullsInLogicList").style.display = "inline-block"; document.getElementById("confirmed_logically_required").style.display = "inline-block";}
-	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; document.getElementById("circusControl").style.display = "none"; document.getElementById("skullsInLogicList").style.display = "none"; document.getElementById("confirmed_logically_required").style.display = "none";}
+	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; document.getElementById("circusControl").style.display = "none"; document.getElementById("skullsInLogicList").style.display = "none"; document.getElementById("confirmed_logically_required").style.display = "none"; circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}}
 	Update();
 }
 
