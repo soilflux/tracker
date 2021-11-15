@@ -243,6 +243,7 @@ function saveStuff() {
 	localStorage.setItem("ganonsBridge", document.getElementById("ganonsBridge").value);
 	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
 	localStorage.setItem("presets", document.getElementById("presets").value);
+	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
 }
 
 function linsoControl() {
