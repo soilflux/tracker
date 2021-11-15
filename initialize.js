@@ -3,6 +3,7 @@ var Check={};
 var ChecksLockedBy={};
 var ChecksPutInLogicBy = {};
 var Game={};
+var CouldHave={};
 var Person={};
 var Map={};
 var UI={};
@@ -14,6 +15,8 @@ var Locked_Logic={};
 var Locked_Logic2={};
 var PutIn_Logic={};
 var Location_Access={};
+var Location_Could_Access={};
+var Location_Could_Peek={};
 var Logic={};
 var Shop_Logic = {};
 var Location ={};
@@ -1305,7 +1308,7 @@ if (!haveEvents) {
 
 linsoControl(); linsoControl();
 setInterval(slowUpdate,10000);
-setInterval(midUpdate,3000);
+setInterval(midUpdate,500);
 setInterval(fastUpdate,400);
 setInterval(updateControllerStatus,1000/60);
 Update(); midUpdate(); midUpdate(); fastUpdate();
