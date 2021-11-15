@@ -560,7 +560,7 @@ function refresh_logic_for_stuff() {
 		else {
 			str = checkSummary[i];
 		}
-		if (Game[checkSummary[i]] || i > 37) { 
+		if (Game[checkSummary[i]] || i > 37 || nerfed) { 
 			if (i <= 37) {
 				if (nerfed) {
 					document.getElementById(str).style.fontWeight = "normal";
