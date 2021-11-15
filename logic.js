@@ -716,7 +716,7 @@ function logic_shortcuts() {
 	Game.can_use_bottle = (Game.bottle1 || Game.bottle2 || Game.bottle3 || (Game.rutos_letter && Game.child_can_enter_river));
 	Game.can_see = Game.lens && Game.magic;
 	Game.can_blast_or_smash = Game.bomb_bag || Game.hammer || Game.has_chus;
-	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.bottle || Game.can_enter_jabu) && Game.giants_wallet);
+	Game.can_enter_dodongos = Game.can_blast_or_smash || Game.goron_bracelet || ((Game.can_use_bottle || Game.can_enter_jabu) && Game.giants_wallet);
 	Game.dodongos_climb	= Game.can_enter_dodongos && (Game.bomb_bag || Game.has_chus || Game.goron_bracelet || Game.can_use_dins || Game.bow);
 	Game.can_enter_shadow= (Game.nocturne || Spawn.adult_nocturne) && Game.can_use_dins && (Game.hover_boots || Game.hookshot) ;//&& Game.can_see;
 	Game.can_cross_shadow_gap= Game.can_enter_shadow && Game.hover_boots;
@@ -760,7 +760,7 @@ function logic_shortcuts() {
 	CouldHave.can_use_bottle = (CouldHave.bottle1 || CouldHave.bottle2 ||CouldHave.bottle3 ||(CouldHave.rutos_letter && CouldHave.child_can_enter_river));
 	CouldHave.can_see = CouldHave.lens && CouldHave.magic;
 	CouldHave.can_blast_or_smash = CouldHave.bomb_bag || CouldHave.hammer || Game.has_chus;
-	CouldHave.can_enter_dodongos = CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet);
+	CouldHave.can_enter_dodongos = CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.can_use_bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet);
 	CouldHave.dodongos_climb	= CouldHave.can_enter_dodongos && (CouldHave.bomb_bag || Game.has_chus || CouldHave.goron_bracelet || CouldHave.can_use_dins || CouldHave.bow);
 	CouldHave.can_enter_shadow= (CouldHave.nocturne || Spawn.adult_nocturne) && CouldHave.can_use_dins && (CouldHave.hover_boots || CouldHave.hookshot) ;//&& CouldHave.can_see;
 	CouldHave.can_cross_shadow_gap= CouldHave.can_enter_shadow && CouldHave.hover_boots;
@@ -1243,7 +1243,7 @@ function location_logic(){
 	Location_Access.market_bowling_1 = Game.bomb_bag;
 	Location_Access.market_bowling_2 = Game.bomb_bag;
 	Location_Access.market_lens_game = true;
-	Location_Access.poes= (Game.bow && Game.eponas && (Game.bottle || Game.can_enter_jabu)) || Game.big_poe;
+	Location_Access.poes= (Game.bow && (Game.can_use_bottle || Game.can_enter_jabu)) || Game.big_poe;
 	Location_Access.dins_fairy = (Game.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && Game.lullaby;
 	Location_Access.g_fairy = (Game.golden_gauntlets || Spawn.adult_ogc) && Game.lullaby;
 	Location_Access.lacs = Game.gen1 && Game.gen2;
@@ -1279,7 +1279,7 @@ function location_logic(){
 	Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
 	Location_Access.crater_grotto = Game.can_blast_or_smash;
 	Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
-	Location_Access.trade_quest = (((Location_Access.thaw_king || (Game.giants_wallet && Game.lullaby && (Game.bottle || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
+	Location_Access.trade_quest = (((Location_Access.thaw_king || (Game.giants_wallet && Game.lullaby && (Game.can_use_bottle || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
 	Location_Access.gerudo_archery_1 = Game.eponas && Game.bow;
@@ -1535,10 +1535,10 @@ function location_logic(){
 	Location_Access.shop_goron_TR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BR = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
 	Location_Access.shop_goron_BL = Game.lullaby || Game.can_stop_link_the_goron || Game.bomb_bag || Game.can_use_dins || Game.has_chus;
-	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
-	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.bottle)));
+	Location_Access.shop_domain_TL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.can_use_bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.can_use_bottle)));
+	Location_Access.shop_domain_TR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.can_use_bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.can_use_bottle)));
+	Location_Access.shop_domain_BR = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.can_use_bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.can_use_bottle)));
+	Location_Access.shop_domain_BL = (Game.bomb_bag && Game.lullaby) || Game.silver_scale || (Game.lullaby && ((Game.can_enter_ganons && Game.can_use_bottle) || Game.can_enter_jabu || (Game.giants_wallet && Game.can_use_bottle)));
 	
 	Location_Could_Access.kokiri_sword = true;
 	Location_Could_Access.mido_1 = true;
@@ -1566,7 +1566,7 @@ function location_logic(){
 	Location_Could_Access.market_bowling_1 = CouldHave.bomb_bag;
 	Location_Could_Access.market_bowling_2 = CouldHave.bomb_bag;
 	Location_Could_Access.market_lens_game = true;
-	Location_Could_Access.poes= (CouldHave.bow && CouldHave.eponas && (CouldHave.bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
+	Location_Could_Access.poes= (CouldHave.bow && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
 	Location_Could_Access.dins_fairy = (CouldHave.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && CouldHave.lullaby;
 	Location_Could_Access.g_fairy = (CouldHave.golden_gauntlets || Spawn.adult_ogc) && CouldHave.lullaby;
 	Location_Could_Access.lacs = false;
@@ -1602,7 +1602,7 @@ function location_logic(){
 	Location_Could_Access.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc;
 	Location_Could_Access.crater_grotto = CouldHave.can_blast_or_smash;
 	Location_Could_Access.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && CouldHave.lullaby;
-	Location_Could_Access.trade_quest = (((Location_Could_Access.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
+	Location_Could_Access.trade_quest = (((Location_Could_Access.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
 	Location_Could_Access.gerudo_hammer = CouldHave.fortress_access && CouldHave.hammer;
 	Location_Could_Access.gerudo_roof = CouldHave.fortress_access && (CouldHave.hookshot || CouldHave.hover_boots);
 	Location_Could_Access.gerudo_archery_1 = CouldHave.eponas && CouldHave.bow;
@@ -1858,10 +1858,10 @@ function location_logic(){
 	Location_Could_Access.shop_goron_TR = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
 	Location_Could_Access.shop_goron_BR = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
 	Location_Could_Access.shop_goron_BL = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
-	Location_Could_Access.shop_domain_TL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Access.shop_domain_TR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Access.shop_domain_BR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Access.shop_domain_BL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
+	Location_Could_Access.shop_domain_TL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Access.shop_domain_TR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Access.shop_domain_BR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Access.shop_domain_BL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
 	
 	Location_Could_Peek.kokiri_sword = true;
 	Location_Could_Peek.mido_1 = true;
@@ -1889,7 +1889,7 @@ function location_logic(){
 	Location_Could_Peek.market_bowling_1 = CouldHave.bomb_bag;
 	Location_Could_Peek.market_bowling_2 = CouldHave.bomb_bag;
 	Location_Could_Peek.market_lens_game = true;
-	Location_Could_Peek.poes= (CouldHave.bow && CouldHave.eponas && (CouldHave.bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
+	Location_Could_Peek.poes= (CouldHave.bow && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
 	Location_Could_Peek.dins_fairy = (CouldHave.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && CouldHave.lullaby;
 	Location_Could_Peek.g_fairy = (CouldHave.golden_gauntlets || Spawn.adult_ogc) && CouldHave.lullaby;
 	Location_Could_Peek.lacs = false;
@@ -1925,7 +1925,7 @@ function location_logic(){
 	Location_Could_Peek.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc;
 	Location_Could_Peek.crater_grotto = CouldHave.can_blast_or_smash;
 	Location_Could_Peek.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && CouldHave.lullaby;
-	Location_Could_Peek.trade_quest = (((Location_Could_Peek.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
+	Location_Could_Peek.trade_quest = (((Location_Could_Peek.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
 	Location_Could_Peek.gerudo_hammer = CouldHave.fortress_access && CouldHave.hammer;
 	Location_Could_Peek.gerudo_roof = CouldHave.fortress_access && (CouldHave.hookshot || CouldHave.hover_boots);
 	Location_Could_Peek.gerudo_archery_1 = CouldHave.eponas && CouldHave.bow;
@@ -2181,8 +2181,8 @@ function location_logic(){
 	Location_Could_Peek.shop_goron_TR = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
 	Location_Could_Peek.shop_goron_BR = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
 	Location_Could_Peek.shop_goron_BL = CouldHave.lullaby || CouldHave.can_stop_link_the_goron || CouldHave.bomb_bag || CouldHave.can_use_dins || Game.has_chus;
-	Location_Could_Peek.shop_domain_TL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Peek.shop_domain_TR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Peek.shop_domain_BR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
-	Location_Could_Peek.shop_domain_BL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.bottle)));
+	Location_Could_Peek.shop_domain_TL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Peek.shop_domain_TR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Peek.shop_domain_BR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
+	Location_Could_Peek.shop_domain_BL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
 }

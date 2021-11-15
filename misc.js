@@ -476,6 +476,7 @@ function Undo() {
 		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.current_shadow_keys -= 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.current_gtg_keys -= 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.current_well_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("ganons")) {Game.current_ganons_keys -= 1;}
 	}
 	
 	if (Check[lastCheck[lastCheck.length-1]] == "boss_key") {
