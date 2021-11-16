@@ -234,6 +234,7 @@ function circusControl() {
 
 function nerfControl() {
 	if (nerfed) {
+		document.getElementById("linso54").style.opacity = 0;
 		nerfed = false; 
 		document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; 
 		document.getElementById("circusControl").style.display = "inline-block"; 
@@ -251,6 +252,7 @@ function nerfControl() {
 		document.getElementById("forceOutOfLogic4").style.display = "inline-block";
 	}
 	else {
+		document.getElementById("linso54").style.opacity = 1;
 		nerfed = true; 
 		document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; 
 		document.getElementById("circusControl").style.display = "none"; 

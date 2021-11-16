@@ -1043,7 +1043,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) {elem.src = Game.shadow_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Game.spirit_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Game.light_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; elem.onclick = toggleLinsoGoMode;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; /*elem.onclick = toggleLinsoGoMode;*/}
 		else {elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Game[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
@@ -1317,6 +1317,7 @@ window.addEventListener("gamepaddisconnected", disconnecthandler);
 if (!haveEvents) {
  setInterval(scangamepads, 500);
 }
+document.getElementById("linso54").style.opacity = 1
 
 linsoControl(); linsoControl();
 setInterval(slowUpdate,10000);
