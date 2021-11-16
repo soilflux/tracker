@@ -918,6 +918,10 @@ display:inline-block;
 margin:1.5%;
 margin-top:0%;
 }
+#nerfControl {
+display:none;	
+}
+}
 #markStones {
 margin-left: 0px;
 margin-top: 3px;
