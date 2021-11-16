@@ -333,6 +333,41 @@ color: red;
 	float: left;
 	width: 300px;
 }
+.checked_text_summary {
+	font-size: 14px;
+	font-weight: bold;	
+	letter-spacing: 0px;
+	color: chartreuse;
+	opacity: 1;
+}
+.checked_text_summary_not_have {
+	font-size: 14px;
+	font-weight: bold;	
+	letter-spacing: 0px;
+	color: chartreuse;
+	opacity: .5;
+}
+.checked_text_summary_have_ool {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: orange;
+	opacity: 1;
+}
+.checked_text_summary_ool {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: black;
+	opacity: 1;
+}
+.checked_text_summary_ool_could_have {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: orange;
+	opacity: .5;
+}
 #extra_column {
 	width: 75px;
 	float: left;

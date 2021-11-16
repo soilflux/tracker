@@ -4,6 +4,7 @@ function Update() {
 	handleItemHighlights(); //add or remove transparency if player has or does not have items, respectively
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
+	update_summary_text() // update the check summary text colors
 	for (var i = 0; i < nextChecks.length; i++) {
 		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
 		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}

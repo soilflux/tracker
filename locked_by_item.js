@@ -26,7 +26,6 @@ function checksLockedByItem(item) {
 	
 	if(Known.scale1 == true) {Locked_Logic2.scale1 = Location_Locked_Logic2[Location.scale1]; } else {Locked_Logic2.scale1 = true;} if(item == "scale1") {Locked_Logic2.scale1 = false;}  
 	if(Known.scale2 == true) {Locked_Logic2.scale2 = Location_Locked_Logic2[Location.scale2]; } else {Locked_Logic2.scale2 = true;} if(item == "scale2") {Locked_Logic2.scale2 = false;} 
-	if(Game.scale2 == true) {document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
 	Locked_Logic2.silver_scale = Locked_Logic2.scale1 || Locked_Logic2.scale2; 
 	Locked_Logic2.golden_scale = Locked_Logic2.scale1 && Locked_Logic2.scale2; 
 	if(Known.bomb_bag1 == true) {Locked_Logic2.bomb_bag1 = Location_Locked_Logic2[Location.bomb_bag1];} else {Locked_Logic2.bomb_bag1 = true;} if(item == "bomb_bag1") {Locked_Logic2.bomb_bag1 = false;} 

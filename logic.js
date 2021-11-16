@@ -18,7 +18,6 @@ function refresh_logic_for_stuff() {
 	
 	if(Known.scale1 == true) {Logic.scale1 = Location_Logic[Location.scale1]; }
 	if(Known.scale2 == true) {Logic.scale2 = Location_Logic[Location.scale2]; }
-	if(Game.scale2 == true) {document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
 	Logic.silver_scale = Logic.scale1 || Logic.scale2;
 	Logic.golden_scale = Logic.scale1 && Logic.scale2;
 	
@@ -95,6 +94,9 @@ function refresh_logic_for_stuff() {
 	Game.bow = false;
 	if (Game.bow1 || Game.bow2 || Game.bow3) {Game.bow = true;}
 	
+	Game.bottle = false;
+	if (Game.bottle1 || Game.bottle2 || Game.bottle3) {Game.bottle = true;}
+	
 	Game.trade = false;
 	if (Game.prescription || Game.claim_check) {Game.trade = true;}
 
@@ -130,8 +132,14 @@ function refresh_logic_for_stuff() {
 	Game.golden_scale = false;
 	if (Game.scale1 && Game.scale2) {Game.golden_scale = true;}
 	
+	if(Game.golden_scale == true) {document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
+	else {document.getElementById("silverscaleimg").src = Game.silver_scale_img;}
+	
 	Game.magic = false;
 	if (Game.magic1 || Game.magic2) {Game.magic = true;}
+	
+	Game.double_magic = false;
+	if (Game.magic1 && Game.magic2) {Game.double_magic = true;}
 	
 	
 	for (var q = 0; q < 30; q++) {
@@ -534,48 +542,6 @@ function refresh_logic_for_stuff() {
 	
 	if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
 	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
-	
-	for(var i = 0; i <= 37; i++){
-		str = checkSummary[i] + "_location";
-		
-		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {var exception = true;} else {var exception = false;}
-		
-		if (nerfed) {document.getElementById(str).className = "logic_check_text2"; document.getElementById(str).style.color = "white"; }
-		else if (Logic[checkSummary[i]] || exception) {document.getElementById(str).className = "logic_check_text2";}
-		else {document.getElementById(str).className = "ool_check_text2";}
-	}
-	
-	for(var i = 0; i < checkSummary.length; i++) {
-		if (i <= 37 ){
-			str = checkSummary[i] + "_location";
-			if (checkSummary[i] == "trade") {
-				if (!Logic.prescription && !Logic.claim_check) {document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
-				else if (Logic.prescription || Logic.claim_check) { document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "14px";}
-			}
-			else {
-				if (!Logic[checkSummary[i]]) { document.getElementById(str).style.fontWeight = "normal"; document.getElementById(str).style.fontSize = "14px";}
-				else if (Logic[checkSummary[i]]) {document.getElementById(str).style.fontWeight = "bold"; document.getElementById(str).style.fontSize = "14px";}
-			}
-		}
-		else {
-			str = checkSummary[i];
-		}
-		if (Game[checkSummary[i]] || i > 37 || nerfed) { 
-			if (i <= 37) {
-				if (nerfed) {
-					document.getElementById(str).style.fontWeight = "normal";
-					document.getElementById(str).style.fontSize = "14px";
-					document.getElementById(str).style.color = "white";
-				}
-				else if (Logic[checkSummary[i]]) {
-					document.getElementById(str).style.color = "chartreuse";
-				}
-				else {
-					document.getElementById(str).style.color = "yellow";
-				}
-			}
-		}
-}
 }
 function force_stuff_in_or_out_of_logic() {
 	var i;
@@ -1420,12 +1386,12 @@ function location_logic(){
 	Location_Access.ganons_lightTrial7 = Game.can_enter_ganons && Game.golden_gauntlets ;//&& Game.can_see;
 	Location_Access.ganons_lightTrialLullaby = Game.can_enter_ganons && Game.golden_gauntlets && Game.lullaby && Game.current_ganons_keys >= 1;
 	Location_Access.ganons_spiritTrial1 = Game.can_enter_ganons;
-	Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.bomb_bag || Game.has_chus);//&& Game.can_see;
+	Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.bomb_bag || Game.has_chus || Game.bow);//&& Game.can_see;
 	Location_Access.ganons_forestTrial = Game.can_enter_ganons;
 	Location_Access.ganons_waterTrial1 = Game.can_enter_ganons;
 	Location_Access.ganons_waterTrial2 = Game.can_enter_ganons;
-	Location_Access.ganons_shadowTrial1 = Game.can_enter_ganons;
-	Location_Access.ganons_shadowTrial2 = Game.can_enter_ganons && (Game.longshot || ((Game.fire_arrows && Game.magic) || (Game.hover_boots && Game.can_use_dins)));
+	Location_Access.ganons_shadowTrial1 = Game.can_enter_ganons && ((Game.bow && Game.fire_arrows && Game.magic) || Game.hookshot || Game.hover_boots || Game.time);;
+	Location_Access.ganons_shadowTrial2 = Game.can_enter_ganons && ((Game.bow && Game.fire_arrows && Game.magic) || (Game.longshot && (Game.hover_boots || Game.can_use_dins)));
 	Location_Access.ganons_bossKey = Game.can_enter_ganons;
 	Location_Access.gtg_lobbyLeft = Game.can_save_carpenters && Game.bow;
 	Location_Access.gtg_lobbyRight = Game.can_save_carpenters && Game.bow;
@@ -1471,7 +1437,7 @@ function location_logic(){
 	Location_Access.boleroSpot = Game.can_enter_fire_temple;
 	Location_Access.minuetSpot = true;
 	Location_Access.requiemSpot = Game.can_enter_colossus;
-	Location_Access.serenadeSpot = Game.ice_access;
+	Location_Access.serenadeSpot = Game.ice_access && Game.can_use_bottle;
 	Location_Access.preludeSpot = Game.forest;
 	Location_Access.nocturneSpot = Game.forest && Game.fire && Game.water;
 	Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
@@ -1743,12 +1709,12 @@ function location_logic(){
 	Location_Could_Access.ganons_lightTrial7 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets ;//&& CouldHave.can_see;
 	Location_Could_Access.ganons_lightTrialLullaby = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets && CouldHave.lullaby && CouldHave.current_ganons_keys >= 1;
 	Location_Could_Access.ganons_spiritTrial1 = CouldHave.can_enter_ganons;
-	Location_Could_Access.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Game.has_chus);//&& CouldHave.can_see;
+	Location_Could_Access.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Game.has_chus || CouldHave.bow);//&& CouldHave.can_see;
 	Location_Could_Access.ganons_forestTrial = CouldHave.can_enter_ganons;
 	Location_Could_Access.ganons_waterTrial1 = CouldHave.can_enter_ganons;
 	Location_Could_Access.ganons_waterTrial2 = CouldHave.can_enter_ganons;
-	Location_Could_Access.ganons_shadowTrial1 = CouldHave.can_enter_ganons;
-	Location_Could_Access.ganons_shadowTrial2 = CouldHave.can_enter_ganons && (CouldHave.longshot || ((CouldHave.fire_arrows && CouldHave.magic) || (CouldHave.hover_boots && CouldHave.can_use_dins)));
+	Location_Could_Access.ganons_shadowTrial1 = CouldHave.can_enter_ganons && ((CouldHave.bow && CouldHave.fire_arrows && CouldHave.magic) || CouldHave.hookshot || CouldHave.hover_boots || CouldHave.time);
+	Location_Could_Access.ganons_shadowTrial2 = CouldHave.can_enter_ganons && ((CouldHave.bow && CouldHave.fire_arrows && CouldHave.magic) || (CouldHave.longshot && (CouldHave.hover_boots || CouldHave.can_use_dins)));
 	Location_Could_Access.ganons_bossKey = CouldHave.can_enter_ganons;
 	Location_Could_Access.gtg_lobbyLeft = CouldHave.can_save_carpenters && CouldHave.bow;
 	Location_Could_Access.gtg_lobbyRight = CouldHave.can_save_carpenters && CouldHave.bow;
@@ -1794,7 +1760,7 @@ function location_logic(){
 	Location_Could_Access.boleroSpot = CouldHave.can_enter_fire_temple;
 	Location_Could_Access.minuetSpot = true;
 	Location_Could_Access.requiemSpot = CouldHave.can_enter_colossus;
-	Location_Could_Access.serenadeSpot = CouldHave.ice_access;
+	Location_Could_Access.serenadeSpot = CouldHave.ice_access && CouldHave.can_use_bottle;
 	Location_Could_Access.preludeSpot = CouldHave.forest;
 	Location_Could_Access.nocturneSpot = CouldHave.forest && CouldHave.fire && CouldHave.water;
 	Location_Could_Access.oot = CouldHave.kokiri_emerald && CouldHave.goron_ruby && CouldHave.zora_sapphire;
@@ -2066,12 +2032,12 @@ function location_logic(){
 	Location_Could_Peek.ganons_lightTrial7 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets ;//&& CouldHave.can_see;
 	Location_Could_Peek.ganons_lightTrialLullaby = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets && CouldHave.lullaby && CouldHave.current_ganons_keys >= 1;
 	Location_Could_Peek.ganons_spiritTrial1 = CouldHave.can_enter_ganons;
-	Location_Could_Peek.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Game.has_chus);//&& CouldHave.can_see;
+	Location_Could_Peek.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Game.has_chus || CouldHave.bow);//&& CouldHave.can_see;
 	Location_Could_Peek.ganons_forestTrial = CouldHave.can_enter_ganons;
 	Location_Could_Peek.ganons_waterTrial1 = CouldHave.can_enter_ganons;
 	Location_Could_Peek.ganons_waterTrial2 = CouldHave.can_enter_ganons;
-	Location_Could_Peek.ganons_shadowTrial1 = CouldHave.can_enter_ganons;
-	Location_Could_Peek.ganons_shadowTrial2 = CouldHave.can_enter_ganons && (CouldHave.longshot || ((CouldHave.fire_arrows && CouldHave.magic) || (CouldHave.hover_boots && CouldHave.can_use_dins)));
+	Location_Could_Peek.ganons_shadowTrial1 = CouldHave.can_enter_ganons && ((CouldHave.bow && CouldHave.fire_arrows && CouldHave.magic) || CouldHave.hookshot || CouldHave.hover_boots || CouldHave.time);;
+	Location_Could_Peek.ganons_shadowTrial2 = CouldHave.can_enter_ganons && ((CouldHave.bow && CouldHave.fire_arrows && CouldHave.magic) || (CouldHave.longshot && (CouldHave.hover_boots || CouldHave.can_use_dins)));
 	Location_Could_Peek.ganons_bossKey = CouldHave.can_enter_ganons;
 	Location_Could_Peek.gtg_lobbyLeft = CouldHave.can_save_carpenters && CouldHave.bow;
 	Location_Could_Peek.gtg_lobbyRight = CouldHave.can_save_carpenters && CouldHave.bow;
@@ -2117,7 +2083,7 @@ function location_logic(){
 	Location_Could_Peek.boleroSpot = CouldHave.can_enter_fire_temple;
 	Location_Could_Peek.minuetSpot = true;
 	Location_Could_Peek.requiemSpot = CouldHave.can_enter_colossus;
-	Location_Could_Peek.serenadeSpot = CouldHave.ice_access;
+	Location_Could_Peek.serenadeSpot = CouldHave.ice_access && CouldHave.can_use_bottle;
 	Location_Could_Peek.preludeSpot = CouldHave.forest;
 	Location_Could_Peek.nocturneSpot = CouldHave.forest && CouldHave.fire && CouldHave.water;
 	Location_Could_Peek.oot = CouldHave.kokiri_emerald && CouldHave.goron_ruby && CouldHave.zora_sapphire;

@@ -25,7 +25,6 @@ function checksPutInLogicByItem(item) {
 	
 	if(Known.scale1 == true) {PutIn_Logic.scale1 = Location_PutIn_Logic[Location.scale1]; } if (item == "scale1") {PutIn_Logic.scale1 = false;}
 	if(Known.scale2 == true) {PutIn_Logic.scale2 = Location_PutIn_Logic[Location.scale2]; } if (item == "scale2") {PutIn_Logic.scale2 = false;}
-	if(Game.scale2 == true) {document.getElementById("silverscaleimg").src = Game.golden_scale_img;}
 	PutIn_Logic.silver_scale = PutIn_Logic.scale1 || PutIn_Logic.scale2; 
 	PutIn_Logic.golden_scale = PutIn_Logic.scale1 && PutIn_Logic.scale2; 
 	
