@@ -1,6 +1,6 @@
 function highlight(x) {
 	if (x.id == "silverscaleimg") {
-		if (Game.scale2 == true) {
+		if (Game.golden_scale == true) {
 			Game.scale1 = false; 
 			Game.scale2 = false;
 			document.getElementById(x.id).src = Game.silver_scale_img;
@@ -214,6 +214,10 @@ function isUpperCase(str) {
     return str === str.toUpperCase();
 }
 
+function isLowerCase(str) {
+    return str === str.toLowerCase();
+}
+
 function timerControl() {
 	pauseFlag = true;
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
@@ -318,34 +322,75 @@ function linso_counter() {
 }
 
 function toggleHint(loc) {
-	var location = "";
+	if(loc.id == "trade_location" && !Known["prescription"] && !Known["claim_check"])
+		return;
+
+	var theLocation = "";
 	var item = "";
-	var itemText = "";
-	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {location = loc.id.slice(5); item = Check[location];} else {item = loc.id.slice(0, -9); location = Location[item];}
-	if (item == "sos") {item = "storms";}
-	if (item == "suns") {item = "suns";}
-	if (item == "sot") {item = "time";}
-	if (item == "serenade") {itemText = "Serenade";} else if (item == "prelude") {itemText = "Prelude"} else {itemText = ItemNames[Items.indexOf(item)];}
-	if (item != "unknown" && location != undefined) {
-		Hinted[location] = !Hinted[location];
-		if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
-			text = Names[Locations.indexOf(location)] + ":  " + itemText + "<br>";
-		}
-		else {
-			text = Names[Locations.indexOf(location)].split(":")[1].slice(1) + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
-		}
-		if (Hinted[location]) {
-			var hintText = document.createElement("small");
-			hintText.innerHTML = text;
-			document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
-		}
-		else {
-			for (i = 0; i < document.getElementById("notes").children.length; i++) {
-				if (document.getElementById("notes").children[i].innerHTML == text) {
-					document.getElementById("notes").children[i].remove();
-					break;
+	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") { // song click
+		theLocation = loc.id.slice(5); 
+		item = Check[theLocation];
+	} 
+	else { // check summary text click
+		item = loc.id.slice(0, -9); 
+		
+		if(item == "trade" && Known["prescription"])
+			item = "prescription";
+		else if(item == "trade" && Known["claim_check"])
+			item = "claim_check";
+		
+		theLocation = Location[item];
+	}
+	
+	if(event.which == 1 || event.which == undefined) { // left click, toggle if this item hinted by a sometimes hint or not
+		var itemText = "";
+	
+		if (item == "sos") {item = "storms";}
+		if (item == "suns") {item = "suns";}
+		if (item == "sot") {item = "time";}
+		
+		if (item == "serenade") {itemText = "Serenade";} 
+		else if (item == "prelude") {itemText = "Prelude"} 
+		else {itemText = ItemNames[Items.indexOf(item)];}
+		
+		if (item != "unknown" && theLocation != "unknown") {
+			Hinted[theLocation] = !Hinted[theLocation];
+			
+			// get the hinted text for this item and location
+			if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
+				text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+			}
+			else {
+				text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+			}
+			
+			if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
+				var hintText = document.createElement("small");
+				hintText.innerHTML = text;
+				document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+			}
+			else { // if it is no longer hinted, remove the hinted text
+				for (i = 0; i < document.getElementById("notes").children.length; i++) {
+					if (document.getElementById("notes").children[i].innerHTML == text) {
+						document.getElementById("notes").children[i].remove();
+						break;
+					}
 				}
 			}
+		}
+	}
+	else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
+		if(loc.id != "trade_location"){
+			if(loc.innerHTML.includes("Big Poe"))
+				Game.big_poe = !Game.big_poe;
+		
+			Game[item] = !Game[item];
+		}
+		else {
+			if(Known["prescription"])
+				Game["prescription"] = !Game["prescription"];
+			else if(Known["claim_check"])
+				Game["claim_check"] = !Game["claim_check"];
 		}
 	}
 }
@@ -541,7 +586,6 @@ function Undo() {
 		}
 		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML.split('-&gt; ')[0] + "-> ";
-			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").style.color = "black";
 		}
 	}
 	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
