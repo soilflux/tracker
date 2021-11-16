@@ -929,11 +929,37 @@ width: 85px;
 }
 #forceOutOfLogic{
 	color:pink;
+	display:none;
 	font-size:18px;
 }
 #forceIntoLogic{
 	color:lightgreen;
+	display:none;
 	font-size:18px;
+}
+#forceLogic1 {
+	display:none;
+}
+#forceLogic2 {
+	display:none;
+}
+#forceLogic3 {
+	display:none;
+}
+#forceLogic4 {
+	display:none;
+}
+#forceOutOfLogic1 {
+	display:none;
+}
+#forceOutOfLogic2 {
+	display:none;
+}
+#forceOutOfLogic3 {
+	display:none;
+}
+#forceOutOfLogic4 {
+	display:none;
 }
 .travelMenu{
 position:absolute;

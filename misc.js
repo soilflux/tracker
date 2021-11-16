@@ -229,8 +229,42 @@ function circusControl() {
 }
 
 function nerfControl() {
-	if (nerfed) {nerfed = false; document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; document.getElementById("circusControl").style.display = "inline-block"; document.getElementById("skullsInLogicList").style.display = "inline-block"; document.getElementById("confirmed_logically_required").style.display = "inline-block";}
-	else {nerfed = true; document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; document.getElementById("circusControl").style.display = "none"; document.getElementById("skullsInLogicList").style.display = "none"; document.getElementById("confirmed_logically_required").style.display = "none"; circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}}
+	if (nerfed) {
+		nerfed = false; 
+		document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; 
+		document.getElementById("circusControl").style.display = "inline-block"; 
+		document.getElementById("skullsInLogicList").style.display = "inline-block"; 
+		document.getElementById("confirmed_logically_required").style.display = "inline-block";
+		document.getElementById("forceIntoLogic").style.display = "inline-block";
+		document.getElementById("forceLogic1").style.display = "inline-block";
+		document.getElementById("forceLogic2").style.display = "inline-block";
+		document.getElementById("forceLogic3").style.display = "inline-block";
+		document.getElementById("forceLogic4").style.display = "inline-block";
+		document.getElementById("forceOutOfLogic").style.display = "inline-block";
+		document.getElementById("forceOutOfLogic1").style.display = "inline-block";
+		document.getElementById("forceOutOfLogic2").style.display = "inline-block";
+		document.getElementById("forceOutOfLogic3").style.display = "inline-block";
+		document.getElementById("forceOutOfLogic4").style.display = "inline-block";
+	}
+	else {
+		nerfed = true; 
+		document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; 
+		document.getElementById("circusControl").style.display = "none"; 
+		document.getElementById("skullsInLogicList").style.display = "none"; 
+		document.getElementById("confirmed_logically_required").style.display = "none"; 
+		circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}
+		document.getElementById("forceIntoLogic").style.display = "none";
+		document.getElementById("forceLogic1").style.display = "none";
+		document.getElementById("forceLogic2").style.display = "none";
+		document.getElementById("forceLogic3").style.display = "none";
+		document.getElementById("forceLogic4").style.display = "none";
+		document.getElementById("forceOutOfLogic").style.display = "none";
+		document.getElementById("forceOutOfLogic1").style.display = "none";
+		document.getElementById("forceOutOfLogic2").style.display = "none";
+		document.getElementById("forceOutOfLogic3").style.display = "none";
+		document.getElementById("forceOutOfLogic4").style.display = "none";
+	}
+		
 	Update();
 }
 
