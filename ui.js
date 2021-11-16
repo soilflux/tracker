@@ -77,6 +77,8 @@ function process_inputs() {
 							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
 							if (!hinted && !peeked){
 								Game[Items2[j] + duplicate] = true;
+								if(inputs[j] == "big")
+									Game["big_poe"] = true;
 							}
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
