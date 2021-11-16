@@ -282,6 +282,7 @@ function saveStuff() {
 	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
 	localStorage.setItem("presets", document.getElementById("presets").value);
 	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
+	localStorage.setItem("csmc", document.getElementById("csmc").value);
 }
 
 function linsoControl() {

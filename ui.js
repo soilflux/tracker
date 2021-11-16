@@ -650,12 +650,12 @@ function updateInputs() {
 	}
 }
 function update_logic_info() {
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "SGL") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
-	if (document.getElementById("presets").value == "WEEKLY") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "4_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
-	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE";document.getElementById("path_hints_div").style.display = "block";}
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
+	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
+	if (document.getElementById("presets").value == "SGL") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
+	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
+	if (document.getElementById("presets").value == "WEEKLY") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "4_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input3").style.display = "none";}
+	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("path_hints_div").style.display = "block";}
 	else {document.getElementById("path_hints_div").style.display = "none";}
 		
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block"; document.getElementById("pieceDungeons").value = "dojafofiwaspsh";}
@@ -741,7 +741,14 @@ function update_logic_info() {
 			document.getElementById(str).style.backgroundColor = "";
 		
 		if(Location_Logic[key] == true) {
-			if (Location_Access[key] == true) {document.getElementById(str).className= "logic_check_text"; 
+			if (nerfed && Location_Access[key] == true && !Location_Obtain[key] == true) {
+				document.getElementById(str).className= "access_check_text";
+				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="yellow";
+			}
+			else if (Location_Access[key] == true) {
+				document.getElementById(str).className= "logic_check_text"; 
 				document.getElementById(str).style.fontWeight = "bold";
 				document.getElementById(str).style.opacity = 1;
 			}
@@ -790,30 +797,46 @@ function update_logic_info() {
 		}
 		else if (Location_Access[key] == true) {
 			if (!nerfed){
-			document.getElementById(str).className= "access_check_text";
-			document.getElementById(str).style.opacity = .5;
-			document.getElementById(str).style.fontWeight = "normal";
-			document.getElementById(str).style.color ="yellow";
+				document.getElementById(str).className= "access_check_text";
+				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="yellow";
 			}
 			else {
-				document.getElementById(str).className= "logic_check_text";
-				document.getElementById(str).style.fontWeight = "bold";
-				document.getElementById(str).style.opacity = 1;
-				document.getElementById(str).style.color = "chartreuse";
+				if (Location_Access[key] == true && !Location_Obtain[key] == true) {
+					document.getElementById(str).className= "access_check_text";
+					document.getElementById(str).style.opacity = .5;
+					document.getElementById(str).style.fontWeight = "normal";
+					document.getElementById(str).style.color ="yellow";
+				}
+				else {
+					document.getElementById(str).className= "logic_check_text";
+					document.getElementById(str).style.fontWeight = "bold";
+					document.getElementById(str).style.opacity = 1;
+					document.getElementById(str).style.color = "chartreuse";
+				}
 			}
 		}
 		else if (Location_Could_Access[key] == true || Location_Could_Peek[key] == true) {
 			if (!nerfed){
-			document.getElementById(str).className= "access_check_text";
-			document.getElementById(str).style.opacity = .2;
-			document.getElementById(str).style.fontWeight = "normal";
-			document.getElementById(str).style.color ="yellow";
+				document.getElementById(str).className= "access_check_text";
+				document.getElementById(str).style.opacity = .2;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="yellow";
 			}
 			else {
-				document.getElementById(str).className= "logic_check_text";
-				document.getElementById(str).style.fontWeight = "normal";
-				document.getElementById(str).style.opacity = .5;
-				document.getElementById(str).style.color = "chartreuse";
+				if(!Location_Could_Access[key] == true && Location_Could_Peek[key] == true) {
+					document.getElementById(str).className= "access_check_text";
+					document.getElementById(str).style.opacity = .2;
+					document.getElementById(str).style.fontWeight = "normal";
+					document.getElementById(str).style.color ="yellow";
+				}
+				else {
+					document.getElementById(str).className= "logic_check_text";
+					document.getElementById(str).style.fontWeight = "normal";
+					document.getElementById(str).style.opacity = .5;
+					document.getElementById(str).style.color = "chartreuse";
+				}
 			}
 		}
 		else {
