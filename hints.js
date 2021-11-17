@@ -507,7 +507,7 @@ function handleAlternateHintInput() {
 	if (temptext2 != "") {
 		var hintText = document.createElement("small");
 		hintText.innerHTML = temptext2;
-		document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+		//document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
 		temptext2 = "";
 	}
 

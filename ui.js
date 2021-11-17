@@ -938,6 +938,11 @@ function update_summary_text() {
 	for(var i = 0; i <= 37; i++){
 		str = checkSummary[i] + "_location";
 		
+		if(Hinted[Location[checkSummary[i]]] && document.getElementById(str).innerHTML.indexOf("*") < 0)
+			document.getElementById(str).innerHTML = "* " + document.getElementById(str).innerHTML + " *";
+		else if(!Hinted[Location[checkSummary[i]]])
+			document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace("* ", "").replace(" *", "");
+		
 		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {
 			var exception = true;} 
 		else {
