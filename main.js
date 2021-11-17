@@ -54,7 +54,7 @@ function midUpdate() {
 		}
 	}
 	for (var i = 0; i < nextChecks.length; i++) {
-		if (Check[nextChecks[i]] != "unknown") {console.log("hi");nextChecks.splice(i,1); continue;}
+		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
 		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
 		if (i == nextChecks.length - 1) {nextIndex = 420;}
 	}
@@ -68,11 +68,13 @@ function slowUpdate() {
 	saveStuff(); //save current settings for next use of tracker
 	refreshVersion(); //will highlight patch notes that haven't been read yet
 	
-	WotHItems = [];
-	for (i=0; i < Items.length; i++) {
-	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
-	}
-	for (i=0; i < Items.length; i++) {
-	if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
+	if (!nerfed) {
+		WotHItems = [];
+		for (i=0; i < Items.length; i++) {
+		ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
+		}
+		for (i=0; i < Items.length; i++) {
+		if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
+		}
 	}
 }
