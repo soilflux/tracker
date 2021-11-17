@@ -382,7 +382,7 @@ function toggleHint(loc) {
 				text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
 			}
 			
-			if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
+			/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
 				var hintText = document.createElement("small");
 				hintText.innerHTML = text;
 				document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
@@ -394,7 +394,7 @@ function toggleHint(loc) {
 						break;
 					}
 				}
-			}
+			}*/
 		}
 	}
 	else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)

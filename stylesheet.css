@@ -196,8 +196,10 @@ color: red;
 	width:25px;
 	margin-bottom: 6px;
 	margin-top: 0px;
+	margin-right: 2px;
 }
 #mouseInputs {
+	color:lightblue;
 	position: absolute;
 	left:590px;
 	top:880px;
@@ -231,11 +233,12 @@ color: red;
 	margin-right:4px;
 }
 #stonePic {
-	margin-left:20px;
+	height:25px;
+	width:25px;
 }
 #medallionPic {
-	margin-bottom: 6px;
-	margin-right:1px;
+	height:25px;
+	width:25px;
 }
 #triforcePic {
 	margin-top: 1px;
