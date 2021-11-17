@@ -321,22 +321,22 @@ var Locations = [
 	"gs_ogc", "g_fairy",
 	"lacs",
 	"gs_fountain_above_log", "gs_fountain_tree", "fountain_fairy", "ice_glacier_hp", "ice_bottom_of_fountain", "gs_fountain_hidden_cave",
-	"gs_ice_spinning_scythe", "ice_map", "ice_compass", "gs_ice_hp_room", "ice_hp", "gs_ice_block_room", "ice_irons",
+	"gs_ice_spinning_scythe", "ice_map", "gs_ice_hp_room", "ice_hp", "ice_compass", "gs_ice_block_room", "ice_irons",
 	"deku_lobby", "deku_slingshot", "deku_slingshot_room_side", "deku_compass", "deku_compass_room_side", "gs_deku_compass", "gs_deku_basement_gate", "gs_deku_basement_vines", "deku_basement", "gs_deku_basement_back", "deku_queen_gohma",
-	"lost_woods_fairy_ocarina", "ocarina_game", "lost_woods_grotto", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "bridge_scrub", "target", "skull_kid", "gs_lost_woods_above_stage", "theater",
+	"lost_woods_fairy_ocarina", "target", "ocarina_game", "lost_woods_grotto", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "skull_kid", "bridge_scrub", "gs_lost_woods_above_stage", "theater",
 	"wolfos_grotto", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2",
 	"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3",
 	"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo",
-	"gs_trail_bombable_wall", "trail_bombable", "trail_dodongos_top", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil",
-	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_grotto", "crater_nook_hp", "gs_crater_soil", "gs_crater_crate", 
+	"trail_dodongos_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil",
+	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "gs_crater_soil", "gs_crater_crate", 
 	"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50",
-	"shield_grave", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave", "graveyard_box", "race_1", "race_2",
+	"shield_grave", "graveyard_box", "race_1", "race_2", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave", 
 	"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2",
 	"shop_domain_TL", "shop_domain_TR", "shop_domain_BR", "shop_domain_BL", "zora_diving", "zora_torches", "thaw_king", "gs_domain",
 	"colossus_bean", "colossus_fairy", "gs_colossus_soil", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", 
 	"gs_wasteland", "wasteland",
 	"gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
-	"gs_jabu_vines", "scrub_jabu", "jabu_boomerang", "jabu_map", "jabu_compass", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
+	"gs_jabu_vines", "scrub_jabu", "jabu_map", "jabu_compass", "jabu_boomerang", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
 	"forest_first", "gs_forest_first", "gs_forest_lobby", "forest_stalfos", "forest_midCourtyard", "gs_forest_outdoor_east", "forest_highCourtyard", "forest_lowCourtyard", "forest_blockRoom", "forest_bossKey", "forest_floormaster", "gs_forest_outdoor_west", "forest_red", "forest_bow", "forest_blue", "forest_fallingCeiling", "forest_nearBoss", "gs_forest_basement", "forest_phantomGanon",
 	"fire_nearBoss", "gs_fire_basement", "fire_hammer1", "fire_hammer2", "fire_lavaOpen", "gs_fire_time", "fire_lavaBomb", "fire_volvagia", "fire_lowerMaze", "gs_fire_bomb_wall", "fire_sideRoom", "fire_map", "fire_upperMaze", "fire_shortcut", "gs_fire_scarecrow_1", "gs_fire_scarecrow_2", "fire_scarecrow", "fire_compass", "fire_sotGoron", "fire_top",
 	"water_compass", "water_map", "water_cracked", "water_torches", "gs_water_south_basement", "water_block", "gs_water_central", "water_pillar", "gs_water_platform_room", "water_dLink", "gs_water_river", "water_river", "water_dragon", "gs_water_near_boss_key", "water_bossKey", "water_morpha",
@@ -360,22 +360,22 @@ var Names = [
 	"Skull", "G Fairy",
 	"LACS",
 	"Log", "Tree", "Fairy", "Glacier", "Divin'", "Cave",
-	"Spinning", "Map", "Comp", "HP", "HP", "Blocks", "Irons",
+	"Spinning", "Map", "HP", "HP", "Comp", "Blocks", "Irons",
 	"Lobby", "Sling 1", "Sling 2", "Comp 1", "Comp 2", "Comp", "Gate", "Vines", "Base", "Back", "Queen",
-	"F Ocarina", "Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr", "Scrub Gr+", "Br Soil", "Br Scrub", "Target", "Saria Kid", "Abv Stage", "Mask",
+	"F Ocarina", "Target", "Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr", "Scrub Gr+", "Br Soil", "Saria Kid", "Br Scrub", "Abv Stage", "Mask",
 	"Wolfos", "Skull", "Left", "Right",
 	"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze 1", "Maze 2", "Maze", "Maze 3!", "Center", "Lil Rollin", "Left", "Center", "Right",
 	"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Comp", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King",
-	"Bombable", "Wall", "Top", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil",
-	"Bean", "Left", "Center", "Right", "Fairy", "Grotto", "Nook", "Soil", "Crate", 
+	"Top", "Bombable", "Wall", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil",
+	"Bean", "Left", "Center", "Right", "Fairy", "Nook", "Grotto", "Soil", "Crate", 
 	"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Red Gr", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "10!", "20!!", "30!!!", "40!!!!", "50!!!!!",
-	"Shield", "Tour", "Soil", "Wall", "Redead", "Fire", "Box", "Race 1", "Race 2",
+	"Shield", "Box", "Race 1", "Race 2", "Tour", "Soil", "Wall", "Redead", "Fire", 
 	"Tree", "Left", "Right", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2",
 	"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "Skull",
 	"Bean", "Fairy", "Soil", "Hill", "Tree", "Left", "Right", 
 	"Skull", "Check",
 	"Fort", "Roof", "1000", "1500", "Target", 
-	"Vines", "Scrub", "Boom", "Map", "Comp", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
+	"Vines", "Scrub", "Map", "Comp", "Boom", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
 	"First", "First", "Lobby", "Stalfos", "C Mid", "C Mid", "C High", "C Low", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
 	"Near Boss", "Base", "Hammer 1", "Hammer 2", "Lav Open", "SoT", "Lav Bomb", "Volva", "Lower", "Bomb Wall", "Side Room", "Map", "Upper", "Bombable", "Crow 1", "Crow 2", "Crow", "Comp", "SoT", "MEGA",
 	"Comp", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
@@ -773,8 +773,8 @@ Spawn = {};
 Spawn.child_lower_dmc = false;
 Spawn.child_lower_dmc_fairy = false;
 Spawn.child_upper_dmc = false;
-Spawn.child_upper_dmc_fairy = false;
-Spawn.child_upper_dmc_ool = false;
+Spawn.child_dmt_fairy = false;
+Spawn.child_dmt_fairy_ool = false;
 Spawn.child_gv_gf = false;
 //Spawn.child_nocturne = false;
 Spawn.child_hyrule_fairy = false;
@@ -784,8 +784,8 @@ Spawn.child_zr = false;
 Spawn.adult_lower_dmc = false;
 Spawn.adult_lower_dmc_fairy = false;
 Spawn.adult_upper_dmc = false;
-Spawn.adult_upper_dmc_fairy = false;
-Spawn.adult_upper_dmc_fairy_ool = false;
+Spawn.adult_dmt_fairy = false;
+Spawn.adult_dmt_fairy_ool = false;
 Spawn.adult_gf = false;
 Spawn.adult_gc_shop = false;
 Spawn.adult_nocturne = false;

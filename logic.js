@@ -670,10 +670,10 @@ function logic_shortcuts() {
 	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (((Logic.lullaby || Spawn.adult_zd) && Logic.bottle) || Spawn.adult_zd_shop));
 	if (document.getElementById("closedDeku").value != "CLOSED") {Logic.deku_access = true;} else {Logic.deku_access = Logic.kokiri_sword;}
 
-	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag || Game.has_chus || Game.silver_scale)
 	Game.child_can_enter_river = Game.bomb_bag || Game.has_chus || Game.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag || Game.has_chus || ((Game.silver_scale || Spawn.child_zd || Spawn.child_zr) && (Game.slingshot || Game.boomerang)));
 	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem || Spawn.adult_gf;
-	Game.can_save_carpenters = (Spawn.child_gv_gf) || (Game.fortress_access && ((Game.bow || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
+	Game.can_save_carpenters = (Spawn.child_gv_gf && Game.kokiri_sword) || (Game.fortress_access && ((Game.bow || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
 	Game.can_use_fire = (Game.dins_fire || (Game.bow && Game.fire_arrows)) && Game.magic;
@@ -691,11 +691,11 @@ function logic_shortcuts() {
 	Game.can_ride_shadow_boat = Game.can_pass_shadow_hookshot_door && Game.lullaby;
 	Game.can_beat_shadow_boss = Game.can_ride_shadow_boat && (Game.bow || Game.longshot || Game.has_chus);
 	Game.can_stop_link_the_goron = Game.bomb_bag || Game.bow || Game.goron_bracelet || Game.has_chus;
-	Game.ice_access = ((Game.rutos_letter && Game.child_can_enter_river) || Rules.kzSkip) && (Game.lullaby || Game.hover_boots);
+	Game.ice_access = ((Game.rutos_letter && Game.child_can_enter_river) || Rules.kzSkip) && (Game.lullaby || Game.hover_boots || Spawn.adult_zd);
 	Game.reverse_crater = (Game.hover_boots || Game.hookshot || Game.child_can_enter_river) && Game.bolero;
-	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot || Game.hover_boots)) || Game.bolero;
-	Game.crater_by_city = Game.bow || Game.bomb_bag || Game.goron_bracelet || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.goron_tunic && Game.longshot && Game.hammer) || Spawn.adult_lower_dmc;
+	Game.crater_by_city = Game.can_stop_link_the_goron || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.longshot && Game.hammer) || Spawn.adult_lower_dmc;
 	Game.crater_top = Game.crater_by_city || Game.hammer || Spawn.adult_upper_dmc;
+	Game.can_enter_fire_temple = (Game.crater_by_city && (Game.hookshot || Game.hover_boots)) || Game.bolero;
 	Game.can_enter_adult_spirit = Game.can_enter_colossus && Game.silver_gauntlets;
 	
 	Game.medalCount = 0; if (Game.forest) {Game.medalCount += 1;} if (Game.fire) {Game.medalCount += 1;} if (Game.water) {Game.medalCount += 1;} if (Game.gen1) {Game.medalCount += 1;} if (Game.gen2) {Game.medalCount += 1;} if (Game.gen3) {Game.medalCount += 1;}
@@ -703,9 +703,9 @@ function logic_shortcuts() {
 	Game.rewardCount = Game.medalCount + Game.stoneCount;
 	Game.can_enter_ganons = (Game.forest && Game.fire && Game.water && Game.gen1 && Game.gen2 && Game.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "4_MEDALS" && Game.medalCount >= 4) || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Game.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Game.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Game.stoneCount == 3) || (document.getElementById("ganonsBridge").value == "1_REWARD" && Game.rewardCount >= 1) || (document.getElementById("ganonsBridge").value == "2_REWARDS" && Game.rewardCount >= 2) || (document.getElementById("ganonsBridge").value == "3_REWARDS" && Game.rewardCount >= 3) || (document.getElementById("ganonsBridge").value == "4_REWARDS" && Game.rewardCount >= 4) || (document.getElementById("ganonsBridge").value == "5_REWARDS" && Game.rewardCount >= 5) || (document.getElementById("ganonsBridge").value == "6_REWARDS" && Game.rewardCount >= 6) || (document.getElementById("ganonsBridge").value == "7_REWARDS" && Game.rewardCount >= 7) || (document.getElementById("ganonsBridge").value == "8_REWARDS" && Game.rewardCount >= 8) || (document.getElementById("ganonsBridge").value == "9_REWARDS" && Game.rewardCount >= 9)
 	 
-	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow || Game.hookshot || Game.bomb_bag);
+	Game.can_climb_fire_temple = Game.can_enter_fire_temple && Game.current_fire_keys >=3 && (Game.bow || Game.hookshot || Game.bomb_bag || Game.has_chus);
 	Game.can_enter_water = (Game.hookshot && Game.iron_boots) || (Game.longshot && Game.golden_scale);
-	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins);
+	Game.middle_water = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins || Game.current_water_keys >= 1);
 	Game.projectile_both = Game.bomb_bag || Game.has_chus || ((Game.slingshot || Game.boomerang) && (Game.bow || Game.hookshot));
 	Game.projectile_child = Game.bomb_bag || Game.has_chus || Game.slingshot || Game.boomerang;
 	Game.projectile_adult = Game.bomb_bag || Game.has_chus || Game.bow || Game.hookshot;
@@ -714,16 +714,16 @@ function logic_shortcuts() {
 	Game.can_climb_gtg_hole = Game.hookshot || Game.hover_boots || Game.bomb_bag;
 	if (document.getElementById("closedDeku").value != "CLOSED") {Game.deku_access = true;} else {Game.deku_access = Game.kokiri_sword;}
 	
-	CouldHave.can_enter_jabu = CouldHave.rutos_letter && (CouldHave.bomb_bag || Game.has_chus || CouldHave.silver_scale)
 	CouldHave.child_can_enter_river = CouldHave.bomb_bag || Game.has_chus || CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	CouldHave.can_enter_jabu = CouldHave.rutos_letter && (CouldHave.bomb_bag || Game.has_chus || ((CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr) && (CouldHave.slingshot || CouldHave.boomerang)));
 	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf;
-	CouldHave.can_save_carpenters = (Spawn.child_gv_gf) || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
+	CouldHave.can_save_carpenters = (Spawn.child_gv_gf && CouldHave.kokiri_sword) || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
 	CouldHave.can_cross_quicksand = CouldHave.fortress_access;
 	CouldHave.can_enter_colossus = (CouldHave.can_cross_quicksand) || CouldHave.requiem;
 	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
 	CouldHave.can_use_dins = CouldHave.dins_fire && CouldHave.magic;
 	CouldHave.can_use_farores = CouldHave.farores_wind && CouldHave.magic;
-	CouldHave.can_use_bottle = (CouldHave.bottle1 || CouldHave.bottle2 ||CouldHave.bottle3 ||(CouldHave.rutos_letter && CouldHave.child_can_enter_river));
+	CouldHave.can_use_bottle = (CouldHave.bottle1 || CouldHave.bottle2 || CouldHave.bottle3 || (CouldHave.rutos_letter && CouldHave.child_can_enter_river));
 	CouldHave.can_see = CouldHave.lens && CouldHave.magic;
 	CouldHave.can_blast_or_smash = CouldHave.bomb_bag || CouldHave.hammer || Game.has_chus;
 	CouldHave.can_enter_dodongos = CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.can_use_bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet);
@@ -735,11 +735,11 @@ function logic_shortcuts() {
 	CouldHave.can_ride_shadow_boat = CouldHave.can_pass_shadow_hookshot_door && CouldHave.lullaby;
 	CouldHave.can_beat_shadow_boss = CouldHave.can_ride_shadow_boat && (CouldHave.bow || CouldHave.longshot || Game.has_chus);
 	CouldHave.can_stop_link_the_goron = CouldHave.bomb_bag || CouldHave.bow || CouldHave.goron_bracelet || Game.has_chus;
-	CouldHave.ice_access = ((CouldHave.rutos_letter && CouldHave.child_can_enter_river) || Rules.kzSkip) && (CouldHave.lullaby || CouldHave.hover_boots);
+	CouldHave.ice_access = ((CouldHave.rutos_letter && CouldHave.child_can_enter_river) || Rules.kzSkip) && (CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd);
 	CouldHave.reverse_crater = (CouldHave.hover_boots || CouldHave.hookshot || CouldHave.child_can_enter_river) && CouldHave.bolero;
-	CouldHave.can_enter_fire_temple = (CouldHave.crater_by_city && (CouldHave.hookshot || CouldHave.hover_boots)) || CouldHave.bolero;
-	CouldHave.crater_by_city = CouldHave.bow || CouldHave.bomb_bag || CouldHave.goron_bracelet || CouldHave.reverse_crater || (CouldHave.hammer && CouldHave.hover_boots) || (CouldHave.goron_tunic && CouldHave.longshot && CouldHave.hammer) || Spawn.adult_lower_dmc;
+	CouldHave.crater_by_city = CouldHave.can_stop_link_the_goron || CouldHave.reverse_crater || (CouldHave.hammer && CouldHave.hover_boots) || (CouldHave.longshot && CouldHave.hammer) || Spawn.adult_lower_dmc;
 	CouldHave.crater_top = CouldHave.crater_by_city || CouldHave.hammer || Spawn.adult_upper_dmc;
+	CouldHave.can_enter_fire_temple = (CouldHave.crater_by_city && (CouldHave.hookshot || CouldHave.hover_boots)) || CouldHave.bolero;
 	CouldHave.can_enter_adult_spirit = CouldHave.can_enter_colossus && CouldHave.silver_gauntlets;
 	
 	CouldHave.medalCount = 0; if (CouldHave.forest) {CouldHave.medalCount += 1;} if (CouldHave.fire) {CouldHave.medalCount += 1;} if (CouldHave.water) {CouldHave.medalCount += 1;} if (CouldHave.gen1) {CouldHave.medalCount += 1;} if (CouldHave.gen2) {CouldHave.medalCount += 1;} if (CouldHave.gen3) {CouldHave.medalCount += 1;}
@@ -747,9 +747,9 @@ function logic_shortcuts() {
 	CouldHave.rewardCount = CouldHave.medalCount + CouldHave.stoneCount;
 	CouldHave.can_enter_ganons = (CouldHave.forest && CouldHave.fire && CouldHave.water && CouldHave.gen1 && CouldHave.gen2 && CouldHave.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "4_MEDALS" && CouldHave.medalCount >= 4) || (document.getElementById("ganonsBridge").value == "3_MEDALS" && CouldHave.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && CouldHave.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && CouldHave.stoneCount == 3) || (document.getElementById("ganonsBridge").value == "1_REWARD" && CouldHave.rewardCount >= 1) || (document.getElementById("ganonsBridge").value == "2_REWARDS" && CouldHave.rewardCount >= 2) || (document.getElementById("ganonsBridge").value == "3_REWARDS" && CouldHave.rewardCount >= 3) || (document.getElementById("ganonsBridge").value == "4_REWARDS" && CouldHave.rewardCount >= 4) || (document.getElementById("ganonsBridge").value == "5_REWARDS" && CouldHave.rewardCount >= 5) || (document.getElementById("ganonsBridge").value == "6_REWARDS" && CouldHave.rewardCount >= 6) || (document.getElementById("ganonsBridge").value == "7_REWARDS" && CouldHave.rewardCount >= 7) || (document.getElementById("ganonsBridge").value == "8_REWARDS" && CouldHave.rewardCount >= 8) || (document.getElementById("ganonsBridge").value == "9_REWARDS" && CouldHave.rewardCount >= 9)
 	 
-	CouldHave.can_climb_fire_temple = CouldHave.can_enter_fire_temple && CouldHave.current_fire_keys >=3 && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag);
+	CouldHave.can_climb_fire_temple = CouldHave.can_enter_fire_temple && CouldHave.current_fire_keys >=3 && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag || Game.has_chus);
 	CouldHave.can_enter_water = (CouldHave.hookshot && CouldHave.iron_boots) || (CouldHave.longshot && CouldHave.golden_scale);
-	CouldHave.middle_water = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins);
+	CouldHave.middle_water = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins || CouldHave.current_water_keys >= 1);
 	CouldHave.projectile_both = CouldHave.bomb_bag || Game.has_chus || ((CouldHave.slingshot || CouldHave.boomerang) && (CouldHave.bow || CouldHave.hookshot));
 	CouldHave.projectile_child = CouldHave.bomb_bag || Game.has_chus || CouldHave.slingshot || CouldHave.boomerang;
 	CouldHave.projectile_adult = CouldHave.bomb_bag || Game.has_chus || CouldHave.bow || CouldHave.hookshot;
@@ -831,7 +831,7 @@ function location_logic(){
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_storms = Logic.storms;
-	Location_Logic.trail_fairy = (Logic.can_blast_or_smash || Spawn.child_upper_dmc_fairy || Spawn.adult_upper_dmc_fairy) && Logic.lullaby;
+	Location_Logic.trail_fairy = (Logic.can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && Logic.lullaby;
 	Location_Logic.trade_quest = Location_Logic.trade_quest = (((Logic.ice_access || ((Logic.giants_wallet || Logic.can_enter_ganons) && (Logic.lullaby || Spawn.adult_zd) && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
 	Location_Logic.crater_bean = (Logic.bolero && Logic.child_can_enter_river) || (Logic.hover_boots && Logic.crater_by_city);
 	Location_Logic.crater_hammer_fairy = ((Logic.crater_by_city && Logic.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && Logic.lullaby;
@@ -1200,7 +1200,7 @@ function location_logic(){
 	Location_Obtain.gerudovalley_fall = true;
 	Location_Obtain.hylia_child_fishing = true;
 	Location_Obtain.hylia_bottle = Game.silver_scale;
-	Location_Obtain.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river;
+	Location_Obtain.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river || Spawn.adult_fishing;
 	Location_Obtain.hylia_lab_top = Game.hookshot || Game.child_can_enter_river;
 	Location_Obtain.hylia_lab_dive = Game.golden_scale || (Game.hookshot && Game.iron_boots);
 	Location_Obtain.hylia_sun_shoot = Game.bow && Game.longshot;
@@ -1231,8 +1231,8 @@ function location_logic(){
 	Location_Obtain.theater = true;
 	Location_Obtain.kokiri_storms = Game.storms;
 	Location_Obtain.rolling_goron = Game.bomb_bag || Game.has_chus || Game.goron_bracelet;
-	Location_Obtain.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc);
-	Location_Obtain.goron_dance = (Game.lullaby || Spawn.child_lower_dmc) && Game.sarias;
+	Location_Obtain.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+	Location_Obtain.goron_dance = (Game.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && Game.sarias;
 	Location_Obtain.goron_maze_1 = Game.can_blast_or_smash || Game.silver_gauntlets;
 	Location_Obtain.goron_maze_2 = Game.can_blast_or_smash || Game.silver_gauntlets;
 	Location_Obtain.goron_maze_3 = Game.hammer || Game.silver_gauntlets || ((Game.bomb_bag || Game.has_chus) && Game.hover_boots);
@@ -1244,7 +1244,7 @@ function location_logic(){
 	Location_Obtain.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && Game.lullaby;
 	Location_Obtain.crater_nook_hp = Game.crater_top || Spawn.child_upper_dmc;
 	Location_Obtain.crater_grotto = Game.can_blast_or_smash;
-	Location_Obtain.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
+	Location_Obtain.trail_fairy = (Game.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && Game.lullaby;
 	Location_Obtain.trade_quest = (((Location_Obtain.thaw_king || (Game.giants_wallet && Game.lullaby && (Game.can_use_bottle || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 	Location_Obtain.gerudo_hammer = Game.fortress_access && Game.hammer;
 	Location_Obtain.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
@@ -1297,8 +1297,8 @@ function location_logic(){
 	Location_Obtain.ice_hp = Game.ice_access && Game.can_use_bottle;
 	Location_Obtain.ice_compass = Game.ice_access && Game.can_use_bottle;
 	Location_Obtain.ice_irons = Game.ice_access && Game.can_use_bottle;
-	Location_Obtain.ice_bottom_of_fountain = Game.ice_access;
-	Location_Obtain.thaw_king = (Game.ice_access && Game.can_use_bottle) || (Game.can_use_bottle && Game.giants_wallet && (Game.lullaby || Game.hover_boots || Spawn.adult_zd));
+	Location_Obtain.ice_bottom_of_fountain = Game.ice_access && Game.iron_boots;
+	Location_Obtain.thaw_king = Game.can_use_bottle && (Game.ice_access || (Game.giants_wallet && (Game.lullaby || Game.hover_boots || Spawn.adult_zd)));
 	Location_Obtain.forest_first = Game.hookshot;
 	Location_Obtain.forest_stalfos = Game.hookshot;
 	Location_Obtain.forest_midCourtyard = Game.hookshot && (Game.time || Game.bow || ((Game.hover_boots || Game.goron_bracelet) && Game.current_forest_keys>=1));
@@ -1523,7 +1523,7 @@ function location_logic(){
 	Location_Could_Access.gerudovalley_fall = true;
 	Location_Could_Access.hylia_child_fishing = true;
 	Location_Could_Access.hylia_bottle = CouldHave.silver_scale;
-	Location_Could_Access.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river;
+	Location_Could_Access.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river || Spawn.adult_fishing;
 	Location_Could_Access.hylia_lab_top = CouldHave.hookshot || CouldHave.child_can_enter_river;
 	Location_Could_Access.hylia_lab_dive = CouldHave.golden_scale || (CouldHave.hookshot && CouldHave.iron_boots);
 	Location_Could_Access.hylia_sun_shoot = CouldHave.bow && CouldHave.longshot;
@@ -1554,8 +1554,8 @@ function location_logic(){
 	Location_Could_Access.theater = true;
 	Location_Could_Access.kokiri_storms = CouldHave.storms;
 	Location_Could_Access.rolling_goron = CouldHave.bomb_bag || Game.has_chus || CouldHave.goron_bracelet;
-	Location_Could_Access.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc);
-	Location_Could_Access.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc) && CouldHave.sarias;
+	Location_Could_Access.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+	Location_Could_Access.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && CouldHave.sarias;
 	Location_Could_Access.goron_maze_1 = CouldHave.can_blast_or_smash || CouldHave.silver_gauntlets;
 	Location_Could_Access.goron_maze_2 = CouldHave.can_blast_or_smash || CouldHave.silver_gauntlets;
 	Location_Could_Access.goron_maze_3 = CouldHave.hammer || CouldHave.silver_gauntlets || ((CouldHave.bomb_bag || Game.has_chus) && CouldHave.hover_boots);
@@ -1567,7 +1567,7 @@ function location_logic(){
 	Location_Could_Access.crater_hammer_fairy = ((CouldHave.crater_by_city && CouldHave.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && CouldHave.lullaby;
 	Location_Could_Access.crater_nook_hp = CouldHave.crater_top || Spawn.child_upper_dmc;
 	Location_Could_Access.crater_grotto = CouldHave.can_blast_or_smash;
-	Location_Could_Access.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && CouldHave.lullaby;
+	Location_Could_Access.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && CouldHave.lullaby;
 	Location_Could_Access.trade_quest = (((Location_Could_Access.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
 	Location_Could_Access.gerudo_hammer = CouldHave.fortress_access && CouldHave.hammer;
 	Location_Could_Access.gerudo_roof = CouldHave.fortress_access && (CouldHave.hookshot || CouldHave.hover_boots);
@@ -1620,7 +1620,7 @@ function location_logic(){
 	Location_Could_Access.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
 	Location_Could_Access.ice_compass = CouldHave.ice_access && CouldHave.can_use_bottle;
 	Location_Could_Access.ice_irons = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Access.ice_bottom_of_fountain = CouldHave.ice_access;
+	Location_Could_Access.ice_bottom_of_fountain = CouldHave.ice_access && CouldHave.iron_boots;
 	Location_Could_Access.thaw_king = (CouldHave.ice_access && CouldHave.can_use_bottle) || (CouldHave.can_use_bottle && CouldHave.giants_wallet && (CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd));
 	Location_Could_Access.forest_first = CouldHave.hookshot;
 	Location_Could_Access.forest_stalfos = CouldHave.hookshot;
@@ -1847,7 +1847,7 @@ function location_logic(){
 		Location_Access.gerudovalley_fall = true;
 		Location_Access.hylia_child_fishing = true;
 		Location_Access.hylia_bottle = true;
-		Location_Access.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river;
+		Location_Access.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river || Spawn.adult_fishing;
 		Location_Access.hylia_lab_top = Game.hookshot || Game.child_can_enter_river;
 		Location_Access.hylia_lab_dive = Game.golden_scale || (Game.hookshot && Game.iron_boots);
 		Location_Access.hylia_sun_shoot = Game.bow;
@@ -1878,8 +1878,8 @@ function location_logic(){
 		Location_Access.theater = true;
 		Location_Access.kokiri_storms = Game.storms;
 		Location_Access.rolling_goron = Game.bomb_bag || Game.has_chus || Game.goron_bracelet;
-		Location_Access.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc);
-		Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc) && Game.sarias;
+		Location_Access.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+		Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && Game.sarias;
 		Location_Access.goron_maze_1 = Game.can_blast_or_smash || Game.silver_gauntlets;
 		Location_Access.goron_maze_2 = Game.can_blast_or_smash || Game.silver_gauntlets;
 		Location_Access.goron_maze_3 = Game.hammer || Game.silver_gauntlets || ((Game.bomb_bag || Game.has_chus) && Game.hover_boots);
@@ -1887,11 +1887,11 @@ function location_logic(){
 		Location_Access.trail_bombable = Game.can_blast_or_smash || Game.goron_bracelet;
 		Location_Access.trail_dodongos_top = true;
 		Location_Access.trail_storms = Game.storms;
-		Location_Access.crater_bean = Game.bolero || Game.crater_top;
-		Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && Game.lullaby;
-		Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
+		Location_Access.crater_bean = Game.bolero || Game.crater_top || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
+		Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || (Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy || Spawn.child_lower_dmc_fairy_ool || Spawn.adult_lower_dmc_fairy_ool)) && Game.lullaby;
+		Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Location_Access.crater_grotto = Game.can_blast_or_smash;
-		Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
+		Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && Game.lullaby;
 		Location_Access.trade_quest = (((Location_Access.thaw_king || (Game.giants_wallet && Game.lullaby && (Game.can_use_bottle || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 		Location_Access.gerudo_hammer = Game.fortress_access && Game.hammer;
 		Location_Access.gerudo_roof = Game.fortress_access && (Game.hookshot || Game.hover_boots);
@@ -2170,7 +2170,7 @@ function location_logic(){
 		Location_Could_Peek.gerudovalley_fall = true;
 		Location_Could_Peek.hylia_child_fishing = true;
 		Location_Could_Peek.hylia_bottle = true;
-		Location_Could_Peek.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river;
+		Location_Could_Peek.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river || Spawn.adult_fishing;
 		Location_Could_Peek.hylia_lab_top = CouldHave.hookshot || CouldHave.child_can_enter_river;
 		Location_Could_Peek.hylia_lab_dive = CouldHave.golden_scale || (CouldHave.hookshot && CouldHave.iron_boots);
 		Location_Could_Peek.hylia_sun_shoot = CouldHave.bow;
@@ -2201,8 +2201,8 @@ function location_logic(){
 		Location_Could_Peek.theater = true;
 		Location_Could_Peek.kokiri_storms = CouldHave.storms;
 		Location_Could_Peek.rolling_goron = CouldHave.bomb_bag || Game.has_chus || CouldHave.goron_bracelet;
-		Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc);
-		Location_Could_Peek.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc) && CouldHave.sarias;
+		Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+		Location_Could_Peek.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && CouldHave.sarias;
 		Location_Could_Peek.goron_maze_1 = CouldHave.can_blast_or_smash || CouldHave.silver_gauntlets;
 		Location_Could_Peek.goron_maze_2 = CouldHave.can_blast_or_smash || CouldHave.silver_gauntlets;
 		Location_Could_Peek.goron_maze_3 = CouldHave.hammer || CouldHave.silver_gauntlets || ((CouldHave.bomb_bag || Game.has_chus) && CouldHave.hover_boots);
@@ -2210,11 +2210,11 @@ function location_logic(){
 		Location_Could_Peek.trail_bombable = CouldHave.can_blast_or_smash || Game.goron_bracelet;
 		Location_Could_Peek.trail_dodongos_top = true;
 		Location_Could_Peek.trail_storms = CouldHave.storms;
-		Location_Could_Peek.crater_bean = CouldHave.bolero || CouldHave.crater_top;
-		Location_Could_Peek.crater_hammer_fairy = ((CouldHave.crater_by_city && CouldHave.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && CouldHave.lullaby;
-		Location_Could_Peek.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc;
+		Location_Could_Peek.crater_bean = CouldHave.bolero || CouldHave.crater_top || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
+		Location_Could_Peek.crater_hammer_fairy = ((CouldHave.crater_by_city && CouldHave.hammer) || (Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy || Spawn.child_lower_dmc_fairy_ool || Spawn.adult_lower_dmc_fairy_ool)) && CouldHave.lullaby;
+		Location_Could_Peek.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Location_Could_Peek.crater_grotto = CouldHave.can_blast_or_smash;
-		Location_Could_Peek.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && CouldHave.lullaby;
+		Location_Could_Peek.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && CouldHave.lullaby;
 		Location_Could_Peek.trade_quest = (((Location_Could_Peek.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
 		Location_Could_Peek.gerudo_hammer = CouldHave.fortress_access && CouldHave.hammer;
 		Location_Could_Peek.gerudo_roof = CouldHave.fortress_access && (CouldHave.hookshot || CouldHave.hover_boots);
@@ -2494,7 +2494,7 @@ function location_logic(){
 		Location_Access.gerudovalley_fall = true;
 		Location_Access.hylia_child_fishing = true;
 		Location_Access.hylia_bottle = true;
-		Location_Access.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river;
+		Location_Access.hylia_adult_fishing = Game.hookshot || Game.child_can_enter_river || Spawn.adult_fishing;
 		Location_Access.hylia_lab_top = Game.hookshot || Game.child_can_enter_river;
 		Location_Access.hylia_lab_dive = Game.golden_scale || (Game.hookshot && Game.iron_boots);
 		Location_Access.hylia_sun_shoot = Game.bow;
@@ -2525,8 +2525,8 @@ function location_logic(){
 		Location_Access.theater = true;
 		Location_Access.kokiri_storms = Game.storms;
 		Location_Access.rolling_goron = Game.bomb_bag || Game.has_chus || Game.goron_bracelet;
-		Location_Access.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc);
-		Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc) && Game.sarias;
+		Location_Access.goron_pot = (Game.bomb_bag || Game.goron_bracelet || Game.has_chus) && (Game.lullaby || Game.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+		Location_Access.goron_dance = (Game.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && Game.sarias;
 		Location_Access.goron_maze_1 = true;
 		Location_Access.goron_maze_2 = true;
 		Location_Access.goron_maze_3 = true;
@@ -2534,11 +2534,11 @@ function location_logic(){
 		Location_Access.trail_bombable = true;
 		Location_Access.trail_dodongos_top = true;
 		Location_Access.trail_storms = Game.storms;
-		Location_Access.crater_bean = Game.bolero || Game.crater_top;
-		Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && Game.lullaby;
-		Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc;
+		Location_Access.crater_bean = Game.bolero || Game.crater_top || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
+		Location_Access.crater_hammer_fairy = ((Game.crater_by_city && Game.hammer) || (Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy || Spawn.child_lower_dmc_fairy_ool || Spawn.adult_lower_dmc_fairy_ool)) && Game.lullaby;
+		Location_Access.crater_nook_hp = Game.crater_top || Game.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Location_Access.crater_grotto = Game.can_blast_or_smash;
-		Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && Game.lullaby;
+		Location_Access.trail_fairy = (Game.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && Game.lullaby;
 		Location_Access.trade_quest = (((Location_Access.thaw_king || (Game.giants_wallet && Game.lullaby && (Game.can_use_bottle || Game.can_enter_jabu))) && Game.prescription) || Game.claim_check) && Game.crater_top;
 		Location_Access.gerudo_hammer = Game.fortress_access;
 		Location_Access.gerudo_roof = Game.fortress_access;
@@ -2817,7 +2817,7 @@ function location_logic(){
 		Location_Could_Peek.gerudovalley_fall = true;
 		Location_Could_Peek.hylia_child_fishing = true;
 		Location_Could_Peek.hylia_bottle = true;
-		Location_Could_Peek.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river;
+		Location_Could_Peek.hylia_adult_fishing = CouldHave.hookshot || CouldHave.child_can_enter_river || Spawn.adult_fishing;
 		Location_Could_Peek.hylia_lab_top = CouldHave.hookshot || CouldHave.child_can_enter_river;
 		Location_Could_Peek.hylia_lab_dive = CouldHave.golden_scale || (CouldHave.hookshot && CouldHave.iron_boots);
 		Location_Could_Peek.hylia_sun_shoot = CouldHave.bow;
@@ -2848,8 +2848,8 @@ function location_logic(){
 		Location_Could_Peek.theater = true;
 		Location_Could_Peek.kokiri_storms = CouldHave.storms;
 		Location_Could_Peek.rolling_goron = CouldHave.bomb_bag || Game.has_chus || CouldHave.goron_bracelet;
-		Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc);
-		Location_Could_Peek.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc) && CouldHave.sarias;
+		Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Game.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+		Location_Could_Peek.goron_dance = (CouldHave.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && CouldHave.sarias;
 		Location_Could_Peek.goron_maze_1 = true;
 		Location_Could_Peek.goron_maze_2 = true;
 		Location_Could_Peek.goron_maze_3 = true;
@@ -2857,11 +2857,11 @@ function location_logic(){
 		Location_Could_Peek.trail_bombable = true;
 		Location_Could_Peek.trail_dodongos_top = true;
 		Location_Could_Peek.trail_storms = CouldHave.storms;
-		Location_Could_Peek.crater_bean = CouldHave.bolero || CouldHave.crater_top;
-		Location_Could_Peek.crater_hammer_fairy = ((CouldHave.crater_by_city && CouldHave.hammer) || Spawn.child_lower_dmc_fairy  || Spawn.adult_lower_dmc_fairy  || Spawn.child_lower_dmc_fairy_ool  || Spawn.adult_lower_dmc_fairy_ool) && CouldHave.lullaby;
-		Location_Could_Peek.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc;
+		Location_Could_Peek.crater_bean = CouldHave.bolero || CouldHave.crater_top || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
+		Location_Could_Peek.crater_hammer_fairy = ((CouldHave.crater_by_city && CouldHave.hammer) || (Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy || Spawn.child_lower_dmc_fairy_ool || Spawn.adult_lower_dmc_fairy_ool)) && CouldHave.lullaby;
+		Location_Could_Peek.crater_nook_hp = CouldHave.crater_top || CouldHave.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Location_Could_Peek.crater_grotto = CouldHave.can_blast_or_smash;
-		Location_Could_Peek.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_upper_dmc_fairy  || Spawn.adult_upper_dmc_fairy || Spawn.child_upper_dmc_fairy_ool || Spawn.adult_upper_dmc_fairy_ool) && CouldHave.lullaby;
+		Location_Could_Peek.trail_fairy = (CouldHave.can_blast_or_smash || Spawn.child_dmt_fairy  || Spawn.adult_dmt_fairy || Spawn.child_dmt_fairy_ool || Spawn.adult_dmt_fairy_ool) && CouldHave.lullaby;
 		Location_Could_Peek.trade_quest = (((Location_Could_Peek.thaw_king || (CouldHave.giants_wallet && CouldHave.lullaby && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu))) && CouldHave.prescription) || CouldHave.claim_check) && CouldHave.crater_top;
 		Location_Could_Peek.gerudo_hammer = CouldHave.fortress_access;
 		Location_Could_Peek.gerudo_roof = CouldHave.fortress_access;

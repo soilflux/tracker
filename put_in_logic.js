@@ -695,7 +695,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.trail_bombable = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.trail_dodongos_top = true;
 	Location_PutIn_Logic.trail_storms = PutIn_Logic.storms;
-	Location_PutIn_Logic.trail_fairy = (PutIn_Logic.can_blast_or_smash || Spawn.child_upper_dmc_fairy || Spawn.adult_upper_dmc_fairy) && PutIn_Logic.lullaby;
+	Location_PutIn_Logic.trail_fairy = (PutIn_Logic.can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && PutIn_Logic.lullaby;
 	Location_PutIn_Logic.trade_quest = Location_PutIn_Logic.trade_quest = (((PutIn_Logic.ice_access || ((PutIn_Logic.giants_wallet || PutIn_Logic.can_enter_ganons) && (PutIn_Logic.lullaby || Spawn.adult_zd) && PutIn_Logic.bottle)) && PutIn_Logic.prescription) || PutIn_Logic.claim_check) && PutIn_Logic.crater_top;
 	Location_PutIn_Logic.crater_bean = (PutIn_Logic.bolero && PutIn_Logic.child_can_enter_river) || (PutIn_Logic.hover_boots && PutIn_Logic.crater_by_city);
 	Location_PutIn_Logic.crater_hammer_fairy = ((PutIn_Logic.crater_by_city && PutIn_Logic.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && PutIn_Logic.lullaby;
