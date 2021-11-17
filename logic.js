@@ -691,7 +691,7 @@ function logic_shortcuts() {
 	Game.can_ride_shadow_boat = Game.can_pass_shadow_hookshot_door && Game.lullaby;
 	Game.can_beat_shadow_boss = Game.can_ride_shadow_boat && (Game.bow || Game.longshot || Game.has_chus);
 	Game.can_stop_link_the_goron = Game.bomb_bag || Game.bow || Game.goron_bracelet || Game.has_chus;
-	Game.ice_access = ((Game.rutos_letter && Game.child_can_enter_river) || Rules.kzSkip) && (Game.lullaby || Game.hover_boots || Spawn.adult_zd);
+	Game.ice_access = (((Game.rutos_letter && Game.child_can_enter_river) || Rules.kzSkip) && (Game.lullaby || Game.hover_boots)) || (Rules.kzSkip && Spawn.adult_zd);
 	Game.reverse_crater = (Game.hover_boots || Game.hookshot || Game.child_can_enter_river) && Game.bolero;
 	Game.crater_by_city = Game.can_stop_link_the_goron || Game.reverse_crater || (Game.hammer && Game.hover_boots) || (Game.longshot && Game.hammer) || Spawn.adult_lower_dmc;
 	Game.crater_top = Game.crater_by_city || Game.hammer || Spawn.adult_upper_dmc;
