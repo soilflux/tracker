@@ -285,6 +285,7 @@ function saveStuff() {
 	localStorage.setItem("presets", document.getElementById("presets").value);
 	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
+	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
 }
 
 function linsoControl() {

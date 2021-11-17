@@ -572,7 +572,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.trail_bombable = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.trail_dodongos_top = true;
 	Location_Locked_Logic2.trail_storms = Locked_Logic2.storms;
-	Location_Locked_Logic2.trail_fairy = (Locked_Logic2.can_blast_or_smash || Spawn.child_upper_dmc_fairy || Spawn.adult_upper_dmc_fairy) && Locked_Logic2.lullaby;
+	Location_Locked_Logic2.trail_fairy = (Locked_Logic2.can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && Locked_Logic2.lullaby;
 	Location_Locked_Logic2.trade_quest = Location_Locked_Logic2.trade_quest = (((Locked_Logic2.ice_access || ((Locked_Logic2.giants_wallet || Locked_Logic2.can_enter_ganons) && (Locked_Logic2.lullaby || Spawn.adult_zd) && Locked_Logic2.bottle)) && Locked_Logic2.prescription) || Locked_Logic2.claim_check) && Locked_Logic2.crater_top;
 	Location_Locked_Logic2.crater_bean = (Locked_Logic2.bolero && Locked_Logic2.child_can_enter_river) || (Locked_Logic2.hover_boots && Locked_Logic2.crater_by_city);
 	Location_Locked_Logic2.crater_hammer_fairy = ((Locked_Logic2.crater_by_city && Locked_Logic2.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && Locked_Logic2.lullaby;
