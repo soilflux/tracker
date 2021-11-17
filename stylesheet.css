@@ -199,6 +199,7 @@ color: red;
 	margin-right: 2px;
 }
 #mouseInputs {
+	color:lightblue;
 	position: absolute;
 	left:590px;
 	top:880px;
