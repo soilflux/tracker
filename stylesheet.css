@@ -361,6 +361,13 @@ color: red;
 	color: black;
 	opacity: 1;
 }
+.checked_text_summary_known {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: white;
+	opacity: 1;
+}
 .checked_text_summary_ool_could_have {
 	font-size: 14px;
 	font-weight: normal;	

@@ -356,6 +356,13 @@ function junk() {
 	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
 	Update();
+	
+	for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
+		if (document.getElementById(Locations[i]).style.display != "none") {
+			document.getElementById(Locations[i]).focus(); //why doesn't this work
+			break;
+		}
+	}
 }	
 
 function junkUltra() {
@@ -401,9 +408,15 @@ function junkItem(x) {
 	document.getElementById("br_" + str2).style.display = "none";
 	
 	document.getElementById(str2).value = "";
-	
 	lastCheck.push(str2);
 	midUpdate();
+	for (var i = Locations.indexOf(str2) + 1; i < Locations.length; i++) {
+		if (document.getElementById(Locations[i]).style.display != "none") {
+			document.getElementById(Locations[i]).focus();
+			break;
+		}
+	}
+	
 }
 
 function junkSong(x) {
@@ -950,6 +963,8 @@ function update_summary_text() {
 				document.getElementById(str).className = "checked_text_summary";
 			else if(CouldHave[checkSummary[i]])
 				document.getElementById(str).className = "checked_text_summary_not_have";
+			else if(Known[checkSummary[i]]) 
+				document.getElementById(str).className = "checked_text_summary_known";
 			else
 				document.getElementById(str).className = "checked_text_summary_ool";
 		}

@@ -369,7 +369,7 @@ var Names = [
 	"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Comp", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King",
 	"Top", "Bombable", "Wall", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil",
 	"Bean", "Left", "Center", "Right", "Fairy", "Nook", "Grotto", "Soil", "Crate", 
-	"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Red Gr", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "10!", "20!!", "30!!!", "40!!!!", "50!!!!!",
+	"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Red Gr", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
 	"Shield", "Box", "Race 1", "Race 2", "Tour", "Soil", "Wall", "Redead", "Fire", 
 	"Tree", "Left", "Right", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2",
 	"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "Skull",
