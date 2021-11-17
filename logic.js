@@ -673,7 +673,7 @@ function logic_shortcuts() {
 	Game.child_can_enter_river = Game.bomb_bag || Game.has_chus || Game.silver_scale || Spawn.child_zd || Spawn.child_zr;
 	Game.can_enter_jabu = Game.rutos_letter && (Game.bomb_bag || Game.has_chus || ((Game.silver_scale || Spawn.child_zd || Spawn.child_zr) && (Game.slingshot || Game.boomerang)));
 	Game.fortress_access = Game.eponas || Game.longshot || Game.requiem || Spawn.adult_gf;
-	Game.can_save_carpenters = (Spawn.child_gv_gf && Game.kokiri_sword) || (Game.fortress_access && ((Game.bow || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
+	Game.can_save_carpenters = Spawn.child_gv_gf || (Game.fortress_access && ((Game.bow || Game.hookshot || Game.hover_boots) || true)) /*fast carpenter fix**/;
 	Game.can_cross_quicksand = Game.fortress_access;
 	Game.can_enter_colossus = (Game.can_cross_quicksand) || Game.requiem;
 	Game.can_use_fire = (Game.dins_fire || (Game.bow && Game.fire_arrows)) && Game.magic;
@@ -717,7 +717,7 @@ function logic_shortcuts() {
 	CouldHave.child_can_enter_river = CouldHave.bomb_bag || Game.has_chus || CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr;
 	CouldHave.can_enter_jabu = CouldHave.rutos_letter && (CouldHave.bomb_bag || Game.has_chus || ((CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr) && (CouldHave.slingshot || CouldHave.boomerang)));
 	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf;
-	CouldHave.can_save_carpenters = (Spawn.child_gv_gf && CouldHave.kokiri_sword) || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
+	CouldHave.can_save_carpenters = Spawn.child_gv_gf || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
 	CouldHave.can_cross_quicksand = CouldHave.fortress_access;
 	CouldHave.can_enter_colossus = (CouldHave.can_cross_quicksand) || CouldHave.requiem;
 	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
