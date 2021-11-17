@@ -230,11 +230,6 @@ function circusControl() {
 	
 	if (circus) {
 		circus = false; 
-		Names[Names.indexOf["Ten"]] = "10"
-		Names[Names.indexOf["Twenty"]] = "20"
-		Names[Names.indexOf["Thirty"]] = "30"
-		Names[Names.indexOf["Fourty"]] = "40"
-		Names[Names.indexOf["Fifty"]] = "50"
 		document.getElementById("circusControl").innerHTML = "Unleash Animals"; 
 		if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;
 		}
