@@ -51,9 +51,10 @@ if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").v
 if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value	= localStorage.getItem("ganonBKSetting");}
 if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
 if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
-if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
 if (localStorage.getItem("shuffleOcarinas")) {document.getElementById("shuffleOcarinas").value = localStorage.getItem("shuffleOcarinas");}
 if (localStorage.getItem("csmc")) {document.getElementById("csmc").value = localStorage.getItem("csmc");}
+if (localStorage.getItem("hints_type")) {document.getElementById("hints_type").value = localStorage.getItem("hints_type");}
+if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
 		
 var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 
@@ -808,6 +809,8 @@ var woth4 = "unknown";
 var woth5 = "unknown";	
 
 var WotHItems = [];
+var ManualWotHItems = {};
+var ManualNotWotHItems = {};
 var pressCooldown = [[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false]]
 var WotH = new Array(35).fill(0);
 var checkedYet = new Array(256).fill(false);

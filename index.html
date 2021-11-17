@@ -53,9 +53,10 @@
 			 <small class="hint_text" id="barren_text">Barren</small> 
 			  <br /> <input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input>  
 			 <br /><small class="hint_text" id="woth_text" >WOTH</small>
-			  <br /><input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input> <br>
-			  <div id = "path_hints_div"><text style="color:#FFFFFF";>&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&#8595;&emsp;&emsp;&nbsp;&nbsp;&#8595;</text><br />
-			   <input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input><input spellcheck="false" class = "hint_input"></input></div>
+			 <div id = "path_hints_div"><div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "hint_input"><br><text class="path_arrow">&#8595;</text><br><input spellcheck="false" id="path_boss1" class = "hint_input"></div><div><input spellcheck="false" id="woth_input2" class = "hint_input"><br><text class="path_arrow">&#8595;</text><br><input spellcheck="false" id="path_boss2" class = "hint_input"></div><div><input spellcheck="false" id="woth_input3" class = "hint_input"><br><text class="path_arrow">&#8595;</text><br><input spellcheck="false" id="path_boss3" class = "hint_input"></div><div><input spellcheck="false" id="woth_input4" class = "hint_input"><br><text class="path_arrow">&#8595;</text><br><input spellcheck="false" id="path_boss4" class = "hint_input"></div><div><input spellcheck="false" id="woth_input5" class = "hint_input"><br><text class="path_arrow">&#8595;</text><br><input spellcheck="false" id="path_boss5" class = "hint_input"></div></div>
+			 
+			  
+			  </div>
 			   <div id = "soli_woth_info">
 				   <div id = "woth_info">
 					<small id="woth1_title" class="woth_info_title"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
@@ -420,6 +421,11 @@
 		<select class="settingsOptions" id="csmc">
 		  <option value="OFF">OFF</option>
 		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="hints_type">HINTS</label>
+		<select class="settingsOptions" id="hints_type">
+		  <option value="WOTH">WOTH</option>
+		  <option value="PATH">PATH</option>
 		</select><br><br class="half_break">
 	</div>
 	<div id = "mouseInputs">
