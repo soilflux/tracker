@@ -1195,7 +1195,7 @@ function location_logic(){
 	Location_Obtain.hyrule_hp_scrub = Game.can_blast_or_smash;
 	Location_Obtain.hyrule_boulder_of_destiny = Game.can_blast_or_smash;
 	Location_Obtain.hyrule_tektite_grotto = Game.can_blast_or_smash && (Game.golden_scale || Game.iron_boots);
-	Location_Obtain.hyrule_ocarina = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+	Location_Obtain.hyrule_ocarina = Game.emerald && Game.ruby && Game.sapphire;
 	Location_Obtain.gerudovalley_box = true;
 	Location_Obtain.gerudovalley_fall = true;
 	Location_Obtain.hylia_child_fishing = true;
@@ -1208,7 +1208,7 @@ function location_logic(){
 	Location_Obtain.richard = true;
 	Location_Obtain.market_bowling_1 = Game.bomb_bag;
 	Location_Obtain.market_bowling_2 = Game.bomb_bag;
-	Location_Obtain.market_lens_game = true;
+	Location_Obtain.market_lens_game = Game.can_see;
 	Location_Obtain.poes= (Game.bow && (Game.can_use_bottle || Game.can_enter_jabu)) || Game.big_poe;
 	Location_Obtain.dins_fairy = (Game.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && Game.lullaby;
 	Location_Obtain.g_fairy = (Game.golden_gauntlets || Spawn.adult_ogc) && Game.lullaby;
@@ -1347,7 +1347,7 @@ function location_logic(){
 	Location_Obtain.spirit_sunRoom = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag || Game.has_chus)) || (((Game.can_use_fire || Game.bow) && Game.silver_gauntlets)));
 	Location_Obtain.spirit_rightHand = Game.current_spirit_keys >= 2;
 	Location_Obtain.spirit_adultLeft = Game.can_enter_adult_spirit && Game.hookshot && Game.lullaby;
-	Location_Obtain.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || (Game.bomb_bag || Game.has_chus));
+	Location_Obtain.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || Game.has_chus);
 	Location_Obtain.spirit_rotatingMirror1 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 	Location_Obtain.spirit_rotatingMirror2 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 	Location_Obtain.spirit_lullabyHand = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby;
@@ -1386,7 +1386,7 @@ function location_logic(){
 	Location_Obtain.ganons_lightTrial7 = Game.can_enter_ganons && Game.golden_gauntlets ;//&& Game.can_see;
 	Location_Obtain.ganons_lightTrialLullaby = Game.can_enter_ganons && Game.golden_gauntlets && Game.lullaby && Game.current_ganons_keys >= 1;
 	Location_Obtain.ganons_spiritTrial1 = Game.can_enter_ganons;
-	Location_Obtain.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.bomb_bag || Game.has_chus || Game.bow);//&& Game.can_see;
+	Location_Obtain.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.has_chus || Game.bow);//&& Game.can_see;
 	Location_Obtain.ganons_forestTrial = Game.can_enter_ganons;
 	Location_Obtain.ganons_waterTrial1 = Game.can_enter_ganons;
 	Location_Obtain.ganons_waterTrial2 = Game.can_enter_ganons;
@@ -1440,7 +1440,7 @@ function location_logic(){
 	Location_Obtain.serenadeSpot = Game.ice_access && Game.can_use_bottle;
 	Location_Obtain.preludeSpot = Game.forest;
 	Location_Obtain.nocturneSpot = Game.forest && Game.fire && Game.water;
-	Location_Obtain.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+	Location_Obtain.oot = Game.emerald && Game.ruby && Game.sapphire;
 	Location_Obtain.scrub_dodongos_1 = Game.can_enter_dodongos;
 	Location_Obtain.scrub_dodongos_2 = Game.can_enter_dodongos;
 	Location_Obtain.scrub_dodongos_3 = Game.bomb_bag;
@@ -1531,7 +1531,7 @@ function location_logic(){
 	Location_Could_Access.richard = true;
 	Location_Could_Access.market_bowling_1 = CouldHave.bomb_bag;
 	Location_Could_Access.market_bowling_2 = CouldHave.bomb_bag;
-	Location_Could_Access.market_lens_game = true;
+	Location_Could_Access.market_lens_game = CouldHave.can_see;
 	Location_Could_Access.poes= (CouldHave.bow && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
 	Location_Could_Access.dins_fairy = (CouldHave.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && CouldHave.lullaby;
 	Location_Could_Access.g_fairy = (CouldHave.golden_gauntlets || Spawn.adult_ogc) && CouldHave.lullaby;
@@ -1662,8 +1662,8 @@ function location_logic(){
 	Location_Could_Access.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);
 	Location_Could_Access.water_bossKey = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.longshot || CouldHave.hover_boots) && CouldHave.current_water_keys >= 2;
 	Location_Could_Access.water_morpha = CouldHave.can_enter_water && CouldHave.water_boss_key && CouldHave.longshot ;
-	Location_Could_Access.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
-	Location_Could_Access.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
+	Location_Could_Access.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || Game.bomb_bag);
+	Location_Could_Access.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || Game.bomb_bag);
 	Location_Could_Access.spirit_childClimb1 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 	Location_Could_Access.spirit_childClimb2 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 	Location_Could_Access.spirit_map = CouldHave.current_spirit_keys >= 1 && ((CouldHave.requiem && (CouldHave.bomb_bag || Game.has_chus)) || (((CouldHave.can_use_fire || CouldHave.bow) && CouldHave.silver_gauntlets)));
@@ -1842,7 +1842,7 @@ function location_logic(){
 		Location_Access.hyrule_hp_scrub = Game.can_blast_or_smash;
 		Location_Access.hyrule_boulder_of_destiny = Game.can_blast_or_smash;
 		Location_Access.hyrule_tektite_grotto = Game.can_blast_or_smash;
-		Location_Access.hyrule_ocarina = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+		Location_Access.hyrule_ocarina = Game.emerald && Game.ruby && Game.sapphire;
 		Location_Access.gerudovalley_box = true;
 		Location_Access.gerudovalley_fall = true;
 		Location_Access.hylia_child_fishing = true;
@@ -1855,7 +1855,7 @@ function location_logic(){
 		Location_Access.richard = true;
 		Location_Access.market_bowling_1 = Game.bomb_bag;
 		Location_Access.market_bowling_2 = Game.bomb_bag;
-		Location_Access.market_lens_game = true;
+		Location_Access.market_lens_game = Game.can_see;
 		Location_Access.poes= (Game.bow && (Game.can_use_bottle || Game.can_enter_jabu)) || Game.big_poe;
 		Location_Access.dins_fairy = (Game.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && Game.lullaby;
 		Location_Access.g_fairy = (Game.golden_gauntlets || Spawn.adult_ogc) && Game.lullaby;
@@ -1994,7 +1994,7 @@ function location_logic(){
 		Location_Access.spirit_sunRoom = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag || Game.has_chus)) || (((Game.can_use_fire || Game.bow) && Game.silver_gauntlets)));
 		Location_Access.spirit_rightHand = Game.current_spirit_keys >= 2;
 		Location_Access.spirit_adultLeft = Game.can_enter_adult_spirit && Game.hookshot && Game.lullaby;
-		Location_Access.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || (Game.bomb_bag || Game.has_chus));
+		Location_Access.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || Game.has_chus);
 		Location_Access.spirit_rotatingMirror1 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 		Location_Access.spirit_rotatingMirror2 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 		Location_Access.spirit_lullabyHand = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby;
@@ -2033,7 +2033,7 @@ function location_logic(){
 		Location_Access.ganons_lightTrial7 = Game.can_enter_ganons && Game.golden_gauntlets ;//&& Game.can_see;
 		Location_Access.ganons_lightTrialLullaby = Game.can_enter_ganons && Game.golden_gauntlets && Game.lullaby && Game.current_ganons_keys >= 1;
 		Location_Access.ganons_spiritTrial1 = Game.can_enter_ganons;
-		Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.bomb_bag || Game.has_chus || Game.bow);//&& Game.can_see;
+		Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.has_chus || Game.bow);//&& Game.can_see;
 		Location_Access.ganons_forestTrial = Game.can_enter_ganons;
 		Location_Access.ganons_waterTrial1 = Game.can_enter_ganons;
 		Location_Access.ganons_waterTrial2 = Game.can_enter_ganons;
@@ -2087,7 +2087,7 @@ function location_logic(){
 		Location_Access.serenadeSpot = Game.ice_access && Game.can_use_bottle;
 		Location_Access.preludeSpot = Game.forest;
 		Location_Access.nocturneSpot = Game.forest && Game.fire && Game.water;
-		Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+		Location_Access.oot = Game.emerald && Game.ruby && Game.sapphire;
 		Location_Access.scrub_dodongos_1 = Game.can_enter_dodongos;
 		Location_Access.scrub_dodongos_2 = Game.can_enter_dodongos;
 		Location_Access.scrub_dodongos_3 = Game.bomb_bag;
@@ -2178,7 +2178,7 @@ function location_logic(){
 		Location_Could_Peek.richard = true;
 		Location_Could_Peek.market_bowling_1 = CouldHave.bomb_bag;
 		Location_Could_Peek.market_bowling_2 = CouldHave.bomb_bag;
-		Location_Could_Peek.market_lens_game = true;
+		Location_Could_Peek.market_lens_game = CouldHave.can_see;;
 		Location_Could_Peek.poes= (CouldHave.bow && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
 		Location_Could_Peek.dins_fairy = (CouldHave.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && CouldHave.lullaby;
 		Location_Could_Peek.g_fairy = (CouldHave.golden_gauntlets || Spawn.adult_ogc) && CouldHave.lullaby;
@@ -2309,8 +2309,8 @@ function location_logic(){
 		Location_Could_Peek.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);
 		Location_Could_Peek.water_bossKey = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.longshot || CouldHave.hover_boots) && CouldHave.current_water_keys >= 2;
 		Location_Could_Peek.water_morpha = CouldHave.can_enter_water && CouldHave.water_boss_key && CouldHave.longshot ;
-		Location_Could_Peek.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
-		Location_Could_Peek.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
+		Location_Could_Peek.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || CouldHave.bomb_bag);
+		Location_Could_Peek.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || CouldHave.bomb_bag);
 		Location_Could_Peek.spirit_childClimb1 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 		Location_Could_Peek.spirit_childClimb2 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 		Location_Could_Peek.spirit_map = CouldHave.current_spirit_keys >= 1 && ((CouldHave.requiem && (CouldHave.bomb_bag || Game.has_chus)) || (((CouldHave.can_use_fire || CouldHave.bow) && CouldHave.silver_gauntlets)));
@@ -2489,7 +2489,7 @@ function location_logic(){
 		Location_Access.hyrule_hp_scrub = Game.can_blast_or_smash;
 		Location_Access.hyrule_boulder_of_destiny = Game.can_blast_or_smash;
 		Location_Access.hyrule_tektite_grotto = Game.can_blast_or_smash;
-		Location_Access.hyrule_ocarina = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+		Location_Access.hyrule_ocarina = Game.emerald && Game.ruby && Game.sapphire;
 		Location_Access.gerudovalley_box = true;
 		Location_Access.gerudovalley_fall = true;
 		Location_Access.hylia_child_fishing = true;
@@ -2502,7 +2502,7 @@ function location_logic(){
 		Location_Access.richard = true;
 		Location_Access.market_bowling_1 = Game.bomb_bag;
 		Location_Access.market_bowling_2 = Game.bomb_bag;
-		Location_Access.market_lens_game = true;
+		Location_Access.market_lens_game = Game.can_see;
 		Location_Access.poes= (Game.bow && (Game.can_use_bottle || Game.can_enter_jabu)) || Game.big_poe;
 		Location_Access.dins_fairy = (Game.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && Game.lullaby;
 		Location_Access.g_fairy = (Game.golden_gauntlets || Spawn.adult_ogc) && Game.lullaby;
@@ -2641,7 +2641,7 @@ function location_logic(){
 		Location_Access.spirit_sunRoom = Game.current_spirit_keys >= 1 && ((Game.requiem && (Game.bomb_bag || Game.has_chus)) || (((Game.can_use_fire || Game.bow) && Game.silver_gauntlets)));
 		Location_Access.spirit_rightHand = Game.current_spirit_keys >= 2;
 		Location_Access.spirit_adultLeft = Game.can_enter_adult_spirit && Game.lullaby && (Game.bow || Game.hookshot || Game.bomb_bag || Game.has_chus);
-		Location_Access.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || (Game.bomb_bag || Game.has_chus));
+		Location_Access.spirit_adultRight = Game.can_enter_adult_spirit && (Game.bow || Game.hookshot || Game.has_chus);
 		Location_Access.spirit_rotatingMirror1 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 		Location_Access.spirit_rotatingMirror2 = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1;
 		Location_Access.spirit_lullabyHand = Game.can_enter_adult_spirit && Game.current_spirit_keys >=1 && Game.lullaby;
@@ -2680,7 +2680,7 @@ function location_logic(){
 		Location_Access.ganons_lightTrial7 = Game.can_enter_ganons && Game.golden_gauntlets ;//&& Game.can_see;
 		Location_Access.ganons_lightTrialLullaby = Game.can_enter_ganons && Game.golden_gauntlets && Game.lullaby && Game.current_ganons_keys >= 1;
 		Location_Access.ganons_spiritTrial1 = Game.can_enter_ganons;
-		Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.bomb_bag || Game.has_chus || Game.bow);//&& Game.can_see;
+		Location_Access.ganons_spiritTrial2 = Game.can_enter_ganons && (Game.has_chus || Game.bow);//&& Game.can_see;
 		Location_Access.ganons_forestTrial = Game.can_enter_ganons;
 		Location_Access.ganons_waterTrial1 = Game.can_enter_ganons;
 		Location_Access.ganons_waterTrial2 = Game.can_enter_ganons;
@@ -2734,7 +2734,7 @@ function location_logic(){
 		Location_Access.serenadeSpot = Game.ice_access && Game.can_use_bottle;
 		Location_Access.preludeSpot = Game.forest;
 		Location_Access.nocturneSpot = Game.forest && Game.fire && Game.water;
-		Location_Access.oot = Game.kokiri_emerald && Game.goron_ruby && Game.zora_sapphire;
+		Location_Access.oot = Game.emerald && Game.ruby && Game.sapphire;
 		Location_Access.scrub_dodongos_1 = Game.can_enter_dodongos;
 		Location_Access.scrub_dodongos_2 = Game.can_enter_dodongos;
 		Location_Access.scrub_dodongos_3 = Game.bomb_bag;
@@ -2825,7 +2825,7 @@ function location_logic(){
 		Location_Could_Peek.richard = true;
 		Location_Could_Peek.market_bowling_1 = CouldHave.bomb_bag;
 		Location_Could_Peek.market_bowling_2 = CouldHave.bomb_bag;
-		Location_Could_Peek.market_lens_CouldHave = true;
+		Location_Could_Peek.market_lens = CouldHave.can_see;
 		Location_Could_Peek.poes= (CouldHave.bow && (CouldHave.can_use_bottle || CouldHave.can_enter_jabu)) || CouldHave.big_poe;
 		Location_Could_Peek.dins_fairy = (CouldHave.bomb_bag || Game.has_chus || Spawn.child_hyrule_fairy) && CouldHave.lullaby;
 		Location_Could_Peek.g_fairy = (CouldHave.golden_gauntlets || Spawn.adult_ogc) && CouldHave.lullaby;
@@ -2956,8 +2956,8 @@ function location_logic(){
 		Location_Could_Peek.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);
 		Location_Could_Peek.water_bossKey = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.longshot || CouldHave.hover_boots) && CouldHave.current_water_keys >= 2;
 		Location_Could_Peek.water_morpha = CouldHave.can_enter_water && CouldHave.water_boss_key && CouldHave.longshot ;
-		Location_Could_Peek.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
-		Location_Could_Peek.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus);
+		Location_Could_Peek.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || CouldHave.bomb_bag);
+		Location_Could_Peek.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Game.has_chus || CouldHave.bomb_bag);
 		Location_Could_Peek.spirit_childClimb1 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 		Location_Could_Peek.spirit_childClimb2 = CouldHave.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.requiem) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets));
 		Location_Could_Peek.spirit_map = CouldHave.current_spirit_keys >= 1 && ((CouldHave.requiem && (CouldHave.bomb_bag || Game.has_chus)) || (((CouldHave.can_use_fire || CouldHave.bow) && CouldHave.silver_gauntlets)));

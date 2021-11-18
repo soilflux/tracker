@@ -775,7 +775,23 @@ function update_logic_info() {
 				//document.getElementById(str).style.fontStyle = "italic";
 				document.getElementById(str).style.opacity = .5;
 			}
-			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
+			var checkInWothArea = -1;
+			if(colorWothAreas) {
+				for (var j = 1; j < 35; j++) {
+					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
+						for (var k = 1; k < 6; k++) {
+							if(wothAreas[k] == AreaNames[j]) {
+								checkInWothArea = k;
+								break;
+							}
+						}
+					}
+				}
+			}
+			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
+				document.getElementById(str).style.color = WotHColors[checkInWothArea];
+			}
+			else if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
 				var j;
@@ -827,10 +843,29 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
+					var checkInWothArea = -1;
+					if(colorWothAreas) {
+						for (var j = 1; j < 35; j++) {
+							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
+								for (var k = 1; k < 6; k++) {
+									if(wothAreas[k] == AreaNames[j]) {
+										checkInWothArea = k;
+										break;
+									}
+								}
+							}
+						}
+					}
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
+						document.getElementById(str).style.color = WotHColors[checkInWothArea];
+					}
+					else {
+						document.getElementById(str).style.color = "chartreuse";
+					}
+					
 					document.getElementById(str).className= "logic_check_text";
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
-					document.getElementById(str).style.color = "chartreuse";
 				}
 			}
 		}
@@ -849,10 +884,29 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
+					var checkInWothArea = -1;
+					if(colorWothAreas) {
+						for (var j = 1; j < 35; j++) {
+							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
+								for (var k = 1; k < 6; k++) {
+									if(wothAreas[k] == AreaNames[j]) {
+										checkInWothArea = k;
+										break;
+									}
+								}
+							}
+						}
+					}
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
+						document.getElementById(str).style.color = WotHColors[checkInWothArea];
+					}
+					else {
+						document.getElementById(str).style.color = "chartreuse";
+					}
+					
 					document.getElementById(str).className= "logic_check_text";
 					document.getElementById(str).style.fontWeight = "normal";
 					document.getElementById(str).style.opacity = .5;
-					document.getElementById(str).style.color = "chartreuse";
 				}
 			}
 		}

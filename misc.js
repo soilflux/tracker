@@ -225,6 +225,16 @@ function timerControl() {
 	timer_stuff();
 }
 
+function colorWothAreasControl() {
+	if(!colorWothAreas)
+		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
+	else
+		document.getElementById("colorWothAreasControl").innerHTML = "Color WotHs"; 
+	colorWothAreas = !colorWothAreas;
+	
+	Update();
+}
+
 function circusControl() {
 	if (!linsoGoMode) {document.getElementById("linso54").src = "./circus-tent_1f3aa.png";}
 	
@@ -360,56 +370,99 @@ function toggleHint(loc) {
 		theLocation = Location[item];
 	}
 	
-	if(event.which == 1 || event.which == undefined) { // left click, toggle if this item hinted by a sometimes hint or not
-		var itemText = "";
+	if (item == "sos") {item = "storms";}
+	if (item == "suns") {item = "suns";}
+	if (item == "sot") {item = "time";}
 	
-		if (item == "sos") {item = "storms";}
-		if (item == "suns") {item = "suns";}
-		if (item == "sot") {item = "time";}
-		
-		if (item == "serenade") {itemText = "Serenade";} 
-		else if (item == "prelude") {itemText = "Prelude"} 
-		else {itemText = ItemNames[Items.indexOf(item)];}
-		
-		if (item != "unknown" && theLocation != "unknown") {
-			Hinted[theLocation] = !Hinted[theLocation];
+	if(MarkedWotHItemArrow == null) {
+		if(event.which == 1 || event.which == undefined) { // left click, toggle if this item hinted by a sometimes hint or not
+			var itemText = "";
 			
-			// get the hinted text for this item and location
-			if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
-				text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+			if (item == "serenade") {itemText = "Serenade";} 
+			else if (item == "prelude") {itemText = "Prelude"} 
+			else {itemText = ItemNames[Items.indexOf(item)];}
+			
+			if (item != "unknown" && theLocation != "unknown") {
+				Hinted[theLocation] = !Hinted[theLocation];
+				
+				// get the hinted text for this item and location
+				if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
+					text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+				}
+				else {
+					text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+				}
+				
+				/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
+					var hintText = document.createElement("small");
+					hintText.innerHTML = text;
+					document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+				}
+				else { // if it is no longer hinted, remove the hinted text
+					for (i = 0; i < document.getElementById("notes").children.length; i++) {
+						if (document.getElementById("notes").children[i].innerHTML == text) {
+							document.getElementById("notes").children[i].remove();
+							break;
+						}
+					}
+				}*/
+			}
+		}
+		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
+			if(loc.id != "trade_location"){
+				if(loc.innerHTML.includes("Big Poe"))
+					Game.big_poe = !Game.big_poe;
+			
+				Game[item] = !Game[item];
 			}
 			else {
-				text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+				if(Known["prescription"])
+					Game["prescription"] = !Game["prescription"];
+				else if(Known["claim_check"])
+					Game["claim_check"] = !Game["claim_check"];
 			}
-			
-			/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
-				var hintText = document.createElement("small");
-				hintText.innerHTML = text;
-				document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
-			}
-			else { // if it is no longer hinted, remove the hinted text
-				for (i = 0; i < document.getElementById("notes").children.length; i++) {
-					if (document.getElementById("notes").children[i].innerHTML == text) {
-						document.getElementById("notes").children[i].remove();
-						break;
-					}
-				}
-			}*/
 		}
 	}
-	else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-		if(loc.id != "trade_location"){
-			if(loc.innerHTML.includes("Big Poe"))
-				Game.big_poe = !Game.big_poe;
+	else {
+		var itemToAdd = document.getElementById(MarkedWotHItemArrow).getAttribute("data-item");
 		
-			Game[item] = !Game[item];
+		if(event.which == 1) {
+			for (var j = 0; j < Items.length; j++) {
+				if(Items[j] == itemToAdd) {
+					if(ManualWotHItemLocked[Items[j]] == undefined)
+						ManualWotHItemLocked[Items[j]] = [];
+					if(ManualWotHItemPutInLogic[Items[j]] == undefined)
+						ManualWotHItemPutInLogic[Items[j]] = [];
+					if(item != itemToAdd) {
+						if(ManualWotHItemPutInLogic[Items[j]].includes(item))
+							ManualWotHItemPutInLogic[Items[j]].splice(ManualWotHItemPutInLogic[Items[j]].indexOf(item), 1);
+						if(ManualWotHItemLocked[Items[j]].includes(item))
+							ManualWotHItemLocked[Items[j]].splice(ManualWotHItemLocked[Items[j]].indexOf(item), 1);
+						else
+							ManualWotHItemLocked[Items[j]].push(item);
+					}
+				}
+			}
 		}
-		else {
-			if(Known["prescription"])
-				Game["prescription"] = !Game["prescription"];
-			else if(Known["claim_check"])
-				Game["claim_check"] = !Game["claim_check"];
+		else if(event.which == 3) {
+			for (var j = 0; j < Items.length; j++) {
+				if(Items[j] == itemToAdd) {
+					if(ManualWotHItemPutInLogic[Items[j]] == undefined)
+						ManualWotHItemPutInLogic[Items[j]] = [];
+					if(ManualWotHItemLocked[Items[j]] == undefined)
+						ManualWotHItemLocked[Items[j]] = [];
+					if(item != itemToAdd) {
+						if(ManualWotHItemLocked[Items[j]].includes(item))
+							ManualWotHItemLocked[Items[j]].splice(ManualWotHItemLocked[Items[j]].indexOf(item), 1);
+						if(ManualWotHItemPutInLogic[Items[j]].includes(item))
+							ManualWotHItemPutInLogic[Items[j]].splice(ManualWotHItemPutInLogic[Items[j]].indexOf(item), 1);
+						else
+							ManualWotHItemPutInLogic[Items[j]].push(item);
+					}
+				}
+			}
 		}
+		MarkedWotHItemArrow = null;
 	}
 }
 
@@ -537,6 +590,7 @@ document.onkeydown = function(e) {
 		timerControl();
 	}
 	if (e.ctrlKey && e.which == 90) {
+		e.preventDefault();
 		Undo();
 	}
 	if (e.which == 187) {
@@ -546,7 +600,13 @@ document.onkeydown = function(e) {
 		token_click = 2; linso_counter();
 	}
 	if (e.ctrlKey && e.which == 65) {
-		circusControl();
+		if(!nerfed)
+			circusControl();
+		else
+			colorWothAreasControl();
+	}
+	if (e.which >= 112 && e.which <= 123 && e.which != 116 && e.which != 122) {
+		e.preventDefault();
 	}
 }
 

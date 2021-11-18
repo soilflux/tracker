@@ -14,8 +14,8 @@ function woth_and_barren_processing() {
 		if (str == "llr" || str == "ranch" || str == "lon" || str == "ran") {if (Area[2] == "4woth") {Area[2] = "5woth";} else if (Area[2] == "3woth") {Area[2] = "4woth";} else if (Area[2] == "2woth") {Area[2] = "3woth";} else if (Area[2] == "woth") {Area[2] = "2woth";} else {Area[2] = "woth";} wothAreas[i] = AreaNames[2];} 
 		if (str == "fie" || str == "hf" || str == "field") {if (Area[3] == "4woth") {Area[3] = "5woth";} else if (Area[3] == "3woth") {Area[3] = "4woth";} else if (Area[3] == "2woth") {Area[3] = "3woth";} else if (Area[3] == "woth") {Area[3] = "2woth";} else {Area[3] = "woth";} wothAreas[i] = AreaNames[3];} 
 		if (str == "gv" || str == "val" || str == "valley") {if (Area[4] == "4woth") {Area[4] = "5woth";} else if (Area[4] == "3woth") {Area[4] = "4woth";} else if (Area[4] == "2woth") {Area[4] = "3woth";} else if (Area[4] == "woth") {Area[4] = "2woth";} else {Area[4] = "woth";} wothAreas[i] = AreaNames[4];} 
-		if (str == "hyl" || str == "hylia" || str == "lh" || str == "lake") {if (Area[5] == "4woth") {Area[5] = "5woth";} else if (Area[5] == "3woth") {Area[5] = "4woth";} else if (Area[5] == "2woth") {Area[5] = "3woth";} else if (Area[5] == "woth") {Area[5] = "2woth";} else {Area[5] = "woth";} wothAreas[i] = AreaNames[5];} 
-		if (str == "mkt" || str == "market" || str == "mar") {if (Area[6] == "4woth") {Area[6] = "5woth";} else if (Area[6] == "3woth") {Area[6] = "4woth";} else if (Area[6] == "2woth") {Area[6] = "3woth";} else if (Area[6] == "woth") {Area[6] = "2woth";} else {Area[6] = "woth";} wothAreas[i] = AreaNames[6];} 
+		if (str == "hyl" || str == "hylia" || str == "lh" || str == "lake" || str == "lak") {if (Area[5] == "4woth") {Area[5] = "5woth";} else if (Area[5] == "3woth") {Area[5] = "4woth";} else if (Area[5] == "2woth") {Area[5] = "3woth";} else if (Area[5] == "woth") {Area[5] = "2woth";} else {Area[5] = "woth";} wothAreas[i] = AreaNames[5];} 
+		if (str == "mkt" || str == "market" || str == "mar" || str == "mark") {if (Area[6] == "4woth") {Area[6] = "5woth";} else if (Area[6] == "3woth") {Area[6] = "4woth";} else if (Area[6] == "2woth") {Area[6] = "3woth";} else if (Area[6] == "woth") {Area[6] = "2woth";} else {Area[6] = "woth";} wothAreas[i] = AreaNames[6];} 
 		if (str == "hyr c" || str == "hcast" || str == "hc" || str == "cas") {if (Area[7] == "4woth") {Area[7] = "5woth";} else if (Area[7] == "3woth") {Area[7] = "4woth";} else if (Area[7] == "2woth") {Area[7] = "3woth";} else if (Area[7] == "woth") {Area[7] = "2woth";} else {Area[7] = "woth";} wothAreas[i] = AreaNames[7];} 
 		if (str == "ogc" || str == "out g" || str == "gfairy" || str == "og" || str == "out") {if (Area[8] == "4woth") {Area[8] = "5woth";} else if (Area[8] == "3woth") {Area[8] = "4woth";} else if (Area[8] == "2woth") {Area[8] = "3woth";} else if (Area[8] == "woth") {Area[8] = "2woth";} else {Area[8] = "woth";} wothAreas[i] = AreaNames[8];} 
 		if (str == "tot" || str == "temple" || str == "time") {if (Area[9] == "4woth") {Area[9] = "5woth";} else if (Area[9] == "3woth") {Area[9] = "4woth";} else if (Area[9] == "2woth") {Area[9] = "3woth";} else if (Area[9] == "woth") {Area[9] = "2woth";} else {Area[9] = "woth";} wothAreas[i] = AreaNames[9];} 
@@ -64,8 +64,8 @@ function woth_and_barren_processing() {
 			if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
 			if (str2 == "fie" || str2 == "hf" || str2 == "field") {Area[3] = "barren";} 
 			if (str2 == "gv" || str2 == "val" || str2 == "valley") {Area[4] = "barren";} 
-			if (str2 == "hyl" || str2 == "hylia" || str2 == "lh" || str2 == "lake") {Area[5] = "barren";} 
-			if (str2 == "mkt" || str2 == "market" || str2 == "mar") {Area[6] = "barren";} 
+			if (str2 == "hyl" || str2 == "hylia" || str2 == "lh" || str2 == "lake" || str2 == "lak") {Area[5] = "barren";} 
+			if (str2 == "mkt" || str2 == "market" || str2 == "mar" || str2 == "mark") {Area[6] = "barren";} 
 			if (str2 == "hyr c" || str2 == "hcast" || str2 == "hc" || str2 == "cas") {Area[7] = "barren";} 
 			if (str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
 			if (str2 == "tot" || str2 == "temple" || str2 == "time") {Area[9] = "barren";} 
@@ -195,31 +195,32 @@ function woth_and_barren_processing() {
 		}
 		for (var i = 1; i <= 34; i++) {
 			
-			var tempnumber1 = 1;
-			var tempnumber2 = 0;
+			var wothRowNumber = 1;
+			var wothNumber = 0;
 			var tempnumber3 = 1;
 			var tempbool = false;
 		
 			
 			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i]) {
 				
-				if (woth1 == AreaNames[i]) {tempnumber2 = 1;}
-				else if (woth2 == AreaNames[i]) {tempnumber2 = 2;}
-				else if (woth3 == AreaNames[i]) {tempnumber2 = 3;}
-				else if (woth4 == AreaNames[i]) {tempnumber2 = 4;}
-				else if (woth5 == AreaNames[i]) {tempnumber2 = 5;}
+				if (woth1 == AreaNames[i]) {wothNumber = 1;}
+				else if (woth2 == AreaNames[i]) {wothNumber = 2;}
+				else if (woth3 == AreaNames[i]) {wothNumber = 3;}
+				else if (woth4 == AreaNames[i]) {wothNumber = 4;}
+				else if (woth5 == AreaNames[i]) {wothNumber = 5;}
 				var tempArray = [];
-				document.getElementById("woth" + tempnumber2 + "_text" + 1).innerHTML="";
-				document.getElementById("woth" + tempnumber2 + "_text" + 2).innerHTML="";
-				document.getElementById("woth" + tempnumber2 + "_text" + 3).innerHTML="";
-				document.getElementById("woth" + tempnumber2 + "_text" + 4).innerHTML="";
-				document.getElementById("woth" + tempnumber2 + "_text" + 5).innerHTML="";
-				document.getElementById("woth" + tempnumber2 + "_text" + 6).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 3).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 4).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows") {continue;}
+					if (Items[k] == "farores_wind") {continue;}
 					if (Items[k] == "lullaby") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
-					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined")) {
+					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
 						if ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1]) {
 						    if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
 							else if (Items[k] == "slingshot2" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot1)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot3)))){continue}
@@ -234,35 +235,58 @@ function woth_and_barren_processing() {
 							else if (Items[k] == "magic2" && Logic.magic1 && !ChecksPutInLogicBy.magic2.includes(Location.magic1)){continue}
 							else if (Items[k] == "goron_tunic" && Logic.can_stop_link_the_goron && !ChecksPutInLogicBy.goron_tunic.includes("goron_link") && (Logic.wallet1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet1) || Logic.wallet2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet2))){continue}
 							//else if (Items[k] == "fire_arrows" && Logic.dins_fire && !ChecksPutInLogicBy.fire_arrows.includes(Location.dins_fire)){continue}
-							document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + tempnumber2 + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
+							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							
 							if(nerfed) {
-								document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML = "<img id = 'wothMajor" + k + tempnumber2 + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
+								document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
 								
 								if(ManualWotHItems[Items[k]]) {
-									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "manualWothImages";
+									document.getElementById("wothMajor" + k + wothNumber).className = "manualWothImages";
 								}
 								else if(ManualNotWotHItems[Items[k]]) {
-									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "notWothItemImages";
+									document.getElementById("wothMajor" + k + wothNumber).className = "notWothItemImages";
 								}
 								else {
-									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).className = "wothMajorImages";
+									document.getElementById("wothMajor" + k + wothNumber).className = "wothMajorImages";
 								}
 							}
 							
 							if (WotHItems.includes(Items[k]) && !nerfed) {
-								document.getElementById("wothMajor" + k + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
+								document.getElementById("wothMajor" + k + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
 								tempnumber3 +=1;
 								} 
 							for (var j = 0; j < Items.length; j++) {
 								if (ChecksLockedBy[Items[k]].includes(Location[Items[j]]) && !nerfed){
-									document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += "<img id = 'wothMinor" + j + tempnumber2 + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
+									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
 									if (WotHItems.includes(Items[j])) {
-										document.getElementById("wothMinor" + j + tempnumber2).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
+										document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
 									} 
 								}
 							} 
-						document.getElementById("woth" + tempnumber2 + "_text" + tempnumber1).innerHTML += " <br />"; tempnumber1 += 1; tempArray.push(Items[k]); 
+							
+							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<span onmousedown = 'markWothItemArrow(this)' id = 'wothItemArrow" + wothNumber + "_" + k + "' data-item = '" + Items[k] + "' class = 'woth_item_arrow'> &#8594; </span>"; 
+							
+							if(MarkedWotHItemArrow == "wothItemArrow" + wothNumber + "_" + k)
+								document.getElementById("wothItemArrow" + wothNumber + "_" + k).style.color = "chartreuse";
+							
+							if(ManualWotHItemLocked[Items[k]] != undefined) {
+								for(var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
+									for (var j = 0; j < Items.length; j++) {
+										if(Items[j] == ManualWotHItemLocked[Items[k]][q])
+											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+									}
+								}
+							}
+							if(ManualWotHItemPutInLogic[Items[k]] != undefined) {
+								for(var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
+									for (var j = 0; j < Items.length; j++) {
+										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q])
+											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+									}
+								}
+							}
+							
+							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += " <br />"; wothRowNumber += 1; tempArray.push(Items[k]); 
 						}
 					} 	
 				}
@@ -277,38 +301,38 @@ function woth_and_barren_processing() {
 					tempArray2.push.apply(tempArray2, tempArray3);
 				}
 				
-				document.getElementById("woth" + tempnumber2 + "_title").innerHTML = AreaNames[i];
+				document.getElementById("woth" + wothNumber + "_title").innerHTML = AreaNames[i];
 			
 				if (document.getElementById("hints_type").value == "PATH") {
 					var addedArrow = false;
 					for(var q = 1; q <= 5; q++)
 						if(wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {
 							if(!addedArrow) {
-								document.getElementById("woth" + tempnumber2 + "_title").innerHTML += " &#8594; "; 
+								document.getElementById("woth" + wothNumber + "_title").innerHTML += " &#8594; "; 
 								addedArrow = true;
 							}
 							else
-								document.getElementById("woth" + tempnumber2 + "_title").innerHTML += ", "; 
-							document.getElementById("woth" + tempnumber2 + "_title").innerHTML += AreaGoalPathBoss[q];
+								document.getElementById("woth" + wothNumber + "_title").innerHTML += ", "; 
+							document.getElementById("woth" + wothNumber + "_title").innerHTML += AreaGoalPathBoss[q];
 						}
 				}
 				
-				document.getElementById("woth" + tempnumber2 + "_title").style.color= WotHColors[tempnumber2];
+				document.getElementById("woth" + wothNumber + "_title").style.color= WotHColors[wothNumber];
 				if (AreaWotHAge[i] < tempnumber3) {
-					document.getElementById("woth" + tempnumber2 + "_title").style.opacity = .2;
-					if (tempnumber2 == 1) {woth1Locations =[];}
-					if (tempnumber2 == 2) {woth2Locations = [];}
-					if (tempnumber2 == 3) {woth3Locations = [];}
-					if (tempnumber2 == 4) {woth4Locations =[];}
-					if (tempnumber2 == 5) {woth5Locations = [];}
+					document.getElementById("woth" + wothNumber + "_title").style.opacity = .2;
+					if (wothNumber == 1) {woth1Locations =[];}
+					if (wothNumber == 2) {woth2Locations = [];}
+					if (wothNumber == 3) {woth3Locations = [];}
+					if (wothNumber == 4) {woth4Locations =[];}
+					if (wothNumber == 5) {woth5Locations = [];}
 				}
 				if (AreaWotHAge[i] >= tempnumber3) {
-					document.getElementById("woth" + tempnumber2 + "_title").style.opacity = 1;
-					if (tempnumber2 == 1) {woth1Locations = tempArray2.slice(0);}
-					if (tempnumber2 == 2) {woth2Locations = tempArray2.slice(0);}
-					if (tempnumber2 == 3) {woth3Locations = tempArray2.slice(0);}
-					if (tempnumber2 == 4) {woth4Locations = tempArray2.slice(0);}
-					if (tempnumber2 == 5) {woth5Locations = tempArray2.slice(0);}
+					document.getElementById("woth" + wothNumber + "_title").style.opacity = 1;
+					if (wothNumber == 1) {woth1Locations = tempArray2.slice(0);}
+					if (wothNumber == 2) {woth2Locations = tempArray2.slice(0);}
+					if (wothNumber == 3) {woth3Locations = tempArray2.slice(0);}
+					if (wothNumber == 4) {woth4Locations = tempArray2.slice(0);}
+					if (wothNumber == 5) {woth5Locations = tempArray2.slice(0);}
 				}
 			}
 			
@@ -554,12 +578,51 @@ function handleAlternateHintInput() {
 function markWothItem(x) {
 	if(event.which == 1 && ManualWotHItems[x.getAttribute("data-item")] != true) {
 		ManualWotHItems[x.getAttribute("data-item")] = true;
+		ManualNotWotHItems[x.getAttribute("data-item")] = false;
 	}
 	else if(event.which == 3 && ManualNotWotHItems[x.getAttribute("data-item")] != true) {
 		ManualNotWotHItems[x.getAttribute("data-item")] = true;
+		ManualWotHItems[x.getAttribute("data-item")] = false;
 	}
 	else {
 		ManualWotHItems[x.getAttribute("data-item")] = false;
 		ManualNotWotHItems[x.getAttribute("data-item")] = false;
+	}
+}
+
+function markWothItemArrow(x) {
+	if(MarkedWotHItemArrow == x.id)
+		MarkedWotHItemArrow = null;
+	else
+		MarkedWotHItemArrow = x.id;
+}
+
+function markMinorWothItem(x) {
+	var theItem = x.getAttribute("data-item");
+	var theParent = x.getAttribute("data-parent");
+	
+	if(event.which == 1 && ManualWotHItems[theItem] != true) {
+		//ManualWotHItems[theItem] = true;
+		//ManualNotWotHItems[theItem] = false;
+	}
+	else if(event.which == 2) {
+		if(ManualWotHItemLocked[theParent].includes(theItem)) {
+			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
+			ManualWotHItemPutInLogic[theParent].push(theItem);
+		}
+		else if(ManualWotHItemPutInLogic[theParent].includes(theItem)) {
+			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
+			ManualWotHItemLocked[theParent].push(theItem);
+		}
+	}
+	else if(event.which == 3 && ManualNotWotHItems[theItem] != true) {
+		if(ManualWotHItemLocked[theParent].includes(theItem))
+			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
+		if(ManualWotHItemPutInLogic[theParent].includes(theItem))
+			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
+	}
+	else {
+		ManualWotHItems[theItem] = false;
+		ManualNotWotHItems[theItem] = false;
 	}
 }
