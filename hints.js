@@ -622,7 +622,7 @@ function markMinorWothItem(x) {
 			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
 	}
 	else {
-		ManualWotHItems[theItem] = false;
-		ManualNotWotHItems[theItem] = false;
+		//ManualWotHItems[theItem] = false;
+		//ManualNotWotHItems[theItem] = false;
 	}
 }
