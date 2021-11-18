@@ -421,7 +421,6 @@ color: red;
 #settingsColumn {
 	position: absolute;
 	left: 750px;
-	top: 1560px;
 }
 .patchNotes {
 	font-size: 12px;
@@ -431,28 +430,40 @@ color: red;
 	margin-bottom:0px;
 	height: 22px;
 	width: 22px;
+	vertical-align: middle;
 }
 .confirmedWothImages {
 	margin-bottom:0px;
 	height: 22px;
 	width: 22px;
 	-webkit-filter: drop-shadow(0px 0px 5px lightblue);
+	vertical-align: middle;
 }
 .manualWothImages {
 	margin-bottom:0px;
 	height: 22px;
 	width: 22px;
 	-webkit-filter: drop-shadow(0px 0px 5px yellow);
+	vertical-align: middle;
 }
 .notWothItemImages {
 	margin-bottom:0px;
 	height: 22px;
 	width: 22px;
 	filter: drop-shadow(0px 0px 5px red);
+	vertical-align: middle;
+}
+.putInLogicByWothItemImages {
+	margin-bottom:0px;
+	height: 22px;
+	width: 22px;
+	border: 1px solid red;
+	vertical-align: middle;
 }
 .wothMajorImages {
 	height: 22px;
 	width: 22px;
+	vertical-align: middle;
 }
 .customizeTitles{
 	font-size: 18px;
@@ -535,6 +546,17 @@ color: red;
 	padding: 0;
 	border: none;
 	color: lime;
+}
+.woth_item_arrow {
+	width: 30px;
+	height:22px;
+	margin-bottom:2px;
+	margin-right:2px;
+	vertical-align: top;
+	padding: 0;
+	border: none;
+	color: black;
+	vertical-align: middle;
 }
 .layout_input {
 	width: 55px;
