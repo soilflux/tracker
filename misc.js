@@ -464,6 +464,7 @@ function toggleHint(loc) {
 		}
 		MarkedWotHItemArrow = null;
 	}
+	midUpdate();
 }
 
 function gs_array_builder() {
