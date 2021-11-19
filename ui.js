@@ -83,7 +83,11 @@ function process_inputs() {
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
 							if (peeked) {peekOrHintText = "";}
+							if(hintedInput == inputs[j])
+								thisIsHinted = true;
 							junkItem(document.getElementById(key)); 
+							thisIsHinted = false;
+							hintedInput = "";
 							break;
 						}
 						else {
@@ -357,12 +361,13 @@ function junk() {
 	lastCheck.push(str);
 	Update();
 	
-	for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
-		if (document.getElementById(Locations[i]).style.display != "none") {
-			document.getElementById(Locations[i]).focus(); //why doesn't this work
-			break;
+	if(!thisIsHinted)
+		for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
+			if (document.getElementById(Locations[i]).style.display != "none") {
+				document.getElementById(Locations[i]).focus(); //why doesn't this work
+				break;
+			}
 		}
-	}
 }	
 
 function junkUltra() {
@@ -410,12 +415,14 @@ function junkItem(x) {
 	document.getElementById(str2).value = "";
 	lastCheck.push(str2);
 	midUpdate();
-	for (var i = Locations.indexOf(str2) + 1; i < Locations.length; i++) {
-		if (document.getElementById(Locations[i]).style.display != "none") {
-			document.getElementById(Locations[i]).focus();
-			break;
+	
+	if(!thisIsHinted)
+		for (var i = Locations.indexOf(str2) + 1; i < Locations.length; i++) {
+			if (document.getElementById(Locations[i]).style.display != "none") {
+				document.getElementById(Locations[i]).focus();
+				break;
+			}
 		}
-	}
 	
 }
 
