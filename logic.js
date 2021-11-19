@@ -1273,7 +1273,7 @@ function location_logic(){
 	Location_Obtain.gerudo_archery_2 = Game.eponas && Game.bow;
 	Location_Obtain.wasteland = (Game.can_cross_quicksand || Game.requiem) && Game.can_use_fire;
 	Location_Obtain.colossus_fairy = Game.can_enter_colossus && (Game.bomb_bag || Game.has_chus) && Game.lullaby;
-	Location_Obtain.colossus_bean = Game.can_enter_colossus && Game.child_can_enter_river;
+	Location_Obtain.colossus_bean = Game.requiem && Game.child_can_enter_river;
 	Location_Obtain.man_on_roof = true;//Game.hookshot;
 	Location_Obtain.kakariko_grotto = true;
 	Location_Obtain.windmill = true;//Game.boomerang || Game.time;
@@ -1596,7 +1596,7 @@ function location_logic(){
 	Location_Could_Access.gerudo_archery_2 = CouldHave.eponas && CouldHave.bow;
 	Location_Could_Access.wasteland = (CouldHave.can_cross_quicksand || CouldHave.requiem) && CouldHave.can_use_fire;
 	Location_Could_Access.colossus_fairy = CouldHave.can_enter_colossus && (CouldHave.bomb_bag || Game.has_chus) && CouldHave.lullaby;
-	Location_Could_Access.colossus_bean = CouldHave.can_enter_colossus && CouldHave.child_can_enter_river;
+	Location_Could_Access.colossus_bean = CouldHave.requiem && CouldHave.child_can_enter_river;
 	Location_Could_Access.man_on_roof = true;//CouldHave.hookshot;
 	Location_Could_Access.kakariko_grotto = true;
 	Location_Could_Access.windmill = true;//CouldHave.boomerang || CouldHave.time;
