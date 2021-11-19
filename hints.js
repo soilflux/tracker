@@ -222,7 +222,7 @@ function woth_and_barren_processing() {
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
 						if ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1]) {
-						    if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
+						    /*if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
 							else if (Items[k] == "slingshot2" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot1)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot3)))){continue}
 							else if (Items[k] == "slingshot3" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot1)) || (Logic.slingshot2 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot2)))){continue}
 							else if (Items[k] == "bomb_bag1" && ((Logic.bomb_bag2 && !ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag2)) || (Logic.bomb_bag3 && !ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag3)))){continue}
@@ -234,7 +234,7 @@ function woth_and_barren_processing() {
 							else if (Items[k] == "magic1" && Logic.magic2 && !ChecksPutInLogicBy.magic1.includes(Location.magic2)){continue}
 							else if (Items[k] == "magic2" && Logic.magic1 && !ChecksPutInLogicBy.magic2.includes(Location.magic1)){continue}
 							else if (Items[k] == "goron_tunic" && Logic.can_stop_link_the_goron && !ChecksPutInLogicBy.goron_tunic.includes("goron_link") && (Logic.wallet1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet1) || Logic.wallet2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet2))){continue}
-							//else if (Items[k] == "fire_arrows" && Logic.dins_fire && !ChecksPutInLogicBy.fire_arrows.includes(Location.dins_fire)){continue}
+							//else if (Items[k] == "fire_arrows" && Logic.dins_fire && !ChecksPutInLogicBy.fire_arrows.includes(Location.dins_fire)){continue}*/
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							
 							if(nerfed) {
@@ -272,16 +272,26 @@ function woth_and_barren_processing() {
 							if(ManualWotHItemLocked[Items[k]] != undefined) {
 								for(var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
 									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemLocked[Items[k]][q])
+										if(Items[j] == ManualWotHItemLocked[Items[k]][q]) {
 											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+											
+											if (ManualWotHMinorItems[Items[j]]) {
+												document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
+											} 
+										}
 									}
 								}
 							}
 							if(ManualWotHItemPutInLogic[Items[k]] != undefined) {
 								for(var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
 									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q])
+										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q]) {
 											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+											
+											if (ManualWotHMinorItems[Items[j]]) {
+											document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
+											} 
+										}
 									}
 								}
 							}
@@ -604,8 +614,10 @@ function markMinorWothItem(x) {
 	var theParent = x.getAttribute("data-parent");
 	
 	if(event.which == 1 && ManualWotHItems[theItem] != true) {
-		//ManualWotHItems[theItem] = true;
-		//ManualNotWotHItems[theItem] = false;
+		if(ManualWotHMinorItems[theItem] == undefined || ManualWotHMinorItems[theItem] == false)
+			ManualWotHMinorItems[theItem] = true;
+		else
+			ManualWotHMinorItems[theItem] = false;
 	}
 	else if(event.which == 2) {
 		if(ManualWotHItemLocked[theParent].includes(theItem)) {
@@ -622,10 +634,8 @@ function markMinorWothItem(x) {
 			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
 		if(ManualWotHItemPutInLogic[theParent].includes(theItem))
 			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
-	}
-	else {
-		ManualWotHItems[theItem] = false;
-		ManualNotWotHItems[theItem] = false;
+		
+		ManualWotHMinorItems[theItem] = false;
 	}
 	midUpdate();
 }
