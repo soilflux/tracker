@@ -588,6 +588,7 @@ function markWothItem(x) {
 		ManualWotHItems[x.getAttribute("data-item")] = false;
 		ManualNotWotHItems[x.getAttribute("data-item")] = false;
 	}
+	midUpdate();
 }
 
 function markWothItemArrow(x) {
@@ -595,6 +596,7 @@ function markWothItemArrow(x) {
 		MarkedWotHItemArrow = null;
 	else
 		MarkedWotHItemArrow = x.id;
+	midUpdate();
 }
 
 function markMinorWothItem(x) {
@@ -625,4 +627,5 @@ function markMinorWothItem(x) {
 		//ManualWotHItems[theItem] = false;
 		//ManualNotWotHItems[theItem] = false;
 	}
+	midUpdate();
 }
