@@ -272,16 +272,26 @@ function woth_and_barren_processing() {
 							if(ManualWotHItemLocked[Items[k]] != undefined) {
 								for(var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
 									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemLocked[Items[k]][q])
+										if(Items[j] == ManualWotHItemLocked[Items[k]][q]) {
 											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+											
+											if (ManualWotHMinorItems[Items[j]]) {
+												document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
+											} 
+										}
 									}
 								}
 							}
 							if(ManualWotHItemPutInLogic[Items[k]] != undefined) {
 								for(var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
 									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q])
+										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q]) {
 											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+											
+											if (ManualWotHMinorItems[Items[j]]) {
+											document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
+											} 
+										}
 									}
 								}
 							}
@@ -604,8 +614,10 @@ function markMinorWothItem(x) {
 	var theParent = x.getAttribute("data-parent");
 	
 	if(event.which == 1 && ManualWotHItems[theItem] != true) {
-		//ManualWotHItems[theItem] = true;
-		//ManualNotWotHItems[theItem] = false;
+		if(ManualWotHMinorItems[theItem] == undefined || ManualWotHMinorItems[theItem] == false)
+			ManualWotHMinorItems[theItem] = true;
+		else
+			ManualWotHMinorItems[theItem] = false;
 	}
 	else if(event.which == 2) {
 		if(ManualWotHItemLocked[theParent].includes(theItem)) {
@@ -622,10 +634,8 @@ function markMinorWothItem(x) {
 			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
 		if(ManualWotHItemPutInLogic[theParent].includes(theItem))
 			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
-	}
-	else {
-		//ManualWotHItems[theItem] = false;
-		//ManualNotWotHItems[theItem] = false;
+		
+		ManualWotHMinorItems[theItem] = false;
 	}
 	midUpdate();
 }
