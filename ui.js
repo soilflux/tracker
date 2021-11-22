@@ -1030,9 +1030,15 @@ function update_summary_text() {
 		}
 		else {
 			if (Game[checkSummary[i]]) 
-				document.getElementById(str).className = "checked_text_summary";
+				if(ManualOutOfLogicItems[checkSummary[i]])
+					document.getElementById(str).className = "checked_text_summary_have_ool";
+				else
+					document.getElementById(str).className = "checked_text_summary";
 			else if(CouldHave[checkSummary[i]])
-				document.getElementById(str).className = "checked_text_summary_not_have";
+				if(ManualOutOfLogicItems[checkSummary[i]])
+					document.getElementById(str).className = "checked_text_summary_ool_could_have";
+				else
+					document.getElementById(str).className = "checked_text_summary_not_have";
 			else if(Known[checkSummary[i]]) 
 				document.getElementById(str).className = "checked_text_summary_known";
 			else
