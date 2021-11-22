@@ -423,10 +423,12 @@ function toggleHint(loc) {
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
-			if(ManualOutOfLogicItems[item] == undefined || ManualOutOfLogicItems[item] == false)
-				ManualOutOfLogicItems[item] = true;
-			else
-				ManualOutOfLogicItems[item] = false;
+			if(Known[item]) {
+				if(ManualOutOfLogicItems[item] == undefined || ManualOutOfLogicItems[item] == false)
+					ManualOutOfLogicItems[item] = true;
+				else
+					ManualOutOfLogicItems[item] = false;
+			}
 		}
 	}
 	else {
