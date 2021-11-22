@@ -422,6 +422,14 @@ function toggleHint(loc) {
 					Game["claim_check"] = !Game["claim_check"];
 			}
 		}
+		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
+			if(Known[item]) {
+				if(ManualOutOfLogicItems[item] == undefined || ManualOutOfLogicItems[item] == false)
+					ManualOutOfLogicItems[item] = true;
+				else
+					ManualOutOfLogicItems[item] = false;
+			}
+		}
 	}
 	else {
 		var itemToAdd = document.getElementById(MarkedWotHItemArrow).getAttribute("data-item");
@@ -680,6 +688,7 @@ function Undo() {
 	Known[Check[lastCheck[lastCheck.length-1]]] = false;
 	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
 	Check[lastCheck[lastCheck.length-1]] = "unknown";
+	document.getElementById(lastCheck[lastCheck.length-1]).value = "";
 	lastCheck.pop();
 	midUpdate();
 }

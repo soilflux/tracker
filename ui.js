@@ -798,7 +798,14 @@ function update_logic_info() {
 			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
 				document.getElementById(str).style.color = WotHColors[checkInWothArea];
 			}
-			else if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {document.getElementById(str).style.color = "chartreuse";}
+			else if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {
+				if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+					document.getElementById(str).style.color = "#FFA500";
+				}
+				else {
+					document.getElementById(str).style.color = "chartreuse";
+				}
+			}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
 				var j;
@@ -863,16 +870,19 @@ function update_logic_info() {
 							}
 						}
 					}
+					document.getElementById(str).className= "logic_check_text";
+					document.getElementById(str).style.fontWeight = "bold";
+					document.getElementById(str).style.opacity = 1;
+					
 					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
 						document.getElementById(str).style.color = WotHColors[checkInWothArea];
+					}
+					else if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
 						document.getElementById(str).style.color = "chartreuse";
 					}
-					
-					document.getElementById(str).className= "logic_check_text";
-					document.getElementById(str).style.fontWeight = "bold";
-					document.getElementById(str).style.opacity = 1;
 				}
 			}
 		}
@@ -904,16 +914,19 @@ function update_logic_info() {
 							}
 						}
 					}
+					document.getElementById(str).className= "logic_check_text";
+					document.getElementById(str).style.fontWeight = "normal";
+					document.getElementById(str).style.opacity = .5;
+					
 					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
 						document.getElementById(str).style.color = WotHColors[checkInWothArea];
+					}
+					else if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
 						document.getElementById(str).style.color = "chartreuse";
 					}
-					
-					document.getElementById(str).className= "logic_check_text";
-					document.getElementById(str).style.fontWeight = "normal";
-					document.getElementById(str).style.opacity = .5;
 				}
 			}
 		}
@@ -1030,9 +1043,15 @@ function update_summary_text() {
 		}
 		else {
 			if (Game[checkSummary[i]]) 
-				document.getElementById(str).className = "checked_text_summary";
+				if(ManualOutOfLogicItems[checkSummary[i]])
+					document.getElementById(str).className = "checked_text_summary_have_ool";
+				else
+					document.getElementById(str).className = "checked_text_summary";
 			else if(CouldHave[checkSummary[i]])
-				document.getElementById(str).className = "checked_text_summary_not_have";
+				if(ManualOutOfLogicItems[checkSummary[i]])
+					document.getElementById(str).className = "checked_text_summary_ool_could_have";
+				else
+					document.getElementById(str).className = "checked_text_summary_not_have";
 			else if(Known[checkSummary[i]]) 
 				document.getElementById(str).className = "checked_text_summary_known";
 			else

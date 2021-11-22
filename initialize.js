@@ -843,6 +843,7 @@ var woth5 = "unknown";
 
 var WotHItems = [];
 var ManualWotHItems = {};
+var ManualOutOfLogicItems = {};
 var ManualNotWotHItems = {};
 var ManualWotHMinorItems = {};
 var MarkedWotHItemArrow = null;
