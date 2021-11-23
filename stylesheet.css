@@ -888,7 +888,7 @@ color: red;
 #scrollable_section {
 	overflow-x: hidden;
     overflow-y: auto;
-	height: 460px;
+	height: 325px;
 }
 .woth_info_text {
 	font-size: 14px;
