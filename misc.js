@@ -229,7 +229,7 @@ function colorWothAreasControl() {
 	if(!colorWothAreas)
 		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
 	else
-		document.getElementById("colorWothAreasControl").innerHTML = "Color WotHs"; 
+		document.getElementById("colorWothAreasControl").innerHTML = "Highlight WotHs"; 
 	colorWothAreas = !colorWothAreas;
 	
 	Update();
