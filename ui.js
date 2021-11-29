@@ -979,15 +979,15 @@ function update_logic_info() {
 							}
 						}
 					}
-					document.getElementById(str).className= "logic_check_text";
+					document.getElementById(str).className= "access_check_text";
 					document.getElementById(str).style.fontWeight = "normal";
-					document.getElementById(str).style.opacity = .5;
+					document.getElementById(str).style.opacity = .2;
 					
 					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
-						document.getElementById(str).style.color = "chartreuse";
+						document.getElementById(str).style.color = "yellow";
 					}
 					
 					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
