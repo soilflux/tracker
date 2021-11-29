@@ -175,6 +175,19 @@
 			<br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
 			<br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
 			<br /><br> Timer can be started and paused using the Pause key
+			<br /><br><br> Location Color Codes: 
+			<br>bright green = can access logically with items you currently have
+			<br>faded green = can access logically with items you currently have access to
+			<br>faded yellow = can check out of logic (based on items you currently have access to)
+			<br>white = known but currently unobtainable
+			<br><br><br> Path Hints(USE S5 PRESET):
+			<br> bottom woth boxes recognize starting letters of boss names (at least two letters)
+			<br><br> can left click items listed under woth locations to the left of the arrow to highlight them yellow or right click to highlight them red
+			<br> intent: yellow highlight means confirmed poth, red highlight means confirmed not poth.
+			<br> can click arrow under woth locations to add an item to the right of it by clicking an item in the check summary. these items can be highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
+			<br><br> intent: yellow highlight means confirmed poth, red box means confirmed locked by item to left of arrow, removed means confirmed not locked by item to left of arrow.
+			<br><br><br>Check Summary:
+			<br>left clicking checked locations will surround it with asterisks (intent: mark as hinted/unhinted). right clicking locations will toggle the item from it as obtained/unobtained.
 		
 			</p>
 		</div>
@@ -323,6 +336,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
 				<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
 				<small class = "patchNotes"><span id = "pn45" class="patchNotes">45</span>: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)</small><br>
 				<small class = "patchNotes"><span id = "pn44" class="patchNotes">44</span>: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)</small><br>
