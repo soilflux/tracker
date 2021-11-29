@@ -460,6 +460,66 @@ function check_circle_info() {
 	if (Game.water_boss_key) {document.getElementById("waterBKs").innerHTML = 0;} else {document.getElementById("waterBKs").innerHTML = 1;}
 	if (Game.spirit_boss_key) {document.getElementById("spiritBKs").innerHTML = 0;} else {document.getElementById("spiritBKs").innerHTML = 1;}
 	if (Game.shadow_boss_key) {document.getElementById("shadowBKs").innerHTML = 0;} else {document.getElementById("shadowBKs").innerHTML = 1;}
+	
+	document.getElementById("forestSKs").title = "";
+	document.getElementById("forestBKs").title = "";
+	for(i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("forestSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("forestBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("fireSKs").title = "";
+	document.getElementById("fireBKs").title = "";
+	for(i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("fireSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("fireBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("waterSKs").title = "";
+	document.getElementById("waterBKs").title = "";
+	for(i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("waterSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("waterBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("spiritSKs").title = "";
+	document.getElementById("spiritBKs").title = "";
+	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("spiritSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("spiritBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("shadowSKs").title = "";
+	document.getElementById("shadowBKs").title = "";
+	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("shadowSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("shadowBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("ganonsSKs").title = "";
+	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++)
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("ganonsSKs").title += Names[i] + "\n";
+	
+	document.getElementById("gtgSKs").title = "";
+	for(i = AreaIndexes[32]; i < AreaIndexes[33]; i++)
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("gtgSKs").title += Names[i] + "\n";
+	
+	document.getElementById("wellSKs").title = "";
+	for(i = AreaIndexes[33]; i < AreaIndexes[34]; i++)
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("wellSKs").title += Names[i] + "\n";
 }
 
 function handleAreaBreaks() {
@@ -795,16 +855,19 @@ function update_logic_info() {
 					}
 				}
 			}
-			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
-				document.getElementById(str).style.color = WotHColors[checkInWothArea];
-			}
-			else if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {
+			
+			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {
 				if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 					document.getElementById(str).style.color = "#FFA500";
 				}
 				else {
 					document.getElementById(str).style.color = "chartreuse";
 				}
+					
+				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+					document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
+				else
+					document.getElementById(str).style.border = "";
 			}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
@@ -874,15 +937,17 @@ function update_logic_info() {
 					document.getElementById(str).style.opacity = .5;
 					document.getElementById(str).style.fontWeight = "normal";
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
-						document.getElementById(str).style.color = WotHColors[checkInWothArea];
-					}
-					else if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
 						document.getElementById(str).style.color ="yellow";
 					}
+					
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
+					else
+						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -918,15 +983,17 @@ function update_logic_info() {
 					document.getElementById(str).style.fontWeight = "normal";
 					document.getElementById(str).style.opacity = .5;
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i])) {
-						document.getElementById(str).style.color = WotHColors[checkInWothArea];
-					}
-					else if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
 						document.getElementById(str).style.color = "chartreuse";
 					}
+					
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
+					else
+						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -940,6 +1007,7 @@ function update_logic_info() {
 			document.getElementById(str).style.opacity = .5;
 			document.getElementById(str).style.fontWeight = "normal";
 			document.getElementById(str).style.color ="black";
+			document.getElementById(str).style.border = "";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "orange";}
 	}
