@@ -323,16 +323,16 @@ function junk() {
 		else if(str.includes("well_") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
 		else if(str.includes("ganons_") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {
-		if (event.target.style.color == "orange") {event.target.style.color = "pink";}
-		else {event.target.style.color = "orange";}
+		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 		return;
 		}
 		Check[str]="small_key";
 		if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 	}
 	else if (type == 2 && event.altKey) {
-		if (x.style.color == "orange") {x.style.color = "pink";}
-		else {x.style.color = "orange";}
+		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 		return;
 	}
 	else {
@@ -814,7 +814,7 @@ function update_logic_info() {
 			}
 		}
 		
-		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
+		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
 		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
@@ -1009,7 +1009,7 @@ function update_logic_info() {
 			document.getElementById(str).style.color ="black";
 			document.getElementById(str).style.border = "";
 		}
-		if (colorChange) {document.getElementById(str).style.color = "orange";}
+		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
 	}
 	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; document.getElementById("text_deku_lobby").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_end_of_bridge").style.color = "#FFD700"; document.getElementById("text_dodongos_end_of_bridge").style.opacity = 1; document.getElementById("text_dodongos_end_of_bridge").style.fontWeight = "bold";}
