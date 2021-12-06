@@ -330,6 +330,22 @@ color: red;
 	width:200px;
 	float:left;
 }
+#probabilityColumn {
+	margin-top:10px;
+	left:20px;
+	position:relative;
+	float: left;
+	width: 50px;
+}
+#explosives_probability {
+	color: #A7C7E7
+}
+#major_probability {
+	color: gold
+}
+#bait_probability {
+	color: #EE4B2B
+}
 .checkSummaryColumn {
 	margin-top:10px;
 	left:20px;

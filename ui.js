@@ -36,6 +36,13 @@ function process_inputs() {
 		if(document.getElementById(key).value == "chu") {
 			if(Game.has_chus == false)
 				enableChus();
+				
+			if(!Known.bombchus1) {Known.bombchus1 = true;}
+			else if(!Known.bombchus2) {Known.bombchus2 = true;}
+			else if(!Known.bombchus3) {Known.bombchus3 = true;}
+			else if(!Known.bombchus4) {Known.bombchus4 = true;}
+			else if(!Known.bombchus5) {Known.bombchus5 = true;}
+			
 			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
 		}
 		
@@ -1127,4 +1134,47 @@ function update_summary_text() {
 		}
 	}
 
+}
+function update_probabilities() {
+	var explosivesLeft = 0;
+	var majorLeft = 0;
+	var bigLeft = 4;
+	if (!Known.bomb_bag1) {explosivesLeft += 1;}
+	if (!Known.bomb_bag2) {explosivesLeft += 1;}
+	if (!Known.bomb_bag3) {explosivesLeft += 1;}
+	if (!Known.bombchus1) {explosivesLeft += 1;}
+	if (!Known.bombchus2) {explosivesLeft += 1;}
+	if (!Known.bombchus3) {explosivesLeft += 1;}
+	if (!Known.bombchus4) {explosivesLeft += 1;}
+	if (!Known.bombchus5) {explosivesLeft += 1;}
+	
+	for (var i = 0; i < Items2.length; i++) {
+		if(Items2[i] == "bombchus" || Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
+		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {j = 3;}
+		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {j = 2;}
+		else {j = ""}
+		
+		if (!Known[Items2[i] + j]) {bigLeft += 1;}
+	}
+	
+	if (!CouldHave.boomerang) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "jabu" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.rutos_letter) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "jabu" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.hammer) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "fire" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.mirror_shield) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.silver_gauntlets && CouldHave.goron_bracelet) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.golden_scale || !CouldHave.iron_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 2; break;}}}
+	if (!CouldHave.longshot && CouldHave.hookshot) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.dins_fire) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.hover_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.kokiri_sword) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "deku" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.hover_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.hookshot) {majorLeft += 2;}
+	if (!CouldHave.bow) {majorLeft += 3;}
+	if (!CouldHave.goron_bracelet) {majorLeft += 3;}
+	if (!CouldHave.light_arrows) {majorLeft += 1;}
+	if (!CouldHave.magic) {majorLeft += 2;}
+	
+	document.getElementById("bait_probability").innerHTML = "Bait("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
+	document.getElementById("major_probability").innerHTML = "Major("+(majorLeft/Game.checks_remaining*100).toFixed(2)+"%)"
+	document.getElementById("explosives_probability").innerHTML = "Explosives("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
 }

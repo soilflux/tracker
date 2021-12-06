@@ -28,9 +28,7 @@
 				
 				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 				
-				<br><br><br><br><br><br><br><br><br><button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br /><button id="linsoControl" onclick="linsoControl()">Show LinSo</button><br /><br />
-				<!--<button id="safetyButton" onclick="safetyLevel()">Be Safe</button><br /> -->
-				<!--<button id="SettingsToggle" onclick="toggleSettings()">Switch to Brackets</button><br /><br /> -->
+				
 				<!--<button onclick="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br /> -->
 			</div>
 			<div id="info_column">
@@ -73,7 +71,6 @@
 				  </div>
 			  </div>
 			  <small id = "timer"></small>
-			  <br><br><br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br><br><br><br><br><br>
 				<div id = "dungSpawn_inputs">
 				<img src = "./normal/frogsong.png"></img><br /><br /><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
 				</div>
@@ -90,15 +87,6 @@
 				<input id="forceOutOfLogic3" class= "check_input"></input>
 				<input id="forceOutOfLogic4" class= "check_input"></input><br><br><br>
 				
-			
-				<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />	
-				<!--<button id="coopControl" onclick="coopControl()">co-op mode</button><br />-->		
-				<button id="circusControl" onclick="circusControl()">Unleash Animals</button><br />
-				<button id="colorWothAreasControl" onclick="colorWothAreasControl()">Highlight WotHs</button><br />
-				<button id="nerfControl" onclick="nerfControl()">Buff My Tracker</button><br />
-				<br /><button id="myBtn">halp</button><br />
-				<button id = "locationCodes">Location Codes</button><br />
-				<br /><button onClick="download()">Download Log</button><br /><br />
 			  <!-- <br /><br /><textarea spellcheck="false"; class = "super_hint_input"></textarea>-->
 			  </div>
 			  
@@ -146,6 +134,12 @@
 				<small id="wallet1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet -> </small><br />
 				<small id="wallet2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet -> </small><br />
 				<small id="zora_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Zora Tunic -> </small>	
+			</div>
+			<div id="probabilityColumn">
+				<small id="explosives_probability">Explosives(99.9%)</small><br>
+				<small id="major_probability">Major(99.9%)</small><br>
+				<small id="bait_probability">Bait(99.9%)</small><br>
+
 			</div>
 			 
 		</div>
@@ -336,6 +330,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes"><span id = "pn48" class="patchNotes">48</span>: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.</small><br>
 				<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
 				<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
 				<small class = "patchNotes"><span id = "pn45" class="patchNotes">45</span>: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)</small><br>
@@ -357,6 +352,17 @@
 				<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
 	</div>
 	<div id = "settingsColumn">
+		<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />		
+		<button id="colorWothAreasControl" onclick="colorWothAreasControl()">Highlight WotHs</button><br /><br>
+		
+		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br />
+		<button id="linsoControl" onclick="linsoControl()">Show LinSo</button><br /><br />
+		
+		<button id="circusControl" onclick="circusControl()">Unleash Animals</button>
+		<button id="nerfControl" onclick="nerfControl()">Buff My Tracker</button><br />
+		<br /><button id="myBtn">halp</button><br />
+		<button id = "locationCodes">Location Codes</button><br />
+		<br /><button onClick="download()">Download Log</button><br /><br />
 		<label class="settingsLabels" for="presets">PRESETS</label>
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
