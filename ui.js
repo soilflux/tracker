@@ -1162,7 +1162,7 @@ function update_probabilities() {
 	if (!CouldHave.rutos_letter) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "jabu" || "unknown") {majorLeft += 1; break;}}}
 	if (!CouldHave.hammer) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "fire" || "unknown") {majorLeft += 1; break;}}}
 	if (!CouldHave.mirror_shield) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.silver_gauntlets && CouldHave.goron_bracelet) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 1; break;}}}
+	if (!CouldHave.silver_gauntlets && CouldHave.goron_bracelet) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 2; break;}}}
 	if (!CouldHave.golden_scale || !CouldHave.iron_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 2; break;}}}
 	if (!CouldHave.longshot && CouldHave.hookshot) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 1; break;}}}
 	if (!CouldHave.dins_fire) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
