@@ -332,8 +332,9 @@ color: red;
 }
 #probabilityColumn {
 	margin-top:10px;
-	left:20px;
-	position:relative;
+	left: 985px;
+	top: 750px;
+	position:absolute;
 	float: left;
 	width: 50px;
 }
@@ -351,6 +352,7 @@ color: red;
 	left:20px;
 	position:relative;
 	float: left;
+	height: 300px;
 	width: 300px;
 }
 .checked_text_summary {
