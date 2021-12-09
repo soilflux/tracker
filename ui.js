@@ -1224,7 +1224,6 @@ function update_probabilities() {
 	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
 	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1;}
 	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
-	console.log(majorLeft)
 	
 	nChecks = document.getElementById("probability_input").value;
 	document.getElementById("bait_probability").innerHTML = "Bait ("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
