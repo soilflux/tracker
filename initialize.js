@@ -1150,9 +1150,10 @@ if (linsoString == "true") {linso = true;}
 
 searchItems = ["Boomerang", "Bomb Bag", "Bow", "Hammer", "Scale", "Hookshot", "Letter", "Strength", "Mirror", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Din's Fire", "Light Arrows"]
 for (var i = 1; i <= 15; i++) {
-	document.getElementById("gomode_div").innerHTML+='<img id = "gomode_'+i+'" class = "gomode_images" onmousedown = gomode_tracking()>'
-	document.getElementById("gomode_" + i).src = ItemImages[ItemNames.indexOf(searchItems[i-1])];
-	document.getElementById("gomode_" + i).style.display = "inline-block";
+	var id = 'searchingFor_'+Items[ItemNames.indexOf(searchItems[i-1])]
+	document.getElementById("gomode_div").innerHTML+='<img id = '+ id +' class = "gomode_images" onmousedown = gomode_tracking()>'
+	document.getElementById(id).src = ItemImages[ItemNames.indexOf(searchItems[i-1])];
+	document.getElementById(id).style.display = "inline-block";
 }
 
 var haveEvents = 'ongamepadconnected' in window;

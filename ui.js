@@ -1095,11 +1095,9 @@ function mouse_input2() {
 }
 
 function gomode_tracking() {
-	for(var i = 1; i <= 15; i++){
-		if (event.target.id.endsWith(i+"")){
-			searchItems.splice(i-1,1)
-		}
-	}
+	item = event.target.id.replace("searchingFor_","");
+	searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]),1) //Pepega
+	console.log(searchItems)
 	event.target.style.display = "none";
 }
 

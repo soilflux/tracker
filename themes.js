@@ -261,27 +261,27 @@ function dark_normie() {
 	Game.light_img = "./normal/items/light.png";
 	
 	
-	document.getElementById("mouseInputs_bomb_bag").src = Game.bomb_img;
-	document.getElementById("mouseInputs_mirror_shield").src = Game.mirror_shield_img;
-	document.getElementById("mouseInputs_lens").src = Game.lens_img;
-	document.getElementById("mouseInputs_bottle").src = Game.rutos_letter_img;
-	document.getElementById("mouseInputs_bow").src = Game.bow_img;
-	document.getElementById("mouseInputs_hammer").src = Game.hammer_img;
-	document.getElementById("mouseInputs_hookshot").src = Game.hookshot_img;
-	document.getElementById("mouseInputs_boomerang").src = Game.boomerang_img;
-	document.getElementById("mouseInputs_chus").src = Game.chu_img;
-	document.getElementById("mouseInputs_scale").src = Game.silver_scale_img;
-	document.getElementById("mouseInputs_magic").src = Game.magic_img;
-	document.getElementById("mouseInputs_strength").src = Game.goron_bracelet_img;
-	document.getElementById("mouseInputs_slingshot").src = Game.slingshot_img;
-	document.getElementById("mouseInputs_magicspell").src = Game.magicspell_img;
-	document.getElementById("mouseInputs_magicarrows").src = Game.magicarrows_img;
-	document.getElementById("mouseInputs_boots").src = Game.boots_img;
-	document.getElementById("mouseInputs_kokiri_sword").src = Game.kokiri_sword_img;
-	document.getElementById("mouseInputs_goronzora").src = Game.goronzora_img;
-	document.getElementById("mouseInputs_wallet").src = Game.wallet1_img;
-	document.getElementById("mouseInputs_prescription").src = Game.prescription_img;
-	document.getElementById("mouseInputs_claim_check").src = Game.claim_check_img;
+	//document.getElementById("mouseInputs_bomb_bag").src = Game.bomb_img;
+	//document.getElementById("mouseInputs_mirror_shield").src = Game.mirror_shield_img;
+	//document.getElementById("mouseInputs_lens").src = Game.lens_img;
+	//document.getElementById("mouseInputs_bottle").src = Game.rutos_letter_img;
+	//document.getElementById("mouseInputs_bow").src = Game.bow_img;
+	//document.getElementById("mouseInputs_hammer").src = Game.hammer_img;
+	//document.getElementById("mouseInputs_hookshot").src = Game.hookshot_img;
+	//document.getElementById("mouseInputs_boomerang").src = Game.boomerang_img;
+	//document.getElementById("mouseInputs_chus").src = Game.chu_img;
+	//document.getElementById("mouseInputs_scale").src = Game.silver_scale_img;
+	//document.getElementById("mouseInputs_magic").src = Game.magic_img;
+	//document.getElementById("mouseInputs_strength").src = Game.goron_bracelet_img;
+	//document.getElementById("mouseInputs_slingshot").src = Game.slingshot_img;
+	//document.getElementById("mouseInputs_magicspell").src = Game.magicspell_img;
+	//document.getElementById("mouseInputs_magicarrows").src = Game.magicarrows_img;
+	//document.getElementById("mouseInputs_boots").src = Game.boots_img;
+	//document.getElementById("mouseInputs_kokiri_sword").src = Game.kokiri_sword_img;
+	//document.getElementById("mouseInputs_goronzora").src = Game.goronzora_img;
+	//document.getElementById("mouseInputs_wallet").src = Game.wallet1_img;
+	//document.getElementById("mouseInputs_prescription").src = Game.prescription_img;
+	//document.getElementById("mouseInputs_claim_check").src = Game.claim_check_img;
 	
 	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Game.kokiri_sword_img; }
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }

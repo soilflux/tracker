@@ -14,8 +14,8 @@
 			<div class="dungColumn" id="dung2"></div>
 			<div class="dungColumn" id="dung3"></div>
 			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
-				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/chux.png" id="chuButton" onclick="enableChus()" class="bonuspics"></img><br />
-				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onclick = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onclick = "highlight(this)">
+				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
+				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onmousedown = "highlight(this)">
 				<br /><br /><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="14" cols="13" id = "hintInput"></textarea><br /><br />
 				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><br>
 				<img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br>
@@ -24,12 +24,12 @@
 				
 				
 				<br /><br />
-				<img id="ageButton" onclick="switchAge()" class="buttonpics" src ="./images/child.png"></img><br /> 
+				<img id="ageButton" onmousedown="switchAge()" class="buttonpics" src ="./images/child.png"></img><br /> 
 				
-				<br /><br><br><br><br><br><br><br><br><br><br><br><br><br><button id="timerControl" onclick="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<br /><br><br><br><br><br><br><br><br><br><br><br><br><br><button id="timerControl" onmousedown="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 				
 				
-				<!--<button onclick="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br /> -->
+				<!--<button onmousedown="window.location.href = 'https://soilflux.github.io/sim';">Play the Sim</button><br /> -->
 			</div>
 			<div id="info_column">
 			  <small id="checks_remaining" class="check_text"> Remaining:196</small><small id="logically_accessible" class="check_text">In Logic: </small><small id="good_check_percent" class="check_text"> </small><br />
@@ -38,19 +38,19 @@
 			  <small id="time_difference" class="check_text"></small>
 			  <small id="skip_req" class="check_text"></small>
 			  <small id="skip_value" class="check_text"></small>
-			  <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dung4">???</small><img id="dung4_req1" onclick = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onclick = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onclick = "highlight(this)"><img id="dung4_req4" onclick = "highlight(this)"><img id="dung4_req5" onclick = "highlight(this)">
+			  <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dung4">???</small><img id="dung4_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onmousedown = "highlight(this)"><img id="dung4_req4" onmousedown = "highlight(this)"><img id="dung4_req5" onmousedown = "highlight(this)">
 			  <br />
-			  <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dung5">???</small><img id="dung5_req1" onclick = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onclick = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onclick = "highlight(this)"><img id="dung5_req4" onclick = "highlight(this)"><img id="dung5_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/water.png" id = "dung6_icon" class = "medallions"><small id="text_dung6" class="dung6">???</small><img id="dung6_req1" onclick = "highlight(this)"><small class="track_text" id="dung6_text2" ></small><img id="dung6_req2" onclick = "highlight(this)"><small class="track_text" id="dung6_text3" ></small><img id="dung6_req3" onclick = "highlight(this)"><img id="dung6_req4" onclick = "highlight(this)"><img id="dung6_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/light.png" id = "dung7_icon" class = "medallions"><small id="text_dung7" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung7_req1" onclick = "highlight(this)"><small class="track_text" id="dung7_text2" ></small><img id="dung7_req2" onclick = "highlight(this)"><small class="track_text" id="dung7_text3" ></small><img id="dung7_req3" onclick = "highlight(this)"><img id="dung7_req4" onclick = "highlight(this)"><img id="dung7_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/light.png" id = "dung8_icon"class = "medallions"><small id="text_dung8" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung8_req1" onclick = "highlight(this)"><small class="track_text" id="dung8_text2" ></small><img id="dung8_req2" onclick = "highlight(this)"><small class="track_text" id="dung8_text3" ></small><img id="dung8_req3" onclick = "highlight(this)"><img id="dung8_req4" onclick = "highlight(this)"><img id="dung8_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/light.png" id = "dung9_icon" class = "medallions"><small id="text_dung9" class="dung9" onclick="identifyMedal(this)">???</small><img id="dung9_req1" onclick = "highlight(this)"><small class="track_text" id="dung9_text2" ></small><img id="dung9_req2" onclick = "highlight(this)"><small class="track_text" id="dung9_text3" ></small><img id="dung9_req3" onclick = "highlight(this)"><img id="dung9_req4" onclick = "highlight(this)"><img id="dung9_req5" onclick = "highlight(this)"><br />
-			  <small id="text_gan" >GAN</small><img src="https://i.imgur.com/uAyOlX8.png" id="gan_req1" class="requirements"  onclick = "highlight(this)"><img src="https://i.imgur.com/NsuqX43.png" id="gan_req2" class="requirements" onclick = "highlight(this)"><img src="https://i.imgur.com/muCeqKm.png" id="gan_req3" class="requirements" onclick = "highlight(this)">
-			  <br /><img src="./images/lullaby505050.png" id="lullabyimg" class="songpics" onclick = "highlight(this)"><img src="./images/eponas505050.png" id="eponasimg" class="songpics" onclick = "highlight(this)"><img src="./images/sarias505050.png" id="sariasimg" class="songpics" onclick = "highlight(this)"><img src="./images/suns505050.png" id="sunsimg" class="songpics" onclick = "highlight(this)"><img src="./images/sot505050.png" id="sotimg" class="songpics" onclick = "highlight(this)"><img src="./images/sos505050.png" id="sosimg" class="songpics" onclick = "highlight(this)">
-			  <br /><img src="./images/minuet505050.png" id="minuetimg" class="songpics" onclick = "highlight(this)"><img src="./images/bolero505050.png" id="boleroimg" class="songpics" onclick = "highlight(this)"><img src="./images/serenade505050.png" id="serenadeimg" class="songpics" onclick = "highlight(this)"><img src="./images/requiem505050.png" id="requiemimg" class="songpics" onclick = "highlight(this)"><img src="./images/nocturne505050.png" id="nocturneimg" class="songpics" onclick = "highlight(this)"><img src="./images/prelude505050.png" id="preludeimg" class="songpics" onclick = "highlight(this)">
-			  <br /><img src = "./normal/items/emerald.png" id = "dung1_icon" class = "stones"><small id="text_dung1" class="dung1" ></small><img id="dung1_req1" onclick = "highlight(this)"><small class="track_text" id="dung1_text2" ></small><img id="dung1_req2" onclick = "highlight(this)"><small class="track_text" id="dung1_text3" ></small><img id="dung1_req3" onclick = "highlight(this)"><img id="dung1_req4" onclick = "highlight(this)"><img id="dung1_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dung2"></small><img id="dung2_req1" onclick = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onclick = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onclick = "highlight(this)"><img id="dung2_req4" onclick = "highlight(this)"><img id="dung2_req5" onclick = "highlight(this)"><br />
-			  <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dung3"></small><img id="dung3_req1" onclick = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onclick = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onclick = "highlight(this)"><img id="dung3_req4" onclick = "highlight(this)"><img id="dung3_req5" onclick = "highlight(this)"><br />
+			  <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dung5">???</small><img id="dung5_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onmousedown = "highlight(this)"><img id="dung5_req4" onmousedown = "highlight(this)"><img id="dung5_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/water.png" id = "dung6_icon" class = "medallions"><small id="text_dung6" class="dung6">???</small><img id="dung6_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung6_text2" ></small><img id="dung6_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung6_text3" ></small><img id="dung6_req3" onmousedown = "highlight(this)"><img id="dung6_req4" onmousedown = "highlight(this)"><img id="dung6_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung7_icon" class = "medallions"><small id="text_dung7" class="dung9" onmousedown="identifyMedal(this)">???</small><img id="dung7_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung7_text2" ></small><img id="dung7_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung7_text3" ></small><img id="dung7_req3" onmousedown = "highlight(this)"><img id="dung7_req4" onmousedown = "highlight(this)"><img id="dung7_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung8_icon"class = "medallions"><small id="text_dung8" class="dung9" onmousedown="identifyMedal(this)">???</small><img id="dung8_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung8_text2" ></small><img id="dung8_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung8_text3" ></small><img id="dung8_req3" onmousedown = "highlight(this)"><img id="dung8_req4" onmousedown = "highlight(this)"><img id="dung8_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/light.png" id = "dung9_icon" class = "medallions"><small id="text_dung9" class="dung9" onmousedown="identifyMedal(this)">???</small><img id="dung9_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung9_text2" ></small><img id="dung9_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung9_text3" ></small><img id="dung9_req3" onmousedown = "highlight(this)"><img id="dung9_req4" onmousedown = "highlight(this)"><img id="dung9_req5" onmousedown = "highlight(this)"><br />
+			  <small id="text_gan" >GAN</small><img src="https://i.imgur.com/uAyOlX8.png" id="gan_req1" class="requirements"  onmousedown = "highlight(this)"><img src="https://i.imgur.com/NsuqX43.png" id="gan_req2" class="requirements" onmousedown = "highlight(this)"><img src="https://i.imgur.com/muCeqKm.png" id="gan_req3" class="requirements" onmousedown = "highlight(this)">
+			  <br /><img src="./images/lullaby505050.png" id="lullabyimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/eponas505050.png" id="eponasimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/sarias505050.png" id="sariasimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/suns505050.png" id="sunsimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/sot505050.png" id="sotimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/sos505050.png" id="sosimg" class="songpics" onmousedown = "highlight(this)">
+			  <br /><img src="./images/minuet505050.png" id="minuetimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/bolero505050.png" id="boleroimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/serenade505050.png" id="serenadeimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/requiem505050.png" id="requiemimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/nocturne505050.png" id="nocturneimg" class="songpics" onmousedown = "highlight(this)"><img src="./images/prelude505050.png" id="preludeimg" class="songpics" onmousedown = "highlight(this)">
+			  <br /><img src = "./normal/items/emerald.png" id = "dung1_icon" class = "stones"><small id="text_dung1" class="dung1" ></small><img id="dung1_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung1_text2" ></small><img id="dung1_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung1_text3" ></small><img id="dung1_req3" onmousedown = "highlight(this)"><img id="dung1_req4" onmousedown = "highlight(this)"><img id="dung1_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dung2"></small><img id="dung2_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onmousedown = "highlight(this)"><img id="dung2_req4" onmousedown = "highlight(this)"><img id="dung2_req5" onmousedown = "highlight(this)"><br />
+			  <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dung3"></small><img id="dung3_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onmousedown = "highlight(this)"><img id="dung3_req4" onmousedown = "highlight(this)"><img id="dung3_req5" onmousedown = "highlight(this)"><br />
 			 <small class="hint_text" id="barren_text">Barren</small> 
 			  <br /> <input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input>  
 			 <br /><small class="hint_text" id="woth_text" >WOTH</small>
@@ -268,11 +268,11 @@
 		</div>
 		<div id = "skullsInLogicList"></div>
 		<div id = "credits"><small class = "customizeTitles">Credits</small><br />
-			<img src="./images/soli.png" class="pplpics" onclick = "highlight(this)"><br />
-			<img src="./images/beeluigi.png" class="pplpics" onclick = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onclick = "highlight(this)"><br />
-			<img src="./images/cola.png" class="pplpics" onclick = "highlight(this)">3 seeds a day<br />
-			<img src="./images/tagnia.png" class="pplpics" onclick = "highlight(this)">theme has zero users<br />
-			<img src="./images/juwk.png" class="pplpics" onclick = "highlight(this)">clownslayer<br />
+			<img src="./images/soli.png" class="pplpics" onmousedown = "highlight(this)"><br />
+			<img src="./images/beeluigi.png" class="pplpics" onmousedown = "highlight(this)">logic <img src="./images/crown_1f451.png" class="pplpics" onmousedown = "highlight(this)"><br />
+			<img src="./images/cola.png" class="pplpics" onmousedown = "highlight(this)">3 seeds a day<br />
+			<img src="./images/tagnia.png" class="pplpics" onmousedown = "highlight(this)">theme has zero users<br />
+			<img src="./images/juwk.png" class="pplpics" onmousedown = "highlight(this)">clownslayer<br />
 		</div>
 	</div>
 	<div id="confirmed_logically_required">
@@ -352,17 +352,17 @@
 				<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
 	</div>
 	<div id = "settingsColumn">
-		<br /><button id="inaccessibleControl" onclick="inaccessibleControl()">Show Inaccessible</button><br />		
-		<button id="colorWothAreasControl" onclick="colorWothAreasControl()">Highlight WotHs</button><br /><br>
+		<br /><button id="inaccessibleControl" onmousedown="inaccessibleControl()">Show Inaccessible</button><br />		
+		<button id="colorWothAreasControl" onmousedown="colorWothAreasControl()">Highlight WotHs</button><br /><br>
 		
-		<button id="iWantToRemoveThisButton" onclick="whoAmI()">Appease Viewers</button><br />
-		<button id="linsoControl" onclick="linsoControl()">Show LinSo</button><br /><br />
+		<button id="iWantToRemoveThisButton" onmousedown="whoAmI()">Appease Viewers</button><br />
+		<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><br /><br />
 		
-		<button id="circusControl" onclick="circusControl()">Unleash Animals</button>
-		<button id="nerfControl" onclick="nerfControl()">Buff My Tracker</button><br />
+		<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
+		<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button><br />
 		<br /><button id="myBtn">halp</button><br />
 		<button id = "locationCodes">Location Codes</button><br />
-		<br /><button onClick="download()">Download Log</button><br /><br />
+		<br /><button onmousedown="download()">Download Log</button><br /><br />
 		<label class="settingsLabels" for="presets">PRESETS</label>
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
@@ -440,13 +440,13 @@
 	</div>
 	<div id = "mouseInputs">
 	<small id = "mouseInputs_locations"></small><br>
-	<img id = "mouseInputs_boomerang" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_hammer" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_mirror_shield" class = "mouseInputsImage" onmousedown = mouse_input2()>
+	<!--<img id = "mouseInputs_boomerang" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_hammer" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_mirror_shield" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_kokiri_sword" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_lens" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_hookshot" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_magic" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bottle" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_scale" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_strength" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bomb_bag" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_chus" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_slingshot" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_bow" class = "mouseInputsImage" onmousedown = mouse_input2()>
 	<img id = "mouseInputs_magicspell" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_magicarrows" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_boots" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_goronzora" class = "mouseInputsImage" onmousedown = mouse_input2()>
-	<img id = "mouseInputs_wallet" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_prescription" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_claim_check" class = "mouseInputsImage" onmousedown = mouse_input2()><small id = "next_check_prediction"></small>
+	<img id = "mouseInputs_wallet" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_prescription" class = "mouseInputsImage" onmousedown = mouse_input2()><img id = "mouseInputs_claim_check" class = "mouseInputsImage" onmousedown = mouse_input2()>--><small id = "next_check_prediction"></small>
 	</div>
 </body>
 	<script src="misc.js"></script>
