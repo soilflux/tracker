@@ -136,9 +136,10 @@
 				<small id="zora_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Zora Tunic -> </small>	
 			</div>
 			<div id="probabilityColumn">
-				<small id="explosives_probability">Explosives(0%)</small><br>
-				<small id="major_probability">Major(0%)</small><br>
-				<small id="bait_probability">Bait(99.99%)</small><br>
+				<small id = "theLetterN">n </small><input spellcheck="false" id = "probability_input" class = "hint_input" value = '1'></input><br>
+				<small id="explosives_probability">Explosives (0%)</small><br>
+				<small id="major_probability">Searching For (0%)</small><br><div id = "gomode_div"></div><br>
+				<small id="bait_probability">Bait (99.99%)</small><br>
 
 			</div>
 			 
@@ -330,6 +331,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small class = "patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes"><span id = "pn49" class="patchNotes">49</span>: searching for items are now manually tracked. click items listed to remove them, middle click big items(near bottom of screen) to add them. n can be modified (chance of finding at least one searched for item in n checks).</small><br>
 				<small class = "patchNotes"><span id = "pn48" class="patchNotes">48</span>: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.</small><br>
 				<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
 				<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
@@ -345,10 +347,8 @@
 				<small class = "patchNotes"><span id = "pn22" class="patchNotes">22</span>: Added highlighting to patch numbers that were loaded for the first time</small><br>
 				<small class = "patchNotes"><span id = "pn8" class="patchNotes">8</span>: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)</small><br>
 				<small class = "patchNotes"><span id = "pn7" class="patchNotes">7</span>: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a></small><br>
-				<small class = "patchNotes"><span id = "pn5" class="patchNotes">5</span>: Ctrl + A = Toggle Animals</small><br>
 				<small class = "patchNotes"><span id = "pn4" class="patchNotes">4</span>: Hotkey for Incrementing Token Counter(- and =)</small><br>
 				<small class = "patchNotes"><span id = "pn3" class="patchNotes">3</span>: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
-				<small class = "patchNotes"><span id = "pn2" class="patchNotes">2</span>: Fixed Unleash Animals</small><br>
 				<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
 	</div>
 	<div id = "settingsColumn">

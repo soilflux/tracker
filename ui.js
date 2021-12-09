@@ -1067,6 +1067,19 @@ function mouse_input() {
 	if (event.button == 1 && event.target.id.includes("ice_")) {route_ice();}
 }
 function mouse_input2() {
+	if (event.button == 1) {
+		for (var i = 1; i < 15; i++) {
+			console.log(document.getElementById("gomode_" + i).style.display)
+			if (document.getElementById("gomode_" + i).style.display == "none" || document.getElementById("gomode_" + i).style.display == "") {
+				document.getElementById("gomode_" + i).src = event.target.src;
+				document.getElementById("gomode_" + i).style.display = "inline-block";
+				searchItems.unshift(ItemNames2[Items2.indexOf(event.target.id.replace("mouseInputs_",""))]); 
+				break;
+				
+			}
+		}
+	}
+	
 	var item = "";
 	if (mouseInputs_locations.length == 0) {return;}
 	if (event.target.id == "mouseInputs_magicspell") {if (event.button == 2) {item = "farores_wind";} else {item = "dins_fire";}}
@@ -1079,6 +1092,15 @@ function mouse_input2() {
 	document.getElementById(mouseInputs_locations[0]).value = inputs[Items2.indexOf(item)];
 	mouseInputs_locations.shift();
 	Update();
+}
+
+function gomode_tracking() {
+	for(var i = 1; i <= 15; i++){
+		if (event.target.id.endsWith(i+"")){
+			searchItems.splice(i-1,1)
+		}
+	}
+	event.target.style.display = "none";
 }
 
 function update_summary_text() { 
@@ -1138,7 +1160,7 @@ function update_summary_text() {
 function update_probabilities() {
 	var explosivesLeft = 0;
 	var majorLeft = 0;
-	var bigLeft = 4;
+	var bigLeft = 5;
 	if (!Known.bomb_bag1) {explosivesLeft += 1;}
 	if (!Known.bomb_bag2) {explosivesLeft += 1;}
 	if (!Known.bomb_bag3) {explosivesLeft += 1;}
@@ -1158,24 +1180,54 @@ function update_probabilities() {
 		if (!Known[Items2[i] + j]) {bigLeft += 1;}
 	}
 	
-	if (!CouldHave.boomerang) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "jabu" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.rutos_letter) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "jabu" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.hammer) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "fire" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.mirror_shield) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.silver_gauntlets && CouldHave.goron_bracelet) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "spirit" || "unknown") {majorLeft += 2; break;}}}
-	if (!CouldHave.golden_scale || !CouldHave.iron_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 2; break;}}}
-	if (!CouldHave.longshot && CouldHave.hookshot) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "water" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.dins_fire) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.hover_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.kokiri_sword) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "deku" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.hover_boots) {for(var i = 4; i <= 9; i++){if (Logic["dung" + i] == "shadow" || "unknown") {majorLeft += 1; break;}}}
-	if (!CouldHave.hookshot) {majorLeft += 2;}
-	if (!CouldHave.bow) {majorLeft += 3;}
-	if (!CouldHave.goron_bracelet) {majorLeft += 3;}
-	if (!CouldHave.light_arrows) {majorLeft += 1;}
-	if (!CouldHave.magic) {majorLeft += 2;}
+	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1;}
+	if (searchItems.includes("Letter") && !Known.rutos_letter)  {majorLeft += 1;}
+	if (searchItems.includes("Hammer") && !Known.hammer)  {majorLeft += 1;}
+	if (searchItems.includes("Mirror") && !Known.mirror_shield)  {majorLeft += 1;}
+	if (searchItems.includes("Strength"))  {
+		if (!Known.strength1) {majorLeft += 1;} 
+		if (!Known.strength2) {majorLeft += 1;} 
+		if (!Known.strength3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Scale"))  {
+		if (!Known.scale1) {majorLeft += 1;} 
+		if (!Known.scale2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Magic"))  {
+		if (!Known.magic1) {majorLeft += 1;} 
+		if (!Known.magic2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Bow"))  {
+		if (!Known.bow1) {majorLeft += 1;} 
+		if (!Known.bow2) {majorLeft += 1;} 
+		if (!Known.bow3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Hookshot"))  {
+		if (!Known.hookshot1) {majorLeft += 1;} 
+		if (!Known.hookshot2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Bomb Bag"))  {
+		if (!Known.bomb_bag1) {majorLeft += 1;} 
+		if (!Known.bomb_bag2) {majorLeft += 1;} 
+		if (!Known.bomb_bag3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Slingshot"))  {
+		if (!Known.slingshot1) {majorLeft += 1;} 
+		if (!Known.slingshot2) {majorLeft += 1;} 
+		if (!Known.slingshot3) {majorLeft += 1;} 
+	}
 	
-	document.getElementById("bait_probability").innerHTML = "Bait("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
-	document.getElementById("major_probability").innerHTML = "Major("+(majorLeft/Game.checks_remaining*100).toFixed(2)+"%)"
-	document.getElementById("explosives_probability").innerHTML = "Explosives("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
+	if (searchItems.includes("Din's Fire") && !Known.dins_fire)  {majorLeft += 1;}
+	if (searchItems.includes("Hover Boots") && !Known.hover_boots)  {majorLeft += 1;}
+	if (searchItems.includes("Kokiri Sword") && !Known.kokiri_sword)  {majorLeft += 1;}
+	if (searchItems.includes("Iron Boots") && !Known.iron_boots)  {majorLeft += 1;}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
+	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1;}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
+	console.log(majorLeft)
+	
+	nChecks = document.getElementById("probability_input").value;
+	document.getElementById("bait_probability").innerHTML = "Bait ("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
+	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Game.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
+	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
 }
