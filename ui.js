@@ -1094,7 +1094,7 @@ function mouse_input2() {
 	Update();
 }
 
-function gomode_tracking() {
+function searchingFor_tracking() {
 	item = event.target.id.replace("searchingFor_","");
 	searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]),1) //Pepega
 	console.log(searchItems)
