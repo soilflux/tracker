@@ -49,12 +49,15 @@ function highlight(x) {
 	if (event.button == 2) {
 		searchingFors = document.getElementsByClassName("searchingFor_images");
 		l = searchingFors.length;
+		if (item == "scale" || item == "bomb_bag" || item == "bow" || item == "wallet" || item == "strength" || item == "hookshot" || item == "slingshot" || item == "magic") {item = item + '1'}
 		for (i = 0; i < l; i++) {
 		  if (searchingFors[i].style.display == "none") {
 			  searchingFors[i].id = "searchingFor_" + item;
 			  searchingFors[i].style.display = "inline-block";
 			  searchingFors[i].src = event.target.src;
+			  console.log(item)
 			  searchItems.push(ItemNames[Items.indexOf(item)])
+			  console.log(searchItems)
 			  break;
 		  }
 		}
