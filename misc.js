@@ -55,9 +55,7 @@ function highlight(x) {
 			  searchingFors[i].id = "searchingFor_" + item;
 			  searchingFors[i].style.display = "inline-block";
 			  searchingFors[i].src = event.target.src;
-			  console.log(item)
 			  searchItems.push(ItemNames[Items.indexOf(item)])
-			  console.log(searchItems)
 			  break;
 		  }
 		}
