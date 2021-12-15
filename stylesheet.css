@@ -201,14 +201,14 @@ color: red;
 #mouseInputs {
 	color:lightblue;
 	position: absolute;
-	left:590px;
-	top:880px;
-	height:150px;
-	width:380px;
+	left:5px;
+	top:1015px;
+	height:50px;
+	width:1000px;
 }
 .mouseInputsImage {
-	height:46px;
-	width:46px;
+	height:44px;
+	width:44px;
 }
 #mouseInputs_locations {
 	font-size:18px;
@@ -330,11 +330,41 @@ color: red;
 	width:200px;
 	float:left;
 }
+.searchingFor_images {
+	height:22px;
+	width: 22px;
+}
+#probability_input{
+	width: 25px;
+}
+#theLetterN {
+	color: white;
+}
+#probabilityColumn {
+	left: 600px;
+	top: 900px;
+	position:absolute;
+	float: left;
+	width: 350px;
+}
+#explosives_probability {
+	font-size: 18px;
+	color: #A7C7E7
+}
+#major_probability {
+	font-size: 18px;
+	color: gold
+}
+#bait_probability {
+	font-size: 18px;
+	color: #EE4B2B
+}
 .checkSummaryColumn {
 	margin-top:10px;
 	left:20px;
 	position:relative;
 	float: left;
+	height: 300px;
 	width: 300px;
 }
 .checked_text_summary {
@@ -827,7 +857,7 @@ color: red;
 	font-size:42px;
 	color: white;
 	position: absolute;
-	top:820px;
+	top:810px;
 	left:900px;
 	font-family: calibri;
 }
