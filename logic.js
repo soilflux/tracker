@@ -1401,7 +1401,7 @@ function location_logic(){
 	Location_Obtain.jabu_map = Game.can_enter_jabu && Game.boomerang;
 	Location_Obtain.jabu_compass = Game.can_enter_jabu && Game.boomerang;
 	Location_Obtain.jabu_barinade = Game.can_enter_jabu && Game.boomerang;
-	Location_Obtain.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus);
+	Location_Obtain.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus) && Game.lullaby;
 	Location_Obtain.ice_glacier_hp = Game.ice_access;
 	Location_Obtain.ice_map = Game.ice_access && Game.can_use_bottle;
 	Location_Obtain.ice_hp = Game.ice_access && Game.can_use_bottle;
@@ -1724,7 +1724,7 @@ function location_logic(){
 	Location_Could_Access.jabu_map = CouldHave.can_enter_jabu && CouldHave.boomerang;
 	Location_Could_Access.jabu_compass = CouldHave.can_enter_jabu && CouldHave.boomerang;
 	Location_Could_Access.jabu_barinade = CouldHave.can_enter_jabu && CouldHave.boomerang;
-	Location_Could_Access.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus);
+	Location_Could_Access.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus) && CouldHave.lullaby;
 	Location_Could_Access.ice_glacier_hp = CouldHave.ice_access;
 	Location_Could_Access.ice_map = CouldHave.ice_access && CouldHave.can_use_bottle;
 	Location_Could_Access.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
@@ -2048,7 +2048,7 @@ function location_logic(){
 		Location_Access.jabu_map = Game.can_enter_jabu && Game.boomerang;
 		Location_Access.jabu_compass = Game.can_enter_jabu && Game.boomerang;
 		Location_Access.jabu_barinade = Game.can_enter_jabu && Game.boomerang;
-		Location_Access.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus);
+		Location_Access.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus) && Game.lullaby;
 		Location_Access.ice_glacier_hp = Game.ice_access;
 		Location_Access.ice_map = Game.ice_access && Game.can_use_bottle;
 		Location_Access.ice_hp = Game.ice_access && Game.can_use_bottle;
@@ -2371,7 +2371,7 @@ function location_logic(){
 		Location_Could_Peek.jabu_map = CouldHave.can_enter_jabu && CouldHave.boomerang;
 		Location_Could_Peek.jabu_compass = CouldHave.can_enter_jabu && CouldHave.boomerang;
 		Location_Could_Peek.jabu_barinade = CouldHave.can_enter_jabu && CouldHave.boomerang;
-		Location_Could_Peek.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus);
+		Location_Could_Peek.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus) && CouldHave.lullaby;
 		Location_Could_Peek.ice_glacier_hp = CouldHave.ice_access;
 		Location_Could_Peek.ice_map = CouldHave.ice_access && CouldHave.can_use_bottle;
 		Location_Could_Peek.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
@@ -2695,7 +2695,7 @@ function location_logic(){
 		Location_Access.jabu_map = Game.can_enter_jabu && Game.boomerang;
 		Location_Access.jabu_compass = Game.can_enter_jabu && Game.boomerang;
 		Location_Access.jabu_barinade = Game.can_enter_jabu && Game.boomerang;
-		Location_Access.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus);
+		Location_Access.fountain_fairy = Game.ice_access && (Game.bomb_bag|| Game.has_chus) && Game.lullaby;
 		Location_Access.ice_glacier_hp = Game.ice_access;
 		Location_Access.ice_map = Game.ice_access && Game.can_use_bottle;
 		Location_Access.ice_hp = Game.ice_access && Game.can_use_bottle;
@@ -3018,7 +3018,7 @@ function location_logic(){
 		Location_Could_Peek.jabu_map = CouldHave.can_enter_jabu && CouldHave.boomerang;
 		Location_Could_Peek.jabu_compass = CouldHave.can_enter_jabu && CouldHave.boomerang;
 		Location_Could_Peek.jabu_barinade = CouldHave.can_enter_jabu && CouldHave.boomerang;
-		Location_Could_Peek.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus);
+		Location_Could_Peek.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Game.has_chus) && CouldHave.lullaby;
 		Location_Could_Peek.ice_glacier_hp = CouldHave.ice_access;
 		Location_Could_Peek.ice_map = CouldHave.ice_access && CouldHave.can_use_bottle;
 		Location_Could_Peek.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
