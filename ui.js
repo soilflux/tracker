@@ -36,6 +36,13 @@ function process_inputs() {
 		if(document.getElementById(key).value == "chu") {
 			if(Game.has_chus == false)
 				enableChus();
+				
+			if(!Known.bombchus1) {Known.bombchus1 = true;}
+			else if(!Known.bombchus2) {Known.bombchus2 = true;}
+			else if(!Known.bombchus3) {Known.bombchus3 = true;}
+			else if(!Known.bombchus4) {Known.bombchus4 = true;}
+			else if(!Known.bombchus5) {Known.bombchus5 = true;}
+			
 			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
 		}
 		
@@ -323,16 +330,16 @@ function junk() {
 		else if(str.includes("well_") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
 		else if(str.includes("ganons_") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
 		else {
-		if (event.target.style.color == "orange") {event.target.style.color = "pink";}
-		else {event.target.style.color = "orange";}
+		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 		return;
 		}
 		Check[str]="small_key";
 		if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 	}
 	else if (type == 2 && event.altKey) {
-		if (x.style.color == "orange") {x.style.color = "pink";}
-		else {x.style.color = "orange";}
+		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 		return;
 	}
 	else {
@@ -814,7 +821,7 @@ function update_logic_info() {
 			}
 		}
 		
-		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
+		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
 		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
@@ -1009,7 +1016,7 @@ function update_logic_info() {
 			document.getElementById(str).style.color ="black";
 			document.getElementById(str).style.border = "";
 		}
-		if (colorChange) {document.getElementById(str).style.color = "orange";}
+		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
 	}
 	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; document.getElementById("text_deku_lobby").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_end_of_bridge").style.color = "#FFD700"; document.getElementById("text_dodongos_end_of_bridge").style.opacity = 1; document.getElementById("text_dodongos_end_of_bridge").style.fontWeight = "bold";}
@@ -1060,6 +1067,19 @@ function mouse_input() {
 	if (event.button == 1 && event.target.id.includes("ice_")) {route_ice();}
 }
 function mouse_input2() {
+	if (event.button == 1) {
+		for (var i = 1; i < 15; i++) {
+			console.log(document.getElementById("gomode_" + i).style.display)
+			if (document.getElementById("gomode_" + i).style.display == "none" || document.getElementById("gomode_" + i).style.display == "") {
+				document.getElementById("gomode_" + i).src = event.target.src;
+				document.getElementById("gomode_" + i).style.display = "inline-block";
+				searchItems.unshift(ItemNames2[Items2.indexOf(event.target.id.replace("mouseInputs_",""))]); 
+				break;
+				
+			}
+		}
+	}
+	
 	var item = "";
 	if (mouseInputs_locations.length == 0) {return;}
 	if (event.target.id == "mouseInputs_magicspell") {if (event.button == 2) {item = "farores_wind";} else {item = "dins_fire";}}
@@ -1072,6 +1092,13 @@ function mouse_input2() {
 	document.getElementById(mouseInputs_locations[0]).value = inputs[Items2.indexOf(item)];
 	mouseInputs_locations.shift();
 	Update();
+}
+
+function searchingFor_tracking() {
+	item = event.target.id.replace("searchingFor_","");
+	searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]),1) //Pepega
+	console.log(searchItems)
+	event.target.style.display = "none";
 }
 
 function update_summary_text() { 
@@ -1127,4 +1154,77 @@ function update_summary_text() {
 		}
 	}
 
+}
+function update_probabilities() {
+	var explosivesLeft = 0;
+	var majorLeft = 0;
+	var bigLeft = 5;
+	if (!Known.bomb_bag1) {explosivesLeft += 1;}
+	if (!Known.bomb_bag2) {explosivesLeft += 1;}
+	if (!Known.bomb_bag3) {explosivesLeft += 1;}
+	if (!Known.bombchus1) {explosivesLeft += 1;}
+	if (!Known.bombchus2) {explosivesLeft += 1;}
+	if (!Known.bombchus3) {explosivesLeft += 1;}
+	if (!Known.bombchus4) {explosivesLeft += 1;}
+	if (!Known.bombchus5) {explosivesLeft += 1;}
+	
+	for (var i = 0; i < Items2.length; i++) {
+		if(Items2[i] == "bombchus" || Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
+		if(Items2[i] == "bottle" && Items2[i-1] == "bottle") {continue;}
+		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {j = 3;}
+		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {j = 2;}
+		else {j = ""}
+		
+		if (!Known[Items2[i] + j]) {bigLeft += 1;}
+	}
+	
+	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1;}
+	if (searchItems.includes("Letter") && !Known.rutos_letter)  {majorLeft += 1;}
+	if (searchItems.includes("Hammer") && !Known.hammer)  {majorLeft += 1;}
+	if (searchItems.includes("Mirror") && !Known.mirror_shield)  {majorLeft += 1;}
+	if (searchItems.includes("Strength"))  {
+		if (!Known.strength1) {majorLeft += 1;} 
+		if (!Known.strength2) {majorLeft += 1;} 
+		if (!Known.strength3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Scale"))  {
+		if (!Known.scale1) {majorLeft += 1;} 
+		if (!Known.scale2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Magic"))  {
+		if (!Known.magic1) {majorLeft += 1;} 
+		if (!Known.magic2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Bow"))  {
+		if (!Known.bow1) {majorLeft += 1;} 
+		if (!Known.bow2) {majorLeft += 1;} 
+		if (!Known.bow3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Hookshot"))  {
+		if (!Known.hookshot1) {majorLeft += 1;} 
+		if (!Known.hookshot2) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Bomb Bag"))  {
+		if (!Known.bomb_bag1) {majorLeft += 1;} 
+		if (!Known.bomb_bag2) {majorLeft += 1;} 
+		if (!Known.bomb_bag3) {majorLeft += 1;} 
+	}
+	if (searchItems.includes("Slingshot"))  {
+		if (!Known.slingshot1) {majorLeft += 1;} 
+		if (!Known.slingshot2) {majorLeft += 1;} 
+		if (!Known.slingshot3) {majorLeft += 1;} 
+	}
+	
+	if (searchItems.includes("Din's Fire") && !Known.dins_fire)  {majorLeft += 1;}
+	if (searchItems.includes("Hover Boots") && !Known.hover_boots)  {majorLeft += 1;}
+	if (searchItems.includes("Kokiri Sword") && !Known.kokiri_sword)  {majorLeft += 1;}
+	if (searchItems.includes("Iron Boots") && !Known.iron_boots)  {majorLeft += 1;}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
+	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1;}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
+	
+	nChecks = document.getElementById("probability_input").value;
+	document.getElementById("bait_probability").innerHTML = "Bait ("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
+	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Game.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
+	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
 }

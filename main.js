@@ -5,6 +5,7 @@ function Update() {
 	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
 	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
 	update_summary_text() // update the check summary text colors
+	update_probabilities() // update the probabilities for items based on checks of that type left vs checks remaining
 	for (var i = 0; i < nextChecks.length; i++) {
 		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
 		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
@@ -38,7 +39,7 @@ function midUpdate() {
 		refreshLinSo();
 		spawn_inputs(); //handle child and adult spawn input
 		handleAlternateHintInput(); //implements inputting hints into the note box
-		trackUnreadHints(); //updates which hints are still unread
+		//trackUnreadHints(); updates which hints are still unread
 		if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
 		if (i >=1 && Game.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
