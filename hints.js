@@ -241,12 +241,15 @@ function woth_and_barren_processing() {
 								document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
 								
 								if(ManualWotHItems[Items[k]]) {
+									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
 									document.getElementById("wothMajor" + k + wothNumber).className = "manualWothImages";
 								}
 								else if(ManualNotWotHItems[Items[k]]) {
+									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "none";
 									document.getElementById("wothMajor" + k + wothNumber).className = "notWothItemImages";
 								}
 								else {
+									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
 									document.getElementById("wothMajor" + k + wothNumber).className = "wothMajorImages";
 								}
 							}
@@ -639,4 +642,16 @@ function markMinorWothItem(x) {
 		ManualWotHMinorItems[theItem] = false;
 	}
 	midUpdate();
+}
+
+function resetWoth(num) {
+	for (var i = 1; i <= 34; i++) {
+		if(AreaNames[i] == wothAreas[num]) {
+			for (var k = 0; k < Items.length; k++) {
+				if(ManualNotWotHItems[Items[k]] && ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1])) {
+					ManualNotWotHItems[Items[k]] = false;
+				}
+			}
+		}
+	}	
 }
