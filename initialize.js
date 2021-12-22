@@ -845,6 +845,7 @@ var woth5 = "unknown";
 
 var WotHItems = [];
 var ManualWotHItems = {};
+var ManualInLogicItems = {};
 var ManualOutOfLogicItems = {};
 var ManualNotWotHItems = {};
 var ManualWotHMinorItems = {};

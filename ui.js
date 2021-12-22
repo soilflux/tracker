@@ -1014,7 +1014,25 @@ function update_logic_info() {
 			document.getElementById(str).style.opacity = .5;
 			document.getElementById(str).style.fontWeight = "normal";
 			document.getElementById(str).style.color ="black";
-			document.getElementById(str).style.border = "";
+			
+			var checkInWothArea = -1;
+			if(colorWothAreas) {
+				for (var j = 1; j < 35; j++) {
+					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
+						for (var k = 1; k < 6; k++) {
+							if(wothAreas[k] == AreaNames[j]) {
+								checkInWothArea = k;
+								break;
+							}
+						}
+					}
+				}
+			}
+			
+			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+				document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
+			else
+				document.getElementById(str).style.border = "";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
 	}
@@ -1112,24 +1130,30 @@ function update_summary_text() {
 		else if(!Hinted[Location[checkSummary[i]]])
 			document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace("* ", "").replace(" *", "");
 		
+		var theItem = checkSummary[i];
 		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {
-			var exception = true;} 
+			var exception = true;
+			if(Known.prescription)
+				theItem = "prescription";
+			else if(Known.claim_check)
+				theItem = "claim_check";
+		} 
 		else {
 			var exception = false;
 		}
 		
 		if(!nerfed) {
-			if (Logic[checkSummary[i]] || exception) {
-				if (Game[checkSummary[i]])
+			if (Logic[theItem] || exception) {
+				if (Game[theItem])
 					document.getElementById(str).className = "checked_text_summary";
 				else
 					document.getElementById(str).className = "checked_text_summary_not_have";
 			}
 			else {
-				if (Game[checkSummary[i]])
+				if (Game[theItem])
 					document.getElementById(str).className = "checked_text_summary_have_ool";
 				else {
-					if(CouldHave[checkSummary[i]])
+					if(CouldHave[theItem])
 						document.getElementById(str).className = "checked_text_summary_ool_could_have";
 					else
 						document.getElementById(str).className = "checked_text_summary_ool";
@@ -1137,17 +1161,21 @@ function update_summary_text() {
 			}
 		}
 		else {
-			if (Game[checkSummary[i]]) 
-				if(ManualOutOfLogicItems[checkSummary[i]])
+			if (Game[theItem] || (theItem == "trade" && (Known.prescription || Known.claim_check))) 
+				if(ManualOutOfLogicItems[theItem])
 					document.getElementById(str).className = "checked_text_summary_have_ool";
-				else
+				else if(ManualInLogicItems[theItem])
 					document.getElementById(str).className = "checked_text_summary";
-			else if(CouldHave[checkSummary[i]])
-				if(ManualOutOfLogicItems[checkSummary[i]])
-					document.getElementById(str).className = "checked_text_summary_ool_could_have";
 				else
+					document.getElementById(str).className = "checked_text_summary_unknown";
+			else if(CouldHave[theItem])
+				if(ManualOutOfLogicItems[theItem])
+					document.getElementById(str).className = "checked_text_summary_ool_could_have";
+				else if(ManualInLogicItems[theItem])
 					document.getElementById(str).className = "checked_text_summary_not_have";
-			else if(Known[checkSummary[i]]) 
+				else
+					document.getElementById(str).className = "checked_text_summary_unknown_not_have";
+			else if(Known[theItem]) 
 				document.getElementById(str).className = "checked_text_summary_known";
 			else
 				document.getElementById(str).className = "checked_text_summary_ool";
