@@ -92,7 +92,8 @@ function process_inputs() {
 							if (peeked) {peekOrHintText = "";}
 							if(hintedInput == inputs[j])
 								thisIsHinted = true;
-							junkItem(document.getElementById(key)); 
+							junkItem(document.getElementById(key));
+							if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).value = "*" + document.getElementById(key).value.toUpperCase() + "*"}
 							thisIsHinted = false;
 							hintedInput = "";
 							break;
@@ -288,8 +289,8 @@ function junk() {
 	var type = event.button;
 	var str = event.target.id;
 	str = str.substring('text_'.length);
-	if (Check[str] != "unknown") {return;}
 	var temp = Locations.indexOf(str);
+	if (Check[str] != "unknown") {forcedDisplay[temp] = false; Game[Check[str]] = true; return;}
 	
 	if(type == 0 && !event.altKey) {
 		if(str.includes("forest_") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
@@ -419,7 +420,6 @@ function junkItem(x) {
 	document.getElementById("text_" + str2).style.display = "none";
 	document.getElementById("br_" + str2).style.display = "none";
 	
-	document.getElementById(str2).value = "";
 	lastCheck.push(str2);
 	midUpdate();
 	
@@ -804,7 +804,7 @@ function update_logic_info() {
 		
 		str = "text_" + key;
 		str2 = "br_" + key;
-		if (Check[key] == "unknown" || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
+		if (Check[key] == "unknown" || forcedDisplay[i] || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
 			document.getElementById(str).style.display = "inline-block";
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";

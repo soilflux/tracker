@@ -854,6 +854,7 @@ var ManualWotHItemLocked = {};
 var ManualWotHItemPutInLogic = {};
 var pressCooldown = [[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false]]
 var WotH = new Array(35).fill(0);
+var forcedDisplay = new Array(256).fill(false);
 var checkedYet = new Array(256).fill(false);
 var readYet = new Array(42).fill(false);
 var AreaAge = new Array(35).fill(0);
