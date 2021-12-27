@@ -139,6 +139,7 @@ var pocketPlacement = "unknown";
 var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", "./normal/items/sapphire.png", "./normal/items/forest.png", "./normal/items/fire.png", "./normal/items/water.png", "./normal/items/shadow.png", "./normal/items/spirit.png", "./normal/items/light.png"];
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
+var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/lion.png"]
 
 Game.logically_accessible = 0;
 var d = new Date();
@@ -1091,7 +1092,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) {elem.src = Game.shadow_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Game.spirit_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Game.light_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = "./circus-tent_1f3aa.png"; /*elem.onclick = toggleLinsoGoMode;*/}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = tabPicSources[Math.floor(Math.random() * tabPicSources.length)]; /*elem.onclick = toggleLinsoGoMode;*/}
 		else {elem.src = Game[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Game[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Game[linsoOrder[linsoOrderIncrement]] = true;}
