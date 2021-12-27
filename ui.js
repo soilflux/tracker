@@ -93,7 +93,7 @@ function process_inputs() {
 							if(hintedInput == inputs[j])
 								thisIsHinted = true;
 							junkItem(document.getElementById(key));
-							if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).value = "*" + document.getElementById(key).value.toUpperCase() + "*"}
+							if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 							thisIsHinted = false;
 							hintedInput = "";
 							break;
