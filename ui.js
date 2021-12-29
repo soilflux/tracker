@@ -76,7 +76,7 @@ function process_inputs() {
 						if (i <= lastItem) {
 							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
 							Location[Items2[j] + duplicate] = document.getElementById(key).id;
-							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " -> " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
 							Known[Items2[j] + duplicate] = true; 
 							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
 							if (!hinted && !peeked){
