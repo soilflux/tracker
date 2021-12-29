@@ -1443,7 +1443,7 @@ function location_logic(){
 	Location_Obtain.water_cracked = Game.can_enter_water && (Game.lullaby || (Game.iron_boots && Game.has_chus)) && (Game.bomb_bag || Game.has_chus);
 	Location_Obtain.water_torches = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins);
 	Location_Obtain.water_block = Game.can_enter_water && Game.lullaby && ((Game.bow || (Game.hover_boots && Game.bomb_bag)) && Game.goron_bracelet);
-	Location_Obtain.water_pillar = Game.middle_water;
+	Location_Obtain.water_pillar = Game.middle_water && Game.iron_boots;
 	Location_Obtain.water_dLink = Game.current_water_keys >= 2 && Game.lullaby;
 	Location_Obtain.water_river = Game.current_water_keys >= 2 && Game.lullaby && Game.time && Game.bow;
 	Location_Obtain.water_dragon = Game.can_enter_water && Game.lullaby && ((Game.current_water_keys >= 2 && Game.time && Game.bow) || Game.goron_bracelet);
@@ -1766,7 +1766,7 @@ function location_logic(){
 	Location_Could_Access.water_cracked = CouldHave.can_enter_water && (CouldHave.lullaby || (CouldHave.iron_boots && Game.has_chus)) && (CouldHave.bomb_bag || Game.has_chus);
 	Location_Could_Access.water_torches = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins);
 	Location_Could_Access.water_block = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.bow || (CouldHave.hover_boots && CouldHave.bomb_bag)) && CouldHave.goron_bracelet);
-	Location_Could_Access.water_pillar = CouldHave.middle_water;
+	Location_Could_Access.water_pillar = CouldHave.middle_water && CouldHave.iron_boots;
 	Location_Could_Access.water_dLink = CouldHave.current_water_keys >= 2 && CouldHave.lullaby;
 	Location_Could_Access.water_river = CouldHave.current_water_keys >= 2 && CouldHave.lullaby && CouldHave.time && CouldHave.bow;
 	Location_Could_Access.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);
@@ -2090,7 +2090,7 @@ function location_logic(){
 		Location_Access.water_cracked = Game.can_enter_water && (Game.lullaby || (Game.iron_boots && Game.has_chus)) && (Game.bomb_bag || Game.has_chus);
 		Location_Access.water_torches = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins);
 		Location_Access.water_block = Game.can_enter_water && Game.lullaby && ((Game.bow || (Game.hover_boots && Game.bomb_bag)) && Game.goron_bracelet);
-		Location_Access.water_pillar = Game.middle_water;
+		Location_Access.water_pillar = Game.middle_water && Game.iron_boots;
 		Location_Access.water_dLink = Game.current_water_keys >= 2 && Game.lullaby;
 		Location_Access.water_river = Game.current_water_keys >= 2 && Game.lullaby && Game.time && Game.bow;
 		Location_Access.water_dragon = Game.can_enter_water && Game.lullaby && ((Game.current_water_keys >= 2 && Game.time && Game.bow) || Game.goron_bracelet);
@@ -2413,7 +2413,7 @@ function location_logic(){
 		Location_Could_Peek.water_cracked = CouldHave.can_enter_water && (CouldHave.lullaby || (CouldHave.iron_boots && Game.has_chus)) && (CouldHave.bomb_bag || Game.has_chus);
 		Location_Could_Peek.water_torches = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins);
 		Location_Could_Peek.water_block = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.bow || (CouldHave.hover_boots && CouldHave.bomb_bag)) && CouldHave.goron_bracelet);
-		Location_Could_Peek.water_pillar = CouldHave.middle_water;
+		Location_Could_Peek.water_pillar = CouldHave.middle_water && CouldHave.iron_boots;
 		Location_Could_Peek.water_dLink = CouldHave.current_water_keys >= 2 && CouldHave.lullaby;
 		Location_Could_Peek.water_river = CouldHave.current_water_keys >= 2 && CouldHave.lullaby && CouldHave.time && CouldHave.bow;
 		Location_Could_Peek.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);
@@ -2737,7 +2737,7 @@ function location_logic(){
 		Location_Access.water_cracked = Game.can_enter_water;
 		Location_Access.water_torches = Game.can_enter_water && Game.lullaby && (Game.bow || Game.can_use_dins);
 		Location_Access.water_block = Game.can_enter_water && Game.lullaby && (Game.bow || Game.hover_boots);
-		Location_Access.water_pillar = Game.middle_water;
+		Location_Access.water_pillar = Game.middle_water && Game.iron_boots;
 		Location_Access.water_dLink = Game.current_water_keys >= 2 && Game.lullaby;
 		Location_Access.water_river = Game.current_water_keys >= 2 && Game.lullaby && Game.time;
 		Location_Access.water_dragon = Game.can_enter_water && Game.lullaby && ((Game.current_water_keys >= 2 && Game.time && Game.bow) || Game.goron_bracelet);
@@ -3060,7 +3060,7 @@ function location_logic(){
 		Location_Could_Peek.water_cracked = CouldHave.can_enter_water;
 		Location_Could_Peek.water_torches = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins);
 		Location_Could_Peek.water_block = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.hover_boots);
-		Location_Could_Peek.water_pillar = CouldHave.middle_water;
+		Location_Could_Peek.water_pillar = CouldHave.middle_water && CouldHave.iron_boots;
 		Location_Could_Peek.water_dLink = CouldHave.current_water_keys >= 2 && CouldHave.lullaby;
 		Location_Could_Peek.water_river = CouldHave.current_water_keys >= 2 && CouldHave.lullaby && CouldHave.time;
 		Location_Could_Peek.water_dragon = CouldHave.can_enter_water && CouldHave.lullaby && ((CouldHave.current_water_keys >= 2 && CouldHave.time && CouldHave.bow) || CouldHave.goron_bracelet);

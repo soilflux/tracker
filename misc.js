@@ -95,7 +95,7 @@ function highlight(x) {
 			if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = true;}
 			if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = true;}
 			if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = true;}
+			if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale1 = true; Game.scale2 = true;}
 			if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true;}
 			if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){Game.magic1 = true;}
 			if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot1 = true; Game.hookshot2 = true;}
@@ -745,15 +745,14 @@ function Undo() {
 		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.gtg_checks_remaining += 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.well_checks_remaining += 1;}
 		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
-			document.getElementById("trade_location").innerHTML = "Trade -> ";
-			document.getElementById("trade_location").style.color = "black";
+			document.getElementById("trade_location").innerHTML = "Trade &#8594; ";
 		}
 		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "time" || Check[lastCheck[lastCheck.length-1]] == "storms" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
 			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
 			Game.checks_remaining -= 1;
 		}
 		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
-			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML.split('-&gt; ')[0] + "-> ";
+			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
 		}
 	}
 	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
