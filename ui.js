@@ -343,26 +343,12 @@ function junk() {
 		Check[str]="junk";
 	}
 	
-	if (Check[str] != "unknown") {forcedDisplay[temp] = false; Game[Check[str]] = true; return;}
-	
-	if (document.getElementById(str).style.display != "none") {
-		document.getElementById(str).style.display = "none";
-	}
-	if (coopmode && type == 1) {
-		document.getElementById("text_" + str).style.className = "bk";
-	}
-	if (coopmode && type == 2) {
-		document.getElementById("text_" + str).style.className = "sk";
-	}
-	
-	if (!coopmode || type == 0){
-		if (document.getElementById("text_" + str).style.display != "none") {
-			document.getElementById("text_" + str).style.display = "none";
-		}
-		if (document.getElementById("br_" + str).style.display != "none") {
-			document.getElementById("br_" + str).style.display = "none";
-		}
-	}
+	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; return;}
+
+	document.getElementById(str).style.display = "none";
+	document.getElementById("text_" + str).style.display = "none";
+	document.getElementById("br_" + str).style.display = "none";
+			
 	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
 	Update();
