@@ -16,23 +16,20 @@ function process_inputs() {
 		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
 		if(Check[key] != "unknown") {continue;}
 		hinted = false;
-		if (isLowerCase(document.getElementById(key).value.charAt(0))
-			&& isLowerCase(document.getElementById(key).value.charAt(1))
-			&& isUpperCase(document.getElementById(key).value.charAt(2))
-			&& document.getElementById(key).value.length == 3) {
-				
+		if (isLowerCase(document.getElementById(key).value.charAt(0)) 
+		 && isUpperCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length-1))
+		 && document.getElementById(key).value.length > 0) {	
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
+			console.log(document.getElementById(key).value)
 		}
 		else if (isUpperCase(document.getElementById(key).value.charAt(0)) 
-			&& isLowerCase(document.getElementById(key).value.charAt(1))
-			&& isLowerCase(document.getElementById(key).value.charAt(2))
-			&& document.getElementById(key).value.length == 3){
+			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
+			  && document.getElementById(key).value.length > 0) {
 			
 			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
-		
 		if(document.getElementById(key).value == "chu") {
 			if(Game.has_chus == false)
 				enableChus();
@@ -69,8 +66,8 @@ function process_inputs() {
 				if(((inputs[j] == "pre" && isItem) || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 				
 				if (j == 0) {document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;}
-				if (j == 1) {thisIsAKey = true; document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); thisIsAKey = false; continue;}
-				if (j == 2) {thisIsABossKey = true; document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); thisIsABossKey = false; continue;}
+				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
@@ -92,7 +89,8 @@ function process_inputs() {
 							if (peeked) {peekOrHintText = "";}
 							if(hintedInput == inputs[j])
 								thisIsHinted = true;
-							junkItem(document.getElementById(key)); 
+							junkItem(document.getElementById(key));
+							if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 							thisIsHinted = false;
 							hintedInput = "";
 							break;
@@ -288,10 +286,9 @@ function junk() {
 	var type = event.button;
 	var str = event.target.id;
 	str = str.substring('text_'.length);
-	if (Check[str] != "unknown") {return;}
 	var temp = Locations.indexOf(str);
 	
-	if(type == 0 && !event.altKey) {
+	if(type == 0 && !event.altKey && Check[str] == "unknown") {
 		if(str.includes("forest_") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
 		else if(str.includes("fire_") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
 		else if(str.includes("water_") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
@@ -305,7 +302,7 @@ function junk() {
 		Check[str]="junk";
 	}
 	
-	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey) {
+	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey || document.getElementById(str).value == "BK") {
 		if(str.includes("forest_") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
 		else if(str.includes("fire_") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
 		else if(str.includes("water_") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
@@ -320,7 +317,7 @@ function junk() {
 		Check[str]="boss_key";
 	}
 	
-	else if ((type == 2 && !event.altKey) || thisIsAKey) {
+	else if ((type == 2 && !event.altKey) || thisIsAKey || document.getElementById(str).value == "SK") {
 		if(str.includes("forest_") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
 		else if(str.includes("fire_") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
 		else if(str.includes("water_") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
@@ -342,9 +339,11 @@ function junk() {
 		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 		return;
 	}
-	else {
+	else if (Check[str] == "unknown") {
 		Check[str]="junk";
 	}
+	
+	if (Check[str] != "unknown") {forcedDisplay[temp] = false; Game[Check[str]] = true; return;}
 	
 	if (document.getElementById(str).style.display != "none") {
 		document.getElementById(str).style.display = "none";
@@ -419,7 +418,6 @@ function junkItem(x) {
 	document.getElementById("text_" + str2).style.display = "none";
 	document.getElementById("br_" + str2).style.display = "none";
 	
-	document.getElementById(str2).value = "";
 	lastCheck.push(str2);
 	midUpdate();
 	
@@ -804,7 +802,7 @@ function update_logic_info() {
 		
 		str = "text_" + key;
 		str2 = "br_" + key;
-		if (Check[key] == "unknown" || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
+		if (Check[key] == "unknown" || forcedDisplay[i] || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
 			document.getElementById(str).style.display = "inline-block";
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";
