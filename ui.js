@@ -347,19 +347,29 @@ function junk() {
 	document.getElementById("text_" + str).style.display = "none";
 	document.getElementById("br_" + str).style.display = "none";
 	
-	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); return;}
+	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
 
 	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
 	Update();
 	
-	if(!thisIsHinted)
+	if(!thisIsHinted) {
+		
+		for(var j = 0; j < AreaIndexes.length; j++) {
+			if(Locations.indexOf(str) < AreaIndexes[j])
+				break;
+		}
+	
 		for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
+			if(i >= AreaIndexes[j])
+				break;
+			
 			if (document.getElementById(Locations[i]).style.display != "none") {
-				document.getElementById(Locations[i]).focus(); //why doesn't this work
+				document.getElementById(Locations[i]).focus();
 				break;
 			}
 		}
+	}
 }	
 
 function junkUltra() {
@@ -407,14 +417,23 @@ function junkItem(x) {
 	lastCheck.push(str2);
 	midUpdate();
 	
-	if(!thisIsHinted)
+	if(!thisIsHinted) {
+		
+		for(var j = 0; j < AreaIndexes.length; j++) {
+			if(Locations.indexOf(str2) < AreaIndexes[j])
+				break;
+		}
+	
 		for (var i = Locations.indexOf(str2) + 1; i < Locations.length; i++) {
+			if(i >= AreaIndexes[j])
+				break;
+			
 			if (document.getElementById(Locations[i]).style.display != "none") {
 				document.getElementById(Locations[i]).focus();
 				break;
 			}
 		}
-	
+	}
 }
 
 function junkSong(x) {
