@@ -614,15 +614,15 @@ function handleDungeonHighlights() {
 	if (Game.ruby) {document.getElementById("dung2_icon").style.opacity=1; document.getElementById("text_dung2").style.opacity = .2;} else{document.getElementById("dung2_icon").style.opacity=.2; document.getElementById("text_dung2").style.opacity = 1;}
 	if (Game.sapphire) {document.getElementById("dung3_icon").style.opacity=1; document.getElementById("text_dung3").style.opacity = .2;} else{document.getElementById("dung3_icon").style.opacity=.2; document.getElementById("text_dung3").style.opacity = 1;}
 
-	if (Check.deku_queen_gohma != "unknown") {if (document.getElementById("text_" + dekuPlacement) != null) {document.getElementById("text_" + dekuPlacement).style.opacity=.2}}
-	if (Check.dodongos_king_dodongo != "unknown") {if (document.getElementById("text_" + dodongosPlacement) != null) {document.getElementById("text_" + dodongosPlacement).style.opacity=.2}}
-	if (Check.jabu_barinade != "unknown") {if (document.getElementById("text_" + jabuPlacement) != null) {document.getElementById("text_" + jabuPlacement).style.opacity=.2}}
-	if (Check.forest_phantomGanon != "unknown") {if (document.getElementById("text_" + forestPlacement) != null) {document.getElementById("text_" + forestPlacement).style.opacity=.2}}
-	if (Check.fire_volvagia != "unknown") {if (document.getElementById("text_" + firePlacement) != null) {document.getElementById("text_" + firePlacement).style.opacity=.2}}
-	if (Check.water_morpha != "unknown") {if (document.getElementById("text_" + waterPlacement) != null) {document.getElementById("text_" + waterPlacement).style.opacity=.2}}
-	if (Check.spirit_twinrova != "unknown") {if (document.getElementById("text_" + spiritPlacement) != null) {document.getElementById("text_" + spiritPlacement).style.opacity=.2}}
-	if (Check.shadow_bongo != "unknown") {if (document.getElementById("text_" + shadowPlacement) != null) {document.getElementById("text_" + shadowPlacement).style.opacity=.2}}
-	if (document.getElementById("text_" + pocketPlacement) != null) {document.getElementById("text_" + pocketPlacement).style.opacity=.2}
+	if (Check.deku_queen_gohma != "unknown") {if (document.getElementById("text_" + dekuPlacement) != null) {document.getElementById(dekuPlacement + "_icon").style.opacity=1; document.getElementById("text_" + dekuPlacement).style.opacity=.2}}
+	if (Check.dodongos_king_dodongo != "unknown") {if (document.getElementById("text_" + dodongosPlacement) != null) {document.getElementById(dodongosPlacement + "_icon").style.opacity=1; document.getElementById("text_" + dodongosPlacement).style.opacity=.2}}
+	if (Check.jabu_barinade != "unknown") {if (document.getElementById("text_" + jabuPlacement) != null) {document.getElementById(jabuPlacement + "_icon").style.opacity=1; document.getElementById("text_" + jabuPlacement).style.opacity=.2}}
+	if (Check.forest_phantomGanon != "unknown") {if (document.getElementById("text_" + forestPlacement) != null) {document.getElementById(forestPlacement + "_icon").style.opacity=1; document.getElementById("text_" + forestPlacement).style.opacity=.2}}
+	if (Check.fire_volvagia != "unknown") {if (document.getElementById("text_" + firePlacement) != null) {document.getElementById(firePlacement + "_icon").style.opacity=1; document.getElementById("text_" + firePlacement).style.opacity=.2}}
+	if (Check.water_morpha != "unknown") {if (document.getElementById("text_" + waterPlacement) != null) {document.getElementById(waterPlacement + "_icon").style.opacity=1; document.getElementById("text_" + waterPlacement).style.opacity=.2}}
+	if (Check.spirit_twinrova != "unknown") {if (document.getElementById("text_" + spiritPlacement) != null) {document.getElementById(spiritPlacement + "_icon").style.opacity=1; document.getElementById("text_" + spiritPlacement).style.opacity=.2}}
+	if (Check.shadow_bongo != "unknown") {if (document.getElementById("text_" + shadowPlacement) != null) {document.getElementById(shadowPlacement + "_icon").style.opacity=1; document.getElementById("text_" + shadowPlacement).style.opacity=.2}}
+	if (document.getElementById("text_" + pocketPlacement) != null) {document.getElementById(pocketPlacement + "_icon").style.opacity=1; document.getElementById("text_" + pocketPlacement).style.opacity=.2}
 }
 
 function checkGanons() {
