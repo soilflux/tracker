@@ -343,12 +343,12 @@ function junk() {
 		Check[str]="junk";
 	}
 	
-	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; return;}
-
 	document.getElementById(str).style.display = "none";
 	document.getElementById("text_" + str).style.display = "none";
 	document.getElementById("br_" + str).style.display = "none";
-			
+	
+	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); return;}
+
 	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
 	Update();
