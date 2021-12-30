@@ -365,7 +365,7 @@ function junk() {
 				break;
 			
 			if (document.getElementById(Locations[i]).style.display != "none") {
-				document.getElementById(Locations[i]).focus();
+				document.getElementById(Locations[i]).focus(); //why doesn't this work
 				break;
 			}
 		}
