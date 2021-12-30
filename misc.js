@@ -755,6 +755,12 @@ function Undo() {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
 		}
 	}
+	
+	forcedDisplay[Locations.indexOf(lastCheck[lastCheck.length-1])] = false;
+	for (var i = 0; i < AreaIndexes.length; i++) {
+		if (Locations.indexOf(lastCheck[lastCheck.length-1]) >= AreaIndexes[i] && Locations.indexOf(lastCheck[lastCheck.length-1]) < AreaIndexes[i+1]) {document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = backgrounds[i]; break;}
+	}
+	
 	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
 	Game[Check[lastCheck[lastCheck.length-1]]] = false;
 	Known[Check[lastCheck[lastCheck.length-1]]] = false;

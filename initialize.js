@@ -926,6 +926,13 @@ var childRoute1 = ["ocarina_game", "lost_woods_grotto", "lost_woods_scrub_grotto
 var childRoute2 = ["market_slingshot_game", "market_bowling_1", "market_bowling_2","dins_fairy","market_lens_game"];
 
 var parent = document.getElementById("normalColumn1");
+
+var backgrounds = ["url('./normal/areas/kokiri.jpg')","url('./normal/areas/ranch.jpg')","url('./normal/areas/field.jpg')","url('./normal/areas/valley.jpg')","url('./normal/areas/hylia.jpg')","url('./normal/areas/market.jpg')","url('./normal/areas/hyrule_castle.jpg')",
+"url('./normal/areas/ogc.jpg')","url('./normal/areas/tot.jpg')","url('./normal/areas/fountain.jpg')","url('./normal/areas/ice.jpg')","url('./normal/areas/deku.jpg')","url('./normal/areas/lost_woods.jpg')","url('./normal/areas/sfm.jpg')",
+"url('./normal/areas/goron.jpg')","url('./normal/areas/dodongos.jpg')","url('./normal/areas/dmt.jpg')","url('./normal/areas/dmc.jpg')","url('./normal/areas/kakariko.jpg')","url('./normal/areas/graveyard.jpg')",
+"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')"
+]
+
 var background = "url('./normal/areas/kokiri.jpg')";
 for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[1]) {background = "url('./normal/areas/ranch.jpg')"; var elem = document.createElement("br"); elem.id = "kokiri_break";  parent.appendChild(elem);}

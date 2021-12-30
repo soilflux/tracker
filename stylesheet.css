@@ -589,7 +589,8 @@ color: red;
 	vertical-align: top;
 	padding: 0;
 	border: none;
-	color: lime;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: magenta;
 }
 .woth_item_arrow {
 	width: 30px;
