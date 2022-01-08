@@ -39,6 +39,9 @@ var temptext2 = "";
 var removeBKFlag = false;
 var mouseInputs_locations = [];
 var nerfed = true;
+var hamsda = false;
+if (localStorage.getItem("hamsda")) {if (localStorage.getItem("hamsda") == "true") {hamsda = true;} else{hamsda = false;};}
+if (hamsda) {document.getElementById("hamsdaToggle").innerHTML="Disable Hamsda Tracking";}
 var next = document.getElementById("next_check_prediction");
 var nextChecks = [];
 var nextIndex = 0;

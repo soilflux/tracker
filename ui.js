@@ -943,15 +943,25 @@ function update_logic_info() {
 							}
 						}
 					}
-					document.getElementById(str).className= "access_check_text";
-					document.getElementById(str).style.opacity = .5;
-					document.getElementById(str).style.fontWeight = "normal";
+					if (hamsda) {
+						document.getElementById(str).className= "access_check_text";
+						document.getElementById(str).style.opacity = .5;
+						document.getElementById(str).style.fontWeight = "normal";
+					}
+					else {
+						document.getElementById(str).className= "logic_check_text";
+						document.getElementById(str).style.opacity = 1;
+						document.getElementById(str).style.fontWeight = "bold";
+					}
 					
 					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
-					else {
+					else if (hamsda) {
 						document.getElementById(str).style.color ="yellow";
+					}
+					else {
+						document.getElementById(str).style.color ="chartreuse";
 					}
 					
 					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))

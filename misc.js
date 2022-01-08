@@ -300,6 +300,16 @@ function colorWothAreasControl() {
 	Update();
 }
 
+function hamsdaToggle() {
+	hamsda = !hamsda;
+	localStorage.setItem("hamsda", hamsda); 
+	console.log(hamsda)
+	if (!hamsda)
+		document.getElementById("hamsdaToggle").innerHTML = "Enable Hamsda Tracking"; 
+	else
+		document.getElementById("hamsdaToggle").innerHTML = "Disable Hamsda Tracking"; 
+}
+
 function circusControl() {
 	if (!linsoGoMode) {document.getElementById("linso54").src = "./circus-tent_1f3aa.png";}
 	
