@@ -17,6 +17,11 @@ function Update() {
 }
 
 function fastUpdate() {
+	if(toFocus != null) {
+		toFocus.focus();
+		toFocus = null;
+	}
+	
 	timer_stuff(); //implements a timer to use as an alternative to stuff like livesplit
 	stone_medallion_input(); //handle stones and medallions input
 	process_inputs(); //handle hinted, peeked and picked up things

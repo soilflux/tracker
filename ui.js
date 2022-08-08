@@ -364,8 +364,8 @@ function junk() {
 			if(i >= AreaIndexes[j])
 				break;
 			
-			if (document.getElementById(Locations[i]).style.display != "none") {
-				document.getElementById(Locations[i]).focus(); //why doesn't this work
+			if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+				toFocus = document.getElementById(Locations[i]); 
 				break;
 			}
 		}
@@ -428,7 +428,7 @@ function junkItem(x) {
 			if(i >= AreaIndexes[j])
 				break;
 			
-			if (document.getElementById(Locations[i]).style.display != "none") {
+			if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
 				document.getElementById(Locations[i]).focus();
 				break;
 			}

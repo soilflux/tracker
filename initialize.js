@@ -46,6 +46,7 @@ var next = document.getElementById("next_check_prediction");
 var nextChecks = [];
 var nextIndex = 0;
 var acceptControllerInput = [false,false,false,false,false,false];
+var toFocus = null;
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
