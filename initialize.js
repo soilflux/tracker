@@ -46,6 +46,7 @@ var next = document.getElementById("next_check_prediction");
 var nextChecks = [];
 var nextIndex = 0;
 var acceptControllerInput = [false,false,false,false,false,false];
+var toFocus = null;
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
@@ -1377,6 +1378,8 @@ function popup() {
 }
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
+if (document.getElementById("presets").value == "SGL_2022")
+	document.getElementById("hintInput").innerHTML = "30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
 
 window.addEventListener("gamepadconnected", connecthandler);
 window.addEventListener("gamepaddisconnected", disconnecthandler);
