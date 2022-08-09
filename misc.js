@@ -705,14 +705,14 @@ document.onkeydown = function(e) {
 document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 
 function refreshVersion() {
-	var version = 21;
+	var version = 51;
 	var elements = document.getElementsByClassName('patchNotes');
-	var currentVersion = parseInt(elements[1].id.substring(2));
+	var currentVersion = parseInt(elements[0].id.substring(2));
 	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
+    console.log(version)
 	for (var i = version; i <= currentVersion; i++) {
-		document.getElementById("pn" + i).style.color = "orange";
-		document.getElementById("pn" + i).style.fontWeight = "bold";
-		document.getElementById("pn" + i).style.fontSize = "20px";
+        document.getElementById("pn" + i).style.display = "inline-block";
+        document.getElementById("patchNotesTitle").style.display = "inline-block";
 	}
 	localStorage.setItem("version",currentVersion+1);
 }

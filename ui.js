@@ -871,7 +871,7 @@ function update_logic_info() {
 					document.getElementById(str).style.color = "#FFA500";
 				}
 				else {
-					document.getElementById(str).style.color = "chartreuse";
+					document.getElementById(str).style.color = inLogicColor;
 				}
 					
 				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
@@ -961,7 +961,7 @@ function update_logic_info() {
 						document.getElementById(str).style.color ="yellow";
 					}
 					else {
-						document.getElementById(str).style.color ="chartreuse";
+						document.getElementById(str).style.color =inLogicColor;
 					}
 					
 					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
@@ -1026,7 +1026,7 @@ function update_logic_info() {
 			document.getElementById(str).className= "ool_check_text";
 			document.getElementById(str).style.opacity = .5;
 			document.getElementById(str).style.fontWeight = "normal";
-			document.getElementById(str).style.color ="black";
+			document.getElementById(str).style.color ="white";
 			
 			var checkInWothArea = -1;
 			if(colorWothAreas) {

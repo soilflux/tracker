@@ -7,9 +7,10 @@ overflow: scroll;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-background-color:		#505050;
-color:black;
+color:white;
 font-family:sans-sarif;
+height: 3000px;
+background-size:cover;
 }
 button {
 	margin-bottom: 5px;
@@ -21,13 +22,16 @@ button {
 a {
 color:lightgreen
 }
-.black {
-  color: black;
+.white {
+  color: white;
 }
 .yellow {
 color: yellow;
 }
 body {
+background-image: linear-gradient(to bottom, #3b4144, #3b4144, #3b4144 36.15%, black 36.15%, black);
+background-size:cover;
+background-repeat: no-repeat;
 margin: 0;
 overflow: hidden;
 }
@@ -82,7 +86,7 @@ color: red;
 }
 #text_gan {
 	vertical-align:top;
-	color: #990000;
+	color: #FB4570;
 	font-size:26px;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
@@ -147,7 +151,7 @@ color: red;
 .dung9{
 	vertical-align:top;
 	font-size:26px;
-	color: black;
+	color: white;
 	text-transform:uppercase;
 	font-family: "Consolas", Courier, monospace;
 }
@@ -263,6 +267,7 @@ color: red;
 	width: 46px;
 	vertical-align: top;
 	margin-bottom: 0px;
+    background-color : black; 
 }
 
 #skip_req{
@@ -280,6 +285,7 @@ color: red;
 	width: 25px;
 	vertical-align: top;
 	margin-bottom: 3px;
+    background-color : black; 
 }
 #woth_text {
 	color: #33cccc
@@ -292,7 +298,8 @@ color: red;
 	height:140px;
 	vertical-align: top;
 	margin-bottom: 3px;
-	columns: 5
+	columns: 5;
+    background-color : black; 
 }
 .area_titles {
 	font-size: 20px;
@@ -337,6 +344,7 @@ color: red;
 }
 #probability_input{
 	width: 25px;
+    background-color : black; 
 }
 #theLetterN {
 	color: white;
@@ -407,7 +415,7 @@ color: red;
 	font-size: 14px;
 	font-weight: normal;	
 	letter-spacing: 0px;
-	color: black;
+	color: white;
 	opacity: 1;
 }
 .checked_text_summary_known {
@@ -465,7 +473,7 @@ color: red;
 }
 #settingsColumn {
 	position: absolute;
-	left: 750px;
+	left: 925px;
 }
 .patchNotes {
 	font-size: 12px;
@@ -581,6 +589,20 @@ color: red;
 	margin-right:2px;
 	padding: 0;
 	border: none;
+    background-color : black; 
+    -webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: magenta;
+}
+#hintInput {
+    background-color : black; 
+    color:white
+}
+.patchNotes {
+    display: none;
+}
+#patchNotesTitle {
+    display: none;
+    color:lightblue;
 }
 .picture_input {
 	width: 30px;
@@ -601,7 +623,7 @@ color: red;
 	vertical-align: top;
 	padding: 0;
 	border: none;
-	color: black;
+	color: white;
 	vertical-align: middle;
 }
 .layout_input {
@@ -609,12 +631,14 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-top:3px;
+    background-color : black; 
 }
 .mark_spawn {
 	width: 55px;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-top:3px;
+    background-color : black; 
 }
 .custom_spawn {
 	width: 55px;
@@ -696,7 +720,7 @@ color: red;
 	vertical-align: top;
 	font-size: 16px;
 	font-weight: normal;
-	color: 	black;
+	color: 	white;
 	display: inline-block;
 	margin-top:2px;
 	margin-bottom:1px;
@@ -707,7 +731,7 @@ color: red;
 	vertical-align: top;
 	font-size: 16px;
 	font-weight: normal;
-	color: 	black;
+	color: 	white;
 	display: inline-block;
 	margin-bottom:2px;
 }
@@ -752,7 +776,7 @@ color: red;
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -1036,7 +1060,7 @@ margin-left:-33%;
 text-align:center;
 height:85%;
 width:67%;
-border:3px solid black;
+border:3px solid white;
 border-radius:7.5%;
 }
 .locationTitle{
@@ -1130,7 +1154,7 @@ position:absolute;
 height:55%;
 width:12%;
 text-align:center;
-border:2px solid black;
+border:2px solid white;
 top:42%;
 right:2%;
 }
@@ -1146,7 +1170,7 @@ outline:none;
 .top {
 display:inline;
 }
-.web{position:absolute; height:20px; width:20px; background-color:black; color:black; border-radius:50%; }
+.web{position:absolute; height:20px; width:20px; background-color:white; color:white; border-radius:50%; }
 
 #cweb{height:35px; width:35px; top:50%; left:50%;}
 #a1web{top:59%; left:52%;}
@@ -1275,7 +1299,7 @@ color:#A3D7FE;
 color:#004F0B;
 }
 #title_ganons {
-color:#990000	
+color:#FB4570
 }
 #title_sfm {
 color:#8BFB9A;

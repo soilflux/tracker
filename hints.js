@@ -270,7 +270,7 @@ function woth_and_barren_processing() {
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<span onmousedown = 'markWothItemArrow(this)' id = 'wothItemArrow" + wothNumber + "_" + k + "' data-item = '" + Items[k] + "' class = 'woth_item_arrow'> &#8594; </span>"; 
 							
 							if(MarkedWotHItemArrow == "wothItemArrow" + wothNumber + "_" + k)
-								document.getElementById("wothItemArrow" + wothNumber + "_" + k).style.color = "chartreuse";
+								document.getElementById("wothItemArrow" + wothNumber + "_" + k).style.color = inLogicColor;
 							
 							if(ManualWotHItemLocked[Items[k]] != undefined) {
 								for(var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {

@@ -47,6 +47,7 @@ var nextChecks = [];
 var nextIndex = 0;
 var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
+var inLogicColor = 'chartreuse'
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;

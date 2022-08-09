@@ -402,10 +402,10 @@ function handleThemes() {
 function dark_theme() {
 	Game.themeChange = false;
 	document.getElementById("checks_remaining").style.color="lightblue";
-	document.getElementById("logically_accessible").style.color="chartreuse";
+	document.getElementById("logically_accessible").style.color=inLogicColor;
 	var all = document.getElementsByClassName('logic_check_text');
 	for (var i = 0; i < all.length; i++) {
-	all[i].style.color = 'chartreuse';
+	all[i].style.color = inLogicColor;
 	}
 	if(document.getElementById('text_dung1') != null) {document.getElementById('text_dung1').style.color = 'lightgreen';}
 	if(document.getElementById('text_dung2') != null) {document.getElementById('text_dung2').style.color = '#ff4d4d';}
@@ -413,8 +413,8 @@ function dark_theme() {
 	if(document.getElementById('text_dung4') != null) {document.getElementById('text_dung4').style.color = 'lightgreen';}
 	if(document.getElementById('text_dung5') != null) {document.getElementById('text_dung5').style.color = '#ff4d4d';}
 	if(document.getElementById('text_dung6') != null) {document.getElementById('text_dung6').style.color = 'lightblue';}
-	if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#660000';}
-	document.body.style.backgroundColor = "#505050";
+	if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#FFA3B8';}
+	document.body.style.backgroundColor = "";
 }
 
 
