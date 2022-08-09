@@ -268,6 +268,7 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 0px;
     background-color : black; 
+    color:white;
 }
 
 #skip_req{
@@ -286,6 +287,7 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 3px;
     background-color : black; 
+    color: white
 }
 #woth_text {
 	color: #33cccc
@@ -300,6 +302,7 @@ color: red;
 	margin-bottom: 3px;
 	columns: 5;
     background-color : black; 
+    color:white;
 }
 .area_titles {
 	font-size: 20px;
@@ -632,6 +635,7 @@ color: red;
 	margin-bottom: 0px;
 	margin-top:3px;
     background-color : black; 
+    color: white;
 }
 .mark_spawn {
 	width: 55px;
@@ -639,6 +643,7 @@ color: red;
 	margin-bottom: 0px;
 	margin-top:3px;
     background-color : black; 
+    color: white;
 }
 .custom_spawn {
 	width: 55px;
@@ -1109,10 +1114,12 @@ display:none;
 margin-left: 0px;
 margin-top: 3px;
 margin-right:2px;
+color:white;
 }
 #markMedallions {
 margin-top: 3px;
 width: 85px;
+color:white;
 }
 #forceOutOfLogic{
 	color:pink;
