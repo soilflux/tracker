@@ -267,7 +267,7 @@ color: red;
 	width: 46px;
 	vertical-align: top;
 	margin-bottom: 0px;
-    background-color : black; 
+    background-color : #181818; 
     color:white;
 }
 
@@ -286,7 +286,7 @@ color: red;
 	width: 25px;
 	vertical-align: top;
 	margin-bottom: 3px;
-    background-color : black; 
+    background-color : #181818; 
     color: white
 }
 #woth_text {
@@ -301,7 +301,7 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 3px;
 	columns: 5;
-    background-color : black; 
+    background-color : #181818; 
     color:white;
 }
 .area_titles {
@@ -347,7 +347,7 @@ color: red;
 }
 #probability_input{
 	width: 25px;
-    background-color : black; 
+    background-color : #181818; 
 }
 #theLetterN {
 	color: white;
@@ -592,12 +592,12 @@ color: red;
 	margin-right:2px;
 	padding: 0;
 	border: none;
-    background-color : black; 
+    background-color : #181818; 
     -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: magenta;
 }
 #hintInput {
-    background-color : black; 
+    background-color : #181818; 
     color:white
 }
 .patchNotes {
@@ -634,7 +634,7 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-top:3px;
-    background-color : black; 
+    background-color : #181818; 
     color: white;
 }
 .mark_spawn {
@@ -642,7 +642,7 @@ color: red;
 	vertical-align: top;
 	margin-bottom: 0px;
 	margin-top:3px;
-    background-color : black; 
+    background-color : #181818; 
     color: white;
 }
 .custom_spawn {
