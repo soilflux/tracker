@@ -1323,7 +1323,7 @@ color:#A3D7FE;
 color:#004F0B;
 }
 #title_ganons {
-color:#FB4570
+color:rgb(253,215,228);
 }
 #title_sfm {
 color:#8BFB9A;
@@ -1371,16 +1371,16 @@ color:#9EF3FD;
 color:#88FA4E;
 }
 #title_fire {
-color:#FE3213;
+color:rgb(255, 80, 80);
 }
 #title_water {
-color:rgb(54, 130, 250);
+color:rgb(74, 170, 255);
 }
 #title_spirit {
-color:rgb(155,161,0);
+color:yellow;
 }
 #title_shadow {
-color:rgb(171,0,231);
+color:rgb(199,100,255);
 }
 #title_well {
 color:#DE86FE;
