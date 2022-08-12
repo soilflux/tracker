@@ -13,7 +13,10 @@ height: 3000px;
 background-size:cover;
 }
 button {
-	margin-bottom: 5px;
+    background:#696969;
+    color: white;
+    border-radius: 5px;
+    height:25px;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
@@ -653,6 +656,19 @@ color: red;
 	vertical-align: top;
 	padding: 0;
 	border: none;
+    background-color:#404040;
+    color:white;
+}
+.settings_small{
+    width: 30px;
+	height:22px;
+	margin-bottom:2px;
+	margin-right:2px;
+	vertical-align: top;
+	padding: 0;
+	border: none;
+    background-color:#404040;
+    color:white;
 }
 .check_text {
 	font-size: 16px;
@@ -1378,6 +1394,8 @@ color:#FE8B08;
 .settingsOptions {
 	font-size: 1.1em;
 	position:absolute;
+    background-color:#404040;
+    color:white;
     left:0;
     right:0;
 }
@@ -1390,6 +1408,8 @@ color:#FE8B08;
 }
 .configOptions {
 	font-size: 1.1em;
+    color: white;
+    background-color:#404040;
 
 }
 .configLabels{
