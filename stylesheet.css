@@ -350,7 +350,6 @@ color: red;
 }
 #probability_input{
 	width: 25px;
-    background-color : #181818; 
 }
 #theLetterN {
 	color: white;
@@ -421,7 +420,6 @@ color: red;
 	font-size: 14px;
 	font-weight: normal;	
 	letter-spacing: 0px;
-	color: white;
 	opacity: 1;
 }
 .checked_text_summary_known {
@@ -599,7 +597,7 @@ color: red;
     -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: magenta;
 }
-#hintInput {
+.alt_hint_input {
     background-color : #181818; 
     color:white
 }

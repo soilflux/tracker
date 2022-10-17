@@ -165,6 +165,8 @@ var linsoGoMode = false;
 var linsoLightRotation = 0;
 if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 Person.type = "normie";
+var colorTheme = "dark";
+if (localStorage.getItem("theme") != null) {if (localStorage.getItem("theme") == "light"){colorTheme = "light"; document.getElementById("altThemeControl").innerHTML = "Light Theme"};}
 Logic.brackets = false;
 	
 document.getElementById("text_dung7").style.color = "yellow";

@@ -216,6 +216,11 @@ function whoAmI() {
 		Update();
 	}
 }
+
+function altThemeControl() {
+	if (colorTheme == "dark") {colorTheme = "light"; localStorage.setItem("theme", colorTheme); document.getElementById("altThemeControl").innerHTML = "Light Theme";}
+	else {colorTheme = "dark"; localStorage.setItem("theme", colorTheme); document.getElementById("altThemeControl").innerHTML = "Dark Theme";}
+}
 	
 function identifyMedal(x) {
 	hasChangedMedal = true;

@@ -1026,7 +1026,12 @@ function update_logic_info() {
 			document.getElementById(str).className= "ool_check_text";
 			document.getElementById(str).style.opacity = .5;
 			document.getElementById(str).style.fontWeight = "normal";
-			document.getElementById(str).style.color ="white";
+			if(colorTheme == "dark") {
+				document.getElementById(str).style.color ="white";
+			}
+			else {
+				document.getElementById(str).style.color ="black";
+			}
 			
 			var checkInWothArea = -1;
 			if(colorWothAreas) {
@@ -1192,6 +1197,16 @@ function update_summary_text() {
 				document.getElementById(str).className = "checked_text_summary_known";
 			else
 				document.getElementById(str).className = "checked_text_summary_ool";
+			
+			if(colorTheme == "dark" && document.getElementById(str).className == "checked_text_summary_ool") {
+				document.getElementById(str).style.color = 'white';
+			}
+			else if (colorTheme == "light" && document.getElementById(str).className == "checked_text_summary_ool"){
+				document.getElementById(str).style.color = 'black';
+			}
+			else {
+				document.getElementById(str).style.color = '';
+			}
 		}
 	}
 

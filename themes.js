@@ -397,6 +397,35 @@ function handleThemes() {
 	}
 	
 	if (Game.changetheme == 1) {Game.themeChange = true; Game.changetheme = 0;}
+	
+	
+	
+	if(colorTheme == "light") {
+		document.body.style.backgroundImage = "linear-gradient(to bottom, #576166, #576166, #576166 36.15%, black 36.15%, black)";
+		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'black';});
+		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#cccccc';});
+		document.querySelectorAll('.alt_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.layout_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.ool_check_text').forEach(e => {e.style.color = 'black';});
+		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'black';});
+	}
+	else {
+		document.body.style.backgroundImage = "linear-gradient(to bottom, #3b4144, #3b4144, #3b4144 36.15%, black 36.15%, black)";
+		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'white';});
+		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#181818';});
+		document.querySelectorAll('.alt_hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.layout_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
+		document.querySelectorAll('.ool_check_text').forEach(e => {e.style.color = 'white';});
+		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'white';});
+	}
 }
 
 function dark_theme() {
