@@ -1383,6 +1383,8 @@ document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "SGL_2022")
 	document.getElementById("hintInput").innerHTML = "30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
+if (document.getElementById("presets").value == "S6")
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 
 window.addEventListener("gamepadconnected", connecthandler);
 window.addEventListener("gamepaddisconnected", disconnecthandler);
