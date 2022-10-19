@@ -165,6 +165,8 @@ var linsoGoMode = false;
 var linsoLightRotation = 0;
 if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
 Person.type = "normie";
+var colorTheme = "dark";
+if (localStorage.getItem("theme") != null) {if (localStorage.getItem("theme") == "light"){colorTheme = "light"; document.getElementById("altThemeControl").innerHTML = "Light Theme"};}
 Logic.brackets = false;
 	
 document.getElementById("text_dung7").style.color = "yellow";
@@ -1022,7 +1024,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i < AreaIndexes[34]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[26]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = Locations[i]; /*elem.onmousedown = mouse_input;*/ if (i < AreaIndexes[26]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
@@ -1381,6 +1383,8 @@ document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "SGL_2022")
 	document.getElementById("hintInput").innerHTML = "30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
+if (document.getElementById("presets").value == "S6")
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 
 window.addEventListener("gamepadconnected", connecthandler);
 window.addEventListener("gamepaddisconnected", disconnecthandler);
