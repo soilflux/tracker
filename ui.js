@@ -1235,50 +1235,64 @@ function update_probabilities() {
 		if (!Known[Items2[i] + j]) {bigLeft += 1;}
 	}
 	
-	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1;}
-	if (searchItems.includes("Letter") && !Known.rutos_letter)  {majorLeft += 1;}
-	if (searchItems.includes("Hammer") && !Known.hammer)  {majorLeft += 1;}
-	if (searchItems.includes("Mirror") && !Known.mirror_shield)  {majorLeft += 1;}
-	if (searchItems.includes("Strength"))  {
+	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1; document.getElementById("searchingFor_boomerang").style.display = "inline-block";} 
+	else if (searchItems.includes("Boomerang")) {document.getElementById("searchingFor_boomerang").style.display = "none";}
+	if (searchItems.includes("Letter") && !Known.rutos_letter)  {majorLeft += 1; document.getElementById("searchingFor_rutos_letter").style.display = "inline-block";} 
+	else if (searchItems.includes("Letter")) {document.getElementById("searchingFor_rutos_letter").style.display = "none";}
+	if (searchItems.includes("Hammer") && !Known.hammer)  {majorLeft += 1; document.getElementById("searchingFor_hammer").style.display = "inline-block";} 
+	else if (searchItems.includes("Hammer")) {document.getElementById("searchingFor_hammer").style.display = "none";}
+	if (searchItems.includes("Mirror") && !Known.mirror_shield)  {majorLeft += 1; document.getElementById("searchingFor_mirror_shield").style.display = "inline-block";} 
+	else if (searchItems.includes("Mirror")) {document.getElementById("searchingFor_mirror_shield").style.display = "none";}
+	if (searchItems.includes("Strength"))  {document.getElementById("searchingFor_strength1").style.display = "inline-block";
 		if (!Known.strength1) {majorLeft += 1;} 
 		if (!Known.strength2) {majorLeft += 1;} 
-		if (!Known.strength3) {majorLeft += 1;} 
+		if (!Known.strength3) {majorLeft += 1;} else {document.getElementById("searchingFor_strength1").style.display = "none";}
 	}
-	if (searchItems.includes("Scale"))  {
+	if (searchItems.includes("Scale")) {document.getElementById("searchingFor_scale1").style.display = "inline-block";
 		if (!Known.scale1) {majorLeft += 1;} 
-		if (!Known.scale2) {majorLeft += 1;} 
+		if (!Known.scale2) {majorLeft += 1;} else{document.getElementById("searchingFor_scale1").style.display = "none";}
 	}
-	if (searchItems.includes("Magic"))  {
+	if (Game.magic) {document.getElementById("searchingFor_magic1").style.display = "none";}
+	if (searchItems.includes("Magic") && !Game.magic)  {document.getElementById("searchingFor_magic1").style.display = "inline-block";
 		if (!Known.magic1) {majorLeft += 1;} 
-		if (!Known.magic2) {majorLeft += 1;} 
+		if (!Known.magic2) {majorLeft += 1;} else{document.getElementById("searchingFor_magic1").style.display = "none";}
 	}
-	if (searchItems.includes("Bow"))  {
+	if (Game.bow) {document.getElementById("searchingFor_bow1").style.display = "none";}
+	if (searchItems.includes("Bow") && !Game.bow)  {document.getElementById("searchingFor_bow1").style.display = "inline-block";
 		if (!Known.bow1) {majorLeft += 1;} 
 		if (!Known.bow2) {majorLeft += 1;} 
-		if (!Known.bow3) {majorLeft += 1;} 
+		if (!Known.bow3) {majorLeft += 1;} else{document.getElementById("searchingFor_bow1").style.display = "none";}
 	}
-	if (searchItems.includes("Hookshot"))  {
+	if (searchItems.includes("Hookshot"))  {document.getElementById("searchingFor_hookshot1").style.display = "inline-block";
 		if (!Known.hookshot1) {majorLeft += 1;} 
-		if (!Known.hookshot2) {majorLeft += 1;} 
+		if (!Known.hookshot2) {majorLeft += 1;} else{document.getElementById("searchingFor_hookshot1").style.display = "none";}
 	}
-	if (searchItems.includes("Bomb Bag"))  {
+	if (Game.bomb_bag) {document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
+	if (searchItems.includes("Bomb Bag") && !Game.bomb_bag)  {document.getElementById("searchingFor_bomb_bag1").style.display = "inline-block";
 		if (!Known.bomb_bag1) {majorLeft += 1;} 
 		if (!Known.bomb_bag2) {majorLeft += 1;} 
-		if (!Known.bomb_bag3) {majorLeft += 1;} 
+		if (!Known.bomb_bag3) {majorLeft += 1;} else{document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
 	}
+	if (Game.slingshot) {document.getElementById("searchingFor_slingshot1").style.display = "none";}
 	if (searchItems.includes("Slingshot"))  {
 		if (!Known.slingshot1) {majorLeft += 1;} 
 		if (!Known.slingshot2) {majorLeft += 1;} 
-		if (!Known.slingshot3) {majorLeft += 1;} 
-	}
-	
-	if (searchItems.includes("Din's Fire") && !Known.dins_fire)  {majorLeft += 1;}
-	if (searchItems.includes("Hover Boots") && !Known.hover_boots)  {majorLeft += 1;}
-	if (searchItems.includes("Kokiri Sword") && !Known.kokiri_sword)  {majorLeft += 1;}
-	if (searchItems.includes("Iron Boots") && !Known.iron_boots)  {majorLeft += 1;}
-	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
-	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1;}
-	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1;}
+		if (!Known.slingshot3) {majorLeft += 1;} else{document.getElementById("searchingFor_slingshot1").style.display = "none";}
+	}	
+	if (searchItems.includes("Din's Fire") && !Known.dins_fire)  {majorLeft += 1; document.getElementById("searchingFor_dins_fire").style.display = "inline-block";}
+	else if (searchItems.includes("Din's Fire")) {document.getElementById("searchingFor_dins_fire").style.display = "none";}
+	if (searchItems.includes("Hover Boots") && !Known.hover_boots)  {majorLeft += 1; document.getElementById("searchingFor_hover_boots").style.display = "inline-block";}
+	else if (searchItems.includes("Hover Boots")) {document.getElementById("searchingFor_hover_boots").style.display = "none";}
+	if (searchItems.includes("Kokiri Sword") && !Known.kokiri_sword)  {majorLeft += 1; document.getElementById("searchingFor_kokiri_sword").style.display = "inline-block";}
+	else if (searchItems.includes("Kokiri Sword")) {document.getElementById("searchingFor_kokiri_sword").style.display = "none";}
+	if (searchItems.includes("Iron Boots") && !Known.iron_boots)  {majorLeft += 1; document.getElementById("searchingFor_iron_boots").style.display = "inline-block";}
+	else if (searchItems.includes("Iron Boots")) {document.getElementById("searchingFor_iron_boots").style.display = "none";}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1; document.getElementById("searchingFor_light_arrows").style.display = "inline-block";}
+	else if (searchItems.includes("Light Arrows")) {document.getElementById("searchingFor_light_arrows").style.display = "none";}
+	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1; document.getElementById("searchingFor_lens").style.display = "inline-block";}
+	else if (searchItems.includes("Lens")) {document.getElementById("searchingFor_lens").style.display = "none";}
+	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1; document.getElementById("searchingFor_light_arrows").style.display = "inline-block";}
+	else if (searchItems.includes("Light Arrows")) {document.getElementById("searchingFor_light_arrows").style.display = "none";}
 	
 	nChecks = document.getElementById("probability_input").value;
 	document.getElementById("bait_probability").innerHTML = "Bait ("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"

@@ -50,14 +50,25 @@ function highlight(x) {
 		searchingFors = document.getElementsByClassName("searchingFor_images");
 		l = searchingFors.length;
 		if (item == "scale" || item == "bomb_bag" || item == "bow" || item == "wallet" || item == "strength" || item == "hookshot" || item == "slingshot" || item == "magic") {item = item + '1'}
-		for (i = 0; i < l; i++) {
-		  if (searchingFors[i].style.display == "none") {
-			  searchingFors[i].id = "searchingFor_" + item;
-			  searchingFors[i].style.display = "inline-block";
-			  searchingFors[i].src = event.target.src;
-			  searchItems.push(ItemNames[Items.indexOf(item)])
-			  break;
-		  }
+		if (!searchItems.includes(ItemNames[Items.indexOf(item)])) {
+			for (i = 0; i < l; i++) {
+			  if (searchingFors[i].style.display == "none") {
+				  searchingFors[i].id = "searchingFor_" + item;
+				  searchingFors[i].style.display = "inline-block";
+				  searchingFors[i].src = event.target.src;
+				  searchItems.push(ItemNames[Items.indexOf(item)])
+				  break;
+			  }
+			}
+		}
+		else {
+			for (i = 0; i < l; i++) {
+			  if (searchingFors[i].id == "searchingFor_" + item) {
+				  searchingFors[i].style.display = "none";
+				  searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]),1)
+				  break;
+			  }
+			}
 		}
 	}
 	
@@ -714,7 +725,6 @@ function refreshVersion() {
 	var elements = document.getElementsByClassName('patchNotes');
 	var currentVersion = parseInt(elements[0].id.substring(2));
 	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
-    console.log(version)
 	for (var i = version; i <= currentVersion; i++) {
         document.getElementById("pn" + i).style.display = "inline-block";
         document.getElementById("patchNotesTitle").style.display = "inline-block";
