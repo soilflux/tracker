@@ -49,16 +49,28 @@ function highlight(x) {
 	if (event.button == 2) {
 		searchingFors = document.getElementsByClassName("searchingFor_images");
 		l = searchingFors.length;
+		flag = false;
 		if (item == "scale" || item == "bomb_bag" || item == "bow" || item == "wallet" || item == "strength" || item == "hookshot" || item == "slingshot" || item == "magic") {item = item + '1'}
 		if (!searchItems.includes(ItemNames[Items.indexOf(item)])) {
 			for (i = 0; i < l; i++) {
-			  if (searchingFors[i].style.display == "none") {
-				  searchingFors[i].id = "searchingFor_" + item;
-				  searchingFors[i].style.display = "inline-block";
-				  searchingFors[i].src = event.target.src;
-				  searchItems.push(ItemNames[Items.indexOf(item)])
-				  break;
-			  }
+				if (searchingFors[i].id == "searchingFor_" + item) {
+					searchingFors[i].style.display = "inline-block";
+					searchingFors[i].src = event.target.src;
+					searchItems.push(ItemNames[Items.indexOf(item)])
+					flag = true;
+					break;
+				}
+			}
+			if (!flag) {
+				for (i = 0; i < l; i++) {
+					if (searchingFors[i].style.display == "none") {
+						searchingFors[i].id = "searchingFor_" + item;
+						searchingFors[i].style.display = "inline-block";
+						searchingFors[i].src = event.target.src;
+						searchItems.push(ItemNames[Items.indexOf(item)])
+						break;
+					}
+				}
 			}
 		}
 		else {
