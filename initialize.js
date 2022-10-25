@@ -48,6 +48,8 @@ var nextIndex = 0;
 var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
+var untracked = 4;
+document.getElementById("bait_probability").onclick = function(){untracked -= 1;}
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;

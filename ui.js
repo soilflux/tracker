@@ -1215,7 +1215,7 @@ function update_summary_text() {
 function update_probabilities() {
 	var explosivesLeft = 0;
 	var majorLeft = 0;
-	var bigLeft = 5;
+	var bigLeft = untracked;
 	if (!Known.bomb_bag1) {explosivesLeft += 1;}
 	if (!Known.bomb_bag2) {explosivesLeft += 1;}
 	if (!Known.bomb_bag3) {explosivesLeft += 1;}
@@ -1226,13 +1226,16 @@ function update_probabilities() {
 	if (!Known.bombchus5) {explosivesLeft += 1;}
 	
 	for (var i = 0; i < Items2.length; i++) {
+		suffix = 0
 		if(Items2[i] == "bombchus" || Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
 		if(Items2[i] == "bottle" && Items2[i-1] == "bottle") {continue;}
-		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {j = 3;}
-		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {j = 2;}
-		else {j = ""}
-		
-		if (!Known[Items2[i] + j]) {bigLeft += 1;}
+		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {suffix = 3;}
+		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {suffix = 2;}
+		else if (!Known[Items2[i]]) {bigLeft += 1;}
+		while (suffix > 0) {
+			if (!Known[Items2[i] + suffix]) {bigLeft += 1;} 
+			suffix-=1;	
+		}			
 	}
 	
 	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1; document.getElementById("searchingFor_boomerang").style.display = "inline-block";} 
@@ -1295,7 +1298,7 @@ function update_probabilities() {
 	else if (searchItems.includes("Light Arrows")) {document.getElementById("searchingFor_light_arrows").style.display = "none";}
 	
 	nChecks = document.getElementById("probability_input").value;
-	document.getElementById("bait_probability").innerHTML = "Bait ("+(bigLeft/(majorLeft+bigLeft)*100).toFixed(2)+"%)"
+	document.getElementById("bait_probability").innerHTML = "Bait ("+((bigLeft-majorLeft)/bigLeft*100).toFixed(2)+"%)"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Game.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
 }
