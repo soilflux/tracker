@@ -1215,7 +1215,7 @@ function update_summary_text() {
 function update_probabilities() {
 	var explosivesLeft = 0;
 	var majorLeft = 0;
-	var bigLeft = untracked;
+	var bigLeft = Math.max(untracked,0);
 	if (!Known.bomb_bag1) {explosivesLeft += 1;}
 	if (!Known.bomb_bag2) {explosivesLeft += 1;}
 	if (!Known.bomb_bag3) {explosivesLeft += 1;}
