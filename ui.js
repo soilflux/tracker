@@ -1276,8 +1276,8 @@ function update_probabilities() {
 		if (!Known.bomb_bag2) {majorLeft += 1;} 
 		if (!Known.bomb_bag3) {majorLeft += 1;} else{document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
 	}
-	if (Game.slingshot) {document.getElementById("searchingFor_slingshot1").style.display = "none";}
-	if (searchItems.includes("Slingshot"))  {
+	
+	if (searchItems.includes("Slingshot"))  {if (Game.slingshot) {document.getElementById("searchingFor_slingshot1").style.display = "none";}
 		if (!Known.slingshot1) {majorLeft += 1;} 
 		if (!Known.slingshot2) {majorLeft += 1;} 
 		if (!Known.slingshot3) {majorLeft += 1;} else{document.getElementById("searchingFor_slingshot1").style.display = "none";}
