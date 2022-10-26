@@ -970,7 +970,7 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[24]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.id = "wasteland_break";  parent.appendChild(elem);}
 	if (i == AreaIndexes[25]) {background = "url('./normal/areas/jabu.jpg')"; var elem = document.createElement("br"); elem.id = "fortress_break";  parent.appendChild(elem);}
 	if (i == AreaIndexes[26]) {
-		parent = document.getElementById("dung1");
+		parent = document.getElementById("dung1"); background = "url('./normal/areas/forest.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_forest"; elem.className = "area_titles"; elem.innerHTML = "For"; elem.onmousedown = route_forest; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "forest"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "forestSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
@@ -978,6 +978,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[27]) {
+		background = "url('./normal/areas/fire.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_fire"; elem.className = "area_titles"; elem.innerHTML = "Fir"; elem.onmousedown = route_fire; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "fire"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "6"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "fireSKs"; elem.className = "superdotSK"; elem.innerHTML = "8"; parent.appendChild(elem);
@@ -985,6 +986,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[28]) {
+		background = "url('./normal/areas/water.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_water"; elem.className = "area_titles"; elem.innerHTML = "Wat"; elem.onmousedown = route_water; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "water"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "4"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "waterSKs"; elem.className = "superdotSK"; elem.innerHTML = "6"; parent.appendChild(elem);
@@ -992,6 +994,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[29]) {
+		background = "url('./normal/areas/spirit.jpg')";
 		parent = document.getElementById("dung2");
 		var elem = document.createElement("small"); elem.id = "title_spirit"; elem.className = "area_titles"; elem.innerHTML = "Spi"; elem.onmousedown = route_spirit; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "spirit"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
@@ -1000,6 +1003,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[30]) {
+		background = "url('./normal/areas/shadow.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_shadow"; elem.className = "area_titles"; elem.innerHTML = "Sha"; elem.onmousedown = route_shadow; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "shadow"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "shadowSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
@@ -1007,12 +1011,14 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[31]) {
+		background = "url('./normal/areas/ganons.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_ganons"; elem.className = "area_titles"; elem.innerHTML = "Gan"; elem.onmousedown = route_ganons; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "ganons"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "ganonsSKs"; elem.className = "superdotSK"; elem.innerHTML = "2"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[32]) {
+		background = "url('./normal/areas/gtg.jpg')";
 		parent = document.getElementById("dung3");
 		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; elem.onmousedown = route_gtg; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "gtg"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "13"; parent.appendChild(elem);
@@ -1020,13 +1026,14 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[33]) {
+		background = "url('./normal/areas/well.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_well"; elem.className = "area_titles"; elem.innerHTML = "Well"; elem.onmousedown = route_well; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "well"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "11"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "wellSKs"; elem.className = "superdotSK"; elem.innerHTML = "3"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i < AreaIndexes[34]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; /*elem.onmousedown = mouse_input;*/ if (i < AreaIndexes[26]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = Locations[i]; /*elem.onmousedown = mouse_input;*/ if (i < AreaIndexes[34]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
