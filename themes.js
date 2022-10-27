@@ -1,62 +1,62 @@
 function dark_soli() {
-	Game.bomb_img= "./images/explosive505050.png";
-	Game.rutos_letter_img= "./images/letter505050.png";
-	Game.boomerang_img= "./images/boomerang505050.png";
-	Game.hookshot_img= "./images/hookshot505050.png";
-	Game.bow_img= "./images/bow505050.png";
-	Game.goron_bracelet_img= "./images/strength1505050.png";
-	Game.lens_img = "./images/lens505050.png";
-	Game.golden_gauntlets_img = "./images/strength3505050.png";
-	Game.hammer_img= "./images/ham505050.png";
-	Game.iron_boots_img= "./images/ironboots505050.png";
-	Game.kokiri_sword_img= "./normal/items/kokiri_sword.png";
-	Game.silver_scale_img=  "./images/silverscale505050.png"
-	Game.golden_scale_img= "./images/goldenscale505050.png";
-	Game.longshot_img= "./images/longshot505050.png";
-	Game.silver_gauntlets_img= "./images/strength2505050.png";
-	Game.mirror_shield_img= "./images/mirrorshield505050.png";
-	Game.dins_fire_img= "./images/dinsfirenew505050.png";
-	Game.magic_img= "./images/magic505050.png";
-	Game.hover_boots_img= "./images/hovers505050.png";
-	Game.light_arrows_img= "./images/lightarrow505050.png";
-	Game.fire_arrows_img= "./images/firearrows505050.png";
-	Game.farores_wind_img = "./images/farores505050.png";
-	Game.bottle_img = "./images/bottle505050.png";
-	Game.slingshot_img = "./images/slingshot505050.png";
-	Game.lullaby_img = "./images/lullaby505050.png";
-	Game.eponas_img = "./images/eponas505050.png";
-	Game.sarias_img = "./images/sarias505050.png";
-	Game.suns_img = "./images/suns505050.png";
-	Game.time_img = "./images/sot505050.png";
-	Game.storms_img = "./images/sos505050.png";
-	Game.minuet_img = "./images/minuet505050.png";
-	Game.bolero_img = "./images/bolero505050.png";
-	Game.serenade_img = "./images/serenade505050.png";
-	Game.requiem_img = "./images/requiem505050.png";
-	Game.nocturne_img = "./images/nocturne505050.png";
-	Game.prelude_img = "./images/prelude505050.png";
-	Game.chu_img = "./images/chux.png";
+	Player.bomb_img= "./images/explosive505050.png";
+	Player.rutos_letter_img= "./images/letter505050.png";
+	Player.boomerang_img= "./images/boomerang505050.png";
+	Player.hookshot_img= "./images/hookshot505050.png";
+	Player.bow_img= "./images/bow505050.png";
+	Player.goron_bracelet_img= "./images/strength1505050.png";
+	Player.lens_img = "./images/lens505050.png";
+	Player.golden_gauntlets_img = "./images/strength3505050.png";
+	Player.hammer_img= "./images/ham505050.png";
+	Player.iron_boots_img= "./images/ironboots505050.png";
+	Player.kokiri_sword_img= "./normal/items/kokiri_sword.png";
+	Player.silver_scale_img=  "./images/silverscale505050.png"
+	Player.golden_scale_img= "./images/goldenscale505050.png";
+	Player.longshot_img= "./images/longshot505050.png";
+	Player.silver_gauntlets_img= "./images/strength2505050.png";
+	Player.mirror_shield_img= "./images/mirrorshield505050.png";
+	Player.dins_fire_img= "./images/dinsfirenew505050.png";
+	Player.magic_img= "./images/magic505050.png";
+	Player.hover_boots_img= "./images/hovers505050.png";
+	Player.light_arrows_img= "./images/lightarrow505050.png";
+	Player.fire_arrows_img= "./images/firearrows505050.png";
+	Player.farores_wind_img = "./images/farores505050.png";
+	Player.bottle_img = "./images/bottle505050.png";
+	Player.slingshot_img = "./images/slingshot505050.png";
+	Player.lullaby_img = "./images/lullaby505050.png";
+	Player.eponas_img = "./images/eponas505050.png";
+	Player.sarias_img = "./images/sarias505050.png";
+	Player.suns_img = "./images/suns505050.png";
+	Player.time_img = "./images/sot505050.png";
+	Player.storms_img = "./images/sos505050.png";
+	Player.minuet_img = "./images/minuet505050.png";
+	Player.bolero_img = "./images/bolero505050.png";
+	Player.serenade_img = "./images/serenade505050.png";
+	Player.requiem_img = "./images/requiem505050.png";
+	Player.nocturne_img = "./images/nocturne505050.png";
+	Player.prelude_img = "./images/prelude505050.png";
+	Player.chu_img = "./images/chux.png";
 	
-	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Game.kokiri_sword_img; }
-	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
-	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
-	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
-	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
-	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
-	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
-	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
-	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
-	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
-	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
-	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
-	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_img; }
-	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
-	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
-	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_img; }
-	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
-	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_img; }
-	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
+	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Player.kokiri_sword_img; }
+	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Player.bomb_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Player.rutos_letter_img; }
+	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Player.boomerang_img; }
+	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Player.hookshot_img; }
+	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Player.bow_img; }
+	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Player.goron_bracelet_img; }
+	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Player.hammer_img; }
+	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Player.iron_boots_img; }
+	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Player.golden_scale_img; }
+	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Player.longshot_img; }
+	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Player.silver_gauntlets_img; }
+	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Player.mirror_shield_img; }
+	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Player.bomb_img; }
+	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Player.hookshot_img; }
+	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Player.dins_fire_img; }
+	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Player.magic_img; }
+	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Player.hover_boots_img; }
+	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Player.bomb_img; }
+	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Player.hookshot_img; }
 	var temp = 0;
 	for (const key of Object.keys(Location_Logic)) {
 		if (temp == 256) {break; }	
@@ -102,30 +102,30 @@ function dark_soli() {
 		if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./images/5RniyE6.png')";}
 	temp +=1;
 	}
-	document.getElementById("chuButton").src= Game.chu_img;
+	document.getElementById("chuButton").src= Player.chu_img;
 	document.getElementById("chuButton").style.opacity = 1;
-	document.getElementById("gan_req2").src= Game.light_arrows_img;
-	document.getElementById("gan_req1").src= Game.magic_img;
-	document.getElementById("gan_req3").src= Game.bow_img;
-	document.getElementById("lullabyimg").src=Game.lullaby_img;
-	document.getElementById("eponasimg").src=Game.eponas_img;
-	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_img;
-	document.getElementById("sotimg").src=Game.time_img;
-	document.getElementById("sosimg").src=Game.storms_img;
-	document.getElementById("minuetimg").src=Game.minuet_img;
-	document.getElementById("boleroimg").src=Game.bolero_img;
-	document.getElementById("serenadeimg").src=Game.serenade_img;
-	document.getElementById("requiemimg").src=Game.requiem_img;
-	document.getElementById("nocturneimg").src=Game.nocturne_img;
-	document.getElementById("preludeimg").src=Game.prelude_img;
-	document.getElementById("faroresimg").src= Game.farores_wind_img;
-	document.getElementById("firearrowsimg").src= Game.fire_arrows_img;
-	document.getElementById("lensimg").src= Game.lens_img;
-	document.getElementById("silverscaleimg").src= Game.silver_scale_img;
-	document.getElementById("bottleimg").src= Game.bottle_img;
-	document.getElementById("slingshotimg").src= Game.slingshot_img;
-	document.getElementById("goldengauntletsimg").src= Game.golden_gauntlets_img;
+	document.getElementById("gan_req2").src= Player.light_arrows_img;
+	document.getElementById("gan_req1").src= Player.magic_img;
+	document.getElementById("gan_req3").src= Player.bow_img;
+	document.getElementById("lullabyimg").src=Player.lullaby_img;
+	document.getElementById("eponasimg").src=Player.eponas_img;
+	document.getElementById("sariasimg").src=Player.sarias_img;
+	document.getElementById("sunsimg").src=Player.suns_img;
+	document.getElementById("sotimg").src=Player.time_img;
+	document.getElementById("sosimg").src=Player.storms_img;
+	document.getElementById("minuetimg").src=Player.minuet_img;
+	document.getElementById("boleroimg").src=Player.bolero_img;
+	document.getElementById("serenadeimg").src=Player.serenade_img;
+	document.getElementById("requiemimg").src=Player.requiem_img;
+	document.getElementById("nocturneimg").src=Player.nocturne_img;
+	document.getElementById("preludeimg").src=Player.prelude_img;
+	document.getElementById("faroresimg").src= Player.farores_wind_img;
+	document.getElementById("firearrowsimg").src= Player.fire_arrows_img;
+	document.getElementById("lensimg").src= Player.lens_img;
+	document.getElementById("silverscaleimg").src= Player.silver_scale_img;
+	document.getElementById("bottleimg").src= Player.bottle_img;
+	document.getElementById("slingshotimg").src= Player.slingshot_img;
+	document.getElementById("goldengauntletsimg").src= Player.golden_gauntlets_img;
 	
 	var all = document.getElementsByClassName('songpics');
 	for (var i = 0; i < all.length; i++) {
@@ -137,172 +137,172 @@ function dark_soli() {
 	}
 	document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 	
-	ItemImages = [Game.farores_wind_img, Game.slingshot_img, Game.slingshot_img, Game.slingshot_img, Game.boomerang_img, Game.silver_scale_img, Game.golden_scale_img, Game.rutos_letter_img, Game.bottle_img, Game.bottle_img, Game.bottle_img, Game.bomb_img, Game.bomb_img, Game.bomb_img, Game.hammer_img, Game.bow_img, Game.bow_img, Game.bow_img, Game.hookshot_img, Game.hookshot_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.mirror_shield_img, Game.magic_img, Game.magic_img, Game.iron_boots_img, Game.kokiri_sword_img, Game.hover_boots_img, Game.wallet1_img, Game.wallet2_img, Game.goron_tunic_img, Game.zora_tunic_img, Game.dins_fire_img, Game.fire_arrows_img, Game.lens_img, Game.prescription_img, Game.claim_check_img, Game.light_arrows_img, Game.lullaby_img, Game.eponas_img, Game.suns_img, Game.sarias_img, Game.storms_img, Game.minuet_img, Game.bolero_img, Game.requiem_img, Game.nocturne_img, Game.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function dark_normie() {
-	Game.bomb_img= "./normal/items/bomb.png";
-	Game.rutos_letter_img= "./normal/items/rutos_letter.png";
-	Game.boomerang_img= "./normal/items/boomerang.png";
-	Game.hookshot_img= "./normal/items/hookshot.png";
-	Game.bow_img= "./normal/items/bow.png";
-	Game.goron_bracelet_img= "./normal/items/goron_bracelet.png";
-	Game.lens_img = "./normal/items/lens.png";
-	Game.golden_gauntlets_img = "./normal/items/golden_gauntlets.png";
-	Game.hammer_img= "./normal/items/hammer.png";
-	Game.iron_boots_img= "./normal/items/iron_boots.png";
-	Game.kokiri_sword_img= "./normal/items/kokiri_sword.png";
-	Game.silver_scale_img=  "./normal/items/silver_scale.png"
-	Game.golden_scale_img= "./normal/items/golden_scale.png";
-	Game.longshot_img= "./normal/items/longshot.png";
-	Game.silver_gauntlets_img= "./normal/items/silver_gauntlets.png";
-	Game.mirror_shield_img= "./normal/items/mirror_shield.png";
-	Game.dins_fire_img= "./normal/items/dins_fire.png";
-	Game.magic_img= "./normal/items/magic.png";
-	Game.magic_2_img =".normal/items/magic_2.png";
-	Game.hover_boots_img= "./normal/items/hover_boots.png";
-	Game.light_arrows_img= "./normal/items/light_arrows.png";
-	Game.fire_arrows_img= "./normal/items/fire_arrows.png";
-	Game.farores_wind_img = "./normal/items/farores_wind.png";
-	Game.bottle_img = "./normal/items/bottle.png";
-	Game.slingshot_img = "./normal/items/slingshot.png";
-	Game.lullaby_img = "./normal/items/lullaby.png";
-	Game.eponas_img = "./normal/items/eponas.png";
-	Game.sarias_img = "./normal/items/sarias.png";
-	Game.suns_img = "./normal/items/suns.png";
-	Game.time_img = "./normal/items/time.png";
-	Game.storms_img = "./normal/items/storms.png";
-	Game.minuet_img = "./normal/items/minuet.png";
-	Game.bolero_img = "./normal/items/bolero.png";
-	Game.serenade_img = "./normal/items/serenade.png";
-	Game.requiem_img = "./normal/items/requiem.png";
-	Game.nocturne_img = "./normal/items/nocturne.png";
-	Game.prelude_img = "./normal/items/prelude.png";
-	Game.chu_img = "./normal/items/chu.png";
-	Game.wallet1_img = "./normal/items/adults_wallet.png";
-	Game.boots_img = "./normal/items/boots.png";
-	Game.magicarrows_img = "./normal/items/magicarrows.png";
-	Game.magicspell_img = "./normal/items/magicspell.png";
-	Game.goronzora_img = "./normal/items/goronzora.png";
+	Player.bomb_img= "./normal/items/bomb.png";
+	Player.rutos_letter_img= "./normal/items/rutos_letter.png";
+	Player.boomerang_img= "./normal/items/boomerang.png";
+	Player.hookshot_img= "./normal/items/hookshot.png";
+	Player.bow_img= "./normal/items/bow.png";
+	Player.goron_bracelet_img= "./normal/items/goron_bracelet.png";
+	Player.lens_img = "./normal/items/lens.png";
+	Player.golden_gauntlets_img = "./normal/items/golden_gauntlets.png";
+	Player.hammer_img= "./normal/items/hammer.png";
+	Player.iron_boots_img= "./normal/items/iron_boots.png";
+	Player.kokiri_sword_img= "./normal/items/kokiri_sword.png";
+	Player.silver_scale_img=  "./normal/items/silver_scale.png"
+	Player.golden_scale_img= "./normal/items/golden_scale.png";
+	Player.longshot_img= "./normal/items/longshot.png";
+	Player.silver_gauntlets_img= "./normal/items/silver_gauntlets.png";
+	Player.mirror_shield_img= "./normal/items/mirror_shield.png";
+	Player.dins_fire_img= "./normal/items/dins_fire.png";
+	Player.magic_img= "./normal/items/magic.png";
+	Player.magic_2_img =".normal/items/magic_2.png";
+	Player.hover_boots_img= "./normal/items/hover_boots.png";
+	Player.light_arrows_img= "./normal/items/light_arrows.png";
+	Player.fire_arrows_img= "./normal/items/fire_arrows.png";
+	Player.farores_wind_img = "./normal/items/farores_wind.png";
+	Player.bottle_img = "./normal/items/bottle.png";
+	Player.slingshot_img = "./normal/items/slingshot.png";
+	Player.lullaby_img = "./normal/items/lullaby.png";
+	Player.eponas_img = "./normal/items/eponas.png";
+	Player.sarias_img = "./normal/items/sarias.png";
+	Player.suns_img = "./normal/items/suns.png";
+	Player.time_img = "./normal/items/time.png";
+	Player.storms_img = "./normal/items/storms.png";
+	Player.minuet_img = "./normal/items/minuet.png";
+	Player.bolero_img = "./normal/items/bolero.png";
+	Player.serenade_img = "./normal/items/serenade.png";
+	Player.requiem_img = "./normal/items/requiem.png";
+	Player.nocturne_img = "./normal/items/nocturne.png";
+	Player.prelude_img = "./normal/items/prelude.png";
+	Player.chu_img = "./normal/items/chu.png";
+	Player.wallet1_img = "./normal/items/adults_wallet.png";
+	Player.boots_img = "./normal/items/boots.png";
+	Player.magicarrows_img = "./normal/items/magicarrows.png";
+	Player.magicspell_img = "./normal/items/magicspell.png";
+	Player.goronzora_img = "./normal/items/goronzora.png";
 	
-	Game.agony_img = "./normal/items/agony.png";
-	Game.antidote_img = "./normal/items/antidote.png";
-	Game.arrows30_img = "./normal/items/arrows30.png";
-	Game.arrows40_img = "./normal/items/arrows40.png";
-	Game.arrows50_img = "./normal/items/arrows50.png";
-	Game.big_poe_img = "./normal/items/big_poe.png";
-	Game.biggoron_sword_img = "./normal/items/biggoron_sword.png";
-	Game.blue_chicken_img = "./normal/items/blue_chicken.png";
-	Game.blue_fire_img = "./normal/items/blue_fire.png";
-	Game.blue_potion_img = "./normal/items/blue_potion.png";
-	Game.bomb_bag_img = "./normal/items/bomb_bag.png";
-	Game.bomb_bag_40_img = "./normal/items/bomb_bag_40.png";
-	Game.bomb_bag_50_img = "./normal/items/bomb_bag_50.png";
-	Game.broken_sword_img = "./normal/items/broken_sword.png";
-	Game.bugs_img = "./normal/items/bugs.png";
-	Game.bunny_hood_img = "./normal/items/bunny_hood.png";
-	Game.chicken1_img = "./normal/items/chicken1.png";
-	Game.chicken2_img = "./normal/items/chicken2.png";
-	Game.claim_check_img = "./normal/items/claim_check.png";
-	Game.deku_shield_img = "./normal/items/deku_shield.png";
-	Game.egg1_img = "./normal/items/egg1.png";
-	Game.egg2_img = "./normal/items/egg2.png";
-	Game.eyeball_frog_img = "./normal/items/eyeball_frog.png";
-	Game.eyedrops_img = "./normal/items/eyedrops.png";
-	Game.fairy_img = "./normal/items/fairy.png";
-	Game.fish_img = "./normal/items/fish.png";
-	Game.gerudo_card_img = "./normal/items/gerudo_card.png";
-	Game.gerudo_mask_img = "./normal/items/gerudo_mask.png";
-	Game.wallet2_img = "./normal/items/giants_wallet.png";
-	Game.goron_mask_img = "./normal/items/goron_mask.png";
-	Game.goron_tunic_img = "./normal/items/goron_tunic.png";
-	Game.green_potion_img = "./normal/items/green_potion.png";
-	Game.half_milk_img = "./normal/items/half_milk.png";
-	Game.hylian_shield_img = "./normal/items/hylian_shield.png";
-	Game.ice_arrows_img = "./normal/items/ice_arrows.png";
-	Game.keaton_mask_img = "./normal/items/keaton_mask.png";
-	Game.kokiri_boots_img = "./normal/items/kokiri_boots.png";
-	Game.kokiri_sword_img = "./normal/items/kokiri_sword.png";
-	Game.kokiri_tunic_img = "./normal/items/kokiri_tunic.png";
-	Game.magic_2_img = "./normal/items/magic_2.png";
-	Game.beans_img = "./normal/items/beans.png";
-	Game.mask_of_truth_img = "./normal/items/mask_of_truth.png";
-	Game.master_sword_img = "./normal/items/master_sword.png";
-	Game.milk_img = "./normal/items/milk.png";
-	Game.nayrus_love_img = "./normal/items/nayrus_love.png";
-	Game.nut_img = "./normal/items/nut.png";
-	Game.ocarina_img = "./normal/items/ocarina.png";
-	Game.ocarina_2_img = "./normal/items/ocarina_2.png";
-	Game.odd_mushroom_img = "./normal/items/odd_mushroom.png";
-	Game.poachers_saw_img = "./normal/items/poachers_saw.png";
-	Game.prescription_img = "./normal/items/prescription.png";
-	Game.red_potion_img = "./normal/items/red_potion.png";
-	Game.seeds_30_img = "./normal/items/seeds_30.png";
-	Game.seeds_40_img = "./normal/items/seeds_40.png";
-	Game.seeds_50_img = "./normal/items/seeds_50.png";
-	Game.skull_mask_img = "./normal/items/skull_mask.png";
-	Game.skull_token_img = "./normal/items/skull_token.png";
-	Game.small_poe_img = "./normal/items/small_poe.png";
-	Game.sold_out_img = "./normal/items/sold_out.png";
-	Game.spooky_mask_img = "./normal/items/spooky_mask.png";
-	Game.stick_img = "./normal/items/stick.png";
-	Game.zeldas_letter_img = "./normal/items/zeldas_letter.png";
-	Game.zora_mask_img = "./normal/items/zora_mask.png";
-	Game.zora_tunic_img = "./normal/items/zora_tunic.png";
+	Player.agony_img = "./normal/items/agony.png";
+	Player.antidote_img = "./normal/items/antidote.png";
+	Player.arrows30_img = "./normal/items/arrows30.png";
+	Player.arrows40_img = "./normal/items/arrows40.png";
+	Player.arrows50_img = "./normal/items/arrows50.png";
+	Player.big_poe_img = "./normal/items/big_poe.png";
+	Player.biggoron_sword_img = "./normal/items/biggoron_sword.png";
+	Player.blue_chicken_img = "./normal/items/blue_chicken.png";
+	Player.blue_fire_img = "./normal/items/blue_fire.png";
+	Player.blue_potion_img = "./normal/items/blue_potion.png";
+	Player.bomb_bag_img = "./normal/items/bomb_bag.png";
+	Player.bomb_bag_40_img = "./normal/items/bomb_bag_40.png";
+	Player.bomb_bag_50_img = "./normal/items/bomb_bag_50.png";
+	Player.broken_sword_img = "./normal/items/broken_sword.png";
+	Player.bugs_img = "./normal/items/bugs.png";
+	Player.bunny_hood_img = "./normal/items/bunny_hood.png";
+	Player.chicken1_img = "./normal/items/chicken1.png";
+	Player.chicken2_img = "./normal/items/chicken2.png";
+	Player.claim_check_img = "./normal/items/claim_check.png";
+	Player.deku_shield_img = "./normal/items/deku_shield.png";
+	Player.egg1_img = "./normal/items/egg1.png";
+	Player.egg2_img = "./normal/items/egg2.png";
+	Player.eyeball_frog_img = "./normal/items/eyeball_frog.png";
+	Player.eyedrops_img = "./normal/items/eyedrops.png";
+	Player.fairy_img = "./normal/items/fairy.png";
+	Player.fish_img = "./normal/items/fish.png";
+	Player.gerudo_card_img = "./normal/items/gerudo_card.png";
+	Player.gerudo_mask_img = "./normal/items/gerudo_mask.png";
+	Player.wallet2_img = "./normal/items/giants_wallet.png";
+	Player.goron_mask_img = "./normal/items/goron_mask.png";
+	Player.goron_tunic_img = "./normal/items/goron_tunic.png";
+	Player.green_potion_img = "./normal/items/green_potion.png";
+	Player.half_milk_img = "./normal/items/half_milk.png";
+	Player.hylian_shield_img = "./normal/items/hylian_shield.png";
+	Player.ice_arrows_img = "./normal/items/ice_arrows.png";
+	Player.keaton_mask_img = "./normal/items/keaton_mask.png";
+	Player.kokiri_boots_img = "./normal/items/kokiri_boots.png";
+	Player.kokiri_sword_img = "./normal/items/kokiri_sword.png";
+	Player.kokiri_tunic_img = "./normal/items/kokiri_tunic.png";
+	Player.magic_2_img = "./normal/items/magic_2.png";
+	Player.beans_img = "./normal/items/beans.png";
+	Player.mask_of_truth_img = "./normal/items/mask_of_truth.png";
+	Player.master_sword_img = "./normal/items/master_sword.png";
+	Player.milk_img = "./normal/items/milk.png";
+	Player.nayrus_love_img = "./normal/items/nayrus_love.png";
+	Player.nut_img = "./normal/items/nut.png";
+	Player.ocarina_img = "./normal/items/ocarina.png";
+	Player.ocarina_2_img = "./normal/items/ocarina_2.png";
+	Player.odd_mushroom_img = "./normal/items/odd_mushroom.png";
+	Player.poachers_saw_img = "./normal/items/poachers_saw.png";
+	Player.prescription_img = "./normal/items/prescription.png";
+	Player.red_potion_img = "./normal/items/red_potion.png";
+	Player.seeds_30_img = "./normal/items/seeds_30.png";
+	Player.seeds_40_img = "./normal/items/seeds_40.png";
+	Player.seeds_50_img = "./normal/items/seeds_50.png";
+	Player.skull_mask_img = "./normal/items/skull_mask.png";
+	Player.skull_token_img = "./normal/items/skull_token.png";
+	Player.small_poe_img = "./normal/items/small_poe.png";
+	Player.sold_out_img = "./normal/items/sold_out.png";
+	Player.spooky_mask_img = "./normal/items/spooky_mask.png";
+	Player.stick_img = "./normal/items/stick.png";
+	Player.zeldas_letter_img = "./normal/items/zeldas_letter.png";
+	Player.zora_mask_img = "./normal/items/zora_mask.png";
+	Player.zora_tunic_img = "./normal/items/zora_tunic.png";
 	
-	Game.emerald_img = "./normal/items/emerald.png";
-	Game.ruby_img = "./normal/items/ruby.png";
-	Game.sapphire_img = "./normal/items/sapphire.png";
-	Game.forest_img = "./normal/items/forest.png";
-	Game.fire_img = "./normal/items/fire.png";
-	Game.water_img = "./normal/items/water.png";
-	Game.shadow_img = "./normal/items/shadow.png";
-	Game.spirit_img = "./normal/items/spirit.png";
-	Game.light_img = "./normal/items/light.png";
+	Player.emerald_img = "./normal/items/emerald.png";
+	Player.ruby_img = "./normal/items/ruby.png";
+	Player.sapphire_img = "./normal/items/sapphire.png";
+	Player.forest_img = "./normal/items/forest.png";
+	Player.fire_img = "./normal/items/fire.png";
+	Player.water_img = "./normal/items/water.png";
+	Player.shadow_img = "./normal/items/shadow.png";
+	Player.spirit_img = "./normal/items/spirit.png";
+	Player.light_img = "./normal/items/light.png";
 	
 	
-	//document.getElementById("mouseInputs_bomb_bag").src = Game.bomb_img;
-	//document.getElementById("mouseInputs_mirror_shield").src = Game.mirror_shield_img;
-	//document.getElementById("mouseInputs_lens").src = Game.lens_img;
-	//document.getElementById("mouseInputs_bottle").src = Game.rutos_letter_img;
-	//document.getElementById("mouseInputs_bow").src = Game.bow_img;
-	//document.getElementById("mouseInputs_hammer").src = Game.hammer_img;
-	//document.getElementById("mouseInputs_hookshot").src = Game.hookshot_img;
-	//document.getElementById("mouseInputs_boomerang").src = Game.boomerang_img;
-	//document.getElementById("mouseInputs_chus").src = Game.chu_img;
-	//document.getElementById("mouseInputs_scale").src = Game.silver_scale_img;
-	//document.getElementById("mouseInputs_magic").src = Game.magic_img;
-	//document.getElementById("mouseInputs_strength").src = Game.goron_bracelet_img;
-	//document.getElementById("mouseInputs_slingshot").src = Game.slingshot_img;
-	//document.getElementById("mouseInputs_magicspell").src = Game.magicspell_img;
-	//document.getElementById("mouseInputs_magicarrows").src = Game.magicarrows_img;
-	//document.getElementById("mouseInputs_boots").src = Game.boots_img;
-	//document.getElementById("mouseInputs_kokiri_sword").src = Game.kokiri_sword_img;
-	//document.getElementById("mouseInputs_goronzora").src = Game.goronzora_img;
-	//document.getElementById("mouseInputs_wallet").src = Game.wallet1_img;
-	//document.getElementById("mouseInputs_prescription").src = Game.prescription_img;
-	//document.getElementById("mouseInputs_claim_check").src = Game.claim_check_img;
+	//document.getElementById("mouseInputs_bomb_bag").src = Player.bomb_img;
+	//document.getElementById("mouseInputs_mirror_shield").src = Player.mirror_shield_img;
+	//document.getElementById("mouseInputs_lens").src = Player.lens_img;
+	//document.getElementById("mouseInputs_bottle").src = Player.rutos_letter_img;
+	//document.getElementById("mouseInputs_bow").src = Player.bow_img;
+	//document.getElementById("mouseInputs_hammer").src = Player.hammer_img;
+	//document.getElementById("mouseInputs_hookshot").src = Player.hookshot_img;
+	//document.getElementById("mouseInputs_boomerang").src = Player.boomerang_img;
+	//document.getElementById("mouseInputs_chus").src = Player.chu_img;
+	//document.getElementById("mouseInputs_scale").src = Player.silver_scale_img;
+	//document.getElementById("mouseInputs_magic").src = Player.magic_img;
+	//document.getElementById("mouseInputs_strength").src = Player.goron_bracelet_img;
+	//document.getElementById("mouseInputs_slingshot").src = Player.slingshot_img;
+	//document.getElementById("mouseInputs_magicspell").src = Player.magicspell_img;
+	//document.getElementById("mouseInputs_magicarrows").src = Player.magicarrows_img;
+	//document.getElementById("mouseInputs_boots").src = Player.boots_img;
+	//document.getElementById("mouseInputs_kokiri_sword").src = Player.kokiri_sword_img;
+	//document.getElementById("mouseInputs_goronzora").src = Player.goronzora_img;
+	//document.getElementById("mouseInputs_wallet").src = Player.wallet1_img;
+	//document.getElementById("mouseInputs_prescription").src = Player.prescription_img;
+	//document.getElementById("mouseInputs_claim_check").src = Player.claim_check_img;
 	
-	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Game.kokiri_sword_img; }
-	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Game.bomb_img; }
-	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Game.rutos_letter_img; }
-	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Game.boomerang_img; }
-	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Game.hookshot_img; }
-	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Game.bow_img; }
-	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Game.goron_bracelet_img; }
-	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Game.hammer_img; }
-	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Game.iron_boots_img; }
-	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Game.golden_scale_img; }
-	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Game.longshot_img; }
-	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Game.silver_gauntlets_img; }
-	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Game.mirror_shield_img; }
-	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Game.bomb_img; }
-	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Game.hookshot_img; }
-	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Game.dins_fire_img; }
-	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Game.magic_img; }
-	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Game.hover_boots_img; }
-	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Game.bomb_img; }
-	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Game.hookshot_img; }
+	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Player.kokiri_sword_img; }
+	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Player.bomb_img; }
+	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Player.rutos_letter_img; }
+	if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").src = Player.boomerang_img; }
+	if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").src = Player.hookshot_img; }
+	if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").src = Player.bow_img; }
+	if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").src = Player.goron_bracelet_img; }
+	if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").src = Player.hammer_img; }
+	if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").src = Player.iron_boots_img; }
+	if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").src = Player.golden_scale_img; }
+	if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").src = Player.longshot_img; }
+	if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").src = Player.silver_gauntlets_img; }
+	if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").src = Player.mirror_shield_img; }
+	if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").src = Player.bomb_img; }
+	if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").src = Player.hookshot_img; }
+	if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").src = Player.dins_fire_img; }
+	if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").src = Player.magic_img; }
+	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Player.hover_boots_img; }
+	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Player.bomb_img; }
+	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Player.hookshot_img; }
 	document.getElementById("normalColumn1").style.width="97px";
 	document.getElementById("normalColumn2").style.width="97px";
 	document.getElementById("normalColumn3").style.width="97px";
@@ -347,30 +347,30 @@ function dark_normie() {
 		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
 		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
 	}
-	document.getElementById("chuButton").src= Game.chu_img;
+	document.getElementById("chuButton").src= Player.chu_img;
 	document.getElementById("chuButton").style.opacity = .4;
-	document.getElementById("gan_req2").src= Game.light_arrows_img;
-	document.getElementById("gan_req1").src= Game.magic_img;
-	document.getElementById("gan_req3").src= Game.bow_img;
-	document.getElementById("lullabyimg").src=Game.lullaby_img;
-	document.getElementById("eponasimg").src=Game.eponas_img;
-	document.getElementById("sariasimg").src=Game.sarias_img;
-	document.getElementById("sunsimg").src=Game.suns_img;
-	document.getElementById("sotimg").src=Game.time_img;
-	document.getElementById("sosimg").src=Game.storms_img;
-	document.getElementById("minuetimg").src=Game.minuet_img;
-	document.getElementById("boleroimg").src=Game.bolero_img;
-	document.getElementById("serenadeimg").src=Game.serenade_img;
-	document.getElementById("requiemimg").src=Game.requiem_img;
-	document.getElementById("nocturneimg").src=Game.nocturne_img;
-	document.getElementById("preludeimg").src=Game.prelude_img;
-	document.getElementById("faroresimg").src= Game.farores_wind_img;
-	document.getElementById("firearrowsimg").src= Game.fire_arrows_img;
-	document.getElementById("lensimg").src= Game.lens_img;
-	document.getElementById("silverscaleimg").src= Game.silver_scale_img;
-	document.getElementById("bottleimg").src= Game.bottle_img;
-	document.getElementById("slingshotimg").src= Game.slingshot_img;
-	document.getElementById("goldengauntletsimg").src= Game.golden_gauntlets_img;
+	document.getElementById("gan_req2").src= Player.light_arrows_img;
+	document.getElementById("gan_req1").src= Player.magic_img;
+	document.getElementById("gan_req3").src= Player.bow_img;
+	document.getElementById("lullabyimg").src=Player.lullaby_img;
+	document.getElementById("eponasimg").src=Player.eponas_img;
+	document.getElementById("sariasimg").src=Player.sarias_img;
+	document.getElementById("sunsimg").src=Player.suns_img;
+	document.getElementById("sotimg").src=Player.time_img;
+	document.getElementById("sosimg").src=Player.storms_img;
+	document.getElementById("minuetimg").src=Player.minuet_img;
+	document.getElementById("boleroimg").src=Player.bolero_img;
+	document.getElementById("serenadeimg").src=Player.serenade_img;
+	document.getElementById("requiemimg").src=Player.requiem_img;
+	document.getElementById("nocturneimg").src=Player.nocturne_img;
+	document.getElementById("preludeimg").src=Player.prelude_img;
+	document.getElementById("faroresimg").src= Player.farores_wind_img;
+	document.getElementById("firearrowsimg").src= Player.fire_arrows_img;
+	document.getElementById("lensimg").src= Player.lens_img;
+	document.getElementById("silverscaleimg").src= Player.silver_scale_img;
+	document.getElementById("bottleimg").src= Player.bottle_img;
+	document.getElementById("slingshotimg").src= Player.slingshot_img;
+	document.getElementById("goldengauntletsimg").src= Player.golden_gauntlets_img;
 	var all = document.getElementsByClassName('songpics');
 	for (var i = 0; i < all.length; i++) {
 	all[i].style.width="38px";
@@ -383,20 +383,20 @@ function dark_normie() {
 	
 	
 	
-	ItemImages = [Game.farores_wind_img, Game.slingshot_img, Game.slingshot_img, Game.slingshot_img, Game.boomerang_img, Game.silver_scale_img, Game.golden_scale_img, Game.rutos_letter_img, Game.bottle_img, Game.bottle_img, Game.bottle_img, Game.bomb_img, Game.bomb_img, Game.bomb_img, Game.hammer_img, Game.bow_img, Game.bow_img, Game.bow_img, Game.hookshot_img, Game.hookshot_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.goron_bracelet_img, Game.mirror_shield_img, Game.magic_img, Game.magic_img, Game.iron_boots_img, Game.kokiri_sword_img, Game.hover_boots_img, Game.wallet1_img, Game.wallet2_img, Game.goron_tunic_img, Game.zora_tunic_img, Game.dins_fire_img, Game.fire_arrows_img, Game.lens_img, Game.prescription_img, Game.claim_check_img, Game.light_arrows_img, Game.lullaby_img, Game.eponas_img, Game.suns_img, Game.sarias_img, Game.storms_img, Game.minuet_img, Game.bolero_img, Game.requiem_img, Game.nocturne_img, Game.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function handleThemes() {
-	if(Game.theme == "dark" && Game.themeChange) {
+	if(Player.theme == "dark" && Player.themeChange) {
 		if (Person.type == "soli") {dark_soli();}
 		else if (Person.type == "normie") {dark_normie();}	
 		dark_theme();
 	}
-	if(Game.theme == "light" && Game.themeChange) {
+	if(Player.theme == "light" && Player.themeChange) {
 		light_theme();
 	}
 	
-	if (Game.changetheme == 1) {Game.themeChange = true; Game.changetheme = 0;}
+	if (Player.changetheme == 1) {Player.themeChange = true; Player.changetheme = 0;}
 	
 	
 	
@@ -429,7 +429,7 @@ function handleThemes() {
 }
 
 function dark_theme() {
-	Game.themeChange = false;
+	Player.themeChange = false;
 	document.getElementById("checks_remaining").style.color="lightblue";
 	document.getElementById("logically_accessible").style.color=inLogicColor;
 	var all = document.getElementsByClassName('logic_check_text');
@@ -448,7 +448,7 @@ function dark_theme() {
 
 
 function light_theme() {
-	Game.themeChange = false;
+	Player.themeChange = false;
 	document.getElementById("logically_accessible").style.color="darkgreen";
 	document.getElementById("checks_remaining").style.color="blue";
 	var all = document.getElementsByClassName('logic_check_text');

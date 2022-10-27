@@ -31,7 +31,7 @@ function process_inputs() {
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
 		if(document.getElementById(key).value == "chu") {
-			if(Game.has_chus == false)
+			if(Player.has_chus == false && !hinted && !peeked)
 				enableChus();
 				
 			if(!Known.bombchus1) {Known.bombchus1 = true;}
@@ -80,9 +80,9 @@ function process_inputs() {
 							Known[Items2[j] + duplicate] = true; 
 							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
 							if (!hinted && !peeked){
-								Game[Items2[j] + duplicate] = true;
+								Player[Items2[j] + duplicate] = true;
 								if(inputs[j] == "big")
-									Game["big_poe"] = true;
+									Player["big_poe"] = true;
 							}
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
@@ -90,7 +90,7 @@ function process_inputs() {
 							if(hintedInput == inputs[j])
 								thisIsHinted = true;
 							junkItem(document.getElementById(key));
-							if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
+							if (!Player[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 							thisIsHinted = false;
 							hintedInput = "";
 							break;
@@ -99,7 +99,7 @@ function process_inputs() {
 							Check[document.getElementById(key).id] = Items2[j];
 							Location[Items2[j]] = document.getElementById(key).id; 
 							Known[Items2[j]] = true; 
-							if (!hinted && !peeked) {Game[Items2[j]] = true;} 
+							if (!hinted && !peeked) {Player[Items2[j]] = true;} 
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted || peeked) {temptext2 += Names[i] + ": " + ItemNames2[j] + "<br />";} 
 							var change = "text_" + document.getElementById(key).id; 
@@ -152,14 +152,14 @@ function stone_medallion_input() {
 		if (i <= 3) {document.getElementById("dung" + i + "_icon").className = "stones";}
 		if (i > 3)  {document.getElementById("dung" + i + "_icon").className = "medallions";}
 		
-		if (str == "de") {Logic["dung" + i] = "deku"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dek"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.kokiri_sword_img; dekuPlacement = "dung" + i;}
-		else if (str == "do") {Logic["dung" + i]= "dodongos"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dod"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.bomb_img; dodongosPlacement = "dung" + i;}
-		else if (str == "ja") {Logic["dung" + i] = "jabu"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "jab"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.rutos_letter_img; document.getElementById("dung" + i + "_req2").src=Game.boomerang_img; jabuPlacement = "dung" + i;}
-		else if (str == "fo") {Logic["dung" + i] = "forest"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "for"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.hookshot_img; document.getElementById("dung" + i + "_req2").src=Game.bow_img; document.getElementById("dung" + i + "_req3").src=Game.goron_bracelet_img; forestPlacement = "dung" + i;}
-		else if (str == "fi") {Logic["dung" + i] = "fire"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "fir"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.hammer_img; firePlacement = "dung" + i;}
-		else if (str == "wa") {Logic["dung" + i] = "water"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "wat"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.iron_boots_img; document.getElementById("dung" + i + "_text2").innerHTML ="/"; document.getElementById("dung" + i + "_req2").src=Game.golden_scale_img; document.getElementById("dung" + i + "_text3").innerHTML = "+"; document.getElementById("dung" + i + "_req3").src=Game.longshot_img; waterPlacement = "dung" + i;}
-		else if (str == "sh") {Logic["dung" + i] = "shadow"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "sha"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req5").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.dins_fire_img; document.getElementById("dung" + i + "_req2").src =Game.magic_img; document.getElementById("dung" + i + "_req3").src=Game.hover_boots_img; document.getElementById("dung" + i + "_req4").src=Game.bomb_img; document.getElementById("dung" + i + "_req5").src=Game.hookshot_img; shadowPlacement = "dung" + i;}
-		else if (str == "sp") {Logic["dung" + i] = "spirit"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "spi"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.silver_gauntlets_img; document.getElementById("dung" + i + "_req2").src=Game.mirror_shield_img; document.getElementById("dung" + i + "_req3").src=Game.bomb_img; document.getElementById("dung" + i + "_req4").src=Game.hookshot_img; spiritPlacement = "dung" + i;}
+		if (str == "de") {Logic["dung" + i] = "deku"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dek"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.kokiri_sword_img; dekuPlacement = "dung" + i;}
+		else if (str == "do") {Logic["dung" + i]= "dodongos"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dod"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.bomb_img; dodongosPlacement = "dung" + i;}
+		else if (str == "ja") {Logic["dung" + i] = "jabu"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "jab"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.rutos_letter_img; document.getElementById("dung" + i + "_req2").src=Player.boomerang_img; jabuPlacement = "dung" + i;}
+		else if (str == "fo") {Logic["dung" + i] = "forest"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "for"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.hookshot_img; document.getElementById("dung" + i + "_req2").src=Player.bow_img; document.getElementById("dung" + i + "_req3").src=Player.goron_bracelet_img; forestPlacement = "dung" + i;}
+		else if (str == "fi") {Logic["dung" + i] = "fire"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "fir"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.hammer_img; firePlacement = "dung" + i;}
+		else if (str == "wa") {Logic["dung" + i] = "water"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "wat"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.iron_boots_img; document.getElementById("dung" + i + "_text2").innerHTML ="/"; document.getElementById("dung" + i + "_req2").src=Player.golden_scale_img; document.getElementById("dung" + i + "_text3").innerHTML = "+"; document.getElementById("dung" + i + "_req3").src=Player.longshot_img; waterPlacement = "dung" + i;}
+		else if (str == "sh") {Logic["dung" + i] = "shadow"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "sha"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req5").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.dins_fire_img; document.getElementById("dung" + i + "_req2").src =Player.magic_img; document.getElementById("dung" + i + "_req3").src=Player.hover_boots_img; document.getElementById("dung" + i + "_req4").src=Player.bomb_img; document.getElementById("dung" + i + "_req5").src=Player.hookshot_img; shadowPlacement = "dung" + i;}
+		else if (str == "sp") {Logic["dung" + i] = "spirit"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "spi"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.silver_gauntlets_img; document.getElementById("dung" + i + "_req2").src=Player.mirror_shield_img; document.getElementById("dung" + i + "_req3").src=Player.bomb_img; document.getElementById("dung" + i + "_req4").src=Player.hookshot_img; spiritPlacement = "dung" + i;}
 		else if (str == "fr" || str == "kk") {Logic["dung" + i] = "pocket"; document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "pok"; pocketPlacement = "dung" + i;}
 		else {
 			document.getElementById("dung" + i + "_icon").className = "empty"; 
@@ -179,14 +179,14 @@ function stone_medallion_input() {
 	if (Logic.dung8 != "unknown") {Logic.spirit_medallion = Logic.dung8; document.getElementById("text_dung8").style.color = "rgb(255, 165, 0)"; document.getElementById("dung8_icon").src = "./normal/items/spirit.png";}
 	
 	for (var i = 1; i<= 9; i++) {
-		if (dekuPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "deku"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "deku"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dek"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.kokiri_sword_img; dekuPlacement = "dung" + i;}
-		else if (dodongosPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "dodongos"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "dodongos"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dod"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.bomb_img; dodongosPlacement = "dung" + i;}
-		else if (jabuPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "jabu"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "jabu"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "jab"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.rutos_letter_img; document.getElementById("dung" + i + "_req2").src=Game.boomerang_img; jabuPlacement = "dung" + i;}
-		else if (forestPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "forest"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "forest"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "for"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.hookshot_img; document.getElementById("dung" + i + "_req2").src=Game.bow_img; document.getElementById("dung" + i + "_req3").src=Game.goron_bracelet_img; forestPlacement = "dung" + i;}
-		else if (firePlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "fire"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "fire"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "fir"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.hammer_img; firePlacement = "dung" + i;}
-		else if (waterPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "water"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "water"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "wat"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.iron_boots_img; document.getElementById("dung" + i + "_text2").innerHTML ="/"; document.getElementById("dung" + i + "_req2").src=Game.golden_scale_img; document.getElementById("dung" + i + "_text3").innerHTML = "+"; document.getElementById("dung" + i + "_req3").src=Game.longshot_img; waterPlacement = "dung" + i;}
-		else if (shadowPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "sha"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req5").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.dins_fire_img; document.getElementById("dung" + i + "_req2").src =Game.magic_img; document.getElementById("dung" + i + "_req3").src=Game.hover_boots_img; document.getElementById("dung" + i + "_req4").src=Game.bomb_img; document.getElementById("dung" + i + "_req5").src=Game.hookshot_img; shadowPlacement = "dung" + i;}
-		else if (spiritPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "spi"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Game.silver_gauntlets_img; document.getElementById("dung" + i + "_req2").src=Game.mirror_shield_img; document.getElementById("dung" + i + "_req3").src=Game.bomb_img; document.getElementById("dung" + i + "_req4").src=Game.hookshot_img; spiritPlacement = "dung" + i;}
+		if (dekuPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "deku"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "deku"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dek"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.kokiri_sword_img; dekuPlacement = "dung" + i;}
+		else if (dodongosPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "dodongos"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "dodongos"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "dod"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.bomb_img; dodongosPlacement = "dung" + i;}
+		else if (jabuPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "jabu"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "jabu"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "jab"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.rutos_letter_img; document.getElementById("dung" + i + "_req2").src=Player.boomerang_img; jabuPlacement = "dung" + i;}
+		else if (forestPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "forest"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "forest"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "for"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.hookshot_img; document.getElementById("dung" + i + "_req2").src=Player.bow_img; document.getElementById("dung" + i + "_req3").src=Player.goron_bracelet_img; forestPlacement = "dung" + i;}
+		else if (firePlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "fire"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "fire"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "fir"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.hammer_img; firePlacement = "dung" + i;}
+		else if (waterPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "water"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "water"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "wat"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.iron_boots_img; document.getElementById("dung" + i + "_text2").innerHTML ="/"; document.getElementById("dung" + i + "_req2").src=Player.golden_scale_img; document.getElementById("dung" + i + "_text3").innerHTML = "+"; document.getElementById("dung" + i + "_req3").src=Player.longshot_img; waterPlacement = "dung" + i;}
+		else if (shadowPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "sha"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req5").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.dins_fire_img; document.getElementById("dung" + i + "_req2").src =Player.magic_img; document.getElementById("dung" + i + "_req3").src=Player.hover_boots_img; document.getElementById("dung" + i + "_req4").src=Player.bomb_img; document.getElementById("dung" + i + "_req5").src=Player.hookshot_img; shadowPlacement = "dung" + i;}
+		else if (spiritPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "spi"; document.getElementById("dung" + i + "_req1").className = "requirements"; document.getElementById("dung" + i + "_req2").className = "requirements"; document.getElementById("dung" + i + "_req3").className = "requirements"; document.getElementById("dung" + i + "_req4").className = "requirements"; document.getElementById("dung" + i + "_req1").src=Player.silver_gauntlets_img; document.getElementById("dung" + i + "_req2").src=Player.mirror_shield_img; document.getElementById("dung" + i + "_req3").src=Player.bomb_img; document.getElementById("dung" + i + "_req4").src=Player.hookshot_img; spiritPlacement = "dung" + i;}
 		else if (pocketPlacement == "unknown" && Logic["dung" + i] == "unknown") {if (Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {Logic["dung" + i] = "pocket"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i-1];} else if (Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {Logic["dung" + i] = "pocket"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8];} document.getElementById("text_dung" + i).className="dung" + i; document.getElementById("text_dung" + i).innerHTML = "pok"; pocketPlacement = "dung" + i;}
 		if (i <= 3 && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown" && Logic.dung7 != "unknown" && Logic.dung8 != "unknown" && Logic.dung9 != "unknown") {document.getElementById("dung" + i + "_icon").className = "stones"; }
 		if (i > 3 && Logic.dung1 != "unknown" && Logic.dung2 != "unknown" && Logic.dung3 != "unknown" && Logic.dung4 != "unknown" && Logic.dung5 != "unknown" && Logic.dung6 != "unknown") {document.getElementById("dung" + i + "_icon").className = "medallions"; }
@@ -235,50 +235,50 @@ function linSoClick() {
 	str = str[str.length-1];
 	str = str.substring(0,str.length-4);
 	if (str.endsWith("forest") || str.endsWith("fire") || str.endsWith("water")){return;}
-	if (str.endsWith("hookshot") && Game.hookshot)  {Game.hookshot2 = true;}
-	else if (str.endsWith("longshot")) {Game.hookshot1 = false; Game.hookshot2 = false;}
-	else if (str.endsWith("hookshot")) {Game.hookshot1 = true;}
-	else if (str.endsWith("bracelet") && Game.goron_bracelet)  {if (!Game.strength1) {Game.strength1 = true;} else if (!Game.strength2) {Game.strength2 = true;} else{Game.strength3 = true;}}
-	else if (str.endsWith("silver_gauntlets")) {Game.strength1 = true; Game.strength2 = true; Game.strength3 = true;}
-	else if (str.endsWith("golden_gauntlets")) {Game.strength1 = false; Game.strength2 = false; Game.strength3 = false;}
-	else if (str.endsWith("bracelet")) {Game.strength1 = true;}
-	else if (str.endsWith("silver_scale") && Game.scale1) {Game.scale2 = true;}
-	else if (str.endsWith("golden_scale")) {Game.scale1 = false; Game.scale2 = false;}
-	else if (str.endsWith("silver_scale")) {Game.scale1 = true;}
-	else if (str.endsWith("magic") && Game.magic) {Game.magic2 = true;}
-	else if (str.endsWith("magic_2")) {Game.magic1 = false; Game.magic2 = false;}
-	else if (str.endsWith("adults_wallet") && Game.adults_wallet) {Game.wallet2 = true;}
-	else if (str.endsWith("giants_wallet") && Game.wallet3) {Game.wallet1 = false; Game.wallet2 = false; Game.wallet3 = false; }
-	else if (str.endsWith("giants_wallet") && Game.giants_wallet) {Game.wallet3 = true;}
-	else if (str.endsWith("adults_wallet")) {Game.wallet1 = true;}
-	else if (str.endsWith("magic")) {Game.magic1 = true;}
-	else if (str.endsWith("bomb")) {if (Game.bomb_bag1) {Game.bomb_bag1 = false; Game.bomb_bag2 = false; Game.bomb_bag3 = false;} else {Game.bomb_bag1 = true;}}
-	else if (str.endsWith("claim_check") && Game.claim_check) {Game.claim_check = false;}
-	else if (str.endsWith("chicken1") && Game.chicken1) {Game.chicken1 = false; Game.blue_chicken = true;}
-	else if (str.endsWith("blue_chicken") && Game.blue_chicken) {Game.blue_chicken = false; Game.odd_mushroom = true;}
-	else if (str.endsWith("eyeball_frog") && Game.eyeball_frog) {Game.eyeball_frog = false; Game.eyedrops = true;}
-	else if (str.endsWith("broken_sword") && Game.broken_sword) {Game.broken_sword = false; Game.prescription = true;}
-	else if (str.endsWith("eyedrops") && Game.eyedrops) {Game.eyedrops = false; Game.claim_check = true;}
-	else if (str.endsWith("odd_mushroom") && Game.odd_mushroom) {Game.odd_mushroom = false; Game.antidote = true;}
-	else if (str.endsWith("antidote") && Game.antidote) {Game.antidote = false; Game.poachers_saw = true;}
-	else if (str.endsWith("egg1") && Game.egg1) {Game.egg1 = false; Game.chicken1 = true;}
-	else if (str.endsWith("poachers_saw") && Game.poachers_saw) {Game.poachers_saw = false; Game.broken_sword = true;}
-	else if (str.endsWith("prescription") && Game.prescription) {Game.prescription = false; Game.eyeball_frog = true;}
-	else if (str.endsWith("egg1")) {Game.egg1 = true;}
-	else if (str.endsWith("mask_of_truth") && Game.mask_of_truth) {Game.mask_of_truth = false;}
-	else if (str.endsWith("gerudo_mask") && Game.gerudo_mask) {Game.gerudo_mask = false; Game.mask_of_truth = true;}
-	else if (str.endsWith("zora_mask") && Game.zora_mask) {Game.zora_mask = false; Game.gerudo_mask = true;}
-	else if (str.endsWith("goron_mask") && Game.goron_mask) {Game.goron_mask = false; Game.zora_mask = true;}
-	else if (str.endsWith("bunny_hood") && Game.bunny_hood) {Game.bunny_hood = false; Game.goron_mask = true;}
-	else if (str.endsWith("spooky_mask") && Game.spooky_mask) {Game.spooky_mask = false; Game.bunny_hood = true;}
-	else if (str.endsWith("skull_mask") && Game.skull_mask) {Game.skull_mask = false; Game.spooky_mask = true;}
-	else if (str.endsWith("keaton_mask") && Game.keaton_mask) {Game.keaton_mask = false; Game.skull_mask = true;}
-	else if (str.endsWith("zeldas_letter") && Game.zeldas_letter) {Game.zeldas_letter = false; Game.keaton_mask = true;}
-	else if (str.endsWith("chicken2") && Game.chicken2) {Game.chicken2 = false; Game.zeldas_letter = true;}
-	else if (str.endsWith("egg2") && Game.egg2) {Game.egg2 = false; Game.chicken2 = true;}
-	else if (str.endsWith("egg2")) {Game.egg2 = true;}
-	else if (event.target.style.filter == "none") {Game[str] = false; Game[str+1] = false;}
-	else {Game[str] = true; Game[str+1] = true;}
+	if (str.endsWith("hookshot") && Player.hookshot)  {Player.hookshot2 = true;}
+	else if (str.endsWith("longshot")) {Player.hookshot1 = false; Player.hookshot2 = false;}
+	else if (str.endsWith("hookshot")) {Player.hookshot1 = true;}
+	else if (str.endsWith("bracelet") && Player.goron_bracelet)  {if (!Player.strength1) {Player.strength1 = true;} else if (!Player.strength2) {Player.strength2 = true;} else{Player.strength3 = true;}}
+	else if (str.endsWith("silver_gauntlets")) {Player.strength1 = true; Player.strength2 = true; Player.strength3 = true;}
+	else if (str.endsWith("golden_gauntlets")) {Player.strength1 = false; Player.strength2 = false; Player.strength3 = false;}
+	else if (str.endsWith("bracelet")) {Player.strength1 = true;}
+	else if (str.endsWith("silver_scale") && Player.scale1) {Player.scale2 = true;}
+	else if (str.endsWith("golden_scale")) {Player.scale1 = false; Player.scale2 = false;}
+	else if (str.endsWith("silver_scale")) {Player.scale1 = true;}
+	else if (str.endsWith("magic") && Player.magic) {Player.magic2 = true;}
+	else if (str.endsWith("magic_2")) {Player.magic1 = false; Player.magic2 = false;}
+	else if (str.endsWith("adults_wallet") && Player.adults_wallet) {Player.wallet2 = true;}
+	else if (str.endsWith("giants_wallet") && Player.wallet3) {Player.wallet1 = false; Player.wallet2 = false; Player.wallet3 = false; }
+	else if (str.endsWith("giants_wallet") && Player.giants_wallet) {Player.wallet3 = true;}
+	else if (str.endsWith("adults_wallet")) {Player.wallet1 = true;}
+	else if (str.endsWith("magic")) {Player.magic1 = true;}
+	else if (str.endsWith("bomb")) {if (Player.bomb_bag1) {Player.bomb_bag1 = false; Player.bomb_bag2 = false; Player.bomb_bag3 = false;} else {Player.bomb_bag1 = true;}}
+	else if (str.endsWith("claim_check") && Player.claim_check) {Player.claim_check = false;}
+	else if (str.endsWith("chicken1") && Player.chicken1) {Player.chicken1 = false; Player.blue_chicken = true;}
+	else if (str.endsWith("blue_chicken") && Player.blue_chicken) {Player.blue_chicken = false; Player.odd_mushroom = true;}
+	else if (str.endsWith("eyeball_frog") && Player.eyeball_frog) {Player.eyeball_frog = false; Player.eyedrops = true;}
+	else if (str.endsWith("broken_sword") && Player.broken_sword) {Player.broken_sword = false; Player.prescription = true;}
+	else if (str.endsWith("eyedrops") && Player.eyedrops) {Player.eyedrops = false; Player.claim_check = true;}
+	else if (str.endsWith("odd_mushroom") && Player.odd_mushroom) {Player.odd_mushroom = false; Player.antidote = true;}
+	else if (str.endsWith("antidote") && Player.antidote) {Player.antidote = false; Player.poachers_saw = true;}
+	else if (str.endsWith("egg1") && Player.egg1) {Player.egg1 = false; Player.chicken1 = true;}
+	else if (str.endsWith("poachers_saw") && Player.poachers_saw) {Player.poachers_saw = false; Player.broken_sword = true;}
+	else if (str.endsWith("prescription") && Player.prescription) {Player.prescription = false; Player.eyeball_frog = true;}
+	else if (str.endsWith("egg1")) {Player.egg1 = true;}
+	else if (str.endsWith("mask_of_truth") && Player.mask_of_truth) {Player.mask_of_truth = false;}
+	else if (str.endsWith("gerudo_mask") && Player.gerudo_mask) {Player.gerudo_mask = false; Player.mask_of_truth = true;}
+	else if (str.endsWith("zora_mask") && Player.zora_mask) {Player.zora_mask = false; Player.gerudo_mask = true;}
+	else if (str.endsWith("goron_mask") && Player.goron_mask) {Player.goron_mask = false; Player.zora_mask = true;}
+	else if (str.endsWith("bunny_hood") && Player.bunny_hood) {Player.bunny_hood = false; Player.goron_mask = true;}
+	else if (str.endsWith("spooky_mask") && Player.spooky_mask) {Player.spooky_mask = false; Player.bunny_hood = true;}
+	else if (str.endsWith("skull_mask") && Player.skull_mask) {Player.skull_mask = false; Player.spooky_mask = true;}
+	else if (str.endsWith("keaton_mask") && Player.keaton_mask) {Player.keaton_mask = false; Player.skull_mask = true;}
+	else if (str.endsWith("zeldas_letter") && Player.zeldas_letter) {Player.zeldas_letter = false; Player.keaton_mask = true;}
+	else if (str.endsWith("chicken2") && Player.chicken2) {Player.chicken2 = false; Player.zeldas_letter = true;}
+	else if (str.endsWith("egg2") && Player.egg2) {Player.egg2 = false; Player.chicken2 = true;}
+	else if (str.endsWith("egg2")) {Player.egg2 = true;}
+	else if (event.target.style.filter == "none") {Player[str] = false; Player[str+1] = false;}
+	else {Player[str] = true; Player[str+1] = true;}
 	Update();
 }
 
@@ -289,26 +289,26 @@ function junk() {
 	var temp = Locations.indexOf(str);
 	
 	if(type == 0 && !event.altKey && Check[str] == "unknown") {
-		if(str.includes("forest_") && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -=1;}
-		else if(str.includes("fire_") && Game.fire_checks_remaining != 0 && str != "fire_grave") {Game.fire_checks_remaining -=1;}
-		else if(str.includes("water_") && Game.water_checks_remaining != 0) {Game.water_checks_remaining -=1;}
-		else if(str.includes("spirit_") && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -=1;}
-		else if(str.includes("shadow_") && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -=1;}
-		else if(str.includes("ganons_") && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -=1;}
-		else if(str.includes("gtg_") && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -=1;}
-		else if(str.includes("well_") && Game.well_checks_remaining != 0) {Game.well_checks_remaining -=1;}
+		if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
+		else if(str.includes("fire_") && Player.fire_checks_remaining != 0 && str != "fire_grave") {Player.fire_checks_remaining -=1;}
+		else if(str.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
+		else if(str.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
+		else if(str.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
+		else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
+		else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
+		else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
 		else if(temp < AreaIndexes[26]){}
 		else {return;}
 		Check[str]="junk";
 	}
 	
 	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey || document.getElementById(str).value == "BK") {
-		if(str.includes("forest_") && !Game.forest_boss_key) {Game.forest_boss_key = true; Location.forest_boss_key = str;}
-		else if(str.includes("fire_") && !Game.fire_boss_key) {Game.fire_boss_key = true; Location.fire_boss_key = str;}
-		else if(str.includes("water_") && !Game.water_boss_key) {Game.water_boss_key = true; Location.water_boss_key = str;}
-		else if(str.includes("spirit_") && !Game.spirit_boss_key) {Game.spirit_boss_key = true; Location.spirit_boss_key = str;}
-		else if(str.includes("shadow_") && !Game.shadow_boss_key) {Game.shadow_boss_key = true; Location.shadow_boss_key = str;}
-		else if(str.includes("ganons_") && !Game.ganons_boss_key) {Game.ganons_boss_key = true; Location.ganons_boss_key = str;}
+		if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
+		else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
+		else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
+		else if(str.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = str;}
+		else if(str.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = str;}
+		else if(str.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = str;}
 		else {
 			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 			return;
@@ -318,14 +318,14 @@ function junk() {
 	}
 	
 	else if ((type == 2 && !event.altKey) || thisIsAKey || document.getElementById(str).value == "SK") {
-		if(str.includes("forest_") && Game.current_forest_keys < 5) {Game.current_forest_keys +=1;}
-		else if(str.includes("fire_") && Game.current_fire_keys < 8) {Game.current_fire_keys +=1;}
-		else if(str.includes("water_") && Game.current_water_keys < 6) {Game.current_water_keys +=1;}
-		else if(str.includes("spirit_") && Game.current_spirit_keys < 5) {Game.current_spirit_keys +=1;}
-		else if(str.includes("shadow_") && Game.current_shadow_keys < 5) {Game.current_shadow_keys +=1;}
-		else if(str.includes("gtg_") && Game.current_gtg_keys < 9) {Game.current_gtg_keys +=1;}
-		else if(str.includes("well_") && Game.current_well_keys < 3) {Game.current_well_keys +=1;}
-		else if(str.includes("ganons_") && Game.current_ganons_keys < 2) {Game.current_ganons_keys +=1;}
+		if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+		else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+		else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+		else if(str.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+		else if(str.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+		else if(str.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+		else if(str.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+		else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 		else {
 		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
 		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
@@ -347,7 +347,7 @@ function junk() {
 	document.getElementById("text_" + str).style.display = "none";
 	document.getElementById("br_" + str).style.display = "none";
 	
-	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
 
 	if (Check[str] != "junk") {midUpdate();}
 	lastCheck.push(str);
@@ -375,14 +375,14 @@ function junk() {
 function junkUltra() {
 	var x = event.target;
 	
-	if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Game.current_forest_keys; Game.current_forest_keys = 5; if (Game.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Game.forest_boss_key = true;}}
-	if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Game.current_fire_keys; Game.current_fire_keys = 8; if (Game.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Game.fire_boss_key = true;}}
-	if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Game.current_water_keys; Game.current_water_keys = 6; if (Game.water_boss_key == false) {Logic.forced_water_boss_key = true; Game.water_boss_key = true;}}
-	if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Game.current_spirit_keys; Game.current_spirit_keys = 5; if (Game.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Game.spirit_boss_key = true;}}
-	if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Game.current_shadow_keys; Game.current_shadow_keys = 5; if (Game.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Game.shadow_boss_key = true;}}
-	if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Game.current_ganons_keys; Game.current_ganons_keys = 2; if (Game.ganons_boss_key == false) {Logic.ganons_boss_key = true; Game.ganons_boss_key = true;}}
-	if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Game.current_gtg_keys; Game.current_gtg_keys = 9;}
-	if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Game.current_well_keys; Game.current_well_keys = 3;}
+	if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
+	if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
+	if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
+	if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
+	if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
+	if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
+	if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
+	if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
 	for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
 		if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
 		document.getElementById(Locations[i]).style.display = "none";
@@ -399,14 +399,14 @@ function junkItem(x) {
 	var temp = true;
 	if (str2.includes('shadow_') || str2.includes('spirit_') || str2.includes('forest_') || str2.includes('fire_') || str2.includes('water_') || str2.includes('gtg_') || str2.includes('well_')|| str2.includes('ganons_')) {
 		temp = false;
-		if(str2.includes('forest_') && Game.forest_checks_remaining != 0) {Game.forest_checks_remaining -= 1; temp = true;}
-		if(str2.includes('fire_') && Game.fire_checks_remaining != 0) {Game.fire_checks_remaining -= 1; temp = true;}
-		if(str2.includes('water_') && Game.water_checks_remaining != 0) {Game.water_checks_remaining -= 1; temp = true;}
-		if(str2.includes('shadow_') && Game.shadow_checks_remaining != 0) {Game.shadow_checks_remaining -= 1; temp = true;}
-		if(str2.includes('spirit_') && Game.spirit_checks_remaining != 0) {Game.spirit_checks_remaining -= 1; temp = true;}
-		if(str2.includes('ganons_') && Game.ganons_checks_remaining != 0) {Game.ganons_checks_remaining -= 1; temp = true;}
-		if(str2.includes('gtg_') && Game.gtg_checks_remaining != 0) {Game.gtg_checks_remaining -= 1; temp = true;}
-		if(str2.includes('well_') && Game.well_checks_remaining != 0) {Game.well_checks_remaining -= 1; temp = true;}
+		if(str2.includes('forest_') && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -= 1; temp = true;}
+		if(str2.includes('fire_') && Player.fire_checks_remaining != 0) {Player.fire_checks_remaining -= 1; temp = true;}
+		if(str2.includes('water_') && Player.water_checks_remaining != 0) {Player.water_checks_remaining -= 1; temp = true;}
+		if(str2.includes('shadow_') && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -= 1; temp = true;}
+		if(str2.includes('spirit_') && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -= 1; temp = true;}
+		if(str2.includes('ganons_') && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -= 1; temp = true;}
+		if(str2.includes('gtg_') && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -= 1; temp = true;}
+		if(str2.includes('well_') && Player.well_checks_remaining != 0) {Player.well_checks_remaining -= 1; temp = true;}
 	}
 	if (!temp) {return;}
 	
@@ -447,29 +447,29 @@ function junkSong(x) {
 }
 
 function check_circle_info() {
-	document.getElementById("forest").innerHTML = "" + Game.forest_checks_remaining;
-	document.getElementById("fire").innerHTML = "" + Game.fire_checks_remaining;
-	document.getElementById("water").innerHTML = "" + Game.water_checks_remaining;
-	document.getElementById("spirit").innerHTML = "" + Game.spirit_checks_remaining;
-	document.getElementById("shadow").innerHTML = "" + Game.shadow_checks_remaining;
-	document.getElementById("ganons").innerHTML = "" + Game.ganons_checks_remaining;
-	document.getElementById("gtg").innerHTML = "" + Game.gtg_checks_remaining;
-	document.getElementById("well").innerHTML = "" + Game.well_checks_remaining;
+	document.getElementById("forest").innerHTML = "" + Player.forest_checks_remaining;
+	document.getElementById("fire").innerHTML = "" + Player.fire_checks_remaining;
+	document.getElementById("water").innerHTML = "" + Player.water_checks_remaining;
+	document.getElementById("spirit").innerHTML = "" + Player.spirit_checks_remaining;
+	document.getElementById("shadow").innerHTML = "" + Player.shadow_checks_remaining;
+	document.getElementById("ganons").innerHTML = "" + Player.ganons_checks_remaining;
+	document.getElementById("gtg").innerHTML = "" + Player.gtg_checks_remaining;
+	document.getElementById("well").innerHTML = "" + Player.well_checks_remaining;
 	
-	document.getElementById("forestSKs").innerHTML = "" + (5 - Game.current_forest_keys);
-	document.getElementById("fireSKs").innerHTML = "" + (8 - Game.current_fire_keys);
-	document.getElementById("waterSKs").innerHTML = "" + (6 - Game.current_water_keys);
-	document.getElementById("spiritSKs").innerHTML = "" + (5 - Game.current_spirit_keys);
-	document.getElementById("shadowSKs").innerHTML = "" + (5 - Game.current_shadow_keys);
-	document.getElementById("ganonsSKs").innerHTML = "" + (2 - Game.current_ganons_keys);
-	document.getElementById("gtgSKs").innerHTML = "" + (9 - Game.current_gtg_keys);
-	document.getElementById("wellSKs").innerHTML = "" + (3 - Game.current_well_keys);
+	document.getElementById("forestSKs").innerHTML = "" + (5 - Player.current_forest_keys);
+	document.getElementById("fireSKs").innerHTML = "" + (8 - Player.current_fire_keys);
+	document.getElementById("waterSKs").innerHTML = "" + (6 - Player.current_water_keys);
+	document.getElementById("spiritSKs").innerHTML = "" + (5 - Player.current_spirit_keys);
+	document.getElementById("shadowSKs").innerHTML = "" + (5 - Player.current_shadow_keys);
+	document.getElementById("ganonsSKs").innerHTML = "" + (2 - Player.current_ganons_keys);
+	document.getElementById("gtgSKs").innerHTML = "" + (9 - Player.current_gtg_keys);
+	document.getElementById("wellSKs").innerHTML = "" + (3 - Player.current_well_keys);
 	
-	if (Game.forest_boss_key) {document.getElementById("forestBKs").innerHTML = 0;} else {document.getElementById("forestBKs").innerHTML = 1;}
-	if (Game.fire_boss_key) {document.getElementById("fireBKs").innerHTML = 0;} else {document.getElementById("fireBKs").innerHTML = 1;}
-	if (Game.water_boss_key) {document.getElementById("waterBKs").innerHTML = 0;} else {document.getElementById("waterBKs").innerHTML = 1;}
-	if (Game.spirit_boss_key) {document.getElementById("spiritBKs").innerHTML = 0;} else {document.getElementById("spiritBKs").innerHTML = 1;}
-	if (Game.shadow_boss_key) {document.getElementById("shadowBKs").innerHTML = 0;} else {document.getElementById("shadowBKs").innerHTML = 1;}
+	if (Player.forest_boss_key) {document.getElementById("forestBKs").innerHTML = 0;} else {document.getElementById("forestBKs").innerHTML = 1;}
+	if (Player.fire_boss_key) {document.getElementById("fireBKs").innerHTML = 0;} else {document.getElementById("fireBKs").innerHTML = 1;}
+	if (Player.water_boss_key) {document.getElementById("waterBKs").innerHTML = 0;} else {document.getElementById("waterBKs").innerHTML = 1;}
+	if (Player.spirit_boss_key) {document.getElementById("spiritBKs").innerHTML = 0;} else {document.getElementById("spiritBKs").innerHTML = 1;}
+	if (Player.shadow_boss_key) {document.getElementById("shadowBKs").innerHTML = 0;} else {document.getElementById("shadowBKs").innerHTML = 1;}
 	
 	document.getElementById("forestSKs").title = "";
 	document.getElementById("forestBKs").title = "";
@@ -564,74 +564,74 @@ function handleAreaBreaks() {
 }
 
 function handleItemHighlights() {
-	if (Game.kokiri_sword) {if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").style.opacity =1; }}
-	if (Game.bomb_bag) {if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").style.opacity =1; } if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").style.opacity =1; } if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").style.opacity =1; }}
-	if (Game.magic) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").style.opacity =1; }}
-	if (Game.light_arrows) {document.getElementById("gan_req2").style.opacity=1;}
-	if (Game.bow) {document.getElementById("gan_req3").style.opacity=1; if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").style.opacity =1; }}
-	if (Game.hookshot) {if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").style.opacity =1; } if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").style.opacity =1; } if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").style.opacity =1; }}
-	if (Game.goron_bracelet) {if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").style.opacity =1; }}
-	if (Game.hammer) {if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").style.opacity =1; }}
-	if (Game.rutos_letter) {if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").style.opacity =1; }}
-	if (Game.boomerang) {if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").style.opacity =1; }}
-	if (Game.iron_boots) {if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").style.opacity =1; }}
-	if (Game.golden_scale) {if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").style.opacity =1; }}
-	if (Game.longshot) {if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").style.opacity =1; }}
-	if (Game.silver_gauntlets) {if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").style.opacity =1; }}
-	if (Game.mirror_shield) {if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").style.opacity =1; }}
-	if (Game.dins_fire) {if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").style.opacity =1; }}
-	if (Game.hover_boots) {if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").style.opacity =1; }}
+	if (Player.kokiri_sword) {if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").style.opacity =1; }}
+	if (Player.bomb_bag) {if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").style.opacity =1; } if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").style.opacity =1; } if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").style.opacity =1; }}
+	if (Player.magic) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").style.opacity =1; }}
+	if (Player.light_arrows) {document.getElementById("gan_req2").style.opacity=1;}
+	if (Player.bow) {document.getElementById("gan_req3").style.opacity=1; if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").style.opacity =1; }}
+	if (Player.hookshot) {if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").style.opacity =1; } if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").style.opacity =1; } if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").style.opacity =1; }}
+	if (Player.goron_bracelet) {if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").style.opacity =1; }}
+	if (Player.hammer) {if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").style.opacity =1; }}
+	if (Player.rutos_letter) {if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").style.opacity =1; }}
+	if (Player.boomerang) {if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").style.opacity =1; }}
+	if (Player.iron_boots) {if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").style.opacity =1; }}
+	if (Player.golden_scale) {if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").style.opacity =1; }}
+	if (Player.longshot) {if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").style.opacity =1; }}
+	if (Player.silver_gauntlets) {if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").style.opacity =1; }}
+	if (Player.mirror_shield) {if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").style.opacity =1; }}
+	if (Player.dins_fire) {if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").style.opacity =1; }}
+	if (Player.hover_boots) {if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").style.opacity =1; }}
 	
-	if (!Game.kokiri_sword) {if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").style.opacity =.2; }}
-	if (!Game.bomb_bag) {if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").style.opacity =.2; } if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").style.opacity =.2; } if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").style.opacity =.2; }}
-	if (!Game.magic) {document.getElementById("gan_req1").style.opacity = .2; if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").style.opacity =.2; }}
-	if (!Game.light_arrows) {document.getElementById("gan_req2").style.opacity = .2;}
-	if (!Game.bow) {document.getElementById("gan_req3").style.opacity = .2; if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").style.opacity =.2; }}
-	if (!Game.hookshot) {if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").style.opacity =.2; } if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").style.opacity =.2; } if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").style.opacity =.2; }}
-	if (!Game.goron_bracelet) {if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").style.opacity =.2; }}
-	if (!Game.hammer) {if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").style.opacity =.2; }}
-	if (!Game.rutos_letter) {if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").style.opacity =.2; }}
-	if (!Game.boomerang) {if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").style.opacity =.2; }}
-	if (!Game.iron_boots) {if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").style.opacity =.2; }}
-	if (!Game.golden_scale) {if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").style.opacity =.2; }}
-	if (!Game.longshot) {if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").style.opacity =.2; }}
-	if (!Game.silver_gauntlets) {if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").style.opacity =.2; }}
-	if (!Game.mirror_shield) {if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").style.opacity =.2; }}
-	if (!Game.dins_fire) {if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").style.opacity =.2; }}
-	if (!Game.hover_boots) {if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").style.opacity =.2; }}
+	if (!Player.kokiri_sword) {if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").style.opacity =.2; }}
+	if (!Player.bomb_bag) {if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").style.opacity =.2; } if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").style.opacity =.2; } if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").style.opacity =.2; }}
+	if (!Player.magic) {document.getElementById("gan_req1").style.opacity = .2; if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").style.opacity =.2; }}
+	if (!Player.light_arrows) {document.getElementById("gan_req2").style.opacity = .2;}
+	if (!Player.bow) {document.getElementById("gan_req3").style.opacity = .2; if(document.getElementById(forestPlacement +"_req2") != null) {document.getElementById(forestPlacement +"_req2").style.opacity =.2; }}
+	if (!Player.hookshot) {if(document.getElementById(forestPlacement +"_req1") != null) {document.getElementById(forestPlacement +"_req1").style.opacity =.2; } if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").style.opacity =.2; } if(document.getElementById(spiritPlacement +"_req4") != null) {document.getElementById(spiritPlacement +"_req4").style.opacity =.2; }}
+	if (!Player.goron_bracelet) {if(document.getElementById(forestPlacement +"_req3") != null) {document.getElementById(forestPlacement +"_req3").style.opacity =.2; }}
+	if (!Player.hammer) {if(document.getElementById(firePlacement +"_req1") != null) {document.getElementById(firePlacement +"_req1").style.opacity =.2; }}
+	if (!Player.rutos_letter) {if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").style.opacity =.2; }}
+	if (!Player.boomerang) {if(document.getElementById(jabuPlacement +"_req2") != null) {document.getElementById(jabuPlacement +"_req2").style.opacity =.2; }}
+	if (!Player.iron_boots) {if(document.getElementById(waterPlacement +"_req1") != null) {document.getElementById(waterPlacement +"_req1").style.opacity =.2; }}
+	if (!Player.golden_scale) {if(document.getElementById(waterPlacement +"_req2") != null) {document.getElementById(waterPlacement +"_req2").style.opacity =.2; }}
+	if (!Player.longshot) {if(document.getElementById(waterPlacement +"_req3") != null) {document.getElementById(waterPlacement +"_req3").style.opacity =.2; }}
+	if (!Player.silver_gauntlets) {if(document.getElementById(spiritPlacement +"_req1") != null) {document.getElementById(spiritPlacement +"_req1").style.opacity =.2; }}
+	if (!Player.mirror_shield) {if(document.getElementById(spiritPlacement +"_req2") != null) {document.getElementById(spiritPlacement +"_req2").style.opacity =.2; }}
+	if (!Player.dins_fire) {if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").style.opacity =.2; }}
+	if (!Player.hover_boots) {if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").style.opacity =.2; }}
 	
-	if (Game.lullaby) {document.getElementById("lullabyimg").style.opacity =1;} else {document.getElementById("lullabyimg").style.opacity =.2;}
-	if (Game.eponas) {document.getElementById("eponasimg").style.opacity =1;} else {document.getElementById("eponasimg").style.opacity =.2;}
-	if (Game.sarias) {document.getElementById("sariasimg").style.opacity =1;} else {document.getElementById("sariasimg").style.opacity =.2;}
-	if (Game.suns) {document.getElementById("sunsimg").style.opacity =1;} else {document.getElementById("sunsimg").style.opacity =.2;}
-	if (Game.time) {document.getElementById("sotimg").style.opacity =1;} else {document.getElementById("sotimg").style.opacity =.2;}
-	if (Game.storms) {document.getElementById("sosimg").style.opacity =1;} else {document.getElementById("sosimg").style.opacity =.2;}
-	if (Game.minuet) {document.getElementById("minuetimg").style.opacity =1;} else {document.getElementById("minuetimg").style.opacity =.2;}
-	if (Game.bolero) {document.getElementById("boleroimg").style.opacity =1;} else {document.getElementById("boleroimg").style.opacity =.2;}
-	if (Game.serenade) {document.getElementById("serenadeimg").style.opacity =1;} else {document.getElementById("serenadeimg").style.opacity =.2;}
-	if (Game.requiem) {document.getElementById("requiemimg").style.opacity =1;} else {document.getElementById("requiemimg").style.opacity =.2;}
-	if (Game.nocturne) {document.getElementById("nocturneimg").style.opacity =1;} else {document.getElementById("nocturneimg").style.opacity =.2;}
-	if (Game.prelude) {document.getElementById("preludeimg").style.opacity =1;} else {document.getElementById("preludeimg").style.opacity =.2;}
+	if (Player.lullaby) {document.getElementById("lullabyimg").style.opacity =1;} else {document.getElementById("lullabyimg").style.opacity =.2;}
+	if (Player.eponas) {document.getElementById("eponasimg").style.opacity =1;} else {document.getElementById("eponasimg").style.opacity =.2;}
+	if (Player.sarias) {document.getElementById("sariasimg").style.opacity =1;} else {document.getElementById("sariasimg").style.opacity =.2;}
+	if (Player.suns) {document.getElementById("sunsimg").style.opacity =1;} else {document.getElementById("sunsimg").style.opacity =.2;}
+	if (Player.time) {document.getElementById("sotimg").style.opacity =1;} else {document.getElementById("sotimg").style.opacity =.2;}
+	if (Player.storms) {document.getElementById("sosimg").style.opacity =1;} else {document.getElementById("sosimg").style.opacity =.2;}
+	if (Player.minuet) {document.getElementById("minuetimg").style.opacity =1;} else {document.getElementById("minuetimg").style.opacity =.2;}
+	if (Player.bolero) {document.getElementById("boleroimg").style.opacity =1;} else {document.getElementById("boleroimg").style.opacity =.2;}
+	if (Player.serenade) {document.getElementById("serenadeimg").style.opacity =1;} else {document.getElementById("serenadeimg").style.opacity =.2;}
+	if (Player.requiem) {document.getElementById("requiemimg").style.opacity =1;} else {document.getElementById("requiemimg").style.opacity =.2;}
+	if (Player.nocturne) {document.getElementById("nocturneimg").style.opacity =1;} else {document.getElementById("nocturneimg").style.opacity =.2;}
+	if (Player.prelude) {document.getElementById("preludeimg").style.opacity =1;} else {document.getElementById("preludeimg").style.opacity =.2;}
 	
-	if (Game.bottle || Logic.bottle) {document.getElementById("bottleimg").style.opacity =1;} else {document.getElementById("bottleimg").style.opacity =.2;}
-	if (Game.farores_wind) {document.getElementById("faroresimg").style.opacity =1;} else {document.getElementById("faroresimg").style.opacity =.2;}
-	if (Game.fire_arrows) {document.getElementById("firearrowsimg").style.opacity =1;} else {document.getElementById("firearrowsimg").style.opacity =.2;}
-	if (Game.silver_scale) {document.getElementById("silverscaleimg").style.opacity =1;} else {document.getElementById("silverscaleimg").style.opacity =.2;}
-	if (Game.lens) {document.getElementById("lensimg").style.opacity =1;} else {document.getElementById("lensimg").style.opacity =.2;}
-	if (Game.golden_gauntlets) {document.getElementById("goldengauntletsimg").style.opacity =1;} else {document.getElementById("goldengauntletsimg").style.opacity =.2;}
-	if (Game.slingshot) {document.getElementById("slingshotimg").style.opacity =1;} else {document.getElementById("slingshotimg").style.opacity =.2;}
+	if (Player.bottle || Logic.bottle) {document.getElementById("bottleimg").style.opacity =1;} else {document.getElementById("bottleimg").style.opacity =.2;}
+	if (Player.farores_wind) {document.getElementById("faroresimg").style.opacity =1;} else {document.getElementById("faroresimg").style.opacity =.2;}
+	if (Player.fire_arrows) {document.getElementById("firearrowsimg").style.opacity =1;} else {document.getElementById("firearrowsimg").style.opacity =.2;}
+	if (Player.silver_scale) {document.getElementById("silverscaleimg").style.opacity =1;} else {document.getElementById("silverscaleimg").style.opacity =.2;}
+	if (Player.lens) {document.getElementById("lensimg").style.opacity =1;} else {document.getElementById("lensimg").style.opacity =.2;}
+	if (Player.golden_gauntlets) {document.getElementById("goldengauntletsimg").style.opacity =1;} else {document.getElementById("goldengauntletsimg").style.opacity =.2;}
+	if (Player.slingshot) {document.getElementById("slingshotimg").style.opacity =1;} else {document.getElementById("slingshotimg").style.opacity =.2;}
 }
 
 function handleDungeonHighlights() {
-	if (Game.forest) {document.getElementById("dung4_icon").style.opacity=1; document.getElementById("text_dung4").style.opacity = .2;} else{document.getElementById("dung4_icon").style.opacity=.2; document.getElementById("text_dung4").style.opacity = 1;}
-	if (Game.fire) {document.getElementById("dung5_icon").style.opacity=1; document.getElementById("text_dung5").style.opacity = .2;} else{document.getElementById("dung5_icon").style.opacity=.2; document.getElementById("text_dung5").style.opacity = 1;}
-	if (Game.water) {document.getElementById("dung6_icon").style.opacity=1; document.getElementById("text_dung6").style.opacity = .2;} else{document.getElementById("dung6_icon").style.opacity=.2; document.getElementById("text_dung6").style.opacity = 1;}
-	if (Game.gen1) {document.getElementById("dung7_icon").style.opacity=1; document.getElementById("text_dung7").style.opacity = .2;} else{document.getElementById("dung7_icon").style.opacity=.2; document.getElementById("text_dung7").style.opacity = 1;}
-	if (Game.gen2) {document.getElementById("dung8_icon").style.opacity=1; document.getElementById("text_dung8").style.opacity = .2;} else{document.getElementById("dung8_icon").style.opacity=.2; document.getElementById("text_dung8").style.opacity = 1;}
-	if (Game.gen3) {document.getElementById("dung9_icon").style.opacity=1; document.getElementById("text_dung9").style.opacity = .2;} else{document.getElementById("dung9_icon").style.opacity=.2; document.getElementById("text_dung9").style.opacity = 1;}
-	if (Game.emerald) {document.getElementById("dung1_icon").style.opacity=1; document.getElementById("text_dung1").style.opacity = .2;} else{document.getElementById("dung1_icon").style.opacity=.2; document.getElementById("text_dung1").style.opacity = 1;}
-	if (Game.ruby) {document.getElementById("dung2_icon").style.opacity=1; document.getElementById("text_dung2").style.opacity = .2;} else{document.getElementById("dung2_icon").style.opacity=.2; document.getElementById("text_dung2").style.opacity = 1;}
-	if (Game.sapphire) {document.getElementById("dung3_icon").style.opacity=1; document.getElementById("text_dung3").style.opacity = .2;} else{document.getElementById("dung3_icon").style.opacity=.2; document.getElementById("text_dung3").style.opacity = 1;}
+	if (Player.forest) {document.getElementById("dung4_icon").style.opacity=1; document.getElementById("text_dung4").style.opacity = .2;} else{document.getElementById("dung4_icon").style.opacity=.2; document.getElementById("text_dung4").style.opacity = 1;}
+	if (Player.fire) {document.getElementById("dung5_icon").style.opacity=1; document.getElementById("text_dung5").style.opacity = .2;} else{document.getElementById("dung5_icon").style.opacity=.2; document.getElementById("text_dung5").style.opacity = 1;}
+	if (Player.water) {document.getElementById("dung6_icon").style.opacity=1; document.getElementById("text_dung6").style.opacity = .2;} else{document.getElementById("dung6_icon").style.opacity=.2; document.getElementById("text_dung6").style.opacity = 1;}
+	if (Player.gen1) {document.getElementById("dung7_icon").style.opacity=1; document.getElementById("text_dung7").style.opacity = .2;} else{document.getElementById("dung7_icon").style.opacity=.2; document.getElementById("text_dung7").style.opacity = 1;}
+	if (Player.gen2) {document.getElementById("dung8_icon").style.opacity=1; document.getElementById("text_dung8").style.opacity = .2;} else{document.getElementById("dung8_icon").style.opacity=.2; document.getElementById("text_dung8").style.opacity = 1;}
+	if (Player.gen3) {document.getElementById("dung9_icon").style.opacity=1; document.getElementById("text_dung9").style.opacity = .2;} else{document.getElementById("dung9_icon").style.opacity=.2; document.getElementById("text_dung9").style.opacity = 1;}
+	if (Player.emerald) {document.getElementById("dung1_icon").style.opacity=1; document.getElementById("text_dung1").style.opacity = .2;} else{document.getElementById("dung1_icon").style.opacity=.2; document.getElementById("text_dung1").style.opacity = 1;}
+	if (Player.ruby) {document.getElementById("dung2_icon").style.opacity=1; document.getElementById("text_dung2").style.opacity = .2;} else{document.getElementById("dung2_icon").style.opacity=.2; document.getElementById("text_dung2").style.opacity = 1;}
+	if (Player.sapphire) {document.getElementById("dung3_icon").style.opacity=1; document.getElementById("text_dung3").style.opacity = .2;} else{document.getElementById("dung3_icon").style.opacity=.2; document.getElementById("text_dung3").style.opacity = 1;}
 
 	if (Check.deku_queen_gohma != "unknown") {if (document.getElementById("text_" + dekuPlacement) != null) {document.getElementById(dekuPlacement + "_icon").style.opacity=1; document.getElementById("text_" + dekuPlacement).style.opacity=.2}}
 	if (Check.dodongos_king_dodongo != "unknown") {if (document.getElementById("text_" + dodongosPlacement) != null) {document.getElementById(dodongosPlacement + "_icon").style.opacity=1; document.getElementById("text_" + dodongosPlacement).style.opacity=.2}}
@@ -645,20 +645,20 @@ function handleDungeonHighlights() {
 }
 
 function checkGanons() {
-	if (Game.magic1 && Game.light_arrows && Game.bow1 && Game.ganons_checks_remaining > 0) {
+	if (Player.magic1 && Player.light_arrows && Player.bow1 && Player.ganons_checks_remaining > 0) {
 		document.getElementById("ganons").click();
 	}
 }
 
 function setInLogicMaxForDungeons() {
-	if (Game.forest_checks_remaining >=0 && (Game.forest_checks_remaining < Game.forest_logically_accessible)) {Game.logically_accessible -= (Game.forest_logically_accessible - Game.forest_checks_remaining);}
-	if (Game.fire_checks_remaining >=0 && (Game.fire_checks_remaining < Game.fire_logically_accessible)) {Game.logically_accessible -= (Game.fire_logically_accessible - Game.fire_checks_remaining);}
-	if (Game.water_checks_remaining >=0 && (Game.water_checks_remaining < Game.water_logically_accessible)) {Game.logically_accessible -= (Game.water_logically_accessible - Game.water_checks_remaining);}
-	if (Game.spirit_checks_remaining >=0 && (Game.spirit_checks_remaining < Game.spirit_logically_accessible)) {Game.logically_accessible -= (Game.spirit_logically_accessible - Game.spirit_checks_remaining);}
-	if (Game.shadow_checks_remaining >=0 && (Game.shadow_checks_remaining < Game.shadow_logically_accessible)) {Game.logically_accessible -= (Game.shadow_logically_accessible - Game.shadow_checks_remaining);}
-	if (Game.gtg_checks_remaining >=0 && (Game.gtg_checks_remaining < Game.gtg_logically_accessible)) {Game.logically_accessible -= (Game.gtg_logically_accessible - Game.gtg_checks_remaining);}
-	if (Game.well_checks_remaining >=0 && (Game.well_checks_remaining < Game.well_logically_accessible)) {Game.logically_accessible -= (Game.well_logically_accessible - Game.well_checks_remaining);}
-	if (Game.ganons_checks_remaining >=0 && (Game.ganons_checks_remaining < Game.ganons_logically_accessible)) {Game.logically_accessible -= (Game.ganons_logically_accessible - Game.ganons_checks_remaining);}
+	if (Player.forest_checks_remaining >=0 && (Player.forest_checks_remaining < Player.forest_logically_accessible)) {Player.logically_accessible -= (Player.forest_logically_accessible - Player.forest_checks_remaining);}
+	if (Player.fire_checks_remaining >=0 && (Player.fire_checks_remaining < Player.fire_logically_accessible)) {Player.logically_accessible -= (Player.fire_logically_accessible - Player.fire_checks_remaining);}
+	if (Player.water_checks_remaining >=0 && (Player.water_checks_remaining < Player.water_logically_accessible)) {Player.logically_accessible -= (Player.water_logically_accessible - Player.water_checks_remaining);}
+	if (Player.spirit_checks_remaining >=0 && (Player.spirit_checks_remaining < Player.spirit_logically_accessible)) {Player.logically_accessible -= (Player.spirit_logically_accessible - Player.spirit_checks_remaining);}
+	if (Player.shadow_checks_remaining >=0 && (Player.shadow_checks_remaining < Player.shadow_logically_accessible)) {Player.logically_accessible -= (Player.shadow_logically_accessible - Player.shadow_checks_remaining);}
+	if (Player.gtg_checks_remaining >=0 && (Player.gtg_checks_remaining < Player.gtg_logically_accessible)) {Player.logically_accessible -= (Player.gtg_logically_accessible - Player.gtg_checks_remaining);}
+	if (Player.well_checks_remaining >=0 && (Player.well_checks_remaining < Player.well_logically_accessible)) {Player.logically_accessible -= (Player.well_logically_accessible - Player.well_checks_remaining);}
+	if (Player.ganons_checks_remaining >=0 && (Player.ganons_checks_remaining < Player.ganons_logically_accessible)) {Player.logically_accessible -= (Player.ganons_logically_accessible - Player.ganons_checks_remaining);}
 }
 function toggleLinsoGoMode() {
 	if (linsoGoMode) {linsoGoMode = false; document.getElementById("linso54").src = "circus-tent_1f3aa.png"; document.getElementById("linsoLight").style.opacity = 0; if (!circus) {document.getElementById("linso54").style.opacity = 0;}}
@@ -685,44 +685,44 @@ function refreshLinSo() {
 				if (i > 9) {continue;}
 				if (linsoOrder[temp] == "" || linsoOrder[temp] == "circus") {temp += 1; continue;}
 				if (linsoOrder[temp] == "" || linsoOrder[temp] == "skull_counter") {temp += 1; continue;}
-				if (linsoOrder[temp] == "hookshot") {if (Game.hookshot && !Game.longshot)  {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.longshot){document.getElementById("linso" + i + j).src = Game.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;} }
-				else if (linsoOrder[temp] == "silver_scale") {if (Game.silver_scale && !Game.golden_scale)  {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.golden_scale){document.getElementById("linso" + i + j).src = Game.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "adults_wallet") {if (Game.wallet3) {document.getElementById("linso103").style.opacity = 1;} else{document.getElementById("linso103").style.opacity = 0;} if (Game.giants_wallet)  { document.getElementById("linso" + i + j).src = Game.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.adults_wallet){document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "goron_bracelet") {if (Game.golden_gauntlets)  {document.getElementById("linso" + i + j).src = Game.golden_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.silver_gauntlets){document.getElementById("linso" + i + j).src = Game.silver_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.goron_bracelet){document.getElementById("linso" + i + j).src = Game.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "bomb") {if (Game.bomb_bag) {document.getElementById("linso" + i + j).src = Game.bomb_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.bomb_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "magic") {if (Game.double_magic)  {document.getElementById("linso" + i + j).src = Game.magic_2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Game.magic){document.getElementById("linso" + i + j).src = Game.magic_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Game.magic_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "egg1" && Game.claim_check) {document.getElementById("linso" + i + j).src = Game.claim_check_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.eyedrops) {document.getElementById("linso" + i + j).src = Game.eyedrops_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.eyeball_frog) {document.getElementById("linso" + i + j).src = Game.eyeball_frog_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.prescription) {document.getElementById("linso" + i + j).src = Game.prescription_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.broken_sword) {document.getElementById("linso" + i + j).src = Game.broken_sword_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.poachers_saw) {document.getElementById("linso" + i + j).src = Game.poachers_saw_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.antidote) {document.getElementById("linso" + i + j).src = Game.antidote_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.odd_mushroom) {document.getElementById("linso" + i + j).src = Game.odd_mushroom_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.blue_chicken) {document.getElementById("linso" + i + j).src = Game.blue_chicken_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.chicken1) {document.getElementById("linso" + i + j).src = Game.chicken1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1" && Game.egg1) {document.getElementById("linso" + i + j).src = Game.egg1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg1") {document.getElementById("linso" + i + j).src = Game.egg1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
-				else if (linsoOrder[temp] == "egg2" && Game.mask_of_truth) {document.getElementById("linso" + i + j).src = Game.mask_of_truth_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.gerudo_mask) {document.getElementById("linso" + i + j).src = Game.gerudo_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.zora_mask) {document.getElementById("linso" + i + j).src = Game.zora_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.goron_mask) {document.getElementById("linso" + i + j).src = Game.goron_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.bunny_hood) {document.getElementById("linso" + i + j).src = Game.bunny_hood_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.spooky_mask) {document.getElementById("linso" + i + j).src = Game.spooky_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.skull_mask) {document.getElementById("linso" + i + j).src = Game.skull_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.keaton_mask) {document.getElementById("linso" + i + j).src = Game.keaton_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.zeldas_letter) {document.getElementById("linso" + i + j).src = Game.zeldas_letter_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.chicken2) {document.getElementById("linso" + i + j).src = Game.chicken2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2" && Game.egg2) {document.getElementById("linso" + i + j).src = Game.egg2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
-				else if (linsoOrder[temp] == "egg2") {document.getElementById("linso" + i + j).src = Game.egg2_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
-				else if (Game[linsoOrder[temp]] || (Game[linsoOrder[temp] + 1])) {document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				if (linsoOrder[temp] == "hookshot") {if (Player.hookshot && !Player.longshot)  {document.getElementById("linso" + i + j).src = Player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.longshot){document.getElementById("linso" + i + j).src = Player.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;} }
+				else if (linsoOrder[temp] == "silver_scale") {if (Player.silver_scale && !Player.golden_scale)  {document.getElementById("linso" + i + j).src = Player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.golden_scale){document.getElementById("linso" + i + j).src = Player.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "adults_wallet") {if (Player.wallet3) {document.getElementById("linso103").style.opacity = 1;} else{document.getElementById("linso103").style.opacity = 0;} if (Player.giants_wallet)  { document.getElementById("linso" + i + j).src = Player.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.adults_wallet){document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "goron_bracelet") {if (Player.golden_gauntlets)  {document.getElementById("linso" + i + j).src = Player.golden_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.silver_gauntlets){document.getElementById("linso" + i + j).src = Player.silver_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.goron_bracelet){document.getElementById("linso" + i + j).src = Player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "bomb") {if (Player.bomb_bag) {document.getElementById("linso" + i + j).src = Player.bomb_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.bomb_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "magic") {if (Player.double_magic)  {document.getElementById("linso" + i + j).src = Player.magic_2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.magic){document.getElementById("linso" + i + j).src = Player.magic_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.magic_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "egg1" && Player.claim_check) {document.getElementById("linso" + i + j).src = Player.claim_check_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.eyedrops) {document.getElementById("linso" + i + j).src = Player.eyedrops_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.eyeball_frog) {document.getElementById("linso" + i + j).src = Player.eyeball_frog_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.prescription) {document.getElementById("linso" + i + j).src = Player.prescription_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.broken_sword) {document.getElementById("linso" + i + j).src = Player.broken_sword_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.poachers_saw) {document.getElementById("linso" + i + j).src = Player.poachers_saw_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.antidote) {document.getElementById("linso" + i + j).src = Player.antidote_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.odd_mushroom) {document.getElementById("linso" + i + j).src = Player.odd_mushroom_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.blue_chicken) {document.getElementById("linso" + i + j).src = Player.blue_chicken_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.chicken1) {document.getElementById("linso" + i + j).src = Player.chicken1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1" && Player.egg1) {document.getElementById("linso" + i + j).src = Player.egg1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg1") {document.getElementById("linso" + i + j).src = Player.egg1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
+				else if (linsoOrder[temp] == "egg2" && Player.mask_of_truth) {document.getElementById("linso" + i + j).src = Player.mask_of_truth_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.gerudo_mask) {document.getElementById("linso" + i + j).src = Player.gerudo_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.zora_mask) {document.getElementById("linso" + i + j).src = Player.zora_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.goron_mask) {document.getElementById("linso" + i + j).src = Player.goron_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.bunny_hood) {document.getElementById("linso" + i + j).src = Player.bunny_hood_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.spooky_mask) {document.getElementById("linso" + i + j).src = Player.spooky_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.skull_mask) {document.getElementById("linso" + i + j).src = Player.skull_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.keaton_mask) {document.getElementById("linso" + i + j).src = Player.keaton_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.zeldas_letter) {document.getElementById("linso" + i + j).src = Player.zeldas_letter_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.chicken2) {document.getElementById("linso" + i + j).src = Player.chicken2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2" && Player.egg2) {document.getElementById("linso" + i + j).src = Player.egg2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
+				else if (linsoOrder[temp] == "egg2") {document.getElementById("linso" + i + j).src = Player.egg2_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
+				else if (Player[linsoOrder[temp]] || (Player[linsoOrder[temp] + 1])) {document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;}
 				else {document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}
 				temp += 1;
 			}
 		}
 		temp = 0;
 		for (var i = 1; i <= 12; i++) {
-			if (Game[linsoOrder2[temp]]) {document.getElementById("linsoS" + i).style.filter = "none"; document.getElementById("linsoS" + i).style.opacity = 1;}
+			if (Player[linsoOrder2[temp]]) {document.getElementById("linsoS" + i).style.filter = "none"; document.getElementById("linsoS" + i).style.opacity = 1;}
 				else {document.getElementById("linsoS" + i).style.filter = "grayscale(100%)"; document.getElementById("linsoS" + i).style.opacity = .2;}
 				temp += 1;
 		}
@@ -746,7 +746,7 @@ function update_logic_info() {
 	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none";}
 	if (document.getElementById("presets").value == "WEEKLY") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "4_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none";}
 	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline";}
-	if (document.getElementById("presets").value == "LEAGUE_S3") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline";Game.lens = true;Game.farores_wind = true;}
+	if (document.getElementById("presets").value == "LEAGUE_S3") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline";Player.lens = true;Player.farores_wind = true;}
 	if (document.getElementById("presets").value == "S6") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "none"; document.getElementById("barren_input1").style.display = "none"; document.getElementById("barren_input2").style.display = "none"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; }
 	
 	
@@ -756,8 +756,8 @@ function update_logic_info() {
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block"; document.getElementById("pieceDungeons").value = "dojafofiwaspsh";}
 	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
 	
-	if (document.getElementById("bosskeys").value == "REMOVE") {Game.forest_boss_key = true; Game.fire_boss_key = true; Game.water_boss_key = true; Game.spirit_boss_key = true; Game.shadow_boss_key = true; removeBKFlag = true;}
-	else if (removeBKFlag) {removeBKFlag = false; Game.forest_boss_key = false; Game.fire_boss_key = false; Game.water_boss_key = false; Game.spirit_boss_key = false; Game.shadow_boss_key = false;}
+	if (document.getElementById("bosskeys").value == "REMOVE") {Player.forest_boss_key = true; Player.fire_boss_key = true; Player.water_boss_key = true; Player.spirit_boss_key = true; Player.shadow_boss_key = true; removeBKFlag = true;}
+	else if (removeBKFlag) {removeBKFlag = false; Player.forest_boss_key = false; Player.fire_boss_key = false; Player.water_boss_key = false; Player.spirit_boss_key = false; Player.shadow_boss_key = false;}
 	
 	Logic.gold_skulltulas = 0;
 	var i;
@@ -765,31 +765,31 @@ function update_logic_info() {
 	for (i = 1; i<=100; i++) {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
-	document.getElementById("tokens_acquired").innerHTML = "Tokens: " + Game.tokens;
+	document.getElementById("tokens_acquired").innerHTML = "Tokens: " + Player.tokens;
 	if (!nerfed) {document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;} else {document.getElementById("skulls_in_logic").innerHTML = "In Logic: ??"}
 
-	Game.logically_accessible = 0;
-	Game.forest_logically_accessible=0;
-	Game.fire_logically_accessible=0;
-	Game.water_logically_accessible=0;
-	Game.spirit_logically_accessible=0;
-	Game.shadow_logically_accessible=0;
-	Game.gtg_logically_accessible=0;
-	Game.well_logically_accessible=0;
-	Game.ganons_logically_accessible=0;
+	Player.logically_accessible = 0;
+	Player.forest_logically_accessible=0;
+	Player.fire_logically_accessible=0;
+	Player.water_logically_accessible=0;
+	Player.spirit_logically_accessible=0;
+	Player.shadow_logically_accessible=0;
+	Player.gtg_logically_accessible=0;
+	Player.well_logically_accessible=0;
+	Player.ganons_logically_accessible=0;
 	
-	Game.forest_checks_remaining = 0;
-	Game.fire_checks_remaining = 0;
-	Game.water_checks_remaining = 0;
-	Game.spirit_checks_remaining = 0;
-	Game.shadow_checks_remaining = 0;
-	Game.gtg_checks_remaining = 0;
-	Game.well_checks_remaining = 0;
-	Game.ganons_checks_remaining = 0;
+	Player.forest_checks_remaining = 0;
+	Player.fire_checks_remaining = 0;
+	Player.water_checks_remaining = 0;
+	Player.spirit_checks_remaining = 0;
+	Player.shadow_checks_remaining = 0;
+	Player.gtg_checks_remaining = 0;
+	Player.well_checks_remaining = 0;
+	Player.ganons_checks_remaining = 0;
 
 	temp = 0;
 	var colorChange = false;
-	Game.checks_remaining = 0;
+	Player.checks_remaining = 0;
 	for (var i = 0; i < Locations.length; i++) {
 		if (i < AreaIndexes[34]) {
 			document.getElementById(Locations[i]).style.display = "none";
@@ -813,15 +813,15 @@ function update_logic_info() {
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";
 			if (i < AreaIndexes[34]) {
-				if (Locations[i].includes("forest_")) {Game.forest_checks_remaining += 1;}
-				else if (Locations[i].includes("fire_")) {Game.fire_checks_remaining += 1;}
-				else if (Locations[i].includes("water_")) {Game.water_checks_remaining += 1;}
-				else if (Locations[i].includes("spirit_")) {Game.spirit_checks_remaining += 1;}
-				else if (Locations[i].includes("shadow_")) {Game.shadow_checks_remaining += 1;}
-				else if (Locations[i].includes("gtg_")) {Game.gtg_checks_remaining += 1;}
-				else if (Locations[i].includes("well_")) {Game.well_checks_remaining += 1;}
-				else if (Locations[i].includes("ganons_")) {Game.ganons_checks_remaining += 1;}
-				else {Game.checks_remaining += 1;}
+				if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
+				else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
+				else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
+				else if (Locations[i].includes("spirit_")) {Player.spirit_checks_remaining += 1;}
+				else if (Locations[i].includes("shadow_")) {Player.shadow_checks_remaining += 1;}
+				else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
+				else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
+				else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
+				else {Player.checks_remaining += 1;}
 			}
 		}
 		
@@ -830,7 +830,7 @@ function update_logic_info() {
 		document.getElementById(str).innerHTML = backUp[i];
 		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
 		
-		if(i > lastItem && Check[key] != "unknown" && !Game[Check[key]] && (Location_Logic[key] || Location_Access[key] || Location_Could_Access[key]))
+		if(i > lastItem && Check[key] != "unknown" && !Player[Check[key]] && (Location_Logic[key] || Location_Access[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
 		else
 			document.getElementById(str).style.backgroundColor = "";
@@ -902,18 +902,18 @@ function update_logic_info() {
 				}
 			}
 			if(document.getElementById(key).style.display != "none") {
-				if (i <= lastItem) {Game.logically_accessible += 1;}
-				if (i == AreaIndexes[12] - 1 && Game.deku_checks_remaining == 0) {Game.logically_accessible -= 1;}
-			    if (i == AreaIndexes[16] - 1 && Game.dodongos_checks_remaining == 0) {Game.logically_accessible -= 1;}
-				if (i == AreaIndexes[26] - 1 && Game.jabu_checks_remaining == 0) {Game.logically_accessible -= 1;}
-				if (i >= AreaIndexes[26] && i < AreaIndexes[27]) {Game.forest_logically_accessible += 1;}
-				if (i >= AreaIndexes[27] && i < AreaIndexes[26]) {Game.fire_logically_accessible += 1;}
-				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Game.water_logically_accessible += 1;}
-				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Game.spirit_logically_accessible += 1;}
-				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Game.shadow_logically_accessible += 1;}
-				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Game.ganons_logically_accessible += 1;}
-				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Game.gtg_logically_accessible += 1;}
-				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Game.well_logically_accessible += 1;}
+				if (i <= lastItem) {Player.logically_accessible += 1;}
+				if (i == AreaIndexes[12] - 1 && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
+			    if (i == AreaIndexes[16] - 1 && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
+				if (i == AreaIndexes[26] - 1 && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
+				if (i >= AreaIndexes[26] && i < AreaIndexes[27]) {Player.forest_logically_accessible += 1;}
+				if (i >= AreaIndexes[27] && i < AreaIndexes[26]) {Player.fire_logically_accessible += 1;}
+				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Player.water_logically_accessible += 1;}
+				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.spirit_logically_accessible += 1;}
+				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.shadow_logically_accessible += 1;}
+				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.ganons_logically_accessible += 1;}
+				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Player.gtg_logically_accessible += 1;}
+				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Player.well_logically_accessible += 1;}
 			}
 		}
 		else if (Location_Access[key] == true) {
@@ -1064,27 +1064,27 @@ function update_logic_info() {
 	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1; document.getElementById("text_shadow_compass").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1; document.getElementById("text_spirit_nearFourArmos").style.fontWeight = "bold";}
 	
-	Game.forest_checks_remaining -= 5 - Game.current_forest_keys;
-	Game.fire_checks_remaining -= 8 - Game.current_fire_keys
-	Game.water_checks_remaining -= 6 - Game.current_water_keys
-	Game.spirit_checks_remaining -= 5 - Game.current_spirit_keys
-	Game.shadow_checks_remaining -= 5 - Game.current_shadow_keys
-	Game.gtg_checks_remaining -= 9 - Game.current_gtg_keys
-	Game.well_checks_remaining -= 3 - Game.current_well_keys
-	Game.ganons_checks_remaining -= 2 - Game.current_ganons_keys;
+	Player.forest_checks_remaining -= 5 - Player.current_forest_keys;
+	Player.fire_checks_remaining -= 8 - Player.current_fire_keys
+	Player.water_checks_remaining -= 6 - Player.current_water_keys
+	Player.spirit_checks_remaining -= 5 - Player.current_spirit_keys
+	Player.shadow_checks_remaining -= 5 - Player.current_shadow_keys
+	Player.gtg_checks_remaining -= 9 - Player.current_gtg_keys
+	Player.well_checks_remaining -= 3 - Player.current_well_keys
+	Player.ganons_checks_remaining -= 2 - Player.current_ganons_keys;
 	
-	if (!Game.forest_boss_key) {Game.forest_checks_remaining -= 1;}
-	if (!Game.fire_boss_key) {Game.fire_checks_remaining -= 1;}
-	if (!Game.water_boss_key) {Game.water_checks_remaining -= 1;}
-	if (!Game.spirit_boss_key) {Game.spirit_checks_remaining -= 1;}
-	if (!Game.shadow_boss_key) {Game.shadow_checks_remaining -= 1;}
+	if (!Player.forest_boss_key) {Player.forest_checks_remaining -= 1;}
+	if (!Player.fire_boss_key) {Player.fire_checks_remaining -= 1;}
+	if (!Player.water_boss_key) {Player.water_checks_remaining -= 1;}
+	if (!Player.spirit_boss_key) {Player.spirit_checks_remaining -= 1;}
+	if (!Player.shadow_boss_key) {Player.shadow_checks_remaining -= 1;}
 	
-	Game.checks_remaining += Game.forest_checks_remaining + Game.fire_checks_remaining + Game.water_checks_remaining + Game.spirit_checks_remaining + Game.shadow_checks_remaining + Game.gtg_checks_remaining + Game.well_checks_remaining + Game.ganons_checks_remaining;
+	Player.checks_remaining += Player.forest_checks_remaining + Player.fire_checks_remaining + Player.water_checks_remaining + Player.spirit_checks_remaining + Player.shadow_checks_remaining + Player.gtg_checks_remaining + Player.well_checks_remaining + Player.ganons_checks_remaining;
 	
-	Game.logically_accessible = Number(Game.logically_accessible);
-	Game.logically_accessible=Game.logically_accessible.toFixed(0);
-	document.getElementById("checks_remaining").innerHTML="Remaining: "+Game.checks_remaining;
-	if (!nerfed) {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Game.logically_accessible;} else {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: ??"}
+	Player.logically_accessible = Number(Player.logically_accessible);
+	Player.logically_accessible=Player.logically_accessible.toFixed(0);
+	document.getElementById("checks_remaining").innerHTML="Remaining: "+Player.checks_remaining;
+	if (!nerfed) {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Player.logically_accessible;} else {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: ??"}
 }
 function mouse_input() {
 	if (event.button == 2 && Check[event.target.id] == "unknown") {
@@ -1163,13 +1163,13 @@ function update_summary_text() {
 		
 		if(!nerfed) {
 			if (Logic[theItem] || exception) {
-				if (Game[theItem])
+				if (Player[theItem])
 					document.getElementById(str).className = "checked_text_summary";
 				else
 					document.getElementById(str).className = "checked_text_summary_not_have";
 			}
 			else {
-				if (Game[theItem])
+				if (Player[theItem])
 					document.getElementById(str).className = "checked_text_summary_have_ool";
 				else {
 					if(CouldHave[theItem])
@@ -1180,7 +1180,7 @@ function update_summary_text() {
 			}
 		}
 		else {
-			if (Game[theItem] || (theItem == "trade" && (Known.prescription || Known.claim_check))) 
+			if (Player[theItem] || (theItem == "trade" && (Known.prescription || Known.claim_check))) 
 				if(ManualOutOfLogicItems[theItem])
 					document.getElementById(str).className = "checked_text_summary_have_ool";
 				else if(ManualInLogicItems[theItem])
@@ -1255,13 +1255,13 @@ function update_probabilities() {
 		if (!Known.scale1) {majorLeft += 1;} 
 		if (!Known.scale2) {majorLeft += 1;} else{document.getElementById("searchingFor_scale1").style.display = "none";}
 	}
-	if (Game.magic) {document.getElementById("searchingFor_magic1").style.display = "none";}
-	if (searchItems.includes("Magic") && !Game.magic)  {document.getElementById("searchingFor_magic1").style.display = "inline-block";
+	if (Player.magic) {document.getElementById("searchingFor_magic1").style.display = "none";}
+	if (searchItems.includes("Magic") && !Player.magic)  {document.getElementById("searchingFor_magic1").style.display = "inline-block";
 		if (!Known.magic1) {majorLeft += 1;} 
 		if (!Known.magic2) {majorLeft += 1;} else{document.getElementById("searchingFor_magic1").style.display = "none";}
 	}
-	if (Game.bow) {document.getElementById("searchingFor_bow1").style.display = "none";}
-	if (searchItems.includes("Bow") && !Game.bow)  {document.getElementById("searchingFor_bow1").style.display = "inline-block";
+	if (Player.bow) {document.getElementById("searchingFor_bow1").style.display = "none";}
+	if (searchItems.includes("Bow") && !Player.bow)  {document.getElementById("searchingFor_bow1").style.display = "inline-block";
 		if (!Known.bow1) {majorLeft += 1;} 
 		if (!Known.bow2) {majorLeft += 1;} 
 		if (!Known.bow3) {majorLeft += 1;} else{document.getElementById("searchingFor_bow1").style.display = "none";}
@@ -1270,14 +1270,14 @@ function update_probabilities() {
 		if (!Known.hookshot1) {majorLeft += 1;} 
 		if (!Known.hookshot2) {majorLeft += 1;} else{document.getElementById("searchingFor_hookshot1").style.display = "none";}
 	}
-	if (Game.bomb_bag) {document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
-	if (searchItems.includes("Bomb Bag") && !Game.bomb_bag)  {document.getElementById("searchingFor_bomb_bag1").style.display = "inline-block";
+	if (Player.bomb_bag) {document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
+	if (searchItems.includes("Bomb Bag") && !Player.bomb_bag)  {document.getElementById("searchingFor_bomb_bag1").style.display = "inline-block";
 		if (!Known.bomb_bag1) {majorLeft += 1;} 
 		if (!Known.bomb_bag2) {majorLeft += 1;} 
 		if (!Known.bomb_bag3) {majorLeft += 1;} else{document.getElementById("searchingFor_bomb_bag1").style.display = "none";}
 	}
 	
-	if (searchItems.includes("Slingshot"))  {if (Game.slingshot) {document.getElementById("searchingFor_slingshot1").style.display = "none";}
+	if (searchItems.includes("Slingshot"))  {if (Player.slingshot) {document.getElementById("searchingFor_slingshot1").style.display = "none";}
 		if (!Known.slingshot1) {majorLeft += 1;} 
 		if (!Known.slingshot2) {majorLeft += 1;} 
 		if (!Known.slingshot3) {majorLeft += 1;} else{document.getElementById("searchingFor_slingshot1").style.display = "none";}
@@ -1299,6 +1299,6 @@ function update_probabilities() {
 	
 	nChecks = document.getElementById("probability_input").value;
 	document.getElementById("bait_probability").innerHTML = "Bait ("+((bigLeft-majorLeft)/bigLeft*100).toFixed(2)+"%)"
-	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Game.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
-	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Game.checks_remaining*100).toFixed(2)+"%)"
+	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
+	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Player.checks_remaining*100).toFixed(2)+"%)"
 }

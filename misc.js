@@ -1,41 +1,41 @@
 function highlight(x) {
 	var item = "";
-	if (document.getElementById(x.id).src.endsWith(Game.kokiri_sword_img.substring(2))){item = "kokiri_sword";}
-	if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){item = "bomb_bag";}
-	if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){item = "iron_boots";}
-	if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){item = "hover_boots";}
-	if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){item = "hookshot";}
-	if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){item = "bow";}
-	if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){item = "hammer";}
-	if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){item = "scale";}
-	if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){item = "magic";}
-	if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){item = "hookshot";}
-	if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){item = "mirror_shield";}
-	if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){item = "dins_fire";}
-	if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){item = "rutos_letter";}
-	if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){item = "boomerang";}
-	if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){item = "lens";}
-	if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){item = "scale";}
-	if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){item = "light_arrows";}
-	if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){item = "fire_arrows";}
-	if (document.getElementById(x.id).src.endsWith(Game.farores_wind_img.substring(2))){item = "farores_wind";}
-	if (document.getElementById(x.id).src.endsWith(Game.bottle_img.substring(2))){item = "bottle";}
-	if (document.getElementById(x.id).src.endsWith(Game.slingshot_img.substring(2))){item = "slingshot";}
-	if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){item = "lullaby";}
-	if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){item = "eponas";}
-	if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){item = "sarias";}
-	if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){item = "suns_song";}
-	if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){item = "song_of_time";}
-	if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){item = "song_of_storms";}
-	if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){item = "minuet";}
-	if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){item = "bolero";}
-	if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){item = "serenade";}
-	if (document.getElementById(x.id).src.endsWith(Game.requiem_img.substring(2))){item = "requiem";}
-	if (document.getElementById(x.id).src.endsWith(Game.nocturne_img.substring(2))){item = "nocturne";}
-	if (document.getElementById(x.id).src.endsWith(Game.prelude_img.substring(2))){item = "prelude";}
+	if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){item = "kokiri_sword";}
+	if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){item = "bomb_bag";}
+	if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){item = "iron_boots";}
+	if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){item = "hover_boots";}
+	if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){item = "hookshot";}
+	if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){item = "bow";}
+	if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){item = "hammer";}
+	if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){item = "scale";}
+	if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){item = "magic";}
+	if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){item = "hookshot";}
+	if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){item = "mirror_shield";}
+	if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){item = "dins_fire";}
+	if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){item = "rutos_letter";}
+	if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){item = "boomerang";}
+	if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){item = "lens";}
+	if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){item = "scale";}
+	if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){item = "light_arrows";}
+	if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){item = "fire_arrows";}
+	if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){item = "farores_wind";}
+	if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){item = "bottle";}
+	if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){item = "slingshot";}
+	if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){item = "lullaby";}
+	if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){item = "eponas";}
+	if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){item = "sarias";}
+	if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){item = "suns_song";}
+	if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){item = "song_of_time";}
+	if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){item = "song_of_storms";}
+	if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){item = "minuet";}
+	if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){item = "bolero";}
+	if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){item = "serenade";}
+	if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){item = "requiem";}
+	if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){item = "nocturne";}
+	if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){item = "prelude";}
 	
 	if (mouseInputs_locations.length != 0 && event.button == 0) {
 		
@@ -87,18 +87,18 @@ function highlight(x) {
 	else if (event.button == 0) {
 	
 		if (x.id == "silverscaleimg") {
-			if (Game.golden_scale == true) {
-				Game.scale1 = false; 
-				Game.scale2 = false;
-				document.getElementById(x.id).src = Game.silver_scale_img;
+			if (Player.golden_scale == true) {
+				Player.scale1 = false; 
+				Player.scale2 = false;
+				document.getElementById(x.id).src = Player.silver_scale_img;
 				x.style.opacity = .2;
 			}
 			else if (x.style.opacity == 1) {
-				Game.scale2 = true;
-				document.getElementById(x.id).src = Game.golden_scale_img;
+				Player.scale2 = true;
+				document.getElementById(x.id).src = Player.golden_scale_img;
 			} 
 			else {
-				Game.scale1 = true;
+				Player.scale1 = true;
 				x.style.opacity = 1;
 			}
 		}
@@ -110,80 +110,80 @@ function highlight(x) {
 			if (x.style.opacity == 1) {Logic.forest_medallion = true;}
 		}
 		else if (document.getElementById(x.id).style.opacity == 1) {
-			if (document.getElementById(x.id).src.endsWith(Game.kokiri_sword_img.substring(2))){Game.kokiri_sword = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = true; }
-			if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale1 = true; Game.scale2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){Game.magic1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot1 = true; Game.hookshot2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength1 = true; Game.strength2 = true; Game.strength3 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.farores_wind_img.substring(2))){Game.farores_wind = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.bottle_img.substring(2))){Game.bottle1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.slingshot_img.substring(2))){Game.slingshot1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.requiem_img.substring(2))){Game.requiem = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.nocturne_img.substring(2))){Game.nocturne = true;}
-			if (document.getElementById(x.id).src.endsWith(Game.prelude_img.substring(2))){Game.prelude = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){Player.kokiri_sword = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){Player.bomb_bag1 = true; }
+			if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){Player.iron_boots = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){Player.hover_boots = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){Player.hookshot1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){Player.bow1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){Player.strength1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){Player.hammer = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){Player.scale1 = true; Player.scale2 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){Player.strength1 = true; Player.strength2 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){Player.magic1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){Player.hookshot1 = true; Player.hookshot2 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){Player.mirror_shield = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){Player.dins_fire = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){Player.rutos_letter = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){Player.boomerang = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){Player.lens = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){Player.strength1 = true; Player.strength2 = true; Player.strength3 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){Player.scale1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){Player.light_arrows = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){Player.fire_arrows = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){Player.farores_wind = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){Player.bottle1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){Player.slingshot1 = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){Player.lullaby = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){Player.eponas = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){Player.sarias = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){Player.suns = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){Player.time = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){Player.storms = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){Player.minuet = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){Player.bolero = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){Player.serenade = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = true;}
 		}
 		else {
-			if (document.getElementById(x.id).src.endsWith(Game.kokiri_sword_img.substring(2))){Game.kokiri_sword = false; }
-			if (document.getElementById(x.id).src.endsWith(Game.bomb_img.substring(2))){Game.bomb_bag1 = false; }
-			if (document.getElementById(x.id).src.endsWith(Game.iron_boots_img.substring(2))){Game.iron_boots = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.hover_boots_img.substring(2))){Game.hover_boots = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.hookshot_img.substring(2))){Game.hookshot1 = false; Game.hookshot2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.bow_img.substring(2))){Game.bow1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.goron_bracelet_img.substring(2))){Game.strength1 = false; Game.strength2 = false; Game.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.hammer_img.substring(2))){Game.hammer = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.golden_scale_img.substring(2))){Game.scale2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.silver_gauntlets_img.substring(2))){Game.strength2 = false; Game.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.magic_img.substring(2))){Game.magic1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.longshot_img.substring(2))){Game.hookshot2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.mirror_shield_img.substring(2))){Game.mirror_shield = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.dins_fire_img.substring(2))){Game.dins_fire = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.rutos_letter_img.substring(2))){Game.rutos_letter = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.boomerang_img.substring(2))){Game.boomerang = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.lens_img.substring(2))){Game.lens = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.golden_gauntlets_img.substring(2))){Game.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.silver_scale_img.substring(2))){Game.scale1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.light_arrows_img.substring(2))){Game.light_arrows = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.fire_arrows_img.substring(2))){Game.fire_arrows = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.farores_wind_img.substring(2))){Game.farores_wind = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.bottle_img.substring(2))){Game.bottle1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.slingshot_img.substring(2))){Game.slingshot1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.lullaby_img.substring(2))){Game.lullaby = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.eponas_img.substring(2))){Game.eponas = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.sarias_img.substring(2))){Game.sarias = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.suns_img.substring(2))){Game.suns = Game.suns = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.time_img.substring(2))){Game.time = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.storms_img.substring(2))){Game.storms = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.minuet_img.substring(2))){Game.minuet = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.bolero_img.substring(2))){Game.bolero = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.serenade_img.substring(2))){Game.serenade = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.requiem_img.substring(2))){Game.requiem = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.nocturne_img.substring(2))){Game.nocturne = false;}
-			if (document.getElementById(x.id).src.endsWith(Game.prelude_img.substring(2))){Game.prelude = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){Player.kokiri_sword = false; }
+			if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){Player.bomb_bag1 = false; }
+			if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){Player.iron_boots = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){Player.hover_boots = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){Player.hookshot1 = false; Player.hookshot2 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){Player.bow1 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){Player.strength1 = false; Player.strength2 = false; Player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){Player.hammer = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){Player.scale2 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){Player.strength2 = false; Player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){Player.magic1 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){Player.hookshot2 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){Player.mirror_shield = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){Player.dins_fire = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){Player.rutos_letter = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){Player.boomerang = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){Player.lens = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){Player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){Player.scale1 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){Player.light_arrows = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){Player.fire_arrows = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){Player.farores_wind = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){Player.bottle1 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){Player.slingshot1 = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){Player.lullaby = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){Player.eponas = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){Player.sarias = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){Player.suns = Player.suns = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){Player.time = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){Player.storms = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){Player.minuet = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){Player.bolero = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){Player.serenade = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = false;}
+			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = false;}
 		}
 		
 		
@@ -219,9 +219,9 @@ function shuffle(array) {
 }
 
 function changeTheme() {
-	if (Game.theme == "dark") {Game.theme = "light"}
-	else {Game.theme = "dark"}
-	Game.themeChange = true;
+	if (Player.theme == "dark") {Player.theme = "light"}
+	else {Player.theme = "dark"}
+	Player.themeChange = true;
 	Update();
 	}
 	
@@ -229,13 +229,13 @@ function whoAmI() {
 	if(Person.type == "soli") {
 		Person.type = "normie";
 		localStorage.setItem("type", "normie");
-		Game.themeChange = true;
+		Player.themeChange = true;
 		Update();
 	}
 	else if (Person.type == "normie") {
 		Person.type = "soli";
 		localStorage.setItem("type", "soli");
-		Game.themeChange = true;
+		Player.themeChange = true;
 		Update();
 	}
 }
@@ -272,13 +272,13 @@ function toggleSettings() {
 }
 
 function enableChus() {
-	if(Game.has_chus == false) {
-		Game.has_chus = true;
+	if(Player.has_chus == false) {
+		Player.has_chus = true;
 		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chuo.png";}
 		else {document.getElementById("chuButton").style.opacity = 1;}
 	}
-	else if(Game.has_chus == true) {
-		Game.has_chus = false;
+	else if(Player.has_chus == true) {
+		Player.has_chus = false;
 		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chux.png";}
 		else {document.getElementById("chuButton").style.opacity = .4;}
 	}
@@ -445,9 +445,9 @@ function coopControl() {
 }
 
 function linso_counter() {
-	if (event.button == 0 || token_click == 0) {Game.tokens += 1;}
-	if (event.button == 2 || token_click == 2) {Game.tokens -= 1;}
-	document.getElementById("linso_counter").innerHTML = "" + Game.tokens;
+	if (event.button == 0 || token_click == 0) {Player.tokens += 1;}
+	if (event.button == 2 || token_click == 2) {Player.tokens -= 1;}
+	document.getElementById("linso_counter").innerHTML = "" + Player.tokens;
 	token_click = 4;
 	midUpdate();
 }
@@ -514,15 +514,15 @@ function toggleHint(loc) {
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
 			if(loc.id != "trade_location"){
 				if(loc.innerHTML.includes("Big Poe"))
-					Game.big_poe = !Game.big_poe;
+					Player.big_poe = !Player.big_poe;
 			
-				Game[item] = !Game[item];
+				Player[item] = !Player[item];
 			}
 			else {
 				if(Known["prescription"])
-					Game["prescription"] = !Game["prescription"];
+					Player["prescription"] = !Player["prescription"];
 				else if(Known["claim_check"])
-					Game["claim_check"] = !Game["claim_check"];
+					Player["claim_check"] = !Player["claim_check"];
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
@@ -754,39 +754,39 @@ function sleep(milliseconds) {
 
 function Undo() {
 	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.current_forest_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.current_fire_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.current_water_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.current_spirit_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.current_shadow_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.current_gtg_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.current_well_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("ganons")) {Game.current_ganons_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.current_forest_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.current_fire_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.current_water_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.current_spirit_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.current_shadow_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Player.current_gtg_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {Player.current_well_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("ganons")) {Player.current_ganons_keys -= 1;}
 	}
 	
 	if (Check[lastCheck[lastCheck.length-1]] == "boss_key") {
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.forest_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.fire_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.water_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.spirit_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.shadow_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.forest_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.fire_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.water_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.spirit_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.shadow_boss_key = false;}
 	}
 
 	if (Check[lastCheck[lastCheck.length-1]] != "unknown" && Check[lastCheck[lastCheck.length-1]] != "small_key" && Check[lastCheck[lastCheck.length-1]] != "boss_key")
 	{
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Game.forest_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Game.fire_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Game.water_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Game.spirit_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Game.shadow_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Game.gtg_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("well")) {Game.well_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.forest_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.fire_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.water_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.spirit_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.shadow_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Player.gtg_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {Player.well_checks_remaining += 1;}
 		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
 			document.getElementById("trade_location").innerHTML = "Trade &#8594; ";
 		}
 		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "time" || Check[lastCheck[lastCheck.length-1]] == "storms" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
 			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
-			Game.checks_remaining -= 1;
+			Player.checks_remaining -= 1;
 		}
 		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
@@ -799,7 +799,7 @@ function Undo() {
 	}
 	
 	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
-	Game[Check[lastCheck[lastCheck.length-1]]] = false;
+	Player[Check[lastCheck[lastCheck.length-1]]] = false;
 	Known[Check[lastCheck[lastCheck.length-1]]] = false;
 	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
 	Check[lastCheck[lastCheck.length-1]] = "unknown";

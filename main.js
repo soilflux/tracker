@@ -29,7 +29,7 @@ function fastUpdate() {
 
 function midUpdate() {
 	var i = 0;
-	var previousInLogicChecks = Game.logically_accessible;
+	var previousInLogicChecks = Player.logically_accessible;
 	var previousInLogicSkulls = Logic.gold_skulltulas;
 	var flag = false;
 	while (i < 100000) {
@@ -46,9 +46,9 @@ function midUpdate() {
 		handleAlternateHintInput(); //implements inputting hints into the note box
 		//trackUnreadHints(); updates which hints are still unread
 		if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
-		if (i >=1 && Game.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
+		if (i >=1 && Player.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
-			previousInLogicChecks = Game.logically_accessible;
+			previousInLogicChecks = Player.logically_accessible;
 			previousInLogicSkulls = Logic.gold_skulltulas;
 			flag = false;
 		}
