@@ -1123,13 +1123,14 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 			animalLV.forEach(function(element, index, array){
 			array[index] = Math.floor(1.25*Math.sqrt(element));
 			});
+			animalOrigLV = animalLV.slice(0);
 			console.log(animalLV)
 			while (animalLV[animalRNG] != Math.max.apply(Math, animalLV)) {
 				animalRNG = Math.floor(Math.random() * tabPicSources.length)
 				animalLV[animalLV.indexOf(Math.max.apply(Math, animalLV))] -= 1;
 			}
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + animalLV[animalRNG]
+			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + animalOrigLV[animalRNG]
 		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
