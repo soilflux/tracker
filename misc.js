@@ -742,19 +742,18 @@ document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 
 function refreshVersion() {
 	var version = 51;
-	viewedNewVersion = 10000000000000;
-	var dt = new Date( "October 25, 2022 23:15:20" );
+	viewedNewVersion = 10000000000000000;
 	var elements = document.getElementsByClassName('patchNotes');
 	var currentVersion = parseInt(elements[0].id.substring(2))+ 1;
 	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
-	if (version<currentVersion) {if (localStorage.getItem("viewedNewVersion")) {viewedNewVersion = localStorage.getItem("viewedNewVersion")} else{localStorage.setItem("viewedNewVersion",dt.getTime());}}
+	if (version<currentVersion) {if (localStorage.getItem("viewedNewVersion")) {viewedNewVersion = localStorage.getItem("viewedNewVersion")} else{localStorage.setItem("viewedNewVersion",Date.now());}}
 	for (var i = version; i < currentVersion; i++) {
         document.getElementById("pn" + i).style.display = "inline-block";
         document.getElementById("patchNotesTitle").style.display = "inline-block";
 	}
-	if (dt.getTime()-viewedNewVersion > 1000*60*60*6) {localStorage.setItem("version",currentVersion); localStorage.removeItem("viewedNewVersion");}
+	if (Date.now()-viewedNewVersion > 1000*60*60*6) {localStorage.setItem("version",currentVersion); localStorage.removeItem("viewedNewVersion");}
 }
-//test
+
 function sleep(milliseconds) {
   const date = Date.now();
   let currentDate = null;
