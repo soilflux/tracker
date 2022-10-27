@@ -1121,12 +1121,12 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
 			animalLV = animalXP.slice(0);
 			animalLV.forEach(function(element, index, array){
-			array[index] = Math.max(Math.floor(2*Math.sqrt(element)-1),0);
+			array[index] = Math.max(Math.floor(2.5*Math.sqrt(element)-1),0);
 			});
 			animalOrigLV = animalLV.slice(0);
 			console.log(animalLV)
 			while (animalLV[animalRNG] != Math.max.apply(Math, animalLV)) {
-				if (Math.random() < 0.5) {animalRNG = Math.floor(Math.random() * tabPicSources.length)}
+				if (Math.random() < 0.3333333) {animalRNG = Math.floor(Math.random() * tabPicSources.length)}
 				animalLV[animalLV.indexOf(Math.max.apply(Math, animalLV))] -= 1;
 			}
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
