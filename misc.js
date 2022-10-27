@@ -743,13 +743,14 @@ document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 function refreshVersion() {
 	var version = 51;
 	var elements = document.getElementsByClassName('patchNotes');
-	var currentVersion = parseInt(elements[0].id.substring(2));
+	var currentVersion = parseInt(elements[0].id.substring(2))+ 1;
 	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
+	if (version<currentVersion) {if (localStorage.getItem("viewedNewVersion")) {viewedNewVersion = localStorage.getItem("viewedNewVersion")} else{localStorage.setItem("viewedNewVersion",Date.getTime());}}
 	for (var i = version; i <= currentVersion; i++) {
         document.getElementById("pn" + i).style.display = "inline-block";
         document.getElementById("patchNotesTitle").style.display = "inline-block";
 	}
-	localStorage.setItem("version",currentVersion+1);
+	if (Date.getTime()-viewedNewVersion > 1000*60*60*6) {localStorage.setItem("version",currentVersion); localStorage.removeItem("viewedNewVersion");}
 }
 
 function sleep(milliseconds) {

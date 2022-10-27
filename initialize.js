@@ -1420,7 +1420,7 @@ if (!haveEvents) {
 document.getElementById("linso54").style.opacity = 1
 
 linsoControl(); linsoControl();
-setInterval(slowUpdate,10000);
+setInterval(slowUpdate,3500);
 setInterval(midUpdate,500);
 setInterval(fastUpdate,100);
 setInterval(updateControllerStatus,1000/60);
