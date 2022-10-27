@@ -185,9 +185,9 @@
 			<br>left clicking checked locations will surround it with asterisks (intent: mark as hinted/unhinted). right clicking locations will toggle the item from it as obtained/unobtained.
 			<br><br><br>Animal Companionship:
 			<br>Gain 1 companion XP with current animal after inputting 20 items into check input boxes or through the hint box.
-			<br>companion level is equal to 1.25*sqrt of companion XP, rounded down.
-			<br>the tracker will automatically reroll other animals once for every companion level, starting with your highest level animal.
-			<br>in other words, gain 1 reroll after 1,3,6,11,16,24... seeds played with that animal.
+			<br>companion level is equal to 2*sqrt of companion XP-1, rounded down.
+			<br>the tracker will roll a d2 once for every companion level, then reroll animals other than your highest level animal for every result of 1. if it fails to roll that animal, it will repeat the process for your next highest level animal.
+			<br>in other words, increase rolling odds for a particular animal after 1,3,4,7,9,13,16... seeds played with that animal.
 		
 			</p>
 		</div>
