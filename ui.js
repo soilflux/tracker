@@ -73,6 +73,7 @@ function process_inputs() {
 					if (k == 0) {var duplicate = "";}
 					else {var duplicate = k + "";}
 					if (!Known[Items2[j] + duplicate]) {
+						trackAnimalQuest();
 						if (i <= lastItem) {
 							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
 							Location[Items2[j] + duplicate] = document.getElementById(key).id;

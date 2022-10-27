@@ -183,6 +183,11 @@
 			<br><br> intent: yellow highlight means confirmed poth, red box means confirmed locked by item to left of arrow, removed means confirmed not locked by item to left of arrow.
 			<br><br><br>Check Summary:
 			<br>left clicking checked locations will surround it with asterisks (intent: mark as hinted/unhinted). right clicking locations will toggle the item from it as obtained/unobtained.
+			<br><br><br>Animal Companionship:
+			<br>Gain 1 companion XP with current animal after inputting 20 items into check input boxes or through the hint box.
+			<br>companion level is equal to 1.25*sqrt of companion XP, rounded down.
+			<br>the tracker will automatically reroll other animals once for every companion level, starting with your highest level animal.
+			<br>in other words, gain 1 reroll after 1,3,6,11,16,24... seeds played with that animal.
 		
 			</p>
 		</div>
@@ -332,6 +337,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small id="patchNotesTitle">Patch Notes</small><br>
+				<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
 				<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>
 				<small class = "patchNotes" id = "pn54">54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) </small><br>
 				<small class = "patchNotes" id = "pn53">53: added light theme and a preset for season 6 (changes by exodus) </small><br>
@@ -365,7 +371,7 @@
 		
 		<button id="iWantToRemoveThisButton" onmousedown="whoAmI()">Appease Viewers</button><br />
 		<button id="altThemeControl" onmousedown="altThemeControl()">Dark Theme</button><br />	
-		<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><br /><br />
+		<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><small id = "animalLV"></small><br /><br />
 		
 		<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
 		<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button><br />

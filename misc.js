@@ -224,7 +224,15 @@ function changeTheme() {
 	Player.themeChange = true;
 	Update();
 	}
-	
+function trackAnimalQuest() {
+	questCounter += 1;
+	if (questCounter >= 20) {
+		animalXP[animalRNG] += 1;
+		questCounter = -100000
+		localStorage.setItem("animalXP", JSON.stringify(animalXP));
+		console.log(animalXP)
+	}
+}	
 function whoAmI() {
 	if(Person.type == "soli") {
 		Person.type = "normie";

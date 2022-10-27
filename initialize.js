@@ -49,6 +49,7 @@ var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
 var untracked = 5;
+var questCounter = 0;
 document.getElementById("bait_probability").onclick = function(){untracked -= 1;}
 
 var dungeonSkullSanity = false;
@@ -147,7 +148,9 @@ var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", 
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/lion.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png"]
-
+var animalXP = [0,0,0,0,0,0,0,0,0,0,0,0]; if (localStorage.getItem("animalXP")) {animalXP = JSON.parse(localStorage.getItem("animalXP"));} 
+console.log(animalXP)
+var animalRNG = Math.floor(Math.random() * tabPicSources.length)
 Player.logically_accessible = 0;
 var d = new Date();
 var pauseTotal = 0;
@@ -1115,7 +1118,19 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) {elem.src = Player.shadow_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Player.spirit_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Player.light_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.src = tabPicSources[Math.floor(Math.random() * tabPicSources.length)]; /*elem.onclick = toggleLinsoGoMode;*/}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
+			animalLV = animalXP.slice(0);
+			animalLV.forEach(function(element, index, array){
+			array[index] = Math.floor(1.25*Math.sqrt(element));
+			});
+			console.log(animalLV)
+			while (animalLV[animalRNG] != Math.max.apply(Math, animalLV)) {
+				animalRNG = Math.floor(Math.random() * tabPicSources.length)
+				animalLV[animalLV.indexOf(Math.max.apply(Math, animalLV))] -= 1;
+			}
+			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
+			document.getElementById("animalLV").innerHTML = elem.src.slice(11,elem.src.length-4) + " LVL " + animalLV[animalRNG]
+		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Player[linsoOrder[linsoOrderIncrement]] = true;}
