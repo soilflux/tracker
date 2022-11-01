@@ -32,9 +32,8 @@ color:lightgreen
 color: yellow;
 }
 body {
-background-image: linear-gradient(to bottom, #3b4144, #3b4144, #3b4144 36.15%, black 36.15%, black);
+background-color: black;
 background-size:cover;
-background-repeat: no-repeat;
 margin: 0;
 overflow: hidden;
 }
@@ -581,6 +580,9 @@ color: red;
   display: table;
   clear: both;
 }
+#row {
+	background-color: #3b4144;
+}
 #row2 {
 	position: absolute;
 	top: 1900px;
@@ -599,6 +601,12 @@ color: red;
 .alt_hint_input {
     background-color : #181818; 
     color:white
+}
+.simLog {
+	overflow-y: scroll;
+	background-color : #181818; 
+    color:white;
+	display: none;
 }
 .patchNotes {
     display: none;
@@ -752,6 +760,17 @@ color: red;
 	color: 	white;
 	display: inline-block;
 	margin-bottom:2px;
+}
+.gossip_text {
+	font-size: 16px;
+	color: pink;
+	font-weight:bold;
+	display: inline-block;
+	opacity: 1;
+	margin-top:2px;
+	margin-bottom:1px;
+	vertical-align: top;
+	letter-spacing: -1px;
 }
 #timerControl {
 	display:none;	

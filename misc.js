@@ -466,7 +466,7 @@ function toggleHint(loc) {
 
 	var theLocation = "";
 	var item = "";
-	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") { // song click
+	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text" || loc.className == "known_check_text") { // song click
 		theLocation = loc.id.slice(5); 
 		item = Check[theLocation];
 	} 
@@ -487,50 +487,81 @@ function toggleHint(loc) {
 	
 	if(MarkedWotHItemArrow == null) {
 		if(event.which == 1 || event.which == undefined) { // left click, toggle if this item hinted by a sometimes hint or not
-			var itemText = "";
+			if(!simActive) {
 			
-			if (item == "serenade") {itemText = "Serenade";} 
-			else if (item == "prelude") {itemText = "Prelude"} 
-			else {itemText = ItemNames[Items.indexOf(item)];}
-			
-			if (item != "unknown" && theLocation != "unknown") {
-				Hinted[theLocation] = !Hinted[theLocation];
+				var itemText = "";
 				
-				// get the hinted text for this item and location
-				if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
-					text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+				if (item == "serenade") {itemText = "Serenade";} 
+				else if (item == "prelude") {itemText = "Prelude"} 
+				else {itemText = ItemNames[Items.indexOf(item)];}
+				
+				if (item != "unknown" && theLocation != "unknown") {
+					Hinted[theLocation] = !Hinted[theLocation];
+					
+					// get the hinted text for this item and location
+					if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
+						text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+					}
+					else {
+						text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+					}
+					
+					/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
+						var hintText = document.createElement("small");
+						hintText.innerHTML = text;
+						document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
+					}
+					else { // if it is no longer hinted, remove the hinted text
+						for (i = 0; i < document.getElementById("notes").children.length; i++) {
+							if (document.getElementById("notes").children[i].innerHTML == text) {
+								document.getElementById("notes").children[i].remove();
+								break;
+							}
+						}
+					}*/
+				}
+			}
+			else {
+				var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+				
+				if(document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase()) {
+					if(loc.id != "trade_location"){
+						if(loc.innerHTML.includes("Big Poe"))
+							Player.big_poe = !Player.big_poe;
+					
+						Player[item] = !Player[item];
+					}
+					else {
+						if(Known["prescription"])
+							Player["prescription"] = !Player["prescription"];
+						else if(Known["claim_check"])
+							Player["claim_check"] = !Player["claim_check"];
+					}
 				}
 				else {
-					text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+					document.getElementById(theLocation).value = input;
 				}
-				
-				/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
-					var hintText = document.createElement("small");
-					hintText.innerHTML = text;
-					document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
-				}
-				else { // if it is no longer hinted, remove the hinted text
-					for (i = 0; i < document.getElementById("notes").children.length; i++) {
-						if (document.getElementById("notes").children[i].innerHTML == text) {
-							document.getElementById("notes").children[i].remove();
-							break;
-						}
-					}
-				}*/
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-			if(loc.id != "trade_location"){
-				if(loc.innerHTML.includes("Big Poe"))
-					Player.big_poe = !Player.big_poe;
-			
-				Player[item] = !Player[item];
+			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+				
+			if(!simActive || (document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase())) {
+				if(loc.id != "trade_location"){
+					if(loc.innerHTML.includes("Big Poe"))
+						Player.big_poe = !Player.big_poe;
+				
+					Player[item] = !Player[item];
+				}
+				else {
+					if(Known["prescription"])
+						Player["prescription"] = !Player["prescription"];
+					else if(Known["claim_check"])
+						Player["claim_check"] = !Player["claim_check"];
+				}
 			}
 			else {
-				if(Known["prescription"])
-					Player["prescription"] = !Player["prescription"];
-				else if(Known["claim_check"])
-					Player["claim_check"] = !Player["claim_check"];
+				document.getElementById(theLocation).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
@@ -763,6 +794,9 @@ function sleep(milliseconds) {
 }
 
 function Undo() {
+	if(lastCheck.length < 2)
+		return;
+	
 	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
 		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.current_forest_keys -= 1;}
 		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.current_fire_keys -= 1;}

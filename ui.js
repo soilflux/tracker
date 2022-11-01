@@ -18,14 +18,13 @@ function process_inputs() {
 		hinted = false;
 		if (isLowerCase(document.getElementById(key).value.charAt(0)) 
 		 && isUpperCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length-1))
-		 && document.getElementById(key).value.length > 0) {	
+		 && document.getElementById(key).value.length > 0 && document.getElementById(key).value != "chU") {	
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
-			console.log(document.getElementById(key).value)
 		}
 		else if (isUpperCase(document.getElementById(key).value.charAt(0)) 
 			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
-			  && document.getElementById(key).value.length > 0) {
+			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value != "Chu" && document.getElementById(key).value != "Ch") {
 			
 			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
@@ -41,6 +40,7 @@ function process_inputs() {
 			else if(!Known.bombchus5) {Known.bombchus5 = true;}
 			
 			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
+			document.getElementById(key).value = "";
 		}
 		
 		for (var j = 0; j < inputs.length; j++) {
@@ -289,110 +289,238 @@ function junk() {
 	str = str.substring('text_'.length);
 	var temp = Locations.indexOf(str);
 	
-	if(type == 0 && !event.altKey && Check[str] == "unknown") {
-		if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
-		else if(str.includes("fire_") && Player.fire_checks_remaining != 0 && str != "fire_grave") {Player.fire_checks_remaining -=1;}
-		else if(str.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
-		else if(str.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
-		else if(str.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
-		else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
-		else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
-		else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-		else if(temp < AreaIndexes[26]){}
-		else {return;}
-		Check[str]="junk";
-	}
-	
-	else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey || document.getElementById(str).value == "BK") {
-		if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
-		else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
-		else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
-		else if(str.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = str;}
-		else if(str.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = str;}
-		else if(str.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = str;}
-		else {
-			if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
+	if(!simActive) {
+		if(type == 0 && !event.altKey && Check[str] == "unknown") {
+			if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
+			else if(str.includes("fire_") && Player.fire_checks_remaining != 0 && str != "fire_grave") {Player.fire_checks_remaining -=1;}
+			else if(str.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
+			else if(str.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
+			else if(str.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
+			else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
+			else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
+			else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
+			else if(temp < AreaIndexes[26]){}
+			else {return;}
+			Check[str]="junk";
+		}
+		
+		else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey || document.getElementById(str).value == "BK") {
+			if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
+			else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
+			else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
+			else if(str.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = str;}
+			else if(str.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = str;}
+			else if(str.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = str;}
+			else {
+				if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
+				return;
+			}
+			if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
+			Check[str]="boss_key";
+		}
+		
+		else if ((type == 2 && !event.altKey) || thisIsAKey || document.getElementById(str).value == "SK") {
+			if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+			else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+			else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+			else if(str.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+			else if(str.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+			else if(str.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+			else if(str.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+			else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+			else {
+			if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+			else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
+			return;
+			}
+			Check[str]="small_key";
+			if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
+		}
+		else if (type == 2 && event.altKey) {
+			if (event.target.style.color == "magenta") {event.target.style.color = "green";}
+			else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 			return;
 		}
-		if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
-		Check[str]="boss_key";
-	}
-	
-	else if ((type == 2 && !event.altKey) || thisIsAKey || document.getElementById(str).value == "SK") {
-		if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
-		else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
-		else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
-		else if(str.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
-		else if(str.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
-		else if(str.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
-		else if(str.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
-		else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
-		else {
-		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
-		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
-		return;
+		else if (Check[str] == "unknown") {
+			Check[str]="junk";
 		}
-		Check[str]="small_key";
-		if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
-	}
-	else if (type == 2 && event.altKey) {
-		if (event.target.style.color == "magenta") {event.target.style.color = "green";}
-		else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
-		return;
-	}
-	else if (Check[str] == "unknown") {
-		Check[str]="junk";
-	}
-	
-	document.getElementById(str).style.display = "none";
-	document.getElementById("text_" + str).style.display = "none";
-	document.getElementById("br_" + str).style.display = "none";
-	
-	if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
-
-	if (Check[str] != "junk") {midUpdate();}
-	lastCheck.push(str);
-	Update();
-	
-	if(!thisIsHinted) {
 		
-		for(var j = 0; j < AreaIndexes.length; j++) {
-			if(Locations.indexOf(str) < AreaIndexes[j])
-				break;
-		}
-	
-		for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
-			if(i >= AreaIndexes[j])
-				break;
+		document.getElementById(str).style.display = "none";
+		document.getElementById("text_" + str).style.display = "none";
+		document.getElementById("br_" + str).style.display = "none";
+		
+		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
+
+		if (Check[str] != "junk") {midUpdate();}
+		lastCheck.push(str);
+		Update();
+		
+		if(!thisIsHinted) {
 			
-			if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
-				toFocus = document.getElementById(Locations[i]); 
-				break;
+			for(var j = 0; j < AreaIndexes.length; j++) {
+				if(Locations.indexOf(str) < AreaIndexes[j])
+					break;
+			}
+		
+			for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
+				if(i >= AreaIndexes[j])
+					break;
+				
+				if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+					toFocus = document.getElementById(Locations[i]); 
+					break;
+				}
 			}
 		}
+	}
+	else {
+		// Sim active
+		if(LocationToSpoilerName[str] == undefined)
+			console.log(str + " is not a known location in the sim");
+		
+		if(!str.startsWith("h_")) { 
+			// clicked an item check, not a gossip hint
+		
+			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
+			
+			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu") {
+
+				if(document.getElementById(str).value != "BK" && document.getElementById(str).value != "SK") {
+					if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
+					else if(str.includes("fire_") && Player.fire_checks_remaining != 0 && str != "fire_grave") {Player.fire_checks_remaining -=1;}
+					else if(str.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
+					else if(str.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
+					else if(str.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
+					else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
+					else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
+					else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
+					else if(temp < AreaIndexes[26]){}
+					else {return;}
+					Check[str]="junk";
+				}
+				
+				else if(document.getElementById(str).value == "BK") {
+					if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
+					else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
+					else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
+					else if(str.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = str;}
+					else if(str.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = str;}
+					else if(str.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = str;}
+					else {
+						if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
+						return;
+					}
+					if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
+					Check[str]="boss_key";
+				}
+				
+				else if (document.getElementById(str).value == "SK") {
+					if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+					else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+					else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+					else if(str.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+					else if(str.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+					else if(str.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+					else if(str.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+					else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+					else {return;}
+					Check[str]="small_key";
+					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
+				}
+				
+				document.getElementById(str).style.display = "none";
+				document.getElementById("text_" + str).style.display = "none";
+				document.getElementById("br_" + str).style.display = "none";
+				
+				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
+				
+				lastCheck.push(str);
+			}
+			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value == "chU" || document.getElementById(str).value == "Chu") {
+				// left click, get the item
+				if(input != "bk" && input != "sk")
+					document.getElementById(str).value = input;
+				
+				else if(input == "bk") {
+					if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
+					else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
+					else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
+					else if(str.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = str;}
+					else if(str.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = str;}
+					else if(str.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = str;}
+					else {
+						if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
+						return;
+					}
+					if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
+					Check[str]="boss_key";
+				}
+				
+				else if (input == "sk") {
+					if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+					else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+					else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+					else if(str.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+					else if(str.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+					else if(str.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+					else if(str.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+					else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+					else {return;}
+					Check[str]="small_key";
+					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
+				}
+				
+				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + "\n" + document.getElementById("simLog").value;
+			}
+			else if(type == 2 && Check[str] == "unknown") {
+				// right click, peek the item
+				document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				
+				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
+			}
+			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {
+				forcedDisplay[temp] = false; 
+				Player[Check[str]] = true; 
+			}
+		}
+		else {
+			// clicked a gossip hint
+			hint = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].replaceAll("#", "").replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+			document.getElementById("simLog").value = hint + "\n" + document.getElementById("simLog").value;
+			Check[str] = "junk";
+			document.getElementById(str).style.display = "none";
+			document.getElementById("text_" + str).style.display = "none";
+			document.getElementById("br_" + str).style.display = "none";
+			lastCheck.push(str);
+		}
+		Update(); 
 	}
 }	
 
 function junkUltra() {
-	var x = event.target;
-	
-	if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
-	if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
-	if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
-	if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
-	if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
-	if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
-	if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
-	if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
-	for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
-		if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
-		document.getElementById(Locations[i]).style.display = "none";
-		document.getElementById("text_" + Locations[i]).style.display = "none";
-		document.getElementById("br_" + Locations[i]).style.display = "none";
+	if(!simActive) {
+		var x = event.target;
+		
+		if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
+		if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
+		if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
+		if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
+		if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
+		if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
+		if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
+		if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
+		for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
+			if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
+			document.getElementById(Locations[i]).style.display = "none";
+			document.getElementById("text_" + Locations[i]).style.display = "none";
+			document.getElementById("br_" + Locations[i]).style.display = "none";
+		}
+		midUpdate();
+		slowUpdate();
+		Update();
 	}
-	midUpdate();
-	slowUpdate();
-	Update();
 }
 
 function junkItem(x) {
@@ -802,6 +930,7 @@ function update_logic_info() {
 		if (document.getElementById("skullSanity").value != "ALL" && Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well"))) {continue;}
 		if (document.getElementById("scrubSanity").value != "ON" && Locations[i].startsWith("scrub_")) {continue;}
 		if (document.getElementById("shopSanity").value != "4" && Locations[i].startsWith("shop_")) {continue;}
+		if (document.getElementById("gossips").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		if (document.getElementById("ganonBKSetting").value == "LACS" && Locations[i].startsWith("lacs")) {continue;}
 		if (document.getElementById("shuffleOcarinas").value == "OFF" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {continue;}
 		
@@ -822,8 +951,13 @@ function update_logic_info() {
 				else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
 				else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
 				else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
-				else {Player.checks_remaining += 1;}
+				else if (!Locations[i].includes("h_")) {Player.checks_remaining += 1;}
 			}
+		}
+		
+		if(key.startsWith("h_")) {
+			document.getElementById(str).className = "gossip_text";
+			continue;
 		}
 		
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
@@ -876,7 +1010,7 @@ function update_logic_info() {
 					document.getElementById(str).style.color = inLogicColor;
 				}
 					
-				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
 					document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 				else
 					document.getElementById(str).style.border = "";
@@ -966,7 +1100,7 @@ function update_logic_info() {
 						document.getElementById(str).style.color =inLogicColor;
 					}
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
 						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 					else
 						document.getElementById(str).style.border = "";
@@ -1012,7 +1146,7 @@ function update_logic_info() {
 						document.getElementById(str).style.color = "yellow";
 					}
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
 						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 					else
 						document.getElementById(str).style.border = "";
@@ -1049,7 +1183,7 @@ function update_logic_info() {
 				}
 			}
 			
-			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]))
+			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
 				document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 			else
 				document.getElementById(str).style.border = "";

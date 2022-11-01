@@ -401,7 +401,7 @@ function handleThemes() {
 	
 	
 	if(colorTheme == "light") {
-		document.body.style.backgroundImage = "linear-gradient(to bottom, #576166, #576166, #576166 36.15%, black 36.15%, black)";
+		document.getElementById('row').style.backgroundColor = '#576166';
 		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
 		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
 		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
@@ -410,11 +410,12 @@ function handleThemes() {
 		document.querySelectorAll('.alt_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
 		document.querySelectorAll('.layout_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
 		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.simLog').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
 		document.querySelectorAll('.ool_check_text').forEach(e => {e.style.color = 'black';});
 		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'black';});
 	}
 	else {
-		document.body.style.backgroundImage = "linear-gradient(to bottom, #3b4144, #3b4144, #3b4144 36.15%, black 36.15%, black)";
+		document.getElementById('row').style.backgroundColor = '#3b4144';
 		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
@@ -425,6 +426,7 @@ function handleThemes() {
 		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 		document.querySelectorAll('.ool_check_text').forEach(e => {e.style.color = 'white';});
 		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'white';});
+		document.querySelectorAll('.simLog').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 	}
 }
 
