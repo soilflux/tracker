@@ -360,136 +360,136 @@ function woth_and_barren_processing() {
 			hinted = true;
 			if (i == 1) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 2) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 3) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 4) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 5) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 6) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 7) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 8) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 9) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 10) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 11) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 12) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 				Player.deku_checks_remaining = 0;
 				Player.checks_remaining -= 1;
 			}
 			if (i == 13) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 14) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 15) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 16) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 				Player.dodongos_checks_remaining = 0;
 				Player.checks_remaining -= 1;
 			}
 			if (i == 17) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 18) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 19) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 20) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 21) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 22) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 23) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 24) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 25) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 			}
 			if (i == 26) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
-					if(Check[Locations[j]] == "unknown") {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
+				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
 				}
 				Player.jabu_checks_remaining = 0;
 				Player.checks_remaining -= 1;
