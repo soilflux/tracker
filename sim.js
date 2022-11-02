@@ -298,7 +298,7 @@ var LocationToSpoilerName = {
 	"redead_grave": "Graveyard Heart Piece Grave Chest",
 	"composers_grave": "Graveyard Royal Familys Tomb Chest",
 	"graveyard_box": "Graveyard Freestanding PoH",
-	"race_1": "Graveyard Hookshot Chest",
+	"race_1": "Graveyard Dampe Race Hookshot Chest",
 	"race_2": "Graveyard Dampe Race Freestanding PoH",
 	"river_pillar": "ZR Near Open Grotto Freestanding PoH",
 	"frogs_1": "ZR Frogs in the Rain",
