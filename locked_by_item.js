@@ -508,10 +508,10 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.kokiri_storms = Locked_Logic2.storms;
 	Location_Locked_Logic2.talons_chickens = true;
 	Location_Locked_Logic2.back_of_ranch = true;
-	Location_Locked_Logic2.hyrule_remote_grotto = Locked_Logic2.can_blast_or_smash;
-	Location_Locked_Logic2.hyrule_open_grotto = true;
+	Location_Locked_Logic2.hyrule_remoteGrotto = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.hyrule_openGrotto = true;
 	Location_Locked_Logic2.hyrule_hp_scrub = Locked_Logic2.can_blast_or_smash;;
-	Location_Locked_Logic2.hyrule_boulder_of_destiny = Locked_Logic2.can_blast_or_smash;;
+	Location_Locked_Logic2.hyrule_marketGrotto = Locked_Logic2.can_blast_or_smash;;
 	Location_Locked_Logic2.hyrule_tektite_grotto = Locked_Logic2.can_blast_or_smash && (Locked_Logic2.golden_scale || Locked_Logic2.iron_boots);
 	Location_Locked_Logic2.hyrule_ocarina	= Locked_Logic2.kokiri_emerald && Locked_Logic2.goron_ruby && Locked_Logic2.zora_sapphire;
 	Location_Locked_Logic2.gerudovalley_box = true;
@@ -548,7 +548,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.deku_queen_gohma = Locked_Logic2.deku_access && Locked_Logic2.slingshot;
 	Location_Locked_Logic2.lost_woods_fairy_ocarina = true;
 	Location_Locked_Logic2.ocarina_game = true;
-	Location_Locked_Logic2.lost_woods_grotto = Locked_Logic2.can_blast_or_smash;
+	Location_Locked_Logic2.lw_generic = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.lost_woods_scrub_grotto = Locked_Logic2.bomb_bag || Locked_Logic2.can_pass_mido_as_adult && Locked_Logic2.hammer;
 	Location_Locked_Logic2.bridge_scrub = true;
 	Location_Locked_Logic2.target = Locked_Logic2.slingshot;

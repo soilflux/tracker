@@ -631,10 +631,10 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.kokiri_storms = PutIn_Logic.storms;
 	Location_PutIn_Logic.talons_chickens = true;
 	Location_PutIn_Logic.back_of_ranch = true;
-	Location_PutIn_Logic.hyrule_remote_grotto = PutIn_Logic.can_blast_or_smash;
-	Location_PutIn_Logic.hyrule_open_grotto = true;
+	Location_PutIn_Logic.hyrule_remoteGrotto = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.hyrule_openGrotto = true;
 	Location_PutIn_Logic.hyrule_hp_scrub = PutIn_Logic.can_blast_or_smash;;
-	Location_PutIn_Logic.hyrule_boulder_of_destiny = PutIn_Logic.can_blast_or_smash;;
+	Location_PutIn_Logic.hyrule_marketGrotto = PutIn_Logic.can_blast_or_smash;;
 	Location_PutIn_Logic.hyrule_tektite_grotto = PutIn_Logic.can_blast_or_smash && (PutIn_Logic.golden_scale || PutIn_Logic.iron_boots);
 	Location_PutIn_Logic.hyrule_ocarina = PutIn_Logic.kokiri_emerald && PutIn_Logic.goron_ruby && PutIn_Logic.zora_sapphire;
 	Location_PutIn_Logic.gerudovalley_box = true;
@@ -671,7 +671,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.deku_queen_gohma = PutIn_Logic.deku_access && PutIn_Logic.slingshot;
 	Location_PutIn_Logic.lost_woods_fairy_ocarina = true;
 	Location_PutIn_Logic.ocarina_game = true;
-	Location_PutIn_Logic.lost_woods_grotto = PutIn_Logic.can_blast_or_smash;
+	Location_PutIn_Logic.lw_generic = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.lost_woods_scrub_grotto = PutIn_Logic.bomb_bag || PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hammer;
 	Location_PutIn_Logic.bridge_scrub = true;
 	Location_PutIn_Logic.target = PutIn_Logic.slingshot;
