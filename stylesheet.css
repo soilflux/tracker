@@ -645,6 +645,9 @@ color: red;
     background-color : #181818; 
     color: white;
 }
+#builtInSeed {
+	width:35px;
+}
 .mark_spawn {
 	width: 55px;
 	vertical-align: top;
