@@ -526,7 +526,7 @@ function toggleHint(loc) {
 			else {
 				var input = "";
 				var temp_item = "";
-				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation])) {
+				if(SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"] != undefined) {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
 					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
 				}
