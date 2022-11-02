@@ -475,14 +475,20 @@ function junk() {
 					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 				}
 				
-				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[str]))
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				else
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + "\n" + document.getElementById("simLog").value;
 			}
 			else if(type == 2 && Check[str] == "unknown") {
 				// right click, peek the item
 				document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				
-				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[str]))
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				else
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
 			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {

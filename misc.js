@@ -466,9 +466,11 @@ function toggleHint(loc) {
 
 	var theLocation = "";
 	var item = "";
+	var thisIsASong = false;
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text" || loc.className == "known_check_text") { // song click
 		theLocation = loc.id.slice(5); 
 		item = Check[theLocation];
+		thisIsASong = true;
 	} 
 	else { // check summary text click
 		item = loc.id.slice(0, -9); 
@@ -558,7 +560,7 @@ function toggleHint(loc) {
 				simTemp = document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 			}
 		
-			if(!simActive || simTemp) {
+			if(!simActive || simTemp || !thisIsASong) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
 						Player.big_poe = !Player.big_poe;
