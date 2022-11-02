@@ -525,12 +525,17 @@ function toggleHint(loc) {
 			}
 			else {
 				var input = "";
-				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation]))
+				var temp_item = "";
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation])) {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
-				else
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
+				}
+				else {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
+				}
 				
-				if(document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase()) {
+				if(Check[theLocation] != "unknown") {
 					if(loc.id != "trade_location"){
 						if(loc.innerHTML.includes("Big Poe"))
 							Player.big_poe = !Player.big_poe;
@@ -546,21 +551,25 @@ function toggleHint(loc) {
 				}
 				else {
 					document.getElementById(theLocation).value = input;
+					document.getElementById("simLog").value = LocationToSpoilerName[theLocation] + " -> " + temp_item + "\n" + document.getElementById("simLog").value;
 				}
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
 			var input = "";
-			var simTemp = false;
+			var temp_item = "";
 			if(simActive) {
-				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation]))
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation])) {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
-				else
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
+				}
+				else {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
-				simTemp = document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
+				}
 			}
 		
-			if(!simActive || simTemp || !thisIsASong) {
+			if(!simActive || Check[theLocation] != "unknown" || !thisIsASong) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
 						Player.big_poe = !Player.big_poe;
@@ -576,6 +585,7 @@ function toggleHint(loc) {
 			}
 			else {
 				document.getElementById(theLocation).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				document.getElementById("simLog").value = LocationToSpoilerName[theLocation] + " -> " + temp_item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
