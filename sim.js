@@ -1,6 +1,18 @@
+function simControl() {
+    if (!document.getElementById("builtInSeed").value > 0) {document.getElementById('fileInput').click(); return;}
+    fetch('./sim_seeds/seed' + document.getElementById("builtInSeed").value + '.json')
+        .then((response) => response.json())
+        .then((data) => {
+            SpoilerJSON = data;
+            readLog();
+        })
+}
 function onFileLoad(elementId, event) {
-	SpoilerJSON = JSON.parse(event.target.result);
-	simActive = true;
+    SpoilerJSON = JSON.parse(event.target.result);
+	readLog();
+}
+function readLog() {
+    simActive = true;
 	
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["Links Pocket"] + "\n";
@@ -23,7 +35,6 @@ function onFileLoad(elementId, event) {
 	document.getElementById("zeldasSpot").value = SpoilerItemToInput[SpoilerJSON["locations"]["Song from Impa"]];
 	simStartingReward();
 }
-
 function onChooseFile(event, onLoadFileHandler) {
     if (typeof window.FileReader !== 'function')
         throw ("The file API isn't supported on this browser.");

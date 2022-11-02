@@ -391,7 +391,7 @@
 		<button id="myBtn">halp</button><br />
 		<button id = "locationCodes">Location Codes</button><br /><br />
 		
-		<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
+		<button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="builtInSeed"></input> 
 		<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
 		<br /><button onmousedown="download()">Download Log</button><br /><br />
 		<label class="settingsLabels" for="presets">PRESETS</label>
