@@ -195,6 +195,7 @@
 			<br>in other words, increase rolling odds for a particular animal after 1,2,3,4,6,8,11,13,16,20... seeds played with that animal.
 			<br><br><br>Simulator:
 			<br>To start the simulator click the "Play the Sim" button and select a spoiler log (only S6 and S5 tested).
+            <br>If you enter in a value from 1-10 in the input box next to the "Play the Sim" button, a seed included with the tracker will be used instead of requiring a selection(this feature does not work offline).
 			<br>The log will appear which keeps track of what you find. It will initially tell you your starting dungeon reward, song, age, and spawn.
 			<br>Click the "Check Altar" button to mark medallions and stones.
 			<br>Click the "Check Adult Spawn" or "Check Child Spawn" button to reveal the spawn for the age you didn't start as. 
@@ -349,6 +350,8 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small id="patchNotesTitle">Patch Notes</small><br>
+                <small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 10 seeds are included. to use, enter a value from 1-10 in the input box next to "Play the Sim"</small><br>
+                <small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>
 				<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
 				<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>
 				<small class = "patchNotes" id = "pn54">54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) </small><br>
@@ -390,7 +393,7 @@
 		<button id="myBtn">halp</button><br />
 		<button id = "locationCodes">Location Codes</button><br /><br />
 		
-		<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
+		<button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="builtInSeed"></input> 
 		<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
 		<br /><button onmousedown="download()">Download Log</button><br /><br />
 		<label class="settingsLabels" for="presets">PRESETS</label>
