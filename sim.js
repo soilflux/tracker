@@ -502,6 +502,8 @@ var LocationToSpoilerName = {
 	"h_colossus" : "Colossus (Spirit Temple)"
 };
 
+var spoilerPurchaseChecks = ["LW Deku Scrub Near Bridge", "LW Deku Scrub Grotto Front", "HF Deku Scrub Grotto"];
+
 var SpoilerItemToInput = {
 	"Bomb Bag" : "bom",
 	"Boomerang" : "boo",

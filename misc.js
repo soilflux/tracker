@@ -522,7 +522,11 @@ function toggleHint(loc) {
 				}
 			}
 			else {
-				var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+				var input = "";
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation]))
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
+				else
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
 				
 				if(document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase()) {
 					if(loc.id != "trade_location"){
@@ -544,9 +548,17 @@ function toggleHint(loc) {
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
-				
-			if(!simActive || (document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase())) {
+			var input = "";
+			var simTemp = false;
+			if(simActive) {
+				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation]))
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
+				else
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+				simTemp = document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+			}
+		
+			if(!simActive || simTemp) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
 						Player.big_poe = !Player.big_poe;

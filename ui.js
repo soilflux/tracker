@@ -381,7 +381,12 @@ function junk() {
 		if(!str.startsWith("h_")) { 
 			// clicked an item check, not a gossip hint
 		
-			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
+			var input = "";
+			
+			if(spoilerPurchaseChecks.includes(LocationToSpoilerName[str]))
+				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"]];
+			else
+				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
 			
 			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu") {
 
