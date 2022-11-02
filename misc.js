@@ -556,19 +556,6 @@ function toggleHint(loc) {
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-			var input = "";
-			var temp_item = "";
-			if(simActive) {
-				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[theLocation])) {
-					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
-					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
-				}
-				else {
-					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
-					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
-				}
-			}
-		
 			if(!simActive || Check[theLocation] != "unknown" || !thisIsASong) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
@@ -582,10 +569,6 @@ function toggleHint(loc) {
 					else if(Known["claim_check"])
 						Player["claim_check"] = !Player["claim_check"];
 				}
-			}
-			else {
-				document.getElementById(theLocation).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
-				document.getElementById("simLog").value = LocationToSpoilerName[theLocation] + " -> " + temp_item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not

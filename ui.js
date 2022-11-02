@@ -481,14 +481,19 @@ function junk() {
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + "\n" + document.getElementById("simLog").value;
 			}
-			else if(type == 2 && Check[str] == "unknown") {
+			else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
 				// right click, peek the item
-				document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				
 				if(spoilerPurchaseChecks.includes(LocationToSpoilerName[str]))
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
-				else
+				else if (LocationToSpoilerName[str].includes("Freestanding") || SpoilerJSON["locations"][LocationToSpoilerName[str]].includes("Small Key") || SpoilerJSON["locations"][LocationToSpoilerName[str]].includes("Boss Key")) {
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else {
+					item = "unknown big chest";
+					document.getElementById(str).value = "???";
+				}
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
 			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {
