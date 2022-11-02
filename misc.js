@@ -800,6 +800,16 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 
+function incrementChus() {
+    chuCount += 1;
+    document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;
+}
+function decrementChus() {
+    chuCount -= 1;
+    chuCount = Math.max(chuCount,0);
+    document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;
+}
+
 function Undo() {
 	if(lastCheck.length < 2)
 		return;

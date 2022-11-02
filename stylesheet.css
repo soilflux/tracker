@@ -43,8 +43,17 @@ color: silver;
 .bk {
 color: red;
 }
+.chuButtons{
+    width: 25px;
+    font-size: 18px;
+    display: none;
+}
+#chuCount {
+    margin-left:2px;
+    display: none;
+}
 #circusControl {
-	display:none
+	display:none;
 }
 #timerControl {
 	margin-left:90px;

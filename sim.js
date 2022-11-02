@@ -13,7 +13,10 @@ function onFileLoad(elementId, event) {
 }
 function readLog() {
     simActive = true;
-	
+    
+    document.getElementById("chuCount").style.display = "inline-block";
+    document.getElementById("chuPlus").style.display = "inline-block";
+    document.getElementById("chuMinus").style.display = "inline-block";
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["Links Pocket"] + "\n";
 	document.getElementById("simCheckAltar").style.display = "block";

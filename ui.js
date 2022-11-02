@@ -486,6 +486,7 @@ function junk() {
 				else
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + "\n" + document.getElementById("simLog").value;
+                if (item.startsWith("Bombchus")) {var count = item.replace(/[^0-9]/g, ""); chuCount += parseInt(count); document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;}
 			}
 			else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
 				// right click, peek the item
