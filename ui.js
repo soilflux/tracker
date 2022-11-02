@@ -381,7 +381,12 @@ function junk() {
 		if(!str.startsWith("h_")) { 
 			// clicked an item check, not a gossip hint
 		
-			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
+			var input = "";
+			
+			if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
+				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"]];
+			else
+				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
 			
 			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu") {
 
@@ -470,14 +475,29 @@ function junk() {
 					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 				}
 				
-				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				else
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + "\n" + document.getElementById("simLog").value;
 			}
-			else if(type == 2 && Check[str] == "unknown") {
+			else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
 				// right click, peek the item
-				document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				
-				item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				var temp_item = "";
+				if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				else
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				
+				if (LocationToSpoilerName[str].includes("Freestanding") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else {
+					item = "unknown big chest";
+					document.getElementById(str).value = "???";
+				}
 				document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
 			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {

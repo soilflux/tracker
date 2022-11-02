@@ -466,9 +466,11 @@ function toggleHint(loc) {
 
 	var theLocation = "";
 	var item = "";
+	var thisIsASong = false;
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text" || loc.className == "known_check_text") { // song click
 		theLocation = loc.id.slice(5); 
 		item = Check[theLocation];
+		thisIsASong = true;
 	} 
 	else { // check summary text click
 		item = loc.id.slice(0, -9); 
@@ -522,9 +524,18 @@ function toggleHint(loc) {
 				}
 			}
 			else {
-				var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+				var input = "";
+				var temp_item = "";
+				if(SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"] != undefined) {
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
+				}
+				else {
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
+				}
 				
-				if(document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase()) {
+				if(Check[theLocation] != "unknown") {
 					if(loc.id != "trade_location"){
 						if(loc.innerHTML.includes("Big Poe"))
 							Player.big_poe = !Player.big_poe;
@@ -540,13 +551,12 @@ function toggleHint(loc) {
 				}
 				else {
 					document.getElementById(theLocation).value = input;
+					document.getElementById("simLog").value = LocationToSpoilerName[theLocation] + " -> " + temp_item + "\n" + document.getElementById("simLog").value;
 				}
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-			var input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
-				
-			if(!simActive || (document.getElementById(theLocation).value == input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase())) {
+			if(!simActive || Check[theLocation] != "unknown" || !thisIsASong) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
 						Player.big_poe = !Player.big_poe;
@@ -559,9 +569,6 @@ function toggleHint(loc) {
 					else if(Known["claim_check"])
 						Player["claim_check"] = !Player["claim_check"];
 				}
-			}
-			else {
-				document.getElementById(theLocation).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
