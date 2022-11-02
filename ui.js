@@ -383,10 +383,12 @@ function junk() {
 		
 			var input = "";
 			
-			if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
-				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"]];
-			else
-				input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
+			if(LocationToSpoilerName[str] != undefined){
+				if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"]];
+				else
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
+			}
 			
 			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu") {
 
@@ -507,8 +509,9 @@ function junk() {
 		}
 		else {
 			// clicked a gossip hint
-			hint = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].replaceAll("#", "").replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
-			document.getElementById("simLog").value = hint + "\n" + document.getElementById("simLog").value;
+			hint = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].replaceAll("#", "");
+			simProcessHint(hint, str);
+			document.getElementById("simLog").value = hint.replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)") + "\n" + document.getElementById("simLog").value;
 			Check[str] = "junk";
 			document.getElementById(str).style.display = "none";
 			document.getElementById("text_" + str).style.display = "none";

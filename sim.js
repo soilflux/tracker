@@ -36,19 +36,19 @@ function readLog() {
 	simStartingReward();
 }
 function onChooseFile(event, onLoadFileHandler) {
-    if (typeof window.FileReader !== 'function')
-        throw ("The file API isn't supported on this browser.");
-    let input = event.target;
-    if (!input)
-        throw ("The browser does not properly implement the event object");
-    if (!input.files)
-        throw ("This browser does not support the `files` property of the file input.");
-    if (!input.files[0])
-        return undefined;
-    let file = input.files[0];
-    let fr = new FileReader();
-    fr.onload = onLoadFileHandler;
-    fr.readAsText(file);
+	if (typeof window.FileReader !== 'function')
+		throw ("The file API isn't supported on this browser.");
+	let input = event.target;
+	if (!input)
+		throw ("The browser does not properly implement the event object");
+	if (!input.files)
+		throw ("This browser does not support the `files` property of the file input.");
+	if (!input.files[0])
+		return undefined;
+	let file = input.files[0];
+	let fr = new FileReader();
+	fr.onload = onLoadFileHandler;
+	fr.readAsText(file);
 }
 
 rewardSpoilerLocations = ["Links Pocket", "Queen Gohma", "King Dodongo", "Barinade", "Phantom Ganon", "Volvagia", "Morpha", "Bongo Bongo", "Twinrova"];
@@ -142,23 +142,23 @@ function simCheckChildSpawn() {
 	
 	input = "";
 	if (child_region == "DMC Great Fairy Fountain")
-        input = "dmcf";
-    else if (child_region == "DMC Lower Local" || child_region == "GC Darunias Chamber")
-        input = "dmcl";
-    else if (child_region == "DMT Great Fairy Fountain")
-        input = "dmtf";
-    else if (child_region == "Death Mountain Summit" || child_region == "DMC Upper Local")
-        input = "dmcu";
-    else if (child_region == "Gerudo Fortress" || child_region == "GV Fortress Side")
-        input = "gf";
-    else if (child_region == "HC Great Fairy Fountain")
-        input = "din";
-    else if (child_region == "ZD Shop")
-        input = "zdshop";
-    else if (child_region == "Zoras Domain" || child_region == "Zoras Domain" || child_region == "ZR Behind Waterfall")
-        input = "zd";
-    else if (child_region == "Zora River")
-        input = "zr";
+		input = "dmcf";
+	else if (child_region == "DMC Lower Local" || child_region == "GC Darunias Chamber")
+		input = "dmcl";
+	else if (child_region == "DMT Great Fairy Fountain")
+		input = "dmtf";
+	else if (child_region == "Death Mountain Summit" || child_region == "DMC Upper Local")
+		input = "dmcu";
+	else if (child_region == "Gerudo Fortress" || child_region == "GV Fortress Side")
+		input = "gf";
+	else if (child_region == "HC Great Fairy Fountain")
+		input = "din";
+	else if (child_region == "ZD Shop")
+		input = "zdshop";
+	else if (child_region == "Zoras Domain" || child_region == "Zoras Domain" || child_region == "ZR Behind Waterfall")
+		input = "zd";
+	else if (child_region == "Zora River")
+		input = "zr";
 	
 	document.getElementById("markChildLocation").value = input;
 	document.getElementById("simCheckChildSpawn").style.display = "none";
@@ -185,33 +185,124 @@ function simCheckAdultSpawn() {
 	input = "";
 	if (adult_region == "DMC Great Fairy Fountain")
 		input = "dmcf";
-    else if (adult_region == "DMC Lower Local" || adult_region == "GC Darunias Chamber")
-        input = "dmcl";
-    else if (adult_region == "DMT Great Fairy Fountain")
-        input = "dmtf";
-    else if (adult_region == "Death Mountain Summit" || adult_region == "DMC Upper Local")
-        input = "dmcu";
-    else if (adult_region == "Gerudo Fortress" || adult_region == "GF Outside Gate" || adult_region == "GV Carpenter Tent" || adult_region == "GV Fortress Side" || adult_region == "Wasteland Near Fortress")
-        input = "gf";
-    else if (adult_region == "GC Shop")
-        input = "gcshop";
-    else if (adult_region == "Graveyard Warp Pad Region")
-        input = "noc";
-    else if (adult_region == "LH Fishing Hole" || adult_region == "LH Fishing Island")
-        input = "fish";
-    else if (adult_region == "LW Beyond Mido" || adult_region == "SFM Entryway" || adult_region == "Sacred Forest Meadow")
-        input = "sfm";
-    else if (adult_region == "ZD Shop")
-        input = "zdshop";
-    else if (adult_region == "Zoras Domain" || adult_region == "ZR Behind Waterfall")
-        input = "zd";
-    else if (adult_region == "OGC Great Fairy Fountain")
-        input = "ogc";
-    else if (adult_region == "Kak Impas Rooftop")
-        input = "kakr";
+	else if (adult_region == "DMC Lower Local" || adult_region == "GC Darunias Chamber")
+		input = "dmcl";
+	else if (adult_region == "DMT Great Fairy Fountain")
+		input = "dmtf";
+	else if (adult_region == "Death Mountain Summit" || adult_region == "DMC Upper Local")
+		input = "dmcu";
+	else if (adult_region == "Gerudo Fortress" || adult_region == "GF Outside Gate" || adult_region == "GV Carpenter Tent" || adult_region == "GV Fortress Side" || adult_region == "Wasteland Near Fortress")
+		input = "gf";
+	else if (adult_region == "GC Shop")
+		input = "gcshop";
+	else if (adult_region == "Graveyard Warp Pad Region")
+		input = "noc";
+	else if (adult_region == "LH Fishing Hole" || adult_region == "LH Fishing Island")
+		input = "fish";
+	else if (adult_region == "LW Beyond Mido" || adult_region == "SFM Entryway" || adult_region == "Sacred Forest Meadow")
+		input = "sfm";
+	else if (adult_region == "ZD Shop")
+		input = "zdshop";
+	else if (adult_region == "Zoras Domain" || adult_region == "ZR Behind Waterfall")
+		input = "zd";
+	else if (adult_region == "OGC Great Fairy Fountain")
+		input = "ogc";
+	else if (adult_region == "Kak Impas Rooftop")
+		input = "kakr";
 	
 	document.getElementById("markAdultLocation").value = input;
 	document.getElementById("simCheckAdultSpawn").style.display = "none";
+}
+
+simWothsEntered = {};
+simWothCounter = 1;
+simPathsEntered = {};
+simPathCounter = 1;
+simBarrensEntered = {};
+simBarrenCounter = 1;
+
+bossInputs = {
+	"Queen Gohma" : "go",
+	"King Dodongo" : "ki",
+	"Barinade" : "ba",
+	"Phantom Ganon" : "ph",
+	"Volvagia" : "vo",
+	"Morpha" : "mo",
+	"Bongo Bongo" : "bo",
+	"Twinrova" : "tw"
+};
+
+function simProcessHint(hint, str) {
+	if(hint.includes("way of the hero")) {
+		if(simWothCounter <= 5) {
+			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
+			
+			if(theArea.startsWith("the "))
+				theArea = theArea.replace("the ", "");
+			
+			if(simWothsEntered[theArea] == undefined)
+				simWothsEntered[theArea] = 1;
+			else
+				simWothsEntered[theArea] += 1;
+			
+			if(simWothsEntered[theArea] == 1 || simWothsEntered[theArea] == 3 || simWothsEntered[theArea] == 5) {
+				document.getElementById("woth_input" + simWothCounter).value = SpoilerAreaToInput[theArea];
+				simWothCounter += 1;
+			}
+		}
+	}
+	else if (hint.includes("on the path")) {
+		if(simPathCounter <= 5) {
+			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
+			theBoss = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[3];
+			
+			if(theArea.startsWith("the "))
+				theArea = theArea.replace("the ", "");
+			
+			if(simPathsEntered[theArea + " -> " + theBoss] == undefined)
+				simPathsEntered[theArea + " -> " + theBoss] = 1;
+			else
+				simPathsEntered[theArea + " -> " + theBoss] += 1;
+			
+			if(simPathsEntered[theArea + " -> " + theBoss] == 1 || simPathsEntered[theArea + " -> " + theBoss] == 3 || simPathsEntered[theArea + " -> " + theBoss] == 5) {
+				document.getElementById("woth_input" + simPathCounter).value = SpoilerAreaToInput[theArea];
+				document.getElementById("path_boss" + simPathCounter).value = bossInputs[theBoss];
+				simPathCounter += 1;
+			}
+		}
+	}
+	else if(hint.includes("foolish choice")) {
+		if(simBarrenCounter <= 5) {
+			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
+			
+			if(theArea.startsWith("the "))
+				theArea = theArea.replace("the ", "");
+			
+			if(simBarrensEntered[theArea] == undefined)
+				simBarrensEntered[theArea] = 1;
+			else
+				simBarrensEntered[theArea] += 1;
+			
+			if(simBarrensEntered[theArea] == 1) {
+				document.getElementById("barren_input" + simBarrenCounter).value = SpoilerAreaToInput[theArea];
+				simBarrenCounter += 1;
+			}
+		}
+	}
+	else { // always or sometimes hint
+		var loc_input = SpoilerHintLocationToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]];
+	
+		var temp_item = "";
+		if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]] == undefined)
+			temp_item = "x";
+		else
+			temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]];
+		
+		if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+			document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + temp_item + "\n");
+		else if(!document.getElementById("hintInput").value.includes(loc_input + " " + temp_item + "\n"))
+			document.getElementById("hintInput").value += loc_input + " " + temp_item + "\n";
+	}
 }
 
 var LocationToSpoilerName = {
@@ -580,3 +671,96 @@ var SpoilerItemToInput = {
 	"Boss Key (Spirit Temple)" : "bk",
 	"Boss Key (Shadow Temple)" : "bk"
 };
+
+var SpoilerAreaToInput = {
+	"Kokiri Forest" : "kok",
+	"Lon Lon Ranch" : "ran",
+	"Hyrule Field" : "fie",
+	"Gerudo Valley" : "gv",
+	"Lake Hylia" : "lak",
+	"Market" : "mar",
+	"Hyrule Castle" : "cas",
+	"outside Ganon's Castle" : "ogc",
+	"Temple of Time" : "tot",
+	"Zora's Fountain" : "zf",
+	"Ice Cavern" : "ice",
+	"Deku Tree" : "dek",
+	"Lost Woods" : "lw",
+	"Sacred Forest Meadow" : "sfm",
+	"Goron City" : "gor",
+	"Dodongo's Cavern" : "dc",
+	"Death Mountain Trail" : "dmt",
+	"Haunted Wasteland" : "was",
+	"Gerudo's Fortress" : "gf",
+	"Kakariko Village" : "kak",
+	"Graveyard" : "gra",
+	"Zora's River" : "zr",
+	"Zora's Domain" : "zd",
+	"Desert Colossus" : "col",
+	"Death Mountain Crater" : "dmc",
+	"Jabu Jabu's Belly" : "jab",
+	"Forest Temple" : "for",
+	"Fire Temple" : "fir",
+	"Water Temple" : "wat",
+	"Spirit Temple" : "spi",
+	"Shadow Temple" : "sha",
+	"inside Ganon's Castle" : "gan",
+	"Gerudo Training Ground" : "gtg",
+	"Bottom of the Well" : "wel"
+}
+
+var SpoilerHintLocationToInput = {
+	"ZF Bottom Freestanding PoH" : "icy",
+	"LH Sun" : "ss",
+	"Market 10 Big Poes" : "poe",
+	"Market Treasure Chest Game Reward" : "len",
+	"Kak 20 Gold Skulltula Reward" : "20",
+	"Song from Royal Familys Tomb" : "cos",
+	"Graveyard Royal Familys Tomb Chest" : "coi",
+	"Graveyard Heart Piece Grave Chest" : "red",
+	"Fire Temple Scarecrow Chest" : "sca",
+	"Fire Temple Megaton Hammer Chest" : "ham",
+	"Water Temple Boss Key Chest" : "wbk",
+	"Water Temple River Chest" : "riv",
+	"Gerudo Training Ground Maze Path Final Chest" : "fin",
+	"Gerudo Training Ground Underwater Silver Rupee Chest" : "toi",
+	"Bottom of the Well Dead Hand Room" : "dea",
+	"Wasteland Chest" : "was",
+	"Sheik at Colossus" : "req",
+	"GC Pot Freestanding PoH" : "pot",
+	"GC Darunias Joy" : "dan",
+	"Spirit Temple Mirror Shield Chest" : "lef",
+	"Spirit Temple Silver Gauntlets Chest" : "rig",
+	"GC Maze Left Chest" : "goh",
+	"GV Chest" : "gvh",
+	"Kak Anju as Child" : "cuc",
+	"Sheik in Crater" : "bol",
+	"Sheik in Forest" : "min",
+	"Sheik at Temple" : "pre",
+	"ZD King Zora Thawed" : "kz",
+	"Jabu Jabus Belly Boomerang Chest" : "boo",
+	"Kak Shooting Gallery Reward" : "shoo",
+	"GF HBA 1500 Points" : "1500",
+	"Forest Temple Floormaster Chest" : "ffl",
+	"Shadow Temple Invisible Floormaster Chest" : "sfl",
+	"Sheik in Kakariko" : "noc",
+	"Sheik in Ice Cavern" : "ser",
+	"LW Skull Kid" : "kid",
+	"DMT Biggoron" : "big",
+	"Deku Theater Skull Mask" : "mas",
+	"Kak 30 Gold Skulltula Reward" : "30",
+	"Kak 40 Gold Skulltula Reward" : "40",
+	"Kak 50 Gold Skulltula Reward" : "50",
+	"ZR Frogs Ocarina Game" : "fr2",
+	"HF Ocarina of Time Item" : "ooti",
+	"Song from Ocarina of Time" : "oot",
+	"HC Great Fairy Reward" : "cas",
+	"OGC Great Fairy Reward" : "ogc",
+	"LW Target in Woods" : "tar",
+	"ZR Frogs in the Rain" : "fr1",
+	"LH Lab Dive" : "div",
+	"Water Temple Central Pillar Chest" : "pil",
+	"Shadow Temple Freestanding Key" : "shpot",
+	"Ice Cavern Iron Boots Chest" : "iro",
+	"Ganons Castle Shadow Trial Golden Gauntlets Chest" : "sh2"
+}
