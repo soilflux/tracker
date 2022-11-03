@@ -97,7 +97,15 @@ var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fa
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
-	if (localStorage.getItem(inputNames[i])) {inputs[i] = localStorage.getItem(inputNames[i]);}
+	if (localStorage.getItem(inputNames[i])) {
+        inputs[i] = localStorage.getItem(inputNames[i]);
+        if (i >= inputs.length) {
+        songInputs[i-itemInputs.length] = localStorage.getItem(inputNames[i])
+        }
+        else {
+            itemInputs[i] = localStorage.getItem(inputNames[i])
+        }
+    }
 	var elem = document.createElement("input"); elem.id = inputNames[i]; elem.value = inputs[i]; elem.className = "settings_small"; parent.appendChild(elem);
 	var elem = document.createElement("small"); elem.id = "text_" + inputNames[i]; elem.className = "check_text"; elem.innerHTML = inputNames[i]; parent.appendChild(elem);
 	var elem = document.createElement("br"); elem.id = "br_" + inputNames[i]; parent.appendChild(elem);
@@ -1423,7 +1431,7 @@ if (!haveEvents) {
 document.getElementById("linso54").style.opacity = 1
 
 linsoControl(); linsoControl();
-setInterval(slowUpdate,3500);
+setInterval(slowUpdate,3000);
 setInterval(midUpdate,500);
 setInterval(fastUpdate,100);
 setInterval(updateControllerStatus,1000/60);
