@@ -809,6 +809,9 @@ function decrementChus() {
     chuCount = Math.max(chuCount,0);
     document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;
 }
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+}
 
 function Undo() {
 	if(lastCheck.length < 2)

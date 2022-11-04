@@ -381,6 +381,27 @@ function junk() {
         if(str == "kokiri_storms" || str == "hyrule_remoteGrotto" || str == "hyrule_openGrotto" || str == "hyrule_marketGrotto" || str == "lw_generic" || str == "crater_grotto" || str == "kakariko_grotto" || str == "river_grotto" || str == "trail_storms") {
             document.getElementById("text_" + "h_"+ str).dispatchEvent(new Event('mousedown'));
         }
+        var spoilerBossName = "";
+        if(str == "deku_queen_gohma") spoilerBossName = "Queen Gohma";
+        if(str == "dodongos_king_dodongo") spoilerBossName = "King Dodongo";
+        if(str == "jabu_barinade") spoilerBossName = "Barinade";
+        if(str == "forest_phantomGanon") spoilerBossName = "Phantom Ganon";
+        if(str == "fire_volvagia") spoilerBossName = "Volvagia";
+        if(str == "water_morpha") spoilerBossName = "Morpha";
+        if(str == "spirit_twinrova") spoilerBossName = "Bongo Bongo";
+        if(str == "shadow_bongo") spoilerBossName = "Twinrova";
+        
+        if (spoilerBossName != "") {
+            if(SpoilerJSON["locations"][spoilerBossName] == "Light Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(0,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Forest Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(2,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Fire Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(4,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Water Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(6,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Shadow Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(8,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Spirit Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(10,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Kokiri Emerald") document.getElementById("markStones").value = document.getElementById("markStones").value.replaceAt(0,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Goron Ruby") document.getElementById("markStones").value = document.getElementById("markStones").value.replaceAt(2,rewardInputDict[spoilerBossName]);
+            if(SpoilerJSON["locations"][spoilerBossName] == "Zora Sapphire") document.getElementById("markStones").value = document.getElementById("markStones").value.replaceAt(4,rewardInputDict[spoilerBossName]);
+        }
 		
 		if(!str.startsWith("h_")) { 
 			// clicked an item check, not a gossip hint
@@ -985,7 +1006,7 @@ function update_logic_info() {
 		
 		if(key.startsWith("h_")) {
             document.getElementById(str).className = "gossip_text";
-            if (Location_Obtain[key]) {
+            if (Location_Obtain[key] && Check[key] != "junk") {
                 document.getElementById(str).style.display = "inline-block";
                 document.getElementById(str2).style.display = "inline-block";
                 document.getElementById(key).style.display = "inline-block";
