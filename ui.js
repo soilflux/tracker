@@ -388,8 +388,8 @@ function junk() {
         if(str == "forest_phantomGanon") spoilerBossName = "Phantom Ganon";
         if(str == "fire_volvagia") spoilerBossName = "Volvagia";
         if(str == "water_morpha") spoilerBossName = "Morpha";
-        if(str == "spirit_twinrova") spoilerBossName = "Bongo Bongo";
-        if(str == "shadow_bongo") spoilerBossName = "Twinrova";
+        if(str == "spirit_twinrova") spoilerBossName = "Twinrova";
+        if(str == "shadow_bongo") spoilerBossName = "Bongo Bongo";
         
         if (spoilerBossName != "") {
             if(SpoilerJSON["locations"][spoilerBossName] == "Light Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(0,rewardInputDict[spoilerBossName]);
