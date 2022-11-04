@@ -984,7 +984,17 @@ function update_logic_info() {
 		}
 		
 		if(key.startsWith("h_")) {
-			document.getElementById(str).className = "gossip_text";
+            document.getElementById(str).className = "gossip_text";
+            if (Location_Obtain[key]) {
+                document.getElementById(str).style.display = "inline-block";
+                document.getElementById(str2).style.display = "inline-block";
+                document.getElementById(key).style.display = "inline-block";
+            }
+			else {
+                document.getElementById(str).style.display = "none"
+                document.getElementById(str2).style.display = "none";
+                document.getElementById(key).style.display = "none";
+            }
 			continue;
 		}
 		

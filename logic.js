@@ -784,6 +784,7 @@ function logic_shortcuts() {
 	if (document.getElementById("closedDeku").value != "CLOSED") {Logic.deku_access = true;} else {Logic.deku_access = Logic.kokiri_sword;}
 
 	Player.child_can_enter_river = Player.bomb_bag || Player.has_chus || Player.silver_scale || Spawn.child_zd || Spawn.child_zr;
+    Player.child_can_enter_domain = Player.silver_scale || Spawn.child_zd || Spawn.child_zr || Player.bomb_bag || Player.has_chus;
 	Player.can_enter_jabu = Player.rutos_letter && (Player.bomb_bag || Player.has_chus || ((Player.silver_scale || Spawn.child_zd || Spawn.child_zr) && (Player.slingshot || Player.boomerang)));
 	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf;
 	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
@@ -1618,7 +1619,48 @@ function location_logic(){
 	Location_Obtain.shop_domain_TR = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Obtain.shop_domain_BR = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Obtain.shop_domain_BL = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
-	
+	Location_Obtain.h_deku_left = true;
+    Location_Obtain.h_deku_right = true;
+    Location_Obtain.h_near_lw = true;
+    Location_Obtain.h_kokiri_storms = Player.storms;
+    Location_Obtain.h_hyrule_remoteGrotto = Player.can_blast_or_smash;
+    Location_Obtain.h_hyrule_openGrotto = true;
+    Location_Obtain.h_hyrule_marketGrotto = Player.can_blast_or_smash;
+    Location_Obtain.h_hyrule_web = (Player.hammer && Player.can_use_fire) || ((Player.bomb_bag || Player.has_chus) && Player.can_use_dins)
+    Location_Obtain.h_valley = true;
+    Location_Obtain.h_lab = true;
+    Location_Obtain.h_back_right_lake = true;
+    Location_Obtain.h_back_left_lake = true;
+    Location_Obtain.h_tot_1 = true;
+    Location_Obtain.h_tot_2 = true;
+    Location_Obtain.h_tot_3 = true;
+    Location_Obtain.h_tot_4 = true;
+    Location_Obtain.h_castle_1 = true;
+    Location_Obtain.h_castle_2 = true;
+    Location_Obtain.h_castle_sos = Player.storms && (Player.bomb_bag || Player.has_chus);
+    Location_Obtain.h_fountain_fairy = Player.ice_access;
+    Location_Obtain.h_fountain = Player.ice_access;
+    Location_Obtain.h_lw_bridge = true;
+    Location_Obtain.h_lw_generic = Player.can_blast_or_smash;
+    Location_Obtain.h_saria = true;
+    Location_Obtain.h_sfm_1 = true;
+    Location_Obtain.h_sfm_2 = true;
+    Location_Obtain.h_goron_maze = Player.can_blast_or_smash;
+    Location_Obtain.h_medigoron = Player.can_blast_or_smash;
+    Location_Obtain.h_dodongos = Player.can_enter_dodongos;
+    Location_Obtain.h_trail_storms = Player.storms;
+    Location_Obtain.h_biggoron = Player.crater_top;
+    Location_Obtain.h_crater_grotto = Player.can_blast_or_smash;
+    Location_Obtain.h_crater_wall = Player.bomb_bag || Player.has_chus;
+    Location_Obtain.h_kakariko_grotto = true;
+    Location_Obtain.h_nocturne = Player.nocturne;
+    Location_Obtain.h_river_grotto = true;
+    Location_Obtain.h_river_pillar = true;
+    Location_Obtain.h_river_domain = true;
+    Location_Obtain.h_domain = Player.lullaby || Player.hover_boots || Player.child_can_enter_domain;
+    Location_Obtain.h_crater_grotto = Player.can_blast_or_smash;
+    Location_Obtain.h_colossus = Player.requiem || Player.eponas || Player.longshot;
+    
 	Location_Could_Access.kokiri_sword = true;
 	Location_Could_Access.mido_1 = true;
 	Location_Could_Access.mido_2 = true;
@@ -2264,7 +2306,7 @@ function location_logic(){
 	Location_Access.shop_domain_TR = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Access.shop_domain_BR = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Access.shop_domain_BL = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
-	
+    
 	Location_Could_Peek.kokiri_sword = true;
 	Location_Could_Peek.mido_1 = true;
 	Location_Could_Peek.mido_2 = true;
