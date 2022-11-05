@@ -459,7 +459,11 @@ function junk() {
 					Check[str]="small_key";
 					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 				}
-				
+                if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				else
+					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if (item.startsWith("Rupee")) {var count = item.replace(/[^0-9]/g, ""); modifyRupees(parseInt(count));}
 				document.getElementById(str).style.display = "none";
 				document.getElementById("text_" + str).style.display = "none";
 				document.getElementById("br_" + str).style.display = "none";

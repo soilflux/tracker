@@ -17,6 +17,9 @@ function readLog() {
     document.getElementById("chuCount").style.display = "inline-block";
     document.getElementById("chuPlus").style.display = "inline-block";
     document.getElementById("chuMinus").style.display = "inline-block";
+    document.getElementById("blueRupee").style.display = "inline-block";
+    document.getElementById("redRupee").style.display = "inline-block";
+    document.getElementById("rupeeCount").style.display = "inline-block";
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["Links Pocket"] + "\n";
 	document.getElementById("simCheckAltar").style.display = "block";

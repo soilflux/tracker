@@ -48,6 +48,20 @@ color: red;
     font-size: 18px;
     display: none;
 }
+.rupeeButtons {
+    position: relative;
+    top:2px;
+    width: 20px;
+    height:25px;
+    display: none;
+}
+#rupeeCount {
+    font-size: 20px;
+    position: relative;
+    left:3px;
+    bottom:3px;
+    display: none;
+}
 #chuCount {
     margin-left:2px;
     display: none;

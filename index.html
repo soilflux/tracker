@@ -13,8 +13,9 @@
 			<div class="dungColumn" id="dung1"></div>
 			<div class="dungColumn" id="dung2"></div>
 			<div class="dungColumn" id="dung3"></div>
-			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span><br />
-				<img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
+			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span>
+                <img id = "redRupee" class = "rupeeButtons" src = "normal/redRupee.png" onmouseDown="modifyRupees(20)"></img><img id = "blueRupee" class = "rupeeButtons" src = "normal/blueRupee.png" onmouseDown="modifyRupees(5)"></img><small id = "rupeeCount">0</small>
+				<br /><img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
 				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onmousedown = "highlight(this)">
 				<br /><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
                 <br /><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="16" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br />
@@ -351,7 +352,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small id="patchNotesTitle">Patch Notes</small><br>
-                <small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 10 seeds are included. to use, enter a value from 1-10 in the input box next to "Play the Sim"</small><br>
+                <small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"</small><br>
                 <small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>
 				<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
 				<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>

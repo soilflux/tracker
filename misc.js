@@ -809,6 +809,20 @@ function decrementChus() {
     chuCount = Math.max(chuCount,0);
     document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;
 }
+function modifyRupees(amount) {
+    if (event.button == 2) {
+        rupeeCount -= amount;
+    }
+    else {
+        rupeeCount += amount;
+    }
+    var cap = 99;
+    if (Player.adults_wallet) {cap = 200;}
+    if (Player.giants_wallet) {cap = 500;}
+    rupeeCount = Math.max(rupeeCount,0);
+    rupeeCount = Math.min(rupeeCount,cap);
+    document.getElementById("rupeeCount").innerHTML = rupeeCount;
+}
 String.prototype.replaceAt = function(index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }

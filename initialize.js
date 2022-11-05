@@ -54,6 +54,7 @@ document.getElementById("bait_probability").onclick = function(){untracked -= 1;
 var simActive = false;
 var SpoilerJSON;
 var chuCount = 0;
+var rupeeCount = 0;
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
