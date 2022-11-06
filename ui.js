@@ -43,6 +43,9 @@ function process_inputs() {
 			document.getElementById(key).value = "";
 		}
 		
+		if(document.getElementById(key).value == "???")
+			continue;
+		
 		for (var j = 0; j < inputs.length; j++) {
 			var isSong = (songInputs.indexOf(inputs[j]) != -1 && i >= AreaIndexes[34]);
 			var isItem = (itemInputs.indexOf(inputs[j]) != -1 && i < AreaIndexes[34]);
