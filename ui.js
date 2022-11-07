@@ -381,7 +381,7 @@ function junk() {
 		if(LocationToSpoilerName[str] == undefined)
 			console.log(str + " is not a known location in the sim");
             
-        if(str == "kokiri_storms" || str == "hyrule_remoteGrotto" || str == "hyrule_openGrotto" || str == "hyrule_marketGrotto" || str == "lw_generic" || str == "crater_grotto" || str == "kakariko_grotto" || str == "river_grotto" || str == "trail_storms") {
+        if((str == "kokiri_storms" || str == "hyrule_remoteGrotto" || str == "hyrule_openGrotto" || str == "hyrule_marketGrotto" || str == "lw_generic" || str == "crater_grotto" || str == "kakariko_grotto" || str == "river_grotto" || str == "trail_storms") && Check["h_" + str] != "junk") {
             document.getElementById("text_" + "h_"+ str).dispatchEvent(new Event('mousedown'));
         }
         var spoilerBossName = "";
