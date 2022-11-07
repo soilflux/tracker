@@ -230,11 +230,10 @@ color: red;
 #mouseInputs {
 	color:lightblue;
 	position: absolute;
-	left:5px;
-	top:1015px;
+	left:600px;
+	top:1050px;
 	height:50px;
 	width:1000px;
-	z-index: -1;
 }
 .mouseInputsImage {
 	height:44px;
