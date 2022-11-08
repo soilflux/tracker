@@ -52,6 +52,7 @@ var untracked = 5;
 var questCounter = 0;
 document.getElementById("bait_probability").onclick = function(){untracked -= 1;}
 var simActive = false;
+var simOverride = false;
 var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;

@@ -571,15 +571,17 @@ function handleAlternateHintInput() {
 								document.getElementById(hintIndexes[i]).value = str;
 							}
 							else if (Hinted[hintIndexes[i]] != true || !Hinted[hintIndexes[i]]) {
+								simOverride = true;
 								if (textSongSpots.includes("text_"+hintIndexes[i])) {
-									document.getElementById("text_"+hintIndexes[i]).click();
+									document.getElementById("text_"+hintIndexes[i]).dispatchEvent(new Event('mousedown'));
 								}
 								else {
 									if(Check[hintIndexes[i]] == "prescription" || Check[hintIndexes[i]] == "claim_check")
 										document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
-									//else
-									//	document.getElementById(Check[hintIndexes[i]]+"_location").dispatchEvent(new Event('mousedown'));
+									else
+										document.getElementById(Check[hintIndexes[i]]+"_location").dispatchEvent(new Event('mousedown'));
 								}
+								simOverride = false;
 							}
 						}
 					}
