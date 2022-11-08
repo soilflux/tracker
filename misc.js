@@ -489,7 +489,7 @@ function toggleHint(loc) {
 	
 	if(MarkedWotHItemArrow == null) {
 		if(event.which == 1 || event.which == undefined) { // left click, toggle if this item hinted by a sometimes hint or not
-			if(!simActive) {
+			if(!simActive || simOverride) {
 			
 				var itemText = "";
 				
