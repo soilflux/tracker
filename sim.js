@@ -25,6 +25,7 @@ function readLog() {
 	document.getElementById("simCheckAltar").style.display = "block";
 	document.getElementById("simCheckChildSpawn").style.display = "block";
 	document.getElementById("simCheckAdultSpawn").style.display = "block";
+	document.getElementById("simCheckLightArrowHint").style.display = "block";
 	document.getElementById("gossips").value = "ON";
 	
 	if(SpoilerJSON["randomized_settings"]["starting_age"] == undefined) {
@@ -218,6 +219,19 @@ function simCheckAdultSpawn() {
 	
 	document.getElementById("markAdultLocation").value = input;
 	document.getElementById("simCheckAdultSpawn").style.display = "none";
+}
+
+function simCheckLightArrowHint() {
+	for(l = 0; l < Locations.length; l++){
+		if(SpoilerJSON["locations"][LocationToSpoilerName[Locations[l]]] == "Light Arrows") {
+			for(a = 1; a < AreaIndexes.length; a++) {
+				if(l >= AreaIndexes[a-1] && l < AreaIndexes[a]) {
+					document.getElementById("simLog").value = "Light Arrows can be found in " + AreaNamesLong[a] + ".\n" + document.getElementById("simLog").value;
+				}
+			}
+		}
+	}
+	document.getElementById("simCheckLightArrowHint").style.display = "none";
 }
 
 simWothsEntered = {};
