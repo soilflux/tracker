@@ -570,7 +570,7 @@ function handleAlternateHintInput() {
 								hintedInput = str.toLowerCase();
 								document.getElementById(hintIndexes[i]).value = str;
 							}
-							else if (Hinted[hintIndexes[i]] != true || !Hinted[hintIndexes[i]]) {
+							else if ((Hinted[hintIndexes[i]] != true || !Hinted[hintIndexes[i]]) && str.toLowerCase() != "chu") {
 								simOverride = true;
 								if (textSongSpots.includes("text_"+hintIndexes[i])) {
 									document.getElementById("text_"+hintIndexes[i]).dispatchEvent(new Event('mousedown'));
