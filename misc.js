@@ -421,6 +421,7 @@ function saveStuff() {
 	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
+    localStorage.setItem("simSeed", document.getElementById("simSeed").value);
 }
 
 function linsoControl() {
