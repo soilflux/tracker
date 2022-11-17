@@ -227,6 +227,7 @@ function changeTheme() {
 function trackAnimalQuest() {
 	questCounter += 1;
 	if (questCounter >= 20) {
+        if (simActive && document.getElementById("simSeed").value > 0) document.getElementById("simSeed").value += 1;
 		animalXP[animalRNG] += 1;
 		questCounter = -100000
 		localStorage.setItem("animalXP", JSON.stringify(animalXP));
