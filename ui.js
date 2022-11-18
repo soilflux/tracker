@@ -478,7 +478,7 @@ function junk() {
 				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && LocationToSpoilerName[str].includes("Freestanding"))
 					document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
 			}
-			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value == inputs[ItemNames2.indexOf("Bombchus")].toLowerCase()) {
+			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value.toLowerCase() == inputs[ItemNames2.indexOf("Bombchus")]) {
 				// left click, get the item
 				if(input != "bk" && input != "sk")
 					document.getElementById(str).value = input;
