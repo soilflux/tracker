@@ -13,7 +13,7 @@ function process_inputs() {
 			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
 		}
 		
-		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
+		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; console.log('hi'); textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
 		if(Check[key] != "unknown") {continue;}
 		
 		if(document.getElementById(key).value == "???")
@@ -22,18 +22,17 @@ function process_inputs() {
 		hinted = false;
 		if (isLowerCase(document.getElementById(key).value.charAt(0)) 
 		 && isUpperCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length-1))
-		 && document.getElementById(key).value.length > 0 && document.getElementById(key).value != "chU") {	
+		 && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {	
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
 		else if (isUpperCase(document.getElementById(key).value.charAt(0)) 
 			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
-			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value != "Chu" && document.getElementById(key).value != "Ch") {
-			
+			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {
 			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
-		if(document.getElementById(key).value == "chu") {
+		if(document.getElementById(key).value == inputs[ItemNames2.indexOf("Bombchus")]) {
 			if(Player.has_chus == false && !hinted && !peeked)
 				enableChus();
 				
@@ -419,7 +418,7 @@ function junk() {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
 			}
 			
-			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu" || (input == "chu" && type == 2 && !LocationToSpoilerName[str].includes("Freestanding"))) {
+			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == inputs[ItemNames2.indexOf("Bombchus")] || (input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && !LocationToSpoilerName[str].includes("Freestanding"))) {
 
 				if(document.getElementById(str).value != "BK" && document.getElementById(str).value != "SK") {
 					if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
@@ -476,10 +475,10 @@ function junk() {
 				
 				lastCheck.push(str);
 				
-				if(input == "chu" && type == 2 && LocationToSpoilerName[str].includes("Freestanding"))
+				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && LocationToSpoilerName[str].includes("Freestanding"))
 					document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
 			}
-			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value == "chU" || document.getElementById(str).value == "Chu") {
+			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value == inputs[ItemNames2.indexOf("Bombchus")].toLowerCase()) {
 				// left click, get the item
 				if(input != "bk" && input != "sk")
 					document.getElementById(str).value = input;
@@ -533,7 +532,7 @@ function junk() {
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 					
-					if(input == "chu")
+					if(input == inputs[ItemNames2.indexOf("Bombchus")])
 						item = "Bombchus";
 				}
 				else {
