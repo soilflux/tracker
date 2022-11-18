@@ -227,6 +227,7 @@ function changeTheme() {
 function trackAnimalQuest() {
 	questCounter += 1;
 	if (questCounter >= 20) {
+        if (simActive && document.getElementById("simSeed").value > 0) document.getElementById("simSeed").value =  parseInt(document.getElementById("simSeed").value) + 1;
 		animalXP[animalRNG] += 1;
 		questCounter = -100000
 		localStorage.setItem("animalXP", JSON.stringify(animalXP));
@@ -421,6 +422,7 @@ function saveStuff() {
 	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
+    localStorage.setItem("simSeed", document.getElementById("simSeed").value);
 }
 
 function linsoControl() {
