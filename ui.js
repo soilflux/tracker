@@ -15,6 +15,10 @@ function process_inputs() {
 		
 		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
 		if(Check[key] != "unknown") {continue;}
+		
+		if(document.getElementById(key).value == "???")
+			continue;
+		
 		hinted = false;
 		if (isLowerCase(document.getElementById(key).value.charAt(0)) 
 		 && isUpperCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length-1))
@@ -42,9 +46,6 @@ function process_inputs() {
 			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
 			document.getElementById(key).value = "";
 		}
-		
-		if(document.getElementById(key).value == "???")
-			continue;
 		
 		for (var j = 0; j < inputs.length; j++) {
 			var isSong = (songInputs.indexOf(inputs[j]) != -1 && i >= AreaIndexes[34]);
@@ -418,7 +419,7 @@ function junk() {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[str]]];
 			}
 			
-			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu") {
+			if(input == undefined || document.getElementById(str).value == "BK" || document.getElementById(str).value == "SK" || document.getElementById(str).value == "chu" || (input == "chu" && type == 2 && !LocationToSpoilerName[str].includes("Freestanding"))) {
 
 				if(document.getElementById(str).value != "BK" && document.getElementById(str).value != "SK") {
 					if(str.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
@@ -474,6 +475,9 @@ function junk() {
 				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
 				
 				lastCheck.push(str);
+				
+				if(input == "chu" && type == 2 && LocationToSpoilerName[str].includes("Freestanding"))
+					document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
 			}
 			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value == "chU" || document.getElementById(str).value == "Chu") {
 				// left click, get the item
@@ -528,6 +532,9 @@ function junk() {
 				if (LocationToSpoilerName[str].includes("Freestanding") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+					
+					if(input == "chu")
+						item = "Bombchus";
 				}
 				else {
 					item = "unknown big chest";
