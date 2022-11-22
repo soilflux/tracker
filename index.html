@@ -72,6 +72,11 @@
 					  </div>
 				  </div>
 			  </div>
+              <small id = "timerToD" onmousedown = "saveToD()"></small>
+              <img id = "newDay" src = "./normal/items/chicken.png" onclick = "timerToD(85)"></img>
+              <img id = "newNight" src = "./normal/wolf.png" onclick = "timerToD(240)"></button>
+              <img id = "midDay" src = "./normal/items/suns.png" onclick = "timerToD(158)"></img>
+              <img id = "midNight" src = "./normal/moon.png" onclick = "timerToD(40)"></img>
 			  <small id = "timer"></small>
 				<div id = "dungSpawn_inputs">
 				<br><br><img src = "./normal/frogsong.png"></img><br /><br /><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
@@ -353,6 +358,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small id="patchNotesTitle">Patch Notes</small><br>
+                <small class = "patchNotes" id = "pn60">60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller</small><br>
                 <small class = "patchNotes" id = "pn59">59: replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.</small><br>
                 <small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"</small><br>
                 <small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>

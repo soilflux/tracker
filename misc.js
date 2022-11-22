@@ -327,6 +327,13 @@ function timerControl() {
 	timer_stuff();
 }
 
+function timerControlToD() {
+	pauseFlagToD = true;
+	if (pausedToD) {pausedToD = false;}
+	else {pausedToD = true;}
+	timerToD(-1);
+}
+
 function colorWothAreasControl() {
 	if(!colorWothAreas)
 		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
@@ -753,9 +760,32 @@ function timer_stuff() {
 	document.getElementById("timer").innerHTML += tempSeconds;
 }
 
+function timerToD(timeSet) {
+    var d = new Date();
+    if (timeSet > lastToDpass) {pauseTotalToD -= (timeSet - lastToDpass)*1000;}
+    if (timeSet < lastToDpass && timeSet >= 0) {pauseTotalToD += (lastToDpass - timeSet)*1000;}
+    console.log(pauseTotalToD);
+	if (pausedToD && pauseFlagToD) {pauseInitialToD = d.getTime(); pauseFlagToD = false;}
+	if (!pausedToD && pauseFlagToD) {pauseTotalToD += d.getTime() - pauseInitialToD; pauseFlagToD = false;}
+	if (!pausedToD) {var totalToDpass = Math.floor((d.getTime() - pauseTotalToD - initialTime)/1000);} else {var totalToDpass = Math.abs(Math.floor((pauseInitialToD - pauseTotalToD - initialTime)/1000));}
+    totalToDpass %=240;//85,155
+    lastToDpass = totalToDpass;
+    if (totalToDpass<85) {totalToDpass += 155; document.getElementById("timerToD").style.color = 'lightblue';}
+    else {document.getElementById("timerToD").style.color = 'yellow';}
+	document.getElementById("timerToD").innerHTML = 240-totalToDpass;
+}
+
+function saveToD() {
+    if (event.button == 0){savedToD = 240-parseInt(document.getElementById("timerToD").innerHTML);}
+    if (event.button == 2){timerToD(savedToD);}
+}
+
 document.onkeydown = function(e) {
 	if (e.which == 19) {
 		timerControl();
+	}
+    if (e.which == 190) {
+		timerControlToD();
 	}
 	if (e.ctrlKey && e.which == 90) {
 		e.preventDefault();

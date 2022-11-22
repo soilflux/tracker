@@ -25,6 +25,7 @@ var gs = [];
 var Area = [];
 var Known = [];
 var paused = true;
+var pausedToD = true;
 var timerInitialized = false;
 var woth1Locations = [];
 var woth2Locations = [];
@@ -121,8 +122,8 @@ for (var i = 0; i < spawnInputs.length; i++) {
 	var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
 }
 
-controllerConfigNames =["","","","","",""];
-controllerConfigDescriptions =["controllerJunk","controllerKey","controllerBosskey", "controllerItem","controllerSkip","controllerAcceptInputs"];
+controllerConfigNames =["","","","","","",""];
+controllerConfigDescriptions =["controllerJunk","controllerKey","controllerBosskey", "controllerItem","controllerSkip","controllerAcceptInputs","controllerToD"];
 var parent = document.getElementById("inputConfig3");
 for (var i = 0; i < controllerConfigNames.length; i++) {
 	if (localStorage.getItem(controllerConfigNames[i])) {controllerConfigNames[i] = localStorage.getItem(controllerConfigNames[i]);}
@@ -170,6 +171,12 @@ var d = new Date();
 var pauseTotal = 0;
 var pauseInitial = 0;
 var pauseFlag = true;
+var pauseTotalToD = -130*1000;
+var pauseInitialToD = 0;
+var pauseFlagToD = true;
+var timeSet = -1;
+var lastToDpass = 0;
+var savedToD = 130;
 var initialTime = d.getTime();
 var goodCheckPercent = 0;
 var timeStart = d.getTime();
@@ -1691,6 +1698,7 @@ if (localStorage.getItem(controllerConfigDescriptions[2])) {document.getElementB
 if (localStorage.getItem(controllerConfigDescriptions[3])) {document.getElementById(controllerConfigDescriptions[3]).value = localStorage.getItem(controllerConfigDescriptions[3]);}
 if (localStorage.getItem(controllerConfigDescriptions[4])) {document.getElementById(controllerConfigDescriptions[4]).value = localStorage.getItem(controllerConfigDescriptions[4]);}
 if (localStorage.getItem(controllerConfigDescriptions[5])) {document.getElementById(controllerConfigDescriptions[5]).value = localStorage.getItem(controllerConfigDescriptions[5]);}
+if (localStorage.getItem(controllerConfigDescriptions[6])) {document.getElementById(controllerConfigDescriptions[6]).value = localStorage.getItem(controllerConfigDescriptions[6]);}
 function updateControllerStatus() {
 	if (!haveEvents) {
 		scangamepads();
@@ -1698,7 +1706,6 @@ function updateControllerStatus() {
 
   var i = 0;
   var j;
-
   for (j in controllers) {
     var controller = controllers[j];
 
@@ -1717,6 +1724,7 @@ function updateControllerStatus() {
 		if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i; localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
 		if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i; localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
 		if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i; localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
+        if (document.getElementById(controllerConfigDescriptions[6]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[6]).value = i; localStorage.setItem(controllerConfigDescriptions[6], document.getElementById(controllerConfigDescriptions[6]).value);}
 		if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
 			if (document.getElementById(controllerConfigDescriptions[0]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1774,10 +1782,12 @@ function updateControllerStatus() {
 				pressCooldown[i][j] = true;
 				acceptControllerInput[j] = false;
 			}
+            console.log(i);
 			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {console.log("hi"); nextChecks.splice(nextIndex,1); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
 			midUpdate();
 		}
 		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
+        if (document.getElementById(controllerConfigDescriptions[6]).value == i && acceptControllerInput[j]) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
       } else if (!pressed) {
 		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;
@@ -1795,6 +1805,7 @@ function updateControllerStatus() {
 					if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
 					if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
 					if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
+                    if (document.getElementById(controllerConfigDescriptions[6]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[6]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[6], document.getElementById(controllerConfigDescriptions[6]).value);}
 				}
 				if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
 			if (document.getElementById(controllerConfigDescriptions[0]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] > .65))) {
