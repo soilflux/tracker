@@ -13,7 +13,7 @@ function process_inputs() {
 			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
 		}
 		
-		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; console.log('hi'); textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
+		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
 		if(Check[key] != "unknown") {continue;}
 		
 		if(document.getElementById(key).value == "???")
