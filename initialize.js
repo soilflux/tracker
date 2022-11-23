@@ -1787,7 +1787,7 @@ function updateControllerStatus() {
 			midUpdate();
 		}
 		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
-        if (document.getElementById(controllerConfigDescriptions[6]).value == i && acceptControllerInput[j]) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
+        if (document.getElementById(controllerConfigDescriptions[6]).value == i) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
       } else if (!pressed) {
 		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;
