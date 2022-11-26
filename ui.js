@@ -475,7 +475,7 @@ function junk() {
 				
 				lastCheck.push(str);
 				
-				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && LocationToSpoilerName[str].includes("Freestanding"))
+				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && (LocationToSpoilerName[str].includes("Freestanding") || LocationToSpoilerName[str].includes("LH Underwater Item")))
 					document.getElementById("simLog").value = LocationToSpoilerName[str] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
 			}
 			else if((type == 0 && Check[str] == "unknown") || document.getElementById(str).value.toLowerCase() == inputs[ItemNames2.indexOf("Bombchus")]) {

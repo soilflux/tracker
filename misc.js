@@ -764,7 +764,6 @@ function timerToD(timeSet) {
     var d = new Date();
     if (timeSet > lastToDpass) {pauseTotalToD -= (timeSet - lastToDpass)*1000;}
     if (timeSet < lastToDpass && timeSet >= 0) {pauseTotalToD += (lastToDpass - timeSet)*1000;}
-    console.log(pauseTotalToD);
 	if (pausedToD && pauseFlagToD) {pauseInitialToD = d.getTime(); pauseFlagToD = false;}
 	if (!pausedToD && pauseFlagToD) {pauseTotalToD += d.getTime() - pauseInitialToD; pauseFlagToD = false;}
 	if (!pausedToD) {var totalToDpass = Math.floor((d.getTime() - pauseTotalToD - initialTime)/1000);} else {var totalToDpass = Math.abs(Math.floor((pauseInitialToD - pauseTotalToD - initialTime)/1000));}
