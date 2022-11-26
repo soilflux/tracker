@@ -2646,6 +2646,7 @@ function location_logic(){
 		Location_Access.water_block = Player.can_enter_water && Player.lullaby && (Player.bow || Player.hover_boots);
 		Location_Access.water_river = Player.current_water_keys >= 2 && Player.time;
 		Location_Access.spirit_adultLeft = Player.can_enter_adult_spirit && Player.lullaby && (Player.bow || Player.hookshot || Player.bomb_bag || Player.has_chus);
+        Location_Access.spirit_rightHand = Player.can_enter_colossus;
 		Location_Access.ganons_shadowTrial1 = Player.can_enter_ganons;
 		Location_Access.gtg_aboveEyes = Player.can_save_carpenters;//&& Player.can_see;
 		Location_Access.gtg_freestanding = Player.can_save_carpenters && (Player.current_gtg_keys >= 2 || (Player.bomb_bag || Player.has_chus) || (Player.can_climb_gtg_hole /*&& Player.can_see*/));
@@ -2677,6 +2678,7 @@ function location_logic(){
 		Location_Could_Peek.water_block = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.hover_boots);
 		Location_Could_Peek.water_river = CouldHave.current_water_keys >= 2 && CouldHave.time;
 		Location_Could_Peek.spirit_adultLeft = CouldHave.can_enter_adult_spirit && CouldHave.lullaby && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag || Player.has_chus);
+        Location_Could_Peek.spirit_rightHand = CouldHave.can_enter_colossus;
 		Location_Could_Peek.ganons_shadowTrial1 = CouldHave.can_enter_ganons;
 		Location_Could_Peek.gtg_aboveEyes = CouldHave.can_save_carpenters;//&& CouldHave.can_see;
 		Location_Could_Peek.gtg_freestanding = CouldHave.can_save_carpenters && (CouldHave.current_gtg_keys >= 2 || (CouldHave.bomb_bag || Player.has_chus) || (CouldHave.can_climb_gtg_hole /*&& CouldHave.can_see*/));

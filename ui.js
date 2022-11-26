@@ -528,7 +528,7 @@ function junk() {
 				else
 					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				
-				if (LocationToSpoilerName[str].includes("Freestanding") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
+				if (LocationToSpoilerName[str].includes("Freestanding") || LocationToSpoilerName[str].includes("LH Underwater Item") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 					
