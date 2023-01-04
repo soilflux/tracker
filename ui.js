@@ -26,9 +26,9 @@ function process_inputs() {
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
-		else if (isUpperCase(document.getElementById(key).value.charAt(0)) 
+		else if (isUpperCase(document.getElementById(key).value.charAt(0))
 			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
-			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {
+			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")] && document.getElementById(key).value.toLowerCase() != inputs[0]) {
 			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
@@ -50,7 +50,7 @@ function process_inputs() {
 			var isSong = (songInputs.indexOf(inputs[j]) != -1 && i >= AreaIndexes[34]);
 			var isItem = (itemInputs.indexOf(inputs[j]) != -1 && i < AreaIndexes[34]);
 			
-			if (document.getElementById(key).value == inputs[j] && (isSong || isItem)) {
+			if (document.getElementById(key).value.toLowerCase() == inputs[j] && (isSong || isItem)) {
 				
 				// don't allow inputting the same item twice if it's not a duplicate item
 				if(!DuplicateItems.includes(Items2[j]) && Known[Items2[j]])
@@ -68,7 +68,10 @@ function process_inputs() {
 				if(Items2[j] == "wallet" && Known["wallet2"]) continue;
 				if(((inputs[j] == "pre" && isItem) || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 				
-				if (j == 0) {document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;}
+				if (j == 0) {
+                    if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
+                    document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
+                }
 				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
@@ -1423,6 +1426,7 @@ function update_probabilities() {
 	var explosivesLeft = 0;
 	var majorLeft = 0;
 	var bigLeft = Math.max(untracked,0);
+    bigLeft -= baitsChecked;
 	if (!Known.bomb_bag1) {explosivesLeft += 1;}
 	if (!Known.bomb_bag2) {explosivesLeft += 1;}
 	if (!Known.bomb_bag3) {explosivesLeft += 1;}
@@ -1501,11 +1505,10 @@ function update_probabilities() {
 	else if (searchItems.includes("Light Arrows")) {document.getElementById("searchingFor_light_arrows").style.display = "none";}
 	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1; document.getElementById("searchingFor_lens").style.display = "inline-block";}
 	else if (searchItems.includes("Lens")) {document.getElementById("searchingFor_lens").style.display = "none";}
-	if (searchItems.includes("Light Arrows") && !Known.light_arrows)  {majorLeft += 1; document.getElementById("searchingFor_light_arrows").style.display = "inline-block";}
-	else if (searchItems.includes("Light Arrows")) {document.getElementById("searchingFor_light_arrows").style.display = "none";}
-	
 	nChecks = document.getElementById("probability_input").value;
-	document.getElementById("bait_probability").innerHTML = "Bait ("+((bigLeft-majorLeft)/bigLeft*100).toFixed(2)+"%)"
-	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1),nChecks))*100).toFixed(2)+"%)"
+    console.log(majorLeft)
+    console.log(bigLeft)
+	document.getElementById("bait_probability").innerHTML = "Big Chest = "+((majorLeft/bigLeft)/(majorLeft/Player.checks_remaining)).toFixed(2)+" Checks"
+	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Player.checks_remaining*100).toFixed(2)+"%)"
 }

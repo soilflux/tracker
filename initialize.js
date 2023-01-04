@@ -50,6 +50,7 @@ var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
 var untracked = 5;
+var baitsChecked = 0;
 var questCounter = 0;
 document.getElementById("bait_probability").onclick = function(){untracked -= 1;}
 var simActive = false;
