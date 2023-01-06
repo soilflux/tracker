@@ -1508,7 +1508,7 @@ function update_probabilities() {
 	nChecks = document.getElementById("probability_input").value;
     console.log(majorLeft)
     console.log(bigLeft)
-	document.getElementById("bait_probability").innerHTML = "Big Chest = "+((majorLeft/bigLeft)/(majorLeft/Player.checks_remaining)).toFixed(2)+" Checks"
+	document.getElementById("bait_probability").innerHTML = "Big Chest = "+(Player.checks_remaining/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Explosives ("+(explosivesLeft/Player.checks_remaining*100).toFixed(2)+"%)"
 }
