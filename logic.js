@@ -2643,7 +2643,7 @@ function location_logic(){
 		Location_Access.fire_upperMaze = Player.can_climb_fire_temple;
 		Location_Access.fire_shortcut = Player.can_climb_fire_temple;
 		Location_Access.water_cracked = Player.can_enter_water;
-		Location_Access.water_block = Player.can_enter_water && Player.lullaby && (Player.bow || Player.hover_boots);
+		Location_Access.water_block = Player.can_enter_water;
 		Location_Access.water_river = Player.current_water_keys >= 2 && Player.time;
 		Location_Access.spirit_adultLeft = Player.can_enter_adult_spirit && Player.lullaby && (Player.bow || Player.hookshot || Player.bomb_bag || Player.has_chus);
         Location_Access.spirit_rightHand = Player.can_enter_colossus;
@@ -2675,7 +2675,7 @@ function location_logic(){
 		Location_Could_Peek.fire_upperMaze = CouldHave.can_climb_fire_temple;
 		Location_Could_Peek.fire_shortcut = CouldHave.can_climb_fire_temple;
 		Location_Could_Peek.water_cracked = CouldHave.can_enter_water;
-		Location_Could_Peek.water_block = CouldHave.can_enter_water && CouldHave.lullaby && (CouldHave.bow || CouldHave.hover_boots);
+		Location_Could_Peek.water_block = CouldHave.can_enter_water;
 		Location_Could_Peek.water_river = CouldHave.current_water_keys >= 2 && CouldHave.time;
 		Location_Could_Peek.spirit_adultLeft = CouldHave.can_enter_adult_spirit && CouldHave.lullaby && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag || Player.has_chus);
         Location_Could_Peek.spirit_rightHand = CouldHave.can_enter_colossus;
