@@ -13,7 +13,19 @@ function process_inputs() {
 			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
 		}
 		
-		if(Check[key] != "unknown" && checkedYet[i-1] == false) {checkedYet[i - 1] = true; textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + AreaNames[AreaNamesIndex] + ": " + Names[i] + "\n"};
+        if(Check[key] != "unknown" && checkedYet[i-1] == false) {
+            checkedYet[i-1] = true; 
+            if (i > lastItem) {
+                checkLocation = "Song";
+            }
+            else if (key.startsWith("h_")) {
+                checkLocation = "Hint";
+            }
+            else {
+                checkLocation = AreaNames[AreaNamesIndex];
+            }
+            textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkLocation + ": " + Names[i] + "\n";
+        }
 		if(Check[key] != "unknown") {continue;}
 		
 		if(document.getElementById(key).value == "???")
@@ -32,6 +44,7 @@ function process_inputs() {
 			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
+        
 		if(document.getElementById(key).value == inputs[ItemNames2.indexOf("Bombchus")]) {
 			if(Player.has_chus == false && !hinted && !peeked)
 				enableChus();
@@ -1503,8 +1516,6 @@ function update_probabilities() {
 	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1; document.getElementById("searchingFor_lens").style.display = "inline-block";}
 	else if (searchItems.includes("Lens")) {document.getElementById("searchingFor_lens").style.display = "none";}
 	nChecks = document.getElementById("probability_input").value;
-    console.log(majorLeft)
-    console.log(bigLeft)
 	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+(Player.checks_remaining/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Chu Packs ~ 1 in "+(1/(explosivesLeft/(Player.checks_remaining-bigLeft))).toFixed(2)+" Smalls"

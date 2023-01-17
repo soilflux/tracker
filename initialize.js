@@ -446,7 +446,7 @@ var Names = [
 	/*Wasteland*/"Skull", "Check",
 	/*Fortress*/"Fort", "Roof", "1000", "1500", "Target", 
 	/*Jabu Jabu*/"Vines", "Scrub", "Map", "Compass", "Boom", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
-	/*Forest Temple*/"First", "First", "Lobby", "Stalfos", "C Mid", "C Mid", "C High", "C Low", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
+	/*Forest Temple*/"First", "First", "Lobby", "Stalfos", "C Hook", "C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
 	/*Fire Temple*/"Near Boss", "Base", "Hammer", "Hammer", "Lav Open", "SoT", "Lav Bomb", "Volvagia", "Low Cell", "Bomb Wall", "Side Room", "Map", "High Cell", "Shortcut", "Crow 1", "Crow 2", "Pierre", "Compass", "SoT Goron", "MEGA",
 	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
 	/*Spirit Temple*/"Ch. Left", "Ch. Right", "Fence", "Ch. Climb", "Ch. Climb", "Ch. Climb", "Map", "Sun Room", "B4 Knuck", "Silvers", "Ad. Left", "SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "Main Room", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
@@ -454,7 +454,7 @@ var Names = [
 	/*Ganon's Castle*/"Scrub L", "Scrub LM", "Scrub RM", "Scrub R", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
 	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Abv Eyes", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
 	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "D Hand", "Invisible", "Door L", "Door R", "Locked 1", "Locked 2", "Like Like", "Base",
-	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Meadow", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
+	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater"];
 
