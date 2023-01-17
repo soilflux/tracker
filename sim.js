@@ -150,7 +150,7 @@ function simCheckChildSpawn() {
 	input = "";
 	if (child_region == "DMC Great Fairy Fountain")
 		input = "dmcf";
-	else if (child_region == "DMC Weller Local" || child_region == "GC Darunias Chamber")
+	else if (child_region == "DMC Lower Local" || child_region == "GC Darunias Chamber")
 		input = "dmcl";
 	else if (child_region == "DMT Great Fairy Fountain")
 		input = "dmtf";
@@ -192,7 +192,7 @@ function simCheckAdultSpawn() {
 	input = "";
 	if (adult_region == "DMC Great Fairy Fountain")
 		input = "dmcf";
-	else if (adult_region == "DMC Weller Local" || adult_region == "GC Darunias Chamber")
+	else if (adult_region == "DMC Lower Local" || adult_region == "GC Darunias Chamber")
 		input = "dmcl";
 	else if (adult_region == "DMT Great Fairy Fountain")
 		input = "dmtf";
