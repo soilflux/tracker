@@ -1470,7 +1470,7 @@ function location_logic(){
 	Location_Obtain.spirit_invisible1 = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus) ;//&& Player.can_see;
 	Location_Obtain.spirit_invisible2 = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus) ;//&& Player.can_see;
 	Location_Obtain.spirit_leftHand = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus);
-	Location_Obtain.spirit_bossKey = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.bow && Player.lullaby && Player.hookshot;
+	Location_Obtain.spirit_bossKey = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.lullaby;
 	Location_Obtain.spirit_tippyTop = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.mirror_shield;
 	Location_Obtain.spirit_twinrova = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.mirror_shield && (Player.bomb_bag || Player.has_chus) && Player.spirit_boss_key && Player.hookshot;
 	Location_Obtain.shadow_map = Player.can_enter_shadow;
@@ -1834,7 +1834,7 @@ function location_logic(){
 	Location_Could_Access.spirit_invisible1 = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus) ;//&& CouldHave.can_see;
 	Location_Could_Access.spirit_invisible2 = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus) ;//&& CouldHave.can_see;
 	Location_Could_Access.spirit_leftHand = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus);
-	Location_Could_Access.spirit_bossKey = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.bow && CouldHave.lullaby && CouldHave.hookshot;
+	Location_Could_Access.spirit_bossKey = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.lullaby;
 	Location_Could_Access.spirit_tippyTop = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.mirror_shield;
 	Location_Could_Access.spirit_twinrova = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.mirror_shield && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.spirit_boss_key && CouldHave.hookshot;
 	Location_Could_Access.shadow_map = CouldHave.can_enter_shadow;
@@ -2157,7 +2157,7 @@ function location_logic(){
 	Location_Access.spirit_invisible1 = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus) ;//&& Player.can_see;
 	Location_Access.spirit_invisible2 = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus) ;//&& Player.can_see;
 	Location_Access.spirit_leftHand = Player.can_enter_adult_spirit && Player.current_spirit_keys >=2 && (Player.bomb_bag || Player.has_chus);
-	Location_Access.spirit_bossKey = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.bow && Player.lullaby && Player.hookshot;
+	Location_Access.spirit_bossKey = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.lullaby;
 	Location_Access.spirit_tippyTop = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.mirror_shield;
 	Location_Access.spirit_twinrova = Player.can_enter_adult_spirit && Player.current_spirit_keys >=3 && Player.mirror_shield && (Player.bomb_bag || Player.has_chus) && Player.spirit_boss_key && Player.hookshot;
 	Location_Access.shadow_map = Player.can_enter_shadow;
@@ -2480,7 +2480,7 @@ function location_logic(){
 	Location_Could_Peek.spirit_invisible1 = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus) ;//&& CouldHave.can_see;
 	Location_Could_Peek.spirit_invisible2 = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus) ;//&& CouldHave.can_see;
 	Location_Could_Peek.spirit_leftHand = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.has_chus);
-	Location_Could_Peek.spirit_bossKey = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.bow && CouldHave.lullaby && CouldHave.hookshot;
+	Location_Could_Peek.spirit_bossKey = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.lullaby;
 	Location_Could_Peek.spirit_tippyTop = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.mirror_shield;
 	Location_Could_Peek.spirit_twinrova = CouldHave.can_enter_adult_spirit && CouldHave.current_spirit_keys >=3 && CouldHave.mirror_shield && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.spirit_boss_key && CouldHave.hookshot;
 	Location_Could_Peek.shadow_map = CouldHave.can_enter_shadow;
