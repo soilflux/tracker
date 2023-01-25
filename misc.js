@@ -312,12 +312,20 @@ function capitalizeThirdLetter(string) {
     return string.charAt(0) + string.charAt(1) + string.charAt(2).toUpperCase();
 }	
 
+function isLetter(s){
+	return s.match("^[a-zA-Z\(\)]+$");    
+}
+
 function isUpperCase(str) {
-    return str === str.toUpperCase();
+	if(!isLetter(str))
+		return false;
+	return str === str.toUpperCase();
 }
 
 function isLowerCase(str) {
-    return str === str.toLowerCase();
+	if(!isLetter(str))
+		return false;
+	return str === str.toLowerCase();
 }
 
 function timerControl() {
