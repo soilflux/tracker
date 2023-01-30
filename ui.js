@@ -1017,7 +1017,7 @@ function update_logic_info() {
 		str = "text_" + key;
 		str2 = "br_" + key;
         
-        if (key == "preludeSpot") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
+        if (key == "preludeSpot" || key == "nocturneSpot" || key == "oot") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
 		
         if (Check[key] == "unknown" || forcedDisplay[i] || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
 			document.getElementById(str).style.display = "inline-block";

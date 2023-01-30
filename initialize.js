@@ -59,6 +59,7 @@ var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;
 document.getElementById("markMedallions").value = "112233445566"
+document.getElementById("markStones").value = "112233"
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
