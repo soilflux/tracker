@@ -58,7 +58,7 @@ var simOverride = false;
 var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;
-document.getElementById("markMedallions").value = "yeGRreBLpuOR";
+document.getElementById("markMedallions").value = "Y-G-R-B-P-O-";
 document.getElementById("markStones").value = "112233";
 
 var dungeonSkullSanity = false;
