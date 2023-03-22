@@ -160,9 +160,7 @@ function simCheckChildSpawn() {
 		input = "gf";
 	else if (child_region == "HC Great Fairy Fountain")
 		input = "din";
-	else if (child_region == "ZD Shop")
-		input = "zdshop";
-	else if (child_region == "Zoras Domain" || child_region == "Zoras Domain" || child_region == "ZR Behind Waterfall")
+	else if (child_region == "Zoras Domain" || child_region == "Zoras Domain" || child_region == "ZR Behind Waterfall" || child_region == "ZD Shop")
 		input = "zd";
 	else if (child_region == "Zora River")
 		input = "zr";

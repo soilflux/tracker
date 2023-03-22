@@ -280,6 +280,7 @@ function refresh_logic_for_stuff() {
 		Logic.prescription = Player.prescription || CouldHave.prescription;
 		Logic.claim_check = Player.claim_check || CouldHave.claim_check;
 		Logic.light_arrows = Player.light_arrows || CouldHave.light_arrows;
+		Logic.ice_arrows = Player.ice_arrows || CouldHave.ice_arrows;
 		Logic.lullaby = Player.lullaby || CouldHave.lullaby;
 		Logic.eponas = Player.eponas || CouldHave.eponas;
 		Logic.sarias = Player.sarias || CouldHave.sarias;
@@ -748,6 +749,7 @@ function logic_shortcuts() {
 	Logic.can_enter_colossus = (Logic.can_cross_quicksand && (Logic.brackets || Logic.can_see)) || Logic.requiem;
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
 	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
+	Logic.can_shoot_blue_fire_arrows = Logic.ice_arrows && Logic.bow && Logic.magic && document.getElementById("presets").value == "LEAGUE_S4";
 	Logic.can_use_farores = Logic.farores_wind && Logic.magic;
 	Logic.can_see = Logic.lens && Logic.magic;
 	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
@@ -761,6 +763,7 @@ function logic_shortcuts() {
 	Logic.can_beat_shadow_boss = Logic.can_ride_shadow_boat && (Logic.bow || Logic.longshot);
 	Logic.can_stop_link_the_goron = Logic.bomb_bag || Logic.bow || Logic.goron_bracelet;
 	Logic.ice_access = Logic.rutos_letter && ((Logic.lullaby && Logic.child_can_enter_river) || (Spawn.adult_zd && Logic.silver_scale));
+	Logic.can_enter_adult_domain = Logic.lullaby || Spawn.adult_zd;
 	Logic.reverse_crater = (Logic.hover_boots || Logic.hookshot || Logic.child_can_enter_river) && Logic.bolero;
 	Logic.can_enter_fire_temple = (Logic.crater_by_city && (Logic.hookshot || Logic.hover_boots)) || Logic.bolero
 	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||((Logic.hammer || Spawn.adult_upper_dmc) && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && (Logic.hammer || Spawn.adult_upper_dmc)) || Spawn.adult_lower_dmc;
@@ -792,11 +795,12 @@ function logic_shortcuts() {
 	Player.can_enter_colossus = (Player.can_cross_quicksand) || Player.requiem;
 	Player.can_use_fire = (Player.dins_fire || (Player.bow && Player.fire_arrows)) && Player.magic;
 	Player.can_use_dins = Player.dins_fire && Player.magic;
+	Player.can_shoot_blue_fire_arrows = Player.ice_arrows && Player.bow && Player.magic && document.getElementById("presets").value == "LEAGUE_S4";
 	Player.can_use_farores = Player.farores_wind && Player.magic;
 	Player.can_use_bottle = (Player.bottle1 || Player.bottle2 || Player.bottle3 || (Player.rutos_letter && Player.child_can_enter_river));
 	Player.can_see = Player.lens && Player.magic;
 	Player.can_blast_or_smash = Player.bomb_bag || Player.hammer || Player.has_chus;
-	Player.can_enter_dodongos = Player.can_blast_or_smash || Player.goron_bracelet || ((Player.can_use_bottle || Player.can_enter_jabu) && Player.giants_wallet);
+	Player.can_enter_dodongos = Player.can_blast_or_smash || Player.goron_bracelet || ((Player.can_use_bottle || Player.can_enter_jabu) && Player.giants_wallet) || Player.can_shoot_blue_fire_arrows;
 	Player.dodongos_climb	= Player.can_enter_dodongos && (Player.bomb_bag || Player.has_chus || Player.goron_bracelet || Player.can_use_dins || Player.bow);
 	Player.can_enter_shadow= (Player.nocturne || Spawn.adult_nocturne) && Player.can_use_dins && (Player.hover_boots || Player.hookshot) ;//&& Player.can_see;
 	Player.can_cross_shadow_gap= Player.can_enter_shadow && Player.hover_boots;
@@ -806,6 +810,7 @@ function logic_shortcuts() {
 	Player.can_beat_shadow_boss = Player.can_ride_shadow_boat && (Player.bow || Player.longshot || Player.has_chus);
 	Player.can_stop_link_the_goron = Player.bomb_bag || Player.bow || Player.goron_bracelet || Player.has_chus;
 	Player.ice_access = (((Player.rutos_letter && Player.child_can_enter_river) || Rules.kzSkip) && (Player.lullaby || Player.hover_boots)) || (Rules.kzSkip && Spawn.adult_zd);
+	Player.can_enter_adult_domain = Player.lullaby || Player.hover_boots || Spawn.adult_zd;
 	Player.reverse_crater = (Player.hover_boots || Player.hookshot || Player.child_can_enter_river) && Player.bolero;
 	Player.crater_by_city = Player.can_stop_link_the_goron || Player.reverse_crater || (Player.hammer && Player.hover_boots) || (Player.longshot && Player.hammer) || Spawn.adult_lower_dmc;
 	Player.crater_top = Player.crater_by_city || Player.hammer || Spawn.adult_upper_dmc;
@@ -836,11 +841,12 @@ function logic_shortcuts() {
 	CouldHave.can_enter_colossus = (CouldHave.can_cross_quicksand) || CouldHave.requiem;
 	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
 	CouldHave.can_use_dins = CouldHave.dins_fire && CouldHave.magic;
+	CouldHave.can_shoot_blue_fire_arrows = CouldHave.ice_arrows && CouldHave.bow && CouldHave.magic && document.getElementById("presets").value == "LEAGUE_S4";
 	CouldHave.can_use_farores = CouldHave.farores_wind && CouldHave.magic;
 	CouldHave.can_use_bottle = (CouldHave.bottle1 || CouldHave.bottle2 || CouldHave.bottle3 || (CouldHave.rutos_letter && CouldHave.child_can_enter_river));
 	CouldHave.can_see = CouldHave.lens && CouldHave.magic;
 	CouldHave.can_blast_or_smash = CouldHave.bomb_bag || CouldHave.hammer || Player.has_chus;
-	CouldHave.can_enter_dodongos = CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.can_use_bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet);
+	CouldHave.can_enter_dodongos = CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.can_use_bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet) || CouldHave.can_shoot_blue_fire_arrows;
 	CouldHave.dodongos_climb	= CouldHave.can_enter_dodongos && (CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet || CouldHave.can_use_dins || CouldHave.bow);
 	CouldHave.can_enter_shadow= (CouldHave.nocturne || Spawn.adult_nocturne) && CouldHave.can_use_dins && (CouldHave.hover_boots || CouldHave.hookshot) ;//&& CouldHave.can_see;
 	CouldHave.can_cross_shadow_gap= CouldHave.can_enter_shadow && CouldHave.hover_boots;
@@ -850,6 +856,7 @@ function logic_shortcuts() {
 	CouldHave.can_beat_shadow_boss = CouldHave.can_ride_shadow_boat && (CouldHave.bow || CouldHave.longshot || Player.has_chus);
 	CouldHave.can_stop_link_the_goron = CouldHave.bomb_bag || CouldHave.bow || CouldHave.goron_bracelet || Player.has_chus;
 	CouldHave.ice_access = (((CouldHave.rutos_letter && CouldHave.child_can_enter_river) || Rules.kzSkip) && (CouldHave.lullaby || CouldHave.hover_boots)) || (Rules.kzSkip && Spawn.adult_zd);
+	CouldHave.can_enter_adult_domain = CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd;
 	CouldHave.reverse_crater = (CouldHave.hover_boots || CouldHave.hookshot || CouldHave.child_can_enter_river) && CouldHave.bolero;
 	CouldHave.crater_by_city = CouldHave.can_stop_link_the_goron || CouldHave.reverse_crater || (CouldHave.hammer && CouldHave.hover_boots) || (CouldHave.longshot && CouldHave.hammer) || Spawn.adult_lower_dmc;
 	CouldHave.crater_top = CouldHave.crater_by_city || CouldHave.hammer || Spawn.adult_upper_dmc;
@@ -978,7 +985,7 @@ function location_logic(){
 	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns && Logic.time);
 	Location_Logic.zora_diving = Logic.child_can_enter_domain;
 	Location_Logic.zora_torches = Logic.child_can_enter_domain;
-	Location_Logic.thaw_king = Logic.ice_access || (Logic.bottle && (Logic.giants_wallet || Logic.can_enter_ganons) && (Logic.lullaby || Spawn.adult_zd));
+	Location_Logic.thaw_king = Logic.can_enter_adult_domain && ((Logic.bottle && (Logic.ice_access || Logic.giants_wallet || Logic.can_enter_ganons)) || Logic.can_shoot_blue_fire_arrows)
 	Location_Logic.colossus_bean = Logic.requiem && Logic.child_can_enter_river;
 	Location_Logic.colossus_fairy = Logic.can_enter_colossus && Logic.bomb_bag && Logic.lullaby;
 	Location_Logic.wasteland = Logic.can_cross_quicksand && Logic.can_use_fire;
@@ -1407,12 +1414,12 @@ function location_logic(){
 	Location_Obtain.jabu_barinade = Player.can_enter_jabu && Player.boomerang;
 	Location_Obtain.fountain_fairy = Player.ice_access && (Player.bomb_bag|| Player.has_chus || (Player.hammer && Player.silver_gauntlets)) && Player.lullaby;
 	Location_Obtain.ice_glacier_hp = Player.ice_access;
-	Location_Obtain.ice_map = Player.ice_access && Player.can_use_bottle;
-	Location_Obtain.ice_hp = Player.ice_access && Player.can_use_bottle;
-	Location_Obtain.ice_compass = Player.ice_access && Player.can_use_bottle;
-	Location_Obtain.ice_irons = Player.ice_access && Player.can_use_bottle;
+	Location_Obtain.ice_map = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Obtain.ice_hp = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Obtain.ice_compass = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Obtain.ice_irons = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
 	Location_Obtain.ice_bottom_of_fountain = Player.ice_access && Player.iron_boots;
-	Location_Obtain.thaw_king = Player.can_use_bottle && (Player.ice_access || (Player.giants_wallet && (Player.lullaby || Player.hover_boots || Spawn.adult_zd)));
+	Location_Obtain.thaw_king = Player.can_enter_adult_domain && ((Player.can_use_bottle && (Player.ice_access || Player.giants_wallet || Player.can_enter_ganons)) || Player.can_shoot_blue_fire_arrows);
 	Location_Obtain.forest_first = Player.hookshot;
 	Location_Obtain.forest_stalfos = Player.hookshot;
 	Location_Obtain.forest_midCourtyard = Player.hookshot && (Player.time || Player.bow || ((Player.hover_boots || Player.goron_bracelet) && Player.current_forest_keys>=1));
@@ -1551,7 +1558,7 @@ function location_logic(){
 	Location_Obtain.boleroSpot = Player.can_enter_fire_temple;
 	Location_Obtain.minuetSpot = true;
 	Location_Obtain.requiemSpot = Player.can_enter_colossus;
-	Location_Obtain.serenadeSpot = Player.ice_access && Player.can_use_bottle;
+	Location_Obtain.serenadeSpot = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
 	Location_Obtain.preludeSpot = Player.forest;
 	Location_Obtain.nocturneSpot = Player.forest && Player.fire && Player.water;
 	Location_Obtain.oot = Player.emerald && Player.ruby && Player.sapphire;
@@ -1638,8 +1645,8 @@ function location_logic(){
     Location_Obtain.h_castle_1 = true;
     Location_Obtain.h_castle_2 = true;
     Location_Obtain.h_castle_sos = Player.storms && (Player.bomb_bag || Player.has_chus);
-    Location_Obtain.h_fountain_fairy = Player.ice_access;
-    Location_Obtain.h_fountain = Player.ice_access;
+    Location_Obtain.h_fountain_fairy = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
+    Location_Obtain.h_fountain = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
     Location_Obtain.h_lw_bridge = true;
     Location_Obtain.h_lw_generic = Player.can_blast_or_smash;
     Location_Obtain.h_saria = true;
@@ -1771,12 +1778,12 @@ function location_logic(){
 	Location_Could_Access.jabu_barinade = CouldHave.can_enter_jabu && CouldHave.boomerang;
 	Location_Could_Access.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Player.has_chus || (CouldHave.hammer && CouldHave.silver_gauntlets)) && CouldHave.lullaby;
 	Location_Could_Access.ice_glacier_hp = CouldHave.ice_access;
-	Location_Could_Access.ice_map = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Access.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Access.ice_compass = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Access.ice_irons = CouldHave.ice_access && CouldHave.can_use_bottle;
+	Location_Could_Access.ice_map = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Access.ice_hp = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Access.ice_compass = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Access.ice_irons = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Access.ice_bottom_of_fountain = CouldHave.ice_access && CouldHave.iron_boots;
-	Location_Could_Access.thaw_king = (CouldHave.ice_access && CouldHave.can_use_bottle) || (CouldHave.can_use_bottle && CouldHave.giants_wallet && (CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd));
+	Location_Could_Access.thaw_king = CouldHave.can_enter_adult_domain && ((CouldHave.can_use_bottle && (CouldHave.ice_access || CouldHave.giants_wallet || CouldHave.can_enter_ganons)) || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Access.forest_first = CouldHave.hookshot;
 	Location_Could_Access.forest_stalfos = CouldHave.hookshot;
 	Location_Could_Access.forest_midCourtyard = CouldHave.hookshot && (CouldHave.time || CouldHave.bow || ((CouldHave.hover_boots || CouldHave.goron_bracelet) && CouldHave.current_forest_keys>=1));
@@ -1915,7 +1922,7 @@ function location_logic(){
 	Location_Could_Access.boleroSpot = CouldHave.can_enter_fire_temple;
 	Location_Could_Access.minuetSpot = true;
 	Location_Could_Access.requiemSpot = CouldHave.can_enter_colossus;
-	Location_Could_Access.serenadeSpot = CouldHave.ice_access && CouldHave.can_use_bottle;
+	Location_Could_Access.serenadeSpot = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Access.preludeSpot = CouldHave.forest || Player.forest || Location_Access.forest_medallion_location;
 	Location_Could_Access.nocturneSpot = (CouldHave.forest || Player.forest || Location_Access.forest_medallion_location) && (CouldHave.fire || Player.fire || Location_Access.fire_medallion_location) && (CouldHave.water || Player.water || Location_Access.water_medallion_location);
 	Location_Could_Access.oot = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
@@ -2094,12 +2101,12 @@ function location_logic(){
 	Location_Access.jabu_barinade = Player.can_enter_jabu && Player.boomerang;
 	Location_Access.fountain_fairy = Player.ice_access && (Player.bomb_bag|| Player.has_chus || (Player.hammer && Player.silver_gauntlets)) && Player.lullaby;
 	Location_Access.ice_glacier_hp = Player.ice_access;
-	Location_Access.ice_map = Player.ice_access && Player.can_use_bottle;
-	Location_Access.ice_hp = Player.ice_access && Player.can_use_bottle;
-	Location_Access.ice_compass = Player.ice_access && Player.can_use_bottle;
-	Location_Access.ice_irons = Player.ice_access && Player.can_use_bottle;
+	Location_Access.ice_map = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Access.ice_hp = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Access.ice_compass = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
+	Location_Access.ice_irons = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
 	Location_Access.ice_bottom_of_fountain = Player.ice_access;
-	Location_Access.thaw_king = (Player.ice_access && Player.can_use_bottle) || (Player.can_use_bottle && Player.giants_wallet && (Player.lullaby || Player.hover_boots || Spawn.adult_zd));
+	Location_Access.thaw_king = Player.can_enter_adult_domain && ((Player.can_use_bottle && (Player.ice_access || Player.giants_wallet || Player.can_enter_ganons)) || Player.can_shoot_blue_fire_arrows);
 	Location_Access.forest_first = Player.hookshot;
 	Location_Access.forest_stalfos = Player.hookshot;
 	Location_Access.forest_midCourtyard = Player.hookshot && (Player.time || Player.bow || ((Player.hover_boots || Player.goron_bracelet) && Player.current_forest_keys>=1));
@@ -2238,7 +2245,7 @@ function location_logic(){
 	Location_Access.boleroSpot = Player.can_enter_fire_temple;
 	Location_Access.minuetSpot = true;
 	Location_Access.requiemSpot = Player.can_enter_colossus;
-	Location_Access.serenadeSpot = Player.ice_access && Player.can_use_bottle;
+	Location_Access.serenadeSpot = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows);
 	Location_Access.preludeSpot = Player.forest;
 	Location_Access.nocturneSpot = Player.forest && Player.fire && Player.water;
 	Location_Access.oot = Player.emerald && Player.ruby && Player.sapphire;
@@ -2417,12 +2424,12 @@ function location_logic(){
 	Location_Could_Peek.jabu_barinade = CouldHave.can_enter_jabu && CouldHave.boomerang;
 	Location_Could_Peek.fountain_fairy = CouldHave.ice_access && (CouldHave.bomb_bag|| Player.has_chus || (CouldHave.hammer && CouldHave.silver_gauntlets)) && CouldHave.lullaby;
 	Location_Could_Peek.ice_glacier_hp = CouldHave.ice_access;
-	Location_Could_Peek.ice_map = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Peek.ice_hp = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Peek.ice_compass = CouldHave.ice_access && CouldHave.can_use_bottle;
-	Location_Could_Peek.ice_irons = CouldHave.ice_access && CouldHave.can_use_bottle;
+	Location_Could_Peek.ice_map = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Peek.ice_hp = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Peek.ice_compass = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
+	Location_Could_Peek.ice_irons = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Peek.ice_bottom_of_fountain = CouldHave.ice_access;
-	Location_Could_Peek.thaw_king = (CouldHave.ice_access && CouldHave.can_use_bottle) || (CouldHave.can_use_bottle && CouldHave.giants_wallet && (CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd));
+	Location_Could_Peek.thaw_king = CouldHave.can_enter_adult_domain && ((CouldHave.can_use_bottle && (CouldHave.ice_access || CouldHave.giants_wallet || CouldHave.can_enter_ganons)) || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Peek.forest_first = CouldHave.hookshot;
 	Location_Could_Peek.forest_stalfos = CouldHave.hookshot;
 	Location_Could_Peek.forest_midCourtyard = CouldHave.hookshot && (CouldHave.time || CouldHave.bow || ((CouldHave.hover_boots || CouldHave.goron_bracelet) && CouldHave.current_forest_keys>=1));
@@ -2561,7 +2568,7 @@ function location_logic(){
 	Location_Could_Peek.boleroSpot = CouldHave.can_enter_fire_temple;
 	Location_Could_Peek.minuetSpot = true;
 	Location_Could_Peek.requiemSpot = CouldHave.can_enter_colossus;
-	Location_Could_Peek.serenadeSpot = CouldHave.ice_access && CouldHave.can_use_bottle;
+	Location_Could_Peek.serenadeSpot = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows);
 	Location_Could_Peek.preludeSpot = CouldHave.forest || Player.forest || Location_Access.forest_medallion_location;
 	Location_Could_Peek.nocturneSpot = (CouldHave.forest || Player.forest || Location_Access.forest_medallion_location) && (CouldHave.fire || Player.fire || Location_Access.fire_medallion_location) && (CouldHave.water || Player.water || Location_Access.water_medallion_location);
 	Location_Could_Peek.oot = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
