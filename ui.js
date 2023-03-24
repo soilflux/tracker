@@ -1038,7 +1038,7 @@ function update_logic_info() {
 		
 		if(key.startsWith("h_")) {
             document.getElementById(str).className = "gossip_text";
-            if (Location_Obtain[key] && Check[key] != "junk") {
+            if (Location_Access[key] && Check[key] != "junk") {
                 document.getElementById(str).style.display = "inline-block";
                 document.getElementById(str2).style.display = "inline-block";
                 document.getElementById(key).style.display = "inline-block";
@@ -1062,7 +1062,7 @@ function update_logic_info() {
 			document.getElementById(str).style.backgroundColor = "";
 		
 		if(Location_Logic[key] == true) {
-			if (nerfed && Location_Access[key] == true && !Location_Obtain[key] == true) {
+			if (nerfed && Location_Access[key] == true && !Location_Could_Access[key] == true) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.opacity = .5;
 				document.getElementById(str).style.fontWeight = "normal";
@@ -1150,7 +1150,7 @@ function update_logic_info() {
 				document.getElementById(str).style.color ="yellow";
 			}
 			else {
-				if (Location_Access[key] == true && !Location_Obtain[key] == true) {
+				if (Location_Access[key] == true && !Location_Could_Access[key] == true) {
 					document.getElementById(str).className= "access_check_text";
 					document.getElementById(str).style.opacity = .5;
 					document.getElementById(str).style.fontWeight = "normal";

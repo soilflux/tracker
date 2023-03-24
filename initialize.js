@@ -15,7 +15,6 @@ var Locked_Logic={};
 var Locked_Logic2={};
 var PutIn_Logic={};
 var Location_Access={};
-var Location_Obtain={};
 var Location_Could_Access={};
 var Location_Could_Peek={};
 var Logic={};
