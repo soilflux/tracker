@@ -137,7 +137,7 @@ function dark_soli() {
 	}
 	document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 	
-	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function dark_normie() {
@@ -383,7 +383,7 @@ function dark_normie() {
 	
 	
 	
-	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.golden_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet2_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function handleThemes() {
@@ -402,15 +402,15 @@ function handleThemes() {
 	
 	if(colorTheme == "light") {
 		document.getElementById('row').style.backgroundColor = '#576166';
-		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
 		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'black';});
-		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.alt_hint_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.layout_input').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
-		document.querySelectorAll('.simLog').forEach(e => {e.style.backgroundColor = '#cccccc'; e.style.color = 'black';});
+		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.alt_hint_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.layout_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.mark_spawn').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
+		document.querySelectorAll('.simLog').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
 		document.querySelectorAll('.ool_check_text').forEach(e => {e.style.color = 'black';});
 		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'black';});
 	}
