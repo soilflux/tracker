@@ -787,7 +787,7 @@ function logic_shortcuts() {
 	if (document.getElementById("closedDeku").value != "CLOSED") {Logic.deku_access = true;} else {Logic.deku_access = Logic.kokiri_sword;}
 
 	Player.child_can_enter_river = Player.bomb_bag || Player.has_chus || Player.silver_scale || Spawn.child_zd || Spawn.child_zr;
-    Player.child_can_enter_domain = Player.silver_scale || Spawn.child_zd || Spawn.child_zr || Player.bomb_bag || Player.has_chus;
+	Player.child_can_enter_domain = Player.silver_scale || Spawn.child_zd || Spawn.child_zr || Player.bomb_bag || Player.has_chus;
 	Player.can_enter_jabu = Player.rutos_letter && (Player.bomb_bag || Player.has_chus || ((Player.silver_scale || Spawn.child_zd || Spawn.child_zr) && (Player.slingshot || Player.boomerang)));
 	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf;
 	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
@@ -1627,47 +1627,47 @@ function location_logic(){
 	Location_Access.shop_domain_BR = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Access.shop_domain_BL = (Player.bomb_bag && Player.lullaby) || Player.silver_scale || (Player.lullaby && ((Player.can_enter_ganons && Player.can_use_bottle) || Player.can_enter_jabu || (Player.giants_wallet && Player.can_use_bottle)));
 	Location_Access.h_deku_left = true;
-    Location_Access.h_deku_right = true;
-    Location_Access.h_near_lw = true;
-    Location_Access.h_kokiri_storms = Player.storms;
-    Location_Access.h_hyrule_remoteGrotto = Player.can_blast_or_smash;
-    Location_Access.h_hyrule_openGrotto = true;
-    Location_Access.h_hyrule_marketGrotto = Player.can_blast_or_smash;
-    Location_Access.h_hyrule_web = (Player.hammer && Player.can_use_fire) || ((Player.bomb_bag || Player.has_chus) && Player.can_use_dins)
-    Location_Access.h_valley = true;
-    Location_Access.h_lab = true;
-    Location_Access.h_back_right_lake = true;
-    Location_Access.h_back_left_lake = true;
-    Location_Access.h_tot_1 = true;
-    Location_Access.h_tot_2 = true;
-    Location_Access.h_tot_3 = true;
-    Location_Access.h_tot_4 = true;
-    Location_Access.h_castle_1 = true;
-    Location_Access.h_castle_2 = true;
-    Location_Access.h_castle_sos = Player.storms && (Player.bomb_bag || Player.has_chus);
-    Location_Access.h_fountain_fairy = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
-    Location_Access.h_fountain = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
-    Location_Access.h_lw_bridge = true;
-    Location_Access.h_lw_generic = Player.can_blast_or_smash;
-    Location_Access.h_saria = true;
-    Location_Access.h_sfm_1 = true;
-    Location_Access.h_sfm_2 = true;
-    Location_Access.h_goron_maze = Player.can_blast_or_smash;
-    Location_Access.h_medigoron = Player.can_blast_or_smash;
-    Location_Access.h_dodongos = Player.can_enter_dodongos;
-    Location_Access.h_trail_storms = Player.storms;
-    Location_Access.h_biggoron = Player.crater_top;
-    Location_Access.h_crater_grotto = Player.can_blast_or_smash;
-    Location_Access.h_crater_wall = Player.bomb_bag || Player.has_chus;
-    Location_Access.h_kakariko_grotto = true;
-    Location_Access.h_nocturne = Player.nocturne;
-    Location_Access.h_river_grotto = true;
-    Location_Access.h_river_pillar = true;
-    Location_Access.h_river_domain = true;
-    Location_Access.h_domain = Player.lullaby || Player.hover_boots || Player.child_can_enter_domain;
-    Location_Access.h_crater_grotto = Player.can_blast_or_smash;
-    Location_Access.h_colossus = Player.requiem || Player.eponas || Player.longshot;
-    
+	Location_Access.h_deku_right = true;
+	Location_Access.h_near_lw = true;
+	Location_Access.h_kokiri_storms = Player.storms;
+	Location_Access.h_hyrule_remoteGrotto = Player.can_blast_or_smash;
+	Location_Access.h_hyrule_openGrotto = true;
+	Location_Access.h_hyrule_marketGrotto = Player.can_blast_or_smash;
+	Location_Access.h_hyrule_web = (Player.hammer && Player.can_use_fire) || ((Player.bomb_bag || Player.has_chus) && Player.can_use_dins)
+	Location_Access.h_valley = true;
+	Location_Access.h_lab = true;
+	Location_Access.h_back_right_lake = true;
+	Location_Access.h_back_left_lake = true;
+	Location_Access.h_tot_1 = true;
+	Location_Access.h_tot_2 = true;
+	Location_Access.h_tot_3 = true;
+	Location_Access.h_tot_4 = true;
+	Location_Access.h_castle_1 = true;
+	Location_Access.h_castle_2 = true;
+	Location_Access.h_castle_sos = Player.storms && (Player.bomb_bag || Player.has_chus);
+	Location_Access.h_fountain_fairy = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
+	Location_Access.h_fountain = Player.ice_access || (Player.rutos_letter && Player.child_can_enter_domain);
+	Location_Access.h_lw_bridge = true;
+	Location_Access.h_lw_generic = Player.can_blast_or_smash;
+	Location_Access.h_saria = true;
+	Location_Access.h_sfm_1 = true;
+	Location_Access.h_sfm_2 = true;
+	Location_Access.h_goron_maze = Player.can_blast_or_smash;
+	Location_Access.h_medigoron = Player.can_blast_or_smash;
+	Location_Access.h_dodongos = Player.can_enter_dodongos;
+	Location_Access.h_trail_storms = Player.storms;
+	Location_Access.h_biggoron = Player.crater_top;
+	Location_Access.h_crater_grotto = Player.can_blast_or_smash;
+	Location_Access.h_crater_wall = Player.bomb_bag || Player.has_chus;
+	Location_Access.h_kakariko_grotto = true;
+	Location_Access.h_nocturne = Player.nocturne;
+	Location_Access.h_river_grotto = true;
+	Location_Access.h_river_pillar = true;
+	Location_Access.h_river_domain = true;
+	Location_Access.h_domain = Player.lullaby || Player.hover_boots || Player.child_can_enter_domain;
+	Location_Access.h_crater_grotto = Player.can_blast_or_smash;
+	Location_Access.h_colossus = Player.requiem || Player.eponas || Player.longshot;
+	
 	Location_Could_Access.kokiri_sword = true;
 	Location_Could_Access.mido_1 = true;
 	Location_Could_Access.mido_2 = true;
@@ -1990,7 +1990,7 @@ function location_logic(){
 	Location_Could_Access.shop_domain_TR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
 	Location_Could_Access.shop_domain_BR = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
 	Location_Could_Access.shop_domain_BL = (CouldHave.bomb_bag && CouldHave.lullaby) || CouldHave.silver_scale || (CouldHave.lullaby && ((CouldHave.can_enter_ganons && CouldHave.can_use_bottle) || CouldHave.can_enter_jabu || (CouldHave.giants_wallet && CouldHave.can_use_bottle)));
-    
+	
 	Location_Could_Peek.kokiri_sword = true;
 	Location_Could_Peek.mido_1 = true;
 	Location_Could_Peek.mido_2 = true;
@@ -2330,7 +2330,7 @@ function location_logic(){
 		Location_Access.water_block = Player.can_enter_water;
 		Location_Access.water_river = Player.current_water_keys >= 2 && Player.time;
 		Location_Access.spirit_adultLeft = Player.can_enter_adult_spirit && Player.lullaby && (Player.bow || Player.hookshot || Player.bomb_bag || Player.has_chus);
-        Location_Access.spirit_rightHand = Player.can_enter_colossus;
+		Location_Access.spirit_rightHand = Player.can_enter_colossus;
 		Location_Access.ganons_shadowTrial1 = Player.can_enter_ganons;
 		Location_Access.gtg_aboveEyes = Player.can_save_carpenters;//&& Player.can_see;
 		Location_Access.gtg_freestanding = Player.can_save_carpenters && (Player.current_gtg_keys >= 2 || (Player.bomb_bag || Player.has_chus) || (Player.can_climb_gtg_hole /*&& Player.can_see*/));
@@ -2362,7 +2362,7 @@ function location_logic(){
 		Location_Could_Peek.water_block = CouldHave.can_enter_water;
 		Location_Could_Peek.water_river = CouldHave.current_water_keys >= 2 && CouldHave.time;
 		Location_Could_Peek.spirit_adultLeft = CouldHave.can_enter_adult_spirit && CouldHave.lullaby && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag || Player.has_chus);
-        Location_Could_Peek.spirit_rightHand = CouldHave.can_enter_colossus;
+		Location_Could_Peek.spirit_rightHand = CouldHave.can_enter_colossus;
 		Location_Could_Peek.ganons_shadowTrial1 = CouldHave.can_enter_ganons;
 		Location_Could_Peek.gtg_aboveEyes = CouldHave.can_save_carpenters;//&& CouldHave.can_see;
 		Location_Could_Peek.gtg_freestanding = CouldHave.can_save_carpenters && (CouldHave.current_gtg_keys >= 2 || (CouldHave.bomb_bag || Player.has_chus) || (CouldHave.can_climb_gtg_hole /*&& CouldHave.can_see*/));
