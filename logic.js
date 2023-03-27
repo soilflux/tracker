@@ -1178,6 +1178,7 @@ function location_logic(){
 	Location_Logic.scrub_crater_1 = Logic.hammer;
 	Location_Logic.scrub_crater_2 = Logic.hammer;
 	Location_Logic.scrub_crater_3 = Logic.hammer;
+	Location_Logic.scrub_crater_child = Logic.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool;
 	Location_Logic.scrub_goron_1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron_2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
 	Location_Logic.scrub_goron_3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
@@ -1602,6 +1603,7 @@ function location_logic(){
 	Location_Access.scrub_crater_1 = Player.hammer;
 	Location_Access.scrub_crater_2 = Player.hammer;
 	Location_Access.scrub_crater_3 = Player.hammer;
+	Location_Access.scrub_crater_child = Player.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool;
 	Location_Access.scrub_goron_1 = Player.time || (Player.can_wear_goron_tunic && Player.hookshot);
 	Location_Access.scrub_goron_2 = Player.time || (Player.can_wear_goron_tunic && Player.hookshot);
 	Location_Access.scrub_goron_3 = Player.time || (Player.can_wear_goron_tunic && Player.hookshot);
@@ -1966,6 +1968,7 @@ function location_logic(){
 	Location_Could_Access.scrub_crater_1 = CouldHave.hammer;
 	Location_Could_Access.scrub_crater_2 = CouldHave.hammer;
 	Location_Could_Access.scrub_crater_3 = CouldHave.hammer;
+	Location_Could_Access.scrub_crater_child = CouldHave.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool;
 	Location_Could_Access.scrub_goron_1 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);
 	Location_Could_Access.scrub_goron_2 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);
 	Location_Could_Access.scrub_goron_3 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);
@@ -2289,6 +2292,7 @@ function location_logic(){
 	Location_Could_Peek.scrub_crater_1 = CouldHave.hammer;
 	Location_Could_Peek.scrub_crater_2 = CouldHave.hammer;
 	Location_Could_Peek.scrub_crater_3 = CouldHave.hammer;
+	Location_Could_Peek.scrub_crater_child = CouldHave.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool;
 	Location_Could_Peek.scrub_goron_1 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);
 	Location_Could_Peek.scrub_goron_2 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);
 	Location_Could_Peek.scrub_goron_3 = CouldHave.time || (CouldHave.can_wear_goron_tunic && CouldHave.hookshot);

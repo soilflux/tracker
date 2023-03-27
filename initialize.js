@@ -399,7 +399,7 @@ var Locations = [
 	"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3", "h_goron_maze", "h_medigoron",
 	"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
 	"trail_dodongos_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil", "h_trail_storms", "h_biggoron",
-	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "gs_crater_soil", "gs_crater_crate", "h_crater_grotto", "h_crater_wall",
+	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "gs_crater_soil", "gs_crater_crate", "scrub_crater_child", "h_crater_grotto", "h_crater_wall",
 	"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50", "h_kakariko_grotto",
 	"shield_grave", "graveyard_box", "race_1", "race_2", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave","h_nocturne",
 	"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2", "h_river_grotto", "h_river_pillar", "h_river_domain",
@@ -438,7 +438,7 @@ var Names = [
 	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "Maze", "Maze!", "Center", "Lil' Rollin'", "Left", "Center", "Right", "Maze", "Medigor",
 	/*Dodongos*/"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Compass", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King", "Dodongos",
 	/*Trail*/"Top", "Bombable", "Wall", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil", "SoS", "Biggoron",
-	/*Crater*/"Bean", "Left", "Center", "Right", "Fairy", "Nook", "Grotto", "Soil", "Crate", "Grotto", "Wall",
+	/*Crater*/"Bean", "Left", "Center", "Right", "Fairy", "Nook", "Grotto", "Soil", "Crate", "C Scrub", "Grotto", "Wall",
 	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
 	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "Soil", "Wall", "Sun's", "Composer", "Nocturne",
 	/*River*/"Tree", "Left", "Right", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
@@ -459,12 +459,12 @@ var Names = [
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater"];
 
-var AreaIndexes = [0,17,26,38,48,65,88,94,96,97,105,112,124,139,146,164,181,192,203,231,241,255,264,272,274,279,288,307,327,343,368,391,411,433,450];
-var SongIndexes = [1000,451,461,1000,1000,1000,450,1000,459,1000,458,1000,1000,452,1000,1000,10000,455,453,454,1000,1000,457,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
-var SongIndexes2 = [1000,451,461,1000,1000,1000,450,1000,459,1000,458,1000,1000,456,1000,1000,1000,455,460,454,1000,1000,457,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var AreaIndexes = [0,17,26,38,48,65,88,94,96,97,105,112,124,139,146,164,181,192,204,232,242,256,265,273,275,280,289,308,328,344,369,392,412,434,451];
+var SongIndexes = [1000,452,462,1000,1000,1000,451,1000,460,1000,459,1000,1000,453,1000,1000,10000,456,454,455,1000,1000,458,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var SongIndexes2 = [1000,452,462,1000,1000,1000,451,1000,460,1000,459,1000,1000,457,1000,1000,1000,456,461,455,1000,1000,458,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 	
-var lastItem = 449;
-var lastSong = 461;
+var lastItem = 450;
+var lastSong = 462;
 	
 Location.med1 = "unknown";
 Location.med2 = "unknown";
