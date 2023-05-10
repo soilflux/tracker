@@ -1062,7 +1062,7 @@ function update_logic_info() {
 			document.getElementById(str).style.backgroundColor = "";
 		
 		if(Location_Logic[key] == true) {
-			if (nerfed && Location_Access[key] == true && !Location_Could_Access[key] == true) {
+			if (nerfed && Location_Access[key] == true && !Location_Obtain[key] == true) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.opacity = .5;
 				document.getElementById(str).style.fontWeight = "normal";
@@ -1101,7 +1101,7 @@ function update_logic_info() {
 					document.getElementById(str).style.color = inLogicColor;
 				}
 					
-				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
+				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
 					document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 				else
 					document.getElementById(str).style.border = "";
@@ -1191,7 +1191,7 @@ function update_logic_info() {
 						document.getElementById(str).style.color =inLogicColor;
 					}
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
 						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 					else
 						document.getElementById(str).style.border = "";
@@ -1237,7 +1237,7 @@ function update_logic_info() {
 						document.getElementById(str).style.color = "yellow";
 					}
 					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
+					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
 						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 					else
 						document.getElementById(str).style.border = "";
@@ -1274,7 +1274,7 @@ function update_logic_info() {
 				}
 			}
 			
-			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[j].startsWith("h_"))
+			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
 				document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
 			else
 				document.getElementById(str).style.border = "";

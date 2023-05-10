@@ -619,7 +619,7 @@ function markMinorWothItem(x) {
 	var theItem = x.getAttribute("data-item");
 	var theParent = x.getAttribute("data-parent");
 	
-	if(event.which == 1 && ManualWotHItems[theItem] != true) {
+	if(event.which == 1) {
 		if(ManualWotHMinorItems[theItem] == undefined || ManualWotHMinorItems[theItem] == false)
 			ManualWotHMinorItems[theItem] = true;
 		else
