@@ -38,7 +38,7 @@ function process_inputs() {
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
-		else if (isUpperCase(document.getElementById(key).value.charAt(0))
+		else if (isUpperCase(document.getElementById(key).value.charAt(0)) && document.getElementById(key).value.length == 3
 			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
 			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")] && document.getElementById(key).value.toLowerCase() != inputs[0]) {
 			hinted = true;
@@ -85,8 +85,9 @@ function process_inputs() {
                     if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
                     document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
                 }
-				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 4) {Check[document.getElementById(key).id]="bombchus"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
@@ -368,7 +369,7 @@ function junk() {
 		document.getElementById("text_" + str).style.display = "none";
 		document.getElementById("br_" + str).style.display = "none";
 		
-		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
+		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; if(Check[str] == "bombchus"){if(Player.has_chus == false){enableChus();} Check[str] = "junk";} Update(); }
 
 		if (Check[str] != "junk") {midUpdate();}
 		lastCheck.push(str);
