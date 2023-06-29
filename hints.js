@@ -58,7 +58,7 @@ function woth_and_barren_processing() {
 			if (str3.startsWith("sh") || str3.startsWith("bo")) {AreaGoalPathBoss[i] = "Bongo";}
 		}
 		
-		if (i <= 3) {
+		if (i <= 4) {
 			var str2 = document.getElementById("barren_input" + i).value;
 			if (str2 == "kok" || str2 == "kf" || str2 == "koki" || str2 == "kfc") {Area[1] = "barren";}
 			if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
@@ -356,7 +356,7 @@ function woth_and_barren_processing() {
 		if (Area[i] == "barren") {AreaAge[i] += 1;}
 		else {AreaAge[i] = 0;}
 		
-		if (AreaAge[i] == 10) {
+		if (AreaAge[i] == 3) {
 			hinted = true;
 			if (i == 1) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {

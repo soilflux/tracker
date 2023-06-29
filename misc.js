@@ -905,7 +905,7 @@ function Undo() {
 			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
 			Player.checks_remaining -= 1;
 		}
-		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
+		else if (Check[lastCheck[lastCheck.length-1]] != "junk" && Check[lastCheck[lastCheck.length-1]] != "ultra") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
 		}
 	}
