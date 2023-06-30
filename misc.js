@@ -801,9 +801,11 @@ document.onkeydown = function(e) {
 	}
 	if (e.which == 187) {
 		token_click = 0; linso_counter();
+		e.preventDefault();
 	}
 	if (e.which == 189) {
 		token_click = 2; linso_counter();
+		e.preventDefault();
 	}
 	if (e.ctrlKey && e.which == 65) {
 		if(!nerfed)
