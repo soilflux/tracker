@@ -1888,6 +1888,8 @@ function scangamepads() {
   }
 }
 
+if (localStorage.getItem("highlightWoths") == "true") {colorWothAreasControl();}
+
 window.onbeforeunload = popup;
 function popup() {
   return '';

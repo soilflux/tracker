@@ -1081,19 +1081,6 @@ function update_logic_info() {
 				//document.getElementById(str).style.fontStyle = "italic";
 				document.getElementById(str).style.opacity = .5;
 			}
-			var checkInWothArea = -1;
-			if(colorWothAreas) {
-				for (var j = 1; j < 35; j++) {
-					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-						for (var k = 1; k < 6; k++) {
-							if(wothAreas[k] == AreaNames[j]) {
-								checkInWothArea = k;
-								break;
-							}
-						}
-					}
-				}
-			}
 			
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {
 				if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
@@ -1102,11 +1089,6 @@ function update_logic_info() {
 				else {
 					document.getElementById(str).style.color = inLogicColor;
 				}
-					
-				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-					document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-				else
-					document.getElementById(str).style.border = "";
 			}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
@@ -1159,19 +1141,6 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
-					var checkInWothArea = -1;
-					if(colorWothAreas) {
-						for (var j = 1; j < 35; j++) {
-							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-								for (var k = 1; k < 6; k++) {
-									if(wothAreas[k] == AreaNames[j]) {
-										checkInWothArea = k;
-										break;
-									}
-								}
-							}
-						}
-					}
 					if (hamsda) {
 						document.getElementById(str).className= "access_check_text";
 						document.getElementById(str).style.opacity = .5;
@@ -1192,11 +1161,6 @@ function update_logic_info() {
 					else {
 						document.getElementById(str).style.color =inLogicColor;
 					}
-					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-					else
-						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -1215,19 +1179,6 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
-					var checkInWothArea = -1;
-					if(colorWothAreas) {
-						for (var j = 1; j < 35; j++) {
-							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-								for (var k = 1; k < 6; k++) {
-									if(wothAreas[k] == AreaNames[j]) {
-										checkInWothArea = k;
-										break;
-									}
-								}
-							}
-						}
-					}
 					document.getElementById(str).className= "access_check_text";
 					document.getElementById(str).style.fontWeight = "normal";
 					document.getElementById(str).style.opacity = .2;
@@ -1238,11 +1189,6 @@ function update_logic_info() {
 					else {
 						document.getElementById(str).style.color = "yellow";
 					}
-					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-					else
-						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -1261,25 +1207,6 @@ function update_logic_info() {
 			else {
 				document.getElementById(str).style.color ="black";
 			}
-			
-			var checkInWothArea = -1;
-			if(colorWothAreas) {
-				for (var j = 1; j < 35; j++) {
-					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-						for (var k = 1; k < 6; k++) {
-							if(wothAreas[k] == AreaNames[j]) {
-								checkInWothArea = k;
-								break;
-							}
-						}
-					}
-				}
-			}
-			
-			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-				document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-			else
-				document.getElementById(str).style.border = "";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
 	}
@@ -1524,4 +1451,57 @@ function update_probabilities() {
 	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+(Player.checks_remaining/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Chu Packs ~ 1 in "+(1/(explosivesLeft/(Player.checks_remaining-bigLeft))).toFixed(2)+" Smalls"
+}
+
+function updateWothBorders() {
+	let AreaSongSpots = [[],[],["text_eponasSpot"],["text_oot"],[],[],[],[],[],["text_preludeSpot"],[],["text_serenadeSpot"],[],[],["text_sariasSpot", "text_minuetSpot"],[],[],[], ["text_boleroSpot"],["text_stormsSpot", "text_nocturneSpot"],["text_sunsSpot"],[],[],["text_requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongSpotsWithoutText = [[],[],["eponasSpot"],["oot"],[],[],[],[],[],["preludeSpot"],[],["serenadeSpot"],[],[],["sariasSpot", "minuetSpot"],[],[],[], ["boleroSpot"],["stormsSpot", "nocturneSpot"],["sunsSpot"],[],[],["requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
+	
+	for (var i = 1; i <= 34; i++) {	
+		if((Area[i] == "woth" || Area[i] == "woth1" || Area[i] == "2woth" || Area[i] == "3woth" || Area[i] == "4woth" || Area[i] == "5woth") && colorWothAreas) {
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				if ((Hinted[AreaSongSpotsWithoutText[i][j]] == false || Hinted[AreaSongSpotsWithoutText[i][j]] == undefined) && !alwaysHints.includes(AreaSongSpotsWithoutText[i][j])) {
+					document.getElementById(songText).style.border = "solid 2px";
+				}
+				else {
+					document.getElementById(songText).style.border = "";
+				}
+			}
+			
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if(!alwaysHints.includes(Locations[j]) && (Hinted[Locations[j]] == false || Hinted[Locations[j]] == undefined) && !Locations[j].startsWith("h_"))
+					document.getElementById("text_" + Locations[j]).style.border = "solid 1px";
+				else
+					document.getElementById("text_" + Locations[j]).style.border = "";
+			}
+		}	
+		else if(Area[i] == "barren" && colorWothAreas) {
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				document.getElementById(songText).style.border = "solid 2px red";
+			}
+			
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if (!Locations[j].startsWith("h_"))
+					document.getElementById("text_" + Locations[j]).style.border = "solid red 1px";
+				else
+					document.getElementById("text_" + Locations[j]).style.border = "";
+			}
+		}
+		else {
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if(Check[Locations[j]] == "unknown") {
+					document.getElementById("text_" + Locations[j]).style.border = "none";
+				}
+			}
+			
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				
+				document.getElementById(songText).style.border = "none";
+			}
+			
+		}
+	}
 }

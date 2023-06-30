@@ -343,11 +343,11 @@ function timerControlToD() {
 }
 
 function colorWothAreasControl() {
-	if(!colorWothAreas)
+	colorWothAreas = !colorWothAreas;
+	if(colorWothAreas)
 		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
 	else
 		document.getElementById("colorWothAreasControl").innerHTML = "Highlight WotHs"; 
-	colorWothAreas = !colorWothAreas;
 	
 	Update();
 }
@@ -438,6 +438,7 @@ function saveStuff() {
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
     localStorage.setItem("simSeed", document.getElementById("simSeed").value);
+	localStorage.setItem("highlightWoths", colorWothAreas);
 }
 
 function linsoControl() {
