@@ -813,6 +813,9 @@ document.onkeydown = function(e) {
 		else
 			colorWothAreasControl();
 	}
+	if (e.which == 32 && e.target == document.body) {
+		e.preventDefault();
+	}
 	if (e.which >= 112 && e.which <= 123 && e.which != 116 && e.which != 122) {
 		e.preventDefault();
 	}
