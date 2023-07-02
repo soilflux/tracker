@@ -968,7 +968,7 @@ var parent = document.getElementById("normalColumn1");
 var backgrounds = ["url('./normal/areas/kokiri.jpg')","url('./normal/areas/ranch.jpg')","url('./normal/areas/field.jpg')","url('./normal/areas/valley.jpg')","url('./normal/areas/hylia.jpg')","url('./normal/areas/market.jpg')","url('./normal/areas/hyrule_castle.jpg')",
 "url('./normal/areas/ogc.jpg')","url('./normal/areas/tot.jpg')","url('./normal/areas/fountain.jpg')","url('./normal/areas/ice.jpg')","url('./normal/areas/deku.jpg')","url('./normal/areas/lost_woods.jpg')","url('./normal/areas/sfm.jpg')",
 "url('./normal/areas/goron.jpg')","url('./normal/areas/dodongos.jpg')","url('./normal/areas/dmt.jpg')","url('./normal/areas/dmc.jpg')","url('./normal/areas/kakariko.jpg')","url('./normal/areas/graveyard.jpg')",
-"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')"
+"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')", "url('./normal/areas/forest.jpg')", "url('./normal/areas/fire.jpg')", "url('./normal/areas/water.jpg')", "url('./normal/areas/spirit.jpg')", "url('./normal/areas/shadow.jpg')", "url('./normal/areas/ganons.jpg')", "url('./normal/areas/gtg.jpg')", "url('./normal/areas/well.jpg')"
 ]
 
 var background = "url('./normal/areas/kokiri.jpg')";
@@ -1888,13 +1888,15 @@ function scangamepads() {
   }
 }
 
+if (localStorage.getItem("highlightWoths") == "true") {colorWothAreasControl();}
+
 window.onbeforeunload = popup;
 function popup() {
   return '';
 }
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
-if (document.getElementById("presets").value == "SGL_2022")
+if (document.getElementById("presets").value == "SGL_2023")
 	document.getElementById("hintInput").innerHTML = "30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "S6")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";

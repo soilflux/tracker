@@ -343,11 +343,11 @@ function timerControlToD() {
 }
 
 function colorWothAreasControl() {
-	if(!colorWothAreas)
+	colorWothAreas = !colorWothAreas;
+	if(colorWothAreas)
 		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
 	else
 		document.getElementById("colorWothAreasControl").innerHTML = "Highlight WotHs"; 
-	colorWothAreas = !colorWothAreas;
 	
 	Update();
 }
@@ -438,6 +438,7 @@ function saveStuff() {
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
     localStorage.setItem("simSeed", document.getElementById("simSeed").value);
+	localStorage.setItem("highlightWoths", colorWothAreas);
 }
 
 function linsoControl() {
@@ -800,15 +801,20 @@ document.onkeydown = function(e) {
 	}
 	if (e.which == 187) {
 		token_click = 0; linso_counter();
+		e.preventDefault();
 	}
 	if (e.which == 189) {
 		token_click = 2; linso_counter();
+		e.preventDefault();
 	}
 	if (e.ctrlKey && e.which == 65) {
 		if(!nerfed)
 			circusControl();
 		else
 			colorWothAreasControl();
+	}
+	if (e.which == 32 && e.target == document.body) {
+		e.preventDefault();
 	}
 	if (e.which >= 112 && e.which <= 123 && e.which != 116 && e.which != 122) {
 		e.preventDefault();
@@ -905,7 +911,7 @@ function Undo() {
 			document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML = document.getElementById("text_" + lastCheck[lastCheck.length-1]).innerHTML.split(': ')[0];
 			Player.checks_remaining -= 1;
 		}
-		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
+		else if (Check[lastCheck[lastCheck.length-1]] != "junk" && Check[lastCheck[lastCheck.length-1]] != "ultra") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
 		}
 	}

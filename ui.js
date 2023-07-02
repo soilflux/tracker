@@ -38,7 +38,7 @@ function process_inputs() {
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
-		else if (isUpperCase(document.getElementById(key).value.charAt(0))
+		else if (isUpperCase(document.getElementById(key).value.charAt(0)) && document.getElementById(key).value.length == 3
 			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
 			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")] && document.getElementById(key).value.toLowerCase() != inputs[0]) {
 			hinted = true;
@@ -85,8 +85,9 @@ function process_inputs() {
                     if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
                     document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
                 }
-				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 4) {Check[document.getElementById(key).id]="bombchus"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
@@ -368,7 +369,7 @@ function junk() {
 		document.getElementById("text_" + str).style.display = "none";
 		document.getElementById("br_" + str).style.display = "none";
 		
-		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; Update(); }
+		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; if(Check[str] == "bombchus"){if(Player.has_chus == false){enableChus();} Check[str] = "junk";} Update(); }
 
 		if (Check[str] != "junk") {midUpdate();}
 		lastCheck.push(str);
@@ -594,6 +595,7 @@ function junkUltra() {
 			document.getElementById(Locations[i]).style.display = "none";
 			document.getElementById("text_" + Locations[i]).style.display = "none";
 			document.getElementById("br_" + Locations[i]).style.display = "none";
+			lastCheck.push(Locations[i]);
 		}
 		midUpdate();
 		slowUpdate();
@@ -947,14 +949,14 @@ function updateInputs() {
 	}
 }
 function update_logic_info() {
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "9_REWARDS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";}
-	if (document.getElementById("presets").value == "SGL_2022") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block";alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "trade_quest", "frogs_2", "theater"];}
-	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none";}
-	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline";}
-	if (document.getElementById("presets").value == "LEAGUE_S4") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"];Player.lens = true;Player.farores_wind = true;document.getElementById("ice_arrows_location_div").style.display = "inline";}
-	if (document.getElementById("presets").value == "S6") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "none"; document.getElementById("barren_input1").style.display = "none"; document.getElementById("barren_input2").style.display = "none"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; document.getElementById("ice_arrows_location_div").style.display = "none";}
-	if (document.getElementById("presets").value == "WEEKLY") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; document.getElementById("ice_arrows_location_div").style.display = "none";}
+	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "9_REWARDS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none";}
+	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none";}
+	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none";}
+	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none";}
+	if (document.getElementById("presets").value == "LEAGUE_S4") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"];Player.lens = true;Player.farores_wind = true;document.getElementById("ice_arrows_location_div").style.display = "inline";}
+	if (document.getElementById("presets").value == "S6") {Rules.kzSkip = false;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "none"; document.getElementById("barren_input1").style.display = "none"; document.getElementById("barren_input2").style.display = "none"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; document.getElementById("ice_arrows_location_div").style.display = "none";}
+	if (document.getElementById("presets").value == "WEEKLY") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "none"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; document.getElementById("ice_arrows_location_div").style.display = "none";}
+	if (document.getElementById("presets").value == "SGL_2023") {Rules.kzSkip = true;  document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater"]; document.getElementById("ice_arrows_location_div").style.display = "none";}
 	
 	
 	if(document.getElementById("hints_type").value == "PATH") { document.getElementById("woth_text").innerHTML = "PATH"; document.getElementById("path_boss1").style.display = "inline"; document.getElementById("path_boss2").style.display = "inline"; document.getElementById("path_boss3").style.display = "inline"; document.getElementById("path_boss4").style.display = "inline"; document.getElementById("path_boss5").style.display = "inline"; document.getElementById("path_arrow1").style.display = "inline"; document.getElementById("path_arrow2").style.display = "inline"; document.getElementById("path_arrow3").style.display = "inline"; document.getElementById("path_arrow4").style.display = "inline"; document.getElementById("path_arrow5").style.display = "inline";}
@@ -1079,19 +1081,6 @@ function update_logic_info() {
 				//document.getElementById(str).style.fontStyle = "italic";
 				document.getElementById(str).style.opacity = .5;
 			}
-			var checkInWothArea = -1;
-			if(colorWothAreas) {
-				for (var j = 1; j < 35; j++) {
-					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-						for (var k = 1; k < 6; k++) {
-							if(wothAreas[k] == AreaNames[j]) {
-								checkInWothArea = k;
-								break;
-							}
-						}
-					}
-				}
-			}
 			
 			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key)) || !circus) {
 				if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
@@ -1100,11 +1089,6 @@ function update_logic_info() {
 				else {
 					document.getElementById(str).style.color = inLogicColor;
 				}
-					
-				if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-					document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-				else
-					document.getElementById(str).style.border = "";
 			}
 			else {
 				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key)];
@@ -1157,19 +1141,6 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
-					var checkInWothArea = -1;
-					if(colorWothAreas) {
-						for (var j = 1; j < 35; j++) {
-							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-								for (var k = 1; k < 6; k++) {
-									if(wothAreas[k] == AreaNames[j]) {
-										checkInWothArea = k;
-										break;
-									}
-								}
-							}
-						}
-					}
 					if (hamsda) {
 						document.getElementById(str).className= "access_check_text";
 						document.getElementById(str).style.opacity = .5;
@@ -1190,11 +1161,6 @@ function update_logic_info() {
 					else {
 						document.getElementById(str).style.color =inLogicColor;
 					}
-					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-					else
-						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -1213,19 +1179,6 @@ function update_logic_info() {
 					document.getElementById(str).style.color ="yellow";
 				}
 				else {
-					var checkInWothArea = -1;
-					if(colorWothAreas) {
-						for (var j = 1; j < 35; j++) {
-							if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-								for (var k = 1; k < 6; k++) {
-									if(wothAreas[k] == AreaNames[j]) {
-										checkInWothArea = k;
-										break;
-									}
-								}
-							}
-						}
-					}
 					document.getElementById(str).className= "access_check_text";
 					document.getElementById(str).style.fontWeight = "normal";
 					document.getElementById(str).style.opacity = .2;
@@ -1236,11 +1189,6 @@ function update_logic_info() {
 					else {
 						document.getElementById(str).style.color = "yellow";
 					}
-					
-					if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-						document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-					else
-						document.getElementById(str).style.border = "";
 				}
 			}
 		}
@@ -1259,25 +1207,6 @@ function update_logic_info() {
 			else {
 				document.getElementById(str).style.color ="black";
 			}
-			
-			var checkInWothArea = -1;
-			if(colorWothAreas) {
-				for (var j = 1; j < 35; j++) {
-					if(Check[Locations[i]] == "unknown" && ((i >= AreaIndexes[j-1] && i < AreaIndexes[j]) || i == SongIndexes[j-1] || i == SongIndexes2[j-1])) {
-						for (var k = 1; k < 6; k++) {
-							if(wothAreas[k] == AreaNames[j]) {
-								checkInWothArea = k;
-								break;
-							}
-						}
-					}
-				}
-			}
-			
-			if(nerfed && colorWothAreas && checkInWothArea != -1 && !alwaysHints.includes(Locations[i]) && !Locations[i].startsWith("h_"))
-				document.getElementById(str).style.border = "1px solid "+document.getElementById(str).style.color;
-			else
-				document.getElementById(str).style.border = "";
 		}
 		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
 	}
@@ -1522,4 +1451,57 @@ function update_probabilities() {
 	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+(Player.checks_remaining/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Chu Packs ~ 1 in "+(1/(explosivesLeft/(Player.checks_remaining-bigLeft))).toFixed(2)+" Smalls"
+}
+
+function updateWothBorders() {
+	let AreaSongSpots = [[],[],["text_eponasSpot"],["text_oot"],[],[],[],[],[],["text_preludeSpot"],[],["text_serenadeSpot"],[],[],["text_sariasSpot", "text_minuetSpot"],[],[],[], ["text_boleroSpot"],["text_stormsSpot", "text_nocturneSpot"],["text_sunsSpot"],[],[],["text_requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongSpotsWithoutText = [[],[],["eponasSpot"],["oot"],[],[],[],[],[],["preludeSpot"],[],["serenadeSpot"],[],[],["sariasSpot", "minuetSpot"],[],[],[], ["boleroSpot"],["stormsSpot", "nocturneSpot"],["sunsSpot"],[],[],["requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
+	
+	for (var i = 1; i <= 34; i++) {	
+		if((Area[i] == "woth" || Area[i] == "woth1" || Area[i] == "2woth" || Area[i] == "3woth" || Area[i] == "4woth" || Area[i] == "5woth") && colorWothAreas) {
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				if ((Hinted[AreaSongSpotsWithoutText[i][j]] == false || Hinted[AreaSongSpotsWithoutText[i][j]] == undefined) && !alwaysHints.includes(AreaSongSpotsWithoutText[i][j])) {
+					document.getElementById(songText).style.border = "solid 2px";
+				}
+				else {
+					document.getElementById(songText).style.border = "";
+				}
+			}
+			
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if(!alwaysHints.includes(Locations[j]) && (Hinted[Locations[j]] == false || Hinted[Locations[j]] == undefined) && !Locations[j].startsWith("h_"))
+					document.getElementById("text_" + Locations[j]).style.border = "solid 1px";
+				else
+					document.getElementById("text_" + Locations[j]).style.border = "";
+			}
+		}	
+		else if(Area[i] == "barren" && colorWothAreas) {
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				document.getElementById(songText).style.border = "solid 2px red";
+			}
+			
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if (!Locations[j].startsWith("h_"))
+					document.getElementById("text_" + Locations[j]).style.border = "solid red 1px";
+				else
+					document.getElementById("text_" + Locations[j]).style.border = "";
+			}
+		}
+		else {
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if(Check[Locations[j]] == "unknown") {
+					document.getElementById("text_" + Locations[j]).style.border = "none";
+				}
+			}
+			
+			for(var j = 0; j < AreaSongSpots[i].length; j++) {
+				var songText = AreaSongSpots[i][j];
+				
+				document.getElementById(songText).style.border = "none";
+			}
+			
+		}
+	}
 }
