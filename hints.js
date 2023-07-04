@@ -58,7 +58,7 @@ function woth_and_barren_processing() {
 			if (str3.startsWith("sh") || str3.startsWith("bo")) {AreaGoalPathBoss[i] = "Bongo";}
 		}
 		
-		if (i <= 4) {
+		if (i <= 5) {
 			var str2 = document.getElementById("barren_input" + i).value;
 			if (str2 == "kok" || str2 == "kf" || str2 == "koki" || str2 == "kfc") {Area[1] = "barren";}
 			if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
