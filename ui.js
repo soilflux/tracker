@@ -1,4 +1,4 @@
-function process_inputs() {
+function processInputs() {
 	document.getElementById("mouseInputs_locations").innerHTML = "";
 	for (var i = 0; i < mouseInputs_locations.length; i++) {
 		if (i > 0) {document.getElementById("mouseInputs_locations").innerHTML += ", ";}
@@ -60,10 +60,8 @@ function process_inputs() {
 		}
 		
 		for (var j = 0; j < inputs.length; j++) {
-			var isSong = (songInputs.indexOf(inputs[j]) != -1 && i >= AreaIndexes[34]);
-			var isItem = (itemInputs.indexOf(inputs[j]) != -1 && i < AreaIndexes[34]);
 			
-			if (document.getElementById(key).value.toLowerCase() == inputs[j] && (isSong || isItem)) {
+			if (document.getElementById(key).value.toLowerCase() == inputs[j]) {
 				
 				// don't allow inputting the same item twice if it's not a duplicate item
 				if(!DuplicateItems.includes(Items2[j]) && Known[Items2[j]])
@@ -79,7 +77,7 @@ function process_inputs() {
 				if(Items2[j] == "magic" && Known["magic2"]) continue;
 				if(Items2[j] == "scale" && Known["scale2"]) continue;
 				if(Items2[j] == "wallet" && Known["wallet2"]) continue;
-				if(((inputs[j] == "pre" && isItem) || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
+				if((Items2[j] == "prescription" || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 				
 				if (j == 0) {
                     if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
@@ -88,7 +86,6 @@ function process_inputs() {
 				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
 				if (j == 4) {Check[document.getElementById(key).id]="bombchus"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (i > lastItem && inputNames[j] == "Prescription") {continue;}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
 					else {var duplicate = k + "";}
@@ -120,6 +117,7 @@ function process_inputs() {
 							Check[document.getElementById(key).id] = Items2[j];
 							Location[Items2[j]] = document.getElementById(key).id; 
 							Known[Items2[j]] = true; 
+                            if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (j < Items2.indexOf("lullaby")) {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];}
 							if (!hinted && !peeked) {Player[Items2[j]] = true;} 
 							if (hinted) {Hinted[key] = true;} 
 							if (hinted || peeked) {temptext2 += Names[i] + ": " + ItemNames2[j] + "<br />";} 
@@ -135,7 +133,7 @@ function process_inputs() {
 	}
 }
 
-function stone_medallion_input() {	
+function stoneMedallionInput() {	
 	var str = document.getElementById("markStones").value.substring(0,2);
 		
 	if (!hasChangedMedal) {
@@ -224,7 +222,7 @@ function stone_medallion_input() {
 	Logic.generic3 = Logic.dung9;		
 }
 
-function spawn_inputs() {
+function updateSpawnInputs() {
 	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by Goron City")].toLowerCase()) {Spawn.child_lower_dmc = true;} else {Spawn.child_lower_dmc = false;}
 	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC fountain")].toLowerCase()) {Spawn.child_lower_dmc = true; Spawn.child_lower_dmc_fairy = true;} else {Spawn.child_lower_dmc_fairy = false;}
 	if (document.getElementById("markChildLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("DMC by trail")].toLowerCase()) {Spawn.child_upper_dmc = true;} else {Spawn.child_upper_dmc = false;}
@@ -655,7 +653,7 @@ function junkSong(x) {
 	Update();
 }
 
-function check_circle_info() {
+function checkCircleInfo() {
 	document.getElementById("forest").innerHTML = "" + Player.forest_checks_remaining;
 	document.getElementById("fire").innerHTML = "" + Player.fire_checks_remaining;
 	document.getElementById("water").innerHTML = "" + Player.water_checks_remaining;
@@ -741,7 +739,7 @@ function check_circle_info() {
 			document.getElementById("wellSKs").title += Names[i] + "\n";
 }
 
-function handleAreaBreaks() {
+function areaBreaks() {
 	var tempUnique = 0;
 	for (var i = 0; i < Locations.length; i++) {
 		if ((i >= AreaIndexes[10] && i < AreaIndexes[11]) || (i >= AreaIndexes[17] && i < AreaIndexes[18])) {continue;}
@@ -772,7 +770,7 @@ function handleAreaBreaks() {
 	}
 }
 
-function handleItemHighlights() {
+function itemHighlights() {
 	if (Player.kokiri_sword) {if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").style.opacity =1; }}
 	if (Player.bomb_bag) {if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").style.opacity =1; } if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").style.opacity =1; } if(document.getElementById(spiritPlacement +"_req3") != null) {document.getElementById(spiritPlacement +"_req3").style.opacity =1; }}
 	if (Player.magic) {document.getElementById("gan_req1").style.opacity=1; if(document.getElementById(shadowPlacement +"_req2") != null) {document.getElementById(shadowPlacement +"_req2").style.opacity =1; }}
@@ -831,7 +829,7 @@ function handleItemHighlights() {
 	if (Player.slingshot) {document.getElementById("slingshotimg").style.opacity =1;} else {document.getElementById("slingshotimg").style.opacity =.2;}
 }
 
-function handleDungeonHighlights() {
+function dungeonHighlights() {
 	if (Player.forest) {document.getElementById("dung4_icon").style.opacity=1; document.getElementById("text_dung4").style.opacity = .2;} else{document.getElementById("dung4_icon").style.opacity=.2; document.getElementById("text_dung4").style.opacity = 1;}
 	if (Player.fire) {document.getElementById("dung5_icon").style.opacity=1; document.getElementById("text_dung5").style.opacity = .2;} else{document.getElementById("dung5_icon").style.opacity=.2; document.getElementById("text_dung5").style.opacity = 1;}
 	if (Player.water) {document.getElementById("dung6_icon").style.opacity=1; document.getElementById("text_dung6").style.opacity = .2;} else{document.getElementById("dung6_icon").style.opacity=.2; document.getElementById("text_dung6").style.opacity = 1;}
@@ -948,7 +946,7 @@ function updateInputs() {
 		localStorage.setItem(spawnNames[i], spawnInputs[i]);
 	}
 }
-function update_logic_info() {
+function updateLogicInfo() {
 	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "9_REWARDS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
 	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "inline-block"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
 	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("woth_input5").style.display = "none"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
@@ -1056,7 +1054,7 @@ function update_logic_info() {
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(Check[key])}
+		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames2[Items2.indexOf(Check[key])])}
 		
 		if(i > lastItem && Check[key] != "unknown" && !Player[Check[key]] && (Location_Logic[key] || Location_Access[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
@@ -1293,7 +1291,7 @@ function searchingFor_tracking() {
 	event.target.style.display = "none";
 }
 
-function update_summary_text() { 
+function updateSummaryText() { 
 	// Update Check Summary ClassNames (only items, not songs)
 		
 	for(var i = 0; i <= 38; i++){
@@ -1367,7 +1365,7 @@ function update_summary_text() {
 	}
 
 }
-function update_probabilities() {
+function updateProbabilities() {
 	var explosivesLeft = 0;
 	var majorLeft = 0;
 	var bigLeft = Math.max(untracked,0);

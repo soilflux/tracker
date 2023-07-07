@@ -1,4 +1,4 @@
-function woth_and_barren_processing() {
+function wothAndBarrenProcessing() {
 	
 	for( var i = 1; i <= 34; i++) {
 	Area[i] = "normal";
@@ -540,7 +540,7 @@ function trackUnreadHints() {
 	document.getElementById("unread").innerHTML = temptext[0] + "Unread: " + temptext[1];
 }
 
-function handleAlternateHintInput() {
+function alternateHintInput() {
 	if (temptext2 != "") {
 		var hintText = document.createElement("small");
 		hintText.innerHTML = temptext2;

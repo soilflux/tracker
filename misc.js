@@ -332,7 +332,7 @@ function timerControl() {
 	pauseFlag = true;
 	if (paused) {paused = false; document.getElementById("timerControl").innerHTML = "Pause";}
 	else {paused = true; document.getElementById("timerControl").innerHTML = "Resume";}
-	timer_stuff();
+	timerStuff();
 }
 
 function timerControlToD() {
@@ -650,7 +650,7 @@ function toggleHint(loc) {
 	midUpdate();
 }
 
-function gs_array_builder() {
+function gsArrayBuilder() {
 	gs[1] = Location_Logic.gs_kokiri_child;
 	gs[2] = Location_Logic.gs_kokiri_soil;
 	gs[3] = Location_Logic.gs_kokiri_adult;
@@ -753,7 +753,7 @@ function gs_array_builder() {
 	gs[100] = Location_Logic.gs_ice_block_room;
 }
 
-function timer_stuff() {
+function timerStuff() {
 	var d = new Date();
 	if (paused && pauseFlag) {pauseInitial = d.getTime(); pauseFlag = false;}
 	if (!paused && pauseFlag) {pauseTotal += d.getTime() - pauseInitial; pauseFlag = false;}

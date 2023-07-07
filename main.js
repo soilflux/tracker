@@ -1,11 +1,11 @@
 function Update() {
-	handleThemes(); //change themes as needed
-	check_circle_info(); //updates the numbers in the circles next to dungeon names
-	handleItemHighlights(); //add or remove transparency if player has or does not have items, respectively
-	handleDungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
-	handleAreaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
-	update_summary_text() // update the check summary text colors
-	update_probabilities() // update the probabilities for items based on checks of that type left vs checks remaining
+	changeThemes();
+	checkCircleInfo(); //updates the numbers in the circles next to dungeon names
+	itemHighlights(); //add or remove transparency if player has or does not have items, respectively
+	dungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
+	areaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
+	updateSummaryText()
+	updateProbabilities() // update the probabilities for items based on checks of that type left vs checks remaining
 	for (var i = 0; i < nextChecks.length; i++) {
 		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
 		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
@@ -22,9 +22,9 @@ function fastUpdate() {
 		toFocus = null;
 	}
 	timerToD(-1); //help with tracking ToD
-	timer_stuff(); //implements a timer to use as an alternative to stuff like livesplit
-	stone_medallion_input(); //handle stones and medallions input
-	process_inputs(); //handle hinted, peeked and picked up things
+	timerStuff(); //implements a timer to use as an alternative to stuff like livesplit
+	stoneMedallionInput();
+	processInputs(); //handles hinted, peeked and picked up things
 	}
 
 function midUpdate() {
@@ -33,18 +33,18 @@ function midUpdate() {
 	var previousInLogicSkulls = Logic.gold_skulltulas;
 	var flag = false;
 	while (i < 100000) {
-		woth_and_barren_processing(); //do various things based on woth and barrens;
+		wothAndBarrenProcessing(); //do various things based on woth and barrens;
 		updateWothBorders(); // highlight woth checks if option enabled
-		refresh_logic_for_stuff(); //puts something in or out of logic based on whether its location is in or out of logic 
-		force_stuff_in_or_out_of_logic(); //implements the force out of logic and force into logic boxes
-		logic_shortcuts(); //combines multiple pieces of logic into one variable
-		location_logic(); //updates logic and accessibility for all locations
-		update_logic_info(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
+		refreshLogicForStuff(); //puts something in or out of logic based on whether its location is in or out of logic 
+		forceStuffInOrOutOfLogic(); //implements the force out of logic and force into logic boxes
+		logicShortcuts(); //combines multiple pieces of logic into one variable
+		locationLogic(); //updates logic and accessibility for all locations
+		updateLogicInfo(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
 		setInLogicMaxForDungeons(); //ensures that dungeons will never add more to the in logic counter than the amount of items they contain
-		gs_array_builder(); //just moves gs logic into an array
+		gsArrayBuilder(); //just moves gs logic into an array
 		refreshLinSo();
-		spawn_inputs(); //handle child and adult spawn input
-		handleAlternateHintInput(); //implements inputting hints into the note box
+		updateSpawnInputs(); //child and adult spawn input
+		alternateHintInput(); //implements inputting hints into the note box
 		//trackUnreadHints(); updates which hints are still unread
 		if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
 		if (i >=1 && Player.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {

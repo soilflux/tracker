@@ -1,4 +1,4 @@
-function refresh_logic_for_stuff() {	
+function refreshLogicForStuff() {	
 	if(Known.kokiri_sword == true) {Logic.kokiri_sword = Location_Logic[Location.kokiri_sword];} else{Logic.kokiri_sword = false;}
 	
 	if(Known.farores_wind == true) {Logic.farores_wind = Location_Logic[Location.farores_wind];} else{Logic.farores_wind = false;}
@@ -657,7 +657,7 @@ function refresh_logic_for_stuff() {
 	if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
 	Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
 }
-function force_stuff_in_or_out_of_logic() {
+function forceStuffInOrOutOfLogic() {
 	var i;
 	for (i = 1; i <= 4; i++) {
 		str = "forceLogic" + i;
@@ -739,7 +739,7 @@ function force_stuff_in_or_out_of_logic() {
 	}
 }
 
-function logic_shortcuts() {
+function logicShortcuts() {
 	Logic.child_can_enter_river = Logic.bomb_bag || Logic.silver_scale || Spawn.child_zd || Spawn.child_zr;
 	Logic.child_can_enter_domain = (Logic.child_can_enter_river && Logic.lullaby) || Logic.silver_scale || Spawn.child_zd;
 	Logic.can_enter_jabu = Logic.rutos_letter && Logic.child_can_enter_domain;
@@ -895,7 +895,7 @@ function logic_shortcuts() {
 	CouldHave.can_climb_gtg_hole = CouldHave.hookshot || CouldHave.hover_boots || CouldHave.bomb_bag;
 	if (document.getElementById("closedDeku").value != "CLOSED") {CouldHave.deku_access = true;} else {CouldHave.deku_access = CouldHave.kokiri_sword;}
 }
-function location_logic(){
+function locationLogic(){
 	Location_Logic.mido_1 = true;
 	Location_Logic.mido_2 = true;
 	Location_Logic.mido_3 = true;
