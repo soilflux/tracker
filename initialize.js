@@ -113,11 +113,12 @@ for (var i = 0; i < inputs.length; i++) {
             itemInputs[i] = localStorage.getItem(inputNames[i])
         }
     }
+    inputs[inputs.indexOf("pre")] = "scr"
 	var elem = document.createElement("input"); elem.id = inputNames[i]; elem.value = inputs[i]; elem.className = "settings_small"; parent.appendChild(elem);
 	var elem = document.createElement("small"); elem.id = "text_" + inputNames[i]; elem.className = "check_text"; elem.innerHTML = inputNames[i]; parent.appendChild(elem);
 	var elem = document.createElement("br"); elem.id = "br_" + inputNames[i]; parent.appendChild(elem);
 }
-itemInputs[itemInputs.indexOf("pre")] = "scr"
+
 var parent = document.getElementById("inputConfig2");
 for (var i = 0; i < spawnInputs.length; i++) {
 	if (localStorage.getItem(spawnNames[i])) {spawnInputs[i] = localStorage.getItem(spawnNames[i]);}
