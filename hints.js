@@ -527,19 +527,6 @@ function wothAndBarrenProcessing() {
 	}
 }
 
-function trackUnreadHints() {
-	var temptext = document.getElementById("unread").innerHTML.split("Unread: ");
-	temptext[1] = "";
-	if (Check.tokens_30 == "unknown") temptext[1] += "30 "; 
-	if (Check.tokens_40 == "unknown") temptext[1] += "40 "; 
-	if (Check.tokens_50 == "unknown") temptext[1] += "50 "; 
-	if (Check.oot == "unknown") temptext[1] += "OoT "; 
-	if (Check.trade_quest == "unknown") temptext[1] += "Bigo "; 
-	if (Check.frogs_2 == "unknown") temptext[1] += "Frogs2 "; 
-	if (Check.theater == "unknown") temptext[1] += "Mask "; 
-	document.getElementById("unread").innerHTML = temptext[0] + "Unread: " + temptext[1];
-}
-
 function alternateHintInput() {
 	if (temptext2 != "") {
 		var hintText = document.createElement("small");

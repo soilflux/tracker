@@ -18,7 +18,7 @@
 				<br /><img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
 				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onmousedown = "highlight(this)">
 				<br /><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
-                <br /><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="16" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br />
+                <br /><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br />
 				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><br>
 				<img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br>
 				<img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input><br>
@@ -278,6 +278,19 @@
 				<br />shadow pot = shap, shapot, shp, shpot
 				<br />ice irons = iro, iron, irons, 
 				<br />ganon shadow trial 2 = sh2, st, sha2, st2, lik, sht
+                <br />ganon shadow trial 2 = sh2, st, sha2, st2, lik, sht
+                <br />ganon shadow trial 2 = sh2, st, sha2, st2, lik, sht
+                <br />child spirit left = chspirit1, chspi1, csp1, cs1
+                <br />child spirit right= chspirit2, chspi2, csp2, cs2
+                <br />horse back archery 1000 = hba1, 1000, 100
+                <br />hylia labtop = labtop, laptop, laro, labroof, topolab, topoflab
+                <br />valley ledge = valley1, gv1, gvledge, valleyledge, valledge, val1
+                <br />valley waterfall = valley2, gv2, waterfall, gvfall, watfall, val2
+                <br />domain torchrun = zdtorches, zdfire, zdfir, domtorches, domfire, domfir
+                <br />domain diving game = zddiving, zddiv, zdgame, domdiving, domdiv, domgame
+                <br />deadhand = dh, deadhand, mrhand, hand, deha, dead
+                <br />behind deadhand = dhbehind, dhback, wellinv, steve, steven, stove
+                <br />dark link= dlink, dl, me, clone, darklink, yami
 			</p>
 		</div>
 	</div> 
@@ -359,6 +372,7 @@
 	</div>
 	<div id ="patchNotesColumn">
 				<small id="patchNotesTitle">Patch Notes</small><br>
+                <small class = "patchNotes" id = "pn63">63: added more locations to alt hint input(to support dual hint locations) </small><br>
                 <small class = "patchNotes" id = "pn62">62: added ability to enter items into song locations. changed prescription input from "pre" to "scr"</small><br>
                 <small class = "patchNotes" id = "pn61">61: changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)</small><br>
                 <small class = "patchNotes" id = "pn60">60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller</small><br>
