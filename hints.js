@@ -560,7 +560,7 @@ function alternateHintInput() {
 							else if ((Hinted[hintIndexes[i]] != true || !Hinted[hintIndexes[i]]) && str.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {
 								simOverride = true;
 								if (textSongSpots.includes("text_"+hintIndexes[i])) {
-									document.getElementById("text_"+hintIndexes[i]).dispatchEvent(new Event('mousedown'));
+									//document.getElementById("text_"+hintIndexes[i]).dispatchEvent(new Event('mousedown'));
 								}
 								else {
 									if(Check[hintIndexes[i]] == "prescription" || Check[hintIndexes[i]] == "claim_check")
