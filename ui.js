@@ -81,6 +81,7 @@ function processInputs() {
 				
 				if (j == 0) {
                     if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
+                    if (i > lastItem) {songItemChecked = true;}
                     document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
                 }
 				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
@@ -117,6 +118,7 @@ function processInputs() {
 							Check[document.getElementById(key).id] = Items2[j];
 							Location[Items2[j]] = document.getElementById(key).id; 
 							Known[Items2[j]] = true; 
+                            if (j<Items2.indexOf("lullaby")) {songItemChecked = true;}
                             if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (j < Items2.indexOf("lullaby")) {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];}
 							if (!hinted && !peeked) {Player[Items2[j]] = true;} 
 							if (hinted) {Hinted[key] = true;} 
@@ -1233,7 +1235,8 @@ function updateLogicInfo() {
 	if (!Player.shadow_boss_key) {Player.shadow_checks_remaining -= 1;}
 	
 	Player.checks_remaining += Player.forest_checks_remaining + Player.fire_checks_remaining + Player.water_checks_remaining + Player.spirit_checks_remaining + Player.shadow_checks_remaining + Player.gtg_checks_remaining + Player.well_checks_remaining + Player.ganons_checks_remaining;
-	
+	if (!songItemChecked) {Player.checks_remaining += 1;}
+    
 	Player.logically_accessible = Number(Player.logically_accessible);
 	Player.logically_accessible=Player.logically_accessible.toFixed(0);
 	document.getElementById("checks_remaining").innerHTML="Remaining: "+Player.checks_remaining;
@@ -1451,7 +1454,7 @@ function updateProbabilities() {
 	if (searchItems.includes("Lens") && !Known.lens)  {majorLeft += 1; document.getElementById("searchingFor_lens").style.display = "inline-block";}
 	else if (searchItems.includes("Lens")) {document.getElementById("searchingFor_lens").style.display = "none";}
 	nChecks = document.getElementById("probability_input").value;
-	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+(Player.checks_remaining/(bigLeft-1)).toFixed(2)+" Checks"
+	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+((Player.checks_remaining-1)/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
 	document.getElementById("explosives_probability").innerHTML = "Chu Packs ~ 1 in "+(1/(explosivesLeft/(Player.checks_remaining-bigLeft))).toFixed(2)+" Smalls"
 }
