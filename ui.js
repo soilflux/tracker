@@ -1378,12 +1378,13 @@ function updateProbabilities() {
 	
 	for (var i = 0; i < Items2.length; i++) {
 		suffix = 0
+		if(Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
+		if(Items2[i] == "bottle" && Items2[i-1] == "bottle") {continue;}
+        
         if(Items2[i] == "bombchus") {
             if (chusInBigChests) {suffix = 5;}
             else continue;
         }
-		if(Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
-		if(Items2[i] == "bottle" && Items2[i-1] == "bottle") {continue;}
 		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {suffix = 3;}
 		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {suffix = 2;}
 		else if (!Known[Items2[i]]) {bigLeft += 1;}
