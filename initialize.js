@@ -58,6 +58,7 @@ var simOverride = false;
 var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;
+var chusInBigChests = false;
 document.getElementById("markMedallions").value = "Y-G-R-B-P-O-";
 document.getElementById("markStones").value = "112233";
 

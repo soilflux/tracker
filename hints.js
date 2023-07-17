@@ -548,7 +548,10 @@ function alternateHintInput() {
 					else {
 						str = capitalizeFirstLetter(str);
 					}
-					if (k == 0) { if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } }
+					if (k == 0) { 
+                    if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+                    if (lines[j].endsWith(" " + inputs[k].toUpperCase()) && Check[hintIndexes[i]] == "unknown") {baitsChecked += 1; thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+                    }
 					else if (k == 1) { if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById(hintIndexes[i]).value = "sk"; thisIsHinted = false; } }
 					else if (k == 2) { if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById(hintIndexes[i]).value = "bk"; thisIsHinted = false; } }
 					else {
