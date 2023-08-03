@@ -39,6 +39,7 @@ var hintedInput = "";
 var temptext2 = "";
 var removeBKFlag = false;
 var mouseInputs_locations = [];
+document.getElementById("timerMultiplier").value = 1;
 var nerfed = true;
 var hamsda = false;
 if (localStorage.getItem("hamsda")) {if (localStorage.getItem("hamsda") == "true") {hamsda = true;} else{hamsda = false;};}
