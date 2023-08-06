@@ -759,7 +759,7 @@ function timerStuff() {
 	if (!paused && pauseFlag) {pauseTotal += d.getTime() - pauseInitial; pauseFlag = false;}
 	if (!paused) {var tempTime = Math.floor((d.getTime() - pauseTotal - initialTime)*document.getElementById("timerMultiplier").value/1000);} else {var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)*document.getElementById("timerMultiplier").value/1000);}
 	if (paused && !timerInitialized) {var temptime = 0;} else if (!paused && !timerInitialized) {timerInitialized = true;}
-	tempHours = Math.floor(tempTime.value / 3600);
+	tempHours = Math.floor(tempTime / 3600);
 	tempMinutes = Math.floor((tempTime % 3600)/ 60);
 	tempSeconds = Math.floor((tempTime % 3600)% 60);
 	document.getElementById("timer").innerHTML = "";
