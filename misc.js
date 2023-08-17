@@ -235,16 +235,25 @@ function trackAnimalQuest() {
         Check["minuetSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("tiger") || tabPicSources[animalRNG].includes("bear")) ||
         Check["serenadeSpot"] == "nocturne" && tabPicSources[animalRNG].includes("crocodile") ||
         Check["requiemSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("elephant") || tabPicSources[animalRNG].includes("camel") || tabPicSources[animalRNG].includes("rhino"))
-        ) {document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; animalXP[animalRNG] *= 1.1; localStorage.setItem("animalXP", JSON.stringify(animalXP));}
+        ) {document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; yamiFlag = true;}
     }
 	if (questCounter >= 20) {
         
         if (simActive && document.getElementById("simSeed").value > 0) document.getElementById("simSeed").value =  parseInt(document.getElementById("simSeed").value) + 1;
-		animalXP[animalRNG] += 1;
+		if (!simActive) animalXP[animalRNG] += 1;
+        else animalXP[animalRNG] += 0.25;
 		questCounter = -100000
 		localStorage.setItem("animalXP", JSON.stringify(animalXP));
 		console.log(animalXP)
 	}
+    if (questCounter <-9000 && yamiFlag && !yamiFlagFlag) {
+        console.log(animalXP[animalRNG]);
+        if (!simActive) animalXP[animalRNG] *= 1.0666;
+        else animalXP[animalRNG] *= (1+.0666/4);
+         console.log(animalXP[animalRNG]);
+        yamiFlagFlag = true;
+        localStorage.setItem("animalXP", JSON.stringify(animalXP));
+    }
 }	
 function whoAmI() {
 	if(Person.type == "soli") {

@@ -51,6 +51,8 @@ var speedUp = false;
 var speedUpTotal = 0;
 var timeTotal = 0;
 var effectiveSpeedUp = 1;
+var yamiFlag = false;
+var yamiFlagFlag = false;
 var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
@@ -1164,7 +1166,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                 for (var m = 0; m < thisAnimalsLevel; m++) {
                     if (Math.random() < 0.3333333) {
                         animalRNG = Math.floor(Math.random() * tabPicSources.length)
-                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000; m=1000};
+                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=100000; m=100000};
                     }
                 }
             }
