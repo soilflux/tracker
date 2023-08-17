@@ -180,7 +180,6 @@ var animalXP = [0,0,0,0,0,0,0,0,0,0,0,0]; if (localStorage.getItem("animalXP")) 
 var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "lion":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11]} 
 localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));
 
-console.log(animalXP)
 var animalRNG = Math.floor(Math.random() * tabPicSources.length)
 Player.logically_accessible = 0;
 var d = new Date();
@@ -1159,17 +1158,18 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Player.light_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
 			animalLV = animalXP.slice(0);
-			animalLV.forEach(function(element, index, array){
-			array[index] = Math.max(Math.floor(2.5*Math.sqrt(element)-1),0);
-			});
-			animalOrigLV = animalLV.slice(0);
-			console.log(animalLV)
-			while (animalLV[animalRNG] != Math.max.apply(Math, animalLV)) {
-				if (Math.random() < 0.3333333) {animalRNG = Math.floor(Math.random() * tabPicSources.length)}
-				animalLV[animalLV.indexOf(Math.max.apply(Math, animalLV))] -= 1;
-			}
+            highestXPAnimals=Object.keys(myAnimalXP).sort(function(a, b) {return -(myAnimalXP[a] - myAnimalXP[b])});
+            for (var n = 0; n < highestXPAnimals.length; n++) {
+                thisAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(myAnimalXP[highestXPAnimals[n]])-1),0);
+                for (var m = 0; m < thisAnimalsLevel; m++) {
+                    if (Math.random() < 0.3333333) {
+                        animalRNG = Math.floor(Math.random() * tabPicSources.length)
+                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000; m=1000};
+                    }
+                }
+            }
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + animalOrigLV[animalRNG]
+			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);//animalOrigLV[animalRNG]
 		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
