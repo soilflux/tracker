@@ -389,6 +389,9 @@ color: red;
 	font-size: 18px;
 	color: #A7C7E7
 }
+.animalFilter {
+    hue-rotate: 180
+}
 #major_probability {
 	font-size: 18px;
 	color: gold

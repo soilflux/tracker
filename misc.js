@@ -144,7 +144,7 @@ function highlight(x) {
 			if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){Player.bolero = true;}
 			if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){Player.serenade = true;}
 			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = true;}
+			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = true; questCounter -= 1; trackAnimalQuest();}
 			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = true;}
 		}
 		else {
@@ -226,7 +226,19 @@ function changeTheme() {
 	}
 function trackAnimalQuest() {
 	questCounter += 1;
+    if (Player.nocturne) {
+        if (
+        Check["lullabySpot"] == "nocturne" && tabPicSources[animalRNG].includes("lion") ||
+        Check["eponasSpot"] == "nocturne" && tabPicSources[animalRNG].includes("zebra") ||
+        Check["sariasSpot"] == "nocturne" && tabPicSources[animalRNG].includes("monkey") ||
+        Check["stormsSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("juggler") || tabPicSources[animalRNG].includes("clown") || tabPicSources[animalRNG].includes("circus")) ||
+        Check["minuetSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("tiger") || tabPicSources[animalRNG].includes("bear")) ||
+        Check["serenadeSpot"] == "nocturne" && tabPicSources[animalRNG].includes("crocodile") ||
+        Check["requiemSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("elephant") || tabPicSources[animalRNG].includes("camel") || tabPicSources[animalRNG].includes("rhino"))
+        ) {document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; animalXP[animalRNG] *= 1.1; localStorage.setItem("animalXP", JSON.stringify(animalXP));}
+    }
 	if (questCounter >= 20) {
+        
         if (simActive && document.getElementById("simSeed").value > 0) document.getElementById("simSeed").value =  parseInt(document.getElementById("simSeed").value) + 1;
 		animalXP[animalRNG] += 1;
 		questCounter = -100000

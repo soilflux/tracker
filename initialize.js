@@ -1169,6 +1169,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                 }
             }
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
+          
 			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);//animalOrigLV[animalRNG]
 		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}

@@ -91,7 +91,6 @@ function processInputs() {
 					if (k == 0) {var duplicate = "";}
 					else {var duplicate = k + "";}
 					if (!Known[Items2[j] + duplicate]) {
-						trackAnimalQuest();
 						if (i <= lastItem) {
 							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
 							Location[Items2[j] + duplicate] = document.getElementById(key).id;
@@ -112,6 +111,7 @@ function processInputs() {
 							if (!Player[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 							thisIsHinted = false;
 							hintedInput = "";
+                            trackAnimalQuest();
 							break;
 						}
 						else {
@@ -126,8 +126,10 @@ function processInputs() {
 							var change = "text_" + document.getElementById(key).id; 
 							document.getElementById(change).innerHTML += ": " + ItemNames2[j]; 
 							junkSong(document.getElementById(key));
+                            trackAnimalQuest();
 							break;
 						}
+                    
 					}
 				}
 			}
