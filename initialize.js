@@ -47,6 +47,10 @@ if (hamsda) {document.getElementById("hamsdaToggle").innerHTML="Disable Hamsda T
 var next = document.getElementById("next_check_prediction");
 var nextChecks = [];
 var nextIndex = 0;
+var speedUp = false;
+var speedUpTotal = 0;
+var timeTotal = 0;
+var effectiveSpeedUp = 1;
 var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
@@ -131,8 +135,8 @@ for (var i = 0; i < spawnInputs.length; i++) {
 	var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
 }
 
-controllerConfigNames =["","","","","","",""];
-controllerConfigDescriptions =["controllerJunk","controllerKey","controllerBosskey", "controllerItem","controllerSkip","controllerAcceptInputs","controllerToD"];
+controllerConfigNames =["","","","","","","",""];
+controllerConfigDescriptions =["controllerJunk","controllerKey","controllerBosskey", "controllerItem","controllerSkip","controllerAcceptInputs","controllerToD","controllerSpeedUp"];
 var parent = document.getElementById("inputConfig3");
 for (var i = 0; i < controllerConfigNames.length; i++) {
 	if (localStorage.getItem(controllerConfigNames[i])) {controllerConfigNames[i] = localStorage.getItem(controllerConfigNames[i]);}
@@ -1713,6 +1717,7 @@ if (localStorage.getItem(controllerConfigDescriptions[3])) {document.getElementB
 if (localStorage.getItem(controllerConfigDescriptions[4])) {document.getElementById(controllerConfigDescriptions[4]).value = localStorage.getItem(controllerConfigDescriptions[4]);}
 if (localStorage.getItem(controllerConfigDescriptions[5])) {document.getElementById(controllerConfigDescriptions[5]).value = localStorage.getItem(controllerConfigDescriptions[5]);}
 if (localStorage.getItem(controllerConfigDescriptions[6])) {document.getElementById(controllerConfigDescriptions[6]).value = localStorage.getItem(controllerConfigDescriptions[6]);}
+if (localStorage.getItem(controllerConfigDescriptions[7])) {document.getElementById(controllerConfigDescriptions[7]).value = localStorage.getItem(controllerConfigDescriptions[7]);}
 function updateControllerStatus() {
 	if (!haveEvents) {
 		scangamepads();
@@ -1739,6 +1744,7 @@ function updateControllerStatus() {
 		if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i; localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
 		if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i; localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
         if (document.getElementById(controllerConfigDescriptions[6]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[6]).value = i; localStorage.setItem(controllerConfigDescriptions[6], document.getElementById(controllerConfigDescriptions[6]).value);}
+        if (document.getElementById(controllerConfigDescriptions[7]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[7]).value = i; localStorage.setItem(controllerConfigDescriptions[7], document.getElementById(controllerConfigDescriptions[7]).value);}
 		if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
 			if (document.getElementById(controllerConfigDescriptions[0]).value == i) {
 				var ev1 = new MouseEvent("mousedown", {
@@ -1802,6 +1808,7 @@ function updateControllerStatus() {
 		}
 		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
         if (document.getElementById(controllerConfigDescriptions[6]).value == i) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
+        if (document.getElementById(controllerConfigDescriptions[7]).value == i) {speedUp = !speedUp; pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
       } else if (!pressed) {
 		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;

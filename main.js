@@ -74,7 +74,7 @@ function slowUpdate() {
 	updateInputs(); //implements custom inputs
 	saveStuff(); //save current settings for next use of tracker
 	refreshVersion(); //will highlight patch notes that haven't been read yet
-	
+	document.getElementById("effectiveSpeedUp").innerHTML = effectiveSpeedUp.toFixed(4);
 	if (!nerfed) {
 		WotHItems = [];
 		for (i=0; i < Items.length; i++) {

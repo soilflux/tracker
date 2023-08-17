@@ -757,7 +757,7 @@ function timerStuff() {
 	var d = new Date();
 	if (paused && pauseFlag) {pauseInitial = d.getTime(); pauseFlag = false;}
 	if (!paused && pauseFlag) {pauseTotal += d.getTime() - pauseInitial; pauseFlag = false;}
-	if (!paused) {var tempTime = Math.floor((d.getTime() - pauseTotal - initialTime)*document.getElementById("timerMultiplier").value/1000);} else {var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)*document.getElementById("timerMultiplier").value/1000);}
+	if (!paused) {if (speedUp) {speedUpTotal += 1;} timeTotal+=1; effectiveSpeedUp = (document.getElementById("timerMultiplier").value-1)*speedUpTotal/timeTotal+1; var tempTime = Math.floor((d.getTime() - pauseTotal - initialTime)*effectiveSpeedUp/1000);} else {var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)*document.getElementById("timerMultiplier").value/1000);}
 	if (paused && !timerInitialized) {var temptime = 0;} else if (!paused && !timerInitialized) {timerInitialized = true;}
 	tempHours = Math.floor(tempTime / 3600);
 	tempMinutes = Math.floor((tempTime % 3600)/ 60);
@@ -792,7 +792,7 @@ document.onkeydown = function(e) {
 	if (e.which == 19) {
 		timerControl();
 	}
-    if (e.which == 190) {
+    if (e.which == 188) {
 		timerControlToD();
 	}
 	if (e.ctrlKey && e.which == 90) {
