@@ -178,12 +178,22 @@ var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", 
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/leopard.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png", "./tab_pics/hippo.png", "./tab_pics/seal.png", "./tab_pics/llama.png", "./tab_pics/dog.png"]
-var animalXP = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
+var animalXP = new Array(16).fill(0);
 if (localStorage.getItem("animalXP")) {
     savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
     for (var i = 0; i<savedAnimalXP.length; i++) {
         animalXP[i] = savedAnimalXP[i];
     }
+}
+var yamiMults = new Array(16).fill(1);
+if (localStorage.getItem("yamiMults")) {
+    savedYamiMults = JSON.parse(localStorage.getItem("yamiMults"));
+    for (var i = 0; i<savedYamiMults.length; i++) {
+        yamiMults[i] = savedYamiMults[i];
+    }
+}
+for (var i = 0; i < animalXP.length; i++) {
+    animalXP[i] *= yamiMults[i];
 }
 var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "leopard":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11], "hippo":animalXP[12], "seal":animalXP[13], "llama":animalXP[14], "dog":animalXP[15]} 
 localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));

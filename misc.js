@@ -248,11 +248,11 @@ function trackAnimalQuest() {
 	}
     if (questCounter <-9000 && yamiFlag && !yamiFlagFlag) {
         console.log(animalXP[animalRNG]);
-        if (!simActive) animalXP[animalRNG] *= 1.0666;
-        else animalXP[animalRNG] *= (1+.0666/4);
-         console.log(animalXP[animalRNG]);
+        if (!simActive) yamiMults[animalRNG] += .0666;
+        else yamiMults[animalRNG] += .0666/4;
+        console.log(yamiMults)
         yamiFlagFlag = true;
-        localStorage.setItem("animalXP", JSON.stringify(animalXP));
+        localStorage.setItem("yamiMults", JSON.stringify(yamiMults));
     }
 }	
 function whoAmI() {
