@@ -177,9 +177,15 @@ var pocketPlacement = "unknown";
 var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", "./normal/items/sapphire.png", "./normal/items/forest.png", "./normal/items/fire.png", "./normal/items/water.png", "./normal/items/shadow.png", "./normal/items/spirit.png", "./normal/items/light.png"];
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
-var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/lion.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png"]
-var animalXP = [0,0,0,0,0,0,0,0,0,0,0,0]; if (localStorage.getItem("animalXP")) {animalXP = JSON.parse(localStorage.getItem("animalXP"));} 
-var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "lion":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11]} 
+var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/leopard.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png", "./tab_pics/hippo.png", "./tab_pics/seal.png", "./tab_pics/llama.png", "./tab_pics/dog.png"]
+var animalXP = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
+if (localStorage.getItem("animalXP")) {
+    savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
+    for (var i = 0; i<savedAnimalXP.length; i++) {
+        animalXP[i] = savedAnimalXP[i];
+    }
+}
+var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "leopard":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11], "hippo":animalXP[12], "seal":animalXP[13], "llama":animalXP[14], "dog":animalXP[15]} 
 localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));
 
 var animalRNG = Math.floor(Math.random() * tabPicSources.length)
@@ -1166,7 +1172,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                 for (var m = 0; m < thisAnimalsLevel; m++) {
                     if (Math.random() < 0.3333333) {
                         animalRNG = Math.floor(Math.random() * tabPicSources.length)
-                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=100000; m=100000};
+                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000000000; m=1000000000};
                     }
                 }
             }
