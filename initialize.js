@@ -1811,7 +1811,7 @@ function updateControllerStatus() {
 		}
 		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
         if (document.getElementById(controllerConfigDescriptions[6]).value == i) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
-        if (document.getElementById(controllerConfigDescriptions[7]).value == i) {speedUp = !speedUp; pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
+        if (document.getElementById(controllerConfigDescriptions[7]).value == i) {speedUp = !speedUp; if(speedUp) document.getElementById("timer").style.color="orange"; else document.getElementById("timer").style.color="white"; pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
       } else if (!pressed) {
 		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
 		  pressCooldown[i][j] = false;
