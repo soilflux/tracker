@@ -178,14 +178,15 @@ var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", 
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/leopard.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png", "./tab_pics/hippo.png", "./tab_pics/seal.png", "./tab_pics/llama.png", "./tab_pics/dog.png", "./tab_pics/horse.png", "./tab_pics/cat.png"]
-var animalXP = new Array(18).fill(0);
+var numberOfAnimals = 18;
+var animalXP = new Array(numberOfAnimals).fill(0);
 if (localStorage.getItem("animalXP")) {
     savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
     for (var i = 0; i<savedAnimalXP.length; i++) {
         animalXP[i] = savedAnimalXP[i];
     }
 }
-var yamiMults = new Array(18).fill(1);
+var yamiMults = new Array(numberOfAnimals).fill(1);
 if (localStorage.getItem("yamiMults")) {
     savedYamiMults = JSON.parse(localStorage.getItem("yamiMults"));
     for (var i = 0; i<savedYamiMults.length; i++) {
@@ -1187,8 +1188,9 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                 }
             }
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
-          
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);//animalOrigLV[animalRNG]
+            
+            rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);
+			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel + " --  roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
 		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
