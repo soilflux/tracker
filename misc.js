@@ -227,13 +227,13 @@ function changeTheme() {
 function trackAnimalQuest() {
 	questCounter += 1;
     if (
-    Check["eponasSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("zebra") || tabPicSources[animalRNG].includes("llama")) ||
+    Check["eponasSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("zebra") || tabPicSources[animalRNG].includes("llama") || tabPicSources[animalRNG].includes("horse")) ||
     Check["sariasSpot"] == "nocturne" && tabPicSources[animalRNG].includes("monkey") ||
     Check["stormsSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("juggler") || tabPicSources[animalRNG].includes("clown") || tabPicSources[animalRNG].includes("circus")) ||
     Check["minuetSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("tiger") || tabPicSources[animalRNG].includes("bear")) ||
     Check["oot"] == "nocturne" && (tabPicSources[animalRNG].includes("crocodile") || tabPicSources[animalRNG].includes("elephant") || tabPicSources[animalRNG].includes("rhino") || tabPicSources[animalRNG].includes("hippo")) ||
     Check["serenadeSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("seal")) ||
-    Check["nocturneSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("dog")) ||
+    Check["nocturneSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("dog") || tabPicSources[animalRNG].includes("cat")) ||
     Check["requiemSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("camel") || tabPicSources[animalRNG].includes("leopard"))
     ) {document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; yamiFlag = true;}
     
