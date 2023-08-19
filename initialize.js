@@ -1181,8 +1181,8 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                 thisAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(myAnimalXP[highestXPAnimals[n]])-1),0);
                 for (var m = 0; m < thisAnimalsLevel; m++) {
                     if (Math.random() < 0.5) {
-                        animalRNG = Math.floor(Math.random() * tabPicSources.length)
-                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000000000; m=1000000000};
+                        if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000000000; m=1000000000}
+                        else animalRNG = Math.floor(Math.random() * tabPicSources.length)
                     }
                 }
             }
