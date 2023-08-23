@@ -1190,7 +1190,8 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
             
             rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel + " --  roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
+			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel;
+            if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("animalLV").innerHTML += " --  roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
 		}
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
