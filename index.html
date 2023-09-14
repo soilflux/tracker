@@ -429,10 +429,10 @@
 		<label class="settingsLabels" for="presets">PRESETS</label>
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
-		  <option value="S6">S6</option>
-		  <option value="WEEKLY">WEEKLY</option>
-		  <option value="SGL_2023">SGL 2023</option>
+		  <option value="S7">S7</option>
 		  <option value="LEAGUE_S4">LEAGUE S4</option>
+		  <option value="SGL_2023">SGL 2023</option>
+		  <option value="S6">S6</option>
 		  <option value="S5">S5</option>
 		  <option value="S4">S4</option>
 		  <option value="S3">S3</option>
@@ -453,10 +453,16 @@
 		  <option value="CLOSED">CLOSED</option>
 		  <option value="OPEN">OPEN</option>
 		</select><br><br class="half_break">
+		<label class="settingsLabels" for="closedFountain">FOUNTAIN</label>
+		<select class="settingsOptions" id="closedFountain">
+		  <option value="CLOSED">CLOSED</option>
+		  <option value="OPEN">OPEN</option>
+		</select><br><br class="half_break">
 		<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
 		<select class="settingsOptions" id="skullSanity">
 		  <option value="OFF">OFF</option>
 		  <option value="DUNGEON">DUNGEON</option>
+		  <option value="OVERWORLD">OVERWORLD</option>
 		  <option value="ALL">ALL</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
@@ -476,12 +482,13 @@
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
 		<select class="settingsOptions" id="ganonsBridge">
+		  <option value="ALL_MED">ALL MED</option>
+		  <option value="OPEN">OPEN</option>
 		  <option value="3_STONES">3 STONES</option>
 		  <option value="2_MEDALS">2 MEDALS</option>
 		  <option value="3_MEDALS">3 MEDALS</option>
 		  <option value="4_MEDALS">4 MEDALS</option>
 		  <option value="5_MEDALS">5 MEDALS</option>
-		  <option value="ALL_MED">ALL MED</option>
 		  <option value="1_REWARD">1 REWARD</option>
 		  <option value="2_REWARDS">2 REWARDS</option>
 		  <option value="3_REWARDS">3 REWARDS</option>
@@ -491,7 +498,6 @@
 		  <option value="7_REWARDS">7 REWARDS</option>
 		  <option value="8_REWARDS">8 REWARDS</option>
 		  <option value="9_REWARDS">9 REWARDS</option>
-		  <option value="ALWAYS">ALWAYS</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
 		<select class="settingsOptions" id="ganonBKSetting">
@@ -507,6 +513,16 @@
 		<select class="settingsOptions" id="hints_type">
 		  <option value="WOTH">WOTH</option>
 		  <option value="PATH">PATH</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="keysanity">KEYSANITY</label>
+		<select class="settingsOptions" id="keysanity">
+		  <option value="OFF">OFF</option>
+		  <option value="KEYSY">KEYSY</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
+		<select class="settingsOptions" id="blueFireArrows">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
 		</select><br><br class="half_break">
 	</div>
 	<div id = "mouseInputs">

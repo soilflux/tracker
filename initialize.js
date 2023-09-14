@@ -76,7 +76,10 @@ if (localStorage.getItem("scrubSanity")) {document.getElementById("scrubSanity")
 if (localStorage.getItem("shopSanity")) {document.getElementById("shopSanity").value = localStorage.getItem("shopSanity");}
 if (localStorage.getItem("skullSanity")) {document.getElementById("skullSanity").value = localStorage.getItem("skullSanity");}
 if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").value	= localStorage.getItem("closedDeku");}
-if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value	= localStorage.getItem("ganonBKSetting");}
+if (localStorage.getItem("closedFountain")) {document.getElementById("closedFountain").value = localStorage.getItem("closedFountain");}
+if (localStorage.getItem("blueFireArrows")) {document.getElementById("blueFireArrows").value = localStorage.getItem("blueFireArrows");}
+if (localStorage.getItem("keysanity")) {document.getElementById("keysanity").value = localStorage.getItem("keysanity");}
+if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value = localStorage.getItem("ganonBKSetting");}
 if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
 if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
 if (localStorage.getItem("shuffleOcarinas")) {document.getElementById("shuffleOcarinas").value = localStorage.getItem("shuffleOcarinas");}
@@ -453,40 +456,40 @@ var Locations = [
 soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
 var Names = [
-	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "Near Exit", "Soil", "Adult", "SoS", "Deku L", "Deku R", "Near LW", "SoS",
-	/*Ranch*/"Talon", "Tree", "Back", "Scrub", "Scrub", "Scrub", "Window", "Shed", "Back Wall", 
-	/*Field*/"Remote", "Open", "Scrub", "Market", "Tektite", "Near Kak", "Near GV", "OoT Item", "Remote", "Open", "Destiny", "Webs",
-	/*Valley*/"Box", "Water", "Bridge", "Soil", "Pillar", "Tent", "Rocks", "Scrub", "Scrub", "Valley",
-	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "Soil", "Lab Wall", "Island", "Ad. Fish", "Labtop", "Crate", "Divin'", "Tree", "Sun", "Lab", "Lake R", "Lake L",
-	/*Market*/"Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Big Rich", "Bowling", "Bowling", "Lens", "Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
-	/*Hyrule Castle*/"Tree", "D Fairy", "Storms", "Castle 1", "Castle 2", "Castle SoS",
-	/*Ganon's Castle*/"Skull", "G Fairy",
+	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "SoS", "Deku L", "Deku R", "Near LW", "SoS",
+	/*Ranch*/"Talon", "*Tree", "Back", "Scrub", "Scrub", "Scrub", "*Window", "*Shed", "*Back", 
+	/*Field*/"Remote", "Open", "Scrub", "Market", "Tektite", "*NearKak", "*Near GV", "OoT Item", "Remote", "Open", "Destiny", "Webs",
+	/*Valley*/"Box", "Water", "*Bridge", "*Soil", "*Pillar", "*Tent", "Rocks", "Scrub", "Scrub", "Valley",
+	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "*Soil", "*Lab Wall", "*Island", "Ad. Fish", "Labtop", "*Crate", "Divin'", "*Tree", "Sun", "Lab", "Lake R", "Lake L",
+	/*Market*/"*Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Big Rich", "Bowling", "Bowling", "Lens", "Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
+	/*Hyrule Castle*/"*Tree", "D Fairy", "*Storms", "Castle 1", "Castle 2", "Castle SoS",
+	/*Ganon's Castle*/"*Skull", "G Fairy",
 	/*Temple of Time*/"LACS",
-	/*Fountain*/"Log", "Tree", "Fairy", "Glacier", "Divin'", "Cave", "Fairy", "Near Jabu",
-	/*Ice*/"Spinning", "Map", "HP", "HP", "Compass", "Blocks", "Irons",
-	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "Compass", "Gate", "Vines", "Basement", "Back", "Queen",
-	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr.", "Scrub Gr+", "Br Soil", "Saria Kid", "Br Scrub", "Abv Stage", "Mask", "Bridge", "Generic",
-	/*Sacred Forest Meadow*/"Wolfos", "Skull", "Left", "Right", "Saria", "Maze 1", "Maze 2",
-	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "Maze", "Maze!", "Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Maze", "Medigor",
-	/*Dodongos*/"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Compass", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King", "Dodongos",
-	/*Trail*/"Top", "Bombable", "Wall", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil", "SoS", "Biggoron",
-	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "Soil", "Crate", "C Scrub", "Grotto", "Wall",
-	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
-	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "Soil", "Wall", "Sun's", "Composer", "Nocturne",
-	/*River*/"Tree", "Scrub", "Scrub", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
-	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "Skull", "Domain",
-	/*Colossus*/"Bean", "Fairy", "Soil", "Hill", "Tree", "Scrub", "Scrub", "Colossus",
-	/*Wasteland*/"Skull", "Check",
-	/*Fortress*/"Fort", "Roof", "1000", "1500", "Target", 
-	/*Jabu Jabu*/"Vines", "Scrub", "Map", "Compass", "Boom", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
-	/*Forest Temple*/"First", "First", "Lobby", "Stalfos", "C Hook", "C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
-	/*Fire Temple*/"Near Boss", "Base", "Hammer", "Hammer", "Lav Open", "SoT", "Lav Bomb", "Volvagia", "Low Cell", "Bomb Wall", "Side Room", "Map", "High Cell", "Shortcut", "Crow 1", "Crow 2", "Pierre", "Compass", "SoT Goron", "MEGA",
-	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
-	/*Spirit Temple*/"Ch. Left", "Ch. Right", "Fence", "Ch. Climb", "Ch. Climb", "Ch. Climb", "Map", "Sun Room", "B4 Knuck", "Silvers", "Ad. Left", "SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "Main Room", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
-	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silvs", "Spinning", "Spinning", "Spinning", "Crusher L", "Spikes", "Crusher H", "Crusher H", "Mid Silvs", "Pot", "Pot", "Wind", "Bombable", "Gibdos", "Near Boat", "Dins", "Dins", "3 Pots", "Floor", "Bongo",
+	/*Fountain*/"*Log", "*Tree", "Fairy", "Glacier", "Divin'", "*Cave", "Fairy", "Near Jabu",
+	/*Ice*/"*Spinning", "Map", "*HP", "HP", "Compass", "*Blocks", "Irons",
+	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "*Compass", "*Gate", "*Vines", "Basement", "*Back", "Queen",
+	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "Mask", "Bridge", "Generic",
+	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Left", "Right", "Saria", "Maze 1", "Maze 2",
+	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "*Maze", "Maze!", "*Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Maze", "Medigor",
+	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "*Nook", "*Vines", "Map", "Compass", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
+	/*Trail*/"Top", "*Wall", "Wall", "SoS", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "SoS", "Biggoron",
+	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
+	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
+	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "*Soil", "*Wall", "Sun's", "Composer", "Nocturne",
+	/*River*/"*Tree", "Scrub", "Scrub", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
+	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "*Skull", "Domain",
+	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
+	/*Wasteland*/"*Skull", "Check",
+	/*Fortress*/"*Fort", "Roof", "1000", "1500", "*Target", 
+	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
+	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "*Base", "Phantom",
+	/*Fire Temple*/"Near Boss", "*Hammer", "Hammer", "Hammer", "Lav Open", "*SoT", "Lav Bomb", "Volvagia", "Low Cell", "*Maze", "Side Room", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "SoT Goron", "MEGA",
+	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "*Near BK", "BK", "Morpha",
+	/*Spirit Temple*/"Ch. Left", "Ch. Right", "*Fence", "Ch. Climb", "*Ch Climb", "Ch. Climb", "Map", "Sun Room", "*B4 Knuck", "Silvers", "Ad. Left", "*SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "*Main", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
+	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silvs", "*Spinning", "Spinning", "Spinning", "Crusher L", "*Crusher", "Crusher H", "Crusher H", "Mid Silvs", "*Pot", "Pot", "Wind", "Bombable", "Gibdos", "*Boat", "Dins", "Dins", "*3 Pots", "Floor", "Bongo",
 	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
 	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Abv Eyes", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
-	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "D Hand", "Invisible", "Door L", "Door R", "Locked 1", "Locked 2", "Like Like", "Base",
+	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "D Hand", "Invisible", "*Door L", "*Door R", "Locked 1", "Locked 2", "*Locked", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater"];
@@ -1094,7 +1097,7 @@ for (var i = 0; i<Locations.length; i++) {
 	}
 	if (i < AreaIndexes[34]) {
 		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[34]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
-		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; /*if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";}*/ parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
 	else {
@@ -1936,7 +1939,7 @@ document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "SGL_2023")
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
-if (document.getElementById("presets").value == "S6")
+if (document.getElementById("presets").value == "S6" || document.getElementById("presets").value == "S7")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 
 window.addEventListener("gamepadconnected", connecthandler);

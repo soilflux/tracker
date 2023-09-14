@@ -451,6 +451,9 @@ function saveStuff() {
 	localStorage.setItem("shopSanity", document.getElementById("shopSanity").value);
 	localStorage.setItem("skullSanity", document.getElementById("skullSanity").value);
 	localStorage.setItem("closedDeku", document.getElementById("closedDeku").value);
+	localStorage.setItem("closedFountain", document.getElementById("closedFountain").value);
+	localStorage.setItem("blueFireArrows", document.getElementById("blueFireArrows").value);
+	localStorage.setItem("keysanity", document.getElementById("keysanity").value);
 	localStorage.setItem("ganonBKSetting", document.getElementById("ganonBKSetting").value);
 	localStorage.setItem("ganonsBridge", document.getElementById("ganonsBridge").value);
 	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
@@ -488,7 +491,7 @@ function inaccessibleControl() {
 
 function coopControl() {
 	if (coopmode) {coopmode = false; document.getElementById("coopControl").innerHTML = "coopmode";}
-	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "ALWAYS"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("shopSanity").value = 4;} 
+	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("shopSanity").value = 4;} 
 }
 
 function linso_counter() {
