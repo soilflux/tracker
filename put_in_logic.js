@@ -123,7 +123,7 @@ function checksPutInLogicByItem(item) {
 	
 	PutIn_Logic.medalCount = 0; if (PutIn_Logic.forest_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.fire_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.water_medallion) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen1) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen2) {PutIn_Logic.medalCount += 1;} if (PutIn_Logic.gen3) {PutIn_Logic.medalCount += 1;}
 	PutIn_Logic.stoneCount = 0; if (PutIn_Logic.kokiri_emerald) {PutIn_Logic.stoneCount += 1;} if (PutIn_Logic.goron_ruby) {PutIn_Logic.stoneCount += 1;} if (PutIn_Logic.zora_sapphire) {PutIn_Logic.stoneCount += 1;}
-	PutIn_Logic.can_enter_ganons = (PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion && PutIn_Logic.gen1 && PutIn_Logic.gen2 && PutIn_Logic.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && PutIn_Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && PutIn_Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && PutIn_Logic.stoneCount == 3)
+	PutIn_Logic.can_enter_ganons = (PutIn_Logic.forest_medallion && PutIn_Logic.fire_medallion && PutIn_Logic.water_medallion && PutIn_Logic.gen1 && PutIn_Logic.gen2 && PutIn_Logic.gen3) || document.getElementById("ganonsBridge").value == "OPEN" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && PutIn_Logic.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && PutIn_Logic.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && PutIn_Logic.stoneCount == 3)
 	
 	PutIn_Logic.can_climb_fire_temple = PutIn_Logic.can_enter_fire_temple && PutIn_Logic.fire_keys >=3 && PutIn_Logic.can_wear_goron_tunic && PutIn_Logic.goron_bracelet && (PutIn_Logic.bow || PutIn_Logic.hookshot || PutIn_Logic.bomb_bag);
 	PutIn_Logic.can_enter_water = PutIn_Logic.hookshot && PutIn_Logic.iron_boots;
@@ -705,7 +705,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.kakariko_grotto = true;
 	Location_PutIn_Logic.windmill = true;//PutIn_Logic.boomerang || PutIn_Logic.time;
 	Location_PutIn_Logic.anju = true;
-	Location_PutIn_Logic.cow_house = true;
+	Location_PutIn_Logic.kakariko_cow_house = true;
 	Location_PutIn_Logic.archery_game = PutIn_Logic.bow;
 	Location_PutIn_Logic.redead_grotto = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.anjus_chickens = true;

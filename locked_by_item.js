@@ -122,7 +122,7 @@ function checksLockedByItem(item) {
 	
 	Locked_Logic2.medalCount = 0; if (Locked_Logic2.forest_medallion) {Locked_Logic2.medalCount += 1;} if (Locked_Logic2.fire_medallion) {Locked_Logic2.medalCount += 1;} if (Locked_Logic2.water_medallion) {Locked_Logic2.medalCount += 1;} if (Locked_Logic2.gen1) {Locked_Logic2.medalCount += 1;} if (Locked_Logic2.gen2) {Locked_Logic2.medalCount += 1;} if (Locked_Logic2.gen3) {Locked_Logic2.medalCount += 1;}
 	Locked_Logic2.stoneCount = 0; if (Locked_Logic2.kokiri_emerald) {Locked_Logic2.stoneCount += 1;} if (Locked_Logic2.goron_ruby) {Locked_Logic2.stoneCount += 1;} if (Locked_Logic2.zora_sapphire) {Locked_Logic2.stoneCount += 1;}
-	Locked_Logic2.can_enter_ganons = (Locked_Logic2.forest_medallion && Locked_Logic2.fire_medallion && Locked_Logic2.water_medallion && Locked_Logic2.gen1 && Locked_Logic2.gen2 && Locked_Logic2.gen3) || document.getElementById("ganonsBridge").value == "ALWAYS" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Locked_Logic2.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Locked_Logic2.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Locked_Logic2.stoneCount == 3)
+	Locked_Logic2.can_enter_ganons = (Locked_Logic2.forest_medallion && Locked_Logic2.fire_medallion && Locked_Logic2.water_medallion && Locked_Logic2.gen1 && Locked_Logic2.gen2 && Locked_Logic2.gen3) || document.getElementById("ganonsBridge").value == "OPEN" || (document.getElementById("ganonsBridge").value == "3_MEDALS" && Locked_Logic2.medalCount >= 3) || (document.getElementById("ganonsBridge").value == "2_MEDALS" && Locked_Logic2.medalCount >= 2) || (document.getElementById("ganonsBridge").value == "3_STONES" && Locked_Logic2.stoneCount == 3)
 	
 	Locked_Logic2.can_climb_fire_temple = Locked_Logic2.can_enter_fire_temple && Locked_Logic2.fire_keys >=3 && Locked_Logic2.can_wear_goron_tunic && Locked_Logic2.goron_bracelet && (Locked_Logic2.bow || Locked_Logic2.hookshot || Locked_Logic2.bomb_bag);
 	Locked_Logic2.can_enter_water = Locked_Logic2.hookshot && Locked_Logic2.iron_boots;
@@ -582,7 +582,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.kakariko_grotto = true;
 	Location_Locked_Logic2.windmill = true;//Locked_Logic2.boomerang || Locked_Logic2.time;
 	Location_Locked_Logic2.anju = true;
-	Location_Locked_Logic2.cow_house = true;
+	Location_Locked_Logic2.kakariko_cow_house = true;
 	Location_Locked_Logic2.archery_game = Locked_Logic2.bow;
 	Location_Locked_Logic2.redead_grotto = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.anjus_chickens = true;

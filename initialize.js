@@ -75,11 +75,18 @@ var scrubSanity = false;
 if (localStorage.getItem("scrubSanity")) {document.getElementById("scrubSanity").value= localStorage.getItem("scrubSanity");}
 if (localStorage.getItem("shopSanity")) {document.getElementById("shopSanity").value = localStorage.getItem("shopSanity");}
 if (localStorage.getItem("skullSanity")) {document.getElementById("skullSanity").value = localStorage.getItem("skullSanity");}
+if (localStorage.getItem("cowSanity")) {document.getElementById("cowSanity").value = localStorage.getItem("cowSanity");}
 if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").value	= localStorage.getItem("closedDeku");}
-if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value	= localStorage.getItem("ganonBKSetting");}
+if (localStorage.getItem("closedFountain")) {document.getElementById("closedFountain").value = localStorage.getItem("closedFountain");}
+if (localStorage.getItem("blueFireArrows")) {document.getElementById("blueFireArrows").value = localStorage.getItem("blueFireArrows");}
+if (localStorage.getItem("keysanity")) {document.getElementById("keysanity").value = localStorage.getItem("keysanity");}
+if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value = localStorage.getItem("ganonBKSetting");}
 if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
 if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
 if (localStorage.getItem("shuffleOcarinas")) {document.getElementById("shuffleOcarinas").value = localStorage.getItem("shuffleOcarinas");}
+if (localStorage.getItem("shuffleGerudoCard")) {document.getElementById("shuffleGerudoCard").value = localStorage.getItem("shuffleGerudoCard");}
+if (localStorage.getItem("shuffleBeanPack")) {document.getElementById("shuffleBeanPack").value = localStorage.getItem("shuffleBeanPack");}
+if (localStorage.getItem("shuffleExpensivePurchases")) {document.getElementById("shuffleExpensivePurchases").value = localStorage.getItem("shuffleExpensivePurchases");}
 if (localStorage.getItem("csmc")) {document.getElementById("csmc").value = localStorage.getItem("csmc");}
 if (localStorage.getItem("hints_type")) {document.getElementById("hints_type").value = localStorage.getItem("hints_type");}
 if (localStorage.getItem("simSeed")) {document.getElementById("simSeed").value = localStorage.getItem("simSeed");}
@@ -88,12 +95,12 @@ if (document.getElementById("presets").value == "SGL_2023") {songItemChecked = f
 		
 var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 
-var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
-var checkSummaryText = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror Shield", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Dins Fire", "Fire Arrows", "Lens", "Letter", "Trade", "Light Arrows", "Ice Arrows"];
+var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
+var checkSummaryText = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror Shield", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Dins Fire", "Fire Arrows", "Lens", "Letter", "Trade", "Light Arrows", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack"];
 var textSongSpots = ["text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
-var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time"];
+var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bomb_bag1", "bomb_bag2", "bomb_bag3", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time"];
 var ItemImages = [];
-var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "Lullaby", "Eponas", "Suns", "Sarias", "Song of Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Song of Time"];
+var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Song of Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Song of Time"];
 var hintNames = ["clone", "mrhand", "dhback", "zdgame", "zdtorches", "gv1", "gv2", "labtop", "hba1", "csp1", "csp2", "hyb", "tek", "crb", "grb", "cob", "fop", "chf", "adf", "hyliasun", "poe", "len", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "wls", "pot", "dan", "lef", "rig", "goh", "gvh", "cuc", "cra", "mea", "1me", "kin", "jab", "sho", "hba", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","toss", "oot", "cas", "ogc", "tar", "fr1", "div", "pil", "shap", "iro", "sh2"];
 var hintNames2 = ["dlink", "hand", "bdh", "zddiv", "zdfir", "val1", "val2", "laptop", "100", "chspi1", "chspi2", "rut", "atz", "crater", "gybox", "colossusbean", "fop", "chfish", "adfish", "shootthesun", "poes", "lens", "20", "redead", "comp", "cos", "scarecrow", "hammer", "waterbk", "river", "gtgf", "toilet", "deadhand", "waste", "wsl", "pot", "daru", "left", "right", "gchammer", "gvhammer", "cucc", "bol", "min", "tot", "kz", "jabu", "shooting", "1500", "forestfloor", "shadowfloor", "noc", "ser", "fountain", "skullkid", "bgs", "skullmask", "30", "40", "50", "frog","ooti", "oot", "hfa", "gfa", "targ", "frogs1", "dive", "pill", "shapot", "iron", "st"];
 var hintNames3 = ["me", "dead", "steven", "zddive", "zdfire", "valleyledge", "waterfall", "topoflab", "1000", "cs1", "cs2", "ruto", "atz", "craterbean", "box", "col", "fop", "cfish", "afish", "sunshoot", "poe", "lensgame", "20s", "red", "composer", "cos", "pierre", "flare", "wbk", "riverch", "gtgfin", "gtgtoilet", "dea", "wasteland", "req", "pot", "darunia", "mir", "sil", "gcleft", "gvh", "cucco", "bolero", "minuet", "pre", "kingzora", "boom", "archery", "150", "ffloor", "shfloor", "nocturne", "serenade", "icy", "kid", "trade", "mask", "30s", "40s", "50s", "frogs","gfcb", "oots", "ohc", "ogc", "target", "frog1", "labdive", "pillar", "shp", "iro", "sha2"];
@@ -102,12 +109,12 @@ var hintNames5 = ["darklink", "deadhand", "dhbehind", "domdiv", "domfir", "valle
 var hintNames6 = ["dl", "dh", "inv", "domdive", "domfire", "valley1", "valley2", "laro","hba1", "chl", "chr", "bot", "atz", "crb", "grb", "colossus", "fop", "chf", "adf", "shoot", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "wastesong", "pot", "dancing", "lefthand", "righthand", "gch", "gvh", "chicken", "cra", "mea", "1me", "kin", "boo", "shoo", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","ootitem", "oot", "cas", "ogc", "tar", "fr1", "experiment", "pil", "shap", "iro", "sht"];
 var hintIndexes = ["water_dLink", "well_deadHand", "well_invisible", "zora_diving", "zora_torches", "gerudovalley_box", "gerudovalley_fall", "hylia_lab_top", "gerudo_archery_1", "spirit_childLeft","spirit_childRight", "hylia_bottle", "hyrule_tektite_grotto", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "hylia_child_fishing", "hylia_adult_fishing", "hylia_sun_shoot", "poes", "market_lens_game", "tokens_20", "redead_grave", "composers_grave", "sunsSpot", "fire_scarecrow", "fire_top", "water_bossKey","water_river", "gtg_final", "gtg_toilet", "well_deadHand", "wasteland", "requiemSpot", "goron_pot", "goron_dance", "spirit_leftHand", "spirit_rightHand", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest_floormaster", "shadow_floormaster", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater", "tokens_30", "tokens_40", "tokens_50", "frogs_2", "hyrule_ocarina", "oot", "dins_fairy", "g_fairy", "target", "frogs_1", "hylia_lab_dive", "water_pillar", "shadow_pot", "ice_irons", "ganons_shadowTrial2"];
 
-var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
-var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
-var inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
+var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
+var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var songInputs = ["lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
-var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice"];
-var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea"];
+var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
@@ -414,10 +421,10 @@ var tempMinutes = 0;
 var tempSeconds = 0;
 	
 var Locations = [
-	"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_soil", "gs_kokiri_adult", "kokiri_storms", "h_deku_left", "h_deku_right", "h_near_lw", "h_kokiri_storms",
-	"talons_chickens", "gs_lon_lon_tree", "back_of_ranch", "scrub_ranch_1", "scrub_ranch_2", "scrub_ranch_3", "gs_lon_lon_window", "gs_lon_lon_shed", "gs_lon_lon_back_wall", 
-	"hyrule_remoteGrotto", "hyrule_openGrotto", "hyrule_hp_scrub", "hyrule_marketGrotto", "hyrule_tektite_grotto", "gs_outside_kakariko", "gs_near_gerudo", "hyrule_ocarina", "h_hyrule_remoteGrotto", "h_hyrule_openGrotto", "h_hyrule_marketGrotto", "h_hyrule_web",
-	"gerudovalley_box", "gerudovalley_fall", "gs_valley_small_bridge", "gs_valley_bean", "gs_valley_pillar", "gs_valley_tent", "gerudo_hammer", "scrub_gv_1", "scrub_gv_2", "h_valley",
+	"mido_1", "mido_2", "mido_3", "mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_soil", "gs_kokiri_adult", "kokiri_storms", "cow_kokiri", "h_deku_left", "h_deku_right", "h_near_lw", "h_kokiri_storms",
+	"talons_chickens", "gs_lon_lon_tree", "back_of_ranch", "scrub_ranch_1", "scrub_ranch_2", "scrub_ranch_3", "gs_lon_lon_window", "gs_lon_lon_shed", "gs_lon_lon_back_wall","cow_ranch1", "cow_ranch2", "cow_ranch3", "cow_ranch4", 
+	"hyrule_remoteGrotto", "hyrule_openGrotto", "hyrule_hp_scrub", "hyrule_marketGrotto", "hyrule_tektite_grotto", "gs_outside_kakariko", "gs_near_gerudo", "hyrule_ocarina", "cow_field", "h_hyrule_remoteGrotto", "h_hyrule_openGrotto", "h_hyrule_marketGrotto", "h_hyrule_web",
+	"gerudovalley_box", "gerudovalley_fall", "gs_valley_small_bridge", "gs_valley_bean", "gs_valley_pillar", "gs_valley_tent", "gerudo_hammer", "scrub_gv_1", "scrub_gv_2", "cow_valley", "h_valley",
 	"scrub_lake_1", "scrub_lake_2", "scrub_lake_3", "hylia_child_fishing", "hylia_bottle", "gs_hylia_bean", "gs_hylia_lab_wall", "gs_hylia_island", "hylia_adult_fishing", "hylia_lab_top", "gs_hylia_lab_crate", "hylia_lab_dive", "gs_hylia_tree", "hylia_sun_shoot", "h_lab", "h_back_right_lake", "h_back_left_lake",
 	"gs_market", "shop_market_bazaar_TL", "shop_market_bazaar_TR", "shop_market_bazaar_BR", "shop_market_bazaar_BL", "shop_market_potion_TL", "shop_market_potion_TR", "shop_market_potion_BR", "shop_market_potion_BL", "shop_market_chu_TL", "shop_market_chu_TR", "shop_market_chu_BR", "shop_market_chu_BL", "market_slingshot_game", "richard", "market_bowling_1", "market_bowling_2", "market_lens_game", "poes", "h_tot_1", "h_tot_2", "h_tot_3", "h_tot_4",
 	"gs_hyrule_castle_tree", "dins_fairy", "gs_hyrule_castle_grotto", "h_castle_1", "h_castle_2", "h_castle_sos",
@@ -428,17 +435,17 @@ var Locations = [
 	"deku_lobby", "deku_slingshot", "deku_slingshot_room_side", "deku_compass", "deku_compass_room_side", "gs_deku_compass", "gs_deku_basement_gate", "gs_deku_basement_vines", "deku_basement", "gs_deku_basement_back", "deku_queen_gohma",
 	"lost_woods_fairy_ocarina", "target", "ocarina_game", "lw_generic", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "skull_kid", "bridge_scrub", "gs_lost_woods_above_stage", "theater", "h_lw_bridge", "h_lw_generic",
 	"wolfos_grotto", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2", "h_saria", "h_sfm_1", "h_sfm_2",
-	"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3", "h_goron_maze", "h_medigoron",
+	"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3", "goron_medigoron", "h_goron_maze", "h_medigoron",
 	"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
-	"trail_dodongos_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil", "h_trail_storms", "h_biggoron",
+	"trail_dodongos_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil","cow_trail", "h_trail_storms", "h_biggoron",
 	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "gs_crater_soil", "gs_crater_crate", "scrub_crater_child", "h_crater_grotto", "h_crater_wall",
-	"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "windmill", "anju", "cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50", "h_kakariko_grotto",
+	"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "kakariko_hag", "windmill", "anju", "kakariko_cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "cow_kakariko", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50", "h_kakariko_grotto",
 	"shield_grave", "graveyard_box", "race_1", "race_2", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave","h_nocturne",
-	"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2", "h_river_grotto", "h_river_pillar", "h_river_domain",
+	"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_bean_salesman", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2", "h_river_grotto", "h_river_pillar", "h_river_domain",
 	"shop_domain_TL", "shop_domain_TR", "shop_domain_BR", "shop_domain_BL", "zora_diving", "zora_torches", "thaw_king", "gs_domain", "h_domain",
 	"colossus_bean", "colossus_fairy", "gs_colossus_soil", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", "h_colossus",
-	"gs_wasteland", "wasteland",
-	"gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
+	"gs_wasteland", "wasteland_carpet", "wasteland",
+	"fortress_card", "gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
 	"gs_jabu_vines", "scrub_jabu", "jabu_map", "jabu_compass", "jabu_boomerang", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
 	"forest_first", "gs_forest_first", "gs_forest_lobby", "forest_stalfos", "forest_midCourtyard", "gs_forest_outdoor_east", "forest_highCourtyard", "forest_lowCourtyard", "forest_blockRoom", "forest_bossKey", "forest_floormaster", "gs_forest_outdoor_west", "forest_red", "forest_bow", "forest_blue", "forest_fallingCeiling", "forest_nearBoss", "gs_forest_basement", "forest_phantomGanon",
 	"fire_nearBoss", "gs_fire_basement", "fire_hammer1", "fire_hammer2", "fire_lavaOpen", "gs_fire_time", "fire_lavaBomb", "fire_volvagia", "fire_lowerMaze", "gs_fire_bomb_wall", "fire_sideRoom", "fire_map", "fire_upperMaze", "fire_shortcut", "gs_fire_scarecrow_1", "gs_fire_scarecrow_2", "fire_scarecrow", "fire_compass", "fire_sotGoron", "fire_top",
@@ -453,50 +460,50 @@ var Locations = [
 soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
 var Names = [
-	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "Near Exit", "Soil", "Adult", "SoS", "Deku L", "Deku R", "Near LW", "SoS",
-	/*Ranch*/"Talon", "Tree", "Back", "Scrub", "Scrub", "Scrub", "Window", "Shed", "Back Wall", 
-	/*Field*/"Remote", "Open", "Scrub", "Market", "Tektite", "Near Kak", "Near GV", "OoT Item", "Remote", "Open", "Destiny", "Webs",
-	/*Valley*/"Box", "Water", "Bridge", "Soil", "Pillar", "Tent", "Rocks", "Scrub", "Scrub", "Valley",
-	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "Soil", "Lab Wall", "Island", "Ad. Fish", "Labtop", "Crate", "Divin'", "Tree", "Sun", "Lab", "Lake R", "Lake L",
-	/*Market*/"Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Big Rich", "Bowling", "Bowling", "Lens", "Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
-	/*Hyrule Castle*/"Tree", "D Fairy", "Storms", "Castle 1", "Castle 2", "Castle SoS",
-	/*Ganon's Castle*/"Skull", "G Fairy",
+	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "SoS", "Cow", "Deku L", "Deku R", "Near LW", "SoS",
+	/*Ranch*/"Talon", "*Tree", "Back", "Scrub", "Scrub", "Scrub", "*Window", "*Shed", "*Back", "Cow", "Cow", "Cow", "Cow",
+	/*Field*/"Remote", "Open", "Scrub", "Market", "Tektite", "*NearKak", "*Near GV", "OoT Item", "Cow", "Remote", "Open", "Destiny", "Webs",
+	/*Valley*/"Box", "Water", "*Bridge", "*Soil", "*Pillar", "*Tent", "Rocks", "Scrub", "Scrub", "Cow", "Valley",
+	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "*Soil", "*Lab Wall", "*Island", "Ad. Fish", "Labtop", "*Crate", "Divin'", "*Tree", "Sun", "Lab", "Lake R", "Lake L",
+	/*Market*/"*Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Big Rich", "Bowling", "Bowling", "Lens", "Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
+	/*Hyrule Castle*/"*Tree", "D Fairy", "*Storms", "Castle 1", "Castle 2", "Castle SoS",
+	/*Ganon's Castle*/"*Skull", "G Fairy",
 	/*Temple of Time*/"LACS",
-	/*Fountain*/"Log", "Tree", "Fairy", "Glacier", "Divin'", "Cave", "Fairy", "Near Jabu",
-	/*Ice*/"Spinning", "Map", "HP", "HP", "Compass", "Blocks", "Irons",
-	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "Compass", "Gate", "Vines", "Basement", "Back", "Queen",
-	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage L", "Stage R", "Stage Soil", "Scrub Gr.", "Scrub Gr+", "Br Soil", "Saria Kid", "Br Scrub", "Abv Stage", "Mask", "Bridge", "Generic",
-	/*Sacred Forest Meadow*/"Wolfos", "Skull", "Left", "Right", "Saria", "Maze 1", "Maze 2",
-	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "Maze", "Maze!", "Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Maze", "Medigor",
-	/*Dodongos*/"Keese", "Scarecrow", "Far", "Lobby", "Nook", "Vines", "Map", "Compass", "Plat", "Left", "Right", "B Bag", "Bridge", "Last", "Above", "King", "Dodongos",
-	/*Trail*/"Top", "Bombable", "Wall", "SoS", "Fairy", "Trade", "Hail", "Flower", "Soil", "SoS", "Biggoron",
-	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "Soil", "Crate", "C Scrub", "Grotto", "Wall",
-	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "Tree", "Guard", "Tower", "Construct", "GS House", "Impas", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
-	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "Soil", "Wall", "Sun's", "Composer", "Nocturne",
-	/*River*/"Tree", "Scrub", "Scrub", "Pillar", "Frogs 1", "Grotto", "Near Gr", "Bridge", "Ledge", "Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
-	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "Skull", "Domain",
-	/*Colossus*/"Bean", "Fairy", "Soil", "Hill", "Tree", "Scrub", "Scrub", "Colossus",
-	/*Wasteland*/"Skull", "Check",
-	/*Fortress*/"Fort", "Roof", "1000", "1500", "Target", 
-	/*Jabu Jabu*/"Vines", "Scrub", "Map", "Compass", "Boom", "B4 Octo L", "B4 Octo R", "Near Boss", "Barinade",
-	/*Forest Temple*/"First", "First", "Lobby", "Stalfos", "C Hook", "C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "Base", "Phantom",
-	/*Fire Temple*/"Near Boss", "Base", "Hammer", "Hammer", "Lav Open", "SoT", "Lav Bomb", "Volvagia", "Low Cell", "Bomb Wall", "Side Room", "Map", "High Cell", "Shortcut", "Crow 1", "Crow 2", "Pierre", "Compass", "SoT Goron", "MEGA",
-	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "S Base", "Block", "Pillar", "Pillar", "Plats", "D Link", "River", "River", "Dragin", "Near BK", "BK", "Morpha",
-	/*Spirit Temple*/"Ch. Left", "Ch. Right", "Fence", "Ch. Climb", "Ch. Climb", "Ch. Climb", "Map", "Sun Room", "B4 Knuck", "Silvers", "Ad. Left", "SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "Main Room", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
-	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silvs", "Spinning", "Spinning", "Spinning", "Crusher L", "Spikes", "Crusher H", "Crusher H", "Mid Silvs", "Pot", "Pot", "Wind", "Bombable", "Gibdos", "Near Boat", "Dins", "Dins", "3 Pots", "Floor", "Bongo",
+	/*Fountain*/"*Log", "*Tree", "Fairy", "Glacier", "Divin'", "*Cave", "Fairy", "Near Jabu",
+	/*Ice*/"*Spinning", "Map", "*HP", "HP", "Compass", "*Blocks", "Irons",
+	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "*Compass", "*Gate", "*Vines", "Basement", "*Back", "Queen",
+	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "Mask", "Bridge", "Generic",
+	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Left", "Right", "Saria", "Maze 1", "Maze 2",
+	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "*Maze", "Maze!", "*Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Medigor", "Maze", "Medigor",
+	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "*Nook", "*Vines", "Map", "Compass", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
+	/*Trail*/"Top", "*Wall", "Wall", "SoS", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "Cow", "SoS", "Biggoron",
+	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
+	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Hag", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
+	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "*Soil", "*Wall", "Sun's", "Composer", "Nocturne",
+	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
+	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Divin'", "Torches", "King", "*Skull", "Domain",
+	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
+	/*Wasteland*/"*Skull", "Carpet", "Check",
+	/*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
+	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
+	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "*Base", "Phantom",
+	/*Fire Temple*/"Near Boss", "*Hammer", "Hammer", "Hammer", "Lav Open", "*SoT", "Lav Bomb", "Volvagia", "Low Cell", "*Maze", "Side Room", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "SoT Goron", "MEGA",
+	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "*Near BK", "BK", "Morpha",
+	/*Spirit Temple*/"Ch. Left", "Ch. Right", "*Fence", "Ch. Climb", "*Ch Climb", "Ch. Climb", "Map", "Sun Room", "*B4 Knuck", "Silvers", "Ad. Left", "*SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "*Main", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
+	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silvs", "*Spinning", "Spinning", "Spinning", "Crusher L", "*Crusher", "Crusher H", "Crusher H", "Mid Silvs", "*Pot", "Pot", "Wind", "Bombable", "Gibdos", "*Boat", "Dins", "Dins", "*3 Pots", "Floor", "Bongo",
 	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
 	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Abv Eyes", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
-	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "D Hand", "Invisible", "Door L", "Door R", "Locked 1", "Locked 2", "Like Like", "Base",
+	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "D Hand", "Invisible", "*Door L", "*Door R", "Locked 1", "Locked 2", "*Locked", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater"];
 
-var AreaIndexes = [0,17,26,38,48,65,88,94,96,97,105,112,124,139,146,164,181,192,204,232,242,256,265,273,275,280,289,308,328,344,369,392,412,434,451];
-var SongIndexes = [1000,452,462,1000,1000,1000,451,1000,460,1000,459,1000,1000,453,1000,1000,10000,456,454,455,1000,1000,458,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
-var SongIndexes2 = [1000,452,462,1000,1000,1000,451,1000,460,1000,459,1000,1000,457,1000,1000,1000,456,461,455,1000,1000,458,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var AreaIndexes = [0,18,31,44,55,72,95,101,103,104,112,119,130,146,153,172,189,201,213,243,253,268,277,285,288,294,303,322,342,358,383,406,426,448,465];
+var SongIndexes = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,467,1000,1000,10000,470,468,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var SongIndexes2 = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,471,1000,1000,1000,470,475,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 	
-var lastItem = 450;
-var lastSong = 462;
+var lastItem = 464;
+var lastSong = 476;
 	
 Location.med1 = "unknown";
 Location.med2 = "unknown";
@@ -755,6 +762,16 @@ Locked_Logic2.forced_spirit_boss_key = false;
 Locked_Logic2.forced_shadow_boss_key = false;
 Logic.light_arrows = false;
 Logic.ice_arrows = false;
+Logic.forest_key_ring = false;
+Logic.fire_key_ring = false;
+Logic.water_key_ring = false;
+Logic.spirit_key_ring = false;
+Logic.shadow_key_ring = false;
+Logic.well_key_ring = false;
+Logic.gtg_key_ring = false;
+Logic.ganons_key_ring = false;
+Logic.gerudo_card = false;
+Logic.magic_bean_pack = false;
 Logic.lullaby = false;
 Logic.eponas = false;
 Logic.sarias = false;
@@ -1094,7 +1111,7 @@ for (var i = 0; i<Locations.length; i++) {
 	}
 	if (i < AreaIndexes[34]) {
 		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[34]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
-		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";} parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; /*if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";}*/ parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
 	else {
@@ -1342,7 +1359,7 @@ var LocationToSpoilerName = {
 	"kakariko_grotto": "Kak Open Grotto Chest",
 	"windmill": "Kak Windmill Freestanding PoH",
 	"anju": "Kak Anju as Adult",
-	"cow_house": "Kak Impas House Freestanding PoH",
+	"kakariko_cow_house": "Kak Impas House Freestanding PoH",
 	"archery_game": "Kak Shooting Gallery Reward",
 	"redead_grotto": "Kak Redead Grotto Chest",
 	"anjus_chickens": "Kak Anju as Child",
@@ -1936,7 +1953,7 @@ document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "SGL_2023")
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nbig \nfr2 \nmas \n";
-if (document.getElementById("presets").value == "S6")
+if (document.getElementById("presets").value == "S6" || document.getElementById("presets").value == "S7")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 
 window.addEventListener("gamepadconnected", connecthandler);

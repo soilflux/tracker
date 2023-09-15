@@ -113,14 +113,18 @@
 				<small id="dins_fire_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Dins Fire &#8594; </small><br />
 				<small id="farores_wind_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Farores &#8594; </small><br />
 				<small id="fire_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Fire Arrows &#8594; </small><br />
+				<div id="gerudo_card_location_div"><small id="gerudo_card_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Gerudo Card &#8594; </small><br></div>
 				<small id="goron_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Goron Tunic &#8594; </small><br />
 				<small id="hammer_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hammer &#8594; </small><br />
 				<small id="hookshot1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hookshot &#8594; </small><br />
 				<small id="hookshot2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hookshot &#8594; </small><br />
 				<small id="hover_boots_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hover Boots &#8594; </small><br />
 				<div id="ice_arrows_location_div"><small id="ice_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Ice Arrows &#8594; </small><br /></div>
-				<small id="iron_boots_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Iron Boots &#8594; </small>
-				<br /><br />
+				<small id="iron_boots_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Iron Boots &#8594; </small><br />
+				<div id="forest_key_ring_location_div"><small id="forest_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Forest Key Ring &#8594; </small><br></div>
+				<div id="fire_key_ring_location_div"><small id="fire_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Fire Key Ring &#8594; </small><br></div>
+				<div id="water_key_ring_location_div"><small id="water_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Water Key Ring &#8594; </small><br></div>
+				<div id="spirit_key_ring_location_div"><small id="spirit_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Spirit Key Ring &#8594; </small></div><br /><br />
 				<textarea spellcheck="false" rows="30" cols="80" id = "simLog" class = "simLog"></textarea><br>
 				<button id = "simCheckAltar" onclick="simCheckAltar()" style = "display: none;">Check Altar</button>
 				<button id = "simCheckChildSpawn" onclick="simCheckChildSpawn()" style = "display: none;">Check Child Spawn</button>
@@ -135,6 +139,7 @@
 				<small id="light_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Light Arrows &#8594; </small><br />
 				<small id="magic1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
 				<small id="magic2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
+				<div id="magic_bean_pack_location_div"><small id="magic_bean_pack_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic Bean Pack&#8594; </small><br></div>
 				<small id="mirror_shield_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Mirror Shield &#8594; </small><br />
 				<small id="scale1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Scale &#8594; </small><br />
 				<small id="scale2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Scale &#8594; </small><br />
@@ -147,7 +152,11 @@
 				<small id="trade_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Trade &#8594; </small><br />
 				<small id="wallet1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet &#8594; </small><br />
 				<small id="wallet2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet &#8594; </small><br />
-				<small id="zora_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Zora Tunic &#8594; </small>	
+				<small id="zora_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Zora Tunic &#8594; </small><br />
+				<div id="shadow_key_ring_location_div"><small id="shadow_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Shadow Key Ring &#8594; </small><br></div>
+				<div id="well_key_ring_location_div"><small id="well_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Well Key Ring &#8594; </small><br></div>
+				<div id="gtg_key_ring_location_div"><small id="gtg_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">GTG Key Ring &#8594; </small><br></div>
+				<div id="ganons_key_ring_location_div"><small id="ganons_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Ganons Key Ring &#8594; </small></div>
 			</div>
 			<div id="probabilityColumn">
 				<small id = "theLetterN">n </small><input spellcheck="false" id = "probability_input" class = "hint_input" value = '1'></input><br>
@@ -429,19 +438,14 @@
 		<label class="settingsLabels" for="presets">PRESETS</label>
 		<select class="settingsOptions" id="presets">
 		  <option value="NONE">NONE</option>
-		  <option value="S6">S6</option>
-		  <option value="WEEKLY">WEEKLY</option>
-		  <option value="SGL_2023">SGL 2023</option>
+		  <option value="S7">S7</option>
 		  <option value="LEAGUE_S4">LEAGUE S4</option>
+		  <option value="SGL_2023">SGL 2023</option>
+		  <option value="S6">S6</option>
 		  <option value="S5">S5</option>
 		  <option value="S4">S4</option>
 		  <option value="S3">S3</option>
 		  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
-		<select class="settingsOptions" id="shuffleOcarinas">
-	      <option value="ON">ON</option>
-		  <option value="OFF">OFF</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="bosskeys">BOSSKEYS</label>
 		<select class="settingsOptions" id="bosskeys">
@@ -453,10 +457,16 @@
 		  <option value="CLOSED">CLOSED</option>
 		  <option value="OPEN">OPEN</option>
 		</select><br><br class="half_break">
+		<label class="settingsLabels" for="closedFountain">FOUNTAIN</label>
+		<select class="settingsOptions" id="closedFountain">
+		  <option value="CLOSED">CLOSED</option>
+		  <option value="OPEN">OPEN</option>
+		</select><br><br class="half_break">
 		<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
 		<select class="settingsOptions" id="skullSanity">
 		  <option value="OFF">OFF</option>
 		  <option value="DUNGEON">DUNGEON</option>
+		  <option value="OVERWORLD">OVERWORLD</option>
 		  <option value="ALL">ALL</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
@@ -469,6 +479,17 @@
 		  <option value="OFF">OFF</option>
 		  <option value="4">4</option>
 		</select><br><br class="half_break">
+		<label class="settingsLabels" for="keysanity">KEYSANITY</label>
+		<select class="settingsOptions" id="keysanity">
+		  <option value="OFF">OFF</option>
+		  <option value="KEYSY">KEYSY</option>
+		  <option value="KEY RINGS">KEY RINGS</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="cowSanity">COWSANITY</label>
+		<select class="settingsOptions" id="cowSanity">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
 		<label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
 		<select class="settingsOptions" id="gossips">
 		  <option value="OFF">OFF</option>
@@ -476,12 +497,13 @@
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
 		<select class="settingsOptions" id="ganonsBridge">
+		  <option value="ALL_MED">ALL MED</option>
+		  <option value="OPEN">OPEN</option>
 		  <option value="3_STONES">3 STONES</option>
 		  <option value="2_MEDALS">2 MEDALS</option>
 		  <option value="3_MEDALS">3 MEDALS</option>
 		  <option value="4_MEDALS">4 MEDALS</option>
 		  <option value="5_MEDALS">5 MEDALS</option>
-		  <option value="ALL_MED">ALL MED</option>
 		  <option value="1_REWARD">1 REWARD</option>
 		  <option value="2_REWARDS">2 REWARDS</option>
 		  <option value="3_REWARDS">3 REWARDS</option>
@@ -491,7 +513,6 @@
 		  <option value="7_REWARDS">7 REWARDS</option>
 		  <option value="8_REWARDS">8 REWARDS</option>
 		  <option value="9_REWARDS">9 REWARDS</option>
-		  <option value="ALWAYS">ALWAYS</option>
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
 		<select class="settingsOptions" id="ganonBKSetting">
@@ -507,6 +528,31 @@
 		<select class="settingsOptions" id="hints_type">
 		  <option value="WOTH">WOTH</option>
 		  <option value="PATH">PATH</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
+		<select class="settingsOptions" id="blueFireArrows">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
+		<select class="settingsOptions" id="shuffleOcarinas">
+	      <option value="ON">ON</option>
+		  <option value="OFF">OFF</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="shuffleGerudoCard">SHFL. GER CARD</label>
+		<select class="settingsOptions" id="shuffleGerudoCard">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="shuffleBeanPack">SHFL. BEANS</label>
+		<select class="settingsOptions" id="shuffleBeanPack">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="shuffleExpensivePurchases">SHFL. EXPENSIVE</label>
+		<select class="settingsOptions" id="shuffleExpensivePurchases">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
 		</select><br><br class="half_break">
 	</div>
 	<div id = "mouseInputs">
