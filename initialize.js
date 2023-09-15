@@ -75,6 +75,7 @@ var scrubSanity = false;
 if (localStorage.getItem("scrubSanity")) {document.getElementById("scrubSanity").value= localStorage.getItem("scrubSanity");}
 if (localStorage.getItem("shopSanity")) {document.getElementById("shopSanity").value = localStorage.getItem("shopSanity");}
 if (localStorage.getItem("skullSanity")) {document.getElementById("skullSanity").value = localStorage.getItem("skullSanity");}
+if (localStorage.getItem("cowSanity")) {document.getElementById("cowSanity").value = localStorage.getItem("cowSanity");}
 if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").value	= localStorage.getItem("closedDeku");}
 if (localStorage.getItem("closedFountain")) {document.getElementById("closedFountain").value = localStorage.getItem("closedFountain");}
 if (localStorage.getItem("blueFireArrows")) {document.getElementById("blueFireArrows").value = localStorage.getItem("blueFireArrows");}
@@ -83,6 +84,9 @@ if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSet
 if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
 if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
 if (localStorage.getItem("shuffleOcarinas")) {document.getElementById("shuffleOcarinas").value = localStorage.getItem("shuffleOcarinas");}
+if (localStorage.getItem("shuffleGerudoCard")) {document.getElementById("shuffleGerudoCard").value = localStorage.getItem("shuffleGerudoCard");}
+if (localStorage.getItem("shuffleBeanPack")) {document.getElementById("shuffleBeanPack").value = localStorage.getItem("shuffleBeanPack");}
+if (localStorage.getItem("shuffleExpensivePurchases")) {document.getElementById("shuffleExpensivePurchases").value = localStorage.getItem("shuffleExpensivePurchases");}
 if (localStorage.getItem("csmc")) {document.getElementById("csmc").value = localStorage.getItem("csmc");}
 if (localStorage.getItem("hints_type")) {document.getElementById("hints_type").value = localStorage.getItem("hints_type");}
 if (localStorage.getItem("simSeed")) {document.getElementById("simSeed").value = localStorage.getItem("simSeed");}

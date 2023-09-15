@@ -450,6 +450,7 @@ function saveStuff() {
 	localStorage.setItem("scrubSanity", document.getElementById("scrubSanity").value);
 	localStorage.setItem("shopSanity", document.getElementById("shopSanity").value);
 	localStorage.setItem("skullSanity", document.getElementById("skullSanity").value);
+	localStorage.setItem("cowSanity", document.getElementById("cowSanity").value);
 	localStorage.setItem("closedDeku", document.getElementById("closedDeku").value);
 	localStorage.setItem("closedFountain", document.getElementById("closedFountain").value);
 	localStorage.setItem("blueFireArrows", document.getElementById("blueFireArrows").value);
@@ -459,6 +460,9 @@ function saveStuff() {
 	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
 	localStorage.setItem("presets", document.getElementById("presets").value);
 	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
+	localStorage.setItem("shuffleGerudoCard", document.getElementById("shuffleGerudoCard").value);
+	localStorage.setItem("shuffleBeanPack", document.getElementById("shuffleBeanPack").value);
+	localStorage.setItem("shuffleExpensivePurchases", document.getElementById("shuffleExpensivePurchases").value);
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
     localStorage.setItem("simSeed", document.getElementById("simSeed").value);
