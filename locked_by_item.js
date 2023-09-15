@@ -582,7 +582,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.kakariko_grotto = true;
 	Location_Locked_Logic2.windmill = true;//Locked_Logic2.boomerang || Locked_Logic2.time;
 	Location_Locked_Logic2.anju = true;
-	Location_Locked_Logic2.cow_house = true;
+	Location_Locked_Logic2.kakariko_cow_house = true;
 	Location_Locked_Logic2.archery_game = Locked_Logic2.bow;
 	Location_Locked_Logic2.redead_grotto = Locked_Logic2.can_blast_or_smash;
 	Location_Locked_Logic2.anjus_chickens = true;

@@ -705,7 +705,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.kakariko_grotto = true;
 	Location_PutIn_Logic.windmill = true;//PutIn_Logic.boomerang || PutIn_Logic.time;
 	Location_PutIn_Logic.anju = true;
-	Location_PutIn_Logic.cow_house = true;
+	Location_PutIn_Logic.kakariko_cow_house = true;
 	Location_PutIn_Logic.archery_game = PutIn_Logic.bow;
 	Location_PutIn_Logic.redead_grotto = PutIn_Logic.can_blast_or_smash;
 	Location_PutIn_Logic.anjus_chickens = true;

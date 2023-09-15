@@ -72,6 +72,17 @@ function refreshLogicForStuff() {
 	Logic.trade = Logic.claim_check || Logic.prescription;
 	
 	if(Known.light_arrows == true) {Logic.light_arrows = Location_Logic[Location.light_arrows];}
+	if(Known.ice_arrows == true) {Logic.ice_arrows = Location_Logic[Location.ice_arrows];}
+	if(Known.forest_key_ring == true) {Logic.forest_key_ring = Location_Logic[Location.forest_key_ring];}
+	if(Known.fire_key_ring == true) {Logic.fire_key_ring = Location_Logic[Location.fire_key_ring];}
+	if(Known.water_key_ring == true) {Logic.water_key_ring = Location_Logic[Location.water_key_ring];}
+	if(Known.spirit_key_ring == true) {Logic.spirit_key_ring = Location_Logic[Location.spirit_key_ring];}
+	if(Known.shadow_key_ring == true) {Logic.shadow_key_ring = Location_Logic[Location.shadow_key_ring];}
+	if(Known.well_key_ring == true) {Logic.well_key_ring = Location_Logic[Location.well_key_ring];}
+	if(Known.gtg_key_ring == true) {Logic.gtg_key_ring = Location_Logic[Location.gtg_key_ring];}
+	if(Known.ganons_key_ring == true) {Logic.ganons_key_ring = Location_Logic[Location.ganons_key_ring];}
+	if(Known.gerudo_card == true) {Logic.gerudo_card = Location_Logic[Location.gerudo_card];}
+	if(Known.magic_bean_pack == true) {Logic.magic_bean_pack = Location_Logic[Location.magic_bean_pack];}
 	
 	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[Location.lullaby]; }
 	if(Known.eponas == true) {Logic.eponas = Location_Logic[Location.eponas]; }
@@ -281,6 +292,16 @@ function refreshLogicForStuff() {
 		Logic.claim_check = Player.claim_check || CouldHave.claim_check;
 		Logic.light_arrows = Player.light_arrows || CouldHave.light_arrows;
 		Logic.ice_arrows = Player.ice_arrows || CouldHave.ice_arrows;
+		Logic.forest_key_ring = Player.forest_key_ring || CouldHave.forest_key_ring;
+		Logic.fire_key_ring = Player.fire_key_ring || CouldHave.fire_key_ring;
+		Logic.water_key_ring = Player.water_key_ring || CouldHave.water_key_ring;
+		Logic.spirit_key_ring = Player.spirit_key_ring || CouldHave.spirit_key_ring;
+		Logic.shadow_key_ring = Player.shadow_key_ring || CouldHave.shadow_key_ring;
+		Logic.well_key_ring = Player.well_key_ring || CouldHave.well_key_ring;
+		Logic.gtg_key_ring = Player.gtg_key_ring || CouldHave.gtg_key_ring;
+		Logic.ganons_key_ring = Player.ganons_key_ring || CouldHave.ganons_key_ring;
+		Logic.gerudo_card = Player.gerudo_card || CouldHave.gerudo_card;
+		Logic.magic_bean_pack = Player.magic_bean_pack || CouldHave.magic_bean_pack;
 		Logic.lullaby = Player.lullaby || CouldHave.lullaby;
 		Logic.eponas = Player.eponas || CouldHave.eponas;
 		Logic.sarias = Player.sarias || CouldHave.sarias;
@@ -1007,7 +1028,7 @@ function locationLogic(){
 	Location_Logic.kakariko_grotto = true;
 	Location_Logic.windmill = true;//Logic.boomerang || Logic.time;
 	Location_Logic.anju = true;
-	Location_Logic.cow_house = true;
+	Location_Logic.kakariko_cow_house = true;
 	Location_Logic.archery_game = Logic.bow;
 	Location_Logic.redead_grotto = Logic.can_blast_or_smash;
 	Location_Logic.anjus_chickens = true;
@@ -1424,7 +1445,7 @@ function locationLogic(){
 	Location_Access.kakariko_grotto = true;
 	Location_Access.windmill = true;//Player.boomerang || Player.time;
 	Location_Access.anju = true;
-	Location_Access.cow_house = true;
+	Location_Access.kakariko_cow_house = true;
 	Location_Access.redead_grotto = Player.can_blast_or_smash;
 	Location_Access.archery_game = Player.bow;
 	Location_Access.anjus_chickens = true;
@@ -1890,7 +1911,7 @@ function locationLogic(){
 	Location_Obtain.kakariko_grotto = true;
 	Location_Obtain.windmill = true;//Player.boomerang || Player.time;
 	Location_Obtain.anju = true;
-	Location_Obtain.cow_house = true;
+	Location_Obtain.kakariko_cow_house = true;
 	Location_Obtain.redead_grotto = Player.can_blast_or_smash;
 	Location_Obtain.archery_game = Player.bow;
 	Location_Obtain.anjus_chickens = true;
@@ -2315,7 +2336,7 @@ function locationLogic(){
 	Location_Could_Access.kakariko_grotto = true;
 	Location_Could_Access.windmill = true;//CouldHave.boomerang || CouldHave.time;
 	Location_Could_Access.anju = true;
-	Location_Could_Access.cow_house = true;
+	Location_Could_Access.kakariko_cow_house = true;
 	Location_Could_Access.redead_grotto = CouldHave.can_blast_or_smash;
 	Location_Could_Access.archery_game = CouldHave.bow;
 	Location_Could_Access.anjus_chickens = true;
@@ -2639,7 +2660,7 @@ function locationLogic(){
 	Location_Could_Peek.kakariko_grotto = true;
 	Location_Could_Peek.windmill = true;//CouldHave.boomerang || CouldHave.time;
 	Location_Could_Peek.anju = true;
-	Location_Could_Peek.cow_house = true;
+	Location_Could_Peek.kakariko_cow_house = true;
 	Location_Could_Peek.redead_grotto = CouldHave.can_blast_or_smash;
 	Location_Could_Peek.archery_game = CouldHave.bow;
 	Location_Could_Peek.anjus_chickens = true;
