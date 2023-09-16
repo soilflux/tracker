@@ -76,7 +76,7 @@ function processInputs() {
 				if(Items2[j] == "hookshot" && Known["hookshot2"]) continue;
 				if(Items2[j] == "magic" && Known["magic2"]) continue;
 				if(Items2[j] == "scale" && Known["scale2"]) continue;
-				if(Items2[j] == "wallet" && Known["wallet2"]) continue;
+				if(Items2[j] == "wallet" && Known["wallet3"]) continue;
 				if((Items2[j] == "prescription" || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 				
 				if (j == 0) {
@@ -898,7 +898,7 @@ function refreshLinSo() {
 				if (linsoOrder[temp] == "" || linsoOrder[temp] == "skull_counter") {temp += 1; continue;}
 				if (linsoOrder[temp] == "hookshot") {if (Player.hookshot && !Player.longshot)  {document.getElementById("linso" + i + j).src = Player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.longshot){document.getElementById("linso" + i + j).src = Player.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;} }
 				else if (linsoOrder[temp] == "silver_scale") {if (Player.silver_scale && !Player.golden_scale)  {document.getElementById("linso" + i + j).src = Player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.golden_scale){document.getElementById("linso" + i + j).src = Player.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
-				else if (linsoOrder[temp] == "adults_wallet") {if (Player.wallet3) {document.getElementById("linso103").style.opacity = 1;} else{document.getElementById("linso103").style.opacity = 0;} if (Player.giants_wallet)  { document.getElementById("linso" + i + j).src = Player.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.adults_wallet){document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
+				else if (linsoOrder[temp] == "adults_wallet") {if (Player.tycoon_wallet) {document.getElementById("linso103").style.opacity = 1;} else{document.getElementById("linso103").style.opacity = 0;} if (Player.giants_wallet)  { document.getElementById("linso" + i + j).src = Player.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.adults_wallet){document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "goron_bracelet") {if (Player.golden_gauntlets)  {document.getElementById("linso" + i + j).src = Player.golden_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.silver_gauntlets){document.getElementById("linso" + i + j).src = Player.silver_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.goron_bracelet){document.getElementById("linso" + i + j).src = Player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "bomb") {if (Player.bomb_bag) {document.getElementById("linso" + i + j).src = Player.bomb_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.bomb_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
 				else if (linsoOrder[temp] == "magic") {if (Player.double_magic)  {document.getElementById("linso" + i + j).src = Player.magic_2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else if (Player.magic){document.getElementById("linso" + i + j).src = Player.magic_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1;} else {document.getElementById("linso" + i + j).src = Player.magic_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = .2;}}
@@ -971,6 +971,11 @@ function updateLogicInfo() {
 		document.getElementById("ice_arrows_location_div").style.display = "none";
 	else
 		document.getElementById("ice_arrows_location_div").style.display = "inline";
+	
+	if(document.getElementById("shopSanity").value == "OFF")
+		document.getElementById("wallet3_location_div").style.display = "none";
+	else
+		document.getElementById("wallet3_location_div").style.display = "inline";
 	
 	if(document.getElementById("keysanity").value == "KEY RINGS") {
 		document.getElementById("forest_key_ring_location_div").style.display = "inline";
@@ -1276,6 +1281,36 @@ function updateLogicInfo() {
 	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1; document.getElementById("text_shadow_compass").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1; document.getElementById("text_spirit_nearFourArmos").style.fontWeight = "bold";}
 	
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.forest_keys = Player.current_forest_keys = 5;
+		Logic.forest_boss_key = Player.forest_boss_key = true;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.fire_keys = Player.current_fire_keys = 8;
+		Logic.fire_boss_key = Player.fire_boss_key = true;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.water_keys = Player.current_water_keys = 6;
+		Logic.water_boss_key = Player.water_boss_key = true;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.shadow_keys = Player.current_shadow_keys = 5;
+		Logic.shadow_boss_key = Player.shadow_boss_key = true;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.spirit_keys = Player.current_spirit_keys = 5;
+		Logic.spirit_boss_key = Player.spirit_boss_key = true;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.gtg_keys = Player.current_gtg_keys = 9;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.well_keys = Player.current_well_keys = 3;
+	}
+	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+		Logic.ganons_keys = Player.current_ganons_keys = 2;
+	}
+	
 	Player.forest_checks_remaining -= 5 - Player.current_forest_keys;
 	Player.fire_checks_remaining -= 8 - Player.current_fire_keys
 	Player.water_checks_remaining -= 6 - Player.current_water_keys
@@ -1354,7 +1389,7 @@ function searchingFor_tracking() {
 function updateSummaryText() { 
 	// Update Check Summary ClassNames (only items, not songs)
 		
-	for(var i = 0; i <= 48; i++){
+	for(var i = 0; i <= 49; i++){
 		str = checkSummary[i] + "_location";
 		
 		if(Hinted[Location[checkSummary[i]]] && document.getElementById(str).innerHTML.indexOf("*") < 0)
