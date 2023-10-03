@@ -8,7 +8,7 @@ function Update() {
 	updateProbabilities() // update the probabilities for items based on checks of that type left vs checks remaining
 	for (var i = 0; i < nextChecks.length; i++) {
 		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
-		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
+		if (Location_Peek[nextChecks[i]]) {nextIndex = i; break;}
 		if (i == nextChecks.length - 1) {i = 420;}
 	}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
@@ -62,7 +62,7 @@ function midUpdate() {
 	}
 	for (var i = 0; i < nextChecks.length; i++) {
 		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
-		if (Location_Access[nextChecks[i]]) {nextIndex = i; break;}
+		if (Location_Peek[nextChecks[i]]) {nextIndex = i; break;}
 		if (i == nextChecks.length - 1) {nextIndex = 420;}
 	}
 	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
