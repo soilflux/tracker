@@ -1408,8 +1408,8 @@ function locationLogic(){
 	Location_Logic.gs_well_east_inner = Logic.boomerang /*&& Logic.can_see*/ && Logic.well_keys >=3;
 	Location_Logic.gs_well_like_like = Logic.boomerang /*&& Logic.can_see*/ && Logic.well_keys >=3;
 	Location_Logic.gs_ice_spinning_scythe = Logic.ice_access && Logic.hookshot;
-	Location_Logic.gs_ice_hp_room = Logic.ice_access && Logic.hookshot;
-	Location_Logic.gs_ice_block_room = Logic.ice_access && Logic.hookshot;
+	Location_Logic.gs_ice_hp_room = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && Logic.hookshot;
+	Location_Logic.gs_ice_block_room = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && Logic.hookshot;
 	
 	Location_Access.kokiri_sword = true;
 	Location_Access.mido_1 = true;
@@ -1847,8 +1847,8 @@ function locationLogic(){
 	Location_Access.gs_well_east_inner = Player.boomerang /*&& Player.can_see*/ && Player.current_well_keys >=2;
 	Location_Access.gs_well_like_like = Player.current_well_keys >=1;
 	Location_Access.gs_ice_spinning_scythe = Player.ice_access && Player.hookshot;
-	Location_Access.gs_ice_hp_room = Player.ice_access && Player.hookshot;
-	Location_Access.gs_ice_block_room = Player.ice_access && (Player.hookshot || (Player.hover_boots && Player.bow));
+	Location_Access.gs_ice_hp_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && Player.hookshot;
+	Location_Access.gs_ice_block_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || (Player.hover_boots && Player.bow));
 	
 	Location_Peek.kokiri_sword = true;
 	Location_Peek.mido_1 = true;
@@ -2327,8 +2327,8 @@ function locationLogic(){
 	Location_Peek.gs_well_east_inner = Player.current_well_keys >=2;
 	Location_Peek.gs_well_like_like = Player.current_well_keys >=1;
 	Location_Peek.gs_ice_spinning_scythe = Player.ice_access && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
-	Location_Peek.gs_ice_hp_room = Player.ice_access && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
-	Location_Peek.gs_ice_block_room = Player.ice_access && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
+	Location_Peek.gs_ice_hp_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
+	Location_Peek.gs_ice_block_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
 	
 	Location_Could_Access.kokiri_sword = true;
 	Location_Could_Access.mido_1 = true;
@@ -2766,8 +2766,8 @@ function locationLogic(){
 	Location_Could_Access.gs_well_east_inner = CouldHave.boomerang && Player.current_well_keys >=2;
 	Location_Could_Access.gs_well_like_like = Player.current_well_keys >=1;
 	Location_Could_Access.gs_ice_spinning_scythe = CouldHave.ice_access && CouldHave.hookshot;
-	Location_Could_Access.gs_ice_hp_room = CouldHave.ice_access && CouldHave.hookshot;
-	Location_Could_Access.gs_ice_block_room = CouldHave.ice_access && (CouldHave.hookshot || (CouldHave.hover_boots && CouldHave.bow));
+	Location_Could_Access.gs_ice_hp_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && CouldHave.hookshot;
+	Location_Could_Access.gs_ice_block_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || (CouldHave.hover_boots && CouldHave.bow));
 	
 	Location_Could_Peek.kokiri_sword = true;
 	Location_Could_Peek.mido_1 = true;
@@ -3246,8 +3246,8 @@ function locationLogic(){
 	Location_Could_Peek.gs_well_east_inner = Player.current_well_keys >=2;
 	Location_Could_Peek.gs_well_like_like = Player.current_well_keys >=1;
 	Location_Could_Peek.gs_ice_spinning_scythe = CouldHave.ice_access && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
-	Location_Could_Peek.gs_ice_hp_room = CouldHave.ice_access && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
-	Location_Could_Peek.gs_ice_block_room = CouldHave.ice_access && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
+	Location_Could_Peek.gs_ice_hp_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
+	Location_Could_Peek.gs_ice_block_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
 	
 	if(document.getElementById("csmc").value == "ON") {
 		Location_Peek.goron_maze_1 = true;
