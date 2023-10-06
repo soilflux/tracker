@@ -107,6 +107,7 @@
 				<small id="bottle1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
 				<small id="bottle2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
 				<small id="bottle3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
+				<div id="bottle4_location_div"><small id="bottle4_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br></div>
 				<small id="bow1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
 				<small id="bow2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
 				<small id="bow3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
@@ -135,7 +136,7 @@
 			<div id="checkSummaryColumn2" class="checkSummaryColumn">
 				<small id="kokiri_sword_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Kokiri Sword &#8594; </small><br />
 				<small id="lens_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Lens &#8594; </small><br />
-				<small id="rutos_letter_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Letter &#8594; </small><br />
+				<div id="rutos_letter_location_div"><small id="rutos_letter_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Letter &#8594; </small><br /></div>
 				<small id="light_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Light Arrows &#8594; </small><br />
 				<small id="magic1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
 				<small id="magic2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
@@ -530,11 +531,6 @@
 		  <option value="WOTH">WOTH</option>
 		  <option value="PATH">PATH</option>
 		</select><br><br class="half_break">
-		<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
-		<select class="settingsOptions" id="blueFireArrows">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
 		<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
 		<select class="settingsOptions" id="shuffleOcarinas">
 	      <option value="ON">ON</option>
@@ -552,6 +548,16 @@
 		</select><br><br class="half_break">
 		<label class="settingsLabels" for="shuffleExpensivePurchases">SHFL. EXPENSIVE</label>
 		<select class="settingsOptions" id="shuffleExpensivePurchases">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
+		<select class="settingsOptions" id="blueFireArrows">
+		  <option value="OFF">OFF</option>
+		  <option value="ON">ON</option>
+		</select><br><br class="half_break">
+		<label class="settingsLabels" for="preplantedBeans">PREPLANT BEANS</label>
+		<select class="settingsOptions" id="preplantedBeans">
 		  <option value="OFF">OFF</option>
 		  <option value="ON">ON</option>
 		</select><br><br class="half_break">
