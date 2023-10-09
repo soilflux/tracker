@@ -818,7 +818,7 @@ function logicShortcuts() {
 	Logic.fortress_access = Logic.eponas || Logic.longshot || Spawn.adult_gf || (Spawn.child_gv_gf && Logic.kokiri_sword);
 	Logic.can_save_carpenters = (Spawn.child_gv_gf && Logic.kokiri_sword) || (Logic.fortress_access && ((Logic.bow || Logic.hookshot || Logic.hover_boots) || true)) /*fast carpenter fix**/;
 	Logic.can_enter_gtg = (Logic.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (Logic.fortress_access && Logic.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
-	Logic.can_cross_quicksand = Logic.fortress_access && (Logic.longshot || Logic.hover_boots);
+	Logic.can_cross_quicksand = Logic.fortress_access && (Logic.longshot || Logic.hover_boots) && (document.getElementById("shuffleGerudoCard").value == "OFF" || Logic.gerudo_card);
 	Logic.can_enter_colossus = (Logic.can_cross_quicksand && (Logic.brackets || Logic.can_see)) || Logic.requiem || Spawn.child_colossus || Spawn.adult_colossus;
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
 	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
@@ -871,7 +871,7 @@ function logicShortcuts() {
 	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf;
 	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
 	Player.can_enter_gtg = (Player.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (Player.fortress_access && Player.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
-	Player.can_cross_quicksand = Player.fortress_access;
+	Player.can_cross_quicksand = Player.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || Player.gerudo_card);
 	Player.can_enter_colossus = (Player.can_cross_quicksand) || Player.requiem || Spawn.child_colossus || Spawn.adult_colossus;
 	Player.can_use_fire = (Player.dins_fire || (Player.bow && Player.fire_arrows)) && Player.magic;
 	Player.can_use_dins = Player.dins_fire && Player.magic;
@@ -925,7 +925,7 @@ function logicShortcuts() {
 	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf;
 	CouldHave.can_save_carpenters = Spawn.child_gv_gf || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
 	CouldHave.can_enter_gtg = (CouldHave.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (CouldHave.fortress_access && CouldHave.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
-	CouldHave.can_cross_quicksand = CouldHave.fortress_access;
+	CouldHave.can_cross_quicksand = CouldHave.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || CouldHave.gerudo_card);
 	CouldHave.can_enter_colossus = (CouldHave.can_cross_quicksand) || CouldHave.requiem || Spawn.child_colossus || Spawn.adult_colossus;
 	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
 	CouldHave.can_use_dins = CouldHave.dins_fire && CouldHave.magic;
