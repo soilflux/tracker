@@ -927,7 +927,7 @@ Spawn.adult_colossus = false;
 
 //RULES
 Rules = {};
-Rules.kzSkip = false;
+Rules.kzSkip = true;
   
 var woth1 = "unknown";
 var woth2 = "unknown";
