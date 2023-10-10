@@ -475,7 +475,7 @@ var Names = [
 	/*Ice*/"*Spinning", "Map", "*HP", "HP", "Compass", "*Blocks", "Irons",
 	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "*Compass", "*Gate", "*Vines", "Basement", "*Back", "Queen",
 	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "Mask", "Bridge", "Generic",
-	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Left", "Right", "Saria", "Maze 1", "Maze 2",
+	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Scrub", "Scrub", "Saria", "Maze 1", "Maze 2",
 	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "*Maze", "Maze!", "*Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Medigor", "Maze", "Medigor",
 	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "*Nook", "*Vines", "Map", "Compass", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
 	/*Trail*/"Top", "*Wall", "Wall", "SoS", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "Cow", "SoS", "Biggoron",
