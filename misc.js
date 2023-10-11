@@ -306,11 +306,15 @@ function enableChus() {
 		Player.has_chus = true;
 		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chuo.png";}
 		else {document.getElementById("chuButton").style.opacity = 1;}
+		
+		document.getElementById("linso23").click();
 	}
 	else if(Player.has_chus == true) {
 		Player.has_chus = false;
 		if (Person.type == "soli") {document.getElementById("chuButton").src = "./images/chux.png";}
 		else {document.getElementById("chuButton").style.opacity = .4;}
+		
+		document.getElementById("linso23").click();
 	}
 }
 

@@ -56,6 +56,7 @@ function wothAndBarrenProcessing() {
 			if (str3.startsWith("wa") || str3.startsWith("mo")) {AreaGoalPathBoss[i] = "Morpha";} 
 			if (str3.startsWith("sp") || str3.startsWith("tw")) {AreaGoalPathBoss[i] = "Twinrova";} 
 			if (str3.startsWith("sh") || str3.startsWith("bo")) {AreaGoalPathBoss[i] = "Bongo";}
+			if (str3.startsWith("to")) {AreaGoalPathBoss[i] = "Tower";}
 		}
 		
 		if (i <= 5) {
