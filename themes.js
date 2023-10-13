@@ -20,7 +20,14 @@ function dark_soli() {
 	Player.hover_boots_img= "./images/hovers505050.png";
 	Player.light_arrows_img= "./images/lightarrow505050.png";
 	Player.ice_arrows_img = "./normal/items/ice_arrows.png";
-	Player.key_img = "./normal/items/small_key.png";
+	Player.forest_key_img = "./normal/items/forest-temple-key.png";
+	Player.fire_key_img = "./normal/items/fire-temple-key.png";
+	Player.water_key_img = "./normal/items/water-temple-key.png";
+	Player.spirit_key_img = "./normal/items/spirit-temple-key.png";
+	Player.shadow_key_img = "./normal/items/shadow-temple-key.png";
+	Player.gtg_key_img = "./normal/items/gtg-key.png";
+	Player.well_key_img = "./normal/items/botw-key.png";
+	Player.ganon_key_img = "./normal/items/ganon-key.png";
 	Player.fire_arrows_img= "./images/firearrows505050.png";
 	Player.farores_wind_img = "./images/farores505050.png";
 	Player.bottle_img = "./images/bottle505050.png";
@@ -139,7 +146,7 @@ function dark_soli() {
 	}
 	document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 	
-	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.forest_key_img, Player.fire_key_img, Player.water_key_img, Player.spirit_key_img, Player.shadow_key_img, Player.well_key_img, Player.gtg_key_img, Player.ganon_key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function dark_normie() {
@@ -222,7 +229,14 @@ function dark_normie() {
 	Player.half_milk_img = "./normal/items/half_milk.png";
 	Player.hylian_shield_img = "./normal/items/hylian_shield.png";
 	Player.ice_arrows_img = "./normal/items/ice_arrows.png";
-	Player.key_img = "./normal/items/small_key.png";
+	Player.forest_key_img = "./normal/items/forest-temple-key.png";
+	Player.fire_key_img = "./normal/items/fire-temple-key.png";
+	Player.water_key_img = "./normal/items/water-temple-key.png";
+	Player.spirit_key_img = "./normal/items/spirit-temple-key.png";
+	Player.shadow_key_img = "./normal/items/shadow-temple-key.png";
+	Player.gtg_key_img = "./normal/items/gtg-key.png";
+	Player.well_key_img = "./normal/items/botw-key.png";
+	Player.ganon_key_img = "./normal/items/ganon-key.png";
 	Player.keaton_mask_img = "./normal/items/keaton_mask.png";
 	Player.kokiri_boots_img = "./normal/items/kokiri_boots.png";
 	Player.kokiri_sword_img = "./normal/items/kokiri_sword.png";
@@ -348,7 +362,8 @@ function dark_normie() {
 		else if (i < AreaIndexes[23]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/colossus.jpg')";}
 		else if (i < AreaIndexes[24]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/wasteland.jpg')";}
 		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
-		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
+		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
+		else if (i < AreaIndexes[27]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
 	}
 	document.getElementById("chuButton").src= Player.chu_img;
 	document.getElementById("chuButton").style.opacity = .4;
@@ -386,7 +401,7 @@ function dark_normie() {
 	
 	
 	
-	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
+	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.forest_key_img, Player.fire_key_img, Player.water_key_img, Player.spirit_key_img, Player.shadow_key_img, Player.well_key_img, Player.gtg_key_img, Player.ganon_key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img];
 }
 
 function changeThemes() {

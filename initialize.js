@@ -438,7 +438,7 @@ var Locations = [
 	"lost_woods_fairy_ocarina", "target", "ocarina_game", "lw_generic", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "skull_kid", "bridge_scrub", "gs_lost_woods_above_stage", "theater", "h_lw_bridge", "h_lw_generic",
 	"wolfos_grotto", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2", "h_saria", "h_sfm_1", "h_sfm_2",
 	"shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3", "goron_medigoron", "h_goron_maze", "h_medigoron",
-	"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_map", "dodongos_compass", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
+	"gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "dodongos_map", "dodongos_compass", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
 	"trail_dodongos_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil","cow_trail", "h_trail_storms", "h_biggoron",
 	"crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "gs_crater_soil", "gs_crater_crate", "scrub_crater_child", "h_crater_grotto", "h_crater_wall",
 	"shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "kakariko_hag", "windmill", "anju", "kakariko_cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "cow_kakariko", "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50", "h_kakariko_grotto",
@@ -477,7 +477,7 @@ var Names = [
 	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "Mask", "Bridge", "Generic",
 	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Scrub", "Scrub", "Saria", "Maze 1", "Maze 2",
 	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "*Maze", "Maze!", "*Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Medigor", "Maze", "Medigor",
-	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "*Nook", "*Vines", "Map", "Compass", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
+	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "Map", "Compass", "*Nook", "*Vines", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
 	/*Trail*/"Top", "*Wall", "Wall", "SoS", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "Cow", "SoS", "Biggoron",
 	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
 	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Hag", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
@@ -500,9 +500,9 @@ var Names = [
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater"];
 
-var AreaIndexes = [0,18,31,44,55,72,95,101,103,104,112,119,130,146,153,172,189,201,213,243,253,268,277,285,288,294,303,322,342,358,383,406,426,448,465];
-var SongIndexes = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,467,1000,1000,10000,470,468,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
-var SongIndexes2 = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,471,1000,1000,1000,470,475,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var AreaIndexes = [0,18,31,44,55,72,95,101,103,104,112,119,130,146,153,172,189,201,213,243,253,268,277,285,288,289,294,303,322,342,358,383,406,426,448,465];
+var SongIndexes = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,467,1000,1000,10000,470,468,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+var SongIndexes2 = [1000,466,476,1000,1000,1000,465,1000,474,1000,473,1000,1000,471,1000,1000,1000,470,475,469,1000,1000,472,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 	
 var lastItem = 464;
 var lastSong = 476;
@@ -644,6 +644,7 @@ var AreaNames= [
 	"Domain",
 	"Colossus",
 	"Wasteland",
+	"Thieves",
 	"Fortress",
 	"Jabu",
 	"Forest",
@@ -682,6 +683,7 @@ var AreaNamesLong = [
 	"Zora's Domain",
 	"the Desert Colossus",
 	"the Haunted Wasteland",
+	"Thieves' Hideout",
 	"Gerudo's Fortress",
 	"Jabu Jabu's Belly",
 	"the Forest Temple",
@@ -945,13 +947,13 @@ var MarkedWotHItemArrow = null;
 var ManualWotHItemLocked = {};
 var ManualWotHItemPutInLogic = {};
 var pressCooldown = [[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false]]
-var WotH = new Array(35).fill(0);
+var WotH = new Array(36).fill(0);
 var forcedDisplay = new Array(1024).fill(false);
 var checkedYet = new Array(1024).fill(false);
 var readYet = new Array(42).fill(false);
-var AreaAge = new Array(35).fill(0);
-var AreaWotHAge = new Array(35).fill(0);
-var wothCount = new Array(35).fill(0);
+var AreaAge = new Array(36).fill(0);
+var AreaWotHAge = new Array(36).fill(0);
+var wothCount = new Array(36).fill(0);
 var textBlock = '';
 var circus = false;
 var colorWothAreas = false;
@@ -1021,7 +1023,7 @@ var parent = document.getElementById("normalColumn1");
 var backgrounds = ["url('./normal/areas/kokiri.jpg')","url('./normal/areas/ranch.jpg')","url('./normal/areas/field.jpg')","url('./normal/areas/valley.jpg')","url('./normal/areas/hylia.jpg')","url('./normal/areas/market.jpg')","url('./normal/areas/hyrule_castle.jpg')",
 "url('./normal/areas/ogc.jpg')","url('./normal/areas/tot.jpg')","url('./normal/areas/fountain.jpg')","url('./normal/areas/ice.jpg')","url('./normal/areas/deku.jpg')","url('./normal/areas/lost_woods.jpg')","url('./normal/areas/sfm.jpg')",
 "url('./normal/areas/goron.jpg')","url('./normal/areas/dodongos.jpg')","url('./normal/areas/dmt.jpg')","url('./normal/areas/dmc.jpg')","url('./normal/areas/kakariko.jpg')","url('./normal/areas/graveyard.jpg')",
-"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')", "url('./normal/areas/forest.jpg')", "url('./normal/areas/fire.jpg')", "url('./normal/areas/water.jpg')", "url('./normal/areas/spirit.jpg')", "url('./normal/areas/shadow.jpg')", "url('./normal/areas/ganons.jpg')", "url('./normal/areas/gtg.jpg')", "url('./normal/areas/well.jpg')"
+"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')", "url('./normal/areas/forest.jpg')", "url('./normal/areas/fire.jpg')", "url('./normal/areas/water.jpg')", "url('./normal/areas/spirit.jpg')", "url('./normal/areas/shadow.jpg')", "url('./normal/areas/ganons.jpg')", "url('./normal/areas/gtg.jpg')", "url('./normal/areas/well.jpg')"
 ]
 
 var background = "url('./normal/areas/kokiri.jpg')";
@@ -1050,8 +1052,9 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[22]) {background = "url('./normal/areas/colossus.jpg')"; var elem = document.createElement("br"); elem.id = "domain_break";  parent.appendChild(elem);}
 	if (i == AreaIndexes[23]) {background = "url('./normal/areas/wasteland.jpg')"; var elem = document.createElement("br"); elem.id = "colossus_break";  parent.appendChild(elem);}
 	if (i == AreaIndexes[24]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.id = "wasteland_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[25]) {background = "url('./normal/areas/jabu.jpg')"; var elem = document.createElement("br"); elem.id = "fortress_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[26]) {
+	if (i == AreaIndexes[25]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.id = "thieves_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[26]) {background = "url('./normal/areas/jabu.jpg')"; var elem = document.createElement("br"); elem.id = "fortress_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[27]) {
 		parent = document.getElementById("dung1"); background = "url('./normal/areas/forest.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_forest"; elem.className = "area_titles"; elem.innerHTML = "For"; elem.onmousedown = route_forest; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "forest"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
@@ -1059,7 +1062,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "forestBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[27]) {
+	if (i == AreaIndexes[28]) {
 		background = "url('./normal/areas/fire.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_fire"; elem.className = "area_titles"; elem.innerHTML = "Fir"; elem.onmousedown = route_fire; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "fire"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "6"; parent.appendChild(elem);
@@ -1067,7 +1070,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "fireBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[28]) {
+	if (i == AreaIndexes[29]) {
 		background = "url('./normal/areas/water.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_water"; elem.className = "area_titles"; elem.innerHTML = "Wat"; elem.onmousedown = route_water; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "water"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "4"; parent.appendChild(elem);
@@ -1075,7 +1078,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "waterBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[29]) {
+	if (i == AreaIndexes[30]) {
 		background = "url('./normal/areas/spirit.jpg')";
 		parent = document.getElementById("dung2");
 		var elem = document.createElement("small"); elem.id = "title_spirit"; elem.className = "area_titles"; elem.innerHTML = "Spi"; elem.onmousedown = route_spirit; parent.appendChild(elem);
@@ -1084,7 +1087,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "spiritBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[30]) {
+	if (i == AreaIndexes[31]) {
 		background = "url('./normal/areas/shadow.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_shadow"; elem.className = "area_titles"; elem.innerHTML = "Sha"; elem.onmousedown = route_shadow; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "shadow"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
@@ -1092,14 +1095,14 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "shadowBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[31]) {
+	if (i == AreaIndexes[32]) {
 		background = "url('./normal/areas/ganons.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_ganons"; elem.className = "area_titles"; elem.innerHTML = "Gan"; elem.onmousedown = route_ganons; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "ganons"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "ganonsSKs"; elem.className = "superdotSK"; elem.innerHTML = "2"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[32]) {
+	if (i == AreaIndexes[33]) {
 		background = "url('./normal/areas/gtg.jpg')";
 		parent = document.getElementById("dung3");
 		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; elem.onmousedown = route_gtg; parent.appendChild(elem);
@@ -1107,15 +1110,15 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("span"); elem.id = "gtgSKs"; elem.className = "superdotSK"; elem.innerHTML = "9"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i == AreaIndexes[33]) {
+	if (i == AreaIndexes[34]) {
 		background = "url('./normal/areas/well.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_well"; elem.className = "area_titles"; elem.innerHTML = "Well"; elem.onmousedown = route_well; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "well"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "11"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "wellSKs"; elem.className = "superdotSK"; elem.innerHTML = "3"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
-	if (i < AreaIndexes[34]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[34]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
+	if (i < AreaIndexes[35]) {
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[35]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; /*if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";}*/ parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
@@ -1669,6 +1672,7 @@ var SpoilerAreaToInput = {
 	"Dodongo's Cavern" : "dc",
 	"Death Mountain Trail" : "dmt",
 	"Haunted Wasteland" : "was",
+	"Thieves' Hideout" : "thi",
 	"Gerudo's Fortress" : "gf",
 	"Kakariko Village" : "kak",
 	"Graveyard" : "gra",
