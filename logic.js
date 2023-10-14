@@ -1108,8 +1108,8 @@ function locationLogic(){
 	Location_Logic.forest_nearBoss = Logic.can_enter_forest_temple && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5;
 	Location_Logic.forest_phantomGanon = Logic.can_enter_forest_temple && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5 && Logic.forest_boss_key;
 	Location_Logic.fire_nearBoss = Logic.can_enter_fire_temple;
-	Location_Logic.fire_hammer1 = Logic.can_enter_fire_temple && Logic.hammer;
-	Location_Logic.fire_hammer2 = Logic.can_enter_fire_temple && Logic.hammer;
+	Location_Logic.fire_hammer1 = Logic.can_enter_fire_temple && Logic.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Logic.fire_key_ring);
+	Location_Logic.fire_hammer2 = Logic.can_enter_fire_temple && Logic.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Logic.fire_key_ring);
 	Location_Logic.fire_lavaOpen = Logic.can_enter_fire_temple && Logic.fire_keys >=1;
 	Location_Logic.fire_lavaBomb = Logic.can_enter_fire_temple && Logic.fire_keys >=1 && Logic.bomb_bag;
 	Location_Logic.fire_volvagia = Logic.can_enter_fire_temple && Logic.fire_boss_key && Logic.hammer && Logic.can_wear_goron_tunic && (Logic.hover_boots || (Logic.fire_keys >=7 && (Logic.time || Logic.bomb_bag)));
@@ -1547,8 +1547,8 @@ function locationLogic(){
 	Location_Access.forest_nearBoss = Player.can_enter_forest_temple && Player.goron_bracelet && Player.bow && Player.current_forest_keys>=5;
 	Location_Access.forest_phantomGanon = Player.can_enter_forest_temple && Player.goron_bracelet && Player.bow && Player.current_forest_keys>=5 && Player.forest_boss_key;
 	Location_Access.fire_nearBoss = Player.can_enter_fire_temple;
-	Location_Access.fire_hammer1 = Player.can_enter_fire_temple && Player.hammer;
-	Location_Access.fire_hammer2 = Player.can_enter_fire_temple && Player.hammer;
+	Location_Access.fire_hammer1 = Player.can_enter_fire_temple && Player.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Player.fire_key_ring);
+	Location_Access.fire_hammer2 = Player.can_enter_fire_temple && Player.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Player.fire_key_ring);
 	Location_Access.fire_lavaOpen = Player.can_enter_fire_temple && Player.current_fire_keys >=1;
 	Location_Access.fire_lavaBomb = Player.can_enter_fire_temple && Player.current_fire_keys >=1 && (Player.bomb_bag || Player.has_chus);
 	Location_Access.fire_volvagia = Player.can_enter_fire_temple && Player.fire_boss_key && Player.hammer;
@@ -1986,8 +1986,8 @@ function locationLogic(){
 	Location_Peek.forest_nearBoss = Player.can_enter_forest_temple && Player.goron_bracelet && Player.bow && Player.current_forest_keys>=5;
 	Location_Peek.forest_phantomGanon = Player.can_enter_forest_temple && Player.goron_bracelet && Player.bow && Player.current_forest_keys>=5 && Player.forest_boss_key;
 	Location_Peek.fire_nearBoss = Player.can_enter_fire_temple;
-	Location_Peek.fire_hammer1 = Player.can_enter_fire_temple && Player.hammer;
-	Location_Peek.fire_hammer2 = Player.can_enter_fire_temple && Player.hammer;
+	Location_Peek.fire_hammer1 = Player.can_enter_fire_temple && Player.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Player.fire_key_ring);
+	Location_Peek.fire_hammer2 = Player.can_enter_fire_temple && Player.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || Player.fire_key_ring);
 	Location_Peek.fire_lavaOpen = Player.can_enter_fire_temple && Player.current_fire_keys >=1;
 	Location_Peek.fire_lavaBomb = Player.can_enter_fire_temple && Player.current_fire_keys >=1 && (Player.bomb_bag || Player.has_chus);
 	Location_Peek.fire_volvagia = Player.can_enter_fire_temple && Player.fire_boss_key && Player.hammer;
@@ -2466,8 +2466,8 @@ function locationLogic(){
 	Location_Could_Access.forest_nearBoss = CouldHave.can_enter_forest_temple && CouldHave.goron_bracelet && CouldHave.bow && Player.current_forest_keys>=5 && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.forest_key_ring);
 	Location_Could_Access.forest_phantomGanon = CouldHave.can_enter_forest_temple && CouldHave.goron_bracelet && CouldHave.bow && Player.current_forest_keys>=5 && Player.forest_boss_key && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.forest_key_ring);
 	Location_Could_Access.fire_nearBoss = CouldHave.can_enter_fire_temple;
-	Location_Could_Access.fire_hammer1 = CouldHave.can_enter_fire_temple && CouldHave.hammer;
-	Location_Could_Access.fire_hammer2 = CouldHave.can_enter_fire_temple && CouldHave.hammer;
+	Location_Could_Access.fire_hammer1 = CouldHave.can_enter_fire_temple && CouldHave.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
+	Location_Could_Access.fire_hammer2 = CouldHave.can_enter_fire_temple && CouldHave.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
 	Location_Could_Access.fire_lavaOpen = CouldHave.can_enter_fire_temple && Player.current_fire_keys >=1 && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
 	Location_Could_Access.fire_lavaBomb = CouldHave.can_enter_fire_temple && Player.current_fire_keys >=1 && (CouldHave.bomb_bag || Player.has_chus) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
 	Location_Could_Access.fire_volvagia = CouldHave.can_enter_fire_temple && Player.fire_boss_key && CouldHave.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
@@ -2905,8 +2905,8 @@ function locationLogic(){
 	Location_Could_Peek.forest_nearBoss = CouldHave.can_enter_forest_temple && CouldHave.goron_bracelet && CouldHave.bow && Player.current_forest_keys>=5;
 	Location_Could_Peek.forest_phantomGanon = CouldHave.can_enter_forest_temple && CouldHave.goron_bracelet && CouldHave.bow && Player.current_forest_keys>=5 && Player.forest_boss_key;
 	Location_Could_Peek.fire_nearBoss = CouldHave.can_enter_fire_temple;
-	Location_Could_Peek.fire_hammer1 = CouldHave.can_enter_fire_temple && CouldHave.hammer;
-	Location_Could_Peek.fire_hammer2 = CouldHave.can_enter_fire_temple && CouldHave.hammer;
+	Location_Could_Peek.fire_hammer1 = CouldHave.can_enter_fire_temple && CouldHave.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
+	Location_Could_Peek.fire_hammer2 = CouldHave.can_enter_fire_temple && CouldHave.hammer && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.fire_key_ring);
 	Location_Could_Peek.fire_lavaOpen = CouldHave.can_enter_fire_temple && Player.current_fire_keys >=1;
 	Location_Could_Peek.fire_lavaBomb = CouldHave.can_enter_fire_temple && Player.current_fire_keys >=1 && (CouldHave.bomb_bag || Player.has_chus);
 	Location_Could_Peek.fire_volvagia = CouldHave.can_enter_fire_temple && Player.fire_boss_key && CouldHave.hammer;

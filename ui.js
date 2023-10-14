@@ -9,7 +9,7 @@ function processInputs() {
 	for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
 		
-		for (var j = 34; j > 0; j--) {
+		for (var j = 35; j > 0; j--) {
 			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
 		}
 		
@@ -323,7 +323,7 @@ function junk() {
 			else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
 			else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
 			else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-			else if(temp < AreaIndexes[26]){}
+			else if(temp < AreaIndexes[27]){}
 			else {return;}
 			Check[str]="junk";
 		}
@@ -450,7 +450,7 @@ function junk() {
 					else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
 					else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
 					else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-					else if(temp < AreaIndexes[26]){}
+					else if(temp < AreaIndexes[27]){}
 					else {return;}
 					Check[str]="junk";
 				}
@@ -586,14 +586,14 @@ function junkUltra() {
 	if(!simActive) {
 		var x = event.target;
 		
-		if (x.id == "forest") {var temp = 26; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
-		if (x.id == "fire") {var temp = 27; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
-		if (x.id == "water") {var temp = 28; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
-		if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
-		if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
-		if (x.id == "ganons") {var temp = 31; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
-		if (x.id == "gtg") {var temp = 32; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
-		if (x.id == "well") {var temp = 33; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
+		if (x.id == "forest") {var temp = 27; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
+		if (x.id == "fire") {var temp = 28; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
+		if (x.id == "water") {var temp = 29; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
+		if (x.id == "spirit") {var temp = 30; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
+		if (x.id == "shadow") {var temp = 31; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
+		if (x.id == "ganons") {var temp = 32; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
+		if (x.id == "gtg") {var temp = 33; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
+		if (x.id == "well") {var temp = 34; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
 		for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
 			if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
 			document.getElementById(Locations[i]).style.display = "none";
@@ -686,7 +686,7 @@ function checkCircleInfo() {
 	
 	document.getElementById("forestSKs").title = "";
 	document.getElementById("forestBKs").title = "";
-	for(i = AreaIndexes[26]; i < AreaIndexes[27]; i++) {
+	for(i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("forestSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -695,7 +695,7 @@ function checkCircleInfo() {
 	
 	document.getElementById("fireSKs").title = "";
 	document.getElementById("fireBKs").title = "";
-	for(i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
+	for(i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("fireSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -704,7 +704,7 @@ function checkCircleInfo() {
 	
 	document.getElementById("waterSKs").title = "";
 	document.getElementById("waterBKs").title = "";
-	for(i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
+	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("waterSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -713,7 +713,7 @@ function checkCircleInfo() {
 	
 	document.getElementById("spiritSKs").title = "";
 	document.getElementById("spiritBKs").title = "";
-	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
+	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("spiritSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -722,7 +722,7 @@ function checkCircleInfo() {
 	
 	document.getElementById("shadowSKs").title = "";
 	document.getElementById("shadowBKs").title = "";
-	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
+	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("shadowSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -730,17 +730,17 @@ function checkCircleInfo() {
 	}
 	
 	document.getElementById("ganonsSKs").title = "";
-	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++)
+	for(i = AreaIndexes[32]; i < AreaIndexes[33]; i++)
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("ganonsSKs").title += Names[i] + "\n";
 	
 	document.getElementById("gtgSKs").title = "";
-	for(i = AreaIndexes[32]; i < AreaIndexes[33]; i++)
+	for(i = AreaIndexes[33]; i < AreaIndexes[34]; i++)
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("gtgSKs").title += Names[i] + "\n";
 	
 	document.getElementById("wellSKs").title = "";
-	for(i = AreaIndexes[33]; i < AreaIndexes[34]; i++)
+	for(i = AreaIndexes[34]; i < AreaIndexes[35]; i++)
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("wellSKs").title += Names[i] + "\n";
 }
@@ -772,7 +772,8 @@ function areaBreaks() {
 		if (i == AreaIndexes[22]-1) {if (tempUnique == AreaIndexes[22] - AreaIndexes[21]) {document.getElementById("domain_break").style.display = "none";} else {document.getElementById("domain_break").style.display = "inline-block";} tempUnique = 0;}
 		if (i == AreaIndexes[23]-1) {if (tempUnique == AreaIndexes[23] - AreaIndexes[22]) {document.getElementById("colossus_break").style.display = "none";} else {document.getElementById("colossus_break").style.display = "inline-block";} tempUnique = 0;}
 		if (i == AreaIndexes[24]-1) {if (tempUnique == AreaIndexes[24] - AreaIndexes[23]) {document.getElementById("wasteland_break").style.display = "none";} else {document.getElementById("wasteland_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[25]-1) {if (tempUnique == AreaIndexes[25] - AreaIndexes[24]) {document.getElementById("fortress_break").style.display = "none";} else {document.getElementById("fortress_break").style.display = "inline-block";} tempUnique = 0;}
+		if (i == AreaIndexes[25]-1) {if (tempUnique == AreaIndexes[25] - AreaIndexes[24]) {document.getElementById("thieves_break").style.display = "none";} else {document.getElementById("thieves_break").style.display = "inline-block";} tempUnique = 0;}
+		if (i == AreaIndexes[26]-1) {if (tempUnique == AreaIndexes[26] - AreaIndexes[25]) {document.getElementById("fortress_break").style.display = "none";} else {document.getElementById("fortress_break").style.display = "inline-block";} tempUnique = 0;}
 	}
 }
 
@@ -1058,7 +1059,7 @@ function updateLogicInfo() {
 	var colorChange = false;
 	Player.checks_remaining = 0;
 	for (var i = 0; i < Locations.length; i++) {
-		if (i < AreaIndexes[34]) {
+		if (i < AreaIndexes[35]) {
 			document.getElementById(Locations[i]).style.display = "none";
 			document.getElementById("text_" + Locations[i]).style.display = "none";
 			document.getElementById("br_" + Locations[i]).style.display = "none";
@@ -1098,7 +1099,7 @@ function updateLogicInfo() {
 			document.getElementById(str).style.display = "inline-block";
 			document.getElementById(key).style.display = "inline-block";
 			document.getElementById(str2).style.display = "inline-block";
-			if (i < AreaIndexes[34]) {
+			if (i < AreaIndexes[35]) {
 				if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
 				else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
 				else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
@@ -1188,15 +1189,15 @@ function updateLogicInfo() {
 				if (i <= lastItem) {Player.logically_accessible += 1;}
 				if (i == AreaIndexes[12] - 1 && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
 			    if (i == AreaIndexes[16] - 1 && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
-				if (i == AreaIndexes[26] - 1 && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
-				if (i >= AreaIndexes[26] && i < AreaIndexes[27]) {Player.forest_logically_accessible += 1;}
-				if (i >= AreaIndexes[27] && i < AreaIndexes[26]) {Player.fire_logically_accessible += 1;}
-				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Player.water_logically_accessible += 1;}
-				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.spirit_logically_accessible += 1;}
-				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.shadow_logically_accessible += 1;}
-				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.ganons_logically_accessible += 1;}
-				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Player.gtg_logically_accessible += 1;}
-				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Player.well_logically_accessible += 1;}
+				if (i == AreaIndexes[27] - 1 && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
+				if (i >= AreaIndexes[27] && i < AreaIndexes[28]) {Player.forest_logically_accessible += 1;}
+				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Player.fire_logically_accessible += 1;}
+				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.water_logically_accessible += 1;}
+				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.spirit_logically_accessible += 1;}
+				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.shadow_logically_accessible += 1;}
+				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Player.ganons_logically_accessible += 1;}
+				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Player.gtg_logically_accessible += 1;}
+				if (i >= AreaIndexes[34] && i < AreaIndexes[33]) {Player.well_logically_accessible += 1;}
 			}
 		}
 		else if (Location_Peek[key] == true) {
@@ -1563,10 +1564,10 @@ function updateProbabilities() {
 }
 
 function updateWothBorders() {
-	let AreaSongSpots = [[],[],["text_eponasSpot"],["text_oot"],[],[],[],[],[],["text_preludeSpot"],[],["text_serenadeSpot"],[],[],["text_sariasSpot", "text_minuetSpot"],[],[],[], ["text_boleroSpot"],["text_stormsSpot", "text_nocturneSpot"],["text_sunsSpot"],[],[],["text_requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
-	let AreaSongSpotsWithoutText = [[],[],["eponasSpot"],["oot"],[],[],[],[],[],["preludeSpot"],[],["serenadeSpot"],[],[],["sariasSpot", "minuetSpot"],[],[],[], ["boleroSpot"],["stormsSpot", "nocturneSpot"],["sunsSpot"],[],[],["requiemSpot"],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongSpots = [[],[],["text_eponasSpot"],["text_oot"],[],[],[],[],[],["text_preludeSpot"],[],["text_serenadeSpot"],[],[],["text_sariasSpot", "text_minuetSpot"],[],[],[], ["text_boleroSpot"],["text_stormsSpot", "text_nocturneSpot"],["text_sunsSpot"],[],[],["text_requiemSpot"],[],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongSpotsWithoutText = [[],[],["eponasSpot"],["oot"],[],[],[],[],[],["preludeSpot"],[],["serenadeSpot"],[],[],["sariasSpot", "minuetSpot"],[],[],[], ["boleroSpot"],["stormsSpot", "nocturneSpot"],["sunsSpot"],[],[],["requiemSpot"],[],[],[],[],[],[],[],[],[],[],[],[]];
 	
-	for (var i = 1; i <= 34; i++) {	
+	for (var i = 1; i <= 35; i++) {	
 		if((Area[i] == "woth" || Area[i] == "woth1" || Area[i] == "2woth" || Area[i] == "3woth" || Area[i] == "4woth" || Area[i] == "5woth") && colorWothAreas) {
 			for(var j = 0; j < AreaSongSpots[i].length; j++) {
 				var songText = AreaSongSpots[i][j];
