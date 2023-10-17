@@ -1800,7 +1800,7 @@ function locationLogic(){
 	Location_Access.gs_valley_pillar = Player.fortress_access && Player.hookshot;
 	Location_Access.gs_fortress_archery = Player.fortress_access && Player.hookshot;
 	Location_Access.gs_fortress_top = Player.fortress_access;
-	Location_Access.gs_wasteland = (Player.hookshot || Player.bomb_bag) && Player.can_cross_quicksand;
+	Location_Access.gs_wasteland = (Player.hookshot || Player.bomb_bag) && (Player.can_cross_quicksand || Player.can_enter_colossus);
 	Location_Access.gs_colossus_soil = Player.can_use_bottle && Player.requiem;
 	Location_Access.gs_colossus_tree = Player.hookshot && Player.can_enter_colossus;
 	Location_Access.gs_colossus_hill = (Player.requiem && Player.bean_access) || (Player.hookshot && Player.can_enter_colossus);
@@ -1843,9 +1843,9 @@ function locationLogic(){
 	Location_Access.gs_shadow_giant_pot = Player.can_bomb_shadow_wall && Player.current_shadow_keys >=2 && Player.hookshot;
 	Location_Access.gs_shadow_near_boat = Player.can_pass_shadow_hookshot_door && Player.longshot && Player.current_shadow_keys >=4;
 	Location_Access.gs_shadow_three_pots = Player.can_ride_shadow_boat;
-	Location_Access.gs_well_west_inner = Player.boomerang /*&& Player.can_see*/ && Player.current_well_keys >=1;
-	Location_Access.gs_well_east_inner = Player.boomerang /*&& Player.can_see*/ && Player.current_well_keys >=1;
-	Location_Access.gs_well_like_like = Player.current_well_keys >=1;
+	Location_Access.gs_well_west_inner = Player.can_enter_well && Player.boomerang /*&& Player.can_see*/ && Player.current_well_keys >=1;
+	Location_Access.gs_well_east_inner = Player.can_enter_well && Player.boomerang /*&& Player.can_see*/ && Player.current_well_keys >=1;
+	Location_Access.gs_well_like_like = Player.can_enter_well && Player.current_well_keys >=1;
 	Location_Access.gs_ice_spinning_scythe = Player.ice_access && Player.hookshot;
 	Location_Access.gs_ice_hp_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && Player.hookshot;
 	Location_Access.gs_ice_block_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || (Player.hover_boots && Player.bow));
@@ -2280,7 +2280,7 @@ function locationLogic(){
 	Location_Peek.gs_valley_pillar = Player.fortress_access && (Player.hookshot || Player.has_chus || Player.bow);
 	Location_Peek.gs_fortress_archery = Player.fortress_access && (Player.hookshot || Player.has_chus || Player.bow);
 	Location_Peek.gs_fortress_top = Player.fortress_access;
-	Location_Peek.gs_wasteland = (Player.hookshot || Player.has_chus || Player.bow || Player.can_use_dins || Player.bomb_bag) && Player.can_cross_quicksand;
+	Location_Peek.gs_wasteland = (Player.hookshot || Player.has_chus || Player.bow || Player.can_use_dins || Player.bomb_bag) && (Player.can_cross_quicksand || Player.can_enter_colossus);
 	Location_Peek.gs_colossus_soil = Player.can_use_bottle && Player.requiem;
 	Location_Peek.gs_colossus_tree = (Player.hookshot || Player.has_chus || Player.bow || Player.can_use_dins || Player.bomb_bag) && Player.can_enter_colossus;
 	Location_Peek.gs_colossus_hill = (Player.requiem && Player.bean_access) || ((Player.hookshot || Player.has_chus || Player.bow) && Player.can_enter_colossus);
@@ -2323,9 +2323,9 @@ function locationLogic(){
 	Location_Peek.gs_shadow_giant_pot = Player.can_bomb_shadow_wall && Player.current_shadow_keys >=2 && Player.hookshot;
 	Location_Peek.gs_shadow_near_boat = Player.can_pass_shadow_hookshot_door && (Player.longshot || Player.bow || Player.has_chus) && Player.current_shadow_keys >=4;
 	Location_Peek.gs_shadow_three_pots = Player.can_ride_shadow_boat;
-	Location_Peek.gs_well_west_inner = Player.current_well_keys >=1;
-	Location_Peek.gs_well_east_inner = Player.current_well_keys >=1;
-	Location_Peek.gs_well_like_like = Player.current_well_keys >=1;
+	Location_Peek.gs_well_west_inner = Player.can_enter_well && Player.current_well_keys >=1;
+	Location_Peek.gs_well_east_inner = Player.can_enter_well && Player.current_well_keys >=1;
+	Location_Peek.gs_well_like_like = Player.can_enter_well && Player.current_well_keys >=1;
 	Location_Peek.gs_ice_spinning_scythe = Player.ice_access && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
 	Location_Peek.gs_ice_hp_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
 	Location_Peek.gs_ice_block_room = Player.ice_access && (Player.can_use_bottle || Player.can_shoot_blue_fire_arrows) && (Player.hookshot || Player.bow || Player.has_chus || Player.bomb_bag || Player.can_use_dins);
@@ -2719,7 +2719,7 @@ function locationLogic(){
 	Location_Could_Access.gs_valley_pillar = CouldHave.fortress_access && CouldHave.hookshot;
 	Location_Could_Access.gs_fortress_archery = CouldHave.fortress_access && CouldHave.hookshot;
 	Location_Could_Access.gs_fortress_top = CouldHave.fortress_access;
-	Location_Could_Access.gs_wasteland = (CouldHave.hookshot || CouldHave.bomb_bag) && CouldHave.can_cross_quicksand;
+	Location_Could_Access.gs_wasteland = (CouldHave.hookshot || CouldHave.bomb_bag) && (CouldHave.can_cross_quicksand || CouldHave.can_enter_colossus);
 	Location_Could_Access.gs_colossus_soil = CouldHave.can_use_bottle && CouldHave.requiem;
 	Location_Could_Access.gs_colossus_tree = CouldHave.hookshot && CouldHave.can_enter_colossus;
 	Location_Could_Access.gs_colossus_hill = (CouldHave.requiem && CouldHave.bean_access) || (CouldHave.hookshot && CouldHave.can_enter_colossus);
@@ -2762,9 +2762,9 @@ function locationLogic(){
 	Location_Could_Access.gs_shadow_giant_pot = CouldHave.can_bomb_shadow_wall && Player.current_shadow_keys >=2 && CouldHave.hookshot;
 	Location_Could_Access.gs_shadow_near_boat = CouldHave.can_pass_shadow_hookshot_door && CouldHave.longshot && Player.current_shadow_keys >=4;
 	Location_Could_Access.gs_shadow_three_pots = CouldHave.can_ride_shadow_boat;
-	Location_Could_Access.gs_well_west_inner = CouldHave.boomerang && Player.current_well_keys >=1;
-	Location_Could_Access.gs_well_east_inner = CouldHave.boomerang && Player.current_well_keys >=1;
-	Location_Could_Access.gs_well_like_like = Player.current_well_keys >=1;
+	Location_Could_Access.gs_well_west_inner = CouldHave.can_enter_well && CouldHave.boomerang && (Player.current_well_keys >= 1 || (CouldHave.lullaby && (CouldHave.bomb_bag || Player.has_chus))) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.well_key_ring);
+	Location_Could_Access.gs_well_east_inner = CouldHave.can_enter_well && CouldHave.boomerang && (Player.current_well_keys >= 1 || (CouldHave.lullaby && (CouldHave.bomb_bag || Player.has_chus))) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.well_key_ring);
+	Location_Could_Access.gs_well_like_like = CouldHave.can_enter_well && (Player.current_well_keys >= 1 || (CouldHave.lullaby && (CouldHave.bomb_bag || Player.has_chus))) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.well_key_ring);
 	Location_Could_Access.gs_ice_spinning_scythe = CouldHave.ice_access && CouldHave.hookshot;
 	Location_Could_Access.gs_ice_hp_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && CouldHave.hookshot;
 	Location_Could_Access.gs_ice_block_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || (CouldHave.hover_boots && CouldHave.bow));
@@ -3199,7 +3199,7 @@ function locationLogic(){
 	Location_Could_Peek.gs_valley_pillar = CouldHave.fortress_access && (CouldHave.hookshot || Player.has_chus || CouldHave.bow);
 	Location_Could_Peek.gs_fortress_archery = CouldHave.fortress_access && (CouldHave.hookshot || Player.has_chus || CouldHave.bow);
 	Location_Could_Peek.gs_fortress_top = CouldHave.fortress_access;
-	Location_Could_Peek.gs_wasteland = (CouldHave.hookshot || Player.has_chus || CouldHave.bow || CouldHave.can_use_dins || CouldHave.bomb_bag) && CouldHave.can_cross_quicksand;
+	Location_Could_Peek.gs_wasteland = (CouldHave.hookshot || Player.has_chus || CouldHave.bow || CouldHave.can_use_dins || CouldHave.bomb_bag) && (CouldHave.can_cross_quicksand || CouldHave.can_enter_colossus);
 	Location_Could_Peek.gs_colossus_soil = CouldHave.can_use_bottle && CouldHave.requiem;
 	Location_Could_Peek.gs_colossus_tree = (CouldHave.hookshot || Player.has_chus || CouldHave.bow || CouldHave.can_use_dins || CouldHave.bomb_bag) && CouldHave.can_enter_colossus;
 	Location_Could_Peek.gs_colossus_hill = (CouldHave.requiem && CouldHave.bean_access) || ((CouldHave.hookshot || Player.has_chus || CouldHave.bow) && CouldHave.can_enter_colossus);
@@ -3242,9 +3242,9 @@ function locationLogic(){
 	Location_Could_Peek.gs_shadow_giant_pot = CouldHave.can_bomb_shadow_wall && Player.current_shadow_keys >=2 && CouldHave.hookshot;
 	Location_Could_Peek.gs_shadow_near_boat = CouldHave.can_pass_shadow_hookshot_door && (CouldHave.longshot || CouldHave.bow || Player.has_chus) && Player.current_shadow_keys >=4;
 	Location_Could_Peek.gs_shadow_three_pots = CouldHave.can_ride_shadow_boat;
-	Location_Could_Peek.gs_well_west_inner = Player.current_well_keys >=1;
-	Location_Could_Peek.gs_well_east_inner = Player.current_well_keys >=1;
-	Location_Could_Peek.gs_well_like_like = Player.current_well_keys >=1;
+	Location_Could_Peek.gs_well_west_inner = CouldHave.can_enter_well && Player.current_well_keys >=1;
+	Location_Could_Peek.gs_well_east_inner = CouldHave.can_enter_well && Player.current_well_keys >=1;
+	Location_Could_Peek.gs_well_like_like = CouldHave.can_enter_well && Player.current_well_keys >=1;
 	Location_Could_Peek.gs_ice_spinning_scythe = CouldHave.ice_access && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
 	Location_Could_Peek.gs_ice_hp_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
 	Location_Could_Peek.gs_ice_block_room = CouldHave.ice_access && (CouldHave.can_use_bottle || CouldHave.can_shoot_blue_fire_arrows) && (CouldHave.hookshot || CouldHave.bow || Player.has_chus || CouldHave.bomb_bag || CouldHave.can_use_dins);
