@@ -304,6 +304,7 @@
 		</div>
 	</div> 
 	<div id ="row2" class="row">
+		<br>
 		<div id = "inputConfig"><small class = "customizeTitles">Custom Item Inputs</small><br><br class ="half_break"></div>
 		
 		<div id = "inputConfig2"><small class = "customizeTitles">Custom Spawn Inputs</small><br><br class ="half_break"></div>
@@ -323,6 +324,151 @@
 			<img src="./images/tagnia.png" class="pplpics" onmousedown = "highlight(this)">theme has zero users<br />
 			<img src="./images/juwk.png" class="pplpics" onmousedown = "highlight(this)">clownslayer<br />
 			<img src="./images/exodus.png" class="pplpics" onmousedown = "highlight(this)">renaissance<br />
+		</div>
+		
+		<div id = "settingsColumn">
+			<button id="inaccessibleControl" onmousedown="inaccessibleControl()">Show Inaccessible</button><br />	
+			<small>timer speed</small><input id = "timerMultiplier"></input><small id="effectiveSpeedUp"></small><br />
+			<button id="colorWothAreasControl" onmousedown="colorWothAreasControl()">Highlight WotHs</button><br />
+			<button id="hamsdaToggle" onmousedown="hamsdaToggle()">Enable Hamsda Tracking</button><br /><br>
+			
+			
+			<button id="iWantToRemoveThisButton" onmousedown="whoAmI()">Appease Viewers</button><br />
+			<button id="altThemeControl" onmousedown="altThemeControl()">Dark Theme</button><br />	
+			<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><small id = "animalLV"></small><br /><br />
+			
+			<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
+			<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button>
+			<button id="myBtn">halp</button><br />
+			<button id = "locationCodes">Location Codes</button><br /><br />
+			
+			<button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
+			<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
+			<br /><button onmousedown="download()">Download Log</button><br /><br />
+			<label class="settingsLabels" for="presets">PRESETS</label>
+			<select class="settingsOptions" id="presets">
+			  <option value="NONE">NONE</option>
+			  <option value="S7">S7</option>
+			  <option value="LEAGUE_S4">LEAGUE S4</option>
+			  <option value="SGL_2023">SGL 2023</option>
+			  <option value="S6">S6</option>
+			  <option value="S5">S5</option>
+			  <option value="S4">S4</option>
+			  <option value="S3">S3</option>
+			  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="bosskeys">BOSSKEYS</label>
+			<select class="settingsOptions" id="bosskeys">
+			  <option value="DUNGEON_ONLY">DUNGEON ONLY</option>
+			  <option value="REMOVE">REMOVE</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="closedDeku">DEKU</label>
+			<select class="settingsOptions" id="closedDeku">
+			  <option value="CLOSED">CLOSED</option>
+			  <option value="OPEN">OPEN</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="closedFountain">FOUNTAIN</label>
+			<select class="settingsOptions" id="closedFountain">
+			  <option value="CLOSED">CLOSED</option>
+			  <option value="OPEN">OPEN</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
+			<select class="settingsOptions" id="skullSanity">
+			  <option value="OFF">OFF</option>
+			  <option value="DUNGEON">DUNGEON</option>
+			  <option value="OVERWORLD">OVERWORLD</option>
+			  <option value="ALL">ALL</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
+			<select class="settingsOptions" id="scrubSanity">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
+			<select class="settingsOptions" id="shopSanity">
+			  <option value="OFF">OFF</option>
+			  <option value="4">4</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="keysanity">KEYSANITY</label>
+			<select class="settingsOptions" id="keysanity">
+			  <option value="OFF">OFF</option>
+			  <option value="KEYSY">KEYSY</option>
+			  <option value="KEY RINGS">KEY RINGS</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="cowSanity">COWSANITY</label>
+			<select class="settingsOptions" id="cowSanity">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
+			<select class="settingsOptions" id="gossips">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
+			<select class="settingsOptions" id="ganonsBridge">
+			  <option value="ALL_MED">ALL MED</option>
+			  <option value="OPEN">OPEN</option>
+			  <option value="3_STONES">3 STONES</option>
+			  <option value="2_MEDALS">2 MEDALS</option>
+			  <option value="3_MEDALS">3 MEDALS</option>
+			  <option value="4_MEDALS">4 MEDALS</option>
+			  <option value="5_MEDALS">5 MEDALS</option>
+			  <option value="1_REWARD">1 REWARD</option>
+			  <option value="2_REWARDS">2 REWARDS</option>
+			  <option value="3_REWARDS">3 REWARDS</option>
+			  <option value="4_REWARDS">4 REWARDS</option>
+			  <option value="5_REWARDS">5 REWARDS</option>
+			  <option value="6_REWARDS">6 REWARDS</option>
+			  <option value="7_REWARDS">7 REWARDS</option>
+			  <option value="8_REWARDS">8 REWARDS</option>
+			  <option value="9_REWARDS">9 REWARDS</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
+			<select class="settingsOptions" id="ganonBKSetting">
+			  <option value="NONE">NONE</option>
+			  <option value="LACS">LACS</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="csmc">CSMC</label>
+			<select class="settingsOptions" id="csmc">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="hints_type">HINTS</label>
+			<select class="settingsOptions" id="hints_type">
+			  <option value="WOTH">WOTH</option>
+			  <option value="PATH">PATH</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
+			<select class="settingsOptions" id="shuffleOcarinas">
+			  <option value="ON">ON</option>
+			  <option value="OFF">OFF</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="shuffleGerudoCard">SHFL. GER CARD</label>
+			<select class="settingsOptions" id="shuffleGerudoCard">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="shuffleBeanPack">SHFL. BEANS</label>
+			<select class="settingsOptions" id="shuffleBeanPack">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="shuffleExpensivePurchases">SHFL. EXPENSIVE</label>
+			<select class="settingsOptions" id="shuffleExpensivePurchases">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
+			<select class="settingsOptions" id="blueFireArrows">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="preplantedBeans">PREPLANT BEANS</label>
+			<select class="settingsOptions" id="preplantedBeans">
+			  <option value="OFF">OFF</option>
+			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
 		</div>
 	</div>
 	<div id="confirmed_logically_required">
@@ -380,187 +526,43 @@
 		<img id = "confirmed_logically_required_52" class = "confirmedWothImages">
 	</div>
 	<div id ="patchNotesColumn">
-				<small id="patchNotesTitle">Patch Notes</small><br>
-                <small class = "patchNotes" id = "pn66">66: added new animals and increased the power of levels to compensate for decreased roll odds</small><br>
-                <small class = "patchNotes" id = "pn65">65: added yami-mal evolution: if nocturne of shadow is located in the animal's preferred location, it will gain yami powers for the rest of the seed and a permanent +6.66% increase in XP(additive multiplier). also quartered xp gains during sim mode.</small><br>
-                <small class = "patchNotes" id = "pn64">64: fixed animal rng to work as described (leveling up other animals was taking away from odds of rolling highest level animal) </small><br>
-                <small class = "patchNotes" id = "pn63">63: added more locations to alt hint input(to support dual hint locations) </small><br>
-                <small class = "patchNotes" id = "pn62">62: added ability to enter items into song locations. changed prescription input from "pre" to "scr"</small><br>
-                <small class = "patchNotes" id = "pn61">61: changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)</small><br>
-                <small class = "patchNotes" id = "pn60">60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller</small><br>
-                <small class = "patchNotes" id = "pn59">59: replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.</small><br>
-                <small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"</small><br>
-                <small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>
-				<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
-				<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>
-				<small class = "patchNotes" id = "pn54">54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) </small><br>
-				<small class = "patchNotes" id = "pn53">53: added light theme and a preset for season 6 (changes by exodus) </small><br>
-                <small class = "patchNotes" id = "pn52">52: added league S3 and SGL 2022 preset (exodus)</small><br>
-				<small class = "patchNotes"><span id = "pn51" class="patchNotes">51</span>: known but not obtained item locations now stay in the checklist</small><br>
-				<small class = "patchNotes"><span id = "pn50" class="patchNotes">50</span>: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) </small><br>
-				<small class = "patchNotes"><span id = "pn49" class="patchNotes">49</span>: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).</small><br>
-				<small class = "patchNotes"><span id = "pn48" class="patchNotes">48</span>: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.</small><br>
-				<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
-				<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
-				<small class = "patchNotes"><span id = "pn45" class="patchNotes">45</span>: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)</small><br>
-				<small class = "patchNotes"><span id = "pn44" class="patchNotes">44</span>: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)</small><br>
-				<small class = "patchNotes"><span id = "pn43" class="patchNotes">43</span>: tracker no longer knows logic</small><br>
-				<small class = "patchNotes"><span id = "pn42" class="patchNotes">42</span>: added frogs2 song display and S5 preset(by exodus)</small><br>
-				<small class = "patchNotes"><span id = "pn39" class="patchNotes">39</span>: Added a new text style for an in logic check that requires an item you have not yet picked up</small><br>
-				<small class = "patchNotes"><span id = "pn38" class="patchNotes">38</span>: added axes support for controller input(might not work with your controller atm).</small><br>
-				<small class = "patchNotes"><span id = "pn31" class="patchNotes">31</span>: controller input works for child dungeons and ice by middle clicking the input box for any check within them</small><br>
-				<small class = "patchNotes"><span id = "pn27" class="patchNotes">27</span>: added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key, item or skip button. This sequence continues until there are no more accessible checks in dungeon.</small><br>
-				<small class = "patchNotes"><span id = "pn26" class="patchNotes">26</span>: timer now starts paused and the hotkey for it has been changed to the pause key</small><br>
-				<small class = "patchNotes"><span id = "pn22" class="patchNotes">22</span>: Added highlighting to patch numbers that were loaded for the first time</small><br>
-				<small class = "patchNotes"><span id = "pn8" class="patchNotes">8</span>: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)</small><br>
-				<small class = "patchNotes"><span id = "pn7" class="patchNotes">7</span>: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a></small><br>
-				<small class = "patchNotes"><span id = "pn4" class="patchNotes">4</span>: Hotkey for Incrementing Token Counter(- and =)</small><br>
-				<small class = "patchNotes"><span id = "pn3" class="patchNotes">3</span>: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
-				<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
-	</div>
-	<div id = "settingsColumn">
-		<br /><button id="inaccessibleControl" onmousedown="inaccessibleControl()">Show Inaccessible</button><br />	
-        <small>timer speed</small><input id = "timerMultiplier"></input><small id="effectiveSpeedUp"></small><br />
-		<button id="colorWothAreasControl" onmousedown="colorWothAreasControl()">Highlight WotHs</button><br />
-		<button id="hamsdaToggle" onmousedown="hamsdaToggle()">Enable Hamsda Tracking</button><br /><br>
-        
-		
-		<button id="iWantToRemoveThisButton" onmousedown="whoAmI()">Appease Viewers</button><br />
-		<button id="altThemeControl" onmousedown="altThemeControl()">Dark Theme</button><br />	
-		<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><small id = "animalLV"></small><br /><br />
-		
-		<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
-		<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button>
-		<button id="myBtn">halp</button><br />
-		<button id = "locationCodes">Location Codes</button><br /><br />
-		
-		<button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
-		<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
-		<br /><button onmousedown="download()">Download Log</button><br /><br />
-		<label class="settingsLabels" for="presets">PRESETS</label>
-		<select class="settingsOptions" id="presets">
-		  <option value="NONE">NONE</option>
-		  <option value="S7">S7</option>
-		  <option value="LEAGUE_S4">LEAGUE S4</option>
-		  <option value="SGL_2023">SGL 2023</option>
-		  <option value="S6">S6</option>
-		  <option value="S5">S5</option>
-		  <option value="S4">S4</option>
-		  <option value="S3">S3</option>
-		  <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="bosskeys">BOSSKEYS</label>
-		<select class="settingsOptions" id="bosskeys">
-	      <option value="DUNGEON_ONLY">DUNGEON ONLY</option>
-		  <option value="REMOVE">REMOVE</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="closedDeku">DEKU</label>
-		<select class="settingsOptions" id="closedDeku">
-		  <option value="CLOSED">CLOSED</option>
-		  <option value="OPEN">OPEN</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="closedFountain">FOUNTAIN</label>
-		<select class="settingsOptions" id="closedFountain">
-		  <option value="CLOSED">CLOSED</option>
-		  <option value="OPEN">OPEN</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
-		<select class="settingsOptions" id="skullSanity">
-		  <option value="OFF">OFF</option>
-		  <option value="DUNGEON">DUNGEON</option>
-		  <option value="OVERWORLD">OVERWORLD</option>
-		  <option value="ALL">ALL</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
-		<select class="settingsOptions" id="scrubSanity">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
-		<select class="settingsOptions" id="shopSanity">
-		  <option value="OFF">OFF</option>
-		  <option value="4">4</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="keysanity">KEYSANITY</label>
-		<select class="settingsOptions" id="keysanity">
-		  <option value="OFF">OFF</option>
-		  <option value="KEYSY">KEYSY</option>
-		  <option value="KEY RINGS">KEY RINGS</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="cowSanity">COWSANITY</label>
-		<select class="settingsOptions" id="cowSanity">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
-		<select class="settingsOptions" id="gossips">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
-		<select class="settingsOptions" id="ganonsBridge">
-		  <option value="ALL_MED">ALL MED</option>
-		  <option value="OPEN">OPEN</option>
-		  <option value="3_STONES">3 STONES</option>
-		  <option value="2_MEDALS">2 MEDALS</option>
-		  <option value="3_MEDALS">3 MEDALS</option>
-		  <option value="4_MEDALS">4 MEDALS</option>
-		  <option value="5_MEDALS">5 MEDALS</option>
-		  <option value="1_REWARD">1 REWARD</option>
-		  <option value="2_REWARDS">2 REWARDS</option>
-		  <option value="3_REWARDS">3 REWARDS</option>
-		  <option value="4_REWARDS">4 REWARDS</option>
-		  <option value="5_REWARDS">5 REWARDS</option>
-		  <option value="6_REWARDS">6 REWARDS</option>
-		  <option value="7_REWARDS">7 REWARDS</option>
-		  <option value="8_REWARDS">8 REWARDS</option>
-		  <option value="9_REWARDS">9 REWARDS</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
-		<select class="settingsOptions" id="ganonBKSetting">
-		  <option value="NONE">NONE</option>
-		  <option value="LACS">LACS</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="csmc">CSMC</label>
-		<select class="settingsOptions" id="csmc">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="hints_type">HINTS</label>
-		<select class="settingsOptions" id="hints_type">
-		  <option value="WOTH">WOTH</option>
-		  <option value="PATH">PATH</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
-		<select class="settingsOptions" id="shuffleOcarinas">
-	      <option value="ON">ON</option>
-		  <option value="OFF">OFF</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shuffleGerudoCard">SHFL. GER CARD</label>
-		<select class="settingsOptions" id="shuffleGerudoCard">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shuffleBeanPack">SHFL. BEANS</label>
-		<select class="settingsOptions" id="shuffleBeanPack">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="shuffleExpensivePurchases">SHFL. EXPENSIVE</label>
-		<select class="settingsOptions" id="shuffleExpensivePurchases">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
-		<select class="settingsOptions" id="blueFireArrows">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
-		<label class="settingsLabels" for="preplantedBeans">PREPLANT BEANS</label>
-		<select class="settingsOptions" id="preplantedBeans">
-		  <option value="OFF">OFF</option>
-		  <option value="ON">ON</option>
-		</select><br><br class="half_break">
+		<small id="patchNotesTitle">Patch Notes</small><br>
+		<small class = "patchNotes" id = "pn66">66: added new animals and increased the power of levels to compensate for decreased roll odds</small><br>
+		<small class = "patchNotes" id = "pn65">65: added yami-mal evolution: if nocturne of shadow is located in the animal's preferred location, it will gain yami powers for the rest of the seed and a permanent +6.66% increase in XP(additive multiplier). also quartered xp gains during sim mode.</small><br>
+		<small class = "patchNotes" id = "pn64">64: fixed animal rng to work as described (leveling up other animals was taking away from odds of rolling highest level animal) </small><br>
+		<small class = "patchNotes" id = "pn63">63: added more locations to alt hint input(to support dual hint locations) </small><br>
+		<small class = "patchNotes" id = "pn62">62: added ability to enter items into song locations. changed prescription input from "pre" to "scr"</small><br>
+		<small class = "patchNotes" id = "pn61">61: changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)</small><br>
+		<small class = "patchNotes" id = "pn60">60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller</small><br>
+		<small class = "patchNotes" id = "pn59">59: replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.</small><br>
+		<small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"</small><br>
+		<small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>
+		<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
+		<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>
+		<small class = "patchNotes" id = "pn54">54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) </small><br>
+		<small class = "patchNotes" id = "pn53">53: added light theme and a preset for season 6 (changes by exodus) </small><br>
+		<small class = "patchNotes" id = "pn52">52: added league S3 and SGL 2022 preset (exodus)</small><br>
+		<small class = "patchNotes"><span id = "pn51" class="patchNotes">51</span>: known but not obtained item locations now stay in the checklist</small><br>
+		<small class = "patchNotes"><span id = "pn50" class="patchNotes">50</span>: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) </small><br>
+		<small class = "patchNotes"><span id = "pn49" class="patchNotes">49</span>: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).</small><br>
+		<small class = "patchNotes"><span id = "pn48" class="patchNotes">48</span>: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.</small><br>
+		<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
+		<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
+		<small class = "patchNotes"><span id = "pn45" class="patchNotes">45</span>: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)</small><br>
+		<small class = "patchNotes"><span id = "pn44" class="patchNotes">44</span>: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)</small><br>
+		<small class = "patchNotes"><span id = "pn43" class="patchNotes">43</span>: tracker no longer knows logic</small><br>
+		<small class = "patchNotes"><span id = "pn42" class="patchNotes">42</span>: added frogs2 song display and S5 preset(by exodus)</small><br>
+		<small class = "patchNotes"><span id = "pn39" class="patchNotes">39</span>: Added a new text style for an in logic check that requires an item you have not yet picked up</small><br>
+		<small class = "patchNotes"><span id = "pn38" class="patchNotes">38</span>: added axes support for controller input(might not work with your controller atm).</small><br>
+		<small class = "patchNotes"><span id = "pn31" class="patchNotes">31</span>: controller input works for child dungeons and ice by middle clicking the input box for any check within them</small><br>
+		<small class = "patchNotes"><span id = "pn27" class="patchNotes">27</span>: added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key, item or skip button. This sequence continues until there are no more accessible checks in dungeon.</small><br>
+		<small class = "patchNotes"><span id = "pn26" class="patchNotes">26</span>: timer now starts paused and the hotkey for it has been changed to the pause key</small><br>
+		<small class = "patchNotes"><span id = "pn22" class="patchNotes">22</span>: Added highlighting to patch numbers that were loaded for the first time</small><br>
+		<small class = "patchNotes"><span id = "pn8" class="patchNotes">8</span>: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)</small><br>
+		<small class = "patchNotes"><span id = "pn7" class="patchNotes">7</span>: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a></small><br>
+		<small class = "patchNotes"><span id = "pn4" class="patchNotes">4</span>: Hotkey for Incrementing Token Counter(- and =)</small><br>
+		<small class = "patchNotes"><span id = "pn3" class="patchNotes">3</span>: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
+		<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
 	</div>
 	<div id = "mouseInputs">
 	<small id = "mouseInputs_locations"></small><br>
