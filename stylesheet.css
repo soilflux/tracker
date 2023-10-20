@@ -611,10 +611,6 @@ color: red;
 #row {
 	background-color: #3b4144;
 }
-#row2 {
-	position: absolute;
-	top: 1900px;
-}
 .check_input {
 	height:22px;
 	width: 30px;
