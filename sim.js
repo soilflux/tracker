@@ -28,12 +28,12 @@ function readLog() {
 	document.getElementById("simCheckLightArrowHint").style.display = "block";
 	document.getElementById("gossips").value = "ON";
 	
-	if(SpoilerJSON["randomized_settings"]["starting_age"] == undefined) {
+	if(SpoilerJSON["settings"]["starting_age"] == undefined) {
 		// if random starting age is not on, assume child vanilla spawn
 		document.getElementById("simLog").value = "Child Spawn: KF Links House\n" + document.getElementById("simLog").value;
 	}
 	else {
-		if(SpoilerJSON["randomized_settings"]["starting_age"] == "child")
+		if(SpoilerJSON["settings"]["starting_age"] == "child")
 			simCheckChildSpawn();
 		else
 			simCheckAdultSpawn();
