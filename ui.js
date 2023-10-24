@@ -402,7 +402,7 @@ function junk() {
 		if(LocationToSpoilerName[str] == undefined)
 			console.log(str + " is not a known location in the sim");
             
-        if((str == "kokiri_storms" || str == "hyrule_remoteGrotto" || str == "hyrule_openGrotto" || str == "hyrule_marketGrotto" || str == "lw_generic" || str == "crater_grotto" || str == "kakariko_grotto" || str == "river_grotto" || str == "trail_storms") && Check["h_" + str] != "junk") {
+        if(((str == "kokiri_storms" && Area[AreaNames.indexOf("Kokiri")] != "barren") || ((str == "hyrule_remoteGrotto" || str == "hyrule_openGrotto" || str == "hyrule_marketGrotto") && Area[AreaNames.indexOf("Field")] != "barren") || (str == "lw_generic" && Area[AreaNames.indexOf("Lost Woods")] != "barren") || (str == "crater_grotto" && Area[AreaNames.indexOf("Crater")] != "barren") || (str == "kakariko_grotto" && Area[AreaNames.indexOf("Kakariko")] != "barren") || (str == "river_grotto" && Area[AreaNames.indexOf("River")] != "barren") || (str == "trail_storms" && Area[AreaNames.indexOf("Trail")] != "barren")) && Check["h_" + str] != "junk") {
             document.getElementById("text_" + "h_"+ str).dispatchEvent(new Event('mousedown'));
         }
         var spoilerBossName = "";
