@@ -12,6 +12,26 @@ function processInputs() {
 		for (var j = 35; j > 0; j--) {
 			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
 		}
+		if(key == "zeldasSpot")
+			AreaNamesIndex = AreaNames.indexOf("");
+		else if(key == "eponasSpot")
+			AreaNamesIndex = AreaNames.indexOf("Ranch");
+		else if(key == "oot")
+			AreaNamesIndex = AreaNames.indexOf("Field");
+		else if(key == "serenadeSpot")
+			AreaNamesIndex = AreaNames.indexOf("Ice");
+		else if(key == "stormsSpot" || key == "nocturneSpot")
+			AreaNamesIndex = AreaNames.indexOf("Kakariko");
+		else if(key == "sunsSpot")
+			AreaNamesIndex = AreaNames.indexOf("Graveyard");
+		else if(key == "requiemSpot")
+			AreaNamesIndex = AreaNames.indexOf("Colossus");
+		else if(key == "sariasSpot" || key == "minuetSpot")
+			AreaNamesIndex = AreaNames.indexOf("SFM");
+		else if(key == "preludeSpot")
+			AreaNamesIndex = AreaNames.indexOf("ToT");
+		else if(key == "boleroSpot")
+			AreaNamesIndex = AreaNames.indexOf("Crater");
 		
         if(Check[key] != "unknown" && checkedYet[i-1] == false) {
             checkedYet[i-1] = true; 
