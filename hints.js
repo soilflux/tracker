@@ -222,6 +222,8 @@ function wothAndBarrenProcessing() {
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows") {continue;}
 					if (Items[k] == "farores_wind") {continue;}
+					if (Items[k] == "serenade") {continue;}
+					if (Items[k] == "prelude") {continue;}
 					if (Items[k] == "lullaby") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
@@ -560,6 +562,7 @@ function alternateHintInput() {
 					if (k == 0) {
 						if(lines[j].endsWith(" " + inputs[k]) && textSongSpots.includes("text_"+hintIndexes[i])) {
 							document.getElementById(hintIndexes[i]).value = "pre";
+							songItemChecked = true;
 						}
 						else { 
 							if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
@@ -582,9 +585,11 @@ function alternateHintInput() {
 								}
 								else {
 									if(Check[hintIndexes[i]] == "prescription" || Check[hintIndexes[i]] == "claim_check")
-										document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
+										//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
+										Hinted[hintIndexes[i]] = true;
 									else
-										document.getElementById(Check[hintIndexes[i]]+"_location").dispatchEvent(new Event('mousedown'));
+										//document.getElementById(Check[hintIndexes[i]]+"_location").dispatchEvent(new Event('mousedown'));
+										Hinted[hintIndexes[i]] = true;
 								}
 								simOverride = false;
 							}

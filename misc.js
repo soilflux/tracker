@@ -741,7 +741,7 @@ function toggleHint(loc) {
 		}
 		MarkedWotHItemArrow = null;
 	}
-	//midUpdate(); // commented out to fix crash when hinting song location as junk ("noc x")
+	midUpdate();
 }
 
 function gsArrayBuilder() {
