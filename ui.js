@@ -114,6 +114,26 @@ function processInputs() {
                             trackAnimalQuest();
 							break;
 						}
+						else if (i > lastItem && j < 41) {
+							songItemChecked = true;
+							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
+							Location[Items2[j] + duplicate] = document.getElementById(key).id;
+							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+							Known[Items2[j] + duplicate] = true; 
+							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
+							if (!hinted && !peeked){
+								Player[Items2[j] + duplicate] = true;
+								if(inputs[j] == "big")
+									Player["big_poe"] = true;
+							}
+							if (hinted) {Hinted[key] = true;} 
+							if (hinted || peeked) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
+							var change = "text_" + document.getElementById(key).id; 
+							document.getElementById(change).innerHTML += ": " + ItemNames2[j]; 
+							junkSong(document.getElementById(key));
+                            trackAnimalQuest();
+							break;
+						}
 						else {
 							Check[document.getElementById(key).id] = Items2[j];
 							Location[Items2[j]] = document.getElementById(key).id; 
@@ -1130,7 +1150,7 @@ function updateLogicInfo() {
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames2[Items2.indexOf(Check[key])])}
+		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
 		
 		if(i > lastItem && Check[key] != "unknown" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
@@ -1404,21 +1424,26 @@ function updateSummaryText() {
 	for(var i = 0; i <= 50; i++){
 		str = checkSummary[i] + "_location";
 		
-		if(Hinted[Location[checkSummary[i]]] && document.getElementById(str).innerHTML.indexOf("*") < 0)
-			document.getElementById(str).innerHTML = "* " + document.getElementById(str).innerHTML + " *";
-		else if(!Hinted[Location[checkSummary[i]]])
-			document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace("* ", "").replace(" *", "");
-		
 		var theItem = checkSummary[i];
-		if (checkSummary[i] == "trade" && (Logic.prescription || Logic.claim_check)) {
+		if (checkSummary[i] == "trade" && (Known.prescription || Known.claim_check)) {
 			var exception = true;
 			if(Known.prescription)
 				theItem = "prescription";
 			else if(Known.claim_check)
 				theItem = "claim_check";
+			
+			if(Hinted[Location[theItem]] && document.getElementById(str).innerHTML.indexOf("*") < 0)
+				document.getElementById(str).innerHTML = "* " + document.getElementById(str).innerHTML + " *";
+			else if(!Hinted[Location[theItem]])
+				document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace("* ", "").replace(" *", "");
 		} 
 		else {
 			var exception = false;
+			
+			if(Hinted[Location[checkSummary[i]]] && document.getElementById(str).innerHTML.indexOf("*") < 0)
+				document.getElementById(str).innerHTML = "* " + document.getElementById(str).innerHTML + " *";
+			else if(!Hinted[Location[checkSummary[i]]])
+				document.getElementById(str).innerHTML = document.getElementById(str).innerHTML.replace("* ", "").replace(" *", "");
 		}
 		
 		if(!nerfed) {
