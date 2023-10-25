@@ -1935,7 +1935,7 @@ function locationLogic(){
 	Location_Peek.anjus_chickens = true;
 	Location_Peek.tokens_10 = Logic.gold_skulltulas >= 10 || Player.tokens >= 10; //these are temporary because access logic for skulls isn't done yet
 	Location_Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Player.tokens >= 20 || document.getElementById("presets").value == "SGL_2023";
-	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2023" || document.getElementById("presets").value == "S7";
+	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2023"";
 	Location_Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Player.tokens >= 40 || document.getElementById("presets").value == "S7";
 	Location_Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Player.tokens >= 50 || document.getElementById("presets").value == "S7";
 	Location_Peek.gravedigging_tour = true;
