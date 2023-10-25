@@ -222,6 +222,8 @@ function wothAndBarrenProcessing() {
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows") {continue;}
 					if (Items[k] == "farores_wind") {continue;}
+					if (Items[k] == "serenade") {continue;}
+					if (Items[k] == "prelude") {continue;}
 					if (Items[k] == "lullaby") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
