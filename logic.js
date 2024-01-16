@@ -1459,7 +1459,7 @@ function locationLogic(){
 	Location_Access.skull_kid = Player.sarias;
 	Location_Access.target = Player.slingshot;
 	Location_Access.theater_skull = true;
-	Location_Access.theater_truth = (Player.emerald || Player.emerald || Location_Access.emerald_location) && (Player.ruby || Player.ruby || Location_Access.ruby_location) && (Player.sapphire || Player.sapphire || Location_Access.sapphire_location);
+	Location_Access.theater_truth = (Player.emerald || Player.emerald || Location_Access.emerald_location) && (Player.ruby || Player.ruby || Location_Access.ruby_location) && (Player.sapphire || Player.sapphire || Location_Access.sapphire_location) && Player.sarias;
 	Location_Access.kokiri_storms = Player.storms;
 	Location_Access.rolling_goron = Player.bomb_bag || Player.has_chus || Player.goron_bracelet;
 	Location_Access.goron_pot = (Player.bomb_bag || Player.goron_bracelet || Player.has_chus) && (Player.lullaby || Player.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -1899,7 +1899,7 @@ function locationLogic(){
 	Location_Peek.skull_kid = Player.sarias;
 	Location_Peek.target = Player.slingshot;
 	Location_Peek.theater_skull = true;
-	Location_Peek.theater_truth = Player.emerald && Player.ruby && Player.sapphire;
+	Location_Peek.theater_truth = Player.emerald && Player.ruby && Player.sapphire && Player.sarias;
 	Location_Peek.kokiri_storms = Player.storms;
 	Location_Peek.rolling_goron = Player.bomb_bag || Player.has_chus || Player.goron_bracelet;
 	Location_Peek.goron_pot = (Player.bomb_bag || Player.goron_bracelet || Player.has_chus) && (Player.lullaby || Player.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -2380,7 +2380,7 @@ function locationLogic(){
 	Location_Could_Access.skull_kid = CouldHave.sarias;
 	Location_Could_Access.target = CouldHave.slingshot;
 	Location_Could_Access.theater_skull = true;
-	Location_Could_Access.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
+	Location_Could_Access.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location) && CouldHave.sarias;
 	Location_Could_Access.kokiri_storms = CouldHave.storms;
 	Location_Could_Access.rolling_goron = CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet;
 	Location_Could_Access.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Player.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -2820,7 +2820,7 @@ function locationLogic(){
 	Location_Could_Peek.skull_kid = CouldHave.sarias;
 	Location_Could_Peek.target = CouldHave.slingshot;
 	Location_Could_Peek.theater_skull = true;
-	Location_Could_Peek.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
+	Location_Could_Peek.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location) && CouldHave.sarias;
 	Location_Could_Peek.kokiri_storms = CouldHave.storms;
 	Location_Could_Peek.rolling_goron = CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet;
 	Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Player.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
