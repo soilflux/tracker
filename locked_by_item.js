@@ -553,7 +553,7 @@ function checksLockedByItem(item) {
 	Location_Locked_Logic2.bridge_scrub = true;
 	Location_Locked_Logic2.target = Locked_Logic2.slingshot;
 	Location_Locked_Logic2.skull_kid = Locked_Logic2.sarias;
-	Location_Locked_Logic2.theater = true;
+	Location_Locked_Logic2.theater_skull = true;
 	Location_Locked_Logic2.wolfos_grotto = Locked_Logic2.bomb_bag || Locked_Logic2.can_pass_mido_as_adult && Locked_Logic2.hammer;
 	Location_Locked_Logic2.rolling_goron = Locked_Logic2.bomb_bag;
 	Location_Locked_Logic2.goron_dance = (Locked_Logic2.lullaby || Spawn.child_lower_dmc) && Locked_Logic2.sarias;

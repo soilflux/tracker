@@ -883,7 +883,7 @@ function logicShortcuts() {
 	Player.can_enter_dodongos = true;
 	Player.can_break_dodongos_wall = Player.can_enter_dodongos && (Player.can_blast_or_smash || Player.goron_bracelet || ((Player.can_use_bottle || Player.can_enter_jabu) && Player.giants_wallet) || Player.can_shoot_blue_fire_arrows);
 	Player.dodongos_climb = Player.can_break_dodongos_wall && (Player.bomb_bag || Player.has_chus || Player.goron_bracelet || Player.can_use_dins || Player.bow);
-	Player.can_enter_shadow= (Player.nocturne || Spawn.adult_nocturne) && Player.can_use_dins;//&& Player.can_see;
+	Player.can_enter_shadow= (Player.nocturne || Spawn.adult_nocturne) && (Player.can_use_dins || (document.getElementById("presets").value == "TRUTH" && Player.can_use_fire));//&& Player.can_see;
 	Player.can_cross_shadow_gap= Player.can_enter_shadow && Player.hover_boots;
 	Player.can_bomb_shadow_wall = Player.can_cross_shadow_gap && (Player.bomb_bag || Player.has_chus) && (document.getElementById("keysanity").value != "KEY RINGS" || Player.shadow_key_ring);
 	Player.can_pass_shadow_hookshot_door = Player.can_bomb_shadow_wall && Player.hookshot;
@@ -937,7 +937,7 @@ function logicShortcuts() {
 	CouldHave.can_enter_dodongos = true;
 	CouldHave.can_break_dodongos_wall = CouldHave.can_enter_dodongos && (CouldHave.can_blast_or_smash || CouldHave.goron_bracelet || ((CouldHave.can_use_bottle || CouldHave.can_enter_jabu) && CouldHave.giants_wallet) || CouldHave.can_shoot_blue_fire_arrows);
 	CouldHave.dodongos_climb = CouldHave.can_break_dodongos_wall && (CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet || CouldHave.can_use_dins || CouldHave.bow);
-	CouldHave.can_enter_shadow= (CouldHave.nocturne || Spawn.adult_nocturne) && CouldHave.can_use_dins;//&& CouldHave.can_see;
+	CouldHave.can_enter_shadow= (CouldHave.nocturne || Spawn.adult_nocturne) && (CouldHave.can_use_dins || (document.getElementById("presets").value == "TRUTH" && Player.can_use_fire));//&& CouldHave.can_see;
 	CouldHave.can_cross_shadow_gap= CouldHave.can_enter_shadow && CouldHave.hover_boots;
 	CouldHave.can_bomb_shadow_wall = CouldHave.can_cross_shadow_gap && (CouldHave.bomb_bag || Player.has_chus) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.shadow_key_ring);
 	CouldHave.can_pass_shadow_hookshot_door = CouldHave.can_bomb_shadow_wall && CouldHave.hookshot;
@@ -1025,7 +1025,8 @@ function locationLogic(){
 	Location_Logic.bridge_scrub = true;
 	Location_Logic.target = Logic.slingshot;
 	Location_Logic.skull_kid = Logic.sarias;
-	Location_Logic.theater = true;
+	Location_Logic.theater_skull = true;
+	Location_Logic.theater_truth = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire && Logic.sarias;
 	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.can_pass_mido_as_adult && Logic.hammer);
 	Location_Logic.rolling_goron = Logic.bomb_bag;
 	Location_Logic.goron_dance = (Logic.lullaby || Spawn.child_lower_dmc) && Logic.sarias;
@@ -1073,7 +1074,7 @@ function locationLogic(){
 	Location_Logic.race_1 = true;
 	Location_Logic.race_2 = true;
 	Location_Logic.river_bean_salesman = Logic.child_can_enter_river;
-	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots;
+	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots || document.getElementById("preplantedBeans").value == "ON";
 	Location_Logic.river_grotto = true;
 	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
 	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.storms;
@@ -1457,7 +1458,8 @@ function locationLogic(){
 	Location_Access.bridge_scrub = true;
 	Location_Access.skull_kid = Player.sarias;
 	Location_Access.target = Player.slingshot;
-	Location_Access.theater = true;
+	Location_Access.theater_skull = true;
+	Location_Access.theater_truth = (Player.emerald || Player.emerald || Location_Access.emerald_location) && (Player.ruby || Player.ruby || Location_Access.ruby_location) && (Player.sapphire || Player.sapphire || Location_Access.sapphire_location);
 	Location_Access.kokiri_storms = Player.storms;
 	Location_Access.rolling_goron = Player.bomb_bag || Player.has_chus || Player.goron_bracelet;
 	Location_Access.goron_pot = (Player.bomb_bag || Player.goron_bracelet || Player.has_chus) && (Player.lullaby || Player.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -1609,7 +1611,7 @@ function locationLogic(){
 	Location_Access.shadow_dins1 = Player.can_ride_shadow_boat && Player.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Access.shadow_dins2 = Player.can_ride_shadow_boat && Player.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Access.shadow_floormaster = Player.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-	Location_Access.shadow_bongo = Player.can_beat_shadow_boss && Player.current_shadow_keys >=5;
+	Location_Access.shadow_bongo = Player.can_beat_shadow_boss && Player.current_shadow_keys >=5 && (Player.shadow_boss_key || document.getElementById("presets").value != "TRUTH");
 	Location_Access.ganons_lightTrial1 = Player.can_enter_ganons && Player.golden_gauntlets;
 	Location_Access.ganons_lightTrial2 = Player.can_enter_ganons && Player.golden_gauntlets;
 	Location_Access.ganons_lightTrial3 = Player.can_enter_ganons && Player.golden_gauntlets;
@@ -1896,7 +1898,8 @@ function locationLogic(){
 	Location_Peek.bridge_scrub = true;
 	Location_Peek.skull_kid = Player.sarias;
 	Location_Peek.target = Player.slingshot;
-	Location_Peek.theater = true;
+	Location_Peek.theater_skull = true;
+	Location_Peek.theater_truth = Player.emerald && Player.ruby && Player.sapphire;
 	Location_Peek.kokiri_storms = Player.storms;
 	Location_Peek.rolling_goron = Player.bomb_bag || Player.has_chus || Player.goron_bracelet;
 	Location_Peek.goron_pot = (Player.bomb_bag || Player.goron_bracelet || Player.has_chus) && (Player.lullaby || Player.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -1935,9 +1938,9 @@ function locationLogic(){
 	Location_Peek.anjus_chickens = true;
 	Location_Peek.tokens_10 = Logic.gold_skulltulas >= 10 || Player.tokens >= 10; //these are temporary because access logic for skulls isn't done yet
 	Location_Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Player.tokens >= 20 || document.getElementById("presets").value == "SGL_2023";
-	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2023";
-	Location_Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Player.tokens >= 40 || document.getElementById("presets").value == "S7";
-	Location_Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Player.tokens >= 50 || document.getElementById("presets").value == "S7";
+	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2023" || document.getElementById("presets").value == "TRUTH";
+	Location_Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Player.tokens >= 40 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH";
+	Location_Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Player.tokens >= 50 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH";
 	Location_Peek.gravedigging_tour = true;
 	Location_Peek.graveyard_box = true;//Player.bean_access || Player.longshot || Player.boomerang;
 	Location_Peek.shield_grave = true;
@@ -2048,7 +2051,7 @@ function locationLogic(){
 	Location_Peek.shadow_dins1 = Player.can_ride_shadow_boat && Player.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Peek.shadow_dins2 = Player.can_ride_shadow_boat && Player.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Peek.shadow_floormaster = Player.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-	Location_Peek.shadow_bongo = Player.can_beat_shadow_boss && Player.current_shadow_keys >=5;
+	Location_Peek.shadow_bongo = Player.can_beat_shadow_boss && Player.current_shadow_keys >=5 && (Player.shadow_boss_key || document.getElementById("presets").value != "TRUTH");
 	Location_Peek.ganons_lightTrial1 = Player.can_enter_ganons && Player.golden_gauntlets;
 	Location_Peek.ganons_lightTrial2 = Player.can_enter_ganons && Player.golden_gauntlets;
 	Location_Peek.ganons_lightTrial3 = Player.can_enter_ganons && Player.golden_gauntlets;
@@ -2376,7 +2379,8 @@ function locationLogic(){
 	Location_Could_Access.bridge_scrub = true;
 	Location_Could_Access.skull_kid = CouldHave.sarias;
 	Location_Could_Access.target = CouldHave.slingshot;
-	Location_Could_Access.theater = true;
+	Location_Could_Access.theater_skull = true;
+	Location_Could_Access.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
 	Location_Could_Access.kokiri_storms = CouldHave.storms;
 	Location_Could_Access.rolling_goron = CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet;
 	Location_Could_Access.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Player.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -2528,7 +2532,7 @@ function locationLogic(){
 	Location_Could_Access.shadow_dins1 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Could_Access.shadow_dins2 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Could_Access.shadow_floormaster = CouldHave.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-	Location_Could_Access.shadow_bongo = CouldHave.can_beat_shadow_boss && Player.current_shadow_keys >=5;
+	Location_Could_Access.shadow_bongo = CouldHave.can_beat_shadow_boss && Player.current_shadow_keys >=5 && (Player.shadow_boss_key || document.getElementById("presets").value != "TRUTH");
 	Location_Could_Access.ganons_lightTrial1 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
 	Location_Could_Access.ganons_lightTrial2 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
 	Location_Could_Access.ganons_lightTrial3 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
@@ -2815,7 +2819,8 @@ function locationLogic(){
 	Location_Could_Peek.bridge_scrub = true;
 	Location_Could_Peek.skull_kid = CouldHave.sarias;
 	Location_Could_Peek.target = CouldHave.slingshot;
-	Location_Could_Peek.theater = true;
+	Location_Could_Peek.theater_skull = true;
+	Location_Could_Peek.theater_truth = (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) && (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) && (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location);
 	Location_Could_Peek.kokiri_storms = CouldHave.storms;
 	Location_Could_Peek.rolling_goron = CouldHave.bomb_bag || Player.has_chus || CouldHave.goron_bracelet;
 	Location_Could_Peek.goron_pot = (CouldHave.bomb_bag || CouldHave.goron_bracelet || Player.has_chus) && (CouldHave.lullaby || CouldHave.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
@@ -2967,7 +2972,7 @@ function locationLogic(){
 	Location_Could_Peek.shadow_dins1 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Could_Peek.shadow_dins2 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins && Player.current_shadow_keys >=4;
 	Location_Could_Peek.shadow_floormaster = CouldHave.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-	Location_Could_Peek.shadow_bongo = CouldHave.can_beat_shadow_boss && Player.current_shadow_keys >=5;
+	Location_Could_Peek.shadow_bongo = CouldHave.can_beat_shadow_boss && Player.current_shadow_keys >=5 && (Player.shadow_boss_key || document.getElementById("presets").value != "TRUTH");
 	Location_Could_Peek.ganons_lightTrial1 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
 	Location_Could_Peek.ganons_lightTrial2 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
 	Location_Could_Peek.ganons_lightTrial3 = CouldHave.can_enter_ganons && CouldHave.golden_gauntlets;
