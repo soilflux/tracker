@@ -676,7 +676,7 @@ function checksPutInLogicByItem(item) {
 	Location_PutIn_Logic.bridge_scrub = true;
 	Location_PutIn_Logic.target = PutIn_Logic.slingshot;
 	Location_PutIn_Logic.skull_kid = PutIn_Logic.sarias;
-	Location_PutIn_Logic.theater = true;
+	Location_PutIn_Logic.theater_skull = true;
 	Location_PutIn_Logic.wolfos_grotto = PutIn_Logic.bomb_bag || PutIn_Logic.can_pass_mido_as_adult && PutIn_Logic.hammer;
 	Location_PutIn_Logic.rolling_goron = PutIn_Logic.bomb_bag;
 	Location_PutIn_Logic.goron_dance = (PutIn_Logic.lullaby || Spawn.child_lower_dmc) && PutIn_Logic.sarias;
