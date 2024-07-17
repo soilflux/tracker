@@ -1,4 +1,5 @@
 function Update() {
+	saveStuff(); //save current settings for next use of tracker
 	changeThemes();
 	checkCircleInfo(); //updates the numbers in the circles next to dungeon names
 	itemHighlights(); //add or remove transparency if player has or does not have items, respectively
@@ -72,7 +73,6 @@ function midUpdate() {
 
 function slowUpdate() {
 	updateInputs(); //implements custom inputs
-	saveStuff(); //save current settings for next use of tracker
 	refreshVersion(); //will highlight patch notes that haven't been read yet
 	document.getElementById("effectiveSpeedUp").innerHTML = effectiveSpeedUp.toFixed(4);
 	if (!nerfed) {

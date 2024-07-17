@@ -1018,6 +1018,9 @@ function locationLogic(){
 	Location_Logic.deku_compass_room_side = Logic.deku_access;
 	Location_Logic.deku_basement = Logic.deku_access;
 	Location_Logic.deku_queen_gohma = Logic.deku_access && Logic.slingshot;
+	if (document.getElementById("presets").value == "SGL_2024") {
+		Location_Logic.deku_queen_gohma = Logic.deku_access;	
+	}
 	Location_Logic.lost_woods_fairy_ocarina = true;
 	Location_Logic.ocarina_game = true;
 	Location_Logic.lw_generic = Logic.can_blast_or_smash;
@@ -1937,10 +1940,10 @@ function locationLogic(){
 	Location_Peek.archery_game = Player.bow;
 	Location_Peek.anjus_chickens = true;
 	Location_Peek.tokens_10 = Logic.gold_skulltulas >= 10 || Player.tokens >= 10; //these are temporary because access logic for skulls isn't done yet
-	Location_Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Player.tokens >= 20 || document.getElementById("presets").value == "SGL_2023";
-	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2023" || document.getElementById("presets").value == "TRUTH";
-	Location_Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Player.tokens >= 40 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH";
-	Location_Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Player.tokens >= 50 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH";
+	Location_Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Player.tokens >= 20 || document.getElementById("presets").value == "SGL_2024";
+	Location_Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Player.tokens >= 30 || document.getElementById("presets").value == "SGL_2024" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
+	Location_Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Player.tokens >= 40 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
+	Location_Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Player.tokens >= 50 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
 	Location_Peek.gravedigging_tour = true;
 	Location_Peek.graveyard_box = true;//Player.bean_access || Player.longshot || Player.boomerang;
 	Location_Peek.shield_grave = true;
