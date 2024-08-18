@@ -21,7 +21,7 @@ function readLog() {
     document.getElementById("redRupee").style.display = "inline-block";
     document.getElementById("rupeeCount").style.display = "inline-block";
 	document.getElementById("simLog").style.display = "inline-block";
-	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["Links Pocket"] + "\n";
+	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["ToT Reward from Rauru"] + "\n";
 	document.getElementById("simCheckAltar").style.display = "block";
 	document.getElementById("simCheckChildSpawn").style.display = "block";
 	document.getElementById("simCheckAdultSpawn").style.display = "block";
@@ -58,10 +58,10 @@ function onChooseFile(event, onLoadFileHandler) {
 	fr.readAsText(file);
 }
 
-rewardSpoilerLocations = ["Links Pocket", "Queen Gohma", "King Dodongo", "Barinade", "Phantom Ganon", "Volvagia", "Morpha", "Bongo Bongo", "Twinrova"];
+rewardSpoilerLocations = ["ToT Reward from Rauru", "Queen Gohma", "King Dodongo", "Barinade", "Phantom Ganon", "Volvagia", "Morpha", "Bongo Bongo", "Twinrova"];
 
 rewardInputDict = {
-	"Links Pocket" : "fr", 
+	"ToT Reward from Rauru" : "fr", 
 	"Queen Gohma" : "de",
 	"King Dodongo" : "do",
 	"Barinade" : "ja",
@@ -76,24 +76,24 @@ function simStartingReward() {
 	m = ["xx", "xx", "xx", "xx", "xx", "xx"];
 	s = ["xx", "xx", "xx"];
 	
-	if(SpoilerJSON["locations"]["Links Pocket"] == "Light Medallion")
-		m[0] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Forest Medallion")
-		m[1] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Fire Medallion")
-		m[2] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Water Medallion")
-		m[3] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Shadow Medallion")
-		m[4] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Spirit Medallion")
-		m[5] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Kokiri Emerald")
-		s[0] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Goron Ruby")
-		s[1] = rewardInputDict["Links Pocket"];
-	else if(SpoilerJSON["locations"]["Links Pocket"] == "Zora Sapphire")
-		s[2] = rewardInputDict["Links Pocket"];
+	if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Light Medallion")
+		m[0] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Forest Medallion")
+		m[1] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Fire Medallion")
+		m[2] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Water Medallion")
+		m[3] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Shadow Medallion")
+		m[4] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Spirit Medallion")
+		m[5] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Kokiri Emerald")
+		s[0] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Goron Ruby")
+		s[1] = rewardInputDict["ToT Reward from Rauru"];
+	else if(SpoilerJSON["locations"]["ToT Reward from Rauru"] == "Zora Sapphire")
+		s[2] = rewardInputDict["ToT Reward from Rauru"];
 	document.getElementById("markMedallions").value = m[0] + m[1] + m[2] + m[3] + m[4] + m[5];
 	document.getElementById("markStones").value = s[0] + s[1] + s[2];
 }
@@ -251,6 +251,22 @@ bossInputs = {
 };
 
 function simProcessHint(hint, str) {
+	let dualHints = [
+		"crawl spaces in the Spirit Temple",
+		"Dead Hand in the well",
+		"final treasures of Ice Cavern",
+		"chests past Dark Link",
+		"Great Fairies outside Hyrule and Ganon's castles",
+		"a diving game and a torch run",
+		"inside the Royal Family Tomb",
+		"riding the bean in Lake Hylia",
+		"biggest fish as child and as an adult",
+		"the crate and waterfall",
+		"Gerudo Horseback Archery rewards",
+		"music-loving Goron and skull kid",
+		"scarecrow and a flare dancer"
+	]
+	
 	if(hint.includes("way of the hero")) {
 		if(simWothCounter <= 5) {
 			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
@@ -307,18 +323,47 @@ function simProcessHint(hint, str) {
 			}
 		}
 	}
-	else { // always or sometimes hint
-		var loc_input = SpoilerHintLocationToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]];
-	
-		var temp_item = "";
-		if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]] == undefined)
-			temp_item = "x";
-		else
-			temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]];
+	else {
+		let isDualHint = false;
+		for(let x = 0; x < dualHints.length; x++) {
+			if(hint.includes(dualHints[x])) {
+				var loc1 = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"][0];
+				var loc2 = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"][1];
+				
+				var temp_item = "";
+				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][0]] == undefined)
+					temp_item = "x";
+				else
+					temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][0]];
+				
+				var temp_item2 = "";
+				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]] == undefined)
+					temp_item2 = "x";
+				else
+					temp_item2 = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]];
+				
+				document.getElementById(SpoilerLocationToLocationName[loc1]).value = temp_item;
+				Hinted[SpoilerLocationToLocationName[loc1]] = true;
+				document.getElementById(SpoilerLocationToLocationName[loc2]).value = temp_item2;
+				Hinted[SpoilerLocationToLocationName[loc2]] = true;
+				isDualHint = true;
+				break;
+			}
+		}
+		if(!isDualHint) { // always or sometimes hint
+			var loc_input = SpoilerHintLocationToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]];
 		
-		if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
-			document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + temp_item + "\n");
-		else if(!document.getElementById("hintInput").value.includes(loc_input + " " + temp_item + "\n"))
-			document.getElementById("hintInput").value += loc_input + " " + temp_item + "\n";
+			var temp_item = "";
+			if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]] == undefined)
+				temp_item = "x";
+			else
+				temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]];
+			
+			if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+				document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + temp_item + "\n");
+			else if(!document.getElementById("hintInput").value.includes(loc_input + " " + temp_item + "\n"))
+				document.getElementById("hintInput").value += loc_input + " " + temp_item + "\n";
+		}
 	}
+	
 }
