@@ -1944,7 +1944,6 @@ var SpoilerItemToInput = {
 	"Small Key (Shadow Temple)" : inputs[inputNames.indexOf("Small Key")],
 	"Small Key (Bottom of the Well)" : inputs[inputNames.indexOf("Small Key")],
 	"Small Key (Gerudo Training Ground)" : inputs[inputNames.indexOf("Small Key")],
-	"Small Key (Bottom of the Well)" : inputs[inputNames.indexOf("Small Key")],
 	"Small Key (Ganons Castle)" : inputs[inputNames.indexOf("Small Key")],
 	"Boss Key (Forest Temple)" : inputs[inputNames.indexOf("Boss Key")],
 	"Boss Key (Fire Temple)" : inputs[inputNames.indexOf("Boss Key")],
