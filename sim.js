@@ -342,9 +342,11 @@ function simProcessHint(hint, str) {
 				else
 					temp_item2 = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]];
 				
-				document.getElementById(SpoilerLocationToLocationName[loc1]).value = temp_item;
+				if(Check[SpoilerLocationToLocationName[loc1]] == "unknown")
+					document.getElementById(SpoilerLocationToLocationName[loc1]).value = capitalizeFirstLetter(temp_item);
 				Hinted[SpoilerLocationToLocationName[loc1]] = true;
-				document.getElementById(SpoilerLocationToLocationName[loc2]).value = temp_item2;
+				if(Check[SpoilerLocationToLocationName[loc2]] == "unknown")
+					document.getElementById(SpoilerLocationToLocationName[loc2]).value = capitalizeFirstLetter(temp_item2);
 				Hinted[SpoilerLocationToLocationName[loc2]] = true;
 				isDualHint = true;
 				break;
