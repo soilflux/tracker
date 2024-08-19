@@ -581,8 +581,12 @@ function toggleHint(loc) {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"]];
 					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]["item"];
 				}
-				else {
+				else if (SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]] != undefined) {
 					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[theLocation]]];
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
+				}
+				else {
+					input = "pre";
 					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
 				}
 				
