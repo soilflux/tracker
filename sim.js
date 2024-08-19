@@ -332,13 +332,19 @@ function simProcessHint(hint, str) {
 				
 				var temp_item = "";
 				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][0]] == undefined)
-					temp_item = "x";
+					if(!songSpots.includes(SpoilerLocationToLocationName[loc1]))
+						temp_item = "x";
+					else
+						temp_item = "pre";
 				else
 					temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][0]];
 				
 				var temp_item2 = "";
 				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]] == undefined)
-					temp_item2 = "x";
+					if(!songSpots.includes(SpoilerLocationToLocationName[loc2]))
+						temp_item2 = "x";
+					else
+						temp_item2 = "pre";
 				else
 					temp_item2 = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]];
 				
@@ -353,11 +359,15 @@ function simProcessHint(hint, str) {
 			}
 		}
 		if(!isDualHint) { // always or sometimes hint
-			var loc_input = SpoilerHintLocationToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]];
+			var loc = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]
+			var loc_input = SpoilerHintLocationToInput[loc];
 		
 			var temp_item = "";
 			if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]] == undefined)
-				temp_item = "x";
+				if(!songSpots.includes(SpoilerLocationToLocationName[loc]))
+					temp_item = "x";
+				else
+					temp_item = "pre";
 			else
 				temp_item = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]];
 			
