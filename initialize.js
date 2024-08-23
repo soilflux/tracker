@@ -32,6 +32,7 @@ var woth2Locations = [];
 var woth3Locations = [];
 var woth4Locations = [];
 var woth5Locations = [];
+var woth6Locations = [];
 var thisIsAKey = false;
 var thisIsABossKey = false;
 var thisIsHinted = false;
@@ -937,6 +938,7 @@ var woth2 = "unknown";
 var woth3 = "unknown";
 var woth4 = "unknown";
 var woth5 = "unknown";	
+var woth6 = "unknown";	
 
 var WotHItems = [];
 var ManualWotHItems = {};
