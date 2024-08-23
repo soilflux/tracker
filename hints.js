@@ -4,10 +4,10 @@ function wothAndBarrenProcessing() {
 	Area[i] = "normal";
 	}
 	
-	wothAreas = ["", "", "", "", "", ""];
-	AreaGoalPathBoss = ["", "", "", "", "", ""];
+	wothAreas = ["", "", "", "", "", "", ""];
+	AreaGoalPathBoss = ["", "", "", "", "", "", ""];
 
-	for (var i = 1; i <= 5; i++) {
+	for (var i = 1; i <= 6; i++) {
 		var str = document.getElementById("woth_input" + i).value;
 		str = str.replace("2","");
 		if (str == "kok" || str == "kf" || str == "koki" || str == "kfc") {if (Area[1] == "4woth") {Area[1] = "5woth";} else if (Area[1] == "3woth") {Area[1] = "4woth";} else if (Area[1] == "2woth") {Area[1] = "3woth";} else if (Area[1] == "woth") {Area[1] = "2woth";} else {Area[1] = "woth";} wothAreas[i] = AreaNames[1];}
@@ -111,6 +111,7 @@ function wothAndBarrenProcessing() {
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {document.getElementById("woth3_title").innerHTML = AreaNames[i]; woth3 = AreaNames[i];}
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {document.getElementById("woth4_title").innerHTML = AreaNames[i]; woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {document.getElementById("woth5_title").innerHTML = AreaNames[i]; woth5 = AreaNames[i];}
+			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {document.getElementById("woth6_title").innerHTML = AreaNames[i]; woth6 = AreaNames[i];}
 			AreaWotHAge[i] = 1;
 		}
 		else if (Area[i] == "2woth" && AreaWotHAge[i] != 2) {		
@@ -119,6 +120,7 @@ function wothAndBarrenProcessing() {
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
+			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
 			AreaWotHAge[i] = 2;
 		}
 		else if (Area[i] == "3woth" && AreaWotHAge[i] != 3) {		
@@ -127,6 +129,7 @@ function wothAndBarrenProcessing() {
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
+			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
 			AreaWotHAge[i] = 3;
 		}
 		else if (Area[i] == "4woth" && AreaWotHAge[i] != 4) {		
@@ -135,6 +138,7 @@ function wothAndBarrenProcessing() {
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
+			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
 			AreaWotHAge[i] = 4;
 		}
 		else if (Area[i] == "5woth" && AreaWotHAge[i] != 5) {		
@@ -144,6 +148,7 @@ function wothAndBarrenProcessing() {
 			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {woth3 = AreaNames[i];}
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
+			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
 			AreaWotHAge[i] = 5;
 		}
 		else if (Area[i] == "normal" || Area[i] == "barren") {
@@ -152,6 +157,7 @@ function wothAndBarrenProcessing() {
 			if (woth3 == AreaNames[i]) {woth3 = "unknown"}
 			if (woth4 == AreaNames[i]) {woth4 = "unknown"}
 			if (woth5 == AreaNames[i]) {woth5 = "unknown"}
+			if (woth6 == AreaNames[i]) {woth6 = "unknown"}
 		AreaWotHAge[i] = 0;	
 		}
 	}
@@ -205,13 +211,14 @@ function wothAndBarrenProcessing() {
 			var tempbool = false;
 		
 			
-			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i]) {
+			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i]) {
 				
 				if (woth1 == AreaNames[i]) {wothNumber = 1;}
 				else if (woth2 == AreaNames[i]) {wothNumber = 2;}
 				else if (woth3 == AreaNames[i]) {wothNumber = 3;}
 				else if (woth4 == AreaNames[i]) {wothNumber = 4;}
 				else if (woth5 == AreaNames[i]) {wothNumber = 5;}
+				else if (woth6 == AreaNames[i]) {wothNumber = 6;}
 				var tempArray = [];
 				document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML="";
@@ -324,7 +331,7 @@ function wothAndBarrenProcessing() {
 			
 				if (document.getElementById("hints_type").value == "PATH") {
 					var addedArrow = false;
-					for(var q = 1; q <= 5; q++)
+					for(var q = 1; q <= 6; q++)
 						if(wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {
 							if(!addedArrow) {
 								document.getElementById("woth" + wothNumber + "_title").innerHTML += " &#8594; "; 
@@ -344,6 +351,7 @@ function wothAndBarrenProcessing() {
 					if (wothNumber == 3) {woth3Locations = [];}
 					if (wothNumber == 4) {woth4Locations =[];}
 					if (wothNumber == 5) {woth5Locations = [];}
+					if (wothNumber == 6) {woth6Locations = [];}
 				}
 				if (AreaWotHAge[i] >= tempnumber3) {
 					document.getElementById("woth" + wothNumber + "_title").style.opacity = 1;
@@ -352,6 +360,7 @@ function wothAndBarrenProcessing() {
 					if (wothNumber == 3) {woth3Locations = tempArray2.slice(0);}
 					if (wothNumber == 4) {woth4Locations = tempArray2.slice(0);}
 					if (wothNumber == 5) {woth5Locations = tempArray2.slice(0);}
+					if (wothNumber == 6) {woth6Locations = tempArray2.slice(0);}
 				}
 			}
 			
