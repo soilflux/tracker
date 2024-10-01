@@ -1223,6 +1223,11 @@ function updateLogicInfo() {
 			}
 		}
 		
+		if(document.getElementById(key).value != "")
+			document.getElementById(key).style.backgroundBlendMode = "overlay"; 
+		else
+			document.getElementById(key).style.backgroundBlendMode = ""; 
+		
 		if(key.startsWith("h_")) {
             document.getElementById(str).className = "gossip_text";
             if (Location_Peek[key] && Check[key] != "junk") {
