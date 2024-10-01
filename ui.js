@@ -1323,12 +1323,12 @@ function updateLogicInfo() {
 					document.getElementById(str).className= "access_check_text";
 					document.getElementById(str).style.opacity = .7;
 					document.getElementById(str).style.fontWeight = "normal";
-					document.getElementById(str).style.color ="yellow";
+					document.getElementById(str).style.color ="#FFA500";
 				}
 				else {
 					if (hamsda) {
 						document.getElementById(str).className= "access_check_text";
-						document.getElementById(str).style.opacity = .5;
+						document.getElementById(str).style.opacity = .7;
 						document.getElementById(str).style.fontWeight = "normal";
 					}
 					else {

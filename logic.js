@@ -1871,12 +1871,6 @@ function locationLogic(){
 		Access = Location_Could_Access;
 		Has = CouldHave;
 	}
-	Location_Could_Access.water_cracked = CouldHave.can_do_water_checks && (CouldHave.lullaby || (CouldHave.iron_boots && (Player.has_chus || CouldHave.bomb_bag))) && (CouldHave.bomb_bag || Player.has_chus);
-	Location_Could_Access.water_dragon = CouldHave.can_enter_water && ((Player.current_water_keys >= 2 && CouldHave.hookshot && CouldHave.time && CouldHave.bow) || (CouldHave.goron_bracelet && CouldHave.lullaby && ((CouldHave.iron_boots && CouldHave.hookshot) || Player.has_chus || CouldHave.bomb_bag) && (CouldHave.silver_scale || CouldHave.iron_boots)));
-	Location_Could_Access.spirit_childLeft = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Player.has_chus || CouldHave.bomb_bag);
-	Location_Could_Access.spirit_childRight = CouldHave.requiem && (CouldHave.slingshot || CouldHave.boomerang || Player.has_chus || CouldHave.bomb_bag);
-	Location_Could_Access.spirit_adultRight = CouldHave.can_enter_adult_spirit && (CouldHave.bow || CouldHave.hookshot || (CouldHave.bomb_bag || Player.has_chus));
-	Location_Could_Access.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Player.has_chus || CouldHave.bow);//&& CouldHave.can_see;
 	
 	Location_Could_Access.forest_first = CouldHave.can_enter_forest_temple;
 	Location_Could_Access.forest_stalfos = CouldHave.can_enter_forest_temple;
@@ -1939,8 +1933,8 @@ function locationLogic(){
 	Location_Could_Access.spirit_bossKey = CouldHave.can_enter_adult_spirit && Player.current_spirit_keys >=3 && CouldHave.lullaby && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.spirit_key_ring);
 	Location_Could_Access.spirit_tippyTop = CouldHave.can_enter_adult_spirit && Player.current_spirit_keys >=3 && CouldHave.mirror_shield && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.spirit_key_ring);
 	Location_Could_Access.spirit_twinrova = CouldHave.can_enter_adult_spirit && Player.current_spirit_keys >=3 && CouldHave.mirror_shield && (CouldHave.bomb_bag || Player.has_chus) && Player.spirit_boss_key && CouldHave.hookshot && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.spirit_key_ring);
-	Location_Could_Access.shadow_map = CouldHave.can_enter_shadow;
-	Location_Could_Access.shadow_hovers = CouldHave.can_enter_shadow;
+	Location_Could_Access.shadow_map = CouldHave.can_enter_shadow && (CouldHave.hover_boots || CouldHave.hookshot);
+	Location_Could_Access.shadow_hovers = CouldHave.can_enter_shadow && (CouldHave.hover_boots || CouldHave.hookshot);
 	Location_Could_Access.shadow_compass = CouldHave.can_cross_shadow_gap;
 	Location_Could_Access.shadow_earlySilvers = CouldHave.can_cross_shadow_gap;
 	Location_Could_Access.shadow_spinning1 = CouldHave.can_bomb_shadow_wall;
@@ -1957,6 +1951,8 @@ function locationLogic(){
 	Location_Could_Access.shadow_dins2 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins;
 	Location_Could_Access.shadow_floormaster = CouldHave.can_ride_shadow_boat;
 	Location_Could_Access.shadow_bongo = CouldHave.can_beat_shadow_boss;
+	
+	Location_Could_Access.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Player.has_chus || CouldHave.bow);//&& CouldHave.can_see;
 	
 	Object.assign(Location_Peek, Location_Access);
 	Object.assign(Location_Could_Peek, Location_Could_Access);
