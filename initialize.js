@@ -119,8 +119,8 @@ var songInputs = ["lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser",
 var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea"];
 var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet"];
-var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr", "col" ];
-var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop", "colossus"];
+var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr", "col", "zf", "zff", "zffool" ];
+var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop", "colossus", "fountain", "fountain fairy", "fountain fairy(ool)"];
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
@@ -911,6 +911,9 @@ Spawn.child_hyrule_fairy = false;
 Spawn.child_zd = false;
 Spawn.child_zr = false;
 Spawn.child_colossus = false;
+Spawn.child_zf = false;
+Spawn.child_zf_fairy = false;
+Spawn.child_zf_fairy_ool = false;
 
 Spawn.adult_lower_dmc = false;
 Spawn.adult_lower_dmc_fairy = false;
@@ -928,6 +931,9 @@ Spawn.adult_ogc = false;
 Spawn.adult_ogc_ool = false;
 Spawn.adult_kak_roof = false;
 Spawn.adult_colossus = false;
+Spawn.adult_zf = false;
+Spawn.adult_zf_fairy = false;
+Spawn.adult_zf_fairy_ool = false;
 
 //RULES
 Rules = {};
