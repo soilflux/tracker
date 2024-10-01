@@ -1320,21 +1320,32 @@ function updateLogicInfo() {
 			}
 			else {
 				if (Location_Peek[key] == true && !Location_Could_Access[key] == true) {
-					document.getElementById(str).className= "access_check_text";
-					document.getElementById(str).style.opacity = .7;
-					document.getElementById(str).style.fontWeight = "normal";
-					document.getElementById(str).style.color ="#FFA500";
+					if (hamsda) {
+						document.getElementById(str).className= "access_check_text";
+						document.getElementById(str).style.opacity = .7;
+						document.getElementById(str).style.fontWeight = "normal";
+						document.getElementById(str).style.color ="#FFA500";
+					}
+					else {
+						document.getElementById(str).className= "logic_check_text";
+						document.getElementById(str).style.opacity = 1;
+						document.getElementById(str).style.fontWeight = "bold";
+						document.getElementById(str).style.color ="chartreuse";
+					}
+					
 				}
 				else {
 					if (hamsda) {
 						document.getElementById(str).className= "access_check_text";
 						document.getElementById(str).style.opacity = .7;
 						document.getElementById(str).style.fontWeight = "normal";
+						document.getElementById(str).style.color ="yellow";
 					}
 					else {
 						document.getElementById(str).className= "logic_check_text";
 						document.getElementById(str).style.opacity = 1;
 						document.getElementById(str).style.fontWeight = "bold";
+						document.getElementById(str).style.color ="chartreuse";
 					}
 					
 					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
