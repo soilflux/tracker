@@ -58,7 +58,8 @@ function wothAndBarrenProcessing() {
 			if (str3.startsWith("sp") || str3.startsWith("tw")) {AreaGoalPathBoss[i] = "Twinrova";} 
 			if (str3.startsWith("sh") || str3.startsWith("bo")) {AreaGoalPathBoss[i] = "Bongo";}
 			if (str3.startsWith("to")) {AreaGoalPathBoss[i] = "Tower";}
-			if (str3.startsWith("ti")) {AreaGoalPathBoss[i] = "TIme";}
+			if (str3.startsWith("ti")) {AreaGoalPathBoss[i] = "Time";}
+			if (str3.startsWith("ev")) {AreaGoalPathBoss[i] = "Light Arrows";}
 		}
 		
 		if (i <= 5) {
@@ -227,7 +228,7 @@ function wothAndBarrenProcessing() {
 				document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
 				for (var k = 0; k<Items.length; k++) {
-					if (Items[k] == "light_arrows") {continue;}
+					if (Items[k] == "light_arrows" && document.getElementById("presets").value != "S8") {continue;}
 					if (Items[k] == "farores_wind") {continue;}
 					if (Items[k] == "serenade") {continue;}
 					if (Items[k] == "prelude") {continue;}
