@@ -247,15 +247,14 @@ bossInputs = {
 	"Volvagia" : "vo",
 	"Morpha" : "mo",
 	"Bongo Bongo" : "bo",
-	"Twinrova" : "tw"
+	"Twinrova" : "tw",
+	"Evil's Bane" : "ev",
+	"Hero" : "he",
+	"Time" : "ti"
 };
 
 function simProcessHint(hint, str) {
 	let dualHints = [
-		"crawl spaces in the Spirit Temple",
-		"Dead Hand in the well",
-		"final treasures of Ice Cavern",
-		"chests past Dark Link",
 		"Great Fairies outside Hyrule and Ganon's castles",
 		"a diving game and a torch run",
 		"inside the Royal Family Tomb",
@@ -264,7 +263,19 @@ function simProcessHint(hint, str) {
 		"the crate and waterfall",
 		"Gerudo Horseback Archery rewards",
 		"music-loving Goron and skull kid",
-		"scarecrow and a flare dancer"
+		"Bombchu Bowling Alley",
+		
+		"Dead Hand in the well",
+		"final treasures of Ice Cavern",
+		"entrance of the Fire Temple",
+		"scarecrow and a flare dancer",
+		"chests past Dark Link",
+		"invisible spinning blade in the Shadow Temple",
+		"wooden walls in the Shadow Temple",
+		"crawl spaces in the Spirit Temple",
+		"Spirit Temple boulders and a melody",
+		"Colossus's right and left hands",
+		"within the Spirit Trial"
 	]
 	
 	if(hint.includes("way of the hero")) {
@@ -359,7 +370,7 @@ function simProcessHint(hint, str) {
 			}
 		}
 		if(!isDualHint) { // always or sometimes hint
-			var loc = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"]
+			var loc = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_locations"];
 			var loc_input = SpoilerHintLocationToInput[loc];
 		
 			var temp_item = "";
