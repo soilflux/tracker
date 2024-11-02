@@ -1394,7 +1394,7 @@ function updateLogicInfo() {
 			}
 		}
 		else {
-			if (hideInaccessible) {
+			if (hideInaccessible && i <= lastItem) {
 				if (document.getElementById(str).style.display != "none") {document.getElementById(str).style.display = "none";}
 				if (document.getElementById(key).style.display != "none") {document.getElementById(key).style.display = "none";}
 				if (document.getElementById(str2).style.display != "none") {document.getElementById(str2).style.display = "none";}
