@@ -1136,7 +1136,7 @@ function updateLogicInfo() {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
 	document.getElementById("tokens_acquired").innerHTML = "Tokens: " + Player.tokens;
-	if (!nerfed) {document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;} else {document.getElementById("skulls_in_logic").innerHTML = "In Logic: ??"}
+	if (true) {document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;} else {document.getElementById("skulls_in_logic").innerHTML = "In Logic: ??"}
 
 	Player.logically_accessible = 0;
 	Player.forest_logically_accessible=0;
