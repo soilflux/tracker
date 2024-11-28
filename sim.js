@@ -33,7 +33,7 @@ function readLog() {
 		document.getElementById("simLog").value = "Child Spawn: KF Links House\n" + document.getElementById("simLog").value;
 	}
 	else {
-		if(SpoilerJSON["settings"]["starting_age"] == "child")
+		if(SpoilerJSON["settings"]["starting_age"] == "child" || SpoilerJSON["randomized_settings"]["starting_age"] == "child")
 			simCheckChildSpawn();
 		else
 			simCheckAdultSpawn();
