@@ -241,14 +241,13 @@ function trackAnimalQuest() {
 	if (questCounter >= 20) {
         
         if (simActive && document.getElementById("simSeed").value > 0) document.getElementById("simSeed").value =  parseInt(document.getElementById("simSeed").value) + 1;
-		if (!simActive) animalXP[animalRNG] += 1;
-        else animalXP[animalRNG] += 0.25;
+		if (!simActive) savedAnimalXP[animalRNG] += 1;
+        else savedAnimalXP[animalRNG] += 0.25;
 		questCounter = -100000
-		localStorage.setItem("animalXP", JSON.stringify(animalXP));
-		console.log(animalXP)
+		localStorage.setItem("animalXP", JSON.stringify(savedAnimalXP));
+		console.log(savedAnimalXP)
 	}
     if (questCounter <-9000 && yamiFlag && !yamiFlagFlag) {
-        console.log(animalXP[animalRNG]);
         if (!simActive) yamiMults[animalRNG] += .0666;
         else yamiMults[animalRNG] += .0666/4;
         console.log(yamiMults)
@@ -256,7 +255,6 @@ function trackAnimalQuest() {
         localStorage.setItem("yamiMults", JSON.stringify(yamiMults));
     }
     if (questCounter <-9000 && rainbowFlag && !rainbowFlagFlag) {
-        console.log(animalXP[animalRNG]);
         if (!simActive) rainbowMults[animalRNG] += .2;
         else rainbowMults[animalRNG] += .2/4;
         console.log(rainbowMults)
