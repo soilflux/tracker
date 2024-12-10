@@ -193,9 +193,12 @@ var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./ta
 var tabPicSourcesRB = ["./tab_pics/circus_tentRB.png", "./tab_pics/camelRB.png", "./tab_pics/tigerRB.png", "./tab_pics/clownRB.png", "./tab_pics/elephantRB.png", "./tab_pics/leopardRB.png", "./tab_pics/rhinoRB.png" , "./tab_pics/jugglerRB.png", "./tab_pics/zebraRB.png", "./tab_pics/bearRB.png", "./tab_pics/crocodileRB.png", "./tab_pics/monkeyRB.png", "./tab_pics/hippoRB.png", "./tab_pics/sealRB.png", "./tab_pics/llamaRB.png", "./tab_pics/dogRB.png", "./tab_pics/horseRB.png", "./tab_pics/catRB.png"]
 var numberOfAnimals = 18;
 var animalXP = new Array(numberOfAnimals).fill(0);
+var savedAnimalXP = new Array(numberOfAnimals).fill(0);
 if (localStorage.getItem("animalXP")) {
     savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
     for (var i = 0; i<savedAnimalXP.length; i++) {
+        if (savedAnimalXP[i]>1000) {savedAnimalXP[i] = 100;}
+        savedAnimalXP[i] = Math.floor(savedAnimalXP[i]);
         animalXP[i] = savedAnimalXP[i];
     }
 }
