@@ -52,6 +52,8 @@ var speedUp = false;
 var speedUpTotal = 0;
 var timeTotal = 0;
 var effectiveSpeedUp = 1;
+var rainbowFlag = false;
+var rainbowFlagFlag = false;
 var yamiFlag = false;
 var yamiFlagFlag = false;
 var acceptControllerInput = [false,false,false,false,false,false];
@@ -188,6 +190,7 @@ var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", 
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/leopard.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png", "./tab_pics/hippo.png", "./tab_pics/seal.png", "./tab_pics/llama.png", "./tab_pics/dog.png", "./tab_pics/horse.png", "./tab_pics/cat.png"]
+var tabPicSourcesRB = ["./tab_pics/circus_tentRB.png", "./tab_pics/camelRB.png", "./tab_pics/tigerRB.png", "./tab_pics/clownRB.png", "./tab_pics/elephantRB.png", "./tab_pics/leopardRB.png", "./tab_pics/rhinoRB.png" , "./tab_pics/jugglerRB.png", "./tab_pics/zebraRB.png", "./tab_pics/bearRB.png", "./tab_pics/crocodileRB.png", "./tab_pics/monkeyRB.png", "./tab_pics/hippoRB.png", "./tab_pics/sealRB.png", "./tab_pics/llamaRB.png", "./tab_pics/dogRB.png", "./tab_pics/horseRB.png", "./tab_pics/catRB.png"]
 var numberOfAnimals = 18;
 var animalXP = new Array(numberOfAnimals).fill(0);
 if (localStorage.getItem("animalXP")) {
@@ -205,6 +208,16 @@ if (localStorage.getItem("yamiMults")) {
 }
 for (var i = 0; i < animalXP.length; i++) {
     animalXP[i] *= yamiMults[i];
+}
+var rainbowMults = new Array(numberOfAnimals).fill(1);
+if (localStorage.getItem("rainbowMults")) {
+    savedrainbowMults = JSON.parse(localStorage.getItem("rainbowMults"));
+    for (var i = 0; i<savedrainbowMults.length; i++) {
+        rainbowMults[i] = savedrainbowMults[i];
+    }
+}
+for (var i = 0; i < animalXP.length; i++) {
+    animalXP[i] *= yamiMults[i] * rainbowMults[i];
 }
 var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "leopard":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11], "hippo":animalXP[12], "seal":animalXP[13], "llama":animalXP[14], "dog":animalXP[15], "horse":animalXP[16] , "cat":animalXP[17]} 
 localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));
@@ -1221,9 +1234,16 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
                     }
                 }
             }
-			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
+      rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);     
             
-            rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);
+			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
+       
+      if (Math.random()<Math.min(rolledAnimalsLevel/1000,0.25)) {
+        elem.src = tabPicSourcesRB[animalRNG];
+        rainbowFlag = true;
+      }
+            
+           
 			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel;
             if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("animalLV").innerHTML += " --  roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
 		}
