@@ -506,6 +506,10 @@ color: red;
 	position: absolute;
 	left: 925px;
 }
+#statsColumn {
+	position: absolute;
+	left: 1200px;
+}
 .patchNotes {
 	font-size: 12px;
 	color:lightblue;

@@ -1242,11 +1242,14 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
         elem.src = tabPicSourcesRB[animalRNG];
         rainbowFlag = true;
       }
-            
-           
+      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + Math.min(rolledAnimalsLevel/1000,0.25)*100 + '%';     
+      document.getElementById("rainbowMult").innerHTML =  'rainbow XP multiplier: ' + rainbowMults[animalRNG];   
+      document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG];  
+      document.getElementById("seedsDone").innerHTML =  'seeds as companion: ' + animalXP[animalRNG];      
+      
 			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel;
-            if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("animalLV").innerHTML += " --  roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
-		}
+            if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("rollChance").innerHTML += "roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
+    }
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;
 		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Player[linsoOrder[linsoOrderIncrement]] = true;}
