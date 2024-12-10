@@ -197,7 +197,7 @@ var savedAnimalXP = new Array(numberOfAnimals).fill(0);
 if (localStorage.getItem("animalXP")) {
     savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
     for (var i = 0; i<savedAnimalXP.length; i++) {
-        if (savedAnimalXP[i]>1000) {savedAnimalXP[i] = 100;}
+        if (savedAnimalXP[i]>1000) {savedAnimalXP[i] = 200;}
         savedAnimalXP[i] = Math.floor(savedAnimalXP[i]);
         animalXP[i] = savedAnimalXP[i];
     }
