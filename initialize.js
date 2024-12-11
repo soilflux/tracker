@@ -54,6 +54,7 @@ var timeTotal = 0;
 var effectiveSpeedUp = 1;
 var rainbowFlag = false;
 var rainbowFlagFlag = false;
+var yamiFailFlag = false;
 var yamiFlag = false;
 var yamiFlagFlag = false;
 var acceptControllerInput = [false,false,false,false,false,false];
@@ -1246,8 +1247,9 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
         rainbowFlag = true;
       }
       document.getElementById("seedsDone").innerHTML =  'seeds as companion: ' + savedAnimalXP[animalRNG];   
-      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + (Math.min(rolledAnimalsLevel/1000,0.25)*100).toFixed(2) + '%';     
+      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + (Math.min(rolledAnimalsLevel/1000,0.25)*100).toFixed(1) + '%';     
       document.getElementById("rainbowMult").innerHTML =  'rainbow XP multiplier: ' + rainbowMults[animalRNG];   
+      document.getElementById("yamiChance").innerHTML =  'yami aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
       document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG];  
          
       

@@ -226,17 +226,13 @@ function changeTheme() {
 	}
 function trackAnimalQuest() {
 	questCounter += 1;
-    if (
-    rolledAnimalsLevel >= 10 &&
-    (Check["eponasSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("llama") || tabPicSources[animalRNG].includes("horse")) ||
-    Check["sariasSpot"] == "nocturne" && tabPicSources[animalRNG].includes("monkey") ||
-    Check["stormsSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("juggler") || tabPicSources[animalRNG].includes("clown") || tabPicSources[animalRNG].includes("circus")) ||
-    Check["minuetSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("tiger") || tabPicSources[animalRNG].includes("bear")) ||
-    Check["oot"] == "nocturne" && (tabPicSources[animalRNG].includes("zebra") || tabPicSources[animalRNG].includes("crocodile") || tabPicSources[animalRNG].includes("elephant") || tabPicSources[animalRNG].includes("rhino") || tabPicSources[animalRNG].includes("hippo")) ||
-    Check["serenadeSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("seal")) ||
-    Check["nocturneSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("dog") || tabPicSources[animalRNG].includes("cat")) ||
-    Check["requiemSpot"] == "nocturne" && (tabPicSources[animalRNG].includes("camel") || tabPicSources[animalRNG].includes("leopard")))
-    ) {document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; yamiFlag = true;}
+    if (Player.nocturne && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !yamiFailFlag) {
+      document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; 
+      yamiFlag = true;
+    }
+    else if (Player.nocturne) {
+      yamiFailFlag = true;
+    }
     
 	if (questCounter >= 20) {
         
@@ -248,15 +244,16 @@ function trackAnimalQuest() {
 		console.log(savedAnimalXP)
 	}
     if (questCounter <-9000 && yamiFlag && !yamiFlagFlag) {
-        if (!simActive) yamiMults[animalRNG] += .0666;
-        else yamiMults[animalRNG] += .0666/4;
+        if (!simActive) yamiMults[animalRNG] += 0.2;
+        else yamiMults[animalRNG] += 0.2/4;
         console.log(yamiMults)
         yamiFlagFlag = true;
+        yamiMults[animalRNG] = parseFloat(yamiMults[animalRNG].toFixed(1))
         localStorage.setItem("yamiMults", JSON.stringify(yamiMults));
     }
     if (questCounter <-9000 && rainbowFlag && !rainbowFlagFlag) {
-        if (!simActive) rainbowMults[animalRNG] += .2;
-        else rainbowMults[animalRNG] += .2/4;
+        if (!simActive) rainbowMults[animalRNG] += 1;
+        else rainbowMults[animalRNG] += 1/4;
         console.log(rainbowMults)
         rainbowFlagFlag = true;
         localStorage.setItem("rainbowMults", JSON.stringify(rainbowMults));
