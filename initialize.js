@@ -52,11 +52,15 @@ var speedUp = false;
 var speedUpTotal = 0;
 var timeTotal = 0;
 var effectiveSpeedUp = 1;
+var animalID = '';
 var rainbowFlag = false;
 var rainbowFlagFlag = false;
 var yamiFailFlag = false;
 var yamiFlag = false;
 var yamiFlagFlag = false;
+var angelFailFlag = false;
+var angelFlag = false;
+var angelFlagFlag = false;
 var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
@@ -213,6 +217,18 @@ if (localStorage.getItem("yamiMults")) {
 for (var i = 0; i < animalXP.length; i++) {
     animalXP[i] *= yamiMults[i];
 }
+
+var angelMults = new Array(numberOfAnimals).fill(1);
+if (localStorage.getItem("angelMults")) {
+    savedAngelMults = JSON.parse(localStorage.getItem("angelMults"));
+    for (var i = 0; i<savedAngelMults.length; i++) {
+        angelMults[i] = savedAngelMults[i];
+    }
+}
+for (var i = 0; i < animalXP.length; i++) {
+    animalXP[i] *= angelMults[i];
+}
+
 var rainbowMults = new Array(numberOfAnimals).fill(1);
 if (localStorage.getItem("rainbowMults")) {
     savedrainbowMults = JSON.parse(localStorage.getItem("rainbowMults"));
@@ -221,8 +237,9 @@ if (localStorage.getItem("rainbowMults")) {
     }
 }
 for (var i = 0; i < animalXP.length; i++) {
-    animalXP[i] *= yamiMults[i] * rainbowMults[i];
+    animalXP[i] *= rainbowMults[i];
 }
+
 var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "leopard":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11], "hippo":animalXP[12], "seal":animalXP[13], "llama":animalXP[14], "dog":animalXP[15], "horse":animalXP[16] , "cat":animalXP[17]} 
 localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));
 
@@ -1227,6 +1244,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Player.spirit_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Player.light_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
+      animalID = elem.id;
 			animalLV = animalXP.slice(0);
             highestXPAnimals=Object.keys(myAnimalXP).sort(function(a, b) {return -(myAnimalXP[a] - myAnimalXP[b])});
             for (var n = 0; n < highestXPAnimals.length; n++) {
@@ -1242,15 +1260,18 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
             
 			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
        
-      if (Math.random()<Math.min(rolledAnimalsLevel/1000,0.25)) {
+      if (Math.random()<Math.min(rolledAnimalsLevel/1000,0.5)) {
         elem.src = tabPicSourcesRB[animalRNG];
         rainbowFlag = true;
       }
       document.getElementById("seedsDone").innerHTML =  'seeds as companion: ' + savedAnimalXP[animalRNG];   
-      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + (Math.min(rolledAnimalsLevel/1000,0.25)*100).toFixed(1) + '%';     
+      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + (Math.min(rolledAnimalsLevel/1000,0.5)*100).toFixed(1) + '%';     
       document.getElementById("rainbowMult").innerHTML =  'rainbow XP multiplier: ' + rainbowMults[animalRNG];   
       document.getElementById("yamiChance").innerHTML =  'yami aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
-      document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG];  
+      document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG]; 
+      document.getElementById("angelChance").innerHTML =  'angel aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
+      document.getElementById("angelMult").innerHTML =  'angel XP multiplier: ' + angelMults[animalRNG];        
+      
          
       
 			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel;
@@ -1262,7 +1283,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		elem.style.position = "absolute";
 		elem.style.left = -32 + j*41 + "px";
 		elem.style.top = tempTop + i*40 + "px";
-		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.style.opacity = 0;} else {elem.style.opacity = .3; elem.style.filter = "grayscale(100%)";}
+		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.style.opacity =0;} else {elem.style.opacity = .3; elem.style.filter = "grayscale(100%)";}
 		if (linsoOrder[linsoOrderIncrement] == "skull_token") {elem.onmousedown = linso_counter;} else if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) {elem.onclick = linSoClick;}
 		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
 			var elem2 = document.createElement("IMG");
@@ -1273,6 +1294,17 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 			elem2.src = "./normal/linsoLight.png";
 			elem2.style.opacity = 0;
 			document.getElementById("linsoColumn").appendChild(elem2); 
+      
+      var elem3 = document.createElement("IMG");
+      elem3.style.position = "absolute";
+			elem3.style.left = -29 + j*41 + "px";
+			elem3.style.top = tempTop -17 + i*40 + "px";
+			elem3.id = "halo";
+			elem3.src = "./normal/halo.png";
+			elem3.style.opacity = 0;
+      elem3.style.height = "28px";
+	  	elem3.style.width = "28px";
+			document.getElementById("linsoColumn").appendChild(elem3); 
 		}
 		document.getElementById("linsoColumn").appendChild(elem); 
 		linsoOrderIncrement += 1;
@@ -2288,7 +2320,6 @@ function scangamepads() {
     }
   }
 }
-
 if (localStorage.getItem("highlightWoths") == "true") {colorWothAreasControl();}
 
 window.onbeforeunload = popup;

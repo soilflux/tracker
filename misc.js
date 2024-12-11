@@ -226,12 +226,21 @@ function changeTheme() {
 	}
 function trackAnimalQuest() {
 	questCounter += 1;
+  
     if (Player.nocturne && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !yamiFailFlag) {
       document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; 
       yamiFlag = true;
     }
     else if (Player.nocturne) {
       yamiFailFlag = true;
+    }
+    
+    if (Player.requiem && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !angelFailFlag) {
+      angelFlag = true;
+      document.getElementById('halo').style.opacity = 1;
+    }
+    else if (Player.requiem) {
+      angelFailFlag = true;
     }
     
 	if (questCounter >= 20) {
@@ -251,6 +260,16 @@ function trackAnimalQuest() {
         yamiMults[animalRNG] = parseFloat(yamiMults[animalRNG].toFixed(1))
         localStorage.setItem("yamiMults", JSON.stringify(yamiMults));
     }
+    
+    if (questCounter <-9000 && angelFlag && !angelFlagFlag) {
+        if (!simActive) angelMults[animalRNG] += 0.2;
+        else angelMults[animalRNG] += 0.2/4;
+        console.log(angelMults)
+        angelFlagFlag = true;
+        angelMults[animalRNG] = parseFloat(angelMults[animalRNG].toFixed(1))
+        localStorage.setItem("angelMults", JSON.stringify(angelMults));
+    }
+    
     if (questCounter <-9000 && rainbowFlag && !rainbowFlagFlag) {
         if (!simActive) rainbowMults[animalRNG] += 1;
         else rainbowMults[animalRNG] += 1/4;

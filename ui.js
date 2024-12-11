@@ -987,6 +987,7 @@ function refreshLinSo() {
 				else {document.getElementById("linsoS" + i).style.filter = "grayscale(100%)"; document.getElementById("linsoS" + i).style.opacity = .2;}
 				temp += 1;
 		}
+    if (angelFlag) {document.getElementById(animalID).style.opacity = 0.4;}
 	}
 	else {document.getElementById("linsoColumn").style.display = "none";}
 }
