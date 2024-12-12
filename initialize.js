@@ -1258,7 +1258,8 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
             }
       rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);     
             
-			elem.src = tabPicSources[animalRNG]; /*elem.onclick = toggleLinsoGoMode;*/
+			elem.src = tabPicSources[animalRNG]; 
+      elem.onclick = toggleLinsoGoMode;
        
       if (Math.random()<Math.min(rolledAnimalsLevel/1000,0.5)) {
         elem.src = tabPicSourcesRB[animalRNG];
@@ -1288,8 +1289,10 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
 			var elem2 = document.createElement("IMG");
 			elem2.style.position = "absolute";
-			elem2.style.left = -82 + j*41 + "px";
-			elem2.style.top = tempTop -  50 + i*40 + "px";
+			elem2.style.left = -154 + j*41 + "px";
+			elem2.style.top = tempTop -  122 + i*40 + "px";
+      elem2.style.height = "280px";
+	  	elem2.style.width = "280px";
 			elem2.id = "linsoLight";
 			elem2.src = "./normal/linsoLight.png";
 			elem2.style.opacity = 0;
