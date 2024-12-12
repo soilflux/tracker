@@ -965,7 +965,7 @@ color: red;
 	font-size:42px;
 	color: white;
 	position: absolute;
-	top:850px;
+	top:870px;
 	left:900px;
 	font-family: calibri;
 }
@@ -979,31 +979,31 @@ color: red;
 }
 #newNight {
     position: absolute;
-	top:900px;
+	top:915px;
 	left:-78px;
-    height:30px;
-    width:30px;
+    height:20px;
+    width:20px;
 }
 #midNight {
     position: absolute;
-	top:900px;
-	left:-46px;
-    height:30px;
-    width:30px;
+	top:915px;
+	left:-56px;
+    height:20px;
+    width:20px;
 }
 #newDay {
     position: absolute;
-	top:930px;
+	top:935px;
 	left:-75px;
-    height:30px;
-    width:30px;
+    height:20px;
+    width:20px;
 }
 #midDay {
     position: absolute;
-	top:930px;
-	left:-45px;
-    height:30px;
-    width:30px;
+	top:935px;
+	left:-55px;
+    height:20px;
+    width:20px;
 }
 #forest_medallion {
 	top: 51px;
