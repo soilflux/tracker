@@ -1275,7 +1275,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
       
          
       
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4) + " LVL " + rolledAnimalsLevel;
+			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4).replace("RB","") + " LVL " + rolledAnimalsLevel;
             if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("rollChance").innerHTML += "roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,rolledAnimalsLevel/2+1))*100).toFixed(1) + "%";
     }
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
