@@ -288,7 +288,7 @@ color: red;
 	opacity: 0.2;
 }
 .hint_input {
-	width: 39px;
+	width: 46px;
 	vertical-align: top;
 	margin-bottom: 0px;
     background-color : #181818; 
@@ -312,6 +312,12 @@ color: red;
 	margin-bottom: 3px;
     background-color : #181818; 
     color: white
+}
+#important_hints_div {
+	display: none;
+}
+#barren_hints_div {
+	display: block;
 }
 #woth_text {
 	color: #33cccc
