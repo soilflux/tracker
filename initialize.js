@@ -2335,8 +2335,8 @@ if (document.getElementById("presets").value == "SGL_2024")
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "TRUTH")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas x\ntru \n";
-if (document.getElementById("presets").value == "LEAGUE_S7") {
-	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \nscr \n";
+if (document.getElementById("presets").value == "LEAGUE_S8") {
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n4 sometimes\n2 dual\n";
 	document.getElementById("zeldasSpot").value = "pre";
 }
 if (document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH") {
