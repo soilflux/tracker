@@ -1029,7 +1029,7 @@ function locationLogic(){
 	Location_Logic.deku_compass = Logic.deku_access;
 	Location_Logic.deku_compass_room_side = Logic.deku_access;
 	Location_Logic.deku_basement = Logic.deku_access;
-	if (document.getElementById("presets").value == "SGL_2024")
+	if (document.getElementById("presets").value == "SGL_2025")
 		Location_Logic.deku_queen_gohma = Logic.deku_access;	
 	else
 		Location_Logic.deku_queen_gohma = Logic.deku_access && Logic.slingshot;
@@ -1964,8 +1964,8 @@ function locationLogic(){
 		Peek.crater_nook_hp = Has.crater_top || Has.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Peek.colossus_fairy = Has.can_enter_colossus && (Has.bomb_bag || Player.has_chus) && Has.lullaby;
 		Peek.colossus_bean = Has.can_enter_colossus;
-		Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Has.tokens >= 20 || document.getElementById("presets").value == "SGL_2024";
-		Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Has.tokens >= 30 || document.getElementById("presets").value == "S8" || document.getElementById("presets").value == "SGL_2024" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
+		Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Has.tokens >= 20 || document.getElementById("presets").value == "SGL_2025";
+		Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Has.tokens >= 30 || document.getElementById("presets").value == "S8" || document.getElementById("presets").value == "SGL_2025" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
 		Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Has.tokens >= 40 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "S8" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
 		Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Has.tokens >= 50 || document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "S8" || document.getElementById("presets").value == "TRUTH" || document.getElementById("presets").value == "LEAGUE_S7";
 		Peek.graveyard_box = true;//Has.bean_access || Has.longshot || Has.boomerang;
