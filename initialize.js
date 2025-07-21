@@ -687,9 +687,9 @@ var AreaNames= [
 	"Jabu",
 	"Forest",
 	"Fire",
-	"Water",
 	"Spirit",
 	"Shadow",
+	"Water",
 	"Ganon's",
 	"GTG",
 	"Well" 
@@ -726,9 +726,9 @@ var AreaNamesLong = [
 	"Jabu Jabu's Belly",
 	"the Forest Temple",
 	"the Fire Temple",
-	"the Water Temple",
 	"the Spirit Temple",
 	"the Shadow Temple",
+	"the Water Temple",
 	"inside Ganon's Castle",
 	"Gerudo Training Ground",
 	"Bottom of the Well" 
