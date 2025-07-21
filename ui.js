@@ -749,18 +749,9 @@ function checkCircleInfo() {
 			document.getElementById("fireBKs").title += Names[i] + "\n";
 	}
 	
-	document.getElementById("waterSKs").title = "";
-	document.getElementById("waterBKs").title = "";
-	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("waterSKs").title += Names[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("waterBKs").title += Names[i] + "\n";
-	}
-	
 	document.getElementById("spiritSKs").title = "";
 	document.getElementById("spiritBKs").title = "";
-	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
+	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("spiritSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
@@ -769,11 +760,20 @@ function checkCircleInfo() {
 	
 	document.getElementById("shadowSKs").title = "";
 	document.getElementById("shadowBKs").title = "";
-	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
+	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
 		if(Check[Locations[i]] == "small_key")
 			document.getElementById("shadowSKs").title += Names[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
 			document.getElementById("shadowBKs").title += Names[i] + "\n";
+	}
+	
+	document.getElementById("waterSKs").title = "";
+	document.getElementById("waterBKs").title = "";
+	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
+		if(Check[Locations[i]] == "small_key")
+			document.getElementById("waterSKs").title += Names[i] + "\n";
+		if(Check[Locations[i]] == "boss_key")
+			document.getElementById("waterBKs").title += Names[i] + "\n";
 	}
 	
 	document.getElementById("ganonsSKs").title = "";
@@ -1318,9 +1318,9 @@ function updateLogicInfo() {
 				if (i == AreaIndexes[27] - 1 && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
 				if (i >= AreaIndexes[27] && i < AreaIndexes[28]) {Player.forest_logically_accessible += 1;}
 				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Player.fire_logically_accessible += 1;}
-				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.water_logically_accessible += 1;}
-				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.spirit_logically_accessible += 1;}
-				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.shadow_logically_accessible += 1;}
+				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.spirit_logically_accessible += 1;}
+				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.shadow_logically_accessible += 1;}
+				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.water_logically_accessible += 1;}
 				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Player.ganons_logically_accessible += 1;}
 				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Player.gtg_logically_accessible += 1;}
 				if (i >= AreaIndexes[34] && i < AreaIndexes[33]) {Player.well_logically_accessible += 1;}

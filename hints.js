@@ -39,9 +39,9 @@ function wothAndBarrenProcessing() {
 		if (str == "jab" || str == "jabu" || str == "jjb" || str == "jj") {if (Area[27] == "4woth") {Area[27] = "5woth";} else if (Area[27] == "3woth") {Area[27] = "4woth";} else if (Area[27] == "2woth") {Area[27] = "3woth";} else if (Area[27] == "woth") {Area[27] = "2woth";} else {Area[27] = "woth";} wothAreas[i] = AreaNames[27];} 
 		if (str == "for" || str == "forest" || str == "fot") {if (Area[28] == "4woth") {Area[28] = "5woth";} else if (Area[28] == "3woth") {Area[28] = "4woth";} else if (Area[28] == "2woth") {Area[28] = "3woth";} else if (Area[28] == "woth") {Area[28] = "2woth";} else {Area[28] = "woth";} wothAreas[i] = AreaNames[28];} 
 		if (str == "fir" || str == "fire" || str == "fit") {if (Area[29] == "4woth") {Area[29] = "5woth";} else if (Area[29] == "3woth") {Area[29] = "4woth";} else if (Area[29] == "2woth") {Area[29] = "3woth";} else if (Area[29] == "woth") {Area[29] = "2woth";} else {Area[29] = "woth";} wothAreas[i] = AreaNames[29];} 
-		if (str == "wat" || str == "wata" || str == "water") {if (Area[30] == "4woth") {Area[30] = "5woth";} else if (Area[30] == "3woth") {Area[30] = "4woth";} else if (Area[30] == "2woth") {Area[30] = "3woth";} else if (Area[30] == "woth") {Area[30] = "2woth";} else {Area[30] = "woth";} wothAreas[i] = AreaNames[30];} 
-		if (str == "spi" || str == "spirit" || str == "sprt" || str == "sp") {if (Area[31] == "4woth") {Area[31] = "5woth";} else if (Area[31] == "3woth") {Area[31] = "4woth";} else if (Area[31] == "2woth") {Area[31] = "3woth";} else if (Area[31] == "woth") {Area[31] = "2woth";} else {Area[31] = "woth";} wothAreas[i] = AreaNames[31];} 
-		if (str == "sha" || str == "shadow" || str == "shad" || str == "sh") {if (Area[32] == "4woth") {Area[32] = "5woth";} else if (Area[32] == "3woth") {Area[32] = "4woth";} else if (Area[32] == "2woth") {Area[32] = "3woth";} else if (Area[32] == "woth") {Area[32] = "2woth";} else {Area[32] = "woth";} wothAreas[i] = AreaNames[32];} 
+		if (str == "spi" || str == "spirit" || str == "sprt" || str == "sp") {if (Area[30] == "4woth") {Area[30] = "5woth";} else if (Area[30] == "3woth") {Area[30] = "4woth";} else if (Area[30] == "2woth") {Area[30] = "3woth";} else if (Area[30] == "woth") {Area[30] = "2woth";} else {Area[30] = "woth";} wothAreas[i] = AreaNames[30];} 
+		if (str == "sha" || str == "shadow" || str == "shad" || str == "sh") {if (Area[31] == "4woth") {Area[31] = "5woth";} else if (Area[31] == "3woth") {Area[31] = "4woth";} else if (Area[31] == "2woth") {Area[31] = "3woth";} else if (Area[31] == "woth") {Area[31] = "2woth";} else {Area[31] = "woth";} wothAreas[i] = AreaNames[31];} 
+		if (str == "wat" || str == "wata" || str == "water") {if (Area[32] == "4woth") {Area[32] = "5woth";} else if (Area[32] == "3woth") {Area[32] = "4woth";} else if (Area[32] == "2woth") {Area[32] = "3woth";} else if (Area[32] == "woth") {Area[32] = "2woth";} else {Area[32] = "woth";} wothAreas[i] = AreaNames[32];} 
 		if (str == "gan" || str == "gan c" || str == "ganons" || str == "ganon" || str == "ga") {if (Area[33] == "4woth") {Area[33] = "5woth";} else if (Area[33] == "3woth") {Area[33] = "4woth";} else if (Area[33] == "2woth") {Area[33] = "3woth";} else if (Area[33] == "woth") {Area[33] = "2woth";} else {Area[33] = "woth";} wothAreas[i] = AreaNames[33];} 
 		if (str == "gtg" || str == "tg" || str == "gt") {if (Area[34] == "4woth") {Area[34] = "5woth";} else if (Area[34] == "3woth") {Area[34] = "4woth";} else if (Area[34] == "2woth") {Area[34] = "3woth";} else if (Area[34] == "woth") {Area[34] = "2woth";} else {Area[34] = "woth";} wothAreas[i] = AreaNames[34];} 
 		if (str == "well" || str == "botw" || str == "wel") {if (Area[35] == "4woth") {Area[35] = "5woth";} else if (Area[35] == "3woth") {Area[35] = "4woth";} else if (Area[35] == "2woth") {Area[35] = "3woth";} else if (Area[35] == "woth") {Area[35] = "2woth";} else {Area[35] = "woth";} wothAreas[i] = AreaNames[35];}
@@ -94,9 +94,9 @@ function wothAndBarrenProcessing() {
 			if (str2 == "jab" || str2 == "jabu" || str2 == "jjb" || str2 == "jj") {Area[27] = "barren";} 
 			if (str2 == "for" || str2 == "forest" || str2 == "fot") {Area[28] = "barren";} 
 			if (str2 == "fir" || str2 == "fire" || str2 == "fit") {Area[29] = "barren";} 
-			if (str2 == "wat" || str2 == "wata" || str2 == "water") {Area[30] = "barren";} 
-			if (str2 == "spi" || str2 == "spirit" || str2 == "sprt" || str2 == "sp") {Area[31] = "barren";} 
-			if (str2 == "sha" || str2 == "shadow" || str2 == "shad" || str2 == "sh") {Area[32] = "barren";} 
+			if (str2 == "spi" || str2 == "spirit" || str2 == "sprt" || str2 == "sp") {Area[30] = "barren";} 
+			if (str2 == "sha" || str2 == "shadow" || str2 == "shad" || str2 == "sh") {Area[31] = "barren";} 
+			if (str2 == "wat" || str2 == "wata" || str2 == "water") {Area[32] = "barren";} 
 			if (str2 == "gan" || str2 == "gan c" || str2 == "ganons" || str2 == "ganon" || str2 == "ga") {Area[33] = "barren";} 
 			if (str2 == "gtg" || str2 == "tg" || str2 == "gt") {Area[34] = "barren";} 
 			if (str2 == "well" || str2 == "botw" || str2 == "wel") {Area[35] = "barren";} 
