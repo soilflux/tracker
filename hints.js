@@ -523,13 +523,13 @@ function wothAndBarrenProcessing() {
 				document.getElementById("fire").style.backgroundColor = "red";
 			}
 			if (i == 30) {
-				document.getElementById("water").style.backgroundColor = "red";
-			}
-			if (i == 31) {
 				document.getElementById("spirit").style.backgroundColor = "red";
 			}
-			if (i == 32) {
+			if (i == 31) {
 				document.getElementById("shadow").style.backgroundColor = "red";
+			}
+			if (i == 32) {
+				document.getElementById("water").style.backgroundColor = "red";
 			}
 			if (i == 33) {
 				document.getElementById("ganons").click();
