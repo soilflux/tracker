@@ -128,8 +128,8 @@ var songInputs = ["lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser",
 var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea"];
 var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet"];
-var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "zd", "zr", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr", "col", "zf", "zff", "zffool" ];
-var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy","trail fairy(ool)", "fortress", "domain", "river", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop", "colossus", "fountain", "fountain fairy", "fountain fairy(ool)"];
+var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
+var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
@@ -523,7 +523,7 @@ var Names = [
 	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
 	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Divin'", "King", "*Skull", "Domain",
 	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
-	/*Wasteland*/"*Skull", "Carpet", "Check",
+	/*Wasteland*/"*Skull", "Carpet", "Torches",
 	/*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
 	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
 	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "*Base", "Phantom",
@@ -942,6 +942,7 @@ Spawn.child_upper_dmc = false;
 Spawn.child_dmt_fairy = false;
 Spawn.child_dmt_fairy_ool = false;
 Spawn.child_gv_gf = false;
+Spawn.child_wasteland = false;
 //Spawn.child_nocturne = false;
 Spawn.child_hyrule_fairy = false;
 Spawn.child_zd = false;
@@ -966,6 +967,7 @@ Spawn.adult_domain = false;
 Spawn.adult_ogc = false;
 Spawn.adult_ogc_ool = false;
 Spawn.adult_kak_roof = false;
+Spawn.adult_wasteland = false;
 Spawn.adult_colossus = false;
 Spawn.adult_zf = false;
 Spawn.adult_zf_fairy = false;
@@ -2340,8 +2342,8 @@ if (document.getElementById("presets").value == "SGL_2025") {
 }
 if (document.getElementById("presets").value == "TRUTH")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas x\ntru \n";
-if (document.getElementById("presets").value == "LEAGUE_S8") {
-	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n4 sometimes\n2 dual\n";
+if (document.getElementById("presets").value == "LEAGUE_S9") {
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 	document.getElementById("zeldasSpot").value = "pre";
 }
 if (document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH") {
