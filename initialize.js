@@ -1104,7 +1104,7 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[27]) {
 		parent = document.getElementById("dung1"); background = "url('./normal/areas/forest.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_forest"; elem.className = "area_titles"; elem.innerHTML = "For"; elem.onmousedown = route_forest; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "forest"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "forest"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "8"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "forestSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "forestBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1112,7 +1112,7 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[28]) {
 		background = "url('./normal/areas/fire.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_fire"; elem.className = "area_titles"; elem.innerHTML = "Fir"; elem.onmousedown = route_fire; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "fire"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "6"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "fire"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "6"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "fireSKs"; elem.className = "superdotSK"; elem.innerHTML = "8"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "fireBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1121,7 +1121,7 @@ for (var i = 0; i<Locations.length; i++) {
 		background = "url('./normal/areas/spirit.jpg')";
 		parent = document.getElementById("dung2");
 		var elem = document.createElement("small"); elem.id = "title_spirit"; elem.className = "area_titles"; elem.innerHTML = "Spi"; elem.onmousedown = route_spirit; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "spirit"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "spirit"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "14"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "spiritSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "spiritBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1129,7 +1129,7 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[30]) {
 		background = "url('./normal/areas/shadow.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_shadow"; elem.className = "area_titles"; elem.innerHTML = "Sha"; elem.onmousedown = route_shadow; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "shadow"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "8"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "shadow"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "8"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "shadowSKs"; elem.className = "superdotSK"; elem.innerHTML = "5"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "shadowBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1138,7 +1138,7 @@ for (var i = 0; i<Locations.length; i++) {
 		background = "url('./normal/areas/water.jpg')";
 		parent = document.getElementById("dung3");
 		var elem = document.createElement("small"); elem.id = "title_water"; elem.className = "area_titles"; elem.innerHTML = "Wat"; elem.onmousedown = route_water; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "water"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "4"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "water"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "4"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "waterSKs"; elem.className = "superdotSK"; elem.innerHTML = "6"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "waterBKs"; elem.className = "superdotBK"; elem.innerHTML = "1"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
@@ -1146,7 +1146,7 @@ for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[32]) {
 		background = "url('./normal/areas/ganons.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_ganons"; elem.className = "area_titles"; elem.innerHTML = "Gan"; elem.onmousedown = route_ganons; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "ganons"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "14"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "ganons"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "14"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "ganonsSKs"; elem.className = "superdotSK"; elem.innerHTML = "2"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
@@ -1154,14 +1154,14 @@ for (var i = 0; i<Locations.length; i++) {
 		background = "url('./normal/areas/gtg.jpg')";
 		parent = document.getElementById("dung4");
 		var elem = document.createElement("small"); elem.id = "title_gtg"; elem.className = "area_titles"; elem.innerHTML = "GTG"; elem.onmousedown = route_gtg; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "gtg"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "13"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "gtg"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "13"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "gtgSKs"; elem.className = "superdotSK"; elem.innerHTML = "9"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[34]) {
 		background = "url('./normal/areas/well.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_well"; elem.className = "area_titles"; elem.innerHTML = "Well"; elem.onmousedown = route_well; parent.appendChild(elem);
-		var elem = document.createElement("span"); elem.id = "well"; elem.className = "superdot"; elem.onclick = junkUltra; elem.innerHTML = "11"; parent.appendChild(elem);
+		var elem = document.createElement("span"); elem.id = "well"; elem.className = "superdot"; /*elem.onclick = junkUltra;*/ elem.innerHTML = "11"; parent.appendChild(elem);
 		var elem = document.createElement("span"); elem.id = "wellSKs"; elem.className = "superdotSK"; elem.innerHTML = "3"; parent.appendChild(elem);
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
@@ -2337,7 +2337,7 @@ function popup() {
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "SGL_2025") {
-	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \n";
+	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
 	document.getElementById("preludeSpot").value = "pre";
 }
 if (document.getElementById("presets").value == "TRUTH")
