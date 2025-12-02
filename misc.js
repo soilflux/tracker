@@ -492,6 +492,8 @@ function saveStuff() {
 	localStorage.setItem("preplantedBeans", document.getElementById("preplantedBeans").value);
 	localStorage.setItem("shuffleExpensivePurchases", document.getElementById("shuffleExpensivePurchases").value);
 	localStorage.setItem("csmc", document.getElementById("csmc").value);
+	localStorage.setItem("erOption", document.getElementById("erOption").value);
+	localStorage.setItem("FAE_option", document.getElementById("FAE_option").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
     localStorage.setItem("simSeed", document.getElementById("simSeed").value);
 	localStorage.setItem("highlightWoths", colorWothAreas);
