@@ -75,8 +75,19 @@ var chuCount = 0;
 var rupeeCount = 0;
 var chusInBigChests = false;
 var songItemChecked = true;
+
+var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
+var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
+var dungs_list = ["deku", "dc", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "ice", "gtg"];
+var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "we", "ic", "gt"];
+for(let d = 0; d < dungs_list.length; d++) {
+	dungeonToEntrance_ER_dict[dungs_list[d]] = dungs_list[d];
+	entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[d];
+}
+
 document.getElementById("markMedallions").value = "Y-G-R-B-P-O-";
 document.getElementById("markStones").value = "112233";
+
 
 var dungeonSkullSanity = false;
 var scrubSanity = false;
@@ -100,6 +111,8 @@ if (localStorage.getItem("csmc")) {document.getElementById("csmc").value = local
 if (localStorage.getItem("hints_type")) {document.getElementById("hints_type").value = localStorage.getItem("hints_type");}
 if (localStorage.getItem("simSeed")) {document.getElementById("simSeed").value = localStorage.getItem("simSeed");}
 if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
+if (localStorage.getItem("erOption")) {document.getElementById("erOption").value = localStorage.getItem("erOption");}
+if (localStorage.getItem("FAE_option")) {document.getElementById("FAE_option").value = localStorage.getItem("FAE_option");}
 if (document.getElementById("presets").value == "SGL_2025") {songItemChecked = false;}
 if (document.getElementById("presets").value == "SGL_2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";

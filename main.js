@@ -40,6 +40,7 @@ function midUpdate() {
 		forceStuffInOrOutOfLogic(); //implements the force out of logic and force into logic boxes
 		logicShortcuts(); //combines multiple pieces of logic into one variable
 		locationLogic(); //updates logic and accessibility for all locations
+		updateDungeonER();
 		updateLogicInfo(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
 		setInLogicMaxForDungeons(); //ensures that dungeons will never add more to the in logic counter than the amount of items they contain
 		gsArrayBuilder(); //just moves gs logic into an array

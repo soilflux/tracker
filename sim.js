@@ -20,6 +20,7 @@ function readLog() {
     document.getElementById("blueRupee").style.display = "inline-block";
     document.getElementById("redRupee").style.display = "inline-block";
     document.getElementById("rupeeCount").style.display = "inline-block";
+    document.getElementById("rupeeBreak").style.display = "inline-block";
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["ToT Reward from Rauru"] + "\n";
 	document.getElementById("simCheckAltar").style.display = "block";

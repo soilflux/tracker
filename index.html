@@ -14,17 +14,20 @@
 			<div class="dungColumn" id="dung2"></div>
 			<div class="dungColumn" id="dung3"></div>
 			<div class="dungColumn" id="dung4"></div>
-			<div id="songColumn"><small id = "song_title" class="area_titles">Songs</small><br /><br /><span id = "songs"></span>
+			<div id="songColumn"><div style="width: 120px; height: 25px"><small id = "song_title" class="area_titles">Songs</small></div><span id = "songs"></span>
                 <img id = "redRupee" class = "rupeeButtons" src = "normal/redRupee.png" onmouseDown="modifyRupees(20)"></img><img id = "blueRupee" class = "rupeeButtons" src = "normal/blueRupee.png" onmouseDown="modifyRupees(5)"></img><small id = "rupeeCount">0</small>
-				<br /><img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
+				<br id="rupeeBreak" class="half_break" style="display: none;"/><img src="./images/farores505050.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows505050.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens505050.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chux.png" id="chuButton" onmousedown="enableChus()" class="bonuspics"></img><br />
 				<img src="./images/silverscale505050.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/bottle505050.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/slingshot505050.png" id="slingshotimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/strength3505050.png" id="goldengauntletsimg" class="bonuspics" onmousedown = "highlight(this)">
-				<br /><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
-                <br /><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br />
+				<br class="half_break"/><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
+                <br class="half_break"/><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br class="half_break"/>
 				<img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><br>
 				<img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br>
 				<img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input><br>
-				<img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input>
-				
+				<img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input><br>
+				<div id="dungeon_er_input_div">
+					<small>DeDoJaFoFiWa</small></img><input id="mark_ER_Dungeons" class="layout_input" ></input>
+					<small>ShSpWeIcGt</small></img><input id="mark_ER_Dungeons2" class="layout_input" ></input>
+				</div>
 				
 				<br /><br />
 				<img id="ageButton" onmousedown="switchAge()" class="buttonpics" src ="./images/child.png"></img><br /> 
@@ -78,12 +81,14 @@
 					  </div>
 				  </div>
 			  </div>
-              <small id = "timerToD" onmousedown = "saveToD()"></small>
-              <img id = "newDay" src = "./normal/items/chicken.png" onclick = "timerToD(85)"></img>
-              <img id = "newNight" src = "./normal/wolf.png" onclick = "timerToD(240)"></button>
-              <img id = "midDay" src = "./normal/items/suns.png" onclick = "timerToD(158)"></img>
-              <img id = "midNight" src = "./normal/moon.png" onclick = "timerToD(40)"></img>
-			  <small id = "timer"></small>
+			  <div id = "timerDiv">
+				  <small id = "timer"></small><br>
+				  <small id = "timerToD" onmousedown = "saveToD()"></small>
+				  <img id = "newDay" src = "./normal/items/chicken.png" onclick = "timerToD(85)"></img>
+				  <img id = "newNight" src = "./normal/wolf.png" onclick = "timerToD(240)"></button>
+				  <img id = "midDay" src = "./normal/items/suns.png" onclick = "timerToD(158)"></img>
+				  <img id = "midNight" src = "./normal/moon.png" onclick = "timerToD(40)"></img>
+			  </div>
 				<div id = "dungspawnInputs">
 				<br><br><img src = "./normal/frogsong.png"></img><br /><br /><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
 				</div>
@@ -356,6 +361,7 @@
 			<label class="settingsLabels" for="presets">PRESETS</label>
 			<select class="settingsOptions" id="presets">
 			  <option value="NONE">NONE</option>
+			  <option value="S9">S9</option>
 			  <option value="SGL_2025">SGL 2025</option>
 			  <option value="LEAGUE_S9">LEAGUE S9</option>
 			  <option value="S8">S8</option>
@@ -410,6 +416,16 @@
 			<select class="settingsOptions" id="cowSanity">
 			  <option value="OFF">OFF</option>
 			  <option value="ON">ON</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="erOption">ENT RANDO</label>
+			<select class="settingsOptions" id="erOption">
+			  <option value="OFF">OFF</option>
+			  <option value="DUNGEONS">DUNGEONS</option>
+			</select><br><br class="half_break">
+			<label class="settingsLabels" for="FAE_option">FAE RULING</label>
+			<select class="settingsOptions" id="FAE_option">
+			  <option value="ALLOWED">ALLOWED</option>
+			  <option value="BANNED">BANNED</option>
 			</select><br><br class="half_break">
 			<label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
 			<select class="settingsOptions" id="gossips">
