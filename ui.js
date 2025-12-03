@@ -1822,8 +1822,8 @@ function updateDungeonER() {
 			//console.log(dungeon_er_inputs);
 			
 			for(let d = 0; d < dungs_list.length; d++) {
-				dungeonToEntrance_ER_dict[dungs_list[d]] = dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])];
-				entranceToDungeon_ER_dict[dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])]] = dungs_list[d];
+				entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])];
+				dungeonToEntrance_ER_dict[dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])]] = dungs_list[d];
 			}
 		}
 	}
@@ -1881,7 +1881,7 @@ function update_dungeon_ER_Logic() {
 			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_colossus;
 			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_colossus;
 		}
-		else if(enter == "well") {
+		else if(enter == "botw") {
 			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_well_entrance;
 			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_well_entrance;
 			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_well_entrance;

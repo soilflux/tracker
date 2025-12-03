@@ -837,7 +837,7 @@ function logicShortcuts() {
 	Logic.can_enter_child_colossus = Logic.requiem || Spawn.child_colossus || Location_Logic.spirit_rightHand;
 	Logic.spirit_access = Logic["ER_spirit_enter"];
 	Logic.child_spirit_access = Logic["ER_spirit_enter"];
-	if(dungeonToEntrance_ER_dict["spirit"] == "spirit")
+	if(entranceToDungeon_ER_dict["spirit"] == "spirit")
 		Logic.child_spirit_access = Logic.can_enter_child_colossus && Logic["ER_spirit_enter"];
 	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
 	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
@@ -870,7 +870,7 @@ function logicShortcuts() {
 	Logic.can_enter_forest_temple_entrance = Logic.can_pass_mido_as_adult && Logic.hookshot;
 	Logic.forest_temple_access = Logic["ER_forest_enter"];
 	Logic.can_enter_well_entrance = Logic.storms;
-	Logic.well_access = Logic["ER_well_enter"];
+	Logic.well_access = Logic["ER_botw_enter"];
 	
 	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.shadow_medallion) {Logic.medalCount += 1;} if (Logic.spirit_medallion) {Logic.medalCount += 1;} if (Logic.light_medallion) {Logic.medalCount += 1;}
 	Logic.stoneCount = 0; if (Logic.kokiri_emerald) {Logic.stoneCount += 1;} if (Logic.goron_ruby) {Logic.stoneCount += 1;} if (Logic.zora_sapphire) {Logic.stoneCount += 1;}
@@ -906,7 +906,7 @@ function logicShortcuts() {
 	Player.can_enter_child_colossus = Player.requiem || Spawn.child_colossus || Spawn.child_wasteland || Location_Access.spirit_rightHand;
 	Player.spirit_access = Player["ER_spirit_enter"];
 	Player.child_spirit_access = Player["ER_spirit_enter"];
-	if(dungeonToEntrance_ER_dict["spirit"] == "spirit")
+	if(entranceToDungeon_ER_dict["spirit"] == "spirit")
 		Player.child_spirit_access = Player.can_enter_child_colossus && Player["ER_spirit_enter"];
 	Player.can_use_fire = (Player.dins_fire || (Player.bow && Player.fire_arrows)) && Player.magic;
 	Player.can_use_dins = Player.dins_fire && Player.magic;
@@ -939,7 +939,7 @@ function logicShortcuts() {
 	Player.can_enter_forest_temple_entrance = Player.hookshot;
 	Player.forest_temple_access = Player["ER_forest_enter"];
 	Player.can_enter_well_entrance = Player.storms;
-	Player.well_access = Player["ER_well_enter"];
+	Player.well_access = Player["ER_botw_enter"];
 	
 	Player.medalCount = 0; if (Player.forest) {Player.medalCount += 1;} if (Player.fire) {Player.medalCount += 1;} if (Player.water) {Player.medalCount += 1;} if (Player.shadow_medallion) {Player.medalCount += 1;} if (Player.spirit_medallion) {Player.medalCount += 1;} if (Player.light_medallion) {Player.medalCount += 1;}
 	Player.stoneCount = 0; if (Player.emerald) {Player.stoneCount += 1;} if (Player.ruby) {Player.stoneCount += 1;} if (Player.sapphire) {Player.stoneCount += 1;}
@@ -977,7 +977,7 @@ function logicShortcuts() {
 	CouldHave.can_enter_child_colossus = CouldHave.requiem || Spawn.child_colossus || Spawn.child_wasteland || Location_Could_Access.spirit_rightHand;
 	CouldHave.spirit_access = CouldHave["ER_spirit_enter"];
 	CouldHave.child_spirit_access = CouldHave["ER_spirit_enter"];
-	if(dungeonToEntrance_ER_dict["spirit"] == "spirit")
+	if(entranceToDungeon_ER_dict["spirit"] == "spirit")
 		CouldHave.child_spirit_access = CouldHave.can_enter_child_colossus && CouldHave["ER_spirit_enter"];
 	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
 	CouldHave.can_use_dins = CouldHave.dins_fire && CouldHave.magic;
@@ -1010,7 +1010,7 @@ function logicShortcuts() {
 	CouldHave.can_enter_forest_temple_entrance = CouldHave.hookshot;
 	CouldHave.forest_temple_access = CouldHave["ER_forest_enter"];
 	CouldHave.can_enter_well_entrance = CouldHave.storms;
-	CouldHave.well_access = CouldHave["ER_well_enter"];
+	CouldHave.well_access = CouldHave["ER_botw_enter"];
 	
 	CouldHave.medalCount = 0; if (CouldHave.forest || Player.forest || Location_Access.forest_medallion_location) {CouldHave.medalCount += 1;} if (CouldHave.fire || Player.fire || Location_Access.fire_medallion_location) {CouldHave.medalCount += 1;} if (CouldHave.water || Player.water || Location_Access.water_medallion_location) {CouldHave.medalCount += 1;} if (Player.shadow_medallion || CouldHave.shadow_medallion || Location_Access.shadow_medallion_location) {CouldHave.medalCount += 1;} if (Player.spirit_medallion || CouldHave.spirit_medallion || Location_Access.spirit_medallion_location) {CouldHave.medalCount += 1;} if (Player.light_medallion || CouldHave.light_medallion || Location_Peek.light_medallion_location) {CouldHave.medalCount += 1;}
 	CouldHave.stoneCount = 0; if (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) {CouldHave.stoneCount += 1;} if (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) {CouldHave.stoneCount += 1;} if (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location) {CouldHave.stoneCount += 1;}
@@ -1638,7 +1638,7 @@ function locationLogic(){
 		Access.water_river = Has.can_do_water_checks && Player.current_water_keys >= 2 && Has.time && Has.bow && Has.hookshot && (document.getElementById("keysanity").value != "KEY RINGS" || Has.water_key_ring);
 		Access.water_dragon = Has.can_do_water_checks && ((Player.current_water_keys >= 2 && Has.hookshot && Has.time && Has.bow) || (Has.goron_bracelet && Has.lullaby && ((Has.iron_boots && Has.hookshot) || Player.has_chus) && (Has.silver_scale || Has.iron_boots)));
 		Access.water_bossKey = Has.can_do_water_checks && (Has.lullaby || Has.iron_boots) && (Has.longshot || Has.hover_boots) && Player.current_water_keys >= 2 && (document.getElementById("keysanity").value != "KEY RINGS" || Has.water_key_ring);
-		Access.water_morpha = Has.can_do_water_checks && Has.water_boss_key && Has.longshot ;
+		Access.water_morpha = Has.water_temple_access && Has.water_boss_key /*&& Has.longshot*/ ;
 		Access.spirit_childLeft = Has.child_spirit_access && (Has.slingshot || Has.boomerang || Player.has_chus);
 		Access.spirit_childRight = Has.child_spirit_access && (Has.slingshot || Has.boomerang || Player.has_chus);
 		Access.spirit_childClimb1 = Has.spirit_access && Player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.child_spirit_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (document.getElementById("keysanity").value != "KEY RINGS" || Has.spirit_key_ring);
@@ -1960,7 +1960,7 @@ function locationLogic(){
 	Location_Could_Access.water_river = CouldHave.can_do_water_checks && CouldHave.hookshot && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.has_chus))) && CouldHave.time && CouldHave.bow && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring);
 	Location_Could_Access.water_dragon = CouldHave.can_do_water_checks && ((Player.current_water_keys >= 2 && CouldHave.hookshot && CouldHave.time && CouldHave.bow) || (CouldHave.goron_bracelet && CouldHave.lullaby && ((CouldHave.iron_boots && CouldHave.hookshot) || Player.has_chus || CouldHave.bomb_bag) && (CouldHave.silver_scale || CouldHave.iron_boots)));
 	Location_Could_Access.water_bossKey = CouldHave.can_do_water_checks && (CouldHave.lullaby || CouldHave.iron_boots) && (CouldHave.longshot || CouldHave.hover_boots) && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.has_chus))) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring);
-	Location_Could_Access.water_morpha = CouldHave.can_do_water_checks && (Player.water_boss_key || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && CouldHave.iron_boots && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.time)) && CouldHave.longshot && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring); 
+	Location_Could_Access.water_morpha = CouldHave.can_do_water_checks && (Player.water_boss_key || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && CouldHave.iron_boots && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.time) && (CouldHave.longshot || CouldHave.hover_boots)) /*&& CouldHave.longshot*/ && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring); 
 	Location_Could_Access.spirit_childLeft = CouldHave.child_spirit_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.has_chus));
 	Location_Could_Access.spirit_childRight = CouldHave.child_spirit_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.has_chus));
 	Location_Could_Access.spirit_childClimb1 = (Player.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.child_spirit_access) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.spirit_key_ring);

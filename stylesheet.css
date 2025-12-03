@@ -1231,11 +1231,17 @@ color:white;
 margin-top: 3px;
 width: 110px;
 color:white;
+font-family: monospace;
 }
 #mark_ER_Dungeons2 {
 margin-top: 3px;
 width: 110px;
 color:white;
+font-family: monospace;
+}
+.dung_er_label {
+	font-family: monospace;
+	margin-left: 3px;
 }
 #forceOutOfLogic{
 	color:pink;

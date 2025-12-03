@@ -78,8 +78,8 @@ var songItemChecked = true;
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
-var dungs_list = ["deku", "dc", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "ice", "gtg"];
-var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "we", "ic", "gt"];
+var dungs_list = ["deku", "dc", "jabu", "forest", "fire", "water", "shadow", "spirit", "botw", "ice", "gtg"];
+var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "bo", "ic", "gt"];
 for(let d = 0; d < dungs_list.length; d++) {
 	dungeonToEntrance_ER_dict[dungs_list[d]] = dungs_list[d];
 	entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[d];
