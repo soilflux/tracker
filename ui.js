@@ -1014,7 +1014,7 @@ function updateLogicInfo() {
 	if (document.getElementById("presets").value == "LEAGUE_S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "ON"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "4"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true; Player.light_arrows = true; Known.light_arrows = true;}
 	if (document.getElementById("presets").value == "SGL_2025") {Rules.kzSkip = true; chusInBigChests = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("barren_input5").style.display = "inline-block"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "frogs_2", "theater_skull"]; Player.prelude = true; Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true;}
 	if (document.getElementById("presets").value == "S8") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
-	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
+	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
 	
 	
 	if (document.getElementById("presets").value == "LEAGUE_S8") {
@@ -1833,68 +1833,137 @@ function updateDungeonER() {
 
 function update_dungeon_ER_Logic() {
 	for(let d = 0; d < dungs_list.length; d++) {
-		Logic["ER_" + dungs_list[d] + "_enter"] = false;
-		Player["ER_" + dungs_list[d] + "_enter"] = false;
-		CouldHave["ER_" + dungs_list[d] + "_enter"] = false;
+		Logic[dungs_list[d] + "_access"] = false;
+		Player[dungs_list[d] + "_access"] = false;
+		CouldHave[dungs_list[d] + "_access"] = false;
 	}
 	
 	for(let d = 0; d < dungs_list.length; d++) {
 		let enter = dungeonToEntrance_ER_dict[dungs_list[d]];
 		
 		if(enter == "deku") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_deku_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_deku_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_deku_entrance;
+			Logic[dungs_list[d] + "_child_access"] = Logic.can_enter_deku_entrance;
+			Player[dungs_list[d] + "_child_access"] = Player.can_enter_deku_entrance;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_deku_entrance;
+			
+			if(document.getElementById("erOption").value == "DUNGEONS") {
+				Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_deku_entrance;
+				Player[dungs_list[d] + "_adult_access"] = Player.can_enter_deku_entrance;
+				CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_deku_entrance;
+			}
+			else {
+				Logic[dungs_list[d] + "_adult_access"] = false;
+				Player[dungs_list[d] + "_adult_access"] = false;
+				CouldHave[dungs_list[d] + "_adult_access"] = false;
+			}
 		}
-		else if(enter == "dc") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_dodongos;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_dodongos;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_dodongos;
+		else if(enter == "dodongos") {
+			Logic[dungs_list[d] + "_child_access"] = Logic.can_enter_child_dodongos;
+			Player[dungs_list[d] + "_child_access"] = Player.can_enter_child_dodongos;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_child_dodongos;
+			
+			Logic[dungs_list[d] + "_adult_access"] = true;
+			Player[dungs_list[d] + "_adult_access"] = true;
+			CouldHave[dungs_list[d] + "_adult_access"] = true;
 		}
 		else if(enter == "jabu") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_jabu_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_jabu_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_jabu_entrance;
+			Logic[dungs_list[d] + "_child_access"] = Logic.jabu_entrance_access;
+			Player[dungs_list[d] + "_child_access"] = Player.jabu_entrance_access;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.jabu_entrance_access;
+			
+			Logic[dungs_list[d] + "_adult_access"] = false;
+			Player[dungs_list[d] + "_adult_access"] = false;
+			CouldHave[dungs_list[d] + "_adult_access"] = false;
 		}
-		else if(enter == "forest") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_forest_temple_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_forest_temple_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_forest_temple_entrance;
+		else if(enter == "forest_temple") {
+			Logic[dungs_list[d] + "_child_access"] = false;
+			Player[dungs_list[d] + "_child_access"] = false;
+			CouldHave[dungs_list[d] + "_child_access"] = false;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_forest_temple_entrance;
+			Player[dungs_list[d] + "_adult_access"] = Player.can_enter_forest_temple_entrance;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_forest_temple_entrance;
 		}
-		else if(enter == "fire") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_fire_temple_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_fire_temple_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_fire_temple_entrance;
+		else if(enter == "fire_temple") {
+			if(document.getElementById("erOption").value == "DUNGEONS") {
+				Logic[dungs_list[d] + "_child_access"] = Logic.bolero;
+				Player[dungs_list[d] + "_child_access"] = Player.bolero;
+				CouldHave[dungs_list[d] + "_child_access"] = CouldHave.bolero;
+			}
+			else {
+				Logic[dungs_list[d] + "_child_access"] = false;
+				Player[dungs_list[d] + "_child_access"] = false;
+				CouldHave[dungs_list[d] + "_child_access"] = false;
+			}
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_fire_temple_entrance;
+			Player[dungs_list[d] + "_adult_access"] = Player.can_enter_fire_temple_entrance;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_fire_temple_entrance;
 		}
-		else if(enter == "water") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_water_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_water_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_water_entrance;
+		else if(enter == "water_temple") {
+			Logic[dungs_list[d] + "_child_access"] = false;
+			Player[dungs_list[d] + "_child_access"] = false;
+			CouldHave[dungs_list[d] + "_child_access"] = false;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_water_entrance;
+			Player[dungs_list[d] + "_adult_access"] = Player.can_enter_water_entrance;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_water_entrance;
 		}
-		else if(enter == "shadow") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_shadow_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_shadow_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_shadow_entrance;
+		else if(enter == "shadow_temple") {
+			Logic[dungs_list[d] + "_child_access"] = Logic.can_enter_shadow_entrance;
+			Player[dungs_list[d] + "_child_access"] = Player.can_enter_shadow_entrance;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_shadow_entrance;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_shadow_entrance;
+			Player[dungs_list[d] + "_adult_access"] = Player.can_enter_shadow_entrance;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_shadow_entrance;
 		}
-		else if(enter == "spirit") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_colossus;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_colossus;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_colossus;
+		else if(enter == "spirit_temple") {
+			Logic[dungs_list[d] + "_child_access"] = Logic.can_enter_child_colossus;
+			Player[dungs_list[d] + "_child_access"] = Player.can_enter_child_colossus;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_child_colossus;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_colossus;
+			Player[dungs_list[d] + "_adult_access"] = Player.can_enter_colossus;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_colossus;
 		}
 		else if(enter == "botw") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.can_enter_well_entrance;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.can_enter_well_entrance;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.can_enter_well_entrance;
+			Logic[dungs_list[d] + "_child_access"] = Logic.can_enter_well_entrance;
+			Player[dungs_list[d] + "_child_access"] = Player.can_enter_well_entrance;
+			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_well_entrance;
+			
+			if(document.getElementById("erOption").value == "DUNGEONS") {
+				Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_well_entrance;
+				Player[dungs_list[d] + "_adult_access"] = Player.can_enter_well_entrance;
+				CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_well_entrance;
+			}
+			else {
+				Logic[dungs_list[d] + "_adult_access"] = false;
+				Player[dungs_list[d] + "_adult_access"] = false;
+				CouldHave[dungs_list[d] + "_adult_access"] = false;	
+			}
 		}
 		else if(enter == "ice") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.ice_entrance_access;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.ice_entrance_access;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.ice_entrance_access;
+			Logic[dungs_list[d] + "_child_access"] = false;
+			Player[dungs_list[d] + "_child_access"] = false;
+			CouldHave[dungs_list[d] + "_child_access"] = false;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.ice_entrance_access;
+			Player[dungs_list[d] + "_adult_access"] = Player.ice_entrance_access;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.ice_entrance_access;
 		}
 		else if(enter == "gtg") {
-			Logic["ER_" + dungs_list[d] + "_enter"] = Logic.gtg_entrance_access;
-			Player["ER_" + dungs_list[d] + "_enter"] = Player.gtg_entrance_access;
-			CouldHave["ER_" + dungs_list[d] + "_enter"] = CouldHave.gtg_entrance_access;
+			Logic[dungs_list[d] + "_child_access"] = false;
+			Player[dungs_list[d] + "_child_access"] = false;
+			CouldHave[dungs_list[d] + "_child_access"] = false;
+			
+			Logic[dungs_list[d] + "_adult_access"] = Logic.gtg_entrance_access;
+			Player[dungs_list[d] + "_adult_access"] = Player.gtg_entrance_access;
+			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.gtg_entrance_access;
 		}
+			
+		Logic[dungs_list[d] + "_access"] = Logic[dungs_list[d] + "_child_access"] || Logic[dungs_list[d] + "_adult_access"];
+		Player[dungs_list[d] + "_access"] = Player[dungs_list[d] + "_child_access"] || Player[dungs_list[d] + "_adult_access"];
+		CouldHave[dungs_list[d] + "_access"] = CouldHave[dungs_list[d] + "_child_access"] || CouldHave[dungs_list[d] + "_adult_access"];
 	}
 }
