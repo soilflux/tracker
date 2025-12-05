@@ -883,7 +883,7 @@ function logicShortcuts() {
 	Player.jabu_entrance_access = (Player.child_can_enter_domain && (Player.rutos_letter || document.getElementById("closedFountain").value == "OPEN")) || Spawn.child_zf;
 	Player.can_hit_jabu_switch = Player.jabu_access && Player.bomb_bag || Player.has_chus || ((Player.boomerang || Player.slingshot) && Player.jabu_child_access) || ((Player.hookshot || Player.bow) && Player.jabu_adult_access);
 	
-	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf || Spawn.adult_wasteland;
+	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || Player.hookshot;
 	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
 	Player.gtg_entrance_access = (Player.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (Player.fortress_access && Player.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
 	Player.can_cross_quicksand = Player.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || Player.gerudo_card);
@@ -941,7 +941,7 @@ function logicShortcuts() {
 	CouldHave.jabu_entrance_access = (CouldHave.child_can_enter_domain && (CouldHave.rutos_letter || document.getElementById("closedFountain").value == "OPEN")) || Spawn.child_zf;
 	CouldHave.can_hit_jabu_switch = CouldHave.jabu_access && CouldHave.bomb_bag || Player.has_chus || ((CouldHave.boomerang || CouldHave.slingshot) && CouldHave.jabu_child_access) || ((CouldHave.hookshot || CouldHave.bow) && CouldHave.jabu_adult_access);
 	
-	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland;
+	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland || CouldHave.hookshot;
 	CouldHave.can_save_carpenters = Spawn.child_gv_gf || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
 	CouldHave.gtg_entrance_access = (CouldHave.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (CouldHave.fortress_access && CouldHave.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
 	CouldHave.can_cross_quicksand = CouldHave.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || CouldHave.gerudo_card);
