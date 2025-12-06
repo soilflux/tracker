@@ -78,6 +78,7 @@ var songItemChecked = true;
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
+var dungs_list2 = {"deku":"Deku", "dodongos":"DC", "jabu":"Jabu", "forest_temple":"Forest", "fire_temple":"Fire", "water_temple":"Water", "shadow_temple":"Shadow", "spirit_temple":"Spirit", "botw":"BotW", "ice":"Ice", "gtg":"GTG"};
 var dungs_list = ["deku", "dodongos", "jabu", "forest_temple", "fire_temple", "water_temple", "shadow_temple", "spirit_temple", "botw", "ice", "gtg"];
 var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "bo", "ic", "gt"];
 for(let d = 0; d < dungs_list.length; d++) {
@@ -279,7 +280,7 @@ var timeFinal;
 var timeLost =0;
 var tMinutes = 0;
 var tSeconds = 0;
-var linso = false;
+var linso = true;
 var linsoGoMode = false;
 var linsoLightRotation = 0;
 if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
