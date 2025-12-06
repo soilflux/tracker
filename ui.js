@@ -1014,12 +1014,17 @@ function updateLogicInfo() {
 	if (document.getElementById("presets").value == "LEAGUE_S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "ON"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "4"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true; Player.light_arrows = true; Known.light_arrows = true;}
 	if (document.getElementById("presets").value == "SGL_2025") {Rules.kzSkip = true; chusInBigChests = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("barren_input5").style.display = "inline-block"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "frogs_2", "theater_skull"]; Player.prelude = true; Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true;}
 	if (document.getElementById("presets").value == "S8") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
-	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
+	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
 	
 	
-	if (document.getElementById("presets").value == "LEAGUE_S8") {
+	if (document.getElementById("presets").value == "LEAGUE_S9") {
 		document.getElementById("important_hints_div").style.display = "block";
 		document.getElementById("barren_hints_div").style.display = "none";	
+		document.getElementById("important_input3").style.display = "inline-block";
+	}
+	else if (document.getElementById("presets").value == "S9") {
+		document.getElementById("important_hints_div").style.display = "block";
+		document.getElementById("important_input3").style.display = "none";
 	}
 	else {
 		document.getElementById("important_hints_div").style.display = "none";
@@ -1791,6 +1796,7 @@ function updateDungeonER() {
 	// if dungeon er is off, dungeons go to their intended destinations
 	if(document.getElementById("erOption").value != "DUNGEONS") {
 		document.getElementById("dungeon_er_input_div").style.display = "none";
+		document.getElementById("dungeons_summary").style.display = "none";
 		
 		for(let d = 0; d < dungs_list.length; d++) {
 			dungeonToEntrance_ER_dict[dungs_list[d]] = dungs_list[d];
@@ -1800,6 +1806,11 @@ function updateDungeonER() {
 	else {
 		// else, dungeon er is on, so figure out where each dungeon goes
 		document.getElementById("dungeon_er_input_div").style.display = "block";
+		document.getElementById("dungeons_summary").style.display = "block";
+		document.getElementById("dungeons_summary").innerHTML = "";
+		for(let d = 0; d < dungs_list.length; d++) {
+			document.getElementById("dungeons_summary").innerHTML += dungs_list2[dungs_list[d]]+" &#8594; ?<br>";
+		}
 		
 		for(let d = 0; d < dungs_list.length; d++) {
 			dungeonToEntrance_ER_dict[dungs_list[d]] = "";
@@ -1807,23 +1818,25 @@ function updateDungeonER() {
 		}
 		
 		// if er dungeon inputs are valid, update dictionaries
-		er_input_string1 = document.getElementById("mark_ER_Dungeons").value;
-		er_input_string2 = document.getElementById("mark_ER_Dungeons2").value;
-		if (er_input_string1.length == 12 && er_input_string2.length == 10) {
+		er_input_string = document.getElementById("mark_ER_Dungeons").value;
+		if (er_input_string.length == 22) {
 			
 			dungeon_er_inputs = [];
+			document.getElementById("dungeons_summary").innerHTML = "<u>Entrance &#8594; Dungeon</u><br>";
 			
-			for(i = 0; i < 6; i++) {
-				dungeon_er_inputs.push(er_input_string1.substring(i*2,i*2+2));
-			}
-			for(i = 0; i < 5; i++) {
-				dungeon_er_inputs.push(er_input_string2.substring(i*2,i*2+2));
+			for(i = 0; i < 11; i++) {
+				dungeon_er_inputs.push(er_input_string.substring(i*2,i*2+2));
 			}
 			//console.log(dungeon_er_inputs);
+			
 			
 			for(let d = 0; d < dungs_list.length; d++) {
 				entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])];
 				dungeonToEntrance_ER_dict[dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])]] = dungs_list[d];
+				
+				
+				
+				document.getElementById("dungeons_summary").innerHTML += dungs_list2[dungs_list[d]]+" &#8594; "+dungs_list2[entranceToDungeon_ER_dict[dungs_list[d]]]+"<br>";
 			}
 		}
 	}

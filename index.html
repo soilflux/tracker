@@ -25,8 +25,7 @@
 				<img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input><br>
 				<img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input><br>
 				<div id="dungeon_er_input_div">
-					<text class="dung_er_label">DeDoJaFoFiWa</small><input id="mark_ER_Dungeons" class="layout_input" value="dedojafofiwa"></input>
-					<text class="dung_er_label">ShSpBoIcGt</small><input id="mark_ER_Dungeons2" class="layout_input" value="shspboicgt"></input>
+					<text class="dung_er_label">DeDoJaFoFiWa</text><br><text class="dung_er_label">ShSpBoIcGt</text><textarea id="mark_ER_Dungeons" class="layout_input">dedojafofiwashspboicgt</textarea>
 				</div>
 				
 				<br /><br />
@@ -66,7 +65,8 @@
 				  <br /> <input spellcheck="false" id = "important_input1" class = "hint_input"></input><input spellcheck="false" id = "important_input2" class = "hint_input"></input><input spellcheck="false" id = "important_input3" class = "hint_input"></input>
 			  </div><small class="hint_text" id="woth_text" >WOTH</small>
 			 <div id = "path_hints_div"><div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "hint_input"><br><text id="path_arrow1" class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class = "hint_input"></div><div><input spellcheck="false" id="woth_input2" class = "hint_input"><br><text id="path_arrow2"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class = "hint_input"></div><div><input spellcheck="false" id="woth_input3" class = "hint_input"><br><text id="path_arrow3"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class = "hint_input"></div><div><input spellcheck="false" id="woth_input4" class = "hint_input"><br><text id="path_arrow4"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class = "hint_input"></div><div><input spellcheck="false" id="woth_input5" class = "hint_input"><br><text id="path_arrow5"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class = "hint_input"></div><div><input spellcheck="false" id="woth_input6" class = "hint_input"><br><text id="path_arrow6"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class = "hint_input"></div></div>
-			 
+			 <div id="dungeons_summary">
+			 </div>
 			  
 			  </div>
 				  <div id = "scrollable_section">
@@ -348,7 +348,7 @@
 			
 			<button id="iWantToRemoveThisButton" onmousedown="whoAmI()">Appease Viewers</button><br />
 			<button id="altThemeControl" onmousedown="altThemeControl()">Dark Theme</button><br />	
-			<button id="linsoControl" onmousedown="linsoControl()">Show LinSo</button><br /><br />
+			<button id="linsoControl" onmousedown="linsoControl()">Hide LinSo</button><br /><br />
 			
 			<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
 			<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button>

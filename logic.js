@@ -1065,8 +1065,8 @@ function locationLogic(){
 	Location_Logic.dodongos_bomb_flower_platform = Logic.dodongos_climb;
 	Location_Logic.dodongos_bomb_bag = Logic.dodongos_climb;
 	Location_Logic.dodongos_end_of_bridge = Logic.dodongos_climb && (Logic.bomb_bag || (Logic.dodongos_adult_access && Logic.hammer));
-	Location_Logic.dodongos_above_king = Logic.bomb_bag;
-	Location_Logic.dodongos_king_dodongo = Logic.bomb_bag;
+	Location_Logic.dodongos_above_king = Logic.dodongos_climb && Logic.bomb_bag;
+	Location_Logic.dodongos_king_dodongo = Logic.dodongos_climb && Logic.bomb_bag;
 	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
 	Location_Logic.trail_dodongos_top = true;
 	Location_Logic.trail_storms = Logic.storms;
@@ -1253,7 +1253,7 @@ function locationLogic(){
 	Location_Logic.sariasSpot = true;
 	Location_Logic.stormsSpot = true;
 	Location_Logic.sunsSpot = Logic.lullaby;
-	Location_Logic.boleroSpot = Logic.fire_temple_adult_access;
+	Location_Logic.boleroSpot = Logic.can_enter_fire_temple_entrance;
 	Location_Logic.minuetSpot = Logic.can_pass_mido_as_adult;
 	Location_Logic.requiemSpot = Logic.can_enter_colossus;
 	Location_Logic.serenadeSpot = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && (Logic.ice_adult_access || Logic.giants_wallet);
@@ -1694,7 +1694,7 @@ function locationLogic(){
 		Access.sariasSpot = true;
 		Access.stormsSpot = true;
 		Access.sunsSpot = Has.lullaby;
-		Access.boleroSpot = Has.fire_temple_adult_access;
+		Access.boleroSpot = Has.can_enter_fire_temple_entrance;
 		Access.minuetSpot = true;
 		Access.requiemSpot = Has.can_enter_colossus;
 		Access.serenadeSpot = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.has_chus || Has.bomb_bag || Has.giants_wallet);

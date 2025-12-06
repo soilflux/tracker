@@ -1229,15 +1229,11 @@ color:white;
 }
 #mark_ER_Dungeons {
 margin-top: 3px;
-width: 110px;
+width: 100px;\
+height: 40px;
 color:white;
 font-family: monospace;
-}
-#mark_ER_Dungeons2 {
-margin-top: 3px;
-width: 110px;
-color:white;
-font-family: monospace;
+resize: none;
 }
 .dung_er_label {
 	font-family: monospace;

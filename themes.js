@@ -74,7 +74,7 @@ function dark_soli() {
 		document.getElementById("normalColumn1").style.width="110px";
 		document.getElementById("normalColumn2").style.width="110px";
 		document.getElementById("normalColumn3").style.width="110px";
-		document.getElementById("woth_info").style.left="956px";
+		document.getElementById("scrollable_section").style.left="956px";
 		document.getElementById("timer").style.left="900px";
 		document.getElementById("skulls_in_logic").style.left="867px";
 		document.getElementById("dung4_icon").style.left="928px";
@@ -323,7 +323,7 @@ function dark_normie() {
 	document.getElementById("normalColumn1").style.width="97px";
 	document.getElementById("normalColumn2").style.width="97px";
 	document.getElementById("normalColumn3").style.width="97px";
-	document.getElementById("woth_info").style.left="0px";
+	document.getElementById("scrollable_section").style.left="0px";
 	document.getElementById("timer").style.left="-140px";
 	document.getElementById("tokens_acquired").style.left="732px";
 	document.getElementById("skulls_in_logic").style.left="871px";
