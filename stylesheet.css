@@ -288,7 +288,7 @@ color: red;
 	opacity: 0.2;
 }
 .hint_input {
-	width: 46px;
+	width: 35px;
 	vertical-align: top;
 	margin-bottom: 0px;
     background-color : #181818; 
@@ -579,6 +579,7 @@ color: red;
 #linsoColumn {
 	position: relative;
 	margin-top:10px;
+	margin-left:5px;
 	float: left;
 	width: 280px;
 	padding-right: 5px;
@@ -1065,11 +1066,11 @@ color: red;
 	padding-top: 0px;
 	text-align:top;
 	left: 830px;
+	height: 325px;
 }
 #scrollable_section {
 	overflow-x: hidden;
     overflow-y: auto;
-	height: 325px;
 }
 .woth_info_text {
 	font-size: 14px;
