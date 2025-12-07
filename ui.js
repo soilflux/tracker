@@ -1019,7 +1019,6 @@ function updateLogicInfo() {
 	
 	if (document.getElementById("presets").value == "LEAGUE_S9") {
 		document.getElementById("important_hints_div").style.display = "block";
-		document.getElementById("barren_hints_div").style.display = "none";	
 		document.getElementById("important_input3").style.display = "inline-block";
 	}
 	else if (document.getElementById("presets").value == "S9") {
@@ -1028,7 +1027,6 @@ function updateLogicInfo() {
 	}
 	else {
 		document.getElementById("important_hints_div").style.display = "none";
-		document.getElementById("barren_hints_div").style.display = "block";
 	}
 	
 	document.getElementById("woth_input1").style.display = "inline";
