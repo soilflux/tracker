@@ -1021,10 +1021,6 @@ function updateLogicInfo() {
 		document.getElementById("important_hints_div").style.display = "block";
 		document.getElementById("important_input3").style.display = "inline-block";
 	}
-	else if (document.getElementById("presets").value == "S9") {
-		document.getElementById("important_hints_div").style.display = "block";
-		document.getElementById("important_input3").style.display = "none";
-	}
 	else {
 		document.getElementById("important_hints_div").style.display = "none";
 	}
@@ -1037,13 +1033,13 @@ function updateLogicInfo() {
 		document.getElementById("woth_input5").style.display = "inline";
 	else
 		document.getElementById("woth_input5").style.display = "none";
-	if(document.getElementById("presets").value == "LEAGUE_S7")
+	if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
 		document.getElementById("woth_input6").style.display = "inline";
 	else
 		document.getElementById("woth_input6").style.display = "none";
 	
 	if(document.getElementById("hints_type").value == "PATH") { 
-		document.getElementById("woth_text").innerHTML = "PATH"; 
+		document.getElementById("woth_text").innerHTML = "Path / Important"; 
 		document.getElementById("path_boss1").style.display = "inline-block"; 
 		document.getElementById("path_boss2").style.display = "inline-block"; 
 		document.getElementById("path_boss3").style.display = "inline-block"; 
@@ -1052,7 +1048,7 @@ function updateLogicInfo() {
 			document.getElementById("path_boss5").style.display = "inline-block";
 		else
 			document.getElementById("path_boss5").style.display = "none";
-		if(document.getElementById("presets").value == "LEAGUE_S7")
+		if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
 			document.getElementById("path_boss6").style.display = "inline-block"; 
 		else
 			document.getElementById("path_boss6").style.display = "none"; 
@@ -1064,7 +1060,7 @@ function updateLogicInfo() {
 			document.getElementById("path_arrow5").style.display = "inline";
 		else
 			document.getElementById("path_arrow5").style.display = "none";
-		if(document.getElementById("presets").value == "LEAGUE_S7")
+		if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
 			document.getElementById("path_arrow6").style.display = "inline";
 		else
 			document.getElementById("path_arrow6").style.display = "none";

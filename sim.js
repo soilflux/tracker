@@ -280,7 +280,7 @@ function simProcessHint(hint, str) {
 	]
 	
 	if(hint.includes("way of the hero")) {
-		if(simWothCounter <= 6) {
+		if(simWothCounter <= 7) {
 			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
 			
 			if(theArea.startsWith("the "))
@@ -298,7 +298,7 @@ function simProcessHint(hint, str) {
 		}
 	}
 	else if (hint.includes("on the path")) {
-		if(simPathCounter <= 6) {
+		if(simPathCounter <= 7) {
 			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
 			theBoss = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[3];
 			

@@ -4,12 +4,20 @@ function wothAndBarrenProcessing() {
 	Area[i] = "normal";
 	}
 	
-	wothAreas = ["", "", "", "", "", "", ""];
-	AreaGoalPathBoss = ["", "", "", "", "", "", ""];
+	wothAreas = ["", "", "", "", "", "", "", ""];
+	AreaGoalPathBoss = ["", "", "", "", "", "", "", ""];
 
-	for (var i = 1; i <= 6; i++) {
+	for (var i = 1; i <= 7; i++) {
 		var str = document.getElementById("woth_input" + i).value;
 		str = str.replace("2","");
+		str = str.replace("3","");
+		str = str.replace("4","");
+		str = str.replace("5","");
+		str = str.replace("6","");
+		str = str.replace("7","");
+		str = str.replace("8","");
+		str = str.replace("9","");
+		str = str.replace("10","");
 		if (str == "kok" || str == "kf" || str == "koki" || str == "kfc") {if (Area[1] == "4woth") {Area[1] = "5woth";} else if (Area[1] == "3woth") {Area[1] = "4woth";} else if (Area[1] == "2woth") {Area[1] = "3woth";} else if (Area[1] == "woth") {Area[1] = "2woth";} else {Area[1] = "woth";} wothAreas[i] = AreaNames[1];}
 		if (str == "llr" || str == "ranch" || str == "lon" || str == "ran") {if (Area[2] == "4woth") {Area[2] = "5woth";} else if (Area[2] == "3woth") {Area[2] = "4woth";} else if (Area[2] == "2woth") {Area[2] = "3woth";} else if (Area[2] == "woth") {Area[2] = "2woth";} else {Area[2] = "woth";} wothAreas[i] = AreaNames[2];} 
 		if (str == "fie" || str == "hf" || str == "field") {if (Area[3] == "4woth") {Area[3] = "5woth";} else if (Area[3] == "3woth") {Area[3] = "4woth";} else if (Area[3] == "2woth") {Area[3] = "3woth";} else if (Area[3] == "woth") {Area[3] = "2woth";} else {Area[3] = "woth";} wothAreas[i] = AreaNames[3];} 
@@ -61,6 +69,17 @@ function wothAndBarrenProcessing() {
 			if (str3.startsWith("ti")) {AreaGoalPathBoss[i] = "Time";}
 			if (str3.startsWith("he")) {AreaGoalPathBoss[i] = "Hero";}
 			if (str3.startsWith("ev")) {AreaGoalPathBoss[i] = "Light Arrows";}
+			if (str3 == "0") {AreaGoalPathBoss[i] = "0 Important Items";} 
+			if (str3 == "1") {AreaGoalPathBoss[i] = "1 Important Item";} 
+			if (str3 == "2") {AreaGoalPathBoss[i] = "2 Important Items";} 
+			if (str3 == "3") {AreaGoalPathBoss[i] = "3 Important Items";} 
+			if (str3 == "4") {AreaGoalPathBoss[i] = "4 Important Items";} 
+			if (str3 == "5") {AreaGoalPathBoss[i] = "5 Important Items";} 
+			if (str3 == "6") {AreaGoalPathBoss[i] = "6 Important Items";} 
+			if (str3 == "7") {AreaGoalPathBoss[i] = "7 Important Items";} 
+			if (str3 == "8") {AreaGoalPathBoss[i] = "8 Important Items";} 
+			if (str3 == "9") {AreaGoalPathBoss[i] = "9 Important Items";} 
+			if (str3 == "10") {AreaGoalPathBoss[i] = "10 Important Items";} 
 		}
 		
 		if (i <= 5) {
@@ -104,7 +123,7 @@ function wothAndBarrenProcessing() {
 	}
 	
 	AreaColors = ["", "00ff88", " aaaa00", " ffff00", " ffaa00", " 00aaff", " aaaaaa", " 84FFFF", " FE0404", " ffffff", " 70ffff", " aaffff", " 996000", " 009000", " 80ff80", " ffcc00", " B35705", " 573E02", " ff5050", " 678C8A", " 8f8493", " 5DB8FE", " 00ffff", " cccc90", " cccc30", " ffff90", " ff0080", " 5FAF36", " ff0000", " 00cccc", " ffff50", " c900c9", " 990000", " ffcc60", " ff00ff"];
-	WotHColors = ["", "9cc4d9", "white", "b19cd9","d09cd9","cyan"];
+	WotHColors = ["", "9cc4d9", "white", "b19cd9","d09cd9","cyan","9CD9C4","D9B19C"];
 
 	for (var i = 1; i <= 35; i++) {
 		if (Area[i] == "woth" && AreaWotHAge[i] != 1) {
@@ -114,6 +133,7 @@ function wothAndBarrenProcessing() {
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {document.getElementById("woth4_title").innerHTML = AreaNames[i]; woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {document.getElementById("woth5_title").innerHTML = AreaNames[i]; woth5 = AreaNames[i];}
 			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {document.getElementById("woth6_title").innerHTML = AreaNames[i]; woth6 = AreaNames[i];}
+			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {document.getElementById("woth7_title").innerHTML = AreaNames[i]; woth7 = AreaNames[i];}
 			AreaWotHAge[i] = 1;
 		}
 		else if (Area[i] == "2woth" && AreaWotHAge[i] != 2) {		
@@ -123,6 +143,7 @@ function wothAndBarrenProcessing() {
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
 			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
+			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {woth7 = AreaNames[i];}
 			AreaWotHAge[i] = 2;
 		}
 		else if (Area[i] == "3woth" && AreaWotHAge[i] != 3) {		
@@ -132,6 +153,7 @@ function wothAndBarrenProcessing() {
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
 			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
+			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {woth7 = AreaNames[i];}
 			AreaWotHAge[i] = 3;
 		}
 		else if (Area[i] == "4woth" && AreaWotHAge[i] != 4) {		
@@ -141,6 +163,7 @@ function wothAndBarrenProcessing() {
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
 			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
+			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {woth7 = AreaNames[i];}
 			AreaWotHAge[i] = 4;
 		}
 		else if (Area[i] == "5woth" && AreaWotHAge[i] != 5) {		
@@ -151,6 +174,7 @@ function wothAndBarrenProcessing() {
 			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {woth4 = AreaNames[i];}
 			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {woth5 = AreaNames[i];}
 			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {woth6 = AreaNames[i];}
+			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {woth7 = AreaNames[i];}
 			AreaWotHAge[i] = 5;
 		}
 		else if (Area[i] == "normal" || Area[i] == "barren") {
@@ -160,6 +184,7 @@ function wothAndBarrenProcessing() {
 			if (woth4 == AreaNames[i]) {woth4 = "unknown"}
 			if (woth5 == AreaNames[i]) {woth5 = "unknown"}
 			if (woth6 == AreaNames[i]) {woth6 = "unknown"}
+			if (woth7 == AreaNames[i]) {woth7 = "unknown"}
 		AreaWotHAge[i] = 0;	
 		}
 	}
@@ -213,7 +238,7 @@ function wothAndBarrenProcessing() {
 			var tempbool = false;
 		
 			
-			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i]) {
+			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i] || woth7 == AreaNames[i]) {
 				
 				if (woth1 == AreaNames[i]) {wothNumber = 1;}
 				else if (woth2 == AreaNames[i]) {wothNumber = 2;}
@@ -221,6 +246,7 @@ function wothAndBarrenProcessing() {
 				else if (woth4 == AreaNames[i]) {wothNumber = 4;}
 				else if (woth5 == AreaNames[i]) {wothNumber = 5;}
 				else if (woth6 == AreaNames[i]) {wothNumber = 6;}
+				else if (woth7 == AreaNames[i]) {wothNumber = 7;}
 				var tempArray = [];
 				document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML="";
@@ -228,6 +254,7 @@ function wothAndBarrenProcessing() {
 				document.getElementById("woth" + wothNumber + "_text" + 4).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
+				document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows" && document.getElementById("presets").value != "S8") {continue;}
 					if (Items[k] == "farores_wind") {continue;}
@@ -333,7 +360,7 @@ function wothAndBarrenProcessing() {
 			
 				if (document.getElementById("hints_type").value == "PATH") {
 					var addedArrow = false;
-					for(var q = 1; q <= 6; q++)
+					for(var q = 1; q <= 7; q++)
 						if(wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {
 							if(!addedArrow) {
 								document.getElementById("woth" + wothNumber + "_title").innerHTML += " &#8594; "; 
@@ -354,6 +381,7 @@ function wothAndBarrenProcessing() {
 					if (wothNumber == 4) {woth4Locations =[];}
 					if (wothNumber == 5) {woth5Locations = [];}
 					if (wothNumber == 6) {woth6Locations = [];}
+					if (wothNumber == 7) {woth7Locations = [];}
 				}
 				if (AreaWotHAge[i] >= tempnumber3) {
 					document.getElementById("woth" + wothNumber + "_title").style.opacity = 1;
@@ -363,6 +391,7 @@ function wothAndBarrenProcessing() {
 					if (wothNumber == 4) {woth4Locations = tempArray2.slice(0);}
 					if (wothNumber == 5) {woth5Locations = tempArray2.slice(0);}
 					if (wothNumber == 6) {woth6Locations = tempArray2.slice(0);}
+					if (wothNumber == 7) {woth7Locations = tempArray2.slice(0);}
 				}
 			}
 			
