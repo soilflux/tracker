@@ -561,12 +561,15 @@ function wothAndBarrenProcessing() {
 				document.getElementById("water").style.backgroundColor = "red";
 			}
 			if (i == 33) {
+				document.getElementById("ganons").style.backgroundColor = "red";
 				document.getElementById("ganons").click();
 			}
 			if (i == 34) {
+				document.getElementById("gtg").style.backgroundColor = "red";
 				document.getElementById("gtg").click();
 			}
 			if (i == 35) {
+				document.getElementById("well").style.backgroundColor = "red";
 				document.getElementById("well").click();
 			}
 			hinted = false;

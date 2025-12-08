@@ -637,9 +637,9 @@ function junkUltra() {
 		
 		if (x.id == "forest") {var temp = 27; Logic.forced_forest_keys = 5 - Player.current_forest_keys; Player.current_forest_keys = 5; if (Player.forest_boss_key == false) {Logic.forced_forest_boss_key = true; Player.forest_boss_key = true;}}
 		if (x.id == "fire") {var temp = 28; Logic.forced_fire_keys = 8 - Player.current_fire_keys; Player.current_fire_keys = 8; if (Player.fire_boss_key == false) {Logic.forced_fire_boss_key = true; Player.fire_boss_key = true;}}
-		if (x.id == "water") {var temp = 29; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
-		if (x.id == "spirit") {var temp = 30; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
-		if (x.id == "shadow") {var temp = 31; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
+		if (x.id == "water") {var temp = 31; Logic.forced_water_keys = 6 - Player.current_water_keys; Player.current_water_keys = 6; if (Player.water_boss_key == false) {Logic.forced_water_boss_key = true; Player.water_boss_key = true;}}
+		if (x.id == "spirit") {var temp = 29; Logic.forced_spirit_keys = 5 - Player.current_spirit_keys; Player.current_spirit_keys = 5; if (Player.spirit_boss_key == false) {Logic.forced_spirit_boss_key = true; Player.spirit_boss_key = true;}}
+		if (x.id == "shadow") {var temp = 30; Logic.forced_shadow_keys = 5 - Player.current_shadow_keys; Player.current_shadow_keys = 5; if (Player.shadow_boss_key == false) {Logic.forced_shadow_boss_key = true; Player.shadow_boss_key = true;}}
 		if (x.id == "ganons") {var temp = 32; Logic.forced_ganons_keys = 2 - Player.current_ganons_keys; Player.current_ganons_keys = 2; if (Player.ganons_boss_key == false) {Logic.ganons_boss_key = true; Player.ganons_boss_key = true;}}
 		if (x.id == "gtg") {var temp = 33; Logic.forced_gtg_keys = 5 - Player.current_gtg_keys; Player.current_gtg_keys = 9;}
 		if (x.id == "well") {var temp = 34; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
@@ -1756,7 +1756,7 @@ function updateWothBorders() {
 					document.getElementById("text_" + Locations[j]).style.border = "";
 			}
 		}	
-		else if(Area[i] == "barren" && colorWothAreas) {
+		else if(Area[i] == "barren") {
 			for(var j = 0; j < AreaSongSpots[i].length; j++) {
 				var songText = AreaSongSpots[i][j];
 				document.getElementById(songText).style.border = "solid 2px red";
