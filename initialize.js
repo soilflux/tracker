@@ -537,40 +537,40 @@ var Locations = [
 soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
 var Names = [
-	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "SoS", "Cow", "Deku L", "Deku R", "Near LW", "SoS",
-	/*Ranch*/"Talon", "*Tree", "Back", "Scrub", "Scrub", "Scrub", "*Window", "*Shed", "*Back", "Cow", "Cow", "Cow", "Cow",
+	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "Storms", "Cow", "Deku L", "Deku R", "Near LW", "SoS",
+	/*Ranch*/"Talon", "*Tree", "Silo", "Scrub", "Scrub", "Scrub", "*Window", "*Shed", "*Back", "Cow", "Cow", "Cow", "Cow",
 	/*Field*/"Market", "Tektite", "Scrub", "Open", "Remote", "*NearKak", "*Near GV", "OoT Item", "Cow", "Remote", "Open", "Destiny", "Webs",
-	/*Valley*/"Box", "Water", "*Bridge", "*Soil", "*Pillar", "*Tent", "Rocks", "Scrub", "Scrub", "Cow", "Valley",
-	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "*Soil", "*Lab Wall", "*Island", "Ad. Fish", "Labtop", "*Crate", "Divin'", "*Tree", "Sun", "Lab", "Lake R", "Lake L",
-	/*Market*/"*Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Big Rich", "Bowling", "Bowling", "Lens", "Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
-	/*Hyrule Castle*/"*Tree", "D Fairy", "*Storms", "Castle 1", "Castle 2", "Castle SoS",
-	/*Ganon's Castle*/"*Skull", "G Fairy",
+	/*Valley*/"Crate", "Waterfall", "*Bridge", "*Soil", "*Pillar", "*Tent", "Hammer", "Scrub", "Scrub", "Cow", "Valley",
+	/*Lake*/"Scrub", "Scrub", "Scrub", "Ch. Fish", "Bottle", "*Soil", "*Lab Wall", "*Island", "Ad. Fish", "Lab Top", "*Crate", "Lab Dive", "*Tree", "ShootSun", "Lab", "Lake R", "Lake L",
+	/*Market*/"*Guard", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Chu 1", "Chu 2", "Chu 3", "Chu 4", "Sling", "Richard", "Bowling", "Bowling", "TCG", "Big Poes", "ToT 1", "ToT 2", "ToT 3", "ToT 4",
+	/*Hyrule Castle*/"*Tree", "Fairy", "*Storms", "Castle 1", "Castle 2", "Castle SoS",
+	/*Ganon's Castle*/"*Skull", "Fairy",
 	/*Temple of Time*/"LACS",
-	/*Fountain*/"*Log", "*Tree", "Fairy", "Glacier", "Divin'", "*Cave", "Fairy", "Near Jabu",
+	/*Fountain*/"*Log", "*Tree", "Fairy", "Glacier", "IcyWaters", "*Cave", "Fairy", "Near Jabu",
 	/*Ice*/"*Spinning", "Map", "*HP", "HP", "Compass", "*Blocks", "Irons",
 	/*Deku*/"Lobby", "Slingshot", "Slingshot", "Compass", "Compass", "*Compass", "*Gate", "*Vines", "Basement", "*Back", "Queen",
-	/*Lost Woods*/"F Ocarina", "Target", "Mem'ry", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "Mask", "Truth", "Bridge", "Generic",
+	/*Lost Woods*/"F Ocarina", "Target", "Memory", "Generic", "Stage Scr", "Stage Scr", "*Soil", "Scrub Gr.", "Scrub Gr+", "*Soil", "Saria Kid", "Br Scrub", "*Adult", "SklMask", "Truth", "Bridge", "Generic",
 	/*Sacred Forest Meadow*/"Wolfos", "*Skull", "Scrub", "Scrub", "Saria", "Maze 1", "Maze 2",
-	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Big Rollin'", "Dancin'", "Chuckin'", "Maze", "Maze", "*Maze", "Maze!", "*Center", "Lil' Rollin'", "Scrub", "Scrub", "Scrub", "Medigor", "Maze", "Medigor",
-	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "Map", "Compass", "*Nook", "*Vines", "Plat", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
-	/*Trail*/"Top", "*Wall", "Wall", "SoS", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "Cow", "SoS", "Biggoron",
-	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
-	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Hag", "Windmill", "Anj", "Cow", "Arch'ry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
-	/*Graveyard*/"Shield", "Box", "Race", "Race", "Tour", "*Soil", "*Wall", "Redead", "Composer", "Nocturne",
-	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
-	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Divin'", "King", "*Skull", "Domain",
-	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
+	/*Goron City*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Rolling", "Darunia", "Pot", "Maze", "Maze", "*Maze", "Left Maze", "*Center", "LinkGor", "Scrub", "Scrub", "Scrub", "Medigor", "Maze", "Medigor",
+	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "Lobby", "Stairs", "*Nook", "*Vines", "Bomb bag", "Scrub 2F", "Scrub 2F", "Bomb bag", "Bridge", "*Last", "Abv KD", "KD", "Dodongos",
+	/*Trail*/"Above DC", "*Wall", "BombWall", "Storms", "Fairy", "Biggoron", "*Hail", "*Flower", "*Soil", "Cow", "SoS", "Biggoron",
+	/*Crater*/"Volcano", "Scrub", "Scrub", "Scrub", "Fairy", "Wall", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
+	/*Kakariko*/"Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Hag", "Windmill", "Anju", "Cow", "Archery", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Grotto", //reasoning for skull check naming being a little weird is just because unleash animals needs enough characters to work properly(maybe not worth supporting)
+	/*Graveyard*/"Shield", "Box", "Race", "Race", "DampeDig", "*Soil", "*Wall", "Sun Grave", "Composer", "Nocturne",
+	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Lower", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Upper", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
+	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Diving", "KZ", "*Skull", "Domain",
+	/*Colossus*/"Arch", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
 	/*Wasteland*/"*Skull", "Carpet", "Torches",
 	/*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
-	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
-	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "*Base", "Phantom",
-	/*Fire Temple*/"Near Boss", "*Hammer", "Hammer", "Hammer", "Lav Open", "*SoT", "Lav Bomb", "Volvagia", "Low Cell", "*Maze", "Side Room", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "SoT Goron", "MEGA",
+	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Rang", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
+	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Plat", "*C Plat", "C Bubble", "C Well", "Push Eye", "BK", "Flrmaster", "*Arch", "Red", "Bow", "Blue", "Falling", "Basement", "*Base", "Phantom",
+	/*Fire Temple*/"Near Boss", "*Hammer", "Hammer", "Hammer", "Lav Left", "*SoT", "Lav Right", "Volvagia", "Low Cell", "*Maze", "Low Cell", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "HighGoron", "Hammer",
 	/*Spirit Temple*/"Ch. Left", "Ch. Right", "*Fence", "Ch. Climb", "*Ch Climb", "Ch. Climb", "Map", "Sun Room", "*B4 Knuck", "Silvers", "Ad. Left", "*SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LullaHand", "LullaHigh", "*Main", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tippy Top", "Twinrova",
-	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silvs", "*Spinning", "Spinning", "Spinning", "Crusher L", "*Crusher", "Crusher H", "Crusher H", "Mid Silvs", "*Pot", "Pot", "Wind", "Bombable", "Gibdos", "*Boat", "Dins", "Dins", "*3 Pots", "Floor", "Bongo",
-	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "*Near BK", "BK", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "Morpha",
+	/*Shadow Temple*/"Map", "Hovers", "Gibdos", "Spin Blade", "*Spinning", "Inv Blade", "Inv Blade", "Crusher L", "*Crusher", "Crusher H", "Crusher H", "Redeads", "*Pot", "Pot", "Wind", "Bombable", "Gibdos", "*Boat", "Dins", "Dins", "*3 Pots", "Floor", "Bongo",
+	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "*Near BK", "BK", "*S Base", "Block", "*Pillar", "Central P", "*Plats", "D Link", "*River", "River", "Dragon", "Morpha",
 	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Shadow 1", "Shadow 2", "BK",
 	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Abv Eyes", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
-	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "Invisible", "D Hand", "*Door L", "*Door R", "Locked 1", "Locked 2", "*Locked", "Base",
+	/*Bottom of the Well*/"Fake L", "Bomb", "Center", "Fake R", "Center", "Bomb back", "Water L", "Coffin", "Water F", "Dead Hand", "Dead Hand", "*Door L", "*Door R", "Locked 1", "Locked 2", "*Locked", "Basement",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater_skull"];
@@ -1113,33 +1113,164 @@ var backgrounds = ["url('./normal/areas/kokiri.jpg')","url('./normal/areas/ranch
 ]
 
 var background = "url('./normal/areas/kokiri.jpg')";
+var elem = document.createElement("small"); elem.id = "title_kokiri"; elem.className = "area_titles"; elem.innerHTML = "Kokiri  "; parent.appendChild(elem);
+var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
 for (var i = 0; i<Locations.length; i++) {
-	if (i == AreaIndexes[1]) {background = "url('./normal/areas/ranch.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kokiri_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[2]) {background = "url('./normal/areas/field.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ranch_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[3]) {background = "url('./normal/areas/valley.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "field_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[4]) {background = "url('./normal/areas/hylia.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "valley_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[5]) {background = "url('./normal/areas/market.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hylia_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[6]) {background = "url('./normal/areas/hyrule_castle.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "market_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[7]) {background = "url('./normal/areas/ogc.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hyrule_castle_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[8]) {background = "url('./normal/areas/tot.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ogc_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[9]) {background = "url('./normal/areas/fountain.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "tot_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[10]) {background = "url('./normal/areas/ice.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fountain_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[11]) {background = "url('./normal/areas/deku.jpg')"; parent = document.getElementById("normalColumn2");}
-	if (i == AreaIndexes[12]) {background = "url('./normal/areas/lost_woods.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "deku_break"; parent.appendChild(elem);}
-	if (i == AreaIndexes[13]) {background = "url('./normal/areas/sfm.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "lost_woods_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[14]) {background = "url('./normal/areas/goron.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "sfm_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[15]) {background = "url('./normal/areas/dodongos.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "goron_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[16]) {background = "url('./normal/areas/dmt.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dodongos_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[17]) {background = "url('./normal/areas/dmc.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dmt_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[18]) {background = "url('./normal/areas/kakariko.jpg')"; parent = document.getElementById("normalColumn3");}
-	if (i == AreaIndexes[19]) {background = "url('./normal/areas/graveyard.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kakariko_break"; parent.appendChild(elem);}
-	if (i == AreaIndexes[20]) {background = "url('./normal/areas/river.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "graveyard_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[21]) {background = "url('./normal/areas/domain.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "river_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[22]) {background = "url('./normal/areas/colossus.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "domain_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[23]) {background = "url('./normal/areas/wasteland.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "colossus_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[24]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "wasteland_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[25]) {background = "url('./normal/areas/fortress.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "thieves_break";  parent.appendChild(elem);}
-	if (i == AreaIndexes[26]) {background = "url('./normal/areas/jabu.jpg')"; var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fortress_break";  parent.appendChild(elem);}
+	if (i == AreaIndexes[1]) {
+		background = "url('./normal/areas/ranch.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kokiri_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_ranch"; elem.className = "area_titles"; elem.innerHTML = "Lon Lon"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+(elem);
+	}
+	if (i == AreaIndexes[2]) {
+		background = "url('./normal/areas/field.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ranch_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_field"; elem.className = "area_titles"; elem.innerHTML = "Field   "; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[3]) {
+		background = "url('./normal/areas/valley.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "field_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_valley"; elem.className = "area_titles"; elem.innerHTML = "Valley"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[4]) {
+		background = "url('./normal/areas/hylia.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "valley_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_hylia"; elem.className = "area_titles"; elem.innerHTML = "Lake"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[5]) {
+		background = "url('./normal/areas/market.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hylia_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_market"; elem.className = "area_titles"; elem.innerHTML = "Market"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[6]) {
+		background = "url('./normal/areas/hyrule_castle.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "market_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_hcastle"; elem.className = "area_titles"; elem.innerHTML = "Castle"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[7]) {
+		background = "url('./normal/areas/ogc.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hyrule_castle_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_outG"; elem.className = "area_titles"; elem.innerHTML = "OGC"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[8]) {
+		background = "url('./normal/areas/tot.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ogc_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_ToT"; elem.className = "area_titles"; elem.innerHTML = "ToT"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[9]) {
+		background = "url('./normal/areas/fountain.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "tot_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_fountain"; elem.className = "area_titles"; elem.innerHTML = "Fountain"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[10]) {
+		background = "url('./normal/areas/ice.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fountain_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_ice"; elem.className = "area_titles"; elem.innerHTML = "Ice"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[11]) {
+		background = "url('./normal/areas/deku.jpg')";
+		parent = document.getElementById("normalColumn2");
+		var elem = document.createElement("small"); elem.id = "title_deku"; elem.className = "area_titles"; elem.innerHTML = "Deku"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[12]) {
+		background = "url('./normal/areas/lost_woods.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "deku_break"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_lostwoods"; elem.className = "area_titles"; elem.innerHTML = "Lost Woods"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[13]) {
+		background = "url('./normal/areas/sfm.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "lost_woods_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_sfm"; elem.className = "area_titles"; elem.innerHTML = "SFM"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[14]) {
+		background = "url('./normal/areas/goron.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "sfm_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_gcity"; elem.className = "area_titles"; elem.innerHTML = "Goron"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[15]) {
+		background = "url('./normal/areas/dodongos.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "goron_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_dodongos"; elem.className = "area_titles"; elem.innerHTML = "DC"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[16]) {
+		background = "url('./normal/areas/dmt.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dodongos_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_trail"; elem.className = "area_titles"; elem.innerHTML = "Trail"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[17]) {
+		background = "url('./normal/areas/dmc.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dmt_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_crater"; elem.className = "area_titles"; elem.innerHTML = "Crater"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[18]) {
+		background = "url('./normal/areas/kakariko.jpg')";
+		parent = document.getElementById("normalColumn3");
+		var elem = document.createElement("small"); elem.id = "title_kakariko"; elem.className = "area_titles"; elem.innerHTML = "Kakariko"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[19]) {
+		background = "url('./normal/areas/graveyard.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kakariko_break"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_graveyard"; elem.className = "area_titles"; elem.innerHTML = "Graveyard"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[20]) {
+		background = "url('./normal/areas/river.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "graveyard_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_river"; elem.className = "area_titles"; elem.innerHTML = "River"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[21]) {
+		background = "url('./normal/areas/domain.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "river_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_domain"; elem.className = "area_titles"; elem.innerHTML = "Domain"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[22]) {
+		background = "url('./normal/areas/colossus.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "domain_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_colossus"; elem.className = "area_titles"; elem.innerHTML = "Colossus"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[23]) {
+		background = "url('./normal/areas/wasteland.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "colossus_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_wasteland"; elem.className = "area_titles"; elem.innerHTML = "Wasteland"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[24]) {
+		background = "url('./normal/areas/fortress.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "wasteland_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_fortress"; elem.className = "area_titles"; elem.innerHTML = "Fortress"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[25]) {
+		background = "url('./normal/areas/fortress.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "thieves_break";  parent.appendChild(elem);
+	}
+	if (i == AreaIndexes[26]) {
+		background = "url('./normal/areas/jabu.jpg')";
+		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fortress_break";  parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "title_jabu"; elem.className = "area_titles"; elem.innerHTML = "Jabu"; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.className = "big_break"; parent.appendChild(elem);
+	}
 	if (i == AreaIndexes[27]) {
 		parent = document.getElementById("dung1"); background = "url('./normal/areas/forest.jpg')";
 		var elem = document.createElement("small"); elem.id = "title_forest"; elem.className = "area_titles"; elem.innerHTML = "For"; elem.onmousedown = route_forest; parent.appendChild(elem);

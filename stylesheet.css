@@ -1493,6 +1493,9 @@ color:#FE8B08;
 .half_break {
 	line-height: 50%;
 }
+.big_break {
+	line-height: 150%;
+}
 .settingsOptions {
 	font-size: 1.1em;
 	position:absolute;
