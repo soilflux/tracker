@@ -1039,7 +1039,7 @@ function updateLogicInfo() {
 		document.getElementById("woth_input6").style.display = "none";
 	
 	if(document.getElementById("hints_type").value == "PATH") { 
-		document.getElementById("woth_text").innerHTML = "Path / Important"; 
+		document.getElementById("woth_text").innerHTML = "Path / Important / Lights"; 
 		document.getElementById("path_boss1").style.display = "inline-block"; 
 		document.getElementById("path_boss2").style.display = "inline-block"; 
 		document.getElementById("path_boss3").style.display = "inline-block"; 
