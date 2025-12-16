@@ -1829,7 +1829,7 @@ function updateDungeonER() {
 				dungeonToEntrance_ER_dict[dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])]] = dungs_list[d];
 				
 				document.getElementById("dungeons_summary").innerHTML +=
-					"<span style='color:" + dungs_colors[dungs_list[d]] + "' onmousedown='highlightDungeonEntrance(this)'>" +
+					"<span data-idx='"+d+"' style='color:" + dungs_colors[d] + "' onmousedown='highlightDungeonEntrance(this)'>" +
 					dungs_list2[dungs_list[d]]+" &#8594; "+dungs_list2[entranceToDungeon_ER_dict[dungs_list[d]]]+"</span><br>";
 			}
 		}
