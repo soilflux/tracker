@@ -199,6 +199,14 @@ function highlight(x) {
 	}
 }
 
+function highlightDungeonEntrance(element) {
+	dungeon = element.textContent.split(' ')[0];
+	dungeon_code = dungs_list2_rev[dungeon];
+	new_color = dungs_colors[dungeon_code] == "white" ? "yellow" : "white";
+	dungs_colors[dungeon_code] = new_color;
+	element.style.color = new_color;
+}
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
