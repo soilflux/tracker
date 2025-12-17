@@ -751,4 +751,6 @@ function resetWoth(element, num) {
 	} else if (event.button == 2) {
 		element.style.textDecoration = "line-through";
 	}
+	
+	midUpdate();
 }
