@@ -710,7 +710,9 @@ function markMinorWothItem(x) {
 	midUpdate();
 }
 
-function resetWoth(num) {
+// Right clicking a woth hint will hide all the corresponding items and strike out the hint.
+// Left clicking will restore all the woth items.
+function resetWoth(element, num) {
 	for (var i = 1; i <= 35; i++) {
 		index = 0;
 		if (num == 1)
@@ -731,10 +733,24 @@ function resetWoth(num) {
 			index = wothAreas.indexOf(woth8)
 		if(AreaNames[i] == wothAreas[index]) {
 			for (var k = 0; k < Items.length; k++) {
-				if(ManualNotWotHItems[Items[k]] && ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1])) {
-					ManualNotWotHItems[Items[k]] = false;
+				if (((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1])) {
+					if(event.button == 0 && ManualNotWotHItems[Items[k]]) {
+						ManualNotWotHItems[Items[k]] = false;
+					}
+					if (event.button == 2) {
+						ManualNotWotHItems[Items[k]] = true;
+						ManualWotHItems[Items[k]] = false;
+					}
 				}
 			}
 		}
-	}	
+	}
+
+	if (event.button == 0) {
+		element.style.textDecoration = "none";
+	} else if (event.button == 2) {
+		element.style.textDecoration = "line-through";
+	}
+	
+	midUpdate();
 }
