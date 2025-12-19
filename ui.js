@@ -1137,6 +1137,9 @@ function updateLogicInfo() {
 	else {
 		document.getElementById("magic_bean_pack_location_div").style.display = "none";
 	}
+	document.getElementById("biggoron_sword_location_div").style.display = "none";
+	document.getElementById("nayrus_love_location_div").style.display = "none";
+	document.getElementById("stone_of_agony_location_div").style.display = "none";
 	
 	if (document.getElementById("bosskeys").value == "REMOVE") {Player.forest_boss_key = true; Player.fire_boss_key = true; Player.water_boss_key = true; Player.spirit_boss_key = true; Player.shadow_boss_key = true; removeBKFlag = true;}
 	else if (removeBKFlag) {removeBKFlag = false; Player.forest_boss_key = false; Player.fire_boss_key = false; Player.water_boss_key = false; Player.spirit_boss_key = false; Player.shadow_boss_key = false;}
