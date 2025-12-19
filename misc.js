@@ -199,6 +199,15 @@ function highlight(x) {
 	}
 }
 
+function highlightDungeonEntrance(element) {
+	idx = parseInt(element.dataset.idx, 10);
+	if (Number.isNaN(idx) || idx < 0 || idx >= dungs_colors.length) return;
+
+	new_color = dungs_colors[idx] == "white" ? "yellow" : "white";
+	dungs_colors[idx] = new_color;
+	element.style.color = new_color;
+}
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
