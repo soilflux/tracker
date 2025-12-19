@@ -266,10 +266,10 @@ function wothAndBarrenProcessing() {
 				document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
 				for (var k = 0; k<Items.length; k++) {
 					if (Items[k] == "light_arrows" && document.getElementById("presets").value != "S8" && document.getElementById("presets").value != "S9") {continue;}
-					if (Items[k] == "farores_wind") {continue;}
-					if (Items[k] == "serenade") {continue;}
-					if (Items[k] == "prelude") {continue;}
-					if (Items[k] == "lullaby") {continue;}
+					if (Items[k] == "farores_wind" && document.getElementById("presets").value != "S9") {continue;}
+					if (Items[k] == "serenade" && document.getElementById("presets").value != "S9") {continue;}
+					if (Items[k] == "prelude" && document.getElementById("presets").value != "S9") {continue;}
+					if (Items[k] == "lullaby" && document.getElementById("presets").value != "S9") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
 						if ((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1]) {
