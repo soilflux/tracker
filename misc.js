@@ -307,6 +307,16 @@ function altThemeControl() {
 	else {colorTheme = "dark"; localStorage.setItem("theme", colorTheme); document.getElementById("altThemeControl").innerHTML = "Dark Theme";}
 }
 
+function wothSizeToggle() {
+	button = document.getElementById("wothSizeToggle");
+
+	isBig = document.getElementById("woth_info").classList.toggle("big");
+	if (isBig) {
+		button.textContent = "Small WotH Font";
+		localStorage.setItem("wothSize", "big");
+	} else {
+		button.textContent = "Large WotH Font";
+		localStorage.setItem("wothSize", "small");
 function areaTitlesToggle() {
 	// This assumes all titles are in the same state; either all hidden or all visible.
 	columns = ["normalColumn1", "normalColumn2", "normalColumn3"];

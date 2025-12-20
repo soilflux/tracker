@@ -1046,6 +1046,7 @@ var colorWothAreas = false;
 var hideInaccessible = true;
 var coopmode = false;
 if (localStorage.getItem("hideInaccessible") != null) {if (localStorage.getItem("hideInaccessible") == "false"){hideInaccessible = false; document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible"};}
+if (localStorage.getItem("wothSize") === "big") wothSizeToggle();
 
 var modal = document.getElementById("myModal");
 
