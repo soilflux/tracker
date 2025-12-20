@@ -310,26 +310,11 @@ function altThemeControl() {
 function wothSizeToggle() {
 	button = document.getElementById("wothSizeToggle");
 
-	// Only toggle first, then set the rest to match, in case they somehow get misaligned.
-	isBig = document.getElementById("woth1_title").classList.toggle("big");
+	isBig = document.getElementById("woth_info").classList.toggle("big");
 	if (isBig) {
-		document.getElementById("woth2_title").classList.add("big");
-		document.getElementById("woth3_title").classList.add("big");
-		document.getElementById("woth4_title").classList.add("big");
-		document.getElementById("woth5_title").classList.add("big");
-		document.getElementById("woth6_title").classList.add("big");
-		document.getElementById("woth7_title").classList.add("big");
-		document.getElementById("woth8_title").classList.add("big");
 		button.textContent = "Small WotH Font";
 		localStorage.setItem("wothSize", "big");
 	} else {
-		document.getElementById("woth2_title").classList.remove("big");
-		document.getElementById("woth3_title").classList.remove("big");
-		document.getElementById("woth4_title").classList.remove("big");
-		document.getElementById("woth5_title").classList.remove("big");
-		document.getElementById("woth6_title").classList.remove("big");
-		document.getElementById("woth7_title").classList.remove("big");
-		document.getElementById("woth8_title").classList.remove("big");
 		button.textContent = "Large WotH Font";
 		localStorage.setItem("wothSize", "small");
 	}

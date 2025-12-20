@@ -1067,6 +1067,10 @@ color: red;
 	text-align:top;
 	left: 830px;
 	height: 325px;
+	font-size: 16px;
+}
+#woth_info.big {
+	font-size: 24px;
 }
 #scrollable_section {
 	overflow-x: hidden;
@@ -1081,11 +1085,8 @@ color: red;
 	font-size: 14px;
 	font-style: italic;
 }
-.woth_info_title {
-	font-size: 16px;
-}
-.woth_info_title.big {
-	font-size: 24px;
+#woth_info .woth_info_title {
+	font-size: inherit;
 }
 .path_arrow {
 	color:#FFFFFF;
