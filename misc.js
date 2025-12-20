@@ -317,6 +317,9 @@ function wothSizeToggle() {
 	} else {
 		button.textContent = "Large WotH Font";
 		localStorage.setItem("wothSize", "small");
+	}
+}
+
 function areaTitlesToggle() {
 	// This assumes all titles are in the same state; either all hidden or all visible.
 	columns = ["normalColumn1", "normalColumn2", "normalColumn3"];
