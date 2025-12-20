@@ -344,6 +344,15 @@ color: red;
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
+.area_titles.hidden {
+	display: none;
+}
+.area_titles_break {
+	line-height: 150%;
+}
+.area_titles_break.hidden {
+	display: none;
+}
 .column {
 	margin-top:10px;
   float: left;
@@ -1492,9 +1501,6 @@ color:#FE8B08;
 }
 .half_break {
 	line-height: 50%;
-}
-.big_break {
-	line-height: 150%;
 }
 .settingsOptions {
 	font-size: 1.1em;
