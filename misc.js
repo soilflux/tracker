@@ -317,6 +317,30 @@ function wothSizeToggle() {
 	} else {
 		button.textContent = "Large WotH Font";
 		localStorage.setItem("wothSize", "small");
+function areaTitlesToggle() {
+	// This assumes all titles are in the same state; either all hidden or all visible.
+	columns = ["normalColumn1", "normalColumn2", "normalColumn3"];
+	columns.forEach(columnStr => {
+		column = document.getElementById(columnStr);
+		area_titles = column.querySelectorAll(".area_titles");
+		area_titles.forEach(element => {
+			element.classList.toggle("hidden");
+		});
+
+		area_titles_breaks = column.querySelectorAll(".area_titles_break");
+		area_titles_breaks.forEach(element => {
+			element.classList.toggle("hidden");
+		});
+	})
+
+	button = document.getElementById("areaTitlesToggle");
+	isHidden = document.getElementById("title_kokiri").classList.contains("hidden");
+	if (isHidden) {
+		button.textContent = "Show Location Headers";
+		localStorage.setItem("showAreaTitles", "false");
+	} else {
+		button.textContent = "Hide Location Headers";
+		localStorage.setItem("showAreaTitles", "true");
 	}
 }
 	
