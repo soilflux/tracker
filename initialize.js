@@ -84,6 +84,7 @@ var dungs_list2 = {"deku":"Deku", "dodongos":"DC", "jabu":"Jabu", "forest_temple
 var dungs_list = ["deku", "dodongos", "jabu", "forest_temple", "fire_temple", "water_temple", "shadow_temple", "spirit_temple", "botw", "ice", "gtg"];
 var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "bo", "ic", "gt"];
 var dungs_colors = Array(dungs_list.length).fill("white");
+var dungs_strike = Array(dungs_list.length).fill("none");
 for(let d = 0; d < dungs_list.length; d++) {
 	dungeonToEntrance_ER_dict[dungs_list[d]] = dungs_list[d];
 	entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[d];

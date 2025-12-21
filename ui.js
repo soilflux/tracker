@@ -1824,21 +1824,51 @@ function updateDungeonER() {
 			for(i = 0; i < 11; i++) {
 				dungeon_er_inputs.push(er_input_string.substring(i*2,i*2+2));
 			}
-			//console.log(dungeon_er_inputs);
-			
 			
 			for(let d = 0; d < dungs_list.length; d++) {
 				entranceToDungeon_ER_dict[dungs_list[d]] = dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])];
 				dungeonToEntrance_ER_dict[dungs_list[dungs_list_short.indexOf(dungeon_er_inputs[d])]] = dungs_list[d];
+
+				med_str = getDungeonERMedStr(entranceToDungeon_ER_dict[dungs_list[d]])
+				color = getDungeonERColor(d);
 				
 				document.getElementById("dungeons_summary").innerHTML +=
-					"<span data-idx='"+d+"' style='color:" + dungs_colors[d] + "' onmousedown='highlightDungeonEntrance(this)'>" +
+					med_str + "<span data-idx='"+d+"' style='color:" + color + "; text-decoration:" + dungs_strike[d] + ";' onmousedown='highlightDungeonEntrance(this)'>" +
 					dungs_list2[dungs_list[d]]+" &#8594; "+dungs_list2[entranceToDungeon_ER_dict[dungs_list[d]]]+"</span><br>";
 			}
 		}
 	}
 	
 	update_dungeon_ER_Logic();
+}
+
+function getDungeonERMedStr(dest) {
+	if (document.getElementById("presets").value == "S9") {
+		dest_code = dest.substring(0,2);
+		med_str = document.getElementById("markMedallions").value;
+		if (dest_code == med_str.substring(0,2)) {  // light med
+			return "<img src='./normal/items/light.png' class='medallions small'>";
+		} else if (dest_code == med_str.substring(2,4)) {  // forest med
+			return "<img src='./normal/items/forest.png' class='medallions small'>";
+		} else if (dest_code == med_str.substring(4,6)) {  // fire med
+			return "<img src='./normal/items/fire.png' class='medallions small'>";
+		} else if (dest_code == med_str.substring(6,8)) {  // water med
+			return "<img src='./normal/items/water.png' class='medallions small'>";
+		} else if (dest_code == med_str.substring(8,10)) {  // shadow med
+			return "<img src='./normal/items/shadow.png' class='medallions small'>";
+		} else if (dest_code == med_str.substring(10,12)) {  // spirit med
+			return "<img src='./normal/items/spirit.png' class='medallions small'>";
+		}
+	}
+	return "";
+}
+
+function getDungeonERColor(i) {
+	if (dungs_strike[i] == "line-through") {
+		return "gray";
+	}
+
+	return dungs_colors[i];
 }
 
 function update_dungeon_ER_Logic() {
