@@ -203,9 +203,19 @@ function highlightDungeonEntrance(element) {
 	idx = parseInt(element.dataset.idx, 10);
 	if (Number.isNaN(idx) || idx < 0 || idx >= dungs_colors.length) return;
 
-	new_color = dungs_colors[idx] == "white" ? "yellow" : "white";
-	dungs_colors[idx] = new_color;
-	element.style.color = new_color;
+	if (event.button == 0) {  // left click
+		// If strike-though, don't bother changing color.
+		if (dungs_strike[idx] == "line-through") return;
+
+		new_color = dungs_colors[idx] == "white" ? "yellow" : "white";
+		dungs_colors[idx] = new_color;
+		element.style.color = new_color;
+	} if (event.button == 2) {  // right click
+		strike = dungs_strike[idx] == "none" ? "line-through" : "none";
+		dungs_strike[idx] = strike;
+		element.style.textDecoration = strike;
+		element.style.color = strike == "none" ? dungs_colors[idx] : "gray";
+	}
 }
 
 function shuffle(array) {
