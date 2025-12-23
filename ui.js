@@ -75,6 +75,7 @@ function processInputs() {
 			else if(!Known.bombchus4) {Known.bombchus4 = true;}
 			else if(!Known.bombchus5) {Known.bombchus5 = true;}
 			
+			// TODO: This should be updated to properly handle chus at song locations.
 			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
 			document.getElementById(key).value = "";
 		}
@@ -99,14 +100,47 @@ function processInputs() {
 				if(Items2[j] == "wallet" && Known["wallet3"]) continue;
 				if((Items2[j] == "prescription" || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 				
-				if (j == 0) {
+				if (j == 0) {  // Junk
                     if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
-                    if (i > lastItem) {songItemChecked = true;}
-                    document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
+                    if (i > lastItem) {
+						songItemChecked = true;
+						var change = "text_" + document.getElementById(key).id; 
+						document.getElementById(change).innerHTML += ": " + ItemNames2[j]; 
+						junkSong(document.getElementById(key));
+						trackAnimalQuest();
+						break;
+					} else {
+                    	document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
+					}
+					continue;
                 }
-				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 4) {Check[document.getElementById(key).id]="bombchus"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
+				if (j == 1) {  // Small key
+					// Small key for overworld or song location is currently unsupported.
+					if (i <= lastOverworldItem || i > lastItem) continue;
+
+					Check[document.getElementById(key).id]="small_key";
+					forcedDisplay[i] = true;
+					document.getElementById(key).style.backgroundImage= "";
+					document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
+					continue;
+				}
+				if (j == 2) {  // Boss key
+					// Boss key for overworld or song location is currently unsupported.
+					if (i <= lastOverworldItem || i > lastItem) continue;
+
+					Check[document.getElementById(key).id]="boss_key";
+					forcedDisplay[i] = true;
+					document.getElementById(key).style.backgroundImage= "";
+					document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
+					continue;
+				}
+				if (j == 4) {  // Bombchus
+					Check[document.getElementById(key).id]="bombchus";
+					forcedDisplay[i] = true;
+					document.getElementById(key).style.backgroundImage= "";
+					document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
+					continue;
+				}
 				for (var k = 0; k <= 3; k++) {
 					if (k == 0) {var duplicate = "";}
 					else {var duplicate = k + "";}
@@ -134,7 +168,7 @@ function processInputs() {
                             trackAnimalQuest();
 							break;
 						}
-						else if (i > lastItem && j < 41) {
+						else if (i > lastItem && j < 44) {
 							songItemChecked = true;
 							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
 							Location[Items2[j] + duplicate] = document.getElementById(key).id;
@@ -1261,7 +1295,12 @@ function updateLogicInfo() {
 		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
+		if (i > lastItem && Check[key] != "unknown") {
+			// Handle chus separately since they're not in the Items list.
+			itemName = Check[key] == "bombchus" ? "Bombchus" : capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])]);
+			document.getElementById(str).innerHTML += ": " + itemName;
+			junkSong(document.getElementById(key));
+		}
 		
 		if(i > lastItem && Check[key] != "unknown" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
