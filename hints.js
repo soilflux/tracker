@@ -600,6 +600,11 @@ function alternateHintInput() {
 		temptext2 = "";
 	}
 
+	if (document.getElementById("presets").value == "S9") {
+		alternateHintInputS9();
+		return;
+	}
+
 	var lines = document.getElementById("hintInput").value.split('\n');
 	var str = "";
 	for (var i= 0; i < hintNames.length; i++) {
@@ -653,6 +658,96 @@ function alternateHintInput() {
 			}
 		}
 	}
+}
+
+function alternateHintInputS9() {
+	var lines = document.getElementById("hintInput").value.split('\n');
+	for (const line of lines) {
+		const rawTerms = line.split(' ');
+		const terms = rawTerms.filter(str => str.length > 0);
+		// Only process lines with 2 or 3 terms.
+		if (terms.length < 2 || terms.length > 3) {
+			continue;
+		}
+
+		// We expect first term to be an existing check code.
+		const checkCode = terms[0].toLowerCase();
+		if (!(checkCode in s9Hints)) continue;
+
+		if (terms.length === 2) {
+			const itemCode = terms[1];
+			// checkCode should be for a sometimes hint, and itemCode should exist.
+			if (typeof s9Hints[checkCode] != 'string' || !inputs.includes(itemCode.toLowerCase())) {
+				continue;
+			}
+			processAlternateHintInput(s9Hints[checkCode], itemCode);		
+		}
+		else if (terms.length === 3) {
+			const itemCode1 = terms[1];
+			const itemCode2 = terms[2];
+			// checkCode should be for a dual hint, and both itemCodes should exist.
+			const dualChecks = s9Hints[checkCode];
+			if (!Array.isArray(dualChecks) ||
+				dualChecks.length != 2 ||
+				!dualChecks.every(item => typeof item === 'string') ||
+				!inputs.includes(itemCode1.toLowerCase()) ||
+				!inputs.includes(itemCode2.toLowerCase())) {
+				continue;
+			}
+			processAlternateHintInput(dualChecks[0], itemCode1);
+			processAlternateHintInput(dualChecks[1], itemCode2);
+		}
+	}
+}
+
+function processAlternateHintInput(checkName, rawItemCode) {
+	const itemCode = rawItemCode.toLowerCase();
+	const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
+	if (!(checkName in Check) || !inputs.includes(itemCode)) {
+		return;
+	}
+
+	// Junk
+	if (itemCode === inputs[0]) {
+		if (textSongSpots.includes("text_"+checkName)) {
+			document.getElementById(checkName).value = "pre";
+			songItemChecked = true;
+		}
+		else { 
+			if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+			if (itemCodeIsUppercase) baitsChecked += 1; 
+		}
+	}
+	// SK
+	else if (itemCode === inputs[1]) {
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "sk"; thisIsHinted = false; }
+	}
+	// BK
+	else if (itemCode === inputs[2]) {
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "bk"; thisIsHinted = false; }
+	}
+	else {
+		if (Check[checkName] == "unknown") {
+			hintedInput = itemCode;
+			document.getElementById(checkName).value = capitalizeFirstLetter(itemCode);
+		}
+		else if (!Hinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
+			simOverride = true;
+			if (textSongSpots.includes("text_"+checkName)) {
+				//document.getElementById("text_"+s9Hints[loc]).dispatchEvent(new Event('mousedown'));
+				Hinted[checkName] = true;
+			}
+			else {
+				if(Check[checkName] == "prescription" || Check[checkName] == "claim_check")
+					//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
+					Hinted[checkName] = true;
+				else
+					//document.getElementById(Check[s9Hints[loc]]+"_location").dispatchEvent(new Event('mousedown'));
+					Hinted[checkName] = true;
+			}
+			simOverride = false;
+		}
+	}	
 }
 
 function markWothItem(x) {

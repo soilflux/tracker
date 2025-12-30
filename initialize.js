@@ -138,6 +138,66 @@ var hintNames4 = ["yami", "deha", "steve", "domgame", "domtorches", "gvledge", "
 var hintNames5 = ["darklink", "deadhand", "dhbehind", "domdiv", "domfir", "valledge", "watfall", "labroof", "hba1", "ch1", "ch2", "bot", "atz", "crb", "grb", "colossus", "fop", "fish", "lunker", "ss", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "ham", "wbk", "riv", "fin", "toi", "dea", "was", "colosong", "pot", "dancing", "lefthand", "silvers", "maze3!", "gvh", "chickens", "cra", "mea", "1me", "kin", "rang", "shooting", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","thrown", "oot", "hyf", "ogc", "tar", "fr1", "exp", "pil", "spot", "iro", "lik", "tru", "scr"];
 var hintNames6 = ["dl", "dh", "inv", "domdive", "domfire", "valley1", "valley2", "laro","hba1", "chl", "chr", "bot", "atz", "crb", "grb", "colossus", "fop", "chf", "adf", "shoot", "poe", "cmg", "20s", "red", "coi", "cos", "sca", "fla", "wbk", "riv", "fin", "toi", "dea", "was", "wastesong", "pot", "dancing", "lefthand", "righthand", "gch", "gvh", "chicken", "cra", "mea", "1me", "kin", "boo", "shoo", "150", "ffl", "sfl", "3me", "ice", "fou", "kid", "big", "mas", "30s", "40s", "50s", "fr2","ootitem", "oot", "cas", "ogc", "tar", "fr1", "experiment", "pil", "shap", "iro", "sht", "tru", "scr"];
 var hintIndexes = ["water_dLink", "well_deadHand", "well_invisible", "zora_diving", "zora_torches", "gerudovalley_box", "gerudovalley_fall", "hylia_lab_top", "gerudo_archery_1", "spirit_childLeft","spirit_childRight", "hylia_bottle", "hyrule_tektite_grotto", "crater_bean", "graveyard_box", "colossus_bean", "ice_bottom_of_fountain", "hylia_child_fishing", "hylia_adult_fishing", "hylia_sun_shoot", "poes", "market_lens_game", "tokens_20", "redead_grave", "composers_grave", "sunsSpot", "fire_scarecrow", "fire_top", "water_bossKey","water_river", "gtg_final", "gtg_toilet", "well_deadHand", "wasteland", "requiemSpot", "goron_pot", "goron_dance", "spirit_leftHand", "spirit_rightHand", "goron_maze_3", "gerudo_hammer", "anjus_chickens", "boleroSpot", "minuetSpot", "preludeSpot", "thaw_king", "jabu_boomerang", "archery_game", "gerudo_archery_2", "forest_floormaster", "shadow_floormaster", "nocturneSpot", "serenadeSpot", "ice_bottom_of_fountain", "skull_kid", "trade_quest", "theater_skull", "tokens_30", "tokens_40", "tokens_50", "frogs_2", "hyrule_ocarina", "oot", "dins_fairy", "g_fairy", "target", "frogs_1", "hylia_lab_dive", "water_pillar", "shadow_pot", "ice_irons", "ganons_shadowTrial2", "theater_truth", "scrub_crater_child"];
+var s9Hints = {
+	"30": "tokens_30",
+	"40": "tokens_40",
+	"50": "tokens_50",
+	"oot": "oot",
+	"noc": "nocturneSpot",
+	"big": "trade_quest",
+	"fr2": "frogs_2",
+	"mas": "theater_skull",
+
+	"kid": "skull_kid",
+	"tar": "target",
+	"poe": "poes",
+	"tcg": "market_lens_game",
+	"hc": "dins_fairy",
+	"20": "tokens_20",
+	"cuc": "anjus_chickens",
+	"sun": "redead_grave",
+	"comp": "composers_grave",
+	"daru": "goron_dance",
+	"pot": "goron_pot",
+	"left": "goron_maze_3",
+	"fr1": "frogs_1",
+	"kz": "thaw_king",
+	"icy": "ice_bottom_of_fountain",
+	"shsun": "hylia_sun_shoot",
+	"lab": "hylia_lab_dive",
+	"gvh": "gerudo_hammer",
+	"waste": "wasteland",
+	"ogc": "g_fairy",
+	"rang": "jabu_boomerang",
+	"pie": "fire_scarecrow",
+	"ham": "fire_top",
+	"riv": "water_river",
+	"cent": "water_pillar",
+	"wbk": "water_bossKey",
+	"silv": "spirit_rightHand",
+	"mir": "spirit_leftHand",
+	"shpot": "shadow_pot",
+	"ice": "ice_irons",
+	"toi": "gtg_toilet",
+	"gtg": "gtg_final",
+	"sht": "ganons_shadowTrial2",
+
+	"chu": ["market_bowling_1", "market_bowling_2"],
+	"zd": ["zora_diving", "zora_torches"],
+	"lh": ["hylia_lab_top", "hylia_adult_fishing"],
+	"gv": ["gerudovalley_box", "gerudovalley_fall"],
+	"hba": ["gerudo_archery_1", "gerudo_archery_2"],
+	"hcogc": ["dins_fairy", "g_fairy"],
+	"filoop": ["fire_hammer1", "fire_hammer2"],
+	"dlloop": ["water_dLink", "water_river"],
+	"rhlh": ["spirit_rightHand", "spirit_leftHand"],
+	"chsp": ["spirit_childLeft", "spirit_childRight"],
+	"adsp": ["spirit_adultLeft", "spirit_adultRight"],
+	"inv": ["shadow_spinning1", "shadow_spinning2"],
+	"shend": ["shadow_dins1", "shadow_dins2"],
+	"dhand": ["well_deadHand", "well_invisible"],
+	"spt": ["ganons_spiritTrial1", "ganons_spiritTrial2"],
+}
 
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
@@ -2509,6 +2569,9 @@ function popup() {
 }
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
+if (document.getElementById("presets").value == "S9") {
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n\n\n";
+}
 if (document.getElementById("presets").value == "SGL_2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
 	document.getElementById("preludeSpot").value = "pre";
