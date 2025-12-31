@@ -1005,18 +1005,22 @@ document.onkeydown = function(e) {
 
 document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 
-function refreshVersion() {
-	var version = 51;
-	viewedNewVersion = 10000000000000000;
-	var elements = document.getElementsByClassName('patchNotes');
-	var currentVersion = parseInt(elements[0].id.substring(2))+ 1;
-	if (localStorage.getItem("version")) {version = localStorage.getItem("version");}
-	if (version<currentVersion) {if (localStorage.getItem("viewedNewVersion")) {viewedNewVersion = localStorage.getItem("viewedNewVersion")} else{localStorage.setItem("viewedNewVersion",Date.now());}}
-	for (var i = version; i < currentVersion; i++) {
-        document.getElementById("pn" + i).style.display = "inline-block";
-        document.getElementById("patchNotesTitle").style.display = "inline-block";
+// For returning users, automatically show patch notes on initialize when a new version is available.
+function showNewPatchNotes() {
+	const patchNotesModal = document.getElementById('patchNotesModal');
+	const currentVersion = parseInt(patchNotesModal.dataset.version);
+
+	// Don't force patch notes to pop up for new user.
+	if (!localStorage.getItem("version")) {
+		localStorage.setItem("version", currentVersion);
+		return;
 	}
-	if (Date.now()-viewedNewVersion > 1000*60*60*6) {localStorage.setItem("version",currentVersion); localStorage.removeItem("viewedNewVersion");}
+	
+	const userVersion =  localStorage.getItem("version");
+	if (userVersion < currentVersion) {
+  		patchNotesModal.style.display = "block";
+		localStorage.setItem("version", currentVersion);
+	}
 }
 
 function sleep(milliseconds) {
