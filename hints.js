@@ -601,58 +601,92 @@ function alternateHintInput() {
 	}
 
 	var lines = document.getElementById("hintInput").value.split('\n');
-	var str = "";
-	for (var i= 0; i < hintNames.length; i++) {
-		for (var j=0; j < lines.length; j++) {
-			if (lines[j].startsWith(hintNames[i]+" ") || lines[j].startsWith(hintNames2[i]+" ") || lines[j].startsWith(hintNames3[i]+" ") || lines[j].startsWith(hintNames4[i]+" ") || lines[j].startsWith(hintNames5[i]+" ") || lines[j].startsWith(hintNames6[i]+" ")) {
-				for (var k = 0; k < inputs.length; k++) {
-					str = inputs[k];
-					if (i < 6) {
-						str = capitalizeThirdLetter(str);
-					}
-					else {
-						str = capitalizeFirstLetter(str);
-					}
-					if (k == 0) {
-						if(lines[j].endsWith(" " + inputs[k]) && textSongSpots.includes("text_"+hintIndexes[i])) {
-							document.getElementById(hintIndexes[i]).value = "pre";
-							songItemChecked = true;
-						}
-						else { 
-							if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
-							if (lines[j].endsWith(" " + inputs[k].toUpperCase()) && Check[hintIndexes[i]] == "unknown") {baitsChecked += 1; thisIsHinted = true; document.getElementById("text_" + hintIndexes[i]).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
-						}
-                    }
-					else if (k == 1) { if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById(hintIndexes[i]).value = "sk"; thisIsHinted = false; } }
-					else if (k == 2) { if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {thisIsHinted = true; document.getElementById(hintIndexes[i]).value = "bk"; thisIsHinted = false; } }
-					else {
-						if (lines[j].endsWith(" " + inputs[k])) {
-							if (Check[hintIndexes[i]] == "unknown") {
-								hintedInput = str.toLowerCase();
-								document.getElementById(hintIndexes[i]).value = str;
-							}
-							else if ((Hinted[hintIndexes[i]] != true || !Hinted[hintIndexes[i]]) && str.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {
-								simOverride = true;
-								if (textSongSpots.includes("text_"+hintIndexes[i])) {
-									//document.getElementById("text_"+hintIndexes[i]).dispatchEvent(new Event('mousedown'));
-									Hinted[hintIndexes[i]] = true;
-								}
-								else {
-									if(Check[hintIndexes[i]] == "prescription" || Check[hintIndexes[i]] == "claim_check")
-										//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
-										Hinted[hintIndexes[i]] = true;
-									else
-										//document.getElementById(Check[hintIndexes[i]]+"_location").dispatchEvent(new Event('mousedown'));
-										Hinted[hintIndexes[i]] = true;
-								}
-								simOverride = false;
-							}
-						}
-					}
-				}
+	for (const line of lines) {
+		const rawTerms = line.split(' ');
+		const terms = rawTerms.filter(str => str.length > 0);
+		// Only process lines with 2 or 3 terms.
+		if (terms.length < 2 || terms.length > 3) {
+			continue;
+		}
+
+		// We expect first term to be an existing check code.
+		const checkCode = terms[0].toLowerCase();
+		if (!(checkCode in hintTable)) continue;
+
+		if (terms.length === 2) {
+			const itemCode = terms[1];
+			// checkCode should be for an individual hint, and itemCode should exist.
+			if (typeof hintTable[checkCode] != 'string' || !inputs.includes(itemCode.toLowerCase())) {
+				continue;
 			}
+			processAlternateHintInput(hintTable[checkCode], itemCode);		
+		}
+		else if (terms.length === 3) {
+			const itemCode1 = terms[1];
+			const itemCode2 = terms[2];
+			// checkCode should be for a dual hint, and both itemCodes should exist.
+			const dualChecks = hintTable[checkCode];
+			if (!Array.isArray(dualChecks) ||
+				dualChecks.length != 2 ||
+				!dualChecks.every(item => typeof item === 'string') ||
+				!inputs.includes(itemCode1.toLowerCase()) ||
+				!inputs.includes(itemCode2.toLowerCase())) {
+				continue;
+			}
+			processAlternateHintInput(dualChecks[0], itemCode1);
+			processAlternateHintInput(dualChecks[1], itemCode2);
 		}
 	}
+}
+
+function processAlternateHintInput(checkName, rawItemCode) {
+	const itemCode = rawItemCode.toLowerCase();
+	const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
+	if (!(checkName in Check) || !inputs.includes(itemCode)) {
+		return;
+	}
+
+	// Junk
+	if (itemCode === inputs[0]) {
+		if (textSongSpots.includes("text_"+checkName)) {
+			document.getElementById(checkName).value = "pre";
+			songItemChecked = true;
+		}
+		else { 
+			if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+			if (itemCodeIsUppercase) baitsChecked += 1; 
+		}
+	}
+	// SK
+	else if (itemCode === inputs[1]) {
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "sk"; thisIsHinted = false; }
+	}
+	// BK
+	else if (itemCode === inputs[2]) {
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "bk"; thisIsHinted = false; }
+	}
+	else {
+		if (Check[checkName] == "unknown") {
+			hintedInput = itemCode;
+			document.getElementById(checkName).value = capitalizeFirstLetter(itemCode);
+		}
+		else if (!Hinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
+			simOverride = true;
+			if (textSongSpots.includes("text_"+checkName)) {
+				//document.getElementById("text_"+checkName).dispatchEvent(new Event('mousedown'));
+				Hinted[checkName] = true;
+			}
+			else {
+				if(Check[checkName] == "prescription" || Check[checkName] == "claim_check")
+					//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
+					Hinted[checkName] = true;
+				else
+					//document.getElementById(Check[checkName]+"_location").dispatchEvent(new Event('mousedown'));
+					Hinted[checkName] = true;
+			}
+			simOverride = false;
+		}
+	}	
 }
 
 function markWothItem(x) {
