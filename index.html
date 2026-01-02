@@ -321,6 +321,60 @@
 			</p>
 		</div>
 	</div> 
+
+	<div id="patchNotesModal" class="modal" data-version="73">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>
+				<b>Patch Notes</b>
+				<!-- IMPORTANT: When adding a patch note, also update data-version to match the latest note -->
+				<br />73: dual hints supported, see location codes
+				<br />72: added left click / right click to dungeon entrances to highlight/hide them. also added med images to dungeon entrances
+				<br />71: added buttons to toggle bigger path hint font and location headers
+				<br />70: added unimportant important items (bgs, sto, nay)
+				<br />69: added right click / left click on path hints to collapse path hints and reduce clutter
+				<br />68: added S9 preset, dungeon ER, important items, light arrow hint
+				<br />67: various changes up to SGL 2025 and league S9
+				<br />66: added new animals and increased the power of levels to compensate for decreased roll odds
+				<br />65: added yami-mal evolution: if nocturne of shadow is located in the animal's preferred location, it will gain yami powers for the rest of the seed and a permanent +6.66% increase in XP(additive multiplier). also quartered xp gains during sim mode.
+				<br />64: fixed animal rng to work as described (leveling up other animals was taking away from odds of rolling highest level animal) 
+				<br />63: added more locations to alt hint input(to support dual hint locations) 
+				<br />62: added ability to enter items into song locations. changed prescription input from "pre" to "scr"
+				<br />61: changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)
+				<br />60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller
+				<br />59: replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.
+				<br />58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"
+				<br />57: added a new simulator(see halp), credit to exodus
+				<br />56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)
+				<br />55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) 
+				<br />54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) 
+				<br />53: added light theme and a preset for season 6 (changes by exodus) 
+				<br />52: added league S3 and SGL 2022 preset (exodus)
+				<!-- <br />51: known but not obtained item locations now stay in the checklist
+				<br />50: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) 
+				<br />49: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).
+				<br />48: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.
+				<br />47: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)
+				<br />46: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted
+				<br />45: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)
+				<br />44: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)
+				<br />43: tracker no longer knows logic
+				<br />42: added frogs2 song display and S5 preset(by exodus)
+				<br />39: Added a new text style for an in logic check that requires an item you have not yet picked up
+				<br />38: added axes support for controller input(might not work with your controller atm).
+				<br />31: controller input works for child dungeons and ice by middle clicking the input box for any check within them
+				<br />27: added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key, item or skip button. This sequence continues until there are no more accessible checks in dungeon.
+				<br />26: timer now starts paused and the hotkey for it has been changed to the pause key
+				<br />22: Added highlighting to patch numbers that were loaded for the first time
+				<br />8: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)
+				<br />7: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a>
+				<br />4: Hotkey for Incrementing Token Counter(- and =)
+				<br />3: LinSo Trade Items and Token Counter (Show LinSo button)
+				<br />1: Custom Item Inputs (scroll down)  -->
+			</p>
+		</div>
+	</div>
+
 	<div id ="row2" class="row">
 		<br>
 		<div id = "inputConfig"><small class = "customizeTitles">Custom Item Inputs</small><br><br class ="half_break"></div>
@@ -360,7 +414,8 @@
 			<button id="circusControl" onmousedown="circusControl()">Unleash Animals</button>
 			<button id="nerfControl" onmousedown="nerfControl()">Buff My Tracker</button>
 			<button id="myBtn">halp</button><br />
-			<button id = "locationCodes">Location Codes</button><br /><br />
+			<button id="locationCodes">Location Codes</button><br />
+			<button id="patchNotesBtn">Patch Notes</button><br /><br />
 			
 			<button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
 			<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
@@ -571,45 +626,6 @@
 		<img id = "confirmed_logically_required_50" class = "confirmedWothImages">
 		<img id = "confirmed_logically_required_51" class = "confirmedWothImages">
 		<img id = "confirmed_logically_required_52" class = "confirmedWothImages">
-	</div>
-	<div id ="patchNotesColumn">
-		<small id="patchNotesTitle">Patch Notes</small><br>
-		<small class = "patchNotes" id = "pn66">66: added new animals and increased the power of levels to compensate for decreased roll odds</small><br>
-		<small class = "patchNotes" id = "pn65">65: added yami-mal evolution: if nocturne of shadow is located in the animal's preferred location, it will gain yami powers for the rest of the seed and a permanent +6.66% increase in XP(additive multiplier). also quartered xp gains during sim mode.</small><br>
-		<small class = "patchNotes" id = "pn64">64: fixed animal rng to work as described (leveling up other animals was taking away from odds of rolling highest level animal) </small><br>
-		<small class = "patchNotes" id = "pn63">63: added more locations to alt hint input(to support dual hint locations) </small><br>
-		<small class = "patchNotes" id = "pn62">62: added ability to enter items into song locations. changed prescription input from "pre" to "scr"</small><br>
-		<small class = "patchNotes" id = "pn61">61: changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)</small><br>
-		<small class = "patchNotes" id = "pn60">60: added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller</small><br>
-		<small class = "patchNotes" id = "pn59">59: replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.</small><br>
-		<small class = "patchNotes" id = "pn58">58: may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"</small><br>
-		<small class = "patchNotes" id = "pn57">57: added a new simulator(see halp), credit to exodus</small><br>
-		<small class = "patchNotes" id = "pn56">56: added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)</small><br>
-		<small class = "patchNotes" id = "pn55">55: fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) </small><br>
-		<small class = "patchNotes" id = "pn54">54: cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) </small><br>
-		<small class = "patchNotes" id = "pn53">53: added light theme and a preset for season 6 (changes by exodus) </small><br>
-		<small class = "patchNotes" id = "pn52">52: added league S3 and SGL 2022 preset (exodus)</small><br>
-		<small class = "patchNotes"><span id = "pn51" class="patchNotes">51</span>: known but not obtained item locations now stay in the checklist</small><br>
-		<small class = "patchNotes"><span id = "pn50" class="patchNotes">50</span>: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) </small><br>
-		<small class = "patchNotes"><span id = "pn49" class="patchNotes">49</span>: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).</small><br>
-		<small class = "patchNotes"><span id = "pn48" class="patchNotes">48</span>: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.</small><br>
-		<small class = "patchNotes"><span id = "pn47" class="patchNotes">47</span>: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)</small><br>
-		<small class = "patchNotes"><span id = "pn46" class="patchNotes">46</span>: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted</small><br>
-		<small class = "patchNotes"><span id = "pn45" class="patchNotes">45</span>: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)</small><br>
-		<small class = "patchNotes"><span id = "pn44" class="patchNotes">44</span>: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)</small><br>
-		<small class = "patchNotes"><span id = "pn43" class="patchNotes">43</span>: tracker no longer knows logic</small><br>
-		<small class = "patchNotes"><span id = "pn42" class="patchNotes">42</span>: added frogs2 song display and S5 preset(by exodus)</small><br>
-		<small class = "patchNotes"><span id = "pn39" class="patchNotes">39</span>: Added a new text style for an in logic check that requires an item you have not yet picked up</small><br>
-		<small class = "patchNotes"><span id = "pn38" class="patchNotes">38</span>: added axes support for controller input(might not work with your controller atm).</small><br>
-		<small class = "patchNotes"><span id = "pn31" class="patchNotes">31</span>: controller input works for child dungeons and ice by middle clicking the input box for any check within them</small><br>
-		<small class = "patchNotes"><span id = "pn27" class="patchNotes">27</span>: added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key, item or skip button. This sequence continues until there are no more accessible checks in dungeon.</small><br>
-		<small class = "patchNotes"><span id = "pn26" class="patchNotes">26</span>: timer now starts paused and the hotkey for it has been changed to the pause key</small><br>
-		<small class = "patchNotes"><span id = "pn22" class="patchNotes">22</span>: Added highlighting to patch numbers that were loaded for the first time</small><br>
-		<small class = "patchNotes"><span id = "pn8" class="patchNotes">8</span>: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)</small><br>
-		<small class = "patchNotes"><span id = "pn7" class="patchNotes">7</span>: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a></small><br>
-		<small class = "patchNotes"><span id = "pn4" class="patchNotes">4</span>: Hotkey for Incrementing Token Counter(- and =)</small><br>
-		<small class = "patchNotes"><span id = "pn3" class="patchNotes">3</span>: LinSo Trade Items and Token Counter (Show LinSo button)</small><br>
-		<small class = "patchNotes"><span id = "pn1" class="patchNotes">1</span>: Custom Item Inputs (scroll down) </small><br>
 	</div>
 	<div id = "mouseInputs">
 	<small id = "mouseInputs_locations"></small><br>

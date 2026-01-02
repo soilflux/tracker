@@ -1049,16 +1049,13 @@ var coopmode = false;
 if (localStorage.getItem("hideInaccessible") != null) {if (localStorage.getItem("hideInaccessible") == "false"){hideInaccessible = false; document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible"};}
 if (localStorage.getItem("wothSize") === "big") wothSizeToggle();
 
+// halp button
 var modal = document.getElementById("myModal");
-
 var btn = document.getElementById("myBtn");
-
 var span = document.getElementsByClassName("close")[0];
-
 btn.onclick = function() {
   modal.style.display = "block";
 }
-
 span.onclick = function() {
   modal.style.display = "none";
 }
@@ -1068,22 +1065,35 @@ window.onclick = function(event) {
   }
 }
 
+// location codes button
 var modal3 = document.getElementById("myModal3");
-
 var btn = document.getElementById("locationCodes");
-
 var span = document.getElementsByClassName("close")[1];
-
 btn.onclick = function() {
   modal3.style.display = "block";
 }
-
 span.onclick = function() {
   modal3.style.display = "none";
 }
 window.onclick = function(event) {
   if (event.target == modal3) {
     modal3.style.display = "none";
+  }
+}
+
+// patch notes button
+var patchNotesModal = document.getElementById("patchNotesModal");
+var btn = document.getElementById("patchNotesBtn");
+var span = document.getElementsByClassName("close")[2];
+btn.onclick = function() {
+  patchNotesModal.style.display = "block";
+}
+span.onclick = function() {
+  patchNotesModal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == patchNotesModal) {
+    patchNotesModal.style.display = "none";
   }
 }
 
@@ -2537,6 +2547,7 @@ document.getElementById("linso52").click();
 document.getElementById("linso61").click();
 Player.zeldas_letter = true;
 
+showNewPatchNotes();
 linsoControl(); linsoControl();
 setInterval(slowUpdate,3000);
 setInterval(midUpdate,500);

@@ -74,7 +74,6 @@ function midUpdate() {
 
 function slowUpdate() {
 	updateInputs(); //implements custom inputs
-	refreshVersion(); //will highlight patch notes that haven't been read yet
 	document.getElementById("effectiveSpeedUp").innerHTML = effectiveSpeedUp.toFixed(4);
 	if (!nerfed) {
 		WotHItems = [];
