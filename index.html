@@ -239,6 +239,7 @@
 			<br>companion level is equal to 2.5*sqrt of companion XP-1, rounded down.
 			<br>the tracker will roll a d2 once for every companion level, then reroll animals other than your highest level animal for every result of 1. if it fails to roll that animal, it will repeat the process for your next highest level animal.
 			<br>in other words, increase rolling odds for a particular animal after 1,2,3,4,6,8,11,13,16,20... seeds played with that animal.
+      <br><b>wish for:</b> the wished for animal will be given highest rolling priority and a 2 lvl buff towards its chance of being rolled. this eventually guarantees its dominance even if you don't consistently refresh for it. 
 			</p>
 		</div>
 	</div>
@@ -577,19 +578,19 @@
 			<select class="settingsOptions" id="preplantedBeans">
 			  <option value="OFF">OFF</option>
 			  <option value="ON">ON</option>
-			</select><br><br class="half_break">
+			</select><br><br class="half_break">    
 		</div>
     <div id = "statsColumn">
-    <small id = "animalLV"></small><br>
-    <small id = "rollChance"></small><br>
-    <small id = "seedsDone"></small><br>
-    <small id = "yamiChance"></small><br>
-    <small id = "yamiMult"></small><br>
-    <small id = "angelChance"></small><br>
-    <small id = "angelMult"></small><br>
-    <small id = "rainbowChance"></small><br>
-    <small id = "rainbowMult"></small><br>
-    
+      <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions" id="desiredAnimal"><option value="random">random</option></select><br><br class="half_break">
+      <small id = "animalLV"></small><br>
+      <small id = "rollChance"></small><br>
+      <small id = "seedsDone"></small><br>
+      <small id = "yamiChance"></small><br>
+      <small id = "yamiMult"></small><br>
+      <small id = "angelChance"></small><br>
+      <small id = "angelMult"></small><br>
+      <small id = "rainbowChance"></small><br>
+      <small id = "rainbowMult"></small><br>
     </div>
 	</div>
 	<div id="confirmed_logically_required">

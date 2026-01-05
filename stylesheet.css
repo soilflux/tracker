@@ -1535,6 +1535,13 @@ color:#FE8B08;
 	left:-150px;
     right:0;
 }
+#desiredAnimalLabel {
+  color: white;
+  position:absolute;
+  left:-57px;
+  top:1px;
+    right:0;
+}
 .configOptions {
 	font-size: 1.1em;
     color: white;

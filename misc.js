@@ -554,7 +554,8 @@ function saveStuff() {
 	localStorage.setItem("erOption", document.getElementById("erOption").value);
 	localStorage.setItem("FAE_option", document.getElementById("FAE_option").value);
 	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
-    localStorage.setItem("simSeed", document.getElementById("simSeed").value);
+  localStorage.setItem("simSeed", document.getElementById("simSeed").value);
+  localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
 	localStorage.setItem("highlightWoths", colorWothAreas);
 }
 
