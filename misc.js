@@ -566,6 +566,8 @@ function linsoControl() {
 		document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
 		document.getElementById("confirmed_logically_required").style.top = "850px"; document.getElementById("confirmed_logically_required").style.left = "735px";
+    document.getElementById("checkSummaryColumn2").style.top = "-320px"; document.getElementById("checkSummaryColumn2").style.left = "250px";
+    
 	}
 	else {
 		linso = true; 
@@ -574,6 +576,7 @@ function linsoControl() {
 		document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
 		document.getElementById("confirmed_logically_required").style.top = "730px"; document.getElementById("confirmed_logically_required").style.left = "970px";
+    document.getElementById("checkSummaryColumn2").style.top = "0px"; document.getElementById("checkSummaryColumn2").style.left = "0px";
 	}
 }
 

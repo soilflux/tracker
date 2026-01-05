@@ -389,6 +389,9 @@ color: red;
 	height:22px;
 	width: 22px;
 }
+#searchingFor_div {
+  width:180px;
+}
 #probability_input{
 	width: 25px;
 }
@@ -399,34 +402,40 @@ color: red;
     width: 50px;
 }
 #probabilityColumn {
-	left: 600px;
-	top: 970px;
+	left: 1740px;
+	top: 30px;
 	position:absolute;
 	float: left;
 	width: 350px;
 }
 #explosives_probability {
-	font-size: 18px;
+	font-size: 14px;
 	color: #A7C7E7
 }
 .animalFilter {
     hue-rotate: 180
 }
 #major_probability {
-	font-size: 18px;
+	font-size: 14px;
 	color: gold
 }
 #bait_probability {
-	font-size: 18px;
+	font-size: 14px;
 	color: #EE4B2B
+}
+#frogSongHelper {
+  width: 175px;
 }
 .checkSummaryColumn {
 	margin-top:10px;
-	left:20px;
+	left:15px;
 	position:relative;
 	float: left;
-	height: 300px;
-	width: 300px;
+	height: 200px;
+	width: 250px;
+}
+#checkSummaryColumn2 {
+  position: relative;
 }
 .checked_text_summary {
 	font-size: 14px;
@@ -995,37 +1004,37 @@ color: red;
 	font-size:42px;
 	color: yellow;
 	position: absolute;
-	top:925px;
-	left:-140px;
+	top:-10px;
+	left:945px;
 	font-family: calibri;
 }
 #newNight {
-    position: absolute;
-	top:935px;
-	left:-78px;
-    height:20px;
-    width:20px;
+  position: absolute;
+  top:-5px;
+  left:1047px;
+  height:20px;
+  width:20px;
 }
 #midNight {
-    position: absolute;
-	top:935px;
-	left:-56px;
-    height:20px;
-    width:20px;
+  position: absolute;
+  top:-5px;
+  left:1067px;
+  height:20px;
+  width:20px;
 }
 #newDay {
-    position: absolute;
-	top:955px;
-	left:-75px;
-    height:20px;
-    width:20px;
+  position: absolute;
+  top:-2px;
+  left:1007px;
+  height:20px;
+  width:20px;
 }
 #midDay {
-    position: absolute;
-	top:955px;
-	left:-55px;
-    height:20px;
-    width:20px;
+  position: absolute;
+  top:-2px;
+  left:1027px;
+  height:20px;
+  width:20px;
 }
 #forest_medallion {
 	top: 51px;
