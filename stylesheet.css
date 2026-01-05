@@ -250,20 +250,20 @@ color: red;
 .stones {
 	height:25px;
 	width:25px;
-	margin-bottom: 6px;
-	margin-top: 2px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 	margin-right: 4px;
 }
 .medallions {
 	height:25px;
 	width:25px;
-	margin-bottom: 4px;
-	margin-top: 2px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 	margin-right:4px;
 }
 .medallions.small {
-	height:14px;
-	width:14px;
+	height:12px;
+	width:12px;
 	margin-bottom: 0px;
 }
 #stonePic {
@@ -417,14 +417,23 @@ color: red;
 }
 #major_probability {
 	font-size: 14px;
-	color: gold
+	color: gold;
+  
 }
 #bait_probability {
 	font-size: 14px;
-	color: #EE4B2B
+	color: #EE4B2B;
+  top: 100px;
+  position: absolute;
+}
+#goMode{
+  height:20px;
+  width:20px;
 }
 #frogSongHelper {
   width: 175px;
+  top: 118px;
+  position: absolute;
 }
 .checkSummaryColumn {
 	margin-top:10px;
