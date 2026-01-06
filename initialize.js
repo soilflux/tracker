@@ -60,6 +60,8 @@ var rainbowFlagFlag = false;
 var yamiFailFlag = false;
 var yamiFlag = false;
 var yamiFlagFlag = false;
+var quest1Flag = false;
+var forestItems = 0;
 var angelFailFlag = false;
 var angelFlag = false;
 var angelFlagFlag = false;
@@ -556,6 +558,7 @@ var tabPicSourcesRB = ["./tab_pics/circus_tentRB.png", "./tab_pics/camelRB.png",
 var numberOfAnimals = tabPicSources.length;
 var animalXP = new Array(numberOfAnimals).fill(0);
 var savedAnimalXP = new Array(numberOfAnimals).fill(0);
+if (localStorage.getItem("quest1")) {document.getElementById("quest1").value= localStorage.getItem("quest1");}
 if (localStorage.getItem("animalXP")) {
     savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
     for (var i = 0; i<savedAnimalXP.length; i++) {
@@ -563,6 +566,17 @@ if (localStorage.getItem("animalXP")) {
         animalXP[i] = savedAnimalXP[i];
     }
 }
+var quest1Mults = new Array(numberOfAnimals).fill(1);
+if (localStorage.getItem("quest1Mults")) {
+    savedQuest1Mults = JSON.parse(localStorage.getItem("quest1Mults"));
+    for (var i = 0; i<savedQuest1Mults.length; i++) {
+        quest1Mults[i] = savedQuest1Mults[i];
+    }
+}
+for (var i = 0; i < animalXP.length; i++) {
+    animalXP[i] *= quest1Mults[i];
+}
+
 var yamiMults = new Array(numberOfAnimals).fill(1);
 if (localStorage.getItem("yamiMults")) {
     savedYamiMults = JSON.parse(localStorage.getItem("yamiMults"));
@@ -1790,7 +1804,11 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
               }
           }
       }
-      rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);     
+      rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);   
+      if (rolledAnimalsLevel >= 5) {
+        document.getElementById("quest1Label").style.display = "inline-block";
+        document.getElementById("quest1").style.display = "inline-block";
+      }
             
 			elem.src = tabPicSources[animalRNG]; 
       elem.onclick = toggleLinsoGoMode;
@@ -1805,7 +1823,8 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
       document.getElementById("yamiChance").innerHTML =  'yami aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
       document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG]; 
       document.getElementById("angelChance").innerHTML =  'angel aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
-      document.getElementById("angelMult").innerHTML =  'angel XP multiplier: ' + angelMults[animalRNG];        
+      document.getElementById("angelMult").innerHTML =  'angel XP multiplier: ' + angelMults[animalRNG];     
+      document.getElementById("quest1Mult").innerHTML =  'quest 1 XP multiplier: ' + quest1Mults[animalRNG].toFixed(2); 
       
          
       
@@ -1834,7 +1853,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
       
       var elem3 = document.createElement("IMG");
       elem3.style.position = "absolute";
-			elem3.style.left = -29 + j*41 + "px";
+			elem3.style.left = -28 + j*41 + "px";
 			elem3.style.top = tempTop -17 + i*40 + "px";
 			elem3.id = "halo";
 			elem3.src = "./normal/halo.png";

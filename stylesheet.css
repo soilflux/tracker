@@ -270,6 +270,9 @@ color: red;
 	height:25px;
 	width:25px;
 }
+#quest1 {
+  display:none
+}
 #medallionPic {
 	height:25px;
 	width:25px;
@@ -1261,7 +1264,7 @@ color:white;
 }
 #markMedallions {
 margin-top: 3px;
-width: 100px;
+width: 95px;
 color:white;
 }
 #mark_ER_Dungeons {
@@ -1546,8 +1549,16 @@ color:#FE8B08;
 }
 #desiredAnimalLabel {
   color: white;
-  position:absolute;
+  position:relative;
   left:-57px;
+  top:1px;
+    right:0;
+}
+#quest1Label {
+  display: none;
+  color: white;
+  position:relative;
+  left:-52px;
   top:1px;
     right:0;
 }
