@@ -247,7 +247,6 @@ function trackAnimalQuest() {
 	questCounter += 1;
   document.getElementById("quest1").disabled = true;
   if (lastCheck[lastCheck.length-1].startsWith("forest_")) forestItems+=1;
-  console.log(Player.bomb_bag3)
   
   if (forestItems >= 4
   && !quest1Flag
@@ -304,13 +303,11 @@ function trackAnimalQuest() {
     else savedAnimalXP[animalRNG] += 0.25;
 		questCounter = -100000
 		localStorage.setItem("animalXP", JSON.stringify(savedAnimalXP));
-		console.log(savedAnimalXP)
 	}
   
   if (questCounter <-9000 && yamiFlag && !yamiFlagFlag) {
     if (!simActive) yamiMults[animalRNG] += 0.2;
     else yamiMults[animalRNG] += 0.2/4;
-    console.log(yamiMults)
     yamiFlagFlag = true;
     yamiMults[animalRNG] = parseFloat(yamiMults[animalRNG].toFixed(1))
     localStorage.setItem("yamiMults", JSON.stringify(yamiMults));
@@ -319,7 +316,6 @@ function trackAnimalQuest() {
   if (questCounter <-9000 && angelFlag && !angelFlagFlag) {
     if (!simActive) angelMults[animalRNG] += 0.2;
     else angelMults[animalRNG] += 0.2/4;
-    console.log(angelMults)
     angelFlagFlag = true;
     angelMults[animalRNG] = parseFloat(angelMults[animalRNG].toFixed(1))
     localStorage.setItem("angelMults", JSON.stringify(angelMults));
@@ -328,7 +324,6 @@ function trackAnimalQuest() {
   if (questCounter <-9000 && rainbowFlag && !rainbowFlagFlag) {
     if (!simActive) rainbowMults[animalRNG] += 1;
     else rainbowMults[animalRNG] += 1/4;
-    console.log(rainbowMults)
     rainbowFlagFlag = true;
     localStorage.setItem("rainbowMults", JSON.stringify(rainbowMults));
   }
@@ -497,8 +492,7 @@ function colorWothAreasControl() {
 
 function hamsdaToggle() {
 	hamsda = !hamsda;
-	localStorage.setItem("hamsda", hamsda); 
-	console.log(hamsda)
+	localStorage.setItem("hamsda", hamsda);
 	if (!hamsda)
 		document.getElementById("hamsdaToggle").innerHTML = "Enable Hamsda Tracking"; 
 	else
