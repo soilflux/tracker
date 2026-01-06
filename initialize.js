@@ -930,8 +930,9 @@ var AreaIndexes = [0,18,31,44,55,72,95,101,103,104,112,119,130,147,154,173,190,2
 var SongIndexes = [1000,467,477,1000,1000,1000,466,1000,475,1000,474,1000,1000,468,1000,1000,10000,471,469,470,1000,1000,473,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 var SongIndexes2 = [1000,467,477,1000,1000,1000,466,1000,475,1000,474,1000,1000,472,1000,1000,1000,471,476,470,1000,1000,473,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
 	
-var lastItem = 465;
-var lastSong = 477;
+const lastItem = Locations.indexOf('zeldasSpot') - 1;
+const lastSong = Locations.indexOf('oot');
+const lastOverworldItem = Locations.indexOf('forest_first') - 1;  // Includes Deku, DC, Jabu, Ice
 	
 Location.med1 = "unknown";
 Location.med2 = "unknown";
@@ -1697,7 +1698,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); parent.appendChild(elem);
 	}
 	if (i < AreaIndexes[35]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.onmousedown = mouse_input; if (i < AreaIndexes[35]) {elem.style.backgroundImage = background; elem.className = "picture_input"; } else {elem.className = "check_input";} parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; elem.onmousedown = mouse_input; elem.style.backgroundImage = background; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = Names[i]; /*if (elem.id.includes("text_gs_")) {elem.style.textDecoration = "underline overline";} if (elem.id.includes("text_scrub")) {elem.style.textDecoration = "underline overline";}*/ parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
