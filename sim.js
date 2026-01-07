@@ -128,6 +128,49 @@ function simCheckAltar() {
 	
 	document.getElementById("simLog").value = "Checked Altar\n" + document.getElementById("simLog").value;
 	document.getElementById("simCheckAltar").style.display = "none";
+    
+    if(document.getElementById("erOption").value == "DUNGEONS") {
+        simCheckDungeonER();
+    }
+}
+
+function simCheckDungeonER() {
+    let entrance_to_dungeon_input = {
+        "Spirit Temple Lobby": "sp",
+        "Fire Temple Lower": "fi",
+        "Jabu Jabus Belly Beginning": "ja",
+        "Forest Temple Lobby": "fo",
+        "Bottom of the Well": "bo",
+        "Water Temple Lobby": "wa",
+        "Gerudo Training Ground Lobby": "gt",
+        "Shadow Temple Entryway": "sh",
+        "Ice Cavern Beginning": "ic",
+        "Deku Tree Lobby": "de",
+        "Dodongos Cavern Beginning": "do"
+    };
+    
+    let dungeonEntranceSpoilerLocations = [
+        "KF Outside Deku Tree -> Deku Tree Lobby", 
+        "Death Mountain -> Dodongos Cavern Beginning",
+        "Zoras Fountain -> Jabu Jabus Belly Beginning", 
+        "SFM Forest Temple Entrance Ledge -> Forest Temple Lobby",
+        "DMC Fire Temple Entrance -> Fire Temple Lower",
+        "Lake Hylia -> Water Temple Lobby",
+        "Graveyard Warp Pad Region -> Shadow Temple Entryway",
+        "Desert Colossus -> Spirit Temple Lobby",
+        "Kakariko Village -> Bottom of the Well",
+        "ZF Ice Ledge -> Ice Cavern Beginning",
+        "Gerudo Fortress -> Gerudo Training Ground Lobby"
+    ];
+    
+	d = ["", "", "", "", "", "", "", "", "", "", ""];
+    
+    SpoilerJSON["entrances"]["Child Spawn -> KF Links House"]
+	
+	for(var i = 0; i < dungeonEntranceSpoilerLocations.length; i++) {
+		d[i] = entrance_to_dungeon_input[SpoilerJSON["entrances"][dungeonEntranceSpoilerLocations[i]]["region"]];
+	}
+	document.getElementById("mark_ER_Dungeons").value = d[0] + d[1] + d[2] + d[3] + d[4] + d[5] + d[6] + d[7] + d[8] + d[9] + d[10];
 }
 
 function simCheckChildSpawn() {
@@ -313,6 +356,26 @@ function simProcessHint(hint, str) {
 			if(simPathsEntered[theArea + " -> " + theBoss] == 1 || simPathsEntered[theArea + " -> " + theBoss] == 3 || simPathsEntered[theArea + " -> " + theBoss] == 5) {
 				document.getElementById("woth_input" + simPathCounter).value = SpoilerAreaToInput[theArea];
 				document.getElementById("path_boss" + simPathCounter).value = bossInputs[theBoss];
+				simPathCounter += 1;
+			}
+		}
+	}
+	else if (hint.includes("major item")) {
+		if(simPathCounter <= 7) {
+			theArea = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[1];
+			theBoss = SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["text"].split('#')[3];
+			
+			if(theArea.startsWith("the "))
+				theArea = theArea.replace("the ", "");
+			
+			if(simPathsEntered[theArea + " -> " + theBoss] == undefined)
+				simPathsEntered[theArea + " -> " + theBoss] = 1;
+			else
+				simPathsEntered[theArea + " -> " + theBoss] += 1;
+			
+			if(simPathsEntered[theArea + " -> " + theBoss] == 1 || simPathsEntered[theArea + " -> " + theBoss] == 3 || simPathsEntered[theArea + " -> " + theBoss] == 5) {
+				document.getElementById("woth_input" + simPathCounter).value = SpoilerAreaToInput[theArea];
+				document.getElementById("path_boss" + simPathCounter).value = theBoss;
 				simPathCounter += 1;
 			}
 		}

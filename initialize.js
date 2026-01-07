@@ -2547,6 +2547,9 @@ var SpoilerItemToInput = {
 	"Eyedrops" : inputs[inputNames.indexOf("Prescription")],
 	"Claim Check" : inputs[inputNames.indexOf("Claim Check")],
 	"Progressive Wallet" : inputs[inputNames.indexOf("Progressive Wallet")],
+	"Nayrus Love" : inputs[inputNames.indexOf("Nayrus Love")],
+	"Biggoron Sword" : inputs[inputNames.indexOf("BGS")],
+	"Stone of Agony" : inputs[inputNames.indexOf("Stone of Agony")],
 	"Zora Tunic" : inputs[inputNames.indexOf("Zora Tunic")],
 	"Zeldas Lullaby" : inputs[inputNames.indexOf("Lullaby")],
 	"Eponas Song" : inputs[inputNames.indexOf("Epona's Song")],
@@ -2885,7 +2888,7 @@ function popup() {
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 if (document.getElementById("presets").value == "S9") {
-	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n\n\n";
+	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n";
 }
 if (document.getElementById("presets").value == "SGL_2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
