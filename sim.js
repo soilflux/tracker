@@ -13,6 +13,12 @@ function onFileLoad(elementId, event) {
 }
 function readLog() {
     simActive = true;
+    startingItem = "";
+    
+    if (document.getElementById("presets").value == "S9") {
+        startingItem = simGetStartingMajorItem();
+        startingItem = " and " + startingItem
+    }
     
     document.getElementById("chuCount").style.display = "inline-block";
     document.getElementById("chuPlus").style.display = "inline-block";
@@ -22,7 +28,7 @@ function readLog() {
     document.getElementById("rupeeCount").style.display = "inline-block";
     document.getElementById("rupeeBreak").style.display = "inline-block";
 	document.getElementById("simLog").style.display = "inline-block";
-	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["ToT Reward from Rauru"] + "\n";
+	document.getElementById("simLog").value = "Starting with " + SpoilerJSON["locations"]["Song from Impa"] + " and " + SpoilerJSON["locations"]["ToT Reward from Rauru"] + startingItem + "\n";
 	document.getElementById("simCheckAltar").style.display = "block";
 	document.getElementById("simCheckChildSpawn").style.display = "block";
 	document.getElementById("simCheckAdultSpawn").style.display = "block";
@@ -171,6 +177,16 @@ function simCheckDungeonER() {
 		d[i] = entrance_to_dungeon_input[SpoilerJSON["entrances"][dungeonEntranceSpoilerLocations[i]]["region"]];
 	}
 	document.getElementById("mark_ER_Dungeons").value = d[0] + d[1] + d[2] + d[3] + d[4] + d[5] + d[6] + d[7] + d[8] + d[9] + d[10];
+}
+
+function simGetStartingMajorItem() {
+    value = Object.keys(SpoilerJSON[":randomized_starting_items"])[0];
+    value2 = Items2[inputs.indexOf(SpoilerItemToInput[value])];
+    Player[value2] = true;
+    Logic[value2] = true;
+    CouldHave[value2] = true;
+    
+    return value;
 }
 
 function simCheckChildSpawn() {
