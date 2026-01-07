@@ -56,9 +56,12 @@ function processInputs() {
 		if(Items2[inputIdx] == "wallet" && Known["wallet3"]) continue;
 		if((Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
 		
-		// TODO(flee): fix this loop too
-		for (var areaIdx = 35; areaIdx > 0; areaIdx--) {
-			if (i < AreaIndexes[areaIdx]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[areaIdx]);};
+		for (var areaIdx = AreaIndexes.length - 1; areaIdx > 0; areaIdx--) {
+			if (i < AreaIndexes[areaIdx]) {
+				var AreaNamesIndex = areaIdx;
+			} else {
+				break;
+			}
 		}
 		if(locationId == "zeldasSpot")
 			AreaNamesIndex = AreaNames.indexOf("");
@@ -111,6 +114,7 @@ function processInputs() {
 			document.getElementById(locationId).value = "";
 		}
 		
+		// Input may have been lowercased or emptied, so set it again.
 		input = document.getElementById(locationId).value;
 
 		if (inputIdx == 0) {
