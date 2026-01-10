@@ -636,6 +636,7 @@ var timeLost =0;
 var tMinutes = 0;
 var tSeconds = 0;
 var linso = true;
+if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso") === 'true'; }
 var linsoGoMode = false;
 var linsoLightRotation = 0;
 if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
