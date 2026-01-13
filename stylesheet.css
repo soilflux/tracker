@@ -630,6 +630,9 @@ color: red;
 	float: left;
 	width: 130px;
 }
+.song_spacing {
+	line-height: 131%;
+}
 .dungcolumn {
 	margin-top:10px;
   float: left;
