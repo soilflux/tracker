@@ -7,65 +7,100 @@ function processInputs() {
 	
 	var peeked = false;
 	for (var i = 0; i < Locations.length; i++) {
-		var key = Locations[i];
+		const locationId = Locations[i];
 		
-		for (var j = 35; j > 0; j--) {
-			if (i < AreaIndexes[j]) {var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);};
+		// Break early if check is already known.
+		if(Check[locationId] != "unknown") {
+			if (!checkedYet[i-1]) {
+				checkedYet[i-1] = true; 
+				if (i > lastItem) {
+					checkLocation = "Song";
+				}
+				else if (locationId.startsWith("h_")) {
+					checkLocation = "Hint";
+				}
+				else {
+					checkLocation = AreaNames[AreaNamesIndex];
+				}
+				textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkLocation + ": " + Names[i] + "\n";
+			}
+			continue;
+        }
+		let input = document.getElementById(locationId).value;
+
+		// Break early if no user input.
+		if (input == '' || input == "???") {
+			continue;
 		}
-		if(key == "zeldasSpot")
+
+		// Break early if input is invalid.
+		var inputIdx = inputs.indexOf(input.toLowerCase());
+		if (inputIdx === -1) {
+			continue;
+		}
+		
+		// don't allow inputting the same item twice if it's not a duplicate item
+		if(!DuplicateItems.includes(Items2[inputIdx]) && Known[Items2[inputIdx]]) {
+			continue;
+		}
+		
+		// if it is a duplicate item and all copies are already known, don't allow the input
+		if(Items2[inputIdx] == "bomb_bag" && Known["bomb_bag3"]) continue;
+		if(Items2[inputIdx] == "bow" && Known["bow3"]) continue;
+		if(Items2[inputIdx] == "slingshot" && Known["slingshot3"]) continue;
+		if(Items2[inputIdx] == "strength" && Known["strength3"]) continue;
+		if(Items2[inputIdx] == "bottle" && Known["bottle4"]) continue;
+		if(Items2[inputIdx] == "hookshot" && Known["hookshot2"]) continue;
+		if(Items2[inputIdx] == "magic" && Known["magic2"]) continue;
+		if(Items2[inputIdx] == "scale" && Known["scale2"]) continue;
+		if(Items2[inputIdx] == "wallet" && Known["wallet3"]) continue;
+		if((Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
+		
+		for (var areaIdx = AreaIndexes.length - 1; areaIdx > 0; areaIdx--) {
+			if (i < AreaIndexes[areaIdx]) {
+				var AreaNamesIndex = areaIdx;
+			} else {
+				break;
+			}
+		}
+		if(locationId == "zeldasSpot")
 			AreaNamesIndex = AreaNames.indexOf("");
-		else if(key == "eponasSpot")
+		else if(locationId == "eponasSpot")
 			AreaNamesIndex = AreaNames.indexOf("Ranch");
-		else if(key == "oot")
+		else if(locationId == "oot")
 			AreaNamesIndex = AreaNames.indexOf("Field");
-		else if(key == "serenadeSpot")
+		else if(locationId == "serenadeSpot")
 			AreaNamesIndex = AreaNames.indexOf("Ice");
-		else if(key == "stormsSpot" || key == "nocturneSpot")
+		else if(locationId == "stormsSpot" || locationId == "nocturneSpot")
 			AreaNamesIndex = AreaNames.indexOf("Kakariko");
-		else if(key == "sunsSpot")
+		else if(locationId == "sunsSpot")
 			AreaNamesIndex = AreaNames.indexOf("Graveyard");
-		else if(key == "requiemSpot")
+		else if(locationId == "requiemSpot")
 			AreaNamesIndex = AreaNames.indexOf("Colossus");
-		else if(key == "sariasSpot" || key == "minuetSpot")
+		else if(locationId == "sariasSpot" || locationId == "minuetSpot")
 			AreaNamesIndex = AreaNames.indexOf("SFM");
-		else if(key == "preludeSpot")
+		else if(locationId == "preludeSpot")
 			AreaNamesIndex = AreaNames.indexOf("ToT");
-		else if(key == "boleroSpot")
+		else if(locationId == "boleroSpot")
 			AreaNamesIndex = AreaNames.indexOf("Crater");
 		
-        if(Check[key] != "unknown" && checkedYet[i-1] == false) {
-            checkedYet[i-1] = true; 
-            if (i > lastItem) {
-                checkLocation = "Song";
-            }
-            else if (key.startsWith("h_")) {
-                checkLocation = "Hint";
-            }
-            else {
-                checkLocation = AreaNames[AreaNamesIndex];
-            }
-            textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkLocation + ": " + Names[i] + "\n";
-        }
-		if(Check[key] != "unknown") {continue;}
-		
-		if(document.getElementById(key).value == "???")
-			continue;
-		
 		hinted = false;
-		if (isLowerCase(document.getElementById(key).value.charAt(0)) 
-		 && isUpperCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length-1))
-		 && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {	
+		if (isLowerCase(input.charAt(0)) &&
+			isUpperCase(input.charAt(input.length-1)) &&
+			input.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")]) {	
 			peeked = true;
-			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
+			document.getElementById(locationId).value = input.toLowerCase();
 		}
-		else if (isUpperCase(document.getElementById(key).value.charAt(0)) && document.getElementById(key).value.length == 3
-			  && isLowerCase(document.getElementById(key).value.charAt(document.getElementById(key).value.length - 1)) 
-			  && document.getElementById(key).value.length > 0 && document.getElementById(key).value.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")] && document.getElementById(key).value.toLowerCase() != inputs[0]) {
+		else if (isUpperCase(input.charAt(0)) &&
+				input.length == 3 &&
+				isLowerCase(input.charAt(input.length - 1)) &&
+				input.toLowerCase() != inputs[ItemNames2.indexOf("Bombchus")] &&
+				input.toLowerCase() != inputs[0]) {
 			hinted = true;
-			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
+			document.getElementById(locationId).value = input.toLowerCase();
 		}
-        
-		if(document.getElementById(key).value == inputs[ItemNames2.indexOf("Bombchus")]) {
+
+		if(input == inputs[ItemNames2.indexOf("Bombchus")]) {
 			if(Player.has_chus == false && !hinted && !peeked)
 				enableChus();
 				
@@ -75,103 +110,107 @@ function processInputs() {
 			else if(!Known.bombchus4) {Known.bombchus4 = true;}
 			else if(!Known.bombchus5) {Known.bombchus5 = true;}
 			
-			document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown'));
-			document.getElementById(key).value = "";
+			document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
+			document.getElementById(locationId).value = "";
 		}
 		
-		for (var j = 0; j < inputs.length; j++) {
-			
-			if (document.getElementById(key).value.toLowerCase() == inputs[j]) {
-				
-				// don't allow inputting the same item twice if it's not a duplicate item
-				if(!DuplicateItems.includes(Items2[j]) && Known[Items2[j]])
-					continue;
-				
-				// if it is a duplicate item and all copies are already known, don't allow the input
-				if(Items2[j] == "bomb_bag" && Known["bomb_bag3"]) continue;
-				if(Items2[j] == "bow" && Known["bow3"]) continue;
-				if(Items2[j] == "slingshot" && Known["slingshot3"]) continue;
-				if(Items2[j] == "strength" && Known["strength3"]) continue;
-				if(Items2[j] == "bottle" && Known["bottle4"]) continue;
-				if(Items2[j] == "hookshot" && Known["hookshot2"]) continue;
-				if(Items2[j] == "magic" && Known["magic2"]) continue;
-				if(Items2[j] == "scale" && Known["scale2"]) continue;
-				if(Items2[j] == "wallet" && Known["wallet3"]) continue;
-				if((Items2[j] == "prescription" || Items2[j] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
-				
-				if (j == 0) {
-                    if (isUpperCase(document.getElementById(key).value.charAt(0))) {baitsChecked+=1;}
-                    if (i > lastItem) {songItemChecked = true;}
-                    document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
-                }
-				if (j == 1) {Check[document.getElementById(key).id]="small_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 2) {Check[document.getElementById(key).id]="boss_key"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				if (j == 4) {Check[document.getElementById(key).id]="bombchus"; forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase(); continue;}
-				for (var k = 0; k <= 3; k++) {
-					if (k == 0) {var duplicate = "";}
-					else {var duplicate = k + "";}
-					if (!Known[Items2[j] + duplicate]) {
-						if (i <= lastItem) {
-							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
-							Location[Items2[j] + duplicate] = document.getElementById(key).id;
-							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
-							Known[Items2[j] + duplicate] = true; 
-							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
-							if (!hinted && !peeked){
-								Player[Items2[j] + duplicate] = true;
-								if(inputs[j] == "big")
-									Player["big_poe"] = true;
-							}
-							if (hinted) {Hinted[key] = true;} 
-							if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
-							if (peeked) {peekOrHintText = "";}
-							if(hintedInput == inputs[j])
-								thisIsHinted = true;
-							junkItem(document.getElementById(key));
-							if (!Player[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
-							thisIsHinted = false;
-							hintedInput = "";
-                            trackAnimalQuest();
-							break;
-						}
-						else if (i > lastItem && j < 41) {
-							songItemChecked = true;
-							Check[document.getElementById(key).id] = Items2[j] + duplicate; 
-							Location[Items2[j] + duplicate] = document.getElementById(key).id;
-							if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
-							Known[Items2[j] + duplicate] = true; 
-							if (inputs[j] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(key).id;}
-							if (!hinted && !peeked){
-								Player[Items2[j] + duplicate] = true;
-								if(inputs[j] == "big")
-									Player["big_poe"] = true;
-							}
-							if (hinted) {Hinted[key] = true;} 
-							if (hinted || peeked) {temptext2 += Names[i] + ":  " + ItemNames2[j] + "<br />";} 
-							var change = "text_" + document.getElementById(key).id; 
-							document.getElementById(change).innerHTML += ": " + ItemNames2[j]; 
-							junkSong(document.getElementById(key));
-                            trackAnimalQuest();
-							break;
-						}
-						else {
-							Check[document.getElementById(key).id] = Items2[j];
-							Location[Items2[j]] = document.getElementById(key).id; 
-							Known[Items2[j]] = true; 
-                            if (j<Items2.indexOf("lullaby")) {songItemChecked = true;}
-                            if (Items2[j] == "prescription" || Items2[j] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (Items2[j] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];} else if (j < Items2.indexOf("lullaby")) {document.getElementById(Items2[j] + duplicate + "_location").innerHTML = ItemNames2[j] + " &#8594; " + Names[i];}
-							if (!hinted && !peeked) {Player[Items2[j]] = true;} 
-							if (hinted) {Hinted[key] = true;} 
-							if (hinted || peeked) {temptext2 += Names[i] + ": " + ItemNames2[j] + "<br />";} 
-							var change = "text_" + document.getElementById(key).id; 
-							document.getElementById(change).innerHTML += ": " + ItemNames2[j]; 
-							junkSong(document.getElementById(key));
-                            trackAnimalQuest();
-							break;
-						}
-                    
+		// Input may have been lowercased or emptied, so set it again.
+		input = document.getElementById(locationId).value;
+
+		if (inputIdx == 0) {
+			if (isUpperCase(input.charAt(0))) {
+				baitsChecked+=1;
+			}
+			if (i > lastItem) {
+				songItemChecked = true;
+			}
+			document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
+			continue;
+		}
+		if (inputIdx == 1) {
+			Check[document.getElementById(locationId).id] = "small_key";
+			forcedDisplay[i] = true;
+			document.getElementById(locationId).style.backgroundImage = "";
+			document.getElementById(locationId).value = input.toUpperCase();
+			continue;
+		}
+		if (inputIdx == 2) {
+			Check[document.getElementById(locationId).id] = "boss_key";
+			forcedDisplay[i] = true;
+			document.getElementById(locationId).style.backgroundImage = "";
+			document.getElementById(locationId).value = input.toUpperCase();
+			continue;
+		}
+		if (inputIdx == 4) {
+			Check[document.getElementById(locationId).id] = "bombchus";
+			// forcedDisplay[i] = true;
+			// document.getElementById(locationId).style.backgroundImage = "";
+			// document.getElementById(locationId).value = "";
+			continue;
+		}
+		for (var k = 0; k <= 3; k++) {
+			if (k == 0) {var duplicate = "";}
+			else {var duplicate = k + "";}
+			if (!Known[Items2[inputIdx] + duplicate]) {
+				if (i <= lastItem) {
+					Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
+					Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
+					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+					Known[Items2[inputIdx] + duplicate] = true; 
+					if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
+					if (!hinted && !peeked){
+						Player[Items2[inputIdx] + duplicate] = true;
+						if(inputs[inputIdx] == "big")
+							Player["big_poe"] = true;
 					}
+					if (hinted) {Hinted[locationId] = true;} 
+					if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[inputIdx] + "<br />";} 
+					if (peeked) {peekOrHintText = "";}
+					if(hintedInput == inputs[inputIdx])
+						thisIsHinted = true;
+					junkItem(document.getElementById(locationId));
+					if (!Player[Items2[inputIdx] + duplicate]) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
+					thisIsHinted = false;
+					hintedInput = "";
+					trackAnimalQuest();
+					break;
 				}
+				else if (i > lastItem && inputIdx < 41) {
+					songItemChecked = true;
+					Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
+					Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
+					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+					Known[Items2[inputIdx] + duplicate] = true; 
+					if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
+					if (!hinted && !peeked){
+						Player[Items2[inputIdx] + duplicate] = true;
+						if(inputs[inputIdx] == "big")
+							Player["big_poe"] = true;
+					}
+					if (hinted) {Hinted[locationId] = true;} 
+					if (hinted || peeked) {temptext2 += Names[i] + ":  " + ItemNames2[inputIdx] + "<br />";} 
+					var change = "text_" + document.getElementById(locationId).id; 
+					document.getElementById(change).innerHTML += ": " + ItemNames2[inputIdx]; 
+					junkSong(document.getElementById(locationId));
+					trackAnimalQuest();
+					break;
+				}
+				else {
+					Check[document.getElementById(locationId).id] = Items2[inputIdx];
+					Location[Items2[inputIdx]] = document.getElementById(locationId).id; 
+					Known[Items2[inputIdx]] = true; 
+					if (inputIdx<Items2.indexOf("lullaby")) {songItemChecked = true;}
+					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];} else if (inputIdx < Items2.indexOf("lullaby")) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];}
+					if (!hinted && !peeked) {Player[Items2[inputIdx]] = true;} 
+					if (hinted) {Hinted[locationId] = true;} 
+					if (hinted || peeked) {temptext2 += Names[i] + ": " + ItemNames2[inputIdx] + "<br />";} 
+					var change = "text_" + document.getElementById(locationId).id; 
+					document.getElementById(change).innerHTML += ": " + ItemNames2[inputIdx]; 
+					junkSong(document.getElementById(locationId));
+					trackAnimalQuest();
+					break;
+				}
+			
 			}
 		}
 	}
