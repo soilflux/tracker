@@ -378,6 +378,8 @@ var hintTable = {
 	"kin": "thaw_king",
 	"kingzora": "thaw_king",
 	"kz": "thaw_king",
+  "10": "tokens_10",
+  "10s": "tokens_10",
 	"20": "tokens_20",
 	"20s": "tokens_20",
 	"30": "tokens_30",
@@ -2893,7 +2895,9 @@ if (document.getElementById("presets").value == "S9") {
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n";
 }
 if (document.getElementById("presets").value == "LESS_PROGRESSION") {
-	document.getElementById("hintInput").innerHTML = "oot \nnoc \nbig \nfr2 \nmas \nlacs ";
+	document.getElementById("hintInput").innerHTML = "oot \nnoc \nbig \nfr2 \nmas \nlacs \n10 x\n20 x\n30 x\n40 x\n50 x";
+  speedUp = true;
+  document.getElementById("timerMultiplier").value = 2.5;
 }
 if (document.getElementById("presets").value == "SGL_2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
