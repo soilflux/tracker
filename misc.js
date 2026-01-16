@@ -37,15 +37,6 @@ function highlight(x) {
 	if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){item = "nocturne";}
 	if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){item = "prelude";}
 	
-	if (mouseInputs_locations.length != 0 && event.button == 0) {
-		
-		Check[mouseInputs_locations[0]] = "unknown";
-		document.getElementById(mouseInputs_locations[0]).value = inputs[Items2.indexOf(item)];
-		mouseInputs_locations.shift();
-		Update();
-		return;
-	}
-	
 	if (event.button == 2) {
 		searchingFors = document.getElementsByClassName("searchingFor_images");
 		l = searchingFors.length;
@@ -242,7 +233,8 @@ function changeTheme() {
 	else {Player.theme = "dark"}
 	Player.themeChange = true;
 	Update();
-	}
+}
+
 function trackAnimalQuest() {
 	questCounter += 1;
   document.getElementById("quest1").disabled = true;
@@ -328,6 +320,7 @@ function trackAnimalQuest() {
     localStorage.setItem("rainbowMults", JSON.stringify(rainbowMults));
   }
 }	
+
 function whoAmI() {
 	if(Person.type == "soli") {
 		Person.type = "normie";

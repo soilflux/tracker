@@ -1,10 +1,4 @@
 function processInputs() {
-	document.getElementById("mouseInputs_locations").innerHTML = "";
-	for (var i = 0; i < mouseInputs_locations.length; i++) {
-		if (i > 0) {document.getElementById("mouseInputs_locations").innerHTML += ", ";}
-		document.getElementById("mouseInputs_locations").innerHTML += Names[Locations.indexOf(mouseInputs_locations[i])];
-	}
-	
 	var peeked = false;
 	for (var i = 0; i < Locations.length; i++) {
 		const locationId = Locations[i];
@@ -1550,50 +1544,6 @@ function updateLogicInfo() {
 	Player.logically_accessible=Player.logically_accessible.toFixed(0);
 	document.getElementById("checks_remaining").innerHTML="Remaining: "+Player.checks_remaining;
 	if (!nerfed) {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Player.logically_accessible;} else {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: ??"}
-}
-function mouse_input() {
-	if (event.button == 2 && Check[event.target.id] == "unknown") {
-		mouseInputs_locations.push(event.target.id);
-		str = event.target.id;
-		str2 = "text_" + str;
-		str3 = "br_" + str;
-		Check[str] = "junk";
-		document.getElementById(str).style.display = "none";
-		document.getElementById(str2).style.display = "none";
-		document.getElementById(str3).style.display = "none";
-		Update();
-	}
-	if (event.button == 1 && event.target.id.includes("dodongos_")) {route_dodongos();}
-	if (event.button == 1 && event.target.id.includes("deku_")) {route_deku();}
-	if (event.button == 1 && event.target.id.includes("jabu_")) {route_jabu();}
-	if (event.button == 1 && event.target.id.includes("ice_")) {route_ice();}
-}
-function mouse_input2() {
-	if (event.button == 1) {
-		for (var i = 1; i < 15; i++) {
-			console.log(document.getElementById("gomode_" + i).style.display)
-			if (document.getElementById("gomode_" + i).style.display == "none" || document.getElementById("gomode_" + i).style.display == "") {
-				document.getElementById("gomode_" + i).src = event.target.src;
-				document.getElementById("gomode_" + i).style.display = "inline-block";
-				searchItems.unshift(ItemNames2[Items2.indexOf(event.target.id.replace("mouseInputs_",""))]); 
-				break;
-				
-			}
-		}
-	}
-	
-	var item = "";
-	if (mouseInputs_locations.length == 0) {return;}
-	if (event.target.id == "mouseInputs_magicspell") {if (event.button == 2) {item = "farores_wind";} else {item = "dins_fire";}}
-	else if (event.target.id == "mouseInputs_boots") {if (event.button == 2) {item = "hover_boots";} else {item = "iron_boots";}}
-	else if (event.target.id == "mouseInputs_magicarrows") {console.log(event.target.value);if (event.button == 2) {item = "light_arrows";} else {item = "fire_arrows";}}
-	else if (event.target.id == "mouseInputs_goronzora") {if (event.button == 2) {item = "zora_tunic";} else {item = "goron_tunic";}}
-	else if (event.target.id == "mouseInputs_bottle") {if (event.button == 2) {item = "rutos_letter";} else {item = "bottle";}}
-	else {item = event.target.id.replace("mouseInputs_","");}
-	Check[mouseInputs_locations[0]] = "unknown";
-	document.getElementById(mouseInputs_locations[0]).value = inputs[Items2.indexOf(item)];
-	mouseInputs_locations.shift();
-	Update();
 }
 
 function searchingFor_tracking() {

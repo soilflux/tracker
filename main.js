@@ -7,14 +7,6 @@ function Update() {
   if (document.getElementById("shiftChecks").value == "YES") areaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
 	updateSummaryText()
 	updateProbabilities() // update the probabilities for items based on checks of that type left vs checks remaining
-	for (var i = 0; i < nextChecks.length; i++) {
-		if (Check[nextChecks[i]] != "unknown") {console.log(nextChecks);nextChecks.splice(i,1); continue;}
-		if (Location_Peek[nextChecks[i]]) {nextIndex = i; break;}
-		if (i == nextChecks.length - 1) {i = 420;}
-	}
-	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
-	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
-	
 }
 
 function fastUpdate() {
@@ -62,13 +54,6 @@ function midUpdate() {
 			i = 100000;
 		}
 	}
-	for (var i = 0; i < nextChecks.length; i++) {
-		if (Check[nextChecks[i]] != "unknown") {nextChecks.splice(i,1); continue;}
-		if (Location_Peek[nextChecks[i]]) {nextIndex = i; break;}
-		if (i == nextChecks.length - 1) {nextIndex = 420;}
-	}
-	if (nextChecks.length > 0 && nextIndex != 420) {next.innerHTML = Names[Locations.indexOf(nextChecks[nextIndex])];} else {next.innerHTML = "";}
-	if (nextChecks.length > 0 && nextIndex != 420) {next.style.color = document.getElementById("text_" + nextChecks[nextIndex]).style.color;}
 	Update(); 
 }
 
