@@ -93,6 +93,9 @@ color: red;
 	font-weight: bold;
 	
 }
+#shiftChecks {
+  width: 163px;
+}
 #text_next {
 	display: none;
 	color: lightblue;
@@ -362,7 +365,7 @@ color: red;
 	display: none;
 }
 .column {
-	margin-top:10px;
+	margin-top:3px;
   float: left;
   width: 90px;
 }
@@ -689,10 +692,9 @@ color: red;
     color:lightblue;
 }
 .picture_input {
-	width: 30px;
+	width: 28px;
 	height:22px;
-	margin-bottom:2px;
-	margin-right:2px;
+	margin-left:3px;
 	vertical-align: top;
 	padding: 0;
 	border: none;
@@ -757,13 +759,12 @@ color: red;
 }
 .logic_check_text{
 	font-size: 16px;
-	color: 						chartreuse;
+	color: chartreuse;
 	font-weight:bold;
 	display: inline-block;
 	opacity: 1;
-	margin-top:2px;
-	margin-bottom:1px;
-	vertical-align: top;
+	margin-top:0px;
+	margin-bottom:0px;
 	letter-spacing: -1px;
 }
 .logic_check_text_not_have{
@@ -1533,7 +1534,7 @@ color:#DE86FE;
 color:#FE8B08;
 }
 .half_break {
-	line-height: 50%;
+	line-height: 5px;
 }
 .settingsOptions {
 	font-size: 1.1em;

@@ -79,6 +79,7 @@ var chuCount = 0;
 var rupeeCount = 0;
 var chusInBigChests = false;
 var songItemChecked = true;
+var unusedLocations = [];
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
@@ -120,6 +121,7 @@ if (localStorage.getItem("simSeed")) {document.getElementById("simSeed").value =
 if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
 if (localStorage.getItem("erOption")) {document.getElementById("erOption").value = localStorage.getItem("erOption");}
 if (localStorage.getItem("FAE_option")) {document.getElementById("FAE_option").value = localStorage.getItem("FAE_option");}
+if (localStorage.getItem("shiftChecks")) {document.getElementById("shiftChecks").value = localStorage.getItem("shiftChecks");}
 if (document.getElementById("presets").value == "SGL_2025") {songItemChecked = false;}
 if (document.getElementById("presets").value == "SGL_2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";

@@ -4,7 +4,7 @@ function Update() {
 	checkCircleInfo(); //updates the numbers in the circles next to dungeon names
 	itemHighlights(); //add or remove transparency if player has or does not have items, respectively
 	dungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
-	areaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
+  if (document.getElementById("shiftChecks").value == "YES") areaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
 	updateSummaryText()
 	updateProbabilities() // update the probabilities for items based on checks of that type left vs checks remaining
 	for (var i = 0; i < nextChecks.length; i++) {

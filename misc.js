@@ -63,7 +63,7 @@ function highlight(x) {
 			}
 			if (!flag) {
 				for (i = 0; i < l; i++) {
-					if (searchingFors[i].style.display == "none") {
+					if (searchingFors[i].style.display == "none" || searchingFors[i].style.visibility == "hidden") {
 						searchingFors[i].id = "searchingFor_" + item;
 						searchingFors[i].style.display = "inline-block";
 						searchingFors[i].src = event.target.src;
@@ -587,6 +587,7 @@ function saveStuff() {
   localStorage.setItem("simSeed", document.getElementById("simSeed").value);
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
+  localStorage.setItem("shiftChecks", document.getElementById("shiftChecks").value);
 	localStorage.setItem("highlightWoths", colorWothAreas);
 }
 

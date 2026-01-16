@@ -216,6 +216,22 @@ function processInputs() {
 	}
 }
 
+function hideCheck(locationId) {
+  if (document.getElementById("shiftChecks").value == "YES") {
+    document.getElementById(locationId).style.display = "none";
+    document.getElementById("text_" + locationId).style.display = "none";
+    document.getElementById("br_" + locationId).style.display = "none";
+  }
+  else {
+    document.getElementById(locationId).style.display = "inline-block";
+    document.getElementById("text_" + locationId).style.display = "inline-block";
+    document.getElementById("br_" + locationId).style.display = "inline-block";
+    document.getElementById(locationId).style.visibility = "hidden";
+    document.getElementById("text_" + locationId).style.visibility = "hidden";
+    document.getElementById("br_" + locationId).style.visibility = "hidden";
+  }
+}
+
 function stoneMedallionInput() {	
 	var str = document.getElementById("markStones").value.substring(0,2);
 		
@@ -457,9 +473,7 @@ function junk() {
 			Check[str]="junk";
 		}
 		
-		document.getElementById(str).style.display = "none";
-		document.getElementById("text_" + str).style.display = "none";
-		document.getElementById("br_" + str).style.display = "none";
+    hideCheck(str);
 		
 		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Player[Check[str]] = true; if(Check[str] == "bombchus"){if(Player.has_chus == false){enableChus();} Check[str] = "junk";} Update(); }
 
@@ -684,9 +698,7 @@ function junkUltra() {
 		if (x.id == "well") {var temp = 34; Logic.forced_well_keys = 5 - Player.current_well_keys; Player.current_well_keys = 3;}
 		for (var i = AreaIndexes[temp]; i < AreaIndexes[temp + 1]; i++){
 			if (Check[Locations[i]] == "unknown") {Check[Locations[i]] = "ultra";}
-			document.getElementById(Locations[i]).style.display = "none";
-			document.getElementById("text_" + Locations[i]).style.display = "none";
-			document.getElementById("br_" + Locations[i]).style.display = "none";
+			hideCheck(Locations[i]);
 			lastCheck.push(Locations[i]);
 		}
 		midUpdate();
@@ -711,9 +723,7 @@ function junkItem(x) {
 	}
 	if (!temp) {return;}
 	
-	document.getElementById(str2).style.display = "none";
-	document.getElementById("text_" + str2).style.display = "none";
-	document.getElementById("br_" + str2).style.display = "none";
+	hideCheck(str2);
 	
 	lastCheck.push(str2);
 	midUpdate();
@@ -837,7 +847,7 @@ function areaBreaks() {
 	var tempUnique = 0;
 	for (var i = 0; i < Locations.length; i++) {
 		if ((i >= AreaIndexes[10] && i < AreaIndexes[11]) || (i >= AreaIndexes[17] && i < AreaIndexes[18])) {continue;}
-		if (document.getElementById(Locations[i]).style.display == "none") {tempUnique += 1;} 
+		if (document.getElementById(Locations[i]).style.display == "none" || document.getElementById(Locations[i]).style.visibility == "hidden") {tempUnique += 1;} 
 		if (i == AreaIndexes[1]-1) {if (tempUnique == AreaIndexes[1] - AreaIndexes[0]) {document.getElementById("kokiri_break").style.display = "none";} else {document.getElementById("kokiri_break").style.display = "inline-block";} tempUnique = 0;}
 		if (i == AreaIndexes[2]-1) {if (tempUnique == AreaIndexes[2] - AreaIndexes[1]) {document.getElementById("ranch_break").style.display = "none";} else {document.getElementById("ranch_break").style.display = "inline-block";} tempUnique = 0;}
 		if (i == AreaIndexes[3]-1) {if (tempUnique == AreaIndexes[3] - AreaIndexes[2]) {document.getElementById("field_break").style.display = "none";} else {document.getElementById("field_break").style.display = "inline-block";} tempUnique = 0;}
@@ -1055,7 +1065,6 @@ function updateLogicInfo() {
 	if (document.getElementById("presets").value == "S8") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
 	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
 	
-	
 	if (document.getElementById("presets").value == "LEAGUE_S9") {
 		document.getElementById("important_hints_div").style.display = "block";
 		document.getElementById("important_input3").style.display = "inline-block";
@@ -1214,67 +1223,75 @@ function updateLogicInfo() {
 	temp = 0;
 	var colorChange = false;
 	Player.checks_remaining = 0;
+  unusedLocations = [];
 	for (var i = 0; i < Locations.length; i++) {
 		if (i < AreaIndexes[35]) {
-			document.getElementById(Locations[i]).style.display = "none";
-			document.getElementById("text_" + Locations[i]).style.display = "none";
-			document.getElementById("br_" + Locations[i]).style.display = "none";
+      hideCheck(Locations[i]);
 		}
 		
 		if (document.getElementById("skullSanity").value == "OFF") {
 			if(Locations[i].startsWith("gs_"))
-				continue;
+				unusedLocations.push(i);
 		}
 		else if (document.getElementById("skullSanity").value == "DUNGEON") {
 			if(Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well")))
-				continue;
+				unusedLocations.push(i);
 		}
 		else if (document.getElementById("skullSanity").value == "OVERWORLD") {
 			if(Locations[i].startsWith("gs_deku") || Locations[i].startsWith("gs_dodongos") || Locations[i].startsWith("gs_jabu") || Locations[i].startsWith("gs_forest") || Locations[i].startsWith("gs_fire") || Locations[i].startsWith("gs_water") || Locations[i].startsWith("gs_spirit") || Locations[i].startsWith("gs_shadow") || Locations[i].startsWith("gs_ice") || Locations[i].startsWith("gs_well"))
-				continue;
+				unusedLocations.push(i);
 		}
 		
 		if (document.getElementById("scrubSanity").value == "OFF") {
 			if(Locations[i].startsWith("scrub_"))
-				continue;
+				unusedLocations.push(i);
 		}
 		else if (document.getElementById("scrubSanity").value == "OVERWORLD") {
 			if(Locations[i].startsWith("scrub_dodongos") || Locations[i].startsWith("scrub_jabu") || Locations[i].startsWith("scrub_ganons"))
-				continue;
+				unusedLocations.push(i);
 		}
 		
-		if (document.getElementById("shopSanity").value != "4" && Locations[i].startsWith("shop_")) {continue;}
-		if (document.getElementById("cowSanity").value != "ON" && Locations[i].startsWith("cow_")) {continue;}
-		if (document.getElementById("gossips").value != "ON" && Locations[i].startsWith("h_")) {continue;}
-		if (document.getElementById("ganonBKSetting").value == "LACS" && Locations[i].startsWith("lacs")) {continue;}
-		if (document.getElementById("shuffleOcarinas").value == "OFF" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {continue;}
-		if (document.getElementById("shuffleBeanPack").value == "OFF" && Locations[i].startsWith("river_bean_salesman")) {continue;}
-		if (document.getElementById("shuffleGerudoCard").value == "OFF" && Locations[i].startsWith("fortress_card")) {continue;}
-		if (document.getElementById("presets").value != "TRUTH" && Locations[i].startsWith("theater_truth")) {continue;}
-		if (document.getElementById("shuffleExpensivePurchases").value == "OFF" && (Locations[i] == "goron_medigoron" || Locations[i].startsWith("kakariko_hag") || Locations[i].startsWith("wasteland_carpet"))) {continue;}
-		
+		if (document.getElementById("shopSanity").value != "4" && Locations[i].startsWith("shop_")) {unusedLocations.push(i);}
+		if (document.getElementById("cowSanity").value != "ON" && Locations[i].startsWith("cow_")) {unusedLocations.push(i);}
+		if (document.getElementById("gossips").value != "ON" && Locations[i].startsWith("h_")) {unusedLocations.push(i);}
+		if (document.getElementById("ganonBKSetting").value == "LACS" && Locations[i].startsWith("lacs")) {unusedLocations.push(i);}
+		if (document.getElementById("shuffleOcarinas").value == "OFF" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {unusedLocations.push(i);}
+		if (document.getElementById("shuffleBeanPack").value == "OFF" && Locations[i].startsWith("river_bean_salesman")) {unusedLocations.push(i);}
+		if (document.getElementById("shuffleGerudoCard").value == "OFF" && Locations[i].startsWith("fortress_card")) {unusedLocations.push(i);}
+		if (document.getElementById("presets").value != "TRUTH" && Locations[i].startsWith("theater_truth")) {unusedLocations.push(i);}
+		if (document.getElementById("shuffleExpensivePurchases").value == "OFF" && (Locations[i] == "goron_medigoron" || Locations[i].startsWith("kakariko_hag") || Locations[i].startsWith("wasteland_carpet"))) {unusedLocations.push(i);}
+		if (unusedLocations.includes(i)) {
+      document.getElementById(Locations[i]).style.display = "none";
+      document.getElementById("text_" + Locations[i]).style.display = "none";
+      document.getElementById("br_" + Locations[i]).style.display = "none";
+      continue;
+    }
+    
 		var key = Locations[i];
 		
 		str = "text_" + key;
 		str2 = "br_" + key;
         
-        if (key == "preludeSpot" || key == "nocturneSpot" || key == "oot") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
+    if (key == "preludeSpot" || key == "nocturneSpot" || key == "oot") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
 		
-        if (Check[key] == "unknown" || forcedDisplay[i] || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
-			document.getElementById(str).style.display = "inline-block";
-			document.getElementById(key).style.display = "inline-block";
-			document.getElementById(str2).style.display = "inline-block";
-			if (i < AreaIndexes[35]) {
-				if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
-				else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
-				else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
-				else if (Locations[i].includes("spirit_")) {Player.spirit_checks_remaining += 1;}
-				else if (Locations[i].includes("shadow_")) {Player.shadow_checks_remaining += 1;}
-				else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
-				else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
-				else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
-				else if (!Locations[i].includes("h_")) {Player.checks_remaining += 1;}
-			}
+    if (Check[key] == "unknown" || forcedDisplay[i] || (coopmode && (Check[key] == "small_key" || Check[key] == "boss_key"))) {
+      document.getElementById(str).style.display = "inline-block";
+      document.getElementById(key).style.display = "inline-block";
+      document.getElementById(str2).style.display = "inline-block";
+      document.getElementById(str).style.visibility = "visible";
+      document.getElementById(str2).style.visibility = "visible";
+      document.getElementById(key).style.visibility = "visible";
+      if (i < AreaIndexes[35]) {
+        if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
+        else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
+        else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
+        else if (Locations[i].includes("spirit_")) {Player.spirit_checks_remaining += 1;}
+        else if (Locations[i].includes("shadow_")) {Player.shadow_checks_remaining += 1;}
+        else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
+        else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
+        else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
+        else if (!Locations[i].includes("h_")) {Player.checks_remaining += 1;}
+      }
 		}
 		
 		if(document.getElementById(key).value != "")
@@ -1297,8 +1314,8 @@ function updateLogicInfo() {
 			continue;
 		}
 		
-		if (document.getElementById(str).style.display != "none") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
-		if(document.getElementById(str).style.display == "none") {continue;}
+		if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
+		if(document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
 		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
 		
@@ -1355,7 +1372,7 @@ function updateLogicInfo() {
 					}
 				}
 			}
-			if(document.getElementById(key).style.display != "none") {
+			if(document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
 				if (i <= lastItem) {Player.logically_accessible += 1;}
 				if (i == AreaIndexes[12] - 1 && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
 			    if (i == AreaIndexes[16] - 1 && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
@@ -1449,9 +1466,16 @@ function updateLogicInfo() {
 		}
 		else {
 			if (hideInaccessible && i <= lastItem) {
-				if (document.getElementById(str).style.display != "none") {document.getElementById(str).style.display = "none";}
-				if (document.getElementById(key).style.display != "none") {document.getElementById(key).style.display = "none";}
-				if (document.getElementById(str2).style.display != "none") {document.getElementById(str2).style.display = "none";}
+        if (document.getElementById("shiftChecks").value == "YES") {
+          document.getElementById(str).style.display = "none";
+          document.getElementById(key).style.display = "none";
+          document.getElementById(str2).style.display = "none";
+        }
+        else {
+          document.getElementById(str).style.visibility = "hidden";
+          document.getElementById(key).style.visibility = "hidden";
+          document.getElementById(str2).style.visibility = "hidden";
+        }
 			}
 			document.getElementById(str).className= "ool_check_text";
 			document.getElementById(str).style.opacity = .5;
