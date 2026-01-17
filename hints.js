@@ -588,7 +588,7 @@ function wothAndBarrenProcessing() {
 	}
 	var array = ["forest", "fire", "water", "spirit", "shadow"];
 	for (var i = 0; i < array.length; i++) {
-		if (document.getElementById(array[i]).style.backgroundColor == "red" && (Logic.emerald == array[i] || Logic.ruby == array[i] || Logic.sapphire == array[i]) && (Check.oot == "minuet" || Check.oot == "serenade" || Check.oot == "prelude" || (Check.oot == "bolero" && (Check.crater_bean == "junk" && Player.hookshot) || Player.hover_boots) || (Check.oot == "suns" && Check.redead_grave == "junk") || (Check.oot == "sarias" && Check.goron_dance == "junk" && Check.saria_kid == "junk"))) {document.getElementById(array[i]).click(); if (Logic.emerald == array[i]) {Player.emerald = false;} if (Logic.ruby == array[i]) {Player.ruby = false;} if (Logic.sapphire == array[i]) {Player.sapphire = false;}}
+		if (document.getElementById(array[i]).style.backgroundColor == "red" && (Logic.emerald == array[i] || Logic.ruby == array[i] || Logic.sapphire == array[i]) && (Check.oot == "minuet" || Check.oot == "serenade" || Check.oot == "prelude" || (Check.oot == "bolero" && (Check.crater_bean == "junk" && Player.hookshot) || Player.hover_boots) || (Check.oot == "suns" && Check.redead_grave == "junk") || (Check.oot == "sarias" && Check.goron_dance == "junk" && Check.saria_kid == "junk"))) {document.getElementById(array[i]).click(); document.getElementById(array[i]).style.backgroundColor = "blue"; if (Logic.emerald == array[i]) {Player.emerald = false;} if (Logic.ruby == array[i]) {Player.ruby = false;} if (Logic.sapphire == array[i]) {Player.sapphire = false;}}
 	}
 }
 
