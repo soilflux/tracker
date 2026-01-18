@@ -1,24 +1,24 @@
 function dark_soli() {
-	Player.bomb_img= "./images/explosive505050.png";
-	Player.rutos_letter_img= "./images/letter505050.png";
-	Player.boomerang_img= "./images/boomerang505050.png";
-	Player.hookshot_img= "./images/hookshot505050.png";
-	Player.bow_img= "./images/bow505050.png";
-	Player.goron_bracelet_img= "./images/strength1505050.png";
-	Player.lens_img = "./images/lens505050.png";
-	Player.golden_gauntlets_img = "./images/strength3505050.png";
-	Player.hammer_img= "./images/ham505050.png";
-	Player.iron_boots_img= "./images/ironboots505050.png";
+	Player.bomb_img= "./images/explosive.png";
+	Player.rutos_letter_img= "./images/letter.png";
+	Player.boomerang_img= "./images/boomerang.png";
+	Player.hookshot_img= "./images/hookshot.png";
+	Player.bow_img= "./images/bow.png";
+	Player.goron_bracelet_img= "./images/strength1.png";
+	Player.lens_img = "./images/lens.png";
+	Player.golden_gauntlets_img = "./images/strength3.png";
+	Player.hammer_img= "./images/ham.png";
+	Player.iron_boots_img= "./images/ironboots.png";
 	Player.kokiri_sword_img= "./normal/items/kokiri_sword.png";
-	Player.silver_scale_img=  "./images/silverscale505050.png"
-	Player.golden_scale_img= "./images/goldenscale505050.png";
-	Player.longshot_img= "./images/longshot505050.png";
-	Player.silver_gauntlets_img= "./images/strength2505050.png";
-	Player.mirror_shield_img= "./images/mirrorshield505050.png";
-	Player.dins_fire_img= "./images/dinsfirenew505050.png";
-	Player.magic_img= "./images/magic505050.png";
-	Player.hover_boots_img= "./images/hovers505050.png";
-	Player.light_arrows_img= "./images/lightarrow505050.png";
+	Player.silver_scale_img=  "./images/silverscale.png"
+	Player.golden_scale_img= "./images/goldenscale.png";
+	Player.longshot_img= "./images/longshot.png";
+	Player.silver_gauntlets_img= "./images/strength2.png";
+	Player.mirror_shield_img= "./images/mirrorshield.png";
+	Player.dins_fire_img= "./images/dinsfire.png";
+	Player.magic_img= "./images/magic.png";
+	Player.hover_boots_img= "./images/hovers.png";
+	Player.light_arrows_img= "./images/lightarrow.png";
 	Player.ice_arrows_img = "./normal/items/ice_arrows.png";
 	Player.forest_key_img = "./normal/items/forest-temple-key.png";
 	Player.fire_key_img = "./normal/items/fire-temple-key.png";
@@ -28,22 +28,22 @@ function dark_soli() {
 	Player.gtg_key_img = "./normal/items/gtg-key.png";
 	Player.well_key_img = "./normal/items/botw-key.png";
 	Player.ganon_key_img = "./normal/items/ganon-key.png";
-	Player.fire_arrows_img= "./images/firearrows505050.png";
-	Player.farores_wind_img = "./images/farores505050.png";
-	Player.bottle_img = "./images/bottle505050.png";
-	Player.slingshot_img = "./images/slingshot505050.png";
-	Player.lullaby_img = "./images/lullaby505050.png";
-	Player.eponas_img = "./images/eponas505050.png";
-	Player.sarias_img = "./images/sarias505050.png";
-	Player.suns_img = "./images/suns505050.png";
-	Player.time_img = "./images/sot505050.png";
-	Player.storms_img = "./images/sos505050.png";
-	Player.minuet_img = "./images/minuet505050.png";
-	Player.bolero_img = "./images/bolero505050.png";
-	Player.serenade_img = "./images/serenade505050.png";
-	Player.requiem_img = "./images/requiem505050.png";
-	Player.nocturne_img = "./images/nocturne505050.png";
-	Player.prelude_img = "./images/prelude505050.png";
+	Player.fire_arrows_img= "./images/firearrows.png";
+	Player.farores_wind_img = "./images/farores.png";
+	Player.bottle_img = "./images/bottle.png";
+	Player.slingshot_img = "./images/slingshot.png";
+	Player.lullaby_img = "./images/lullaby.png";
+	Player.eponas_img = "./images/eponas.png";
+	Player.sarias_img = "./images/sarias.png";
+	Player.suns_img = "./images/suns.png";
+	Player.time_img = "./images/sot.png";
+	Player.storms_img = "./images/sos.png";
+	Player.minuet_img = "./images/minuet.png";
+	Player.bolero_img = "./images/bolero.png";
+	Player.serenade_img = "./images/serenade.png";
+	Player.requiem_img = "./images/requiem.png";
+	Player.nocturne_img = "./images/nocturne.png";
+	Player.prelude_img = "./images/prelude.png";
 	Player.chu_img = "./images/chux.png";
 	
 	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Player.kokiri_sword_img; }
@@ -67,50 +67,37 @@ function dark_soli() {
 	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Player.bomb_img; }
 	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Player.hookshot_img; }
 	var temp = 0;
-	for (const key of Object.keys(Location_Logic)) {
-		if (temp == 256) {break; }	
-		if (document.getElementById(key) != null){document.getElementById(key).style.height="21px";}
-		if (document.getElementById(key) != null){document.getElementById(key).style.width="29px";}
-		document.getElementById("normalColumn1").style.width="110px";
-		document.getElementById("normalColumn2").style.width="110px";
-		document.getElementById("normalColumn3").style.width="110px";
-		document.getElementById("scrollable_section").style.left="956px";
-		document.getElementById("timer").style.left="900px";
-		document.getElementById("skulls_in_logic").style.left="867px";
-		document.getElementById("dung4_icon").style.left="928px";
-		document.getElementById("dung5_icon").style.left="928px";
-		document.getElementById("dung6_icon").style.left="928px";
-		document.getElementById("dung7_icon").style.left="928px";
-		document.getElementById("dung8_icon").style.left="928px";
-		document.getElementById("dung9_icon").style.left="928px";
-		if (temp >= 0 && temp <=5) {document.getElementById(key).style.backgroundImage = "url('./images/c3nWMsM.png')";}
-		if (temp >= 6 && temp <=7) {document.getElementById(key).style.backgroundImage = "url('./images/lxT1gSk.png')";}
-		if (temp >= 8 && temp <=12) {document.getElementById(key).style.backgroundImage = "url('./images/sjT5Hai.png')";}
-		if (temp >= 13 && temp <=15) {document.getElementById(key).style.backgroundImage = "url('./images/sEKZt65.png')";}
-		if (temp >= 16 && temp <=21) {document.getElementById(key).style.backgroundImage = "url('./images/BofwN1y.png')";}
-		if (temp >= 22 && temp <=27) {document.getElementById(key).style.backgroundImage = "url('./images/hrb0r0b.png')";}
-		if (temp >= 28 && temp <=28) {document.getElementById(key).style.backgroundImage = "url('./images/sYlOOIK.png')";}
-		if (temp >= 29 && temp <=29) {document.getElementById(key).style.backgroundImage = "url('./images/s7mKEc9.png')";}
-		if (temp >= 30 && temp <=30) {document.getElementById(key).style.backgroundImage = "url('./images/fEshagY.jpg')";}
-		if (temp >= 31 && temp <=33) {document.getElementById(key).style.backgroundImage = "url('./images/5lUtq7c.png')";}
-		if (temp >= 34 && temp <=37) {document.getElementById(key).style.backgroundImage = "url('./images/zjCXaML.png')";}
-		if (temp >= 38 && temp <=44) {document.getElementById(key).style.backgroundImage = "url('./images/9BaI5JJ.png')";}
-		if (temp >= 45 && temp <=51) {document.getElementById(key).style.backgroundImage = "url('./images/mv5QLem.png')";}
-		if (temp >= 52 && temp <=52) {document.getElementById(key).style.backgroundImage = "url('./images/S4OentL.png')";}
-		if (temp >= 53 && temp <=59) {document.getElementById(key).style.backgroundImage = "url('./images/i37Ey8I.png')";}
-		if (temp >= 60 && temp <=66) {document.getElementById(key).style.backgroundImage = "url('./images/9btLMfb.png')";}
-		if (temp >= 67 && temp <=71) {document.getElementById(key).style.backgroundImage = "url('./images/sEKZt65.png')";}
-		if (temp >= 72 && temp <=75) {document.getElementById(key).style.backgroundImage = "url('./images/Wf1f3BM.png')";}
-		if (temp >= 76 && temp <=88) {document.getElementById(key).style.backgroundImage = "url('./images/M5hCjWo.png')";}
-		if (temp >= 89 && temp <=95) {document.getElementById(key).style.backgroundImage = "url('./images/bOYOCRS.png')";}
-		if (temp >= 96 && temp <=100) {document.getElementById(key).style.backgroundImage = "url('./images/hm7rWKb.png')";}
-		if (temp >= 101 && temp <=103) {document.getElementById(key).style.backgroundImage = "url('./images/9BwSTvK.png')";}
-		if (temp >= 104 && temp <=105) {document.getElementById(key).style.backgroundImage = "url('./images/kf4Nhow.png')";}
-		if (temp >= 106 && temp <=106) {document.getElementById(key).style.backgroundImage = "url('./images/gQAN9po.png')";}
-		if (temp >= 107 && temp <=109) {document.getElementById(key).style.backgroundImage = "url('./images/O8YMJ5E.png')";}
-		if (temp >= 110 && temp <=113) {document.getElementById(key).style.backgroundImage = "url('./images/5RniyE6.png')";}
-	temp +=1;
+  for (var i = 0; i < Locations.length; i++) {
+		var key = Locations[i];
+		if (i < AreaIndexes[1]) {document.getElementById(key).style.backgroundImage = "url('./images/kokiri.png')";}
+		else if (i < AreaIndexes[2]) {document.getElementById(key).style.backgroundImage = "url('./images/ranch.png')";}
+		else if (i < AreaIndexes[3]) {document.getElementById(key).style.backgroundImage = "url('./images/field.png')";}
+		else if (i < AreaIndexes[4]) {document.getElementById(key).style.backgroundImage = "url('./images/valley.png')";}
+		else if (i < AreaIndexes[5]) {document.getElementById(key).style.backgroundImage = "url('./images/hylia.png')";}
+		else if (i < AreaIndexes[6]) {document.getElementById(key).style.backgroundImage = "url('./images/market.png')";}
+		else if (i < AreaIndexes[7]) {document.getElementById(key).style.backgroundImage = "url('./images/hyrule_castle.png')";}
+		else if (i < AreaIndexes[8]) {document.getElementById(key).style.backgroundImage = "url('./images/ogc.png')";}
+		else if (i < AreaIndexes[9]) {document.getElementById(key).style.backgroundImage = "url('./images/tot.jpg')";}
+		else if (i < AreaIndexes[10]) {document.getElementById(key).style.backgroundImage = "url('./images/fountain.png')";}
+		else if (i < AreaIndexes[11]) {document.getElementById(key).style.backgroundImage = "url('./images/ice.png')";}
+		else if (i < AreaIndexes[12]) {document.getElementById(key).style.backgroundImage = "url('./images/deku.png')";}
+		else if (i < AreaIndexes[13]) {document.getElementById(key).style.backgroundImage = "url('./images/lost_woods.png')";}
+		else if (i < AreaIndexes[14]) {document.getElementById(key).style.backgroundImage = "url('./images/sfm.png')";}
+		else if (i < AreaIndexes[15]) {document.getElementById(key).style.backgroundImage = "url('./images/goron.png')";}
+		else if (i < AreaIndexes[16]) {document.getElementById(key).style.backgroundImage = "url('./images/dodongos.png')";}
+		else if (i < AreaIndexes[17]) {document.getElementById(key).style.backgroundImage = "url('./images/dmt.png')";}
+		else if (i < AreaIndexes[18]) {document.getElementById(key).style.backgroundImage = "url('./images/dmc.png')";}
+		else if (i < AreaIndexes[19]) {document.getElementById(key).style.backgroundImage = "url('./images/kakariko.png')";}
+		else if (i < AreaIndexes[20]) {document.getElementById(key).style.backgroundImage = "url('./images/graveyard.png')";}
+		else if (i < AreaIndexes[21]) {document.getElementById(key).style.backgroundImage = "url('./images/river.png')";}
+		else if (i < AreaIndexes[22]) {document.getElementById(key).style.backgroundImage = "url('./images/domain.png')";}
+		else if (i < AreaIndexes[23]) {document.getElementById(key).style.backgroundImage = "url('./images/colossus.png')";}
+		else if (i < AreaIndexes[24]) {document.getElementById(key).style.backgroundImage = "url('./images/wasteland.png')";}
+		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./images/fortress.png')";}
+		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./images/fortress.png')";}
+		else if (i < AreaIndexes[27]) {document.getElementById(key).style.backgroundImage = "url('./images/jabu.png')";}
 	}
+
 	document.getElementById("chuButton").src= Player.chu_img;
 	document.getElementById("chuButton").style.opacity = 1;
 	document.getElementById("gan_req2").src= Player.light_arrows_img;
@@ -136,14 +123,6 @@ function dark_soli() {
 	document.getElementById("slingshotimg").src= Player.slingshot_img;
 	document.getElementById("goldengauntletsimg").src= Player.golden_gauntlets_img;
 	
-	var all = document.getElementsByClassName('songpics');
-	for (var i = 0; i < all.length; i++) {
-	all[i].style.width="26px";
-	all[i].style.height="26px";
-	all[i].style.marginLeft="8px";
-	all[i].style.marginBottom="2px";
-	all[i].style.marginTop="5px";
-	}
 	document.getElementById("iWantToRemoveThisButton").innerHTML="Appease Viewers";
 	
 	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.biggoron_sword_img, Player.nayrus_love_img, Player.stone_of_agony_img, Player.forest_key_img, Player.fire_key_img, Player.water_key_img, Player.spirit_key_img, Player.shadow_key_img, Player.well_key_img, Player.gtg_key_img, Player.ganon_key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img, Player.prelude_img, Player.serenade_img];
@@ -277,29 +256,6 @@ function dark_normie() {
 	Player.spirit_img = "./normal/items/spirit.png";
 	Player.light_img = "./normal/items/light.png";
 	
-	
-	//document.getElementById("mouseInputs_bomb_bag").src = Player.bomb_img;
-	//document.getElementById("mouseInputs_mirror_shield").src = Player.mirror_shield_img;
-	//document.getElementById("mouseInputs_lens").src = Player.lens_img;
-	//document.getElementById("mouseInputs_bottle").src = Player.rutos_letter_img;
-	//document.getElementById("mouseInputs_bow").src = Player.bow_img;
-	//document.getElementById("mouseInputs_hammer").src = Player.hammer_img;
-	//document.getElementById("mouseInputs_hookshot").src = Player.hookshot_img;
-	//document.getElementById("mouseInputs_boomerang").src = Player.boomerang_img;
-	//document.getElementById("mouseInputs_chus").src = Player.chu_img;
-	//document.getElementById("mouseInputs_scale").src = Player.silver_scale_img;
-	//document.getElementById("mouseInputs_magic").src = Player.magic_img;
-	//document.getElementById("mouseInputs_strength").src = Player.goron_bracelet_img;
-	//document.getElementById("mouseInputs_slingshot").src = Player.slingshot_img;
-	//document.getElementById("mouseInputs_magicspell").src = Player.magicspell_img;
-	//document.getElementById("mouseInputs_magicarrows").src = Player.magicarrows_img;
-	//document.getElementById("mouseInputs_boots").src = Player.boots_img;
-	//document.getElementById("mouseInputs_kokiri_sword").src = Player.kokiri_sword_img;
-	//document.getElementById("mouseInputs_goronzora").src = Player.goronzora_img;
-	//document.getElementById("mouseInputs_wallet").src = Player.wallet1_img;
-	//document.getElementById("mouseInputs_prescription").src = Player.prescription_img;
-	//document.getElementById("mouseInputs_claim_check").src = Player.claim_check_img;
-	
 	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Player.kokiri_sword_img; }
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Player.bomb_img; }
 	if(document.getElementById(jabuPlacement +"_req1") != null) {document.getElementById(jabuPlacement +"_req1").src = Player.rutos_letter_img; }
@@ -320,23 +276,8 @@ function dark_normie() {
 	if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").src = Player.hover_boots_img; }
 	if(document.getElementById(shadowPlacement +"_req4") != null) {document.getElementById(shadowPlacement +"_req4").src = Player.bomb_img; }
 	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Player.hookshot_img; }
-	document.getElementById("normalColumn1").style.width="97px";
-	document.getElementById("normalColumn2").style.width="97px";
-	document.getElementById("normalColumn3").style.width="97px";
-	document.getElementById("scrollable_section").style.left="0px";
-	document.getElementById("timer").style.left="-140px";
-	document.getElementById("tokens_acquired").style.left="732px";
-	document.getElementById("skulls_in_logic").style.left="871px";
-	document.getElementById("dung4_icon").style.left="948px";
-	document.getElementById("dung5_icon").style.left="948px";
-	document.getElementById("dung6_icon").style.left="948px";
-	document.getElementById("dung7_icon").style.left="948px";
-	document.getElementById("dung8_icon").style.left="948px";
-	document.getElementById("dung9_icon").style.left="948px";
 	for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
-		if (document.getElementById(key) != null){document.getElementById(key).style.height="22px";}
-		if (document.getElementById(key) != null){document.getElementById(key).style.width="30px";}
 		if (i < AreaIndexes[1]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kokiri.jpg')";}
 		else if (i < AreaIndexes[2]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ranch.jpg')";}
 		else if (i < AreaIndexes[3]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/field.jpg')";}
@@ -389,17 +330,8 @@ function dark_normie() {
 	document.getElementById("bottleimg").src= Player.bottle_img;
 	document.getElementById("slingshotimg").src= Player.slingshot_img;
 	document.getElementById("goldengauntletsimg").src= Player.golden_gauntlets_img;
-	var all = document.getElementsByClassName('songpics');
-	for (var i = 0; i < all.length; i++) {
-	all[i].style.width="38px";
-	all[i].style.height="38px";
-	all[i].style.marginLeft="1px";
-	all[i].style.marginBottom="1px";
-	all[i].style.marginTop="1px";
-	}
+  
 	document.getElementById("iWantToRemoveThisButton").innerHTML="Original";
-	
-	
 	
 	ItemImages = [Player.farores_wind_img, Player.slingshot_img, Player.slingshot_img, Player.slingshot_img, Player.boomerang_img, Player.silver_scale_img, Player.silver_scale_img, Player.rutos_letter_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bottle_img, Player.bomb_img, Player.bomb_img, Player.bomb_img, Player.hammer_img, Player.bow_img, Player.bow_img, Player.bow_img, Player.hookshot_img, Player.hookshot_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.goron_bracelet_img, Player.mirror_shield_img, Player.magic_img, Player.magic_img, Player.iron_boots_img, Player.kokiri_sword_img, Player.hover_boots_img, Player.wallet1_img, Player.wallet1_img, Player.wallet1_img, Player.goron_tunic_img, Player.zora_tunic_img, Player.dins_fire_img, Player.fire_arrows_img, Player.lens_img, Player.prescription_img, Player.claim_check_img, Player.light_arrows_img, Player.ice_arrows_img, Player.biggoron_sword_img, Player.nayrus_love_img, Player.stone_of_agony_img, Player.forest_key_img, Player.fire_key_img, Player.water_key_img, Player.spirit_key_img, Player.shadow_key_img, Player.well_key_img, Player.gtg_key_img, Player.ganon_key_img, Player.gerudo_card_img, Player.beans_img, Player.lullaby_img, Player.eponas_img, Player.suns_img, Player.sarias_img, Player.storms_img, Player.minuet_img, Player.bolero_img, Player.requiem_img, Player.nocturne_img, Player.time_img, Player.prelude_img, Player.serenade_img];
 }
@@ -415,8 +347,6 @@ function changeThemes() {
 	}
 	
 	if (Player.changetheme == 1) {Player.themeChange = true; Player.changetheme = 0;}
-	
-	
 	
 	if(colorTheme == "light") {
 		document.getElementById('row').style.backgroundColor = '#576166';
@@ -465,7 +395,6 @@ function dark_theme() {
 	if(document.getElementById('text_gan') != null) {document.getElementById('text_gan').style.color = '#FFA3B8';}
 	document.body.style.backgroundColor = "";
 }
-
 
 function light_theme() {
 	Player.themeChange = false;

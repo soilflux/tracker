@@ -367,7 +367,7 @@ color: red;
 .column {
 	margin-top:3px;
   float: left;
-  width: 90px;
+  width: 97px;
 }
 #inputConfig {
 	width:200px;
@@ -965,12 +965,12 @@ color: red;
 .songpics {
 	position:relative;
 	left: -6px;
-	height:40px;
-	width: 40px;
-	margin-left:8px;
+	height:38px;
+	width: 38px;
+	margin-left:1px;
 	margin-right:0px;
-	margin-top:5px;
-	margin-bottom:5px;
+	margin-top:1px;
+	margin-bottom:1px;
 	opacity: .2;
 }
 .bonuspics{
@@ -1013,7 +1013,7 @@ color: red;
 	color: white;
 	position: absolute;
 	top:890px;
-	left:900px;
+	left:-130px;
 	font-family: calibri;
 }
 #timerToD {
@@ -1144,69 +1144,6 @@ color: red;
 	left:895px;
 	position: absolute;
 }
-.keydot {
-  height: 18px;
-  width: 18px;
-  background-color: gray;
-  margin-right:3px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.greendot {
-  height: 24px;
-  width: 24px;
-  margin-right:3px;
-  margin-bottom:3px;
-  background-color: green;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
-.reddot {
-  height: 26px;
-  width: 26px;
-  margin-right:3px;
-  background-color: red;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
-.bluedot {
-  height: 18px;
-  width: 18px;
-  margin-right:3px;
-  background-color: blue;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
-.purpledot {
-  height: 18px;
-  width: 18px;
-  margin-right:3px;
-  background-color: purple;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
-.orangedot {
-  height: 18px;
-  width: 18px;
-  margin-right:3px;
-  background-color: orange;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
-.yellowdot {
-  height: 18px;
-  width: 18px;
-  margin-right:3px;
-  background-color: yellow;
-  border-radius: 50%;
-  opacity: 0.2;
-  display: inline-block;
-}
 .gameFocus{
 position:absolute;
 left:50%;
@@ -1283,50 +1220,6 @@ resize: none;
 	font-family: monospace;
 	margin-left: 3px;
 }
-#forceOutOfLogic{
-	color:pink;
-	display:none;
-	font-size:18px;
-}
-#forceIntoLogic{
-	color:lightgreen;
-	display:none;
-	font-size:18px;
-}
-#forceLogic1 {
-	display:none;
-}
-#forceLogic2 {
-	display:none;
-}
-#forceLogic3 {
-	display:none;
-}
-#forceLogic4 {
-	display:none;
-}
-#forceOutOfLogic1 {
-	display:none;
-}
-#forceOutOfLogic2 {
-	display:none;
-}
-#forceOutOfLogic3 {
-	display:none;
-}
-#forceOutOfLogic4 {
-	display:none;
-}
-.travelMenu{
-position:absolute;
-
-height:55%;
-width:12%;
-text-align:center;
-border:2px solid white;
-top:42%;
-right:2%;
-}
 h1 {
 text-align:center;
 width:30%;
@@ -1357,72 +1250,7 @@ display:inline;
 @-webkit-keyframes orbit { 
 from { -webkit-transform:rotate(0deg) } 
 to { -webkit-transform:rotate(360deg) } }
-/*#forest {
-	border: 3px solid #88FA4E;
-}
-#forestSKs {
-	border: 3px solid #88FA4E;
-}
-#forestBKs {
-	border: 3px solid #88FA4E;
-}
-#fire {
-	border: 3px solid #FE3213;
-}
-#fireSKs {
-	border: 3px solid #FE3213;
-}
-#fireBKs {
-	border: 3px solid #FE3213;
-}
-#water {
-	border: 3px solid #131BFE;
-}
-#waterSKs {
-	border: 3px solid #131BFE;
-}
-#waterBKs {
-	border: 3px solid #131BFE;
-}
-#spirit {
-	border: 3px solid #8C9B03;
-}
-#spiritSKs {
-	border: 3px solid #8C9B03;
-}
-#spiritBKs {
-	border: 3px solid #8C9B03;
-}
-#shadow {
-	border: 3px solid #69008E;
-}
-#shadowSKs {
-	border: 3px solid #69008E;
-}
-#shadowBKs {
-	border: 3px solid #69008E;
-}
-#gtg {
-	border: 3px solid #FE8B08;
-}
-#gtgSKs {
-	border: 3px solid #FE8B08;
-}
-#well{
-	border: 3px solid #DE86FE;
-}
-#wellSKs {
-	border: 3px solid #DE86FE;
-}
-#ganons {
-	border: 3px solid #990000;
-}
-#ganonsSKs {
-	border: 3px solid #990000;
-}
-#ganonsBKs {
-	border: 3px solid #990000;
-}*/
+
 #title_kokiri {
 color:#20EA01;
 }

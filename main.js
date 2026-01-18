@@ -29,7 +29,6 @@ function midUpdate() {
 		wothAndBarrenProcessing(); //do various things based on woth and barrens;
 		updateWothBorders(); // highlight woth checks if option enabled
 		refreshLogicForStuff(); //puts something in or out of logic based on whether its location is in or out of logic 
-		forceStuffInOrOutOfLogic(); //implements the force out of logic and force into logic boxes
 		logicShortcuts(); //combines multiple pieces of logic into one variable
 		locationLogic(); //updates logic and accessibility for all locations
 		updateDungeonER();
