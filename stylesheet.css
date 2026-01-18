@@ -73,7 +73,7 @@ color: red;
 	margin-left:90px;
 }
 #normalColumn1 {
-	margin-left:10px;
+	margin-left:3px;
 }
 .dot_span{
 	margin-left:21px;
@@ -365,7 +365,7 @@ color: red;
 	display: none;
 }
 .column {
-	margin-top:3px;
+	margin-top:4px;
   float: left;
   width: 97px;
 }
@@ -763,8 +763,6 @@ color: red;
 	font-weight:bold;
 	display: inline-block;
 	opacity: 1;
-	margin-top:0px;
-	margin-bottom:0px;
 	letter-spacing: -1px;
 }
 .logic_check_text_not_have{
@@ -784,8 +782,6 @@ color: red;
 	font-weight:normal;
 	display: inline-block;
 	opacity: .5;
-	margin-top:2px;
-	margin-bottom:1px;
 	vertical-align: top;
 	letter-spacing: -1px;
 }
@@ -802,8 +798,6 @@ color: red;
 	font-size: 16px;
 	color: 						yellow;
 	font-weight:normal;
-	margin-top:2px;
-	margin-bottom:1px;
 	display: inline-block;
 	opacity: .5;
 	letter-spacing: -1px;
@@ -813,8 +807,6 @@ color: red;
 	font-size: 16px;
 	color: 						yellow;
 	font-weight:normal;
-	margin-top:2px;
-	margin-bottom:1px;
 	display: inline-block;
 	opacity: .2;
 	letter-spacing: -1px;
@@ -825,8 +817,6 @@ color: red;
 	font-weight: normal;
 	color: 	white;
 	display: inline-block;
-	margin-top:2px;
-	margin-bottom:1px;
 	opacity: .5;
 	letter-spacing: -1px;
 }
