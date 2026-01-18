@@ -1399,7 +1399,7 @@ var AreaWotHAge = new Array(36).fill(0);
 var wothCount = new Array(36).fill(0);
 var textBlock = '';
 var circus = false;
-var colorWothAreas = false;
+var colorWothAreas = true;
 var hideInaccessible = true;
 var coopmode = false;
 if (localStorage.getItem("hideInaccessible") != null) {if (localStorage.getItem("hideInaccessible") == "false"){hideInaccessible = false; document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible"};}
@@ -2885,7 +2885,6 @@ function scangamepads() {
     }
   }
 }
-if (localStorage.getItem("highlightWoths") == "true") {colorWothAreasControl();}
 
 window.onbeforeunload = popup;
 function popup() {

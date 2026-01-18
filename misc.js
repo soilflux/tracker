@@ -473,16 +473,6 @@ function timerControlToD() {
 	timerToD(-1);
 }
 
-function colorWothAreasControl() {
-	colorWothAreas = !colorWothAreas;
-	if(colorWothAreas)
-		document.getElementById("colorWothAreasControl").innerHTML = "Plain WotHs"; 
-	else
-		document.getElementById("colorWothAreasControl").innerHTML = "Highlight WotHs"; 
-	
-	Update();
-}
-
 function hamsdaToggle() {
 	hamsda = !hamsda;
 	localStorage.setItem("hamsda", hamsda);
