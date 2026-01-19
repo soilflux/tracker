@@ -14,7 +14,6 @@ function fastUpdate() {
 		toFocus.focus();
 		toFocus = null;
 	}
-	timerToD(-1); //help with tracking ToD
 	timerStuff(); //implements a timer to use as an alternative to stuff like livesplit
 	stoneMedallionInput();
 	processInputs(); //handles hinted, peeked and picked up things

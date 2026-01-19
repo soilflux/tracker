@@ -112,9 +112,6 @@ function processInputs() {
 		input = document.getElementById(locationId).value;
 
 		if (inputIdx == 0) {
-			if (isUpperCase(input.charAt(0))) {
-				baitsChecked+=1;
-			}
 			if (i > lastItem) {
 				songItemChecked = true;
 			}
@@ -1633,33 +1630,8 @@ function updateSummaryText() {
 
 }
 function updateProbabilities() {
-	var explosivesLeft = 0;
 	var majorLeft = 0;
-	var bigLeft = Math.max(untracked,0);
-    bigLeft -= baitsChecked;
-	if (!Known.bombchus1) {explosivesLeft += 1;}
-	if (!Known.bombchus2) {explosivesLeft += 1;}
-	if (!Known.bombchus3) {explosivesLeft += 1;}
-	if (!Known.bombchus4) {explosivesLeft += 1;}
-	if (!Known.bombchus5) {explosivesLeft += 1;}
 	
-	for (var i = 0; i < Items2.length; i++) {
-		suffix = 0
-		if(Items2[i] == "junk" || Items2[i] == "small_key" || Items2[i] == "boss_key" || i >= Items2.indexOf("lullaby")) {continue;}
-		if(Items2[i] == "bottle" && Items2[i-1] == "bottle") {continue;}
-        
-        if(Items2[i] == "bombchus") {
-            if (chusInBigChests) {suffix = 5;}
-            else continue;
-        }
-		else if (Items2[i] == "bow" || Items2[i] == "bomb_bag" || Items2[i] == "strength" || Items2[i] == "slingshot" || Items2[i] == "bottle") {suffix = 3;}
-		else if (Items2[i] == "magic" || Items2[i] == "wallet" || Items2[i] == "hookshot") {suffix = 2;}
-		else if (!Known[Items2[i]]) {bigLeft += 1;}
-		while (suffix > 0) {
-			if (!Known[Items2[i] + suffix]) {bigLeft += 1;} 
-			suffix-=1;	
-		}			
-	}
 	var goMode = true;
 	if (searchItems.includes("Boomerang") && !Known.boomerang)  {majorLeft += 1; document.getElementById("searchingFor_boomerang").style.display = "inline-block";goMode = false;} 
 	else if (searchItems.includes("Boomerang")) {document.getElementById("searchingFor_boomerang").style.display = "none";}
@@ -1744,9 +1716,7 @@ function updateProbabilities() {
   else {
     document.getElementById('goMode').style.display = "none";
   }
-	document.getElementById("bait_probability").innerHTML = "Big Chest ~ 1 in "+((Player.checks_remaining-1)/(bigLeft-1)).toFixed(2)+" Checks"
 	document.getElementById("major_probability").innerHTML = "Searching For ("+((1-Math.pow(1-majorLeft/(Player.checks_remaining-nChecks/2+1/2),nChecks))*100).toFixed(2)+"%)"
-	document.getElementById("explosives_probability").innerHTML = "Chu Packs ~ 1 in "+(1/(explosivesLeft/(Player.checks_remaining-bigLeft))).toFixed(2)+" Smalls"
 }
 
 function updateWothBorders() {
