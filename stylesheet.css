@@ -439,7 +439,7 @@ color: red;
 }
 #frogSongHelper {
   width: 175px;
-  top: 80px;
+  top: -2px;
   position: absolute;
 }
 .checkSummaryColumn {
@@ -630,7 +630,7 @@ color: red;
 	margin-top:9px;
 }
 #songcolumn {
-	margin-top:10px;
+	margin-top:4px;
 	float: left;
 	width: 130px;
 }
@@ -638,7 +638,7 @@ color: red;
 	line-height: 131%;
 }
 .dungcolumn {
-	margin-top:10px;
+	margin-top:4px;
   float: left;
   width:100px;
 }
@@ -1000,11 +1000,11 @@ color: red;
 	color: gold;
 }
 #timer {
-	font-size:42px;
+	font-size:50px;
 	color: white;
 	position: absolute;
-	top:890px;
-	left:-130px;
+	top:-20px;
+	left:915px;
 	font-family: calibri;
 }
 #forest_medallion {
