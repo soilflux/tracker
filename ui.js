@@ -524,21 +524,7 @@ function junk() {
 		Update();
 		
 		if(!thisIsHinted) {
-			
-			for(var j = 0; j < AreaIndexes.length; j++) {
-				if(Locations.indexOf(str) < AreaIndexes[j])
-					break;
-			}
-		
-			for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
-				if(i >= AreaIndexes[j])
-					break;
-				
-				if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
-					toFocus = document.getElementById(Locations[i]); 
-					break;
-				}
-			}
+			highlightNextCheck(str);
 		}
 	}
 	else {
@@ -771,21 +757,7 @@ function junkItem(x) {
 	midUpdate();
 	
 	if(!thisIsHinted) {
-		
-		for(var j = 0; j < AreaIndexes.length; j++) {
-			if(Locations.indexOf(str2) < AreaIndexes[j])
-				break;
-		}
-	
-		for (var i = Locations.indexOf(str2) + 1; i < Locations.length; i++) {
-			if(i >= AreaIndexes[j])
-				break;
-			
-			if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
-				document.getElementById(Locations[i]).focus();
-				break;
-			}
-		}
+		highlightNextCheck(str2);
 	}
 }
 
@@ -797,6 +769,28 @@ function junkSong(x) {
 	
 	lastCheck.push(str2);
 	Update();
+}
+
+function highlightNextCheck(locationID) {
+  for(var j = 0; j < AreaIndexes.length; j++) {
+				if(Locations.indexOf(locationID) < AreaIndexes[j])
+					break;
+	}
+		
+  for (var i = Locations.indexOf(locationID) + 1; i < Locations.length; i++) {
+    if(i == AreaIndexes[j]) {
+      i = AreaIndexes[j-1];
+    }
+    
+    if (i == Locations.indexOf(locationID)) {
+      i = AreaIndexes[j];
+    }
+    
+    if (document.getElementById(Locations[i]).style.display != "none" && document.getElementById(Locations[i]).style.visibility != "hidden" && Location_Peek[Locations[i]]) {
+      toFocus = document.getElementById(Locations[i]); 
+      break;
+    }
+  }
 }
 
 function checkCircleInfo() {
