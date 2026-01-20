@@ -29,13 +29,15 @@ function processInputs() {
 
     if (input.startsWith("`")) {
       input = input.slice(1);
-      if (pathInputs.includes(input)) {
-        let pathNum = 8;
-        for (var i = 1; i < pathNum; i++) {
-          if (document.getElementById("path_boss" + i).value == "") {
-            document.getElementById("path_boss" + i).value = input;
-            document.getElementById(locationId).value = "";
-            break;
+      for (var i = 0; i < pathInputs.length; i++) {
+        if (input.startsWith(pathInputs[i])) {
+          let pathNum = 8;
+          for (var j = 1; j < pathNum; j++) {
+            if (document.getElementById("path_boss" + j).value == "") {
+              document.getElementById("path_boss" + j).value = input;
+              document.getElementById(locationId).value = "";
+              break;
+            }
           }
         }
       }
@@ -44,13 +46,15 @@ function processInputs() {
 
     if (input.startsWith("1")) {
       input = input.slice(1);
-      if (areaInputs.includes(input)) {
-        let wothNum = 8;
-        for (var i = 1; i < wothNum; i++) {
-          if (document.getElementById("woth_input" + i).value == "") {
-            document.getElementById("woth_input" + i).value = input;
-            document.getElementById(locationId).value = "";
-            break;
+      for (var i = 0; i < areaInputs.length; i++) {
+        if (input.startsWith(areaInputs[i])) {
+          let wothNum = 8;
+          for (var j = 1; j < wothNum; j++) {
+            if (document.getElementById("woth_input" + j).value == "") {
+              document.getElementById("woth_input" + j).value = input;
+              document.getElementById(locationId).value = "";
+              break;
+            }
           }
         }
       }
@@ -59,13 +63,15 @@ function processInputs() {
     
     if (input.startsWith("2")) {
       input = input.slice(1);
-      if (areaInputs.includes(input)) {
-        let barrenNum = 5;
-        for (var i = 1; i < barrenNum; i++) {
-          if (document.getElementById("barren_input" + i).value == "") {
-            document.getElementById("barren_input" + i).value = input;
-            document.getElementById(locationId).value = "";
-            break;
+      for (var i = 0; i < areaInputs.length; i++) {
+        if (input.startsWith(areaInputs[i])) {
+          let barrenNum = 8;
+          for (var j = 1; j < barrenNum; j++) {
+            if (document.getElementById("barren_input" + j).value == "") {
+              document.getElementById("barren_input" + j).value = input;
+              document.getElementById(locationId).value = "";
+              break;
+            }
           }
         }
       }
