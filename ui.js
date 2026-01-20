@@ -27,6 +27,51 @@ function processInputs() {
 			continue;
 		}
 
+    if (input.startsWith("`")) {
+      input = input.slice(1);
+      if (pathInputs.includes(input)) {
+        let pathNum = 8;
+        for (var i = 1; i < pathNum; i++) {
+          if (document.getElementById("path_boss" + i).value == "") {
+            document.getElementById("path_boss" + i).value = input;
+            document.getElementById(locationId).value = "";
+            break;
+          }
+        }
+      }
+      continue;
+    }
+
+    if (input.startsWith("1")) {
+      input = input.slice(1);
+      if (areaInputs.includes(input)) {
+        let wothNum = 8;
+        for (var i = 1; i < wothNum; i++) {
+          if (document.getElementById("woth_input" + i).value == "") {
+            document.getElementById("woth_input" + i).value = input;
+            document.getElementById(locationId).value = "";
+            break;
+          }
+        }
+      }
+      continue;
+    }
+    
+    if (input.startsWith("2")) {
+      input = input.slice(1);
+      if (areaInputs.includes(input)) {
+        let barrenNum = 5;
+        for (var i = 1; i < barrenNum; i++) {
+          if (document.getElementById("barren_input" + i).value == "") {
+            document.getElementById("barren_input" + i).value = input;
+            document.getElementById(locationId).value = "";
+            break;
+          }
+        }
+      }
+      continue;
+    }
+
 		// Break early if input is invalid.
 		var inputIdx = inputs.indexOf(input.toLowerCase());
 		if (inputIdx === -1) {
