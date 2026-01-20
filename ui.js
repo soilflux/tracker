@@ -27,7 +27,7 @@ function processInputs() {
 			continue;
 		}
 
-    if (input.startsWith("`")) {
+    if (input.startsWith(" ")) {
       input = input.slice(1);
       for (var i = 0; i < pathInputs.length; i++) {
         if (input.startsWith(pathInputs[i])) {
