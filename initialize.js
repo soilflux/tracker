@@ -480,10 +480,47 @@ var hintTable = {
 	"zddt": ["zora_diving", "zora_torches"],
 };
 
+var areaInputs = {
+    "ko": "ko",   "kf": "ko",                   // Kokiri Forest
+    "ll": "ra",   "ra": "ra",                   // Lon Lon Ranch
+    "fie": "hf",  "hf": "hf",                   // Hyrule Field
+    "gv": "gv",   "va": "gv",                   // Gerudo Valley
+    "hyl": "lh",  "lh": "lh",   "la": "lh",     // Lake Hylia
+    "mk": "mk",   "ma": "mk",                   // Market
+    "hc": "ca",   "ca": "ca",                   // Castle Yard
+    "ou": "ou",   "og": "ou",                   // Outside Ganon
+    "to": "to",                                 // Temple of Time
+    "zf": "zf",   "fou": "zf",                  // Zora's Fountain
+    "ic": "ic",                                 // Ice Cavern
+    "dt": "de",   "de": "de",                   // Deku Tree
+    "lw": "lw",                                 // Lost Woods
+    "me": "sf",   "sf": "sf",                   // Sacred Forest Meadow
+    "go": "go",                                 // Goron City
+    "dod": "dc",  "dc": "dc",                   // Dodongo's Cavern
+    "dm": "tr",   "tr": "tr",                   // Death Mountain Trail
+    "dmc": "cr",  "cr": "cr",                   // Death Mountain Crater
+    "kv": "ka",   "ka": "ka",                   // Kakariko Village
+    "gy": "gy",   "gr": "gy",                   // Graveyard
+    "zr": "zr",   "ri": "zr",                   // Zora's River
+    "zd": "zd",   "dom": "zd",                  // Zora's Domain
+    "co": "co",                                 // Colossus
+    "wl": "was",  "was": "was",                 // Wasteland
+    "th": "th",                                 // Thieves' Hideout
+    "gf": "gf",                                 // Gerudo Fortress
+    "jj": "jj",   "ja": "jj",                   // Jabu Jabu
+    "for": "for",                               // Forest Temple
+    "fir": "fir",                               // Fire Temple
+    "wat": "wat",                               // Water Temple
+    "sh": "sh",                                 // Shadow Temple
+    "sp": "sp",                                 // Spirit Temple
+    "ga": "ga",                                 // Ganon's Castle
+    "gt": "gt",                                 // Ganon's Tower
+    "we": "we",   "bo": "we"                    // Well
+};
+
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
-var areaInputs = ["ko", "kf","ll", "ra", "lo", "fie", "hf", "gv", "va", "hyl", "lh", "la", "mk", "ma", "hc", "ca", "ou", "og", "to", "zf", "fou", "ic", "dt", "de", "lw", "me", "sfm", "go", "dod", "dc", "dm", "tr", "dmc", "cr", "kv", "ka", "gy", "gr", "zr", "ri", "zd", "dom", "co", "wl", "was", "th", "gf", "jj", "ja", "for", "fir", "wat", "sh", "sp", "ga", "gt", "we", "bo"];
 var pathInputs = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var songInputs = ["lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea"];

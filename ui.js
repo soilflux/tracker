@@ -46,35 +46,35 @@ function processInputs() {
 
     if (input.startsWith("1")) {
       input = input.slice(1);
-      for (var i = 0; i < areaInputs.length; i++) {
-        if (input.startsWith(areaInputs[i])) {
+      Object.keys(areaInputs).forEach(key => {
+        if (input.startsWith(key)) {
           let wothNum = 8;
-          for (var j = 1; j < wothNum; j++) {
-            if (document.getElementById("woth_input" + j).value == "") {
-              document.getElementById("woth_input" + j).value = input;
+          for (var i = 1; i < wothNum; i++) {
+            if (document.getElementById("woth_input" + i).value == "") {
+              document.getElementById("woth_input" + i).value = key;
               document.getElementById(locationId).value = "";
               break;
             }
           }
         }
-      }
+      });
       continue;
     }
     
     if (input.startsWith("2")) {
       input = input.slice(1);
-      for (var i = 0; i < areaInputs.length; i++) {
-        if (input.startsWith(areaInputs[i])) {
+      Object.keys(areaInputs).forEach(key => {
+        if (input.startsWith(key)) {
           let barrenNum = 8;
-          for (var j = 1; j < barrenNum; j++) {
-            if (document.getElementById("barren_input" + j).value == "") {
-              document.getElementById("barren_input" + j).value = input;
+          for (var i = 1; i < barrenNum; i++) {
+            if (document.getElementById("barren_input" + i).value == "") {
+              document.getElementById("barren_input" + i).value = key;
               document.getElementById(locationId).value = "";
               break;
             }
           }
         }
-      }
+      });
       continue;
     }
 
