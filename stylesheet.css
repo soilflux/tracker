@@ -37,12 +37,6 @@ background-size:cover;
 margin: 0;
 overflow: hidden;
 }
-.sk {
-color: silver;
-}
-.bk {
-color: red;
-}
 .chuButtons{
     width: 25px;
     font-size: 18px;
@@ -75,12 +69,6 @@ color: red;
 #normalColumn1 {
 	margin-left:3px;
 }
-.dot_span{
-	margin-left:21px;
-}
-.doubledot_span{
-	margin-left:42px;
-}
 .track_text {
 	font-size:26px;
 	margin-left:3px;
@@ -95,15 +83,6 @@ color: red;
 }
 #shiftChecks {
   width: 163px;
-}
-#text_next {
-	display: none;
-	color: lightblue;
-	font-size: 18px;
-	font-weight: bold;
-}
-#next {
-	display: none !important;
 }
 #logically_accessible{
 	color:darkgreen;
@@ -230,21 +209,6 @@ color: red;
 	margin-top: 0px;
 	margin-right: 2px;
 }
-#mouseInputs {
-	color:lightblue;
-	position: absolute;
-	left:600px;
-	top:1050px;
-	height:50px;
-	width:1000px;
-}
-.mouseInputsImage {
-	height:44px;
-	width:44px;
-}
-#mouseInputs_locations {
-	font-size:18px;
-}
 #dungspawnInputs {
 	position: absolute;
 	top:1040px;
@@ -305,24 +269,9 @@ color: red;
     background-color : #181818; 
     color:white;
 }
-
-#skip_req{
-	color: darkgreen;
-}
 .hint_text {
 	font-size: 20px;
 	font-weight: bold;
-}
-.meh_text {
-	font-size: 14px;
-	color: green;
-}
-.meh_input {
-	width: 25px;
-	vertical-align: top;
-	margin-bottom: 3px;
-    background-color : #181818; 
-    color: white
 }
 #important_hints_div {
 	display: none;
@@ -886,24 +835,6 @@ color: red;
   text-decoration: none;
   cursor: pointer;
 }
-.dot {
-  height: 18px;
-  width: 18px;
-  margin-right:3px;
-  background-color: blue;
-  border-radius: 50%;
-  display: inline-block;
-}
-.logicdot {
-	height: 12px;
-	width: 12px;
-	margin-left:3px;
-	margin-right:3px;
-	background-color: palevioletred;
-	vertical-align: center;
-	border-radius: 50%;
-	display: inline-block;
-}
 .superdot {
   height: 18px;
   width: 18px;
@@ -941,17 +872,6 @@ color: red;
   background-color: red;
   border-radius: 50%;
   display: inline-block;
-}
-.bossdot {
-  height: 18px;
-  width: 18px;
-  background-color: red;
-  margin-right:3px;
-  border-radius: 50%;
-  display: inline-block;
-}
-#song_title {
-	color: white;
 }
 .songpics {
 	position:relative;
@@ -1003,45 +923,9 @@ color: red;
 	font-size:50px;
 	color: white;
 	position: absolute;
-	top:-20px;
-	left:915px;
+	top:-10px;
+	left:1740px;
 	font-family: calibri;
-}
-#forest_medallion {
-	top: 51px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
-}
-#fire_medallion {
-	top: 87px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
-}
-#water_medallion {
-	top: 124px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
-}
-#gen1_medallion {
-	top: 159px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
-}
-#gen2_medallion {
-	top: 196px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
-}
-#gen3_medallion {
-	top: 231px;
-	right: 940px;
-	position: absolute;
-	opacity: .2;
 }
 #linsoLight{
 	animation: rotation 6s infinite linear;
@@ -1110,47 +994,8 @@ width:67%;
 border:3px solid white;
 border-radius:7.5%;
 }
-.locationTitle{
-font-weight:bold;
-font-size:22px;
-}
-.locationDescription{
-
-    font-size:17px;
-}
-.localListing{
-    width:100%;
-    height:5%;
-}
-.log {
-    margin-top:5%;
-    height:80%;
-    width:10%;
-    margin-left:2.5%;
-    text-align:left;
-}
-.logHeading{
-    font-size:16px;
-    font-weight:bold;
-    text-align:center;
-}
-.localText{
-}
-.localHeading{
-    font-size:16px;
-    font-weight:bold;
-}
-.localSection{
-vertical-align:top;
-width:25%;
-height:60%;
-display:inline-block;
-margin:1.5%;
-margin-top:0%;
-}
 #nerfControl {
 display:none;	
-}
 }
 #markStones {
 margin-left: 0px;
@@ -1187,25 +1032,6 @@ outline:none;
 .top {
 display:inline;
 }
-.web{position:absolute; height:20px; width:20px; background-color:white; color:white; border-radius:50%; }
-
-#cweb{height:35px; width:35px; top:50%; left:50%;}
-#a1web{top:59%; left:52%;}
-#a2web{top:60%; left:56%;}
-#a3web{top:62%; left:60%;}
-#a4web{top:65%; left:64%;}
-#a5web{top:62%; left:68%;}
-#a6web{top:58%; left:72%;}
-#a7web{top:61%; left:75%; height:55px; width:55px;}
-#b1web{top:44%; left:52%;}
-#b2web{top:42%; left:49%;}
-#b3web{top:36%; left:50%;}
-#b4web{top:32%; left:47%;}
-
-@-webkit-keyframes orbit { 
-from { -webkit-transform:rotate(0deg) } 
-to { -webkit-transform:rotate(360deg) } }
-
 #title_kokiri {
 color:#20EA01;
 }

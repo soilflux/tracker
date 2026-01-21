@@ -351,7 +351,6 @@ function changeThemes() {
 	if(colorTheme == "light") {
 		document.getElementById('row').style.backgroundColor = '#576166';
 		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
-		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
 		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
 		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'black';});
 		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#404040'; e.style.color = 'white';});
@@ -365,7 +364,6 @@ function changeThemes() {
 	else {
 		document.getElementById('row').style.backgroundColor = '#3b4144';
 		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
-		document.querySelectorAll('.meh_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'white';});
 		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'white';});
 		document.querySelectorAll('.check_input').forEach(e => {e.style.backgroundColor = '#181818'; e.style.color = 'magenta';});
