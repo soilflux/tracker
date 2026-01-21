@@ -415,6 +415,7 @@ function wothAndBarrenProcessing() {
 		
 		if (AreaAge[i] == 3) {
 			hinted = true;
+      thisIsHinted = true;
 			if (i == 1) {
 				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
 					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}

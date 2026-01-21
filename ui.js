@@ -1,4 +1,5 @@
 function processInputs() {
+  thisIsHinted = false;
 	var peeked = false;
 	for (var i = 0; i < Locations.length; i++) {
 		const locationId = Locations[i];
