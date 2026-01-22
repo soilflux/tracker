@@ -86,41 +86,41 @@ function wothAndBarrenProcessing() {
 		
 		if (i <= 5) {
 			var str2 = document.getElementById("barren_input" + i).value;
-			if (str2 == "kok" || str2 == "kf" || str2 == "koki" || str2 == "kfc") {Area[1] = "barren";}
-			if (str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
-			if (str2 == "fie" || str2 == "hf" || str2 == "field") {Area[3] = "barren";} 
+			if (str2 == "ko" || str2 == "kok" || str2 == "kf" || str2 == "koki" || str2 == "kfc") {Area[1] = "barren";}
+			if (str2 == "ra" || str2 == "llr" || str2 == "ranch" || str2 == "lon" || str2 == "ran") {Area[2] = "barren";} 
+			if (str2 == "hf" || str2 == "fie" || str2 == "field") {Area[3] = "barren";} 
 			if (str2 == "gv" || str2 == "val" || str2 == "valley") {Area[4] = "barren";} 
-			if (str2 == "hyl" || str2 == "hylia" || str2 == "lh" || str2 == "lake" || str2 == "lak") {Area[5] = "barren";} 
-			if (str2 == "mkt" || str2 == "market" || str2 == "mar" || str2 == "mark") {Area[6] = "barren";} 
-			if (str2 == "hyr c" || str2 == "hcast" || str2 == "hc" || str2 == "cas") {Area[7] = "barren";} 
-			if (str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
-			if (str2 == "tot" || str2 == "temple" || str2 == "time") {Area[9] = "barren";} 
-			if (str2 == "fountain" || str2 == "fount" || str2 == "fou" || str2 == "zf") {Area[10] = "barren";} 
-			if (str2 == "ice" || str2 == "ic" || str2 == "cavern") {Area[11] = "barren";} 
-			if (str2 == "deku" || str2 == "dek" || str2 == "dt") {Area[12] = "barren";} 
+			if (str2 == "lh" || str2 == "hyl" || str2 == "hylia" || str2 == "lake" || str2 == "lak") {Area[5] = "barren";} 
+			if (str2 == "mk" || str2 == "mkt" || str2 == "market" || str2 == "mar" || str2 == "mark") {Area[6] = "barren";} 
+			if (str2 == "ca" || str2 == "hyr c" || str2 == "hcast" || str2 == "hc" || str2 == "cas") {Area[7] = "barren";} 
+			if (str2 == "ou" || str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
+			if (str2 == "to" || str2 == "tot" || str2 == "temple" || str2 == "time") {Area[9] = "barren";} 
+			if (str2 == "zf" || str2 == "fountain" || str2 == "fount" || str2 == "fou") {Area[10] = "barren";} 
+			if (str2 == "ic" || str2 == "ice" || str2 == "cavern") {Area[11] = "barren";} 
+			if (str2 == "de" || str2 == "deku" || str2 == "dek" || str2 == "dt") {Area[12] = "barren";} 
 			if (str2 == "lw" || str2 == "lost" || str2 == "woods") {Area[13] = "barren";} 
-			if (str2 == "sfm" || str2 == "mea" || str2 == "mead") {Area[14] = "barren";} 
-			if (str2 == "gor" || str2 == "gc" || str2 == "goron") {Area[15] = "barren";} 
-			if (str2 == "dod" || str2 == "dodo" || str2 == "dc") {Area[16] = "barren";} 
-			if (str2 == "tra" || str2 == "trail" || str2 == "dmt") {Area[17] = "barren";} 
-			if (str2 == "cra" || str2 == "crater" || str2 == "dmc") {Area[18] = "barren";} 
-			if (str2 == "kak" || str2 == "kaki" || str2 == "kv") {Area[19] = "barren";} 
-			if (str2 == "gra" || str2 == "grave" || str2 == "gy") {Area[20] = "barren";} 
-			if (str2 == "riv" || str2 == "river" || str2 == "zr") {Area[21] = "barren";} 
-			if (str2 == "dom" || str2 == "domain" || str2 == "zd") {Area[22] = "barren";} 
-			if (str2 == "col" || str2 == "colo" || str2 == "colossus" || str2 == "co") {Area[23] = "barren";} 
+			if (str2 == "sf" || str2 == "sfm" || str2 == "mea" || str2 == "mead") {Area[14] = "barren";} 
+			if (str2 == "go" || str2 == "gor" || str2 == "gc" || str2 == "goron") {Area[15] = "barren";} 
+			if (str2 == "dc" || str2 == "dod" || str2 == "dodo") {Area[16] = "barren";} 
+			if (str2 == "tr" || str2 == "tra" || str2 == "trail" || str2 == "dmt") {Area[17] = "barren";} 
+			if (str2 == "cr" || str2 == "cra" || str2 == "crater" || str2 == "dmc") {Area[18] = "barren";} 
+			if (str2 == "ka" || str2 == "kak" || str2 == "kaki" || str2 == "kv") {Area[19] = "barren";} 
+			if (str2 == "gy" || str2 == "gra" || str2 == "grave") {Area[20] = "barren";} 
+			if (str2 == "zr" || str2 == "riv" || str2 == "river") {Area[21] = "barren";} 
+			if (str2 == "zd" || str2 == "dom" || str2 == "domain") {Area[22] = "barren";} 
+			if (str2 == "co" || str2 == "col" || str2 == "colo" || str2 == "colossus" || str2 == "co") {Area[23] = "barren";} 
 			if (str2 == "was" || str2 == "waste" || str2 == "wl" || str2 == "hw") {Area[24] = "barren";} 
-			if (str2 == "thi" || str2 == "th" || str2 == "thieve" || str2 == "thieves") {Area[25] = "barren";} 
-			if (str2 == "fort" || str2 == "fortress" || str2 == "gf") {Area[26] = "barren";} 
-			if (str2 == "jab" || str2 == "jabu" || str2 == "jjb" || str2 == "jj") {Area[27] = "barren";} 
+			if (str2 == "th" || str2 == "thi" || str2 == "thieve" || str2 == "thieves") {Area[25] = "barren";} 
+			if (str2 == "gf" || str2 == "fort" || str2 == "fortress") {Area[26] = "barren";} 
+			if (str2 == "jj" || str2 == "jab" || str2 == "jabu" || str2 == "jjb") {Area[27] = "barren";} 
 			if (str2 == "for" || str2 == "forest" || str2 == "fot") {Area[28] = "barren";} 
 			if (str2 == "fir" || str2 == "fire" || str2 == "fit") {Area[29] = "barren";} 
-			if (str2 == "spi" || str2 == "spirit" || str2 == "sprt" || str2 == "sp") {Area[30] = "barren";} 
-			if (str2 == "sha" || str2 == "shadow" || str2 == "shad" || str2 == "sh") {Area[31] = "barren";} 
+			if (str2 == "sp" || str2 == "spi" || str2 == "spirit" || str2 == "sprt") {Area[30] = "barren";} 
+			if (str2 == "sh" || str2 == "sha" || str2 == "shadow" || str2 == "shad") {Area[31] = "barren";} 
 			if (str2 == "wat" || str2 == "wata" || str2 == "water") {Area[32] = "barren";} 
-			if (str2 == "gan" || str2 == "gan c" || str2 == "ganons" || str2 == "ganon" || str2 == "ga") {Area[33] = "barren";} 
-			if (str2 == "gtg" || str2 == "tg" || str2 == "gt") {Area[34] = "barren";} 
-			if (str2 == "well" || str2 == "botw" || str2 == "wel") {Area[35] = "barren";} 
+			if (str2 == "ga" || str2 == "gan" || str2 == "gan c" || str2 == "ganons" || str2 == "ganon") {Area[33] = "barren";} 
+			if (str2 == "gt" || str2 == "gtg" || str2 == "tg") {Area[34] = "barren";} 
+			if (str2 == "we" || str2 == "well" || str2 == "botw" || str2 == "wel") {Area[35] = "barren";} 
 		}
 	}
 	
