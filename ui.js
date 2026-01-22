@@ -225,7 +225,7 @@ function processInputs() {
 function hideCheck(locationID) {
   if (document.getElementById("shiftChecks").value == "YES") {
     document.getElementById(locationID).style.display = "none";
-    if (Locations.getIndexOf(locationID) <= lastItem) {
+    if (Locations.indexOf(locationID) <= lastItem) {
       document.getElementById("text_" + locationID).style.display = "none";
       document.getElementById("br_" + locationID).style.display = "none";
     }
@@ -1526,7 +1526,7 @@ function updateLogicInfo() {
 	if (!Player.shadow_boss_key) {Player.shadow_checks_remaining -= 1;}
 	
 	Player.checks_remaining += Player.forest_checks_remaining + Player.fire_checks_remaining + Player.water_checks_remaining + Player.spirit_checks_remaining + Player.shadow_checks_remaining + Player.gtg_checks_remaining + Player.well_checks_remaining + Player.ganons_checks_remaining;
-	if (!songItemChecked) {Player.checks_remaining += 1; console.log("hi");}
+	if (!songItemChecked) {Player.checks_remaining += 1;}
     
 	Player.logically_accessible = Number(Player.logically_accessible);
 	Player.logically_accessible=Player.logically_accessible.toFixed(0);
