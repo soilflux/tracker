@@ -195,83 +195,51 @@ function processInputs() {
 			if (k == 0) {var duplicate = "";}
 			else {var duplicate = k + "";}
 			if (!Known[Items2[inputIdx] + duplicate]) {
-				if (i <= lastItem) {
-					Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
-					Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
-					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
-					Known[Items2[inputIdx] + duplicate] = true; 
-					if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
-					if (!hinted && !peeked){
-						Player[Items2[inputIdx] + duplicate] = true;
-						if(inputs[inputIdx] == "big")
-							Player["big_poe"] = true;
-					}
-					if (hinted) {Hinted[locationId] = true;} 
-					if (hinted) {temptext2 += Names[i] + ":  " + ItemNames2[inputIdx] + "<br />";} 
-					if (peeked) {peekOrHintText = "";}
-					if(hintedInput == inputs[inputIdx])
-						thisIsHinted = true;
-					junkItem(document.getElementById(locationId));
-					if (!Player[Items2[inputIdx] + duplicate]) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
-					thisIsHinted = false;
-					hintedInput = "";
-					trackAnimalQuest();
-					break;
-				}
-				else if (i > lastItem && inputIdx < 41) {
-					songItemChecked = true;
-					Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
-					Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
-					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
-					Known[Items2[inputIdx] + duplicate] = true; 
-					if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
-					if (!hinted && !peeked){
-						Player[Items2[inputIdx] + duplicate] = true;
-						if(inputs[inputIdx] == "big")
-							Player["big_poe"] = true;
-					}
-					if (hinted) {Hinted[locationId] = true;} 
-					if (hinted || peeked) {temptext2 += Names[i] + ":  " + ItemNames2[inputIdx] + "<br />";} 
-					var change = "text_" + document.getElementById(locationId).id; 
-					document.getElementById(change).innerHTML += ": " + ItemNames2[inputIdx]; 
-					junkSong(document.getElementById(locationId));
-					trackAnimalQuest();
-					break;
-				}
-				else {
-					Check[document.getElementById(locationId).id] = Items2[inputIdx];
-					Location[Items2[inputIdx]] = document.getElementById(locationId).id; 
-					Known[Items2[inputIdx]] = true; 
-					if (inputIdx<Items2.indexOf("lullaby")) {songItemChecked = true;}
-					if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];} else if (inputIdx < Items2.indexOf("lullaby")) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + Names[i];}
-					if (!hinted && !peeked) {Player[Items2[inputIdx]] = true;} 
-					if (hinted) {Hinted[locationId] = true;} 
-					if (hinted || peeked) {temptext2 += Names[i] + ": " + ItemNames2[inputIdx] + "<br />";} 
-					var change = "text_" + document.getElementById(locationId).id; 
-					document.getElementById(change).innerHTML += ": " + ItemNames2[inputIdx]; 
-					junkSong(document.getElementById(locationId));
-					trackAnimalQuest();
-					break;
-				}
-			
-			}
+        Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
+        Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
+        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (inputIdx < Items2.indexOf("lullaby")) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+        Known[Items2[inputIdx] + duplicate] = true; 
+        if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
+        if (!hinted && !peeked){
+          Player[Items2[inputIdx] + duplicate] = true;
+          if(inputs[inputIdx] == "big")
+            Player["big_poe"] = true;
+        }
+        if (hinted) {Hinted[locationId] = true;} 
+        if(hintedInput == inputs[inputIdx])
+          thisIsHinted = true;
+        junkItem(document.getElementById(locationId));
+        if (!Player[Items2[inputIdx] + duplicate] && i <= lastItem) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
+        thisIsHinted = false;
+        hintedInput = "";
+        if (inputIdx<Items2.indexOf("lullaby") && i > lastItem) {
+          songItemChecked = true;
+        }
+        trackAnimalQuest();
+        break;
+      }
 		}
 	}
 }
 
-function hideCheck(locationId) {
+function hideCheck(locationID) {
   if (document.getElementById("shiftChecks").value == "YES") {
-    document.getElementById(locationId).style.display = "none";
-    document.getElementById("text_" + locationId).style.display = "none";
-    document.getElementById("br_" + locationId).style.display = "none";
+    document.getElementById(locationID).style.display = "none";
+    if (Locations.getIndexOf(locationID) <= lastItem) {
+      document.getElementById("text_" + locationID).style.display = "none";
+      document.getElementById("br_" + locationID).style.display = "none";
+    }
   }
   else {
-    document.getElementById(locationId).style.display = "inline-block";
-    document.getElementById("text_" + locationId).style.display = "inline-block";
-    document.getElementById("br_" + locationId).style.display = "inline-block";
-    document.getElementById(locationId).style.visibility = "hidden";
-    document.getElementById("text_" + locationId).style.visibility = "hidden";
-    document.getElementById("br_" + locationId).style.visibility = "hidden";
+    document.getElementById(locationID).style.display = "none";
+    document.getElementById(locationID).style.visibility = "hidden";
+    if (Locations.indexOf(locationID) <= lastItem) {
+      document.getElementById(locationID).style.display = "inline-block";
+      document.getElementById("text_" + locationID).style.display = "inline-block";
+      document.getElementById("br_" + locationID).style.display = "inline-block";
+      document.getElementById("text_" + locationID).style.visibility = "hidden";
+      document.getElementById("br_" + locationID).style.visibility = "hidden";
+    }
   }
 }
 
@@ -737,39 +705,16 @@ function junkUltra() {
 }
 
 function junkItem(x) {
-	var str2 = x.id;
-	var temp = true;
-	if (str2.includes('shadow_') || str2.includes('spirit_') || str2.includes('forest_') || str2.includes('fire_') || str2.includes('water_') || str2.includes('gtg_') || str2.includes('well_')|| str2.includes('ganons_')) {
-		temp = false;
-		if(str2.includes('forest_') && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -= 1; temp = true;}
-		if(str2.includes('fire_') && Player.fire_checks_remaining != 0) {Player.fire_checks_remaining -= 1; temp = true;}
-		if(str2.includes('water_') && Player.water_checks_remaining != 0) {Player.water_checks_remaining -= 1; temp = true;}
-		if(str2.includes('shadow_') && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -= 1; temp = true;}
-		if(str2.includes('spirit_') && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -= 1; temp = true;}
-		if(str2.includes('ganons_') && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -= 1; temp = true;}
-		if(str2.includes('gtg_') && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -= 1; temp = true;}
-		if(str2.includes('well_') && Player.well_checks_remaining != 0) {Player.well_checks_remaining -= 1; temp = true;}
-	}
-	if (!temp) {return;}
-	
-	hideCheck(str2);
-	
-	lastCheck.push(str2);
+	let locationID = x.id;
+
+
+	hideCheck(locationID);
+	lastCheck.push(locationID);
 	midUpdate();
 	
 	if(!thisIsHinted) {
-		highlightNextCheck(str2);
+		highlightNextCheck(locationID);
 	}
-}
-
-function junkSong(x) {
-	var str2 = x.id;
-	document.getElementById(str2).style.display = "none";
-	
-	document.getElementById(str2).value = "";
-	
-	lastCheck.push(str2);
-	Update();
 }
 
 function highlightNextCheck(locationID) {
@@ -1581,7 +1526,7 @@ function updateLogicInfo() {
 	if (!Player.shadow_boss_key) {Player.shadow_checks_remaining -= 1;}
 	
 	Player.checks_remaining += Player.forest_checks_remaining + Player.fire_checks_remaining + Player.water_checks_remaining + Player.spirit_checks_remaining + Player.shadow_checks_remaining + Player.gtg_checks_remaining + Player.well_checks_remaining + Player.ganons_checks_remaining;
-	if (!songItemChecked) {Player.checks_remaining += 1;}
+	if (!songItemChecked) {Player.checks_remaining += 1; console.log("hi");}
     
 	Player.logically_accessible = Number(Player.logically_accessible);
 	Player.logically_accessible=Player.logically_accessible.toFixed(0);

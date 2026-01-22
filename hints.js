@@ -594,12 +594,6 @@ function wothAndBarrenProcessing() {
 }
 
 function alternateHintInput() {
-	if (temptext2 != "") {
-		var hintText = document.createElement("small");
-		hintText.innerHTML = temptext2;
-		//document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
-		temptext2 = "";
-	}
 
 	var lines = document.getElementById("hintInput").value.split('\n');
 	for (const line of lines) {
