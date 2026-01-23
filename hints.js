@@ -91,7 +91,7 @@ function wothAndBarrenProcessing() {
 			if (str2 == "hf" || str2 == "fie" || str2 == "field") {Area[3] = "barren";} 
 			if (str2 == "gv" || str2 == "val" || str2 == "valley") {Area[4] = "barren";} 
 			if (str2 == "lh" || str2 == "hyl" || str2 == "hylia" || str2 == "lake" || str2 == "lak") {Area[5] = "barren";} 
-			if (str2 == "ma" || str2 == "mkt" || str2 == "market" || str2 == "mar" || str2 == "mark") {Area[6] = "barren";} 
+			if (str2 == "mk" || str2 == "ma" || str2 == "mkt" || str2 == "market" || str2 == "mar" || str2 == "mark") {Area[6] = "barren";} 
 			if (str2 == "ca" || str2 == "hyr c" || str2 == "hcast" || str2 == "hc" || str2 == "cas") {Area[7] = "barren";} 
 			if (str2 == "ou" || str2 == "ogc" || str2 == "out g" || str2 == "gfairy" || str2 == "og" || str2 == "out") {Area[8] = "barren";} 
 			if (str2 == "to" || str2 == "tot" || str2 == "temple" || str2 == "time") {Area[9] = "barren";} 
