@@ -52,7 +52,7 @@ function processInputs() {
           let wothNum = 8;
           for (var i = 1; i < wothNum; i++) {
             if (document.getElementById("woth_input" + i).value == "") {
-              document.getElementById("woth_input" + i).value = key;
+              document.getElementById("woth_input" + i).value = areaInputs[key];
               document.getElementById(locationId).value = "";
               break;
             }
@@ -69,7 +69,7 @@ function processInputs() {
           let barrenNum = 8;
           for (var i = 1; i < barrenNum; i++) {
             if (document.getElementById("barren_input" + i).value == "") {
-              document.getElementById("barren_input" + i).value = key;
+              document.getElementById("barren_input" + i).value = areaInputs[key];
               document.getElementById(locationId).value = "";
               break;
             }
