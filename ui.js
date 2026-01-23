@@ -938,12 +938,6 @@ function dungeonHighlights() {
 	if (document.getElementById("text_" + pocketPlacement) != null) {document.getElementById(pocketPlacement + "_icon").style.opacity=1; document.getElementById("text_" + pocketPlacement).style.opacity=.2}
 }
 
-function checkGanons() {
-	if (Player.magic1 && Player.light_arrows && Player.bow1 && Player.ganons_checks_remaining > 0) {
-		document.getElementById("ganons").click();
-	}
-}
-
 function setInLogicMaxForDungeons() {
 	if (Player.forest_checks_remaining >=0 && (Player.forest_checks_remaining < Player.forest_logically_accessible)) {Player.logically_accessible -= (Player.forest_logically_accessible - Player.forest_checks_remaining);}
 	if (Player.fire_checks_remaining >=0 && (Player.fire_checks_remaining < Player.fire_logically_accessible)) {Player.logically_accessible -= (Player.fire_logically_accessible - Player.fire_checks_remaining);}

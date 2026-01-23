@@ -38,7 +38,6 @@ function midUpdate() {
 		updateSpawnInputs(); //child and adult spawn input
 		alternateHintInput(); //implements inputting hints into the note box
 		//trackUnreadHints(); updates which hints are still unread
-		if (document.getElementById("presets").value == "S3") {checkGanons();} //Removes ganon's castle checks if player has obtained light arrows, magic and bow
 		if (i >=1 && Player.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
 			previousInLogicChecks = Player.logically_accessible;
