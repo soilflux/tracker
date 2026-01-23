@@ -495,7 +495,7 @@ var areaInputs = {
     "me": "sf",   "sf": "sf",                   // Sacred Forest Meadow
     "go": "go",                                 // Goron City
     "dod": "dc",  "dc": "dc",                   // Dodongo's Cavern
-    "dm": "tr",   "tr": "tr",                   // Death Mountain Trail
+    "dmt": "tr",   "tr": "tr",                   // Death Mountain Trail
     "dmc": "cr",  "cr": "cr",                   // Death Mountain Crater
     "kv": "ka",   "ka": "ka",                   // Kakariko Village
     "gy": "gy",   "gr": "gy",                   // Graveyard
