@@ -643,14 +643,8 @@ function processAlternateHintInput(checkName, rawItemCode) {
 
 	// Junk
 	if (itemCode === inputs[0]) {
-		if (textSongSpots.includes("text_"+checkName)) {
-			document.getElementById(checkName).value = "pre";
-			songItemChecked = true;
-		}
-		else { 
-			if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
-			if (itemCodeIsUppercase) baitsChecked += 1; 
-		}
+    if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+		if (itemCodeIsUppercase) baitsChecked += 1; 
 	}
 	// SK
 	else if (itemCode === inputs[1]) {

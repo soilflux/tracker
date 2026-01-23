@@ -438,8 +438,6 @@ function junk() {
 			else if(str.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
 			else if(str.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
 			else if(str.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-			else if(temp < AreaIndexes[27]){}
-			else {return;}
 			Check[str]="junk";
 		}
 		
@@ -1293,9 +1291,10 @@ function updateLogicInfo() {
 		if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		if (i > lastItem && Check[key] != "unknown") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
+		if (i > lastItem && Check[key] != "unknown" && Check[key] != "junk") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
+    if (i > lastItem && Check[key] == "junk") {document.getElementById(str).innerHTML += ": Junk"}
 		
-		if(i > lastItem && Check[key] != "unknown" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
+		if(i > lastItem && Check[key] != "unknown" && Check[key] != "junk" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
 		else
 			document.getElementById(str).style.backgroundColor = "";
