@@ -2727,6 +2727,6 @@ Player.zeldas_letter = true;
 showNewPatchNotes();
 linsoControl(); linsoControl();
 setInterval(slowUpdate,3000);
-setInterval(midUpdate,500);
+setInterval(midUpdate,1500);
 setInterval(fastUpdate,100);
 Update(); midUpdate(); midUpdate(); fastUpdate();

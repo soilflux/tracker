@@ -15,9 +15,11 @@ function fastUpdate() {
 		toFocus = null;
 	}
 	timerStuff(); //implements a timer to use as an alternative to stuff like livesplit
-	stoneMedallionInput();
 	processInputs(); //handles hinted, peeked and picked up things
-	}
+  if (document.activeElement == document.getElementById("markMedallions")) {
+    stoneMedallionInput();
+  }
+}
 
 function midUpdate() {
 	var i = 0;
@@ -25,19 +27,11 @@ function midUpdate() {
 	var previousInLogicSkulls = Logic.gold_skulltulas;
 	var flag = false;
 	while (i < 100000) {
-		wothAndBarrenProcessing(); //do various things based on woth and barrens;
-		updateWothBorders(); // highlight woth checks if option enabled
 		refreshLogicForStuff(); //puts something in or out of logic based on whether its location is in or out of logic 
 		logicShortcuts(); //combines multiple pieces of logic into one variable
 		locationLogic(); //updates logic and accessibility for all locations
 		updateDungeonER();
-		updateLogicInfo(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
-		setInLogicMaxForDungeons(); //ensures that dungeons will never add more to the in logic counter than the amount of items they contain
 		gsArrayBuilder(); //just moves gs logic into an array
-		refreshLinSo();
-		updateSpawnInputs(); //child and adult spawn input
-		alternateHintInput(); //implements inputting hints into the note box
-		//trackUnreadHints(); updates which hints are still unread
 		if (i >=1 && Player.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
 			previousInLogicChecks = Player.logically_accessible;
@@ -51,6 +45,14 @@ function midUpdate() {
 			i = 100000;
 		}
 	}
+  stoneMedallionInput();
+  wothAndBarrenProcessing(); //do various things based on woth and barrens;
+  updateWothBorders(); // highlight woth checks if option enabled;
+  alternateHintInput(); //implements inputting hints into the note box;
+  setInLogicMaxForDungeons(); //ensures that dungeons will never add more to the in logic counter than the amount of items they contain
+  updateLogicInfo(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
+  updateSpawnInputs(); //child and adult spawn input
+  refreshLinSo();
 	Update(); 
 }
 
