@@ -441,7 +441,7 @@ function junk() {
 			Check[str]="junk";
 		}
 		
-		else if(type == 1 || (type == 0 && event.altKey) || thisIsABossKey || document.getElementById(str).value == "BK") {
+		else if(type == 1 || (type == 0 && event.altKey) || document.getElementById(str).value == "BK") {
 			if(str.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = str;}
 			else if(str.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = str;}
 			else if(str.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = str;}
@@ -452,11 +452,10 @@ function junk() {
 				if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 				return;
 			}
-			if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
 			Check[str]="boss_key";
 		}
 		
-		else if ((type == 2 && !event.altKey) || thisIsAKey || document.getElementById(str).value == "SK") {
+		else if ((type == 2 && !event.altKey) || document.getElementById(str).value == "SK") {
 			if(str.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
 			else if(str.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
 			else if(str.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
@@ -471,7 +470,6 @@ function junk() {
 			return;
 			}
 			Check[str]="small_key";
-			if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 		}
 		else if (type == 2 && event.altKey) {
 			if (event.target.style.color == "magenta") {event.target.style.color = "green";}
@@ -563,7 +561,6 @@ function junk() {
 						if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 						return;
 					}
-					if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
 					Check[str]="boss_key";
 				}
 				
@@ -578,7 +575,6 @@ function junk() {
 					else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 					else {return;}
 					Check[str]="small_key";
-					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 				}
                 if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)
 					item = SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
@@ -612,7 +608,6 @@ function junk() {
 						if(str.startsWith("shop_")) {if (Shop_Logic[str] == "giants_wallet") {Shop_Logic[str] = "accessible"} else if (Shop_Logic[str] == "accessible") {Shop_Logic[str] = "adults_wallet"} else {Shop_Logic[str] = "giants_wallet"}}	
 						return;
 					}
-					if (thisIsABossKey) {temptext2 += Names[temp] + ":  Boss Key" + "<br />";}
 					Check[str]="boss_key";
 				}
 				
@@ -627,7 +622,6 @@ function junk() {
 					else if(str.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 					else {return;}
 					Check[str]="small_key";
-					if (thisIsAKey) {temptext2 += Names[temp] + ":  Small Key" + "<br />";}
 				}
 				
 				if(SpoilerJSON["locations"][LocationToSpoilerName[str]]["item"] != undefined)

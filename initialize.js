@@ -35,24 +35,14 @@ var woth5Locations = [];
 var woth6Locations = [];
 var woth7Locations = [];
 var woth8Locations = [];
-var thisIsAKey = false;
-var thisIsABossKey = false;
 var thisIsHinted = false;
 var hintedInput = "";
-var temptext2 = "";
 var removeBKFlag = false;
-document.getElementById("timerMultiplier").value = 1;
+var timerMultiplier = 1;
 var nerfed = true;
 var hamsda = false;
 if (localStorage.getItem("hamsda")) {if (localStorage.getItem("hamsda") == "true") {hamsda = true;} else{hamsda = false;};}
 if (hamsda) {document.getElementById("hamsdaToggle").innerHTML="Disable Hamsda Tracking";}
-var next = document.getElementById("next_check_prediction");
-var nextChecks = [];
-var nextIndex = 0;
-var speedUp = false;
-var speedUpTotal = 0;
-var timeTotal = 0;
-var effectiveSpeedUp = 1;
 var animalID = '';
 var rainbowFlag = false;
 var rainbowFlagFlag = false;
@@ -2927,8 +2917,7 @@ if (document.getElementById("presets").value == "S9") {
 }
 if (document.getElementById("presets").value == "LESS_PROGRESSION") {
 	document.getElementById("hintInput").innerHTML = "oot \nnoc \nbig \nfr2 \nmas \nlacs \n10 x\n20 x\n30 x\n40 x\n50 x";
-  speedUp = true;
-  document.getElementById("timerMultiplier").value = 2.5;
+  timerMultiplier = 2.5;
 }
 if (document.getElementById("presets").value == "SGL_2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";

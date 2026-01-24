@@ -483,13 +483,6 @@ overflow: hidden;
 	left: 985px;
 	top: 900px;
 }
-#next_check_prediction {
-	position:absolute;
-	font-size:20px;
-	margin-left:10px;
-	top:130px;
-	left:280px;
-}
 #pieceDungeons {
 	width:92px;
 	margin-left:0px;

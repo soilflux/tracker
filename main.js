@@ -56,7 +56,6 @@ function midUpdate() {
 
 function slowUpdate() {
 	updateInputs(); //implements custom inputs
-	document.getElementById("effectiveSpeedUp").innerHTML = effectiveSpeedUp.toFixed(4);
 	if (!nerfed) {
 		WotHItems = [];
 		for (i=0; i < Items.length; i++) {
