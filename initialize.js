@@ -65,6 +65,7 @@ var rupeeCount = 0;
 var chusInBigChests = false;
 var songItemChecked = true;
 var unusedLocations = [];
+var dimmed = 0.25;
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
@@ -2700,6 +2701,8 @@ if (document.getElementById("presets").value == "S9") {
 if (document.getElementById("presets").value == "LESS_PROGRESSION") {
 	document.getElementById("hintInput").innerHTML = "oot \nnoc \nbig \nfr2 \nmas \nlacs \n10 x\n20 x\n30 x\n40 x\n50 x";
   timerMultiplier = 2.5;
+  Player.light_arrows = true;
+  Known.light_arrows = true;
 }
 if (document.getElementById("presets").value == "SGL_2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
