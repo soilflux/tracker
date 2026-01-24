@@ -724,7 +724,7 @@ function highlightNextCheck(locationID) {
       i = AreaIndexes[j];
     }
     
-    if (document.getElementById(Locations[i]).style.display != "none" && document.getElementById(Locations[i]).style.visibility != "hidden" && Location_Peek[Locations[i]]) {
+    if (document.getElementById(Locations[i]).style.display != "none" && document.getElementById(Locations[i]).style.visibility != "hidden" && document.getElementById(Locations[i]).value == "" && Location_Peek[Locations[i]]) {
       toFocus = document.getElementById(Locations[i]); 
       break;
     }
