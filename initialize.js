@@ -54,7 +54,6 @@ var forestItems = 0;
 var angelFailFlag = false;
 var angelFlag = false;
 var angelFlagFlag = false;
-var acceptControllerInput = [false,false,false,false,false,false];
 var toFocus = null;
 var inLogicColor = 'chartreuse'
 var questCounter = 0;
@@ -540,16 +539,6 @@ for (var i = 0; i < spawnInputs.length; i++) {
 	var elem = document.createElement("input"); elem.id = spawnNames[i]; elem.value = spawnInputs[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
 	var elem = document.createElement("small"); elem.id = "text_" + spawnNames[i]; elem.className = "check_text"; elem.innerHTML = spawnNames[i]; parent.appendChild(elem);
 	var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
-}
-
-controllerConfigNames =["","","","","","","",""];
-controllerConfigDescriptions =["controllerJunk","controllerKey","controllerBosskey", "controllerItem","controllerSkip","controllerAcceptInputs","controllerToD","controllerSpeedUp"];
-var parent = document.getElementById("inputConfig3");
-for (var i = 0; i < controllerConfigNames.length; i++) {
-	if (localStorage.getItem(controllerConfigNames[i])) {controllerConfigNames[i] = localStorage.getItem(controllerConfigNames[i]);}
-	var elem = document.createElement("input"); elem.id = controllerConfigDescriptions[i]; elem.value = controllerConfigNames[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
-	var elem = document.createElement("small"); elem.id = "text_" + controllerConfigDescriptions[i]; elem.className = "check_text"; elem.innerHTML = controllerConfigDescriptions[i].substring(10); parent.appendChild(elem);
-	var elem = document.createElement("br"); elem.id = "br_" + controllerConfigDescriptions[i]; parent.appendChild(elem);
 }
 
 for (var i = 3; i < Items2.length; i++) {
@@ -1936,8 +1925,6 @@ for (var i = 1; i <= 15; i++) {
 	document.getElementById(id).style.display = "inline-block";
 }
 
-var haveEvents = 'ongamepadconnected' in window;
-var controllers = {};
 var LocationToSpoilerName = {
 	"mido_1": "KF Midos Top Left Chest",
 	"mido_2": "KF Midos Top Right Chest",
@@ -2700,211 +2687,6 @@ var SpoilerHintLocationToInput = {
 	"Ice Cavern Iron Boots Chest" : "iro",
 	"Ganons Castle Shadow Trial Golden Gauntlets Chest" : "sh2"
 }
-function connecthandler(e) {
-  addgamepad(e.gamepad);
-}
-
-function addgamepad(gamepad) {
-  controllers[gamepad.index] = gamepad;
-}
-
-function disconnecthandler(e) {
-  removegamepad(e.gamepad);
-}
-
-if (localStorage.getItem(controllerConfigDescriptions[0])) {document.getElementById(controllerConfigDescriptions[0]).value = localStorage.getItem(controllerConfigDescriptions[0]);}
-if (localStorage.getItem(controllerConfigDescriptions[1])) {document.getElementById(controllerConfigDescriptions[1]).value = localStorage.getItem(controllerConfigDescriptions[1]);}
-if (localStorage.getItem(controllerConfigDescriptions[2])) {document.getElementById(controllerConfigDescriptions[2]).value = localStorage.getItem(controllerConfigDescriptions[2]);}
-if (localStorage.getItem(controllerConfigDescriptions[3])) {document.getElementById(controllerConfigDescriptions[3]).value = localStorage.getItem(controllerConfigDescriptions[3]);}
-if (localStorage.getItem(controllerConfigDescriptions[4])) {document.getElementById(controllerConfigDescriptions[4]).value = localStorage.getItem(controllerConfigDescriptions[4]);}
-if (localStorage.getItem(controllerConfigDescriptions[5])) {document.getElementById(controllerConfigDescriptions[5]).value = localStorage.getItem(controllerConfigDescriptions[5]);}
-if (localStorage.getItem(controllerConfigDescriptions[6])) {document.getElementById(controllerConfigDescriptions[6]).value = localStorage.getItem(controllerConfigDescriptions[6]);}
-if (localStorage.getItem(controllerConfigDescriptions[7])) {document.getElementById(controllerConfigDescriptions[7]).value = localStorage.getItem(controllerConfigDescriptions[7]);}
-function updateControllerStatus() {
-	if (!haveEvents) {
-		scangamepads();
-	}
-
-  var i = 0;
-  var j;
-  for (j in controllers) {
-    var controller = controllers[j];
-
-    for (i = 0; i < controller.buttons.length; i++) {
-      var val = controller.buttons[i];
-      var pressed = val == 1.0;
-      if (typeof(val) == "object") {
-        pressed = val.pressed;
-        val = val.value;
-      }
-	  
-      if (pressed && pressCooldown[i][j] == false) {
-		if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i; localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
-		if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i; localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
-		if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i; localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
-		if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i; localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
-		if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i; localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
-		if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i; localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
-        if (document.getElementById(controllerConfigDescriptions[6]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[6]).value = i; localStorage.setItem(controllerConfigDescriptions[6], document.getElementById(controllerConfigDescriptions[6]).value);}
-        if (document.getElementById(controllerConfigDescriptions[7]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[7]).value = i; localStorage.setItem(controllerConfigDescriptions[7], document.getElementById(controllerConfigDescriptions[7]).value);}
-		if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
-			if (document.getElementById(controllerConfigDescriptions[0]).value == i) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 0,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				pressCooldown[i][j] = true;
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[1]).value == i) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 2,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				pressCooldown[i][j] = true;
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[2]).value == i) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 1,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				pressCooldown[i][j] = true;
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[3]).value == i) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 2,
-					buttons: 2,
-					clientX: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
-				pressCooldown[i][j] = true;
-				acceptControllerInput[j] = false;
-			}
-            console.log(i);
-			if (document.getElementById(controllerConfigDescriptions[4]).value == i) {console.log("hi"); nextChecks.splice(nextIndex,1); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
-			midUpdate();
-		}
-		if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = true; pressCooldown[i][j] = true;}
-        if (document.getElementById(controllerConfigDescriptions[6]).value == i) {timerControlToD(); pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
-        if (document.getElementById(controllerConfigDescriptions[7]).value == i) {speedUp = !speedUp; if(speedUp) document.getElementById("timer").style.color="orange"; else document.getElementById("timer").style.color="white"; pressCooldown[i][j] = true; acceptControllerInput[j] = false;}
-      } else if (!pressed) {
-		  if (document.getElementById(controllerConfigDescriptions[5]).value == i) {acceptControllerInput[j] = false;}
-		  pressCooldown[i][j] = false;
-      } else {
-		  
-	  }
-    }
-		if (document.getElementById("readAxes").value == "YES") {
-			for (i =0; i < 6; i++) {
-				if (i == 4 || i == 3) continue;
-				if (controller.axes[i] > .7 || controller.axes[i] < -.7) {
-					if (document.getElementById(controllerConfigDescriptions[0]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[0]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[0], document.getElementById(controllerConfigDescriptions[0]).value);}
-					if (document.getElementById(controllerConfigDescriptions[1]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[1]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[1], document.getElementById(controllerConfigDescriptions[1]).value);}
-					if (document.getElementById(controllerConfigDescriptions[2]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[2]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[2], document.getElementById(controllerConfigDescriptions[2]).value);}
-					if (document.getElementById(controllerConfigDescriptions[3]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[3]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[3], document.getElementById(controllerConfigDescriptions[3]).value);}
-					if (document.getElementById(controllerConfigDescriptions[4]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[4]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[4], document.getElementById(controllerConfigDescriptions[4]).value);}
-					if (document.getElementById(controllerConfigDescriptions[5]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[5]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[5], document.getElementById(controllerConfigDescriptions[5]).value);}
-                    if (document.getElementById(controllerConfigDescriptions[6]) === document.activeElement) {document.getElementById(controllerConfigDescriptions[6]).value = i + controller.axes[i].toFixed(2); localStorage.setItem(controllerConfigDescriptions[6], document.getElementById(controllerConfigDescriptions[6]).value);}
-				}
-				if (acceptControllerInput[j] && nextChecks.length > 0 && nextIndex != 420){
-			if (document.getElementById(controllerConfigDescriptions[0]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[0]).value.includes("-") && controller.axes[i] > .65))) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 0,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[1]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[1]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[1]).value.includes("-") && controller.axes[i] > .65))) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 2,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[2]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[2]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[2]).value.includes("-") && controller.axes[i] > .65))) {
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 1,
-					buttons: 2,
-					clientX: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById("text_" + nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById("text_" + nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput[j] = false;
-			}
-			if (document.getElementById(controllerConfigDescriptions[3]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[3]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[3]).value.includes("-") && controller.axes[i] > .65))) {
-				console.log(nextChecks[nextIndex]);
-				var ev1 = new MouseEvent("mousedown", {
-					bubbles: true,
-					cancelable: false,
-					view: window,
-					button: 2,
-					buttons: 2,
-					clientX: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().x,
-					clientY: document.getElementById(nextChecks[nextIndex]).getBoundingClientRect().y
-				});
-				document.getElementById(nextChecks[nextIndex]).dispatchEvent(ev1);
-				acceptControllerInput[j] = false;
-				
-			}
-			if (document.getElementById(controllerConfigDescriptions[4]).value.startsWith(i) && ((document.getElementById(controllerConfigDescriptions[4]).value.includes("-") && controller.axes[i] < -.65) || (!document.getElementById(controllerConfigDescriptions[4]).value.includes("-") && controller.axes[i] > .65))) {nextChecks.splice(nextIndex,1); acceptControllerInput[j] = false;}
-			midUpdate();
-			}
-		}
-	}
-  }
-}
-
-function scangamepads() {
-  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
-  for (var i = 0; i < gamepads.length; i++) {
-    if (gamepads[i]) {
-      if (gamepads[i].index in controllers) {
-        controllers[gamepads[i].index] = gamepads[i];
-      } else {
-        addgamepad(gamepads[i]);
-      }
-    }
-  }
-}
 
 window.onbeforeunload = popup;
 function popup() {
@@ -2933,12 +2715,7 @@ if (document.getElementById("presets").value == "S7" || document.getElementById(
 	document.getElementById("markChildLocation").value = "kok";
 	document.getElementById("markAdultLocation").value = "tot";
 }
-window.addEventListener("gamepadconnected", connecthandler);
-window.addEventListener("gamepaddisconnected", disconnecthandler);
 
-if (!haveEvents) {
- setInterval(scangamepads, 500);
-}
 document.getElementById("linso54").style.opacity = 1;
 document.getElementById("linso11").click();
 document.getElementById("linso12").click();
@@ -2952,5 +2729,4 @@ linsoControl(); linsoControl();
 setInterval(slowUpdate,3000);
 setInterval(midUpdate,500);
 setInterval(fastUpdate,100);
-setInterval(updateControllerStatus,1000/60);
 Update(); midUpdate(); midUpdate(); fastUpdate();
