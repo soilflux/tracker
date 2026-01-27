@@ -81,6 +81,21 @@ function processInputs() {
       });
       continue;
     }
+    
+    if (input.startsWith("3")) {
+      input = input.slice(1);
+      Object.keys(alwaysTable).forEach(key => {
+        if (input.startsWith(key)) {
+          input = input.slice(1);
+          if (inputs.includes(input)) {
+            document.getElementById(alwaysTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+            document.getElementById(locationId).value = "";
+            flash();
+          }
+        }
+      });
+      continue;
+    }
 
 		// Break early if input is invalid.
 		var inputIdx = inputs.indexOf(input.toLowerCase());
@@ -709,7 +724,7 @@ function junkItem(x) {
 	midUpdate();
   flash();
 	
-	if(!thisIsHinted) {
+	if(!thisIsHinted && !hinted) {
 		highlightNextCheck(locationID);
 	}
 }

@@ -124,6 +124,19 @@ var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomeran
 var ItemImages = [];
 var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
 
+//take advantage of a small pool to shorten the inputs
+var alwaysTable = {
+  "3": "tokens_30",
+  "4": "tokens_40",
+  "5": "tokens_50",
+  "o": "oot",
+  "n": "nocturneSpot",
+  "b": "trade_quest",
+  "f": "frogs_2",
+  "m": "theater_skull",
+  "l": "lacs" //here because of less progression preset
+}
+
 // When adding to hint table, take care not to duplicate keys.
 // If this happens, the one appearing latest will be used.
 var hintTable = {
