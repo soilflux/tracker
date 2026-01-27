@@ -25,6 +25,9 @@ function fastUpdate() {
   if (document.activeElement.id.startsWith("woth") || document.activeElement.id.startsWith("barren") || document.activeElement.id.startsWith("path")) {
     wothAndBarrenProcessing();
   }
+  if (document.activeElement === document.body) {
+    highlightNextCheck(Locations[0]);
+  }
 }
 
 function midUpdate() {
