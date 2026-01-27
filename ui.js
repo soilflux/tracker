@@ -37,6 +37,7 @@ function processInputs() {
             if (document.getElementById("path_boss" + k).value == "") {
               document.getElementById("path_boss" + k).value = input;
               document.getElementById(locationId).value = "";
+              flash();
               break;
             }
           }
@@ -54,6 +55,7 @@ function processInputs() {
             if (document.getElementById("woth_input" + j).value == "") {
               document.getElementById("woth_input" + j).value = areaInputs[key];
               document.getElementById(locationId).value = "";
+              flash();
               break;
             }
           }
@@ -71,6 +73,7 @@ function processInputs() {
             if (document.getElementById("barren_input" + j).value == "") {
               document.getElementById("barren_input" + j).value = areaInputs[key];
               document.getElementById(locationId).value = "";
+              flash();
               break;
             }
           }
@@ -168,6 +171,7 @@ function processInputs() {
 				songItemChecked = true;
 			}
 			document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
+      flash();
 			continue;
 		}
 		if (inputIdx == 1) {
@@ -703,6 +707,7 @@ function junkItem(x) {
 	hideCheck(locationID);
 	lastCheck.push(locationID);
 	midUpdate();
+  flash();
 	
 	if(!thisIsHinted) {
 		highlightNextCheck(locationID);

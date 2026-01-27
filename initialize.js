@@ -107,6 +107,7 @@ if (localStorage.getItem("presets")) {document.getElementById("presets").value =
 if (localStorage.getItem("erOption")) {document.getElementById("erOption").value = localStorage.getItem("erOption");}
 if (localStorage.getItem("FAE_option")) {document.getElementById("FAE_option").value = localStorage.getItem("FAE_option");}
 if (localStorage.getItem("shiftChecks")) {document.getElementById("shiftChecks").value = localStorage.getItem("shiftChecks");}
+if (localStorage.getItem("flashFeedback")) {document.getElementById("flashFeedback").value = localStorage.getItem("flashFeedback");}
 if (document.getElementById("presets").value == "SGL_2025") {songItemChecked = false;}
 if (document.getElementById("presets").value == "SGL_2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";
@@ -2731,5 +2732,5 @@ showNewPatchNotes();
 linsoControl(); linsoControl();
 setInterval(slowUpdate,3000);
 setInterval(midUpdate,1500);
-setInterval(fastUpdate,100);
+setInterval(fastUpdate,70);
 Update(); midUpdate(); midUpdate(); fastUpdate();

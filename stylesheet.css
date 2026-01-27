@@ -81,9 +81,6 @@ overflow: hidden;
 	font-weight: bold;
 	
 }
-#shiftChecks {
-  width: 163px;
-}
 #logically_accessible{
 	color:darkgreen;
 	font-size: 17px;
@@ -495,7 +492,7 @@ overflow: hidden;
 }
 #statsColumn {
 	position: absolute;
-	left: 1200px;
+	left: 1300px;
 }
 .patchNotes {
 	font-size: 12px;
@@ -606,6 +603,10 @@ overflow: hidden;
 }
 #row {
 	background-color: #3b4144;
+}
+.highlight-flash {
+  background-color: #00ffcc !important; /* A bright teal/cyan */
+  transition: background-color 0.05s ease-in;
 }
 .check_input {
 	height:22px;
@@ -1169,10 +1170,10 @@ color:#FE8B08;
     right:0;
 }
 .configOptions {
-	font-size: 1.1em;
-    color: white;
-    background-color:#404040;
-
+	font-size: 1em;
+  color: white;
+  background-color:#404040;
+  width: 260px;
 }
 .configLabels{
 	font-size: 1.1em;

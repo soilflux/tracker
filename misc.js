@@ -564,7 +564,7 @@ function saveStuff() {
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
   localStorage.setItem("shiftChecks", document.getElementById("shiftChecks").value);
-	localStorage.setItem("highlightWoths", colorWothAreas);
+  localStorage.setItem("flashFeedback", document.getElementById("flashFeedback").value);
 }
 
 function linsoControl() {
@@ -1054,6 +1054,19 @@ function modifyRupees(amount) {
 }
 String.prototype.replaceAt = function(index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+}
+
+function flash() {
+  if (document.getElementById("flashFeedback").value === "NO") {
+    return;
+  }
+  const row = document.getElementById('hintInput');
+  
+  row.classList.add('highlight-flash');
+  
+  setTimeout(() => {
+    row.classList.remove('highlight-flash');
+  }, 100);
 }
 
 function Undo() {
