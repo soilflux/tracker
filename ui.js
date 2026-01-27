@@ -96,6 +96,15 @@ function processInputs() {
       });
       continue;
     }
+    
+    if (input.startsWith("0")) {
+      input = input.slice(1);
+      if (input.length == 12) {
+        document.getElementById("markMedallions").value = input;
+        document.getElementById(locationId).value = "";
+        flash();
+      }
+    }
 
 		// Break early if input is invalid.
 		var inputIdx = inputs.indexOf(input.toLowerCase());
