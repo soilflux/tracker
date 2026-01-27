@@ -55,6 +55,7 @@ function processInputs() {
             if (document.getElementById("woth_input" + j).value == "") {
               document.getElementById("woth_input" + j).value = areaInputs[key];
               document.getElementById(locationId).value = "";
+              wothAndBarrenProcessing();
               flash();
               break;
             }
@@ -73,6 +74,7 @@ function processInputs() {
             if (document.getElementById("barren_input" + j).value == "") {
               document.getElementById("barren_input" + j).value = areaInputs[key];
               document.getElementById(locationId).value = "";
+              wothAndBarrenProcessing();
               flash();
               break;
             }
@@ -97,11 +99,27 @@ function processInputs() {
       continue;
     }
     
+    if (input.startsWith("4")) {
+      input = input.slice(1);
+      Object.keys(hintTable).forEach(key => {
+        if (input.startsWith(key)) {
+          input = input.replace(key,'');
+          if (inputs.includes(input)) {
+            document.getElementById(hintTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+            document.getElementById(locationId).value = "";
+            flash();
+          }
+        }
+      });
+      continue;
+    }
+    
     if (input.startsWith("0")) {
       input = input.slice(1);
       if (input.length == 12) {
         document.getElementById("markMedallions").value = input;
         document.getElementById(locationId).value = "";
+        stoneMedallionInput();
         flash();
       }
     }
