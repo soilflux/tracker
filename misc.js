@@ -188,6 +188,7 @@ function highlight(x) {
 		if (x.id == "gor_rub" && x.style.opacity==1) {Logic.goron_ruby = true;}
 		if (x.id == "zor_sap" && x.style.opacity==1) {Logic.zora_sapphire = true;}
 	}
+  midUpdate();
 }
 
 function highlightDungeonEntrance(element) {
@@ -1060,12 +1061,12 @@ function flash() {
   if (document.getElementById("flashFeedback").value === "NO") {
     return;
   }
-  const row = document.getElementById('hintInput');
+  const toFlash = document.getElementById('hintInput');
   
-  row.classList.add('highlight-flash');
+  toFlash.classList.add('highlight-flash');
   
   setTimeout(() => {
-    row.classList.remove('highlight-flash');
+    toFlash.classList.remove('highlight-flash');
   }, 100);
 }
 

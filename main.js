@@ -19,6 +19,12 @@ function fastUpdate() {
   if (document.activeElement == document.getElementById("markMedallions")) {
     stoneMedallionInput();
   }
+  if (document.activeElement == document.getElementById("hintInput")) {
+    alternateHintInput();
+  }
+  if (document.activeElement.id.startsWith("woth") || document.activeElement.id.startsWith("barren") || document.activeElement.id.startsWith("path")) {
+    wothAndBarrenProcessing();
+  }
 }
 
 function midUpdate() {
