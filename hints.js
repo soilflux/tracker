@@ -648,11 +648,11 @@ function processAlternateHintInput(checkName, rawItemCode) {
 	}
 	// SK
 	else if (itemCode === inputs[1]) {
-		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "sk"; thisIsHinted = false; }
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]);}
 	}
 	// BK
 	else if (itemCode === inputs[2]) {
-		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = "bk"; thisIsHinted = false; }
+		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]);}
 	}
 	else {
 		if (Check[checkName] == "unknown") {
