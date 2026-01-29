@@ -27,37 +27,25 @@ function processInputs() {
 		if (input == '' || input == "???") {
 			continue;
 		}
-    
-    if (input.startsWith(" ")) {
-      input = input.slice(1);
-      for (var j = 0; j < pathInputs.length; j++) {
-        if (input.startsWith(pathInputs[j])) {
-          let pathNum = 8;
-          for (var k = 1; k < pathNum; k++) {
-            if (document.getElementById("path_boss" + k).value == "") {
-              document.getElementById("path_boss" + k).value = input;
-              document.getElementById(locationId).value = "";
-              flash();
-              break;
-            }
-          }
-        }
-      }
-      continue;
-    }
 
     if (input.startsWith("1")) {
       input = input.slice(1);
       Object.keys(areaInputs).forEach(key => {
         if (input.startsWith(key)) {
-          let wothNum = 8;
-          for (var j = 1; j < wothNum; j++) {
-            if (document.getElementById("woth_input" + j).value == "") {
-              document.getElementById("woth_input" + j).value = areaInputs[key];
-              document.getElementById(locationId).value = "";
-              wothAndBarrenProcessing();
-              flash();
-              break;
+          input = input.replace(key,"");
+          for (var j = 0; j < pathInputs.length; j++) {
+            if (input.startsWith(pathInputs[j])) {
+              let wothNum = 8;
+              for (var k = 1; k < wothNum; k++) {
+                if (document.getElementById("woth_input" + k).value == "") {
+                  document.getElementById("woth_input" + k).value = areaInputs[key];
+                  document.getElementById("path_boss" + k).value = pathInputs[j];
+                  document.getElementById(locationId).value = "";
+                  wothAndBarrenProcessing();
+                  flash();
+                  break;
+                }
+              }
             }
           }
         }

@@ -81,7 +81,7 @@ function wothAndBarrenProcessing() {
 			if (str3 == "8") {AreaGoalPathBoss[i] = "8 Important";} 
 			if (str3 == "9") {AreaGoalPathBoss[i] = "9 Important";} 
 			if (str3 == "10") {AreaGoalPathBoss[i] = "10 Important";} 
-			if (str3.startsWith("lig")) {AreaGoalPathBoss[i] = "Light Arrows";} 
+			if (str3.startsWith("li")) {AreaGoalPathBoss[i] = "Light Arrows";} 
 		}
 		
 		if (i <= 5) {
