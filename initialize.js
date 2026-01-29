@@ -503,20 +503,20 @@ var areaInputs = {
     "me": "sf",   "sf": "sf",                   // Sacred Forest Meadow
     "go": "go",                                 // Goron City
     "dod": "dc",  "dc": "dc",                   // Dodongo's Cavern
-    "dmt": "tr",   "tr": "tr",                  // Death Mountain Trail
+    "dmt": "tr",  "tr": "tr",                   // Death Mountain Trail
     "dmc": "cr",  "cr": "cr",                   // Death Mountain Crater
     "kv": "ka",   "ka": "ka",                   // Kakariko Village
     "gy": "gy",   "gr": "gy",                   // Graveyard
     "zr": "zr",   "ri": "zr",                   // Zora's River
     "zd": "zd",   "dom": "zd",                  // Zora's Domain
     "co": "co",                                 // Colossus
-    "wl": "was",  "was": "was",                 // Wasteland
+    "hw": "was",  "was": "was",                 // Wasteland
     "th": "th",                                 // Thieves' Hideout
     "gf": "gf",                                 // Gerudo Fortress
     "jj": "jj",   "ja": "jj",                   // Jabu Jabu
-    "for": "for",                               // Forest Temple
-    "fir": "fir",                               // Fire Temple
-    "wat": "wat",                               // Water Temple
+    "fo": "for",                                // Forest Temple
+    "fi": "fir",                                // Fire Temple
+    "wa": "wat",                                // Water Temple
     "sh": "sh",                                 // Shadow Temple
     "sp": "sp",                                 // Spirit Temple
     "ga": "ga",                                 // Ganon's Castle
