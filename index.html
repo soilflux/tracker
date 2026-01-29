@@ -159,33 +159,46 @@
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p> The tracker is designed to be used with the browser in fullscreen mode (f11). It can be used without but it may lead to a need to scroll down.
-          <br><br> Input the first three letters of the common name for items/songs next to checks. Exceptions are lul, sot, sos for zelda's lullaby, song of time, and song of storms. 
-          <br /> Progressive items use str, hoo, wal, and sca.
-          <br />Start with a capital letter to input hinted items. End with a capital letter to input peeked items. Click off the check when item has been obtained.
-          <br />Left click check text or type x in its box if the item found is irrelevant to check accessibility. Use middle clicks(or alt + left click) and right clicks for boss keys and small keys, respectively.
-          <br />Left click on the song check text, or the summary text on the right to toggle if you've found a hint for that check.
-          <br /><br /> Input stones in the box next to the random stone and forest+fire+water medallion in the box next to the random medallion.  Use the first two letters of each dungeon or fr for free. example: frshde = free, shadow, deku.
-          <br /> Alternatively, input light, forest, fire, water, shadow and spirit medallions into the box next to the random medallion.
-          <br /> The two boxes above these are used to input spawns relevant to check accessibility for child and adult, respectively (or even irrelevant spawns to help you remember).
-          <br /> Input abbreviations for hint areas in the Barren and WOTH boxes to track those. These are kind of arbitrary but you'll figure it out as you go :)
-          <br /><br /> An alternate way of inputting hints is by putting a location code and the three letter item code (or x for nothing) into the white text area on their own line.
-          <br /> Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
-          <br /><br> Timer can be started and paused using the Pause key
-          <br /><br><b>Location Color Codes:</b>
-          <br>bright green = can access logically with items you currently have
-          <br>faded green = can access logically with items you currently have access to
-          <br>faded yellow = can check out of logic (based on items you currently have access to)
-          <br>white = known but currently unobtainable
-          <br><br> <b>Path Hints</b>:
-          <br>The bottom path boxes recognize starting letters of boss names (at least two letters)
-          <br>You can also enter Important, Evil's Bane, Path of the Hero, or Light arrow hints here. You can put a number for Important, "evi" for Evil's Bane, "lig" for light arrows, "her" for Path of the Hero.
-          <br><br> can left click items listed under woth locations to the left of the arrow to highlight them yellow or right click to highlight them red
-          <br> intent: yellow highlight means confirmed poth, red highlight means confirmed not poth.
-          <br> can click arrow under woth locations to add an item to the right of it by clicking an item in the check summary. these items can be highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
-          <br><br> intent: yellow highlight means confirmed poth, red box means confirmed locked by item to left of arrow, removed means confirmed not locked by item to left of arrow.
+          <p> The tracker is designed to be used with the browser in fullscreen mode (f11).
+          
+          <br><br><b>Inputs</b>:
+          <br>All inputs are done using an input box listed on the left of each check name.
+          
+          <br><b>Items: </b>
+          <br>x,a,q for junk, small key, boss key. You may also left click, right click or middle click the check name. the former will typically be faster.
+          <br>Otherwise, an item code that typically is an initialism of the common name for that item. these are listed on the bottom left if you scroll down. they can also be customized there but note that a code should not overlap with the start of different code.
+          <br>End with a capital letter to input peeked items. Click off the check when item has been obtained.
+          
+          <br><br>The following may be input using ANY check input box.
+        
+          <br><b>Path and Barrens:</b>
+          <br>Start with a prefix: 1 for path or 2 for barren. continue (no space) with an area code, plus a path code for pathes. these codes are listed under the 'Location Codes' button.
+          <br>For example, 1trde means trail is path to gohma. 1riev means river is evil's bane. 2zd means domain is barren.
+          
+          <br><b>Always and Sometimes:</b>
+          <br>Start with a prefix: 3 for always, 4 for sometimes. follow (remember, no spaces unless stated) with the code for the location (dual hints also have codes of their own) and with the item input. 
+          <br>For example, 3bx means biggoron is nothing. 4bowlxsli means bowling has a junk item and a slingshot. 4danhoo means dancing dad has a hookshot.
+          <br>Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
+          
+          <br><b>Medallions:</b>
+          <br>Start with prefix: 0. follow with two items codes for the dungeon that has each medallion, going in the order: light, forest, fire, water, shadow, spirit. 
+          <br>For example, 0defofrshspdo means deku has light, forest has forest, pocket has fire etc.
+          
+          <br><br><b>Location Color Codes:</b>
+          <br>Bright green = can access logically with items you currently have
+          <br>Faded green = can access logically with items you currently have access to
+          <br>Faded yellow = can check out of logic (based on items you currently have access to)
+          <br>White = known but currently unobtainable
+          
+          <br><br> Child and adult emoji boxes are used to input spawns relevant to check accessibility for child and adult, respectively (or even irrelevant spawns to help you remember).
+          <br><br> Timer can be started and paused using the pause key
+          
+          
+          <br><br> <b>Path Display</b>
+          <br> Left click items listed to the left of the arrow to highlight them yellow or right click to remove them. Left clicking the area name brings back all removed items.
+          <br> Click arrow to add an item to the right of it by clicking an item in the check summary. these items can be highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
           <br><br><b>Check Summary</b>:
-          <br>left clicking checked locations will surround it with asterisks (intent: mark as hinted/unhinted). right clicking locations will toggle the item from it as obtained/unobtained.
+          <br>Right clicking locations will toggle the item from it as obtained/unobtained.
           <br><br><b>Simulator</b>:
           <br>To start the simulator click the "Play the Sim" button and select a spoiler log (only S6 and S5 tested).
           <br>If you enter in a value from 1-200 in the input box next to the "Play the Sim" button, a seed included with the tracker will be used instead of requiring a selection(this feature does not work offline).
@@ -209,7 +222,44 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <p>
-            <b>Dual hints (hint item1 item2)</b>
+            <b>Area Codes</b>
+            <br> ko = kokiri
+            <br> ra = ranch
+            <br> hf = hyrule field
+            <br> gv = gerudo valley
+            <br> lh = lake hylia
+            <br> mk = market
+            <br> ca = hyrule castle
+            <br> ou = outside ganon's castle
+            <br> to = temple of time
+            <br> zf = zora's fountain
+            <br> ic = ice cavern
+            <br> de = deku tree
+            <br> lo = lost woods
+            <br> sf = sfm
+            <br> go = goron city
+            <br> dc = dodongo's cavern
+            <br> tr = trail
+            <br> cr = crater
+            <br> ka = kakariko
+            <br> gy = graveyard
+            <br> zr = zora's river
+            <br> zd = zora's domain
+            <br> co = colossus
+            <br> hw = haunted wasteland
+            <br> th = thieve's hideout
+            <br> gf = gerudo fortress
+            <br> jj = jabu jabu
+            <br> fo = forest
+            <br> fi = fire
+            <br> wa = water
+            <br> sh = shadow
+            <br> sp = spirit
+            <br> ga = ganon's castle
+            <br> gt = gtg
+            <br> we = well
+            <br>
+            <br><b>Dual hints (hint item1 item2)</b>
             <br />castle fairies = hcogc
             <br />chu bowling = chu, bowl, bowling
             <br />valley box+crate = gv, val
