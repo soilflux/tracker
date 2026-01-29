@@ -19,6 +19,9 @@ function fastUpdate() {
   if (document.activeElement == document.getElementById("markMedallions")) {
     stoneMedallionInput();
   }
+  if (document.activeElement == document.getElementById("mark_ER_Dungeons")) {
+    updateDungeonER();
+  }
   if (document.activeElement == document.getElementById("hintInput")) {
     alternateHintInput();
   }
