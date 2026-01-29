@@ -114,6 +114,16 @@ function processInputs() {
       continue;
     }
     
+    if (input.startsWith("9")) {
+      input = input.slice(1);
+      if (input.length == 22) {
+        document.getElementById("mark_ER_Dungeons").value = input;
+        document.getElementById(locationId).value = "";
+        updateDungeonER();
+        flash();
+      }
+    }
+    
     if (input.startsWith("0")) {
       input = input.slice(1);
       if (input.length == 12) {
