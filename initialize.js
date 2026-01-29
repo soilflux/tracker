@@ -2707,6 +2707,8 @@ var SpoilerHintLocationToInput = {
 	"Ganons Castle Shadow Trial Golden Gauntlets Chest" : "sh2"
 }
 
+var isBoss = ["deku_queen_gohma", "dodongos_king_dodongo", "jabu_barinade", "forest_phantomGanon", "fire_volvagia", "water_morpha", "spirit_twinrova", "shadow_bongo"];
+
 window.onbeforeunload = popup;
 function popup() {
   return '';

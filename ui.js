@@ -196,7 +196,7 @@ function processInputs() {
 			peeked = true;
 			document.getElementById(locationId).value = input.toLowerCase();
 		}
-		else if (isUpperCase(input.charAt(0)) && input.toLowerCase() != inputs[0]) {
+		else if (isUpperCase(input.charAt(0))) {
 			hinted = true;
 			document.getElementById(locationId).value = input.toLowerCase();
 		}
@@ -208,6 +208,11 @@ function processInputs() {
 			if (i > lastItem) {
 				songItemChecked = true;
 			}
+      if (isBoss.includes(locationId) && hinted) {
+        Check[document.getElementById(locationId).id] = "junk";
+        forcedDisplay[i] = true;
+        continue;
+      }
 			document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
       flash();
 			continue;
@@ -529,7 +534,7 @@ function junk() {
 		lastCheck.push(locationID);
 		Update();
 		
-		if(!thisIsHinted) {
+		if(!thisIsHinted && !hinted) {
 			highlightNextCheck(locationID);
 		}
 	}
