@@ -27,7 +27,7 @@ function processInputs() {
 		if (input == '' || input == "???") {
 			continue;
 		}
-
+    //PATH
     if (input.startsWith("1")) {
       input = input.slice(1);
       Object.keys(areaInputs).forEach(key => {
@@ -52,7 +52,7 @@ function processInputs() {
       });
       continue;
     }
-    
+    //BARREN
     if (input.startsWith("2")) {
       input = input.slice(1);
       Object.keys(areaInputs).forEach(key => {
@@ -71,7 +71,7 @@ function processInputs() {
       });
       continue;
     }
-    
+    //ALWAYS
     if (input.startsWith("3")) {
       input = input.slice(1);
       Object.keys(alwaysTable).forEach(key => {
@@ -86,22 +86,40 @@ function processInputs() {
       });
       continue;
     }
-    
+    //SOMETIMES
     if (input.startsWith("4")) {
       input = input.slice(1);
-      Object.keys(hintTable).forEach(key => {
+      Object.keys(sometimesTableReduced).forEach(key => {
         if (input.startsWith(key)) {
           input = input.replace(key,'');
-          if (inputs.includes(input)) {
-            document.getElementById(hintTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
-            document.getElementById(locationId).value = "";
-            flash();
-          }
+          if (inputs.includes(input.slice(0,1))) {
+            if (!key.startsWith('6')) {
+                document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+                document.getElementById(locationId).value = "";
+                flash();
+            }
+            else {
+              let firstInput = input.charAt(0).toUpperCase();
+              if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
+                firstInput += input.slice(1);
+                input = input.slice(2);
+              }
+              else {
+                input = input.slice(1);
+              }
+              if (inputs.includes(input)) {
+                document.getElementById(sometimesTableReduced[key][0]).value = firstInput;
+                document.getElementById(sometimesTableReduced[key][1]).value = input.charAt(0).toUpperCase() + input.slice(1);
+                document.getElementById(locationId).value = "";
+                flash();
+              }
+            }
+          }  
         }
       });
       continue;
     }
-    
+    //DUNGEON ENTRANCES
     if (input.startsWith("9")) {
       input = input.slice(1);
       if (input.length == 22) {
@@ -111,7 +129,7 @@ function processInputs() {
         flash();
       }
     }
-    
+    //MEDALLIONS
     if (input.startsWith("0")) {
       input = input.slice(1);
       if (input.length == 12) {
