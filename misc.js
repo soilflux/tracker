@@ -462,12 +462,10 @@ function download() {
 }
 
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if (string.length > 0) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 }
-
-function capitalizeThirdLetter(string) {
-    return string.charAt(0) + string.charAt(1) + string.charAt(2).toUpperCase();
-}	
 
 function isLetter(s){
 	return s.match("^[a-zA-Z\(\)]+$");    
