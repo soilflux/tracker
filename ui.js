@@ -1046,10 +1046,6 @@ function refreshLinSo() {
 	else {document.getElementById("linsoColumn").style.display = "none";}
 }
 function updateInputs() {
-	for (var i = 0; i < inputs.length; i++) {
-		inputs[i] = document.getElementById(inputNames[i]).value;
-		localStorage.setItem(inputNames[i], inputs[i]);
-	}
 	for (var i = 0; i < spawnInputs.length; i++) {
 		spawnInputs[i] = document.getElementById(spawnNames[i]).value;
 		localStorage.setItem(spawnNames[i], spawnInputs[i]);

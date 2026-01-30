@@ -408,6 +408,31 @@ function toggleSettings() {
 	}
 }
 
+function inputPresets() {
+  if (document.getElementById("inputPresets").value == "LEGACY") {
+    inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
+  }
+  else if (document.getElementById("inputPresets").value == "RECOMMENDED") {
+    inputs = ["x", "a", "q", "bm", "ch", "bo", "bt", "bi", "bw", "di", "fa", "fi", "go", "ha", "ho", "hv", "ir", "ko", "le", "ru", "li", "ma", "mr", "sc", "sl", "st", "ip", "cl", "wa", "zo", "ic", "bg", "na", "ny", "5fo", "5fi", "5wa", "5sp", "5sh", "5we", "5ge", "5ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "so", "mi", "bl", "se", "re", "no", "pr"];
+  }
+  
+  var parent = document.getElementById("inputConfig");
+  for (var i = 0; i < inputs.length; i++) {
+    if (document.getElementById("inputPresets").value == "CUSTOM") {
+      if (localStorage.getItem(inputNames[i])) {
+        inputs[i] = localStorage.getItem(inputNames[i]);
+      }
+    }
+    document.getElementById(inputNames[i]).value = inputs[i];
+  }
+}
+
+function saveInputs() {
+  for (var i = 0; i < inputs.length; i++) {
+    localStorage.setItem(inputNames[i], inputs[i]);
+	}
+}
+
 function enableChus() {
 	if(Player.has_chus == false) {
 		Player.has_chus = true;
@@ -566,6 +591,7 @@ function saveStuff() {
   localStorage.setItem("quest1", document.getElementById("quest1").value);
   localStorage.setItem("shiftChecks", document.getElementById("shiftChecks").value);
   localStorage.setItem("flashFeedback", document.getElementById("flashFeedback").value);
+  localStorage.setItem("inputPresets", document.getElementById("inputPresets").value);
 }
 
 function linsoControl() {

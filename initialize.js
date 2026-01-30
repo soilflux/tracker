@@ -108,6 +108,7 @@ if (localStorage.getItem("erOption")) {document.getElementById("erOption").value
 if (localStorage.getItem("FAE_option")) {document.getElementById("FAE_option").value = localStorage.getItem("FAE_option");}
 if (localStorage.getItem("shiftChecks")) {document.getElementById("shiftChecks").value = localStorage.getItem("shiftChecks");}
 if (localStorage.getItem("flashFeedback")) {document.getElementById("flashFeedback").value = localStorage.getItem("flashFeedback");}
+if (localStorage.getItem("inputPresets")) {document.getElementById("inputPresets").value = localStorage.getItem("inputPresets");}
 if (document.getElementById("presets").value == "SGL_2025") {songItemChecked = false;}
 if (document.getElementById("presets").value == "SGL_2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";
@@ -528,8 +529,6 @@ var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomeran
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "a", "q", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var pathInputs = ["x", "de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev","li", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var songInputs = ["lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
-var itemInputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea"];
 var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet","bombchus"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
@@ -537,20 +536,11 @@ var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fa
 
 var parent = document.getElementById("inputConfig");
 for (var i = 0; i < inputs.length; i++) {
-	if (localStorage.getItem(inputNames[i])) {
-        inputs[i] = localStorage.getItem(inputNames[i]);
-        if (i >= inputs.length) {
-        songInputs[i-itemInputs.length] = localStorage.getItem(inputNames[i])
-        }
-        else {
-            itemInputs[i] = localStorage.getItem(inputNames[i])
-        }
-    }
-    inputs[inputNames.indexOf("Prescription")] = "scr"
-	var elem = document.createElement("input"); elem.id = inputNames[i]; elem.value = inputs[i]; elem.className = "settings_small"; parent.appendChild(elem);
-	var elem = document.createElement("small"); elem.id = "text_" + inputNames[i]; elem.className = "check_text"; elem.innerHTML = inputNames[i]; parent.appendChild(elem);
-	var elem = document.createElement("br"); elem.id = "br_" + inputNames[i]; parent.appendChild(elem);
+  var elem = document.createElement("input"); elem.id = inputNames[i]; elem.value = inputs[i]; elem.className = "settings_small"; parent.appendChild(elem);
+  var elem = document.createElement("small"); elem.id = "text_" + inputNames[i]; elem.className = "check_text"; elem.innerHTML = inputNames[i]; parent.appendChild(elem);
+  var elem = document.createElement("br"); elem.id = "br_" + inputNames[i]; parent.appendChild(elem);
 }
+inputPresets();
 
 var parent = document.getElementById("inputConfig2");
 for (var i = 0; i < spawnInputs.length; i++) {

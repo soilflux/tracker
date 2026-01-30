@@ -31,6 +31,9 @@ function fastUpdate() {
   if (document.activeElement === document.body) {
     highlightNextCheck(Locations[0]);
   }
+  if (document.activeElement === document.getElementById("inputPresets")) {
+    inputPresets();
+  }
 }
 
 function midUpdate() {

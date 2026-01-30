@@ -408,7 +408,14 @@
 
       <div id ="row2" class="row">
         <br>
-        <div id = "inputConfig"><small class = "customizeTitles">Custom Item Inputs</small><br><br class ="half_break"></div>
+        <div id = "inputConfig"><small class = "customizeTitles">Item Inputs</small><br>
+          <select class="configOptions" id="inputPresets">
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="LEGACY">LEGACY</option>
+            <option value="RECOMMENDED">RECOMMENDED</option>
+          </select><br><br>
+          <button id = "saveInputs" onmouseDown="saveInputs()">SAVE INPUTS</button><br class="half_break">
+        </div>
         
         <div id = "inputConfig2"><small class = "customizeTitles">Custom Spawn Inputs</small><br><br class ="half_break"></div>
         

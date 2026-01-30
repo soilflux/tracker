@@ -37,6 +37,9 @@ background-size:cover;
 margin: 0;
 overflow: hidden;
 }
+#inputPresets {
+  width:150px;
+}
 .chuButtons{
     width: 25px;
     font-size: 18px;
