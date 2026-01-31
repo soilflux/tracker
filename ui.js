@@ -93,7 +93,7 @@ function processInputs() {
         if (input.startsWith(key)) {
           input = input.replace(key,'');
           if (inputs.includes(input.slice(0,1))) {
-            if (!key.startsWith('6')) {
+            if (!key.startsWith("4")) {
                 document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
                 document.getElementById(locationId).value = "";
                 flash();
@@ -128,6 +128,7 @@ function processInputs() {
         updateDungeonER();
         flash();
       }
+      continue;
     }
     //MEDALLIONS
     if (input.startsWith("0")) {
@@ -138,6 +139,7 @@ function processInputs() {
         stoneMedallionInput();
         flash();
       }
+      continue;
     }
 
 		// Break early if input is invalid.
