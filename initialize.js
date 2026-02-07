@@ -1034,13 +1034,13 @@ var Names = [
 	/*Wasteland*/"*Skull", "Carpet", "Torches",
 	/*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
 	/*Jabu Jabu*/"*Vines", "Scrub", "Map", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
-	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Near Boss", "*Base", "Phantom",
-	/*Fire Temple*/"Near Boss", "*Hammer", "Hammer", "Hammer", "La Open", "*SoT", "La Bomb", "Volvagia", "Low Cell", "*Maze", "Side Door", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "Top Gor", "MEGA",
-	/*Spirit Temple*/"Ch. Left", "Ch. Right", "*Fence", "Ch. Climb", "*Ch Climb", "Ch. Climb", "Map", "Sun Rm.", "*B4 Knuck", "Silvers", "Ad. Left", "*SoT", "Ad. Right", "Ad. Climb", "Ad. Climb", "LulHand", "LullaHi", "*Main", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tip Top", "Twinrova",
+	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "BK", "Floor", "*Arch", "Red", "Bow", "Blue", "Falling", "Nr Boss", "*Base", "Phantom",
+	/*Fire Temple*/"Nr Boss", "*Hammer", "Hammer", "Hammer", "La Open", "*SoT", "La Bomb", "Volvagia", "Low Cell", "*Maze", "Side Door", "Map", "High Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Compass", "Top Gor", "MEGA",
+	/*Spirit Temple*/"C. Left", "C. Right", "*Fence", "C. Climb", "*Ch Climb", "C. Climb", "Map", "Sun Rm.", "*B4 Knuck", "Silvers", "A. Left", "*SoT", "A. Right", "A. Climb", "A. Climb", "LulHand", "LullaHi", "*Main", "4 Armos", "Invisible", "Invisible", "Mirror", "BK", "Tip Top", "Twinrova",
 	/*Shadow Temple*/"Map", "Hovers", "Compass", "Early Silv", "*Spinning", "Spinning", "Spinning", "Crush L", "*Crush", "Crush H", "Crush H", "Mid Silv", "*Pot", "Pot", "Wind", "Bomb", "Gibdos", "*Boat", "Dins", "Dins", "*3 Pots", "Floor", "Bongo",
 	/*Water Temple*/"Compass", "Map", "Cracked", "Torches", "*Near BK", "BK", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "Morpha",
-	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Light 1", "Light 2", "Light 3", "Light 4", "Light 5", "Light 6", "Light Clr", "Light Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Sha 1", "Sha 2", "BK",
-	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Abv Eyes", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
+	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Lght 1", "Lght 2", "Lght 3", "Lght 4", "Lght 5", "Lght 6", "Lght Clr", "Lght Lul", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Sha 1", "Sha 2", "BK",
+	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Above", "Enemies", "Fire", "R1", "R2", "R3", "Beamos", "L1",  "L2", "L3", "L4", "Final", "Toilet",
 	/*Bottom of the Well*/"Fake L", "F Bomb", "C Big", "Fake R", "C Small", "B Bomb", "Water L", "Coffin", "Water F", "Invisible", "D Hand", "*Door L", "*Door R", "Locked 1", "Locked 2", "*Locked", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
