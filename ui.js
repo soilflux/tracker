@@ -1,6 +1,7 @@
 function processInputs() {
   thisIsHinted = false;
 	var peeked = false;
+  hinted = false;
 	for (var i = 0; i < Locations.length; i++) {
 		const locationId = Locations[i];
 		
@@ -199,7 +200,6 @@ function processInputs() {
 				enableChus();
 		}
     
-		hinted = false;
 		if (isLowerCase(input.charAt(0)) && isUpperCase(input.charAt(input.length-1))) {	
 			peeked = true;
 			document.getElementById(locationId).value = input.toLowerCase();
