@@ -277,23 +277,18 @@ function processInputs() {
 }
 
 function hideCheck(locationID) {
-  if (document.getElementById("shiftChecks").value == "YES") {
+  if (document.getElementById("shiftChecks").value == "YES" && Locations.indexOf(locationID) <= lastItem) {
     document.getElementById(locationID).style.display = "none";
-    if (Locations.indexOf(locationID) <= lastItem) {
-      document.getElementById("text_" + locationID).style.display = "none";
-      document.getElementById("br_" + locationID).style.display = "none";
-    }
+    document.getElementById("text_" + locationID).style.display = "none";
+    document.getElementById("br_" + locationID).style.display = "none";
   }
   else {
-    document.getElementById(locationID).style.display = "none";
     document.getElementById(locationID).style.visibility = "hidden";
-    if (Locations.indexOf(locationID) <= lastItem) {
-      document.getElementById(locationID).style.display = "inline-block";
-      document.getElementById("text_" + locationID).style.display = "inline-block";
-      document.getElementById("br_" + locationID).style.display = "inline-block";
-      document.getElementById("text_" + locationID).style.visibility = "hidden";
-      document.getElementById("br_" + locationID).style.visibility = "hidden";
-    }
+    document.getElementById(locationID).style.display = "inline-block";
+    document.getElementById("text_" + locationID).style.display = "inline-block";
+    document.getElementById("br_" + locationID).style.display = "inline-block";
+    document.getElementById("text_" + locationID).style.visibility = "hidden";
+    document.getElementById("br_" + locationID).style.visibility = "hidden";
   }
 }
 
@@ -1407,8 +1402,6 @@ function updateLogicInfo() {
 		if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		if (i > lastItem && Check[key] != "unknown" && Check[key] != "junk") {document.getElementById(str).innerHTML += ": " + capitalizeFirstLetter(ItemNames[Items.indexOf(Check[key])])}
-    if (i > lastItem && Check[key] == "junk") {document.getElementById(str).innerHTML += ": Junk"}
 		
 		if(i > lastItem && Check[key] != "unknown" && Check[key] != "junk" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
 			document.getElementById(str).style.backgroundColor = "gray";
