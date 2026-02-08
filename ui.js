@@ -263,7 +263,7 @@ function processInputs() {
         if(hintedInput == inputs[inputIdx])
           thisIsHinted = true;
         junkItem(document.getElementById(locationId));
-        if (!Player[Items2[inputIdx] + duplicate] && i <= lastItem) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
+        if (!Player[Items2[inputIdx] + duplicate]) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
         thisIsHinted = false;
         hintedInput = "";
         if (inputIdx<Items2.indexOf("lullaby") && i > lastItem) {
@@ -840,6 +840,9 @@ function highlightNextCheck(locationID) {
     if (i == Locations.indexOf(locationID)) {
       i = AreaIndexes[j];
     }
+    if (i == Locations.indexOf("theater_skull")) {
+      continue;
+    }
     
     if ((age == "child" && adult.includes(Locations[i])) || (age == "adult" && child.includes(Locations[i]))) {
       continue;
@@ -1402,11 +1405,6 @@ function updateLogicInfo() {
 		if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
 		if(document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
-		
-		if(i > lastItem && Check[key] != "unknown" && Check[key] != "junk" && !Player[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key]))
-			document.getElementById(str).style.backgroundColor = "gray";
-		else
-			document.getElementById(str).style.backgroundColor = "";
 		
 		if(Location_Logic[key] == true) {
 			if (nerfed && Location_Peek[key] == true && !Location_Access[key] == true) {
