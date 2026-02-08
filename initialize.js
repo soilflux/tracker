@@ -1484,6 +1484,8 @@ Spawn.adult_zf_fairy_ool = false;
 //RULES
 Rules = {};
 Rules.kzSkip = true;
+Rules.waterHop = true;
+Rules.valleyBridgeWithHookshot = true;
   
 var woth1 = "unknown";
 var woth2 = "unknown";

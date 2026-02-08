@@ -802,7 +802,7 @@ function logicShortcuts() {
 	Player.jabu_entrance_access = (Player.child_can_enter_domain && (Player.rutos_letter || document.getElementById("closedFountain").value == "OPEN")) || Spawn.child_zf;
 	Player.can_hit_jabu_switch = Player.jabu_access && Player.bomb_bag || Player.has_chus || ((Player.boomerang || Player.slingshot) && Player.jabu_child_access) || ((Player.hookshot || Player.bow) && Player.jabu_adult_access);
 	
-	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || Player.hookshot;
+	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (Rules.valleyBridgeWithHookshot && Player.hookshot);
 	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
 	Player.gtg_entrance_access = (Player.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (Player.fortress_access && Player.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
 	Player.can_cross_quicksand = Player.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || Player.gerudo_card);
@@ -862,7 +862,7 @@ function logicShortcuts() {
 	CouldHave.jabu_entrance_access = (CouldHave.child_can_enter_domain && (CouldHave.rutos_letter || document.getElementById("closedFountain").value == "OPEN")) || Spawn.child_zf;
 	CouldHave.can_hit_jabu_switch = CouldHave.jabu_access && CouldHave.bomb_bag || Player.has_chus || ((CouldHave.boomerang || CouldHave.slingshot) && CouldHave.jabu_child_access) || ((CouldHave.hookshot || CouldHave.bow) && CouldHave.jabu_adult_access);
 	
-	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland || CouldHave.hookshot;
+	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (Rules.valleyBridgeWithHookshot && CouldHave.hookshot);
 	CouldHave.can_save_carpenters = Spawn.child_gv_gf || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
 	CouldHave.gtg_entrance_access = (CouldHave.can_save_carpenters && document.getElementById("shuffleGerudoCard").value == "OFF") || (CouldHave.fortress_access && CouldHave.gerudo_card && document.getElementById("shuffleGerudoCard").value == "ON");
 	CouldHave.can_cross_quicksand = CouldHave.fortress_access && (document.getElementById("shuffleGerudoCard").value == "OFF" || CouldHave.gerudo_card);
@@ -1519,7 +1519,7 @@ function locationLogic(){
 		Access.water_river = Has.can_do_water_checks && Player.current_water_keys >= 2 && Has.time && Has.bow && Has.hookshot && (document.getElementById("keysanity").value != "KEY RINGS" || Has.water_key_ring);
 		Access.water_dragon = Has.can_do_water_checks && ((Player.current_water_keys >= 2 && Has.hookshot && Has.time && Has.bow) || (Has.goron_bracelet && Has.lullaby && ((Has.iron_boots && Has.hookshot) || Player.has_chus) && (Has.silver_scale || Has.iron_boots)));
 		Access.water_bossKey = Has.can_do_water_checks && (Has.lullaby || Has.iron_boots) && (Has.longshot || Has.hover_boots) && Player.current_water_keys >= 2 && (document.getElementById("keysanity").value != "KEY RINGS" || Has.water_key_ring);
-		Access.water_morpha = Has.water_temple_adult_access && Has.water_boss_key /*&& Has.longshot*/ ;
+		Access.water_morpha = Has.water_temple_adult_access && Has.water_boss_key && (Rules.waterHop || Has.longshot);
 		Access.spirit_childLeft = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || Player.has_chus);
 		Access.spirit_childRight = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || Player.has_chus);
 		Access.spirit_childClimb1 = Has.spirit_temple_access && Player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.spirit_temple_child_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (document.getElementById("keysanity").value != "KEY RINGS" || Has.spirit_key_ring);
@@ -1841,7 +1841,7 @@ function locationLogic(){
 	Location_Could_Access.water_river = CouldHave.can_do_water_checks && CouldHave.hookshot && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.has_chus))) && CouldHave.time && CouldHave.bow && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring);
 	Location_Could_Access.water_dragon = CouldHave.can_do_water_checks && ((Player.current_water_keys >= 2 && CouldHave.hookshot && CouldHave.time && CouldHave.bow) || (CouldHave.goron_bracelet && CouldHave.lullaby && ((CouldHave.iron_boots && CouldHave.hookshot) || Player.has_chus || CouldHave.bomb_bag) && (CouldHave.silver_scale || CouldHave.iron_boots)));
 	Location_Could_Access.water_bossKey = CouldHave.can_do_water_checks && (CouldHave.lullaby || CouldHave.iron_boots) && (CouldHave.longshot || CouldHave.hover_boots) && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.has_chus))) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring);
-	Location_Could_Access.water_morpha = CouldHave.can_do_water_checks && (Player.water_boss_key || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && CouldHave.iron_boots && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.time) && (CouldHave.longshot || CouldHave.hover_boots)) /*&& CouldHave.longshot*/ && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring); 
+	Location_Could_Access.water_morpha = CouldHave.can_do_water_checks && (Player.water_boss_key || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && CouldHave.iron_boots && (CouldHave.bomb_bag || Player.has_chus) && CouldHave.time) && (CouldHave.longshot || CouldHave.hover_boots)) && (Rules.waterHop || CouldHave.longshot) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.water_key_ring); 
 	Location_Could_Access.spirit_childLeft = CouldHave.spirit_temple_child_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.has_chus));
 	Location_Could_Access.spirit_childRight = CouldHave.spirit_temple_child_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.has_chus));
 	Location_Could_Access.spirit_childClimb1 = (Player.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.spirit_temple_child_access) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (document.getElementById("keysanity").value != "KEY RINGS" || CouldHave.spirit_key_ring);
