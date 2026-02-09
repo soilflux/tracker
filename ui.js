@@ -1557,7 +1557,7 @@ function updateLogicInfo() {
         }
 			}
 			document.getElementById(str).className= "ool_check_text";
-			document.getElementById(str).style.opacity = .5;
+			document.getElementById(str).style.opacity = .25;
 			document.getElementById(str).style.fontWeight = "normal";
 			if(colorTheme == "dark") {
 				document.getElementById(str).style.color ="white";
@@ -1825,7 +1825,7 @@ function updateWothBorders() {
 			
 			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
 				if(!alwaysHints.includes(Locations[j]) && (Hinted[Locations[j]] == false || Hinted[Locations[j]] == undefined) && !Locations[j].startsWith("h_")) {
-					document.getElementById("text_" + Locations[j]).style.border = "solid 1px";
+					document.getElementById("text_" + Locations[j]).style.border = "solid cyan 2px";
           document.getElementById("text_" + Locations[j]).style.letterSpacing = "-1.6px";
         }
 				else

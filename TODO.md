@@ -3,3 +3,9 @@
 - [ ] condensed woths
 - [ ] put aminal stuff in a separate file
 - [ ] make hinted items within song locations bold (as it is for other locations)
+- [ ] change note box into input boxes to match the rest of the tracker
+- [x] fix song layout shift
+- [ ] find middle ground to remove large woth font option
+- [ ] cluster checks on the list by proximity rather by area
+- [ ] don't border locations that have their important items hinted (unless also path)
+- [ ] Normalize every check name to between 4-7 characters
