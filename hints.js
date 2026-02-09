@@ -336,182 +336,65 @@ function wothAndBarrenProcessing() {
 			
 		}	
 		
-	for (var i = 1; i <= 35; i++) {
-		
-		if (Area[i] == "barren") {AreaAge[i] += 1;}
-		else {AreaAge[i] = 0;}
-		
-		if (AreaAge[i] == 3) {
-			hinted = true;
+  const dungeonMappings = {
+    12: { key: 'deku_checks_remaining', bossCheck: true },
+    16: { key: 'dodongos_checks_remaining', bossCheck: true },
+    27: { key: 'jabu_checks_remaining', bossCheck: true }
+  };
+
+  const uiMappings = {
+    28: { id: "forest", action: "color" },
+    29: { id: "fire",   action: "color" },
+    30: { id: "spirit", action: "color" },
+    31: { id: "shadow", action: "color" },
+    32: { id: "water",  action: "color" },
+    33: { id: "ganons", action: "click" },
+    34: { id: "gtg",    action: "click" },
+    35: { id: "well",   action: "click" }
+  };
+
+  for (let i = 1; i <= 35; i++) {
+    AreaAge[i] = (Area[i] === "barren") ? (AreaAge[i] || 0) + 1 : 0;
+
+    if (AreaAge[i] === 3) {
+      hinted = true;
       thisIsHinted = true;
-			if (i == 1) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 2) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 3) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 4) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 5) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 6) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 7) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 8) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 9) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 10) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 11) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 12) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-				Player.deku_checks_remaining = 0;
-				Player.checks_remaining -= 1;
-			}
-			if (i == 13) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 14) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 15) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 16) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-				Player.dodongos_checks_remaining = 0;
-				Player.checks_remaining -= 1;
-			}
-			if (i == 17) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 18) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 19) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 20) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 21) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 22) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 23) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 24) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 25) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 26) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_")) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-			}
-			if (i == 27) {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Check[Locations[j]] == "unknown" && !Locations[j].startsWith("h_") && !bossStrings.includes(Locations[j])) {document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));}
-				}
-				Player.jabu_checks_remaining = 0;
-				Player.checks_remaining -= 1;
-			}
-			if (i == 28) {
-				document.getElementById("forest").style.color = "red";
-			}
-			if (i == 29) {
-				document.getElementById("fire").style.color = "red";
-			}
-			if (i == 30) {
-				document.getElementById("spirit").style.color = "red";
-			}
-			if (i == 31) {
-				document.getElementById("shadow").style.color = "red";
-			}
-			if (i == 32) {
-				document.getElementById("water").style.color = "red";
-			}
-			if (i == 33) {
-				document.getElementById("ganons").click();
-			}
-			if (i == 34) {
-				document.getElementById("gtg").click();
-			}
-			if (i == 35) {
-				document.getElementById("well").click();
-			}
-			hinted = false;
-		}
-	}
+
+      if (i <= 27) {
+        const dungeon = dungeonMappings[i];
+        
+        for (let j = AreaIndexes[i - 1]; j < AreaIndexes[i]; j++) {
+          const loc = Locations[j];
+          const isUnknown = Check[loc] === "unknown";
+          const isNotHint = !loc.startsWith("h_");
+          const isNotBoss = !(dungeon?.bossCheck && bossStrings.includes(loc));
+          const isVisible = document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden";
+
+          if (isUnknown && isNotHint && isNotBoss && isVisible) {
+            document.getElementById("text_" + loc).dispatchEvent(new Event('mousedown'));
+          }
+        }
+
+        if (dungeon) {
+          Player[dungeon.key] = 0;
+          Player.checks_remaining -= 1;
+        }
+      } 
+      else if (uiMappings[i]) {
+        const item = uiMappings[i];
+        const element = document.getElementById(item.id);
+        
+        if (item.action === "color") {
+          element.style.color = "red";
+        } else {
+          element.click();
+        }
+      }
+      
+      hinted = false;
+    }
+  }
+  
 	var array = ["forest", "fire", "water", "spirit", "shadow"];
 	for (var i = 0; i < array.length; i++) {
 		if (document.getElementById(array[i]).style.color == "red" && (Logic.emerald == array[i] || Logic.ruby == array[i] || Logic.sapphire == array[i]) && (Check.oot == "minuet" || Check.oot == "serenade" || Check.oot == "prelude" || (Check.oot == "bolero" && (Check.crater_bean == "junk" && Player.hookshot) || Player.hover_boots) || (Check.oot == "suns" && Check.redead_grave == "junk") || (Check.oot == "sarias" && Check.goron_dance == "junk" && Check.saria_kid == "junk"))) {document.getElementById(array[i]).click(); document.getElementById(array[i]).style.color = "lightblue"; if (Logic.emerald == array[i]) {Player.emerald = false;} if (Logic.ruby == array[i]) {Player.ruby = false;} if (Logic.sapphire == array[i]) {Player.sapphire = false;}}

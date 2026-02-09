@@ -581,7 +581,7 @@ function junk() {
 		else if (Check[locationID] == "unknown") {
 			Check[locationID]="junk";
 		}
-		
+    
     hideCheck(locationID);
 		
 		if (forcedDisplay[locationIndex]) {forcedDisplay[locationIndex] = false; Player[Check[locationID]] = true; if(Check[locationID] == "bombchus"){if(Player.has_chus == false){enableChus();} Check[locationID] = "junk";} Update(); }
@@ -1635,7 +1635,6 @@ function updateLogicInfo() {
 function searchingFor_tracking() {
 	item = event.target.id.replace("searchingFor_","");
 	searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]),1) //Pepega
-	console.log(searchItems)
 	event.target.style.display = "none";
 }
 

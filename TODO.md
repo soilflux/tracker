@@ -1,3 +1,5 @@
 - [ ] add song locations into the main checklist
 - [x] toggle water hop and bridge cross
 - [ ] condensed woths
+- [ ] put aminal stuff in a separate file
+- [ ] make hinted items within song locations bold (as it is for other locations)

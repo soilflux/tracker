@@ -1,12 +1,12 @@
 function Update() {
-	saveStuff(); //save current settings for next use of tracker
+	saveStuff();
 	changeThemes();
-	checkCircleInfo(); //updates the numbers in the circles next to dungeon names
-	itemHighlights(); //add or remove transparency if player has or does not have items, respectively
-	dungeonHighlights(); //highlight medallions if player has them and highlight dungeon text if player still needs to beat it
-  if (document.getElementById("shiftChecks").value == "YES") areaBreaks(); //add or remove line breaks for areas based on whether any checks in that area are currently being displayed
-	updateSummaryText()
-	updateProbabilities() // update the probabilities for items based on checks of that type left vs checks remaining
+	checkCircleInfo();
+	itemHighlights();
+	dungeonHighlights();
+  if (document.getElementById("shiftChecks").value == "YES") areaBreaks();
+	updateSummaryText();
+	updateProbabilities();
 }
 
 function fastUpdate() {
@@ -14,8 +14,8 @@ function fastUpdate() {
 		toFocus.focus();
 		toFocus = null;
 	}
-	timerStuff(); //implements a timer to use as an alternative to stuff like livesplit
-	processInputs(); //handles hinted, peeked and picked up things
+	timerStuff(); 
+	processInputs();
   if (document.activeElement == document.getElementById("markMedallions")) {
     stoneMedallionInput();
   }
@@ -42,11 +42,11 @@ function midUpdate() {
 	var previousInLogicSkulls = Logic.gold_skulltulas;
 	var flag = false;
 	while (i < 100000) {
-		refreshLogicForStuff(); //puts something in or out of logic based on whether its location is in or out of logic 
-		logicShortcuts(); //combines multiple pieces of logic into one variable
-		locationLogic(); //updates logic and accessibility for all locations
+		refreshLogicForStuff();
+		logicShortcuts();
+		locationLogic();
 		updateDungeonER();
-		gsArrayBuilder(); //just moves gs logic into an array
+		gsArrayBuilder(); 
 		if (i >=1 && Player.logically_accessible > previousInLogicChecks || Logic.gold_skulltulas > previousInLogicSkulls) {
 			i += 1;
 			previousInLogicChecks = Player.logically_accessible;
@@ -61,20 +61,20 @@ function midUpdate() {
 		}
 	}
   stoneMedallionInput();
-  wothAndBarrenProcessing(); //do various things based on woth and barrens;
-  alternateHintInput(); //implements inputting hints into the note box;
-  setInLogicMaxForDungeons(); //ensures that dungeons will never add more to the in logic counter than the amount of items they contain
-  updateLogicInfo(); //updates colors and counts for checks, woths and the skull, remaining, in-logic counters
-  updateSpawnInputs(); //child and adult spawn input
+  wothAndBarrenProcessing(); 
+  alternateHintInput();
+  setInLogicMaxForDungeons();
+  updateLogicInfo();
+  updateSpawnInputs();
   refreshLinSo();
-  updateWothBorders(); // highlight woth checks if option enabled;
+  updateWothBorders();
   updateUsefulAreaItems();
   dungeonHeaderVisibility();
 	Update(); 
 }
 
 function slowUpdate() {
-	updateInputs(); //implements custom inputs
+	updateInputs();
 	if (!nerfed) {
 		WotHItems = [];
 		for (i=0; i < Items.length; i++) {
