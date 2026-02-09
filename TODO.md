@@ -1,11 +1,18 @@
 - [ ] add song locations into the main checklist
-- [x] toggle water hop and bridge cross
 - [ ] condensed woths
 - [ ] put aminal stuff in a separate file
 - [ ] make hinted items within song locations bold (as it is for other locations)
 - [ ] change note box into input boxes to match the rest of the tracker
-- [x] fix song layout shift
 - [ ] find middle ground to remove large woth font option
 - [ ] cluster checks on the list by proximity rather by area
 - [ ] don't border locations that have their important items hinted (unless also path)
-- [ ] Normalize every check name to between 4-7 characters
+- [ ] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
+- [ ] eliminate reliance on midUpdate() interval runs
+- [ ] remove the non-linso item tracker and add a condensed visual for 1me, 3me and stone dungeons
+- [ ] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)
+- [ ] condense checklist into 6 columns
+- [ ] add flee to credits
+- [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
+- [ ] add an avg finish time stat(last 25 seeds) by preset
+- [x] fix song layout shift
+- [x] toggle water hop and bridge cross
