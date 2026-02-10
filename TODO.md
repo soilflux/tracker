@@ -16,3 +16,4 @@
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross
+- [ ] add a 1-length input for generic important items 

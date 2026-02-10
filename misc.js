@@ -1023,6 +1023,11 @@ document.onkeydown = function(e) {
 	}
 }
 
+function colorFirstLetter(str, color) {
+  if (!str) return "";
+  return `<span style="color: ${color};">${str[0]}</span>${str.slice(1)}`;
+}
+
 document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 
 // For returning users, automatically show patch notes on initialize when a new version is available.

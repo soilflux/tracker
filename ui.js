@@ -1862,52 +1862,20 @@ function updateWothBorders() {
 	}
 }
 
-function updateUsefulAreaItems() {
-  const elements = document.querySelectorAll(".area_requirements");
-
-  elements.forEach((element) => {
-    // Get the stable ID from data attribute (fallback to parsing src if data missing)
-    const rawItemName = element.dataset.item || element.src.split("/").pop().replace(/\.\w+$/, "");
-    
-    let isOwned = false;
-
-    switch (rawItemName) {
-      case "hookshot":
-        // Handle Image Swapping
-        if (Player.longshot) {
-          // Only update DOM if necessary to prevent flickering
-          if (!element.src.includes(Player.longshot_img)) {
-             element.src = Player.longshot_img;
-          }
-          isOwned = true;
-        } else {
-          if (!element.src.includes(Player.hookshot_img)) {
-             element.src = Player.hookshot_img;
-          }
-          isOwned = Player.hookshot;
-        }
+function updateUsefulAreaItems() { 
+  if (Player.can_see) {
+    for (var i = AreaIndexes[AreaNames.indexOf("Shadow")-1]; i<AreaIndexes[AreaNames.indexOf("Shadow")]; i++) {
+      if (document.getElementById(Locations[i]).style.display == "inline-block" && document.getElementById(Locations[i]).style.visibility == "visible") {
+        document.getElementById("text_" + Locations[i]).innerHTML = colorFirstLetter(document.getElementById("text_" + Locations[i]).innerHTML,"pink");
         break;
-
-      default:
-        isOwned = Player[rawItemName];
-        break;
+      }
     }
-
-    if (isOwned) {
-      element.style.filter = "drop-shadow(0px 0px 1px #FFFFFF)";
-    } else {
-      element.style.filter = "contrast(0%)";
-    }
-  });
+  }
 }
 
 function updateChecklistEntrances() {
-  // Define the HTML ID prefixes
   const domIds = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "ice", "gtg"];
   
-  // Define a map for the Entrance -> Image logic
-  // Key: The value found in dungeonToEntrance_ER_dict
-  // Value: The specific filenames for the 'from' and 'to' images
   const entranceImages = {
     "deku":          { from: "kokiri",    to: "deku" },
     "dodongos":      { from: "dmt",       to: "dodongos" },
@@ -1926,10 +1894,9 @@ function updateChecklistEntrances() {
 
   for (let i = 0; i < dungs_list.length; i++) {
     const dungeonKey = dungs_list[i];
-    const elementPrefix = domIds[i];        // Prefix for the HTML ID (e.g., "deku")
+    const elementPrefix = domIds[i];
     const entranceType = dungeonToEntrance_ER_dict[dungeonKey];
 
-    //Update DOM if valid data exists
     const imageData = entranceImages[entranceType];
     
     if (imageData) {
