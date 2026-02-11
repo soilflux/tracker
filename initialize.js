@@ -968,6 +968,43 @@ var child = [
   "zeldasSpot", "eponasSpot", "sariasSpot", "oot",
 ];
 
+const AreaImages = {
+  "Kokiri Forest": "kokiri",
+  "Lon Lon Ranch": "ranch",
+  "Hyrule Field": "field",
+  "Gerudo Valley": "valley",
+  "Lake Hylia": "hylia",
+  "Market": "market",
+  "Hyrule Castle": "hyrule_castle",
+  "Outside Ganon's Castle": "ogc",
+  "Temple of Time": "tot",
+  "Zora's Fountain": "fountain",
+  "Ice Cavern": "ice",
+  "Deku Tree": "deku",
+  "Lost Woods": "lost_woods",
+  "Sacred Forest Meadow": "sfm",
+  "Goron City": "goron",
+  "Dodongo's Cavern": "dodongos",
+  "Death Mountain Trail": "dmt",
+  "Death Mountain Crater": "dmc",
+  "Kakariko Village": "kakariko",
+  "Graveyard": "graveyard",
+  "Zora's River": "river",
+  "Zora's Domain": "domain",
+  "Desert Colossus": "colossus",
+  "Haunted Wasteland": "wasteland",
+  "Gerudo's Fortress": "fortress",
+  "Jabu Jabu's Belly": "jabu",
+  "Forest Temple": "forest",
+  "Fire Temple": "fire",
+  "Water Temple": "water",
+  "Shadow Temple": "shadow",
+  "Spirit Temple": "spirit",
+  "Bottom of the Well": "well",
+  "Gerudo Training Ground": "gtg",
+  "Ganon's Castle": "ganon"
+};
+
 var LocationToArea = {
     // Kokiri Forest
     "kokiri_mido_1": "Kokiri Forest", "kokiri_mido_2": "Kokiri Forest", "kokiri_mido_3": "Kokiri Forest", "kokiri_mido_4": "Kokiri Forest", "kokiri_sword": "Kokiri Forest", "shop_kokiri_TL": "Kokiri Forest", "shop_kokiri_TR": "Kokiri Forest", "shop_kokiri_BR": "Kokiri Forest", "shop_kokiri_BL": "Kokiri Forest", "gs_kokiri_child": "Kokiri Forest", "gs_kokiri_soil": "Kokiri Forest", "gs_kokiri_adult": "Kokiri Forest", "kokiri_storms": "Kokiri Forest", "cow_kokiri": "Kokiri Forest", "h_deku_left": "Kokiri Forest", "h_deku_right": "Kokiri Forest", "h_near_lw": "Kokiri Forest", "h_kokiri_storms": "Kokiri Forest",

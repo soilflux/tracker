@@ -69,33 +69,14 @@ function dark_soli() {
 	var temp = 0;
   for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
-		if (i < AreaIndexes[1]) {document.getElementById(key).style.backgroundImage = "url('./images/kokiri.png')";}
-		else if (i < AreaIndexes[2]) {document.getElementById(key).style.backgroundImage = "url('./images/ranch.png')";}
-		else if (i < AreaIndexes[3]) {document.getElementById(key).style.backgroundImage = "url('./images/field.png')";}
-		else if (i < AreaIndexes[4]) {document.getElementById(key).style.backgroundImage = "url('./images/valley.png')";}
-		else if (i < AreaIndexes[5]) {document.getElementById(key).style.backgroundImage = "url('./images/hylia.png')";}
-		else if (i < AreaIndexes[6]) {document.getElementById(key).style.backgroundImage = "url('./images/market.png')";}
-		else if (i < AreaIndexes[7]) {document.getElementById(key).style.backgroundImage = "url('./images/hyrule_castle.png')";}
-		else if (i < AreaIndexes[8]) {document.getElementById(key).style.backgroundImage = "url('./images/ogc.png')";}
-		else if (i < AreaIndexes[9]) {document.getElementById(key).style.backgroundImage = "url('./images/tot.jpg')";}
-		else if (i < AreaIndexes[10]) {document.getElementById(key).style.backgroundImage = "url('./images/fountain.png')";}
-		else if (i < AreaIndexes[11]) {document.getElementById(key).style.backgroundImage = "url('./images/ice.png')";}
-		else if (i < AreaIndexes[12]) {document.getElementById(key).style.backgroundImage = "url('./images/deku.png')";}
-		else if (i < AreaIndexes[13]) {document.getElementById(key).style.backgroundImage = "url('./images/lost_woods.png')";}
-		else if (i < AreaIndexes[14]) {document.getElementById(key).style.backgroundImage = "url('./images/sfm.png')";}
-		else if (i < AreaIndexes[15]) {document.getElementById(key).style.backgroundImage = "url('./images/goron.png')";}
-		else if (i < AreaIndexes[16]) {document.getElementById(key).style.backgroundImage = "url('./images/dodongos.png')";}
-		else if (i < AreaIndexes[17]) {document.getElementById(key).style.backgroundImage = "url('./images/dmt.png')";}
-		else if (i < AreaIndexes[18]) {document.getElementById(key).style.backgroundImage = "url('./images/dmc.png')";}
-		else if (i < AreaIndexes[19]) {document.getElementById(key).style.backgroundImage = "url('./images/kakariko.png')";}
-		else if (i < AreaIndexes[20]) {document.getElementById(key).style.backgroundImage = "url('./images/graveyard.png')";}
-		else if (i < AreaIndexes[21]) {document.getElementById(key).style.backgroundImage = "url('./images/river.png')";}
-		else if (i < AreaIndexes[22]) {document.getElementById(key).style.backgroundImage = "url('./images/domain.png')";}
-		else if (i < AreaIndexes[23]) {document.getElementById(key).style.backgroundImage = "url('./images/colossus.png')";}
-		else if (i < AreaIndexes[24]) {document.getElementById(key).style.backgroundImage = "url('./images/wasteland.png')";}
-		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./images/fortress.png')";}
-		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./images/fortress.png')";}
-		else if (i < AreaIndexes[27]) {document.getElementById(key).style.backgroundImage = "url('./images/jabu.png')";}
+    if (songLocations.includes(key)) {
+      continue;
+    }
+    let areaName = LocationToArea[Locations[i]];
+    let imgFile = AreaImages[areaName] + ".png";
+    if (imgFile) {
+      document.getElementById(key).style.backgroundImage = `url('./images/${imgFile}')`;
+    }
 	}
 
 	document.getElementById("chuButton").src= Player.chu_img;
@@ -278,33 +259,14 @@ function dark_normie() {
 	if(document.getElementById(shadowPlacement +"_req5") != null) {document.getElementById(shadowPlacement +"_req5").src = Player.hookshot_img; }
 	for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
-		if (i < AreaIndexes[1]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kokiri.jpg')";}
-		else if (i < AreaIndexes[2]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ranch.jpg')";}
-		else if (i < AreaIndexes[3]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/field.jpg')";}
-		else if (i < AreaIndexes[4]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/valley.jpg')";}
-		else if (i < AreaIndexes[5]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/hylia.jpg')";}
-		else if (i < AreaIndexes[6]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/market.jpg')";}
-		else if (i < AreaIndexes[7]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/hyrule_castle.jpg')";}
-		else if (i < AreaIndexes[8]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ogc.jpg')";}
-		else if (i < AreaIndexes[9]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/tot.jpg')";}
-		else if (i < AreaIndexes[10]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fountain.jpg')";}
-		else if (i < AreaIndexes[11]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/ice.jpg')";}
-		else if (i < AreaIndexes[12]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/deku.jpg')";}
-		else if (i < AreaIndexes[13]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/lost_woods.jpg')";}
-		else if (i < AreaIndexes[14]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/sfm.jpg')";}
-		else if (i < AreaIndexes[15]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/goron.jpg')";}
-		else if (i < AreaIndexes[16]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dodongos.jpg')";}
-		else if (i < AreaIndexes[17]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dmt.jpg')";}
-		else if (i < AreaIndexes[18]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/dmc.jpg')";}
-		else if (i < AreaIndexes[19]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/kakariko.jpg')";}
-		else if (i < AreaIndexes[20]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/graveyard.jpg')";}
-		else if (i < AreaIndexes[21]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/river.jpg')";}
-		else if (i < AreaIndexes[22]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/domain.jpg')";}
-		else if (i < AreaIndexes[23]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/colossus.jpg')";}
-		else if (i < AreaIndexes[24]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/wasteland.jpg')";}
-		else if (i < AreaIndexes[25]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
-		else if (i < AreaIndexes[26]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/fortress.jpg')";}
-		else if (i < AreaIndexes[27]) {document.getElementById(key).style.backgroundImage = "url('./normal/areas/jabu.jpg')";}
+    if (songLocations.includes(key)) {
+      continue;
+    }
+    let areaName = LocationToArea[Locations[i]];
+    let imgFile = AreaImages[areaName] + ".jpg";
+    if (imgFile) {
+      document.getElementById(key).style.backgroundImage = `url('./normal/areas/${imgFile}')`;
+    }
 	}
 	document.getElementById("chuButton").src= Player.chu_img;
 	document.getElementById("chuButton").style.opacity = .4;

@@ -14,6 +14,7 @@
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
+- [ ] replace usages of AreaIndexes
 
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross
