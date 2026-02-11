@@ -17,7 +17,7 @@ function processInputs() {
 				else {
 					
 				}
-				textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkArea + ": " + checkName + "\n";
+				checkLog += "" + timerHours + "h " + timerMinutes + "m " + timerSeconds + "s " + checkArea + ": " + checkName + "\n";
 			}
 			continue;
         }

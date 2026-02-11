@@ -919,9 +919,9 @@ Player.changetheme = 1;
 Player.has_chus = false;
 	
 var tempTime = 0;
-var tempHours = 0;
-var tempMinutes = 0;
-var tempSeconds = 0;
+var timerHours = 0;
+var timerMinutes = 0;
+var timerSeconds = 0;
 
 //Lists of adult and child-onlyish checks to be used for next check highlighting. It's more of a 'you're very likely to be doing this as child/adult' than a guarantee
 var adult = [
@@ -1586,7 +1586,7 @@ var readYet = new Array(42).fill(false);
 var AreaAge = new Array(36).fill(0);
 var AreaWotHAge = new Array(36).fill(0);
 var wothCount = new Array(36).fill(0);
-var textBlock = '';
+var checkLog = '';
 var circus = false;
 var colorWothAreas = true;
 var hideInaccessible = true;

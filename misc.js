@@ -454,7 +454,7 @@ function download() {
         var a = document.body.appendChild(
             document.createElement("a")
         );
-        var textToWrite = textBlock;
+        var textToWrite = checkLog;
         a.download = "route.txt"; 
         textToWrite = textToWrite.replace(/\n/g, "%0D%0A"); 
         a.href = "data:text/plain," + textToWrite;
@@ -983,14 +983,14 @@ function timerStuff() {
     var tempTime = Math.floor((pauseInitial - pauseTotal - initialTime)*timerMultiplier/1000);
   }
 	if (paused && !timerInitialized) {var temptime = 0;} else if (!paused && !timerInitialized) {timerInitialized = true;}
-	tempHours = Math.floor(tempTime / 3600);
-	tempMinutes = Math.floor((tempTime % 3600)/ 60);
-	tempSeconds = Math.floor((tempTime % 3600)% 60);
+	timerHours = Math.floor(tempTime / 3600);
+	timerMinutes = Math.floor((tempTime % 3600)/ 60);
+	timerSeconds = Math.floor((tempTime % 3600)% 60);
 	document.getElementById("timer").innerHTML = "";
-	if (tempHours > 0) {document.getElementById("timer").innerHTML += tempHours + ":";}
-	if (tempHours > 0 && tempMinutes == 0) {document.getElementById("timer").innerHTML += "00:"} if (tempMinutes > 0) {if (tempMinutes < 10 && tempHours > 0) {document.getElementById("timer").innerHTML += "0";} document.getElementById("timer").innerHTML += tempMinutes + ":";}
-	if (tempSeconds < 10 && (tempMinutes > 0 || tempHours > 0)) {document.getElementById("timer").innerHTML += "0";}
-	document.getElementById("timer").innerHTML += tempSeconds;
+	if (timerHours > 0) {document.getElementById("timer").innerHTML += timerHours + ":";}
+	if (timerHours > 0 && timerMinutes == 0) {document.getElementById("timer").innerHTML += "00:"} if (timerMinutes > 0) {if (timerMinutes < 10 && timerHours > 0) {document.getElementById("timer").innerHTML += "0";} document.getElementById("timer").innerHTML += timerMinutes + ":";}
+	if (timerSeconds < 10 && (timerMinutes > 0 || timerHours > 0)) {document.getElementById("timer").innerHTML += "0";}
+	document.getElementById("timer").innerHTML += timerSeconds;
 }
 
 document.onkeydown = function(e) {
