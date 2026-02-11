@@ -9,14 +9,11 @@ function processInputs() {
 		if(Check[locationId] != "unknown") {
 			if (!checkedYet[i-1]) {
 				checkedYet[i-1] = true; 
-				if (i > lastItem) {
-					checkLocation = "Song";
-				}
-				else if (locationId.startsWith("h_")) {
+				if (locationId.startsWith("h_")) {
 					checkLocation = "Hint";
 				}
 				else {
-					checkLocation = AreaNames[AreaNamesIndex];
+					checkLocation = LocationToArea[locationId];
 				}
 				textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkLocation + ": " + Names[i] + "\n";
 			}
