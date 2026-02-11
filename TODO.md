@@ -9,11 +9,12 @@
 - [ ] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
 - [ ] eliminate reliance on midUpdate() interval runs
 - [ ] remove the non-linso item tracker and add a condensed visual for 1me, 3me and stone dungeons
-- [ ] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)
 - [ ] condense checklist into 6 columns
 - [ ] add flee to credits
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
+- [ ] add a 1-length input for generic important items 
+
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross
-- [ ] add a 1-length input for generic important items 
+- [x] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)

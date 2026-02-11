@@ -56,7 +56,7 @@ overflow: hidden;
   font-size:21px;
   letter-spacing:-5px;
   margin-left:-1px;
-  margin-bottom:-2px;
+  margin-bottom:-4px;
   position:relative;
   bottom:1px;
 }
@@ -64,7 +64,7 @@ overflow: hidden;
   color:lightgrey;
   font-size:21px;
   margin-left:2px;
-  margin-bottom:-2px;
+  margin-bottom:-4px;
   position:relative;
   bottom:1px;
 }
@@ -72,7 +72,7 @@ overflow: hidden;
   color:#CA3433;
   font-size:21px;
   margin-left:-2px;
-  margin-bottom:-2px;
+  margin-bottom:-4px;
   position:relative;
   bottom:1px;
 }
