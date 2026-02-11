@@ -674,10 +674,10 @@ function toggleHint(loc) {
 					
 					// get the hinted text for this item and location
 					if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
-						text = Names[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+						text = checkNames[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
 					}
 					else {
-						text = Names[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+						text = checkNames[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
 					}
 					
 					/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text

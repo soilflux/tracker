@@ -10,7 +10,7 @@ function processInputs() {
 			if (!checkedYet[i-1]) {
 				checkedYet[i-1] = true; 
         let checkArea = LocationToArea[locationId];
-        let checkName = Names[i];
+        let checkName = checkNames[i];
 				if (locationId.startsWith("h_")) {
 					checkName = checkName + " Hint";
 				}
@@ -250,7 +250,7 @@ function processInputs() {
 			if (!Known[Items2[inputIdx] + duplicate]) {
         Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
         Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
-        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];} else if (inputIdx < Items2.indexOf("lullaby") && inputIdx != 4) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + Names[i];}
+        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];} else if (inputIdx < Items2.indexOf("lullaby") && inputIdx != 4) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];}
         Known[Items2[inputIdx] + duplicate] = true; 
         if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
         if (!hinted && !peeked){
@@ -883,61 +883,61 @@ function checkCircleInfo() {
 	document.getElementById("forestBKs").title = "";
 	for(i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("forestSKs").title += Names[i] + "\n";
+			document.getElementById("forestSKs").title += checkNames[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("forestBKs").title += Names[i] + "\n";
+			document.getElementById("forestBKs").title += checkNames[i] + "\n";
 	}
 	
 	document.getElementById("fireSKs").title = "";
 	document.getElementById("fireBKs").title = "";
 	for(i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("fireSKs").title += Names[i] + "\n";
+			document.getElementById("fireSKs").title += checkNames[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("fireBKs").title += Names[i] + "\n";
+			document.getElementById("fireBKs").title += checkNames[i] + "\n";
 	}
 	
 	document.getElementById("spiritSKs").title = "";
 	document.getElementById("spiritBKs").title = "";
 	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("spiritSKs").title += Names[i] + "\n";
+			document.getElementById("spiritSKs").title += checkNames[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("spiritBKs").title += Names[i] + "\n";
+			document.getElementById("spiritBKs").title += checkNames[i] + "\n";
 	}
 	
 	document.getElementById("shadowSKs").title = "";
 	document.getElementById("shadowBKs").title = "";
 	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("shadowSKs").title += Names[i] + "\n";
+			document.getElementById("shadowSKs").title += checkNames[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("shadowBKs").title += Names[i] + "\n";
+			document.getElementById("shadowBKs").title += checkNames[i] + "\n";
 	}
 	
 	document.getElementById("waterSKs").title = "";
 	document.getElementById("waterBKs").title = "";
 	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("waterSKs").title += Names[i] + "\n";
+			document.getElementById("waterSKs").title += checkNames[i] + "\n";
 		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("waterBKs").title += Names[i] + "\n";
+			document.getElementById("waterBKs").title += checkNames[i] + "\n";
 	}
 	
 	document.getElementById("ganonsSKs").title = "";
 	for(i = AreaIndexes[32]; i < AreaIndexes[33]; i++)
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("ganonsSKs").title += Names[i] + "\n";
+			document.getElementById("ganonsSKs").title += checkNames[i] + "\n";
 	
 	document.getElementById("gtgSKs").title = "";
 	for(i = AreaIndexes[33]; i < AreaIndexes[34]; i++)
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("gtgSKs").title += Names[i] + "\n";
+			document.getElementById("gtgSKs").title += checkNames[i] + "\n";
 	
 	document.getElementById("wellSKs").title = "";
 	for(i = AreaIndexes[34]; i < AreaIndexes[35]; i++)
 		if(Check[Locations[i]] == "small_key")
-			document.getElementById("wellSKs").title += Names[i] + "\n";
+			document.getElementById("wellSKs").title += checkNames[i] + "\n";
 }
 
 function areaBreaks() {
