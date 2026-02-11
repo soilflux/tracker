@@ -9,13 +9,15 @@ function processInputs() {
 		if(Check[locationId] != "unknown") {
 			if (!checkedYet[i-1]) {
 				checkedYet[i-1] = true; 
+        let checkArea = LocationToArea[locationId];
+        let checkName = Names[i];
 				if (locationId.startsWith("h_")) {
-					checkLocation = "Hint";
+					checkName = checkName + " Hint";
 				}
 				else {
-					checkLocation = LocationToArea[locationId];
+					
 				}
-				textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkLocation + ": " + Names[i] + "\n";
+				textBlock += "" + tempHours + "h " + tempMinutes + "m " + tempSeconds + "s " + checkArea + ": " + checkName + "\n";
 			}
 			continue;
         }
