@@ -593,20 +593,6 @@ function toggleHint(loc) {
 					else {
 						text = checkNames[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
 					}
-					
-					/*if (Hinted[theLocation]) { // if it is now hinted, add the hinted text
-						var hintText = document.createElement("small");
-						hintText.innerHTML = text;
-						document.getElementById("notes").insertBefore(hintText, document.getElementById("notes").firstChild);
-					}
-					else { // if it is no longer hinted, remove the hinted text
-						for (i = 0; i < document.getElementById("notes").children.length; i++) {
-							if (document.getElementById("notes").children[i].innerHTML == text) {
-								document.getElementById("notes").children[i].remove();
-								break;
-							}
-						}
-					}*/
 				}
 			}
 			else {
@@ -678,65 +664,9 @@ function toggleHint(loc) {
 			}
 		}
 		else if(event.ctrlKey && event.which == 1) {
-			
-			if (Check[theLocation] == "small_key") {
-				if (theLocation.startsWith("forest")) {Player.current_forest_keys -= 1;}
-				if (theLocation.startsWith("fire")) {Player.current_fire_keys -= 1;}
-				if (theLocation.startsWith("water")) {Player.current_water_keys -= 1;}
-				if (theLocation.startsWith("spirit")) {Player.current_spirit_keys -= 1;}
-				if (theLocation.startsWith("shadow")) {Player.current_shadow_keys -= 1;}
-				if (theLocation.startsWith("gtg")) {Player.current_gtg_keys -= 1;}
-				if (theLocation.startsWith("well")) {Player.current_well_keys -= 1;}
-				if (theLocation.startsWith("ganons")) {Player.current_ganons_keys -= 1;}
-			}
-			
-			if (Check[theLocation] == "boss_key") {
-				if (theLocation.startsWith("forest")) {Player.forest_boss_key = false;}
-				if (theLocation.startsWith("fire")) {Player.fire_boss_key = false;}
-				if (theLocation.startsWith("water")) {Player.water_boss_key = false;}
-				if (theLocation.startsWith("spirit")) {Player.spirit_boss_key = false;}
-				if (theLocation.startsWith("shadow")) {Player.shadow_boss_key = false;}
-			}
-
-			if (Check[theLocation] != "unknown" && Check[theLocation] != "small_key" && Check[theLocation] != "boss_key")
-			{
-				if (theLocation.startsWith("forest")) {Player.forest_checks_remaining += 1;}
-				if (theLocation.startsWith("fire")) {Player.fire_checks_remaining += 1;}
-				if (theLocation.startsWith("water")) {Player.water_checks_remaining += 1;}
-				if (theLocation.startsWith("spirit")) {Player.spirit_checks_remaining += 1;}
-				if (theLocation.startsWith("shadow")) {Player.shadow_checks_remaining += 1;}
-				if (theLocation.startsWith("gtg")) {Player.gtg_checks_remaining += 1;}
-				if (theLocation.startsWith("well")) {Player.well_checks_remaining += 1;}
-				if (Check[theLocation] == "claim_check" || Check[theLocation] == "prescription") {
-					document.getElementById("trade_location").innerHTML = "Trade &#8594; ";
-				}
-				else if (Check[theLocation] == "lullaby" || Check[theLocation] == "eponas" || Check[theLocation] == "sarias" || Check[theLocation] == "suns" || Check[theLocation] == "time" || Check[theLocation] == "storms" || Check[theLocation] == "minuet" || Check[theLocation] == "bolero" || Check[theLocation] == "serenade" || Check[theLocation] == "nocturne" || Check[theLocation] == "requiem" || Check[theLocation] == "prelude") {
-					document.getElementById("text_" + theLocation).innerHTML = document.getElementById("text_" + theLocation).innerHTML.split(': ')[0];
-					Player.checks_remaining -= 1;
-				}
-				else if (Check[theLocation] != "junk" && Check[theLocation] != "ultra") {
-					document.getElementById(Check[theLocation] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[theLocation])] + " &#8594; ";
-				}
-			}
-			
-			forcedDisplay[Locations.indexOf(theLocation)] = false;
-			for (var i = 0; i < AreaIndexes.length; i++) {
-				if (Locations.indexOf(theLocation) >= AreaIndexes[i] && Locations.indexOf(theLocation) < AreaIndexes[i+1]) {document.getElementById(theLocation).style.backgroundImage = backgrounds[i]; break;}
-			}
-			
-			Location[Check[theLocation]] = "unknown";
-			Player[Check[theLocation]] = false;
-			Known[Check[theLocation]] = false;
-			Logic[Check[theLocation]] = false;
-			Check[theLocation] = "unknown";
-			document.getElementById(theLocation).value = "";
-			
-			var t = lastCheck.indexOf(theLocation);
-			if (t > -1) {
-			  lastCheck.splice(t, 1);
-			}
-			
-			midUpdate();
+      lastCheck.splice(lastCheck.indexOf(theLocation),1);
+			lastCheck.push(theLocation);
+      Undo();
 		}
 	}
 	else {
