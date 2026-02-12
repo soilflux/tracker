@@ -43,20 +43,8 @@ var nerfed = true;
 var hamsda = false;
 if (localStorage.getItem("hamsda")) {if (localStorage.getItem("hamsda") == "true") {hamsda = true;} else{hamsda = false;};}
 if (hamsda) {document.getElementById("hamsdaToggle").innerHTML="Disable Hamsda Tracking";}
-var animalID = '';
-var rainbowFlag = false;
-var rainbowFlagFlag = false;
-var yamiFailFlag = false;
-var yamiFlag = false;
-var yamiFlagFlag = false;
-var quest1Flag = false;
-var forestItems = 0;
-var angelFailFlag = false;
-var angelFlag = false;
-var angelFlagFlag = false;
 var toFocus = null;
 var inLogicColor = 'chartreuse'
-var questCounter = 0;
 var simActive = false;
 var simOverride = false;
 var SpoilerJSON;
@@ -644,87 +632,13 @@ var pocketPlacement = "unknown";
 var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", "./normal/items/sapphire.png", "./normal/items/forest.png", "./normal/items/fire.png", "./normal/items/water.png", "./normal/items/shadow.png", "./normal/items/spirit.png", "./normal/items/light.png"];
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
-var tabPicSources = ["./tab_pics/circus_tent.png", "./tab_pics/camel.png", "./tab_pics/tiger.png", "./tab_pics/clown.png", "./tab_pics/elephant.png", "./tab_pics/leopard.png", "./tab_pics/rhino.png" , "./tab_pics/juggler.png", "./tab_pics/zebra.png", "./tab_pics/bear.png", "./tab_pics/crocodile.png", "./tab_pics/monkey.png", "./tab_pics/hippo.png", "./tab_pics/seal.png", "./tab_pics/llama.png", "./tab_pics/dog.png", "./tab_pics/horse.png", "./tab_pics/cat.png", "./tab_pics/kurama.png", "./tab_pics/merry.png", "./tab_pics/articuno.png"]
-var tabPicSourcesRB = ["./tab_pics/circus_tentRB.png", "./tab_pics/camelRB.png", "./tab_pics/tigerRB.png", "./tab_pics/clownRB.png", "./tab_pics/elephantRB.png", "./tab_pics/leopardRB.png", "./tab_pics/rhinoRB.png" , "./tab_pics/jugglerRB.png", "./tab_pics/zebraRB.png", "./tab_pics/bearRB.png", "./tab_pics/crocodileRB.png", "./tab_pics/monkeyRB.png", "./tab_pics/hippoRB.png", "./tab_pics/sealRB.png", "./tab_pics/llamaRB.png", "./tab_pics/dogRB.png", "./tab_pics/horseRB.png", "./tab_pics/catRB.png", "./tab_pics/kuramaRB.png", "./tab_pics/merryRB.png", "./tab_pics/articunoRB.png"]
-var numberOfAnimals = tabPicSources.length;
-var animalXP = new Array(numberOfAnimals).fill(0);
-var savedAnimalXP = new Array(numberOfAnimals).fill(0);
-if (localStorage.getItem("quest1")) {document.getElementById("quest1").value= localStorage.getItem("quest1");}
-if (localStorage.getItem("animalXP")) {
-    savedAnimalXP = JSON.parse(localStorage.getItem("animalXP"));
-    for (var i = 0; i<savedAnimalXP.length; i++) {
-        savedAnimalXP[i] = Math.floor(savedAnimalXP[i]);
-        animalXP[i] = savedAnimalXP[i];
-    }
-}
-var quest1Mults = new Array(numberOfAnimals).fill(1);
-if (localStorage.getItem("quest1Mults")) {
-    savedQuest1Mults = JSON.parse(localStorage.getItem("quest1Mults"));
-    for (var i = 0; i<savedQuest1Mults.length; i++) {
-        quest1Mults[i] = savedQuest1Mults[i];
-    }
-}
-for (var i = 0; i < animalXP.length; i++) {
-    animalXP[i] *= quest1Mults[i];
-}
 
-var yamiMults = new Array(numberOfAnimals).fill(1);
-if (localStorage.getItem("yamiMults")) {
-    savedYamiMults = JSON.parse(localStorage.getItem("yamiMults"));
-    for (var i = 0; i<savedYamiMults.length; i++) {
-        yamiMults[i] = savedYamiMults[i];
-    }
-}
-for (var i = 0; i < animalXP.length; i++) {
-    animalXP[i] *= yamiMults[i];
-}
-
-var angelMults = new Array(numberOfAnimals).fill(1);
-if (localStorage.getItem("angelMults")) {
-    savedAngelMults = JSON.parse(localStorage.getItem("angelMults"));
-    for (var i = 0; i<savedAngelMults.length; i++) {
-        angelMults[i] = savedAngelMults[i];
-    }
-}
-for (var i = 0; i < animalXP.length; i++) {
-    animalXP[i] *= angelMults[i];
-}
-
-var rainbowMults = new Array(numberOfAnimals).fill(1);
-if (localStorage.getItem("rainbowMults")) {
-    savedrainbowMults = JSON.parse(localStorage.getItem("rainbowMults"));
-    for (var i = 0; i<savedrainbowMults.length; i++) {
-        rainbowMults[i] = savedrainbowMults[i];
-    }
-}
-for (var i = 0; i < animalXP.length; i++) {
-    animalXP[i] *= rainbowMults[i];
-}
-
-var myAnimalXP = {"circus_tent":animalXP[0], "camel":animalXP[1], "tiger":animalXP[2], "clown":animalXP[3], "elephant":animalXP[4], "leopard":animalXP[5], "rhino":animalXP[6], "juggler":animalXP[7], "zebra":animalXP[8], "bear":animalXP[9], "crocodile":animalXP[10], "monkey":animalXP[11], "hippo":animalXP[12], "seal":animalXP[13], "llama":animalXP[14], "dog":animalXP[15], "horse":animalXP[16], "cat":animalXP[17], "kurama":animalXP[18], "merry":animalXP[19], "articuno":animalXP[20]} 
-localStorage.setItem("myAnimalXP", JSON.stringify(myAnimalXP));
-
-var animalRNG = Math.floor(Math.random() * tabPicSources.length)
 Player.logically_accessible = 0;
 var d = new Date();
 var pauseTotal = 0;
 var pauseInitial = 0;
 var pauseFlag = true;
-var pauseTotalToD = -130*1000;
-var pauseInitialToD = 0;
-var pauseFlagToD = true;
-var timeSet = -1;
-var lastToDpass = 0;
-var savedToD = 130;
 var initialTime = d.getTime();
-var goodCheckPercent = 0;
-var timeStart = d.getTime();
-var timeCurrent;	
-var timeFuture;
-var timeFinal;
-var timeLost =0;
-var tMinutes = 0;
-var tSeconds = 0;
 var linso = true;
 if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso") === 'true'; }
 var linsoGoMode = false;
@@ -1118,7 +1032,7 @@ var Locations = [
 soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
 var checkNames = [
-	/*Kokiri*/"Midos", "Midos", "Midos", "Midos", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "Storms", "Cow", "Deku L", "Deku R", "Near LW", "Storms",
+	/*Kokiri*/"Mido's", "Mido's", "Mido's", "Mido's", "Sword", "Shop 1", "Shop 2", "Shop 3", "Shop 4", "*Exit", "*Soil", "*Adult", "Storms", "Cow", "Deku L", "Deku R", "Near LW", "Storms",
 	/*Ranch*/"Talon", "*Tree", "Back", "Scrub", "Scrub", "Scrub", "*Window", "*Shed", "*Back", "Cow", "Cow", "Cow", "Cow",
 	/*Field*/"Market", "Tektite", "Scrub", "Open", "Remote", "*NearKak", "*Near GV", "OoT Item", "Cow", "Remote", "Open", "Destiny", "Webs",
 	/*Valley*/"Crate", "Water", "*Bridge", "*Soil", "*Pillar", "*Tent", "Rocks", "Scrub", "Scrub", "Cow", "Valley",
@@ -1136,7 +1050,7 @@ var checkNames = [
 	/*Dodongos*/"*Keese", "*Pierre", "Scrub R", "Scrub L", "Map Ch", "Cmpass", "*Nook", "*Vines", "Platform", "Scrub 2F", "Scrub 2F", "B Bag", "Bridge", "*Last", "Above", "King", "Dodongos",
 	/*Trail*/"Abv DC", "*Wall", "Wall", "Storms", "Fairy", "Trade", "*Hail", "*Flower", "*Soil", "Cow", "Storms", "Biggoron",
 	/*Crater*/"Bean", "Scrub", "Scrub", "Scrub", "Fairy", "Nook", "Grotto", "*Soil", "*Crate", "Ch. Scrub", "Grotto", "Wall",
-	/*Kakariko*/"Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Rooftop", "Rear Gr", "Hag", "Windmll", "Anju", "Nr Cow", "Archry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Grotto",
+	/*Kakariko*/"Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Rooftop", "Rear Gr", "Hag", "Windmll", "Anju's", "Nr Cow", "Archry", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Grotto",
 	/*Graveyard*/"Shield", "Crate", "Racing", "Racing", "Touring", "*Soil", "*Wall", "Redead", "Composr", "Nocturne",
 	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
 	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Divin", "King", "*Skull", "Domain",
@@ -1615,7 +1529,6 @@ var ManualWotHMinorItems = {};
 var MarkedWotHItemArrow = null;
 var ManualWotHItemLocked = {};
 var ManualWotHItemPutInLogic = {};
-var pressCooldown = [[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false],[false,false,false,false,false,false]]
 var WotH = new Array(36).fill(0);
 var forcedDisplay = new Array(1024).fill(false);
 var checkedYet = new Array(1024).fill(false);
@@ -2034,54 +1947,7 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Player.spirit_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Player.light_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
-      animalID = elem.id;
-			animalLV = animalXP.slice(0);
-      highestXPAnimals=Object.keys(myAnimalXP).sort(function(a, b) {return -(myAnimalXP[a] - myAnimalXP[b])});
-      for (var n = 0; n < highestXPAnimals.length; n++) {
-        document.getElementById('desiredAnimal').innerHTML+='<option value="'+highestXPAnimals[n]+'">'+highestXPAnimals[n].replace("_"," ")+'</option>'
-      }
-      if (localStorage.getItem("desiredAnimal")) {document.getElementById("desiredAnimal").value= localStorage.getItem("desiredAnimal");}
-      if (document.getElementById('desiredAnimal').value != 'random') {
-        highestXPAnimals.splice(highestXPAnimals.indexOf(document.getElementById('desiredAnimal').value), 1);
-        highestXPAnimals.unshift(document.getElementById('desiredAnimal').value);
-      }
-      
-      for (var n = 0; n < highestXPAnimals.length; n++) {
-          thisAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(myAnimalXP[highestXPAnimals[n]])-1),0);
-          if (document.getElementById('desiredAnimal').value == highestXPAnimals[n]) thisAnimalsLevel += 2;
-          for (var m = 0; m < thisAnimalsLevel; m++) {
-              if (Math.random() < 0.5) {
-                  if (tabPicSources[animalRNG].includes(highestXPAnimals[n])) {n=1000000000; m=1000000000}
-                  else animalRNG = Math.floor(Math.random() * tabPicSources.length)
-              }
-          }
-      }
-      rolledAnimalsLevel = Math.max(Math.floor(2.5*Math.sqrt(animalXP[animalRNG])-1),0);   
-      if (rolledAnimalsLevel >= 5) {
-        document.getElementById("quest1Label").style.display = "inline-block";
-        document.getElementById("quest1").style.display = "inline-block";
-      }
-            
-			elem.src = tabPicSources[animalRNG]; 
-      elem.onclick = toggleLinsoGoMode;
-       
-      if (Math.random()<Math.min(rolledAnimalsLevel/1000,0.5)) {
-        elem.src = tabPicSourcesRB[animalRNG];
-        rainbowFlag = true;
-      }
-      document.getElementById("seedsDone").innerHTML =  'seeds as companion: ' + savedAnimalXP[animalRNG];   
-      document.getElementById("rainbowChance").innerHTML =  'rainbow aminalution: ' + (Math.min(rolledAnimalsLevel/1000,0.5)*100).toFixed(1) + '%';     
-      document.getElementById("rainbowMult").innerHTML =  'rainbow XP multiplier: ' + rainbowMults[animalRNG];   
-      document.getElementById("yamiChance").innerHTML =  'yami aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
-      document.getElementById("yamiMult").innerHTML =  'yami XP multiplier: ' + yamiMults[animalRNG]; 
-      document.getElementById("angelChance").innerHTML =  'angel aminalution: ' + (Math.min(rolledAnimalsLevel/200,0.125)*100).toFixed(1) + '%'; 
-      document.getElementById("angelMult").innerHTML =  'angel XP multiplier: ' + angelMults[animalRNG];     
-      document.getElementById("quest1Mult").innerHTML =  'quest 1 XP multiplier: ' + quest1Mults[animalRNG].toFixed(2); 
-      
-         
-      
-			document.getElementById("animalLV").innerHTML = elem.src.slice(44,elem.src.length-4).replace("RB","") + " LVL " + rolledAnimalsLevel;
-            if (tabPicSources[animalRNG].includes(highestXPAnimals[0])) document.getElementById("rollChance").innerHTML += "roll chance:" + ((1-Math.pow((numberOfAnimals-1)/numberOfAnimals,(rolledAnimalsLevel+2)/2+1))*100).toFixed(1) + "%";
+      rollAnimal();
     }
 		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
 		Player[linsoOrder[linsoOrderIncrement]] = false;

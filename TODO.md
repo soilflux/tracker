@@ -4,7 +4,7 @@
 - [ ] make hinted items within song locations bold (as it is for other locations)
 - [ ] change note box into input boxes to match the rest of the tracker
 - [ ] find middle ground to remove large woth font option
-- [ ] cluster checks on the list by proximity rather by area
+- [ ] cluster checks on the list by proximity rather than by area
 - [ ] don't border locations that have their important items hinted (unless also path)
 - [ ] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
 - [ ] eliminate reliance on midUpdate() interval runs
@@ -15,6 +15,7 @@
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
 - [ ] replace usages of AreaIndexes
+- [ ] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
 
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross

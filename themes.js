@@ -324,7 +324,7 @@ function changeThemes() {
 		document.querySelectorAll('.ool_check_text2').forEach(e => {e.style.color = 'black';});
 	}
 	else {
-		document.getElementById('row').style.backgroundColor = '#212121';
+		document.getElementById('row').style.backgroundColor = '#181818';
 		document.querySelectorAll('.hint_input').forEach(e => {e.style.backgroundColor = '#121212'; e.style.color = 'white';});
 		document.querySelectorAll('.super_hint_input').forEach(e => {e.style.backgroundColor = '#121212'; e.style.color = 'white';});
 		document.querySelectorAll('.checked_text_summary_ool').forEach(e => {e.style.color = 'white';});
