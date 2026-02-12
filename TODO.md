@@ -1,6 +1,5 @@
 - [ ] add song locations into the main checklist
 - [ ] condensed woths
-- [ ] put aminal stuff in a separate file
 - [ ] make hinted items within song locations bold (as it is for other locations)
 - [ ] change note box into input boxes to match the rest of the tracker
 - [ ] find middle ground to remove large woth font option
@@ -15,8 +14,9 @@
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
 - [ ] replace usages of AreaIndexes
-- [ ] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
 
+- [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross
 - [x] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)
+- [x] put aminal stuff in a separate file

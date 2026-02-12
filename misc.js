@@ -915,6 +915,12 @@ document.onkeydown = function(e) {
 		e.preventDefault();
 		Undo();
 	}
+  if (e.key === "Tab") {
+    if (Locations.includes(document.activeElement.id)) {
+      highlightNextCheck(document.activeElement.id);
+      e.preventDefault();
+    }	
+	}
 	if (e.which == 187) {
 		token_click = 0; linso_counter();
 		e.preventDefault();
