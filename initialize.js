@@ -883,111 +883,111 @@ var child = [
 ];
 
 const AreaImages = {
-  "Kokiri Forest": "kokiri",
-  "Lon Lon Ranch": "ranch",
-  "Hyrule Field": "field",
-  "Gerudo Valley": "valley",
-  "Lake Hylia": "hylia",
+  "Kokiri": "kokiri",
+  "Ranch": "ranch",
+  "Field": "field",
+  "Valley": "valley",
+  "Hylia": "hylia",
   "Market": "market",
-  "Hyrule Castle": "hyrule_castle",
-  "Outside Ganon's Castle": "ogc",
-  "Temple of Time": "tot",
-  "Zora's Fountain": "fountain",
-  "Ice Cavern": "ice",
-  "Deku Tree": "deku",
+  "Hyr Cas": "hyrule_castle",
+  "OGC": "ogc",
+  "ToT": "tot",
+  "Fountain": "fountain",
+  "Ice": "ice",
+  "Deku": "deku",
   "Lost Woods": "lost_woods",
-  "Sacred Forest Meadow": "sfm",
+  "SFM": "sfm",
   "Goron City": "goron",
-  "Dodongo's Cavern": "dodongos",
-  "Death Mountain Trail": "dmt",
-  "Death Mountain Crater": "dmc",
-  "Kakariko Village": "kakariko",
+  "Dodongos": "dodongos",
+  "Trail": "dmt",
+  "Crater": "dmc",
+  "Kakariko": "kakariko",
   "Graveyard": "graveyard",
-  "Zora's River": "river",
-  "Zora's Domain": "domain",
-  "Desert Colossus": "colossus",
-  "Haunted Wasteland": "wasteland",
-  "Gerudo's Fortress": "fortress",
-  "Jabu Jabu's Belly": "jabu",
-  "Forest Temple": "forest",
-  "Fire Temple": "fire",
-  "Water Temple": "water",
-  "Shadow Temple": "shadow",
-  "Spirit Temple": "spirit",
-  "Bottom of the Well": "well",
-  "Gerudo Training Ground": "gtg",
-  "Ganon's Castle": "ganon"
+  "River": "river",
+  "Domain": "domain",
+  "Colossus": "colossus",
+  "Wasteland": "wasteland",
+  "Fortress": "fortress",
+  "Jabu": "jabu",
+  "Forest": "forest",
+  "Fire": "fire",
+  "Water": "water",
+  "Shadow": "shadow",
+  "Spirit": "spirit",
+  "Well": "well",
+  "GTG": "gtg",
+  "Ganon's": "ganons"
 };
 
 var LocationToArea = {
     // Kokiri Forest
-    "kokiri_mido_1": "Kokiri Forest", "kokiri_mido_2": "Kokiri Forest", "kokiri_mido_3": "Kokiri Forest", "kokiri_mido_4": "Kokiri Forest", "kokiri_sword": "Kokiri Forest", "shop_kokiri_TL": "Kokiri Forest", "shop_kokiri_TR": "Kokiri Forest", "shop_kokiri_BR": "Kokiri Forest", "shop_kokiri_BL": "Kokiri Forest", "gs_kokiri_child": "Kokiri Forest", "gs_kokiri_soil": "Kokiri Forest", "gs_kokiri_adult": "Kokiri Forest", "kokiri_storms": "Kokiri Forest", "cow_kokiri": "Kokiri Forest", "h_deku_left": "Kokiri Forest", "h_deku_right": "Kokiri Forest", "h_near_lw": "Kokiri Forest", "h_kokiri_storms": "Kokiri Forest",
+    "kokiri_mido_1": "Kokiri", "kokiri_mido_2": "Kokiri", "kokiri_mido_3": "Kokiri", "kokiri_mido_4": "Kokiri", "kokiri_sword": "Kokiri", "shop_kokiri_TL": "Kokiri", "shop_kokiri_TR": "Kokiri", "shop_kokiri_BR": "Kokiri", "shop_kokiri_BL": "Kokiri", "gs_kokiri_child": "Kokiri", "gs_kokiri_soil": "Kokiri", "gs_kokiri_adult": "Kokiri", "kokiri_storms": "Kokiri", "cow_kokiri": "Kokiri", "h_deku_left": "Kokiri", "h_deku_right": "Kokiri", "h_near_lw": "Kokiri", "h_kokiri_storms": "Kokiri",
     // Lon Lon Ranch
-    "eponasSpot": "Lon Lon Ranch", "talons_chickens": "Lon Lon Ranch", "gs_lon_lon_tree": "Lon Lon Ranch", "back_of_ranch": "Lon Lon Ranch", "scrub_ranch_1": "Lon Lon Ranch", "scrub_ranch_2": "Lon Lon Ranch", "scrub_ranch_3": "Lon Lon Ranch", "gs_lon_lon_window": "Lon Lon Ranch", "gs_lon_lon_shed": "Lon Lon Ranch", "gs_lon_lon_back_wall": "Lon Lon Ranch", "cow_ranch1": "Lon Lon Ranch", "cow_ranch2": "Lon Lon Ranch", "cow_ranch3": "Lon Lon Ranch", "cow_ranch4": "Lon Lon Ranch",
+    "eponasSpot": "Ranch", "talons_chickens": "Ranch", "gs_lon_lon_tree": "Ranch", "back_of_ranch": "Ranch", "scrub_ranch_1": "Ranch", "scrub_ranch_2": "Ranch", "scrub_ranch_3": "Ranch", "gs_lon_lon_window": "Ranch", "gs_lon_lon_shed": "Ranch", "gs_lon_lon_back_wall": "Ranch", "cow_ranch1": "Ranch", "cow_ranch2": "Ranch", "cow_ranch3": "Ranch", "cow_ranch4": "Ranch",
     // Hyrule Field
-    "oot": "Hyrule Field", "hyrule_marketGrotto": "Hyrule Field", "hyrule_tektite_grotto": "Hyrule Field", "hyrule_hp_scrub": "Hyrule Field", "hyrule_openGrotto": "Hyrule Field", "hyrule_remoteGrotto": "Hyrule Field", "gs_outside_kakariko": "Hyrule Field", "gs_near_gerudo": "Hyrule Field", "hyrule_ocarina": "Hyrule Field", "cow_field": "Hyrule Field", "h_hyrule_remoteGrotto": "Hyrule Field", "h_hyrule_openGrotto": "Hyrule Field", "h_hyrule_marketGrotto": "Hyrule Field", "h_hyrule_web": "Hyrule Field",
+    "oot": "Field", "hyrule_marketGrotto": "Field", "hyrule_tektite_grotto": "Field", "hyrule_hp_scrub": "Field", "hyrule_openGrotto": "Field", "hyrule_remoteGrotto": "Field", "gs_outside_kakariko": "Field", "gs_near_gerudo": "Field", "hyrule_ocarina": "Field", "cow_field": "Field", "h_hyrule_remoteGrotto": "Field", "h_hyrule_openGrotto": "Field", "h_hyrule_marketGrotto": "Field", "h_hyrule_web": "Field",
     // Gerudo Valley
-    "gerudovalley_box": "Gerudo Valley", "gerudovalley_fall": "Gerudo Valley", "gs_valley_small_bridge": "Gerudo Valley", "gs_valley_bean": "Gerudo Valley", "gs_valley_pillar": "Gerudo Valley", "gs_valley_tent": "Gerudo Valley", "gerudo_hammer": "Gerudo Valley", "scrub_gv_1": "Gerudo Valley", "scrub_gv_2": "Gerudo Valley", "cow_valley": "Gerudo Valley", "h_valley": "Gerudo Valley",
+    "gerudovalley_box": "Valley", "gerudovalley_fall": "Valley", "gs_valley_small_bridge": "Valley", "gs_valley_bean": "Valley", "gs_valley_pillar": "Valley", "gs_valley_tent": "Valley", "gerudo_hammer": "Valley", "scrub_gv_1": "Valley", "scrub_gv_2": "Valley", "cow_valley": "Valley", "h_valley": "Valley",
     // Lake Hylia
-    "scrub_lake_1": "Lake Hylia", "scrub_lake_2": "Lake Hylia", "scrub_lake_3": "Lake Hylia", "hylia_child_fishing": "Lake Hylia", "hylia_bottle": "Lake Hylia", "gs_hylia_bean": "Lake Hylia", "gs_hylia_lab_wall": "Lake Hylia", "gs_hylia_island": "Lake Hylia", "hylia_adult_fishing": "Lake Hylia", "hylia_lab_top": "Lake Hylia", "gs_hylia_lab_crate": "Lake Hylia", "hylia_lab_dive": "Lake Hylia", "gs_hylia_tree": "Lake Hylia", "hylia_sun_shoot": "Lake Hylia", "h_lab": "Lake Hylia", "h_back_right_lake": "Lake Hylia", "h_back_left_lake": "Lake Hylia",
+    "scrub_lake_1": "Hylia", "scrub_lake_2": "Hylia", "scrub_lake_3": "Hylia", "hylia_child_fishing": "Hylia", "hylia_bottle": "Hylia", "gs_hylia_bean": "Hylia", "gs_hylia_lab_wall": "Hylia", "gs_hylia_island": "Hylia", "hylia_adult_fishing": "Hylia", "hylia_lab_top": "Hylia", "gs_hylia_lab_crate": "Hylia", "hylia_lab_dive": "Hylia", "gs_hylia_tree": "Hylia", "hylia_sun_shoot": "Hylia", "h_lab": "Hylia", "h_back_right_lake": "Hylia", "h_back_left_lake": "Hylia",
     // Market
     "gs_market": "Market", "shop_market_bazaar_TL": "Market", "shop_market_bazaar_TR": "Market", "shop_market_bazaar_BR": "Market", "shop_market_bazaar_BL": "Market", "shop_market_potion_TL": "Market", "shop_market_potion_TR": "Market", "shop_market_potion_BR": "Market", "shop_market_potion_BL": "Market", "shop_market_chu_TL": "Market", "shop_market_chu_TR": "Market", "shop_market_chu_BR": "Market", "shop_market_chu_BL": "Market", "market_slingshot_game": "Market", "richard": "Market", "market_bowling_1": "Market", "market_bowling_2": "Market", "market_lens_game": "Market", "poes": "Market", "h_tot_1": "Market", "h_tot_2": "Market", "h_tot_3": "Market", "h_tot_4": "Market",
     // Hyrule Castle
-    "zeldasSpot": "Hyrule Castle", "gs_hyrule_castle_tree": "Hyrule Castle", "dins_fairy": "Hyrule Castle", "gs_hyrule_castle_grotto": "Hyrule Castle", "h_castle_1": "Hyrule Castle", "h_castle_2": "Hyrule Castle", "h_castle_sos": "Hyrule Castle",
+    "zeldasSpot": "Hyr Cas", "gs_hyrule_castle_tree": "Hyr Cas", "dins_fairy": "Hyr Cas", "gs_hyrule_castle_grotto": "Hyr Cas", "h_castle_1": "Hyr Cas", "h_castle_2": "Hyr Cas", "h_castle_sos": "Hyr Cas",
     // Outside Ganon's Castle
-    "gs_ogc": "Outside Ganon's Castle", "g_fairy": "Outside Ganon's Castle",
+    "gs_ogc": "OGC", "g_fairy": "OGC",
     // Temple of Time
-    "preludeSpot": "Temple of Time", "lacs": "Temple of Time",
+    "preludeSpot": "ToT", "lacs": "ToT",
     // Zora's Fountain
-    "gs_fountain_above_log": "Zora's Fountain", "gs_fountain_tree": "Zora's Fountain", "fountain_fairy": "Zora's Fountain", "glacier_hp": "Zora's Fountain", "bottom_of_fountain": "Zora's Fountain", "gs_fountain_hidden_cave": "Zora's Fountain", "h_fountain_fairy": "Zora's Fountain", "h_fountain": "Zora's Fountain",
+    "gs_fountain_above_log": "Fountain", "gs_fountain_tree": "Fountain", "fountain_fairy": "Fountain", "glacier_hp": "Fountain", "bottom_of_fountain": "Fountain", "gs_fountain_hidden_cave": "Fountain", "h_fountain_fairy": "Fountain", "h_fountain": "Fountain",
     // Ice Cavern
-    "serenadeSpot": "Ice Cavern", "gs_ice_spinning_scythe": "Ice Cavern", "ice_map": "Ice Cavern", "gs_ice_hp_room": "Ice Cavern", "ice_hp": "Ice Cavern", "ice_compass": "Ice Cavern", "gs_ice_block_room": "Ice Cavern", "ice_irons": "Ice Cavern",
+    "serenadeSpot": "Ice", "gs_ice_spinning_scythe": "Ice", "ice_map": "Ice", "gs_ice_hp_room": "Ice", "ice_hp": "Ice", "ice_compass": "Ice", "gs_ice_block_room": "Ice", "ice_irons": "Ice",
     // Deku Tree
-    "deku_lobby": "Deku Tree", "deku_slingshot": "Deku Tree", "deku_slingshot_room_side": "Deku Tree", "deku_compass": "Deku Tree", "deku_compass_room_side": "Deku Tree", "gs_deku_compass": "Deku Tree", "gs_deku_basement_gate": "Deku Tree", "gs_deku_basement_vines": "Deku Tree", "deku_basement": "Deku Tree", "gs_deku_basement_back": "Deku Tree", "deku_queen_gohma": "Deku Tree",
+    "deku_lobby": "Deku", "deku_slingshot": "Deku", "deku_slingshot_room_side": "Deku", "deku_compass": "Deku", "deku_compass_room_side": "Deku", "gs_deku_compass": "Deku", "gs_deku_basement_gate": "Deku", "gs_deku_basement_vines": "Deku", "deku_basement": "Deku", "gs_deku_basement_back": "Deku", "deku_queen_gohma": "Deku",
     // Lost Woods
     "lost_woods_fairy_ocarina": "Lost Woods", "target": "Lost Woods", "ocarina_game": "Lost Woods", "lw_generic": "Lost Woods", "scrub_lw_1": "Lost Woods", "scrub_lw_2": "Lost Woods", "gs_lost_woods_bean_2": "Lost Woods", "lost_woods_scrub_grotto": "Lost Woods", "scrub_lw_3": "Lost Woods", "gs_lost_woods_bean_1": "Lost Woods", "skull_kid": "Lost Woods", "bridge_scrub": "Lost Woods", "gs_lost_woods_above_stage": "Lost Woods", "theater_skull": "Lost Woods", "theater_truth": "Lost Woods", "h_lw_bridge": "Lost Woods", "h_lw_generic": "Lost Woods",
     // Sacred Forest Meadow
-    "minuetSpot": "Sacred Forest Meadow", "sariasSpot": "Sacred Forest Meadow", "wolfos_grotto": "Sacred Forest Meadow", "gs_sacred_forest": "Sacred Forest Meadow", "scrub_sfm_1": "Sacred Forest Meadow", "scrub_sfm_2": "Sacred Forest Meadow", "h_saria": "Sacred Forest Meadow", "h_sfm_1": "Sacred Forest Meadow", "h_sfm_2": "Sacred Forest Meadow",
+    "minuetSpot": "SFM", "sariasSpot": "SFM", "wolfos_grotto": "SFM", "gs_sacred_forest": "SFM", "scrub_sfm_1": "SFM", "scrub_sfm_2": "SFM", "h_saria": "SFM", "h_sfm_1": "SFM", "h_sfm_2": "SFM",
     // Goron City
     "shop_goron_TL": "Goron City", "shop_goron_TR": "Goron City", "shop_goron_BR": "Goron City", "shop_goron_BL": "Goron City", "rolling_goron": "Goron City", "goron_dance": "Goron City", "goron_pot": "Goron City", "goron_maze_1": "Goron City", "goron_maze_2": "Goron City", "gs_goron_maze": "Goron City", "goron_maze_3": "Goron City", "gs_goron_center": "Goron City", "goron_link": "Goron City", "scrub_goron_1": "Goron City", "scrub_goron_2": "Goron City", "scrub_goron_3": "Goron City", "goron_medigoron": "Goron City", "h_goron_maze": "Goron City", "h_medigoron": "Goron City",
     // Dodongo's Cavern
-    "gs_dodongos_east_side": "Dodongo's Cavern", "gs_dodongos_scarecrow": "Dodongo's Cavern", "scrub_dodongos_1": "Dodongo's Cavern", "scrub_dodongos_2": "Dodongo's Cavern", "dodongos_map": "Dodongo's Cavern", "dodongos_compass": "Dodongo's Cavern", "gs_dodongos_above_stairs": "Dodongo's Cavern", "gs_dodongos_stair_vines": "Dodongo's Cavern", "dodongos_bomb_flower_platform": "Dodongo's Cavern", "scrub_dodongos_3": "Dodongo's Cavern", "scrub_dodongos_4": "Dodongo's Cavern", "dodongos_bomb_bag": "Dodongo's Cavern", "dodongos_end_of_bridge": "Dodongo's Cavern", "gs_dodongos_before_king": "Dodongo's Cavern", "dodongos_above_king": "Dodongo's Cavern", "dodongos_king_dodongo": "Dodongo's Cavern", "h_dodongos": "Dodongo's Cavern",
+    "gs_dodongos_east_side": "Dodongos", "gs_dodongos_scarecrow": "Dodongos", "scrub_dodongos_1": "Dodongos", "scrub_dodongos_2": "Dodongos", "dodongos_map": "Dodongos", "dodongos_compass": "Dodongos", "gs_dodongos_above_stairs": "Dodongos", "gs_dodongos_stair_vines": "Dodongos", "dodongos_bomb_flower_platform": "Dodongos", "scrub_dodongos_3": "Dodongos", "scrub_dodongos_4": "Dodongos", "dodongos_bomb_bag": "Dodongos", "dodongos_end_of_bridge": "Dodongos", "gs_dodongos_before_king": "Dodongos", "dodongos_above_king": "Dodongos", "dodongos_king_dodongo": "Dodongos", "h_dodongos": "Dodongos",
     // Death Mountain Trail
-    "trail_top": "Death Mountain Trail", "gs_trail_bombable_wall": "Death Mountain Trail", "trail_bombable": "Death Mountain Trail", "trail_storms": "Death Mountain Trail", "trail_fairy": "Death Mountain Trail", "trade_quest": "Death Mountain Trail", "gs_trail_hail_path": "Death Mountain Trail", "gs_trail_above_dodongos": "Death Mountain Trail", "gs_trail_soil": "Death Mountain Trail", "cow_trail": "Death Mountain Trail", "h_trail_storms": "Death Mountain Trail", "h_biggoron": "Death Mountain Trail",
+    "trail_top": "Trail", "gs_trail_bombable_wall": "Trail", "trail_bombable": "Trail", "trail_storms": "Trail", "trail_fairy": "Trail", "trade_quest": "Trail", "gs_trail_hail_path": "Trail", "gs_trail_above_dodongos": "Trail", "gs_trail_soil": "Trail", "cow_trail": "Trail", "h_trail_storms": "Trail", "h_trail_storms": "Trail", "h_biggoron": "Trail",
     // Death Mountain Crater
-    "boleroSpot": "Death Mountain Crater", "crater_bean": "Death Mountain Crater", "scrub_crater_1": "Death Mountain Crater", "scrub_crater_2": "Death Mountain Crater", "scrub_crater_3": "Death Mountain Crater", "crater_hammer_fairy": "Death Mountain Crater", "crater_nook_hp": "Death Mountain Crater", "crater_grotto": "Death Mountain Crater", "gs_crater_soil": "Death Mountain Crater", "gs_crater_crate": "Death Mountain Crater", "scrub_crater_child": "Death Mountain Crater", "h_crater_grotto": "Death Mountain Crater", "h_crater_wall": "Death Mountain Crater",
+    "boleroSpot": "Crater", "crater_bean": "Crater", "scrub_crater_1": "Crater", "scrub_crater_2": "Crater", "scrub_crater_3": "Crater", "crater_hammer_fairy": "Crater", "crater_nook_hp": "Crater", "crater_grotto": "Crater", "gs_crater_soil": "Crater", "gs_crater_crate": "Crater", "scrub_crater_child": "Crater", "h_crater_grotto": "Crater", "h_crater_wall": "Crater",
     // Kakariko Village
-    "nocturneSpot": "Kakariko Village", "stormsSpot": "Kakariko Village", "tokens_10": "Kakariko Village", "tokens_20": "Kakariko Village", "tokens_30": "Kakariko Village", "tokens_40": "Kakariko Village", "tokens_50": "Kakariko Village", "shop_kakariko_bazaar_TL": "Kakariko Village", "shop_kakariko_bazaar_TR": "Kakariko Village", "shop_kakariko_bazaar_BR": "Kakariko Village", "shop_kakariko_bazaar_BL": "Kakariko Village", "shop_kakariko_potion_TL": "Kakariko Village", "shop_kakariko_potion_TR": "Kakariko Village", "shop_kakariko_potion_BR": "Kakariko Village", "shop_kakariko_potion_BL": "Kakariko Village", "man_on_roof": "Kakariko Village", "kakariko_grotto": "Kakariko Village", "kakariko_hag": "Kakariko Village", "windmill": "Kakariko Village", "anju": "Kakariko Village", "kakariko_cow_house": "Kakariko Village", "archery_game": "Kakariko Village", "redead_grotto": "Kakariko Village", "anjus_chickens": "Kakariko Village", "gs_kakariko_tree": "Kakariko Village", "gs_kakariko_guard_house": "Kakariko Village", "gs_kakariko_tower": "Kakariko Village", "gs_kakariko_construction": "Kakariko Village", "gs_kakariko_skulltula_house": "Kakariko Village", "gs_kakariko_impas": "Kakariko Village", "cow_kakariko": "Kakariko Village", "h_kakariko_grotto": "Kakariko Village",
+    "nocturneSpot": "Kakariko", "stormsSpot": "Kakariko", "tokens_10": "Kakariko", "tokens_20": "Kakariko", "tokens_30": "Kakariko", "tokens_40": "Kakariko", "tokens_50": "Kakariko", "shop_kakariko_bazaar_TL": "Kakariko", "shop_kakariko_bazaar_TR": "Kakariko", "shop_kakariko_bazaar_BR": "Kakariko", "shop_kakariko_bazaar_BL": "Kakariko", "shop_kakariko_potion_TL": "Kakariko", "shop_kakariko_potion_TR": "Kakariko", "shop_kakariko_potion_BR": "Kakariko", "shop_kakariko_potion_BL": "Kakariko", "man_on_roof": "Kakariko", "kakariko_grotto": "Kakariko", "kakariko_hag": "Kakariko", "windmill": "Kakariko", "anju": "Kakariko", "kakariko_cow_house": "Kakariko", "archery_game": "Kakariko", "redead_grotto": "Kakariko", "anjus_chickens": "Kakariko", "gs_kakariko_tree": "Kakariko", "gs_kakariko_guard_house": "Kakariko", "gs_kakariko_tower": "Kakariko", "gs_kakariko_construction": "Kakariko", "gs_kakariko_skulltula_house": "Kakariko", "gs_kakariko_impas": "Kakariko", "cow_kakariko": "Kakariko", "h_kakariko_grotto": "Kakariko",
     // Graveyard
     "sunsSpot": "Graveyard", "shield_grave": "Graveyard", "graveyard_box": "Graveyard", "race_1": "Graveyard", "race_2": "Graveyard", "gravedigging_tour": "Graveyard", "gs_graveyard_soil": "Graveyard", "gs_graveyard_wall": "Graveyard", "redead_grave": "Graveyard", "composers_grave": "Graveyard", "h_nocturne": "Graveyard",
     // Zora's River
-    "gs_river_tree": "Zora's River", "scrub_river_1": "Zora's River", "scrub_river_2": "Zora's River", "river_bean_salesman": "Zora's River", "river_pillar": "Zora's River", "frogs_1": "Zora's River", "river_grotto": "Zora's River", "gs_river_near_grotto": "Zora's River", "gs_river_above_bridge": "Zora's River", "river_ledge": "Zora's River", "gs_river_ladder": "Zora's River", "frogs_2": "Zora's River", "h_river_grotto": "Zora's River", "h_river_pillar": "Zora's River", "h_river_domain": "Zora's River",
+    "gs_river_tree": "River", "scrub_river_1": "River", "scrub_river_2": "River", "river_bean_salesman": "River", "river_pillar": "River", "frogs_1": "River", "river_grotto": "River", "gs_river_near_grotto": "River", "gs_river_above_bridge": "River", "river_ledge": "River", "gs_river_ladder": "River", "frogs_2": "River", "h_river_grotto": "River", "h_river_pillar": "River", "h_river_domain": "River",
     // Zora's Domain
-    "shop_domain_TL": "Zora's Domain", "shop_domain_TR": "Zora's Domain", "shop_domain_BR": "Zora's Domain", "shop_domain_BL": "Zora's Domain", "zora_torches": "Zora's Domain", "zora_diving": "Zora's Domain", "thaw_king": "Zora's Domain", "gs_domain": "Zora's Domain", "h_domain": "Zora's Domain",
+    "shop_domain_TL": "Domain", "shop_domain_TR": "Domain", "shop_domain_BR": "Domain", "shop_domain_BL": "Domain", "zora_torches": "Domain", "zora_diving": "Domain", "thaw_king": "Domain", "gs_domain": "Domain", "h_domain": "Domain",
     // Desert Colossus
-    "requiemSpot": "Desert Colossus", "colossus_bean": "Desert Colossus", "colossus_fairy": "Desert Colossus", "gs_colossus_soil": "Desert Colossus", "gs_colossus_hill": "Desert Colossus", "gs_colossus_tree": "Desert Colossus", "scrub_colossus_1": "Desert Colossus", "scrub_colossus_2": "Desert Colossus", "h_colossus": "Desert Colossus",
+    "requiemSpot": "Colossus", "colossus_bean": "Colossus", "colossus_fairy": "Colossus", "gs_colossus_soil": "Colossus", "gs_colossus_hill": "Colossus", "gs_colossus_tree": "Colossus", "scrub_colossus_1": "Colossus", "scrub_colossus_2": "Colossus", "h_colossus": "Colossus",
     // Haunted Wasteland
-    "gs_wasteland": "Haunted Wasteland", "wasteland_carpet": "Haunted Wasteland", "wasteland": "Haunted Wasteland",
+    "gs_wasteland": "Wasteland", "wasteland_carpet": "Wasteland", "wasteland": "Wasteland",
     // Gerudo's Fortress
-    "fortress_card": "Gerudo's Fortress", "gs_fortress_top": "Gerudo's Fortress", "gerudo_roof": "Gerudo's Fortress", "gerudo_archery_1": "Gerudo's Fortress", "gerudo_archery_2": "Gerudo's Fortress", "gs_fortress_archery": "Gerudo's Fortress",
+    "fortress_card": "Fortress", "gs_fortress_top": "Fortress", "gerudo_roof": "Fortress", "gerudo_archery_1": "Fortress", "gerudo_archery_2": "Fortress", "gs_fortress_archery": "Fortress",
     // Jabu Jabu's Belly
-    "gs_jabu_vines": "Jabu Jabu's Belly", "scrub_jabu": "Jabu Jabu's Belly", "jabu_map": "Jabu Jabu's Belly", "jabu_compass": "Jabu Jabu's Belly", "jabu_boomerang": "Jabu Jabu's Belly", "gs_jabu_near_octo_1": "Jabu Jabu's Belly", "gs_jabu_near_octo_2": "Jabu Jabu's Belly", "gs_jabu_near_boss": "Jabu Jabu's Belly", "jabu_barinade": "Jabu Jabu's Belly",
+    "gs_jabu_vines": "Jabu", "scrub_jabu": "Jabu", "jabu_map": "Jabu", "jabu_compass": "Jabu", "jabu_boomerang": "Jabu", "gs_jabu_near_octo_1": "Jabu", "gs_jabu_near_octo_2": "Jabu", "gs_jabu_near_boss": "Jabu", "jabu_barinade": "Jabu",
     // Forest Temple
-    "forest_first": "Forest Temple", "gs_forest_first": "Forest Temple", "gs_forest_lobby": "Forest Temple", "forest_stalfos": "Forest Temple", "forest_midCourtyard": "Forest Temple", "gs_forest_outdoor_east": "Forest Temple", "forest_highCourtyard": "Forest Temple", "forest_lowCourtyard": "Forest Temple", "forest_blockRoom": "Forest Temple", "forest_bossKey": "Forest Temple", "forest_floormaster": "Forest Temple", "gs_forest_outdoor_west": "Forest Temple", "forest_red": "Forest Temple", "forest_bow": "Forest Temple", "forest_blue": "Forest Temple", "forest_fallingCeiling": "Forest Temple", "forest_nearBoss": "Forest Temple", "gs_forest_basement": "Forest Temple", "forest_phantomGanon": "Forest Temple",
+    "forest_first": "Forest", "gs_forest_first": "Forest", "gs_forest_lobby": "Forest", "forest_stalfos": "Forest", "forest_midCourtyard": "Forest", "gs_forest_outdoor_east": "Forest", "forest_highCourtyard": "Forest", "forest_lowCourtyard": "Forest", "forest_blockRoom": "Forest", "forest_bossKey": "Forest", "forest_floormaster": "Forest", "gs_forest_outdoor_west": "Forest", "forest_red": "Forest", "forest_bow": "Forest", "forest_blue": "Forest", "forest_fallingCeiling": "Forest", "forest_nearBoss": "Forest", "gs_forest_basement": "Forest", "forest_phantomGanon": "Forest",
     // Fire Temple
-    "fire_nearBoss": "Fire Temple", "gs_fire_basement": "Fire Temple", "fire_hammer1": "Fire Temple", "fire_hammer2": "Fire Temple", "fire_lavaOpen": "Fire Temple", "gs_fire_time": "Fire Temple", "fire_lavaBomb": "Fire Temple", "fire_volvagia": "Fire Temple", "fire_lowerMaze": "Fire Temple", "gs_fire_bomb_wall": "Fire Temple", "fire_sideRoom": "Fire Temple", "fire_map": "Fire Temple", "fire_upperMaze": "Fire Temple", "fire_shortcut": "Fire Temple", "gs_fire_scarecrow_1": "Fire Temple", "gs_fire_scarecrow_2": "Fire Temple", "fire_scarecrow": "Fire Temple", "fire_compass": "Fire Temple", "fire_sotGoron": "Fire Temple", "fire_top": "Fire Temple",
+    "fire_nearBoss": "Fire", "gs_fire_basement": "Fire", "fire_hammer1": "Fire", "fire_hammer2": "Fire", "fire_lavaOpen": "Fire", "gs_fire_time": "Fire", "fire_lavaBomb": "Fire", "fire_volvagia": "Fire", "fire_lowerMaze": "Fire", "gs_fire_bomb_wall": "Fire", "fire_sideRoom": "Fire", "fire_map": "Fire", "fire_upperMaze": "Fire", "fire_shortcut": "Fire", "gs_fire_scarecrow_1": "Fire", "gs_fire_scarecrow_2": "Fire", "fire_scarecrow": "Fire", "fire_compass": "Fire", "fire_sotGoron": "Fire", "fire_top": "Fire",
     // Spirit Temple
-    "spirit_childLeft": "Spirit Temple", "spirit_childRight": "Spirit Temple", "gs_spirit_metal_fence": "Spirit Temple", "spirit_childClimb1": "Spirit Temple", "gs_spirit_child_climb": "Spirit Temple", "spirit_childClimb2": "Spirit Temple", "spirit_map": "Spirit Temple", "spirit_sunRoom": "Spirit Temple", "gs_spirit_before_child_knuckle": "Spirit Temple", "spirit_rightHand": "Spirit Temple", "spirit_adultLeft": "Spirit Temple", "gs_spirit_boulder_room": "Spirit Temple", "spirit_adultRight": "Spirit Temple", "spirit_rotatingMirror1": "Spirit Temple", "spirit_rotatingMirror2": "Spirit Temple", "spirit_lullabyHand": "Spirit Temple", "spirit_lullabyHigh": "Spirit Temple", "gs_spirit_lobby": "Spirit Temple", "spirit_nearFourArmos": "Spirit Temple", "spirit_invisible1": "Spirit Temple", "spirit_invisible2": "Spirit Temple", "spirit_leftHand": "Spirit Temple", "spirit_bossKey": "Spirit Temple", "spirit_tippyTop": "Spirit Temple", "spirit_twinrova": "Spirit Temple",
+    "spirit_childLeft": "Spirit", "spirit_childRight": "Spirit", "gs_spirit_metal_fence": "Spirit", "spirit_childClimb1": "Spirit", "gs_spirit_child_climb": "Spirit", "spirit_childClimb2": "Spirit", "spirit_map": "Spirit", "spirit_sunRoom": "Spirit", "gs_spirit_before_child_knuckle": "Spirit", "spirit_rightHand": "Spirit", "spirit_adultLeft": "Spirit", "gs_spirit_boulder_room": "Spirit", "spirit_adultRight": "Spirit", "spirit_rotatingMirror1": "Spirit", "spirit_rotatingMirror2": "Spirit", "spirit_lullabyHand": "Spirit", "spirit_lullabyHigh": "Spirit", "gs_spirit_lobby": "Spirit", "spirit_nearFourArmos": "Spirit", "spirit_invisible1": "Spirit", "spirit_invisible2": "Spirit", "spirit_leftHand": "Spirit", "spirit_bossKey": "Spirit", "spirit_tippyTop": "Spirit", "spirit_twinrova": "Spirit",
     // Shadow Temple
-    "shadow_map": "Shadow Temple", "shadow_hovers": "Shadow Temple", "shadow_compass": "Shadow Temple", "shadow_earlySilvers": "Shadow Temple", "gs_shadow_like_like": "Shadow Temple", "shadow_spinning1": "Shadow Temple", "shadow_spinning2": "Shadow Temple", "shadow_spikesLower": "Shadow Temple", "gs_shadow_crusher": "Shadow Temple", "shadow_spikesUpper": "Shadow Temple", "shadow_spikesSwitch": "Shadow Temple", "shadow_redeadSilvers": "Shadow Temple", "gs_shadow_giant_pot": "Shadow Temple", "shadow_pot": "Shadow Temple", "shadow_wind": "Shadow Temple", "shadow_bombable": "Shadow Temple", "shadow_gibdos": "Shadow Temple", "gs_shadow_near_boat": "Shadow Temple", "shadow_dins1": "Shadow Temple", "shadow_dins2": "Shadow Temple", "gs_shadow_three_pots": "Shadow Temple", "shadow_floormaster": "Shadow Temple", "shadow_bongo": "Shadow Temple",
+    "shadow_map": "Shadow", "shadow_hovers": "Shadow", "shadow_compass": "Shadow", "shadow_earlySilvers": "Shadow", "gs_shadow_like_like": "Shadow", "shadow_spinning1": "Shadow", "shadow_spinning2": "Shadow", "shadow_spikesLower": "Shadow", "gs_shadow_crusher": "Shadow", "shadow_spikesUpper": "Shadow", "shadow_spikesSwitch": "Shadow", "shadow_redeadSilvers": "Shadow", "gs_shadow_giant_pot": "Shadow", "shadow_pot": "Shadow", "shadow_wind": "Shadow", "shadow_bombable": "Shadow", "shadow_gibdos": "Shadow", "gs_shadow_near_boat": "Shadow", "shadow_dins1": "Shadow", "shadow_dins2": "Shadow", "gs_shadow_three_pots": "Shadow", "shadow_floormaster": "Shadow", "shadow_bongo": "Shadow",
     // Water Temple
-    "water_compass": "Water Temple", "water_map": "Water Temple", "water_cracked": "Water Temple", "water_torches": "Water Temple", "gs_water_near_boss_key": "Water Temple", "water_bossKey": "Water Temple", "gs_water_south_basement": "Water Temple", "water_block": "Water Temple", "gs_water_central": "Water Temple", "water_pillar": "Water Temple", "gs_water_platform_room": "Water Temple", "water_dLink": "Water Temple", "gs_water_river": "Water Temple", "water_river": "Water Temple", "water_dragon": "Water Temple", "water_morpha": "Water Temple",
+    "water_compass": "Water", "water_map": "Water", "water_cracked": "Water", "water_torches": "Water", "gs_water_near_boss_key": "Water", "water_bossKey": "Water", "gs_water_south_basement": "Water", "water_block": "Water", "gs_water_central": "Water", "water_pillar": "Water", "gs_water_platform_room": "Water", "water_dLink": "Water", "gs_water_river": "Water", "water_river": "Water", "water_dragon": "Water", "water_morpha": "Water",
     // Ganon's Castle
-    "scrub_ganons_1": "Ganon's Castle", "scrub_ganons_2": "Ganon's Castle", "scrub_ganons_3": "Ganon's Castle", "scrub_ganons_4": "Ganon's Castle", "ganons_lightTrial1": "Ganon's Castle", "ganons_lightTrial2": "Ganon's Castle", "ganons_lightTrial3": "Ganon's Castle", "ganons_lightTrial4": "Ganon's Castle", "ganons_lightTrial5": "Ganon's Castle", "ganons_lightTrial6": "Ganon's Castle", "ganons_lightTrial7": "Ganon's Castle", "ganons_lightTrialLullaby": "Ganon's Castle", "ganons_spiritTrial1": "Ganon's Castle", "ganons_spiritTrial2": "Ganon's Castle", "ganons_forestTrial": "Ganon's Castle", "ganons_waterTrial1": "Ganon's Castle", "ganons_waterTrial2": "Ganon's Castle", "ganons_shadowTrial1": "Ganon's Castle", "ganons_shadowTrial2": "Ganon's Castle", "ganons_bossKey": "Ganon's Castle",
+    "scrub_ganons_1": "Ganon's", "scrub_ganons_2": "Ganon's", "scrub_ganons_3": "Ganon's", "scrub_ganons_4": "Ganon's", "ganons_lightTrial1": "Ganon's", "ganons_lightTrial2": "Ganon's", "ganons_lightTrial3": "Ganon's", "ganons_lightTrial4": "Ganon's", "ganons_lightTrial5": "Ganon's", "ganons_lightTrial6": "Ganon's", "ganons_lightTrial7": "Ganon's", "ganons_lightTrialLullaby": "Ganon's", "ganons_spiritTrial1": "Ganon's", "ganons_spiritTrial2": "Ganon's", "ganons_forestTrial": "Ganon's", "ganons_waterTrial1": "Ganon's", "ganons_waterTrial2": "Ganon's", "ganons_shadowTrial1": "Ganon's", "ganons_shadowTrial2": "Ganon's", "ganons_bossKey": "Ganon's",
     // Gerudo Training Ground
-    "gtg_lobbyLeft": "Gerudo Training Ground", "gtg_lobbyRight": "Gerudo Training Ground", "gtg_stalfos": "Gerudo Training Ground", "gtg_wolfos": "Gerudo Training Ground", "gtg_silvers1": "Gerudo Training Ground", "gtg_silvers2": "Gerudo Training Ground", "gtg_silvers3": "Gerudo Training Ground", "gtg_silvers4": "Gerudo Training Ground", "gtg_eyes": "Gerudo Training Ground", "gtg_aboveEyes": "Gerudo Training Ground", "gtg_keese": "Gerudo Training Ground", "gtg_flamesChest": "Gerudo Training Ground", "gtg_freestanding": "Gerudo Training Ground", "gtg_right2": "Gerudo Training Ground", "gtg_right3": "Gerudo Training Ground", "gtg_beamos": "Gerudo Training Ground", "gtg_left1": "Gerudo Training Ground", "gtg_left2": "Gerudo Training Ground", "gtg_left3": "Gerudo Training Ground", "gtg_left4": "Gerudo Training Ground", "gtg_final": "Gerudo Training Ground", "gtg_toilet": "Gerudo Training Ground",
+    "gtg_lobbyLeft": "GTG", "gtg_lobbyRight": "GTG", "gtg_stalfos": "GTG", "gtg_wolfos": "GTG", "gtg_silvers1": "GTG", "gtg_silvers2": "GTG", "gtg_silvers3": "GTG", "gtg_silvers4": "GTG", "gtg_eyes": "GTG", "gtg_aboveEyes": "GTG", "gtg_keese": "GTG", "gtg_flamesChest": "GTG", "gtg_freestanding": "GTG", "gtg_right2": "GTG", "gtg_right3": "GTG", "gtg_beamos": "GTG", "gtg_left1": "GTG", "gtg_left2": "GTG", "gtg_left3": "GTG", "gtg_left4": "GTG", "gtg_final": "GTG", "gtg_toilet": "GTG",
     // Bottom of the Well
-    "well_fakeLeft": "Bottom of the Well", "well_frontBombable": "Bottom of the Well", "well_centerBig": "Bottom of the Well", "well_fakeRight": "Bottom of the Well", "well_centerSmall": "Bottom of the Well", "well_backBombable": "Bottom of the Well", "well_waterLeft": "Bottom of the Well", "well_coffin": "Bottom of the Well", "well_waterFront": "Bottom of the Well", "well_invisible": "Bottom of the Well", "well_deadHand": "Bottom of the Well", "gs_well_west_inner": "Bottom of the Well", "gs_well_east_inner": "Bottom of the Well", "well_locked1": "Bottom of the Well", "well_locked2": "Bottom of the Well", "gs_well_like_like": "Bottom of the Well", "well_basement": "Bottom of the Well",
+    "well_fakeLeft": "Well", "well_frontBombable": "Well", "well_centerBig": "Well", "well_fakeRight": "Well", "well_centerSmall": "Well", "well_backBombable": "Well", "well_waterLeft": "Well", "well_coffin": "Well", "well_waterFront": "Well", "well_invisible": "Well", "well_deadHand": "Well", "gs_well_west_inner": "Well", "gs_well_east_inner": "Well", "well_locked1": "Well", "well_locked2": "Well", "gs_well_like_like": "Well", "well_basement": "Well",
 };
 
 var songLocations = ["zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"];
