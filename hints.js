@@ -200,7 +200,7 @@ function wothAndBarrenProcessing() {
 					if (Items[k] == "lullaby" && document.getElementById("presets").value != "S9") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
-						if (LocationToArea[Locations.indexOf(Location[Items[k]])] == AreaNames[i]) {
+						if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
 						    /*if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
 							else if (Items[k] == "slingshot2" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot1)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot3)))){continue}
 							else if (Items[k] == "slingshot3" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot1)) || (Logic.slingshot2 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot2)))){continue}
