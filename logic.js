@@ -457,256 +457,180 @@ function refreshLogicForStuff() {
 	if(Logic.water_medallion_location == "unknown") {Logic.water_medallion = false;}
 	
 	if(document.getElementById("keysanity").value != "KEYSEY" && document.getElementById("keysanity").value != "KEY RINGS") {
-		Logic.current_forest_keys = Logic.forced_forest_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Forest")-1]; i < AreaIndexes[AreaNames.indexOf("Forest")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_forest_keys +=1;}
-		}
-		Logic.current_fire_keys = Logic.forced_fire_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Fire")-1]; i < AreaIndexes[AreaNames.indexOf("Fire")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_fire_keys +=1;}
-		}
-		
-		Logic.current_water_keys = Logic.forced_water_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Water")-1]; i < AreaIndexes[AreaNames.indexOf("Water")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_water_keys +=1;}
-		}
-		
-		Logic.current_spirit_keys = Logic.forced_spirit_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Spirit")-1]; i < AreaIndexes[AreaNames.indexOf("Spirit")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_spirit_keys +=1;}
-		}
-		
-		Logic.current_shadow_keys = Logic.forced_shadow_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Shadow")-1]; i < AreaIndexes[AreaNames.indexOf("Shadow")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_shadow_keys +=1;}
-		}
-		
-		Logic.current_ganons_keys = Logic.forced_ganons_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Ganon's")-1]; i < AreaIndexes[AreaNames.indexOf("Ganon's")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_ganons_keys +=1;}
-		}
-		
-		Logic.current_gtg_keys = Logic.forced_gtg_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("GTG")-1]; i < AreaIndexes[AreaNames.indexOf("GTG")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_gtg_keys +=1;}
-		}
-		
-		Logic.current_well_keys = Logic.forced_well_keys;
-		for (i = AreaIndexes[AreaNames.indexOf("Well")-1]; i < AreaIndexes[AreaNames.indexOf("Well")]; i++) {
-			str = Locations[i];
-			if (Check[str] == "small_key" && Location_Logic[str]) {Logic.current_well_keys +=1;}
-		}
-		
-		if (Logic.current_forest_keys < 5) {
-			var for_keys = [["forest_first","forest_stalfos","forest_midCourtyard","forest_highCourtyard","forest_lowCourtyard"], ["forest_blockRoom","forest_floormaster"], ["forest_bossKey"], ["forest_red","forest_bow","forest_blue"]]
-			var done = false;
-			Logic.min_forest_keys = 0;
-			for (i = 0; i < for_keys.length; i++) {
-				for (j = 0; j < for_keys[i].length; j++) {
-					str = for_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-						Logic.min_forest_keys = i;
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			if (!done) {Logic.min_forest_keys = 5;}
-		}
-		Logic.forest_keys = Math.max(Logic.min_forest_keys,Logic.current_forest_keys);
-		if (!Logic.forest_boss_key) {
-			var bk = true;
-			for (i = AreaIndexes[AreaNames.indexOf("Forest")-1]; i < AreaIndexes[AreaNames.indexOf("Forest")]-1; i++) {
-				str = Locations[i];
-				if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
-					bk = false;
-					break;
-				}
-			}
-			Logic.forest_boss_key = bk;
-		}
+		const dungeons = [
+      { name: "Forest",  key: "forest" },
+      { name: "Fire",    key: "fire"   },
+      { name: "Water",   key: "water"  },
+      { name: "Spirit",  key: "spirit" },
+      { name: "Shadow",  key: "shadow" },
+      { name: "Ganon's", key: "ganons" },
+      { name: "GTG",     key: "gtg"    },
+      { name: "Well",    key: "well"   }
+    ];
 
-		if (Logic.current_fire_keys < 8 && ((Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || (Check["fire_volvagia"] != "small_key" && Check["fire_volvagia"] != "unknown"))) {
-			var fir_keys = [["fire_nearBoss","fire_hammer1","fire_hammer2"], ["fire_lavaOpen","fire_lavaBomb"],[], ["fire_lowerMaze","fire_sideRoom"],["fire_map"], ["fire_upperMaze","fire_shortcut","fire_scarecrow"]]
-			var done = false;
-			for (i = 0; i < fir_keys.length; i++) {
-				for (j = 0; j < fir_keys[i].length; j++) {
-					str = fir_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" || (Check[str] == "boss_key" && (Check["fire_volvagia"] == "small_key" || Check["fire_volvagia"] == "unknown")))) {
-						Logic.min_fire_keys = i;	
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			
-			if (!done) {Logic.min_fire_keys = 8;}
-		}
-		Logic.fire_keys = Math.max(Logic.min_fire_keys,Logic.current_fire_keys);
-		if (!Logic.fire_boss_key) {
-			var bk = true;
-			for (i = AreaIndexes[AreaNames.indexOf("Fire")-1]; i < AreaIndexes[AreaNames.indexOf("Fire")]; i++) {
-				if (Locations[i] == "fire_volvagia" || Locations[i].includes("gs_")) {
-					continue;
-				}
-				str = Locations[i];
-				if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
-					bk = false;
-					break;
-				}
-			}
-			Logic.fire_boss_key = bk;
-		}
+    dungeons.forEach(dungeon => {
+      Logic[`current_${dungeon.key}_keys`] = Logic[`forced_${dungeon.key}_keys`];
+      
+      AreaToLocation[dungeon.name].forEach(loc => {
+        if (Check[loc] === "small_key" && Location_Logic[loc]) {
+          Logic[`current_${dungeon.key}_keys`] += 1;
+        }
+      });
+    });
 		
-		if (Logic.current_water_keys < 6 && (Logic.longshot && Logic.iron_boots || (Check["water_morpha"] != "small_key" && Check["water_morpha"] != "unknown"))) {
-			var wat_keys = [["water_compass","water_map","water_cracked","water_torches","water_block","water_pillar","water_dragon"]]
-			var done = false;
-			for (i = 0; i < wat_keys.length; i++) {
-				for (j = 0; j < wat_keys[i].length; j++) {
-					str = wat_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown"|| (Check[str] == "boss_key" && (Check["water_morpha"] == "small_key" || Check["water_morpha"] == "unknown")))) {
-						Logic.min_water_keys = i;
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			if (!done) {Logic.min_water_keys = 6;}
-		}
-		else
-			Logic.min_water_keys = 0;
-		Logic.water_keys = Math.max(Logic.min_water_keys,Logic.current_water_keys);
-		if (!Logic.water_boss_key) {
-			var bk = true;
-			for (i = AreaIndexes[AreaNames.indexOf("Water")-1]; i < AreaIndexes[AreaNames.indexOf("Water")]-1; i++) {4
-				if(Locations[i] == "water_morpha" || Locations[i].includes("gs_"))
-					continue;
-				
-				str = Locations[i];
-				if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
-					bk = false;
-					break;
-				}
-			}
-			Logic.water_boss_key = bk;
-		}
-		if (Logic.current_spirit_keys < 5) {
-			var spi_keys = [["spirit_childLeft","spirit_childRight","spirit_adultLeft","spirit_adultRight"], ["spirit_childClimb1","spirit_childClimb2","spirit_map","spirit_sunRoom"], [], ["spirit_rightHand","spirit_rotatingMirror1","spirit_rotatingMirror2","spirit_lullabyHigh","spirit_lullabyHand"],["spirit_nearFourArmos","spirit_invisible1","spirit_invisible2","spirit_leftHand"],["spirit_bossKey","spirit_tippyTop"]]
-			var done = false;
-			for (i = 0; i < spi_keys.length; i++) {
-				for (j = 0; j < spi_keys[i].length; j++) {
-					str = spi_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-						Logic.min_spirit_keys = i;
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			if (!done) {Logic.min_spirit_keys = 5;}
-		}
-		Logic.spirit_keys = Math.max(Logic.min_spirit_keys,Logic.current_spirit_keys);
-		if (!Logic.spirit_boss_key) {
-			var bk = true;
-			for (i = AreaIndexes[AreaNames.indexOf("Spirit")-1]; i < AreaIndexes[AreaNames.indexOf("Spirit")]-1; i++) {
-				if(Locations[i] == "spirit_twinrova" || Locations[i].includes("gs_"))
-					continue;
-				
-				str = Locations[i];
-				if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
-					bk = false;
-					break;
-				}
-			}
-			Logic.spirit_boss_key = bk;
-		}
-		if (Logic.current_shadow_keys < 5) {
-			var sha_keys = [["shadow_map","shadow_hovers","shadow_compass","shadow_earlySilvers"], ["shadow_spinning1","shadow_spinning2","shadow_spikesLower","shadow_spikesUpper","shadow_spikesSwitch"], ["shadow_pot","shadow_redeadSilvers"],["shadow_wind","shadow_bombable","shadow_gibdos"],["shadow_dins1","shadow_dins2","shadow_floormaster"]]
-			var done = false;
-			for (i = 0; i < sha_keys.length; i++) {
-				for (j = 0; j < sha_keys[i].length; j++) {
-					str = sha_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-						Logic.min_shadow_keys = i;
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			if (!done) {Logic.min_shadow_keys = 5;}
-		}
-		Logic.shadow_keys = Math.max(Logic.min_shadow_keys,Logic.current_shadow_keys);
-		if (!Logic.shadow_boss_key) {
-			var bk = true;
-			for (i = AreaIndexes[AreaNames.indexOf("Shadow")-1]; i < AreaIndexes[AreaNames.indexOf("Shadow")]-1; i++) {
-				if(Locations[i] == "shadow_bongo" || Locations[i].includes("gs_"))
-					continue;
-				
-				str = Locations[i];
-				if (!Location_Logic[str] && (Check[str] == "boss_key" || Check[str] == "unknown")) {
-					bk = false;
-					break;
-				}
-			}
-			Logic.shadow_boss_key = bk;
-		}
-		if (Logic.current_ganons_keys < 2) {
-			Logic.min_ganons_keys = 2;
-			var done = false;
-			for (i = AreaIndexes[AreaNames.indexOf("Ganon's")-1]; i < AreaIndexes[AreaNames.indexOf("Ganon's")]; i++) {
-				if (Locations[i] == "ganons_lightTrialLullaby") {continue;}
-				str = Locations[i];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Logic.min_ganons_keys = 0;
-					break;
-				}
-			}
-		}
-		Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
-		if (Logic.current_gtg_keys < 9) {
-			var ger_keys = [["lobbyLeft","lobbyRight","stalfos","wolfos","silvers1","silvers2","silvers3","silvers4","eyes","aboveEyes","keese","fireChest","freestanding","right2","right3","beamos","toilet"], [],[],["left1"],["left2"],[],["left3"],["left4"]]
-			var done = false;
-			for (i = 0; i < ger_keys.length; i++) {
-				for (j = 0; j < ger_keys[i].length; j++) {
-					str = "gtg_" + ger_keys[i][j];
-					if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-						Logic.min_gtg_keys = i;
-						done = true;
-						break;
-					}
-				}
-				if (done) {break;}
-			}
-			if (!done) {Logic.min_gtg_keys = 9;}
-		}
-		Logic.gtg_keys = Math.max(Logic.min_gtg_keys,Logic.current_gtg_keys);
-		if (Logic.current_well_keys < 3) {
-			Logic.min_well_keys = 3;
-			for (i = AreaIndexes[AreaNames.indexOf("Well")-1]; i < AreaIndexes[AreaNames.indexOf("Well")]; i++) {
-				if (Locations[i] == "well_locked1" || Locations[i] == "well_locked2" || Locations[i].includes("gs_")) {continue;}
-				str = Locations[i];
-				if (!(Location_Logic[str]) && (Check[str] == "small_key" || Check[str] == "unknown" )) {
-					Logic.min_well_keys = 0;
-					break;
-				}
-			}
-		}
-		Logic.well_keys = Math.max(Logic.min_well_keys,Logic.current_well_keys);
-		
-		if(Logic.can_enter_ganons && Logic.golden_gauntlets) {Logic.min_ganons_keys = 1;}
-		Logic.ganons_keys = Math.max(Logic.min_ganons_keys,Logic.current_ganons_keys);
+		const calculateMinKeys = (tiers, maxKeys) => {
+      for (let i = 0; i < tiers.length; i++) {
+        for (const loc of tiers[i]) {
+          if (!Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")) {
+            return i;
+          }
+        }
+      }
+    return maxKeys;
+    };
+
+    const updateBossKeyLogic = (areaName, logicProperty, bossLocation) => {
+      if (Logic[logicProperty]) return;
+
+      const locations = AreaToLocation[areaName] || [];
+      let foundMissingBK = false;
+
+      for (const loc of locations) {
+        if (loc === bossLocation || loc.includes("gs_")) continue;
+
+        if (!Location_Logic[loc] && (Check[loc] === "boss_key" || Check[loc] === "unknown")) {
+          foundMissingBK = true;
+          break;
+        }
+      }
+      Logic[logicProperty] = !foundMissingBK;
+    };
+
+    const dungeonData = {
+      Forest: {
+        key: "forest",
+        max: 5,
+        boss: "forest_phantomGanon",
+        tiers: [
+          ["forest_first", "forest_stalfos", "forest_midCourtyard", "forest_highCourtyard", "forest_lowCourtyard"],
+          ["forest_blockRoom", "forest_floormaster"],
+          ["forest_bossKey"],
+          ["forest_red", "forest_bow", "forest_blue"]
+        ]
+      },
+      Fire: {
+        key: "fire",
+        max: 8,
+        boss: "fire_volvagia",
+        condition: () => (Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || 
+                         (Check["fire_volvagia"] !== "small_key" && Check["fire_volvagia"] !== "unknown"),
+        tiers: [
+          ["fire_nearBoss", "fire_hammer1", "fire_hammer2"],
+          ["fire_lavaOpen", "fire_lavaBomb"],
+          [],
+          ["fire_lowerMaze", "fire_sideRoom"],
+          ["fire_map"],
+          ["fire_upperMaze", "fire_shortcut", "fire_scarecrow"]
+        ],
+        bkSpecial: (loc) => Check[loc] === "boss_key" && (Check["fire_volvagia"] === "small_key" || Check["fire_volvagia"] === "unknown")
+      },
+      Water: {
+        key: "water",
+        max: 6,
+        boss: "water_morpha",
+        condition: () => (Logic.longshot && Logic.iron_boots) || 
+                         (Check["water_morpha"] !== "small_key" && Check["water_morpha"] !== "unknown"),
+        tiers: [
+          ["water_compass", "water_map", "water_cracked", "water_torches", "water_block", "water_pillar", "water_dragon"]
+        ],
+        bkSpecial: (loc) => Check[loc] === "boss_key" && (Check["water_morpha"] === "small_key" || Check["water_morpha"] === "unknown")
+      },
+      Spirit: {
+        key: "spirit",
+        max: 5,
+        boss: "spirit_twinrova",
+        tiers: [
+          ["spirit_childLeft", "spirit_childRight", "spirit_adultLeft", "spirit_adultRight"],
+          ["spirit_childClimb1", "spirit_childClimb2", "spirit_map", "spirit_sunRoom"],
+          [],
+          ["spirit_rightHand", "spirit_rotatingMirror1", "spirit_rotatingMirror2", "spirit_lullabyHigh", "spirit_lullabyHand"],
+          ["spirit_nearFourArmos", "spirit_invisible1", "spirit_invisible2", "spirit_leftHand"],
+          ["spirit_bossKey", "spirit_tippyTop"]
+        ]
+      },
+      Shadow: {
+        key: "shadow",
+        max: 5,
+        boss: "shadow_bongo",
+        tiers: [
+          ["shadow_map", "shadow_hovers", "shadow_compass", "shadow_earlySilvers"],
+          ["shadow_spinning1", "shadow_spinning2", "shadow_spikesLower", "shadow_spikesUpper", "shadow_spikesSwitch"],
+          ["shadow_pot", "shadow_redeadSilvers"],
+          ["shadow_wind", "shadow_bombable", "shadow_gibdos"],
+          ["shadow_dins1", "shadow_dins2", "shadow_floormaster"]
+        ]
+      },
+      GTG: {
+        key: "gtg",
+        max: 9,
+        tiers: [
+          ["gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_toilet"],
+          [], [], ["gtg_left1"], ["gtg_left2"], [], ["gtg_left3"], ["gtg_left4"]
+        ]
+      }
+    };
+
+
+    Object.entries(dungeonData).forEach(([name, data]) => {
+      const currentKeyProp = `current_${data.key}_keys`;
+      const minKeyProp = `min_${data.key}_keys`;
+      const finalKeyProp = `${data.key}_keys`;
+
+      if (Logic[currentKeyProp] < data.max) {
+        if (!data.condition || data.condition()) {
+          let found = false;
+          for (let i = 0; i < data.tiers.length; i++) {
+            for (const loc of data.tiers[i]) {
+              const isKey = Check[loc] === "small_key" || Check[loc] === "unknown";
+              const isSpecialBK = data.bkSpecial ? data.bkSpecial(loc) : false;
+
+              if (!Location_Logic[loc] && (isKey || isSpecialBK)) {
+                Logic[minKeyProp] = i;
+                found = true;
+                break;
+              }
+            }
+            if (found) break;
+          }
+          if (!found) Logic[minKeyProp] = data.max;
+        } else if (data.key === "water") {
+          Logic.min_water_keys = 0;
+        }
+      }
+      Logic[finalKeyProp] = Math.max(Logic[minKeyProp] || 0, Logic[currentKeyProp]);
+
+      if (data.boss) {
+        updateBossKeyLogic(name, `${data.key}_boss_key`, data.boss);
+      }
+    });
+
+    if (Logic.current_ganons_keys < 2) {
+      const needsKeys = AreaToLocation["Ganon's"].some(loc => 
+        loc !== "ganons_lightTrialLullaby" && !Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")
+      );
+      Logic.min_ganons_keys = needsKeys ? 0 : 2;
+    }
+    if (Logic.can_enter_ganons && Logic.golden_gauntlets) Logic.min_ganons_keys = 1;
+    Logic.ganons_keys = Math.max(Logic.min_ganons_keys, Logic.current_ganons_keys);
+
+    if (Logic.current_well_keys < 3) {
+      const needsKeys = AreaToLocation["Well"].some(loc => 
+        !["well_locked1", "well_locked2"].includes(loc) && !loc.includes("gs_") && 
+        !Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")
+      );
+      Logic.min_well_keys = needsKeys ? 0 : 3;
+    }
+    Logic.well_keys = Math.max(Logic.min_well_keys, Logic.current_well_keys);
 	}
 	
 	if(document.getElementById("keysanity").value == "KEY RINGS" && !Player.forest_key_ring) {

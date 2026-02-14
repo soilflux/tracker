@@ -990,6 +990,16 @@ var LocationToArea = {
     "well_fakeLeft": "Well", "well_frontBombable": "Well", "well_centerBig": "Well", "well_fakeRight": "Well", "well_centerSmall": "Well", "well_backBombable": "Well", "well_waterLeft": "Well", "well_coffin": "Well", "well_waterFront": "Well", "well_invisible": "Well", "well_deadHand": "Well", "gs_well_west_inner": "Well", "gs_well_east_inner": "Well", "well_locked1": "Well", "well_locked2": "Well", "gs_well_like_like": "Well", "well_basement": "Well",
 };
 
+const AreaToLocation = Object.entries(LocationToArea).reduce((acc, [location, area]) => {
+    if (!acc[area]) {
+        acc[area] = [];
+    }
+    
+    acc[area].push(location);
+    
+    return acc;
+}, {});
+
 var songLocations = ["zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"];
   
 var Locations = [
