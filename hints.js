@@ -160,19 +160,6 @@ function wothAndBarrenProcessing() {
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
 						if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
-						    /*if (Items[k] == "slingshot1" && ((Logic.slingshot2 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot2)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot1.includes(Location.slingshot3)))){continue}
-							else if (Items[k] == "slingshot2" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot1)) || (Logic.slingshot3 && !ChecksPutInLogicBy.slingshot2.includes(Location.slingshot3)))){continue}
-							else if (Items[k] == "slingshot3" && ((Logic.slingshot1 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot1)) || (Logic.slingshot2 && !ChecksPutInLogicBy.slingshot3.includes(Location.slingshot2)))){continue}
-							else if (Items[k] == "bomb_bag1" && ((Logic.bomb_bag2 && !ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag2)) || (Logic.bomb_bag3 && !ChecksPutInLogicBy.bomb_bag1.includes(Location.bomb_bag3)))){continue}
-							else if (Items[k] == "bomb_bag2" && ((Logic.bomb_bag1 && !ChecksPutInLogicBy.bomb_bag2.includes(Location.bomb_bag1)) || (Logic.bomb_bag3 && !ChecksPutInLogicBy.bomb_bag2.includes(Location.bomb_bag3)))){continue}
-							else if (Items[k] == "bomb_bag3" && ((Logic.bomb_bag1 && !ChecksPutInLogicBy.bomb_bag3.includes(Location.bomb_bag1)) || (Logic.bomb_bag2 && !ChecksPutInLogicBy.bomb_bag3.includes(Location.bomb_bag2)))){continue}
-							else if (Items[k] == "bow1" && ((Logic.bow2 && !ChecksPutInLogicBy.bow1.includes(Location.bow2)) || (Logic.bow3 && !ChecksPutInLogicBy.bow1.includes(Location.bow3)))){continue}
-							else if (Items[k] == "bow2" && ((Logic.bow1 && !ChecksPutInLogicBy.bow2.includes(Location.bow1)) || (Logic.bow3 && !ChecksPutInLogicBy.bow2.includes(Location.bow3)))){continue}
-							else if (Items[k] == "bow3" && ((Logic.bow1 && !ChecksPutInLogicBy.bow3.includes(Location.bow1)) || (Logic.bow2 && !ChecksPutInLogicBy.bow3.includes(Location.bow2)))){continue}
-							else if (Items[k] == "magic1" && Logic.magic2 && !ChecksPutInLogicBy.magic1.includes(Location.magic2)){continue}
-							else if (Items[k] == "magic2" && Logic.magic1 && !ChecksPutInLogicBy.magic2.includes(Location.magic1)){continue}
-							else if (Items[k] == "goron_tunic" && Logic.can_stop_link_the_goron && !ChecksPutInLogicBy.goron_tunic.includes("goron_link") && (Logic.wallet1 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet1) || Logic.wallet2 && !ChecksPutInLogicBy.goron_tunic.includes(Location.wallet2))){continue}
-							//else if (Items[k] == "fire_arrows" && Logic.dins_fire && !ChecksPutInLogicBy.fire_arrows.includes(Location.dins_fire)){continue}*/
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							
 							if(nerfed) {
@@ -191,19 +178,6 @@ function wothAndBarrenProcessing() {
 									document.getElementById("wothMajor" + k + wothNumber).className = "wothMajorImages";
 								}
 							}
-							
-							if (WotHItems.includes(Items[k]) && !nerfed) {
-								document.getElementById("wothMajor" + k + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
-								tempnumber3 +=1;
-								} 
-							for (var j = 0; j < Items.length; j++) {
-								if (ChecksLockedBy[Items[k]].includes(Location[Items[j]]) && !nerfed){
-									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' src=" + ItemImages[j] + ">";
-									if (WotHItems.includes(Items[j])) {
-										document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px lightblue)"); 
-									} 
-								}
-							} 
 							
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<span onmousedown = 'markWothItemArrow(this)' id = 'wothItemArrow" + wothNumber + "_" + k + "' data-item = '" + Items[k] + "' class = 'woth_item_arrow'> &#8594; </span>"; 
 							
@@ -241,16 +215,6 @@ function wothAndBarrenProcessing() {
 						}
 					} 	
 				}
-				var tempArray2 = [];
-				for (k = 0; k < tempArray.length; k++) {
-					var tempArray3 = [];
-					for (l = 0; l < ChecksPutInLogicBy[tempArray[k]].length; l++) {
-						if (Check[ChecksPutInLogicBy[tempArray[k]][l]] == "unknown") {
-							tempArray3.push(ChecksPutInLogicBy[tempArray[k]][l]);
-						}
-					}
-					tempArray2.push.apply(tempArray2, tempArray3);
-				}
 				
 				document.getElementById("woth" + wothNumber + "_title").innerHTML = AreaNames[i];
 			
@@ -269,28 +233,6 @@ function wothAndBarrenProcessing() {
 				}
 				
 				document.getElementById("woth" + wothNumber + "_title").style.color= WotHColors[wothNumber];
-				if (AreaWotHAge[i] < tempnumber3) {
-					document.getElementById("woth" + wothNumber + "_title").style.opacity = .2;
-					if (wothNumber == 1) {woth1Locations =[];}
-					if (wothNumber == 2) {woth2Locations = [];}
-					if (wothNumber == 3) {woth3Locations = [];}
-					if (wothNumber == 4) {woth4Locations =[];}
-					if (wothNumber == 5) {woth5Locations = [];}
-					if (wothNumber == 6) {woth6Locations = [];}
-					if (wothNumber == 7) {woth7Locations = [];}
-					if (wothNumber == 8) {woth8Locations = [];}
-				}
-				if (AreaWotHAge[i] >= tempnumber3) {
-					document.getElementById("woth" + wothNumber + "_title").style.opacity = 1;
-					if (wothNumber == 1) {woth1Locations = tempArray2.slice(0);}
-					if (wothNumber == 2) {woth2Locations = tempArray2.slice(0);}
-					if (wothNumber == 3) {woth3Locations = tempArray2.slice(0);}
-					if (wothNumber == 4) {woth4Locations = tempArray2.slice(0);}
-					if (wothNumber == 5) {woth5Locations = tempArray2.slice(0);}
-					if (wothNumber == 6) {woth6Locations = tempArray2.slice(0);}
-					if (wothNumber == 7) {woth7Locations = tempArray2.slice(0);}
-					if (wothNumber == 8) {woth8Locations = tempArray2.slice(0);}
-				}
 			}
 			
 		}	
