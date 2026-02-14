@@ -75,13 +75,4 @@ function midUpdate() {
 
 function slowUpdate() {
 	updateInputs();
-	if (!nerfed) {
-		WotHItems = [];
-		for (i=0; i < Items.length; i++) {
-		ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
-		}
-		for (i=0; i < Items.length; i++) {
-		if (Location[Items[i]] != null ) {ChecksPutInLogicBy[Items[i]] = checksPutInLogicByItem(Items[i]);}
-		}
-	}
 }

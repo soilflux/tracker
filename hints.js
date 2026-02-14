@@ -125,47 +125,6 @@ function wothAndBarrenProcessing() {
 		}
 	}
 
-	var med_locations_found = 1;
-	for (var i =0; i<8; i++) {
-			if (Logic.emerald != dungeonStrings[i] && Logic.ruby != dungeonStrings[i] && Logic.sapphire != dungeonStrings[i] && Logic.emerald != "unknown" && Logic.ruby != "unknown" && Logic.sapphire != "unknown") {Location["med" + med_locations_found] = bossStrings[i]; med_locations_found += 1;}
-	}
-
-	if (!WotHItems.includes("med1")) { WotHItems.push("med1");}
-	if (!WotHItems.includes("med2")) { WotHItems.push("med2");}
-	if (!WotHItems.includes("med3")) { WotHItems.push("med3");}
-	if (!WotHItems.includes("med4")) { WotHItems.push("med4");}
-	if (!WotHItems.includes("med5")) { WotHItems.push("med5");}
-	if (!WotHItems.includes("med6")) { WotHItems.push("med6");}
-	if (!WotHItems.includes("light_arrows")) {WotHItems.push("light_arrows");}
-
-		if (Known.bow1 && Known.bow2 && Known.bow3) {
-			if (ChecksLockedBy.bow1.includes(Location.bow2) && ChecksLockedBy.bow1.includes(Location.bow3)) {if (!WotHItems.includes("bow1")) {WotHItems.push("bow1")}}
-			if (ChecksLockedBy.bow2.includes(Location.bow1) && ChecksLockedBy.bow2.includes(Location.bow3)) {if (!WotHItems.includes("bow2")) {WotHItems.push("bow2")}}
-			if (ChecksLockedBy.bow3.includes(Location.bow2) && ChecksLockedBy.bow3.includes(Location.bow1)) {if (!WotHItems.includes("bow3")) {WotHItems.push("bow3")}}
-			}
-		if (ChecksLockedBy.magic1.includes(Location.magic2)) {if (!WotHItems.includes("magic1")) {WotHItems.push("magic1")}}
-		if (ChecksLockedBy.magic2.includes(Location.magic1)) {if (!WotHItems.includes("magic2")) {WotHItems.push("magic2")}}
-		for (var i = 0; i<Items.length; i++) {
-				for (var j = 0; j<WotHItems.length; j++){
-					if (Location[WotHItems[j]] != null) {
-						if (ChecksLockedBy[Items[i]].includes(Location[WotHItems[j]])) {
-							
-								if (!WotHItems.includes(Items[i])) {WotHItems.push(Items[i]);}
-						}
-					}
-				}
-		}
-		for ( var d = 1; d <= 52; d++) {
-			document.getElementById("confirmed_logically_required_" + d).style.display = "none";
-		}
-		var temp = 6;
-		while (temp < WotHItems.length) {
-		if (!Known[WotHItems[temp]]) {
-			document.getElementById("confirmed_logically_required_" + (temp - 5)).src = ItemImages[Items.indexOf(WotHItems[temp])];
-			document.getElementById("confirmed_logically_required_" + (temp - 5)).style.display = "inline-block";
-		}
-		temp++;
-		}
 		for (var i = 1; i <= 35; i++) {
 			
 			var wothRowNumber = 1;

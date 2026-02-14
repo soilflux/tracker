@@ -1422,35 +1422,11 @@ function updateLogicInfo() {
 				document.getElementById(str).style.opacity = .5;
 			}
 			
-			if ((!woth1Locations.includes(key) && !woth2Locations.includes(key) && !woth3Locations.includes(key) && !woth4Locations.includes(key) && !woth5Locations.includes(key) && !woth6Locations.includes(key)) || !circus) {
-				if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
-					document.getElementById(str).style.color = "#FFA500";
-				}
-				else {
-					document.getElementById(str).style.color = inLogicColor;
-				}
-			}
-			else {
-				var woths = [woth1Locations.includes(key), woth2Locations.includes(key), woth3Locations.includes(key), woth4Locations.includes(key), woth5Locations.includes(key), woth6Locations.includes(key)];
-				var j;
-				var k;
-				var l;
-				var text = document.getElementById(str).innerHTML;
-				document.getElementById(str).innerHTML = "";
-				for (j = 0; j < text.length; j++) {
-					for (k = 0; k < woths.length; k++) {
-						if (woths[k]) {
-						    let temptext = '<span style = "color: ' + WotHColors[k+1] + '">' + text[j] + '</span>';
-							for (l = k+1; l <woths.length; l++) {
-								if (woths[l]) {woths[k] = false;}
-							}
-							document.getElementById(str).innerHTML += temptext;
-							break;
-						}	
-						//if (k == woths.length -1) {document.getElementById(str).innerHTML += text[j];}
-					}
-				}
-			}
+      if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+        document.getElementById(str).style.color = "#FFA500";
+      } else {
+        document.getElementById(str).style.color = inLogicColor;
+      }
 			if(document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
 				if (i <= lastItem) {Player.logically_accessible += 1;}
 				if (i == AreaIndexes[12] - 1 && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}

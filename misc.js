@@ -413,66 +413,15 @@ function hamsdaToggle() {
 		document.getElementById("hamsdaToggle").innerHTML = "Disable Hamsda Tracking"; 
 }
 
-function circusControl() {
-	if (!linsoGoMode) {document.getElementById("linso54").src = "./circus-tent_1f3aa.png";}
-	
-	if (circus) {
-		circus = false; 
-		document.getElementById("circusControl").innerHTML = "Unleash Animals"; 
-		if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;
-		}
-	}
-	
-	else if (!nerfed) {
-		circus = true; 
-		document.getElementById("circusControl").innerHTML = "Send Back to Circus"; 
-		if (!linsoGoMode) {
-			document.getElementById("linso54").style.opacity = 1;
-			}
-	}
-	
-	Update();
-}
-
 function nerfControl() {
 	if (nerfed) {
-		document.getElementById("linso54").style.opacity = 0;
 		nerfed = false; 
-		document.getElementById("nerfControl").innerHTML = "Nerf My Tracker"; 
-		document.getElementById("circusControl").style.display = "inline-block"; 
 		document.getElementById("skullsInLogicList").style.display = "inline-block"; 
-		document.getElementById("confirmed_logically_required").style.display = "inline-block";
-		document.getElementById("forceIntoLogic").style.display = "inline-block";
-		document.getElementById("forceLogic1").style.display = "inline-block";
-		document.getElementById("forceLogic2").style.display = "inline-block";
-		document.getElementById("forceLogic3").style.display = "inline-block";
-		document.getElementById("forceLogic4").style.display = "inline-block";
-		document.getElementById("forceOutOfLogic").style.display = "inline-block";
-		document.getElementById("forceOutOfLogic1").style.display = "inline-block";
-		document.getElementById("forceOutOfLogic2").style.display = "inline-block";
-		document.getElementById("forceOutOfLogic3").style.display = "inline-block";
-		document.getElementById("forceOutOfLogic4").style.display = "inline-block";
 	}
 	else {
-		document.getElementById("linso54").style.opacity = 1;
 		nerfed = true; 
-		document.getElementById("nerfControl").innerHTML = "Buff My Tracker"; 
-		document.getElementById("circusControl").style.display = "none"; 
 		document.getElementById("skullsInLogicList").style.display = "none"; 
-		document.getElementById("confirmed_logically_required").style.display = "none"; 
-		circus = false; document.getElementById("circusControl").innerHTML = "Unleash Animals"; if (!linsoGoMode) {document.getElementById("linso54").style.opacity = 0;}
-		document.getElementById("forceIntoLogic").style.display = "none";
-		document.getElementById("forceLogic1").style.display = "none";
-		document.getElementById("forceLogic2").style.display = "none";
-		document.getElementById("forceLogic3").style.display = "none";
-		document.getElementById("forceLogic4").style.display = "none";
-		document.getElementById("forceOutOfLogic").style.display = "none";
-		document.getElementById("forceOutOfLogic1").style.display = "none";
-		document.getElementById("forceOutOfLogic2").style.display = "none";
-		document.getElementById("forceOutOfLogic3").style.display = "none";
-		document.getElementById("forceOutOfLogic4").style.display = "none";
 	}
-		
 	Update();
 }
 
@@ -513,7 +462,6 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Show LinSo"; 
 		document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
-		document.getElementById("confirmed_logically_required").style.top = "850px"; document.getElementById("confirmed_logically_required").style.left = "735px";
     document.getElementById("checkSummaryColumn1").style.top = "112px"; document.getElementById("checkSummaryColumn1").style.left = "750px";
     
 	}
@@ -523,7 +471,6 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Hide LinSo"; 
 		document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
-		document.getElementById("confirmed_logically_required").style.top = "730px"; document.getElementById("confirmed_logically_required").style.left = "970px";
     document.getElementById("checkSummaryColumn1").style.top = "0px"; document.getElementById("checkSummaryColumn1").style.left = "105px";
 	}
 }
@@ -860,10 +807,7 @@ document.onkeydown = function(e) {
 		e.preventDefault();
 	}
 	if (e.ctrlKey && e.which == 65) {
-		if(!nerfed)
-			circusControl();
-		else
-			colorWothAreasControl();
+    colorWothAreasControl();
 	}
 	if (e.which == 32 && e.target == document.body) {
 		e.preventDefault();

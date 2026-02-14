@@ -1530,7 +1530,6 @@ var woth6 = "unknown";
 var woth7 = "unknown";
 var woth8 = "unknown";
 
-var WotHItems = [];
 var ManualWotHItems = {};
 var ManualInLogicItems = {};
 var ManualOutOfLogicItems = {};
@@ -1547,7 +1546,6 @@ var AreaAge = new Array(36).fill(0);
 var AreaWotHAge = new Array(36).fill(0);
 var wothCount = new Array(36).fill(0);
 var checkLog = '';
-var circus = false;
 var colorWothAreas = true;
 var hideInaccessible = true;
 var coopmode = false;
@@ -1604,17 +1602,6 @@ window.onclick = function(event) {
 
 for (var i = 0; i < 244; i++) {
 	Check[Location[i]] = "unknown";
-}
-	
-for (i=0; i < Items.length; i++) {
-	ChecksLockedBy[Items[i]] = checksLockedByItem(Items[i]);
-}
-	
-for (i=0; i < Items.length; i++) {
-	ChecksLockedBy[Items[i]] = [];
-}
-for (i=0; i < Items.length; i++) {
-	ChecksPutInLogicBy[Items[i]] = [];
 }
 
 var parent = document.getElementById("normalColumn1");
