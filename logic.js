@@ -477,17 +477,6 @@ function refreshLogicForStuff() {
         }
       });
     });
-		
-		const calculateMinKeys = (tiers, maxKeys) => {
-      for (let i = 0; i < tiers.length; i++) {
-        for (const loc of tiers[i]) {
-          if (!Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")) {
-            return i;
-          }
-        }
-      }
-    return maxKeys;
-    };
 
     const updateBossKeyLogic = (areaName, logicProperty, bossLocation) => {
       if (Logic[logicProperty]) return;
