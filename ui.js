@@ -854,90 +854,29 @@ function highlightNextCheck(locationID) {
   }
 }
 
-function checkCircleInfo() {
-	document.getElementById("forest").innerHTML = "" + Player.forest_checks_remaining;
-	document.getElementById("fire").innerHTML = "" + Player.fire_checks_remaining;
-	document.getElementById("water").innerHTML = "" + Player.water_checks_remaining;
-	document.getElementById("spirit").innerHTML = "" + Player.spirit_checks_remaining;
-	document.getElementById("shadow").innerHTML = "" + Player.shadow_checks_remaining;
-	document.getElementById("ganons").innerHTML = "" + Player.ganons_checks_remaining;
-	document.getElementById("gtg").innerHTML = "" + Player.gtg_checks_remaining;
-	document.getElementById("well").innerHTML = "" + Player.well_checks_remaining;
-	
-	document.getElementById("forestSKs").innerHTML = "" + (5 - Player.current_forest_keys);
-	document.getElementById("fireSKs").innerHTML = "" + (8 - Player.current_fire_keys);
-	document.getElementById("waterSKs").innerHTML = "" + (6 - Player.current_water_keys);
-	document.getElementById("spiritSKs").innerHTML = "" + (5 - Player.current_spirit_keys);
-	document.getElementById("shadowSKs").innerHTML = "" + (5 - Player.current_shadow_keys);
-	document.getElementById("ganonsSKs").innerHTML = "" + (2 - Player.current_ganons_keys);
-	document.getElementById("gtgSKs").innerHTML = "" + (9 - Player.current_gtg_keys);
-	document.getElementById("wellSKs").innerHTML = "" + (3 - Player.current_well_keys);
-	
-	if (Player.forest_boss_key) {document.getElementById("forestBKs").innerHTML = 0;} else {document.getElementById("forestBKs").innerHTML = 1;}
-	if (Player.fire_boss_key) {document.getElementById("fireBKs").innerHTML = 0;} else {document.getElementById("fireBKs").innerHTML = 1;}
-	if (Player.water_boss_key) {document.getElementById("waterBKs").innerHTML = 0;} else {document.getElementById("waterBKs").innerHTML = 1;}
-	if (Player.spirit_boss_key) {document.getElementById("spiritBKs").innerHTML = 0;} else {document.getElementById("spiritBKs").innerHTML = 1;}
-	if (Player.shadow_boss_key) {document.getElementById("shadowBKs").innerHTML = 0;} else {document.getElementById("shadowBKs").innerHTML = 1;}
-	
-	document.getElementById("forestSKs").title = "";
-	document.getElementById("forestBKs").title = "";
-	for(i = AreaIndexes[27]; i < AreaIndexes[28]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("forestSKs").title += checkNames[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("forestBKs").title += checkNames[i] + "\n";
-	}
-	
-	document.getElementById("fireSKs").title = "";
-	document.getElementById("fireBKs").title = "";
-	for(i = AreaIndexes[28]; i < AreaIndexes[29]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("fireSKs").title += checkNames[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("fireBKs").title += checkNames[i] + "\n";
-	}
-	
-	document.getElementById("spiritSKs").title = "";
-	document.getElementById("spiritBKs").title = "";
-	for(i = AreaIndexes[29]; i < AreaIndexes[30]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("spiritSKs").title += checkNames[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("spiritBKs").title += checkNames[i] + "\n";
-	}
-	
-	document.getElementById("shadowSKs").title = "";
-	document.getElementById("shadowBKs").title = "";
-	for(i = AreaIndexes[30]; i < AreaIndexes[31]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("shadowSKs").title += checkNames[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("shadowBKs").title += checkNames[i] + "\n";
-	}
-	
-	document.getElementById("waterSKs").title = "";
-	document.getElementById("waterBKs").title = "";
-	for(i = AreaIndexes[31]; i < AreaIndexes[32]; i++) {
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("waterSKs").title += checkNames[i] + "\n";
-		if(Check[Locations[i]] == "boss_key")
-			document.getElementById("waterBKs").title += checkNames[i] + "\n";
-	}
-	
-	document.getElementById("ganonsSKs").title = "";
-	for(i = AreaIndexes[32]; i < AreaIndexes[33]; i++)
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("ganonsSKs").title += checkNames[i] + "\n";
-	
-	document.getElementById("gtgSKs").title = "";
-	for(i = AreaIndexes[33]; i < AreaIndexes[34]; i++)
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("gtgSKs").title += checkNames[i] + "\n";
-	
-	document.getElementById("wellSKs").title = "";
-	for(i = AreaIndexes[34]; i < AreaIndexes[35]; i++)
-		if(Check[Locations[i]] == "small_key")
-			document.getElementById("wellSKs").title += checkNames[i] + "\n";
+function keyDungeonInfo() {
+	const dungeonConfig = {
+    forest: { maxSK: 5, hasBK: true },
+    fire:   { maxSK: 8, hasBK: true },
+    water:  { maxSK: 6, hasBK: true },
+    spirit: { maxSK: 5, hasBK: true },
+    shadow: { maxSK: 5, hasBK: true },
+    ganons: { maxSK: 2, hasBK: false },
+    gtg:    { maxSK: 9, hasBK: false },
+    well:   { maxSK: 3, hasBK: false }
+  };
+
+  Object.entries(dungeonConfig).forEach(([key, config]) => {
+      document.getElementById(key).textContent = Player[`${key}_checks_remaining`];
+      
+      const currentKeys = Player[`current_${key}_keys`];
+      document.getElementById(`${key}SKs`).textContent = config.maxSK - currentKeys;
+      
+      if (config.hasBK) {
+          const hasKey = Player[`${key}_boss_key`];
+          document.getElementById(`${key}BKs`).textContent = hasKey ? 0 : 1;
+      }
+  });
 }
 
 function areaBreaks() {

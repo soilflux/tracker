@@ -1,7 +1,7 @@
 function Update() {
 	saveStuff();
   changeThemes();
-	checkCircleInfo();
+	keyDungeonInfo();
 	itemHighlights();
 	dungeonHighlights();
   if (document.getElementById("shiftChecks").value == "YES") areaBreaks();
