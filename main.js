@@ -1,6 +1,6 @@
 function Update() {
 	saveStuff();
-	changeThemes();
+  changeThemes();
 	checkCircleInfo();
 	itemHighlights();
 	dungeonHighlights();

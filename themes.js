@@ -310,7 +310,6 @@ function changeThemes() {
 		light_theme();
 	}
 	
-	if (Player.changetheme == 1) {Player.themeChange = true; Player.changetheme = 0;}
 	
 	if(colorTheme == "light") {
 		document.getElementById('row').style.backgroundColor = '#576166';

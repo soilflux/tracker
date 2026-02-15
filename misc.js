@@ -229,13 +229,6 @@ function shuffle(array) {
   return array;
 }
 
-function changeTheme() {
-	if (Player.theme == "dark") {Player.theme = "light"}
-	else {Player.theme = "dark"}
-	Player.themeChange = true;
-	Update();
-}
-
 function whoAmI() {
 	if(Person.type == "soli") {
 		Person.type = "normie";
