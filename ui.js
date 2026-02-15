@@ -812,7 +812,6 @@ function junkItem(x) {
 }
 
 function highlightNextCheck(locationID) {
-  
   let d = new Date();
   if ((d.getTime() - ageSetStamp) > 30000) {
     age = "";
@@ -825,31 +824,34 @@ function highlightNextCheck(locationID) {
     age = "child";
     ageSetStamp = d.getTime();
   }
-
-  for(var j = 0; j < AreaIndexes.length; j++) {
-				if(Locations.indexOf(locationID) < AreaIndexes[j])
-					break;
-	}
 		
-  for (var i = Locations.indexOf(locationID) + 1; i < Locations.length; i++) {
-    if(i == AreaIndexes[j]) {
-      i = AreaIndexes[j-1];
-    }
+  let checkArea = LocationToArea[locationID]; 
     
-    if (i == Locations.indexOf(locationID)) {
-      i = AreaIndexes[j];
+  for (const loc of AreaToLocation[checkArea].slice(AreaToLocation[checkArea].indexOf(locationID))) {
+    if (isAGoodCheckSuggestion(loc)) {
+      toFocus = document.getElementById(loc); 
+      return;
     }
-    if (i == Locations.indexOf("theater_skull")) {
-      continue;
-    }
-    
-    if ((age == "child" && adult.includes(Locations[i])) || (age == "adult" && child.includes(Locations[i]))) {
-      continue;
-    }
-    
-    if (document.getElementById(Locations[i]).style.display != "none" && document.getElementById(Locations[i]).style.visibility != "hidden" && document.getElementById(Locations[i]).value == "" && Location_Peek[Locations[i]]) {
+  }
+  
+  for (i = Locations.indexOf(AreaToLocation[checkArea][0]); i < Locations.length; i++) {
+    if (isAGoodCheckSuggestion(Locations[i])) {
       toFocus = document.getElementById(Locations[i]); 
-      break;
+      return;
+    }
+  }
+  
+  function isAGoodCheckSuggestion(loc) {
+    if (loc == "theater_skull") {
+      return false;
+    }
+    
+    if ((age == "child" && adult.includes(loc)) || (age == "adult" && child.includes(loc))) {
+      return false;
+    }
+    
+    if (document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden" && document.getElementById(loc).value == "" && Location_Peek[loc]) {
+      return true;
     }
   }
 }
@@ -1234,7 +1236,7 @@ function updateLogicInfo() {
 	Player.checks_remaining = 0;
   unusedLocations = [];
 	for (var i = 0; i < Locations.length; i++) {
-		if (i < AreaIndexes[35]) {
+		if (!songLocations.includes(Locations[i])) {
       hideCheck(Locations[i]);
 		}
 		
@@ -1720,14 +1722,14 @@ function updateWothBorders() {
 				}
 			}
 			
-			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-				if(!alwaysHints.includes(Locations[j]) && (Hinted[Locations[j]] == false || Hinted[Locations[j]] == undefined) && !Locations[j].startsWith("h_")) {
-					document.getElementById("text_" + Locations[j]).style.border = "solid cyan 2px";
-          document.getElementById("text_" + Locations[j]).style.letterSpacing = "-1.6px";
+			AreaToLocation[AreaNames[i]].forEach(loc => {
+				if(!alwaysHints.includes(loc) && (Hinted[loc] == false || Hinted[loc] == undefined) && !loc.startsWith("h_")) {
+					document.getElementById("text_" + loc).style.border = "solid cyan 2px";
+          document.getElementById("text_" + loc).style.letterSpacing = "-1.6px";
         }
 				else
-					document.getElementById("text_" + Locations[j]).style.border = "";
-			}
+					document.getElementById("text_" + loc).style.border = "";
+			});
 		}	
 		else if(Area[i] == "barren") {
 			for(var j = 0; j < AreaSongSpots[i].length; j++) {
@@ -1761,9 +1763,13 @@ function updateWothBorders() {
 
 function updateUsefulAreaItems() { 
   if (Player.can_see) {
-    for (var i = AreaIndexes[AreaNames.indexOf("Shadow")-1]; i<AreaIndexes[AreaNames.indexOf("Shadow")]; i++) {
-      if (document.getElementById(Locations[i]).style.display == "inline-block" && document.getElementById(Locations[i]).style.visibility == "visible") {
-        document.getElementById("text_" + Locations[i]).innerHTML = colorFirstLetter(document.getElementById("text_" + Locations[i]).innerHTML,"pink");
+    for (const loc of AreaToLocation["Shadow"]) {
+      const element = document.getElementById(loc);
+      if (element && element.style.display === "inline-block" && element.style.visibility === "visible") {
+        const textElement = document.getElementById("text_" + loc);
+        if (textElement) {
+          textElement.innerHTML = colorFirstLetter(textElement.innerHTML, "pink");
+        }
         break;
       }
     }
