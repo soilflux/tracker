@@ -73,9 +73,10 @@ function dark_soli() {
       continue;
     }
     let areaName = LocationToArea[Locations[i]];
-    let imgFile = AreaImages[areaName] + ".png";
+    let imgFile = "url('./images/" + AreaImages[areaName] + ".png')";
     if (imgFile) {
-      document.getElementById(key).style.backgroundImage = `url('./images/${imgFile}')`;
+      Player[AreaImages[areaName] + "_img"] = imgFile;
+      document.getElementById(key).style.backgroundImage = imgFile;
     }
 	}
 
@@ -263,9 +264,10 @@ function dark_normie() {
       continue;
     }
     let areaName = LocationToArea[Locations[i]];
-    let imgFile = AreaImages[areaName] + ".jpg";
+    let imgFile = "url('./normal/areas/" + AreaImages[areaName] + ".jpg')";
     if (imgFile) {
-      document.getElementById(key).style.backgroundImage = `url('./normal/areas/${imgFile}')`;
+      Player[AreaImages[areaName] + "_img"] = imgFile;
+      document.getElementById(key).style.backgroundImage = imgFile;
     }
 	}
 	document.getElementById("chuButton").src= Player.chu_img;

@@ -935,9 +935,13 @@ function Undo() {
 	}
 	
 	forcedDisplay[Locations.indexOf(lastCheck[lastCheck.length-1])] = false;
-	for (var i = 0; i < AreaIndexes.length; i++) {
-		if (Locations.indexOf(lastCheck[lastCheck.length-1]) >= AreaIndexes[i] && Locations.indexOf(lastCheck[lastCheck.length-1]) < AreaIndexes[i+1]) {document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = backgrounds[i]; break;}
-	}
+	for (var i = 0; i < AreaNames.length; i++) {
+    if (LocationToArea[lastCheck[lastCheck.length-1]] == AreaNames[i]) {
+      console.log(Player[AreaImages[AreaNames[i]] + "_img"])
+      document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = Player[AreaImages[AreaNames[i]] + "_img"];
+    }
+  }
+
 	
 	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
 	Player[Check[lastCheck[lastCheck.length-1]]] = false;

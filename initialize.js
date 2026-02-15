@@ -1537,72 +1537,55 @@ for (var i = 0; i < 244; i++) {
 
 var parent = document.getElementById("normalColumn1");
 
-var backgrounds = ["url('./normal/areas/kokiri.jpg')","url('./normal/areas/ranch.jpg')","url('./normal/areas/field.jpg')","url('./normal/areas/valley.jpg')","url('./normal/areas/hylia.jpg')","url('./normal/areas/market.jpg')","url('./normal/areas/hyrule_castle.jpg')",
-"url('./normal/areas/ogc.jpg')","url('./normal/areas/tot.jpg')","url('./normal/areas/fountain.jpg')","url('./normal/areas/ice.jpg')","url('./normal/areas/deku.jpg')","url('./normal/areas/lost_woods.jpg')","url('./normal/areas/sfm.jpg')",
-"url('./normal/areas/goron.jpg')","url('./normal/areas/dodongos.jpg')","url('./normal/areas/dmt.jpg')","url('./normal/areas/dmc.jpg')","url('./normal/areas/kakariko.jpg')","url('./normal/areas/graveyard.jpg')",
-"url('./normal/areas/river.jpg')","url('./normal/areas/domain.jpg')","url('./normal/areas/colossus.jpg')","url('./normal/areas/wasteland.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/fortress.jpg')","url('./normal/areas/jabu.jpg')", "url('./normal/areas/forest.jpg')", "url('./normal/areas/fire.jpg')", "url('./normal/areas/spirit.jpg')", "url('./normal/areas/shadow.jpg')", "url('./normal/areas/water.jpg')", "url('./normal/areas/ganons.jpg')", "url('./normal/areas/gtg.jpg')", "url('./normal/areas/well.jpg')"
-]
-
-var background = "url('./normal/areas/kokiri.jpg')";
 var elem = document.createElement("small"); elem.id = "title_kokiri"; elem.className = "area_titles hidden"; elem.innerHTML = "Kokiri"; parent.appendChild(elem);
 var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 for (var i = 0; i<Locations.length; i++) {
 	if (i == AreaIndexes[1]) {
-		background = "url('./normal/areas/ranch.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kokiri_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ranch"; elem.className = "area_titles hidden"; elem.innerHTML = "Lon Lon"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[2]) {
-		background = "url('./normal/areas/field.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ranch_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_field"; elem.className = "area_titles hidden"; elem.innerHTML = "Field"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[3]) {
-		background = "url('./normal/areas/valley.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "field_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_valley"; elem.className = "area_titles hidden"; elem.innerHTML = "Valley"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[4]) {
-		background = "url('./normal/areas/hylia.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "valley_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_hylia"; elem.className = "area_titles hidden"; elem.innerHTML = "Lake"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[5]) {
-		background = "url('./normal/areas/market.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hylia_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_market"; elem.className = "area_titles hidden"; elem.innerHTML = "Market"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[6]) {
-		background = "url('./normal/areas/hyrule_castle.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "market_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_hcastle"; elem.className = "area_titles hidden"; elem.innerHTML = "Castle"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[7]) {
-		background = "url('./normal/areas/ogc.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hyrule_castle_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_outG"; elem.className = "area_titles hidden"; elem.innerHTML = "OGC"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[8]) {
-		background = "url('./normal/areas/tot.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ogc_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ToT"; elem.className = "area_titles hidden"; elem.innerHTML = "ToT"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[9]) {
-		background = "url('./normal/areas/fountain.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "tot_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_fountain"; elem.className = "area_titles hidden"; elem.innerHTML = "Fountain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[10]) {
-		background = "url('./normal/areas/ice.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fountain_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ice"; elem.className = "area_titles hidden"; elem.innerHTML = "Ice"; parent.appendChild(elem);
 		var elem = document.createElement("img"); elem.dataset.dungeon = "ice"; elem.id = "ice_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
@@ -1610,7 +1593,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "ice"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[11]) {
-		background = "url('./normal/areas/deku.jpg')";
 		parent = document.getElementById("normalColumn2");
 		var elem = document.createElement("small"); elem.id = "title_deku"; elem.className = "area_titles hidden"; elem.innerHTML = "Deku"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "deku"; elem.id = "deku_from"; elem.className = "area_entrance"; elem.src = './normal/areas/kokiri.jpg'; parent.appendChild(elem);
@@ -1619,25 +1601,21 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "deku"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[12]) {
-		background = "url('./normal/areas/lost_woods.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "deku_break"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_lostwoods"; elem.className = "area_titles hidden"; elem.innerHTML = "Lost Woods"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[13]) {
-		background = "url('./normal/areas/sfm.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "lost_woods_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_sfm"; elem.className = "area_titles hidden"; elem.innerHTML = "SFM"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[14]) {
-		background = "url('./normal/areas/goron.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "sfm_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_gcity"; elem.className = "area_titles hidden"; elem.innerHTML = "Goron"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[15]) {
-		background = "url('./normal/areas/dodongos.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "goron_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_dodongos"; elem.className = "area_titles hidden"; elem.innerHTML = "DC"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "dodongos_from"; elem.className = "area_entrance"; elem.src = './normal/areas/dmt.jpg'; parent.appendChild(elem);
@@ -1646,65 +1624,54 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "dodongos"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[16]) {
-		background = "url('./normal/areas/dmt.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dodongos_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_trail"; elem.className = "area_titles hidden"; elem.innerHTML = "Trail"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[17]) {
-		background = "url('./normal/areas/dmc.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dmt_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_crater"; elem.className = "area_titles hidden"; elem.innerHTML = "Crater"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[18]) {
-		background = "url('./normal/areas/kakariko.jpg')";
 		parent = document.getElementById("normalColumn3");
 		var elem = document.createElement("small"); elem.id = "title_kakariko"; elem.className = "area_titles hidden"; elem.innerHTML = "Kakariko"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[19]) {
-		background = "url('./normal/areas/graveyard.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kakariko_break"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_graveyard"; elem.className = "area_titles hidden"; elem.innerHTML = "Graveyard"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[20]) {
-		background = "url('./normal/areas/river.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "graveyard_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_river"; elem.className = "area_titles hidden"; elem.innerHTML = "River"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[21]) {
-		background = "url('./normal/areas/domain.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "river_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_domain"; elem.className = "area_titles hidden"; elem.innerHTML = "Domain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[22]) {
-		background = "url('./normal/areas/colossus.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "domain_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_colossus"; elem.className = "area_titles hidden"; elem.innerHTML = "Colossus"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[23]) {
-		background = "url('./normal/areas/wasteland.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "colossus_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_wasteland"; elem.className = "area_titles hidden"; elem.innerHTML = "Wasteland"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[24]) {
-		background = "url('./normal/areas/fortress.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "wasteland_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_fortress"; elem.className = "area_titles hidden"; elem.innerHTML = "Fortress"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[25]) {
-		background = "url('./normal/areas/fortress.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "thieves_break";  parent.appendChild(elem);
 	}
 	if (i == AreaIndexes[26]) {
-		background = "url('./normal/areas/jabu.jpg')";
 		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fortress_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_jabu"; elem.className = "area_titles hidden"; elem.innerHTML = "Jabu"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
@@ -1713,7 +1680,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "jabu"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[27]) {
-    parent = document.getElementById("dung1"); background = "url('./normal/areas/forest.jpg')";
+    parent = document.getElementById("dung1");
     var elem = document.createElement("img"); elem.dataset.dungeon = "forest"; elem.id = "forest_from"; elem.className = "area_entrance"; elem.src = './normal/areas/sfm.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "forest"; elem.id = "forest_to"; elem.className = "area_entrance"; elem.src = './normal/areas/forest.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "forest"; elem.id = "reward_forest"; elem.className = "area_rewards"; parent.appendChild(elem);
@@ -1723,7 +1690,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "forest"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[28]) {
-	  background = "url('./normal/areas/fire.jpg')";
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "fire_from"; elem.className = "area_entrance"; elem.src = './normal/areas/dmc.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "fire_to"; elem.className = "area_entrance"; elem.src = './normal/areas/fire.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "reward_fire"; elem.className = "area_rewards"; parent.appendChild(elem);
@@ -1733,7 +1699,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "fire"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[29]) {
-		background = "url('./normal/areas/spirit.jpg')";
 		parent = document.getElementById("dung2");
 		var elem = document.createElement("img"); elem.dataset.dungeon = "spirit"; elem.id = "spirit_from"; elem.className = "area_entrance"; elem.src = './normal/areas/colossus.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "spirit"; elem.id = "spirit_to"; elem.className = "area_entrance"; elem.src = './normal/areas/spirit.jpg'; parent.appendChild(elem);
@@ -1744,7 +1709,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "spirit"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[30]) {
-		background = "url('./normal/areas/shadow.jpg')";
 		var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "shadow_from"; elem.className = "area_entrance"; elem.src = './normal/areas/graveyard.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "shadow_to"; elem.className = "area_entrance"; elem.src = './normal/areas/shadow.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "reward_shadow"; elem.className = "area_rewards"; parent.appendChild(elem);
@@ -1754,7 +1718,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "shadow"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[31]) {
-		background = "url('./normal/areas/water.jpg')";
 		parent = document.getElementById("dung3");
 		var elem = document.createElement("img"); elem.dataset.dungeon = "water"; elem.id = "water_from"; elem.className = "area_entrance"; elem.src = './normal/areas/hylia.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "water"; elem.id = "water_to"; elem.className = "area_entrance"; elem.src = './normal/areas/water.jpg'; parent.appendChild(elem);
@@ -1765,7 +1728,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "water"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[32]) {
-		background = "url('./normal/areas/ganons.jpg')";
 		var elem = document.createElement("img"); elem.dataset.dungeon = "ganons"; elem.id = "ganons_from"; elem.className = "area_entrance"; elem.src = './normal/areas/ogc.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "ganons"; elem.id = "ganons_to"; elem.className = "area_entrance"; elem.src = './normal/areas/ganons.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "ganons"; elem.id = "ganons"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
@@ -1773,7 +1735,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "ganons"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[33]) {
-		background = "url('./normal/areas/gtg.jpg')";
 		parent = document.getElementById("dung4");
 		var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fortress.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_to"; elem.className = "area_entrance"; elem.src = './normal/areas/gtg.jpg'; parent.appendChild(elem);
@@ -1782,7 +1743,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "gtg"; parent.appendChild(elem);   
 	}
 	if (i == AreaIndexes[34]) {
-		background = "url('./normal/areas/well.jpg')";
 		var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_from"; elem.className = "area_entrance"; elem.src = './normal/areas/kakariko.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_to"; elem.className = "area_entrance"; elem.src = './normal/areas/well.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "well"; elem.id = "well"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
@@ -1790,7 +1750,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "well"; parent.appendChild(elem);   
 	}
 	if (i < AreaIndexes[35]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.style.backgroundImage = background; elem.className = "picture_input"; parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
@@ -2759,6 +2719,7 @@ document.getElementById("linso52").click();
 document.getElementById("linso61").click();
 Player.zeldas_letter = true;
 
+dark_normie();
 showNewPatchNotes();
 linsoControl(); linsoControl();
 setInterval(slowUpdate,3000);
