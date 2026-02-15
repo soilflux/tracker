@@ -17,7 +17,6 @@ var gs = [];
 var Area = [];
 var Known = [];
 var paused = true;
-var pausedToD = true;
 var timerInitialized = false;
 var thisIsHinted = false;
 var hintedInput = "";
@@ -1539,53 +1538,46 @@ var parent = document.getElementById("normalColumn1");
 var elem = document.createElement("small"); elem.id = "title_kokiri"; elem.className = "area_titles hidden"; elem.innerHTML = "Kokiri"; parent.appendChild(elem);
 var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 for (var i = 0; i<Locations.length; i++) {
+  if (LocationToArea[Locations[i]] != LocationToArea[Locations[i-1]]) {
+    var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);
+  }
 	if (LocationToArea[Locations[i]] != "Kokiri" && LocationToArea[Locations[i-1]] == "Kokiri") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kokiri_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ranch"; elem.className = "area_titles hidden"; elem.innerHTML = "Lon Lon"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Ranch" && LocationToArea[Locations[i-1]] == "Ranch") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ranch_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_field"; elem.className = "area_titles hidden"; elem.innerHTML = "Field"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Field" && LocationToArea[Locations[i-1]] == "Field") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "field_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_valley"; elem.className = "area_titles hidden"; elem.innerHTML = "Valley"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Valley" && LocationToArea[Locations[i-1]] == "Valley") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "valley_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_hylia"; elem.className = "area_titles hidden"; elem.innerHTML = "Lake"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Hylia" && LocationToArea[Locations[i-1]] == "Hylia") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hylia_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_market"; elem.className = "area_titles hidden"; elem.innerHTML = "Market"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Market" && LocationToArea[Locations[i-1]] == "Market") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "market_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_hcastle"; elem.className = "area_titles hidden"; elem.innerHTML = "Castle"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Hyr Cas" && LocationToArea[Locations[i-1]] == "Hyr Cas") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "hyrule_castle_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_outG"; elem.className = "area_titles hidden"; elem.innerHTML = "OGC"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "OGC" && LocationToArea[Locations[i-1]] == "OGC") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "ogc_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ToT"; elem.className = "area_titles hidden"; elem.innerHTML = "ToT"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "ToT" && LocationToArea[Locations[i-1]] == "ToT") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "tot_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_fountain"; elem.className = "area_titles hidden"; elem.innerHTML = "Fountain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Fountain" && LocationToArea[Locations[i-1]] == "Fountain") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fountain_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_ice"; elem.className = "area_titles hidden"; elem.innerHTML = "Ice"; parent.appendChild(elem);
 		var elem = document.createElement("img"); elem.dataset.dungeon = "ice"; elem.id = "ice_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "ice"; elem.id = "ice_to"; elem.className = "area_entrance"; elem.src = './normal/areas/ice.jpg'; parent.appendChild(elem);
@@ -1600,22 +1592,18 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "deku"; parent.appendChild(elem);   
 	}
 	if (LocationToArea[Locations[i]] != "Deku " && LocationToArea[Locations[i-1]] == "Deku") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "deku_break"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_lostwoods"; elem.className = "area_titles hidden"; elem.innerHTML = "Lost Woods"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Lost Woods" && LocationToArea[Locations[i-1]] == "Lost Woods") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "lost_woods_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_sfm"; elem.className = "area_titles hidden"; elem.innerHTML = "SFM"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "SFM" && LocationToArea[Locations[i-1]] == "SFM") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "sfm_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_gcity"; elem.className = "area_titles hidden"; elem.innerHTML = "Goron"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Goron City" && LocationToArea[Locations[i-1]] == "Goron City") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "goron_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_dodongos"; elem.className = "area_titles hidden"; elem.innerHTML = "DC"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "dodongos_from"; elem.className = "area_entrance"; elem.src = './normal/areas/dmt.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "dodongos_to"; elem.className = "area_entrance"; elem.src = './normal/areas/dodongos.jpg'; parent.appendChild(elem);
@@ -1623,12 +1611,10 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.dataset.dungeon = "dodongos"; parent.appendChild(elem);   
 	}
 	if (LocationToArea[Locations[i]] != "Dodongos" && LocationToArea[Locations[i-1]] == "Dodongos") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dodongos_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_trail"; elem.className = "area_titles hidden"; elem.innerHTML = "Trail"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Trail" && LocationToArea[Locations[i-1]] == "Trail") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "dmt_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_crater"; elem.className = "area_titles hidden"; elem.innerHTML = "Crater"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
@@ -1638,40 +1624,30 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Kakariko" && LocationToArea[Locations[i-1]] == "Kakariko") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "kakariko_break"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_graveyard"; elem.className = "area_titles hidden"; elem.innerHTML = "Graveyard"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Graveyard" && LocationToArea[Locations[i-1]] == "Graveyard") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "graveyard_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_river"; elem.className = "area_titles hidden"; elem.innerHTML = "River"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "River" && LocationToArea[Locations[i-1]] == "River") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "river_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_domain"; elem.className = "area_titles hidden"; elem.innerHTML = "Domain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Domain" && LocationToArea[Locations[i-1]] == "Domain") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "domain_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_colossus"; elem.className = "area_titles hidden"; elem.innerHTML = "Colossus"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Colossus" && LocationToArea[Locations[i-1]] == "Colossus") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "colossus_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_wasteland"; elem.className = "area_titles hidden"; elem.innerHTML = "Wasteland"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
 	if (LocationToArea[Locations[i]] != "Wasteland" && LocationToArea[Locations[i-1]] == "Wasteland") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "wasteland_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_fortress"; elem.className = "area_titles hidden"; elem.innerHTML = "Fortress"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Thieves" && LocationToArea[Locations[i-1]] == "Thieves") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "thieves_break";  parent.appendChild(elem);
-	}
 	if (LocationToArea[Locations[i]] != "Fortress" && LocationToArea[Locations[i-1]] == "Fortress") {
-		var elem = document.createElement("br"); elem.className = "half_break"; elem.id = "fortress_break";  parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "title_jabu"; elem.className = "area_titles hidden"; elem.innerHTML = "Jabu"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_to"; elem.className = "area_entrance"; elem.src = './normal/areas/jabu.jpg'; parent.appendChild(elem);

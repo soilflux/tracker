@@ -941,35 +941,18 @@ function checkCircleInfo() {
 }
 
 function areaBreaks() {
-	var tempUnique = 0;
-	for (var i = 0; i < Locations.length; i++) {
-		if ((i >= AreaIndexes[10] && i < AreaIndexes[11]) || (i >= AreaIndexes[17] && i < AreaIndexes[18])) {continue;}
-		if (document.getElementById(Locations[i]).style.display == "none" || document.getElementById(Locations[i]).style.visibility == "hidden") {tempUnique += 1;} 
-		if (i == AreaIndexes[1]-1) {if (tempUnique == AreaIndexes[1] - AreaIndexes[0]) {document.getElementById("kokiri_break").style.display = "none";} else {document.getElementById("kokiri_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[2]-1) {if (tempUnique == AreaIndexes[2] - AreaIndexes[1]) {document.getElementById("ranch_break").style.display = "none";} else {document.getElementById("ranch_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[3]-1) {if (tempUnique == AreaIndexes[3] - AreaIndexes[2]) {document.getElementById("field_break").style.display = "none";} else {document.getElementById("field_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[4]-1) {if (tempUnique == AreaIndexes[4] - AreaIndexes[3]) {document.getElementById("valley_break").style.display = "none";} else {document.getElementById("valley_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[5]-1) {if (tempUnique == AreaIndexes[5] - AreaIndexes[4]) {document.getElementById("hylia_break").style.display = "none";} else {document.getElementById("hylia_break").style.display == "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[6]-1) {if (tempUnique == AreaIndexes[6] - AreaIndexes[5]) {document.getElementById("market_break").style.display = "none";} else {document.getElementById("market_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[7]-1) {if (tempUnique == AreaIndexes[7] - AreaIndexes[6]) {document.getElementById("hyrule_castle_break").style.display = "none";} else {document.getElementById("hyrule_castle_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[8]-1) {if (tempUnique == AreaIndexes[8] - AreaIndexes[7]) {document.getElementById("ogc_break").style.display = "none";} else {document.getElementById("ogc_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[9]-1) {if (tempUnique == AreaIndexes[9] - AreaIndexes[8]) {document.getElementById("tot_break").style.display = "none";} else {document.getElementById("tot_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[10]-1) {if (tempUnique == AreaIndexes[10] - AreaIndexes[9]) {document.getElementById("fountain_break").style.display = "none";} else {document.getElementById("fountain_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[12]-1) {if (tempUnique == AreaIndexes[12] - AreaIndexes[11]) {document.getElementById("deku_break").style.display = "none";} else {document.getElementById("deku_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[13]-1) {if (tempUnique == AreaIndexes[13] - AreaIndexes[12]) {document.getElementById("lost_woods_break").style.display = "none";} else {document.getElementById("lost_woods_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[14]-1) {if (tempUnique == AreaIndexes[14] - AreaIndexes[13]) {document.getElementById("sfm_break").style.display = "none";} else {document.getElementById("sfm_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[15]-1) {if (tempUnique == AreaIndexes[15] - AreaIndexes[14]) {document.getElementById("goron_break").style.display = "none";} else {document.getElementById("goron_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[16]-1) {if (tempUnique == AreaIndexes[16] - AreaIndexes[15]) {document.getElementById("dodongos_break").style.display = "none";} else {document.getElementById("dodongos_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[17]-1) {if (tempUnique == AreaIndexes[17] - AreaIndexes[16]) {document.getElementById("dmt_break").style.display = "none";} else {document.getElementById("dmt_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[19]-1) {if (tempUnique == AreaIndexes[19] - AreaIndexes[18]) {document.getElementById("kakariko_break").style.display = "none";} else {document.getElementById("kakariko_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[20]-1) {if (tempUnique == AreaIndexes[20] - AreaIndexes[19]) {document.getElementById("graveyard_break").style.display = "none";} else {document.getElementById("graveyard_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[21]-1) {if (tempUnique == AreaIndexes[21] - AreaIndexes[20]) {document.getElementById("river_break").style.display = "none";} else {document.getElementById("river_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[22]-1) {if (tempUnique == AreaIndexes[22] - AreaIndexes[21]) {document.getElementById("domain_break").style.display = "none";} else {document.getElementById("domain_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[23]-1) {if (tempUnique == AreaIndexes[23] - AreaIndexes[22]) {document.getElementById("colossus_break").style.display = "none";} else {document.getElementById("colossus_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[24]-1) {if (tempUnique == AreaIndexes[24] - AreaIndexes[23]) {document.getElementById("wasteland_break").style.display = "none";} else {document.getElementById("wasteland_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[25]-1) {if (tempUnique == AreaIndexes[25] - AreaIndexes[24]) {document.getElementById("thieves_break").style.display = "none";} else {document.getElementById("thieves_break").style.display = "inline-block";} tempUnique = 0;}
-		if (i == AreaIndexes[26]-1) {if (tempUnique == AreaIndexes[26] - AreaIndexes[25]) {document.getElementById("fortress_break").style.display = "none";} else {document.getElementById("fortress_break").style.display = "inline-block";} tempUnique = 0;}
-	}
+  const breaks = document.querySelectorAll('br.area_breaks');
+  breaks.forEach((br, index) => {
+    let prev = br.previousElementSibling;
+    while (prev && window.getComputedStyle(prev).display === 'none') {
+        prev = prev.previousElementSibling;
+    }
+    if (prev && prev.tagName === 'BR' && !prev.classList.contains('area_breaks')) {
+        br.style.display = "inline-block";
+    } else {
+        br.style.display = "none";
+    }
+  });
 }
 
 function itemHighlights() {

@@ -1105,6 +1105,9 @@ color:#FE8B08;
 .half_break {
 	line-height: 5px;
 }
+.area_breaks {
+	line-height: 5px;
+}
 .settingsOptions {
 	font-size: 1.1em;
 	position:absolute;
