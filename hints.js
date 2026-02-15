@@ -264,8 +264,7 @@ function wothAndBarrenProcessing() {
       if (i <= 27) {
         const dungeon = dungeonMappings[i];
         
-        for (let j = AreaIndexes[i - 1]; j < AreaIndexes[i]; j++) {
-          const loc = Locations[j];
+        AreaToLocation[AreaNames[i]].forEach(loc => {
           const isUnknown = Check[loc] === "unknown";
           const isNotHint = !loc.startsWith("h_");
           const isNotBoss = !(dungeon?.bossCheck && bossStrings.includes(loc));
@@ -274,7 +273,7 @@ function wothAndBarrenProcessing() {
           if (isUnknown && isNotHint && isNotBoss && isVisible) {
             document.getElementById("text_" + loc).dispatchEvent(new Event('mousedown'));
           }
-        }
+        });
 
         if (dungeon) {
           Player[dungeon.key] = 0;

@@ -1290,7 +1290,7 @@ function updateLogicInfo() {
       document.getElementById(str).style.visibility = "visible";
       document.getElementById(str2).style.visibility = "visible";
       document.getElementById(key).style.visibility = "visible";
-      if (i < AreaIndexes[35]) {
+      if (!songLocations.includes(key)) {
         if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
         else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
         else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
@@ -1351,17 +1351,17 @@ function updateLogicInfo() {
       }
 			if(document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
 				if (i <= lastItem) {Player.logically_accessible += 1;}
-				if (i == AreaIndexes[12] - 1 && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
-			    if (i == AreaIndexes[16] - 1 && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
-				if (i == AreaIndexes[27] - 1 && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
-				if (i >= AreaIndexes[27] && i < AreaIndexes[28]) {Player.forest_logically_accessible += 1;}
-				if (i >= AreaIndexes[28] && i < AreaIndexes[27]) {Player.fire_logically_accessible += 1;}
-				if (i >= AreaIndexes[29] && i < AreaIndexes[28]) {Player.spirit_logically_accessible += 1;}
-				if (i >= AreaIndexes[30] && i < AreaIndexes[29]) {Player.shadow_logically_accessible += 1;}
-				if (i >= AreaIndexes[31] && i < AreaIndexes[30]) {Player.water_logically_accessible += 1;}
-				if (i >= AreaIndexes[32] && i < AreaIndexes[31]) {Player.ganons_logically_accessible += 1;}
-				if (i >= AreaIndexes[33] && i < AreaIndexes[32]) {Player.gtg_logically_accessible += 1;}
-				if (i >= AreaIndexes[34] && i < AreaIndexes[33]) {Player.well_logically_accessible += 1;}
+				if (key == "deku_queen_gohma" && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
+			    if (key == "dodongos_king_dodongo" && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
+				if (key == "jabu_barinade" && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
+				if (LocationToArea[key] == "Forest") {Player.forest_logically_accessible += 1;}
+				if (LocationToArea[key] == "Fire") {Player.fire_logically_accessible += 1;}
+				if (LocationToArea[key] == "Spirit") {Player.spirit_logically_accessible += 1;}
+				if (LocationToArea[key] == "Shadow") {Player.shadow_logically_accessible += 1;}
+				if (LocationToArea[key] == "Water") {Player.water_logically_accessible += 1;}
+				if (LocationToArea[key] == "Ganon's") {Player.ganons_logically_accessible += 1;}
+				if (LocationToArea[key] == "GTG") {Player.gtg_logically_accessible += 1;}
+				if (LocationToArea[key] == "Well") {Player.well_logically_accessible += 1;}
 			}
 		}
 		else if (Location_Peek[key] == true) {
