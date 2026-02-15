@@ -1538,6 +1538,13 @@ var parent = document.getElementById("normalColumn1");
 var elem = document.createElement("small"); elem.id = "title_kokiri"; elem.className = "area_titles hidden"; elem.innerHTML = "Kokiri"; parent.appendChild(elem);
 var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 for (var i = 0; i<Locations.length; i++) {
+  if (songLocations.includes(Locations[i])) {
+		parent = document.getElementById("songs");
+		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "check_input"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
+    continue;
+	}
   if (LocationToArea[Locations[i]] != LocationToArea[Locations[i-1]]) {
     var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);
   }
@@ -1717,7 +1724,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "gtg"; elem.id = "gtgSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "gtg"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Well" && LocationToArea[Locations[i-1]] == "Well") {
+	if (LocationToArea[Locations[i]] != "GTG" && LocationToArea[Locations[i-1]] == "GTG") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_from"; elem.className = "area_entrance"; elem.src = './normal/areas/kakariko.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_to"; elem.className = "area_entrance"; elem.src = './normal/areas/well.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "well"; elem.id = "well"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
@@ -1726,12 +1733,6 @@ for (var i = 0; i<Locations.length; i++) {
 	}
 	if (i < AreaIndexes[35]) {
 		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
-		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
-		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
-	}
-	else {
-		parent = document.getElementById("songs");
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "check_input"; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 	}
