@@ -834,7 +834,7 @@ function highlightNextCheck(locationID) {
     }
   }
   
-  for (i = Locations.indexOf(AreaToLocation[checkArea][0]); i < Locations.length; i++) {
+  for (let i = Locations.indexOf(AreaToLocation[checkArea][0]); i < Locations.length; i++) {
     if (isAGoodCheckSuggestion(Locations[i])) {
       toFocus = document.getElementById(Locations[i]); 
       return;

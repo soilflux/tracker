@@ -8,12 +8,12 @@
 - [ ] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
 - [ ] eliminate reliance on midUpdate() interval runs
 - [ ] remove the non-linso item tracker and add a condensed visual for 1me, 3me and stone dungeons
-- [ ] condense checklist into 6 columns
 - [ ] add flee to credits
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
 - [ ] replace usages of AreaIndexes
+- [ ] display a list of the next few checks that would be suggested assuming you entire junk
 
 - [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
 - [x] fix song layout shift

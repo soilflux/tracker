@@ -464,7 +464,7 @@ function resetWoth(element, num) {
 			index = wothAreas.indexOf(woth8)
 		if(AreaNames[i] == wothAreas[index]) {
 			for (var k = 0; k < Items.length; k++) {
-				if (((Locations.indexOf(Location[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(Location[Items[k]]) < AreaIndexes[i]) || Locations.indexOf(Location[Items[k]]) == SongIndexes[i-1] || Locations.indexOf(Location[Items[k]]) == SongIndexes2[i-1])) {
+				if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
 					if(event.button == 0 && ManualNotWotHItems[Items[k]]) {
 						ManualNotWotHItems[Items[k]] = false;
 					}
