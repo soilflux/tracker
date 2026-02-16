@@ -137,6 +137,7 @@ function highlight(x) {
 			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = true;}
 			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = true;}
 			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = true;}
+      if (document.getElementById(x.id).src.endsWith(Player.chu_img.substring(2))){Player.bombchus1 = true;}
 		}
 		else {
 			if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){Player.kokiri_sword = false; }
@@ -175,6 +176,7 @@ function highlight(x) {
 			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = false;}
 			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = false;}
 			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = false;}
+      if (document.getElementById(x.id).src.endsWith(Player.chu_img.substring(2))){Player.bombchus1 = false;}
 		}
 		
 		

@@ -14,8 +14,9 @@
 - [ ] add a 1-length input for generic important items 
 - [ ] replace usages of AreaIndexes
 - [ ] display a list of the next few checks that would be suggested assuming you entire junk
-- [x] add chus to checksummary
+- [ ] automatically check off marked duplicates if you get another one
 
+- [x] add chus to checksummary
 - [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
 - [x] fix song layout shift
 - [x] toggle water hop and bridge cross

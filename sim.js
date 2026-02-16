@@ -280,15 +280,15 @@ function simCheckAdultSpawn() {
 }
 
 function simCheckLightArrowHint() {
-	for(l = 0; l < Locations.length; l++){
-		if(SpoilerJSON["locations"][LocationToSpoilerName[Locations[l]]] == "Light Arrows") {
-			for(a = 1; a < AreaIndexes.length; a++) {
-				if(l >= AreaIndexes[a-1] && l < AreaIndexes[a]) {
-					document.getElementById("simLog").value = "Light Arrows can be found in " + AreaNamesLong[a] + ".\n" + document.getElementById("simLog").value;
-				}
-			}
-		}
-	}
+  const log = document.getElementById("simLog");
+  
+  for (const loc of Locations) {
+    if (SpoilerJSON.locations[LocationToSpoilerName[loc]] === "Light Arrows") {
+      const area = AreaNamesLong[AreaNames.indexOf(LocationToArea[loc])]; 
+      log.value = `Light Arrows can be found in ${area}.\n${log.value}`;
+      break;
+    }
+  }
 	document.getElementById("simCheckLightArrowHint").style.display = "none";
 }
 
