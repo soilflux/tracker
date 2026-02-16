@@ -1180,7 +1180,7 @@ var	gsText = [
 	"Ice Near HP",
 	"Ice Block Room"		
 ];
-	
+  
 var AreaNames= [
 	"",
 	"Kokiri",
@@ -1387,14 +1387,6 @@ Logic.gtg_keys = 0;
 Logic.min_well_keys=0;
 Logic.current_well_keys=0;
 Logic.well_keys = 0;
-Logic.forced_forest_keys=0;
-Logic.forced_fire_keys=0;
-Logic.forced_water_keys=0;
-Logic.forced_spirit_keys=0;
-Logic.forced_shadow_keys=0;
-Logic.forced_ganons_keys=0;
-Logic.forced_gtg_keys=0;
-Logic.forced_well_keys=0;
 Logic.forced_forest_boss_key = false;
 Logic.forced_fire_boss_key = false;
 Logic.forced_water_boss_key = false;

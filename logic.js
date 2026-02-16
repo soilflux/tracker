@@ -228,6 +228,7 @@ function refreshLogicForStuff() {
 	Logic.water_boss_key = Logic.forced_water_boss_key;
 	Logic.spirit_boss_key = Logic.forced_spirit_boss_key;
 	Logic.shadow_boss_key = Logic.forced_shadow_boss_key;
+  Logic.ganons_boss_key = Logic.forced_ganons_boss_key;
 	CouldHave.forest_boss_key = Logic.forced_forest_boss_key;
 	CouldHave.fire_boss_key = Logic.forced_fire_boss_key;
 	CouldHave.water_boss_key = Logic.forced_water_boss_key;
@@ -999,9 +1000,9 @@ function locationLogic(){
 	Location_Logic.spirit_childRight = Logic.spirit_temple_child_access && (Logic.slingshot || Logic.boomerang);
 	Location_Logic.spirit_childClimb1 = Logic.spirit_temple_access && (Logic.spirit_keys >=1 && Logic.projectile_both);
 	Location_Logic.spirit_childClimb2 = Logic.spirit_temple_access && (Logic.spirit_keys >=1 && Logic.projectile_both);
-	Location_Logic.spirit_map = Logic.spirit_temple_access && (Logic.spirit_keys ==5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
-	Location_Logic.spirit_sunRoom = Logic.spirit_temple_access && (Logic.spirit_keys ==5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
-	Location_Logic.spirit_rightHand = Logic.spirit_temple_access && ((Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys == 5) && ((Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.can_push_spirit_silver_block && (Logic.bow || Logic.hookshot || Logic.bomb_bag)));
+	Location_Logic.spirit_map = Logic.spirit_temple_access && (Logic.spirit_keys >=5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
+	Location_Logic.spirit_sunRoom = Logic.spirit_temple_access && (Logic.spirit_keys >=5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
+	Location_Logic.spirit_rightHand = Logic.spirit_temple_access && ((Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys >= 5) && ((Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.can_push_spirit_silver_block && (Logic.bow || Logic.hookshot || Logic.bomb_bag)));
 	Location_Logic.spirit_adultLeft = Logic.can_push_spirit_silver_block && Logic.hookshot && Logic.lullaby;
 	Location_Logic.spirit_adultRight = Logic.can_push_spirit_silver_block && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Location_Logic.spirit_rotatingMirror1 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=3;
@@ -1012,9 +1013,9 @@ function locationLogic(){
 	Location_Logic.spirit_invisible1 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag ;//&& Logic.can_see;
 	Location_Logic.spirit_invisible2 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag ;//&& Logic.can_see;
 	Location_Logic.spirit_leftHand = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag;
-	Location_Logic.spirit_bossKey = Logic.can_push_spirit_silver_block && Logic.spirit_keys ==5 && Logic.bow && Logic.lullaby && Logic.hookshot;
-	Location_Logic.spirit_tippyTop = Logic.can_push_spirit_silver_block && Logic.spirit_keys ==5 && Logic.mirror_shield;
-	Location_Logic.spirit_twinrova = Logic.can_push_spirit_silver_block && Logic.spirit_keys ==5 && Logic.mirror_shield && Logic.bomb_bag && Logic.spirit_boss_key && Logic.hookshot;
+	Location_Logic.spirit_bossKey = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.bow && Logic.lullaby && Logic.hookshot;
+	Location_Logic.spirit_tippyTop = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.mirror_shield;
+	Location_Logic.spirit_twinrova = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.mirror_shield && Logic.bomb_bag && Logic.spirit_boss_key && Logic.hookshot;
 	Location_Logic.shadow_map = Logic.shadow_temple_adult_access && (Logic.hover_boots || Logic.hookshot);
 	Location_Logic.shadow_hovers = Logic.shadow_temple_adult_access && (Logic.hover_boots || Logic.hookshot);
 	Location_Logic.shadow_compass = Logic.can_cross_shadow_gap;
@@ -1057,13 +1058,13 @@ function locationLogic(){
 	Location_Logic.gtg_silvers2 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
 	Location_Logic.gtg_silvers3 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
 	Location_Logic.gtg_silvers4 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg_eyes = Logic.gtg_adult_access && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys == 9) && Logic.hammer));
+	Location_Logic.gtg_eyes = Logic.gtg_adult_access && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys >= 9) && Logic.hammer));
 	Location_Logic.gtg_aboveEyes = Logic.gtg_adult_access && Logic.hookshot && Logic.bow ;//&& Logic.can_see;
 	Location_Logic.gtg_keese = Logic.gtg_adult_access && Logic.hookshot/*&& Logic.can_see*/;
-	Location_Logic.gtg_flamesChest = Logic.gtg_adult_access && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys == 9)) ;
-	Location_Logic.gtg_freestanding = Logic.gtg_access && (Logic.gtg_keys == 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg_right2 = Logic.gtg_access && (Logic.gtg_keys == 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg_right3 = Logic.gtg_access && (Logic.gtg_keys == 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_flamesChest = Logic.gtg_adult_access && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys >= 9)) ;
+	Location_Logic.gtg_freestanding = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_right2 = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
+	Location_Logic.gtg_right3 = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
 	Location_Logic.gtg_beamos = Logic.gtg_access && Logic.bomb_bag;
 	Location_Logic.gtg_left1 = Logic.gtg_access && Logic.gtg_keys >= 3 ;//&& Logic.can_see;
 	Location_Logic.gtg_left2 = Logic.gtg_access && Logic.gtg_keys >= 4;
@@ -1082,9 +1083,9 @@ function locationLogic(){
 	Location_Logic.well_waterFront = Logic.botw_child_access && Logic.lullaby;
 	Location_Logic.well_deadHand = Logic.botw_child_access && Logic.lullaby ;//&& Logic.kokiri_sword;
 	Location_Logic.well_invisible = Logic.botw_child_access && Logic.lullaby ;//&& Logic.can_see ;
-	Location_Logic.well_locked1 = Logic.botw_child_access && Logic.well_keys == 3 ;//&& Logic.can_see ;
-	Location_Logic.well_locked2 = Logic.botw_child_access && Logic.well_keys == 3 ;//&& Logic.can_see ;
-	Location_Logic.well_basement = Logic.botw_child_access && (Logic.bomb_bag || (((/*Logic.can_see &&*/ Logic.well_keys == 3) || Logic.can_use_dins) && Logic.goron_bracelet));
+	Location_Logic.well_locked1 = Logic.botw_child_access && Logic.well_keys >= 3 ;//&& Logic.can_see ;
+	Location_Logic.well_locked2 = Logic.botw_child_access && Logic.well_keys >= 3 ;//&& Logic.can_see ;
+	Location_Logic.well_basement = Logic.botw_child_access && (Logic.bomb_bag || (((/*Logic.can_see &&*/ Logic.well_keys >= 3) || Logic.can_use_dins) && Logic.goron_bracelet));
 	Location_Logic.zeldasSpot = true;
 	Location_Logic.eponasSpot = true;
 	Location_Logic.sariasSpot = true;
@@ -1245,7 +1246,7 @@ function locationLogic(){
 	Location_Logic.gs_forest_lobby = Logic.forest_temple_adult_access && Logic.hookshot;
 	Location_Logic.gs_forest_outdoor_east = Logic.forest_temple_adult_access && Logic.hookshot && ((Logic.bow || Logic.time) || (Logic.forest_keys >= 1 && Logic.hover_boots));
 	Location_Logic.gs_forest_outdoor_west = Logic.forest_temple_adult_access && Logic.hookshot && (((Logic.bow || Logic.time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
-	Location_Logic.gs_forest_basement = Logic.forest_temple_adult_access && Logic.hookshot && Logic.bow && Logic.goron_bracelet && Logic.forest_keys == 5;
+	Location_Logic.gs_forest_basement = Logic.forest_temple_adult_access && Logic.hookshot && Logic.bow && Logic.goron_bracelet && Logic.forest_keys >= 5;
 	Location_Logic.gs_fire_time = Logic.fire_temple_adult_access && Logic.fire_keys >= 1 && Logic.time;
 	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
 	Location_Logic.gs_fire_scarecrow_1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
@@ -1257,7 +1258,7 @@ function locationLogic(){
 	Location_Logic.gs_water_near_boss_key = Logic.can_do_water_checks && Logic.longshot && Logic.lullaby && Logic.water_keys >=4;
 	Location_Logic.gs_water_platform_room = Logic.can_do_water_checks && Logic.longshot && Logic.lullaby && Logic.water_keys >=4;
 	Location_Logic.gs_spirit_metal_fence = Logic.spirit_temple_child_access && (Logic.boomerang || Logic.slingshot);
-	Location_Logic.gs_spirit_before_child_knuckle = Logic.spirit_temple_access && (Logic.bomb_bag && Logic.boomerang && Logic.hookshot && Logic.spirit_keys >= 1) || (Logic.boomerang && Logic.spirit_keys == 5 && Logic.bomb_bag && Logic.spirit_temple_child_access) || (Logic.hookshot && Logic.silver_gauntlets && Logic.spirit_keys >= 3);
+	Location_Logic.gs_spirit_before_child_knuckle = Logic.spirit_temple_access && (Logic.bomb_bag && Logic.boomerang && Logic.hookshot && Logic.spirit_keys >= 1) || (Logic.boomerang && Logic.spirit_keys >= 5 && Logic.bomb_bag && Logic.spirit_temple_child_access) || (Logic.hookshot && Logic.silver_gauntlets && Logic.spirit_keys >= 3);
 	Location_Logic.gs_spirit_boulder_room = Logic.can_push_spirit_silver_block && Logic.time && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
 	Location_Logic.gs_spirit_lobby = Logic.can_push_spirit_silver_block && Logic.spirit_keys >= 3 && (Logic.hookshot || Logic.hover_boots);
 	Location_Logic.gs_spirit_child_climb = Logic.spirit_temple_access && Logic.spirit_keys >= 1;
@@ -1498,9 +1499,9 @@ function locationLogic(){
 		Access.gtg_silvers2 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
 		Access.gtg_silvers3 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
 		Access.gtg_silvers4 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
-		Access.gtg_eyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;  //((Has.bomb_bag || Player.current_gtg_keys == 9) && Has.hammer));
+		Access.gtg_eyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;  //((Has.bomb_bag || Player.current_gtg_keys >= 9) && Has.hammer));
 		Access.gtg_aboveEyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;//&& Has.can_see;
-		Access.gtg_keese = Has.gtg_adult_access && Has.can_climb_gtg_hole;// && (Has.can_see || (Has.bomb_bag || Player.current_gtg_keys == 9)) ;
+		Access.gtg_keese = Has.gtg_adult_access && Has.can_climb_gtg_hole;// && (Has.can_see || (Has.bomb_bag || Player.current_gtg_keys >= 9)) ;
 		Access.gtg_flamesChest = Has.gtg_adult_access && Has.can_climb_gtg_hole/*&& Has.can_see*/;
 		Access.gtg_freestanding = Has.gtg_access && (Player.current_gtg_keys >= 2 || ((Has.bomb_bag || Player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
 		Access.gtg_right2 = Has.gtg_access && (Player.current_gtg_keys >= 2 || ((Has.bomb_bag || Player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
@@ -1686,7 +1687,7 @@ function locationLogic(){
 		Access.gs_forest_lobby = Has.forest_temple_adult_access && Has.hookshot;
 		Access.gs_forest_outdoor_east = Has.forest_temple_adult_access && Has.hookshot && ((Has.bow || Has.time) || (Player.current_forest_keys >= 1 && Has.hover_boots));
 		Access.gs_forest_outdoor_west = Has.forest_temple_adult_access && Has.hookshot && (((Has.bow || Has.time) && Has.longshot) || (Player.current_forest_keys >= 1 && Has.hover_boots) || (Player.current_forest_keys >= 2 && Has.goron_bracelet && Has.bow))
-		Access.gs_forest_basement = Has.forest_temple_adult_access && Has.hookshot && Has.bow && Has.goron_bracelet && Player.current_forest_keys == 5;
+		Access.gs_forest_basement = Has.forest_temple_adult_access && Has.hookshot && Has.bow && Has.goron_bracelet && Player.current_forest_keys >= 5;
 		Access.gs_fire_time = Has.fire_temple_adult_access && Player.current_fire_keys >= 1;
 		Access.gs_fire_bomb_wall = Has.can_climb_fire_temple && (Has.bomb_bag || Player.bombchus);
 		Access.gs_fire_scarecrow_1 = Has.can_climb_fire_temple && Player.current_fire_keys >=5 && Has.hookshot;

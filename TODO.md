@@ -15,6 +15,7 @@
 - [ ] replace usages of AreaIndexes
 - [ ] display a list of the next few checks that would be suggested assuming you entire junk
 - [ ] automatically check off marked duplicates if you get another one
+- [ ] use a lowercased version of areanames in backend
 
 - [x] add chus to checksummary
 - [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
