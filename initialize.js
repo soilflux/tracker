@@ -816,7 +816,7 @@ Player.ganons_logically_accessible=0;
 Player.theme = "dark";
 Player.themeChange = true;
 	
-Player.has_chus = false;
+Player.bombchus = false;
 	
 var tempTime = 0;
 var timerHours = 0;

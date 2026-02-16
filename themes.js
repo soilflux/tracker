@@ -44,7 +44,7 @@ function dark_soli() {
 	Player.requiem_img = "./images/requiem.png";
 	Player.nocturne_img = "./images/nocturne.png";
 	Player.prelude_img = "./images/prelude.png";
-	Player.chu_img = "./images/chux.png";
+	Player.chu_img = "./images/chu.png";
 	
 	if(document.getElementById(dekuPlacement +"_req1") != null) {document.getElementById(dekuPlacement +"_req1").src = Player.kokiri_sword_img; }
 	if(document.getElementById(dodongosPlacement +"_req1") != null) {document.getElementById(dodongosPlacement +"_req1").src = Player.bomb_img; }
@@ -81,7 +81,6 @@ function dark_soli() {
 	}
 
 	document.getElementById("chuButton").src= Player.chu_img;
-	document.getElementById("chuButton").style.opacity = 1;
 	document.getElementById("gan_req2").src= Player.light_arrows_img;
 	document.getElementById("gan_req1").src= Player.magic_img;
 	document.getElementById("gan_req3").src= Player.bow_img;

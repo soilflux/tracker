@@ -192,12 +192,6 @@ function processInputs() {
 			AreaNamesIndex = AreaNames.indexOf("ToT");
 		else if(locationId == "boleroSpot")
 			AreaNamesIndex = AreaNames.indexOf("Crater");
-		
-    
-    if(input == inputs[ItemNames2.indexOf("Bombchus")]) {
-			if(Player.has_chus == false && !hinted && !peeked)
-				enableChus();
-		}
     
 		if (isLowerCase(input.charAt(0)) && isUpperCase(input.charAt(input.length-1))) {	
 			peeked = true;
@@ -589,7 +583,11 @@ function junk() {
     
     hideCheck(locationID);
 		
-		if (forcedDisplay[locationIndex]) {forcedDisplay[locationIndex] = false; Player[Check[locationID]] = true; if(Check[locationID] == "bombchus"){if(Player.has_chus == false){enableChus();} Check[locationID] = "junk";} Update(); }
+		if (forcedDisplay[locationIndex]) {
+      forcedDisplay[locationIndex] = false; 
+      Player[Check[locationID]] = true; 
+      Update(); 
+    }
 
 		if (Check[locationID] != "junk") {midUpdate();}
 		lastCheck.push(locationID);
