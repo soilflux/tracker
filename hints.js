@@ -268,9 +268,9 @@ function wothAndBarrenProcessing() {
           const isUnknown = Check[loc] === "unknown";
           const isNotHint = !loc.startsWith("h_");
           const isNotBoss = !(dungeon?.bossCheck && bossStrings.includes(loc));
-          const isVisible = document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden";
+          const isDisplayed = document.getElementById(loc).style.display != "none";
 
-          if (isUnknown && isNotHint && isNotBoss && isVisible) {
+          if (isUnknown && isNotHint && isNotBoss && isDisplayed) {
             document.getElementById("text_" + loc).dispatchEvent(new Event('mousedown'));
           }
         });

@@ -930,8 +930,7 @@ function Undo() {
 	forcedDisplay[Locations.indexOf(lastCheck[lastCheck.length-1])] = false;
 	for (var i = 0; i < AreaNames.length; i++) {
     if (LocationToArea[lastCheck[lastCheck.length-1]] == AreaNames[i]) {
-      console.log(Player[AreaImages[AreaNames[i]] + "_img"])
-      document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = Player[AreaImages[AreaNames[i]] + "_img"];
+      document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = Player[AreaNames[i] + "_img"];
     }
   }
 

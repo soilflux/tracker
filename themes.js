@@ -266,7 +266,7 @@ function dark_normie() {
     let areaName = LocationToArea[Locations[i]];
     let imgFile = "url('./normal/areas/" + AreaImages[areaName] + ".jpg')";
     if (imgFile) {
-      Player[AreaImages[areaName] + "_img"] = imgFile;
+      Player[areaName + "_img"] = imgFile;
       document.getElementById(key).style.backgroundImage = imgFile;
     }
 	}
