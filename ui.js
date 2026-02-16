@@ -250,7 +250,13 @@ function processInputs() {
 			if (!Known[Items2[inputIdx] + duplicate]) {
         Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
         Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
-        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];} else if (Items2[inputIdx] == "big_poe") {document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];} else if (inputIdx < Items2.indexOf("lullaby") && inputIdx != 4) {document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];}
+        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {
+          document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+        } else if (Items2[inputIdx] == "big_poe") {
+          document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+        } else if (inputIdx < Items2.indexOf("lullaby")) {
+          document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+        }
         Known[Items2[inputIdx] + duplicate] = true; 
         if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
         if (!hinted && !peeked){
