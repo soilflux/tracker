@@ -1749,9 +1749,9 @@ function updateWothBorders() {
 			}
 		}
 		else {
-			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-				if(Check[Locations[j]] == "unknown") {
-					document.getElementById("text_" + Locations[j]).style.border = "none";
+			for (const loc of AreaToLocation[AreaNames[i]]) {
+				if(Check[loc] == "unknown") {
+					document.getElementById("text_" + loc).style.border = "none";
 				}
 			}
 			
