@@ -12,7 +12,6 @@
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
-- [ ] replace usages of AreaIndexes
 - [ ] display a list of the next few checks that would be suggested assuming you entire junk
 - [ ] automatically check off marked duplicates if you get another one
 - [ ] use a lowercased version of areanames in backend
@@ -27,3 +26,4 @@
 - [x] toggle water hop and bridge cross
 - [x] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)
 - [x] put aminal stuff in a separate file
+- [x] replace usages of AreaIndexes

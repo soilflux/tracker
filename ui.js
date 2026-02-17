@@ -622,7 +622,7 @@ function junk() {
 					else if(locationId.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
 					else if(locationId.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
 					else if(locationId.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-					else if(locationIndex < AreaIndexes[27]){}
+					else if(!songLocations.includes(locationId)){}
 					else {return;}
 					Check[locationId]="junk";
 				}
