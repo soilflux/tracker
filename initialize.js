@@ -1724,11 +1724,9 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "well"; elem.id = "wellSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "well"; parent.appendChild(elem);   
 	}
-	if (i < AreaIndexes[35]) {
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
-		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
-		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
-	}
+  var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
+  var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
+  var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
 }
 
 if (localStorage.getItem("showAreaTitles") === "true") areaTitlesToggle();
