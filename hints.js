@@ -257,7 +257,7 @@ function wothAndBarrenProcessing() {
   for (let i = 1; i <= 35; i++) {
     AreaAge[i] = (Area[i] === "barren") ? (AreaAge[i] || 0) + 1 : 0;
 
-    if (AreaAge[i] === 3) {
+    if (AreaAge[i] === 1) {
       hinted = true;
       thisIsHinted = true;
 
