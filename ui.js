@@ -164,34 +164,6 @@ function processInputs() {
 		if(Items2[inputIdx] == "scale" && Known["scale2"]) continue;
 		if(Items2[inputIdx] == "wallet" && Known["wallet3"]) continue;
 		if((Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") && (Known["prescription"] || Known["claim_check"])) continue;
-		
-		for (var areaIdx = AreaIndexes.length - 1; areaIdx > 0; areaIdx--) {
-			if (i < AreaIndexes[areaIdx]) {
-				var AreaNamesIndex = areaIdx;
-			} else {
-				break;
-			}
-		}
-		if(locationId == "zeldasSpot")
-			AreaNamesIndex = AreaNames.indexOf("");
-		else if(locationId == "eponasSpot")
-			AreaNamesIndex = AreaNames.indexOf("Ranch");
-		else if(locationId == "oot")
-			AreaNamesIndex = AreaNames.indexOf("Field");
-		else if(locationId == "serenadeSpot")
-			AreaNamesIndex = AreaNames.indexOf("Ice");
-		else if(locationId == "stormsSpot" || locationId == "nocturneSpot")
-			AreaNamesIndex = AreaNames.indexOf("Kakariko");
-		else if(locationId == "sunsSpot")
-			AreaNamesIndex = AreaNames.indexOf("Graveyard");
-		else if(locationId == "requiemSpot")
-			AreaNamesIndex = AreaNames.indexOf("Colossus");
-		else if(locationId == "sariasSpot" || locationId == "minuetSpot")
-			AreaNamesIndex = AreaNames.indexOf("SFM");
-		else if(locationId == "preludeSpot")
-			AreaNamesIndex = AreaNames.indexOf("ToT");
-		else if(locationId == "boleroSpot")
-			AreaNamesIndex = AreaNames.indexOf("Crater");
     
 		if (isLowerCase(input.charAt(0)) && isUpperCase(input.charAt(input.length-1))) {	
 			peeked = true;
@@ -245,11 +217,11 @@ function processInputs() {
         Check[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate; 
         Location[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
         if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {
-          document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+          document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + LocationToArea[locationId] + ": " + checkNames[i];
         } else if (Items2[inputIdx] == "big_poe") {
-          document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+          document.getElementById("bottle"+duplicate+"_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + LocationToArea[locationId] + ": " + checkNames[i];
         } else if (inputIdx < Items2.indexOf("lullaby")) {
-          document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + AreaNames[AreaNamesIndex] + ": " + checkNames[i];
+          document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + LocationToArea[locationId] + ": " + checkNames[i];
         }
         Known[Items2[inputIdx] + duplicate] = true; 
         if (inputs[inputIdx] == "big") {Known.big_poe = true; Location.big_poe = document.getElementById(locationId).id;}
@@ -275,19 +247,19 @@ function processInputs() {
 	}
 }
 
-function hideCheck(locationID) {
-  if (document.getElementById("shiftChecks").value == "YES" && Locations.indexOf(locationID) <= lastItem) {
-    document.getElementById(locationID).style.display = "none";
-    document.getElementById("text_" + locationID).style.display = "none";
-    document.getElementById("br_" + locationID).style.display = "none";
+function hideCheck(locationId) {
+  if (document.getElementById("shiftChecks").value == "YES" && Locations.indexOf(locationId) <= lastItem) {
+    document.getElementById(locationId).style.display = "none";
+    document.getElementById("text_" + locationId).style.display = "none";
+    document.getElementById("br_" + locationId).style.display = "none";
   }
   else {
-    document.getElementById(locationID).style.visibility = "hidden";
-    document.getElementById(locationID).style.display = "inline-block";
-    document.getElementById("text_" + locationID).style.display = "inline-block";
-    document.getElementById("br_" + locationID).style.display = "inline-block";
-    document.getElementById("text_" + locationID).style.visibility = "hidden";
-    document.getElementById("br_" + locationID).style.visibility = "hidden";
+    document.getElementById(locationId).style.visibility = "hidden";
+    document.getElementById(locationId).style.display = "inline-block";
+    document.getElementById("text_" + locationId).style.display = "inline-block";
+    document.getElementById("br_" + locationId).style.display = "inline-block";
+    document.getElementById("text_" + locationId).style.visibility = "hidden";
+    document.getElementById("br_" + locationId).style.visibility = "hidden";
   }
 }
 
@@ -523,46 +495,46 @@ function linSoClick() {
 
 function junk() {
 	var type = event.button;
-	var locationID = event.target.id;
-	locationID = locationID.substring('text_'.length);
-	var locationIndex = Locations.indexOf(locationID);
+	var locationId = event.target.id;
+	locationId = locationId.substring('text_'.length);
+	var locationIndex = Locations.indexOf(locationId);
 	
 	if(!simActive) {
-		if(type == 0 && !event.altKey && Check[locationID] == "unknown") {
-			if(locationID.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
-			else if(locationID.includes("fire_") && Player.fire_checks_remaining != 0 && locationID != "fire_grave") {Player.fire_checks_remaining -=1;}
-			else if(locationID.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
-			else if(locationID.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
-			else if(locationID.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
-			else if(locationID.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
-			else if(locationID.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
-			else if(locationID.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
-			Check[locationID]="junk";
+		if(type == 0 && !event.altKey && Check[locationId] == "unknown") {
+			if(locationId.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
+			else if(locationId.includes("fire_") && Player.fire_checks_remaining != 0 && locationId != "fire_grave") {Player.fire_checks_remaining -=1;}
+			else if(locationId.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
+			else if(locationId.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
+			else if(locationId.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
+			else if(locationId.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
+			else if(locationId.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
+			else if(locationId.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
+			Check[locationId]="junk";
 		}
 		
-		else if(type == 1 || (type == 0 && event.altKey) || document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")]) {
-			if(locationID.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationID;}
-			else if(locationID.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationID;}
-			else if(locationID.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationID;}
-			else if(locationID.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationID;}
-			else if(locationID.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationID;}
-			else if(locationID.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationID;}
+		else if(type == 1 || (type == 0 && event.altKey) || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")]) {
+			if(locationId.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationId;}
+			else if(locationId.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationId;}
+			else if(locationId.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationId;}
+			else if(locationId.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationId;}
+			else if(locationId.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationId;}
+			else if(locationId.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationId;}
 			else {
-				if(locationID.startsWith("shop_")) {if (Shop_Logic[locationID] == "giants_wallet") {Shop_Logic[locationID] = "accessible"} else if (Shop_Logic[locationID] == "accessible") {Shop_Logic[locationID] = "adults_wallet"} else {Shop_Logic[locationID] = "giants_wallet"}}	
+				if(locationId.startsWith("shop_")) {if (Shop_Logic[locationId] == "giants_wallet") {Shop_Logic[locationId] = "accessible"} else if (Shop_Logic[locationId] == "accessible") {Shop_Logic[locationId] = "adults_wallet"} else {Shop_Logic[locationId] = "giants_wallet"}}	
 				return;
 			}
-			Check[locationID]="boss_key";
+			Check[locationId]="boss_key";
 		}
 		
-		else if ((type == 2 && !event.altKey) || document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")]) {
-			if(locationID.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
-			else if(locationID.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
-			else if(locationID.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
-			else if(locationID.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
-			else if(locationID.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
-			else if(locationID.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
-			else if(locationID.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
-			else if(locationID.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+		else if ((type == 2 && !event.altKey) || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")]) {
+			if(locationId.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+			else if(locationId.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+			else if(locationId.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+			else if(locationId.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+			else if(locationId.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+			else if(locationId.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+			else if(locationId.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+			else if(locationId.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 			else {
         if ((type == 2 && !event.altKey)) {
           if (event.target.style.color == "magenta") {event.target.style.color = "green";}
@@ -570,50 +542,50 @@ function junk() {
         }
 			return;
 			}
-			Check[locationID]="small_key";
+			Check[locationId]="small_key";
 		}
 		else if (type == 2 && event.altKey) {
 			if (event.target.style.color == "magenta") {event.target.style.color = "green";}
 			else {event.target.style.color = "magenta"; event.target.style.opacity = "1"}
 			return;
 		}
-		else if (Check[locationID] == "unknown") {
-			Check[locationID]="junk";
+		else if (Check[locationId] == "unknown") {
+			Check[locationId]="junk";
 		}
     
-    hideCheck(locationID);
+    hideCheck(locationId);
 		
 		if (forcedDisplay[locationIndex]) {
       forcedDisplay[locationIndex] = false; 
-      Player[Check[locationID]] = true; 
+      Player[Check[locationId]] = true; 
       Update(); 
     }
 
-		if (Check[locationID] != "junk") {midUpdate();}
-		lastCheck.push(locationID);
+		if (Check[locationId] != "junk") {midUpdate();}
+		lastCheck.push(locationId);
 		Update();
 		
 		if(!thisIsHinted && !hinted) {
-			highlightNextCheck(locationID);
+			highlightNextCheck(locationId);
 		}
 	}
 	else {
 		// Sim active
-		if(LocationToSpoilerName[locationID] == undefined)
-			console.log(locationID + " is not a known location in the sim");
+		if(LocationToSpoilerName[locationId] == undefined)
+			console.log(locationId + " is not a known location in the sim");
             
-        if(((locationID == "kokiri_storms" && Area[AreaNames.indexOf("Kokiri")] != "barren") || ((locationID == "hyrule_remoteGrotto" || locationID == "hyrule_openGrotto" || locationID == "hyrule_marketGrotto") && Area[AreaNames.indexOf("Field")] != "barren") || (locationID == "lw_generic" && Area[AreaNames.indexOf("Lost Woods")] != "barren") || (locationID == "crater_grotto" && Area[AreaNames.indexOf("Crater")] != "barren") || (locationID == "kakariko_grotto" && Area[AreaNames.indexOf("Kakariko")] != "barren") || (locationID == "river_grotto" && Area[AreaNames.indexOf("River")] != "barren") || (locationID == "trail_storms" && Area[AreaNames.indexOf("Trail")] != "barren")) && Check["h_" + locationID] != "junk") {
-            document.getElementById("text_" + "h_"+ locationID).dispatchEvent(new Event('mousedown'));
+        if(((locationId == "kokiri_storms" && Area[AreaNames.indexOf("Kokiri")] != "barren") || ((locationId == "hyrule_remoteGrotto" || locationId == "hyrule_openGrotto" || locationId == "hyrule_marketGrotto") && Area[AreaNames.indexOf("Field")] != "barren") || (locationId == "lw_generic" && Area[AreaNames.indexOf("Lost Woods")] != "barren") || (locationId == "crater_grotto" && Area[AreaNames.indexOf("Crater")] != "barren") || (locationId == "kakariko_grotto" && Area[AreaNames.indexOf("Kakariko")] != "barren") || (locationId == "river_grotto" && Area[AreaNames.indexOf("River")] != "barren") || (locationId == "trail_storms" && Area[AreaNames.indexOf("Trail")] != "barren")) && Check["h_" + locationId] != "junk") {
+            document.getElementById("text_" + "h_"+ locationId).dispatchEvent(new Event('mousedown'));
         }
         var spoilerBossName = "";
-        if(locationID == "deku_queen_gohma") spoilerBossName = "Queen Gohma";
-        if(locationID == "dodongos_king_dodongo") spoilerBossName = "King Dodongo";
-        if(locationID == "jabu_barinade") spoilerBossName = "Barinade";
-        if(locationID == "forest_phantomGanon") spoilerBossName = "Phantom Ganon";
-        if(locationID == "fire_volvagia") spoilerBossName = "Volvagia";
-        if(locationID == "water_morpha") spoilerBossName = "Morpha";
-        if(locationID == "spirit_twinrova") spoilerBossName = "Twinrova";
-        if(locationID == "shadow_bongo") spoilerBossName = "Bongo Bongo";
+        if(locationId == "deku_queen_gohma") spoilerBossName = "Queen Gohma";
+        if(locationId == "dodongos_king_dodongo") spoilerBossName = "King Dodongo";
+        if(locationId == "jabu_barinade") spoilerBossName = "Barinade";
+        if(locationId == "forest_phantomGanon") spoilerBossName = "Phantom Ganon";
+        if(locationId == "fire_volvagia") spoilerBossName = "Volvagia";
+        if(locationId == "water_morpha") spoilerBossName = "Morpha";
+        if(locationId == "spirit_twinrova") spoilerBossName = "Twinrova";
+        if(locationId == "shadow_bongo") spoilerBossName = "Bongo Bongo";
         
         if (spoilerBossName != "") {
             if(SpoilerJSON["locations"][spoilerBossName] == "Light Medallion") document.getElementById("markMedallions").value = document.getElementById("markMedallions").value.replaceAt(0,rewardInputDict[spoilerBossName]);
@@ -627,152 +599,152 @@ function junk() {
             if(SpoilerJSON["locations"][spoilerBossName] == "Zora Sapphire") document.getElementById("markStones").value = document.getElementById("markStones").value.replaceAt(4,rewardInputDict[spoilerBossName]);
         }
 		
-		if(!locationID.startsWith("h_")) { 
+		if(!locationId.startsWith("h_")) { 
 			// clicked an item check, not a gossip hint
 		
 			var input = "";
 			
-			if(LocationToSpoilerName[locationID] != undefined){
-				if(SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"] != undefined)
-					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"]];
+			if(LocationToSpoilerName[locationId] != undefined){
+				if(SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"] != undefined)
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"]];
 				else
-					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[locationID]]];
+					input = SpoilerItemToInput[SpoilerJSON["locations"][LocationToSpoilerName[locationId]]];
 			}
 			
-			if(input == undefined || document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")] || document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")] || document.getElementById(locationID).value == inputs[ItemNames2.indexOf("Bombchus")] || (input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && !LocationToSpoilerName[locationID].includes("Freestanding"))) {
+			if(input == undefined || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")] || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")] || document.getElementById(locationId).value == inputs[ItemNames2.indexOf("Bombchus")] || (input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && !LocationToSpoilerName[locationId].includes("Freestanding"))) {
 
-				if(document.getElementById(locationID).value.toLowerCase() != inputs[inputNames.indexOf("Boss Key")] && document.getElementById(locationID).value.toLowerCase() != inputs[inputNames.indexOf("Small Key")]) {
-					if(locationID.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
-					else if(locationID.includes("fire_") && Player.fire_checks_remaining != 0 && locationID != "fire_grave") {Player.fire_checks_remaining -=1;}
-					else if(locationID.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
-					else if(locationID.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
-					else if(locationID.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
-					else if(locationID.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
-					else if(locationID.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
-					else if(locationID.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
+				if(document.getElementById(locationId).value.toLowerCase() != inputs[inputNames.indexOf("Boss Key")] && document.getElementById(locationId).value.toLowerCase() != inputs[inputNames.indexOf("Small Key")]) {
+					if(locationId.includes("forest_") && Player.forest_checks_remaining != 0) {Player.forest_checks_remaining -=1;}
+					else if(locationId.includes("fire_") && Player.fire_checks_remaining != 0 && locationId != "fire_grave") {Player.fire_checks_remaining -=1;}
+					else if(locationId.includes("water_") && Player.water_checks_remaining != 0) {Player.water_checks_remaining -=1;}
+					else if(locationId.includes("spirit_") && Player.spirit_checks_remaining != 0) {Player.spirit_checks_remaining -=1;}
+					else if(locationId.includes("shadow_") && Player.shadow_checks_remaining != 0) {Player.shadow_checks_remaining -=1;}
+					else if(locationId.includes("ganons_") && Player.ganons_checks_remaining != 0) {Player.ganons_checks_remaining -=1;}
+					else if(locationId.includes("gtg_") && Player.gtg_checks_remaining != 0) {Player.gtg_checks_remaining -=1;}
+					else if(locationId.includes("well_") && Player.well_checks_remaining != 0) {Player.well_checks_remaining -=1;}
 					else if(locationIndex < AreaIndexes[27]){}
 					else {return;}
-					Check[locationID]="junk";
+					Check[locationId]="junk";
 				}
 				
-				else if(document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")]) {
-					if(locationID.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationID;}
-					else if(locationID.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationID;}
-					else if(locationID.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationID;}
-					else if(locationID.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationID;}
-					else if(locationID.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationID;}
-					else if(locationID.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationID;}
+				else if(document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")]) {
+					if(locationId.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationId;}
+					else if(locationId.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationId;}
+					else if(locationId.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationId;}
+					else if(locationId.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationId;}
+					else if(locationId.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationId;}
+					else if(locationId.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationId;}
 					else {
-						if(locationID.startsWith("shop_")) {if (Shop_Logic[locationID] == "giants_wallet") {Shop_Logic[locationID] = "accessible"} else if (Shop_Logic[locationID] == "accessible") {Shop_Logic[locationID] = "adults_wallet"} else {Shop_Logic[locationID] = "giants_wallet"}}	
+						if(locationId.startsWith("shop_")) {if (Shop_Logic[locationId] == "giants_wallet") {Shop_Logic[locationId] = "accessible"} else if (Shop_Logic[locationId] == "accessible") {Shop_Logic[locationId] = "adults_wallet"} else {Shop_Logic[locationId] = "giants_wallet"}}	
 						return;
 					}
-					Check[locationID]="boss_key";
+					Check[locationId]="boss_key";
 				}
 				
-				else if (document.getElementById(locationID).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")]) {
-					if(locationID.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
-					else if(locationID.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
-					else if(locationID.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
-					else if(locationID.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
-					else if(locationID.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
-					else if(locationID.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
-					else if(locationID.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
-					else if(locationID.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+				else if (document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")]) {
+					if(locationId.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+					else if(locationId.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+					else if(locationId.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+					else if(locationId.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+					else if(locationId.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+					else if(locationId.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+					else if(locationId.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+					else if(locationId.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 					else {return;}
-					Check[locationID]="small_key";
+					Check[locationId]="small_key";
 				}
-                if(SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"] != undefined)
-					item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+                if(SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"] != undefined)
+					item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				else
-					item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+					item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				if (item.startsWith("Rupee")) {var count = item.replace(/[^0-9]/g, ""); modifyRupees(parseInt(count));}
-				document.getElementById(locationID).style.display = "none";
-				document.getElementById("text_" + locationID).style.display = "none";
-				document.getElementById("br_" + locationID).style.display = "none";
+				document.getElementById(locationId).style.display = "none";
+				document.getElementById("text_" + locationId).style.display = "none";
+				document.getElementById("br_" + locationId).style.display = "none";
 				
-				if (forcedDisplay[locationIndex]) {forcedDisplay[locationIndex] = false; Player[Check[locationID]] = true; Update(); }
+				if (forcedDisplay[locationIndex]) {forcedDisplay[locationIndex] = false; Player[Check[locationId]] = true; Update(); }
 				
-				lastCheck.push(locationID);
+				lastCheck.push(locationId);
 				
-				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && (LocationToSpoilerName[locationID].includes("Freestanding") || LocationToSpoilerName[locationID].includes("LH Underwater Item")))
-					document.getElementById("simLog").value = LocationToSpoilerName[locationID] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
+				if(input == inputs[ItemNames2.indexOf("Bombchus")] && type == 2 && (LocationToSpoilerName[locationId].includes("Freestanding") || LocationToSpoilerName[locationId].includes("LH Underwater Item")))
+					document.getElementById("simLog").value = LocationToSpoilerName[locationId] + " -> Bombchus (peeked)\n" + document.getElementById("simLog").value;
 			}
-			else if((type == 0 && Check[locationID] == "unknown") || document.getElementById(locationID).value.toLowerCase() == inputs[ItemNames2.indexOf("Bombchus")]) {
+			else if((type == 0 && Check[locationId] == "unknown") || document.getElementById(locationId).value.toLowerCase() == inputs[ItemNames2.indexOf("Bombchus")]) {
 				// left click, get the item
 				if(input != inputs[inputNames.indexOf("Boss Key")] && input != inputs[inputNames.indexOf("Small Key")])
-					document.getElementById(locationID).value = input;
+					document.getElementById(locationId).value = input;
 				
 				else if(input == inputs[inputNames.indexOf("Boss Key")]) {
-					if(locationID.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationID;}
-					else if(locationID.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationID;}
-					else if(locationID.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationID;}
-					else if(locationID.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationID;}
-					else if(locationID.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationID;}
-					else if(locationID.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationID;}
+					if(locationId.includes("forest_") && !Player.forest_boss_key) {Player.forest_boss_key = true; Location.forest_boss_key = locationId;}
+					else if(locationId.includes("fire_") && !Player.fire_boss_key) {Player.fire_boss_key = true; Location.fire_boss_key = locationId;}
+					else if(locationId.includes("water_") && !Player.water_boss_key) {Player.water_boss_key = true; Location.water_boss_key = locationId;}
+					else if(locationId.includes("spirit_") && !Player.spirit_boss_key) {Player.spirit_boss_key = true; Location.spirit_boss_key = locationId;}
+					else if(locationId.includes("shadow_") && !Player.shadow_boss_key) {Player.shadow_boss_key = true; Location.shadow_boss_key = locationId;}
+					else if(locationId.includes("ganons_") && !Player.ganons_boss_key) {Player.ganons_boss_key = true; Location.ganons_boss_key = locationId;}
 					else {
-						if(locationID.startsWith("shop_")) {if (Shop_Logic[locationID] == "giants_wallet") {Shop_Logic[locationID] = "accessible"} else if (Shop_Logic[locationID] == "accessible") {Shop_Logic[locationID] = "adults_wallet"} else {Shop_Logic[locationID] = "giants_wallet"}}	
+						if(locationId.startsWith("shop_")) {if (Shop_Logic[locationId] == "giants_wallet") {Shop_Logic[locationId] = "accessible"} else if (Shop_Logic[locationId] == "accessible") {Shop_Logic[locationId] = "adults_wallet"} else {Shop_Logic[locationId] = "giants_wallet"}}	
 						return;
 					}
-					Check[locationID]="boss_key";
+					Check[locationId]="boss_key";
 				}
 				
 				else if (input == inputs[inputNames.indexOf("Small Key")]) {
-					if(locationID.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
-					else if(locationID.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
-					else if(locationID.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
-					else if(locationID.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
-					else if(locationID.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
-					else if(locationID.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
-					else if(locationID.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
-					else if(locationID.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
+					if(locationId.includes("forest_") && Player.current_forest_keys < 5) {Player.current_forest_keys +=1;}
+					else if(locationId.includes("fire_") && Player.current_fire_keys < 8) {Player.current_fire_keys +=1;}
+					else if(locationId.includes("water_") && Player.current_water_keys < 6) {Player.current_water_keys +=1;}
+					else if(locationId.includes("spirit_") && Player.current_spirit_keys < 5) {Player.current_spirit_keys +=1;}
+					else if(locationId.includes("shadow_") && Player.current_shadow_keys < 5) {Player.current_shadow_keys +=1;}
+					else if(locationId.includes("gtg_") && Player.current_gtg_keys < 9) {Player.current_gtg_keys +=1;}
+					else if(locationId.includes("well_") && Player.current_well_keys < 3) {Player.current_well_keys +=1;}
+					else if(locationId.includes("ganons_") && Player.current_ganons_keys < 2) {Player.current_ganons_keys +=1;}
 					else {return;}
-					Check[locationID]="small_key";
+					Check[locationId]="small_key";
 				}
 				
-				if(SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"] != undefined)
-					item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if(SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"] != undefined)
+					item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				else
-					item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
-				document.getElementById("simLog").value = LocationToSpoilerName[locationID] + " -> " + item + "\n" + document.getElementById("simLog").value;
+					item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				document.getElementById("simLog").value = LocationToSpoilerName[locationId] + " -> " + item + "\n" + document.getElementById("simLog").value;
                 if (item.startsWith("Bombchus")) {var count = item.replace(/[^0-9]/g, ""); chuCount += parseInt(count); document.getElementById("chuCount").innerHTML = "Chus: " + chuCount;}
 			}
-			else if(type == 2 && Check[locationID] == "unknown" && document.getElementById(locationID).value != "???") {
+			else if(type == 2 && Check[locationId] == "unknown" && document.getElementById(locationId).value != "???") {
 				// right click, peek the item
 				
 				var temp_item = "";
-				if(SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"] != undefined)
-					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+				if(SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"] != undefined)
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]]["item"].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				else
-					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
 				
-				if (LocationToSpoilerName[locationID].includes("Freestanding") || LocationToSpoilerName[locationID].includes("LH Underwater Item") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
-					item = SpoilerJSON["locations"][LocationToSpoilerName[locationID]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
-					document.getElementById(locationID).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				if (LocationToSpoilerName[locationId].includes("Freestanding") || LocationToSpoilerName[locationId].includes("LH Underwater Item") || temp_item.includes("Small Key") || temp_item.includes("Boss Key")) {
+					item = SpoilerJSON["locations"][LocationToSpoilerName[locationId]].replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)");
+					document.getElementById(locationId).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 					
 					if(input == inputs[ItemNames2.indexOf("Bombchus")])
 						item = "Bombchus";
 				}
 				else {
 					item = "unknown big chest";
-					document.getElementById(locationID).value = "???";
+					document.getElementById(locationId).value = "???";
 				}
-				document.getElementById("simLog").value = LocationToSpoilerName[locationID] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
+				document.getElementById("simLog").value = LocationToSpoilerName[locationId] + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
-			else if (Check[locationID] != "unknown" && Check[locationID] != "junk" && forcedDisplay[locationIndex]) {
+			else if (Check[locationId] != "unknown" && Check[locationId] != "junk" && forcedDisplay[locationIndex]) {
 				forcedDisplay[locationIndex] = false; 
-				Player[Check[locationID]] = true; 
+				Player[Check[locationId]] = true; 
 			}
 		}
 		else {
 			// clicked a gossip hint
-			hint = SpoilerJSON["gossip_stones"][LocationToSpoilerName[locationID]]["text"].replaceAll("#", "");
-			simProcessHint(hint, locationID);
+			hint = SpoilerJSON["gossip_stones"][LocationToSpoilerName[locationId]]["text"].replaceAll("#", "");
+			simProcessHint(hint, locationId);
 			document.getElementById("simLog").value = hint.replaceAll("Small Key (Gerudo Training Ground)", "Small Key (GTG)") + "\n" + document.getElementById("simLog").value;
-			Check[locationID] = "junk";
-			document.getElementById(locationID).style.display = "none";
-			document.getElementById("text_" + locationID).style.display = "none";
-			document.getElementById("br_" + locationID).style.display = "none";
-			lastCheck.push(locationID);
+			Check[locationId] = "junk";
+			document.getElementById(locationId).style.display = "none";
+			document.getElementById("text_" + locationId).style.display = "none";
+			document.getElementById("br_" + locationId).style.display = "none";
+			lastCheck.push(locationId);
 		}
 		Update(); 
 	}
@@ -796,36 +768,36 @@ function junkUltra() {
 }
 
 function junkItem(x) {
-	let locationID = x.id;
+	let locationId = x.id;
 
 
-	hideCheck(locationID);
-	lastCheck.push(locationID);
+	hideCheck(locationId);
+	lastCheck.push(locationId);
 	midUpdate();
   flash();
 	
 	if(!thisIsHinted && !hinted) {
-		highlightNextCheck(locationID);
+		highlightNextCheck(locationId);
 	}
 }
 
-function highlightNextCheck(locationID) {
+function highlightNextCheck(locationId) {
   let d = new Date();
   if ((d.getTime() - ageSetStamp) > 30000) {
     age = "";
   }
-  if (adult.includes(locationID)) {
+  if (adult.includes(locationId)) {
     age = "adult";
     ageSetStamp = d.getTime();
   }
-  else if (child.includes(locationID)) {
+  else if (child.includes(locationId)) {
     age = "child";
     ageSetStamp = d.getTime();
   }
 		
-  let checkArea = LocationToArea[locationID]; 
+  let checkArea = LocationToArea[locationId]; 
     
-  for (const loc of AreaToLocation[checkArea].slice(AreaToLocation[checkArea].indexOf(locationID))) {
+  for (const loc of AreaToLocation[checkArea].slice(AreaToLocation[checkArea].indexOf(locationId))) {
     if (isAGoodCheckSuggestion(loc)) {
       toFocus = document.getElementById(loc); 
       return;

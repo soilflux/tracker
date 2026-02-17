@@ -16,6 +16,10 @@
 - [ ] display a list of the next few checks that would be suggested assuming you entire junk
 - [ ] automatically check off marked duplicates if you get another one
 - [ ] use a lowercased version of areanames in backend
+- [ ] 1 character input for mark rest of current age checks in an area junk
+- [ ] don't list chus in woth if bombchus aren't in logic
+- [ ] duplicate some checks on the checklist (for example, crate waterfall should be before child hylia, but also next to gtg)
+- [ ] extra <br> by cluster instead of by area (for example: colossus, wasteland, fortress, gtg, valley are effectively all the same play and it should be structured as such)
 
 - [x] add chus to checksummary
 - [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
