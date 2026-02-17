@@ -1436,7 +1436,6 @@ function updateLogicInfo() {
 			}
 		}
 		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
-    document.getElementById(str).style.letterSpacing = "-1.3px";
 	}
 	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; document.getElementById("text_deku_lobby").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_above_king").style.color = "#FFD700"; document.getElementById("text_dodongos_above_king").style.opacity = 1; document.getElementById("text_dodongos_above_king").style.fontWeight = "bold";}

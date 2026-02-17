@@ -728,16 +728,9 @@ overflow: hidden;
 	color: chartreuse;
 	display: inline-block;
 	opacity: 1;
-}
-.logic_check_text_not_have{
-	font-size: 16px;
-	color: 						chartreuse;
-	font-weight:bold;
-	display: inline-block;
-	opacity: .5;
-	margin-top:2px;
-	margin-bottom:1px;
+  margin-top:1px;
 	vertical-align: top;
+  letter-spacing: -1.3px;
 }
 .known_check_text{
 	font-size: 16px;
@@ -745,31 +738,19 @@ overflow: hidden;
 	font-weight:normal;
 	display: inline-block;
 	opacity: .5;
+  margin-top:1px;
 	vertical-align: top;
-}
-.logic_check_text2{
-	vertical-align: top;
-	font-size: 16px;
-	font-weight: normal;
-	color: 	chartreuse;
-	display: inline-block;
-	margin-bottom:2px;
+  letter-spacing: -1.3px;
 }
 .access_check_text{
-	vertical-align: top;
 	font-size: 16px;
 	color: 						yellow;
 	font-weight:normal;
 	display: inline-block;
 	opacity: .5;
-}
-.access_check_text_not_have{
-	vertical-align: top;
-	font-size: 16px;
-	color: 						yellow;
-	font-weight:normal;
-	display: inline-block;
-	opacity: .2;
+  margin-top:1px;
+  vertical-align: top;
+  letter-spacing: -1.3px;
 }
 .ool_check_text{
 	vertical-align: top;
@@ -778,24 +759,18 @@ overflow: hidden;
 	color: 	white;
 	display: inline-block;
 	opacity: .5;
-}
-.ool_check_text2{
-	vertical-align: top;
-	font-size: 16px;
-	font-weight: normal;
-	color: 	white;
-	display: inline-block;
-	margin-bottom:2px;
+  margin-top:1px;
+  vertical-align: top;
+  letter-spacing: -1.3px;
 }
 .gossip_text {
 	font-size: 16px;
 	color: pink;
-	font-weight:bold;
 	display: inline-block;
 	opacity: 1;
-	margin-top:2px;
-	margin-bottom:1px;
+	margin-top:1px;
 	vertical-align: top;
+  letter-spacing: -1.3px;
 }
 #timerControl {
 	display:none;	
