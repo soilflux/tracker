@@ -1707,12 +1707,12 @@ function updateWothBorders() {
 				document.getElementById(songText).style.border = "solid 2px red";
 			}
 			
-			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-				if (!Locations[j].startsWith("h_"))
-					document.getElementById("text_" + Locations[j]).style.border = "solid red 1px";
+			AreaToLocation[AreaNames[i]].forEach(loc => {
+				if (!loc.startsWith("h_"))
+					document.getElementById("text_" + loc).style.border = "solid red 1px";
 				else
-					document.getElementById("text_" + Locations[j]).style.border = "";
-			}
+					document.getElementById("text_" + loc).style.border = "";
+			});
 		}
 		else {
 			AreaToLocation[AreaNames[i]]?.forEach(loc => {
