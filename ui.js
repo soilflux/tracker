@@ -1064,7 +1064,6 @@ function updateRules() {
     rules.fae = "banned";
     rules.waterHop = "banned"; 
     rules.valleyWithHook = "banned"; 
-    document.getElementById("barren_text").style.display = "inline-block"; 
     document.getElementById("barren_input1").style.display = "inline-block"; 
     document.getElementById("barren_input2").style.display = "inline-block"; 
     document.getElementById("barren_input3").style.display = "inline-block"; 
@@ -1094,7 +1093,6 @@ function updateRules() {
     rules.dungeonEr = "off";
     rules.skullSanity = "off";
     rules.hintsType = "path";
-    document.getElementById("barren_text").style.display = "inline-block";
     document.getElementById("barren_input1").style.display = "inline-block";
     document.getElementById("barren_input2").style.display = "inline-block";
     document.getElementById("barren_input3").style.display = "inline-block";
@@ -1125,7 +1123,6 @@ function updateRules() {
     rules.dungeonEr = "off";
     rules.skullSanity = "off";
     rules.hintsType = "path";
-    document.getElementById("barren_text").style.display = "inline-block"; 
     document.getElementById("barren_input1").style.display = "inline-block"; 
     document.getElementById("barren_input2").style.display = "inline-block"; 
     document.getElementById("barren_input3").style.display = "inline"; 
@@ -1162,7 +1159,6 @@ function updateRules() {
     rules.dungeonEr = "off";
     rules.skullSanity = "off";
     rules.hintsType = "path";
-    document.getElementById("barren_text").style.display = "inline-block";
     document.getElementById("barren_input1").style.display = "inline-block";
     document.getElementById("barren_input2").style.display = "inline-block";
     document.getElementById("barren_input3").style.display = "inline-block";
@@ -1201,7 +1197,6 @@ function updateRules() {
     rules.fae = "allowed";
     rules.waterHop = "allowed"; 
     rules.valleyWithHook = "allowed"; 
-    document.getElementById("barren_text").style.display = "inline-block";
     document.getElementById("barren_input1").style.display = "inline-block";
     document.getElementById("barren_input2").style.display = "inline-block";
     document.getElementById("barren_input3").style.display = "none";
@@ -1225,7 +1220,6 @@ function updateRules() {
 		document.getElementById("woth_input6").style.display = "none";
   
   if(rules.hintsType == "path") { 
-		document.getElementById("woth_text").innerHTML = "Path / Important / Lights"; 
 		document.getElementById("path_boss1").style.display = "inline-block"; 
 		document.getElementById("path_boss2").style.display = "inline-block"; 
 		document.getElementById("path_boss3").style.display = "inline-block"; 
@@ -1245,7 +1239,6 @@ function updateRules() {
 		else
 			document.getElementById("path_arrow6").style.display = "none";
 	}else {
-		document.getElementById("woth_text").innerHTML = "WOTH"; 
 		document.getElementById("path_boss1").style.display = "none"; 
 		document.getElementById("path_boss2").style.display = "none"; 
 		document.getElementById("path_boss3").style.display = "none"; 

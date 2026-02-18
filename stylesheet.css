@@ -349,17 +349,21 @@ body {
   opacity: 0.2;
 }
 
-.hint_input {
+.barren_input {
   width: 30px;
   vertical-align: top;
   margin-bottom: 0px;
   background-color: #181818;
+  filter: drop-shadow(0px 0px 2px red);
   color: white;
 }
-
-.hint_text {
-  font-size: 20px;
-  font-weight: bold;
+.woth_input {
+  width: 30px;
+  vertical-align: top;
+  margin-bottom: 0px;
+  background-color: #181818;
+  filter: drop-shadow(0px 0px 2px blue);
+  color: white;
 }
 
 #important_hints_div {
