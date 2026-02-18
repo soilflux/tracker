@@ -314,18 +314,8 @@ body {
   margin-bottom: 0px;
 }
 
-#stonePic {
-  height: 25px;
-  width: 25px;
-}
-
 #quest1 {
   display: none;
-}
-
-#medallionPic {
-  height: 25px;
-  width: 25px;
 }
 
 #triforcePic {
@@ -1067,17 +1057,38 @@ body {
   border-radius: 7.5%;
 }
 
+#stonePic {
+  height: 16px;
+  width: 16px;
+  position:absolute;
+  right:50px;
+  top:129px;
+}
 #markStones {
-  margin-left: 0px;
-  margin-top: 3px;
-  margin-right: 2px;
+  width: 50px;
   color: white;
+  position:absolute;
+  text-align:center;
+  right:4px;
+  top:123px;
+  font-size:12px;
 }
 
+#medallionPic {
+  height: 16px;
+  width: 16px;
+  position:absolute;
+  right:160px;
+  top:129px;
+}
 #markMedallions {
-  margin-top: 3px;
-  width: 95px;
+  width: 90px;
   color: white;
+  position:absolute;
+  right:74px;
+  text-align:center;
+  top:123px;
+  font-size:12px;
 }
 
 #mark_ER_Dungeons {
