@@ -532,16 +532,10 @@
           <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
           <input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
           <br /><button onmousedown="download()">Download Log</button><br /><br />
-          <label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
-          <select class="settingsOptions" id="gossips">
+          <select class="settingsOptions" id="gossips" style="display:none">
             <option value="OFF">OFF</option>
             <option value="ON">ON</option>
           </select><br><br class="half_break">  
-          <label class="settingsLabels" for="bombchusInLogic">CHUS IN LOGIC?</label>
-          <select class="settingsOptions" id="bombchusInLogic">
-            <option value="YES">YES</option>
-            <option value="NO">NO</option>
-          </select><br><br class="half_break">
         </div>
         <div id = "statsColumn">
           <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions" id="desiredAnimal"><option value="random">random</option></select><br><br class="half_break">

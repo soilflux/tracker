@@ -1034,31 +1034,32 @@ function updateInputs() {
 	}
 }
 
-function changePreset() {
+function updateRules() {
   if (rules.preset == "aminalFunhouse") {
-    rules.valleyBridgeWithHookshot = "banned"; 
-    rules.waterHop = "banned"; 
-    rules.kzSkip = "banned";
+    rules.skullSanity = "off";
+    rules.scrubSanity = "off";
+    rules.shopSanity = "off";
+    rules.cowSanity = "off";
+    rules.smallKeys = "ownDungeon";
     rules.bossKeys = "remove"; 
-    rules.ocarinas = "vanilla"; 
+    rules.dungeonEr = "off";
     rules.bridge = "nineRewards";
+    rules.ganonBk = "remove";
     rules.deku = "closed"; 
     rules.fountain = "closed"; 
-    rules.blueFireArrows = "off";
-    rules.smallKeys = "ownDungeon";
-    rules.cowSanity = "off";
+    rules.ocarinas = "vanilla"; 
     rules.gerudoCard = "vanilla"; 
     rules.beans = "vanilla";
-    rules.preplantBeans = "off";
     rules.expensive = "vanilla";
-    rules.ganonBk = "remove";
     rules.csmc = "on";
-    rules.shopSanity = "off";
-    rules.scrubSanity = "off";
-    rules.fae = "banned";
-    rules.dungeonEr = "off";
-    rules.skullSanity = "off";
+    rules.chusInLogic = "off";
+    rules.preplantBeans = "off";
+    rules.blueFireArrows = "off";
     rules.hintsType = "path";
+    rules.kzSkip = "banned";
+    rules.fae = "banned";
+    rules.waterHop = "banned"; 
+    rules.valleyWithHook = "banned"; 
     document.getElementById("barren_text").style.display = "inline-block"; 
     document.getElementById("barren_input1").style.display = "inline-block"; 
     document.getElementById("barren_input2").style.display = "inline-block"; 
@@ -1079,9 +1080,9 @@ function changePreset() {
     rules.cowSanity = "off";
     rules.gerudoCard = "vanilla";
     rules.beans = "vanilla";
-    rules.preplantBeans = "off";
     rules.expensive = "vanilla";
     rules.ganonBk = "remove";
+    rules.preplantBeans = "off";
     rules.csmc = "on";
     rules.shopSanity = "off";
     rules.scrubSanity = "off";
@@ -1172,27 +1173,30 @@ function changePreset() {
     Known.lens = true;
   }
 	else if (rules.preset == "s9") {
-    rules.kzSkip = "allowed";
+    rules.skullSanity = "off";
+    rules.scrubSanity = "off";
+    rules.shopSanity = "off";
+    rules.cowSanity = "off";
+    rules.smallKeys = "ownDungeon";
     rules.bossKeys = "ownDungeon"; 
-    rules.ocarinas = "vanilla"; 
+    rules.dungeonEr = "ganonsExcluded"; 
     rules.bridge = "vanilla"; 
+    rules.ganonBk = "remove";
     rules.deku = "closed"; 
     rules.fountain = "closed"; 
-    rules.blueFireArrows = "on";
-    rules.smallKeys = "ownDungeon";
-    rules.cowSanity = "off";
+    rules.ocarinas = "vanilla"; 
     rules.gerudoCard = "vanilla";
     rules.beans = "vanilla";
-    rules.preplantBeans = "off";
     rules.expensive = "vanilla";
-    rules.ganonBk = "remove";
     rules.csmc = "on";
-    rules.shopSanity = "off";
-    rules.scrubSanity = "off";
-    rules.fae = "allowed";
-    rules.dungeonEr = "ganonsExcluded";
-    rules.skullSanity = "off";
+    rules.chusInLogic = "off"
+    rules.preplantBeans = "off";
+    rules.blueFireArrows = "on";
     rules.hintsType = "path";
+    rules.kzSkip = "allowed";
+    rules.fae = "allowed";
+    rules.waterHop = "allowed"; 
+    rules.valleyWithHook = "allowed"; 
     document.getElementById("barren_text").style.display = "inline-block";
     document.getElementById("barren_input1").style.display = "inline-block";
     document.getElementById("barren_input2").style.display = "inline-block";
@@ -1201,39 +1205,28 @@ function changePreset() {
     document.getElementById("barren_input5").style.display = "none";
     document.getElementById("markAdultLocation").value = "tot";
     alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];
+  } 
+  
+  if (rules.preset == "leagueS9") {
+    document.getElementById("important_hints_div").style.display = "block";
+    document.getElementById("important_input3").style.display = "inline-block";
+  }
+  else {
+    document.getElementById("important_hints_div").style.display = "none";
   }
   
-  Object.keys(rulesConfig).forEach(key => {
-    document.getElementById(key).value = rules[key];
-  });
-}
-
-function updateLogicInfo() {
-	if (rules.preset == "leagueS9") {
-		document.getElementById("important_hints_div").style.display = "block";
-		document.getElementById("important_input3").style.display = "inline-block";
-	}
-	else {
-		document.getElementById("important_hints_div").style.display = "none";
-	}
-	
-	document.getElementById("woth_input1").style.display = "inline";
-	document.getElementById("woth_input2").style.display = "inline";
-	document.getElementById("woth_input3").style.display = "inline";
-	document.getElementById("woth_input4").style.display = "inline";
-	document.getElementById("woth_input5").style.display = "inline";
-	if(rules.preset == "s9")
+  if(rules.preset == "s9")
 		document.getElementById("woth_input6").style.display = "inline";
 	else
 		document.getElementById("woth_input6").style.display = "none";
-	
-	if(rules.hintsType == "path") { 
+  
+  if(rules.hintsType == "path") { 
 		document.getElementById("woth_text").innerHTML = "Path / Important / Lights"; 
 		document.getElementById("path_boss1").style.display = "inline-block"; 
 		document.getElementById("path_boss2").style.display = "inline-block"; 
 		document.getElementById("path_boss3").style.display = "inline-block"; 
 		document.getElementById("path_boss4").style.display = "inline-block"; 
-			document.getElementById("path_boss5").style.display = "inline-block";
+	  document.getElementById("path_boss5").style.display = "inline-block";
 		if(rules.preset == "s9")
 			document.getElementById("path_boss6").style.display = "inline-block"; 
 		else
@@ -1247,8 +1240,7 @@ function updateLogicInfo() {
 			document.getElementById("path_arrow6").style.display = "inline";
 		else
 			document.getElementById("path_arrow6").style.display = "none";
-	}
-	else {
+	}else {
 		document.getElementById("woth_text").innerHTML = "WOTH"; 
 		document.getElementById("path_boss1").style.display = "none"; 
 		document.getElementById("path_boss2").style.display = "none"; 
@@ -1263,30 +1255,35 @@ function updateLogicInfo() {
 		document.getElementById("path_arrow5").style.display = "none"; 
 		document.getElementById("path_arrow6").style.display = "none";
 	}
-		
-	if (rules.preset == "aminalFunhouse") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block"; document.getElementById("pieceDungeons").value = "dedojafofiwaspsh";}
-	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
-	
-	if(rules.blueFireArrows == "off")
+  
+  if (rules.preset == "aminalFunhouse") {
+    document.getElementById("triforcePic").style.display = "inline-block"; 
+    document.getElementById("pieceDungeons").style.display = "inline-block"; 
+    document.getElementById("pieceDungeons").value = "dedojafofiwaspsh";
+  }else {
+    document.getElementById("triforcePic").style.display = "none"; 
+    document.getElementById("pieceDungeons").style.display = "none";
+  }
+  
+  if(rules.blueFireArrows == "off")
 		document.getElementById("ice_arrows_location_div").style.display = "none";
 	else
 		document.getElementById("ice_arrows_location_div").style.display = "inline";
-	
-	if(rules.fountain == "closed") {
+  
+  if(rules.fountain == "closed") {
 		document.getElementById("rutos_letter_location_div").style.display = "inline";
 		document.getElementById("bottle4_location_div").style.display = "none";
-	}
-	else {
+	}else {
 		document.getElementById("rutos_letter_location_div").style.display = "none";
 		document.getElementById("bottle4_location_div").style.display = "inline";
 	}
-	
-	if(rules.shopSanity == "OFF")
+  
+  if(rules.shopSanity == "OFF")
 		document.getElementById("wallet3_location_div").style.display = "none";
 	else
 		document.getElementById("wallet3_location_div").style.display = "inline";
-	
-	if(rules.smallKeys == "keyRings") {
+  
+  if(rules.smallKeys == "keyRings") {
 		document.getElementById("forest_key_ring_location_div").style.display = "inline";
 		document.getElementById("fire_key_ring_location_div").style.display = "inline";
 		document.getElementById("water_key_ring_location_div").style.display = "inline";
@@ -1295,8 +1292,7 @@ function updateLogicInfo() {
 		document.getElementById("well_key_ring_location_div").style.display = "inline";
 		document.getElementById("gtg_key_ring_location_div").style.display = "inline";
 		document.getElementById("ganons_key_ring_location_div").style.display = "inline";
-	}
-	else {
+	}else {
 		document.getElementById("forest_key_ring_location_div").style.display = "none";
 		document.getElementById("fire_key_ring_location_div").style.display = "none";
 		document.getElementById("water_key_ring_location_div").style.display = "none";
@@ -1306,26 +1302,50 @@ function updateLogicInfo() {
 		document.getElementById("gtg_key_ring_location_div").style.display = "none";
 		document.getElementById("ganons_key_ring_location_div").style.display = "none";
 	}
-	
-	if(rules.gerudoCard == "shuffled") {
+  
+  if(rules.gerudoCard == "shuffled") {
 		document.getElementById("gerudo_card_location_div").style.display = "inline";
-	}
-	else {
+	}else {
 		document.getElementById("gerudo_card_location_div").style.display = "none";
 	}
-	
-	if(rules.beans == "shuffled") {
+  if(rules.beans == "shuffled") {
 		document.getElementById("magic_bean_pack_location_div").style.display = "inline";
-	}
-	else {
+	}else {
 		document.getElementById("magic_bean_pack_location_div").style.display = "none";
 	}
+  if (rules.bossKeys == "remove") {
+    Player.forest_boss_key = true; 
+    Player.fire_boss_key = true; 
+    Player.water_boss_key = true; 
+    Player.spirit_boss_key = true; 
+    Player.shadow_boss_key = true; 
+    removeBKFlag = true;
+  } else if (removeBKFlag) {
+    removeBKFlag = false; 
+    Player.forest_boss_key = false; 
+    Player.fire_boss_key = false; 
+    Player.water_boss_key = false; 
+    Player.spirit_boss_key = false; 
+    Player.shadow_boss_key = false;
+  }
+  
+  Object.keys(rulesConfig).forEach(key => {
+    document.getElementById(key).value = rules[key];
+  });
+}
+
+function updateLogicInfo() {
+	document.getElementById("woth_input1").style.display = "inline";
+	document.getElementById("woth_input2").style.display = "inline";
+	document.getElementById("woth_input3").style.display = "inline";
+	document.getElementById("woth_input4").style.display = "inline";
+	document.getElementById("woth_input5").style.display = "inline";
+	
 	document.getElementById("biggoron_sword_location_div").style.display = "none";
 	document.getElementById("nayrus_love_location_div").style.display = "none";
 	document.getElementById("stone_of_agony_location_div").style.display = "none";
 	
-	if (rules.bossKeys == "remove") {Player.forest_boss_key = true; Player.fire_boss_key = true; Player.water_boss_key = true; Player.spirit_boss_key = true; Player.shadow_boss_key = true; removeBKFlag = true;}
-	else if (removeBKFlag) {removeBKFlag = false; Player.forest_boss_key = false; Player.fire_boss_key = false; Player.water_boss_key = false; Player.spirit_boss_key = false; Player.shadow_boss_key = false;}
+	
 	
 	Logic.gold_skulltulas = 0;
 	var i;

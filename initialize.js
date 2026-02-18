@@ -63,21 +63,24 @@ const rulesConfig = {
   cowSanity:                 { label: "Cow Sanity", options: ["Off", "On"] },
   smallKeys:               { label: "Small Keys", options: ["Own Dungeon", "Remove", "Key Rings"] },
   bossKeys:                  { label: "Boss Keys", options: ["Own Dungeon", "Remove"] },
-  dungeonEr:                 { label: "Dungeon ER", options: ["Off", "Ganon's Excluded"] },
-  deku:               { label: "Deku", options: ["Closed", "Open"] },
-  fountain:                { label: "Fountain", options: ["Closed", "Open"] },
+  dungeonEr:                 { label: "Dungeon ER", options: ["Off", "Ganon's Excluded"] }, 
   bridge:                { label: "Bridge", options: ["All Meds", "Open", "Vanilla", "Three Stones", "Two Medals", "Three Medals", "FOur Medals", "Five Medals", "One Reward", "Two Rewards", "Three Rewards", "Four Rewards", "Five Rewards", "Six Rewards", "Seven Rewards", "Eight Rewards", "Nine Rewards"] },
   ganonBk:                { label: "Ganon BK", options: ["Remove", "LACS"] },
-  Csmc:                { label: "CSMC", options: ["Off", "On"] },
+  deku:               { label: "Deku", options: ["Closed", "Open"] },
+  fountain:                { label: "Fountain", options: ["Closed", "Open"] },
   ocarinas:                { label: "Ocarinas", options: ["Vanilla", "Shuffled"] },
   gerudoCard:                { label: "Gerudo Card", options: ["Vanilla", "Shuffled"] },
   beans:                { label: "Beans", options: ["Vanilla", "Shuffled"] },
   expensive:                { label: "Expensive", options: ["Vanilla", "Shuffled"] },
-  blueFireArrows:                { label: "Blu Fire Arrw", options: ["Off", "On"] },
+  csmc:                { label: "CSMC", options: ["Off", "On"] },
+  chusInLogic:                { label: "Chus In Logic", options: ["Off", "On"] },
   preplantBeans:                { label: "Preplant Beans", options: ["Off", "On"] },
+  blueFireArrows:                { label: "Blu Fire Arrw", options: ["Off", "On"] },
   hintType:                { label: "Hints Type", options: ["WotH", "Path"] },
   kzSkip:                { label: "KZ Skip", options: ["Banned", "Allowed"] },
-  Fae:                { label: "FAE", options: ["Banned", "Allowed"] },
+  fae:                { label: "FAE", options: ["Banned", "Allowed"] },
+  waterHop:                { label: "Water Hop", options: ["Banned", "Allowed"] },
+  valleyWithHook:                { label: "Valley w/ Hook", options: ["Banned", "Allowed"] },
 };
 const container = document.getElementById('settingsColumn');
 
@@ -118,7 +121,7 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   input.addEventListener('change', (e) => {
     rules[key] = e.target.value;
     localStorage.setItem("rules_" + key, e.target.value);
-    if (key == "preset") changePreset();
+    updateRules();
   });
 });
 
@@ -1479,7 +1482,7 @@ Spawn.adult_zf_fairy_ool = false;
 Rules = {};
 rules.kzSkip = "allowed";
 rules.waterHop = "allowed";
-rules.valleyBridgeWithHookshot = "allowed";
+rules.valleyWithHook = "allowed";
   
 var woth1 = "unknown";
 var woth2 = "unknown";
@@ -2724,6 +2727,7 @@ Player.zeldas_letter = true;
 
 showNewPatchNotes();
 linsoControl(); linsoControl();
+updateRules();
 setInterval(slowUpdate,3000);
 setInterval(midUpdate,1500);
 setInterval(fastUpdate,70);
