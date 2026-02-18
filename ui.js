@@ -1411,7 +1411,7 @@ function updateLogicInfo() {
 		}
 		
 		if (rules.shopSanity != "4" && Locations[i].startsWith("shop_")) {unusedLocations.push(i);}
-		if (rules.cowSanity == "on" && Locations[i].startsWith("cow_")) {unusedLocations.push(i);}
+		if (rules.cowSanity == "off" && Locations[i].startsWith("cow_")) {unusedLocations.push(i);}
 		if (document.getElementById("gossips").value != "ON" && Locations[i].startsWith("h_")) {unusedLocations.push(i);}
 		if (rules.ganonBk == "lacs" && Locations[i].startsWith("lacs")) {unusedLocations.push(i);}
 		if (rules.ocarinas == "vanilla" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {unusedLocations.push(i);}

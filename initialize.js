@@ -999,8 +999,6 @@ var LocationToArea = {
     "colossus_bean": "Colossus", "requiemSpot": "Colossus", "colossus_fairy": "Colossus", "gs_colossus_soil": "Colossus", "gs_colossus_hill": "Colossus", "gs_colossus_tree": "Colossus", "scrub_colossus_1": "Colossus", "scrub_colossus_2": "Colossus", "h_colossus": "Colossus",
     // Haunted Wasteland
     "gs_wasteland": "Wasteland", "wasteland_carpet": "Wasteland", "wasteland": "Wasteland",
-    // Gerudo's Fortress
-    "fortress_card": "Fortress", "gs_fortress_top": "Fortress", "gerudo_roof": "Fortress", "gerudo_archery_1": "Fortress", "gerudo_archery_2": "Fortress", "gs_fortress_archery": "Fortress",
     // Jabu Jabu's Belly
     "gs_jabu_vines": "Jabu", "scrub_jabu": "Jabu", "jabu_map": "Jabu", "jabu_compass": "Jabu", "jabu_boomerang": "Jabu", "gs_jabu_near_octo_1": "Jabu", "gs_jabu_near_octo_2": "Jabu", "gs_jabu_near_boss": "Jabu", "jabu_barinade": "Jabu",
     // Forest Temple
@@ -1015,6 +1013,8 @@ var LocationToArea = {
     "water_compass": "Water", "water_map": "Water", "water_cracked": "Water", "water_torches": "Water", "gs_water_near_boss_key": "Water", "water_bossKey": "Water", "gs_water_south_basement": "Water", "water_block": "Water", "gs_water_central": "Water", "water_pillar": "Water", "gs_water_platform_room": "Water", "water_dLink": "Water", "gs_water_river": "Water", "water_river": "Water", "water_dragon": "Water", "water_morpha": "Water",
     // Ganon's Castle
     "scrub_ganons_1": "Ganon's", "scrub_ganons_2": "Ganon's", "scrub_ganons_3": "Ganon's", "scrub_ganons_4": "Ganon's", "ganons_lightTrial1": "Ganon's", "ganons_lightTrial2": "Ganon's", "ganons_lightTrial3": "Ganon's", "ganons_lightTrial4": "Ganon's", "ganons_lightTrial5": "Ganon's", "ganons_lightTrial6": "Ganon's", "ganons_lightTrial7": "Ganon's", "ganons_lightTrialLullaby": "Ganon's", "ganons_spiritTrial1": "Ganon's", "ganons_spiritTrial2": "Ganon's", "ganons_forestTrial": "Ganon's", "ganons_waterTrial1": "Ganon's", "ganons_waterTrial2": "Ganon's", "ganons_shadowTrial1": "Ganon's", "ganons_shadowTrial2": "Ganon's", "ganons_bossKey": "Ganon's",
+    // Gerudo's Fortress
+    "fortress_card": "Fortress", "gs_fortress_top": "Fortress", "gerudo_roof": "Fortress", "gerudo_archery_1": "Fortress", "gerudo_archery_2": "Fortress", "gs_fortress_archery": "Fortress",
     // Gerudo Training Ground
     "gtg_lobbyLeft": "GTG", "gtg_lobbyRight": "GTG", "gtg_stalfos": "GTG", "gtg_wolfos": "GTG", "gtg_silvers1": "GTG", "gtg_silvers2": "GTG", "gtg_silvers3": "GTG", "gtg_silvers4": "GTG", "gtg_eyes": "GTG", "gtg_aboveEyes": "GTG", "gtg_keese": "GTG", "gtg_flamesChest": "GTG", "gtg_freestanding": "GTG", "gtg_right2": "GTG", "gtg_right3": "GTG", "gtg_beamos": "GTG", "gtg_left1": "GTG", "gtg_left2": "GTG", "gtg_left3": "GTG", "gtg_left4": "GTG", "gtg_final": "GTG", "gtg_toilet": "GTG",
     // Bottom of the Well
@@ -1056,9 +1056,6 @@ var Locations = [
 	"shield_grave", "graveyard_box", "race_1", "race_2", "gravedigging_tour", "gs_graveyard_soil", "gs_graveyard_wall", "redead_grave", "composers_grave","h_nocturne",
 	"gs_river_tree", "scrub_river_1", "scrub_river_2", "river_bean_salesman", "river_pillar", "frogs_1", "river_grotto", "gs_river_near_grotto", "gs_river_above_bridge", "river_ledge", "gs_river_ladder", "frogs_2", "h_river_grotto", "h_river_pillar", "h_river_domain",
 	"shop_domain_TL", "shop_domain_TR", "shop_domain_BR", "shop_domain_BL", "zora_torches", "zora_diving", "thaw_king", "gs_domain", "h_domain",
-	"colossus_bean", "colossus_fairy", "gs_colossus_soil", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", "h_colossus",
-	"gs_wasteland", "wasteland_carpet", "wasteland",
-	"fortress_card", "gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery", 
 	"gs_jabu_vines", "scrub_jabu", "jabu_map", "jabu_compass", "jabu_boomerang", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
 	"forest_first", "gs_forest_first", "gs_forest_lobby", "forest_stalfos", "forest_midCourtyard", "gs_forest_outdoor_east", "forest_highCourtyard", "forest_lowCourtyard", "forest_blockRoom", "forest_bossKey", "forest_floormaster", "gs_forest_outdoor_west", "forest_red", "forest_bow", "forest_blue", "forest_fallingCeiling", "forest_nearBoss", "gs_forest_basement", "forest_phantomGanon",
 	"fire_nearBoss", "gs_fire_basement", "fire_hammer1", "fire_hammer2", "fire_lavaOpen", "gs_fire_time", "fire_lavaBomb", "fire_volvagia", "fire_lowerMaze", "gs_fire_bomb_wall", "fire_sideRoom", "fire_map", "fire_upperMaze", "fire_shortcut", "gs_fire_scarecrow_1", "gs_fire_scarecrow_2", "fire_scarecrow", "fire_compass", "fire_sotGoron", "fire_top",
@@ -1066,7 +1063,10 @@ var Locations = [
 	"shadow_map", "shadow_hovers", "shadow_compass", "shadow_earlySilvers", "gs_shadow_like_like", "shadow_spinning1", "shadow_spinning2", "shadow_spikesLower", "gs_shadow_crusher", "shadow_spikesUpper", "shadow_spikesSwitch", "shadow_redeadSilvers", "gs_shadow_giant_pot", "shadow_pot", "shadow_wind", "shadow_bombable", "shadow_gibdos", "gs_shadow_near_boat", "shadow_dins1", "shadow_dins2", "gs_shadow_three_pots", "shadow_floormaster", "shadow_bongo",
 	"water_compass", "water_map", "water_cracked", "water_torches", "gs_water_near_boss_key", "water_bossKey", "gs_water_south_basement", "water_block", "gs_water_central", "water_pillar", "gs_water_platform_room", "water_dLink", "gs_water_river", "water_river", "water_dragon", "water_morpha",
 	"scrub_ganons_1", "scrub_ganons_2", "scrub_ganons_3", "scrub_ganons_4", "ganons_lightTrial1", "ganons_lightTrial2", "ganons_lightTrial3", "ganons_lightTrial4", "ganons_lightTrial5", "ganons_lightTrial6", "ganons_lightTrial7", "ganons_lightTrialLullaby", "ganons_spiritTrial1", "ganons_spiritTrial2", "ganons_forestTrial", "ganons_waterTrial1", "ganons_waterTrial2", "ganons_shadowTrial1", "ganons_shadowTrial2", "ganons_bossKey",
-	"gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1",  "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
+	"colossus_bean", "colossus_fairy", "gs_colossus_soil", "gs_colossus_hill", "gs_colossus_tree", "scrub_colossus_1", "scrub_colossus_2", "h_colossus",
+  "gs_wasteland", "wasteland_carpet", "wasteland", 
+  "fortress_card", "gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery",
+  "gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1",  "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
 	"well_fakeLeft", "well_frontBombable", "well_centerBig", "well_fakeRight", "well_centerSmall", "well_backBombable", "well_waterLeft", "well_coffin", "well_waterFront", "well_invisible", "well_deadHand", "gs_well_west_inner", "gs_well_east_inner", "well_locked1", "well_locked2", "gs_well_like_like", "well_basement",
 	"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
 ];
@@ -1094,10 +1094,7 @@ var checkNames = [
 	/*Kakariko*/"Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Bazaar 1", "Bazaar 2", "Bazaar 3", "Bazaar 4", "Potion 1", "Potion 2", "Potion 3", "Potion 4", "Roof", "Rear Gr", "Hag", "Windmll", "Anju's", "Cow", "Archery", "Redead", "Cuccos", "*Tree", "*Guard", "*Tower", "*Archery", "*GS house", "*Impas", "Cow Milk", "Grotto",
 	/*Graveyard*/"Shield", "Crate", "Racing", "Racing", "Touring", "*Soil", "*Wall", "Redead", "Composr", "Nocturne",
 	/*River*/"*Tree", "Scrub", "Scrub", "Bean", "Pillar", "Frogs 1", "Grotto", "*Near Gr", "*Bridge", "Ledge", "*Ladder", "Frogs 2", "Grotto", "Pillar", "Water",
-	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Diving", "King Z", "*Skull", "Domain",
-	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
-	/*Wasteland*/"*Skull", "Carpet", "Torches",
-	/*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
+	/*Domain*/"Shop 1", "Shop 2", "Shop 3", "Shop 4", "Torches", "Diving", "King Z", "*Skull", "Domain",	
 	/*Jabu Jabu*/"*Vines", "Scrub", "Map Ch", "Compass", "Boom", "*B4 Octo", "*B4 Octo", "*B4 Boss", "Barinade",
 	/*Forest Temple*/"First", "*First", "*Lobby", "Stalfos", "C Hook", "*C Hook", "C Top", "C Well", "Shoot", "Boss Ky", "Floor", "*Arch", "Red Poe", "Fa. Bow", "Blu Poe", "Falling", "Nr Boss", "*Base", "Phantom",
 	/*Fire Temple*/"Nr Boss", "*Hammer", "Hammer", "Hammer", "La Open", "*SoT", "La Bomb", "Volvagia", "Low Cell", "*Maze", "Side Rm.", "Map Ch", "Hgh Cell", "Shortcut", "*Pierre", "*Pierre", "Pierre", "Cmpass", "Top Gor", "MEGA",
@@ -1105,7 +1102,10 @@ var checkNames = [
 	/*Shadow Temple*/"Map Ch", "Hovers", "Cmpass", "Early Slv", "*Spinning", "Spinning", "Spinning", "Crush L", "*Crush", "Crush H", "Crush H", "Mid Slv", "*Pot Rm", "Pot Rm", "Wind", "Bomb", "Gibdos", "*Boat", "Din Wal", "Din Wal", "*3 Pots", "Floor", "Bongo",
 	/*Water Temple*/"Cmpass", "Map Ch", "Cracked", "Torches", "*Near BK", "Boss Ky", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "Morpha",
 	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Lght 1", "Lght 2", "Lght 3", "Lght 4", "Lght 5", "Lght 6", "Lght Cl", "Lght Lu", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Sha 1", "Sha 2", "Boss Ky",
-	/*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Above", "Enemis", "In Fire", "Right 1", "Right 2", "Right 3", "Beamo", "Left 1",  "Left 2", "Left 3", "Left 4", "Final", "Toilet",
+	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
+  /*Wasteland*/"*Skull", "Carpet", "Torches",	
+  /*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
+  /*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Above", "Enemis", "In Fire", "Right 1", "Right 2", "Right 3", "Beamo", "Left 1",  "Left 2", "Left 3", "Left 4", "Final", "Toilet",
 	/*Bottom of the Well*/"Fake L", "F Bmb", "C Big", "Fake R", "C Small", "B Bmb", "Watr L", "Coffin", "Watr F", "Invisibl", "D Hand", "*Door L", "*Door R", "Lockd 1", "Lockd 2", "*Lockd", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
@@ -1579,9 +1579,6 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
     continue;
 	}
-  if (LocationToArea[Locations[i]] != LocationToArea[Locations[i-1]]) {
-    var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);
-  }
 	if (LocationToArea[Locations[i]] != "Kokiri" && LocationToArea[Locations[i-1]] == "Kokiri") {
 		var elem = document.createElement("small"); elem.id = "title_ranch"; elem.className = "area_titles hidden"; elem.innerHTML = "Lon Lon"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
@@ -1676,7 +1673,8 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.id = "title_domain"; elem.className = "area_titles hidden"; elem.innerHTML = "Domain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Domain" && LocationToArea[Locations[i-1]] == "Domain") {
+	if (LocationToArea[Locations[i]] == "Colossus" && LocationToArea[Locations[i-1]] != "Colossus") {
+    parent = document.getElementById("dung4");
 		var elem = document.createElement("small"); elem.id = "title_colossus"; elem.className = "area_titles hidden"; elem.innerHTML = "Colossus"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
@@ -1688,7 +1686,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.id = "title_fortress"; elem.className = "area_titles hidden"; elem.innerHTML = "Fortress"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Fortress" && LocationToArea[Locations[i-1]] == "Fortress") {
+	if (LocationToArea[Locations[i]] == "Jabu" && LocationToArea[Locations[i-1]] != "Jabu") {
 		var elem = document.createElement("small"); elem.id = "title_jabu"; elem.className = "area_titles hidden"; elem.innerHTML = "Jabu"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_to"; elem.className = "area_entrance"; elem.src = './normal/areas/jabu.jpg'; parent.appendChild(elem);
@@ -1750,8 +1748,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "ganons"; elem.id = "ganonsSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "ganons"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Ganon's" && LocationToArea[Locations[i-1]] == "Ganon's") {
-		parent = document.getElementById("dung4");
+	if (LocationToArea[Locations[i]] == "GTG" && LocationToArea[Locations[i-1]] != "GTG") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fortress.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_to"; elem.className = "area_entrance"; elem.src = './normal/areas/gtg.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "gtg"; elem.id = "gtg"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
@@ -1768,6 +1765,9 @@ for (var i = 0; i<Locations.length; i++) {
   var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
   var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
   var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
+  if (LocationToArea[Locations[i+1]] != LocationToArea[Locations[i]]) {
+    var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);
+  }
 }
 
 if (localStorage.getItem("showAreaTitles") === "true") areaTitlesToggle();

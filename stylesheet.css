@@ -67,6 +67,7 @@ body {
   letter-spacing: -5px;
   margin-left: -1px;
   margin-bottom: -4px;
+  margin-top:-4px;
   position: relative;
   bottom: 1px;
 }
@@ -76,6 +77,7 @@ body {
   font-size: 21px;
   margin-left: 2px;
   margin-bottom: -4px;
+  margin-top:-4px;
   position: relative;
   bottom: 1px;
 }
@@ -85,6 +87,7 @@ body {
   font-size: 21px;
   margin-left: -2px;
   margin-bottom: -4px;
+  margin-top:-4px;
   position: relative;
   bottom: 1px;
 }
@@ -125,7 +128,7 @@ body {
 }
 
 #normalColumn1 {
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .track_text {
@@ -408,7 +411,7 @@ body {
 }
 
 .column {
-  margin-top: 2px;
+  margin-top: 4px;
   float: left;
   width: 89px;
 }
@@ -709,7 +712,7 @@ body {
 }
 
 .dungcolumn {
-  top: -2px;
+  top: 4px;
   float: left;
   position: relative;
   width: 89px;
