@@ -418,8 +418,6 @@ function saveStuff() {
   localStorage.setItem("simSeed", document.getElementById("simSeed").value);
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
-  localStorage.setItem("shiftChecks", document.getElementById("shiftChecks").value);
-  localStorage.setItem("flashFeedback", document.getElementById("flashFeedback").value);
   localStorage.setItem("inputPresets", document.getElementById("inputPresets").value);
 }
 
@@ -846,7 +844,7 @@ String.prototype.replaceAt = function(index, replacement) {
 }
 
 function flash() {
-  if (document.getElementById("flashFeedback").value === "NO") {
+  if (rules.flashOnInput === "off") {
     return;
   }
   const toFlash = document.getElementById('hintInput');

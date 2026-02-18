@@ -56,6 +56,8 @@ document.getElementById("markMedallions").value = "Y-G-R-B-P-O-";
 document.getElementById("markStones").value = "112233";
 
 const rulesConfig = {
+  shiftChecks:               { label: "Shift Checks", options: ["Off","On"] },  
+  flashOnInput:               { label: "Flash on Input", options: ["Off","On"] },  
   preset:               { label: "Preset", options: ["None", "S9", "Aminal Funhouse", "Truth", "League S9", "SGL 2025"] },  
   skullSanity:               { label: "Skull Sanity", options: ["Off", "Dungeon", "Overworld", "All"] },
   scrubSanity:               { label: "Scrub Sanity", options: ["Off", "Overworld", "All"] },
@@ -64,7 +66,7 @@ const rulesConfig = {
   smallKeys:               { label: "Small Keys", options: ["Own Dungeon", "Remove", "Key Rings"] },
   bossKeys:                  { label: "Boss Keys", options: ["Own Dungeon", "Remove"] },
   dungeonEr:                 { label: "Dungeon ER", options: ["Off", "Ganon's Excluded"] }, 
-  bridge:                { label: "Bridge", options: ["All Meds", "Open", "Vanilla", "Three Stones", "Two Medals", "Three Medals", "FOur Medals", "Five Medals", "One Reward", "Two Rewards", "Three Rewards", "Four Rewards", "Five Rewards", "Six Rewards", "Seven Rewards", "Eight Rewards", "Nine Rewards"] },
+  bridge:                { label: "Bridge", options: ["All Meds", "Open", "Vanilla", "Three Stones", "Two Medals", "Three Medals", "Four Medals", "Five Medals", "One Reward", "Two Rewards", "Three Rewards", "Four Rewards", "Five Rewards", "Six Rewards", "Seven Rewards", "Eight Rewards", "Nine Rewards"] },
   ganonBk:                { label: "Ganon BK", options: ["Remove", "LACS"] },
   deku:               { label: "Deku", options: ["Closed", "Open"] },
   fountain:                { label: "Fountain", options: ["Closed", "Open"] },
@@ -73,7 +75,7 @@ const rulesConfig = {
   beans:                { label: "Beans", options: ["Vanilla", "Shuffled"] },
   expensive:                { label: "Expensive", options: ["Vanilla", "Shuffled"] },
   csmc:                { label: "CSMC", options: ["Off", "On"] },
-  chusInLogic:                { label: "Chus In Logic", options: ["Off", "On"] },
+  chusInLogic:                { label: "Chus in Logic", options: ["Off", "On"] },
   preplantBeans:                { label: "Preplant Beans", options: ["Off", "On"] },
   blueFireArrows:                { label: "Blu Fire Arrw", options: ["Off", "On"] },
   hintType:                { label: "Hints Type", options: ["WotH", "Path"] },
@@ -114,6 +116,8 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   input.id = key;
   wrapper.appendChild(input);
   container.appendChild(wrapper);
+  if (key == "flashOnInput")
+    container.appendChild(document.createElement('br'));
 
   const savedValue = localStorage.getItem("rules_" + key) ?? config.default ?? toCamelCase(config.options[0]);
   rules[key] = savedValue;
@@ -149,7 +153,7 @@ var alwaysTable = {
   "b": "trade_quest",
   "f": "frogs_2",
   "m": "theater_skull",
-  //rest are here because of less progression preset
+  //rest are here because of aminal funhouse preset
   "h": "fire_top",
   "s": "fire_scarecrow",
   "v": "fire_volvagia",
@@ -1106,8 +1110,6 @@ var checkNames = [
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater_skull"];
-	
-var lastItem = 465;
 	
 Location.med1 = "unknown";
 Location.med2 = "unknown";

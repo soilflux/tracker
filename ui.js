@@ -178,7 +178,7 @@ function processInputs() {
 		input = document.getElementById(locationId).value;
 
 		if (inputIdx == 0) {
-			if (i > lastItem) {
+			if (songLocations.includes(locationId)) {
 				songItemChecked = true;
 			}
       if (isBoss.includes(locationId) && hinted) {
@@ -237,7 +237,7 @@ function processInputs() {
         if (!Player[Items2[inputIdx] + duplicate]) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
         thisIsHinted = false;
         hintedInput = "";
-        if (inputIdx<Items2.indexOf("lullaby") && i > lastItem) {
+        if (inputIdx<Items2.indexOf("lullaby") && songLocations.includes(locationId)) {
           songItemChecked = true;
         }
         trackAnimalQuest();
@@ -248,7 +248,7 @@ function processInputs() {
 }
 
 function hideCheck(locationId) {
-  if (document.getElementById("shiftChecks").value == "YES" && Locations.indexOf(locationId) <= lastItem) {
+  if (rules.shiftChecks == "on" && !songLocations.includes(locationId)) {
     document.getElementById(locationId).style.display = "none";
     document.getElementById("text_" + locationId).style.display = "none";
     document.getElementById("br_" + locationId).style.display = "none";
@@ -369,7 +369,7 @@ function dungeonHeaderVisibility() {
       el.style.display = "inline-block";
     }
     else {
-      if (document.getElementById("shiftChecks").value == "NO") {
+      if (rules.shiftChecks == "off") {
         el.style.visibility = "hidden";
       }
       else {
@@ -965,8 +965,12 @@ function toggleLinsoGoMode() {
 function refreshLinSo() {
 	if (linso) {
 		document.getElementById("linsoColumn").style.display = "inline-block";
-		for (var i = 0; i <= 11; i++) {
-			if (Check[Locations[lastItem + i+1]] != "unknown") {document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 1;} else {document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 0;}
+		for (let i = 0; i < songLocations.length; i++) {
+			if (Check[songLocations[i]] != "unknown") {
+        document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 1;
+      }else {
+        document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 0;
+      }
 		}
 		var temp = 0;
 		for (var i = 1; i <= 11; i++) {
@@ -1490,13 +1494,13 @@ function updateLogicInfo() {
 				document.getElementById(str).style.opacity = .5;
 			}
 			
-      if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+      if(songLocations.includes(key) && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
         document.getElementById(str).style.color = "#FFA500";
       } else {
         document.getElementById(str).style.color = inLogicColor;
       }
 			if(document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
-				if (i <= lastItem) {Player.logically_accessible += 1;}
+				if (!songLocations.includes(key)) {Player.logically_accessible += 1;}
 				if (key == "deku_queen_gohma" && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
 			    if (key == "dodongos_king_dodongo" && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
 				if (key == "jabu_barinade" && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
@@ -1546,7 +1550,7 @@ function updateLogicInfo() {
 						document.getElementById(str).style.color ="chartreuse";
 					}
 					
-					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+					if(songLocations.includes(key) && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
 					else if (hamsda) {
@@ -1577,7 +1581,7 @@ function updateLogicInfo() {
 					document.getElementById(str).style.fontWeight = "normal";
 					document.getElementById(str).style.opacity = .2;
 					
-					if(i > lastItem && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
+					if(songLocations.includes(key) && Check[key] != "unknown" && ManualOutOfLogicItems[Check[key]]) {
 						document.getElementById(str).style.color = "#FFA500";
 					}
 					else {
@@ -1587,8 +1591,8 @@ function updateLogicInfo() {
 			}
 		}
 		else {
-			if (hideInaccessible && i <= lastItem) {
-        if (document.getElementById("shiftChecks").value == "YES") {
+			if (hideInaccessible && !songLocations.includes(key)) {
+        if (rules.shiftChecks == "on") {
           document.getElementById(str).style.display = "none";
           document.getElementById(key).style.display = "none";
           document.getElementById(str2).style.display = "none";

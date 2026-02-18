@@ -4,7 +4,7 @@ function Update() {
 	keyDungeonInfo();
 	itemHighlights();
 	dungeonHighlights();
-  if (document.getElementById("shiftChecks").value == "YES") areaBreaks();
+  if (rules.shiftChecks == "on") areaBreaks();
 	updateSummaryText();
 	updateProbabilities();
 }
