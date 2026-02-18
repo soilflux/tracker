@@ -413,7 +413,7 @@ body {
 .column {
   margin-top: 4px;
   float: left;
-  width: 89px;
+  width: 85px;
 }
 
 #inputConfig {
@@ -715,7 +715,7 @@ body {
   top: 4px;
   float: left;
   position: relative;
-  width: 89px;
+  width: 85px;
 }
 
 #notes {
