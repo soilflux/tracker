@@ -11,7 +11,9 @@ function Update() {
 
 function fastUpdate() {
 	if(toFocus != null) {
-		toFocus.focus();
+		toFocus.focus({
+      preventScroll: true
+    });
 		toFocus = null;
 	}
 	timerStuff(); 

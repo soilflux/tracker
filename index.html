@@ -532,145 +532,16 @@
           <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
           <input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
           <br /><button onmousedown="download()">Download Log</button><br /><br />
-          <label class="settingsLabels" for="presets">PRESETS</label>
-          <select class="settingsOptions" id="presets">
-            <option value="NONE">NONE</option>
-            <option value="S9">S9</option>
-            <option value="SGL_2025">SGL 2025</option>
-            <option value="LEAGUE_S9">LEAGUE S9</option>
-            <option value="S8">S8</option>
-            <option value="TRUTH">TRUTH</option>
-            <option value="S7">S7</option>
-            <option value="S6">S6</option>
-            <option value="S5">S5</option>
-            <option value="S4">S4</option>
-            <option value="S3">S3</option>
-            <option value="LESS_PROGRESSION">LESS PROGRESSION</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="bosskeys">BOSSKEYS</label>
-          <select class="settingsOptions" id="bosskeys">
-            <option value="DUNGEON_ONLY">DUNGEON ONLY</option>
-            <option value="REMOVE">REMOVE</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="closedDeku">DEKU</label>
-          <select class="settingsOptions" id="closedDeku">
-            <option value="CLOSED">CLOSED</option>
-            <option value="OPEN">OPEN</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="closedFountain">FOUNTAIN</label>
-          <select class="settingsOptions" id="closedFountain">
-            <option value="CLOSED">CLOSED</option>
-            <option value="OPEN">OPEN</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="skullSanity">SKULLSANITY</label>
-          <select class="settingsOptions" id="skullSanity">
-            <option value="OFF">OFF</option>
-            <option value="DUNGEON">DUNGEON</option>
-            <option value="OVERWORLD">OVERWORLD</option>
-            <option value="ALL">ALL</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="scrubSanity">SCRUBSANITY</label>
-          <select class="settingsOptions" id="scrubSanity">
-            <option value="OFF">OFF</option>
-            <option value="OVERWORLD">OVERWORLD</option>
-            <option value="ALL">ALL</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="shopSanity">SHOPSANITY</label>
-          <select class="settingsOptions" id="shopSanity">
-            <option value="OFF">OFF</option>
-            <option value="4">4</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="keysanity">KEYSANITY</label>
-          <select class="settingsOptions" id="keysanity">
-            <option value="OFF">OFF</option>
-            <option value="KEYSY">KEYSY</option>
-            <option value="KEY RINGS">KEY RINGS</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="cowSanity">COWSANITY</label>
-          <select class="settingsOptions" id="cowSanity">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="erOption">ENTR RANDO</label>
-          <select class="settingsOptions" id="erOption">
-            <option value="OFF">OFF</option>
-            <option value="DUNGEONS">DUNGEONS</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="FAE_option">FAE RULING</label>
-          <select class="settingsOptions" id="FAE_option">
-            <option value="ALLOWED">ALLOWED</option>
-            <option value="BANNED">BANNED</option>
-          </select><br><br class="half_break">
           <label class="settingsLabels" for="gossips">SHOW GOSSIPS</label>
           <select class="settingsOptions" id="gossips">
             <option value="OFF">OFF</option>
             <option value="ON">ON</option>
+          </select><br><br class="half_break">  
+          <label class="settingsLabels" for="bombchusInLogic">CHUS IN LOGIC?</label>
+          <select class="settingsOptions" id="bombchusInLogic">
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
           </select><br><br class="half_break">
-          <label class="settingsLabels" for="ganonsBridge">BRIDGE</label>
-          <select class="settingsOptions" id="ganonsBridge">
-            <option value="ALL_MED">ALL MED</option>
-            <option value="OPEN">OPEN</option>
-            <option value="VANILLA">VANILLA</option>
-            <option value="3_STONES">3 STONES</option>
-            <option value="2_MEDALS">2 MEDALS</option>
-            <option value="3_MEDALS">3 MEDALS</option>
-            <option value="4_MEDALS">4 MEDALS</option>
-            <option value="5_MEDALS">5 MEDALS</option>
-            <option value="1_REWARD">1 REWARD</option>
-            <option value="2_REWARDS">2 REWARDS</option>
-            <option value="3_REWARDS">3 REWARDS</option>
-            <option value="4_REWARDS">4 REWARDS</option>
-            <option value="5_REWARDS">5 REWARDS</option>
-            <option value="6_REWARDS">6 REWARDS</option>
-            <option value="7_REWARDS">7 REWARDS</option>
-            <option value="8_REWARDS">8 REWARDS</option>
-            <option value="9_REWARDS">9 REWARDS</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="ganonBKSetting">GANON BK</label>
-          <select class="settingsOptions" id="ganonBKSetting">
-            <option value="NONE">NONE</option>
-            <option value="LACS">LACS</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="csmc">CSMC</label>
-          <select class="settingsOptions" id="csmc">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="hints_type">HINTS</label>
-          <select class="settingsOptions" id="hints_type">
-            <option value="WOTH">WOTH</option>
-            <option value="PATH">PATH</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="shuffleOcarinas">SHFL. OCARINAS</label>
-          <select class="settingsOptions" id="shuffleOcarinas">
-            <option value="ON">ON</option>
-            <option value="OFF">OFF</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="shuffleGerudoCard">SHFL. GER CARD</label>
-          <select class="settingsOptions" id="shuffleGerudoCard">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="shuffleBeanPack">SHFL. BEANS</label>
-          <select class="settingsOptions" id="shuffleBeanPack">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="shuffleExpensivePurchases">SHFL. EXPENSIVE</label>
-          <select class="settingsOptions" id="shuffleExpensivePurchases">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="blueFireArrows">BLUEFIREARROW</label>
-          <select class="settingsOptions" id="blueFireArrows">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">
-          <label class="settingsLabels" for="preplantedBeans">PREPLANT BEANS</label>
-          <select class="settingsOptions" id="preplantedBeans">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">    
         </div>
         <div id = "statsColumn">
           <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions" id="desiredAnimal"><option value="random">random</option></select><br><br class="half_break">

@@ -67,7 +67,7 @@ function wothAndBarrenProcessing() {
       }
     }
   
-		if (document.getElementById("hints_type").value == "PATH") {
+		if (rules.hintsType == "path") {
 			var pathInput = document.getElementById("path_boss" + i).value.toLowerCase();
 			
 			if (pathInput.startsWith("de") || pathInput.startsWith("go")) {AreaGoalPathBoss[i] = "Gohma";} 
@@ -152,11 +152,11 @@ function wothAndBarrenProcessing() {
 				document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
 				document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
 				for (var k = 0; k<Items.length; k++) {
-					if (Items[k] == "light_arrows" && document.getElementById("presets").value != "S8" && document.getElementById("presets").value != "S9") {continue;}
-					if (Items[k] == "farores_wind" && document.getElementById("presets").value != "S9") {continue;}
-					if (Items[k] == "serenade" && document.getElementById("presets").value != "S9") {continue;}
-					if (Items[k] == "prelude" && document.getElementById("presets").value != "S9") {continue;}
-					if (Items[k] == "lullaby" && document.getElementById("presets").value != "S9") {continue;}
+					if (Items[k] == "light_arrows" && rules.preset != "S8" && rules.preset != "s9") {continue;}
+					if (Items[k] == "farores_wind" && rules.preset != "s9") {continue;}
+					if (Items[k] == "serenade" && rules.preset != "s9") {continue;}
+					if (Items[k] == "prelude" && rules.preset != "s9") {continue;}
+					if (Items[k] == "lullaby" && rules.preset != "s9") {continue;}
 					if (Items[k] == Check["zeldasSpot"]) {continue;}
 					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
 						if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
@@ -218,7 +218,7 @@ function wothAndBarrenProcessing() {
 				
 				document.getElementById("woth" + wothNumber + "_title").innerHTML = AreaNames[i];
 			
-				if (document.getElementById("hints_type").value == "PATH") {
+				if (rules.hintsType == "path") {
 					var addedArrow = false;
 					for(var q = 1; q <= NUM_WOTHS; q++)
 						if(wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {

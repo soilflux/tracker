@@ -55,39 +55,77 @@ for(let d = 0; d < dungs_list.length; d++) {
 document.getElementById("markMedallions").value = "Y-G-R-B-P-O-";
 document.getElementById("markStones").value = "112233";
 
-var dungeonSkullSanity = false;
-var scrubSanity = false;
-if (localStorage.getItem("scrubSanity")) {document.getElementById("scrubSanity").value= localStorage.getItem("scrubSanity");}
-if (localStorage.getItem("shopSanity")) {document.getElementById("shopSanity").value = localStorage.getItem("shopSanity");}
-if (localStorage.getItem("skullSanity")) {document.getElementById("skullSanity").value = localStorage.getItem("skullSanity");}
-if (localStorage.getItem("cowSanity")) {document.getElementById("cowSanity").value = localStorage.getItem("cowSanity");}
-if (localStorage.getItem("closedDeku")) {document.getElementById("closedDeku").value	= localStorage.getItem("closedDeku");}
-if (localStorage.getItem("closedFountain")) {document.getElementById("closedFountain").value = localStorage.getItem("closedFountain");}
-if (localStorage.getItem("blueFireArrows")) {document.getElementById("blueFireArrows").value = localStorage.getItem("blueFireArrows");}
-if (localStorage.getItem("keysanity")) {document.getElementById("keysanity").value = localStorage.getItem("keysanity");}
-if (localStorage.getItem("ganonBKSetting")) {document.getElementById("ganonBKSetting").value = localStorage.getItem("ganonBKSetting");}
-if (localStorage.getItem("ganonsBridge")) {document.getElementById("ganonsBridge").value = localStorage.getItem("ganonsBridge");}
-if (localStorage.getItem("bosskeys")) {document.getElementById("bosskeys").value = localStorage.getItem("bosskeys");}
-if (localStorage.getItem("shuffleOcarinas")) {document.getElementById("shuffleOcarinas").value = localStorage.getItem("shuffleOcarinas");}
-if (localStorage.getItem("shuffleGerudoCard")) {document.getElementById("shuffleGerudoCard").value = localStorage.getItem("shuffleGerudoCard");}
-if (localStorage.getItem("shuffleBeanPack")) {document.getElementById("shuffleBeanPack").value = localStorage.getItem("shuffleBeanPack");}
-if (localStorage.getItem("preplantedBeans")) {document.getElementById("preplantedBeans").value = localStorage.getItem("preplantedBeans");}
-if (localStorage.getItem("shuffleExpensivePurchases")) {document.getElementById("shuffleExpensivePurchases").value = localStorage.getItem("shuffleExpensivePurchases");}
-if (localStorage.getItem("csmc")) {document.getElementById("csmc").value = localStorage.getItem("csmc");}
-if (localStorage.getItem("hints_type")) {document.getElementById("hints_type").value = localStorage.getItem("hints_type");}
-if (localStorage.getItem("simSeed")) {document.getElementById("simSeed").value = localStorage.getItem("simSeed");}
-if (localStorage.getItem("presets")) {document.getElementById("presets").value = localStorage.getItem("presets");}
-if (localStorage.getItem("erOption")) {document.getElementById("erOption").value = localStorage.getItem("erOption");}
-if (localStorage.getItem("FAE_option")) {document.getElementById("FAE_option").value = localStorage.getItem("FAE_option");}
-if (localStorage.getItem("shiftChecks")) {document.getElementById("shiftChecks").value = localStorage.getItem("shiftChecks");}
-if (localStorage.getItem("flashFeedback")) {document.getElementById("flashFeedback").value = localStorage.getItem("flashFeedback");}
-if (localStorage.getItem("inputPresets")) {document.getElementById("inputPresets").value = localStorage.getItem("inputPresets");}
-if (document.getElementById("presets").value == "SGL_2025") {songItemChecked = false;}
-if (document.getElementById("presets").value == "SGL_2025")
+const rulesConfig = {
+  preset:               { label: "Preset", options: ["None", "S9", "Aminal Funhouse", "Truth", "League S9", "SGL 2025"] },  
+  skullSanity:               { label: "Skull Sanity", options: ["Off", "Dungeon", "Overworld", "All"] },
+  scrubSanity:               { label: "Scrub Sanity", options: ["Off", "Overworld", "All"] },
+  shopSanity:               { label: "Shop Sanity", options: ["Off", "4"] },
+  cowSanity:                 { label: "Cow Sanity", options: ["Off", "On"] },
+  smallKeys:               { label: "Small Keys", options: ["Own Dungeon", "Remove", "Key Rings"] },
+  bossKeys:                  { label: "Boss Keys", options: ["Own Dungeon", "Remove"] },
+  dungeonEr:                 { label: "Dungeon ER", options: ["Off", "Ganon's Excluded"] },
+  deku:               { label: "Deku", options: ["Closed", "Open"] },
+  fountain:                { label: "Fountain", options: ["Closed", "Open"] },
+  bridge:                { label: "Bridge", options: ["All Meds", "Open", "Vanilla", "Three Stones", "Two Medals", "Three Medals", "FOur Medals", "Five Medals", "One Reward", "Two Rewards", "Three Rewards", "Four Rewards", "Five Rewards", "Six Rewards", "Seven Rewards", "Eight Rewards", "Nine Rewards"] },
+  ganonBk:                { label: "Ganon BK", options: ["Remove", "LACS"] },
+  Csmc:                { label: "CSMC", options: ["Off", "On"] },
+  ocarinas:                { label: "Ocarinas", options: ["Vanilla", "Shuffled"] },
+  gerudoCard:                { label: "Gerudo Card", options: ["Vanilla", "Shuffled"] },
+  beans:                { label: "Beans", options: ["Vanilla", "Shuffled"] },
+  expensive:                { label: "Expensive", options: ["Vanilla", "Shuffled"] },
+  blueFireArrows:                { label: "Blu Fire Arrw", options: ["Off", "On"] },
+  preplantBeans:                { label: "Preplant Beans", options: ["Off", "On"] },
+  hintType:                { label: "Hints Type", options: ["WotH", "Path"] },
+  kzSkip:                { label: "KZ Skip", options: ["Banned", "Allowed"] },
+  Fae:                { label: "FAE", options: ["Banned", "Allowed"] },
+};
+const container = document.getElementById('settingsColumn');
+
+const rules = {};
+
+Object.entries(rulesConfig).forEach(([key, config]) => {
+  
+  const wrapper = document.createElement('div');
+  wrapper.className = "rules-row";
+
+  const label = document.createElement('label');
+  label.innerText = config.label;
+  label.setAttribute('for', key);
+  wrapper.appendChild(label);
+
+  let input;
+  
+  if (config.type === "text") {
+    input = document.createElement('input');
+    input.type = "text";
+  } else {
+    input = document.createElement('select');
+    config.options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = toCamelCase(opt);
+      option.text = opt;
+      input.appendChild(option);
+    });
+  }
+
+  input.id = key;
+  wrapper.appendChild(input);
+  container.appendChild(wrapper);
+
+  const savedValue = localStorage.getItem("rules_" + key) ?? config.default ?? toCamelCase(config.options[0]);
+  rules[key] = savedValue;
+  input.value = savedValue;
+  input.addEventListener('change', (e) => {
+    rules[key] = e.target.value;
+    localStorage.setItem("rules_" + key, e.target.value);
+    if (key == "preset") changePreset();
+  });
+});
+
+if (rules.preset == "sgl2025") {songItemChecked = false;}
+if (rules.preset == "sgl2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";
 
-
-		
 var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 
 var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows","biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
@@ -1065,8 +1103,6 @@ var checkNames = [
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater_skull"];
-
-var AreaIndexes = [0,18,31,44,55,72,95,101,103,104,112,119,130,147,154,173,190,202,214,244,254,269,278,286,289,290,295,304,323,343,368,391,407,427,449,466];
 	
 var lastItem = 465;
 	
@@ -1441,9 +1477,9 @@ Spawn.adult_zf_fairy_ool = false;
 
 //RULES
 Rules = {};
-Rules.kzSkip = true;
-Rules.waterHop = true;
-Rules.valleyBridgeWithHookshot = true;
+rules.kzSkip = "allowed";
+rules.waterHop = "allowed";
+rules.valleyBridgeWithHookshot = "allowed";
   
 var woth1 = "unknown";
 var woth2 = "unknown";
@@ -2654,26 +2690,26 @@ function popup() {
 }
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
-if (document.getElementById("presets").value == "S9") {
+if (rules.preset == "s9") {
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n";
 }
-if (document.getElementById("presets").value == "LESS_PROGRESSION") {
+if (rules.preset == "aminalFunhouse") {
 	document.getElementById("hintInput").innerHTML = "10 x\n20 x\n30 x\n40 x\n50 x";
   timerMultiplier = 2.5;
   Player.light_arrows = true;
   Known.light_arrows = true;
 }
-if (document.getElementById("presets").value == "SGL_2025") {
+if (rules.preset == "sgl2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
 	document.getElementById("preludeSpot").value = "pre";
 }
-if (document.getElementById("presets").value == "TRUTH")
+if (rules.preset == "truth")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas x\ntru \n";
-if (document.getElementById("presets").value == "LEAGUE_S9") {
+if (rules.preset == "leagueS9") {
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 	document.getElementById("zeldasSpot").value = "pre";
 }
-if (document.getElementById("presets").value == "S7" || document.getElementById("presets").value == "TRUTH") {
+if (rules.preset == "S7" || rules.preset == "truth") {
 	document.getElementById("markChildLocation").value = "kok";
 	document.getElementById("markAdultLocation").value = "tot";
 }

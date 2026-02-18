@@ -231,6 +231,17 @@ function shuffle(array) {
   return array;
 }
 
+function toCamelCase(str) {
+  return str
+    .replace(/[^a-zA-Z0-9 ]/g, "")
+    .split(" ")
+    .map((word, index) => {
+      if (index === 0) return word.toLowerCase();
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join("");
+}
+
 function whoAmI() {
 	if(Person.type == "soli") {
 		Person.type = "normie";
@@ -404,27 +415,6 @@ function nerfControl() {
 }
 
 function saveStuff() {
-	localStorage.setItem("scrubSanity", document.getElementById("scrubSanity").value);
-	localStorage.setItem("shopSanity", document.getElementById("shopSanity").value);
-	localStorage.setItem("skullSanity", document.getElementById("skullSanity").value);
-	localStorage.setItem("cowSanity", document.getElementById("cowSanity").value);
-	localStorage.setItem("closedDeku", document.getElementById("closedDeku").value);
-	localStorage.setItem("closedFountain", document.getElementById("closedFountain").value);
-	localStorage.setItem("blueFireArrows", document.getElementById("blueFireArrows").value);
-	localStorage.setItem("keysanity", document.getElementById("keysanity").value);
-	localStorage.setItem("ganonBKSetting", document.getElementById("ganonBKSetting").value);
-	localStorage.setItem("ganonsBridge", document.getElementById("ganonsBridge").value);
-	localStorage.setItem("bosskeys", document.getElementById("bosskeys").value);
-	localStorage.setItem("presets", document.getElementById("presets").value);
-	localStorage.setItem("shuffleOcarinas", document.getElementById("shuffleOcarinas").value);
-	localStorage.setItem("shuffleGerudoCard", document.getElementById("shuffleGerudoCard").value);
-	localStorage.setItem("shuffleBeanPack", document.getElementById("shuffleBeanPack").value);
-	localStorage.setItem("preplantedBeans", document.getElementById("preplantedBeans").value);
-	localStorage.setItem("shuffleExpensivePurchases", document.getElementById("shuffleExpensivePurchases").value);
-	localStorage.setItem("csmc", document.getElementById("csmc").value);
-	localStorage.setItem("erOption", document.getElementById("erOption").value);
-	localStorage.setItem("FAE_option", document.getElementById("FAE_option").value);
-	localStorage.setItem("hints_type", document.getElementById("hints_type").value);
   localStorage.setItem("simSeed", document.getElementById("simSeed").value);
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
@@ -460,7 +450,7 @@ function inaccessibleControl() {
 
 function coopControl() {
 	if (coopmode) {coopmode = false; document.getElementById("coopControl").innerHTML = "coopmode";}
-	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "OPEN"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("shopSanity").value = 4;} 
+	else {coopmode = true; document.getElementById("coopControl").innerHTML = "solitude"; document.getElementById("skullSanity").value = "DUNGEON"; document.getElementById("scrubSanity").value = "ON"; document.getElementById("ganonsBridge").value = "OPEN"; rules.ganonBk = "lacs"; document.getElementById("shopSanity").value = 4;} 
 }
 
 function linso_counter() {

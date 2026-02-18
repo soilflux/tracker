@@ -1033,20 +1033,183 @@ function updateInputs() {
 		localStorage.setItem(spawnNames[i], spawnInputs[i]);
 	}
 }
+
+function changePreset() {
+  if (rules.preset == "aminalFunhouse") {
+    rules.valleyBridgeWithHookshot = "banned"; 
+    rules.waterHop = "banned"; 
+    rules.kzSkip = "banned";
+    rules.bossKeys = "remove"; 
+    rules.ocarinas = "vanilla"; 
+    rules.bridge = "nineRewards";
+    rules.deku = "closed"; 
+    rules.fountain = "closed"; 
+    rules.blueFireArrows = "off";
+    rules.smallKeys = "ownDungeon";
+    rules.cowSanity = "off";
+    rules.gerudoCard = "vanilla"; 
+    rules.beans = "vanilla";
+    rules.preplantBeans = "off";
+    rules.expensive = "vanilla";
+    rules.ganonBk = "remove";
+    rules.csmc = "on";
+    rules.shopSanity = "off";
+    rules.scrubSanity = "off";
+    rules.fae = "banned";
+    rules.dungeonEr = "off";
+    rules.skullSanity = "off";
+    rules.hintsType = "path";
+    document.getElementById("barren_text").style.display = "inline-block"; 
+    document.getElementById("barren_input1").style.display = "inline-block"; 
+    document.getElementById("barren_input2").style.display = "inline-block"; 
+    document.getElementById("barren_input3").style.display = "inline-block"; 
+    document.getElementById("barren_input4").style.display = "inline-block"; 
+    document.getElementById("barren_input5").style.display = "inline-block"; 
+    alwaysHints = ["oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull","lacs"];
+  }
+	else if (rules.preset == "truth") {
+    rules.kzSkip = "allowed"; 
+    rules.bossKeys = "ownDungeon"; 
+    rules.ocarinas = "vanilla"; 
+    rules.bridge = "allMeds"; 
+    rules.deku = "closed"; 
+    rules.fountain = "closed";
+    rules.blueFireArrows = "on"; 
+    rules.smallKeys = "ownDungeon";
+    rules.cowSanity = "off";
+    rules.gerudoCard = "vanilla";
+    rules.beans = "vanilla";
+    rules.preplantBeans = "off";
+    rules.expensive = "vanilla";
+    rules.ganonBk = "remove";
+    rules.csmc = "on";
+    rules.shopSanity = "off";
+    rules.scrubSanity = "off";
+    rules.fae = "banned";
+    rules.dungeonEr = "off";
+    rules.skullSanity = "off";
+    rules.hintsType = "path";
+    document.getElementById("barren_text").style.display = "inline-block";
+    document.getElementById("barren_input1").style.display = "inline-block";
+    document.getElementById("barren_input2").style.display = "inline-block";
+    document.getElementById("barren_input3").style.display = "inline-block";
+    document.getElementById("barren_input4").style.display = "inline-block";
+    document.getElementById("barren_input5").style.display = "none";
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "theater_truth"];
+    Player.farores_wind = true;
+  }
+	else if (rules.preset == "leagueS9") {
+    rules.kzSkip = "allowed"; 
+    rules.bossKeys = "ownDungeon"; 
+    rules.ocarinas = "vanilla"; 
+    rules.bridge = "fiveMedals"; 
+    rules.deku = "closed"; 
+    rules.fountain = "closed"; 
+    rules.blueFireArrows = "on"; 
+    rules.smallKeys = "ownDungeon";
+    rules.cowSanity = "off";
+    rules.gerudoCard = "vanilla"; 
+    rules.beans = "vanilla";
+    rules.preplantBeans = "off";
+    rules.expensive = "shuffled"; 
+    rules.ganonBk = "remove";
+    rules.csmc = "on";
+    rules.shopSanity = "4"; 
+    rules.scrubSanity = "off";
+    rules.fae = "banned";
+    rules.dungeonEr = "off";
+    rules.skullSanity = "off";
+    rules.hintsType = "path";
+    document.getElementById("barren_text").style.display = "inline-block"; 
+    document.getElementById("barren_input1").style.display = "inline-block"; 
+    document.getElementById("barren_input2").style.display = "inline-block"; 
+    document.getElementById("barren_input3").style.display = "inline"; 
+    document.getElementById("barren_input4").style.display = "none"; 
+    document.getElementById("barren_input5").style.display = "none"; 
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];
+    Player.farores_wind = true; 
+    Known.farores_wind = true; 
+    Player.lens = true; 
+    Known.lens = true; 
+    Player.light_arrows = true; 
+    Known.light_arrows = true;
+  }
+	else if (rules.preset == "sgl2025") {
+    rules.kzSkip = "allowed"; 
+    chusInBigChests = true; 
+    rules.bossKeys = "ownDungeon"; 
+    rules.ocarinas = "vanilla";
+    rules.bridge = "threeStones";
+    rules.deku = "closed";
+    rules.fountain = "closed"; 
+    rules.blueFireArrows = "on"; 
+    rules.smallKeys = "ownDungeon";
+    rules.cowSanity = "off";
+    rules.gerudoCard = "vanilla";
+    rules.beans = "vanilla";
+    rules.preplantBeans = "off";
+    rules.expensive = "vanilla";
+    rules.ganonBk = "lacs";
+    rules.csmc = "on";
+    rules.shopSanity = "off";
+    rules.scrubSanity = "off";
+    rules.fae = "banned";
+    rules.dungeonEr = "off";
+    rules.skullSanity = "off";
+    rules.hintsType = "path";
+    document.getElementById("barren_text").style.display = "inline-block";
+    document.getElementById("barren_input1").style.display = "inline-block";
+    document.getElementById("barren_input2").style.display = "inline-block";
+    document.getElementById("barren_input3").style.display = "inline-block";
+    document.getElementById("barren_input4").style.display = "inline-block";
+    document.getElementById("barren_input5").style.display = "inline-block";
+    document.getElementById("markAdultLocation").value = "tot";
+    alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "frogs_2", "theater_skull"];
+    Player.prelude = true;
+    Player.farores_wind = true;
+    Known.farores_wind = true;
+    Player.lens = true;
+    Known.lens = true;
+  }
+	else if (rules.preset == "s9") {
+    rules.kzSkip = "allowed";
+    rules.bossKeys = "ownDungeon"; 
+    rules.ocarinas = "vanilla"; 
+    rules.bridge = "vanilla"; 
+    rules.deku = "closed"; 
+    rules.fountain = "closed"; 
+    rules.blueFireArrows = "on";
+    rules.smallKeys = "ownDungeon";
+    rules.cowSanity = "off";
+    rules.gerudoCard = "vanilla";
+    rules.beans = "vanilla";
+    rules.preplantBeans = "off";
+    rules.expensive = "vanilla";
+    rules.ganonBk = "remove";
+    rules.csmc = "on";
+    rules.shopSanity = "off";
+    rules.scrubSanity = "off";
+    rules.fae = "allowed";
+    rules.dungeonEr = "ganonsExcluded";
+    rules.skullSanity = "off";
+    rules.hintsType = "path";
+    document.getElementById("barren_text").style.display = "inline-block";
+    document.getElementById("barren_input1").style.display = "inline-block";
+    document.getElementById("barren_input2").style.display = "inline-block";
+    document.getElementById("barren_input3").style.display = "none";
+    document.getElementById("barren_input4").style.display = "none";
+    document.getElementById("barren_input5").style.display = "none";
+    document.getElementById("markAdultLocation").value = "tot";
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];
+  }
+  
+  Object.keys(rulesConfig).forEach(key => {
+    document.getElementById(key).value = rules[key];
+  });
+}
+
 function updateLogicInfo() {
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {Rules.valleyBridgeWithHookshot = false; Rules.waterHop = false; Rules.kzSkip = true; document.getElementById("bosskeys").value = "REMOVE"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "9_REWARDS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("barren_input5").style.display = "inline-block"; alwaysHints = ["oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull","lacs"];}
-	if (document.getElementById("presets").value == "S3") {Rules.kzSkip = false; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "OPEN"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
-	if (document.getElementById("presets").value == "S4") {Rules.kzSkip = false; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "2_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "OFF"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "WOTH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
-	if (document.getElementById("presets").value == "S5") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none";}
-	if (document.getElementById("presets").value == "S6") {Rules.kzSkip = false; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "none"; document.getElementById("barren_input1").style.display = "none"; document.getElementById("barren_input2").style.display = "none"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
-	if (document.getElementById("presets").value == "S7") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "OFF"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child", "cow_kokiri"];}
-	if (document.getElementById("presets").value == "TRUTH") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "ALL_MED"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH";  document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("barren_input5").style.display = "none"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "theater_truth"];Player.farores_wind = true;}
-	if (document.getElementById("presets").value == "LEAGUE_S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "5_MEDALS"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "ON"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "4"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true; Player.light_arrows = true; Known.light_arrows = true;}
-	if (document.getElementById("presets").value == "SGL_2025") {Rules.kzSkip = true; chusInBigChests = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "3_STONES"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "LACS"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "inline-block"; document.getElementById("barren_input5").style.display = "inline-block"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "frogs_2", "theater_skull"]; Player.prelude = true; Player.farores_wind = true; Known.farores_wind = true; Player.lens = true; Known.lens = true;}
-	if (document.getElementById("presets").value == "S8") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "BANNED"; document.getElementById("erOption").value = "OFF"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "inline-block"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
-	if (document.getElementById("presets").value == "S9") {Rules.kzSkip = true; document.getElementById("bosskeys").value = "DUNGEON_ONLY"; document.getElementById("shuffleOcarinas").value = "OFF"; document.getElementById("ganonsBridge").value = "VANILLA"; document.getElementById("closedDeku").value = "CLOSED"; document.getElementById("closedFountain").value = "CLOSED"; document.getElementById("blueFireArrows").value = "ON"; document.getElementById("keysanity").value = "OFF"; document.getElementById("cowSanity").value = "OFF"; document.getElementById("shuffleGerudoCard").value = "OFF"; document.getElementById("shuffleBeanPack").value = "OFF"; document.getElementById("preplantedBeans").value = "OFF"; document.getElementById("shuffleExpensivePurchases").value = "OFF"; document.getElementById("ganonBKSetting").value = "NONE"; document.getElementById("csmc").value = "ON"; document.getElementById("shopSanity").value = "OFF"; document.getElementById("scrubSanity").value = "OFF"; document.getElementById("FAE_option").value = "ALLOWED"; document.getElementById("erOption").value = "DUNGEONS"; document.getElementById("skullSanity").value = "OFF"; document.getElementById("hints_type").value = "PATH"; document.getElementById("barren_text").style.display = "inline-block"; document.getElementById("barren_input1").style.display = "inline-block"; document.getElementById("barren_input2").style.display = "inline-block"; document.getElementById("barren_input3").style.display = "none"; document.getElementById("barren_input4").style.display = "none"; document.getElementById("barren_input5").style.display = "none"; document.getElementById("markAdultLocation").value = "tot"; alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];}
-	
-	if (document.getElementById("presets").value == "LEAGUE_S9") {
+	if (rules.preset == "leagueS9") {
 		document.getElementById("important_hints_div").style.display = "block";
 		document.getElementById("important_input3").style.display = "inline-block";
 	}
@@ -1058,26 +1221,20 @@ function updateLogicInfo() {
 	document.getElementById("woth_input2").style.display = "inline";
 	document.getElementById("woth_input3").style.display = "inline";
 	document.getElementById("woth_input4").style.display = "inline";
-	if(document.getElementById("presets").value != "S4")
-		document.getElementById("woth_input5").style.display = "inline";
-	else
-		document.getElementById("woth_input5").style.display = "none";
-	if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
+	document.getElementById("woth_input5").style.display = "inline";
+	if(rules.preset == "s9")
 		document.getElementById("woth_input6").style.display = "inline";
 	else
 		document.getElementById("woth_input6").style.display = "none";
 	
-	if(document.getElementById("hints_type").value == "PATH") { 
+	if(rules.hintsType == "path") { 
 		document.getElementById("woth_text").innerHTML = "Path / Important / Lights"; 
 		document.getElementById("path_boss1").style.display = "inline-block"; 
 		document.getElementById("path_boss2").style.display = "inline-block"; 
 		document.getElementById("path_boss3").style.display = "inline-block"; 
 		document.getElementById("path_boss4").style.display = "inline-block"; 
-		if(document.getElementById("presets").value != "S4")
 			document.getElementById("path_boss5").style.display = "inline-block";
-		else
-			document.getElementById("path_boss5").style.display = "none";
-		if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
+		if(rules.preset == "s9")
 			document.getElementById("path_boss6").style.display = "inline-block"; 
 		else
 			document.getElementById("path_boss6").style.display = "none"; 
@@ -1085,11 +1242,8 @@ function updateLogicInfo() {
 		document.getElementById("path_arrow2").style.display = "inline"; 
 		document.getElementById("path_arrow3").style.display = "inline"; 
 		document.getElementById("path_arrow4").style.display = "inline"; 
-		if(document.getElementById("presets").value != "S4")
-			document.getElementById("path_arrow5").style.display = "inline";
-		else
-			document.getElementById("path_arrow5").style.display = "none";
-		if(document.getElementById("presets").value == "LEAGUE_S7" || document.getElementById("presets").value == "S9")
+    document.getElementById("path_arrow5").style.display = "inline";
+		if(rules.preset == "s9")
 			document.getElementById("path_arrow6").style.display = "inline";
 		else
 			document.getElementById("path_arrow6").style.display = "none";
@@ -1110,15 +1264,15 @@ function updateLogicInfo() {
 		document.getElementById("path_arrow6").style.display = "none";
 	}
 		
-	if (document.getElementById("presets").value == "LESS_PROGRESSION") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block"; document.getElementById("pieceDungeons").value = "dedojafofiwaspsh";}
+	if (rules.preset == "aminalFunhouse") {document.getElementById("triforcePic").style.display = "inline-block"; document.getElementById("pieceDungeons").style.display = "inline-block"; document.getElementById("pieceDungeons").value = "dedojafofiwaspsh";}
 	else {document.getElementById("triforcePic").style.display = "none"; document.getElementById("pieceDungeons").style.display = "none";}
 	
-	if(document.getElementById("blueFireArrows").value == "OFF")
+	if(rules.blueFireArrows == "off")
 		document.getElementById("ice_arrows_location_div").style.display = "none";
 	else
 		document.getElementById("ice_arrows_location_div").style.display = "inline";
 	
-	if(document.getElementById("closedFountain").value == "CLOSED") {
+	if(rules.fountain == "closed") {
 		document.getElementById("rutos_letter_location_div").style.display = "inline";
 		document.getElementById("bottle4_location_div").style.display = "none";
 	}
@@ -1127,12 +1281,12 @@ function updateLogicInfo() {
 		document.getElementById("bottle4_location_div").style.display = "inline";
 	}
 	
-	if(document.getElementById("shopSanity").value == "OFF")
+	if(rules.shopSanity == "OFF")
 		document.getElementById("wallet3_location_div").style.display = "none";
 	else
 		document.getElementById("wallet3_location_div").style.display = "inline";
 	
-	if(document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "keyRings") {
 		document.getElementById("forest_key_ring_location_div").style.display = "inline";
 		document.getElementById("fire_key_ring_location_div").style.display = "inline";
 		document.getElementById("water_key_ring_location_div").style.display = "inline";
@@ -1153,14 +1307,14 @@ function updateLogicInfo() {
 		document.getElementById("ganons_key_ring_location_div").style.display = "none";
 	}
 	
-	if(document.getElementById("shuffleGerudoCard").value == "ON") {
+	if(rules.gerudoCard == "shuffled") {
 		document.getElementById("gerudo_card_location_div").style.display = "inline";
 	}
 	else {
 		document.getElementById("gerudo_card_location_div").style.display = "none";
 	}
 	
-	if(document.getElementById("shuffleBeanPack").value == "ON") {
+	if(rules.beans == "shuffled") {
 		document.getElementById("magic_bean_pack_location_div").style.display = "inline";
 	}
 	else {
@@ -1170,7 +1324,7 @@ function updateLogicInfo() {
 	document.getElementById("nayrus_love_location_div").style.display = "none";
 	document.getElementById("stone_of_agony_location_div").style.display = "none";
 	
-	if (document.getElementById("bosskeys").value == "REMOVE") {Player.forest_boss_key = true; Player.fire_boss_key = true; Player.water_boss_key = true; Player.spirit_boss_key = true; Player.shadow_boss_key = true; removeBKFlag = true;}
+	if (rules.bossKeys == "remove") {Player.forest_boss_key = true; Player.fire_boss_key = true; Player.water_boss_key = true; Player.spirit_boss_key = true; Player.shadow_boss_key = true; removeBKFlag = true;}
 	else if (removeBKFlag) {removeBKFlag = false; Player.forest_boss_key = false; Player.fire_boss_key = false; Player.water_boss_key = false; Player.spirit_boss_key = false; Player.shadow_boss_key = false;}
 	
 	Logic.gold_skulltulas = 0;
@@ -1210,37 +1364,37 @@ function updateLogicInfo() {
       hideCheck(Locations[i]);
 		}
 		
-		if (document.getElementById("skullSanity").value == "OFF") {
+		if (rules.skullSanity == "off") {
 			if(Locations[i].startsWith("gs_"))
 				unusedLocations.push(i);
 		}
-		else if (document.getElementById("skullSanity").value == "DUNGEON") {
+		else if (rules.skullSanity == "dungeon") {
 			if(Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well")))
 				unusedLocations.push(i);
 		}
-		else if (document.getElementById("skullSanity").value == "OVERWORLD") {
+		else if (rules.skullSanity == "overworld") {
 			if(Locations[i].startsWith("gs_deku") || Locations[i].startsWith("gs_dodongos") || Locations[i].startsWith("gs_jabu") || Locations[i].startsWith("gs_forest") || Locations[i].startsWith("gs_fire") || Locations[i].startsWith("gs_water") || Locations[i].startsWith("gs_spirit") || Locations[i].startsWith("gs_shadow") || Locations[i].startsWith("gs_ice") || Locations[i].startsWith("gs_well"))
 				unusedLocations.push(i);
 		}
 		
-		if (document.getElementById("scrubSanity").value == "OFF") {
+		if (rules.scrubSanity == "off") {
 			if(Locations[i].startsWith("scrub_"))
 				unusedLocations.push(i);
 		}
-		else if (document.getElementById("scrubSanity").value == "OVERWORLD") {
+		else if (rules.scrubSanity == "overworld") {
 			if(Locations[i].startsWith("scrub_dodongos") || Locations[i].startsWith("scrub_jabu") || Locations[i].startsWith("scrub_ganons"))
 				unusedLocations.push(i);
 		}
 		
-		if (document.getElementById("shopSanity").value != "4" && Locations[i].startsWith("shop_")) {unusedLocations.push(i);}
-		if (document.getElementById("cowSanity").value != "ON" && Locations[i].startsWith("cow_")) {unusedLocations.push(i);}
+		if (rules.shopSanity != "4" && Locations[i].startsWith("shop_")) {unusedLocations.push(i);}
+		if (rules.cowSanity == "on" && Locations[i].startsWith("cow_")) {unusedLocations.push(i);}
 		if (document.getElementById("gossips").value != "ON" && Locations[i].startsWith("h_")) {unusedLocations.push(i);}
-		if (document.getElementById("ganonBKSetting").value == "LACS" && Locations[i].startsWith("lacs")) {unusedLocations.push(i);}
-		if (document.getElementById("shuffleOcarinas").value == "OFF" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {unusedLocations.push(i);}
-		if (document.getElementById("shuffleBeanPack").value == "OFF" && Locations[i].startsWith("river_bean_salesman")) {unusedLocations.push(i);}
-		if (document.getElementById("shuffleGerudoCard").value == "OFF" && Locations[i].startsWith("fortress_card")) {unusedLocations.push(i);}
-		if (document.getElementById("presets").value != "TRUTH" && Locations[i].startsWith("theater_truth")) {unusedLocations.push(i);}
-		if (document.getElementById("shuffleExpensivePurchases").value == "OFF" && (Locations[i] == "goron_medigoron" || Locations[i].startsWith("kakariko_hag") || Locations[i].startsWith("wasteland_carpet"))) {unusedLocations.push(i);}
+		if (rules.ganonBk == "lacs" && Locations[i].startsWith("lacs")) {unusedLocations.push(i);}
+		if (rules.ocarinas == "vanilla" && (Locations[i].startsWith("hyrule_ocarina") || Locations[i].startsWith("lost_woods_fairy_ocarina"))) {unusedLocations.push(i);}
+		if (rules.beans == "vanilla" && Locations[i].startsWith("river_bean_salesman")) {unusedLocations.push(i);}
+		if (rules.gerudoCard == "vanilla" && Locations[i].startsWith("fortress_card")) {unusedLocations.push(i);}
+		if (rules.preset != "TRUTH" && Locations[i].startsWith("theater_truth")) {unusedLocations.push(i);}
+		if (rules.expensive == "vanilla" && (Locations[i] == "goron_medigoron" || Locations[i].startsWith("kakariko_hag") || Locations[i].startsWith("wasteland_carpet"))) {unusedLocations.push(i);}
 		if (unusedLocations.includes(i)) {
       document.getElementById(Locations[i]).style.display = "none";
       document.getElementById("text_" + Locations[i]).style.display = "none";
@@ -1446,33 +1600,33 @@ function updateLogicInfo() {
 	if (document.getElementById("pieceDungeons").value.includes("sh")) {document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1; document.getElementById("text_shadow_compass").style.fontWeight = "bold";}
 	if (document.getElementById("pieceDungeons").value.includes("sp")) {document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1; document.getElementById("text_spirit_nearFourArmos").style.fontWeight = "bold";}
 	
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.forest_keys = Player.current_forest_keys = 5;
 		Logic.forest_boss_key = Player.forest_boss_key = true;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.fire_keys = Player.current_fire_keys = 8;
 		Logic.fire_boss_key = Player.fire_boss_key = true;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.water_keys = Player.current_water_keys = 6;
 		Logic.water_boss_key = Player.water_boss_key = true;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.shadow_keys = Player.current_shadow_keys = 5;
 		Logic.shadow_boss_key = Player.shadow_boss_key = true;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.spirit_keys = Player.current_spirit_keys = 5;
 		Logic.spirit_boss_key = Player.spirit_boss_key = true;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.gtg_keys = Player.current_gtg_keys = 9;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.well_keys = Player.current_well_keys = 3;
 	}
-	if(document.getElementById("keysanity").value == "KEYSY" || document.getElementById("keysanity").value == "KEY RINGS") {
+	if(rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
 		Logic.ganons_keys = Player.current_ganons_keys = 2;
 	}
 	
@@ -1780,7 +1934,7 @@ function updateChecklistEntrances() {
 
 function updateDungeonER() {
 	// if dungeon er is off, dungeons go to their intended destinations
-	if(document.getElementById("erOption").value != "DUNGEONS") {
+	if(rules.dungeonEr != "ganonsExcluded") {
 		document.getElementById("dungeon_er_input_div").style.display = "none";
 		document.getElementById("dungeons_summary").style.display = "none";
 		
@@ -1833,7 +1987,7 @@ function updateDungeonER() {
 }
 
 function getDungeonERMedStr(dest) {
-	if (document.getElementById("presets").value == "S9") {
+	if (rules.preset == "s9") {
 		dest_code = dest.substring(0,2);
 		med_str = document.getElementById("markMedallions").value;
 		if (dest_code == med_str.substring(0,2)) {  // light med
@@ -1876,7 +2030,7 @@ function update_dungeon_ER_Logic() {
 			Player[dungs_list[d] + "_child_access"] = Player.can_enter_deku_entrance;
 			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_deku_entrance;
 			
-			if(document.getElementById("erOption").value == "DUNGEONS") {
+			if(rules.dungeonEr == "ganonsExcluded") {
 				Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_deku_entrance;
 				Player[dungs_list[d] + "_adult_access"] = Player.can_enter_deku_entrance;
 				CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_deku_entrance;
@@ -1915,7 +2069,7 @@ function update_dungeon_ER_Logic() {
 			CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_forest_temple_entrance;
 		}
 		else if(enter == "fire_temple") {
-			if(document.getElementById("erOption").value == "DUNGEONS") {
+			if(rules.dungeonEr == "ganonsExcluded") {
 				Logic[dungs_list[d] + "_child_access"] = Logic.bolero;
 				Player[dungs_list[d] + "_child_access"] = Player.bolero;
 				CouldHave[dungs_list[d] + "_child_access"] = CouldHave.bolero;
@@ -1962,7 +2116,7 @@ function update_dungeon_ER_Logic() {
 			Player[dungs_list[d] + "_child_access"] = Player.can_enter_well_entrance;
 			CouldHave[dungs_list[d] + "_child_access"] = CouldHave.can_enter_well_entrance;
 			
-			if(document.getElementById("erOption").value == "DUNGEONS") {
+			if(rules.dungeonEr == "ganonsExcluded") {
 				Logic[dungs_list[d] + "_adult_access"] = Logic.can_enter_well_entrance;
 				Player[dungs_list[d] + "_adult_access"] = Player.can_enter_well_entrance;
 				CouldHave[dungs_list[d] + "_adult_access"] = CouldHave.can_enter_well_entrance;

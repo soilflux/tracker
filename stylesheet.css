@@ -1150,12 +1150,17 @@ h1 {
   right: 0;
 }
 
-.settingsLabels {
-  font-size: 1.1em;
+.rules-row {
+  display: flex;            /* Makes this a flex container */
+  justify-content: space-between; /* Pushes label to left, select to right */
+  align-items: center;      /* Centers them vertically */
+  width: 100%;              /* Ensure the row takes up the full width */
+}
+
+.rules-row select {
+  background-color: #404040;
   color: white;
-  position: absolute;
-  left: -150px;
-  right: 0;
+  width:170px;
 }
 
 #desiredAnimalLabel {

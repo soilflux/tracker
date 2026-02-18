@@ -15,7 +15,7 @@ function readLog() {
     simActive = true;
     startingItem = "";
     
-    if (document.getElementById("presets").value == "S9") {
+    if (rules.preset == "s9") {
         startingItem = simGetStartingMajorItem();
         startingItem = " and " + startingItem
     }
@@ -135,7 +135,7 @@ function simCheckAltar() {
 	document.getElementById("simLog").value = "Checked Altar\n" + document.getElementById("simLog").value;
 	document.getElementById("simCheckAltar").style.display = "none";
     
-    if(document.getElementById("erOption").value == "DUNGEONS") {
+    if(rules.dungeonEr == "ganonsExcluded") {
         simCheckDungeonER();
     }
 }
