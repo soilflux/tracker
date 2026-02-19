@@ -260,11 +260,6 @@ function hideCheck(locationId) {
 function stoneMedallionInput() {	
 	var str = document.getElementById("markStones").value.substring(0,2);
 		
-	if (!hasChangedMedal) {
-		document.getElementById("text_dung7").style.color = "yellow";
-		document.getElementById("text_dung8").style.color = "yellow";
-		document.getElementById("text_dung9").style.color = "yellow";
-	}
 	dekuPlacement = "unknown";
 	dodongosPlacement = "unknown";
 	jabuPlacement = "unknown";
@@ -1664,7 +1659,7 @@ function updateLogicInfo() {
 	player.checks_remaining += player.forest_checks_remaining + player.fire_checks_remaining + player.water_checks_remaining + player.spirit_checks_remaining + player.shadow_checks_remaining + player.gtg_checks_remaining + player.well_checks_remaining + player.ganons_checks_remaining;
     
 	document.getElementById("checks_remaining").innerHTML=player.checks_remaining + " Checks Left";
-	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=player.logically_accessible + " in logic";} else {document.getElementById("logically_accessible").innerHTML="??? in logic"}
+	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=player.logically_accessible + " in Logic";} else {document.getElementById("logically_accessible").innerHTML="??? in Logic"}
   document.getElementById("accessible").innerHTML = player.accessible + " Accessible";
   document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible + " Accessible";
 }

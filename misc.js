@@ -303,7 +303,6 @@ function areaTitlesToggle() {
 }
 	
 function identifyMedal(x) {
-	hasChangedMedal = true;
 	if (x.style.color == "yellow") {
 		x.style.color = "rgb(238, 130, 238)";
 	}
