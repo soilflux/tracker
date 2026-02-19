@@ -144,29 +144,17 @@ body {
   margin-right:190px;
   margin-left:10px;
   color: gold;
+  font-weight: bold;
 }
 #checkStatsColumn {
-  color: blue;
+  color: lightblue;
   float:right;
   margin-top:4px;
+  font-weight: bold;
 }
 .stat-text {
   font-size:16px;
   float: top;
-}
-#checks_remaining {
-  font-weight: bold;
-}
-#logically_accessible {
-  font-weight: bold;
-}
-#skulls_in_logic {
-  font-weight: bold;
-}
-
-#tokens_acquired {
-  font-weight: bold;
-  color: gold;
 }
 
 #text_gan {

@@ -129,7 +129,6 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   });
 });
 
-if (rules.preset == "sgl2025") {songItemChecked = false;}
 if (rules.preset == "sgl2025")
 	document.getElementById("markMedallions").value = "Y-frR-B-P-O-";
 

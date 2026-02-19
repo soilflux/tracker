@@ -178,9 +178,6 @@ function processInputs() {
 		input = document.getElementById(locationId).value;
 
 		if (inputIdx == 0) {
-			if (songLocations.includes(locationId)) {
-				songItemChecked = true;
-			}
       if (isBoss.includes(locationId) && hinted) {
         Check[document.getElementById(locationId).id] = "junk";
         forcedDisplay[i] = true;
@@ -237,9 +234,6 @@ function processInputs() {
         if (!Player[Items2[inputIdx] + duplicate]) {forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage= ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase()}
         thisIsHinted = false;
         hintedInput = "";
-        if (inputIdx<Items2.indexOf("lullaby") && songLocations.includes(locationId)) {
-          songItemChecked = true;
-        }
         trackAnimalQuest();
         break;
       }
@@ -1352,6 +1346,8 @@ function updateLogicInfo() {
 	}
 	document.getElementById("tokens_acquired").innerHTML = Player.tokens + " Tokens" ;
 	if (true) {document.getElementById("skulls_in_logic").innerHTML = Logic.gold_skulltulas + " in Logic";} else {document.getElementById("skulls_in_logic").innerHTML = "??? in Logic"}
+  
+  Player.accessible = 0;
 
 	Player.logically_accessible = 0;
 	Player.forest_logically_accessible=0;
@@ -1433,17 +1429,15 @@ function updateLogicInfo() {
       document.getElementById(str).style.visibility = "visible";
       document.getElementById(str2).style.visibility = "visible";
       document.getElementById(key).style.visibility = "visible";
-      if (!songLocations.includes(key)) {
-        if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
-        else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
-        else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
-        else if (Locations[i].includes("spirit_")) {Player.spirit_checks_remaining += 1;}
-        else if (Locations[i].includes("shadow_")) {Player.shadow_checks_remaining += 1;}
-        else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
-        else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
-        else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
-        else if (!Locations[i].includes("h_")) {Player.checks_remaining += 1;}
-      }
+      if (Locations[i].includes("forest_")) {Player.forest_checks_remaining += 1;}
+      else if (Locations[i].includes("fire_")) {Player.fire_checks_remaining += 1;}
+      else if (Locations[i].includes("water_")) {Player.water_checks_remaining += 1;}
+      else if (Locations[i].includes("spirit_")) {Player.spirit_checks_remaining += 1;}
+      else if (Locations[i].includes("shadow_")) {Player.shadow_checks_remaining += 1;}
+      else if (Locations[i].includes("gtg_")) {Player.gtg_checks_remaining += 1;}
+      else if (Locations[i].includes("well_")) {Player.well_checks_remaining += 1;}
+      else if (Locations[i].includes("ganons_")) {Player.ganons_checks_remaining += 1;}
+      else if (!Locations[i].includes("h_")) {Player.checks_remaining += 1;}
 		}
 		
 		if(document.getElementById(key).value != "")
@@ -1470,6 +1464,9 @@ function updateLogicInfo() {
 		if(document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") {continue;}
 		document.getElementById(str).innerHTML = backUp[i];
 		
+    if (Location_Access[key] == true)
+      Player.accessible += 1;
+    
 		if(Location_Logic[key] == true) {
 			if (nerfed && Location_Peek[key] == true && !Location_Access[key] == true) {
 				document.getElementById(str).className= "access_check_text";
@@ -1493,7 +1490,7 @@ function updateLogicInfo() {
         document.getElementById(str).style.color = inLogicColor;
       }
 			if(document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
-				if (!songLocations.includes(key)) {Player.logically_accessible += 1;}
+				Player.logically_accessible += 1;
 				if (key == "deku_queen_gohma" && Player.deku_checks_remaining == 0) {Player.logically_accessible -= 1;}
 			    if (key == "dodongos_king_dodongo" && Player.dodongos_checks_remaining == 0) {Player.logically_accessible -= 1;}
 				if (key == "jabu_barinade" && Player.jabu_checks_remaining == 0) {Player.logically_accessible -= 1;}
@@ -1663,12 +1660,10 @@ function updateLogicInfo() {
 	if (!Player.shadow_boss_key) {Player.shadow_checks_remaining -= 1;}
 	
 	Player.checks_remaining += Player.forest_checks_remaining + Player.fire_checks_remaining + Player.water_checks_remaining + Player.spirit_checks_remaining + Player.shadow_checks_remaining + Player.gtg_checks_remaining + Player.well_checks_remaining + Player.ganons_checks_remaining;
-	if (!songItemChecked) {Player.checks_remaining += 1;}
     
-	Player.logically_accessible = Number(Player.logically_accessible);
-	Player.logically_accessible=Player.logically_accessible.toFixed(0);
 	document.getElementById("checks_remaining").innerHTML=Player.checks_remaining + " Checks Left";
-	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=Player.logically_accessible + "in Logic";} else {document.getElementById("logically_accessible").innerHTML="??? in Logic"}
+	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=Player.logically_accessible + " in Logic";} else {document.getElementById("logically_accessible").innerHTML="??? in Logic"}
+  document.getElementById("accessible").innerHTML = Player.accessible + " Accessible";
 }
 
 function searchingFor_tracking() {
