@@ -339,7 +339,7 @@ function changeThemes() {
 function dark_theme() {
 	Player.themeChange = false;
 	document.getElementById("checks_remaining").style.color="lightblue";
-	document.getElementById("logically_accessible").style.color=inLogicColor;
+	document.getElementById("logically_accessible").style.color="lightblue";
 	var all = document.getElementsByClassName('logic_check_text');
 	for (var i = 0; i < all.length; i++) {
 	all[i].style.color = inLogicColor;
@@ -356,7 +356,7 @@ function dark_theme() {
 
 function light_theme() {
 	Player.themeChange = false;
-	document.getElementById("logically_accessible").style.color="darkgreen";
+	document.getElementById("logically_accessible").style.color="blue";
 	document.getElementById("checks_remaining").style.color="blue";
 	var all = document.getElementsByClassName('logic_check_text');
 	for (var i = 0; i < all.length; i++) {

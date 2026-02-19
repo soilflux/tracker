@@ -35,8 +35,7 @@
           
         </div>
         <div id="info_column">
-          <small id="checks_remaining" class="check_text"> Remaining:196</small><small id="logically_accessible" class="check_text">In Logic: </small><br />
-          <small id="tokens_acquired" class="check_text">Tokens: </small><small id="skulls_in_logic" class="check_text">Skulls: </small><br />
+          
           <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dung4">???</small><img id="dung4_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onmousedown = "highlight(this)"><img id="dung4_req4" onmousedown = "highlight(this)"><img id="dung4_req5" onmousedown = "highlight(this)">
           <br />
           <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dung5">???</small><img id="dung5_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onmousedown = "highlight(this)"><img id="dung5_req4" onmousedown = "highlight(this)"><img id="dung5_req5" onmousedown = "highlight(this)"><br />
@@ -81,7 +80,14 @@
         </div>
           
         <div id="linsoColumn"><img id ="linso_background" src="./images/background.png"></div>
-          
+        <div id="tokenStatsColumn">
+          <small id="tokens_acquired" class="stat-text"></small>
+          <br><small id="skulls_in_logic" class="stat-text"></small>
+        </div>
+        <div id="checkStatsColumn">
+          <small id="checks_remaining" class="stat-text"></small>
+          <br><small id="logically_accessible" class="stat-text"></small>
+        </div>
         <div id="checkSummaryColumn1" class="checkSummaryColumn">
           <small id="bomb_bag1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bomb Bag &#8594; </small><br />
           <small id="bomb_bag2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bomb Bag &#8594; </small><br />

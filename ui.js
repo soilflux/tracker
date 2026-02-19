@@ -1350,8 +1350,8 @@ function updateLogicInfo() {
 	for (i = 1; i<=100; i++) {
 		if (gs[i] == true) {Logic.gold_skulltulas +=1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
-	document.getElementById("tokens_acquired").innerHTML = "Tokens: " + Player.tokens;
-	if (true) {document.getElementById("skulls_in_logic").innerHTML = "In Logic: " + Logic.gold_skulltulas;} else {document.getElementById("skulls_in_logic").innerHTML = "In Logic: ??"}
+	document.getElementById("tokens_acquired").innerHTML = Player.tokens + " Tokens" ;
+	if (true) {document.getElementById("skulls_in_logic").innerHTML = Logic.gold_skulltulas + " in Logic";} else {document.getElementById("skulls_in_logic").innerHTML = "??? in Logic"}
 
 	Player.logically_accessible = 0;
 	Player.forest_logically_accessible=0;
@@ -1667,8 +1667,8 @@ function updateLogicInfo() {
     
 	Player.logically_accessible = Number(Player.logically_accessible);
 	Player.logically_accessible=Player.logically_accessible.toFixed(0);
-	document.getElementById("checks_remaining").innerHTML="Remaining: "+Player.checks_remaining;
-	if (!nerfed) {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: "+Player.logically_accessible;} else {document.getElementById("logically_accessible").innerHTML="&nbsp; &nbsp; In Logic: ??"}
+	document.getElementById("checks_remaining").innerHTML=Player.checks_remaining + " Checks Left";
+	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=Player.logically_accessible + "in Logic";} else {document.getElementById("logically_accessible").innerHTML="??? in Logic"}
 }
 
 function searchingFor_tracking() {

@@ -138,17 +138,35 @@ body {
   vertical-align: top;
 }
 
-#checks_remaining {
+#tokenStatsColumn {
+  float:right;
+  margin-top:4px;
+  margin-right:190px;
+  margin-left:10px;
+  color: gold;
+}
+#checkStatsColumn {
   color: blue;
-  font-size: 17px;
+  float:right;
+  margin-top:4px;
+}
+.stat-text {
+  font-size:16px;
+  float: top;
+}
+#checks_remaining {
+  font-weight: bold;
+}
+#logically_accessible {
+  font-weight: bold;
+}
+#skulls_in_logic {
   font-weight: bold;
 }
 
-#logically_accessible {
-  color: darkgreen;
-  font-size: 17px;
-  float: right;
+#tokens_acquired {
   font-weight: bold;
+  color: gold;
 }
 
 #text_gan {
@@ -965,21 +983,6 @@ body {
   margin-top: 2px;
   margin-bottom: 3px;
   opacity: 1;
-}
-
-#skulls_in_logic {
-  top: 30px;
-  font-size: 17px;
-  font-weight: bold;
-  color: gold;
-  float: right;
-}
-
-#tokens_acquired {
-  top: 30px;
-  font-size: 17px;
-  font-weight: bold;
-  color: gold;
 }
 
 #timer {
