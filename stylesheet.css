@@ -532,21 +532,21 @@ body {
   background-image: url("./normal/background.png");
 }
 
-#info_column {
+#info-row {
+  margin-top:2px;
   display: flex;            /* Enables side-by-side layout */
   flex-direction: row;      /* Ensures they go horizontally */
   align-items: flex-start;  /* Aligns columns to the top */
   gap: 5px;   
 }
-#undecidedColumn {
-  margin-top:200px;
+#undecided-column {
+  margin-top:20px;
   display: flex;            /* Enables side-by-side layout */
-  flex-direction: column;      /* Ensures they go horizontally */
-  justify-content: space-between; /* Adds even spacing between the columns */
+  flex-direction: row;      /* Ensures they go horizontally */
   align-items: flex-start;  /* Aligns columns to the top */
   gap: 5px;   
 }
-.threeDungeons {
+.three-dungeons {
   width:155px;
 }
 #patchNotesColumn {
@@ -637,7 +637,7 @@ body {
 
 #linsoColumn {
   position: relative;
-  top:-340px;
+  top:12px;
   width: 280px;
 }
 
