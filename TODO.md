@@ -5,7 +5,6 @@
 - [ ] find middle ground to remove large woth font option
 - [ ] cluster checks on the list by proximity rather than by area
 - [ ] don't border locations that have their important items hinted (unless also path)
-- [ ] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
 - [ ] eliminate reliance on midUpdate() interval runs
 - [ ] remove the non-linso item tracker and add a condensed visual for 1me, 3me and stone dungeons
 - [ ] add flee to credits
@@ -27,3 +26,4 @@
 - [x] replace removed useful item feature with something that reminds players of minor speedups (like lens in shadowtemple)
 - [x] put aminal stuff in a separate file
 - [x] replace usages of AreaIndexes
+- [x] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)

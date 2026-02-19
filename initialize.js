@@ -675,10 +675,6 @@ person.type = "normie";
 var colorTheme = "dark";
 if (localStorage.getItem("theme") != null) {if (localStorage.getItem("theme") == "light"){colorTheme = "light"; document.getElementById("altThemeControl").innerHTML = "Light Theme"};}
 	
-document.getElementById("text_dung7").style.color = "yellow";
-document.getElementById("text_dung8").style.color = "yellow";
-document.getElementById("text_dung9").style.color = "yellow";
-	
 player.tokens = 0;
 token_click = 4;
 	
@@ -934,9 +930,9 @@ var checkNames = [
 	/*Water Temple*/"Cmpass", "Map Ch", "Cracked", "Torches", "*Near BK", "Boss Ky", "*S Base", "Block", "*Pillar", "Pillar", "*Plats", "D Link", "*River", "River", "Dragin", "Morpha",
 	/*Ganon's Castle*/"Scrub", "Scrub", "Scrub", "Scrub", "Lght 1", "Lght 2", "Lght 3", "Lght 4", "Lght 5", "Lght 6", "Lght Cl", "Lght Lu", "Spirit 1", "Spirit 2", "Forest", "Water 1", "Water 2", "Sha 1", "Sha 2", "Boss Ky",
 	/*Colossus*/"Bean", "Fairy", "*Soil", "*Hill", "*Tree", "Scrub", "Scrub", "Colossus",
-  /*Wasteland*/"*Skull", "Carpet", "Torches",	
-  /*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
-  /*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Above", "Enemis", "In Fire", "Right 1", "Right 2", "Right 3", "Beamo", "Left 1",  "Left 2", "Left 3", "Left 4", "Final", "Toilet",
+    /*Wasteland*/"*Skull", "Carpet", "Torches",	
+    /*Fortress*/"Card", "*Fort", "Roof", "1000", "1500", "*Target", 
+    /*Gerudo Training Grounds*/"Lobby", "Lobby", "Stalfos", "Wolfos", "Silvers", "Silvers", "Silvers", "Silvers", "Eyes", "Above", "Enemis", "In Fire", "Right 1", "Right 2", "Right 3", "Beamo", "Left 1",  "Left 2", "Left 3", "Left 4", "Final", "Toilet",
 	/*Bottom of the Well*/"Fake L", "F Bmb", "C Big", "Fake R", "C Small", "B Bmb", "Watr L", "Coffin", "Watr F", "Invisibl", "D Hand", "*Door L", "*Door R", "Lockd 1", "Lockd 2", "*Lockd", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];

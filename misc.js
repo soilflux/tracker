@@ -301,18 +301,6 @@ function areaTitlesToggle() {
 		localStorage.setItem("showAreaTitles", "true");
 	}
 }
-	
-function identifyMedal(x) {
-	if (x.style.color == "yellow") {
-		x.style.color = "rgb(238, 130, 238)";
-	}
-	else if (x.style.color == "rgb(238, 130, 238)") {
-		x.style.color = "rgb(255, 165, 0)";
-	}
-	else if (x.style.color == "rgb(255, 165, 0)") {
-		x.style.color = "yellow";
-	}
-}
 
 function toggleSettings() {
 	if(logic.brackets) {
@@ -427,7 +415,7 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Show LinSo"; 
 		document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
-    document.getElementById("checkSummaryColumn1").style.top = "140px"; document.getElementById("checkSummaryColumn1").style.left = "770px";
+    document.getElementById("checkSummaryColumn1").style.top = "-635px"; document.getElementById("checkSummaryColumn1").style.left = "1030px";
     
 	}
 	else {
@@ -436,7 +424,7 @@ function linsoControl() {
 		document.getElementById("linsoControl").innerHTML = "Hide LinSo"; 
 		document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info")); 
 		document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
-    document.getElementById("checkSummaryColumn1").style.top = "0px"; document.getElementById("checkSummaryColumn1").style.left = "105px";
+    document.getElementById("checkSummaryColumn1").style.top = "-350px"; document.getElementById("checkSummaryColumn1").style.left = "550px";
 	}
 }
 
