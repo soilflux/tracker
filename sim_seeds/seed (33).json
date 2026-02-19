@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Poe":                      1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        2,
@@ -468,7 +468,7 @@
     "Spirit Temple Statue Room Hand Chest":                 "Piece of Heart",
     "Spirit Temple Near Four Armos Chest":                  "Progressive Scale",
     "Spirit Temple Hallway Right Invisible Chest":          "Progressive Wallet",
-    "Spirit Temple Hallway Left Invisible Chest":           "Claim Check",
+    "Spirit Temple Hallway Left Invisible Chest":           "Claim checkToItemMap",
     "Spirit Temple Mirror Shield Chest":                    "Fire Arrows",
     "Spirit Temple Boss Key Chest":                         "Piece of Heart",
     "Spirit Temple Topmost Chest":                          "Rupees (5)",

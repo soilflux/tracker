@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Green Potion":             1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        2,
@@ -365,7 +365,7 @@
     "OGC Great Fairy Reward":                               "Piece of Heart",
     "Deku Tree Map Chest":                                  "Piece of Heart",
     "Deku Tree Slingshot Room Side Chest":                  "Piece of Heart",
-    "Deku Tree Slingshot Chest":                            "Claim Check",
+    "Deku Tree Slingshot Chest":                            "Claim checkToItemMap",
     "Deku Tree Compass Chest":                              "Deku Seeds (30)",
     "Deku Tree Compass Room Side Chest":                    "Piece of Heart",
     "Deku Tree Basement Chest":                             "Rupees (5)",

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle with Red Potion":               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -399,7 +399,7 @@
     "Forest Temple First Stalfos Chest":                    "Rutos Letter",
     "Forest Temple Raised Island Courtyard Chest":          "Small Key (Forest Temple)",
     "Forest Temple Map Chest":                              "Small Key (Forest Temple)",
-    "Forest Temple Well Chest":                             "Claim Check",
+    "Forest Temple Well Chest":                             "Claim checkToItemMap",
     "Forest Temple Eye Switch Chest":                       "Small Key (Forest Temple)",
     "Forest Temple Boss Key Chest":                         "Piece of Heart",
     "Forest Temple Floormaster Chest":                      "Small Key (Forest Temple)",

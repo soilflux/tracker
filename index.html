@@ -153,10 +153,10 @@
             <div id="stone_of_agony_location_div"><small id="stone_of_agony_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Agony &#8594; </small></div>
           </div>
           <textarea spellcheck="false" rows="25" cols="80" id = "simLog" class = "simLog"></textarea><br>
-          <button id = "simCheckAltar" onclick="simCheckAltar()" style = "display: none;">Check Altar</button>
-          <button id = "simCheckChildSpawn" onclick="simCheckChildSpawn()" style = "display: none;">Check Child Spawn</button>
-          <button id = "simCheckAdultSpawn" onclick="simCheckAdultSpawn()" style = "display: none;">Check Adult Spawn</button>
-          <button id = "simCheckLightArrowHint" onclick="simCheckLightArrowHint()" style = "display: none;">Check Light Arrow Hint</button>
+          <button id = "simCheckAltar" onclick="simCheckAltar()" style = "display: none;">checkToItemMap Altar</button>
+          <button id = "simCheckChildSpawn" onclick="simCheckChildSpawn()" style = "display: none;">checkToItemMap Child Spawn</button>
+          <button id = "simCheckAdultSpawn" onclick="simCheckAdultSpawn()" style = "display: none;">checkToItemMap Adult Spawn</button>
+          <button id = "simCheckLightArrowHint" onclick="simCheckLightArrowHint()" style = "display: none;">checkToItemMap Light Arrow Hint</button>
         </div>
         
         <div id="probabilityColumn">
@@ -183,19 +183,19 @@
           <br><br>The following may be input using ANY check input box.
         
           <br><b>Path and Barrens:</b>
-          <br>Start with a prefix: 1 for path or 2 for barren. continue with an area code, plus a path code for pathes. these codes are listed under the 'Location Codes' button.
+          <br>Start with a prefix: 1 for path or 2 for barren. continue with an area code, plus a path code for pathes. these codes are listed under the 'itemToCheckMap Codes' button.
           <br>For example, 1trde means trail is path to gohma. 1riev means river is evil's bane. 2zd means domain is barren.
           
           <br><b>Always and Sometimes:</b>
           <br>Start with a prefix: 3 for always, 4 for sometimes. follow with codes for the hint and item(s). 
           <br>For example, 3bx means biggoron is nothing. 44bxsl means bowling has a junk item and a slingshot. 4daho means dancing dad has a hookshot.
-          <br>Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
+          <br>Codes for locations can be found by scrolling down and pressing the "itemToCheckMap Codes" button.
           
           <br><b>Medallions:</b>
           <br>Start with prefix: 0. follow with two items codes for the dungeon that has each medallion, going in the order: light, forest, fire, water, shadow, spirit. 
           <br>For example, 0defofrshspdo means deku has light, forest has forest, pocket has fire etc.
           
-          <br><br><b>Location Color Codes:</b>
+          <br><br><b>itemToCheckMap Color Codes:</b>
           <br>Bright green = can access logically with items you currently have
           <br>Faded green = can access logically with items you currently have access to
           <br>Faded yellow = can check out of logic (based on items you currently have access to)
@@ -208,14 +208,14 @@
           <br><br> <b>Path Display</b>
           <br> Left click items listed to the left of the arrow to highlight them yellow or right click to remove them. Left clicking the area name brings back all removed items.
           <br> Click arrow to add an item to the right of it by clicking an item in the check summary. these items can be highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
-          <br><br><b>Check Summary</b>:
+          <br><br><b>checkToItemMap Summary</b>:
           <br>Right clicking locations will toggle the item from it as obtained/unobtained.
           <br><br><b>Simulator</b>:
           <br>To start the simulator click the "Play the Sim" button and select a spoiler log (only S6 and S5 tested).
           <br>If you enter in a value from 1-200 in the input box next to the "Play the Sim" button, a seed included with the tracker will be used instead of requiring a selection(this feature does not work offline).
           <br>The log will appear which keeps track of what you find. It will initially tell you your starting dungeon reward, song, age, and spawn.
-          <br>Click the "Check Altar" button to mark medallions and stones.
-          <br>Click the "Check Adult Spawn" or "Check Child Spawn" button to reveal the spawn for the age you didn't start as. 
+          <br>Click the "checkToItemMap Altar" button to mark medallions and stones.
+          <br>Click the "checkToItemMap Adult Spawn" or "checkToItemMap Child Spawn" button to reveal the spawn for the age you didn't start as. 
           <br>Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.
           <br>If you peek a check which is not freestanding, it will tell you that you found an unknown big chest, labeled by "???". You can left click the check again to obtain the item there.
           <br>Click a Gossip Stone check (colored pink) to get a hint. WotH, Path, Barren, Always, and Sometimes hints can then be manually entered in the tracker.
@@ -468,7 +468,7 @@
             <!-- <br />51: known but not obtained item locations now stay in the checklist
             <br />50: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) 
             <br />49: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).
-            <br />48: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. Logic is not factored in at all so in some cases there will be a large level of inaccuracy.
+            <br />48: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. logic is not factored in at all so in some cases there will be a large level of inaccuracy.
             <br />47: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)
             <br />46: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted
             <br />45: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)
@@ -520,10 +520,10 @@
           <button id="altThemeControl" onmousedown="altThemeControl()">Dark Theme</button><br />	
           <button id="linsoControl" onmousedown="linsoControl()">Hide LinSo</button><br />
           <button id="wothSizeToggle" onmousedown="wothSizeToggle()">Large WotH Font</button><br />
-          <button id="areaTitlesToggle" onmousedown="areaTitlesToggle()">Show Location Headers</button><br /><br />
+          <button id="areaTitlesToggle" onmousedown="areaTitlesToggle()">Show itemToCheckMap Headers</button><br /><br />
           
           <button id="myBtn">halp</button><br />
-          <button id="locationCodes">Location Codes</button><br />
+          <button id="locationCodes">itemToCheckMap Codes</button><br />
           <button id="patchNotesBtn">Patch Notes</button><br /><br />
           
           <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 

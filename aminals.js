@@ -143,8 +143,8 @@ function trackAnimalQuest() {
     localStorage.setItem("quest1Mults", JSON.stringify(quest1Mults));
   }
   
-  if (Player.slingshot
-  && !Player.bomb_bag 
+  if (player.slingshot
+  && !player.bomb_bag 
   && !quest1Flag
   && document.getElementById("quest1").style.display != "none"
   && document.getElementById("quest1").value == "slingshotBeforeBombbag") {
@@ -154,8 +154,8 @@ function trackAnimalQuest() {
     localStorage.setItem("quest1Mults", JSON.stringify(quest1Mults));
   }
   
-  if (Player.bomb_bag3
-  && Player.slingshot3
+  if (player.bomb_bag3
+  && player.slingshot3
   && !quest1Flag
   && document.getElementById("quest1").style.display != "none"
   && document.getElementById("quest1").value == "3BombbagsAnd3Slingshots") {
@@ -165,19 +165,19 @@ function trackAnimalQuest() {
     localStorage.setItem("quest1Mults", JSON.stringify(quest1Mults));
   }
   
-  if (Player.nocturne && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !yamiFailFlag) {
+  if (player.nocturne && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !yamiFailFlag) {
     document.getElementById("linso54").style.filter = "brightness(1.5) invert(100%)"; 
     yamiFlag = true;
   }
-  else if (Player.nocturne) {
+  else if (player.nocturne) {
     yamiFailFlag = true;
   }
   
-  if (Player.requiem && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !angelFailFlag) {
+  if (player.requiem && Math.random() < Math.min(rolledAnimalsLevel/200,0.125) && !angelFailFlag) {
     angelFlag = true;
     document.getElementById('halo').style.opacity = 1;
   }
-  else if (Player.requiem) {
+  else if (player.requiem) {
     angelFailFlag = true;
   }
     

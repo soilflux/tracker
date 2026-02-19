@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -304,7 +304,7 @@
     "Kak Anju as Adult":                                    "Farores Wind",
     "Kak Impas House Freestanding PoH":                     "Rupees (50)",
     "Kak Windmill Freestanding PoH":                        "Deku Seeds (30)",
-    "Kak Man on Roof":                                      "Claim Check",
+    "Kak Man on Roof":                                      "Claim checkToItemMap",
     "Kak Open Grotto Chest":                                "Recovery Heart",
     "Kak Redead Grotto Chest":                              "Bombs (5)",
     "Kak Shooting Gallery Reward":                          "Arrows (5)",
@@ -647,7 +647,7 @@
       "GV Waterfall Freestanding PoH":              "Slingshot",
       "Hideout 1 Torch Jail Gerudo Key":            "Small Key (Thieves Hideout)",
       "KF Shop Item 1":                             "Buy Deku Shield",
-      "Kak Man on Roof":                            "Claim Check",
+      "Kak Man on Roof":                            "Claim checkToItemMap",
       "Master Sword Pedestal":                      "Time Travel",
       "ZR Open Grotto Chest":                       "Bomb Bag"
     },

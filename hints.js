@@ -157,9 +157,9 @@ function wothAndBarrenProcessing() {
 					if (Items[k] == "serenade" && rules.preset != "s9") {continue;}
 					if (Items[k] == "prelude" && rules.preset != "s9") {continue;}
 					if (Items[k] == "lullaby" && rules.preset != "s9") {continue;}
-					if (Items[k] == Check["zeldasSpot"]) {continue;}
-					if (Location[Items[k]] != null && (Hinted[Location[Items[k]]] == false || typeof Hinted[Location[Items[k]]] == "undefined") && !alwaysHints.includes(Location[Items[k]])) {
-						if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
+					if (Items[k] == checkToItemMap["zeldasSpot"]) {continue;}
+					if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
+						if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
 							
 							if(nerfed) {
@@ -264,8 +264,8 @@ function wothAndBarrenProcessing() {
       if (i <= 27) {
         const dungeon = dungeonMappings[i];
         
-        AreaToLocation[AreaNames[i]].forEach(loc => {
-          const isUnknown = Check[loc] === "unknown";
+        areaToCheckMap[AreaNames[i]].forEach(loc => {
+          const isUnknown = checkToItemMap[loc] === "unknown";
           const isNotHint = !loc.startsWith("h_");
           const isNotBoss = !(dungeon?.bossCheck && bossStrings.includes(loc));
           const isDisplayed = document.getElementById(loc).style.display != "none";
@@ -276,8 +276,8 @@ function wothAndBarrenProcessing() {
         });
 
         if (dungeon) {
-          Player[dungeon.key] = 0;
-          Player.checks_remaining -= 1;
+          player[dungeon.key] = 0;
+          player.checks_remaining -= 1;
         }
       } 
       else if (uiMappings[i]) {
@@ -297,7 +297,7 @@ function wothAndBarrenProcessing() {
   
 	var array = ["forest", "fire", "water", "spirit", "shadow"];
 	for (var i = 0; i < array.length; i++) {
-		if (document.getElementById(array[i]).style.color == "red" && (Logic.emerald == array[i] || Logic.ruby == array[i] || Logic.sapphire == array[i]) && (Check.oot == "minuet" || Check.oot == "serenade" || Check.oot == "prelude" || (Check.oot == "bolero" && (Check.crater_bean == "junk" && Player.hookshot) || Player.hover_boots) || (Check.oot == "suns" && Check.redead_grave == "junk") || (Check.oot == "sarias" && Check.goron_dance == "junk" && Check.saria_kid == "junk"))) {document.getElementById(array[i]).click(); document.getElementById(array[i]).style.color = "lightblue"; if (Logic.emerald == array[i]) {Player.emerald = false;} if (Logic.ruby == array[i]) {Player.ruby = false;} if (Logic.sapphire == array[i]) {Player.sapphire = false;}}
+		if (document.getElementById(array[i]).style.color == "red" && (logic.emerald == array[i] || logic.ruby == array[i] || logic.sapphire == array[i]) && (checkToItemMap.oot == "minuet" || checkToItemMap.oot == "serenade" || checkToItemMap.oot == "prelude" || (checkToItemMap.oot == "bolero" && (checkToItemMap.crater_bean == "junk" && player.hookshot) || player.hover_boots) || (checkToItemMap.oot == "suns" && checkToItemMap.redead_grave == "junk") || (checkToItemMap.oot == "sarias" && checkToItemMap.goron_dance == "junk" && checkToItemMap.saria_kid == "junk"))) {document.getElementById(array[i]).click(); document.getElementById(array[i]).style.color = "lightblue"; if (logic.emerald == array[i]) {player.emerald = false;} if (logic.ruby == array[i]) {player.ruby = false;} if (logic.sapphire == array[i]) {player.sapphire = false;}}
 	}
 }
 
@@ -345,41 +345,41 @@ function alternateHintInput() {
 function processAlternateHintInput(checkName, rawItemCode) {
 	const itemCode = rawItemCode.toLowerCase();
 	const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
-	if (!(checkName in Check) || !inputs.includes(itemCode)) {
+	if (!(checkName in checkToItemMap) || !inputs.includes(itemCode)) {
 		return;
 	}
 
 	// Junk
 	if (itemCode === inputs[0]) {
-    if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
+    if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
 		if (itemCodeIsUppercase) baitsChecked += 1; 
 	}
 	// SK
 	else if (itemCode === inputs[1]) {
-		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]);}
+		if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]);}
 	}
 	// BK
 	else if (itemCode === inputs[2]) {
-		if (Check[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]);}
+		if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]);}
 	}
 	else {
-		if (Check[checkName] == "unknown") {
+		if (checkToItemMap[checkName] == "unknown") {
 			hintedInput = itemCode;
 			document.getElementById(checkName).value = capitalizeFirstLetter(itemCode);
 		}
-		else if (!Hinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
+		else if (!isCheckHinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
 			simOverride = true;
 			if (textSongSpots.includes("text_"+checkName)) {
 				//document.getElementById("text_"+checkName).dispatchEvent(new Event('mousedown'));
-				Hinted[checkName] = true;
+				isCheckHinted[checkName] = true;
 			}
 			else {
-				if(Check[checkName] == "prescription" || Check[checkName] == "claim_check")
+				if(checkToItemMap[checkName] == "prescription" || checkToItemMap[checkName] == "claim_check")
 					//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
-					Hinted[checkName] = true;
+					isCheckHinted[checkName] = true;
 				else
-					//document.getElementById(Check[checkName]+"_location").dispatchEvent(new Event('mousedown'));
-					Hinted[checkName] = true;
+					//document.getElementById(checkToItemMap[checkName]+"_location").dispatchEvent(new Event('mousedown'));
+					isCheckHinted[checkName] = true;
 			}
 			simOverride = false;
 		}
@@ -464,7 +464,7 @@ function resetWoth(element, num) {
 			index = wothAreas.indexOf(woth8)
 		if(AreaNames[i] == wothAreas[index]) {
 			for (var k = 0; k < Items.length; k++) {
-				if (LocationToArea[Location[Items[k]]] == AreaNames[i]) {
+				if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
 					if(event.button == 0 && ManualNotWotHItems[Items[k]]) {
 						ManualNotWotHItems[Items[k]] = false;
 					}

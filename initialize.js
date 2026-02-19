@@ -1,21 +1,19 @@
-var Hinted = {};
-var Check={};
-var Player={};
-var CouldHave={};
-var Person={};
-var Map={};
-var UI={};
-var Location_Logic ={};
-var Location_Peek={};
-var Location_Access={};
-var Location_Could_Access={};
-var Location_Could_Peek={};
-var Logic={};
-var Shop_Logic = {};
-var Location ={};
+var isCheckHinted = {};
+var checkToItemMap={};
+var player={};
+var couldHave={};
+var person={};
+var locationLogic ={};
+var locationPeek={};
+var locationAccess={};
+var locationCouldAccess={};
+var locationCouldPeek={};
+var logic={};
+var shopLogic = {};
+var itemToCheckMap ={};
 var gs = [];
 var Area = [];
-var Known = [];
+var knownItems = [];
 var paused = true;
 var timerInitialized = false;
 var thisIsHinted = false;
@@ -34,7 +32,6 @@ var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;
 var chusInBigChests = false;
-var songItemChecked = true;
 var unusedLocations = [];
 var dimmed = 0.25;
 var age = "";
@@ -75,7 +72,7 @@ const rulesConfig = {
   beans:                { label: "Beans", options: ["Vanilla", "Shuffled"] },
   expensive:                { label: "Expensive", options: ["Vanilla", "Shuffled"] },
   csmc:                { label: "CSMC", options: ["Off", "On"] },
-  chusInLogic:                { label: "Chus in Logic", options: ["Off", "On"] },
+  chusInLogic:                { label: "Chus in logic", options: ["Off", "On"] },
   preplantBeans:                { label: "Preplant Beans", options: ["Off", "On"] },
   blueFireArrows:                { label: "Blu Fire Arrw", options: ["Off", "On"] },
   hintType:                { label: "Hints Type", options: ["WotH", "Path"] },
@@ -140,7 +137,7 @@ var textSongSpots = ["text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "t
 var songSpots = ["zeldasSpot", "eponasSpot", "sariasSpot", "sunsSpot", "oot", "stormsSpot", "minuetSpot", "boleroSpot", "serenadeSpot", "requiemSpot", "nocturneSpot", "preludeSpot"];
 var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
 var ItemImages = [];
-var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
+var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim checkToItemMap", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
 
 //take advantage of a small pool to shorten the inputs
 var alwaysTable = {
@@ -605,10 +602,10 @@ var areaInputs = {
 };
 
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
-var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim checkToItemMap", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "a", "q", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var pathInputs = ["x", "de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev","li", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim checkToItemMap", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet","bombchus"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf","dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc","ogcool", "gcshop", "zdshop", "kakr" ];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy","ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
@@ -631,15 +628,15 @@ for (var i = 0; i < spawnInputs.length; i++) {
 
 for (var i = 3; i < Items2.length; i++) {
 	if (Items2[i] != "bombchus" && Items2[i] != "slingshot" && Items2[i] != "bomb_bag" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
-    Known[Items2[i]] = false;
+    knownItems[Items2[i]] = false;
   } else {
-    Known[Items2[i]] = true;
+    knownItems[Items2[i]] = true;
   }
-	Known[Items2[i] + 1] = false;
-	Known[Items2[i] + 2] = false;
-	Known[Items2[i] + 3] = false;
-	Known[Items2[i] + 4] = false;
-	Known[Items2[i] + 5] = false;
+	knownItems[Items2[i] + 1] = false;
+	knownItems[Items2[i] + 2] = false;
+	knownItems[Items2[i] + 3] = false;
+	knownItems[Items2[i] + 4] = false;
+	knownItems[Items2[i] + 5] = false;
 }
 	
 var dungeonStrings = ["deku", "dodongos", "jabu", "forest", "fire", "water", "spirit", "shadow"];
@@ -648,7 +645,7 @@ var bossStrings = ["deku_queen_gohma", "dodongos_king_dodongo", "jabu_barinade",
 var age = "child";
 var hinted = false;
 var lastCheck = ["start"];
-Check.start = "unknown";
+checkToItemMap.start = "unknown";
 
 var dekuPlacement = "unknown";
 var dodongosPlacement = "unknown";
@@ -664,7 +661,7 @@ var dungIconSources = ["./normal/items/emerald.png", "./normal/items/ruby.png", 
 document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random() * 3)];
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6)+3];
 
-Player.logically_accessible = 0;
+player.logically_accessible = 0;
 var d = new Date();
 var pauseTotal = 0;
 var pauseInitial = 0;
@@ -674,193 +671,193 @@ var linso = true;
 if (localStorage.getItem("linso")) {linso = localStorage.getItem("linso") === 'true'; }
 var linsoGoMode = false;
 var linsoLightRotation = 0;
-if (localStorage.getItem("type")) {Person.type = localStorage.getItem("type");} else{Person.type = "normie";}
-Person.type = "normie";
+if (localStorage.getItem("type")) {person.type = localStorage.getItem("type");} else{person.type = "normie";}
+person.type = "normie";
 var colorTheme = "dark";
 if (localStorage.getItem("theme") != null) {if (localStorage.getItem("theme") == "light"){colorTheme = "light"; document.getElementById("altThemeControl").innerHTML = "Light Theme"};}
-Logic.brackets = false;
+logic.brackets = false;
 	
 document.getElementById("text_dung7").style.color = "yellow";
 document.getElementById("text_dung8").style.color = "yellow";
 document.getElementById("text_dung9").style.color = "yellow";
 	
-Player.unknown = false;
-Player.small_key = true;
-Player.boss_key = true;
+player.unknown = false;
+player.small_key = true;
+player.boss_key = true;
 	
-Player.emerald = false;
-Player.ruby = false;
-Player.sapphire = false;
+player.emerald = false;
+player.ruby = false;
+player.sapphire = false;
 	
 var hasChangedMedal = false;
 	
-Player.tokens = 0;
+player.tokens = 0;
 token_click = 4;
 	
-Player.kokiri_sword = false;
-Player.farores_wind = false;
-Player.slingshot1= false;
-Player.slingshot1= false;
-Player.slingshot2= false;
-Player.slingshot3= false;
-Player.boomerang = false;
-Player.rutos_letter = false;
-Player.bottle1 = false;
-Player.bottle2 = false;
-Player.bottle3 = false;
-Player.bottle4 = false;
-Player.big_poe = false;
-Player.scale1 = false;
-Player.scale2 = false;
-Player.bomb_bag1 = false;
-Player.bomb_bag2 = false;
-Player.bomb_bag3 = false;
-Player.hammer = false;
-Player.bow1 = false;
-Player.bow2 = false;
-Player.bow3 = false;
-Player.hookshot = false;
-Player.longshot = false;
-Player.iron_boots = false;
-Player.hover_boots = false;
-Player.magic = false;
-Player.magic1 = false;
-Player.magic2 = false;
-Player.dins_fire = false;
-Player.fire_arrows = false;
-Player.goron_bracelet = false;
-Player.silver_gauntlets = false;
-Player.golden_gauntlets = false;
-Player.mirror_shield = false;
-Player.wallet1 = false;
-Player.wallet2 = false;
-Player.wallet3 = false;
-Player.goron_tunic = false;
-Player.zora_tunic = false;
-Player.lens = false;
-Player.stone_of_agony = false;
-Player.trade = false;
-Player.prescription = false;
-Player.claim_check = false;
-Player.lullaby = false;
-Player.eponas = false;
-Player.sarias = false;
-Player.suns = false;
-Player.time = false;
-Player.storms = false;
-Player.minuet = false;
-Player.bolero = false;
-Player.serenade = false;
-Player.requiem = false;
-Player.nocturne = false;
-Player.prelude = false;
+player.kokiri_sword = false;
+player.farores_wind = false;
+player.slingshot1= false;
+player.slingshot1= false;
+player.slingshot2= false;
+player.slingshot3= false;
+player.boomerang = false;
+player.rutos_letter = false;
+player.bottle1 = false;
+player.bottle2 = false;
+player.bottle3 = false;
+player.bottle4 = false;
+player.big_poe = false;
+player.scale1 = false;
+player.scale2 = false;
+player.bomb_bag1 = false;
+player.bomb_bag2 = false;
+player.bomb_bag3 = false;
+player.hammer = false;
+player.bow1 = false;
+player.bow2 = false;
+player.bow3 = false;
+player.hookshot = false;
+player.longshot = false;
+player.iron_boots = false;
+player.hover_boots = false;
+player.magic = false;
+player.magic1 = false;
+player.magic2 = false;
+player.dins_fire = false;
+player.fire_arrows = false;
+player.goron_bracelet = false;
+player.silver_gauntlets = false;
+player.golden_gauntlets = false;
+player.mirror_shield = false;
+player.wallet1 = false;
+player.wallet2 = false;
+player.wallet3 = false;
+player.goron_tunic = false;
+player.zora_tunic = false;
+player.lens = false;
+player.stone_of_agony = false;
+player.trade = false;
+player.prescription = false;
+player.claim_check = false;
+player.lullaby = false;
+player.eponas = false;
+player.sarias = false;
+player.suns = false;
+player.time = false;
+player.storms = false;
+player.minuet = false;
+player.bolero = false;
+player.serenade = false;
+player.requiem = false;
+player.nocturne = false;
+player.prelude = false;
 	
-Player.min_forest_keys=0;
-Player.current_forest_keys=0;
-Player.forest_keys = 0;
-Player.min_fire_keys=0;
-Player.current_fire_keys=0;
-Player.fire_keys = 0;
-Player.min_water_keys=0;
-Player.current_water_keys=0;
-Player.water_keys = 0;
-Player.min_spirit_keys=0;
-Player.current_spirit_keys=0;
-Player.spirit_keys = 0;
-Player.min_shadow_keys=0;
-Player.current_shadow_keys=0;
-Player.shadow_keys = 0;
-Player.min_ganons_keys=0;
-Player.current_ganons_keys=0;
-Player.ganons_keys = 0;
-Player.min_gtg_keys=0;
-Player.current_gtg_keys=0;
-Player.gtg_keys = 0;
-Player.min_well_keys=0;
-Player.current_well_keys=0;
-Player.well_keys = 0;		
-Player.deku_checks_remaining = 7;
-Player.dodongos_checks_remaining = 7;
-Player.jabu_checks_remaining = 4;
-Player.forest_checks_remaining = 8;
-Player.fire_checks_remaining = 6;
-Player.water_checks_remaining = 4;
-Player.shadow_checks_remaining = 12;
-Player.spirit_checks_remaining = 14;
-Player.gtg_checks_remaining = 13;
-Player.well_checks_remaining = 11;
-Player.ganons_checks_remaining = 14;
-Player.forest_boss_key = false;
-Player.fire_boss_key = false;
-Player.water_boss_key = false;
-Player.spirit_boss_key = false;
-Player.shadow_boss_key = false;
-Player.forest_key_ring = false;
-Player.fire_key_ring = false;
-Player.water_key_ring = false;
-Player.spirit_key_ring = false;
-Player.shadow_key_ring = false;
-Player.well_key_ring = false;
-Player.gtg_key_ring = false;
-Player.ganons_key_ring = false;
-Player.gerudo_card = false;
-Player.magic_bean_pack = false;
+player.min_forest_keys=0;
+player.current_forest_keys=0;
+player.forest_keys = 0;
+player.min_fire_keys=0;
+player.current_fire_keys=0;
+player.fire_keys = 0;
+player.min_water_keys=0;
+player.current_water_keys=0;
+player.water_keys = 0;
+player.min_spirit_keys=0;
+player.current_spirit_keys=0;
+player.spirit_keys = 0;
+player.min_shadow_keys=0;
+player.current_shadow_keys=0;
+player.shadow_keys = 0;
+player.min_ganons_keys=0;
+player.current_ganons_keys=0;
+player.ganons_keys = 0;
+player.min_gtg_keys=0;
+player.current_gtg_keys=0;
+player.gtg_keys = 0;
+player.min_well_keys=0;
+player.current_well_keys=0;
+player.well_keys = 0;		
+player.deku_checks_remaining = 7;
+player.dodongos_checks_remaining = 7;
+player.jabu_checks_remaining = 4;
+player.forest_checks_remaining = 8;
+player.fire_checks_remaining = 6;
+player.water_checks_remaining = 4;
+player.shadow_checks_remaining = 12;
+player.spirit_checks_remaining = 14;
+player.gtg_checks_remaining = 13;
+player.well_checks_remaining = 11;
+player.ganons_checks_remaining = 14;
+player.forest_boss_key = false;
+player.fire_boss_key = false;
+player.water_boss_key = false;
+player.spirit_boss_key = false;
+player.shadow_boss_key = false;
+player.forest_key_ring = false;
+player.fire_key_ring = false;
+player.water_key_ring = false;
+player.spirit_key_ring = false;
+player.shadow_key_ring = false;
+player.well_key_ring = false;
+player.gtg_key_ring = false;
+player.ganons_key_ring = false;
+player.gerudo_card = false;
+player.magic_bean_pack = false;
 
-CouldHave.min_forest_keys=0;
-CouldHave.current_forest_keys=0;
-CouldHave.forest_keys = 0;
-CouldHave.min_fire_keys=0;
-CouldHave.current_fire_keys=0;
-CouldHave.fire_keys = 0;
-CouldHave.min_water_keys=0;
-CouldHave.current_water_keys=0;
-CouldHave.water_keys = 0;
-CouldHave.min_spirit_keys=0;
-CouldHave.current_spirit_keys=0;
-CouldHave.spirit_keys = 0;
-CouldHave.min_shadow_keys=0;
-CouldHave.current_shadow_keys=0;
-CouldHave.shadow_keys = 0;
-CouldHave.min_ganons_keys=0;
-CouldHave.current_ganons_keys=0;
-CouldHave.ganons_keys = 0;
-CouldHave.min_gtg_keys=0;
-CouldHave.current_gtg_keys=0;
-CouldHave.gtg_keys = 0;
-CouldHave.min_well_keys=0;
-CouldHave.current_well_keys=0;
-CouldHave.well_keys = 0;	
-CouldHave.forest_boss_key = false;
-CouldHave.fire_boss_key = false;
-CouldHave.water_boss_key = false;
-CouldHave.spirit_boss_key = false;
-CouldHave.shadow_boss_key = false;
-CouldHave.forest_key_ring = false;
-CouldHave.fire_key_ring = false;
-CouldHave.water_key_ring = false;
-CouldHave.spirit_key_ring = false;
-CouldHave.shadow_key_ring = false;
-CouldHave.well_key_ring = false;
-CouldHave.gtg_key_ring = false;
-CouldHave.ganons_key_ring = false;
-CouldHave.gerudo_card = false;
-CouldHave.magic_bean_pack = false;
+couldHave.min_forest_keys=0;
+couldHave.current_forest_keys=0;
+couldHave.forest_keys = 0;
+couldHave.min_fire_keys=0;
+couldHave.current_fire_keys=0;
+couldHave.fire_keys = 0;
+couldHave.min_water_keys=0;
+couldHave.current_water_keys=0;
+couldHave.water_keys = 0;
+couldHave.min_spirit_keys=0;
+couldHave.current_spirit_keys=0;
+couldHave.spirit_keys = 0;
+couldHave.min_shadow_keys=0;
+couldHave.current_shadow_keys=0;
+couldHave.shadow_keys = 0;
+couldHave.min_ganons_keys=0;
+couldHave.current_ganons_keys=0;
+couldHave.ganons_keys = 0;
+couldHave.min_gtg_keys=0;
+couldHave.current_gtg_keys=0;
+couldHave.gtg_keys = 0;
+couldHave.min_well_keys=0;
+couldHave.current_well_keys=0;
+couldHave.well_keys = 0;	
+couldHave.forest_boss_key = false;
+couldHave.fire_boss_key = false;
+couldHave.water_boss_key = false;
+couldHave.spirit_boss_key = false;
+couldHave.shadow_boss_key = false;
+couldHave.forest_key_ring = false;
+couldHave.fire_key_ring = false;
+couldHave.water_key_ring = false;
+couldHave.spirit_key_ring = false;
+couldHave.shadow_key_ring = false;
+couldHave.well_key_ring = false;
+couldHave.gtg_key_ring = false;
+couldHave.ganons_key_ring = false;
+couldHave.gerudo_card = false;
+couldHave.magic_bean_pack = false;
 	
-Player.checks_remaining=196;
-Player.logically_accessible=35;
-Player.forest_logically_accessible=0;
-Player.fire_logically_accessible=0;
-Player.water_logically_accessible=0;
-Player.spirit_logically_accessible=0;
-Player.shadow_logically_accessible=0;
-Player.gtg_logically_accessible=0;
-Player.well_logically_accessible=0;
-Player.ganons_logically_accessible=0;
+player.checks_remaining=196;
+player.logically_accessible=35;
+player.forest_logically_accessible=0;
+player.fire_logically_accessible=0;
+player.water_logically_accessible=0;
+player.spirit_logically_accessible=0;
+player.shadow_logically_accessible=0;
+player.gtg_logically_accessible=0;
+player.well_logically_accessible=0;
+player.ganons_logically_accessible=0;
 	
-Player.theme = "dark";
-Player.themeChange = true;
+player.theme = "dark";
+player.themeChange = true;
 	
-Player.bombchus = false;
+player.bombchus = false;
 	
 var tempTime = 0;
 var timerHours = 0;
@@ -949,7 +946,7 @@ const AreaImages = {
   "Ganon's": "ganons"
 };
 
-var LocationToArea = {
+var checkToAreaMap = {
     // Kokiri Forest
     "kokiri_mido_1": "Kokiri", "kokiri_mido_2": "Kokiri", "kokiri_mido_3": "Kokiri", "kokiri_mido_4": "Kokiri", "kokiri_sword": "Kokiri", "shop_kokiri_TL": "Kokiri", "shop_kokiri_TR": "Kokiri", "shop_kokiri_BR": "Kokiri", "shop_kokiri_BL": "Kokiri", "gs_kokiri_child": "Kokiri", "gs_kokiri_soil": "Kokiri", "gs_kokiri_adult": "Kokiri", "kokiri_storms": "Kokiri", "cow_kokiri": "Kokiri", "h_deku_left": "Kokiri", "h_deku_right": "Kokiri", "h_near_lw": "Kokiri", "h_kokiri_storms": "Kokiri",
     // Lon Lon Ranch
@@ -1020,19 +1017,19 @@ var LocationToArea = {
     "well_fakeLeft": "Well", "well_frontBombable": "Well", "well_centerBig": "Well", "well_fakeRight": "Well", "well_centerSmall": "Well", "well_backBombable": "Well", "well_waterLeft": "Well", "well_coffin": "Well", "well_waterFront": "Well", "well_invisible": "Well", "well_deadHand": "Well", "gs_well_west_inner": "Well", "gs_well_east_inner": "Well", "well_locked1": "Well", "well_locked2": "Well", "gs_well_like_like": "Well", "well_basement": "Well",
 };
 
-const AreaToLocation = Object.entries(LocationToArea).reduce((acc, [location, area]) => {
+const areaToCheckMap = Object.entries(checkToAreaMap).reduce((acc, [check, area]) => {
     if (!acc[area]) {
         acc[area] = [];
     }
     
-    acc[area].push(location);
+    acc[area].push(check);
     
     return acc;
 }, {});
 
-var songLocations = ["zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"];
+var songChecks = ["zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"];
   
-var Locations = [
+var checks = [
 	"kokiri_mido_1", "kokiri_mido_2", "kokiri_mido_3", "kokiri_mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_soil", "gs_kokiri_adult", "kokiri_storms", "cow_kokiri", "h_deku_left", "h_deku_right", "h_near_lw", "h_kokiri_storms",
 	"talons_chickens", "gs_lon_lon_tree", "back_of_ranch", "scrub_ranch_1", "scrub_ranch_2", "scrub_ranch_3", "gs_lon_lon_window", "gs_lon_lon_shed", "gs_lon_lon_back_wall","cow_ranch1", "cow_ranch2", "cow_ranch3", "cow_ranch4", 
 	"hyrule_marketGrotto", "hyrule_tektite_grotto", "hyrule_hp_scrub", "hyrule_openGrotto", "hyrule_remoteGrotto", "gs_outside_kakariko", "gs_near_gerudo", "hyrule_ocarina", "cow_field", "h_hyrule_remoteGrotto", "h_hyrule_openGrotto", "h_hyrule_marketGrotto", "h_hyrule_web",
@@ -1110,12 +1107,12 @@ var checkNames = [
 ];
 var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater_skull"];
 	
-Location.med1 = "unknown";
-Location.med2 = "unknown";
-Location.med3 = "unknown";
-Location.med4 = "unknown"; 
-Location.med5 = "unknown";
-Location.med6 = "unknown";
+itemToCheckMap.med1 = "unknown";
+itemToCheckMap.med2 = "unknown";
+itemToCheckMap.med3 = "unknown";
+itemToCheckMap.med4 = "unknown"; 
+itemToCheckMap.med5 = "unknown";
+itemToCheckMap.med6 = "unknown";
 	
 var	gsText = [
 	"",
@@ -1299,146 +1296,146 @@ var AreaNamesLong = [
 	"Bottom of the Well" 
 ];
 
-Logic.accessible = true;
+logic.accessible = true;
 
-Logic.bottle = false;
-Logic.big_poe = false;
-Logic.scale1 = false;
-Logic.scale2 = false;
-Logic.bomb_bag1 = false;
-Logic.bomb_bag2 = false;
-Logic.bomb_bag3 = false;
-Logic.bow1 = false;
-Logic.bow2 = false;
-Logic.bow3 = false;
-Logic.hookshot1 = false;
-Logic.hookshot2 = false;
-Logic.strength1 = false;
-Logic.strength2 = false;
-Logic.strength3 = false;
-Logic.magic1 = false;
-Logic.magic2 = false;
-Logic.slingshot1 = false;
-Logic.slingshot2 = false;
-Logic.slingshot3 = false;
-Logic.wallet1 = false;
-Logic.wallet2 = false;
-Logic.wallet3 = false;
+logic.bottle = false;
+logic.big_poe = false;
+logic.scale1 = false;
+logic.scale2 = false;
+logic.bomb_bag1 = false;
+logic.bomb_bag2 = false;
+logic.bomb_bag3 = false;
+logic.bow1 = false;
+logic.bow2 = false;
+logic.bow3 = false;
+logic.hookshot1 = false;
+logic.hookshot2 = false;
+logic.strength1 = false;
+logic.strength2 = false;
+logic.strength3 = false;
+logic.magic1 = false;
+logic.magic2 = false;
+logic.slingshot1 = false;
+logic.slingshot2 = false;
+logic.slingshot3 = false;
+logic.wallet1 = false;
+logic.wallet2 = false;
+logic.wallet3 = false;
 
-Logic.kokiri_sword = false;
-Logic.farores_wind = false;
-Logic.slingshot= false;
-Logic.boomerang = false;
-Logic.rutos_letter = false;
-Logic.silver_scale = false;
-Logic.golden_scale = false;
-Logic.bomb_bag = false;
-Logic.hammer = false;
-Logic.bow = false;
-Logic.hookshot1 = false;
-Logic.hookshot2 = false;
-Logic.iron_boots = false;
-Logic.hover_boots = false;
-Logic.magic = false;
-Logic.dins_fire = false;
-Logic.fire_arrows = false;
-Logic.goron_bracelet = false;
-Logic.silver_gauntlets = false;
-Logic.golden_gauntlets = false;
-Logic.mirror_shield = false;
-Logic.adults_wallet = false;
-Logic.giants_wallet = false;
-Logic.goron_tunic = false;
-Logic.zora_tunic = false;
-Logic.lens = false;
-Logic.stone_of_agony = false;
-Logic.trade = false;
-Logic.prescription = false;
-Logic.claim_check = false;
-Logic.trade = false;
-Logic.light_arrows = false;
-Logic.ice_arrows = false;
-Logic.forest_key_ring = false;
-Logic.fire_key_ring = false;
-Logic.water_key_ring = false;
-Logic.spirit_key_ring = false;
-Logic.shadow_key_ring = false;
-Logic.well_key_ring = false;
-Logic.gtg_key_ring = false;
-Logic.ganons_key_ring = false;
-Logic.gerudo_card = false;
-Logic.magic_bean_pack = false;
-Logic.lullaby = false;
-Logic.eponas = false;
-Logic.sarias = false;
-Logic.suns = false;
-Logic.time = false;
-Logic.storms = false;
-Logic.minuet = false;
-Logic.bolero = false;
-Logic.serenade = false;
-Logic.requiem = false;
-Logic.nocturne = false;
-Logic.prelude = false;
-Logic.forest_medallion = false;
-Logic.fire_medallion = false;
-Logic.water_medallion = false;
-Logic.spirit_medallion = false;
-Logic.shadow_medallion = false;
-Logic.light_medallion = false;
-Logic.emerald = false;
-Logic.ruby = false;
-Logic.sapphire = false;
-Logic.kokiri_emerald = false;
-Logic.goron_ruby = false;
-Logic.zora_sapphire = false;
+logic.kokiri_sword = false;
+logic.farores_wind = false;
+logic.slingshot= false;
+logic.boomerang = false;
+logic.rutos_letter = false;
+logic.silver_scale = false;
+logic.golden_scale = false;
+logic.bomb_bag = false;
+logic.hammer = false;
+logic.bow = false;
+logic.hookshot1 = false;
+logic.hookshot2 = false;
+logic.iron_boots = false;
+logic.hover_boots = false;
+logic.magic = false;
+logic.dins_fire = false;
+logic.fire_arrows = false;
+logic.goron_bracelet = false;
+logic.silver_gauntlets = false;
+logic.golden_gauntlets = false;
+logic.mirror_shield = false;
+logic.adults_wallet = false;
+logic.giants_wallet = false;
+logic.goron_tunic = false;
+logic.zora_tunic = false;
+logic.lens = false;
+logic.stone_of_agony = false;
+logic.trade = false;
+logic.prescription = false;
+logic.claim_check = false;
+logic.trade = false;
+logic.light_arrows = false;
+logic.ice_arrows = false;
+logic.forest_key_ring = false;
+logic.fire_key_ring = false;
+logic.water_key_ring = false;
+logic.spirit_key_ring = false;
+logic.shadow_key_ring = false;
+logic.well_key_ring = false;
+logic.gtg_key_ring = false;
+logic.ganons_key_ring = false;
+logic.gerudo_card = false;
+logic.magic_bean_pack = false;
+logic.lullaby = false;
+logic.eponas = false;
+logic.sarias = false;
+logic.suns = false;
+logic.time = false;
+logic.storms = false;
+logic.minuet = false;
+logic.bolero = false;
+logic.serenade = false;
+logic.requiem = false;
+logic.nocturne = false;
+logic.prelude = false;
+logic.forest_medallion = false;
+logic.fire_medallion = false;
+logic.water_medallion = false;
+logic.spirit_medallion = false;
+logic.shadow_medallion = false;
+logic.light_medallion = false;
+logic.emerald = false;
+logic.ruby = false;
+logic.sapphire = false;
+logic.kokiri_emerald = false;
+logic.goron_ruby = false;
+logic.zora_sapphire = false;
 
-Logic.forest_medallion_location = "unknown";
-Logic.fire_medallion_location  = "unknown";
-Logic.water_medallion_location  = "unknown";
-Logic.generic1 = "unknown";
-Logic.generic2 = "unknown";
-Logic.generic3 = "unknown";
-Logic.emerald = "unknown";
-Logic.ruby  = "unknown";
-Logic.sapphire  = "unknown";
+logic.forest_medallion_location = "unknown";
+logic.fire_medallion_location  = "unknown";
+logic.water_medallion_location  = "unknown";
+logic.generic1 = "unknown";
+logic.generic2 = "unknown";
+logic.generic3 = "unknown";
+logic.emerald = "unknown";
+logic.ruby  = "unknown";
+logic.sapphire  = "unknown";
 
-Logic.min_forest_keys=0;
-Logic.current_forest_keys=0;
-Logic.forest_keys = 0;
-Logic.min_fire_keys=0;
-Logic.current_fire_keys=0;
-Logic.fire_keys = 0;
-Logic.min_water_keys=0;
-Logic.current_water_keys=0;
-Logic.water_keys = 0;
-Logic.min_spirit_keys=0;
-Logic.current_spirit_keys=0;
-Logic.spirit_keys = 0;
-Logic.min_shadow_keys=0;
-Logic.current_shadow_keys=0;
-Logic.shadow_keys = 0;
-Logic.min_ganons_keys=0;
-Logic.current_ganons_keys=0;
-Logic.ganons_keys = 0;
-Logic.min_gtg_keys=0;
-Logic.current_gtg_keys=0;
-Logic.gtg_keys = 0;
-Logic.min_well_keys=0;
-Logic.current_well_keys=0;
-Logic.well_keys = 0;
-Logic.forced_forest_boss_key = false;
-Logic.forced_fire_boss_key = false;
-Logic.forced_water_boss_key = false;
-Logic.forced_spirit_boss_key = false;
-Logic.forced_shadow_boss_key = false;
+logic.min_forest_keys=0;
+logic.current_forest_keys=0;
+logic.forest_keys = 0;
+logic.min_fire_keys=0;
+logic.current_fire_keys=0;
+logic.fire_keys = 0;
+logic.min_water_keys=0;
+logic.current_water_keys=0;
+logic.water_keys = 0;
+logic.min_spirit_keys=0;
+logic.current_spirit_keys=0;
+logic.spirit_keys = 0;
+logic.min_shadow_keys=0;
+logic.current_shadow_keys=0;
+logic.shadow_keys = 0;
+logic.min_ganons_keys=0;
+logic.current_ganons_keys=0;
+logic.ganons_keys = 0;
+logic.min_gtg_keys=0;
+logic.current_gtg_keys=0;
+logic.gtg_keys = 0;
+logic.min_well_keys=0;
+logic.current_well_keys=0;
+logic.well_keys = 0;
+logic.forced_forest_boss_key = false;
+logic.forced_fire_boss_key = false;
+logic.forced_water_boss_key = false;
+logic.forced_spirit_boss_key = false;
+logic.forced_shadow_boss_key = false;
 
-Logic.forest_boss_key = false;
-Logic.fire_boss_key = false;
-Logic.water_boss_key = false;
-Logic.spirit_boss_key = false;
-Logic.shadow_boss_key = false;
-Logic.ganons_boss_key = false;
+logic.forest_boss_key = false;
+logic.fire_boss_key = false;
+logic.water_boss_key = false;
+logic.spirit_boss_key = false;
+logic.shadow_boss_key = false;
+logic.ganons_boss_key = false;
 
 //SPAWNS
 Spawn = {};
@@ -1563,64 +1560,64 @@ window.onclick = function(event) {
 }
 
 for (var i = 0; i < 244; i++) {
-	Check[Location[i]] = "unknown";
+	checkToItemMap[itemToCheckMap[i]] = "unknown";
 }
 
 var parent = document.getElementById("normalColumn1");
 
 var elem = document.createElement("small"); elem.id = "title_kokiri"; elem.className = "area_titles hidden"; elem.innerHTML = "Kokiri"; parent.appendChild(elem);
 var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
-for (var i = 0; i<Locations.length; i++) {
-  if (songLocations.includes(Locations[i])) {
+for (var i = 0; i<checks.length; i++) {
+  if (songChecks.includes(checks[i])) {
 		parent = document.getElementById("songs");
-		var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "check_input"; parent.appendChild(elem);
-		var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
-		var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
+		var elem = document.createElement("input"); elem.id = checks[i]; elem.className = "check_input"; parent.appendChild(elem);
+		var elem = document.createElement("small"); elem.id = "text_" + checks[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
+		var elem = document.createElement("br"); elem.id = "br_" + checks[i]; parent.appendChild(elem);
     continue;
 	}
-	if (LocationToArea[Locations[i]] != "Kokiri" && LocationToArea[Locations[i-1]] == "Kokiri") {
+	if (checkToAreaMap[checks[i]] != "Kokiri" && checkToAreaMap[checks[i-1]] == "Kokiri") {
 		var elem = document.createElement("small"); elem.id = "title_ranch"; elem.className = "area_titles hidden"; elem.innerHTML = "Lon Lon"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Ranch" && LocationToArea[Locations[i-1]] == "Ranch") {
+	if (checkToAreaMap[checks[i]] != "Ranch" && checkToAreaMap[checks[i-1]] == "Ranch") {
 		var elem = document.createElement("small"); elem.id = "title_field"; elem.className = "area_titles hidden"; elem.innerHTML = "Field"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Field" && LocationToArea[Locations[i-1]] == "Field") {
+	if (checkToAreaMap[checks[i]] != "Field" && checkToAreaMap[checks[i-1]] == "Field") {
 		var elem = document.createElement("small"); elem.id = "title_valley"; elem.className = "area_titles hidden"; elem.innerHTML = "Valley"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Valley" && LocationToArea[Locations[i-1]] == "Valley") {
+	if (checkToAreaMap[checks[i]] != "Valley" && checkToAreaMap[checks[i-1]] == "Valley") {
 		var elem = document.createElement("small"); elem.id = "title_hylia"; elem.className = "area_titles hidden"; elem.innerHTML = "Lake"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Hylia" && LocationToArea[Locations[i-1]] == "Hylia") {
+	if (checkToAreaMap[checks[i]] != "Hylia" && checkToAreaMap[checks[i-1]] == "Hylia") {
 		var elem = document.createElement("small"); elem.id = "title_market"; elem.className = "area_titles hidden"; elem.innerHTML = "Market"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Market" && LocationToArea[Locations[i-1]] == "Market") {
+	if (checkToAreaMap[checks[i]] != "Market" && checkToAreaMap[checks[i-1]] == "Market") {
 		var elem = document.createElement("small"); elem.id = "title_hcastle"; elem.className = "area_titles hidden"; elem.innerHTML = "Castle"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Hyr Cas" && LocationToArea[Locations[i-1]] == "Hyr Cas") {
+	if (checkToAreaMap[checks[i]] != "Hyr Cas" && checkToAreaMap[checks[i-1]] == "Hyr Cas") {
 		var elem = document.createElement("small"); elem.id = "title_outG"; elem.className = "area_titles hidden"; elem.innerHTML = "OGC"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "OGC" && LocationToArea[Locations[i-1]] == "OGC") {
+	if (checkToAreaMap[checks[i]] != "OGC" && checkToAreaMap[checks[i-1]] == "OGC") {
 		var elem = document.createElement("small"); elem.id = "title_ToT"; elem.className = "area_titles hidden"; elem.innerHTML = "ToT"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "ToT" && LocationToArea[Locations[i-1]] == "ToT") {
+	if (checkToAreaMap[checks[i]] != "ToT" && checkToAreaMap[checks[i-1]] == "ToT") {
 		var elem = document.createElement("small"); elem.id = "title_fountain"; elem.className = "area_titles hidden"; elem.innerHTML = "Fountain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Fountain" && LocationToArea[Locations[i-1]] == "Fountain") {
+	if (checkToAreaMap[checks[i]] != "Fountain" && checkToAreaMap[checks[i-1]] == "Fountain") {
 		var elem = document.createElement("small"); elem.id = "title_ice"; elem.className = "area_titles hidden"; elem.innerHTML = "Ice"; parent.appendChild(elem);
 		var elem = document.createElement("img"); elem.dataset.dungeon = "ice"; elem.id = "ice_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "ice"; elem.id = "ice_to"; elem.className = "area_entrance"; elem.src = './normal/areas/ice.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "ice"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Ice" && LocationToArea[Locations[i-1]] == "Ice") {
+	if (checkToAreaMap[checks[i]] != "Ice" && checkToAreaMap[checks[i-1]] == "Ice") {
 		parent = document.getElementById("normalColumn2");
 		var elem = document.createElement("small"); elem.id = "title_deku"; elem.className = "area_titles hidden"; elem.innerHTML = "Deku"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "deku"; elem.id = "deku_from"; elem.className = "area_entrance"; elem.src = './normal/areas/kokiri.jpg'; parent.appendChild(elem);
@@ -1628,71 +1625,71 @@ for (var i = 0; i<Locations.length; i++) {
     var elem = document.createElement("img"); elem.dataset.dungeon = "deku"; elem.id = "reward_deku"; elem.className = "area_rewards"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "deku"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Deku " && LocationToArea[Locations[i-1]] == "Deku") {
+	if (checkToAreaMap[checks[i]] != "Deku " && checkToAreaMap[checks[i-1]] == "Deku") {
 		var elem = document.createElement("small"); elem.id = "title_lostwoods"; elem.className = "area_titles hidden"; elem.innerHTML = "Lost Woods"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Lost Woods" && LocationToArea[Locations[i-1]] == "Lost Woods") {
+	if (checkToAreaMap[checks[i]] != "Lost Woods" && checkToAreaMap[checks[i-1]] == "Lost Woods") {
 		var elem = document.createElement("small"); elem.id = "title_sfm"; elem.className = "area_titles hidden"; elem.innerHTML = "SFM"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "SFM" && LocationToArea[Locations[i-1]] == "SFM") {
+	if (checkToAreaMap[checks[i]] != "SFM" && checkToAreaMap[checks[i-1]] == "SFM") {
 		var elem = document.createElement("small"); elem.id = "title_gcity"; elem.className = "area_titles hidden"; elem.innerHTML = "Goron"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Goron City" && LocationToArea[Locations[i-1]] == "Goron City") {
+	if (checkToAreaMap[checks[i]] != "Goron City" && checkToAreaMap[checks[i-1]] == "Goron City") {
 		var elem = document.createElement("small"); elem.id = "title_dodongos"; elem.className = "area_titles hidden"; elem.innerHTML = "DC"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "dodongos_from"; elem.className = "area_entrance"; elem.src = './normal/areas/dmt.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "dodongos_to"; elem.className = "area_entrance"; elem.src = './normal/areas/dodongos.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "dodongos"; elem.id = "reward_dodongos"; elem.className = "area_rewards"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "dodongos"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Dodongos" && LocationToArea[Locations[i-1]] == "Dodongos") {
+	if (checkToAreaMap[checks[i]] != "Dodongos" && checkToAreaMap[checks[i-1]] == "Dodongos") {
 		var elem = document.createElement("small"); elem.id = "title_trail"; elem.className = "area_titles hidden"; elem.innerHTML = "Trail"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Trail" && LocationToArea[Locations[i-1]] == "Trail") {
+	if (checkToAreaMap[checks[i]] != "Trail" && checkToAreaMap[checks[i-1]] == "Trail") {
 		var elem = document.createElement("small"); elem.id = "title_crater"; elem.className = "area_titles hidden"; elem.innerHTML = "Crater"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Crater" && LocationToArea[Locations[i-1]] == "Crater") {
+	if (checkToAreaMap[checks[i]] != "Crater" && checkToAreaMap[checks[i-1]] == "Crater") {
 		parent = document.getElementById("normalColumn3");
 		var elem = document.createElement("small"); elem.id = "title_kakariko"; elem.className = "area_titles hidden"; elem.innerHTML = "Kakariko"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Kakariko" && LocationToArea[Locations[i-1]] == "Kakariko") {
+	if (checkToAreaMap[checks[i]] != "Kakariko" && checkToAreaMap[checks[i-1]] == "Kakariko") {
 		var elem = document.createElement("small"); elem.id = "title_graveyard"; elem.className = "area_titles hidden"; elem.innerHTML = "Graveyard"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Graveyard" && LocationToArea[Locations[i-1]] == "Graveyard") {
+	if (checkToAreaMap[checks[i]] != "Graveyard" && checkToAreaMap[checks[i-1]] == "Graveyard") {
 		var elem = document.createElement("small"); elem.id = "title_river"; elem.className = "area_titles hidden"; elem.innerHTML = "River"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "River" && LocationToArea[Locations[i-1]] == "River") {
+	if (checkToAreaMap[checks[i]] != "River" && checkToAreaMap[checks[i-1]] == "River") {
 		var elem = document.createElement("small"); elem.id = "title_domain"; elem.className = "area_titles hidden"; elem.innerHTML = "Domain"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] == "Colossus" && LocationToArea[Locations[i-1]] != "Colossus") {
+	if (checkToAreaMap[checks[i]] == "Colossus" && checkToAreaMap[checks[i-1]] != "Colossus") {
     parent = document.getElementById("dung4");
 		var elem = document.createElement("small"); elem.id = "title_colossus"; elem.className = "area_titles hidden"; elem.innerHTML = "Colossus"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Colossus" && LocationToArea[Locations[i-1]] == "Colossus") {
+	if (checkToAreaMap[checks[i]] != "Colossus" && checkToAreaMap[checks[i-1]] == "Colossus") {
 		var elem = document.createElement("small"); elem.id = "title_wasteland"; elem.className = "area_titles hidden"; elem.innerHTML = "Wasteland"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] != "Wasteland" && LocationToArea[Locations[i-1]] == "Wasteland") {
+	if (checkToAreaMap[checks[i]] != "Wasteland" && checkToAreaMap[checks[i-1]] == "Wasteland") {
 		var elem = document.createElement("small"); elem.id = "title_fortress"; elem.className = "area_titles hidden"; elem.innerHTML = "Fortress"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.className = "area_titles_break hidden"; parent.appendChild(elem);
 	}
-	if (LocationToArea[Locations[i]] == "Jabu" && LocationToArea[Locations[i-1]] != "Jabu") {
+	if (checkToAreaMap[checks[i]] == "Jabu" && checkToAreaMap[checks[i-1]] != "Jabu") {
 		var elem = document.createElement("small"); elem.id = "title_jabu"; elem.className = "area_titles hidden"; elem.innerHTML = "Jabu"; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fountain.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "jabu_to"; elem.className = "area_entrance"; elem.src = './normal/areas/jabu.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "jabu"; elem.id = "reward_jabu"; elem.className = "area_rewards"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "jabu"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Jabu" && LocationToArea[Locations[i-1]] == "Jabu") {
+	if (checkToAreaMap[checks[i]] != "Jabu" && checkToAreaMap[checks[i-1]] == "Jabu") {
     parent = document.getElementById("dung1");
     var elem = document.createElement("img"); elem.dataset.dungeon = "forest"; elem.id = "forest_from"; elem.className = "area_entrance"; elem.src = './normal/areas/sfm.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "forest"; elem.id = "forest_to"; elem.className = "area_entrance"; elem.src = './normal/areas/forest.jpg'; parent.appendChild(elem);
@@ -1702,7 +1699,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "forest"; elem.id = "forestBKs"; elem.className = "superBK"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "forest"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Forest" && LocationToArea[Locations[i-1]] == "Forest") {
+	if (checkToAreaMap[checks[i]] != "Forest" && checkToAreaMap[checks[i-1]] == "Forest") {
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "fire_from"; elem.className = "area_entrance"; elem.src = './normal/areas/dmc.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "fire_to"; elem.className = "area_entrance"; elem.src = './normal/areas/fire.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "fire"; elem.id = "reward_fire"; elem.className = "area_rewards"; parent.appendChild(elem);
@@ -1711,7 +1708,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "fire"; elem.id = "fireBKs"; elem.className = "superBK"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "fire"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Fire" && LocationToArea[Locations[i-1]] == "Fire") {
+	if (checkToAreaMap[checks[i]] != "Fire" && checkToAreaMap[checks[i-1]] == "Fire") {
 		parent = document.getElementById("dung2");
 		var elem = document.createElement("img"); elem.dataset.dungeon = "spirit"; elem.id = "spirit_from"; elem.className = "area_entrance"; elem.src = './normal/areas/colossus.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "spirit"; elem.id = "spirit_to"; elem.className = "area_entrance"; elem.src = './normal/areas/spirit.jpg'; parent.appendChild(elem);
@@ -1721,7 +1718,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "spirit"; elem.id = "spiritBKs"; elem.className = "superBK"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "spirit"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Spirit" && LocationToArea[Locations[i-1]] == "Spirit") {
+	if (checkToAreaMap[checks[i]] != "Spirit" && checkToAreaMap[checks[i-1]] == "Spirit") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "shadow_from"; elem.className = "area_entrance"; elem.src = './normal/areas/graveyard.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "shadow_to"; elem.className = "area_entrance"; elem.src = './normal/areas/shadow.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "shadow"; elem.id = "reward_shadow"; elem.className = "area_rewards"; parent.appendChild(elem);
@@ -1730,7 +1727,7 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "shadow"; elem.id = "shadowBKs"; elem.className = "superBK"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "shadow"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Shadow" && LocationToArea[Locations[i-1]] == "Shadow") {
+	if (checkToAreaMap[checks[i]] != "Shadow" && checkToAreaMap[checks[i-1]] == "Shadow") {
 		parent = document.getElementById("dung3");
 		var elem = document.createElement("img"); elem.dataset.dungeon = "water"; elem.id = "water_from"; elem.className = "area_entrance"; elem.src = './normal/areas/hylia.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "water"; elem.id = "water_to"; elem.className = "area_entrance"; elem.src = './normal/areas/water.jpg'; parent.appendChild(elem);
@@ -1740,31 +1737,31 @@ for (var i = 0; i<Locations.length; i++) {
 		var elem = document.createElement("small"); elem.dataset.dungeon = "water"; elem.id = "waterBKs"; elem.className = "superBK"; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "water"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "Water" && LocationToArea[Locations[i-1]] == "Water") {
+	if (checkToAreaMap[checks[i]] != "Water" && checkToAreaMap[checks[i-1]] == "Water") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "ganons"; elem.id = "ganons_from"; elem.className = "area_entrance"; elem.src = './normal/areas/ogc.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "ganons"; elem.id = "ganons_to"; elem.className = "area_entrance"; elem.src = './normal/areas/ganons.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "ganons"; elem.id = "ganons"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "ganons"; elem.id = "ganonsSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "ganons"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] == "GTG" && LocationToArea[Locations[i-1]] != "GTG") {
+	if (checkToAreaMap[checks[i]] == "GTG" && checkToAreaMap[checks[i-1]] != "GTG") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_from"; elem.className = "area_entrance"; elem.src = './normal/areas/fortress.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "gtg"; elem.id = "gtg_to"; elem.className = "area_entrance"; elem.src = './normal/areas/gtg.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "gtg"; elem.id = "gtg"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "gtg"; elem.id = "gtgSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "gtg"; parent.appendChild(elem);   
 	}
-	if (LocationToArea[Locations[i]] != "GTG" && LocationToArea[Locations[i-1]] == "GTG") {
+	if (checkToAreaMap[checks[i]] != "GTG" && checkToAreaMap[checks[i-1]] == "GTG") {
 		var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_from"; elem.className = "area_entrance"; elem.src = './normal/areas/kakariko.jpg'; parent.appendChild(elem);
     var elem = document.createElement("img"); elem.dataset.dungeon = "well"; elem.id = "well_to"; elem.className = "area_entrance"; elem.src = './normal/areas/well.jpg'; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "well"; elem.id = "well"; elem.className = "superJunk"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("small"); elem.dataset.dungeon = "well"; elem.id = "wellSKs"; elem.className = "superSK"; elem.onclick = junkUltra; parent.appendChild(elem);
 		var elem = document.createElement("br"); elem.dataset.dungeon = "well"; parent.appendChild(elem);   
 	}
-  var elem = document.createElement("input"); elem.id = Locations[i]; elem.className = "picture_input"; parent.appendChild(elem);
-  var elem = document.createElement("small"); elem.id = "text_" + Locations[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
-  var elem = document.createElement("br"); elem.id = "br_" + Locations[i]; parent.appendChild(elem);
-  if (LocationToArea[Locations[i+1]] != LocationToArea[Locations[i]]) {
+  var elem = document.createElement("input"); elem.id = checks[i]; elem.className = "picture_input"; parent.appendChild(elem);
+  var elem = document.createElement("small"); elem.id = "text_" + checks[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
+  var elem = document.createElement("br"); elem.id = "br_" + checks[i]; parent.appendChild(elem);
+  if (checkToAreaMap[checks[i+1]] != checkToAreaMap[checks[i]]) {
     var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);
   }
 }
@@ -1773,17 +1770,17 @@ if (localStorage.getItem("showAreaTitles") === "true") areaTitlesToggle();
 
 var backUp = [];
 		
-for (var i = 0; i < Locations.length; i++) {
-	Check[Locations[i]] = "unknown";
-	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
-	if (Locations[i].startsWith("shop_")) {Shop_Logic[Locations[i]] = "giants_wallet";}
+for (var i = 0; i < checks.length; i++) {
+	checkToItemMap[checks[i]] = "unknown";
+	backUp.push(document.getElementById("text_" + checks[i]).innerHTML);
+	if (checks[i].startsWith("shop_")) {shopLogic[checks[i]] = "giants_wallet";}
 }
 
 for (var i = 0; i < Items.length; i++) {
-	Location[Items[i]] = "unknown";
+	itemToCheckMap[Items[i]] = "unknown";
 }
 
-locationLogic();
+updateLocationLogic();
 
 changeThemes();
 
@@ -1837,16 +1834,16 @@ if (i == 5) {tempTop += 9;} if (i == 9) {tempTop += 5;} if (i == 10) {tempTop -=
 		elem.id = "linso" + i + j;
 		elem.style.height = "35px";
 		elem.style.width = "35px";
-		if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) {elem.src = Player.bottle_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) {elem.src = Player.shadow_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = Player.spirit_img;}
-		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = Player.light_img;}
+		if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) {elem.src = player.bottle_img;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) {elem.src = player.shadow_img;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) {elem.src = player.spirit_img;}
+		else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) {elem.src = player.light_img;}
 		else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
       rollAnimal();
     }
-		else {elem.src = Player[linsoOrder[linsoOrderIncrement] + "_img"];}
-		Player[linsoOrder[linsoOrderIncrement]] = false;
-		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {Player[linsoOrder[linsoOrderIncrement]] = true;}
+		else {elem.src = player[linsoOrder[linsoOrderIncrement] + "_img"];}
+		player[linsoOrder[linsoOrderIncrement]] = false;
+		if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") {player[linsoOrder[linsoOrderIncrement]] = true;}
 		elem.style.position = "absolute";
 		elem.style.left = -32 + j*41 + "px";
 		elem.style.top = tempTop + i*40 + "px";
@@ -1888,7 +1885,7 @@ for (var i = 1; i <= 12; i++) {
 	elem.id = "linsoS" + i;
 	elem.style.height = "35px";
 	elem.style.width = "35px";
-	elem.src = Player[linsoOrder2[linsoOrderIncrement] + "_img"];
+	elem.src = player[linsoOrder2[linsoOrderIncrement] + "_img"];
 	elem.style.position = "absolute";
 	elem.style.left = 258 + "px";
 	elem.style.top = tempTop + i*31 + "px";
@@ -2556,7 +2553,7 @@ var SpoilerItemToInput = {
 	"Prescription" : inputs[inputNames.indexOf("Prescription")],
 	"Eyeball Frog" : inputs[inputNames.indexOf("Prescription")],
 	"Eyedrops" : inputs[inputNames.indexOf("Prescription")],
-	"Claim Check" : inputs[inputNames.indexOf("Claim Check")],
+	"Claim checkToItemMap" : inputs[inputNames.indexOf("Claim checkToItemMap")],
 	"Progressive Wallet" : inputs[inputNames.indexOf("Progressive Wallet")],
 	"Nayrus Love" : inputs[inputNames.indexOf("Nayrus Love")],
 	"Biggoron Sword" : inputs[inputNames.indexOf("BGS")],
@@ -2700,8 +2697,8 @@ if (rules.preset == "s9") {
 if (rules.preset == "aminalFunhouse") {
 	document.getElementById("hintInput").innerHTML = "10 x\n20 x\n30 x\n40 x\n50 x";
   timerMultiplier = 2.5;
-  Player.light_arrows = true;
-  Known.light_arrows = true;
+  player.light_arrows = true;
+  knownItems.light_arrows = true;
 }
 if (rules.preset == "sgl2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
@@ -2724,7 +2721,7 @@ document.getElementById("linso12").click();
 document.getElementById("linso22").click();
 document.getElementById("linso52").click();
 document.getElementById("linso61").click();
-Player.zeldas_letter = true;
+player.zeldas_letter = true;
 
 showNewPatchNotes();
 linsoControl(); linsoControl();

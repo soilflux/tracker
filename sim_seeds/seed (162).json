@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Poe":                      1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        5,
@@ -307,7 +307,7 @@
     "Kak Man on Roof":                                      "Arrows (10)",
     "Kak Open Grotto Chest":                                "Piece of Heart",
     "Kak Redead Grotto Chest":                              "Recovery Heart",
-    "Kak Shooting Gallery Reward":                          "Claim Check",
+    "Kak Shooting Gallery Reward":                          "Claim checkToItemMap",
     "Kak 10 Gold Skulltula Reward":                         "Arrows (30)",
     "Kak 20 Gold Skulltula Reward":                         "Deku Nuts (5)",
     "Kak 30 Gold Skulltula Reward":                         "Rupees (50)",

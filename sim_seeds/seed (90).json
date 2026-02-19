@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Poe":                      1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -478,7 +478,7 @@
     "Ice Cavern Iron Boots Chest":                          "Piece of Heart",
     "Ice Cavern Freestanding PoH":                          "Rupees (5)",
     "Gerudo Training Ground Lobby Left Chest":              "Bombchus (10)",
-    "Gerudo Training Ground Lobby Right Chest":             "Claim Check",
+    "Gerudo Training Ground Lobby Right Chest":             "Claim checkToItemMap",
     "Gerudo Training Ground Stalfos Chest":                 "Stone of Agony",
     "Gerudo Training Ground Before Heavy Block Chest":      "Progressive Strength Upgrade",
     "Gerudo Training Ground Heavy Block First Chest":       "Small Key (Gerudo Training Ground)",

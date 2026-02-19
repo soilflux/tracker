@@ -1,41 +1,41 @@
 function highlight(x) {
 	var item = "";
-	if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){item = "kokiri_sword";}
-	if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){item = "bomb_bag";}
-	if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){item = "iron_boots";}
-	if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){item = "hover_boots";}
-	if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){item = "hookshot";}
-	if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){item = "bow";}
-	if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){item = "hammer";}
-	if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){item = "scale";}
-	if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){item = "magic";}
-	if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){item = "hookshot";}
-	if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){item = "mirror_shield";}
-	if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){item = "dins_fire";}
-	if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){item = "rutos_letter";}
-	if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){item = "boomerang";}
-	if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){item = "lens";}
-	if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){item = "strength";}
-	if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){item = "scale";}
-	if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){item = "light_arrows";}
-	if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){item = "fire_arrows";}
-	if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){item = "farores_wind";}
-	if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){item = "bottle";}
-	if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){item = "slingshot";}
-	if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){item = "lullaby";}
-	if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){item = "eponas";}
-	if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){item = "sarias";}
-	if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){item = "suns_song";}
-	if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){item = "song_of_time";}
-	if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){item = "song_of_storms";}
-	if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){item = "minuet";}
-	if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){item = "bolero";}
-	if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){item = "serenade";}
-	if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){item = "requiem";}
-	if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){item = "nocturne";}
-	if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){item = "prelude";}
+	if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))){item = "kokiri_sword";}
+	if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))){item = "bomb_bag";}
+	if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))){item = "iron_boots";}
+	if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))){item = "hover_boots";}
+	if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))){item = "hookshot";}
+	if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))){item = "bow";}
+	if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))){item = "hammer";}
+	if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))){item = "scale";}
+	if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))){item = "magic";}
+	if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))){item = "hookshot";}
+	if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))){item = "mirror_shield";}
+	if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))){item = "dins_fire";}
+	if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))){item = "rutos_letter";}
+	if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))){item = "boomerang";}
+	if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))){item = "lens";}
+	if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))){item = "strength";}
+	if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))){item = "scale";}
+	if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))){item = "light_arrows";}
+	if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))){item = "fire_arrows";}
+	if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))){item = "farores_wind";}
+	if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))){item = "bottle";}
+	if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))){item = "slingshot";}
+	if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))){item = "lullaby";}
+	if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))){item = "eponas";}
+	if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))){item = "sarias";}
+	if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))){item = "suns_song";}
+	if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))){item = "song_of_time";}
+	if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))){item = "song_of_storms";}
+	if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))){item = "minuet";}
+	if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))){item = "bolero";}
+	if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))){item = "serenade";}
+	if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))){item = "requiem";}
+	if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))){item = "nocturne";}
+	if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))){item = "prelude";}
 	
 	if (event.button == 2) {
 		searchingFors = document.getElementsByClassName("searchingFor_images");
@@ -78,18 +78,18 @@ function highlight(x) {
 	else if (event.button == 0) {
 	
 		if (x.id == "silverscaleimg") {
-			if (Player.golden_scale == true) {
-				Player.scale1 = false; 
-				Player.scale2 = false;
-				document.getElementById(x.id).src = Player.silver_scale_img;
+			if (player.golden_scale == true) {
+				player.scale1 = false; 
+				player.scale2 = false;
+				document.getElementById(x.id).src = player.silver_scale_img;
 				x.style.opacity = .2;
 			}
 			else if (x.style.opacity == 1) {
-				Player.scale2 = true;
-				document.getElementById(x.id).src = Player.golden_scale_img;
+				player.scale2 = true;
+				document.getElementById(x.id).src = player.golden_scale_img;
 			} 
 			else {
-				Player.scale1 = true;
+				player.scale1 = true;
 				x.style.opacity = 1;
 			}
 		}
@@ -98,97 +98,97 @@ function highlight(x) {
 			else {x.style.opacity =1;}
 		}
 		if (x.id == "for_med") {
-			if (x.style.opacity == 1) {Logic.forest_medallion = true;}
+			if (x.style.opacity == 1) {logic.forest_medallion = true;}
 		}
 		else if (document.getElementById(x.id).style.opacity == 1) {
-			if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){Player.kokiri_sword = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){Player.bomb_bag1 = true; }
-			if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){Player.iron_boots = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){Player.hover_boots = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){Player.hookshot1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){Player.bow1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){Player.strength1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){Player.hammer = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){Player.scale1 = true; Player.scale2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){Player.strength1 = true; Player.strength2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){Player.magic1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){Player.hookshot1 = true; Player.hookshot2 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){Player.mirror_shield = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){Player.dins_fire = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){Player.rutos_letter = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){Player.boomerang = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){Player.lens = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){Player.strength1 = true; Player.strength2 = true; Player.strength3 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){Player.scale1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){Player.light_arrows = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){Player.fire_arrows = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){Player.farores_wind = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){Player.bottle1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){Player.slingshot1 = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){Player.lullaby = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){Player.eponas = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){Player.sarias = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){Player.suns = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){Player.time = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){Player.storms = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){Player.minuet = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){Player.bolero = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){Player.serenade = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = true;}
-			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = true;}
-      if (document.getElementById(x.id).src.endsWith(Player.chu_img.substring(2))){Player.bombchus1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))){player.kokiri_sword = true;}
+			if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))){player.bomb_bag1 = true; }
+			if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))){player.iron_boots = true;}
+			if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))){player.hover_boots = true;}
+			if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))){player.hookshot1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))){player.bow1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))){player.strength1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))){player.hammer = true;}
+			if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))){player.scale1 = true; player.scale2 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))){player.strength1 = true; player.strength2 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))){player.magic1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))){player.hookshot1 = true; player.hookshot2 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))){player.mirror_shield = true;}
+			if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))){player.dins_fire = true;}
+			if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))){player.rutos_letter = true;}
+			if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))){player.boomerang = true;}
+			if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))){player.lens = true;}
+			if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))){player.strength1 = true; player.strength2 = true; player.strength3 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))){player.scale1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))){player.light_arrows = true;}
+			if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))){player.fire_arrows = true;}
+			if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))){player.farores_wind = true;}
+			if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))){player.bottle1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))){player.slingshot1 = true;}
+			if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))){player.lullaby = true;}
+			if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))){player.eponas = true;}
+			if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))){player.sarias = true;}
+			if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))){player.suns = true;}
+			if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))){player.time = true;}
+			if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))){player.storms = true;}
+			if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))){player.minuet = true;}
+			if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))){player.bolero = true;}
+			if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))){player.serenade = true;}
+			if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))){player.requiem = true;}
+			if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))){player.nocturne = true;}
+			if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))){player.prelude = true;}
+      if (document.getElementById(x.id).src.endsWith(player.chu_img.substring(2))){player.bombchus1 = true;}
 		}
 		else {
-			if (document.getElementById(x.id).src.endsWith(Player.kokiri_sword_img.substring(2))){Player.kokiri_sword = false; }
-			if (document.getElementById(x.id).src.endsWith(Player.bomb_img.substring(2))){Player.bomb_bag1 = false; }
-			if (document.getElementById(x.id).src.endsWith(Player.iron_boots_img.substring(2))){Player.iron_boots = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.hover_boots_img.substring(2))){Player.hover_boots = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.hookshot_img.substring(2))){Player.hookshot1 = false; Player.hookshot2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.bow_img.substring(2))){Player.bow1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.goron_bracelet_img.substring(2))){Player.strength1 = false; Player.strength2 = false; Player.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.hammer_img.substring(2))){Player.hammer = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.golden_scale_img.substring(2))){Player.scale2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.silver_gauntlets_img.substring(2))){Player.strength2 = false; Player.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.magic_img.substring(2))){Player.magic1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.longshot_img.substring(2))){Player.hookshot2 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.mirror_shield_img.substring(2))){Player.mirror_shield = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.dins_fire_img.substring(2))){Player.dins_fire = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.rutos_letter_img.substring(2))){Player.rutos_letter = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.boomerang_img.substring(2))){Player.boomerang = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.lens_img.substring(2))){Player.lens = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.golden_gauntlets_img.substring(2))){Player.strength3 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.silver_scale_img.substring(2))){Player.scale1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.light_arrows_img.substring(2))){Player.light_arrows = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.fire_arrows_img.substring(2))){Player.fire_arrows = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.farores_wind_img.substring(2))){Player.farores_wind = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.bottle_img.substring(2))){Player.bottle1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.slingshot_img.substring(2))){Player.slingshot1 = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.lullaby_img.substring(2))){Player.lullaby = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.eponas_img.substring(2))){Player.eponas = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.sarias_img.substring(2))){Player.sarias = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.suns_img.substring(2))){Player.suns = Player.suns = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.time_img.substring(2))){Player.time = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.storms_img.substring(2))){Player.storms = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.minuet_img.substring(2))){Player.minuet = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.bolero_img.substring(2))){Player.bolero = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.serenade_img.substring(2))){Player.serenade = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.requiem_img.substring(2))){Player.requiem = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.nocturne_img.substring(2))){Player.nocturne = false;}
-			if (document.getElementById(x.id).src.endsWith(Player.prelude_img.substring(2))){Player.prelude = false;}
-      if (document.getElementById(x.id).src.endsWith(Player.chu_img.substring(2))){Player.bombchus1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))){player.kokiri_sword = false; }
+			if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))){player.bomb_bag1 = false; }
+			if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))){player.iron_boots = false;}
+			if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))){player.hover_boots = false;}
+			if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))){player.hookshot1 = false; player.hookshot2 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))){player.bow1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))){player.strength1 = false; player.strength2 = false; player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))){player.hammer = false;}
+			if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))){player.scale2 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))){player.strength2 = false; player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))){player.magic1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))){player.hookshot2 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))){player.mirror_shield = false;}
+			if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))){player.dins_fire = false;}
+			if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))){player.rutos_letter = false;}
+			if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))){player.boomerang = false;}
+			if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))){player.lens = false;}
+			if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))){player.strength3 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))){player.scale1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))){player.light_arrows = false;}
+			if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))){player.fire_arrows = false;}
+			if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))){player.farores_wind = false;}
+			if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))){player.bottle1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))){player.slingshot1 = false;}
+			if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))){player.lullaby = false;}
+			if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))){player.eponas = false;}
+			if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))){player.sarias = false;}
+			if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))){player.suns = player.suns = false;}
+			if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))){player.time = false;}
+			if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))){player.storms = false;}
+			if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))){player.minuet = false;}
+			if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))){player.bolero = false;}
+			if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))){player.serenade = false;}
+			if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))){player.requiem = false;}
+			if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))){player.nocturne = false;}
+			if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))){player.prelude = false;}
+      if (document.getElementById(x.id).src.endsWith(player.chu_img.substring(2))){player.bombchus1 = false;}
 		}
 		
 		
-		if (x.id == "fir_med" && x.style.opacity==1) {Logic.fire_medallion = true;}
-		if (x.id == "wat_med" && x.style.opacity==1) {Logic.water_medallion = true;}
-		if (x.id == "spi_med" && x.style.opacity==1) {Logic.spirit_medallion = true;}
-		if (x.id == "sha_med" && x.style.opacity==1) {Logic.shadow_medallion = true;}
-		if (x.id == "lit_med" && x.style.opacity==1) {Logic.light_medallion = true;}
+		if (x.id == "fir_med" && x.style.opacity==1) {logic.fire_medallion = true;}
+		if (x.id == "wat_med" && x.style.opacity==1) {logic.water_medallion = true;}
+		if (x.id == "spi_med" && x.style.opacity==1) {logic.spirit_medallion = true;}
+		if (x.id == "sha_med" && x.style.opacity==1) {logic.shadow_medallion = true;}
+		if (x.id == "lit_med" && x.style.opacity==1) {logic.light_medallion = true;}
 		
-		if (x.id == "kok_eme" && x.style.opacity==1) {Logic.kokiri_emerald = true;}
-		if (x.id == "gor_rub" && x.style.opacity==1) {Logic.goron_ruby = true;}
-		if (x.id == "zor_sap" && x.style.opacity==1) {Logic.zora_sapphire = true;}
+		if (x.id == "kok_eme" && x.style.opacity==1) {logic.kokiri_emerald = true;}
+		if (x.id == "gor_rub" && x.style.opacity==1) {logic.goron_ruby = true;}
+		if (x.id == "zor_sap" && x.style.opacity==1) {logic.zora_sapphire = true;}
 	}
   midUpdate();
 }
@@ -243,16 +243,16 @@ function toCamelCase(str) {
 }
 
 function whoAmI() {
-	if(Person.type == "soli") {
-		Person.type = "normie";
+	if(person.type == "soli") {
+		person.type = "normie";
 		localStorage.setItem("type", "normie");
-		Player.themeChange = true;
+		player.themeChange = true;
 		Update();
 	}
-	else if (Person.type == "normie") {
-		Person.type = "soli";
+	else if (person.type == "normie") {
+		person.type = "soli";
 		localStorage.setItem("type", "soli");
-		Player.themeChange = true;
+		player.themeChange = true;
 		Update();
 	}
 }
@@ -294,10 +294,10 @@ function areaTitlesToggle() {
 	button = document.getElementById("areaTitlesToggle");
 	isHidden = document.getElementById("title_kokiri").classList.contains("hidden");
 	if (isHidden) {
-		button.textContent = "Show Location Headers";
+		button.textContent = "Show itemToCheckMap Headers";
 		localStorage.setItem("showAreaTitles", "false");
 	} else {
-		button.textContent = "Hide Location Headers";
+		button.textContent = "Hide itemToCheckMap Headers";
 		localStorage.setItem("showAreaTitles", "true");
 	}
 }
@@ -316,13 +316,13 @@ function identifyMedal(x) {
 }
 
 function toggleSettings() {
-	if(Logic.brackets) {
-		Logic.brackets = false;
+	if(logic.brackets) {
+		logic.brackets = false;
 		document.getElementById("SettingsToggle").innerHTML = "Switch to Brackets";
 		Update();
 	}
 	else {
-		Logic.brackets = true;
+		logic.brackets = true;
 		document.getElementById("SettingsToggle").innerHTML = "Switch to Weekly";
 		Update();
 	}
@@ -452,15 +452,15 @@ function coopControl() {
 }
 
 function linso_counter() {
-	if (event.button == 0 || token_click == 0) {Player.tokens += 1;}
-	if (event.button == 2 || token_click == 2) {Player.tokens -= 1;}
-	document.getElementById("linso_counter").innerHTML = "" + Player.tokens;
+	if (event.button == 0 || token_click == 0) {player.tokens += 1;}
+	if (event.button == 2 || token_click == 2) {player.tokens -= 1;}
+	document.getElementById("linso_counter").innerHTML = "" + player.tokens;
 	token_click = 4;
 	midUpdate();
 }
 
 function toggleHint(loc) {
-	if(loc.id == "trade_location" && !Known["prescription"] && !Known["claim_check"])
+	if(loc.id == "trade_location" && !knownItems["prescription"] && !knownItems["claim_check"])
 		return;
 
 	var theLocation = "";
@@ -468,18 +468,18 @@ function toggleHint(loc) {
 	var thisIsASong = false;
 	if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text" || loc.className == "known_check_text") { // song click
 		theLocation = loc.id.slice(5); 
-		item = Check[theLocation];
+		item = checkToItemMap[theLocation];
 		thisIsASong = true;
 	} 
 	else { // check summary text click
 		item = loc.id.slice(0, -9); 
 		
-		if(item == "trade" && Known["prescription"])
+		if(item == "trade" && knownItems["prescription"])
 			item = "prescription";
-		else if(item == "trade" && Known["claim_check"])
+		else if(item == "trade" && knownItems["claim_check"])
 			item = "claim_check";
 		
-		theLocation = Location[item];
+		theLocation = itemToCheckMap[item];
 	}
 	
 	if (item == "sos") {item = "storms";}
@@ -497,14 +497,14 @@ function toggleHint(loc) {
 				else {itemText = ItemNames[Items.indexOf(item)];}
 				
 				if (item != "unknown" && theLocation != "unknown") {
-					Hinted[theLocation] = !Hinted[theLocation];
+					isCheckHinted[theLocation] = !isCheckHinted[theLocation];
 					
 					// get the hinted text for this item and location
 					if (loc.className == "logic_check_text" || loc.className == "ool_check_text" || loc.className == "access_check_text") {
-						text = checkNames[Locations.indexOf(theLocation)] + ":  " + itemText + "<br>";
+						text = checkNames[checks.indexOf(theLocation)] + ":  " + itemText + "<br>";
 					}
 					else {
-						text = checkNames[Locations.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
+						text = checkNames[checks.indexOf(theLocation)] + ":  " + ItemNames[Items.indexOf(item)] + "<br>";
 					}
 				}
 			}
@@ -524,18 +524,18 @@ function toggleHint(loc) {
 					temp_item = SpoilerJSON["locations"][LocationToSpoilerName[theLocation]];
 				}
 				
-				if(Check[theLocation] != "unknown") {
+				if(checkToItemMap[theLocation] != "unknown") {
 					if(loc.id != "trade_location"){
 						if(loc.innerHTML.includes("Big Poe"))
-							Player.big_poe = !Player.big_poe;
+							player.big_poe = !player.big_poe;
 					
-						Player[item] = !Player[item];
+						player[item] = !player[item];
 					}
 					else {
-						if(Known["prescription"])
-							Player["prescription"] = !Player["prescription"];
-						else if(Known["claim_check"])
-							Player["claim_check"] = !Player["claim_check"];
+						if(knownItems["prescription"])
+							player["prescription"] = !player["prescription"];
+						else if(knownItems["claim_check"])
+							player["claim_check"] = !player["claim_check"];
 					}
 				}
 				else {
@@ -545,23 +545,23 @@ function toggleHint(loc) {
 			}
 		}
 		else if(event.which == 3) { // right click, toggle if you have it or not (Game dictionary)
-			if(!simActive || Check[theLocation] != "unknown" || !thisIsASong) {
+			if(!simActive || checkToItemMap[theLocation] != "unknown" || !thisIsASong) {
 				if(loc.id != "trade_location"){
 					if(loc.innerHTML.includes("Big Poe"))
-						Player.big_poe = !Player.big_poe;
+						player.big_poe = !player.big_poe;
 				
-					Player[item] = !Player[item];
+					player[item] = !player[item];
 				}
 				else {
-					if(Known["prescription"])
-						Player["prescription"] = !Player["prescription"];
-					else if(Known["claim_check"])
-						Player["claim_check"] = !Player["claim_check"];
+					if(knownItems["prescription"])
+						player["prescription"] = !player["prescription"];
+					else if(knownItems["claim_check"])
+						player["claim_check"] = !player["claim_check"];
 				}
 			}
 		}
 		else if(event.which == 2) { // middle click, toggle if the item is in logic or not
-			if(Known[item]) {
+			if(knownItems[item]) {
 				if((ManualInLogicItems[item] == undefined || ManualInLogicItems[item] == false) && (ManualOutOfLogicItems[item] == undefined || ManualOutOfLogicItems[item] == false)) {
 					ManualInLogicItems[item] = true;
 					ManualOutOfLogicItems[item] = false;
@@ -627,106 +627,106 @@ function toggleHint(loc) {
 }
 
 function gsArrayBuilder() {
-	gs[1] = Location_Logic.gs_kokiri_child;
-	gs[2] = Location_Logic.gs_kokiri_soil;
-	gs[3] = Location_Logic.gs_kokiri_adult;
-	gs[4] = Location_Logic.gs_market;
-	gs[5] = Location_Logic.gs_lost_woods_bean_1;
-	gs[6] = Location_Logic.gs_lost_woods_bean_2;
-	gs[7] = Location_Logic.gs_lost_woods_above_stage;
-	gs[8] = Location_Logic.gs_sacred_forest;
-	gs[9] = Location_Logic.gs_outside_kakariko;
-	gs[10] = Location_Logic.gs_near_gerudo;
-	gs[11] = Location_Logic.gs_hyrule_castle_tree;
-	gs[12] = Location_Logic.gs_hyrule_castle_grotto;
-	gs[13] = Location_Logic.gs_lon_lon_tree;
-	gs[14] = Location_Logic.gs_lon_lon_shed;
-	gs[15] = Location_Logic.gs_lon_lon_window;
-	gs[16] = Location_Logic.gs_lon_lon_back_wall;
-	gs[17] = Location_Logic.gs_kakariko_construction;
-	gs[18] = Location_Logic.gs_kakariko_skulltula_house;
-	gs[19] = Location_Logic.gs_kakariko_guard_house;
-	gs[20] = Location_Logic.gs_kakariko_tree;
-	gs[21] = Location_Logic.gs_kakariko_tower;
-	gs[22] = Location_Logic.gs_kakariko_impas;
-	gs[23] = Location_Logic.gs_graveyard_wall;
-	gs[24] = Location_Logic.gs_graveyard_soil;
-	gs[25] = Location_Logic.gs_trail_soil;
-	gs[26] = Location_Logic.gs_trail_bombable_wall;
-	gs[27] = Location_Logic.gs_trail_hail_path;
-	gs[28] = Location_Logic.gs_trail_above_dodongos;
-	gs[29] = Location_Logic.gs_goron_center;
-	gs[30] = Location_Logic.gs_goron_maze;
-	gs[31] = Location_Logic.gs_crater_crate;
-	gs[32] = Location_Logic.gs_crater_soil;
-	gs[33] = Location_Logic.gs_river_ladder;
-	gs[34] = Location_Logic.gs_river_near_grotto;
-	gs[35] = Location_Logic.gs_river_above_bridge;
-	gs[36] = Location_Logic.gs_river_tree;
-	gs[37] = Location_Logic.gs_domain;
-	gs[38] = Location_Logic.gs_fountain_above_log;
-	gs[39] = Location_Logic.gs_fountain_tree;
-	gs[40] = Location_Logic.gs_fountain_hidden_cave;
-	gs[41] = Location_Logic.gs_hylia_bean;
-	gs[42] = Location_Logic.gs_hylia_lab_wall;
-	gs[43] = Location_Logic.gs_hylia_island;
-	gs[44] = Location_Logic.gs_hylia_tree;
-	gs[45] = Location_Logic.gs_hylia_lab_crate;
-	gs[46] = Location_Logic.gs_valley_small_bridge;
-	gs[47] = Location_Logic.gs_valley_bean;
-	gs[48] = Location_Logic.gs_valley_tent;
-	gs[49] = Location_Logic.gs_valley_pillar;
-	gs[50] = Location_Logic.gs_fortress_archery;
-	gs[51] = Location_Logic.gs_fortress_top;
-	gs[52] = Location_Logic.gs_wasteland;
-	gs[53] = Location_Logic.gs_colossus_soil;
-	gs[54] = Location_Logic.gs_colossus_tree;
-	gs[55] = Location_Logic.gs_colossus_hill;
-	gs[56] = Location_Logic.gs_ogc;
-	gs[57] = Location_Logic.gs_deku_basement_back;
-	gs[58] = Location_Logic.gs_deku_basement_gate;
-	gs[59] = Location_Logic.gs_deku_basement_vines;
-	gs[60] = Location_Logic.gs_deku_compass;
-	gs[61] = Location_Logic.gs_dodongos_east_side;
-	gs[62] = Location_Logic.gs_dodongos_stair_vines;
-	gs[63] = Location_Logic.gs_dodongos_above_stairs;
-	gs[64] = Location_Logic.gs_dodongos_scarecrow;
-	gs[65] = Location_Logic.gs_dodongos_before_king;
-	gs[66] = Location_Logic.gs_jabu_vines;
-	gs[67] = Location_Logic.gs_jabu_near_octo_1;
-	gs[68] = Location_Logic.gs_jabu_near_octo_2;
-	gs[69] = Location_Logic.gs_jabu_near_boss;
-	gs[70] = Location_Logic.gs_forest_first;
-	gs[71] = Location_Logic.gs_forest_lobby;
-	gs[72] = Location_Logic.gs_forest_outdoor_east;
-	gs[73] = Location_Logic.gs_forest_outdoor_west;
-	gs[74] = Location_Logic.gs_forest_basement;
-	gs[75] = Location_Logic.gs_fire_time;
-	gs[76] = Location_Logic.gs_fire_bomb_wall;
-	gs[77] = Location_Logic.gs_fire_scarecrow_1;
-	gs[78] = Location_Logic.gs_fire_scarecrow_2;
-	gs[79] = Location_Logic.gs_fire_basement;
-	gs[80] = Location_Logic.gs_water_south_basement;
-	gs[81] = Location_Logic.gs_water_river;
-	gs[82] = Location_Logic.gs_water_central;
-	gs[83] = Location_Logic.gs_water_near_boss_key;
-	gs[84] = Location_Logic.gs_water_platform_room;
-	gs[85] = Location_Logic.gs_spirit_metal_fence;
-	gs[86] = Location_Logic.gs_spirit_before_child_knuckle;
-	gs[87] = Location_Logic.gs_spirit_boulder_room;
-	gs[88] = Location_Logic.gs_spirit_lobby;
-	gs[89] = Location_Logic.gs_spirit_child_climb;
-	gs[90] = Location_Logic.gs_shadow_like_like;
-	gs[91] = Location_Logic.gs_shadow_crusher;
-	gs[92] = Location_Logic.gs_shadow_giant_pot;
-	gs[93] = Location_Logic.gs_shadow_near_boat;
-	gs[94] = Location_Logic.gs_shadow_three_pots;
-	gs[95] = Location_Logic.gs_well_west_inner;
-	gs[96] = Location_Logic.gs_well_east_inner;
-	gs[97] = Location_Logic.gs_well_like_like;
-	gs[98] = Location_Logic.gs_ice_spinning_scythe;
-	gs[99] = Location_Logic.gs_ice_hp_room;
-	gs[100] = Location_Logic.gs_ice_block_room;
+	gs[1] = locationLogic.gs_kokiri_child;
+	gs[2] = locationLogic.gs_kokiri_soil;
+	gs[3] = locationLogic.gs_kokiri_adult;
+	gs[4] = locationLogic.gs_market;
+	gs[5] = locationLogic.gs_lost_woods_bean_1;
+	gs[6] = locationLogic.gs_lost_woods_bean_2;
+	gs[7] = locationLogic.gs_lost_woods_above_stage;
+	gs[8] = locationLogic.gs_sacred_forest;
+	gs[9] = locationLogic.gs_outside_kakariko;
+	gs[10] = locationLogic.gs_near_gerudo;
+	gs[11] = locationLogic.gs_hyrule_castle_tree;
+	gs[12] = locationLogic.gs_hyrule_castle_grotto;
+	gs[13] = locationLogic.gs_lon_lon_tree;
+	gs[14] = locationLogic.gs_lon_lon_shed;
+	gs[15] = locationLogic.gs_lon_lon_window;
+	gs[16] = locationLogic.gs_lon_lon_back_wall;
+	gs[17] = locationLogic.gs_kakariko_construction;
+	gs[18] = locationLogic.gs_kakariko_skulltula_house;
+	gs[19] = locationLogic.gs_kakariko_guard_house;
+	gs[20] = locationLogic.gs_kakariko_tree;
+	gs[21] = locationLogic.gs_kakariko_tower;
+	gs[22] = locationLogic.gs_kakariko_impas;
+	gs[23] = locationLogic.gs_graveyard_wall;
+	gs[24] = locationLogic.gs_graveyard_soil;
+	gs[25] = locationLogic.gs_trail_soil;
+	gs[26] = locationLogic.gs_trail_bombable_wall;
+	gs[27] = locationLogic.gs_trail_hail_path;
+	gs[28] = locationLogic.gs_trail_above_dodongos;
+	gs[29] = locationLogic.gs_goron_center;
+	gs[30] = locationLogic.gs_goron_maze;
+	gs[31] = locationLogic.gs_crater_crate;
+	gs[32] = locationLogic.gs_crater_soil;
+	gs[33] = locationLogic.gs_river_ladder;
+	gs[34] = locationLogic.gs_river_near_grotto;
+	gs[35] = locationLogic.gs_river_above_bridge;
+	gs[36] = locationLogic.gs_river_tree;
+	gs[37] = locationLogic.gs_domain;
+	gs[38] = locationLogic.gs_fountain_above_log;
+	gs[39] = locationLogic.gs_fountain_tree;
+	gs[40] = locationLogic.gs_fountain_hidden_cave;
+	gs[41] = locationLogic.gs_hylia_bean;
+	gs[42] = locationLogic.gs_hylia_lab_wall;
+	gs[43] = locationLogic.gs_hylia_island;
+	gs[44] = locationLogic.gs_hylia_tree;
+	gs[45] = locationLogic.gs_hylia_lab_crate;
+	gs[46] = locationLogic.gs_valley_small_bridge;
+	gs[47] = locationLogic.gs_valley_bean;
+	gs[48] = locationLogic.gs_valley_tent;
+	gs[49] = locationLogic.gs_valley_pillar;
+	gs[50] = locationLogic.gs_fortress_archery;
+	gs[51] = locationLogic.gs_fortress_top;
+	gs[52] = locationLogic.gs_wasteland;
+	gs[53] = locationLogic.gs_colossus_soil;
+	gs[54] = locationLogic.gs_colossus_tree;
+	gs[55] = locationLogic.gs_colossus_hill;
+	gs[56] = locationLogic.gs_ogc;
+	gs[57] = locationLogic.gs_deku_basement_back;
+	gs[58] = locationLogic.gs_deku_basement_gate;
+	gs[59] = locationLogic.gs_deku_basement_vines;
+	gs[60] = locationLogic.gs_deku_compass;
+	gs[61] = locationLogic.gs_dodongos_east_side;
+	gs[62] = locationLogic.gs_dodongos_stair_vines;
+	gs[63] = locationLogic.gs_dodongos_above_stairs;
+	gs[64] = locationLogic.gs_dodongos_scarecrow;
+	gs[65] = locationLogic.gs_dodongos_before_king;
+	gs[66] = locationLogic.gs_jabu_vines;
+	gs[67] = locationLogic.gs_jabu_near_octo_1;
+	gs[68] = locationLogic.gs_jabu_near_octo_2;
+	gs[69] = locationLogic.gs_jabu_near_boss;
+	gs[70] = locationLogic.gs_forest_first;
+	gs[71] = locationLogic.gs_forest_lobby;
+	gs[72] = locationLogic.gs_forest_outdoor_east;
+	gs[73] = locationLogic.gs_forest_outdoor_west;
+	gs[74] = locationLogic.gs_forest_basement;
+	gs[75] = locationLogic.gs_fire_time;
+	gs[76] = locationLogic.gs_fire_bomb_wall;
+	gs[77] = locationLogic.gs_fire_scarecrow_1;
+	gs[78] = locationLogic.gs_fire_scarecrow_2;
+	gs[79] = locationLogic.gs_fire_basement;
+	gs[80] = locationLogic.gs_water_south_basement;
+	gs[81] = locationLogic.gs_water_river;
+	gs[82] = locationLogic.gs_water_central;
+	gs[83] = locationLogic.gs_water_near_boss_key;
+	gs[84] = locationLogic.gs_water_platform_room;
+	gs[85] = locationLogic.gs_spirit_metal_fence;
+	gs[86] = locationLogic.gs_spirit_before_child_knuckle;
+	gs[87] = locationLogic.gs_spirit_boulder_room;
+	gs[88] = locationLogic.gs_spirit_lobby;
+	gs[89] = locationLogic.gs_spirit_child_climb;
+	gs[90] = locationLogic.gs_shadow_like_like;
+	gs[91] = locationLogic.gs_shadow_crusher;
+	gs[92] = locationLogic.gs_shadow_giant_pot;
+	gs[93] = locationLogic.gs_shadow_near_boat;
+	gs[94] = locationLogic.gs_shadow_three_pots;
+	gs[95] = locationLogic.gs_well_west_inner;
+	gs[96] = locationLogic.gs_well_east_inner;
+	gs[97] = locationLogic.gs_well_like_like;
+	gs[98] = locationLogic.gs_ice_spinning_scythe;
+	gs[99] = locationLogic.gs_ice_hp_room;
+	gs[100] = locationLogic.gs_ice_block_room;
 }
 
 function timerStuff() {
@@ -759,7 +759,7 @@ document.onkeydown = function(e) {
 		Undo();
 	}
   if (e.key === "Tab") {
-    if (Locations.includes(document.activeElement.id)) {
+    if (checks.includes(document.activeElement.id)) {
       highlightNextCheck(document.activeElement.id);
       e.preventDefault();
     }	
@@ -833,8 +833,8 @@ function modifyRupees(amount) {
         rupeeCount += amount;
     }
     var cap = 99;
-    if (Player.adults_wallet) {cap = 200;}
-    if (Player.giants_wallet) {cap = 500;}
+    if (player.adults_wallet) {cap = 200;}
+    if (player.giants_wallet) {cap = 500;}
     rupeeCount = Math.max(rupeeCount,0);
     rupeeCount = Math.min(rupeeCount,cap);
     document.getElementById("rupeeCount").innerHTML = rupeeCount;
@@ -860,58 +860,58 @@ function Undo() {
 	if(lastCheck.length < 2)
 		return;
 	
-	if (Check[lastCheck[lastCheck.length-1]] == "small_key") {
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.current_forest_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.current_fire_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.current_water_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.current_spirit_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.current_shadow_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Player.current_gtg_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("well")) {Player.current_well_keys -= 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("ganons")) {Player.current_ganons_keys -= 1;}
+	if (checkToItemMap[lastCheck[lastCheck.length-1]] == "small_key") {
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {player.current_forest_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {player.current_fire_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {player.current_water_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {player.current_spirit_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {player.current_shadow_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {player.current_gtg_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {player.current_well_keys -= 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("ganons")) {player.current_ganons_keys -= 1;}
 	}
 	
-	if (Check[lastCheck[lastCheck.length-1]] == "boss_key") {
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.forest_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.fire_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.water_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.spirit_boss_key = false;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.shadow_boss_key = false;}
+	if (checkToItemMap[lastCheck[lastCheck.length-1]] == "boss_key") {
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {player.forest_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {player.fire_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {player.water_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {player.spirit_boss_key = false;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {player.shadow_boss_key = false;}
 	}
 
-	if (Check[lastCheck[lastCheck.length-1]] != "unknown" && Check[lastCheck[lastCheck.length-1]] != "small_key" && Check[lastCheck[lastCheck.length-1]] != "boss_key")
+	if (checkToItemMap[lastCheck[lastCheck.length-1]] != "unknown" && checkToItemMap[lastCheck[lastCheck.length-1]] != "small_key" && checkToItemMap[lastCheck[lastCheck.length-1]] != "boss_key")
 	{
-		if (lastCheck[lastCheck.length-1].startsWith("forest")) {Player.forest_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("fire")) {Player.fire_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("water")) {Player.water_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {Player.spirit_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {Player.shadow_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {Player.gtg_checks_remaining += 1;}
-		if (lastCheck[lastCheck.length-1].startsWith("well")) {Player.well_checks_remaining += 1;}
-		if (Check[lastCheck[lastCheck.length-1]] == "claim_check" || Check[lastCheck[lastCheck.length-1]] == "prescription") {
+		if (lastCheck[lastCheck.length-1].startsWith("forest")) {player.forest_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("fire")) {player.fire_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("water")) {player.water_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("spirit")) {player.spirit_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("shadow")) {player.shadow_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("gtg")) {player.gtg_checks_remaining += 1;}
+		if (lastCheck[lastCheck.length-1].startsWith("well")) {player.well_checks_remaining += 1;}
+		if (checkToItemMap[lastCheck[lastCheck.length-1]] == "claim_check" || checkToItemMap[lastCheck[lastCheck.length-1]] == "prescription") {
 			document.getElementById("trade_location").innerHTML = "Trade &#8594; ";
 		}
-		else if (Check[lastCheck[lastCheck.length-1]] == "lullaby" || Check[lastCheck[lastCheck.length-1]] == "eponas" || Check[lastCheck[lastCheck.length-1]] == "sarias" || Check[lastCheck[lastCheck.length-1]] == "suns" || Check[lastCheck[lastCheck.length-1]] == "time" || Check[lastCheck[lastCheck.length-1]] == "storms" || Check[lastCheck[lastCheck.length-1]] == "minuet" || Check[lastCheck[lastCheck.length-1]] == "bolero" || Check[lastCheck[lastCheck.length-1]] == "serenade" || Check[lastCheck[lastCheck.length-1]] == "nocturne" || Check[lastCheck[lastCheck.length-1]] == "requiem" || Check[lastCheck[lastCheck.length-1]] == "prelude") {
-			Player.checks_remaining -= 1;
+		else if (checkToItemMap[lastCheck[lastCheck.length-1]] == "lullaby" || checkToItemMap[lastCheck[lastCheck.length-1]] == "eponas" || checkToItemMap[lastCheck[lastCheck.length-1]] == "sarias" || checkToItemMap[lastCheck[lastCheck.length-1]] == "suns" || checkToItemMap[lastCheck[lastCheck.length-1]] == "time" || checkToItemMap[lastCheck[lastCheck.length-1]] == "storms" || checkToItemMap[lastCheck[lastCheck.length-1]] == "minuet" || checkToItemMap[lastCheck[lastCheck.length-1]] == "bolero" || checkToItemMap[lastCheck[lastCheck.length-1]] == "serenade" || checkToItemMap[lastCheck[lastCheck.length-1]] == "nocturne" || checkToItemMap[lastCheck[lastCheck.length-1]] == "requiem" || checkToItemMap[lastCheck[lastCheck.length-1]] == "prelude") {
+			player.checks_remaining -= 1;
 		}
-		else if (Check[lastCheck[lastCheck.length-1]] != "junk" && Check[lastCheck[lastCheck.length-1]] != "ultra") {
-			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == Check[lastCheck[lastCheck.length-1]])] + " &#8594; ";
+		else if (checkToItemMap[lastCheck[lastCheck.length-1]] != "junk" && checkToItemMap[lastCheck[lastCheck.length-1]] != "ultra") {
+			document.getElementById(checkToItemMap[lastCheck[lastCheck.length-1]] + "_location").innerHTML = checkSummaryText[Items.findIndex(element => element == checkToItemMap[lastCheck[lastCheck.length-1]])] + " &#8594; ";
 		}
 	}
 	
-	forcedDisplay[Locations.indexOf(lastCheck[lastCheck.length-1])] = false;
+	forcedDisplay[checks.indexOf(lastCheck[lastCheck.length-1])] = false;
 	for (var i = 0; i < AreaNames.length; i++) {
-    if (LocationToArea[lastCheck[lastCheck.length-1]] == AreaNames[i] && !songLocations.includes(lastCheck[lastCheck.length-1])) {
-      document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = Player[AreaNames[i] + "_img"];
+    if (checkToAreaMap[lastCheck[lastCheck.length-1]] == AreaNames[i] && !songChecks.includes(lastCheck[lastCheck.length-1])) {
+      document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = player[AreaNames[i] + "_img"];
     }
   }
 
 	
-	Location[Check[lastCheck[lastCheck.length-1]]] = "unknown";
-	Player[Check[lastCheck[lastCheck.length-1]]] = false;
-	Known[Check[lastCheck[lastCheck.length-1]]] = false;
-	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
-	Check[lastCheck[lastCheck.length-1]] = "unknown";
+	itemToCheckMap[checkToItemMap[lastCheck[lastCheck.length-1]]] = "unknown";
+	player[checkToItemMap[lastCheck[lastCheck.length-1]]] = false;
+	knownItems[checkToItemMap[lastCheck[lastCheck.length-1]]] = false;
+	logic[checkToItemMap[lastCheck[lastCheck.length-1]]] = false;
+	checkToItemMap[lastCheck[lastCheck.length-1]] = "unknown";
 	document.getElementById(lastCheck[lastCheck.length-1]).value = "";
 	lastCheck.pop();
 	midUpdate();

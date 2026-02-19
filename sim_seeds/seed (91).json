@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Milk":                     1,
     "Bottle with Red Potion":               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        6,
@@ -504,7 +504,7 @@
     "Ganons Castle Water Trial Right Chest":                "Bombchus (5)",
     "Ganons Castle Shadow Trial Front Chest":               "Rupees (200)",
     "Ganons Castle Shadow Trial Golden Gauntlets Chest":    "Small Key (Ganons Castle)",
-    "Ganons Castle Light Trial First Left Chest":           "Claim Check",
+    "Ganons Castle Light Trial First Left Chest":           "Claim checkToItemMap",
     "Ganons Castle Light Trial Second Left Chest":          "Piece of Heart",
     "Ganons Castle Light Trial Third Left Chest":           "Hylian Shield",
     "Ganons Castle Light Trial First Right Chest":          "Deku Nuts (10)",

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Poe":                      1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        2,
@@ -317,7 +317,7 @@
     "Graveyard Heart Piece Grave Chest":                    "Heart Container",
     "Graveyard Royal Familys Tomb Chest":                   "Rupees (20)",
     "Graveyard Freestanding PoH":                           "Rupees (50)",
-    "Graveyard Dampe Gravedigging Tour":                    "Claim Check",
+    "Graveyard Dampe Gravedigging Tour":                    "Claim checkToItemMap",
     "Graveyard Dampe Race Hookshot Chest":                  "Arrows (30)",
     "Graveyard Dampe Race Freestanding PoH":                "Arrows (5)",
     "DMT Freestanding PoH":                                 "Heart Container",

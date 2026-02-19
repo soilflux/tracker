@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Red Potion":               1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -475,7 +475,7 @@
     "Spirit Temple Twinrova Heart":                         "Piece of Heart",
     "Ice Cavern Map Chest":                                 "Stone of Agony",
     "Ice Cavern Compass Chest":                             "Piece of Heart",
-    "Ice Cavern Iron Boots Chest":                          "Claim Check",
+    "Ice Cavern Iron Boots Chest":                          "Claim checkToItemMap",
     "Ice Cavern Freestanding PoH":                          "Light Arrows",
     "Gerudo Training Ground Lobby Left Chest":              "Recovery Heart",
     "Gerudo Training Ground Lobby Right Chest":             "Rupees (5)",

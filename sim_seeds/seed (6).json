@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Green Potion":             1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        6,
@@ -288,7 +288,7 @@
     "HF Near Market Grotto Chest":                          "Progressive Scale",
     "HF Tektite Grotto Freestanding PoH":                   "Bombs (10)",
     "HF Southeast Grotto Chest":                            "Deku Seeds (30)",
-    "HF Open Grotto Chest":                                 "Claim Check",
+    "HF Open Grotto Chest":                                 "Claim checkToItemMap",
     "HF Deku Scrub Grotto":                                 {"item": "Fire Arrows", "price": 10},
     "Market Shooting Gallery Reward":                       "Progressive Strength Upgrade",
     "Market Bombchu Bowling First Prize":                   "Piece of Heart",

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle with Milk":                     1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        5,
@@ -341,7 +341,7 @@
     "ZR Frogs Ocarina Game":                                "Rupees (5)",
     "ZR Near Open Grotto Freestanding PoH":                 "Deku Seeds (30)",
     "ZR Near Domain Freestanding PoH":                      "Arrows (10)",
-    "ZD Diving Minigame":                                   "Claim Check",
+    "ZD Diving Minigame":                                   "Claim checkToItemMap",
     "ZD Chest":                                             "Rupees (5)",
     "ZD King Zora Thawed":                                  "Kokiri Sword",
     "ZF Great Fairy Reward":                                "Rupees (20)",

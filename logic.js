@@ -1,464 +1,464 @@
 function refreshLogicForStuff() {	
-	if(Known.kokiri_sword == true) {Logic.kokiri_sword = Location_Logic[Location.kokiri_sword];} else{Logic.kokiri_sword = false;}
+	if(knownItems.kokiri_sword == true) {logic.kokiri_sword = locationLogic[itemToCheckMap.kokiri_sword];} else{logic.kokiri_sword = false;}
 	
-	if(Known.farores_wind == true) {Logic.farores_wind = Location_Logic[Location.farores_wind];} else{Logic.farores_wind = false;}
+	if(knownItems.farores_wind == true) {logic.farores_wind = locationLogic[itemToCheckMap.farores_wind];} else{logic.farores_wind = false;}
 	
-	if(Known.slingshot1 == true) {Logic.slingshot1 = Location_Logic[Location.slingshot1];} 
-	if(Known.slingshot2 == true) {Logic.slingshot2 = Location_Logic[Location.slingshot2];}
-	if(Known.slingshot3 == true) {Logic.slingshot3 = Location_Logic[Location.slingshot3];}
-	Logic.slingshot = Logic.slingshot1 || Logic.slingshot2 || Logic.slingshot3;
+	if(knownItems.slingshot1 == true) {logic.slingshot1 = locationLogic[itemToCheckMap.slingshot1];} 
+	if(knownItems.slingshot2 == true) {logic.slingshot2 = locationLogic[itemToCheckMap.slingshot2];}
+	if(knownItems.slingshot3 == true) {logic.slingshot3 = locationLogic[itemToCheckMap.slingshot3];}
+	logic.slingshot = logic.slingshot1 || logic.slingshot2 || logic.slingshot3;
 	
-	if(Known.boomerang == true) {Logic.boomerang = Location_Logic[Location.boomerang];} else{Logic.boomerang = false;}
+	if(knownItems.boomerang == true) {logic.boomerang = locationLogic[itemToCheckMap.boomerang];} else{logic.boomerang = false;}
 	
-	if(Known.rutos_letter == true) {Logic.rutos_letter = Location_Logic[Location.rutos_letter];} else{Logic.rutos_letter = false;}
-	if(Known.bottle1 == true) {Logic.bottle1 = Location_Logic[Location.bottle1];}
-	if(Known.bottle2 == true) {Logic.bottle2 = Location_Logic[Location.bottle2];}
-	if(Known.bottle3 == true) {Logic.bottle3 = Location_Logic[Location.bottle3];}
-	if(Known.bottle4 == true) {Logic.bottle4 = Location_Logic[Location.bottle4];}
-	Logic.bottle = (Logic.rutos_letter && Logic.child_can_enter_domain) || Logic.bottle1 || Logic.bottle2 || Logic.bottle3 || Logic.bottle4;
+	if(knownItems.rutos_letter == true) {logic.rutos_letter = locationLogic[itemToCheckMap.rutos_letter];} else{logic.rutos_letter = false;}
+	if(knownItems.bottle1 == true) {logic.bottle1 = locationLogic[itemToCheckMap.bottle1];}
+	if(knownItems.bottle2 == true) {logic.bottle2 = locationLogic[itemToCheckMap.bottle2];}
+	if(knownItems.bottle3 == true) {logic.bottle3 = locationLogic[itemToCheckMap.bottle3];}
+	if(knownItems.bottle4 == true) {logic.bottle4 = locationLogic[itemToCheckMap.bottle4];}
+	logic.bottle = (logic.rutos_letter && logic.child_can_enter_domain) || logic.bottle1 || logic.bottle2 || logic.bottle3 || logic.bottle4;
 	
-	if(Known.scale1 == true) {Logic.scale1 = Location_Logic[Location.scale1]; }
-	if(Known.scale2 == true) {Logic.scale2 = Location_Logic[Location.scale2]; }
-	Logic.silver_scale = Logic.scale1 || Logic.scale2;
-	Logic.golden_scale = Logic.scale1 && Logic.scale2;
+	if(knownItems.scale1 == true) {logic.scale1 = locationLogic[itemToCheckMap.scale1]; }
+	if(knownItems.scale2 == true) {logic.scale2 = locationLogic[itemToCheckMap.scale2]; }
+	logic.silver_scale = logic.scale1 || logic.scale2;
+	logic.golden_scale = logic.scale1 && logic.scale2;
 	
-	if(Known.bomb_bag1 == true) {Logic.bomb_bag1 = Location_Logic[Location.bomb_bag1];}
-	if(Known.bomb_bag2 == true) {Logic.bomb_bag2 = Location_Logic[Location.bomb_bag2];}
-	if(Known.bomb_bag3 == true) {Logic.bomb_bag3 = Location_Logic[Location.bomb_bag3];}
-	Logic.bomb_bag = Logic.bomb_bag1 || Logic.bomb_bag2 || Logic.bomb_bag3;
+	if(knownItems.bomb_bag1 == true) {logic.bomb_bag1 = locationLogic[itemToCheckMap.bomb_bag1];}
+	if(knownItems.bomb_bag2 == true) {logic.bomb_bag2 = locationLogic[itemToCheckMap.bomb_bag2];}
+	if(knownItems.bomb_bag3 == true) {logic.bomb_bag3 = locationLogic[itemToCheckMap.bomb_bag3];}
+	logic.bomb_bag = logic.bomb_bag1 || logic.bomb_bag2 || logic.bomb_bag3;
 	
-	if(Known.hammer == true) {Logic.hammer = Location_Logic[Location.hammer];} else{Logic.hammer= false;}
+	if(knownItems.hammer == true) {logic.hammer = locationLogic[itemToCheckMap.hammer];} else{logic.hammer= false;}
 	
-	if(Known.bow1 == true) {Logic.bow1 = Location_Logic[Location.bow1];}
-	if(Known.bow2 == true) {Logic.bow2 = Location_Logic[Location.bow2];}
-	if(Known.bow3 == true) {Logic.bow3 = Location_Logic[Location.bow3];}
-	Logic.bow = Logic.bow1 || Logic.bow2 || Logic.bow3;
+	if(knownItems.bow1 == true) {logic.bow1 = locationLogic[itemToCheckMap.bow1];}
+	if(knownItems.bow2 == true) {logic.bow2 = locationLogic[itemToCheckMap.bow2];}
+	if(knownItems.bow3 == true) {logic.bow3 = locationLogic[itemToCheckMap.bow3];}
+	logic.bow = logic.bow1 || logic.bow2 || logic.bow3;
 	
-	if(Known.hookshot1 == true) {Logic.hookshot1 = Location_Logic[Location.hookshot1];}
-	if(Known.hookshot2 == true) {Logic.hookshot2 = Location_Logic[Location.hookshot2];}
-	Logic.hookshot = Logic.hookshot1 || Logic.hookshot2;
-	Logic.longshot = Logic.hookshot1 && Logic.hookshot2;
-	if(Known.strength1 == true) {Logic.strength1 = Location_Logic[Location.strength1];}
-	if(Known.strength2 == true) {Logic.strength2 = Location_Logic[Location.strength2];}
-	if(Known.strength3 == true) {Logic.strength3 = Location_Logic[Location.strength3];}
-	Logic.goron_bracelet = Logic.strength1 || Logic.strength2 || Logic.strength3;
-	Logic.silver_gauntlets = (Logic.strength1 && Logic.strength2) || (Logic.strength1 && Logic.strength3) || (Logic.strength2 && Logic.strength3)
-	Logic.golden_gauntlets = Logic.strength1 && Logic.strength2 && Logic.strength3;
+	if(knownItems.hookshot1 == true) {logic.hookshot1 = locationLogic[itemToCheckMap.hookshot1];}
+	if(knownItems.hookshot2 == true) {logic.hookshot2 = locationLogic[itemToCheckMap.hookshot2];}
+	logic.hookshot = logic.hookshot1 || logic.hookshot2;
+	logic.longshot = logic.hookshot1 && logic.hookshot2;
+	if(knownItems.strength1 == true) {logic.strength1 = locationLogic[itemToCheckMap.strength1];}
+	if(knownItems.strength2 == true) {logic.strength2 = locationLogic[itemToCheckMap.strength2];}
+	if(knownItems.strength3 == true) {logic.strength3 = locationLogic[itemToCheckMap.strength3];}
+	logic.goron_bracelet = logic.strength1 || logic.strength2 || logic.strength3;
+	logic.silver_gauntlets = (logic.strength1 && logic.strength2) || (logic.strength1 && logic.strength3) || (logic.strength2 && logic.strength3)
+	logic.golden_gauntlets = logic.strength1 && logic.strength2 && logic.strength3;
 	
-	if(Known.mirror_shield == true) {Logic.mirror_shield = Location_Logic[Location.mirror_shield];} else{Logic.mirror_shield = false;}
+	if(knownItems.mirror_shield == true) {logic.mirror_shield = locationLogic[itemToCheckMap.mirror_shield];} else{logic.mirror_shield = false;}
 	
-	if(Known.big_poe == true) {Logic.big_poe = Location_Logic[Location.big_poe];} else{Logic.big_poe= false;}
+	if(knownItems.big_poe == true) {logic.big_poe = locationLogic[itemToCheckMap.big_poe];} else{logic.big_poe= false;}
 	
-	if(Known.iron_boots == true) {Logic.iron_boots = Location_Logic[Location.iron_boots];} else{Logic.iron_boots = false;}
-	if(Known.hover_boots == true) {Logic.hover_boots = Location_Logic[Location.hover_boots];} else{Logic.hover_boots = false;}
+	if(knownItems.iron_boots == true) {logic.iron_boots = locationLogic[itemToCheckMap.iron_boots];} else{logic.iron_boots = false;}
+	if(knownItems.hover_boots == true) {logic.hover_boots = locationLogic[itemToCheckMap.hover_boots];} else{logic.hover_boots = false;}
 	
-	if(Known.magic1 == true) {Logic.magic1 = Location_Logic[Location.magic1];}
-	if(Known.magic2 == true) {Logic.magic2 = Location_Logic[Location.magic2];}
-	Logic.magic = Logic.magic1 || Logic.magic2;
+	if(knownItems.magic1 == true) {logic.magic1 = locationLogic[itemToCheckMap.magic1];}
+	if(knownItems.magic2 == true) {logic.magic2 = locationLogic[itemToCheckMap.magic2];}
+	logic.magic = logic.magic1 || logic.magic2;
 	
-	if(Known.dins_fire == true) {Logic.dins_fire = Location_Logic[Location.dins_fire];} else{Logic.dins_fire = false;}
-	if(Known.fire_arrows == true) {Logic.fire_arrows = Location_Logic[Location.fire_arrows];} else{Logic.fire_arrows = false;}
+	if(knownItems.dins_fire == true) {logic.dins_fire = locationLogic[itemToCheckMap.dins_fire];} else{logic.dins_fire = false;}
+	if(knownItems.fire_arrows == true) {logic.fire_arrows = locationLogic[itemToCheckMap.fire_arrows];} else{logic.fire_arrows = false;}
 	
-	if(Known.wallet1 == true) {Logic.wallet1 = Location_Logic[Location.wallet1];}
-	if(Known.wallet2 == true) {Logic.wallet2 = Location_Logic[Location.wallet2];}
-	if(Known.wallet3 == true) {Logic.wallet3 = Location_Logic[Location.wallet3];}
-	Logic.adults_wallet = Logic.wallet1 || Logic.wallet2 || Logic.wallet3;
-	Logic.giants_wallet = (Logic.wallet1 && Logic.wallet2) || (Logic.wallet1 && Logic.wallet3) || (Logic.wallet2 && Logic.wallet3);
-	Logic.tycoon_wallet = Logic.wallet1 && Logic.wallet2 && Logic.wallet3;
+	if(knownItems.wallet1 == true) {logic.wallet1 = locationLogic[itemToCheckMap.wallet1];}
+	if(knownItems.wallet2 == true) {logic.wallet2 = locationLogic[itemToCheckMap.wallet2];}
+	if(knownItems.wallet3 == true) {logic.wallet3 = locationLogic[itemToCheckMap.wallet3];}
+	logic.adults_wallet = logic.wallet1 || logic.wallet2 || logic.wallet3;
+	logic.giants_wallet = (logic.wallet1 && logic.wallet2) || (logic.wallet1 && logic.wallet3) || (logic.wallet2 && logic.wallet3);
+	logic.tycoon_wallet = logic.wallet1 && logic.wallet2 && logic.wallet3;
 	
-	if(Known.goron_tunic == true) {Logic.goron_tunic = Location_Logic[Location.goron_tunic];} else{Logic.goron_tunic = false;}
-	if(Known.zora_tunic == true) {Logic.zora_tunic = Location_Logic[Location.zora_tunic];} else{Logic.zora_tunic = false;}
-	if(Known.lens == true) {Logic.lens = Location_Logic[Location.lens];} else{Logic.lens = false;}
-	if(Known.stone_of_agony == true) {Logic.stone_of_agony = Location_Logic[Location.stone_of_agony];} else{Logic.stone_of_agony = false;}
-	if(Known.prescription == true) {Logic.prescription = Location_Logic[Location.prescription];} else{Logic.prescription = false;}
-	if(Known.claim_check == true) {Logic.claim_check = Location_Logic[Location.claim_check];} else{Logic.claim_check = false;}
-	Logic.trade = Logic.claim_check || Logic.prescription;
+	if(knownItems.goron_tunic == true) {logic.goron_tunic = locationLogic[itemToCheckMap.goron_tunic];} else{logic.goron_tunic = false;}
+	if(knownItems.zora_tunic == true) {logic.zora_tunic = locationLogic[itemToCheckMap.zora_tunic];} else{logic.zora_tunic = false;}
+	if(knownItems.lens == true) {logic.lens = locationLogic[itemToCheckMap.lens];} else{logic.lens = false;}
+	if(knownItems.stone_of_agony == true) {logic.stone_of_agony = locationLogic[itemToCheckMap.stone_of_agony];} else{logic.stone_of_agony = false;}
+	if(knownItems.prescription == true) {logic.prescription = locationLogic[itemToCheckMap.prescription];} else{logic.prescription = false;}
+	if(knownItems.claim_check == true) {logic.claim_check = locationLogic[itemToCheckMap.claim_check];} else{logic.claim_check = false;}
+	logic.trade = logic.claim_check || logic.prescription;
 	
-	if(Known.light_arrows == true) {Logic.light_arrows = Location_Logic[Location.light_arrows];}
-	if(Known.ice_arrows == true) {Logic.ice_arrows = Location_Logic[Location.ice_arrows];}
-	if(Known.forest_key_ring == true) {Logic.forest_key_ring = Location_Logic[Location.forest_key_ring];}
-	if(Known.fire_key_ring == true) {Logic.fire_key_ring = Location_Logic[Location.fire_key_ring];}
-	if(Known.water_key_ring == true) {Logic.water_key_ring = Location_Logic[Location.water_key_ring];}
-	if(Known.spirit_key_ring == true) {Logic.spirit_key_ring = Location_Logic[Location.spirit_key_ring];}
-	if(Known.shadow_key_ring == true) {Logic.shadow_key_ring = Location_Logic[Location.shadow_key_ring];}
-	if(Known.well_key_ring == true) {Logic.well_key_ring = Location_Logic[Location.well_key_ring];}
-	if(Known.gtg_key_ring == true) {Logic.gtg_key_ring = Location_Logic[Location.gtg_key_ring];}
-	if(Known.ganons_key_ring == true) {Logic.ganons_key_ring = Location_Logic[Location.ganons_key_ring];}
-	if(Known.gerudo_card == true) {Logic.gerudo_card = Location_Logic[Location.gerudo_card];}
-	if(Known.magic_bean_pack == true) {Logic.magic_bean_pack = Location_Logic[Location.magic_bean_pack];}
+	if(knownItems.light_arrows == true) {logic.light_arrows = locationLogic[itemToCheckMap.light_arrows];}
+	if(knownItems.ice_arrows == true) {logic.ice_arrows = locationLogic[itemToCheckMap.ice_arrows];}
+	if(knownItems.forest_key_ring == true) {logic.forest_key_ring = locationLogic[itemToCheckMap.forest_key_ring];}
+	if(knownItems.fire_key_ring == true) {logic.fire_key_ring = locationLogic[itemToCheckMap.fire_key_ring];}
+	if(knownItems.water_key_ring == true) {logic.water_key_ring = locationLogic[itemToCheckMap.water_key_ring];}
+	if(knownItems.spirit_key_ring == true) {logic.spirit_key_ring = locationLogic[itemToCheckMap.spirit_key_ring];}
+	if(knownItems.shadow_key_ring == true) {logic.shadow_key_ring = locationLogic[itemToCheckMap.shadow_key_ring];}
+	if(knownItems.well_key_ring == true) {logic.well_key_ring = locationLogic[itemToCheckMap.well_key_ring];}
+	if(knownItems.gtg_key_ring == true) {logic.gtg_key_ring = locationLogic[itemToCheckMap.gtg_key_ring];}
+	if(knownItems.ganons_key_ring == true) {logic.ganons_key_ring = locationLogic[itemToCheckMap.ganons_key_ring];}
+	if(knownItems.gerudo_card == true) {logic.gerudo_card = locationLogic[itemToCheckMap.gerudo_card];}
+	if(knownItems.magic_bean_pack == true) {logic.magic_bean_pack = locationLogic[itemToCheckMap.magic_bean_pack];}
 	
-	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[Location.lullaby]; }
-	if(Known.eponas == true) {Logic.eponas = Location_Logic[Location.eponas]; }
-	if(Known.sarias == true) {Logic.sarias = Location_Logic[Location.sarias]; }
-	if(Known.suns == true) {Logic.suns = Location_Logic[Location.suns]; }
-	if(Known.time == true) {Logic.time = Location_Logic[Location.time]; }
-	if(Known.storms == true) {Logic.storms = Location_Logic[Location.storms]; }
-	if(Known.minuet == true) {Logic.minuet = Location_Logic[Location.minuet]; }
-	if(Known.bolero == true) {Logic.bolero = Location_Logic[Location.bolero]; }
-	if(Known.serenade == true) {Logic.serenade = Location_Logic[Location.serenade]; }
-	if(Known.requiem == true) {Logic.requiem = Location_Logic[Location.requiem]; }
-	if(Known.nocturne == true) {Logic.nocturne = Location_Logic[Location.nocturne]; }
-	if(Known.prelude == true) {Logic.prelude = Location_Logic[Location.prelude]; }
+	if(knownItems.lullaby == true) {logic.lullaby = locationLogic[itemToCheckMap.lullaby]; }
+	if(knownItems.eponas == true) {logic.eponas = locationLogic[itemToCheckMap.eponas]; }
+	if(knownItems.sarias == true) {logic.sarias = locationLogic[itemToCheckMap.sarias]; }
+	if(knownItems.suns == true) {logic.suns = locationLogic[itemToCheckMap.suns]; }
+	if(knownItems.time == true) {logic.time = locationLogic[itemToCheckMap.time]; }
+	if(knownItems.storms == true) {logic.storms = locationLogic[itemToCheckMap.storms]; }
+	if(knownItems.minuet == true) {logic.minuet = locationLogic[itemToCheckMap.minuet]; }
+	if(knownItems.bolero == true) {logic.bolero = locationLogic[itemToCheckMap.bolero]; }
+	if(knownItems.serenade == true) {logic.serenade = locationLogic[itemToCheckMap.serenade]; }
+	if(knownItems.requiem == true) {logic.requiem = locationLogic[itemToCheckMap.requiem]; }
+	if(knownItems.nocturne == true) {logic.nocturne = locationLogic[itemToCheckMap.nocturne]; }
+	if(knownItems.prelude == true) {logic.prelude = locationLogic[itemToCheckMap.prelude]; }
 	
 	
 	
-	Player.bomb_bag = false;
-	if (Player.bomb_bag1 || Player.bomb_bag2 || Player.bomb_bag3) {Player.bomb_bag = true;}
+	player.bomb_bag = false;
+	if (player.bomb_bag1 || player.bomb_bag2 || player.bomb_bag3) {player.bomb_bag = true;}
   
-  Player.bombchus = false;
-  if (Player.bombchus1 || Player.bombchus2 || Player.bombchus3 || Player.bombchus4 || Player.bombchus5) {Player.bombchus = true;}
+  player.bombchus = false;
+  if (player.bombchus1 || player.bombchus2 || player.bombchus3 || player.bombchus4 || player.bombchus5) {player.bombchus = true;}
 	
-	Player.bow = false;
-	if (Player.bow1 || Player.bow2 || Player.bow3) {Player.bow = true;}
+	player.bow = false;
+	if (player.bow1 || player.bow2 || player.bow3) {player.bow = true;}
 	
-	Player.bottle = false;
-	if (Player.bottle1 || Player.bottle2 || Player.bottle3 || Player.bottle4) {Player.bottle = true;}
+	player.bottle = false;
+	if (player.bottle1 || player.bottle2 || player.bottle3 || player.bottle4) {player.bottle = true;}
 	
-	Player.trade = false;
-	if (Player.prescription || Player.claim_check) {Player.trade = true;}
+	player.trade = false;
+	if (player.prescription || player.claim_check) {player.trade = true;}
 
-	Player.hookshot = false;
-	if (Player.hookshot1 || Player.hookshot2) {Player.hookshot = true;}
+	player.hookshot = false;
+	if (player.hookshot1 || player.hookshot2) {player.hookshot = true;}
 	
-	Player.longshot = false;
-	if (Player.hookshot1 && Player.hookshot2) {Player.longshot = true;}
+	player.longshot = false;
+	if (player.hookshot1 && player.hookshot2) {player.longshot = true;}
 	
-	Player.slingshot = false;
-	if (Player.slingshot1 || Player.slingshot2 || Player.slingshot3) {Player.slingshot = true;}
+	player.slingshot = false;
+	if (player.slingshot1 || player.slingshot2 || player.slingshot3) {player.slingshot = true;}
 	
-	Player.adults_wallet = false;
-	if (Player.wallet1 || Player.wallet2 || Player.wallet3) {Player.adults_wallet = true;}
+	player.adults_wallet = false;
+	if (player.wallet1 || player.wallet2 || player.wallet3) {player.adults_wallet = true;}
 	
-	Player.giants_wallet = false;
-	if ((Player.wallet1 && Player.wallet2) || (Player.wallet1 && Player.wallet3) || (Player.wallet2 && Player.wallet3)) {Player.giants_wallet = true;}
+	player.giants_wallet = false;
+	if ((player.wallet1 && player.wallet2) || (player.wallet1 && player.wallet3) || (player.wallet2 && player.wallet3)) {player.giants_wallet = true;}
 	
-	Player.tycoon_wallet = false;
-	if (Player.wallet1 && Player.wallet2 && Player.wallet3) {Player.tycoon_wallet = true;}
+	player.tycoon_wallet = false;
+	if (player.wallet1 && player.wallet2 && player.wallet3) {player.tycoon_wallet = true;}
 	
-	Player.goron_bracelet = false;
-	if (Player.strength1 || Player.strength2 || Player.strength3) {Player.goron_bracelet = true;}
+	player.goron_bracelet = false;
+	if (player.strength1 || player.strength2 || player.strength3) {player.goron_bracelet = true;}
 	
-	Player.silver_gauntlets = false;
-	if (Player.strength1 && Player.strength3) {Player.silver_gauntlets = true;}
-	else if (Player.strength2 && Player.strength3) {Player.silver_gauntlets = true;}
-	else if (Player.strength1 && Player.strength2) {Player.silver_gauntlets = true;}
+	player.silver_gauntlets = false;
+	if (player.strength1 && player.strength3) {player.silver_gauntlets = true;}
+	else if (player.strength2 && player.strength3) {player.silver_gauntlets = true;}
+	else if (player.strength1 && player.strength2) {player.silver_gauntlets = true;}
 	
-	Player.golden_gauntlets = false;
-	if (Player.strength1 && Player.strength2 && Player.strength3) {Player.golden_gauntlets = true;}
+	player.golden_gauntlets = false;
+	if (player.strength1 && player.strength2 && player.strength3) {player.golden_gauntlets = true;}
 	
-	Player.silver_scale = false;
-	if (Player.scale1 || Player.scale2) {Player.silver_scale = true;}
+	player.silver_scale = false;
+	if (player.scale1 || player.scale2) {player.silver_scale = true;}
 	
-	Player.golden_scale = false;
-	if (Player.scale1 && Player.scale2) {Player.golden_scale = true;}
+	player.golden_scale = false;
+	if (player.scale1 && player.scale2) {player.golden_scale = true;}
 	
-	if(Player.golden_scale == true) {document.getElementById("silverscaleimg").src = Player.golden_scale_img;}
-	else {document.getElementById("silverscaleimg").src = Player.silver_scale_img;}
+	if(player.golden_scale == true) {document.getElementById("silverscaleimg").src = player.golden_scale_img;}
+	else {document.getElementById("silverscaleimg").src = player.silver_scale_img;}
 	
-	Player.magic = false;
-	if (Player.magic1 || Player.magic2) {Player.magic = true;}
+	player.magic = false;
+	if (player.magic1 || player.magic2) {player.magic = true;}
 	
-	Player.double_magic = false;
-	if (Player.magic1 && Player.magic2) {Player.double_magic = true;}
+	player.double_magic = false;
+	if (player.magic1 && player.magic2) {player.double_magic = true;}
 	
 	
 	for (var q = 0; q < 30; q++) {
 		for (var i = 0; i < Items.length; i++) {
-			if(Location_Could_Access[Location[Items[i]]] || Player[Items[i]])
-				CouldHave[Items[i]] = true;
+			if(locationCouldAccess[itemToCheckMap[Items[i]]] || player[Items[i]])
+				couldHave[Items[i]] = true;
 			else
-				CouldHave[Items[i]] = false;
+				couldHave[Items[i]] = false;
 		}
 		
-		if(Location_Could_Access[Location["big_poe"]] || Player["big_poe"])
-			CouldHave["big_poe"] = true;
+		if(locationCouldAccess[itemToCheckMap["big_poe"]] || player["big_poe"])
+			couldHave["big_poe"] = true;
 		else
-			CouldHave["big_poe"] = false;
+			couldHave["big_poe"] = false;
 	}
 	
-	CouldHave.bomb_bag = false;
-	if (CouldHave.bomb_bag1 || CouldHave.bomb_bag2 || CouldHave.bomb_bag3) {CouldHave.bomb_bag = true;}
+	couldHave.bomb_bag = false;
+	if (couldHave.bomb_bag1 || couldHave.bomb_bag2 || couldHave.bomb_bag3) {couldHave.bomb_bag = true;}
 	
-	CouldHave.bow = false;
-	if (CouldHave.bow1 || CouldHave.bow2 || CouldHave.bow3) {CouldHave.bow = true;}
+	couldHave.bow = false;
+	if (couldHave.bow1 || couldHave.bow2 || couldHave.bow3) {couldHave.bow = true;}
 	
-	CouldHave.trade = false;
-	if (CouldHave.prescription || CouldHave.claim_check) {CouldHave.trade = true;}
+	couldHave.trade = false;
+	if (couldHave.prescription || couldHave.claim_check) {couldHave.trade = true;}
 
-	CouldHave.hookshot = false;
-	if (CouldHave.hookshot1 || CouldHave.hookshot2) {CouldHave.hookshot = true;}
+	couldHave.hookshot = false;
+	if (couldHave.hookshot1 || couldHave.hookshot2) {couldHave.hookshot = true;}
 	
-	CouldHave.longshot = false;
-	if (CouldHave.hookshot1 && CouldHave.hookshot2) {CouldHave.longshot = true;}
+	couldHave.longshot = false;
+	if (couldHave.hookshot1 && couldHave.hookshot2) {couldHave.longshot = true;}
 	
-	CouldHave.slingshot = false;
-	if (CouldHave.slingshot1 || CouldHave.slingshot2 || CouldHave.slingshot3) {CouldHave.slingshot = true;}
+	couldHave.slingshot = false;
+	if (couldHave.slingshot1 || couldHave.slingshot2 || couldHave.slingshot3) {couldHave.slingshot = true;}
 	
-	CouldHave.adults_wallet = false;
-	if (CouldHave.wallet1 || CouldHave.wallet2 || CouldHave.wallet3) {CouldHave.adults_wallet = true;}
+	couldHave.adults_wallet = false;
+	if (couldHave.wallet1 || couldHave.wallet2 || couldHave.wallet3) {couldHave.adults_wallet = true;}
 	
-	CouldHave.giants_wallet = false;
-	if ((CouldHave.wallet1 && CouldHave.wallet2) || (CouldHave.wallet1 && CouldHave.wallet3) || (CouldHave.wallet2 && CouldHave.wallet3)) {CouldHave.giants_wallet = true;}
+	couldHave.giants_wallet = false;
+	if ((couldHave.wallet1 && couldHave.wallet2) || (couldHave.wallet1 && couldHave.wallet3) || (couldHave.wallet2 && couldHave.wallet3)) {couldHave.giants_wallet = true;}
 	
-	CouldHave.tycoon_wallet = false;
-	if (CouldHave.wallet1 && CouldHave.wallet2 && CouldHave.wallet3) {CouldHave.tycoon_wallet = true;}
+	couldHave.tycoon_wallet = false;
+	if (couldHave.wallet1 && couldHave.wallet2 && couldHave.wallet3) {couldHave.tycoon_wallet = true;}
 	
-	CouldHave.goron_bracelet = false;
-	if (CouldHave.strength1 || CouldHave.strength2 || CouldHave.strength3) {CouldHave.goron_bracelet = true;}
+	couldHave.goron_bracelet = false;
+	if (couldHave.strength1 || couldHave.strength2 || couldHave.strength3) {couldHave.goron_bracelet = true;}
 	
-	CouldHave.silver_gauntlets = false;
-	if (CouldHave.strength1 && CouldHave.strength3) {CouldHave.silver_gauntlets = true;}
-	else if (CouldHave.strength2 && CouldHave.strength3) {CouldHave.silver_gauntlets = true;}
-	else if (CouldHave.strength1 && CouldHave.strength2) {CouldHave.silver_gauntlets = true;}
+	couldHave.silver_gauntlets = false;
+	if (couldHave.strength1 && couldHave.strength3) {couldHave.silver_gauntlets = true;}
+	else if (couldHave.strength2 && couldHave.strength3) {couldHave.silver_gauntlets = true;}
+	else if (couldHave.strength1 && couldHave.strength2) {couldHave.silver_gauntlets = true;}
 	
-	CouldHave.golden_gauntlets = false;
-	if (CouldHave.strength1 && CouldHave.strength2 && CouldHave.strength3) {CouldHave.golden_gauntlets = true;}
+	couldHave.golden_gauntlets = false;
+	if (couldHave.strength1 && couldHave.strength2 && couldHave.strength3) {couldHave.golden_gauntlets = true;}
 	
-	CouldHave.silver_scale = false;
-	if (CouldHave.scale1 || CouldHave.scale2) {CouldHave.silver_scale = true;}
+	couldHave.silver_scale = false;
+	if (couldHave.scale1 || couldHave.scale2) {couldHave.silver_scale = true;}
 	
-	CouldHave.golden_scale = false;
-	if (CouldHave.scale1 && CouldHave.scale2) {CouldHave.golden_scale = true;}
+	couldHave.golden_scale = false;
+	if (couldHave.scale1 && couldHave.scale2) {couldHave.golden_scale = true;}
 	
-	CouldHave.magic = false;
-	if (CouldHave.magic1 || CouldHave.magic2) {CouldHave.magic = true;}
+	couldHave.magic = false;
+	if (couldHave.magic1 || couldHave.magic2) {couldHave.magic = true;}
 	
-	Logic.forest_boss_key = Logic.forced_forest_boss_key;
-	Logic.fire_boss_key = Logic.forced_fire_boss_key;
-	Logic.water_boss_key = Logic.forced_water_boss_key;
-	Logic.spirit_boss_key = Logic.forced_spirit_boss_key;
-	Logic.shadow_boss_key = Logic.forced_shadow_boss_key;
-  Logic.ganons_boss_key = Logic.forced_ganons_boss_key;
-	CouldHave.forest_boss_key = Logic.forced_forest_boss_key;
-	CouldHave.fire_boss_key = Logic.forced_fire_boss_key;
-	CouldHave.water_boss_key = Logic.forced_water_boss_key;
-	CouldHave.spirit_boss_key = Logic.forced_spirit_boss_key;
-	CouldHave.shadow_boss_key = Logic.forced_shadow_boss_key;
-	if(Player.forest_boss_key == true) {Logic.forest_boss_key = Location_Logic[Location.forest_boss_key]; CouldHave.forest_boss_key = true; }
-	if(Player.fire_boss_key == true) {Logic.fire_boss_key = Location_Logic[Location.fire_boss_key]; CouldHave.fire_boss_key = true; }
-	if(Player.water_boss_key == true) {Logic.water_boss_key = Location_Logic[Location.water_boss_key]; CouldHave.water_boss_key = true; }
-	if(Player.spirit_boss_key == true) {Logic.spirit_boss_key = Location_Logic[Location.spirit_boss_key]; CouldHave.spirit_boss_key = true; }
-	if(Player.shadow_boss_key == true) {Logic.shadow_boss_key = Location_Logic[Location.shadow_boss_key]; CouldHave.shadow_boss_key = true; }
+	logic.forest_boss_key = logic.forced_forest_boss_key;
+	logic.fire_boss_key = logic.forced_fire_boss_key;
+	logic.water_boss_key = logic.forced_water_boss_key;
+	logic.spirit_boss_key = logic.forced_spirit_boss_key;
+	logic.shadow_boss_key = logic.forced_shadow_boss_key;
+  logic.ganons_boss_key = logic.forced_ganons_boss_key;
+	couldHave.forest_boss_key = logic.forced_forest_boss_key;
+	couldHave.fire_boss_key = logic.forced_fire_boss_key;
+	couldHave.water_boss_key = logic.forced_water_boss_key;
+	couldHave.spirit_boss_key = logic.forced_spirit_boss_key;
+	couldHave.shadow_boss_key = logic.forced_shadow_boss_key;
+	if(player.forest_boss_key == true) {logic.forest_boss_key = locationLogic[itemToCheckMap.forest_boss_key]; couldHave.forest_boss_key = true; }
+	if(player.fire_boss_key == true) {logic.fire_boss_key = locationLogic[itemToCheckMap.fire_boss_key]; couldHave.fire_boss_key = true; }
+	if(player.water_boss_key == true) {logic.water_boss_key = locationLogic[itemToCheckMap.water_boss_key]; couldHave.water_boss_key = true; }
+	if(player.spirit_boss_key == true) {logic.spirit_boss_key = locationLogic[itemToCheckMap.spirit_boss_key]; couldHave.spirit_boss_key = true; }
+	if(player.shadow_boss_key == true) {logic.shadow_boss_key = locationLogic[itemToCheckMap.shadow_boss_key]; couldHave.shadow_boss_key = true; }
 	
 	if(nerfed) {
-		Logic.bomb_bag = false;
-		if (Player.bomb_bag1 || Player.bomb_bag2 || Player.bomb_bag3 || CouldHave.bomb_bag1 || CouldHave.bomb_bag2 || CouldHave.bomb_bag3) {Logic.bomb_bag = true;}
+		logic.bomb_bag = false;
+		if (player.bomb_bag1 || player.bomb_bag2 || player.bomb_bag3 || couldHave.bomb_bag1 || couldHave.bomb_bag2 || couldHave.bomb_bag3) {logic.bomb_bag = true;}
 
-		Logic.bow = false;
-		if (Player.bow1 || Player.bow2 || Player.bow3 || CouldHave.bow1 || CouldHave.bow2 || CouldHave.bow3) {Logic.bow = true;}
+		logic.bow = false;
+		if (player.bow1 || player.bow2 || player.bow3 || couldHave.bow1 || couldHave.bow2 || couldHave.bow3) {logic.bow = true;}
 
-		Logic.bottle = false;
-		if (Player.bottle1 || Player.bottle2 || Player.bottle3 || Player.bottle4 || CouldHave.bottle1 || CouldHave.bottle2 || CouldHave.bottle3 || CouldHave.bottle4 || (Player.rutos_letter && Player.child_can_enter_domain) || (CouldHave.rutos_letter && CouldHave.child_can_enter_domain)) {Logic.bottle = true;}
+		logic.bottle = false;
+		if (player.bottle1 || player.bottle2 || player.bottle3 || player.bottle4 || couldHave.bottle1 || couldHave.bottle2 || couldHave.bottle3 || couldHave.bottle4 || (player.rutos_letter && player.child_can_enter_domain) || (couldHave.rutos_letter && couldHave.child_can_enter_domain)) {logic.bottle = true;}
 
-		Logic.trade = false;
-		if (Player.prescription || Player.claim_check || CouldHave.prescription || CouldHave.claim_check) {Logic.trade = true;}
+		logic.trade = false;
+		if (player.prescription || player.claim_check || couldHave.prescription || couldHave.claim_check) {logic.trade = true;}
 
-		Logic.hookshot = false;
-		if (Player.hookshot1 || Player.hookshot2 || CouldHave.hookshot1 || CouldHave.hookshot2) {Logic.hookshot = true;}
+		logic.hookshot = false;
+		if (player.hookshot1 || player.hookshot2 || couldHave.hookshot1 || couldHave.hookshot2) {logic.hookshot = true;}
 
-		Logic.longshot = false;
-		if ((Player.hookshot1 || CouldHave.hookshot1)	&& (Player.hookshot2 || CouldHave.hookshot2)) {Logic.longshot = true;}
+		logic.longshot = false;
+		if ((player.hookshot1 || couldHave.hookshot1)	&& (player.hookshot2 || couldHave.hookshot2)) {logic.longshot = true;}
 
-		Logic.slingshot = false;
-		if (Player.slingshot1 || Player.slingshot2 || Player.slingshot3 || CouldHave.slingshot1 || CouldHave.slingshot2 || CouldHave.slingshot3) {Logic.slingshot = true;}
+		logic.slingshot = false;
+		if (player.slingshot1 || player.slingshot2 || player.slingshot3 || couldHave.slingshot1 || couldHave.slingshot2 || couldHave.slingshot3) {logic.slingshot = true;}
 
-		Logic.adults_wallet = false;
-		if (Player.wallet1 || Player.wallet2 || CouldHave.wallet1 || CouldHave.wallet2 || CouldHave.wallet3 || CouldHave.wallet3) {Logic.adults_wallet = true;}
+		logic.adults_wallet = false;
+		if (player.wallet1 || player.wallet2 || couldHave.wallet1 || couldHave.wallet2 || couldHave.wallet3 || couldHave.wallet3) {logic.adults_wallet = true;}
 
-		Logic.giants_wallet = false;
-		if (((Player.wallet1 || CouldHave.wallet1) && (Player.wallet2 || CouldHave.wallet2)) || ((Player.wallet1 || CouldHave.wallet1) && (Player.wallet3 || CouldHave.wallet3)) || ((Player.wallet2 || CouldHave.wallet2) && (Player.wallet3 || CouldHave.wallet3))) {Logic.giants_wallet = true;}
+		logic.giants_wallet = false;
+		if (((player.wallet1 || couldHave.wallet1) && (player.wallet2 || couldHave.wallet2)) || ((player.wallet1 || couldHave.wallet1) && (player.wallet3 || couldHave.wallet3)) || ((player.wallet2 || couldHave.wallet2) && (player.wallet3 || couldHave.wallet3))) {logic.giants_wallet = true;}
 
-		Logic.tycoon_wallet = false;
-		if ((Player.wallet1 || CouldHave.wallet1) && (Player.wallet2 || CouldHave.wallet2) && (Player.wallet3 || CouldHave.wallet3)) {Logic.tycoon_wallet = true;}
+		logic.tycoon_wallet = false;
+		if ((player.wallet1 || couldHave.wallet1) && (player.wallet2 || couldHave.wallet2) && (player.wallet3 || couldHave.wallet3)) {logic.tycoon_wallet = true;}
 
-		Logic.goron_bracelet = false;
-		if (Player.strength1 || Player.strength2 || Player.strength3 || CouldHave.strength1 || CouldHave.strength2 || CouldHave.strength3) {Logic.goron_bracelet = true;}
+		logic.goron_bracelet = false;
+		if (player.strength1 || player.strength2 || player.strength3 || couldHave.strength1 || couldHave.strength2 || couldHave.strength3) {logic.goron_bracelet = true;}
 
-		Logic.silver_gauntlets = false;
-		if ((Player.strength1 || CouldHave.strength1) && (Player.strength3 || CouldHave.strength3)) {Logic.silver_gauntlets = true;}
-		else if ((Player.strength2 || CouldHave.strength2) && (Player.strength3 || CouldHave.strength3)) {Logic.silver_gauntlets = true;}
-		else if ((Player.strength1 || CouldHave.strength1) && (Player.strength2 || CouldHave.strength2)) {Logic.silver_gauntlets = true;}
+		logic.silver_gauntlets = false;
+		if ((player.strength1 || couldHave.strength1) && (player.strength3 || couldHave.strength3)) {logic.silver_gauntlets = true;}
+		else if ((player.strength2 || couldHave.strength2) && (player.strength3 || couldHave.strength3)) {logic.silver_gauntlets = true;}
+		else if ((player.strength1 || couldHave.strength1) && (player.strength2 || couldHave.strength2)) {logic.silver_gauntlets = true;}
 
-		Logic.golden_gauntlets = false;
-		if ((Player.strength1 || CouldHave.strength1) && (Player.strength2 || CouldHave.strength2) && (Player.strength3 || CouldHave.strength3)) {Logic.golden_gauntlets = true;}
+		logic.golden_gauntlets = false;
+		if ((player.strength1 || couldHave.strength1) && (player.strength2 || couldHave.strength2) && (player.strength3 || couldHave.strength3)) {logic.golden_gauntlets = true;}
 
-		Logic.silver_scale = false;
-		if (Player.scale1 || Player.scale2 || CouldHave.scale1 || CouldHave.scale2) {Logic.silver_scale = true;}
+		logic.silver_scale = false;
+		if (player.scale1 || player.scale2 || couldHave.scale1 || couldHave.scale2) {logic.silver_scale = true;}
 
-		Logic.golden_scale = false;
-		if ((Player.scale1 || CouldHave.scale1) && (Player.scale2 || CouldHave.scale2)) {Logic.golden_scale = true;}
+		logic.golden_scale = false;
+		if ((player.scale1 || couldHave.scale1) && (player.scale2 || couldHave.scale2)) {logic.golden_scale = true;}
 
-		Logic.magic = false;
-		if (Player.magic1 || Player.magic2 || CouldHave.magic1 || CouldHave.magic2) {Logic.magic = true;}
+		logic.magic = false;
+		if (player.magic1 || player.magic2 || couldHave.magic1 || couldHave.magic2) {logic.magic = true;}
 
-		Logic.double_magic = false;
-		if ((Player.magic1 || CouldHave.magic1) && (Player.magic2 || CouldHave.magic2)) {Logic.double_magic = true;}
+		logic.double_magic = false;
+		if ((player.magic1 || couldHave.magic1) && (player.magic2 || couldHave.magic2)) {logic.double_magic = true;}
 
-		Logic.kokiri_sword = Player.kokiri_sword || CouldHave.kokiri_sword;
-		Logic.farores_wind = Player.farores_wind || CouldHave.farores_wind;
-		Logic.boomerang = Player.boomerang || CouldHave.boomerang;
-		Logic.rutos_letter = Player.rutos_letter || CouldHave.rutos_letter;
-		Logic.hammer = Player.hammer || CouldHave.hammer;
-		Logic.mirror_shield = Player.mirror_shield || CouldHave.mirror_shield;
-		Logic.big_poe = Player.big_poe || CouldHave.big_poe;
-		Logic.iron_boots = Player.iron_boots || CouldHave.iron_boots;
-		Logic.hover_boots = Player.hover_boots || CouldHave.hover_boots;
-		Logic.dins_fire = Player.dins_fire || CouldHave.dins_fire;
-		Logic.fire_arrows = Player.fire_arrows || CouldHave.fire_arrows;
-		Logic.goron_tunic = Player.goron_tunic || CouldHave.goron_tunic;
-		Logic.zora_tunic = Player.zora_tunic || CouldHave.zora_tunic;
-		Logic.lens = Player.lens || CouldHave.lens;
-		Logic.stone_of_agony = Player.stone_of_agony || CouldHave.stone_of_agony;
-		Logic.prescription = Player.prescription || CouldHave.prescription;
-		Logic.claim_check = Player.claim_check || CouldHave.claim_check;
-		Logic.light_arrows = Player.light_arrows || CouldHave.light_arrows;
-		Logic.ice_arrows = Player.ice_arrows || CouldHave.ice_arrows;
-		Logic.forest_key_ring = Player.forest_key_ring || CouldHave.forest_key_ring;
-		Logic.fire_key_ring = Player.fire_key_ring || CouldHave.fire_key_ring;
-		Logic.water_key_ring = Player.water_key_ring || CouldHave.water_key_ring;
-		Logic.spirit_key_ring = Player.spirit_key_ring || CouldHave.spirit_key_ring;
-		Logic.shadow_key_ring = Player.shadow_key_ring || CouldHave.shadow_key_ring;
-		Logic.well_key_ring = Player.well_key_ring || CouldHave.well_key_ring;
-		Logic.gtg_key_ring = Player.gtg_key_ring || CouldHave.gtg_key_ring;
-		Logic.ganons_key_ring = Player.ganons_key_ring || CouldHave.ganons_key_ring;
-		Logic.gerudo_card = Player.gerudo_card || CouldHave.gerudo_card;
-		Logic.magic_bean_pack = Player.magic_bean_pack || CouldHave.magic_bean_pack;
-		Logic.lullaby = Player.lullaby || CouldHave.lullaby;
-		Logic.eponas = Player.eponas || CouldHave.eponas;
-		Logic.sarias = Player.sarias || CouldHave.sarias;
-		Logic.suns = Player.suns || CouldHave.suns;
-		Logic.time = Player.time || CouldHave.time;
-		Logic.storms = Player.storms || CouldHave.storms;
-		Logic.minuet = Player.minuet || CouldHave.minuet;
-		Logic.bolero = Player.bolero || CouldHave.bolero;
-		Logic.serenade = Player.serenade || CouldHave.serenade;
-		Logic.requiem = Player.requiem || CouldHave.requiem;
-		Logic.nocturne = Player.nocturne || CouldHave.nocturne;
-		Logic.prelude = Player.prelude || CouldHave.prelude;
+		logic.kokiri_sword = player.kokiri_sword || couldHave.kokiri_sword;
+		logic.farores_wind = player.farores_wind || couldHave.farores_wind;
+		logic.boomerang = player.boomerang || couldHave.boomerang;
+		logic.rutos_letter = player.rutos_letter || couldHave.rutos_letter;
+		logic.hammer = player.hammer || couldHave.hammer;
+		logic.mirror_shield = player.mirror_shield || couldHave.mirror_shield;
+		logic.big_poe = player.big_poe || couldHave.big_poe;
+		logic.iron_boots = player.iron_boots || couldHave.iron_boots;
+		logic.hover_boots = player.hover_boots || couldHave.hover_boots;
+		logic.dins_fire = player.dins_fire || couldHave.dins_fire;
+		logic.fire_arrows = player.fire_arrows || couldHave.fire_arrows;
+		logic.goron_tunic = player.goron_tunic || couldHave.goron_tunic;
+		logic.zora_tunic = player.zora_tunic || couldHave.zora_tunic;
+		logic.lens = player.lens || couldHave.lens;
+		logic.stone_of_agony = player.stone_of_agony || couldHave.stone_of_agony;
+		logic.prescription = player.prescription || couldHave.prescription;
+		logic.claim_check = player.claim_check || couldHave.claim_check;
+		logic.light_arrows = player.light_arrows || couldHave.light_arrows;
+		logic.ice_arrows = player.ice_arrows || couldHave.ice_arrows;
+		logic.forest_key_ring = player.forest_key_ring || couldHave.forest_key_ring;
+		logic.fire_key_ring = player.fire_key_ring || couldHave.fire_key_ring;
+		logic.water_key_ring = player.water_key_ring || couldHave.water_key_ring;
+		logic.spirit_key_ring = player.spirit_key_ring || couldHave.spirit_key_ring;
+		logic.shadow_key_ring = player.shadow_key_ring || couldHave.shadow_key_ring;
+		logic.well_key_ring = player.well_key_ring || couldHave.well_key_ring;
+		logic.gtg_key_ring = player.gtg_key_ring || couldHave.gtg_key_ring;
+		logic.ganons_key_ring = player.ganons_key_ring || couldHave.ganons_key_ring;
+		logic.gerudo_card = player.gerudo_card || couldHave.gerudo_card;
+		logic.magic_bean_pack = player.magic_bean_pack || couldHave.magic_bean_pack;
+		logic.lullaby = player.lullaby || couldHave.lullaby;
+		logic.eponas = player.eponas || couldHave.eponas;
+		logic.sarias = player.sarias || couldHave.sarias;
+		logic.suns = player.suns || couldHave.suns;
+		logic.time = player.time || couldHave.time;
+		logic.storms = player.storms || couldHave.storms;
+		logic.minuet = player.minuet || couldHave.minuet;
+		logic.bolero = player.bolero || couldHave.bolero;
+		logic.serenade = player.serenade || couldHave.serenade;
+		logic.requiem = player.requiem || couldHave.requiem;
+		logic.nocturne = player.nocturne || couldHave.nocturne;
+		logic.prelude = player.prelude || couldHave.prelude;
 
-		Logic.forest_boss_key = Player.forest_boss_key || CouldHave.forest_boss_key;
-		Logic.fire_boss_key = Player.fire_boss_key || CouldHave.fire_boss_key;
-		Logic.water_boss_key = Player.water_boss_key || CouldHave.water_boss_key;
-		Logic.spirit_boss_key = Player.spirit_boss_key || CouldHave.spirit_boss_key;
-		Logic.shadow_boss_key = Player.shadow_boss_key || CouldHave.shadow_boss_key;
+		logic.forest_boss_key = player.forest_boss_key || couldHave.forest_boss_key;
+		logic.fire_boss_key = player.fire_boss_key || couldHave.fire_boss_key;
+		logic.water_boss_key = player.water_boss_key || couldHave.water_boss_key;
+		logic.spirit_boss_key = player.spirit_boss_key || couldHave.spirit_boss_key;
+		logic.shadow_boss_key = player.shadow_boss_key || couldHave.shadow_boss_key;
 	}
 	
-	Player.forest = false; 
-	CouldHave.forest = false;
-	Location_Access.forest_medallion_location = false;
-	if(Logic.forest_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.deku_queen_gohma; Location_Access.forest_medallion_location = Location_Access.deku_queen_gohma; CouldHave.forest = Location_Could_Access.deku_queen_gohma;}
-	else if(Logic.forest_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.dodongos_king_dodongo; Location_Access.forest_medallion_location = Location_Access.dodongos_king_dodongo; CouldHave.forest = Location_Could_Access.dodongos_king_dodongo;}
-	else if(Logic.forest_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.jabu_barinade; Location_Access.forest_medallion_location = Location_Access.jabu_barinade; CouldHave.forest = Location_Could_Access.jabu_barinade;}
-	else if(Logic.forest_medallion_location == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.forest_phantomGanon; Location_Access.forest_medallion_location = Location_Access.forest_phantomGanon; CouldHave.forest = Location_Could_Access.forest_phantomGanon;}
-	else if(Logic.forest_medallion_location == "fire") {if (Check.fire_volvagia != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.fire_volvagia; Location_Access.forest_medallion_location = Location_Access.fire_volvagia; CouldHave.forest = Location_Could_Access.fire_volvagia;}
-	else if(Logic.forest_medallion_location == "water") {if (Check.water_morpha != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.water_morpha; Location_Access.forest_medallion_location = Location_Access.water_morpha; CouldHave.forest = Location_Could_Access.water_morpha;}
-	else if(Logic.forest_medallion_location == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.spirit_twinrova; Location_Access.forest_medallion_location = Location_Access.spirit_twinrova; CouldHave.forest = Location_Could_Access.spirit_twinrova;}
-	else if(Logic.forest_medallion_location == "shadow") {if (Check.shadow_bongo != "unknown") {Player.forest = true;} Logic.forest_medallion = Location_Logic.shadow_bongo; Location_Access.forest_medallion_location = Location_Access.shadow_bongo; CouldHave.forest = Location_Could_Access.shadow_bongo;}
-	else if(Logic.forest_medallion_location == "pocket") {Player.forest = true; Logic.forest_medallion = true; Location_Access.forest_medallion_location = true; CouldHave.forest = true;}
-	else {Logic.forest_medallion_location == "unknown"; Logic.forest_medallion = false;}
+	player.forest = false; 
+	couldHave.forest = false;
+	locationAccess.forest_medallion_location = false;
+	if(logic.forest_medallion_location == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.deku_queen_gohma; locationAccess.forest_medallion_location = locationAccess.deku_queen_gohma; couldHave.forest = locationCouldAccess.deku_queen_gohma;}
+	else if(logic.forest_medallion_location == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.dodongos_king_dodongo; locationAccess.forest_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.forest = locationCouldAccess.dodongos_king_dodongo;}
+	else if(logic.forest_medallion_location == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.jabu_barinade; locationAccess.forest_medallion_location = locationAccess.jabu_barinade; couldHave.forest = locationCouldAccess.jabu_barinade;}
+	else if(logic.forest_medallion_location == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.forest_phantomGanon; locationAccess.forest_medallion_location = locationAccess.forest_phantomGanon; couldHave.forest = locationCouldAccess.forest_phantomGanon;}
+	else if(logic.forest_medallion_location == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.fire_volvagia; locationAccess.forest_medallion_location = locationAccess.fire_volvagia; couldHave.forest = locationCouldAccess.fire_volvagia;}
+	else if(logic.forest_medallion_location == "water") {if (checkToItemMap.water_morpha != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.water_morpha; locationAccess.forest_medallion_location = locationAccess.water_morpha; couldHave.forest = locationCouldAccess.water_morpha;}
+	else if(logic.forest_medallion_location == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.spirit_twinrova; locationAccess.forest_medallion_location = locationAccess.spirit_twinrova; couldHave.forest = locationCouldAccess.spirit_twinrova;}
+	else if(logic.forest_medallion_location == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.forest = true;} logic.forest_medallion = locationLogic.shadow_bongo; locationAccess.forest_medallion_location = locationAccess.shadow_bongo; couldHave.forest = locationCouldAccess.shadow_bongo;}
+	else if(logic.forest_medallion_location == "pocket") {player.forest = true; logic.forest_medallion = true; locationAccess.forest_medallion_location = true; couldHave.forest = true;}
+	else {logic.forest_medallion_location == "unknown"; logic.forest_medallion = false;}
 	
-	Player.fire = false; 
-	CouldHave.fire = false;
-	Location_Access.fire_medallion_location = false;
-	if(Logic.fire_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.deku_queen_gohma; Location_Access.fire_medallion_location = Location_Access.deku_queen_gohma; CouldHave.fire = Location_Could_Access.deku_queen_gohma;}
-	else if(Logic.fire_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.dodongos_king_dodongo; Location_Access.fire_medallion_location = Location_Access.dodongos_king_dodongo; CouldHave.fire = Location_Could_Access.dodongos_king_dodongo;}
-	else if(Logic.fire_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.jabu_barinade; Location_Access.fire_medallion_location = Location_Access.jabu_barinade; CouldHave.fire = Location_Could_Access.jabu_barinade;}
-	else if(Logic.fire_medallion_location == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.forest_phantomGanon; Location_Access.fire_medallion_location = Location_Access.forest_phantomGanon; CouldHave.fire = Location_Could_Access.forest_phantomGanon;}
-	else if(Logic.fire_medallion_location == "fire") {if (Check.fire_volvagia != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.fire_volvagia; Location_Access.fire_medallion_location = Location_Access.fire_volvagia; CouldHave.fire = Location_Could_Access.fire_volvagia;}
-	else if(Logic.fire_medallion_location == "water") {if (Check.water_morpha != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.water_morpha; Location_Access.fire_medallion_location = Location_Access.water_morpha; CouldHave.fire = Location_Could_Access.water_morpha;}
-	else if(Logic.fire_medallion_location == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.spirit_twinrova; Location_Access.fire_medallion_location = Location_Access.spirit_twinrova; CouldHave.fire = Location_Could_Access.spirit_twinrova;}
-	else if(Logic.fire_medallion_location == "shadow") {if (Check.shadow_bongo != "unknown") {Player.fire = true;} Logic.fire_medallion = Location_Logic.shadow_bongo; Location_Access.fire_medallion_location = Location_Access.shadow_bongo; CouldHave.fire = Location_Could_Access.shadow_bongo;}
-	else if(Logic.fire_medallion_location == "pocket") {Player.fire = true; Logic.fire_medallion = true; Location_Access.fire_medallion_location = true; CouldHave.fire = true;}
-	else {Logic.fire_medallion_location == "unknown"; Logic.fire_medallion = false;}
+	player.fire = false; 
+	couldHave.fire = false;
+	locationAccess.fire_medallion_location = false;
+	if(logic.fire_medallion_location == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.deku_queen_gohma; locationAccess.fire_medallion_location = locationAccess.deku_queen_gohma; couldHave.fire = locationCouldAccess.deku_queen_gohma;}
+	else if(logic.fire_medallion_location == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.dodongos_king_dodongo; locationAccess.fire_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.fire = locationCouldAccess.dodongos_king_dodongo;}
+	else if(logic.fire_medallion_location == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.jabu_barinade; locationAccess.fire_medallion_location = locationAccess.jabu_barinade; couldHave.fire = locationCouldAccess.jabu_barinade;}
+	else if(logic.fire_medallion_location == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.forest_phantomGanon; locationAccess.fire_medallion_location = locationAccess.forest_phantomGanon; couldHave.fire = locationCouldAccess.forest_phantomGanon;}
+	else if(logic.fire_medallion_location == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.fire_volvagia; locationAccess.fire_medallion_location = locationAccess.fire_volvagia; couldHave.fire = locationCouldAccess.fire_volvagia;}
+	else if(logic.fire_medallion_location == "water") {if (checkToItemMap.water_morpha != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.water_morpha; locationAccess.fire_medallion_location = locationAccess.water_morpha; couldHave.fire = locationCouldAccess.water_morpha;}
+	else if(logic.fire_medallion_location == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.spirit_twinrova; locationAccess.fire_medallion_location = locationAccess.spirit_twinrova; couldHave.fire = locationCouldAccess.spirit_twinrova;}
+	else if(logic.fire_medallion_location == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.fire = true;} logic.fire_medallion = locationLogic.shadow_bongo; locationAccess.fire_medallion_location = locationAccess.shadow_bongo; couldHave.fire = locationCouldAccess.shadow_bongo;}
+	else if(logic.fire_medallion_location == "pocket") {player.fire = true; logic.fire_medallion = true; locationAccess.fire_medallion_location = true; couldHave.fire = true;}
+	else {logic.fire_medallion_location == "unknown"; logic.fire_medallion = false;}
 	
-	Player.water = false; 
-	CouldHave.water = false;
-	Location_Access.water_medallion_location = false;
-	if(Logic.water_medallion_location == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.deku_queen_gohma; Location_Access.water_medallion_location = Location_Access.deku_queen_gohma; CouldHave.water = Location_Could_Access.deku_queen_gohma;}
-	else if(Logic.water_medallion_location == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.dodongos_king_dodongo; Location_Access.water_medallion_location = Location_Access.dodongos_king_dodongo; CouldHave.water = Location_Could_Access.dodongos_king_dodongo;}
-	else if(Logic.water_medallion_location == "jabu") {if (Check.jabu_barinade != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.jabu_barinade; Location_Access.water_medallion_location = Location_Access.jabu_barinade; CouldHave.water = Location_Could_Access.jabu_barinade;}
-	else if(Logic.water_medallion_location == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.forest_phantomGanon; Location_Access.water_medallion_location = Location_Access.forest_phantomGanon; CouldHave.water = Location_Could_Access.forest_phantomGanon;}
-	else if(Logic.water_medallion_location == "fire") {if (Check.fire_volvagia != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.fire_volvagia; Location_Access.water_medallion_location = Location_Access.fire_volvagia; CouldHave.water = Location_Could_Access.fire_volvagia;}
-	else if(Logic.water_medallion_location == "water") {if (Check.water_morpha != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.water_morpha; Location_Access.water_medallion_location = Location_Access.water_morpha; CouldHave.water = Location_Could_Access.water_morpha;}
-	else if(Logic.water_medallion_location == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.spirit_twinrova; Location_Access.water_medallion_location = Location_Access.spirit_twinrova; CouldHave.water = Location_Could_Access.spirit_twinrova;}
-	else if(Logic.water_medallion_location == "shadow") {if (Check.shadow_bongo != "unknown") {Player.water = true;} Logic.water_medallion = Location_Logic.shadow_bongo; Location_Access.water_medallion_location = Location_Access.shadow_bongo; CouldHave.water = Location_Could_Access.shadow_bongo;}
-	else if(Logic.water_medallion_location == "pocket") {Player.water = true; Logic.water_medallion = true; Location_Access.water_medallion_location = true; CouldHave.water = true;}
-	else {Logic.water_medallion_location == "unknown"; Logic.water_medallion = false;}
+	player.water = false; 
+	couldHave.water = false;
+	locationAccess.water_medallion_location = false;
+	if(logic.water_medallion_location == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.water = true;} logic.water_medallion = locationLogic.deku_queen_gohma; locationAccess.water_medallion_location = locationAccess.deku_queen_gohma; couldHave.water = locationCouldAccess.deku_queen_gohma;}
+	else if(logic.water_medallion_location == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.water = true;} logic.water_medallion = locationLogic.dodongos_king_dodongo; locationAccess.water_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.water = locationCouldAccess.dodongos_king_dodongo;}
+	else if(logic.water_medallion_location == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.water = true;} logic.water_medallion = locationLogic.jabu_barinade; locationAccess.water_medallion_location = locationAccess.jabu_barinade; couldHave.water = locationCouldAccess.jabu_barinade;}
+	else if(logic.water_medallion_location == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.water = true;} logic.water_medallion = locationLogic.forest_phantomGanon; locationAccess.water_medallion_location = locationAccess.forest_phantomGanon; couldHave.water = locationCouldAccess.forest_phantomGanon;}
+	else if(logic.water_medallion_location == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.water = true;} logic.water_medallion = locationLogic.fire_volvagia; locationAccess.water_medallion_location = locationAccess.fire_volvagia; couldHave.water = locationCouldAccess.fire_volvagia;}
+	else if(logic.water_medallion_location == "water") {if (checkToItemMap.water_morpha != "unknown") {player.water = true;} logic.water_medallion = locationLogic.water_morpha; locationAccess.water_medallion_location = locationAccess.water_morpha; couldHave.water = locationCouldAccess.water_morpha;}
+	else if(logic.water_medallion_location == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.water = true;} logic.water_medallion = locationLogic.spirit_twinrova; locationAccess.water_medallion_location = locationAccess.spirit_twinrova; couldHave.water = locationCouldAccess.spirit_twinrova;}
+	else if(logic.water_medallion_location == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.water = true;} logic.water_medallion = locationLogic.shadow_bongo; locationAccess.water_medallion_location = locationAccess.shadow_bongo; couldHave.water = locationCouldAccess.shadow_bongo;}
+	else if(logic.water_medallion_location == "pocket") {player.water = true; logic.water_medallion = true; locationAccess.water_medallion_location = true; couldHave.water = true;}
+	else {logic.water_medallion_location == "unknown"; logic.water_medallion = false;}
 	
-	Logic.shadow_medallion = false;
-	Logic.spirit_medallion = false;
-	Logic.light_medallion = false;
-	Player.shadow_medallion = false;
-	Player.spirit_medallion = false;
-	Player.light_medallion = false;
-	CouldHave.shadow_medallion = false;
-	CouldHave.spirit_medallion = false;
-	CouldHave.light_medallion = false;
-	Location_Access.shadow_medallion_location = false;
-	Location_Access.spirit_medallion_location = false;
-	Location_Access.light_medallion_location = false;
+	logic.shadow_medallion = false;
+	logic.spirit_medallion = false;
+	logic.light_medallion = false;
+	player.shadow_medallion = false;
+	player.spirit_medallion = false;
+	player.light_medallion = false;
+	couldHave.shadow_medallion = false;
+	couldHave.spirit_medallion = false;
+	couldHave.light_medallion = false;
+	locationAccess.shadow_medallion_location = false;
+	locationAccess.spirit_medallion_location = false;
+	locationAccess.light_medallion_location = false;
 	for (var i = 1; i <=3; i++) {
 		str = "generic" + i;
 		str2 = "gen" + i;
-		Player[str2] = false; 
-		if(Logic[str] == "deku") {if (Check.deku_queen_gohma != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.deku_queen_gohma; if(document.getElementById("text_" + dekuPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(dekuPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.deku_queen_gohma; CouldHave.shadow_medallion = Location_Could_Access.deku_queen_gohma; Location_Access.shadow_medallion_location = Location_Access.deku_queen_gohma;if (Check.deku_queen_gohma != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + dekuPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(dekuPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.deku_queen_gohma; CouldHave.spirit_medallion = Location_Could_Access.deku_queen_gohma; Location_Access.spirit_medallion_location = Location_Access.deku_queen_gohma;if (Check.deku_queen_gohma != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.deku_queen_gohma;if (Check.deku_queen_gohma != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.deku_queen_gohma;Location_Access.light_medallion_location = Player[Check["deku_queen_gohma"]];}}
-		else if(Logic[str] == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.dodongos_king_dodongo; if(document.getElementById("text_" + dodongosPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.dodongos_king_dodongo; CouldHave.shadow_medallion = Location_Could_Access.dodongos_king_dodongo; Location_Access.shadow_medallion_location = Location_Access.dodongos_king_dodongo;if (Check.dodongos_king_dodongo != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + dodongosPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.dodongos_king_dodongo; CouldHave.spirit_medallion = Location_Could_Access.dodongos_king_dodongo; Location_Access.spirit_medallion_location = Location_Access.dodongos_king_dodongo;if (Check.dodongos_king_dodongo != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.dodongos_king_dodongo;if (Check.dodongos_king_dodongo != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.dodongos_king_dodongo;Location_Access.light_medallion_location = Player[Check["dodongos_king_dodongo"]];}}
-		else if(Logic[str] == "jabu") {if (Check.jabu_barinade != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.jabu_barinade; if(document.getElementById("text_" + jabuPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(jabuPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.jabu_barinade; CouldHave.shadow_medallion = Location_Could_Access.jabu_barinade; Location_Access.shadow_medallion_location = Location_Access.jabu_barinade;if (Check.jabu_barinade != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + jabuPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(jabuPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.jabu_barinade; CouldHave.spirit_medallion = Location_Could_Access.jabu_barinade; Location_Access.spirit_medallion_location = Location_Access.jabu_barinade;if (Check.jabu_barinade != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.jabu_barinade;if (Check.jabu_barinade != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.jabu_barinade;Location_Access.light_medallion_location = Player[Check["jabu_barinade"]];}}
-		else if(Logic[str] == "forest") {if (Check.forest_phantomGanon != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.forest_phantomGanon; if(document.getElementById("text_" + forestPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(forestPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.forest_phantomGanon; CouldHave.shadow_medallion = Location_Could_Access.forest_phantomGanon; Location_Access.shadow_medallion_location = Location_Access.forest_phantomGanon;if (Check.forest_phantomGanon != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + forestPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(forestPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion =  Location_Logic.forest_phantomGanon; CouldHave.spirit_medallion = Location_Could_Access.forest_phantomGanon; Location_Access.spirit_medallion_location = Location_Access.forest_phantomGanon;if (Check.forest_phantomGanon != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.forest_phantomGanon;if (Check.forest_phantomGanon != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.forest_phantomGanon;Location_Access.light_medallion_location = Player[Check["forest_phantomGanon"]];}}
-		else if(Logic[str] == "fire") {if (Check.fire_volvagia != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.fire_volvagia; if(document.getElementById("text_" + firePlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(firePlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.fire_volvagia; CouldHave.shadow_medallion = Location_Could_Access.fire_volvagia; Location_Access.shadow_medallion_location = Location_Access.fire_volvagia;if (Check.fire_volvagia != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + firePlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(firePlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.fire_volvagia; CouldHave.spirit_medallion = Location_Could_Access.fire_volvagia; Location_Access.spirit_medallion_location = Location_Access.fire_volvagia;if (Check.fire_volvagia != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.fire_volvagia;if (Check.fire_volvagia != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.fire_volvagia;Location_Access.light_medallion_location = Player[Check["fire_volvagia"]];}}
-		else if(Logic[str] == "water") {if (Check.water_morpha != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.water_morpha; if(document.getElementById("text_" + waterPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(waterPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.water_morpha; CouldHave.shadow_medallion = Location_Could_Access.water_morpha; Location_Access.shadow_medallion_location = Location_Access.water_morpha;if (Check.water_morpha != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + waterPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(waterPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.water_morpha; CouldHave.spirit_medallion = Location_Could_Access.water_morpha; Location_Access.spirit_medallion_location = Location_Access.water_morpha;if (Check.water_morpha != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.water_morpha;if (Check.water_morpha != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.water_morpha;Location_Access.light_medallion_location = Player[Check["water_morpha"]];}}
-		else if(Logic[str] == "spirit") {if (Check.spirit_twinrova != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.spirit_twinrova; if(document.getElementById("text_" + spiritPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(spiritPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.spirit_twinrova; CouldHave.shadow_medallion = Location_Could_Access.spirit_twinrova; Location_Access.shadow_medallion_location = Location_Access.spirit_twinrova;if (Check.spirit_twinrova != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + spiritPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(spiritPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.spirit_twinrova; CouldHave.spirit_medallion = Location_Could_Access.spirit_twinrova; Location_Access.spirit_medallion_location = Location_Access.spirit_twinrova;if (Check.spirit_twinrova != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.spirit_twinrova;if (Check.spirit_twinrova != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.spirit_twinrova;Location_Access.light_medallion_location = Player[Check["spirit_twinrova"]];}}
-		else if(Logic[str] == "shadow") {if (Check.shadow_bongo != "unknown") {Player[str2] = true;} Logic[str2] = Location_Logic.shadow_bongo; if(document.getElementById("text_" + shadowPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(shadowPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = Location_Logic.shadow_bongo; CouldHave.shadow_medallion = Location_Could_Access.shadow_bongo; Location_Access.shadow_medallion_location = Location_Access.shadow_bongo;if (Check.shadow_bongo != "unknown") {Player.shadow_medallion = true;};} else if(document.getElementById("text_" + shadowPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(shadowPlacement + "_icon").src = dungIconSources[7]; Logic.spirit_medallion = Location_Logic.shadow_bongo; CouldHave.spirit_medallion = Location_Could_Access.shadow_bongo; Location_Access.spirit_medallion_location = Location_Access.shadow_bongo;if (Check.shadow_bongo != "unknown") {Player.spirit_medallion = true;};} else {Logic.light_medallion = Location_Logic.shadow_bongo;if (Check.shadow_bongo != "unknown") {Player.light_medallion = true;};CouldHave.light_medallion = Location_Could_Access.shadow_bongo;Location_Access.light_medallion_location = Player[Check["shadow_bongo"]];}}
-		else if(Logic[str] == "pocket") {Player[str2] = true; Logic[str2] = true; if(document.getElementById("text_" + pocketPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(pocketPlacement + "_icon").src = dungIconSources[6]; Logic.shadow_medallion = true; CouldHave.shadow_medallion = true; Location_Access.shadow_medallion_location = true;Player.shadow_medallion = true;} else if(document.getElementById("text_" + pocketPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(pocketPlacement + "_icon").src = dungIconSources[7];  Logic.spirit_medallion = true; CouldHave.spirit_medallion = true; Location_Access.spirit_medallion_location = true;Player.spirit_medallion = true;} else {Logic.light_medallion = true;Player.light_medallion = true;CouldHave.light_medallion = true;Location_Access.light_medallion_location = true;}}
-		else {Logic[str2] = false;}
+		player[str2] = false; 
+		if(logic[str] == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player[str2] = true;} logic[str2] = locationLogic.deku_queen_gohma; if(document.getElementById("text_" + dekuPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(dekuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.deku_queen_gohma; couldHave.shadow_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.shadow_medallion_location = locationAccess.deku_queen_gohma;if (checkToItemMap.deku_queen_gohma != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + dekuPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(dekuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.deku_queen_gohma; couldHave.spirit_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.spirit_medallion_location = locationAccess.deku_queen_gohma;if (checkToItemMap.deku_queen_gohma != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.deku_queen_gohma;if (checkToItemMap.deku_queen_gohma != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.deku_queen_gohma;locationAccess.light_medallion_location = player[checkToItemMap["deku_queen_gohma"]];}}
+		else if(logic[str] == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player[str2] = true;} logic[str2] = locationLogic.dodongos_king_dodongo; if(document.getElementById("text_" + dodongosPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.dodongos_king_dodongo; couldHave.shadow_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.shadow_medallion_location = locationAccess.dodongos_king_dodongo;if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + dodongosPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.dodongos_king_dodongo; couldHave.spirit_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.spirit_medallion_location = locationAccess.dodongos_king_dodongo;if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.dodongos_king_dodongo;if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.dodongos_king_dodongo;locationAccess.light_medallion_location = player[checkToItemMap["dodongos_king_dodongo"]];}}
+		else if(logic[str] == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player[str2] = true;} logic[str2] = locationLogic.jabu_barinade; if(document.getElementById("text_" + jabuPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(jabuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.jabu_barinade; couldHave.shadow_medallion = locationCouldAccess.jabu_barinade; locationAccess.shadow_medallion_location = locationAccess.jabu_barinade;if (checkToItemMap.jabu_barinade != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + jabuPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(jabuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.jabu_barinade; couldHave.spirit_medallion = locationCouldAccess.jabu_barinade; locationAccess.spirit_medallion_location = locationAccess.jabu_barinade;if (checkToItemMap.jabu_barinade != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.jabu_barinade;if (checkToItemMap.jabu_barinade != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.jabu_barinade;locationAccess.light_medallion_location = player[checkToItemMap["jabu_barinade"]];}}
+		else if(logic[str] == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player[str2] = true;} logic[str2] = locationLogic.forest_phantomGanon; if(document.getElementById("text_" + forestPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(forestPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.forest_phantomGanon; couldHave.shadow_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.shadow_medallion_location = locationAccess.forest_phantomGanon;if (checkToItemMap.forest_phantomGanon != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + forestPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(forestPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion =  locationLogic.forest_phantomGanon; couldHave.spirit_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.spirit_medallion_location = locationAccess.forest_phantomGanon;if (checkToItemMap.forest_phantomGanon != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.forest_phantomGanon;if (checkToItemMap.forest_phantomGanon != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.forest_phantomGanon;locationAccess.light_medallion_location = player[checkToItemMap["forest_phantomGanon"]];}}
+		else if(logic[str] == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player[str2] = true;} logic[str2] = locationLogic.fire_volvagia; if(document.getElementById("text_" + firePlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(firePlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.fire_volvagia; couldHave.shadow_medallion = locationCouldAccess.fire_volvagia; locationAccess.shadow_medallion_location = locationAccess.fire_volvagia;if (checkToItemMap.fire_volvagia != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + firePlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(firePlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.fire_volvagia; couldHave.spirit_medallion = locationCouldAccess.fire_volvagia; locationAccess.spirit_medallion_location = locationAccess.fire_volvagia;if (checkToItemMap.fire_volvagia != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.fire_volvagia;if (checkToItemMap.fire_volvagia != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.fire_volvagia;locationAccess.light_medallion_location = player[checkToItemMap["fire_volvagia"]];}}
+		else if(logic[str] == "water") {if (checkToItemMap.water_morpha != "unknown") {player[str2] = true;} logic[str2] = locationLogic.water_morpha; if(document.getElementById("text_" + waterPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(waterPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.water_morpha; couldHave.shadow_medallion = locationCouldAccess.water_morpha; locationAccess.shadow_medallion_location = locationAccess.water_morpha;if (checkToItemMap.water_morpha != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + waterPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(waterPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.water_morpha; couldHave.spirit_medallion = locationCouldAccess.water_morpha; locationAccess.spirit_medallion_location = locationAccess.water_morpha;if (checkToItemMap.water_morpha != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.water_morpha;if (checkToItemMap.water_morpha != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.water_morpha;locationAccess.light_medallion_location = player[checkToItemMap["water_morpha"]];}}
+		else if(logic[str] == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player[str2] = true;} logic[str2] = locationLogic.spirit_twinrova; if(document.getElementById("text_" + spiritPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(spiritPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.spirit_twinrova; couldHave.shadow_medallion = locationCouldAccess.spirit_twinrova; locationAccess.shadow_medallion_location = locationAccess.spirit_twinrova;if (checkToItemMap.spirit_twinrova != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + spiritPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(spiritPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.spirit_twinrova; couldHave.spirit_medallion = locationCouldAccess.spirit_twinrova; locationAccess.spirit_medallion_location = locationAccess.spirit_twinrova;if (checkToItemMap.spirit_twinrova != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.spirit_twinrova;if (checkToItemMap.spirit_twinrova != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.spirit_twinrova;locationAccess.light_medallion_location = player[checkToItemMap["spirit_twinrova"]];}}
+		else if(logic[str] == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player[str2] = true;} logic[str2] = locationLogic.shadow_bongo; if(document.getElementById("text_" + shadowPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(shadowPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.shadow_bongo; couldHave.shadow_medallion = locationCouldAccess.shadow_bongo; locationAccess.shadow_medallion_location = locationAccess.shadow_bongo;if (checkToItemMap.shadow_bongo != "unknown") {player.shadow_medallion = true;};} else if(document.getElementById("text_" + shadowPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(shadowPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.shadow_bongo; couldHave.spirit_medallion = locationCouldAccess.shadow_bongo; locationAccess.spirit_medallion_location = locationAccess.shadow_bongo;if (checkToItemMap.shadow_bongo != "unknown") {player.spirit_medallion = true;};} else {logic.light_medallion = locationLogic.shadow_bongo;if (checkToItemMap.shadow_bongo != "unknown") {player.light_medallion = true;};couldHave.light_medallion = locationCouldAccess.shadow_bongo;locationAccess.light_medallion_location = player[checkToItemMap["shadow_bongo"]];}}
+		else if(logic[str] == "pocket") {player[str2] = true; logic[str2] = true; if(document.getElementById("text_" + pocketPlacement).style.color=="rgb(238, 130, 238)") {document.getElementById(pocketPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = true; couldHave.shadow_medallion = true; locationAccess.shadow_medallion_location = true;player.shadow_medallion = true;} else if(document.getElementById("text_" + pocketPlacement).style.color=="rgb(255, 165, 0)") {document.getElementById(pocketPlacement + "_icon").src = dungIconSources[7];  logic.spirit_medallion = true; couldHave.spirit_medallion = true; locationAccess.spirit_medallion_location = true;player.spirit_medallion = true;} else {logic.light_medallion = true;player.light_medallion = true;couldHave.light_medallion = true;locationAccess.light_medallion_location = true;}}
+		else {logic[str2] = false;}
 	}
 	
-	Player.emerald = false;
-	CouldHave.emerald = false;
-	Location_Access.emerald_location = false;
-	if(Logic.emerald == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.deku_queen_gohma; Location_Access.emerald_location = Location_Access.deku_queen_gohma; CouldHave.emerald = Location_Could_Access.deku_queen_gohma;}
-	if(Logic.emerald == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.dodongos_king_dodongo; Location_Access.emerald_location = Location_Access.dodongos_king_dodongo; CouldHave.emerald = Location_Could_Access.dodongos_king_dodongo;}
-	if(Logic.emerald == "jabu") {if (Check.jabu_barinade != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.jabu_barinade; Location_Access.emerald_location = Location_Access.jabu_barinade; CouldHave.emerald = Location_Could_Access.jabu_barinade;}
-	if(Logic.emerald == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.forest_phantomGanon; Location_Access.emerald_location = Location_Access.forest_phantomGanon; CouldHave.emerald = Location_Could_Access.forest_phantomGanon;}
-	if(Logic.emerald == "fire") {if (Check.fire_volvagia != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.fire_volvagia; Location_Access.emerald_location = Location_Access.fire_volvagia; CouldHave.emerald = Location_Could_Access.fire_volvagia;}
-	if(Logic.emerald == "water") {if (Check.water_morpha != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.water_morpha; Location_Access.emerald_location = Location_Access.water_morpha; CouldHave.emerald = Location_Could_Access.water_morpha;}
-	if(Logic.emerald == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.spirit_twinrova; Location_Access.emerald_location = Location_Access.spirit_twinrova; CouldHave.emerald = Location_Could_Access.spirit_twinrova;}
-	if(Logic.emerald == "shadow") {if (Check.shadow_bongo != "unknown") {Player.emerald = true;} Logic.kokiri_emerald = Location_Logic.shadow_bongo; Location_Access.emerald_location = Location_Access.shadow_bongo; CouldHave.emerald = Location_Could_Access.shadow_bongo;}
-	if(Logic.emerald == "pocket") {Player.emerald = true; Logic.kokiri_emerald = true; Location_Access.emerald_location = true; CouldHave.emerald = true;}
+	player.emerald = false;
+	couldHave.emerald = false;
+	locationAccess.emerald_location = false;
+	if(logic.emerald == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.deku_queen_gohma; locationAccess.emerald_location = locationAccess.deku_queen_gohma; couldHave.emerald = locationCouldAccess.deku_queen_gohma;}
+	if(logic.emerald == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.dodongos_king_dodongo; locationAccess.emerald_location = locationAccess.dodongos_king_dodongo; couldHave.emerald = locationCouldAccess.dodongos_king_dodongo;}
+	if(logic.emerald == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.jabu_barinade; locationAccess.emerald_location = locationAccess.jabu_barinade; couldHave.emerald = locationCouldAccess.jabu_barinade;}
+	if(logic.emerald == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.forest_phantomGanon; locationAccess.emerald_location = locationAccess.forest_phantomGanon; couldHave.emerald = locationCouldAccess.forest_phantomGanon;}
+	if(logic.emerald == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.fire_volvagia; locationAccess.emerald_location = locationAccess.fire_volvagia; couldHave.emerald = locationCouldAccess.fire_volvagia;}
+	if(logic.emerald == "water") {if (checkToItemMap.water_morpha != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.water_morpha; locationAccess.emerald_location = locationAccess.water_morpha; couldHave.emerald = locationCouldAccess.water_morpha;}
+	if(logic.emerald == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.spirit_twinrova; locationAccess.emerald_location = locationAccess.spirit_twinrova; couldHave.emerald = locationCouldAccess.spirit_twinrova;}
+	if(logic.emerald == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.emerald = true;} logic.kokiri_emerald = locationLogic.shadow_bongo; locationAccess.emerald_location = locationAccess.shadow_bongo; couldHave.emerald = locationCouldAccess.shadow_bongo;}
+	if(logic.emerald == "pocket") {player.emerald = true; logic.kokiri_emerald = true; locationAccess.emerald_location = true; couldHave.emerald = true;}
 	
-	Player.ruby = false;
-	CouldHave.ruby = false;
-	Location_Access.ruby_location = false;
-	if(Logic.ruby == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.deku_queen_gohma; Location_Access.ruby_location = Location_Access.deku_queen_gohma; CouldHave.ruby = Location_Could_Access.deku_queen_gohma;}
-	if(Logic.ruby == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.dodongos_king_dodongo; Location_Access.ruby_location = Location_Access.dodongos_king_dodongo; CouldHave.ruby = Location_Could_Access.dodongos_king_dodongo;}
-	if(Logic.ruby == "jabu") {if (Check.jabu_barinade != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.jabu_barinade; Location_Access.ruby_location = Location_Access.jabu_barinade; CouldHave.ruby = Location_Could_Access.jabu_barinade;}
-	if(Logic.ruby == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.forest_phantomGanon; Location_Access.ruby_location = Location_Access.forest_phantomGanon; CouldHave.ruby = Location_Could_Access.forest_phantomGanon;}
-	if(Logic.ruby == "fire") {if (Check.fire_volvagia != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.fire_volvagia; Location_Access.ruby_location = Location_Access.fire_volvagia; CouldHave.ruby = Location_Could_Access.fire_volvagia;}
-	if(Logic.ruby == "water") {if (Check.water_morpha != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.water_morpha; Location_Access.ruby_location = Location_Access.water_morpha; CouldHave.ruby = Location_Could_Access.water_morpha;}
-	if(Logic.ruby == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.spirit_twinrova; Location_Access.ruby_location = Location_Access.spirit_twinrova; CouldHave.ruby = Location_Could_Access.spirit_twinrova;}
-	if(Logic.ruby == "shadow") {if (Check.shadow_bongo != "unknown") {Player.ruby = true;} Logic.goron_ruby = Location_Logic.shadow_bongo; Location_Access.ruby_location = Location_Access.shadow_bongo; CouldHave.ruby = Location_Could_Access.shadow_bongo;}
-	if(Logic.ruby == "pocket") {Player.ruby = true; Logic.goron_ruby = true; Location_Access.ruby_location = true; CouldHave.ruby = true;}
+	player.ruby = false;
+	couldHave.ruby = false;
+	locationAccess.ruby_location = false;
+	if(logic.ruby == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.deku_queen_gohma; locationAccess.ruby_location = locationAccess.deku_queen_gohma; couldHave.ruby = locationCouldAccess.deku_queen_gohma;}
+	if(logic.ruby == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.dodongos_king_dodongo; locationAccess.ruby_location = locationAccess.dodongos_king_dodongo; couldHave.ruby = locationCouldAccess.dodongos_king_dodongo;}
+	if(logic.ruby == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.jabu_barinade; locationAccess.ruby_location = locationAccess.jabu_barinade; couldHave.ruby = locationCouldAccess.jabu_barinade;}
+	if(logic.ruby == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.forest_phantomGanon; locationAccess.ruby_location = locationAccess.forest_phantomGanon; couldHave.ruby = locationCouldAccess.forest_phantomGanon;}
+	if(logic.ruby == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.fire_volvagia; locationAccess.ruby_location = locationAccess.fire_volvagia; couldHave.ruby = locationCouldAccess.fire_volvagia;}
+	if(logic.ruby == "water") {if (checkToItemMap.water_morpha != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.water_morpha; locationAccess.ruby_location = locationAccess.water_morpha; couldHave.ruby = locationCouldAccess.water_morpha;}
+	if(logic.ruby == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.spirit_twinrova; locationAccess.ruby_location = locationAccess.spirit_twinrova; couldHave.ruby = locationCouldAccess.spirit_twinrova;}
+	if(logic.ruby == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.ruby = true;} logic.goron_ruby = locationLogic.shadow_bongo; locationAccess.ruby_location = locationAccess.shadow_bongo; couldHave.ruby = locationCouldAccess.shadow_bongo;}
+	if(logic.ruby == "pocket") {player.ruby = true; logic.goron_ruby = true; locationAccess.ruby_location = true; couldHave.ruby = true;}
 	
-	Player.sapphire = false;
-	CouldHave.sapphire = false;
-	Location_Access.sapphire_location = false;
-	if(Logic.sapphire == "deku") {if (Check.deku_queen_gohma != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.deku_queen_gohma; Location_Access.sapphire_location = Location_Access.deku_queen_gohma; CouldHave.sapphire = Location_Could_Access.deku_queen_gohma;}
-	if(Logic.sapphire == "dodongos") {if (Check.dodongos_king_dodongo != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.dodongos_king_dodongo; Location_Access.sapphire_location = Location_Access.dodongos_king_dodongo; CouldHave.sapphire = Location_Could_Access.dodongos_king_dodongo;}
-	if(Logic.sapphire == "jabu") {if (Check.jabu_barinade != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.jabu_barinade; Location_Access.sapphire_location = Location_Access.jabu_barinade; CouldHave.sapphire = Location_Could_Access.jabu_barinade;}
-	if(Logic.sapphire == "forest") {if (Check.forest_phantomGanon != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.forest_phantomGanon; Location_Access.sapphire_location = Location_Access.forest_phantomGanon; CouldHave.sapphire = Location_Could_Access.forest_phantomGanon;}
-	if(Logic.sapphire == "fire") {if (Check.fire_volvagia != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.fire_volvagia; Location_Access.sapphire_location = Location_Access.fire_volvagia; CouldHave.sapphire = Location_Could_Access.fire_volvagia;}
-	if(Logic.sapphire == "water") {if (Check.water_morpha != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.water_morpha; Location_Access.sapphire_location = Location_Access.water_morpha; CouldHave.sapphire = Location_Could_Access.water_morpha;}
-	if(Logic.sapphire == "spirit") {if (Check.spirit_twinrova != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.spirit_twinrova; Location_Access.sapphire_location = Location_Access.spirit_twinrova; CouldHave.sapphire = Location_Could_Access.spirit_twinrova;}
-	if(Logic.sapphire == "shadow") {if (Check.shadow_bongo != "unknown") {Player.sapphire = true;} Logic.zora_sapphire = Location_Logic.shadow_bongo; Location_Access.sapphire_location = Location_Access.shadow_bongo; CouldHave.sapphire = Location_Could_Access.shadow_bongo;}
-	if(Logic.sapphire == "pocket") {Player.sapphire = true; Logic.zora_sapphire = true; Location_Access.sapphire_location = true; CouldHave.sapphire = true;}
+	player.sapphire = false;
+	couldHave.sapphire = false;
+	locationAccess.sapphire_location = false;
+	if(logic.sapphire == "deku") {if (checkToItemMap.deku_queen_gohma != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.deku_queen_gohma; locationAccess.sapphire_location = locationAccess.deku_queen_gohma; couldHave.sapphire = locationCouldAccess.deku_queen_gohma;}
+	if(logic.sapphire == "dodongos") {if (checkToItemMap.dodongos_king_dodongo != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.dodongos_king_dodongo; locationAccess.sapphire_location = locationAccess.dodongos_king_dodongo; couldHave.sapphire = locationCouldAccess.dodongos_king_dodongo;}
+	if(logic.sapphire == "jabu") {if (checkToItemMap.jabu_barinade != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.jabu_barinade; locationAccess.sapphire_location = locationAccess.jabu_barinade; couldHave.sapphire = locationCouldAccess.jabu_barinade;}
+	if(logic.sapphire == "forest") {if (checkToItemMap.forest_phantomGanon != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.forest_phantomGanon; locationAccess.sapphire_location = locationAccess.forest_phantomGanon; couldHave.sapphire = locationCouldAccess.forest_phantomGanon;}
+	if(logic.sapphire == "fire") {if (checkToItemMap.fire_volvagia != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.fire_volvagia; locationAccess.sapphire_location = locationAccess.fire_volvagia; couldHave.sapphire = locationCouldAccess.fire_volvagia;}
+	if(logic.sapphire == "water") {if (checkToItemMap.water_morpha != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.water_morpha; locationAccess.sapphire_location = locationAccess.water_morpha; couldHave.sapphire = locationCouldAccess.water_morpha;}
+	if(logic.sapphire == "spirit") {if (checkToItemMap.spirit_twinrova != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.spirit_twinrova; locationAccess.sapphire_location = locationAccess.spirit_twinrova; couldHave.sapphire = locationCouldAccess.spirit_twinrova;}
+	if(logic.sapphire == "shadow") {if (checkToItemMap.shadow_bongo != "unknown") {player.sapphire = true;} logic.zora_sapphire = locationLogic.shadow_bongo; locationAccess.sapphire_location = locationAccess.shadow_bongo; couldHave.sapphire = locationCouldAccess.shadow_bongo;}
+	if(logic.sapphire == "pocket") {player.sapphire = true; logic.zora_sapphire = true; locationAccess.sapphire_location = true; couldHave.sapphire = true;}
 	
 	
-	if(Logic.emerald == "unknown") {Logic.kokiri_emerald = false;}
-	if(Logic.ruby == "unknown") {Logic.goron_ruby = false;}
-	if(Logic.sapphire == "unknown") {Logic.zora_sapphire = false;}
-	if(Logic.forest_medallion_location == "unknown") {Logic.forest_medallion = false;}
-	if(Logic.fire_medallion_location == "unknown") {Logic.fire_medallion = false;}
-	if(Logic.water_medallion_location == "unknown") {Logic.water_medallion = false;}
+	if(logic.emerald == "unknown") {logic.kokiri_emerald = false;}
+	if(logic.ruby == "unknown") {logic.goron_ruby = false;}
+	if(logic.sapphire == "unknown") {logic.zora_sapphire = false;}
+	if(logic.forest_medallion_location == "unknown") {logic.forest_medallion = false;}
+	if(logic.fire_medallion_location == "unknown") {logic.fire_medallion = false;}
+	if(logic.water_medallion_location == "unknown") {logic.water_medallion = false;}
 	
 	if(rules.smallKeys != "remove" && rules.smallKeys != "keyRings") {
 		const dungeons = [
@@ -473,30 +473,30 @@ function refreshLogicForStuff() {
     ];
 
     dungeons.forEach(dungeon => {
-      Logic[`current_${dungeon.key}_keys`] = Logic[`forced_${dungeon.key}_keys`];
+      logic[`current_${dungeon.key}_keys`] = logic[`forced_${dungeon.key}_keys`];
       
-      AreaToLocation[dungeon.name].forEach(loc => {
-        if (Check[loc] === "small_key" && Location_Logic[loc]) {
-          Logic[`current_${dungeon.key}_keys`] += 1;
+      areaToCheckMap[dungeon.name].forEach(loc => {
+        if (checkToItemMap[loc] === "small_key" && locationLogic[loc]) {
+          logic[`current_${dungeon.key}_keys`] += 1;
         }
       });
     });
 
     const updateBossKeyLogic = (areaName, logicProperty, bossLocation) => {
-      if (Logic[logicProperty]) return;
+      if (logic[logicProperty]) return;
 
-      const locations = AreaToLocation[areaName] || [];
+      const locations = areaToCheckMap[areaName] || [];
       let foundMissingBK = false;
 
       for (const loc of locations) {
         if (loc === bossLocation || loc.includes("gs_")) continue;
 
-        if (!Location_Logic[loc] && (Check[loc] === "boss_key" || Check[loc] === "unknown")) {
+        if (!locationLogic[loc] && (checkToItemMap[loc] === "boss_key" || checkToItemMap[loc] === "unknown")) {
           foundMissingBK = true;
           break;
         }
       }
-      Logic[logicProperty] = !foundMissingBK;
+      logic[logicProperty] = !foundMissingBK;
     };
 
     const dungeonData = {
@@ -515,8 +515,8 @@ function refreshLogicForStuff() {
         key: "fire",
         max: 8,
         boss: "fire_volvagia",
-        condition: () => (Logic.can_wear_goron_tunic && Logic.hammer && Logic.hover_boots) || 
-                         (Check["fire_volvagia"] !== "small_key" && Check["fire_volvagia"] !== "unknown"),
+        condition: () => (logic.can_wear_goron_tunic && logic.hammer && logic.hover_boots) || 
+                         (checkToItemMap["fire_volvagia"] !== "small_key" && checkToItemMap["fire_volvagia"] !== "unknown"),
         tiers: [
           ["fire_nearBoss", "fire_hammer1", "fire_hammer2"],
           ["fire_lavaOpen", "fire_lavaBomb"],
@@ -525,18 +525,18 @@ function refreshLogicForStuff() {
           ["fire_map"],
           ["fire_upperMaze", "fire_shortcut", "fire_scarecrow"]
         ],
-        bkSpecial: (loc) => Check[loc] === "boss_key" && (Check["fire_volvagia"] === "small_key" || Check["fire_volvagia"] === "unknown")
+        bkSpecial: (loc) => checkToItemMap[loc] === "boss_key" && (checkToItemMap["fire_volvagia"] === "small_key" || checkToItemMap["fire_volvagia"] === "unknown")
       },
       Water: {
         key: "water",
         max: 6,
         boss: "water_morpha",
-        condition: () => (Logic.longshot && Logic.iron_boots) || 
-                         (Check["water_morpha"] !== "small_key" && Check["water_morpha"] !== "unknown"),
+        condition: () => (logic.longshot && logic.iron_boots) || 
+                         (checkToItemMap["water_morpha"] !== "small_key" && checkToItemMap["water_morpha"] !== "unknown"),
         tiers: [
           ["water_compass", "water_map", "water_cracked", "water_torches", "water_block", "water_pillar", "water_dragon"]
         ],
-        bkSpecial: (loc) => Check[loc] === "boss_key" && (Check["water_morpha"] === "small_key" || Check["water_morpha"] === "unknown")
+        bkSpecial: (loc) => checkToItemMap[loc] === "boss_key" && (checkToItemMap["water_morpha"] === "small_key" || checkToItemMap["water_morpha"] === "unknown")
       },
       Spirit: {
         key: "spirit",
@@ -579,702 +579,702 @@ function refreshLogicForStuff() {
       const minKeyProp = `min_${data.key}_keys`;
       const finalKeyProp = `${data.key}_keys`;
 
-      if (Logic[currentKeyProp] < data.max) {
+      if (logic[currentKeyProp] < data.max) {
         if (!data.condition || data.condition()) {
           let found = false;
           for (let i = 0; i < data.tiers.length; i++) {
             for (const loc of data.tiers[i]) {
-              const isKey = Check[loc] === "small_key" || Check[loc] === "unknown";
+              const isKey = checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown";
               const isSpecialBK = data.bkSpecial ? data.bkSpecial(loc) : false;
 
-              if (!Location_Logic[loc] && (isKey || isSpecialBK)) {
-                Logic[minKeyProp] = i;
+              if (!locationLogic[loc] && (isKey || isSpecialBK)) {
+                logic[minKeyProp] = i;
                 found = true;
                 break;
               }
             }
             if (found) break;
           }
-          if (!found) Logic[minKeyProp] = data.max;
+          if (!found) logic[minKeyProp] = data.max;
         } else if (data.key === "water") {
-          Logic.min_water_keys = 0;
+          logic.min_water_keys = 0;
         }
       }
-      Logic[finalKeyProp] = Math.max(Logic[minKeyProp] || 0, Logic[currentKeyProp]);
+      logic[finalKeyProp] = Math.max(logic[minKeyProp] || 0, logic[currentKeyProp]);
 
       if (data.boss) {
         updateBossKeyLogic(name, `${data.key}_boss_key`, data.boss);
       }
     });
 
-    if (Logic.current_ganons_keys < 2) {
-      const needsKeys = AreaToLocation["Ganon's"].some(loc => 
-        loc !== "ganons_lightTrialLullaby" && !Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")
+    if (logic.current_ganons_keys < 2) {
+      const needsKeys = areaToCheckMap["Ganon's"].some(loc => 
+        loc !== "ganons_lightTrialLullaby" && !locationLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
       );
-      Logic.min_ganons_keys = needsKeys ? 0 : 2;
+      logic.min_ganons_keys = needsKeys ? 0 : 2;
     }
-    if (Logic.can_enter_ganons && Logic.golden_gauntlets) Logic.min_ganons_keys = 1;
-    Logic.ganons_keys = Math.max(Logic.min_ganons_keys, Logic.current_ganons_keys);
+    if (logic.can_enter_ganons && logic.golden_gauntlets) logic.min_ganons_keys = 1;
+    logic.ganons_keys = Math.max(logic.min_ganons_keys, logic.current_ganons_keys);
 
-    if (Logic.current_well_keys < 3) {
-      const needsKeys = AreaToLocation["Well"].some(loc => 
+    if (logic.current_well_keys < 3) {
+      const needsKeys = areaToCheckMap["Well"].some(loc => 
         !["well_locked1", "well_locked2"].includes(loc) && !loc.includes("gs_") && 
-        !Location_Logic[loc] && (Check[loc] === "small_key" || Check[loc] === "unknown")
+        !locationLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
       );
-      Logic.min_well_keys = needsKeys ? 0 : 3;
+      logic.min_well_keys = needsKeys ? 0 : 3;
     }
-    Logic.well_keys = Math.max(Logic.min_well_keys, Logic.current_well_keys);
+    logic.well_keys = Math.max(logic.min_well_keys, logic.current_well_keys);
 	}
 	
-	if(rules.smallKeys == "keyRings" && !Player.forest_key_ring) {
-		Logic.forest_keys = Player.current_forest_keys = 0;
-		Logic.forest_boss_key = Player.forest_boss_key = false;
+	if(rules.smallKeys == "keyRings" && !player.forest_key_ring) {
+		logic.forest_keys = player.current_forest_keys = 0;
+		logic.forest_boss_key = player.forest_boss_key = false;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.fire_key_ring) {
-		Logic.fire_keys = Player.current_fire_keys = 0;
-		Logic.fire_boss_key = Player.fire_boss_key = false;
+	if(rules.smallKeys == "keyRings" && !player.fire_key_ring) {
+		logic.fire_keys = player.current_fire_keys = 0;
+		logic.fire_boss_key = player.fire_boss_key = false;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.water_key_ring) {
-		Logic.water_keys = Player.current_water_keys = 0;
-		Logic.water_boss_key = Player.water_boss_key = false;
+	if(rules.smallKeys == "keyRings" && !player.water_key_ring) {
+		logic.water_keys = player.current_water_keys = 0;
+		logic.water_boss_key = player.water_boss_key = false;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.shadow_key_ring) {
-		Logic.shadow_keys = Player.current_shadow_keys = 0;
-		Logic.shadow_boss_key = Player.shadow_boss_key = false;
+	if(rules.smallKeys == "keyRings" && !player.shadow_key_ring) {
+		logic.shadow_keys = player.current_shadow_keys = 0;
+		logic.shadow_boss_key = player.shadow_boss_key = false;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.spirit_key_ring) {
-		Logic.spirit_keys = Player.current_spirit_keys = 0;
-		Logic.spirit_boss_key = Player.spirit_boss_key = false;
+	if(rules.smallKeys == "keyRings" && !player.spirit_key_ring) {
+		logic.spirit_keys = player.current_spirit_keys = 0;
+		logic.spirit_boss_key = player.spirit_boss_key = false;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.gtg_key_ring) {
-		Logic.gtg_keys = Player.current_gtg_keys = 0;
+	if(rules.smallKeys == "keyRings" && !player.gtg_key_ring) {
+		logic.gtg_keys = player.current_gtg_keys = 0;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.well_key_ring) {
-		Logic.well_keys = Player.current_well_keys = 0;
+	if(rules.smallKeys == "keyRings" && !player.well_key_ring) {
+		logic.well_keys = player.current_well_keys = 0;
 	}
-	if(rules.smallKeys == "keyRings" && !Player.ganons_key_ring) {
-		Logic.ganons_keys = Player.current_ganons_keys = 0;
+	if(rules.smallKeys == "keyRings" && !player.ganons_key_ring) {
+		logic.ganons_keys = player.current_ganons_keys = 0;
 	}
 }
 
 function logicShortcuts() {
-	Logic.child_can_enter_river = Logic.bomb_bag || Logic.silver_scale || Spawn.child_zd || Spawn.child_zr;
-	Logic.bean_access = ((Logic.child_can_enter_river && rules.beans == "vanilla") || (Logic.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
-	Logic.child_can_enter_domain = (Logic.child_can_enter_river && Logic.lullaby) || Logic.silver_scale || Spawn.child_zd;
-	Logic.jabu_entrance_access = ((Logic.rutos_letter || rules.fountain == "open") && Logic.child_can_enter_domain) || Spawn.child_zf;
-	Logic.can_hit_jabu_switch = Logic.jabu_access && Logic.bomb_bag || ((Logic.boomerang || Logic.slingshot) && Logic.jabu_child_access) || ((Logic.hookshot || Logic.bow) && Logic.jabu_adult_access);
-	Logic.fortress_access = Logic.eponas || Logic.longshot || Spawn.adult_gf || Spawn.adult_wasteland || (Spawn.child_gv_gf && Logic.kokiri_sword);
-	Logic.can_save_carpenters = (Spawn.child_gv_gf && Logic.kokiri_sword) || (Logic.fortress_access && ((Logic.bow || Logic.hookshot || Logic.hover_boots) || true)) /*fast carpenter fix**/;
-	Logic.gtg_entrance_access = (Logic.can_save_carpenters && rules.gerudoCard == "vanilla") || (Logic.fortress_access && Logic.gerudo_card && rules.gerudoCard == "shuffled");
-	Logic.can_cross_quicksand = Logic.fortress_access && (Logic.longshot || Logic.hover_boots) && (rules.gerudoCard == "vanilla" || Logic.gerudo_card || Spawn.adult_wasteland);
-	Logic.can_enter_colossus = (Logic.can_cross_quicksand && (Logic.brackets || Logic.can_see)) || Logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || Location_Logic.spirit_leftHand || Location_Logic.spirit_rightHand;
-	Logic.can_enter_child_colossus = Logic.requiem || Spawn.child_colossus || Location_Logic.spirit_rightHand;
-	Logic.can_use_fire = (Logic.dins_fire || (Logic.bow && Logic.fire_arrows)) && Logic.magic;
-	Logic.can_use_dins = Logic.dins_fire && Logic.magic;
-	Logic.can_shoot_blue_fire_arrows = Logic.ice_arrows && Logic.bow && Logic.magic && rules.blueFireArrows == "on";
-	Logic.can_use_farores = Logic.farores_wind && Logic.magic;
-	Logic.can_see = Logic.lens && Logic.magic;
-	Logic.can_blast_or_smash = Logic.bomb_bag || Logic.hammer;
-	Logic.can_enter_child_dodongos = Logic.bomb_bag || Logic.goron_bracelet;
-	Logic.can_break_dodongos_wall = Logic.dodongos_access && (Logic.goron_bracelet || Logic.bomb_bag || (Logic.dodongos_adult_access && Logic.hammer));
-	Logic.dodongos_climb = Logic.can_break_dodongos_wall && (Logic.bomb_bag || Logic.goron_bracelet || Logic.can_use_dins);
-	Logic.can_enter_shadow_entrance = (Logic.nocturne || Spawn.adult_nocturne) && Logic.can_use_dins;//&& Logic.can_see;
-	Logic.can_cross_shadow_gap= Logic.shadow_temple_adult_access && Logic.hover_boots;
-	Logic.can_bomb_shadow_wall = Logic.can_cross_shadow_gap && Logic.bomb_bag && (rules.smallKeys != "keyRings" || CouldHave.shadow_key_ring);
-	Logic.can_pass_shadow_hookshot_door = Logic.can_bomb_shadow_wall && Logic.hookshot;
-	Logic.can_ride_shadow_boat = Logic.can_pass_shadow_hookshot_door && Logic.lullaby;
-	Logic.can_beat_shadow_boss = Logic.can_ride_shadow_boat && (Logic.bow || Logic.longshot);
-	Logic.can_stop_link_the_goron = Logic.bomb_bag || Logic.bow || Logic.goron_bracelet;
-	Logic.can_enter_adult_domain = Logic.lullaby || Spawn.adult_zd;
-	Logic.ice_entrance_access = (Logic.can_enter_adult_domain && ((Logic.rutos_letter && Logic.child_can_enter_domain) || rules.fountain == "open")) || Spawn.adult_zf;
-	Logic.reverse_crater = (Logic.hover_boots || Logic.hookshot || Logic.child_can_enter_river) && Logic.bolero;
-	Logic.can_enter_fire_temple_entrance = (Logic.crater_by_city && (Logic.hookshot || Logic.hover_boots)) || Logic.bolero;
-	Logic.crater_by_city = Logic.bow || Logic.bomb_bag || Logic.goron_bracelet || Logic.reverse_crater ||((Logic.hammer || Spawn.adult_upper_dmc) && Logic.hover_boots) || (Logic.longshot && Logic.goron_tunic && (Logic.hammer || Spawn.adult_upper_dmc)) || Spawn.adult_lower_dmc;
-	Logic.crater_top = Logic.crater_by_city || Logic.hammer || Spawn.adult_upper_dmc;
-	Logic.can_push_spirit_silver_block = Logic.spirit_temple_adult_access && Logic.silver_gauntlets;
-	Logic.can_pass_mido_as_adult = Logic.minuet || Logic.sarias || Spawn.adult_meadow;
-	Logic.can_enter_forest_temple_entrance = Logic.can_pass_mido_as_adult && Logic.hookshot;
-	Logic.can_enter_well_entrance = Logic.storms;
+	logic.child_can_enter_river = logic.bomb_bag || logic.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	logic.bean_access = ((logic.child_can_enter_river && rules.beans == "vanilla") || (logic.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
+	logic.child_can_enter_domain = (logic.child_can_enter_river && logic.lullaby) || logic.silver_scale || Spawn.child_zd;
+	logic.jabu_entrance_access = ((logic.rutos_letter || rules.fountain == "open") && logic.child_can_enter_domain) || Spawn.child_zf;
+	logic.can_hit_jabu_switch = logic.jabu_access && logic.bomb_bag || ((logic.boomerang || logic.slingshot) && logic.jabu_child_access) || ((logic.hookshot || logic.bow) && logic.jabu_adult_access);
+	logic.fortress_access = logic.eponas || logic.longshot || Spawn.adult_gf || Spawn.adult_wasteland || (Spawn.child_gv_gf && logic.kokiri_sword);
+	logic.can_save_carpenters = (Spawn.child_gv_gf && logic.kokiri_sword) || (logic.fortress_access && ((logic.bow || logic.hookshot || logic.hover_boots) || true)) /*fast carpenter fix**/;
+	logic.gtg_entrance_access = (logic.can_save_carpenters && rules.gerudoCard == "vanilla") || (logic.fortress_access && logic.gerudo_card && rules.gerudoCard == "shuffled");
+	logic.can_cross_quicksand = logic.fortress_access && (logic.longshot || logic.hover_boots) && (rules.gerudoCard == "vanilla" || logic.gerudo_card || Spawn.adult_wasteland);
+	logic.can_enter_colossus = (logic.can_cross_quicksand && (logic.brackets || logic.can_see)) || logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || locationLogic.spirit_leftHand || locationLogic.spirit_rightHand;
+	logic.can_enter_child_colossus = logic.requiem || Spawn.child_colossus || locationLogic.spirit_rightHand;
+	logic.can_use_fire = (logic.dins_fire || (logic.bow && logic.fire_arrows)) && logic.magic;
+	logic.can_use_dins = logic.dins_fire && logic.magic;
+	logic.can_shoot_blue_fire_arrows = logic.ice_arrows && logic.bow && logic.magic && rules.blueFireArrows == "on";
+	logic.can_use_farores = logic.farores_wind && logic.magic;
+	logic.can_see = logic.lens && logic.magic;
+	logic.can_blast_or_smash = logic.bomb_bag || logic.hammer;
+	logic.can_enter_child_dodongos = logic.bomb_bag || logic.goron_bracelet;
+	logic.can_break_dodongos_wall = logic.dodongos_access && (logic.goron_bracelet || logic.bomb_bag || (logic.dodongos_adult_access && logic.hammer));
+	logic.dodongos_climb = logic.can_break_dodongos_wall && (logic.bomb_bag || logic.goron_bracelet || logic.can_use_dins);
+	logic.can_enter_shadow_entrance = (logic.nocturne || Spawn.adult_nocturne) && logic.can_use_dins;//&& logic.can_see;
+	logic.can_cross_shadow_gap= logic.shadow_temple_adult_access && logic.hover_boots;
+	logic.can_bomb_shadow_wall = logic.can_cross_shadow_gap && logic.bomb_bag && (rules.smallKeys != "keyRings" || couldHave.shadow_key_ring);
+	logic.can_pass_shadow_hookshot_door = logic.can_bomb_shadow_wall && logic.hookshot;
+	logic.can_ride_shadow_boat = logic.can_pass_shadow_hookshot_door && logic.lullaby;
+	logic.can_beat_shadow_boss = logic.can_ride_shadow_boat && (logic.bow || logic.longshot);
+	logic.can_stop_link_the_goron = logic.bomb_bag || logic.bow || logic.goron_bracelet;
+	logic.can_enter_adult_domain = logic.lullaby || Spawn.adult_zd;
+	logic.ice_entrance_access = (logic.can_enter_adult_domain && ((logic.rutos_letter && logic.child_can_enter_domain) || rules.fountain == "open")) || Spawn.adult_zf;
+	logic.reverse_crater = (logic.hover_boots || logic.hookshot || logic.child_can_enter_river) && logic.bolero;
+	logic.can_enter_fire_temple_entrance = (logic.crater_by_city && (logic.hookshot || logic.hover_boots)) || logic.bolero;
+	logic.crater_by_city = logic.bow || logic.bomb_bag || logic.goron_bracelet || logic.reverse_crater ||((logic.hammer || Spawn.adult_upper_dmc) && logic.hover_boots) || (logic.longshot && logic.goron_tunic && (logic.hammer || Spawn.adult_upper_dmc)) || Spawn.adult_lower_dmc;
+	logic.crater_top = logic.crater_by_city || logic.hammer || Spawn.adult_upper_dmc;
+	logic.can_push_spirit_silver_block = logic.spirit_temple_adult_access && logic.silver_gauntlets;
+	logic.can_pass_mido_as_adult = logic.minuet || logic.sarias || Spawn.adult_meadow;
+	logic.can_enter_forest_temple_entrance = logic.can_pass_mido_as_adult && logic.hookshot;
+	logic.can_enter_well_entrance = logic.storms;
 	
-	Logic.medalCount = 0; if (Logic.forest_medallion) {Logic.medalCount += 1;} if (Logic.fire_medallion) {Logic.medalCount += 1;} if (Logic.water_medallion) {Logic.medalCount += 1;} if (Logic.shadow_medallion) {Logic.medalCount += 1;} if (Logic.spirit_medallion) {Logic.medalCount += 1;} if (Logic.light_medallion) {Logic.medalCount += 1;}
-	Logic.stoneCount = 0; if (Logic.kokiri_emerald) {Logic.stoneCount += 1;} if (Logic.goron_ruby) {Logic.stoneCount += 1;} if (Logic.zora_sapphire) {Logic.stoneCount += 1;}
-	Logic.rewardCount = Logic.medalCount + Logic.stoneCount;
-	Logic.can_enter_ganons = (Logic.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && Logic.medalCount >= 5) || (rules.bridge == "fourMedals" && Logic.medalCount >= 4) || (rules.bridge == "threeMedals" && Logic.medalCount >= 3) || (rules.bridge == "twoMedals" && Logic.medalCount >= 2) || (rules.bridge == "threeStones" && Logic.stoneCount == 3) || (rules.bridge == "1Reward" && Logic.rewardCount >= 1) || (rules.bridge == "twoRewards" && Logic.rewardCount >= 2) || (rules.bridge == "threeRewards" && Logic.rewardCount >= 3) || (rules.bridge == "fourRewards" && Logic.rewardCount >= 4) || (rules.bridge == "fiveRewards" && Logic.rewardCount >= 5) || (rules.bridge == "sixRewards" && Logic.rewardCount >= 6) || (rules.bridge == "sevenRewards" && Logic.rewardCount >= 7) || (rules.bridge == "eightRewards" && Logic.rewardCount >= 8) || (rules.bridge == "nineRewards" && Logic.rewardCount >= 9) || (rules.bridge == "vanilla" && Logic.spirit_medallion && Logic.shadow_medallion && Logic.light_arrows);
+	logic.medalCount = 0; if (logic.forest_medallion) {logic.medalCount += 1;} if (logic.fire_medallion) {logic.medalCount += 1;} if (logic.water_medallion) {logic.medalCount += 1;} if (logic.shadow_medallion) {logic.medalCount += 1;} if (logic.spirit_medallion) {logic.medalCount += 1;} if (logic.light_medallion) {logic.medalCount += 1;}
+	logic.stoneCount = 0; if (logic.kokiri_emerald) {logic.stoneCount += 1;} if (logic.goron_ruby) {logic.stoneCount += 1;} if (logic.zora_sapphire) {logic.stoneCount += 1;}
+	logic.rewardCount = logic.medalCount + logic.stoneCount;
+	logic.can_enter_ganons = (logic.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && logic.medalCount >= 5) || (rules.bridge == "fourMedals" && logic.medalCount >= 4) || (rules.bridge == "threeMedals" && logic.medalCount >= 3) || (rules.bridge == "twoMedals" && logic.medalCount >= 2) || (rules.bridge == "threeStones" && logic.stoneCount == 3) || (rules.bridge == "1Reward" && logic.rewardCount >= 1) || (rules.bridge == "twoRewards" && logic.rewardCount >= 2) || (rules.bridge == "threeRewards" && logic.rewardCount >= 3) || (rules.bridge == "fourRewards" && logic.rewardCount >= 4) || (rules.bridge == "fiveRewards" && logic.rewardCount >= 5) || (rules.bridge == "sixRewards" && logic.rewardCount >= 6) || (rules.bridge == "sevenRewards" && logic.rewardCount >= 7) || (rules.bridge == "eightRewards" && logic.rewardCount >= 8) || (rules.bridge == "nineRewards" && logic.rewardCount >= 9) || (rules.bridge == "vanilla" && logic.spirit_medallion && logic.shadow_medallion && logic.light_arrows);
 	
-	Logic.can_climb_fire_temple = Logic.fire_temple_adult_access && Logic.fire_keys >=3 && Logic.can_wear_goron_tunic && Logic.goron_bracelet && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
-	Logic.can_enter_water_entrance = (Logic.hookshot && Logic.iron_boots) || (Logic.longshot && Logic.golden_scale);
-	Logic.can_do_water_checks = Logic.water_temple_adult_access && Logic.iron_boots;
-	Logic.middle_water = Logic.can_do_water_checks && Logic.lullaby && (Logic.bow || Logic.can_use_dins);
-	Logic.projectile_both = Logic.bomb_bag || ((Logic.slingshot || Logic.boomerang) && (Logic.bow || Logic.hookshot));
-	Logic.projectile_child = Logic.bomb_bag || Logic.slingshot || Logic.boomerang;
-	Logic.projectile_adult = Logic.bomb_bag || Logic.bow || Logic.hookshot;
-	Logic.can_wear_goron_tunic = Logic.goron_tunic || (Logic.adults_wallet && (Logic.bomb_bag || Logic.goron_bracelet || Logic.bow || Spawn.adult_gc_shop));
-	Logic.can_wear_zora_tunic = Logic.zora_tunic || (Logic.giants_wallet && (((Logic.lullaby || Spawn.adult_zd) && Logic.bottle) || Spawn.adult_zd_shop));
-	Logic.child_can_get_past_mido = rules.deku == "open" || Logic.kokiri_sword;
-	Logic.can_enter_deku_entrance = Logic.child_can_get_past_mido;
+	logic.can_climb_fire_temple = logic.fire_temple_adult_access && logic.fire_keys >=3 && logic.can_wear_goron_tunic && logic.goron_bracelet && (logic.bow || logic.hookshot || logic.bomb_bag);
+	logic.can_enter_water_entrance = (logic.hookshot && logic.iron_boots) || (logic.longshot && logic.golden_scale);
+	logic.can_do_water_checks = logic.water_temple_adult_access && logic.iron_boots;
+	logic.middle_water = logic.can_do_water_checks && logic.lullaby && (logic.bow || logic.can_use_dins);
+	logic.projectile_both = logic.bomb_bag || ((logic.slingshot || logic.boomerang) && (logic.bow || logic.hookshot));
+	logic.projectile_child = logic.bomb_bag || logic.slingshot || logic.boomerang;
+	logic.projectile_adult = logic.bomb_bag || logic.bow || logic.hookshot;
+	logic.can_wear_goron_tunic = logic.goron_tunic || (logic.adults_wallet && (logic.bomb_bag || logic.goron_bracelet || logic.bow || Spawn.adult_gc_shop));
+	logic.can_wear_zora_tunic = logic.zora_tunic || (logic.giants_wallet && (((logic.lullaby || Spawn.adult_zd) && logic.bottle) || Spawn.adult_zd_shop));
+	logic.child_can_get_past_mido = rules.deku == "open" || logic.kokiri_sword;
+	logic.can_enter_deku_entrance = logic.child_can_get_past_mido;
 
-	Player.child_can_enter_river = Player.bomb_bag || Player.bombchus || Player.silver_scale || Spawn.child_zd || Spawn.child_zr;
-	Player.child_can_enter_domain = Player.silver_scale || Spawn.child_zd || Spawn.child_zr || Player.bomb_bag || Player.bombchus;
-	Player.bean_access = ((Player.child_can_enter_river && rules.beans == "vanilla") || (Player.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
-	Player.jabu_entrance_access = (Player.child_can_enter_domain && (Player.rutos_letter || rules.fountain == "open")) || Spawn.child_zf;
-	Player.can_hit_jabu_switch = Player.jabu_access && Player.bomb_bag || Player.bombchus || ((Player.boomerang || Player.slingshot) && Player.jabu_child_access) || ((Player.hookshot || Player.bow) && Player.jabu_adult_access);
+	player.child_can_enter_river = player.bomb_bag || player.bombchus || player.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	player.child_can_enter_domain = player.silver_scale || Spawn.child_zd || Spawn.child_zr || player.bomb_bag || player.bombchus;
+	player.bean_access = ((player.child_can_enter_river && rules.beans == "vanilla") || (player.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
+	player.jabu_entrance_access = (player.child_can_enter_domain && (player.rutos_letter || rules.fountain == "open")) || Spawn.child_zf;
+	player.can_hit_jabu_switch = player.jabu_access && player.bomb_bag || player.bombchus || ((player.boomerang || player.slingshot) && player.jabu_child_access) || ((player.hookshot || player.bow) && player.jabu_adult_access);
 	
-	Player.fortress_access = Player.eponas || Player.longshot || Player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && Player.hookshot);
-	Player.can_save_carpenters = Spawn.child_gv_gf || (Player.fortress_access && ((Player.bow || Player.hookshot || Player.hover_boots) || true)) /*fast carpenter fix**/;
-	Player.gtg_entrance_access = (Player.can_save_carpenters && rules.gerudoCard == "vanilla") || (Player.fortress_access && Player.gerudo_card && rules.gerudoCard == "shuffled");
-	Player.can_cross_quicksand = Player.fortress_access && (rules.gerudoCard == "vanilla" || Player.gerudo_card);
-	Player.can_enter_colossus = (Player.can_cross_quicksand) || Player.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || Location_Access.spirit_leftHand || Location_Access.spirit_rightHand;
-	Player.can_enter_child_colossus = Player.requiem || Spawn.child_colossus || Spawn.child_wasteland || Location_Access.spirit_rightHand;
-  Player.can_use_fire_arrows = Player.fire_arrows && Player.magic && Player.bow;
-	Player.can_use_fire = (Player.dins_fire || (Player.bow && Player.fire_arrows)) && Player.magic;
-	Player.can_use_dins = Player.dins_fire && Player.magic;
-	Player.can_shoot_blue_fire_arrows = Player.ice_arrows && Player.bow && Player.magic && rules.blueFireArrows == "on";
-	Player.can_use_farores = Player.farores_wind && Player.magic;
-	Player.can_use_bottle = (Player.bottle1 || Player.bottle2 || Player.bottle3 || Player.bottle4 || (Player.rutos_letter && Player.child_can_enter_river));
-	Player.can_see = Player.lens && Player.magic;
-	Player.can_use_explosives = Player.bomb_bag || Player.bombchus;
-  Player.can_blast_or_smash = Player.bomb_bag || Player.hammer || Player.bombchus;
-	Player.can_enter_child_dodongos = Player.bomb_bag || Player.goron_bracelet || Player.bombchus;
-	Player.can_break_dodongos_wall = Player.dodongos_access && (Player.bomb_bag || Player.bombchus || Player.goron_bracelet || (Player.dodongos_adult_access && (Player.hammer || Player.can_shoot_blue_fire_arrows)));
-	Player.dodongos_climb = Player.can_break_dodongos_wall && (Player.bomb_bag || Player.bombchus || Player.goron_bracelet || Player.can_use_dins || (Player.dodongos_adult_access && Player.bow));
-	Player.can_enter_shadow_entrance= (Player.nocturne || Spawn.adult_nocturne) && (Player.can_use_dins || (rules.fae == "allowed" && Player.can_use_fire));//&& Player.can_see;
-	Player.can_cross_shadow_gap= Player.shadow_temple_adult_access && Player.hover_boots;
-	Player.can_bomb_shadow_wall = Player.can_cross_shadow_gap && (Player.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || Player.shadow_key_ring);
-	Player.can_pass_shadow_hookshot_door = Player.can_bomb_shadow_wall && Player.hookshot;
-	Player.can_ride_shadow_boat = Player.can_pass_shadow_hookshot_door && Player.lullaby;
-	Player.can_beat_shadow_boss = Player.can_ride_shadow_boat && (Player.bow || Player.longshot || Player.bombchus) && Player.shadow_boss_key;
-	Player.can_stop_link_the_goron = Player.bomb_bag || Player.bow || Player.goron_bracelet || Player.bombchus;
-	Player.can_enter_adult_domain = Player.lullaby || Player.hover_boots || Spawn.adult_zd;
-	Player.ice_entrance_access = (Player.can_enter_adult_domain && ((Player.rutos_letter && Player.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
-	Player.reverse_crater = (Player.hover_boots || Player.hookshot || Player.child_can_enter_river) && Player.bolero;
-	Player.crater_by_city = Player.can_stop_link_the_goron || Player.reverse_crater || Player.hammer || (Player.longshot && Player.hammer) || Spawn.adult_lower_dmc;
-	Player.crater_top = Player.crater_by_city || Player.hammer || Spawn.adult_upper_dmc;
-	Player.can_enter_fire_temple_entrance = (Player.crater_by_city && (Player.hookshot || Player.hover_boots)) || Player.bolero;
-	Player.can_push_spirit_silver_block = Player.spirit_temple_adult_access && Player.silver_gauntlets;
-	Player.can_enter_forest_temple_entrance = Player.hookshot;
-	Player.can_enter_well_entrance = Player.storms;
+	player.fortress_access = player.eponas || player.longshot || player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && player.hookshot);
+	player.can_save_carpenters = Spawn.child_gv_gf || (player.fortress_access && ((player.bow || player.hookshot || player.hover_boots) || true)) /*fast carpenter fix**/;
+	player.gtg_entrance_access = (player.can_save_carpenters && rules.gerudoCard == "vanilla") || (player.fortress_access && player.gerudo_card && rules.gerudoCard == "shuffled");
+	player.can_cross_quicksand = player.fortress_access && (rules.gerudoCard == "vanilla" || player.gerudo_card);
+	player.can_enter_colossus = (player.can_cross_quicksand) || player.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || locationAccess.spirit_leftHand || locationAccess.spirit_rightHand;
+	player.can_enter_child_colossus = player.requiem || Spawn.child_colossus || Spawn.child_wasteland || locationAccess.spirit_rightHand;
+  player.can_use_fire_arrows = player.fire_arrows && player.magic && player.bow;
+	player.can_use_fire = (player.dins_fire || (player.bow && player.fire_arrows)) && player.magic;
+	player.can_use_dins = player.dins_fire && player.magic;
+	player.can_shoot_blue_fire_arrows = player.ice_arrows && player.bow && player.magic && rules.blueFireArrows == "on";
+	player.can_use_farores = player.farores_wind && player.magic;
+	player.can_use_bottle = (player.bottle1 || player.bottle2 || player.bottle3 || player.bottle4 || (player.rutos_letter && player.child_can_enter_river));
+	player.can_see = player.lens && player.magic;
+	player.can_use_explosives = player.bomb_bag || player.bombchus;
+  player.can_blast_or_smash = player.bomb_bag || player.hammer || player.bombchus;
+	player.can_enter_child_dodongos = player.bomb_bag || player.goron_bracelet || player.bombchus;
+	player.can_break_dodongos_wall = player.dodongos_access && (player.bomb_bag || player.bombchus || player.goron_bracelet || (player.dodongos_adult_access && (player.hammer || player.can_shoot_blue_fire_arrows)));
+	player.dodongos_climb = player.can_break_dodongos_wall && (player.bomb_bag || player.bombchus || player.goron_bracelet || player.can_use_dins || (player.dodongos_adult_access && player.bow));
+	player.can_enter_shadow_entrance= (player.nocturne || Spawn.adult_nocturne) && (player.can_use_dins || (rules.fae == "allowed" && player.can_use_fire));//&& player.can_see;
+	player.can_cross_shadow_gap= player.shadow_temple_adult_access && player.hover_boots;
+	player.can_bomb_shadow_wall = player.can_cross_shadow_gap && (player.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || player.shadow_key_ring);
+	player.can_pass_shadow_hookshot_door = player.can_bomb_shadow_wall && player.hookshot;
+	player.can_ride_shadow_boat = player.can_pass_shadow_hookshot_door && player.lullaby;
+	player.can_beat_shadow_boss = player.can_ride_shadow_boat && (player.bow || player.longshot || player.bombchus) && player.shadow_boss_key;
+	player.can_stop_link_the_goron = player.bomb_bag || player.bow || player.goron_bracelet || player.bombchus;
+	player.can_enter_adult_domain = player.lullaby || player.hover_boots || Spawn.adult_zd;
+	player.ice_entrance_access = (player.can_enter_adult_domain && ((player.rutos_letter && player.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
+	player.reverse_crater = (player.hover_boots || player.hookshot || player.child_can_enter_river) && player.bolero;
+	player.crater_by_city = player.can_stop_link_the_goron || player.reverse_crater || player.hammer || (player.longshot && player.hammer) || Spawn.adult_lower_dmc;
+	player.crater_top = player.crater_by_city || player.hammer || Spawn.adult_upper_dmc;
+	player.can_enter_fire_temple_entrance = (player.crater_by_city && (player.hookshot || player.hover_boots)) || player.bolero;
+	player.can_push_spirit_silver_block = player.spirit_temple_adult_access && player.silver_gauntlets;
+	player.can_enter_forest_temple_entrance = player.hookshot;
+	player.can_enter_well_entrance = player.storms;
 	
-	Player.medalCount = 0; if (Player.forest) {Player.medalCount += 1;} if (Player.fire) {Player.medalCount += 1;} if (Player.water) {Player.medalCount += 1;} if (Player.shadow_medallion) {Player.medalCount += 1;} if (Player.spirit_medallion) {Player.medalCount += 1;} if (Player.light_medallion) {Player.medalCount += 1;}
-	Player.stoneCount = 0; if (Player.emerald) {Player.stoneCount += 1;} if (Player.ruby) {Player.stoneCount += 1;} if (Player.sapphire) {Player.stoneCount += 1;}
-	Player.rewardCount = Player.medalCount + Player.stoneCount;
-	Player.can_enter_ganons = (Player.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && Player.medalCount >= 5) || (rules.bridge == "fourMedals" && Player.medalCount >= 4) || (rules.bridge == "threeMedals" && Player.medalCount >= 3) || (rules.bridge == "twoMedals" && Player.medalCount >= 2) || (rules.bridge == "threeStones" && Player.stoneCount == 3) || (rules.bridge == "1Reward" && Player.rewardCount >= 1) || (rules.bridge == "twoRewards" && Player.rewardCount >= 2) || (rules.bridge == "threeRewards" && Player.rewardCount >= 3) || (rules.bridge == "fourRewards" && Player.rewardCount >= 4) || (rules.bridge == "fiveRewards" && Player.rewardCount >= 5) || (rules.bridge == "sixRewards" && Player.rewardCount >= 6) || (rules.bridge == "sevenRewards" && Player.rewardCount >= 7) || (rules.bridge == "eightRewards" && Player.rewardCount >= 8) || (rules.bridge == "nineRewards" && Player.rewardCount >= 9) || (rules.bridge == "vanilla" && Player.spirit_medallion && Player.shadow_medallion && Player.light_arrows);
+	player.medalCount = 0; if (player.forest) {player.medalCount += 1;} if (player.fire) {player.medalCount += 1;} if (player.water) {player.medalCount += 1;} if (player.shadow_medallion) {player.medalCount += 1;} if (player.spirit_medallion) {player.medalCount += 1;} if (player.light_medallion) {player.medalCount += 1;}
+	player.stoneCount = 0; if (player.emerald) {player.stoneCount += 1;} if (player.ruby) {player.stoneCount += 1;} if (player.sapphire) {player.stoneCount += 1;}
+	player.rewardCount = player.medalCount + player.stoneCount;
+	player.can_enter_ganons = (player.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && player.medalCount >= 5) || (rules.bridge == "fourMedals" && player.medalCount >= 4) || (rules.bridge == "threeMedals" && player.medalCount >= 3) || (rules.bridge == "twoMedals" && player.medalCount >= 2) || (rules.bridge == "threeStones" && player.stoneCount == 3) || (rules.bridge == "1Reward" && player.rewardCount >= 1) || (rules.bridge == "twoRewards" && player.rewardCount >= 2) || (rules.bridge == "threeRewards" && player.rewardCount >= 3) || (rules.bridge == "fourRewards" && player.rewardCount >= 4) || (rules.bridge == "fiveRewards" && player.rewardCount >= 5) || (rules.bridge == "sixRewards" && player.rewardCount >= 6) || (rules.bridge == "sevenRewards" && player.rewardCount >= 7) || (rules.bridge == "eightRewards" && player.rewardCount >= 8) || (rules.bridge == "nineRewards" && player.rewardCount >= 9) || (rules.bridge == "vanilla" && player.spirit_medallion && player.shadow_medallion && player.light_arrows);
 	 
-	Player.can_climb_fire_temple = Player.fire_temple_adult_access && Player.current_fire_keys >=3 && (Player.bow || Player.hookshot || Player.bomb_bag || Player.bombchus);
-	Player.can_enter_water_entrance = Player.hookshot && (Player.iron_boots || Player.golden_scale);
-	Player.can_do_water_checks = Player.water_temple_adult_access && (Player.iron_boots || Player.longshot);
-	Player.middle_water = Player.can_do_water_checks && Player.lullaby && (Player.bow || Player.can_use_dins || Player.current_water_keys >= 1);
-	Player.projectile_both = Player.bomb_bag || Player.bombchus || ((Player.slingshot || Player.boomerang) && (Player.bow || Player.hookshot));
-	Player.projectile_child = Player.bomb_bag || Player.bombchus || Player.slingshot || Player.boomerang;
-	Player.projectile_adult = Player.bomb_bag || Player.bombchus || Player.bow || Player.hookshot;
-	Player.can_wear_goron_tunic = true;
-	Player.can_wear_zora_tunic = true;
-	Player.can_climb_gtg_hole = Player.hookshot || Player.hover_boots || Player.bomb_bag;
+	player.can_climb_fire_temple = player.fire_temple_adult_access && player.current_fire_keys >=3 && (player.bow || player.hookshot || player.bomb_bag || player.bombchus);
+	player.can_enter_water_entrance = player.hookshot && (player.iron_boots || player.golden_scale);
+	player.can_do_water_checks = player.water_temple_adult_access && (player.iron_boots || player.longshot);
+	player.middle_water = player.can_do_water_checks && player.lullaby && (player.bow || player.can_use_dins || player.current_water_keys >= 1);
+	player.projectile_both = player.bomb_bag || player.bombchus || ((player.slingshot || player.boomerang) && (player.bow || player.hookshot));
+	player.projectile_child = player.bomb_bag || player.bombchus || player.slingshot || player.boomerang;
+	player.projectile_adult = player.bomb_bag || player.bombchus || player.bow || player.hookshot;
+	player.can_wear_goron_tunic = true;
+	player.can_wear_zora_tunic = true;
+	player.can_climb_gtg_hole = player.hookshot || player.hover_boots || player.bomb_bag;
 	
-	Player.child_can_get_past_mido = rules.deku == "open" || Player.kokiri_sword;
-	Player.can_enter_deku_entrance = Player.child_can_get_past_mido;
+	player.child_can_get_past_mido = rules.deku == "open" || player.kokiri_sword;
+	player.can_enter_deku_entrance = player.child_can_get_past_mido;
 	
-	CouldHave.child_can_enter_river = CouldHave.bomb_bag || Player.bombchus || CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr;
-	CouldHave.bean_access = ((CouldHave.child_can_enter_river && rules.beans == "vanilla") || (CouldHave.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
-	CouldHave.child_can_enter_domain = CouldHave.silver_scale || Spawn.child_zd || Spawn.child_zr || CouldHave.bomb_bag || Player.bombchus;
-	CouldHave.jabu_entrance_access = (CouldHave.child_can_enter_domain && (CouldHave.rutos_letter || rules.fountain == "open")) || Spawn.child_zf;
-	CouldHave.can_hit_jabu_switch = CouldHave.jabu_access && CouldHave.bomb_bag || Player.bombchus || ((CouldHave.boomerang || CouldHave.slingshot) && CouldHave.jabu_child_access) || ((CouldHave.hookshot || CouldHave.bow) && CouldHave.jabu_adult_access);
+	couldHave.child_can_enter_river = couldHave.bomb_bag || player.bombchus || couldHave.silver_scale || Spawn.child_zd || Spawn.child_zr;
+	couldHave.bean_access = ((couldHave.child_can_enter_river && rules.beans == "vanilla") || (couldHave.magic_bean_pack && rules.beans == "shuffled") || (rules.preplantBeans == "on"));
+	couldHave.child_can_enter_domain = couldHave.silver_scale || Spawn.child_zd || Spawn.child_zr || couldHave.bomb_bag || player.bombchus;
+	couldHave.jabu_entrance_access = (couldHave.child_can_enter_domain && (couldHave.rutos_letter || rules.fountain == "open")) || Spawn.child_zf;
+	couldHave.can_hit_jabu_switch = couldHave.jabu_access && couldHave.bomb_bag || player.bombchus || ((couldHave.boomerang || couldHave.slingshot) && couldHave.jabu_child_access) || ((couldHave.hookshot || couldHave.bow) && couldHave.jabu_adult_access);
 	
-	CouldHave.fortress_access = CouldHave.eponas || CouldHave.longshot || CouldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && CouldHave.hookshot);
-	CouldHave.can_save_carpenters = Spawn.child_gv_gf || (CouldHave.fortress_access && ((CouldHave.bow || CouldHave.hookshot || CouldHave.hover_boots) || true)) /*fast carpenter fix**/;
-	CouldHave.gtg_entrance_access = (CouldHave.can_save_carpenters && rules.gerudoCard == "vanilla") || (CouldHave.fortress_access && CouldHave.gerudo_card && rules.gerudoCard == "shuffled");
-	CouldHave.can_cross_quicksand = CouldHave.fortress_access && (rules.gerudoCard == "vanilla" || CouldHave.gerudo_card);
-	CouldHave.can_enter_colossus = (CouldHave.can_cross_quicksand) || CouldHave.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || Location_Could_Access.spirit_leftHand || Location_Could_Access.spirit_rightHand;
-	CouldHave.can_enter_child_colossus = CouldHave.requiem || Spawn.child_colossus || Spawn.child_wasteland || Location_Could_Access.spirit_rightHand;
-	CouldHave.can_use_fire = (CouldHave.dins_fire || (CouldHave.bow && CouldHave.fire_arrows)) && CouldHave.magic;
-	CouldHave.can_use_dins = CouldHave.dins_fire && CouldHave.magic;
-	CouldHave.can_shoot_blue_fire_arrows = CouldHave.ice_arrows && CouldHave.bow && CouldHave.magic && rules.blueFireArrows == "on";
-	CouldHave.can_use_farores = CouldHave.farores_wind && CouldHave.magic;
-	CouldHave.can_use_bottle = (CouldHave.bottle1 || CouldHave.bottle2 || CouldHave.bottle3 || CouldHave.bottle4 || (CouldHave.rutos_letter && CouldHave.child_can_enter_river));
-	CouldHave.can_see = CouldHave.lens && CouldHave.magic;
-	CouldHave.can_blast_or_smash = CouldHave.bomb_bag || CouldHave.hammer || Player.bombchus;
-	CouldHave.can_enter_child_dodongos = CouldHave.bomb_bag || CouldHave.goron_bracelet || Player.bombchus;
-	CouldHave.can_break_dodongos_wall = CouldHave.dodongos_access && (CouldHave.bomb_bag || Player.bombchus || CouldHave.goron_bracelet || (CouldHave.dodongos_adult_access && (CouldHave.hammer || CouldHave.can_shoot_blue_fire_arrows)))
-	CouldHave.dodongos_climb = CouldHave.can_break_dodongos_wall && (CouldHave.bomb_bag || Player.bombchus || CouldHave.goron_bracelet || CouldHave.can_use_dins || (Player.dodongos_adult_access && CouldHave.bow));
-	CouldHave.can_enter_shadow_entrance= (CouldHave.nocturne || Spawn.adult_nocturne) && (CouldHave.can_use_dins || (rules.fae == "allowed" && Player.can_use_fire));//&& CouldHave.can_see;
-	CouldHave.can_cross_shadow_gap= CouldHave.shadow_temple_adult_access && CouldHave.hover_boots;
-	CouldHave.can_bomb_shadow_wall = CouldHave.can_cross_shadow_gap && (CouldHave.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || CouldHave.shadow_key_ring);
-	CouldHave.can_pass_shadow_hookshot_door = CouldHave.can_bomb_shadow_wall && CouldHave.hookshot;
-	CouldHave.can_ride_shadow_boat = CouldHave.can_pass_shadow_hookshot_door && CouldHave.lullaby;
-	CouldHave.can_beat_shadow_boss = CouldHave.can_ride_shadow_boat && (CouldHave.bow || CouldHave.longshot || Player.bombchus || CouldHave.bomb_bag) && (rules.dungeonEr != "ganonsExcluded" || Player.shadow_boss_key);
-	CouldHave.can_stop_link_the_goron = CouldHave.bomb_bag || CouldHave.bow || CouldHave.goron_bracelet || Player.bombchus;
-	CouldHave.ice_entrance_access = (CouldHave.can_enter_adult_domain && ((CouldHave.rutos_letter && CouldHave.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
-	CouldHave.can_enter_adult_domain = CouldHave.lullaby || CouldHave.hover_boots || Spawn.adult_zd;
-	CouldHave.reverse_crater = (CouldHave.hover_boots || CouldHave.hookshot || CouldHave.child_can_enter_river) && CouldHave.bolero;
-	CouldHave.crater_by_city = CouldHave.can_stop_link_the_goron || CouldHave.reverse_crater || CouldHave.hammer || (CouldHave.longshot && CouldHave.hammer) || Spawn.adult_lower_dmc;
-	CouldHave.crater_top = CouldHave.crater_by_city || CouldHave.hammer || Spawn.adult_upper_dmc;
-	CouldHave.can_enter_fire_temple_entrance = (CouldHave.crater_by_city && (CouldHave.hookshot || CouldHave.hover_boots)) || CouldHave.bolero;
-	CouldHave.can_push_spirit_silver_block = CouldHave.spirit_temple_adult_access && CouldHave.silver_gauntlets;
-	CouldHave.can_enter_forest_temple_entrance = CouldHave.hookshot;
-	CouldHave.can_enter_well_entrance = CouldHave.storms;
+	couldHave.fortress_access = couldHave.eponas || couldHave.longshot || couldHave.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && couldHave.hookshot);
+	couldHave.can_save_carpenters = Spawn.child_gv_gf || (couldHave.fortress_access && ((couldHave.bow || couldHave.hookshot || couldHave.hover_boots) || true)) /*fast carpenter fix**/;
+	couldHave.gtg_entrance_access = (couldHave.can_save_carpenters && rules.gerudoCard == "vanilla") || (couldHave.fortress_access && couldHave.gerudo_card && rules.gerudoCard == "shuffled");
+	couldHave.can_cross_quicksand = couldHave.fortress_access && (rules.gerudoCard == "vanilla" || couldHave.gerudo_card);
+	couldHave.can_enter_colossus = (couldHave.can_cross_quicksand) || couldHave.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || locationCouldAccess.spirit_leftHand || locationCouldAccess.spirit_rightHand;
+	couldHave.can_enter_child_colossus = couldHave.requiem || Spawn.child_colossus || Spawn.child_wasteland || locationCouldAccess.spirit_rightHand;
+	couldHave.can_use_fire = (couldHave.dins_fire || (couldHave.bow && couldHave.fire_arrows)) && couldHave.magic;
+	couldHave.can_use_dins = couldHave.dins_fire && couldHave.magic;
+	couldHave.can_shoot_blue_fire_arrows = couldHave.ice_arrows && couldHave.bow && couldHave.magic && rules.blueFireArrows == "on";
+	couldHave.can_use_farores = couldHave.farores_wind && couldHave.magic;
+	couldHave.can_use_bottle = (couldHave.bottle1 || couldHave.bottle2 || couldHave.bottle3 || couldHave.bottle4 || (couldHave.rutos_letter && couldHave.child_can_enter_river));
+	couldHave.can_see = couldHave.lens && couldHave.magic;
+	couldHave.can_blast_or_smash = couldHave.bomb_bag || couldHave.hammer || player.bombchus;
+	couldHave.can_enter_child_dodongos = couldHave.bomb_bag || couldHave.goron_bracelet || player.bombchus;
+	couldHave.can_break_dodongos_wall = couldHave.dodongos_access && (couldHave.bomb_bag || player.bombchus || couldHave.goron_bracelet || (couldHave.dodongos_adult_access && (couldHave.hammer || couldHave.can_shoot_blue_fire_arrows)))
+	couldHave.dodongos_climb = couldHave.can_break_dodongos_wall && (couldHave.bomb_bag || player.bombchus || couldHave.goron_bracelet || couldHave.can_use_dins || (player.dodongos_adult_access && couldHave.bow));
+	couldHave.can_enter_shadow_entrance= (couldHave.nocturne || Spawn.adult_nocturne) && (couldHave.can_use_dins || (rules.fae == "allowed" && player.can_use_fire));//&& couldHave.can_see;
+	couldHave.can_cross_shadow_gap= couldHave.shadow_temple_adult_access && couldHave.hover_boots;
+	couldHave.can_bomb_shadow_wall = couldHave.can_cross_shadow_gap && (couldHave.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || couldHave.shadow_key_ring);
+	couldHave.can_pass_shadow_hookshot_door = couldHave.can_bomb_shadow_wall && couldHave.hookshot;
+	couldHave.can_ride_shadow_boat = couldHave.can_pass_shadow_hookshot_door && couldHave.lullaby;
+	couldHave.can_beat_shadow_boss = couldHave.can_ride_shadow_boat && (couldHave.bow || couldHave.longshot || player.bombchus || couldHave.bomb_bag) && (rules.dungeonEr != "ganonsExcluded" || player.shadow_boss_key);
+	couldHave.can_stop_link_the_goron = couldHave.bomb_bag || couldHave.bow || couldHave.goron_bracelet || player.bombchus;
+	couldHave.ice_entrance_access = (couldHave.can_enter_adult_domain && ((couldHave.rutos_letter && couldHave.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
+	couldHave.can_enter_adult_domain = couldHave.lullaby || couldHave.hover_boots || Spawn.adult_zd;
+	couldHave.reverse_crater = (couldHave.hover_boots || couldHave.hookshot || couldHave.child_can_enter_river) && couldHave.bolero;
+	couldHave.crater_by_city = couldHave.can_stop_link_the_goron || couldHave.reverse_crater || couldHave.hammer || (couldHave.longshot && couldHave.hammer) || Spawn.adult_lower_dmc;
+	couldHave.crater_top = couldHave.crater_by_city || couldHave.hammer || Spawn.adult_upper_dmc;
+	couldHave.can_enter_fire_temple_entrance = (couldHave.crater_by_city && (couldHave.hookshot || couldHave.hover_boots)) || couldHave.bolero;
+	couldHave.can_push_spirit_silver_block = couldHave.spirit_temple_adult_access && couldHave.silver_gauntlets;
+	couldHave.can_enter_forest_temple_entrance = couldHave.hookshot;
+	couldHave.can_enter_well_entrance = couldHave.storms;
 	
-	CouldHave.medalCount = 0; if (CouldHave.forest || Player.forest || Location_Access.forest_medallion_location) {CouldHave.medalCount += 1;} if (CouldHave.fire || Player.fire || Location_Access.fire_medallion_location) {CouldHave.medalCount += 1;} if (CouldHave.water || Player.water || Location_Access.water_medallion_location) {CouldHave.medalCount += 1;} if (Player.shadow_medallion || CouldHave.shadow_medallion || Location_Access.shadow_medallion_location) {CouldHave.medalCount += 1;} if (Player.spirit_medallion || CouldHave.spirit_medallion || Location_Access.spirit_medallion_location) {CouldHave.medalCount += 1;} if (Player.light_medallion || CouldHave.light_medallion || Location_Peek.light_medallion_location) {CouldHave.medalCount += 1;}
-	CouldHave.stoneCount = 0; if (CouldHave.emerald || Player.emerald || Location_Access.emerald_location) {CouldHave.stoneCount += 1;} if (CouldHave.ruby || Player.ruby || Location_Access.ruby_location) {CouldHave.stoneCount += 1;} if (CouldHave.sapphire || Player.sapphire || Location_Access.sapphire_location) {CouldHave.stoneCount += 1;}
-	CouldHave.rewardCount = CouldHave.medalCount + CouldHave.stoneCount;
-	CouldHave.can_enter_ganons = (CouldHave.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && CouldHave.medalCount >= 5) || (rules.bridge == "fourMedals" && CouldHave.medalCount >= 4) || (rules.bridge == "threeMedals" && CouldHave.medalCount >= 3) || (rules.bridge == "twoMedals" && CouldHave.medalCount >= 2) || (rules.bridge == "threeStones" && CouldHave.stoneCount == 3) || (rules.bridge == "1Reward" && CouldHave.rewardCount >= 1) || (rules.bridge == "twoRewards" && CouldHave.rewardCount >= 2) || (rules.bridge == "threeRewards" && CouldHave.rewardCount >= 3) || (rules.bridge == "fourRewards" && CouldHave.rewardCount >= 4) || (rules.bridge == "fiveRewards" && CouldHave.rewardCount >= 5) || (rules.bridge == "sixRewards" && CouldHave.rewardCount >= 6) || (rules.bridge == "sevenRewards" && CouldHave.rewardCount >= 7) || (rules.bridge == "eightRewards" && CouldHave.rewardCount >= 8) || (rules.bridge == "nineRewards" && CouldHave.rewardCount >= 9) || (rules.bridge == "vanilla" && (Player.spirit_medallion || CouldHave.spirit_medallion || Location_Access.spirit_medallion_location) && (Player.shadow_medallion || CouldHave.shadow_medallion || Location_Access.shadow_medallion_location) && CouldHave.light_arrows);
+	couldHave.medalCount = 0; if (couldHave.forest || player.forest || locationAccess.forest_medallion_location) {couldHave.medalCount += 1;} if (couldHave.fire || player.fire || locationAccess.fire_medallion_location) {couldHave.medalCount += 1;} if (couldHave.water || player.water || locationAccess.water_medallion_location) {couldHave.medalCount += 1;} if (player.shadow_medallion || couldHave.shadow_medallion || locationAccess.shadow_medallion_location) {couldHave.medalCount += 1;} if (player.spirit_medallion || couldHave.spirit_medallion || locationAccess.spirit_medallion_location) {couldHave.medalCount += 1;} if (player.light_medallion || couldHave.light_medallion || locationPeek.light_medallion_location) {couldHave.medalCount += 1;}
+	couldHave.stoneCount = 0; if (couldHave.emerald || player.emerald || locationAccess.emerald_location) {couldHave.stoneCount += 1;} if (couldHave.ruby || player.ruby || locationAccess.ruby_location) {couldHave.stoneCount += 1;} if (couldHave.sapphire || player.sapphire || locationAccess.sapphire_location) {couldHave.stoneCount += 1;}
+	couldHave.rewardCount = couldHave.medalCount + couldHave.stoneCount;
+	couldHave.can_enter_ganons = (couldHave.medalCount == 6 && rules.bridge == "allMeds") || rules.bridge == "open" || (rules.bridge == "fiveMedals" && couldHave.medalCount >= 5) || (rules.bridge == "fourMedals" && couldHave.medalCount >= 4) || (rules.bridge == "threeMedals" && couldHave.medalCount >= 3) || (rules.bridge == "twoMedals" && couldHave.medalCount >= 2) || (rules.bridge == "threeStones" && couldHave.stoneCount == 3) || (rules.bridge == "1Reward" && couldHave.rewardCount >= 1) || (rules.bridge == "twoRewards" && couldHave.rewardCount >= 2) || (rules.bridge == "threeRewards" && couldHave.rewardCount >= 3) || (rules.bridge == "fourRewards" && couldHave.rewardCount >= 4) || (rules.bridge == "fiveRewards" && couldHave.rewardCount >= 5) || (rules.bridge == "sixRewards" && couldHave.rewardCount >= 6) || (rules.bridge == "sevenRewards" && couldHave.rewardCount >= 7) || (rules.bridge == "eightRewards" && couldHave.rewardCount >= 8) || (rules.bridge == "nineRewards" && couldHave.rewardCount >= 9) || (rules.bridge == "vanilla" && (player.spirit_medallion || couldHave.spirit_medallion || locationAccess.spirit_medallion_location) && (player.shadow_medallion || couldHave.shadow_medallion || locationAccess.shadow_medallion_location) && couldHave.light_arrows);
 	 
-	CouldHave.can_climb_fire_temple = CouldHave.fire_temple_adult_access && (Player.current_fire_keys >=3 || (CouldHave.hammer && (CouldHave.bomb_bag || Player.bombchus)))  && (CouldHave.bow || CouldHave.hookshot || CouldHave.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	CouldHave.can_enter_water_entrance = CouldHave.hookshot && (CouldHave.iron_boots || CouldHave.golden_scale);
-	CouldHave.can_do_water_checks = CouldHave.water_temple_adult_access && (CouldHave.iron_boots || CouldHave.longshot);
-	CouldHave.middle_water = CouldHave.can_do_water_checks && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins || Player.current_water_keys >= 1);
-	CouldHave.projectile_both = CouldHave.bomb_bag || Player.bombchus || ((CouldHave.slingshot || CouldHave.boomerang) && (CouldHave.bow || CouldHave.hookshot));
-	CouldHave.projectile_child = CouldHave.bomb_bag || Player.bombchus || CouldHave.slingshot || CouldHave.boomerang;
-	CouldHave.projectile_adult = CouldHave.bomb_bag || Player.bombchus || CouldHave.bow || CouldHave.hookshot;
-	CouldHave.can_wear_goron_tunic = true;
-	CouldHave.can_wear_zora_tunic = true;
-	CouldHave.can_climb_gtg_hole = CouldHave.hookshot || CouldHave.hover_boots || CouldHave.bomb_bag;
-	CouldHave.child_can_get_past_mido = rules.deku == "open" || CouldHave.kokiri_sword;
-	CouldHave.can_enter_deku_entrance = CouldHave.child_can_get_past_mido;
+	couldHave.can_climb_fire_temple = couldHave.fire_temple_adult_access && (player.current_fire_keys >=3 || (couldHave.hammer && (couldHave.bomb_bag || player.bombchus)))  && (couldHave.bow || couldHave.hookshot || couldHave.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	couldHave.can_enter_water_entrance = couldHave.hookshot && (couldHave.iron_boots || couldHave.golden_scale);
+	couldHave.can_do_water_checks = couldHave.water_temple_adult_access && (couldHave.iron_boots || couldHave.longshot);
+	couldHave.middle_water = couldHave.can_do_water_checks && couldHave.lullaby && (couldHave.bow || couldHave.can_use_dins || player.current_water_keys >= 1);
+	couldHave.projectile_both = couldHave.bomb_bag || player.bombchus || ((couldHave.slingshot || couldHave.boomerang) && (couldHave.bow || couldHave.hookshot));
+	couldHave.projectile_child = couldHave.bomb_bag || player.bombchus || couldHave.slingshot || couldHave.boomerang;
+	couldHave.projectile_adult = couldHave.bomb_bag || player.bombchus || couldHave.bow || couldHave.hookshot;
+	couldHave.can_wear_goron_tunic = true;
+	couldHave.can_wear_zora_tunic = true;
+	couldHave.can_climb_gtg_hole = couldHave.hookshot || couldHave.hover_boots || couldHave.bomb_bag;
+	couldHave.child_can_get_past_mido = rules.deku == "open" || couldHave.kokiri_sword;
+	couldHave.can_enter_deku_entrance = couldHave.child_can_get_past_mido;
 }
-function locationLogic(){
-	Location_Logic.kokiri_mido_1 = true;
-	Location_Logic.kokiri_mido_2 = true;
-	Location_Logic.kokiri_mido_3 = true;
-	Location_Logic.kokiri_mido_4 = true;
-	Location_Logic.kokiri_sword = true;
-	Location_Logic.kokiri_storms = Logic.storms;
-	Location_Logic.talons_chickens = true;
-	Location_Logic.back_of_ranch = true;
-	Location_Logic.hyrule_remoteGrotto = Logic.can_blast_or_smash;
-	Location_Logic.hyrule_openGrotto = true;
-	Location_Logic.hyrule_hp_scrub = Logic.can_blast_or_smash;
-	Location_Logic.hyrule_marketGrotto = Logic.can_blast_or_smash;
-	Location_Logic.hyrule_tektite_grotto = Logic.can_blast_or_smash && (Logic.golden_scale || Logic.iron_boots);
-	Location_Logic.hyrule_ocarina = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire;
-	Location_Logic.gerudovalley_box = true;
-	Location_Logic.gerudovalley_fall = true;
-	Location_Logic.gerudo_hammer = Logic.fortress_access && Logic.hammer;
-	Location_Logic.hylia_child_fishing = true;
-	Location_Logic.hylia_bottle = Logic.silver_scale;
-	Location_Logic.hylia_adult_fishing = Logic.hookshot || Logic.bean_access || Spawn.adult_fishing;
-	Location_Logic.hylia_lab_top = Logic.hookshot || Logic.bean_access;
-	Location_Logic.hylia_lab_dive = Logic.golden_scale;
-	Location_Logic.hylia_sun_shoot = Logic.longshot && Logic.bow;
-	Location_Logic.market_slingshot_game = true;
-	Location_Logic.richard = true;
-	Location_Logic.market_bowling_1 = Logic.bomb_bag;
-	Location_Logic.market_bowling_2 = Logic.bomb_bag;
-	Location_Logic.market_lens_game = Logic.can_see;
-	Location_Logic.poes= (Logic.bow && Logic.eponas && Logic.bottle) || Logic.big_poe;
-	Location_Logic.dins_fairy = (Logic.bomb_bag || Spawn.child_hyrule_fairy) && Logic.lullaby;
-	Location_Logic.g_fairy = (Logic.golden_gauntlets || Spawn.adult_ogc) && Logic.lullaby;
-	Location_Logic.lacs = Logic.shadow_medallion && Logic.spirit_medallion;
-	Location_Logic.fountain_fairy = ((Logic.ice_entrance_access && Logic.bomb_bag) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || (Logic.bomb_bag && Spawn.child_zf)) && Logic.lullaby;
-	Location_Logic.glacier_hp = Logic.ice_entrance_access;
-	Location_Logic.bottom_of_fountain = Logic.ice_entrance_access && Logic.iron_boots;
-	Location_Logic.ice_map = Logic.ice_adult_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows);
-	Location_Logic.ice_compass = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && (Logic.ice_adult_access || Logic.giants_wallet);
-	Location_Logic.ice_hp = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && (Logic.ice_adult_access || Logic.giants_wallet);
-	Location_Logic.ice_irons = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && (Logic.ice_adult_access || Logic.giants_wallet);
-	Location_Logic.deku_lobby = Logic.deku_access;
-	Location_Logic.deku_slingshot = Logic.deku_access;
-	Location_Logic.deku_slingshot_room_side = Logic.deku_access;
-	Location_Logic.deku_compass = Logic.deku_access;
-	Location_Logic.deku_compass_room_side = Logic.deku_access;
-	Location_Logic.deku_basement = Logic.deku_access;
+function updateLocationLogic(){
+	locationLogic.kokiri_mido_1 = true;
+	locationLogic.kokiri_mido_2 = true;
+	locationLogic.kokiri_mido_3 = true;
+	locationLogic.kokiri_mido_4 = true;
+	locationLogic.kokiri_sword = true;
+	locationLogic.kokiri_storms = logic.storms;
+	locationLogic.talons_chickens = true;
+	locationLogic.back_of_ranch = true;
+	locationLogic.hyrule_remoteGrotto = logic.can_blast_or_smash;
+	locationLogic.hyrule_openGrotto = true;
+	locationLogic.hyrule_hp_scrub = logic.can_blast_or_smash;
+	locationLogic.hyrule_marketGrotto = logic.can_blast_or_smash;
+	locationLogic.hyrule_tektite_grotto = logic.can_blast_or_smash && (logic.golden_scale || logic.iron_boots);
+	locationLogic.hyrule_ocarina = logic.kokiri_emerald && logic.goron_ruby && logic.zora_sapphire;
+	locationLogic.gerudovalley_box = true;
+	locationLogic.gerudovalley_fall = true;
+	locationLogic.gerudo_hammer = logic.fortress_access && logic.hammer;
+	locationLogic.hylia_child_fishing = true;
+	locationLogic.hylia_bottle = logic.silver_scale;
+	locationLogic.hylia_adult_fishing = logic.hookshot || logic.bean_access || Spawn.adult_fishing;
+	locationLogic.hylia_lab_top = logic.hookshot || logic.bean_access;
+	locationLogic.hylia_lab_dive = logic.golden_scale;
+	locationLogic.hylia_sun_shoot = logic.longshot && logic.bow;
+	locationLogic.market_slingshot_game = true;
+	locationLogic.richard = true;
+	locationLogic.market_bowling_1 = logic.bomb_bag;
+	locationLogic.market_bowling_2 = logic.bomb_bag;
+	locationLogic.market_lens_game = logic.can_see;
+	locationLogic.poes= (logic.bow && logic.eponas && logic.bottle) || logic.big_poe;
+	locationLogic.dins_fairy = (logic.bomb_bag || Spawn.child_hyrule_fairy) && logic.lullaby;
+	locationLogic.g_fairy = (logic.golden_gauntlets || Spawn.adult_ogc) && logic.lullaby;
+	locationLogic.lacs = logic.shadow_medallion && logic.spirit_medallion;
+	locationLogic.fountain_fairy = ((logic.ice_entrance_access && logic.bomb_bag) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || (logic.bomb_bag && Spawn.child_zf)) && logic.lullaby;
+	locationLogic.glacier_hp = logic.ice_entrance_access;
+	locationLogic.bottom_of_fountain = logic.ice_entrance_access && logic.iron_boots;
+	locationLogic.ice_map = logic.ice_adult_access && (logic.bottle || logic.can_shoot_blue_fire_arrows);
+	locationLogic.ice_compass = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && (logic.ice_adult_access || logic.giants_wallet);
+	locationLogic.ice_hp = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && (logic.ice_adult_access || logic.giants_wallet);
+	locationLogic.ice_irons = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && (logic.ice_adult_access || logic.giants_wallet);
+	locationLogic.deku_lobby = logic.deku_access;
+	locationLogic.deku_slingshot = logic.deku_access;
+	locationLogic.deku_slingshot_room_side = logic.deku_access;
+	locationLogic.deku_compass = logic.deku_access;
+	locationLogic.deku_compass_room_side = logic.deku_access;
+	locationLogic.deku_basement = logic.deku_access;
 	if (rules.preset == "sgl2025")
-		Location_Logic.deku_queen_gohma = Logic.deku_access;
+		locationLogic.deku_queen_gohma = logic.deku_access;
 	else
-		Location_Logic.deku_queen_gohma = Logic.deku_access && ((Logic.deku_child_access && Logic.slingshot) || (Logic.deku_adult_access && Logic.can_use_fire));
-	Location_Logic.lost_woods_fairy_ocarina = true;
-	Location_Logic.ocarina_game = true;
-	Location_Logic.lw_generic = Logic.can_blast_or_smash;
-	Location_Logic.lost_woods_scrub_grotto = Logic.bomb_bag || (Logic.can_pass_mido_as_adult && Logic.hammer);
-	Location_Logic.bridge_scrub = true;
-	Location_Logic.target = Logic.slingshot;
-	Location_Logic.skull_kid = Logic.sarias;
-	Location_Logic.theater_skull = true;
-	Location_Logic.theater_truth = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire && Logic.sarias;
-	Location_Logic.wolfos_grotto = Logic.bomb_bag || (Logic.can_pass_mido_as_adult && Logic.hammer);
-	Location_Logic.rolling_goron = Logic.bomb_bag;
-	Location_Logic.goron_dance = (Logic.lullaby || Spawn.child_lower_dmc) && Logic.sarias;
-	Location_Logic.goron_pot = Logic.bomb_bag && (Logic.lullaby || Logic.can_use_dins || Spawn.child_lower_dmc);
-	Location_Logic.goron_maze_1 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
-	Location_Logic.goron_maze_2 = Logic.can_blast_or_smash || Logic.silver_gauntlets;
-	Location_Logic.goron_maze_3 = Logic.hammer || Logic.silver_gauntlets;
-	Location_Logic.goron_link = Logic.can_stop_link_the_goron;
-	Location_Logic.goron_medigoron = (Logic.can_blast_or_smash || Logic.goron_bracelet) && Logic.adults_wallet;
-	Location_Logic.dodongos_map = Logic.can_break_dodongos_wall;
-	Location_Logic.dodongos_compass = Logic.can_break_dodongos_wall;
-	Location_Logic.dodongos_bomb_flower_platform = Logic.dodongos_climb;
-	Location_Logic.dodongos_bomb_bag = Logic.dodongos_climb;
-	Location_Logic.dodongos_end_of_bridge = Logic.dodongos_climb && (Logic.bomb_bag || (Logic.dodongos_adult_access && Logic.hammer));
-	Location_Logic.dodongos_above_king = Logic.dodongos_climb && Logic.bomb_bag;
-	Location_Logic.dodongos_king_dodongo = Logic.dodongos_climb && Logic.bomb_bag;
-	Location_Logic.trail_bombable = Logic.can_blast_or_smash;
-	Location_Logic.trail_top = true;
-	Location_Logic.trail_storms = Logic.storms;
-	Location_Logic.trail_fairy = (Logic.can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && Logic.lullaby;
-	Location_Logic.trade_quest = ((((Logic.ice_access && Logic.bottle) || ((Logic.giants_wallet || Logic.can_enter_ganons) && (Logic.lullaby || Spawn.adult_zd) && Logic.bottle)) && Logic.prescription) || Logic.claim_check) && Logic.crater_top;
-	Location_Logic.crater_bean = (Logic.bolero && Logic.bean_access) || (Logic.hover_boots && Logic.crater_by_city);
-	Location_Logic.crater_hammer_fairy = ((Logic.crater_by_city && Logic.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && Logic.lullaby;
-	Location_Logic.crater_grotto = Logic.can_blast_or_smash;
-	Location_Logic.crater_nook_hp = Logic.crater_top || Spawn.child_upper_dmc;
-	Location_Logic.man_on_roof = true;//Logic.hookshot;
-	Location_Logic.kakariko_grotto = true;
-	Location_Logic.kakariko_hag = Logic.adults_wallet;
-	Location_Logic.windmill = true;//Logic.boomerang || Logic.time;
-	Location_Logic.anju = true;
-	Location_Logic.kakariko_cow_house = true;
-	Location_Logic.archery_game = Logic.bow;
-	Location_Logic.redead_grotto = Logic.can_blast_or_smash;
-	Location_Logic.anjus_chickens = true;
-	Location_Logic.tokens_10 = Logic.gold_skulltulas >= 10;
-	Location_Logic.tokens_20 = Logic.gold_skulltulas >= 20;
-	Location_Logic.tokens_30 = Logic.gold_skulltulas >= 30;
-	Location_Logic.tokens_40 = Logic.gold_skulltulas >= 40;
-	Location_Logic.tokens_50 = Logic.gold_skulltulas >= 50;
-	Location_Logic.shield_grave = true;
-	Location_Logic.gravedigging_tour = true;
-	Location_Logic.redead_grave = Logic.suns;
-	Location_Logic.composers_grave = Logic.lullaby && Logic.can_use_fire;
-	Location_Logic.graveyard_box = Logic.bean_access || Logic.longshot;
-	Location_Logic.race_1 = true;
-	Location_Logic.race_2 = true;
-	Location_Logic.river_bean_salesman = Logic.child_can_enter_river;
-	Location_Logic.river_pillar = Logic.child_can_enter_river || Logic.hover_boots || rules.preplantBeans == "on";
-	Location_Logic.river_grotto = true;
-	Location_Logic.river_ledge = Logic.child_can_enter_river || Logic.hover_boots;
-	Location_Logic.frogs_1 = Logic.child_can_enter_river && Logic.storms;
-	Location_Logic.frogs_2 = Logic.child_can_enter_river && (Logic.storms && Logic.lullaby && Logic.eponas && Logic.sarias && Logic.suns && Logic.time);
-	Location_Logic.zora_diving = Logic.child_can_enter_domain;
-	Location_Logic.zora_torches = Logic.child_can_enter_domain;
-	Location_Logic.thaw_king = Logic.can_enter_adult_domain && ((Logic.bottle && (Logic.ice_access || Logic.giants_wallet || Logic.can_enter_ganons)) || Logic.can_shoot_blue_fire_arrows);
-	Location_Logic.colossus_bean = Logic.requiem && Logic.bean_access;
-	Location_Logic.colossus_fairy = Logic.can_enter_colossus && Logic.bomb_bag && Logic.lullaby;
-	Location_Logic.wasteland = Logic.can_cross_quicksand && Logic.can_use_fire;
-	Location_Logic.wasteland_carpet = Logic.can_cross_quicksand && Logic.adults_wallet;
-	Location_Logic.fortress_card = Logic.can_save_carpenters;
-	Location_Logic.gerudo_roof = Logic.fortress_access && (Logic.hookshot || Logic.hover_boots);
-	Location_Logic.gerudo_archery_1 = Logic.eponas && Logic.bow && Logic.gtg_entrance_access;
-	Location_Logic.gerudo_archery_2 = Logic.eponas && Logic.bow && Logic.gtg_entrance_access;
-	Location_Logic.jabu_boomerang = Logic.can_hit_jabu_switch;
-	Location_Logic.jabu_map = Logic.can_hit_jabu_switch && Logic.boomerang && Logic.jabu_child_access;
-	Location_Logic.jabu_compass = Logic.can_hit_jabu_switch && Logic.boomerang && Logic.jabu_child_access;
-	Location_Logic.jabu_barinade = Logic.can_hit_jabu_switch && Logic.boomerang && Logic.jabu_child_access;
-	Location_Logic.forest_first = Logic.forest_temple_access;
-	Location_Logic.forest_stalfos = Logic.forest_temple_access;
-	Location_Logic.forest_midCourtyard = Logic.forest_temple_adult_access && ((((Logic.time || Logic.bow || (Logic.hover_boots && Logic.forest_keys>=1)) && Logic.hookshot)) || (Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5));
-	Location_Logic.forest_highCourtyard = Logic.forest_temple_access && (Logic.time || (Logic.forest_temple_adult_access && ((Logic.bow && Logic.hookshot) || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5))));
-	Location_Logic.forest_lowCourtyard = Logic.forest_temple_access && (Logic.time || (Logic.forest_temple_adult_access && ((Logic.bow && Logic.hookshot) || (Logic.hover_boots && Logic.forest_keys>=1) || (Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5))));
-	Location_Logic.forest_blockRoom = Logic.forest_temple_adult_access && Logic.forest_keys >= 1 && (Logic.bow || (Logic.forest_temple_child_access && Logic.slingshot)) && Logic.goron_bracelet;
-	Location_Logic.forest_bossKey = Logic.forest_temple_adult_access && Logic.forest_keys >= 2 && Logic.bow && Logic.goron_bracelet;
-	Location_Logic.forest_floormaster = Logic.forest_temple_adult_access && ((Logic.bow && Logic.goron_bracelet && Logic.forest_keys >=2) || (Logic.hover_boots && Logic.forest_keys >=1));
-	Location_Logic.forest_red = Logic.forest_temple_adult_access && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
-	Location_Logic.forest_bow = Logic.forest_temple_adult_access && Logic.goron_bracelet && Logic.forest_keys>=3;
-	Location_Logic.forest_blue = Logic.forest_temple_adult_access && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=3;
-	Location_Logic.forest_fallingCeiling = Logic.forest_temple_adult_access && Logic.goron_bracelet && (Logic.bow || Logic.can_use_dins) && Logic.forest_keys>=5;
-	Location_Logic.forest_nearBoss = Logic.forest_temple_adult_access && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5;
-	Location_Logic.forest_phantomGanon = Logic.forest_temple_adult_access && Logic.goron_bracelet && Logic.bow && Logic.forest_keys>=5 && Logic.forest_boss_key;
-	Location_Logic.fire_nearBoss = Logic.fire_temple_access;
-	Location_Logic.fire_hammer1 = Logic.fire_temple_adult_access && Logic.hammer && (rules.smallKeys != "keyRings" || Logic.fire_key_ring);
-	Location_Logic.fire_hammer2 = Logic.fire_temple_adult_access && Logic.hammer && (rules.smallKeys != "keyRings" || Logic.fire_key_ring);
-	Location_Logic.fire_lavaOpen = Logic.fire_temple_access && Logic.fire_keys >=1;
-	Location_Logic.fire_lavaBomb = Logic.fire_temple_adult_access && Logic.fire_keys >=1 && Logic.bomb_bag;
-	Location_Logic.fire_volvagia = Logic.fire_temple_adult_access && Logic.fire_boss_key && Logic.hammer && Logic.can_wear_goron_tunic && (Logic.hover_boots || (Logic.fire_keys >=7 && (Logic.time || Logic.bomb_bag)));
-	Location_Logic.fire_lowerMaze = Logic.can_climb_fire_temple;
-	Location_Logic.fire_sideRoom = Logic.can_climb_fire_temple;
-	Location_Logic.fire_map = Logic.can_climb_fire_temple && ((Logic.fire_keys >= 4 && Logic.bow) || Logic.fire_keys>=5);
-	Location_Logic.fire_upperMaze = Logic.can_climb_fire_temple && Logic.fire_keys>=5;
-	Location_Logic.fire_shortcut = Logic.can_climb_fire_temple && Logic.fire_keys>=5 && Logic.bomb_bag;
-	Location_Logic.fire_scarecrow = Logic.can_climb_fire_temple && Logic.fire_keys>=5 && Logic.hookshot;
-	Location_Logic.fire_compass = Logic.can_climb_fire_temple && Logic.fire_keys>=6;
-	Location_Logic.fire_sotGoron = Logic.can_climb_fire_temple && (Logic.fire_keys>=7 || (Logic.fire_keys>=6 && Logic.hover_boots)) && Logic.hammer && (Logic.time || Logic.bomb_bag);
-	Location_Logic.fire_top = Logic.can_climb_fire_temple && (Logic.fire_keys>=7 || (Logic.fire_keys >= 6 && Logic.hammer && Logic.hover_boots)) && Logic.bomb_bag;
-	Location_Logic.water_compass = Logic.can_do_water_checks && Logic.hookshot;
-	Location_Logic.water_map = Logic.can_do_water_checks;
-	Location_Logic.water_cracked = Logic.middle_water && Logic.bomb_bag;
-	Location_Logic.water_torches = Logic.can_do_water_checks && Logic.lullaby && (Logic.bow || Logic.can_use_dins || Logic.water_temple_child_access);
-	Location_Logic.water_block = Logic.can_do_water_checks && Logic.lullaby && Logic.bow && Logic.goron_bracelet && (Logic.hover_boots || Logic.longshot) && Logic.hookshot;
-	Location_Logic.water_pillar = Logic.middle_water && Logic.can_wear_zora_tunic && Logic.hookshot;
-	Location_Logic.water_dLink = Logic.can_do_water_checks && Logic.water_keys >= 5 && Logic.hookshot;
-	Location_Logic.water_river = Logic.can_do_water_checks && Logic.water_keys >= 5 && Logic.time && Logic.bow && Logic.hookshot;
-	Location_Logic.water_dragon = Logic.can_do_water_checks && ((Logic.water_keys >= 5 && Logic.time && Logic.bow) || (Logic.goron_bracelet && Logic.lullaby)) && Logic.hookshot;
-	Location_Logic.water_bossKey = Logic.can_do_water_checks && Logic.longshot && Logic.water_keys >= 5 && ((Logic.bomb_bag && Logic.goron_bracelet) || Logic.hover_boots);
-	Location_Logic.water_morpha = Logic.can_do_water_checks && Logic.water_boss_key && Logic.longshot ;
-	Location_Logic.spirit_childLeft = Logic.spirit_temple_child_access && (Logic.slingshot || Logic.boomerang);
-	Location_Logic.spirit_childRight = Logic.spirit_temple_child_access && (Logic.slingshot || Logic.boomerang);
-	Location_Logic.spirit_childClimb1 = Logic.spirit_temple_access && (Logic.spirit_keys >=1 && Logic.projectile_both);
-	Location_Logic.spirit_childClimb2 = Logic.spirit_temple_access && (Logic.spirit_keys >=1 && Logic.projectile_both);
-	Location_Logic.spirit_map = Logic.spirit_temple_access && (Logic.spirit_keys >=5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
-	Location_Logic.spirit_sunRoom = Logic.spirit_temple_access && (Logic.spirit_keys >=5 && Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.spirit_keys >=3 && Logic.silver_gauntlets && Logic.can_use_fire) || (Logic.bomb_bag && Logic.spirit_keys >=1 && Logic.can_use_fire);
-	Location_Logic.spirit_rightHand = Logic.spirit_temple_access && ((Logic.spirit_keys >=3 && Logic.longshot && Logic.bomb_bag) || Logic.spirit_keys >= 5) && ((Logic.spirit_temple_child_access && Logic.bomb_bag) || (Logic.can_push_spirit_silver_block && (Logic.bow || Logic.hookshot || Logic.bomb_bag)));
-	Location_Logic.spirit_adultLeft = Logic.can_push_spirit_silver_block && Logic.hookshot && Logic.lullaby;
-	Location_Logic.spirit_adultRight = Logic.can_push_spirit_silver_block && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
-	Location_Logic.spirit_rotatingMirror1 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=3;
-	Location_Logic.spirit_rotatingMirror2 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=3;
-	Location_Logic.spirit_lullabyHand = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=3 && Logic.lullaby;
-	Location_Logic.spirit_lullabyHigh = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=3 && Logic.lullaby && (Logic.hookshot || Logic.hover_boots);
-	Location_Logic.spirit_nearFourArmos = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag && Logic.mirror_shield;
-	Location_Logic.spirit_invisible1 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag ;//&& Logic.can_see;
-	Location_Logic.spirit_invisible2 = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag ;//&& Logic.can_see;
-	Location_Logic.spirit_leftHand = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=4 && Logic.bomb_bag;
-	Location_Logic.spirit_bossKey = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.bow && Logic.lullaby && Logic.hookshot;
-	Location_Logic.spirit_tippyTop = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.mirror_shield;
-	Location_Logic.spirit_twinrova = Logic.can_push_spirit_silver_block && Logic.spirit_keys >=5 && Logic.mirror_shield && Logic.bomb_bag && Logic.spirit_boss_key && Logic.hookshot;
-	Location_Logic.shadow_map = Logic.shadow_temple_adult_access && (Logic.hover_boots || Logic.hookshot);
-	Location_Logic.shadow_hovers = Logic.shadow_temple_adult_access && (Logic.hover_boots || Logic.hookshot);
-	Location_Logic.shadow_compass = Logic.can_cross_shadow_gap;
-	Location_Logic.shadow_earlySilvers = Logic.can_cross_shadow_gap;
-	Location_Logic.shadow_spinning1 = Logic.can_bomb_shadow_wall;
-	Location_Logic.shadow_spinning2 = Logic.can_bomb_shadow_wall;
-	Location_Logic.shadow_spikesLower = Logic.can_bomb_shadow_wall;
-	Location_Logic.shadow_spikesUpper = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
-	Location_Logic.shadow_spikesSwitch = Logic.can_bomb_shadow_wall && Logic.goron_bracelet;
-	Location_Logic.shadow_redeadSilvers = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2;
-	Location_Logic.shadow_pot = Logic.can_bomb_shadow_wall && Logic.hookshot && Logic.shadow_keys >=2;
-	Location_Logic.shadow_wind = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
-	Location_Logic.shadow_bombable = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
-	Location_Logic.shadow_gibdos = Logic.can_pass_shadow_hookshot_door && Logic.shadow_keys >=3;
-	Location_Logic.shadow_dins1 = Logic.can_ride_shadow_boat && Logic.shadow_keys >=4 && Logic.can_use_dins;
-	Location_Logic.shadow_dins2 = Logic.can_ride_shadow_boat && Logic.shadow_keys >=4 && Logic.can_use_dins;
-	Location_Logic.shadow_floormaster = Logic.can_ride_shadow_boat && Logic.shadow_keys >=4;
-	Location_Logic.shadow_bongo = Logic.can_beat_shadow_boss && Logic.shadow_keys >=5;
-	Location_Logic.ganons_lightTrial1 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial2 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial3 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial4 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial5 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial6 = Logic.can_enter_ganons && Logic.golden_gauntlets;
-	Location_Logic.ganons_lightTrial7 = Logic.can_enter_ganons && Logic.golden_gauntlets ;//&& Logic.can_see;
-	Location_Logic.ganons_lightTrialLullaby = Logic.can_enter_ganons && Logic.golden_gauntlets && Logic.lullaby && Logic.ganons_keys >= 1;
-	Location_Logic.ganons_spiritTrial1 = Logic.can_enter_ganons && Logic.hookshot;
-	Location_Logic.ganons_spiritTrial2 = Logic.can_enter_ganons && Logic.hookshot && Logic.bomb_bag;//&& Logic.can_see;
-	Location_Logic.ganons_forestTrial = Logic.can_enter_ganons;
-	Location_Logic.ganons_waterTrial1 = Logic.can_enter_ganons;
-	Location_Logic.ganons_waterTrial2 = Logic.can_enter_ganons;
-	Location_Logic.ganons_shadowTrial1 = Logic.can_enter_ganons && ((Logic.bow && Logic.fire_arrows && Logic.magic) || Logic.hookshot || Logic.hover_boots || Logic.time);
-	Location_Logic.ganons_shadowTrial2 = Logic.can_enter_ganons && ((Logic.bow && Logic.fire_arrows && Logic.magic) || (Logic.longshot && (Logic.hover_boots || Logic.can_use_dins)));
-	Location_Logic.ganons_bossKey = Logic.can_enter_ganons;
-	Location_Logic.gtg_lobbyLeft = Logic.gtg_access && ((Logic.bow && Logic.gtg_adult_access) || (Logic.slingshot && Logic.gtg_child_access));
-	Location_Logic.gtg_lobbyRight = Logic.gtg_access && ((Logic.bow && Logic.gtg_adult_access) || (Logic.slingshot && Logic.gtg_child_access));
-	Location_Logic.gtg_stalfos = Logic.gtg_access;
-	Location_Logic.gtg_wolfos = Logic.gtg_adult_access && Logic.hookshot;
-	Location_Logic.gtg_silvers1 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg_silvers2 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg_silvers3 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg_silvers4 = Logic.gtg_adult_access && Logic.hookshot && Logic.silver_gauntlets ;//&& Logic.can_see ;
-	Location_Logic.gtg_eyes = Logic.gtg_adult_access && Logic.hookshot && Logic.bow;  //((Logic.bomb_bag || Logic.gtg_keys >= 9) && Logic.hammer));
-	Location_Logic.gtg_aboveEyes = Logic.gtg_adult_access && Logic.hookshot && Logic.bow ;//&& Logic.can_see;
-	Location_Logic.gtg_keese = Logic.gtg_adult_access && Logic.hookshot/*&& Logic.can_see*/;
-	Location_Logic.gtg_flamesChest = Logic.gtg_adult_access && Logic.hookshot && Logic.hammer;// && (Logic.can_see || (Logic.bomb_bag || Logic.gtg_keys >= 9)) ;
-	Location_Logic.gtg_freestanding = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg_right2 = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg_right3 = Logic.gtg_access && (Logic.gtg_keys >= 9 || (Logic.bomb_bag && (Logic.time || Logic.gtg_child_access)) || (Logic.hookshot /*&& Logic.can_see*/ && Logic.time));
-	Location_Logic.gtg_beamos = Logic.gtg_access && Logic.bomb_bag;
-	Location_Logic.gtg_left1 = Logic.gtg_access && Logic.gtg_keys >= 3 ;//&& Logic.can_see;
-	Location_Logic.gtg_left2 = Logic.gtg_access && Logic.gtg_keys >= 4;
-	Location_Logic.gtg_left3 = Logic.gtg_access && Logic.gtg_keys >= 6;
-	Location_Logic.gtg_left4 = Logic.gtg_access && Logic.gtg_keys >= 7;
-	Location_Logic.gtg_final = Logic.gtg_access && Logic.gtg_keys >= 9;
-	Location_Logic.gtg_toilet = Logic.gtg_adult_access && Logic.iron_boots && Logic.time && Logic.hookshot /*&& Logic.can_see*/;
-	Location_Logic.well_fakeRight = Logic.botw_child_access;//&& Logic.can_see;
-	Location_Logic.well_centerSmall = Logic.botw_child_access;//&& Logic.can_see;
-	Location_Logic.well_backBombable = Logic.botw_child_access && Logic.bomb_bag;
-	Location_Logic.well_waterLeft = Logic.botw_child_access && Logic.lullaby;
-	Location_Logic.well_coffin = Logic.botw_child_access;
-	Location_Logic.well_centerBig = Logic.botw_child_access;//&& Logic.can_see;
-	Location_Logic.well_fakeLeft = Logic.botw_child_access;//&& Logic.can_see;
-	Location_Logic.well_frontBombable = Logic.botw_child_access && Logic.bomb_bag;
-	Location_Logic.well_waterFront = Logic.botw_child_access && Logic.lullaby;
-	Location_Logic.well_deadHand = Logic.botw_child_access && Logic.lullaby ;//&& Logic.kokiri_sword;
-	Location_Logic.well_invisible = Logic.botw_child_access && Logic.lullaby ;//&& Logic.can_see ;
-	Location_Logic.well_locked1 = Logic.botw_child_access && Logic.well_keys >= 3 ;//&& Logic.can_see ;
-	Location_Logic.well_locked2 = Logic.botw_child_access && Logic.well_keys >= 3 ;//&& Logic.can_see ;
-	Location_Logic.well_basement = Logic.botw_child_access && (Logic.bomb_bag || (((/*Logic.can_see &&*/ Logic.well_keys >= 3) || Logic.can_use_dins) && Logic.goron_bracelet));
-	Location_Logic.zeldasSpot = true;
-	Location_Logic.eponasSpot = true;
-	Location_Logic.sariasSpot = true;
-	Location_Logic.stormsSpot = true;
-	Location_Logic.sunsSpot = Logic.lullaby;
-	Location_Logic.boleroSpot = Logic.can_enter_fire_temple_entrance;
-	Location_Logic.minuetSpot = Logic.can_pass_mido_as_adult;
-	Location_Logic.requiemSpot = Logic.can_enter_colossus;
-	Location_Logic.serenadeSpot = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && (Logic.ice_adult_access || Logic.giants_wallet);
-	Location_Logic.preludeSpot = Logic.forest_medallion;
-	Location_Logic.nocturneSpot = Logic.forest_medallion && Logic.fire_medallion && Logic.water_medallion;
-	Location_Logic.oot = Logic.kokiri_emerald && Logic.goron_ruby && Logic.zora_sapphire;
-	Location_Logic.scrub_dodongos_1 = Logic.can_break_dodongos_wall;
-	Location_Logic.scrub_dodongos_2 = Logic.can_break_dodongos_wall;
-	Location_Logic.scrub_dodongos_3 = Logic.can_break_dodongos_wall && Logic.bomb_bag;
-	Location_Logic.scrub_dodongos_4 = Logic.can_break_dodongos_wall && Logic.bomb_bag;
-	Location_Logic.scrub_jabu = Logic.can_hit_jabu_switch;
-	Location_Logic.scrub_ganons_1 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons_2 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons_3 = Logic.can_enter_ganons;
-	Location_Logic.scrub_ganons_4 = Logic.can_enter_ganons;
-	Location_Logic.scrub_river_1 = Logic.storms;
-	Location_Logic.scrub_river_2 = Logic.storms;
-	Location_Logic.scrub_sfm_1 = Logic.storms;
-	Location_Logic.scrub_sfm_2 = Logic.storms;
-	Location_Logic.scrub_lake_1 = true;
-	Location_Logic.scrub_lake_2 = true;
-	Location_Logic.scrub_lake_3 = true;
-	Location_Logic.scrub_lw_1 = true;
-	Location_Logic.scrub_lw_2 = true;
-	Location_Logic.scrub_lw_3 = Logic.can_blast_or_smash;
-	Location_Logic.scrub_colossus_1 = Logic.silver_gauntlets && Logic.can_enter_colossus;
-	Location_Logic.scrub_colossus_2 = Logic.silver_gauntlets && Logic.can_enter_colossus;
-	Location_Logic.scrub_crater_1 = Logic.hammer && Logic.crater_by_city;
-	Location_Logic.scrub_crater_2 = Logic.hammer && Logic.crater_by_city;
-	Location_Logic.scrub_crater_3 = Logic.hammer && Logic.crater_by_city;
-	Location_Logic.scrub_crater_child = Logic.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || Logic.hammer;
-	Location_Logic.scrub_goron_1 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_goron_2 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_goron_3 = Logic.time || (Logic.can_wear_goron_tunic && Logic.hookshot);
-	Location_Logic.scrub_ranch_1 = true;
-	Location_Logic.scrub_ranch_2 = true;
-	Location_Logic.scrub_ranch_3 = true;
-	Location_Logic.scrub_gv_1 = Logic.fortress_access && Logic.storms;
-	Location_Logic.scrub_gv_2 = Logic.fortress_access && Logic.storms;
-	Location_Logic.shop_kokiri_TL = Logic[Shop_Logic.shop_kokiri_TL];
-	Location_Logic.shop_kokiri_TR = Logic[Shop_Logic.shop_kokiri_TR];
-	Location_Logic.shop_kokiri_BR = Logic[Shop_Logic.shop_kokiri_BR];
-	Location_Logic.shop_kokiri_BL = Logic[Shop_Logic.shop_kokiri_BL];
-	Location_Logic.shop_market_bazaar_TL = Logic[Shop_Logic.shop_market_bazaar_TL];
-	Location_Logic.shop_market_bazaar_TR = Logic[Shop_Logic.shop_market_bazaar_TR];
-	Location_Logic.shop_market_bazaar_BR = Logic[Shop_Logic.shop_market_bazaar_BR];
-	Location_Logic.shop_market_bazaar_BL = Logic[Shop_Logic.shop_market_bazaar_BL];
-	Location_Logic.shop_market_potion_TL = Logic[Shop_Logic.shop_market_potion_TL];
-	Location_Logic.shop_market_potion_TR = Logic[Shop_Logic.shop_market_potion_TR];
-	Location_Logic.shop_market_potion_BR = Logic[Shop_Logic.shop_market_potion_BR];
-	Location_Logic.shop_market_potion_BL = Logic[Shop_Logic.shop_market_potion_BL];
-	Location_Logic.shop_market_chu_TL = Logic[Shop_Logic.shop_market_chu_TL];
-	Location_Logic.shop_market_chu_TR = Logic[Shop_Logic.shop_market_chu_TR];
-	Location_Logic.shop_market_chu_BR = Logic[Shop_Logic.shop_market_chu_BR];
-	Location_Logic.shop_market_chu_BL = Logic[Shop_Logic.shop_market_chu_BL];
-	Location_Logic.shop_kakariko_bazaar_TL = Logic[Shop_Logic.shop_kakariko_bazaar_TL];
-	Location_Logic.shop_kakariko_bazaar_TR = Logic[Shop_Logic.shop_kakariko_bazaar_TR];
-	Location_Logic.shop_kakariko_bazaar_BR = Logic[Shop_Logic.shop_kakariko_bazaar_BR];
-	Location_Logic.shop_kakariko_bazaar_BL = Logic[Shop_Logic.shop_kakariko_bazaar_BL];
-	Location_Logic.shop_kakariko_potion_TL = Logic[Shop_Logic.shop_kakariko_potion_TL];
-	Location_Logic.shop_kakariko_potion_TR = Logic[Shop_Logic.shop_kakariko_potion_TR];
-	Location_Logic.shop_kakariko_potion_BR = Logic[Shop_Logic.shop_kakariko_potion_BR];
-	Location_Logic.shop_kakariko_potion_BL = Logic[Shop_Logic.shop_kakariko_potion_BL];
-	Location_Logic.shop_goron_TL = Logic[Shop_Logic.shop_goron_TL] && (Logic.lullaby || Logic.can_stop_link_the_goron || Logic.bomb_bag || Logic.can_use_dins);
-	Location_Logic.shop_goron_TR = Logic[Shop_Logic.shop_goron_TR] && (Logic.lullaby || Logic.can_stop_link_the_goron || Logic.bomb_bag || Logic.can_use_dins);
-	Location_Logic.shop_goron_BR = Logic[Shop_Logic.shop_goron_BR] && (Logic.lullaby || Logic.can_stop_link_the_goron || Logic.bomb_bag || Logic.can_use_dins);
-	Location_Logic.shop_goron_BL = Logic[Shop_Logic.shop_goron_BL] && (Logic.lullaby || Logic.can_stop_link_the_goron || Logic.bomb_bag || Logic.can_use_dins);
-	Location_Logic.shop_domain_TL = Logic[Shop_Logic.shop_domain_TL] && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale || (Logic.lullaby && ((Logic.can_enter_ganons && Logic.bottle) || Logic.jabu_entrance_access || (Logic.giants_wallet && Logic.bottle))));
-	Location_Logic.shop_domain_TR = Logic[Shop_Logic.shop_domain_TR] && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale || (Logic.lullaby && ((Logic.can_enter_ganons && Logic.bottle) || Logic.jabu_entrance_access || (Logic.giants_wallet && Logic.bottle))));
-	Location_Logic.shop_domain_BR = Logic[Shop_Logic.shop_domain_BR] && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale || (Logic.lullaby && ((Logic.can_enter_ganons && Logic.bottle) || Logic.jabu_entrance_access || (Logic.giants_wallet && Logic.bottle))));
-	Location_Logic.shop_domain_BL = Logic[Shop_Logic.shop_domain_BL] && ((Logic.bomb_bag && Logic.lullaby) || Logic.silver_scale || (Logic.lullaby && ((Logic.can_enter_ganons && Logic.bottle) || Logic.jabu_entrance_access || (Logic.giants_wallet && Logic.bottle))));
-	Location_Logic.cow_kokiri = Logic.eponas;
-	Location_Logic.cow_ranch1 = Logic.eponas;
-	Location_Logic.cow_ranch2 = Logic.eponas;
-	Location_Logic.cow_ranch3 = Logic.eponas;
-	Location_Logic.cow_ranch4 = Logic.eponas;
-	Location_Logic.cow_field = Logic.eponas && ((Logic.hammer && Logic.can_use_fire) || (Logic.bomb_bag && Logic.can_use_dins));
-	Location_Logic.cow_valley = Logic.eponas;
-	Location_Logic.cow_trail = Logic.eponas && Logic.can_blast_or_smash;
-	Location_Logic.cow_kakariko = Logic.eponas;
+		locationLogic.deku_queen_gohma = logic.deku_access && ((logic.deku_child_access && logic.slingshot) || (logic.deku_adult_access && logic.can_use_fire));
+	locationLogic.lost_woods_fairy_ocarina = true;
+	locationLogic.ocarina_game = true;
+	locationLogic.lw_generic = logic.can_blast_or_smash;
+	locationLogic.lost_woods_scrub_grotto = logic.bomb_bag || (logic.can_pass_mido_as_adult && logic.hammer);
+	locationLogic.bridge_scrub = true;
+	locationLogic.target = logic.slingshot;
+	locationLogic.skull_kid = logic.sarias;
+	locationLogic.theater_skull = true;
+	locationLogic.theater_truth = logic.kokiri_emerald && logic.goron_ruby && logic.zora_sapphire && logic.sarias;
+	locationLogic.wolfos_grotto = logic.bomb_bag || (logic.can_pass_mido_as_adult && logic.hammer);
+	locationLogic.rolling_goron = logic.bomb_bag;
+	locationLogic.goron_dance = (logic.lullaby || Spawn.child_lower_dmc) && logic.sarias;
+	locationLogic.goron_pot = logic.bomb_bag && (logic.lullaby || logic.can_use_dins || Spawn.child_lower_dmc);
+	locationLogic.goron_maze_1 = logic.can_blast_or_smash || logic.silver_gauntlets;
+	locationLogic.goron_maze_2 = logic.can_blast_or_smash || logic.silver_gauntlets;
+	locationLogic.goron_maze_3 = logic.hammer || logic.silver_gauntlets;
+	locationLogic.goron_link = logic.can_stop_link_the_goron;
+	locationLogic.goron_medigoron = (logic.can_blast_or_smash || logic.goron_bracelet) && logic.adults_wallet;
+	locationLogic.dodongos_map = logic.can_break_dodongos_wall;
+	locationLogic.dodongos_compass = logic.can_break_dodongos_wall;
+	locationLogic.dodongos_bomb_flower_platform = logic.dodongos_climb;
+	locationLogic.dodongos_bomb_bag = logic.dodongos_climb;
+	locationLogic.dodongos_end_of_bridge = logic.dodongos_climb && (logic.bomb_bag || (logic.dodongos_adult_access && logic.hammer));
+	locationLogic.dodongos_above_king = logic.dodongos_climb && logic.bomb_bag;
+	locationLogic.dodongos_king_dodongo = logic.dodongos_climb && logic.bomb_bag;
+	locationLogic.trail_bombable = logic.can_blast_or_smash;
+	locationLogic.trail_top = true;
+	locationLogic.trail_storms = logic.storms;
+	locationLogic.trail_fairy = (logic.can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && logic.lullaby;
+	locationLogic.trade_quest = ((((logic.ice_access && logic.bottle) || ((logic.giants_wallet || logic.can_enter_ganons) && (logic.lullaby || Spawn.adult_zd) && logic.bottle)) && logic.prescription) || logic.claim_check) && logic.crater_top;
+	locationLogic.crater_bean = (logic.bolero && logic.bean_access) || (logic.hover_boots && logic.crater_by_city);
+	locationLogic.crater_hammer_fairy = ((logic.crater_by_city && logic.hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && logic.lullaby;
+	locationLogic.crater_grotto = logic.can_blast_or_smash;
+	locationLogic.crater_nook_hp = logic.crater_top || Spawn.child_upper_dmc;
+	locationLogic.man_on_roof = true;//logic.hookshot;
+	locationLogic.kakariko_grotto = true;
+	locationLogic.kakariko_hag = logic.adults_wallet;
+	locationLogic.windmill = true;//logic.boomerang || logic.time;
+	locationLogic.anju = true;
+	locationLogic.kakariko_cow_house = true;
+	locationLogic.archery_game = logic.bow;
+	locationLogic.redead_grotto = logic.can_blast_or_smash;
+	locationLogic.anjus_chickens = true;
+	locationLogic.tokens_10 = logic.gold_skulltulas >= 10;
+	locationLogic.tokens_20 = logic.gold_skulltulas >= 20;
+	locationLogic.tokens_30 = logic.gold_skulltulas >= 30;
+	locationLogic.tokens_40 = logic.gold_skulltulas >= 40;
+	locationLogic.tokens_50 = logic.gold_skulltulas >= 50;
+	locationLogic.shield_grave = true;
+	locationLogic.gravedigging_tour = true;
+	locationLogic.redead_grave = logic.suns;
+	locationLogic.composers_grave = logic.lullaby && logic.can_use_fire;
+	locationLogic.graveyard_box = logic.bean_access || logic.longshot;
+	locationLogic.race_1 = true;
+	locationLogic.race_2 = true;
+	locationLogic.river_bean_salesman = logic.child_can_enter_river;
+	locationLogic.river_pillar = logic.child_can_enter_river || logic.hover_boots || rules.preplantBeans == "on";
+	locationLogic.river_grotto = true;
+	locationLogic.river_ledge = logic.child_can_enter_river || logic.hover_boots;
+	locationLogic.frogs_1 = logic.child_can_enter_river && logic.storms;
+	locationLogic.frogs_2 = logic.child_can_enter_river && (logic.storms && logic.lullaby && logic.eponas && logic.sarias && logic.suns && logic.time);
+	locationLogic.zora_diving = logic.child_can_enter_domain;
+	locationLogic.zora_torches = logic.child_can_enter_domain;
+	locationLogic.thaw_king = logic.can_enter_adult_domain && ((logic.bottle && (logic.ice_access || logic.giants_wallet || logic.can_enter_ganons)) || logic.can_shoot_blue_fire_arrows);
+	locationLogic.colossus_bean = logic.requiem && logic.bean_access;
+	locationLogic.colossus_fairy = logic.can_enter_colossus && logic.bomb_bag && logic.lullaby;
+	locationLogic.wasteland = logic.can_cross_quicksand && logic.can_use_fire;
+	locationLogic.wasteland_carpet = logic.can_cross_quicksand && logic.adults_wallet;
+	locationLogic.fortress_card = logic.can_save_carpenters;
+	locationLogic.gerudo_roof = logic.fortress_access && (logic.hookshot || logic.hover_boots);
+	locationLogic.gerudo_archery_1 = logic.eponas && logic.bow && logic.gtg_entrance_access;
+	locationLogic.gerudo_archery_2 = logic.eponas && logic.bow && logic.gtg_entrance_access;
+	locationLogic.jabu_boomerang = logic.can_hit_jabu_switch;
+	locationLogic.jabu_map = logic.can_hit_jabu_switch && logic.boomerang && logic.jabu_child_access;
+	locationLogic.jabu_compass = logic.can_hit_jabu_switch && logic.boomerang && logic.jabu_child_access;
+	locationLogic.jabu_barinade = logic.can_hit_jabu_switch && logic.boomerang && logic.jabu_child_access;
+	locationLogic.forest_first = logic.forest_temple_access;
+	locationLogic.forest_stalfos = logic.forest_temple_access;
+	locationLogic.forest_midCourtyard = logic.forest_temple_adult_access && ((((logic.time || logic.bow || (logic.hover_boots && logic.forest_keys>=1)) && logic.hookshot)) || (logic.goron_bracelet && (logic.bow || logic.can_use_dins) && logic.forest_keys>=5));
+	locationLogic.forest_highCourtyard = logic.forest_temple_access && (logic.time || (logic.forest_temple_adult_access && ((logic.bow && logic.hookshot) || (logic.hover_boots && logic.forest_keys>=1) || (logic.goron_bracelet && (logic.bow || logic.can_use_dins) && logic.forest_keys>=5))));
+	locationLogic.forest_lowCourtyard = logic.forest_temple_access && (logic.time || (logic.forest_temple_adult_access && ((logic.bow && logic.hookshot) || (logic.hover_boots && logic.forest_keys>=1) || (logic.goron_bracelet && (logic.bow || logic.can_use_dins) && logic.forest_keys>=5))));
+	locationLogic.forest_blockRoom = logic.forest_temple_adult_access && logic.forest_keys >= 1 && (logic.bow || (logic.forest_temple_child_access && logic.slingshot)) && logic.goron_bracelet;
+	locationLogic.forest_bossKey = logic.forest_temple_adult_access && logic.forest_keys >= 2 && logic.bow && logic.goron_bracelet;
+	locationLogic.forest_floormaster = logic.forest_temple_adult_access && ((logic.bow && logic.goron_bracelet && logic.forest_keys >=2) || (logic.hover_boots && logic.forest_keys >=1));
+	locationLogic.forest_red = logic.forest_temple_adult_access && logic.goron_bracelet && logic.bow && logic.forest_keys>=3;
+	locationLogic.forest_bow = logic.forest_temple_adult_access && logic.goron_bracelet && logic.forest_keys>=3;
+	locationLogic.forest_blue = logic.forest_temple_adult_access && logic.goron_bracelet && logic.bow && logic.forest_keys>=3;
+	locationLogic.forest_fallingCeiling = logic.forest_temple_adult_access && logic.goron_bracelet && (logic.bow || logic.can_use_dins) && logic.forest_keys>=5;
+	locationLogic.forest_nearBoss = logic.forest_temple_adult_access && logic.goron_bracelet && logic.bow && logic.forest_keys>=5;
+	locationLogic.forest_phantomGanon = logic.forest_temple_adult_access && logic.goron_bracelet && logic.bow && logic.forest_keys>=5 && logic.forest_boss_key;
+	locationLogic.fire_nearBoss = logic.fire_temple_access;
+	locationLogic.fire_hammer1 = logic.fire_temple_adult_access && logic.hammer && (rules.smallKeys != "keyRings" || logic.fire_key_ring);
+	locationLogic.fire_hammer2 = logic.fire_temple_adult_access && logic.hammer && (rules.smallKeys != "keyRings" || logic.fire_key_ring);
+	locationLogic.fire_lavaOpen = logic.fire_temple_access && logic.fire_keys >=1;
+	locationLogic.fire_lavaBomb = logic.fire_temple_adult_access && logic.fire_keys >=1 && logic.bomb_bag;
+	locationLogic.fire_volvagia = logic.fire_temple_adult_access && logic.fire_boss_key && logic.hammer && logic.can_wear_goron_tunic && (logic.hover_boots || (logic.fire_keys >=7 && (logic.time || logic.bomb_bag)));
+	locationLogic.fire_lowerMaze = logic.can_climb_fire_temple;
+	locationLogic.fire_sideRoom = logic.can_climb_fire_temple;
+	locationLogic.fire_map = logic.can_climb_fire_temple && ((logic.fire_keys >= 4 && logic.bow) || logic.fire_keys>=5);
+	locationLogic.fire_upperMaze = logic.can_climb_fire_temple && logic.fire_keys>=5;
+	locationLogic.fire_shortcut = logic.can_climb_fire_temple && logic.fire_keys>=5 && logic.bomb_bag;
+	locationLogic.fire_scarecrow = logic.can_climb_fire_temple && logic.fire_keys>=5 && logic.hookshot;
+	locationLogic.fire_compass = logic.can_climb_fire_temple && logic.fire_keys>=6;
+	locationLogic.fire_sotGoron = logic.can_climb_fire_temple && (logic.fire_keys>=7 || (logic.fire_keys>=6 && logic.hover_boots)) && logic.hammer && (logic.time || logic.bomb_bag);
+	locationLogic.fire_top = logic.can_climb_fire_temple && (logic.fire_keys>=7 || (logic.fire_keys >= 6 && logic.hammer && logic.hover_boots)) && logic.bomb_bag;
+	locationLogic.water_compass = logic.can_do_water_checks && logic.hookshot;
+	locationLogic.water_map = logic.can_do_water_checks;
+	locationLogic.water_cracked = logic.middle_water && logic.bomb_bag;
+	locationLogic.water_torches = logic.can_do_water_checks && logic.lullaby && (logic.bow || logic.can_use_dins || logic.water_temple_child_access);
+	locationLogic.water_block = logic.can_do_water_checks && logic.lullaby && logic.bow && logic.goron_bracelet && (logic.hover_boots || logic.longshot) && logic.hookshot;
+	locationLogic.water_pillar = logic.middle_water && logic.can_wear_zora_tunic && logic.hookshot;
+	locationLogic.water_dLink = logic.can_do_water_checks && logic.water_keys >= 5 && logic.hookshot;
+	locationLogic.water_river = logic.can_do_water_checks && logic.water_keys >= 5 && logic.time && logic.bow && logic.hookshot;
+	locationLogic.water_dragon = logic.can_do_water_checks && ((logic.water_keys >= 5 && logic.time && logic.bow) || (logic.goron_bracelet && logic.lullaby)) && logic.hookshot;
+	locationLogic.water_bossKey = logic.can_do_water_checks && logic.longshot && logic.water_keys >= 5 && ((logic.bomb_bag && logic.goron_bracelet) || logic.hover_boots);
+	locationLogic.water_morpha = logic.can_do_water_checks && logic.water_boss_key && logic.longshot ;
+	locationLogic.spirit_childLeft = logic.spirit_temple_child_access && (logic.slingshot || logic.boomerang);
+	locationLogic.spirit_childRight = logic.spirit_temple_child_access && (logic.slingshot || logic.boomerang);
+	locationLogic.spirit_childClimb1 = logic.spirit_temple_access && (logic.spirit_keys >=1 && logic.projectile_both);
+	locationLogic.spirit_childClimb2 = logic.spirit_temple_access && (logic.spirit_keys >=1 && logic.projectile_both);
+	locationLogic.spirit_map = logic.spirit_temple_access && (logic.spirit_keys >=5 && logic.spirit_temple_child_access && logic.bomb_bag) || (logic.spirit_keys >=3 && logic.silver_gauntlets && logic.can_use_fire) || (logic.bomb_bag && logic.spirit_keys >=1 && logic.can_use_fire);
+	locationLogic.spirit_sunRoom = logic.spirit_temple_access && (logic.spirit_keys >=5 && logic.spirit_temple_child_access && logic.bomb_bag) || (logic.spirit_keys >=3 && logic.silver_gauntlets && logic.can_use_fire) || (logic.bomb_bag && logic.spirit_keys >=1 && logic.can_use_fire);
+	locationLogic.spirit_rightHand = logic.spirit_temple_access && ((logic.spirit_keys >=3 && logic.longshot && logic.bomb_bag) || logic.spirit_keys >= 5) && ((logic.spirit_temple_child_access && logic.bomb_bag) || (logic.can_push_spirit_silver_block && (logic.bow || logic.hookshot || logic.bomb_bag)));
+	locationLogic.spirit_adultLeft = logic.can_push_spirit_silver_block && logic.hookshot && logic.lullaby;
+	locationLogic.spirit_adultRight = logic.can_push_spirit_silver_block && (logic.bow || logic.hookshot || logic.bomb_bag);
+	locationLogic.spirit_rotatingMirror1 = logic.can_push_spirit_silver_block && logic.spirit_keys >=3;
+	locationLogic.spirit_rotatingMirror2 = logic.can_push_spirit_silver_block && logic.spirit_keys >=3;
+	locationLogic.spirit_lullabyHand = logic.can_push_spirit_silver_block && logic.spirit_keys >=3 && logic.lullaby;
+	locationLogic.spirit_lullabyHigh = logic.can_push_spirit_silver_block && logic.spirit_keys >=3 && logic.lullaby && (logic.hookshot || logic.hover_boots);
+	locationLogic.spirit_nearFourArmos = logic.can_push_spirit_silver_block && logic.spirit_keys >=4 && logic.bomb_bag && logic.mirror_shield;
+	locationLogic.spirit_invisible1 = logic.can_push_spirit_silver_block && logic.spirit_keys >=4 && logic.bomb_bag ;//&& logic.can_see;
+	locationLogic.spirit_invisible2 = logic.can_push_spirit_silver_block && logic.spirit_keys >=4 && logic.bomb_bag ;//&& logic.can_see;
+	locationLogic.spirit_leftHand = logic.can_push_spirit_silver_block && logic.spirit_keys >=4 && logic.bomb_bag;
+	locationLogic.spirit_bossKey = logic.can_push_spirit_silver_block && logic.spirit_keys >=5 && logic.bow && logic.lullaby && logic.hookshot;
+	locationLogic.spirit_tippyTop = logic.can_push_spirit_silver_block && logic.spirit_keys >=5 && logic.mirror_shield;
+	locationLogic.spirit_twinrova = logic.can_push_spirit_silver_block && logic.spirit_keys >=5 && logic.mirror_shield && logic.bomb_bag && logic.spirit_boss_key && logic.hookshot;
+	locationLogic.shadow_map = logic.shadow_temple_adult_access && (logic.hover_boots || logic.hookshot);
+	locationLogic.shadow_hovers = logic.shadow_temple_adult_access && (logic.hover_boots || logic.hookshot);
+	locationLogic.shadow_compass = logic.can_cross_shadow_gap;
+	locationLogic.shadow_earlySilvers = logic.can_cross_shadow_gap;
+	locationLogic.shadow_spinning1 = logic.can_bomb_shadow_wall;
+	locationLogic.shadow_spinning2 = logic.can_bomb_shadow_wall;
+	locationLogic.shadow_spikesLower = logic.can_bomb_shadow_wall;
+	locationLogic.shadow_spikesUpper = logic.can_bomb_shadow_wall && logic.goron_bracelet;
+	locationLogic.shadow_spikesSwitch = logic.can_bomb_shadow_wall && logic.goron_bracelet;
+	locationLogic.shadow_redeadSilvers = logic.can_bomb_shadow_wall && logic.shadow_keys >=2;
+	locationLogic.shadow_pot = logic.can_bomb_shadow_wall && logic.hookshot && logic.shadow_keys >=2;
+	locationLogic.shadow_wind = logic.can_pass_shadow_hookshot_door && logic.shadow_keys >=3;
+	locationLogic.shadow_bombable = logic.can_pass_shadow_hookshot_door && logic.shadow_keys >=3;
+	locationLogic.shadow_gibdos = logic.can_pass_shadow_hookshot_door && logic.shadow_keys >=3;
+	locationLogic.shadow_dins1 = logic.can_ride_shadow_boat && logic.shadow_keys >=4 && logic.can_use_dins;
+	locationLogic.shadow_dins2 = logic.can_ride_shadow_boat && logic.shadow_keys >=4 && logic.can_use_dins;
+	locationLogic.shadow_floormaster = logic.can_ride_shadow_boat && logic.shadow_keys >=4;
+	locationLogic.shadow_bongo = logic.can_beat_shadow_boss && logic.shadow_keys >=5;
+	locationLogic.ganons_lightTrial1 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial2 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial3 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial4 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial5 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial6 = logic.can_enter_ganons && logic.golden_gauntlets;
+	locationLogic.ganons_lightTrial7 = logic.can_enter_ganons && logic.golden_gauntlets ;//&& logic.can_see;
+	locationLogic.ganons_lightTrialLullaby = logic.can_enter_ganons && logic.golden_gauntlets && logic.lullaby && logic.ganons_keys >= 1;
+	locationLogic.ganons_spiritTrial1 = logic.can_enter_ganons && logic.hookshot;
+	locationLogic.ganons_spiritTrial2 = logic.can_enter_ganons && logic.hookshot && logic.bomb_bag;//&& logic.can_see;
+	locationLogic.ganons_forestTrial = logic.can_enter_ganons;
+	locationLogic.ganons_waterTrial1 = logic.can_enter_ganons;
+	locationLogic.ganons_waterTrial2 = logic.can_enter_ganons;
+	locationLogic.ganons_shadowTrial1 = logic.can_enter_ganons && ((logic.bow && logic.fire_arrows && logic.magic) || logic.hookshot || logic.hover_boots || logic.time);
+	locationLogic.ganons_shadowTrial2 = logic.can_enter_ganons && ((logic.bow && logic.fire_arrows && logic.magic) || (logic.longshot && (logic.hover_boots || logic.can_use_dins)));
+	locationLogic.ganons_bossKey = logic.can_enter_ganons;
+	locationLogic.gtg_lobbyLeft = logic.gtg_access && ((logic.bow && logic.gtg_adult_access) || (logic.slingshot && logic.gtg_child_access));
+	locationLogic.gtg_lobbyRight = logic.gtg_access && ((logic.bow && logic.gtg_adult_access) || (logic.slingshot && logic.gtg_child_access));
+	locationLogic.gtg_stalfos = logic.gtg_access;
+	locationLogic.gtg_wolfos = logic.gtg_adult_access && logic.hookshot;
+	locationLogic.gtg_silvers1 = logic.gtg_adult_access && logic.hookshot && logic.silver_gauntlets ;//&& logic.can_see ;
+	locationLogic.gtg_silvers2 = logic.gtg_adult_access && logic.hookshot && logic.silver_gauntlets ;//&& logic.can_see ;
+	locationLogic.gtg_silvers3 = logic.gtg_adult_access && logic.hookshot && logic.silver_gauntlets ;//&& logic.can_see ;
+	locationLogic.gtg_silvers4 = logic.gtg_adult_access && logic.hookshot && logic.silver_gauntlets ;//&& logic.can_see ;
+	locationLogic.gtg_eyes = logic.gtg_adult_access && logic.hookshot && logic.bow;  //((logic.bomb_bag || logic.gtg_keys >= 9) && logic.hammer));
+	locationLogic.gtg_aboveEyes = logic.gtg_adult_access && logic.hookshot && logic.bow ;//&& logic.can_see;
+	locationLogic.gtg_keese = logic.gtg_adult_access && logic.hookshot/*&& logic.can_see*/;
+	locationLogic.gtg_flamesChest = logic.gtg_adult_access && logic.hookshot && logic.hammer;// && (logic.can_see || (logic.bomb_bag || logic.gtg_keys >= 9)) ;
+	locationLogic.gtg_freestanding = logic.gtg_access && (logic.gtg_keys >= 9 || (logic.bomb_bag && (logic.time || logic.gtg_child_access)) || (logic.hookshot /*&& logic.can_see*/ && logic.time));
+	locationLogic.gtg_right2 = logic.gtg_access && (logic.gtg_keys >= 9 || (logic.bomb_bag && (logic.time || logic.gtg_child_access)) || (logic.hookshot /*&& logic.can_see*/ && logic.time));
+	locationLogic.gtg_right3 = logic.gtg_access && (logic.gtg_keys >= 9 || (logic.bomb_bag && (logic.time || logic.gtg_child_access)) || (logic.hookshot /*&& logic.can_see*/ && logic.time));
+	locationLogic.gtg_beamos = logic.gtg_access && logic.bomb_bag;
+	locationLogic.gtg_left1 = logic.gtg_access && logic.gtg_keys >= 3 ;//&& logic.can_see;
+	locationLogic.gtg_left2 = logic.gtg_access && logic.gtg_keys >= 4;
+	locationLogic.gtg_left3 = logic.gtg_access && logic.gtg_keys >= 6;
+	locationLogic.gtg_left4 = logic.gtg_access && logic.gtg_keys >= 7;
+	locationLogic.gtg_final = logic.gtg_access && logic.gtg_keys >= 9;
+	locationLogic.gtg_toilet = logic.gtg_adult_access && logic.iron_boots && logic.time && logic.hookshot /*&& logic.can_see*/;
+	locationLogic.well_fakeRight = logic.botw_child_access;//&& logic.can_see;
+	locationLogic.well_centerSmall = logic.botw_child_access;//&& logic.can_see;
+	locationLogic.well_backBombable = logic.botw_child_access && logic.bomb_bag;
+	locationLogic.well_waterLeft = logic.botw_child_access && logic.lullaby;
+	locationLogic.well_coffin = logic.botw_child_access;
+	locationLogic.well_centerBig = logic.botw_child_access;//&& logic.can_see;
+	locationLogic.well_fakeLeft = logic.botw_child_access;//&& logic.can_see;
+	locationLogic.well_frontBombable = logic.botw_child_access && logic.bomb_bag;
+	locationLogic.well_waterFront = logic.botw_child_access && logic.lullaby;
+	locationLogic.well_deadHand = logic.botw_child_access && logic.lullaby ;//&& logic.kokiri_sword;
+	locationLogic.well_invisible = logic.botw_child_access && logic.lullaby ;//&& logic.can_see ;
+	locationLogic.well_locked1 = logic.botw_child_access && logic.well_keys >= 3 ;//&& logic.can_see ;
+	locationLogic.well_locked2 = logic.botw_child_access && logic.well_keys >= 3 ;//&& logic.can_see ;
+	locationLogic.well_basement = logic.botw_child_access && (logic.bomb_bag || (((/*logic.can_see &&*/ logic.well_keys >= 3) || logic.can_use_dins) && logic.goron_bracelet));
+	locationLogic.zeldasSpot = true;
+	locationLogic.eponasSpot = true;
+	locationLogic.sariasSpot = true;
+	locationLogic.stormsSpot = true;
+	locationLogic.sunsSpot = logic.lullaby;
+	locationLogic.boleroSpot = logic.can_enter_fire_temple_entrance;
+	locationLogic.minuetSpot = logic.can_pass_mido_as_adult;
+	locationLogic.requiemSpot = logic.can_enter_colossus;
+	locationLogic.serenadeSpot = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && (logic.ice_adult_access || logic.giants_wallet);
+	locationLogic.preludeSpot = logic.forest_medallion;
+	locationLogic.nocturneSpot = logic.forest_medallion && logic.fire_medallion && logic.water_medallion;
+	locationLogic.oot = logic.kokiri_emerald && logic.goron_ruby && logic.zora_sapphire;
+	locationLogic.scrub_dodongos_1 = logic.can_break_dodongos_wall;
+	locationLogic.scrub_dodongos_2 = logic.can_break_dodongos_wall;
+	locationLogic.scrub_dodongos_3 = logic.can_break_dodongos_wall && logic.bomb_bag;
+	locationLogic.scrub_dodongos_4 = logic.can_break_dodongos_wall && logic.bomb_bag;
+	locationLogic.scrub_jabu = logic.can_hit_jabu_switch;
+	locationLogic.scrub_ganons_1 = logic.can_enter_ganons;
+	locationLogic.scrub_ganons_2 = logic.can_enter_ganons;
+	locationLogic.scrub_ganons_3 = logic.can_enter_ganons;
+	locationLogic.scrub_ganons_4 = logic.can_enter_ganons;
+	locationLogic.scrub_river_1 = logic.storms;
+	locationLogic.scrub_river_2 = logic.storms;
+	locationLogic.scrub_sfm_1 = logic.storms;
+	locationLogic.scrub_sfm_2 = logic.storms;
+	locationLogic.scrub_lake_1 = true;
+	locationLogic.scrub_lake_2 = true;
+	locationLogic.scrub_lake_3 = true;
+	locationLogic.scrub_lw_1 = true;
+	locationLogic.scrub_lw_2 = true;
+	locationLogic.scrub_lw_3 = logic.can_blast_or_smash;
+	locationLogic.scrub_colossus_1 = logic.silver_gauntlets && logic.can_enter_colossus;
+	locationLogic.scrub_colossus_2 = logic.silver_gauntlets && logic.can_enter_colossus;
+	locationLogic.scrub_crater_1 = logic.hammer && logic.crater_by_city;
+	locationLogic.scrub_crater_2 = logic.hammer && logic.crater_by_city;
+	locationLogic.scrub_crater_3 = logic.hammer && logic.crater_by_city;
+	locationLogic.scrub_crater_child = logic.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || logic.hammer;
+	locationLogic.scrub_goron_1 = logic.time || (logic.can_wear_goron_tunic && logic.hookshot);
+	locationLogic.scrub_goron_2 = logic.time || (logic.can_wear_goron_tunic && logic.hookshot);
+	locationLogic.scrub_goron_3 = logic.time || (logic.can_wear_goron_tunic && logic.hookshot);
+	locationLogic.scrub_ranch_1 = true;
+	locationLogic.scrub_ranch_2 = true;
+	locationLogic.scrub_ranch_3 = true;
+	locationLogic.scrub_gv_1 = logic.fortress_access && logic.storms;
+	locationLogic.scrub_gv_2 = logic.fortress_access && logic.storms;
+	locationLogic.shop_kokiri_TL = logic[shopLogic.shop_kokiri_TL];
+	locationLogic.shop_kokiri_TR = logic[shopLogic.shop_kokiri_TR];
+	locationLogic.shop_kokiri_BR = logic[shopLogic.shop_kokiri_BR];
+	locationLogic.shop_kokiri_BL = logic[shopLogic.shop_kokiri_BL];
+	locationLogic.shop_market_bazaar_TL = logic[shopLogic.shop_market_bazaar_TL];
+	locationLogic.shop_market_bazaar_TR = logic[shopLogic.shop_market_bazaar_TR];
+	locationLogic.shop_market_bazaar_BR = logic[shopLogic.shop_market_bazaar_BR];
+	locationLogic.shop_market_bazaar_BL = logic[shopLogic.shop_market_bazaar_BL];
+	locationLogic.shop_market_potion_TL = logic[shopLogic.shop_market_potion_TL];
+	locationLogic.shop_market_potion_TR = logic[shopLogic.shop_market_potion_TR];
+	locationLogic.shop_market_potion_BR = logic[shopLogic.shop_market_potion_BR];
+	locationLogic.shop_market_potion_BL = logic[shopLogic.shop_market_potion_BL];
+	locationLogic.shop_market_chu_TL = logic[shopLogic.shop_market_chu_TL];
+	locationLogic.shop_market_chu_TR = logic[shopLogic.shop_market_chu_TR];
+	locationLogic.shop_market_chu_BR = logic[shopLogic.shop_market_chu_BR];
+	locationLogic.shop_market_chu_BL = logic[shopLogic.shop_market_chu_BL];
+	locationLogic.shop_kakariko_bazaar_TL = logic[shopLogic.shop_kakariko_bazaar_TL];
+	locationLogic.shop_kakariko_bazaar_TR = logic[shopLogic.shop_kakariko_bazaar_TR];
+	locationLogic.shop_kakariko_bazaar_BR = logic[shopLogic.shop_kakariko_bazaar_BR];
+	locationLogic.shop_kakariko_bazaar_BL = logic[shopLogic.shop_kakariko_bazaar_BL];
+	locationLogic.shop_kakariko_potion_TL = logic[shopLogic.shop_kakariko_potion_TL];
+	locationLogic.shop_kakariko_potion_TR = logic[shopLogic.shop_kakariko_potion_TR];
+	locationLogic.shop_kakariko_potion_BR = logic[shopLogic.shop_kakariko_potion_BR];
+	locationLogic.shop_kakariko_potion_BL = logic[shopLogic.shop_kakariko_potion_BL];
+	locationLogic.shop_goron_TL = logic[shopLogic.shop_goron_TL] && (logic.lullaby || logic.can_stop_link_the_goron || logic.bomb_bag || logic.can_use_dins);
+	locationLogic.shop_goron_TR = logic[shopLogic.shop_goron_TR] && (logic.lullaby || logic.can_stop_link_the_goron || logic.bomb_bag || logic.can_use_dins);
+	locationLogic.shop_goron_BR = logic[shopLogic.shop_goron_BR] && (logic.lullaby || logic.can_stop_link_the_goron || logic.bomb_bag || logic.can_use_dins);
+	locationLogic.shop_goron_BL = logic[shopLogic.shop_goron_BL] && (logic.lullaby || logic.can_stop_link_the_goron || logic.bomb_bag || logic.can_use_dins);
+	locationLogic.shop_domain_TL = logic[shopLogic.shop_domain_TL] && ((logic.bomb_bag && logic.lullaby) || logic.silver_scale || (logic.lullaby && ((logic.can_enter_ganons && logic.bottle) || logic.jabu_entrance_access || (logic.giants_wallet && logic.bottle))));
+	locationLogic.shop_domain_TR = logic[shopLogic.shop_domain_TR] && ((logic.bomb_bag && logic.lullaby) || logic.silver_scale || (logic.lullaby && ((logic.can_enter_ganons && logic.bottle) || logic.jabu_entrance_access || (logic.giants_wallet && logic.bottle))));
+	locationLogic.shop_domain_BR = logic[shopLogic.shop_domain_BR] && ((logic.bomb_bag && logic.lullaby) || logic.silver_scale || (logic.lullaby && ((logic.can_enter_ganons && logic.bottle) || logic.jabu_entrance_access || (logic.giants_wallet && logic.bottle))));
+	locationLogic.shop_domain_BL = logic[shopLogic.shop_domain_BL] && ((logic.bomb_bag && logic.lullaby) || logic.silver_scale || (logic.lullaby && ((logic.can_enter_ganons && logic.bottle) || logic.jabu_entrance_access || (logic.giants_wallet && logic.bottle))));
+	locationLogic.cow_kokiri = logic.eponas;
+	locationLogic.cow_ranch1 = logic.eponas;
+	locationLogic.cow_ranch2 = logic.eponas;
+	locationLogic.cow_ranch3 = logic.eponas;
+	locationLogic.cow_ranch4 = logic.eponas;
+	locationLogic.cow_field = logic.eponas && ((logic.hammer && logic.can_use_fire) || (logic.bomb_bag && logic.can_use_dins));
+	locationLogic.cow_valley = logic.eponas;
+	locationLogic.cow_trail = logic.eponas && logic.can_blast_or_smash;
+	locationLogic.cow_kakariko = logic.eponas;
 
-	Location_Logic.gs_kokiri_child = true;
-	Location_Logic.gs_kokiri_soil = Logic.bottle;
-	Location_Logic.gs_kokiri_adult = Logic.hookshot;
-	Location_Logic.gs_market = true;
-	Location_Logic.gs_lost_woods_bean_1 = Logic.bottle;
-	Location_Logic.gs_lost_woods_bean_2 = Logic.bottle;
-	Location_Logic.gs_lost_woods_above_stage = Logic.bean_access && Logic.can_pass_mido_as_adult;
-	Location_Logic.gs_sacred_forest = Logic.hookshot && Logic.can_pass_mido_as_adult;
-	Location_Logic.gs_outside_kakariko = (Logic.boomerang && Logic.bomb_bag) || (Logic.can_blast_or_smash && Logic.hookshot);
-	Location_Logic.gs_near_gerudo = (Logic.hammer && Logic.can_use_fire && Logic.hookshot) || (Logic.can_use_dins && Logic.bomb_bag && Logic.boomerang);
-	Location_Logic.gs_hyrule_castle_tree = true;
-	Location_Logic.gs_hyrule_castle_grotto = Logic.storms && Logic.bomb_bag && Logic.boomerang;
-	Location_Logic.gs_lon_lon_tree = true;
-	Location_Logic.gs_lon_lon_shed = true;
-	Location_Logic.gs_lon_lon_window = Logic.boomerang;
-	Location_Logic.gs_lon_lon_back_wall = Logic.boomerang;
-	Location_Logic.gs_kakariko_construction = true;
-	Location_Logic.gs_kakariko_skulltula_house = true;
-	Location_Logic.gs_kakariko_guard_house = true;
-	Location_Logic.gs_kakariko_tree = true;
-	Location_Logic.gs_kakariko_tower = Logic.bomb_bag || Logic.slingshot;
-	Location_Logic.gs_kakariko_impas = Logic.hookshot || Spawn.adult_kak_roof;
-	Location_Logic.gs_graveyard_wall = Logic.boomerang;
-	Location_Logic.gs_graveyard_soil = Logic.bottle;
-	Location_Logic.gs_trail_soil = Logic.bottle && (Logic.bomb_bag || Logic.goron_bracelet);
-	Location_Logic.gs_trail_bombable_wall = Logic.can_blast_or_smash;
-	Location_Logic.gs_trail_hail_path = Logic.hammer;
-	Location_Logic.gs_trail_above_dodongos = Logic.hammer;
-	Location_Logic.gs_goron_center = true;
-	Location_Logic.gs_goron_maze = Logic.bomb_bag;
-	Location_Logic.gs_crater_crate = Logic.can_blast_or_smash || Spawn.child_upper_dmc;
-	Location_Logic.gs_crater_soil = Logic.bottle && Logic.bolero;
-	Location_Logic.gs_river_ladder = Logic.child_can_enter_river;
-	Location_Logic.gs_river_near_grotto = Logic.hookshot;
-	Location_Logic.gs_river_above_bridge = Logic.hookshot;
-	Location_Logic.gs_river_tree = true;
-	Location_Logic.gs_domain = (Logic.lullaby || Spawn.adult_zd) && (Logic.hookshot || Logic.magic || Logic.bow);
-	Location_Logic.gs_fountain_above_log = Logic.jabu_entrance_access && Logic.boomerang;
-	Location_Logic.gs_fountain_tree = Logic.jabu_entrance_access;
-	Location_Logic.gs_fountain_hidden_cave = Logic.ice_entrance_access && Logic.silver_gauntlets && Logic.hookshot && Logic.can_blast_or_smash;
-	Location_Logic.gs_hylia_bean = Logic.bottle;
-	Location_Logic.gs_hylia_lab_wall = Logic.boomerang;
-	Location_Logic.gs_hylia_island = true;
-	Location_Logic.gs_hylia_tree = Logic.longshot;
-	Location_Logic.gs_hylia_lab_crate = Logic.iron_boots && Logic.hookshot;
-	Location_Logic.gs_valley_small_bridge = Logic.boomerang;
-	Location_Logic.gs_valley_bean = Logic.bottle;
-	Location_Logic.gs_valley_tent = Logic.fortress_access && Logic.hookshot;
-	Location_Logic.gs_valley_pillar = Logic.fortress_access && Logic.hookshot;
-	Location_Logic.gs_fortress_archery = Logic.fortress_access && Logic.hookshot;
-	Location_Logic.gs_fortress_top = Logic.fortress_access;
-	Location_Logic.gs_wasteland = Logic.hookshot && Logic.can_cross_quicksand;
-	Location_Logic.gs_colossus_soil = Logic.bottle && Logic.requiem;
-	Location_Logic.gs_colossus_tree = Logic.hookshot && Logic.can_enter_colossus;
-	Location_Logic.gs_colossus_hill = (Logic.requiem && Logic.bean_access) || (Logic.longshot && Logic.can_enter_colossus);
-	Location_Logic.gs_ogc = true;
-	Location_Logic.gs_deku_basement_back = Logic.deku_access && Logic.boomerang && Logic.bomb_bag && Logic.slingshot;
-	Location_Logic.gs_deku_basement_gate = Logic.deku_access;
-	Location_Logic.gs_deku_basement_vines = Logic.deku_access && (Logic.slingshot || Logic.boomerang || Logic.bomb_bag || Logic.can_use_dins);
-	Location_Logic.gs_deku_compass = Logic.deku_access;
-	Location_Logic.gs_dodongos_east_side = Logic.can_break_dodongos_wall;
-	Location_Logic.gs_dodongos_stair_vines = Logic.dodongos_climb;
-	Location_Logic.gs_dodongos_above_stairs = (Logic.dodongos_climb && Logic.hookshot) || (Logic.boomerang && (Logic.bomb_bag || Logic.goron_bracelet));
-	Location_Logic.gs_dodongos_scarecrow = Logic.can_break_dodongos_wall && Logic.hookshot;
-	Location_Logic.gs_dodongos_before_king = Logic.bomb_bag;
-	Location_Logic.gs_jabu_vines = Logic.can_hit_jabu_switch;
-	Location_Logic.gs_jabu_near_octo_1 = Logic.can_hit_jabu_switch && Logic.boomerang;
-	Location_Logic.gs_jabu_near_octo_2 = Logic.can_hit_jabu_switch && Logic.boomerang;
-	Location_Logic.gs_jabu_near_boss = Logic.can_hit_jabu_switch && Logic.boomerang;
-	Location_Logic.gs_forest_first = Logic.forest_temple_adult_access && Logic.hookshot;
-	Location_Logic.gs_forest_lobby = Logic.forest_temple_adult_access && Logic.hookshot;
-	Location_Logic.gs_forest_outdoor_east = Logic.forest_temple_adult_access && Logic.hookshot && ((Logic.bow || Logic.time) || (Logic.forest_keys >= 1 && Logic.hover_boots));
-	Location_Logic.gs_forest_outdoor_west = Logic.forest_temple_adult_access && Logic.hookshot && (((Logic.bow || Logic.time) && Logic.longshot) || (Logic.forest_keys >= 1 && Logic.hover_boots) || (Logic.forest_keys >= 2 && Logic.goron_bracelet && Logic.bow))
-	Location_Logic.gs_forest_basement = Logic.forest_temple_adult_access && Logic.hookshot && Logic.bow && Logic.goron_bracelet && Logic.forest_keys >= 5;
-	Location_Logic.gs_fire_time = Logic.fire_temple_adult_access && Logic.fire_keys >= 1 && Logic.time;
-	Location_Logic.gs_fire_bomb_wall = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.bomb_bag;
-	Location_Logic.gs_fire_scarecrow_1 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
-	Location_Logic.gs_fire_scarecrow_2 = Logic.can_climb_fire_temple && Logic.goron_bracelet && Logic.fire_keys >=5 && Logic.hookshot;
-	Location_Logic.gs_fire_basement = Logic.fire_temple_adult_access && Logic.hammer;
-	Location_Logic.gs_water_south_basement = Logic.can_do_water_checks && Logic.bomb_bag && Logic.lullaby && Player.hookshot;
-	Location_Logic.gs_water_river = Logic.can_do_water_checks && Logic.time && Logic.water_keys >= 5 && Player.hookshot;
-	Location_Logic.gs_water_central = Logic.middle_water && Logic.longshot;
-	Location_Logic.gs_water_near_boss_key = Logic.can_do_water_checks && Logic.longshot && Logic.lullaby && Logic.water_keys >=4;
-	Location_Logic.gs_water_platform_room = Logic.can_do_water_checks && Logic.longshot && Logic.lullaby && Logic.water_keys >=4;
-	Location_Logic.gs_spirit_metal_fence = Logic.spirit_temple_child_access && (Logic.boomerang || Logic.slingshot);
-	Location_Logic.gs_spirit_before_child_knuckle = Logic.spirit_temple_access && (Logic.bomb_bag && Logic.boomerang && Logic.hookshot && Logic.spirit_keys >= 1) || (Logic.boomerang && Logic.spirit_keys >= 5 && Logic.bomb_bag && Logic.spirit_temple_child_access) || (Logic.hookshot && Logic.silver_gauntlets && Logic.spirit_keys >= 3);
-	Location_Logic.gs_spirit_boulder_room = Logic.can_push_spirit_silver_block && Logic.time && (Logic.bow || Logic.hookshot || Logic.bomb_bag);
-	Location_Logic.gs_spirit_lobby = Logic.can_push_spirit_silver_block && Logic.spirit_keys >= 3 && (Logic.hookshot || Logic.hover_boots);
-	Location_Logic.gs_spirit_child_climb = Logic.spirit_temple_access && Logic.spirit_keys >= 1;
-	Location_Logic.gs_shadow_like_like = Logic.can_bomb_shadow_wall;
-	Location_Logic.gs_shadow_crusher = Logic.can_bomb_shadow_wall && Logic.hookshot;
-	Location_Logic.gs_shadow_giant_pot = Logic.can_bomb_shadow_wall && Logic.shadow_keys >=2 && Logic.hookshot;
-	Location_Logic.gs_shadow_near_boat = Logic.can_pass_shadow_hookshot_door && Logic.longshot && Logic.shadow_keys >=4;
-	Location_Logic.gs_shadow_three_pots = Logic.can_ride_shadow_boat;
-	Location_Logic.gs_well_west_inner = Logic.boomerang /*&& Logic.can_see*/ && Logic.well_keys >=3;
-	Location_Logic.gs_well_east_inner = Logic.boomerang /*&& Logic.can_see*/ && Logic.well_keys >=3;
-	Location_Logic.gs_well_like_like = Logic.boomerang /*&& Logic.can_see*/ && Logic.well_keys >=3;
-	Location_Logic.gs_ice_spinning_scythe = Logic.ice_access && Logic.hookshot;
-	Location_Logic.gs_ice_hp_room = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && Logic.hookshot;
-	Location_Logic.gs_ice_block_room = Logic.ice_access && (Logic.bottle || Logic.can_shoot_blue_fire_arrows) && Logic.hookshot;
+	locationLogic.gs_kokiri_child = true;
+	locationLogic.gs_kokiri_soil = logic.bottle;
+	locationLogic.gs_kokiri_adult = logic.hookshot;
+	locationLogic.gs_market = true;
+	locationLogic.gs_lost_woods_bean_1 = logic.bottle;
+	locationLogic.gs_lost_woods_bean_2 = logic.bottle;
+	locationLogic.gs_lost_woods_above_stage = logic.bean_access && logic.can_pass_mido_as_adult;
+	locationLogic.gs_sacred_forest = logic.hookshot && logic.can_pass_mido_as_adult;
+	locationLogic.gs_outside_kakariko = (logic.boomerang && logic.bomb_bag) || (logic.can_blast_or_smash && logic.hookshot);
+	locationLogic.gs_near_gerudo = (logic.hammer && logic.can_use_fire && logic.hookshot) || (logic.can_use_dins && logic.bomb_bag && logic.boomerang);
+	locationLogic.gs_hyrule_castle_tree = true;
+	locationLogic.gs_hyrule_castle_grotto = logic.storms && logic.bomb_bag && logic.boomerang;
+	locationLogic.gs_lon_lon_tree = true;
+	locationLogic.gs_lon_lon_shed = true;
+	locationLogic.gs_lon_lon_window = logic.boomerang;
+	locationLogic.gs_lon_lon_back_wall = logic.boomerang;
+	locationLogic.gs_kakariko_construction = true;
+	locationLogic.gs_kakariko_skulltula_house = true;
+	locationLogic.gs_kakariko_guard_house = true;
+	locationLogic.gs_kakariko_tree = true;
+	locationLogic.gs_kakariko_tower = logic.bomb_bag || logic.slingshot;
+	locationLogic.gs_kakariko_impas = logic.hookshot || Spawn.adult_kak_roof;
+	locationLogic.gs_graveyard_wall = logic.boomerang;
+	locationLogic.gs_graveyard_soil = logic.bottle;
+	locationLogic.gs_trail_soil = logic.bottle && (logic.bomb_bag || logic.goron_bracelet);
+	locationLogic.gs_trail_bombable_wall = logic.can_blast_or_smash;
+	locationLogic.gs_trail_hail_path = logic.hammer;
+	locationLogic.gs_trail_above_dodongos = logic.hammer;
+	locationLogic.gs_goron_center = true;
+	locationLogic.gs_goron_maze = logic.bomb_bag;
+	locationLogic.gs_crater_crate = logic.can_blast_or_smash || Spawn.child_upper_dmc;
+	locationLogic.gs_crater_soil = logic.bottle && logic.bolero;
+	locationLogic.gs_river_ladder = logic.child_can_enter_river;
+	locationLogic.gs_river_near_grotto = logic.hookshot;
+	locationLogic.gs_river_above_bridge = logic.hookshot;
+	locationLogic.gs_river_tree = true;
+	locationLogic.gs_domain = (logic.lullaby || Spawn.adult_zd) && (logic.hookshot || logic.magic || logic.bow);
+	locationLogic.gs_fountain_above_log = logic.jabu_entrance_access && logic.boomerang;
+	locationLogic.gs_fountain_tree = logic.jabu_entrance_access;
+	locationLogic.gs_fountain_hidden_cave = logic.ice_entrance_access && logic.silver_gauntlets && logic.hookshot && logic.can_blast_or_smash;
+	locationLogic.gs_hylia_bean = logic.bottle;
+	locationLogic.gs_hylia_lab_wall = logic.boomerang;
+	locationLogic.gs_hylia_island = true;
+	locationLogic.gs_hylia_tree = logic.longshot;
+	locationLogic.gs_hylia_lab_crate = logic.iron_boots && logic.hookshot;
+	locationLogic.gs_valley_small_bridge = logic.boomerang;
+	locationLogic.gs_valley_bean = logic.bottle;
+	locationLogic.gs_valley_tent = logic.fortress_access && logic.hookshot;
+	locationLogic.gs_valley_pillar = logic.fortress_access && logic.hookshot;
+	locationLogic.gs_fortress_archery = logic.fortress_access && logic.hookshot;
+	locationLogic.gs_fortress_top = logic.fortress_access;
+	locationLogic.gs_wasteland = logic.hookshot && logic.can_cross_quicksand;
+	locationLogic.gs_colossus_soil = logic.bottle && logic.requiem;
+	locationLogic.gs_colossus_tree = logic.hookshot && logic.can_enter_colossus;
+	locationLogic.gs_colossus_hill = (logic.requiem && logic.bean_access) || (logic.longshot && logic.can_enter_colossus);
+	locationLogic.gs_ogc = true;
+	locationLogic.gs_deku_basement_back = logic.deku_access && logic.boomerang && logic.bomb_bag && logic.slingshot;
+	locationLogic.gs_deku_basement_gate = logic.deku_access;
+	locationLogic.gs_deku_basement_vines = logic.deku_access && (logic.slingshot || logic.boomerang || logic.bomb_bag || logic.can_use_dins);
+	locationLogic.gs_deku_compass = logic.deku_access;
+	locationLogic.gs_dodongos_east_side = logic.can_break_dodongos_wall;
+	locationLogic.gs_dodongos_stair_vines = logic.dodongos_climb;
+	locationLogic.gs_dodongos_above_stairs = (logic.dodongos_climb && logic.hookshot) || (logic.boomerang && (logic.bomb_bag || logic.goron_bracelet));
+	locationLogic.gs_dodongos_scarecrow = logic.can_break_dodongos_wall && logic.hookshot;
+	locationLogic.gs_dodongos_before_king = logic.bomb_bag;
+	locationLogic.gs_jabu_vines = logic.can_hit_jabu_switch;
+	locationLogic.gs_jabu_near_octo_1 = logic.can_hit_jabu_switch && logic.boomerang;
+	locationLogic.gs_jabu_near_octo_2 = logic.can_hit_jabu_switch && logic.boomerang;
+	locationLogic.gs_jabu_near_boss = logic.can_hit_jabu_switch && logic.boomerang;
+	locationLogic.gs_forest_first = logic.forest_temple_adult_access && logic.hookshot;
+	locationLogic.gs_forest_lobby = logic.forest_temple_adult_access && logic.hookshot;
+	locationLogic.gs_forest_outdoor_east = logic.forest_temple_adult_access && logic.hookshot && ((logic.bow || logic.time) || (logic.forest_keys >= 1 && logic.hover_boots));
+	locationLogic.gs_forest_outdoor_west = logic.forest_temple_adult_access && logic.hookshot && (((logic.bow || logic.time) && logic.longshot) || (logic.forest_keys >= 1 && logic.hover_boots) || (logic.forest_keys >= 2 && logic.goron_bracelet && logic.bow))
+	locationLogic.gs_forest_basement = logic.forest_temple_adult_access && logic.hookshot && logic.bow && logic.goron_bracelet && logic.forest_keys >= 5;
+	locationLogic.gs_fire_time = logic.fire_temple_adult_access && logic.fire_keys >= 1 && logic.time;
+	locationLogic.gs_fire_bomb_wall = logic.can_climb_fire_temple && logic.goron_bracelet && logic.bomb_bag;
+	locationLogic.gs_fire_scarecrow_1 = logic.can_climb_fire_temple && logic.goron_bracelet && logic.fire_keys >=5 && logic.hookshot;
+	locationLogic.gs_fire_scarecrow_2 = logic.can_climb_fire_temple && logic.goron_bracelet && logic.fire_keys >=5 && logic.hookshot;
+	locationLogic.gs_fire_basement = logic.fire_temple_adult_access && logic.hammer;
+	locationLogic.gs_water_south_basement = logic.can_do_water_checks && logic.bomb_bag && logic.lullaby && player.hookshot;
+	locationLogic.gs_water_river = logic.can_do_water_checks && logic.time && logic.water_keys >= 5 && player.hookshot;
+	locationLogic.gs_water_central = logic.middle_water && logic.longshot;
+	locationLogic.gs_water_near_boss_key = logic.can_do_water_checks && logic.longshot && logic.lullaby && logic.water_keys >=4;
+	locationLogic.gs_water_platform_room = logic.can_do_water_checks && logic.longshot && logic.lullaby && logic.water_keys >=4;
+	locationLogic.gs_spirit_metal_fence = logic.spirit_temple_child_access && (logic.boomerang || logic.slingshot);
+	locationLogic.gs_spirit_before_child_knuckle = logic.spirit_temple_access && (logic.bomb_bag && logic.boomerang && logic.hookshot && logic.spirit_keys >= 1) || (logic.boomerang && logic.spirit_keys >= 5 && logic.bomb_bag && logic.spirit_temple_child_access) || (logic.hookshot && logic.silver_gauntlets && logic.spirit_keys >= 3);
+	locationLogic.gs_spirit_boulder_room = logic.can_push_spirit_silver_block && logic.time && (logic.bow || logic.hookshot || logic.bomb_bag);
+	locationLogic.gs_spirit_lobby = logic.can_push_spirit_silver_block && logic.spirit_keys >= 3 && (logic.hookshot || logic.hover_boots);
+	locationLogic.gs_spirit_child_climb = logic.spirit_temple_access && logic.spirit_keys >= 1;
+	locationLogic.gs_shadow_like_like = logic.can_bomb_shadow_wall;
+	locationLogic.gs_shadow_crusher = logic.can_bomb_shadow_wall && logic.hookshot;
+	locationLogic.gs_shadow_giant_pot = logic.can_bomb_shadow_wall && logic.shadow_keys >=2 && logic.hookshot;
+	locationLogic.gs_shadow_near_boat = logic.can_pass_shadow_hookshot_door && logic.longshot && logic.shadow_keys >=4;
+	locationLogic.gs_shadow_three_pots = logic.can_ride_shadow_boat;
+	locationLogic.gs_well_west_inner = logic.boomerang /*&& logic.can_see*/ && logic.well_keys >=3;
+	locationLogic.gs_well_east_inner = logic.boomerang /*&& logic.can_see*/ && logic.well_keys >=3;
+	locationLogic.gs_well_like_like = logic.boomerang /*&& logic.can_see*/ && logic.well_keys >=3;
+	locationLogic.gs_ice_spinning_scythe = logic.ice_access && logic.hookshot;
+	locationLogic.gs_ice_hp_room = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && logic.hookshot;
+	locationLogic.gs_ice_block_room = logic.ice_access && (logic.bottle || logic.can_shoot_blue_fire_arrows) && logic.hookshot;
 	
-	for(let i = 0, Access = Location_Access, Has = Player; i < 2; i++) {
+	for(let i = 0, Access = locationAccess, Has = player; i < 2; i++) {
 		Access.kokiri_sword = true;
 		Access.kokiri_mido_1 = true;
 		Access.kokiri_mido_2 = true;
@@ -1302,7 +1302,7 @@ function locationLogic(){
 		Access.market_bowling_2 = Has.bomb_bag;
 		Access.market_lens_game = Has.can_see;
 		Access.poes= (Has.bow && (Has.can_use_bottle || Has.jabu_entrance_access)) || Has.big_poe;
-		Access.dins_fairy = (Has.bomb_bag || Player.bombchus || Spawn.child_hyrule_fairy) && Has.lullaby;
+		Access.dins_fairy = (Has.bomb_bag || player.bombchus || Spawn.child_hyrule_fairy) && Has.lullaby;
 		Access.g_fairy = (Has.golden_gauntlets || Spawn.adult_ogc) && Has.lullaby;
 		Access.lacs = (Has.gen1 || Has.shadow_medallion || Access.shadow_medallion_location) && (Has.gen2 || Has.spirit_medallion || Access.spirit_medallion_location);
 		Access.river_bean_salesman = Has.child_can_enter_river;
@@ -1324,12 +1324,12 @@ function locationLogic(){
 		Access.theater_skull = true;
 		Access.theater_truth = (Has.emerald || Has.emerald || Access.emerald_location) && (Has.ruby || Has.ruby || Access.ruby_location) && (Has.sapphire || Has.sapphire || Access.sapphire_location) && Has.sarias;
 		Access.kokiri_storms = Has.storms;
-		Access.rolling_goron = Has.bomb_bag || Player.bombchus || Has.goron_bracelet;
-		Access.goron_pot = (Has.bomb_bag || Has.goron_bracelet || Player.bombchus) && (Has.lullaby || Has.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
+		Access.rolling_goron = Has.bomb_bag || player.bombchus || Has.goron_bracelet;
+		Access.goron_pot = (Has.bomb_bag || Has.goron_bracelet || player.bombchus) && (Has.lullaby || Has.can_use_dins || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy);
 		Access.goron_dance = (Has.lullaby || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy) && Has.sarias;
 		Access.goron_maze_1 = Has.can_blast_or_smash || Has.silver_gauntlets;
 		Access.goron_maze_2 = Has.can_blast_or_smash || Has.silver_gauntlets;
-		Access.goron_maze_3 = Has.hammer || Has.silver_gauntlets || ((Has.bomb_bag || Player.bombchus) && Has.hover_boots);
+		Access.goron_maze_3 = Has.hammer || Has.silver_gauntlets || ((Has.bomb_bag || player.bombchus) && Has.hover_boots);
 		Access.goron_link = Has.can_stop_link_the_goron;
 		Access.goron_medigoron = (Has.can_blast_or_smash || Has.goron_bracelet) && Has.adults_wallet;
 		Access.trail_bombable = Has.can_blast_or_smash || Has.goron_bracelet;
@@ -1348,7 +1348,7 @@ function locationLogic(){
 		Access.gerudo_archery_2 = Has.eponas && Has.bow && Has.gtg_entrance_access;
 		Access.wasteland = (Has.can_cross_quicksand || Has.requiem) && Has.can_use_fire;
 		Access.wasteland_carpet = (Has.can_cross_quicksand || Has.requiem) && Has.adults_wallet;
-		Access.colossus_fairy = Has.can_enter_colossus && (Has.bomb_bag || Player.bombchus) && Has.lullaby;
+		Access.colossus_fairy = Has.can_enter_colossus && (Has.bomb_bag || player.bombchus) && Has.lullaby;
 		Access.colossus_bean = Has.requiem && Has.bean_access;
 		Access.man_on_roof = true;//Has.hookshot;
 		Access.kakariko_grotto = true;
@@ -1359,11 +1359,11 @@ function locationLogic(){
 		Access.redead_grotto = Has.can_blast_or_smash;
 		Access.archery_game = Has.bow;
 		Access.anjus_chickens = true;
-		Access.tokens_10 = Logic.gold_skulltulas >= 10 || Has.tokens >= 10; //these are temporary because access logic for skulls isn't done yet
-		Access.tokens_20 = Logic.gold_skulltulas >= 20 || Has.tokens >= 20;
-		Access.tokens_30 = Logic.gold_skulltulas >= 30 || Has.tokens >= 30;
-		Access.tokens_40 = Logic.gold_skulltulas >= 40 || Has.tokens >= 40;
-		Access.tokens_50 = Logic.gold_skulltulas >= 50 || Has.tokens >= 50;
+		Access.tokens_10 = logic.gold_skulltulas >= 10 || Has.tokens >= 10; //these are temporary because access logic for skulls isn't done yet
+		Access.tokens_20 = logic.gold_skulltulas >= 20 || Has.tokens >= 20;
+		Access.tokens_30 = logic.gold_skulltulas >= 30 || Has.tokens >= 30;
+		Access.tokens_40 = logic.gold_skulltulas >= 40 || Has.tokens >= 40;
+		Access.tokens_50 = logic.gold_skulltulas >= 50 || Has.tokens >= 50;
 		Access.gravedigging_tour = true;
 		Access.graveyard_box = Has.bean_access || Has.longshot || Has.boomerang;
 		Access.shield_grave = true;
@@ -1382,81 +1382,81 @@ function locationLogic(){
 		Access.dodongos_compass = Has.can_break_dodongos_wall;
 		Access.dodongos_bomb_flower_platform = Has.dodongos_climb;
 		Access.dodongos_bomb_bag = Has.dodongos_climb;
-		Access.dodongos_end_of_bridge = Has.dodongos_climb && (Has.bomb_bag || Player.bombchus || (Has.dodongos_adult_access && Has.hammer));
-		Access.dodongos_above_king = Has.dodongos_climb && (Has.bomb_bag || Player.bombchus);
-		Access.dodongos_king_dodongo = Has.dodongos_climb && (Has.bomb_bag || Player.bombchus);
+		Access.dodongos_end_of_bridge = Has.dodongos_climb && (Has.bomb_bag || player.bombchus || (Has.dodongos_adult_access && Has.hammer));
+		Access.dodongos_above_king = Has.dodongos_climb && (Has.bomb_bag || player.bombchus);
+		Access.dodongos_king_dodongo = Has.dodongos_climb && (Has.bomb_bag || player.bombchus);
 		Access.jabu_boomerang = Has.can_hit_jabu_switch;
 		Access.jabu_map = Has.can_hit_jabu_switch && Has.boomerang && Has.jabu_child_access;
 		Access.jabu_compass = Has.can_hit_jabu_switch && Has.boomerang && Has.jabu_child_access;
 		Access.jabu_barinade = Has.can_hit_jabu_switch && Has.boomerang && Has.jabu_child_access;
-		Access.fountain_fairy = ((Has.ice_entrance_access && (Has.bomb_bag || Player.bombchus || (Has.hammer && Has.silver_gauntlets))) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || ((Has.bomb_bag || Player.bombchus) && Spawn.child_zf)) && Has.lullaby;
+		Access.fountain_fairy = ((Has.ice_entrance_access && (Has.bomb_bag || player.bombchus || (Has.hammer && Has.silver_gauntlets))) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || ((Has.bomb_bag || player.bombchus) && Spawn.child_zf)) && Has.lullaby;
 		Access.glacier_hp = Has.ice_entrance_access;
-		Access.ice_map = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.bombchus || Has.bomb_bag);
-		Access.ice_hp = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.bombchus || Has.bomb_bag || Has.giants_wallet);
-		Access.ice_compass = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.bombchus || Has.bomb_bag || Has.giants_wallet);
-		Access.ice_irons = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.bombchus || Has.bomb_bag || Has.giants_wallet);
+		Access.ice_map = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag);
+		Access.ice_hp = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
+		Access.ice_compass = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
+		Access.ice_irons = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
 		Access.bottom_of_fountain = Has.ice_entrance_access && Has.iron_boots;
 		Access.thaw_king = Has.can_enter_adult_domain && ((Has.can_use_bottle && (Has.ice_access || Has.giants_wallet || Has.can_enter_ganons)) || Has.can_shoot_blue_fire_arrows);
 		Access.forest_first = Has.forest_temple_access;
 		Access.forest_stalfos = Has.forest_temple_access;
-		Access.forest_midCourtyard = Has.forest_temple_adult_access && (((Has.time && (Has.hover_boots || Has.hookshot)) || (Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && Player.current_forest_keys>=1 && (Has.hover_boots || Has.hookshot))) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && Player.current_forest_keys>=5));
-		Access.forest_highCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && Player.current_forest_keys>=1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && Player.current_forest_keys>=5))));
-		Access.forest_lowCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && Player.current_forest_keys>=1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && Player.current_forest_keys>=5))));
-		Access.forest_blockRoom = Has.forest_temple_adult_access && Player.current_forest_keys >= 1 && (Has.bow || (Has.forest_temple_child_access && Has.slingshot)) && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_bossKey = Has.forest_temple_adult_access && Player.current_forest_keys >= 2 && Has.bow && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_floormaster = Has.forest_temple_adult_access && ((Has.bow && Has.goron_bracelet && Player.current_forest_keys >=2) || ((Has.hover_boots || Has.goron_bracelet) && Player.current_forest_keys >=1)) && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_red = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && Player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_bow = Has.forest_temple_adult_access && Has.goron_bracelet && Player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_blue = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && Player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_fallingCeiling = Has.forest_temple_adult_access && Has.goron_bracelet && (Has.bow || Has.can_use_dins) && Player.current_forest_keys>=5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_nearBoss = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && Player.current_forest_keys>=5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-		Access.forest_phantomGanon = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && Player.current_forest_keys>=5 && Player.forest_boss_key && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_midCourtyard = Has.forest_temple_adult_access && (((Has.time && (Has.hover_boots || Has.hookshot)) || (Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys>=1 && (Has.hover_boots || Has.hookshot))) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys>=5));
+		Access.forest_highCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys>=1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys>=5))));
+		Access.forest_lowCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys>=1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys>=5))));
+		Access.forest_blockRoom = Has.forest_temple_adult_access && player.current_forest_keys >= 1 && (Has.bow || (Has.forest_temple_child_access && Has.slingshot)) && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_bossKey = Has.forest_temple_adult_access && player.current_forest_keys >= 2 && Has.bow && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_floormaster = Has.forest_temple_adult_access && ((Has.bow && Has.goron_bracelet && player.current_forest_keys >=2) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys >=1)) && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_red = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_bow = Has.forest_temple_adult_access && Has.goron_bracelet && player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_blue = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys>=3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_fallingCeiling = Has.forest_temple_adult_access && Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys>=5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_nearBoss = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys>=5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+		Access.forest_phantomGanon = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys>=5 && player.forest_boss_key && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
 		Access.fire_nearBoss = Has.fire_temple_access;
 		Access.fire_hammer1 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
 		Access.fire_hammer2 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
-		Access.fire_lavaOpen = Has.fire_temple_access && Player.current_fire_keys >=1 && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
-		Access.fire_lavaBomb = Has.fire_temple_access && Player.current_fire_keys >=1 && (Has.bomb_bag || (Player.bombchus && Has.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
-		Access.fire_volvagia = Has.fire_temple_adult_access && Player.fire_boss_key && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
+		Access.fire_lavaOpen = Has.fire_temple_access && player.current_fire_keys >=1 && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
+		Access.fire_lavaBomb = Has.fire_temple_access && player.current_fire_keys >=1 && (Has.bomb_bag || (player.bombchus && Has.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
+		Access.fire_volvagia = Has.fire_temple_adult_access && player.fire_boss_key && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
 		Access.fire_lowerMaze = Has.can_climb_fire_temple;
 		Access.fire_sideRoom = Has.can_climb_fire_temple;
-		Access.fire_map = Has.can_climb_fire_temple && ((Player.current_fire_keys >= 4 && Has.bow) || Player.current_fire_keys>=5);
-		Access.fire_upperMaze = Has.can_climb_fire_temple && Player.current_fire_keys>=5;
-		Access.fire_shortcut = Has.can_climb_fire_temple && Player.current_fire_keys>=5 && (Has.bomb_bag || Player.bombchus);
-		Access.fire_scarecrow = Has.can_climb_fire_temple && Player.current_fire_keys>=5 && Has.hookshot;
-		Access.fire_compass = Has.can_climb_fire_temple && Player.current_fire_keys>=6;
-		Access.fire_sotGoron = Has.can_climb_fire_temple && (Player.current_fire_keys>=7 || (Player.current_fire_keys>=6)) && Has.hammer && (Has.time || Has.bomb_bag || Player.bombchus);
-		Access.fire_top = Has.can_climb_fire_temple && (Player.current_fire_keys>=7 || (Player.current_fire_keys >= 6)) && (Has.bomb_bag || Player.bombchus);
+		Access.fire_map = Has.can_climb_fire_temple && ((player.current_fire_keys >= 4 && Has.bow) || player.current_fire_keys>=5);
+		Access.fire_upperMaze = Has.can_climb_fire_temple && player.current_fire_keys>=5;
+		Access.fire_shortcut = Has.can_climb_fire_temple && player.current_fire_keys>=5 && (Has.bomb_bag || player.bombchus);
+		Access.fire_scarecrow = Has.can_climb_fire_temple && player.current_fire_keys>=5 && Has.hookshot;
+		Access.fire_compass = Has.can_climb_fire_temple && player.current_fire_keys>=6;
+		Access.fire_sotGoron = Has.can_climb_fire_temple && (player.current_fire_keys>=7 || (player.current_fire_keys>=6)) && Has.hammer && (Has.time || Has.bomb_bag || player.bombchus);
+		Access.fire_top = Has.can_climb_fire_temple && (player.current_fire_keys>=7 || (player.current_fire_keys >= 6)) && (Has.bomb_bag || player.bombchus);
 		Access.water_compass = Has.water_temple_adult_access && ((Has.lullaby && Has.longshot) || Has.iron_boots);
 		Access.water_map = Has.can_do_water_checks;
-		Access.water_cracked = Has.can_do_water_checks && (Has.lullaby || (Has.iron_boots && Player.bombchus)) && (Has.bomb_bag || Player.bombchus);
+		Access.water_cracked = Has.can_do_water_checks && (Has.lullaby || (Has.iron_boots && player.bombchus)) && (Has.bomb_bag || player.bombchus);
 		Access.water_torches = Has.can_do_water_checks && Has.lullaby && (Has.bow || Has.can_use_dins || Has.water_temple_child_access);
 		Access.water_block = Has.can_do_water_checks && Has.lullaby && (((Has.bow && Has.hookshot) || (Has.hover_boots && Has.bomb_bag)) && Has.goron_bracelet);
 		Access.water_pillar = Has.middle_water && Has.iron_boots && Has.hookshot;
-		Access.water_dLink = Has.can_do_water_checks && Player.current_water_keys >= 2 && Has.hookshot && (rules.smallKeys != "keyRings" || Has.water_key_ring);
-		Access.water_river = Has.can_do_water_checks && Player.current_water_keys >= 2 && Has.time && Has.bow && Has.hookshot && (rules.smallKeys != "keyRings" || Has.water_key_ring);
-		Access.water_dragon = Has.can_do_water_checks && ((Player.current_water_keys >= 2 && Has.hookshot && Has.time && Has.bow) || (Has.goron_bracelet && Has.lullaby && ((Has.iron_boots && Has.hookshot) || Player.bombchus) && (Has.silver_scale || Has.iron_boots)));
-		Access.water_bossKey = Has.can_do_water_checks && (Has.lullaby || Has.iron_boots) && (Has.longshot || Has.hover_boots) && Player.current_water_keys >= 2 && (rules.smallKeys != "keyRings" || Has.water_key_ring);
+		Access.water_dLink = Has.can_do_water_checks && player.current_water_keys >= 2 && Has.hookshot && (rules.smallKeys != "keyRings" || Has.water_key_ring);
+		Access.water_river = Has.can_do_water_checks && player.current_water_keys >= 2 && Has.time && Has.bow && Has.hookshot && (rules.smallKeys != "keyRings" || Has.water_key_ring);
+		Access.water_dragon = Has.can_do_water_checks && ((player.current_water_keys >= 2 && Has.hookshot && Has.time && Has.bow) || (Has.goron_bracelet && Has.lullaby && ((Has.iron_boots && Has.hookshot) || player.bombchus) && (Has.silver_scale || Has.iron_boots)));
+		Access.water_bossKey = Has.can_do_water_checks && (Has.lullaby || Has.iron_boots) && (Has.longshot || Has.hover_boots) && player.current_water_keys >= 2 && (rules.smallKeys != "keyRings" || Has.water_key_ring);
 		Access.water_morpha = Has.water_temple_adult_access && Has.water_boss_key && (rules.waterHop == "allowed" || Has.longshot);
-		Access.spirit_childLeft = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || Player.bombchus);
-		Access.spirit_childRight = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || Player.bombchus);
-		Access.spirit_childClimb1 = Has.spirit_temple_access && Player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.spirit_temple_child_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_childClimb2 = Has.spirit_temple_access && Player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.spirit_temple_child_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_map = Has.spirit_temple_access && Player.current_spirit_keys >= 1 && ((Has.spirit_temple_child_access && (Has.bomb_bag || Player.bombchus)) || (((Has.can_use_fire || Has.bow) && Has.silver_gauntlets))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_sunRoom = Has.spirit_temple_access && Player.current_spirit_keys >= 1 && ((Has.spirit_temple_child_access && (Has.bomb_bag || Player.bombchus)) || (((Has.can_use_fire || Has.bow) && Has.silver_gauntlets))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_rightHand = Has.spirit_temple_access && Player.current_spirit_keys >= 2 && ((Has.spirit_temple_child_access && (Has.bomb_bag || Player.bombchus)) || (Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_childLeft = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || player.bombchus);
+		Access.spirit_childRight = Has.spirit_temple_child_access && (Has.slingshot || Has.boomerang || player.bombchus);
+		Access.spirit_childClimb1 = Has.spirit_temple_access && player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.spirit_temple_child_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_childClimb2 = Has.spirit_temple_access && player.current_spirit_keys >= 1 && ((Has.projectile_child && Has.spirit_temple_child_access) || (Has.projectile_adult && Has.silver_gauntlets)) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_map = Has.spirit_temple_access && player.current_spirit_keys >= 1 && ((Has.spirit_temple_child_access && (Has.bomb_bag || player.bombchus)) || (((Has.can_use_fire || Has.bow) && Has.silver_gauntlets))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_sunRoom = Has.spirit_temple_access && player.current_spirit_keys >= 1 && ((Has.spirit_temple_child_access && (Has.bomb_bag || player.bombchus)) || (((Has.can_use_fire || Has.bow) && Has.silver_gauntlets))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_rightHand = Has.spirit_temple_access && player.current_spirit_keys >= 2 && ((Has.spirit_temple_child_access && (Has.bomb_bag || player.bombchus)) || (Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
 		Access.spirit_adultLeft = Has.can_push_spirit_silver_block && Has.hookshot && Has.lullaby;
-		Access.spirit_adultRight = Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || Player.bombchus);
-		Access.spirit_rotatingMirror1 = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=1 && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_rotatingMirror2 = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=1 && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_lullabyHand = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=1 && Has.lullaby && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_lullabyHigh = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=1 && Has.lullaby && (Has.hookshot || Has.hover_boots) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_nearFourArmos = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (Has.bomb_bag || Player.bombchus) && Has.mirror_shield && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_invisible1 = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (Has.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring) ;//&& Has.can_see;
-		Access.spirit_invisible2 = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (Has.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring) ;//&& Has.can_see;
-		Access.spirit_leftHand = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (Has.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_bossKey = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && Has.lullaby && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_tippyTop = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && Has.mirror_shield && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
-		Access.spirit_twinrova = Has.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && Has.mirror_shield && (Has.bomb_bag || Player.bombchus) && Player.spirit_boss_key && Has.hookshot && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_adultRight = Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || player.bombchus);
+		Access.spirit_rotatingMirror1 = Has.can_push_spirit_silver_block && player.current_spirit_keys >=1 && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_rotatingMirror2 = Has.can_push_spirit_silver_block && player.current_spirit_keys >=1 && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_lullabyHand = Has.can_push_spirit_silver_block && player.current_spirit_keys >=1 && Has.lullaby && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_lullabyHigh = Has.can_push_spirit_silver_block && player.current_spirit_keys >=1 && Has.lullaby && (Has.hookshot || Has.hover_boots) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_nearFourArmos = Has.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (Has.bomb_bag || player.bombchus) && Has.mirror_shield && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_invisible1 = Has.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (Has.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring) ;//&& Has.can_see;
+		Access.spirit_invisible2 = Has.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (Has.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring) ;//&& Has.can_see;
+		Access.spirit_leftHand = Has.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (Has.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_bossKey = Has.can_push_spirit_silver_block && player.current_spirit_keys >=3 && Has.lullaby && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_tippyTop = Has.can_push_spirit_silver_block && player.current_spirit_keys >=3 && Has.mirror_shield && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
+		Access.spirit_twinrova = Has.can_push_spirit_silver_block && player.current_spirit_keys >=3 && Has.mirror_shield && (Has.bomb_bag || player.bombchus) && player.spirit_boss_key && Has.hookshot && (rules.smallKeys != "keyRings" || Has.spirit_key_ring);
 		Access.shadow_map = Has.shadow_temple_adult_access && (Has.hover_boots || Has.hookshot);
 		Access.shadow_hovers = Has.shadow_temple_adult_access && (Has.hover_boots || Has.hookshot);
 		Access.shadow_compass = Has.can_cross_shadow_gap;
@@ -1466,15 +1466,15 @@ function locationLogic(){
 		Access.shadow_spikesLower = Has.can_bomb_shadow_wall;
 		Access.shadow_spikesUpper = Has.can_bomb_shadow_wall;
 		Access.shadow_spikesSwitch = Has.can_bomb_shadow_wall;
-		Access.shadow_redeadSilvers = Has.can_bomb_shadow_wall && Player.current_shadow_keys >=2;
-		Access.shadow_pot = Has.can_bomb_shadow_wall && Has.hookshot && Player.current_shadow_keys >=2;
-		Access.shadow_wind = Has.can_pass_shadow_hookshot_door && Player.current_shadow_keys >=3;
-		Access.shadow_bombable = Has.can_pass_shadow_hookshot_door && Player.current_shadow_keys >=3;
-		Access.shadow_gibdos = Has.can_pass_shadow_hookshot_door && Player.current_shadow_keys >=3;
-		Access.shadow_dins1 = Has.can_ride_shadow_boat && Has.can_use_dins && Player.current_shadow_keys >=4;
-		Access.shadow_dins2 = Has.can_ride_shadow_boat && Has.can_use_dins && Player.current_shadow_keys >=4;
-		Access.shadow_floormaster = Has.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-		Access.shadow_bongo = Has.can_beat_shadow_boss && Player.current_shadow_keys >=5 && (Has.shadow_boss_key || rules.preset != "TRUTH");
+		Access.shadow_redeadSilvers = Has.can_bomb_shadow_wall && player.current_shadow_keys >=2;
+		Access.shadow_pot = Has.can_bomb_shadow_wall && Has.hookshot && player.current_shadow_keys >=2;
+		Access.shadow_wind = Has.can_pass_shadow_hookshot_door && player.current_shadow_keys >=3;
+		Access.shadow_bombable = Has.can_pass_shadow_hookshot_door && player.current_shadow_keys >=3;
+		Access.shadow_gibdos = Has.can_pass_shadow_hookshot_door && player.current_shadow_keys >=3;
+		Access.shadow_dins1 = Has.can_ride_shadow_boat && Has.can_use_dins && player.current_shadow_keys >=4;
+		Access.shadow_dins2 = Has.can_ride_shadow_boat && Has.can_use_dins && player.current_shadow_keys >=4;
+		Access.shadow_floormaster = Has.can_ride_shadow_boat && player.current_shadow_keys >=4;
+		Access.shadow_bongo = Has.can_beat_shadow_boss && player.current_shadow_keys >=5 && (Has.shadow_boss_key || rules.preset != "TRUTH");
 		Access.ganons_lightTrial1 = Has.can_enter_ganons && Has.golden_gauntlets;
 		Access.ganons_lightTrial2 = Has.can_enter_ganons && Has.golden_gauntlets;
 		Access.ganons_lightTrial3 = Has.can_enter_ganons && Has.golden_gauntlets;
@@ -1482,9 +1482,9 @@ function locationLogic(){
 		Access.ganons_lightTrial5 = Has.can_enter_ganons && Has.golden_gauntlets;
 		Access.ganons_lightTrial6 = Has.can_enter_ganons && Has.golden_gauntlets;
 		Access.ganons_lightTrial7 = Has.can_enter_ganons && Has.golden_gauntlets ;//&& Has.can_see;
-		Access.ganons_lightTrialLullaby = Has.can_enter_ganons && Has.golden_gauntlets && Has.lullaby && Player.current_ganons_keys >= 1 && (rules.smallKeys != "keyRings" || Has.ganons_key_ring);
+		Access.ganons_lightTrialLullaby = Has.can_enter_ganons && Has.golden_gauntlets && Has.lullaby && player.current_ganons_keys >= 1 && (rules.smallKeys != "keyRings" || Has.ganons_key_ring);
 		Access.ganons_spiritTrial1 = Has.can_enter_ganons;
-		Access.ganons_spiritTrial2 = Has.can_enter_ganons && (Player.bombchus || Has.bow);//&& Has.can_see;
+		Access.ganons_spiritTrial2 = Has.can_enter_ganons && (player.bombchus || Has.bow);//&& Has.can_see;
 		Access.ganons_forestTrial = Has.can_enter_ganons;
 		Access.ganons_waterTrial1 = Has.can_enter_ganons;
 		Access.ganons_waterTrial2 = Has.can_enter_ganons;
@@ -1499,34 +1499,34 @@ function locationLogic(){
 		Access.gtg_silvers2 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
 		Access.gtg_silvers3 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
 		Access.gtg_silvers4 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets ;//&& Has.can_see ;
-		Access.gtg_eyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;  //((Has.bomb_bag || Player.current_gtg_keys >= 9) && Has.hammer));
+		Access.gtg_eyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;  //((Has.bomb_bag || player.current_gtg_keys >= 9) && Has.hammer));
 		Access.gtg_aboveEyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;//&& Has.can_see;
-		Access.gtg_keese = Has.gtg_adult_access && Has.can_climb_gtg_hole;// && (Has.can_see || (Has.bomb_bag || Player.current_gtg_keys >= 9)) ;
+		Access.gtg_keese = Has.gtg_adult_access && Has.can_climb_gtg_hole;// && (Has.can_see || (Has.bomb_bag || player.current_gtg_keys >= 9)) ;
 		Access.gtg_flamesChest = Has.gtg_adult_access && Has.can_climb_gtg_hole/*&& Has.can_see*/;
-		Access.gtg_freestanding = Has.gtg_access && (Player.current_gtg_keys >= 2 || ((Has.bomb_bag || Player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-		Access.gtg_right2 = Has.gtg_access && (Player.current_gtg_keys >= 2 || ((Has.bomb_bag || Player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-		Access.gtg_right3 = Has.gtg_access && (Player.current_gtg_keys >= 2 || ((Has.bomb_bag || Player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-		Access.gtg_beamos = Has.gtg_access && (Has.bomb_bag || Player.bombchus);
-		Access.gtg_left1 = Has.gtg_access && Player.current_gtg_keys >= 1 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring) ;//&& Has.can_see;
-		Access.gtg_left2 = Has.gtg_access && Player.current_gtg_keys >= 2 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-		Access.gtg_left3 = Has.gtg_access && Player.current_gtg_keys >= 4 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-		Access.gtg_left4 = Has.gtg_access && Player.current_gtg_keys >= 5 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-		Access.gtg_final = Has.gtg_access && Player.current_gtg_keys >= 7 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
+		Access.gtg_freestanding = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bomb_bag || player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
+		Access.gtg_right2 = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bomb_bag || player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
+		Access.gtg_right3 = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bomb_bag || player.bombchus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
+		Access.gtg_beamos = Has.gtg_access && (Has.bomb_bag || player.bombchus);
+		Access.gtg_left1 = Has.gtg_access && player.current_gtg_keys >= 1 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring) ;//&& Has.can_see;
+		Access.gtg_left2 = Has.gtg_access && player.current_gtg_keys >= 2 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
+		Access.gtg_left3 = Has.gtg_access && player.current_gtg_keys >= 4 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
+		Access.gtg_left4 = Has.gtg_access && player.current_gtg_keys >= 5 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
+		Access.gtg_final = Has.gtg_access && player.current_gtg_keys >= 7 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
 		Access.gtg_toilet = Has.gtg_adult_access && Has.iron_boots && Has.time && Has.hookshot /*&& Has.can_see*/;
 		Access.well_fakeRight = Has.botw_child_access;//&& Has.can_see;
-		Access.well_backBombable = Has.botw_child_access && (Has.bomb_bag || Player.bombchus);
+		Access.well_backBombable = Has.botw_child_access && (Has.bomb_bag || player.bombchus);
 		Access.well_waterLeft = Has.botw_child_access && Has.lullaby;
 		Access.well_coffin = Has.botw_child_access;
 		Access.well_centerSmall = Has.botw_child_access;//&& Has.can_see;
 		Access.well_centerBig = Has.botw_child_access;//&& Has.can_see;
-		Access.well_frontBombable = Has.botw_child_access && (Has.bomb_bag || Player.bombchus);
+		Access.well_frontBombable = Has.botw_child_access && (Has.bomb_bag || player.bombchus);
 		Access.well_deadHand = Has.botw_child_access && Has.lullaby ;//&& Has.kokiri_sword;
 		Access.well_invisible = Has.botw_child_access && Has.lullaby ;//&& Has.can_see ;
 		Access.well_waterFront = Has.botw_child_access && Has.lullaby;
 		Access.well_fakeLeft = Has.botw_child_access;//&& Has.can_see;
-		Access.well_locked1 = Has.botw_child_access && (Player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
-		Access.well_locked2 = Has.botw_child_access &&  (Player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
-		Access.well_basement = Has.botw_child_access && ((Has.bomb_bag || Player.bombchus) || (((/*Has.can_see &&*/ Player.current_well_keys >= 1) || Has.can_use_dins) && Has.goron_bracelet));
+		Access.well_locked1 = Has.botw_child_access && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
+		Access.well_locked2 = Has.botw_child_access &&  (player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
+		Access.well_basement = Has.botw_child_access && ((Has.bomb_bag || player.bombchus) || (((/*Has.can_see &&*/ player.current_well_keys >= 1) || Has.can_use_dins) && Has.goron_bracelet));
 		Access.zeldasSpot = true;
 		Access.eponasSpot = true;
 		Access.sariasSpot = true;
@@ -1535,14 +1535,14 @@ function locationLogic(){
 		Access.boleroSpot = Has.can_enter_fire_temple_entrance;
 		Access.minuetSpot = true;
 		Access.requiemSpot = Has.can_enter_colossus;
-		Access.serenadeSpot = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || Player.bombchus || Has.bomb_bag || Has.giants_wallet);
+		Access.serenadeSpot = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
 		Access.preludeSpot = Has.forest || Has.forest || Access.forest_medallion_location;
 		Access.nocturneSpot = (Has.forest || Has.forest || Access.forest_medallion_location) && (Has.fire || Has.fire || Access.fire_medallion_location) && (Has.water || Has.water || Access.water_medallion_location);
 		Access.oot = (Has.emerald || Has.emerald || Access.emerald_location) && (Has.ruby || Has.ruby || Access.ruby_location) && (Has.sapphire || Has.sapphire || Access.sapphire_location);
 		Access.scrub_dodongos_1 = Has.can_break_dodongos_wall;
 		Access.scrub_dodongos_2 = Has.can_break_dodongos_wall;
-		Access.scrub_dodongos_3 = Has.dodongos_climb && (Has.bomb_bag || Player.bombchus || Has.goron_bracelet);
-		Access.scrub_dodongos_4 = Has.dodongos_climb && (Has.bomb_bag || Player.bombchus || Has.goron_bracelet);
+		Access.scrub_dodongos_3 = Has.dodongos_climb && (Has.bomb_bag || player.bombchus || Has.goron_bracelet);
+		Access.scrub_dodongos_4 = Has.dodongos_climb && (Has.bomb_bag || player.bombchus || Has.goron_bracelet);
 		Access.scrub_jabu = Has.can_hit_jabu_switch;
 		Access.scrub_ganons_1 = Has.can_enter_ganons;
 		Access.scrub_ganons_2 = Has.can_enter_ganons;
@@ -1563,7 +1563,7 @@ function locationLogic(){
 		Access.scrub_crater_1 = Has.hammer;
 		Access.scrub_crater_2 = Has.hammer;
 		Access.scrub_crater_3 = Has.hammer;
-		Access.scrub_crater_child = Has.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || Has.hammer || Player.bombchus;
+		Access.scrub_crater_child = Has.bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || Has.hammer || player.bombchus;
 		Access.scrub_goron_1 = Has.time || Has.hookshot;
 		Access.scrub_goron_2 = Has.time || Has.hookshot;
 		Access.scrub_goron_3 = Has.time || Has.hookshot;
@@ -1596,10 +1596,10 @@ function locationLogic(){
 		Access.shop_kakariko_potion_TR = true;
 		Access.shop_kakariko_potion_BR = true;
 		Access.shop_kakariko_potion_BL = true;
-		Access.shop_goron_TL = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || Player.bombchus;
-		Access.shop_goron_TR = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || Player.bombchus;
-		Access.shop_goron_BR = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || Player.bombchus;
-		Access.shop_goron_BL = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || Player.bombchus;
+		Access.shop_goron_TL = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || player.bombchus;
+		Access.shop_goron_TR = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || player.bombchus;
+		Access.shop_goron_BR = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || player.bombchus;
+		Access.shop_goron_BL = Has.lullaby || Has.can_stop_link_the_goron || Has.bomb_bag || Has.can_use_dins || player.bombchus;
 		Access.shop_domain_TL = (Has.bomb_bag && Has.lullaby) || Has.silver_scale || (Has.lullaby && ((Has.can_enter_ganons && Has.can_use_bottle) || Has.jabu_entrance_access || (Has.giants_wallet && Has.can_use_bottle)));
 		Access.shop_domain_TR = (Has.bomb_bag && Has.lullaby) || Has.silver_scale || (Has.lullaby && ((Has.can_enter_ganons && Has.can_use_bottle) || Has.jabu_entrance_access || (Has.giants_wallet && Has.can_use_bottle)));
 		Access.shop_domain_BR = (Has.bomb_bag && Has.lullaby) || Has.silver_scale || (Has.lullaby && ((Has.can_enter_ganons && Has.can_use_bottle) || Has.jabu_entrance_access || (Has.giants_wallet && Has.can_use_bottle)));
@@ -1620,10 +1620,10 @@ function locationLogic(){
 		Access.gs_market = true;
 		Access.gs_lost_woods_bean_1 = Has.can_use_bottle;
 		Access.gs_lost_woods_bean_2 = Has.can_use_bottle;
-		Access.gs_lost_woods_above_stage = Has.bean_access || (Has.hookshot && (Player.bombchus || Has.bow)) || Has.longshot;
+		Access.gs_lost_woods_above_stage = Has.bean_access || (Has.hookshot && (player.bombchus || Has.bow)) || Has.longshot;
 		Access.gs_sacred_forest = Has.hookshot;
-		Access.gs_outside_kakariko = (Has.boomerang && (Has.bomb_bag || Player.bombchus)) || (Has.can_blast_or_smash && Has.hookshot);
-		Access.gs_near_gerudo = (Has.hammer && Has.can_use_fire && Has.hookshot) || (Has.can_use_dins && (Has.bomb_bag || Player.bombchus) && Has.boomerang);
+		Access.gs_outside_kakariko = (Has.boomerang && (Has.bomb_bag || player.bombchus)) || (Has.can_blast_or_smash && Has.hookshot);
+		Access.gs_near_gerudo = (Has.hammer && Has.can_use_fire && Has.hookshot) || (Has.can_use_dins && (Has.bomb_bag || player.bombchus) && Has.boomerang);
 		Access.gs_hyrule_castle_tree = true;
 		Access.gs_hyrule_castle_grotto = Has.storms && Has.boomerang;
 		Access.gs_lon_lon_tree = true;
@@ -1638,12 +1638,12 @@ function locationLogic(){
 		Access.gs_kakariko_impas = Has.hookshot || Spawn.adult_kak_roof || Has.hover_boots;
 		Access.gs_graveyard_wall = Has.boomerang;
 		Access.gs_graveyard_soil = Has.can_use_bottle;
-		Access.gs_trail_soil = Has.can_use_bottle && ((Has.bomb_bag || Player.bombchus) || Has.goron_bracelet);
+		Access.gs_trail_soil = Has.can_use_bottle && ((Has.bomb_bag || player.bombchus) || Has.goron_bracelet);
 		Access.gs_trail_bombable_wall = Has.can_blast_or_smash;
 		Access.gs_trail_hail_path = Has.can_stop_link_the_goron || Has.hammer || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc || Spawn.lower_dmc_fairy || Spawn.adult_dmt_fairy || Spawn.adult_dmt_fairy_ool;
 		Access.gs_trail_above_dodongos = true;
 		Access.gs_goron_center = true;
-		Access.gs_goron_maze = Has.bomb_bag || Player.bombchus;
+		Access.gs_goron_maze = Has.bomb_bag || player.bombchus;
 		Access.gs_crater_crate = Has.can_blast_or_smash || Spawn.child_upper_dmc;
 		Access.gs_crater_soil = Has.can_use_bottle && Has.bolero;
 		Access.gs_river_ladder = Has.child_can_enter_river;
@@ -1670,7 +1670,7 @@ function locationLogic(){
 		Access.gs_colossus_tree = Has.hookshot && Has.can_enter_colossus;
 		Access.gs_colossus_hill = (Has.requiem && Has.bean_access) || (Has.hookshot && Has.can_enter_colossus);
 		Access.gs_ogc = true;
-		Access.gs_deku_basement_back = Has.deku_access && Has.boomerang && (Has.bomb_bag || Player.bombchus);
+		Access.gs_deku_basement_back = Has.deku_access && Has.boomerang && (Has.bomb_bag || player.bombchus);
 		Access.gs_deku_basement_gate = Has.deku_access;
 		Access.gs_deku_basement_vines = Has.deku_access;
 		Access.gs_deku_compass = Has.deku_access;
@@ -1678,143 +1678,143 @@ function locationLogic(){
 		Access.gs_dodongos_stair_vines = Has.dodongos_climb;
 		Access.gs_dodongos_above_stairs = Has.dodongos_climb && (Has.hookshot || Has.boomerang);
 		Access.gs_dodongos_scarecrow = Has.can_break_dodongos_wall;
-		Access.gs_dodongos_before_king = (Has.bomb_bag || Player.bombchus);
+		Access.gs_dodongos_before_king = (Has.bomb_bag || player.bombchus);
 		Access.gs_jabu_vines = Has.can_hit_jabu_switch;
 		Access.gs_jabu_near_octo_1 = Has.can_hit_jabu_switch && Has.boomerang;
 		Access.gs_jabu_near_octo_2 = Has.can_hit_jabu_switch && Has.boomerang;
 		Access.gs_jabu_near_boss = Has.can_hit_jabu_switch && Has.boomerang;
 		Access.gs_forest_first = Has.forest_temple_adult_access && Has.hookshot;
 		Access.gs_forest_lobby = Has.forest_temple_adult_access && Has.hookshot;
-		Access.gs_forest_outdoor_east = Has.forest_temple_adult_access && Has.hookshot && ((Has.bow || Has.time) || (Player.current_forest_keys >= 1 && Has.hover_boots));
-		Access.gs_forest_outdoor_west = Has.forest_temple_adult_access && Has.hookshot && (((Has.bow || Has.time) && Has.longshot) || (Player.current_forest_keys >= 1 && Has.hover_boots) || (Player.current_forest_keys >= 2 && Has.goron_bracelet && Has.bow))
-		Access.gs_forest_basement = Has.forest_temple_adult_access && Has.hookshot && Has.bow && Has.goron_bracelet && Player.current_forest_keys >= 5;
-		Access.gs_fire_time = Has.fire_temple_adult_access && Player.current_fire_keys >= 1;
-		Access.gs_fire_bomb_wall = Has.can_climb_fire_temple && (Has.bomb_bag || Player.bombchus);
-		Access.gs_fire_scarecrow_1 = Has.can_climb_fire_temple && Player.current_fire_keys >=5 && Has.hookshot;
-		Access.gs_fire_scarecrow_2 = Has.can_climb_fire_temple && Player.current_fire_keys >=5 && Has.hookshot;
+		Access.gs_forest_outdoor_east = Has.forest_temple_adult_access && Has.hookshot && ((Has.bow || Has.time) || (player.current_forest_keys >= 1 && Has.hover_boots));
+		Access.gs_forest_outdoor_west = Has.forest_temple_adult_access && Has.hookshot && (((Has.bow || Has.time) && Has.longshot) || (player.current_forest_keys >= 1 && Has.hover_boots) || (player.current_forest_keys >= 2 && Has.goron_bracelet && Has.bow))
+		Access.gs_forest_basement = Has.forest_temple_adult_access && Has.hookshot && Has.bow && Has.goron_bracelet && player.current_forest_keys >= 5;
+		Access.gs_fire_time = Has.fire_temple_adult_access && player.current_fire_keys >= 1;
+		Access.gs_fire_bomb_wall = Has.can_climb_fire_temple && (Has.bomb_bag || player.bombchus);
+		Access.gs_fire_scarecrow_1 = Has.can_climb_fire_temple && player.current_fire_keys >=5 && Has.hookshot;
+		Access.gs_fire_scarecrow_2 = Has.can_climb_fire_temple && player.current_fire_keys >=5 && Has.hookshot;
 		Access.gs_fire_basement = Has.fire_temple_adult_access && Has.hammer;
-		Access.gs_water_south_basement = Has.can_do_water_checks && (Has.bomb_bag || Player.bombchus) && Has.lullaby && Has.hookshot;
-		Access.gs_water_river = Has.can_do_water_checks && Has.time && Player.current_water_keys >= 2 && Has.hookshot;
+		Access.gs_water_south_basement = Has.can_do_water_checks && (Has.bomb_bag || player.bombchus) && Has.lullaby && Has.hookshot;
+		Access.gs_water_river = Has.can_do_water_checks && Has.time && player.current_water_keys >= 2 && Has.hookshot;
 		Access.gs_water_central = Has.middle_water && (Has.longshot || (Has.can_use_farores && Has.hookshot));
-		Access.gs_water_near_boss_key = Has.can_do_water_checks && (Has.longshot || Has.hover_boots) && (Has.lullaby || Has.iron_boots) && Player.current_water_keys >=1;
-		Access.gs_water_platform_room = Has.can_do_water_checks && Has.hookshot && Player.current_water_keys >=1;
-		Access.gs_spirit_metal_fence = Has.spirit_temple_child_access && (Has.boomerang || Has.slingshot || Player.bombchus);
-		Access.gs_spirit_before_child_knuckle = Has.spirit_temple_access && ((Has.bomb_bag || Player.bombchus) && Has.boomerang && Player.current_spirit_keys >= 1 && Has.spirit_temple_child_access) || (Has.hookshot && Has.silver_gauntlets && Player.current_spirit_keys >= 1);
-		Access.gs_spirit_boulder_room = Has.can_push_spirit_silver_block && Has.time && (Has.bow || Has.hookshot || Player.bombchus);
-		Access.gs_spirit_lobby = Has.can_push_spirit_silver_block && Player.current_spirit_keys >= 1 && (Has.hookshot || Has.hover_boots);
-		Access.gs_spirit_child_climb = Has.spirit_temple_access && Player.current_spirit_keys >= 1;
+		Access.gs_water_near_boss_key = Has.can_do_water_checks && (Has.longshot || Has.hover_boots) && (Has.lullaby || Has.iron_boots) && player.current_water_keys >=1;
+		Access.gs_water_platform_room = Has.can_do_water_checks && Has.hookshot && player.current_water_keys >=1;
+		Access.gs_spirit_metal_fence = Has.spirit_temple_child_access && (Has.boomerang || Has.slingshot || player.bombchus);
+		Access.gs_spirit_before_child_knuckle = Has.spirit_temple_access && ((Has.bomb_bag || player.bombchus) && Has.boomerang && player.current_spirit_keys >= 1 && Has.spirit_temple_child_access) || (Has.hookshot && Has.silver_gauntlets && player.current_spirit_keys >= 1);
+		Access.gs_spirit_boulder_room = Has.can_push_spirit_silver_block && Has.time && (Has.bow || Has.hookshot || player.bombchus);
+		Access.gs_spirit_lobby = Has.can_push_spirit_silver_block && player.current_spirit_keys >= 1 && (Has.hookshot || Has.hover_boots);
+		Access.gs_spirit_child_climb = Has.spirit_temple_access && player.current_spirit_keys >= 1;
 		Access.gs_shadow_like_like = Has.can_bomb_shadow_wall;
 		Access.gs_shadow_crusher = Has.can_bomb_shadow_wall && (Has.hookshot || Has.bomb_bag);
-		Access.gs_shadow_giant_pot = Has.can_bomb_shadow_wall && Player.current_shadow_keys >=2 && Has.hookshot;
-		Access.gs_shadow_near_boat = Has.can_pass_shadow_hookshot_door && Has.longshot && Player.current_shadow_keys >=4;
+		Access.gs_shadow_giant_pot = Has.can_bomb_shadow_wall && player.current_shadow_keys >=2 && Has.hookshot;
+		Access.gs_shadow_near_boat = Has.can_pass_shadow_hookshot_door && Has.longshot && player.current_shadow_keys >=4;
 		Access.gs_shadow_three_pots = Has.can_ride_shadow_boat;
-		Access.gs_well_west_inner = Has.botw_child_access && Has.boomerang && (Player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
-		Access.gs_well_east_inner = Has.botw_child_access && Has.boomerang && (Player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
-		Access.gs_well_like_like = Has.botw_child_access && (Player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
+		Access.gs_well_west_inner = Has.botw_child_access && Has.boomerang && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
+		Access.gs_well_east_inner = Has.botw_child_access && Has.boomerang && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
+		Access.gs_well_like_like = Has.botw_child_access && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
 		Access.gs_ice_spinning_scythe = Has.ice_access && Has.hookshot;
 		Access.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && Has.hookshot;
 		Access.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || (Has.hover_boots && Has.bow));
 		
-		Access = Location_Could_Access;
-		Has = CouldHave;
+		Access = locationCouldAccess;
+		Has = couldHave;
 	}
 	
-	Location_Could_Access.forest_first = CouldHave.forest_temple_access;
-	Location_Could_Access.forest_stalfos = CouldHave.forest_temple_access;
-	Location_Could_Access.forest_midCourtyard = CouldHave.forest_temple_adult_access && ((CouldHave.time && (CouldHave.hover_boots || CouldHave.hookshot) || (CouldHave.bow && CouldHave.hookshot) || ((CouldHave.hover_boots || CouldHave.goron_bracelet) && Player.current_forest_keys>=1 && (CouldHave.hover_boots || CouldHave.hookshot))));
-	Location_Could_Access.forest_highCourtyard = CouldHave.forest_temple_access && (CouldHave.time || (CouldHave.forest_temple_adult_access && (((CouldHave.hover_boots || CouldHave.goron_bracelet) && Player.current_forest_keys>=1) || (CouldHave.bow && CouldHave.hookshot/* && (CouldHave.iron_boots || CouldHave.scale2 || CouldHave.longshot)*/))));
-	Location_Could_Access.forest_lowCourtyard = CouldHave.forest_temple_access && (CouldHave.time || (CouldHave.forest_temple_adult_access && (((CouldHave.hover_boots || CouldHave.goron_bracelet) && Player.current_forest_keys>=1) || (CouldHave.bow && CouldHave.hookshot/* && (CouldHave.iron_boots || CouldHave.scale2 || CouldHave.longshot)*/))));
-	Location_Could_Access.forest_blockRoom = CouldHave.forest_temple_adult_access && (CouldHave.bow || (CouldHave.forest_temple_child_access && CouldHave.slingshot)) && CouldHave.goron_bracelet && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_bossKey = CouldHave.forest_temple_adult_access && CouldHave.bow && CouldHave.goron_bracelet && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_floormaster = CouldHave.forest_temple_adult_access && ((CouldHave.bow && CouldHave.goron_bracelet) || ((CouldHave.hover_boots || CouldHave.goron_bracelet) && Player.current_forest_keys >=1)) && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_red = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && CouldHave.bow && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_bow = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_blue = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && CouldHave.bow && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_fallingCeiling = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && (CouldHave.bow || CouldHave.can_use_dins) && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_nearBoss = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && CouldHave.bow && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.forest_phantomGanon = CouldHave.forest_temple_adult_access && CouldHave.goron_bracelet && CouldHave.bow && (rules.smallKeys != "keyRings" || CouldHave.forest_key_ring);
-	Location_Could_Access.fire_nearBoss = CouldHave.fire_temple_access;
-	Location_Could_Access.fire_hammer1 = CouldHave.fire_temple_adult_access && CouldHave.hammer && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	Location_Could_Access.fire_hammer2 = CouldHave.fire_temple_adult_access && CouldHave.hammer && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	Location_Could_Access.fire_lavaOpen = CouldHave.fire_temple_access && (Player.current_fire_keys >=1 || (CouldHave.hammer && CouldHave.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	Location_Could_Access.fire_lavaBomb = CouldHave.fire_temple_access && (Player.current_fire_keys >=1 || (CouldHave.hammer && CouldHave.fire_temple_adult_access)) && (CouldHave.bomb_bag || (Player.bombchus && CouldHave.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	Location_Could_Access.fire_volvagia = CouldHave.fire_temple_adult_access && ((Player.fire_boss_key && CouldHave.hammer) || (CouldHave.hammer && CouldHave.bow && CouldHave.hookshot && (CouldHave.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || CouldHave.fire_key_ring);
-	Location_Could_Access.fire_lowerMaze = CouldHave.can_climb_fire_temple;
-	Location_Could_Access.fire_sideRoom = CouldHave.can_climb_fire_temple;
-	Location_Could_Access.fire_map = CouldHave.can_climb_fire_temple && (((Player.current_fire_keys >= 4 && CouldHave.bow) || Player.current_fire_keys>=5) || CouldHave.bow);
-	Location_Could_Access.fire_upperMaze = CouldHave.can_climb_fire_temple && (Player.current_fire_keys>=5 || (CouldHave.bow && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.fire_shortcut = CouldHave.can_climb_fire_temple && ((Player.current_fire_keys>=5 && (CouldHave.bomb_bag || Player.bombchus)) || (CouldHave.hammer && CouldHave.bow && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.fire_scarecrow = CouldHave.can_climb_fire_temple && ((Player.current_fire_keys>=5 && CouldHave.hookshot) || (CouldHave.hammer && CouldHave.bow && CouldHave.hookshot && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.fire_compass = CouldHave.can_climb_fire_temple && (Player.current_fire_keys>=6 || (CouldHave.hammer && CouldHave.bow && CouldHave.hookshot && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.fire_sotGoron = CouldHave.can_climb_fire_temple && ((Player.current_fire_keys>=7 || (Player.current_fire_keys>=6)) && CouldHave.hammer && (CouldHave.time || CouldHave.bomb_bag || Player.bombchus || CouldHave.hover_boots) || (CouldHave.hammer && CouldHave.bow && CouldHave.hookshot && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.fire_top = CouldHave.can_climb_fire_temple && ((Player.current_fire_keys>=7 || (Player.current_fire_keys >= 6)) && (CouldHave.bomb_bag || Player.bombchus) || (CouldHave.hammer && CouldHave.bow && CouldHave.hookshot && (CouldHave.bomb_bag || Player.bombchus)));
-	Location_Could_Access.water_compass = CouldHave.water_temple_adult_access && ((CouldHave.lullaby && CouldHave.longshot) || CouldHave.iron_boots);
-	Location_Could_Access.water_map = CouldHave.can_do_water_checks;
-	Location_Could_Access.water_cracked = CouldHave.can_do_water_checks && (CouldHave.lullaby || (CouldHave.iron_boots && Player.bombchus)) && (CouldHave.bomb_bag || Player.bombchus);
-	Location_Could_Access.water_torches = CouldHave.can_do_water_checks && CouldHave.lullaby && (CouldHave.bow || CouldHave.can_use_dins || CouldHave.water_temple_child_access);
-	Location_Could_Access.water_block = CouldHave.can_do_water_checks && CouldHave.lullaby && ((CouldHave.bow || CouldHave.hover_boots) && CouldHave.goron_bracelet);
-	Location_Could_Access.water_pillar = CouldHave.can_do_water_checks && CouldHave.middle_water && CouldHave.iron_boots;
-	Location_Could_Access.water_dLink = CouldHave.can_do_water_checks && CouldHave.hookshot && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || CouldHave.water_key_ring);
-	Location_Could_Access.water_river = CouldHave.can_do_water_checks && CouldHave.hookshot && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.bombchus))) && CouldHave.time && CouldHave.bow && (rules.smallKeys != "keyRings" || CouldHave.water_key_ring);
-	Location_Could_Access.water_dragon = CouldHave.can_do_water_checks && ((Player.current_water_keys >= 2 && CouldHave.hookshot && CouldHave.time && CouldHave.bow) || (CouldHave.goron_bracelet && CouldHave.lullaby && ((CouldHave.iron_boots && CouldHave.hookshot) || Player.bombchus || CouldHave.bomb_bag) && (CouldHave.silver_scale || CouldHave.iron_boots)));
-	Location_Could_Access.water_bossKey = CouldHave.can_do_water_checks && (CouldHave.lullaby || CouldHave.iron_boots) && (CouldHave.longshot || CouldHave.hover_boots) && (Player.current_water_keys >= 2 || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && (CouldHave.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || CouldHave.water_key_ring);
-	Location_Could_Access.water_morpha = CouldHave.can_do_water_checks && (Player.water_boss_key || (CouldHave.lullaby && CouldHave.bow && CouldHave.goron_bracelet && CouldHave.iron_boots && (CouldHave.bomb_bag || Player.bombchus) && CouldHave.time) && (CouldHave.longshot || CouldHave.hover_boots)) && (rules.waterHop == "allowed" || CouldHave.longshot) && (rules.smallKeys != "keyRings" || CouldHave.water_key_ring); 
-	Location_Could_Access.spirit_childLeft = CouldHave.spirit_temple_child_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.bombchus));
-	Location_Could_Access.spirit_childRight = CouldHave.spirit_temple_child_access && (CouldHave.slingshot || CouldHave.boomerang || (CouldHave.bomb_bag || Player.bombchus));
-	Location_Could_Access.spirit_childClimb1 = (Player.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.spirit_temple_child_access) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_childClimb2 = (Player.current_spirit_keys >= 1 && ((CouldHave.projectile_child && CouldHave.spirit_temple_child_access) || (CouldHave.projectile_adult && CouldHave.silver_gauntlets))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_map = (Player.current_spirit_keys >= 1 && ((CouldHave.spirit_temple_child_access && (CouldHave.bomb_bag || Player.bombchus)) || (((CouldHave.can_use_fire || CouldHave.bow) && CouldHave.silver_gauntlets)))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring));
-	Location_Could_Access.spirit_sunRoom = (Player.current_spirit_keys >= 1 && ((CouldHave.spirit_temple_child_access && (CouldHave.bomb_bag || Player.bombchus)) || (((CouldHave.can_use_fire || CouldHave.bow) && CouldHave.silver_gauntlets)))) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_rightHand = Player.current_spirit_keys >= 2 && ((CouldHave.can_push_spirit_silver_block && CouldHave.projectile_adult) || (CouldHave.spirit_temple_child_access && (CouldHave.bomb_bag || Player.bombchus))) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_adultLeft = CouldHave.can_push_spirit_silver_block && CouldHave.hookshot && CouldHave.lullaby;
-	Location_Could_Access.spirit_adultRight = CouldHave.can_push_spirit_silver_block && (CouldHave.bow || CouldHave.hookshot || (CouldHave.bomb_bag || Player.bombchus));
-	Location_Could_Access.spirit_rotatingMirror1 = CouldHave.can_push_spirit_silver_block && (Player.current_spirit_keys >=1) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_rotatingMirror2 = CouldHave.can_push_spirit_silver_block && (Player.current_spirit_keys >=1) || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_lullabyHand = CouldHave.can_push_spirit_silver_block && (Player.current_spirit_keys >=1 || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight)) && CouldHave.lullaby && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_lullabyHigh = CouldHave.can_push_spirit_silver_block && (Player.current_spirit_keys >=1 || (Location_Could_Access.spirit_childLeft && Location_Could_Access.spirit_childRight && Location_Could_Access.spirit_adultLeft && Location_Could_Access.spirit_adultRight)) && CouldHave.lullaby && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_nearFourArmos = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.bombchus) && CouldHave.mirror_shield && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_invisible1 = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring); //&& CouldHave.can_see;
-	Location_Could_Access.spirit_invisible2 = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring); //&& CouldHave.can_see;
-	Location_Could_Access.spirit_leftHand = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=2 && (CouldHave.bomb_bag || Player.bombchus) && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_bossKey = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && CouldHave.lullaby && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_tippyTop = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && CouldHave.mirror_shield && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.spirit_twinrova = CouldHave.can_push_spirit_silver_block && Player.current_spirit_keys >=3 && CouldHave.mirror_shield && (CouldHave.bomb_bag || Player.bombchus) && Player.spirit_boss_key && CouldHave.hookshot && (rules.smallKeys != "keyRings" || CouldHave.spirit_key_ring);
-	Location_Could_Access.shadow_map = CouldHave.shadow_temple_adult_access && (CouldHave.hover_boots || CouldHave.hookshot);
-	Location_Could_Access.shadow_hovers = CouldHave.shadow_temple_adult_access && (CouldHave.hover_boots || CouldHave.hookshot);
-	Location_Could_Access.shadow_compass = CouldHave.can_cross_shadow_gap;
-	Location_Could_Access.shadow_earlySilvers = CouldHave.can_cross_shadow_gap;
-	Location_Could_Access.shadow_spinning1 = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_spinning2 = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_spikesLower = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_spikesUpper = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_spikesSwitch = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_redeadSilvers = CouldHave.can_bomb_shadow_wall;
-	Location_Could_Access.shadow_pot = CouldHave.can_bomb_shadow_wall && CouldHave.hookshot;
-	Location_Could_Access.shadow_wind = CouldHave.can_pass_shadow_hookshot_door;
-	Location_Could_Access.shadow_bombable = CouldHave.can_pass_shadow_hookshot_door;
-	Location_Could_Access.shadow_gibdos = CouldHave.can_pass_shadow_hookshot_door;
-	Location_Could_Access.shadow_dins1 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins;
-	Location_Could_Access.shadow_dins2 = CouldHave.can_ride_shadow_boat && CouldHave.can_use_dins;
-	Location_Could_Access.shadow_floormaster = CouldHave.can_ride_shadow_boat;
-	Location_Could_Access.shadow_bongo = CouldHave.can_beat_shadow_boss;
+	locationCouldAccess.forest_first = couldHave.forest_temple_access;
+	locationCouldAccess.forest_stalfos = couldHave.forest_temple_access;
+	locationCouldAccess.forest_midCourtyard = couldHave.forest_temple_adult_access && ((couldHave.time && (couldHave.hover_boots || couldHave.hookshot) || (couldHave.bow && couldHave.hookshot) || ((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys>=1 && (couldHave.hover_boots || couldHave.hookshot))));
+	locationCouldAccess.forest_highCourtyard = couldHave.forest_temple_access && (couldHave.time || (couldHave.forest_temple_adult_access && (((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys>=1) || (couldHave.bow && couldHave.hookshot/* && (couldHave.iron_boots || couldHave.scale2 || couldHave.longshot)*/))));
+	locationCouldAccess.forest_lowCourtyard = couldHave.forest_temple_access && (couldHave.time || (couldHave.forest_temple_adult_access && (((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys>=1) || (couldHave.bow && couldHave.hookshot/* && (couldHave.iron_boots || couldHave.scale2 || couldHave.longshot)*/))));
+	locationCouldAccess.forest_blockRoom = couldHave.forest_temple_adult_access && (couldHave.bow || (couldHave.forest_temple_child_access && couldHave.slingshot)) && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_bossKey = couldHave.forest_temple_adult_access && couldHave.bow && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_floormaster = couldHave.forest_temple_adult_access && ((couldHave.bow && couldHave.goron_bracelet) || ((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys >=1)) && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_red = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_bow = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_blue = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_fallingCeiling = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && (couldHave.bow || couldHave.can_use_dins) && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_nearBoss = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.forest_phantomGanon = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+	locationCouldAccess.fire_nearBoss = couldHave.fire_temple_access;
+	locationCouldAccess.fire_hammer1 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	locationCouldAccess.fire_hammer2 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	locationCouldAccess.fire_lavaOpen = couldHave.fire_temple_access && (player.current_fire_keys >=1 || (couldHave.hammer && couldHave.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	locationCouldAccess.fire_lavaBomb = couldHave.fire_temple_access && (player.current_fire_keys >=1 || (couldHave.hammer && couldHave.fire_temple_adult_access)) && (couldHave.bomb_bag || (player.bombchus && couldHave.fire_temple_adult_access)) && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	locationCouldAccess.fire_volvagia = couldHave.fire_temple_adult_access && ((player.fire_boss_key && couldHave.hammer) || (couldHave.hammer && couldHave.bow && couldHave.hookshot && (couldHave.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
+	locationCouldAccess.fire_lowerMaze = couldHave.can_climb_fire_temple;
+	locationCouldAccess.fire_sideRoom = couldHave.can_climb_fire_temple;
+	locationCouldAccess.fire_map = couldHave.can_climb_fire_temple && (((player.current_fire_keys >= 4 && couldHave.bow) || player.current_fire_keys>=5) || couldHave.bow);
+	locationCouldAccess.fire_upperMaze = couldHave.can_climb_fire_temple && (player.current_fire_keys>=5 || (couldHave.bow && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.fire_shortcut = couldHave.can_climb_fire_temple && ((player.current_fire_keys>=5 && (couldHave.bomb_bag || player.bombchus)) || (couldHave.hammer && couldHave.bow && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.fire_scarecrow = couldHave.can_climb_fire_temple && ((player.current_fire_keys>=5 && couldHave.hookshot) || (couldHave.hammer && couldHave.bow && couldHave.hookshot && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.fire_compass = couldHave.can_climb_fire_temple && (player.current_fire_keys>=6 || (couldHave.hammer && couldHave.bow && couldHave.hookshot && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.fire_sotGoron = couldHave.can_climb_fire_temple && ((player.current_fire_keys>=7 || (player.current_fire_keys>=6)) && couldHave.hammer && (couldHave.time || couldHave.bomb_bag || player.bombchus || couldHave.hover_boots) || (couldHave.hammer && couldHave.bow && couldHave.hookshot && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.fire_top = couldHave.can_climb_fire_temple && ((player.current_fire_keys>=7 || (player.current_fire_keys >= 6)) && (couldHave.bomb_bag || player.bombchus) || (couldHave.hammer && couldHave.bow && couldHave.hookshot && (couldHave.bomb_bag || player.bombchus)));
+	locationCouldAccess.water_compass = couldHave.water_temple_adult_access && ((couldHave.lullaby && couldHave.longshot) || couldHave.iron_boots);
+	locationCouldAccess.water_map = couldHave.can_do_water_checks;
+	locationCouldAccess.water_cracked = couldHave.can_do_water_checks && (couldHave.lullaby || (couldHave.iron_boots && player.bombchus)) && (couldHave.bomb_bag || player.bombchus);
+	locationCouldAccess.water_torches = couldHave.can_do_water_checks && couldHave.lullaby && (couldHave.bow || couldHave.can_use_dins || couldHave.water_temple_child_access);
+	locationCouldAccess.water_block = couldHave.can_do_water_checks && couldHave.lullaby && ((couldHave.bow || couldHave.hover_boots) && couldHave.goron_bracelet);
+	locationCouldAccess.water_pillar = couldHave.can_do_water_checks && couldHave.middle_water && couldHave.iron_boots;
+	locationCouldAccess.water_dLink = couldHave.can_do_water_checks && couldHave.hookshot && (player.current_water_keys >= 2 || (couldHave.lullaby && couldHave.bow && couldHave.goron_bracelet && (couldHave.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || couldHave.water_key_ring);
+	locationCouldAccess.water_river = couldHave.can_do_water_checks && couldHave.hookshot && (player.current_water_keys >= 2 || (couldHave.lullaby && couldHave.bow && couldHave.goron_bracelet && (couldHave.bomb_bag || player.bombchus))) && couldHave.time && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.water_key_ring);
+	locationCouldAccess.water_dragon = couldHave.can_do_water_checks && ((player.current_water_keys >= 2 && couldHave.hookshot && couldHave.time && couldHave.bow) || (couldHave.goron_bracelet && couldHave.lullaby && ((couldHave.iron_boots && couldHave.hookshot) || player.bombchus || couldHave.bomb_bag) && (couldHave.silver_scale || couldHave.iron_boots)));
+	locationCouldAccess.water_bossKey = couldHave.can_do_water_checks && (couldHave.lullaby || couldHave.iron_boots) && (couldHave.longshot || couldHave.hover_boots) && (player.current_water_keys >= 2 || (couldHave.lullaby && couldHave.bow && couldHave.goron_bracelet && (couldHave.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || couldHave.water_key_ring);
+	locationCouldAccess.water_morpha = couldHave.can_do_water_checks && (player.water_boss_key || (couldHave.lullaby && couldHave.bow && couldHave.goron_bracelet && couldHave.iron_boots && (couldHave.bomb_bag || player.bombchus) && couldHave.time) && (couldHave.longshot || couldHave.hover_boots)) && (rules.waterHop == "allowed" || couldHave.longshot) && (rules.smallKeys != "keyRings" || couldHave.water_key_ring); 
+	locationCouldAccess.spirit_childLeft = couldHave.spirit_temple_child_access && (couldHave.slingshot || couldHave.boomerang || (couldHave.bomb_bag || player.bombchus));
+	locationCouldAccess.spirit_childRight = couldHave.spirit_temple_child_access && (couldHave.slingshot || couldHave.boomerang || (couldHave.bomb_bag || player.bombchus));
+	locationCouldAccess.spirit_childClimb1 = (player.current_spirit_keys >= 1 && ((couldHave.projectile_child && couldHave.spirit_temple_child_access) || (couldHave.projectile_adult && couldHave.silver_gauntlets))) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_childClimb2 = (player.current_spirit_keys >= 1 && ((couldHave.projectile_child && couldHave.spirit_temple_child_access) || (couldHave.projectile_adult && couldHave.silver_gauntlets))) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_map = (player.current_spirit_keys >= 1 && ((couldHave.spirit_temple_child_access && (couldHave.bomb_bag || player.bombchus)) || (((couldHave.can_use_fire || couldHave.bow) && couldHave.silver_gauntlets)))) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring));
+	locationCouldAccess.spirit_sunRoom = (player.current_spirit_keys >= 1 && ((couldHave.spirit_temple_child_access && (couldHave.bomb_bag || player.bombchus)) || (((couldHave.can_use_fire || couldHave.bow) && couldHave.silver_gauntlets)))) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_rightHand = player.current_spirit_keys >= 2 && ((couldHave.can_push_spirit_silver_block && couldHave.projectile_adult) || (couldHave.spirit_temple_child_access && (couldHave.bomb_bag || player.bombchus))) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_adultLeft = couldHave.can_push_spirit_silver_block && couldHave.hookshot && couldHave.lullaby;
+	locationCouldAccess.spirit_adultRight = couldHave.can_push_spirit_silver_block && (couldHave.bow || couldHave.hookshot || (couldHave.bomb_bag || player.bombchus));
+	locationCouldAccess.spirit_rotatingMirror1 = couldHave.can_push_spirit_silver_block && (player.current_spirit_keys >=1) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_rotatingMirror2 = couldHave.can_push_spirit_silver_block && (player.current_spirit_keys >=1) || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_lullabyHand = couldHave.can_push_spirit_silver_block && (player.current_spirit_keys >=1 || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight)) && couldHave.lullaby && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_lullabyHigh = couldHave.can_push_spirit_silver_block && (player.current_spirit_keys >=1 || (locationCouldAccess.spirit_childLeft && locationCouldAccess.spirit_childRight && locationCouldAccess.spirit_adultLeft && locationCouldAccess.spirit_adultRight)) && couldHave.lullaby && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_nearFourArmos = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (couldHave.bomb_bag || player.bombchus) && couldHave.mirror_shield && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_invisible1 = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (couldHave.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring); //&& couldHave.can_see;
+	locationCouldAccess.spirit_invisible2 = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (couldHave.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring); //&& couldHave.can_see;
+	locationCouldAccess.spirit_leftHand = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=2 && (couldHave.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_bossKey = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=3 && couldHave.lullaby && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_tippyTop = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=3 && couldHave.mirror_shield && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.spirit_twinrova = couldHave.can_push_spirit_silver_block && player.current_spirit_keys >=3 && couldHave.mirror_shield && (couldHave.bomb_bag || player.bombchus) && player.spirit_boss_key && couldHave.hookshot && (rules.smallKeys != "keyRings" || couldHave.spirit_key_ring);
+	locationCouldAccess.shadow_map = couldHave.shadow_temple_adult_access && (couldHave.hover_boots || couldHave.hookshot);
+	locationCouldAccess.shadow_hovers = couldHave.shadow_temple_adult_access && (couldHave.hover_boots || couldHave.hookshot);
+	locationCouldAccess.shadow_compass = couldHave.can_cross_shadow_gap;
+	locationCouldAccess.shadow_earlySilvers = couldHave.can_cross_shadow_gap;
+	locationCouldAccess.shadow_spinning1 = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_spinning2 = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_spikesLower = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_spikesUpper = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_spikesSwitch = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_redeadSilvers = couldHave.can_bomb_shadow_wall;
+	locationCouldAccess.shadow_pot = couldHave.can_bomb_shadow_wall && couldHave.hookshot;
+	locationCouldAccess.shadow_wind = couldHave.can_pass_shadow_hookshot_door;
+	locationCouldAccess.shadow_bombable = couldHave.can_pass_shadow_hookshot_door;
+	locationCouldAccess.shadow_gibdos = couldHave.can_pass_shadow_hookshot_door;
+	locationCouldAccess.shadow_dins1 = couldHave.can_ride_shadow_boat && couldHave.can_use_dins;
+	locationCouldAccess.shadow_dins2 = couldHave.can_ride_shadow_boat && couldHave.can_use_dins;
+	locationCouldAccess.shadow_floormaster = couldHave.can_ride_shadow_boat;
+	locationCouldAccess.shadow_bongo = couldHave.can_beat_shadow_boss;
 	
-	Location_Could_Access.ganons_spiritTrial2 = CouldHave.can_enter_ganons && (CouldHave.bomb_bag || Player.bombchus || CouldHave.bow);//&& CouldHave.can_see;
+	locationCouldAccess.ganons_spiritTrial2 = couldHave.can_enter_ganons && (couldHave.bomb_bag || player.bombchus || couldHave.bow);//&& couldHave.can_see;
 	
-	Object.assign(Location_Peek, Location_Access);
-	Object.assign(Location_Could_Peek, Location_Could_Access);
+	Object.assign(locationPeek, locationAccess);
+	Object.assign(locationCouldPeek, locationCouldAccess);
 	
-	for(let i = 0, Peek = Location_Peek, Has = Player; i < 2; i++) {
+	for(let i = 0, Peek = locationPeek, Has = player; i < 2; i++) {
 		Peek.hyrule_tektite_grotto = Has.can_blast_or_smash;
 		Peek.hylia_bottle = true;
 		Peek.hylia_sun_shoot = Has.bow;
 		Peek.crater_bean = Has.bolero || Has.crater_top || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
 		Peek.crater_nook_hp = Has.crater_top || Has.bolero || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_dmt_fairy || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc || Spawn.adult_lower_dmc_fairy || Spawn.adult_upper_dmc || Spawn.adult_lower_dmc_fairy;
-		Peek.colossus_fairy = Has.can_enter_colossus && (Has.bomb_bag || Player.bombchus) && Has.lullaby;
+		Peek.colossus_fairy = Has.can_enter_colossus && (Has.bomb_bag || player.bombchus) && Has.lullaby;
 		Peek.colossus_bean = Has.can_enter_colossus;
-		Peek.tokens_20 = Logic.gold_skulltulas >= 20 || Has.tokens >= 20 || rules.preset == "sgl2025";
-		Peek.tokens_30 = Logic.gold_skulltulas >= 30 || Has.tokens >= 30 || rules.preset == "S8" || rules.preset == "sgl2025" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
-		Peek.tokens_40 = Logic.gold_skulltulas >= 40 || Has.tokens >= 40 || rules.preset == "S7" || rules.preset == "S8" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
-		Peek.tokens_50 = Logic.gold_skulltulas >= 50 || Has.tokens >= 50 || rules.preset == "S7" || rules.preset == "S8" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
+		Peek.tokens_20 = logic.gold_skulltulas >= 20 || Has.tokens >= 20 || rules.preset == "sgl2025";
+		Peek.tokens_30 = logic.gold_skulltulas >= 30 || Has.tokens >= 30 || rules.preset == "S8" || rules.preset == "sgl2025" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
+		Peek.tokens_40 = logic.gold_skulltulas >= 40 || Has.tokens >= 40 || rules.preset == "S7" || rules.preset == "S8" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
+		Peek.tokens_50 = logic.gold_skulltulas >= 50 || Has.tokens >= 50 || rules.preset == "S7" || rules.preset == "S8" || rules.preset == "truth" || rules.preset == "leagueS9" || rules.preset == "s9";
 		Peek.graveyard_box = true;//Has.bean_access || Has.longshot || Has.boomerang;
 		Peek.bottom_of_fountain = Has.ice_entrance_access;
 		Peek.kakariko_hag = true;
@@ -1828,7 +1828,7 @@ function locationLogic(){
 		Peek.h_hyrule_remoteGrotto = Has.can_blast_or_smash;
 		Peek.h_hyrule_openGrotto = true;
 		Peek.h_hyrule_marketGrotto = Has.can_blast_or_smash;
-		Peek.h_hyrule_web = (Has.hammer && Has.can_use_fire) || ((Has.bomb_bag || Player.bombchus) && Has.can_use_dins)
+		Peek.h_hyrule_web = (Has.hammer && Has.can_use_fire) || ((Has.bomb_bag || player.bombchus) && Has.can_use_dins)
 		Peek.h_valley = true;
 		Peek.h_lab = true;
 		Peek.h_back_right_lake = true;
@@ -1839,7 +1839,7 @@ function locationLogic(){
 		Peek.h_tot_4 = true;
 		Peek.h_castle_1 = true;
 		Peek.h_castle_2 = true;
-		Peek.h_castle_sos = Has.storms && (Has.bomb_bag || Player.bombchus);
+		Peek.h_castle_sos = Has.storms && (Has.bomb_bag || player.bombchus);
 		Peek.h_fountain_fairy = Has.ice_entrance_access || Has.jabu_entrance_access;
 		Peek.h_fountain = Has.ice_entrance_access || Has.jabu_entrance_access;
 		Peek.h_lw_bridge = true;
@@ -1853,7 +1853,7 @@ function locationLogic(){
 		Peek.h_trail_storms = Has.storms;
 		Peek.h_biggoron = Has.crater_top;
 		Peek.h_crater_grotto = Has.can_blast_or_smash;
-		Peek.h_crater_wall = Has.bomb_bag || Player.bombchus;
+		Peek.h_crater_wall = Has.bomb_bag || player.bombchus;
 		Peek.h_kakariko_grotto = true;
 		Peek.h_nocturne = Has.nocturne;
 		Peek.h_river_grotto = true;
@@ -1862,44 +1862,44 @@ function locationLogic(){
 		Peek.h_domain = Has.lullaby || Has.hover_boots || Has.child_can_enter_domain;
 		Peek.h_crater_grotto = Has.can_blast_or_smash;
 		Peek.h_colossus = Has.requiem || Has.eponas || Has.longshot;
-		Peek.gs_kokiri_adult = Has.hookshot || Has.hover_boots || Has.bow || Player.bombchus || Has.bomb_bag || Has.can_use_dins;
-		Peek.gs_lost_woods_above_stage = Has.bean_access || Player.bombchus || Has.bow || Has.longshot || Has.can_use_dins;
-		Peek.gs_sacred_forest = Has.hookshot || Player.bombchus || Has.bomb_bag || Has.bow || Has.can_use_dins;
-		Peek.gs_outside_kakariko = ((Has.boomerang || Has.slingshot || Has.can_use_dins) && (Has.bomb_bag || Player.bombchus)) || (Has.can_blast_or_smash && (Has.hookshot || Has.bow || Has.can_use_dins)) || Player.bombchus || Has.bomb_bag;
-		Peek.gs_near_gerudo = (Has.hammer && (Has.can_use_fire || Player.bombchus || Has.bow)) || ((Has.bomb_bag || Player.bombchus) && (Has.can_use_dins || Has.slingshot || Player.bombchus));
-		Peek.gs_hyrule_castle_grotto = Has.storms && (Has.boomerang || Player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag);
-		Peek.gs_lon_lon_window = Has.boomerang || Player.bombchus || Has.slingshot;
-		Peek.gs_lon_lon_back_wall = Has.boomerang || Player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag;
-		Peek.gs_kakariko_impas = Has.hookshot || Spawn.adult_kak_roof || Has.hover_boots || Player.bombchus;
-		Peek.gs_graveyard_wall = Has.boomerang || Player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag;
-		Peek.gs_river_near_grotto = Has.hookshot || Player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag;
-		Peek.gs_river_above_bridge = Has.hookshot || Player.bombchus || Has.bow;
-		Peek.gs_fountain_above_log = Has.jabu_entrance_access && (Has.boomerang || Player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag);
-		Peek.gs_fountain_hidden_cave = Has.ice_entrance_access && Has.silver_gauntlets && (Has.hookshot || Player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && Has.can_blast_or_smash;
-		Peek.gs_hylia_tree = Has.longshot || Player.bombchus;
+		Peek.gs_kokiri_adult = Has.hookshot || Has.hover_boots || Has.bow || player.bombchus || Has.bomb_bag || Has.can_use_dins;
+		Peek.gs_lost_woods_above_stage = Has.bean_access || player.bombchus || Has.bow || Has.longshot || Has.can_use_dins;
+		Peek.gs_sacred_forest = Has.hookshot || player.bombchus || Has.bomb_bag || Has.bow || Has.can_use_dins;
+		Peek.gs_outside_kakariko = ((Has.boomerang || Has.slingshot || Has.can_use_dins) && (Has.bomb_bag || player.bombchus)) || (Has.can_blast_or_smash && (Has.hookshot || Has.bow || Has.can_use_dins)) || player.bombchus || Has.bomb_bag;
+		Peek.gs_near_gerudo = (Has.hammer && (Has.can_use_fire || player.bombchus || Has.bow)) || ((Has.bomb_bag || player.bombchus) && (Has.can_use_dins || Has.slingshot || player.bombchus));
+		Peek.gs_hyrule_castle_grotto = Has.storms && (Has.boomerang || player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag);
+		Peek.gs_lon_lon_window = Has.boomerang || player.bombchus || Has.slingshot;
+		Peek.gs_lon_lon_back_wall = Has.boomerang || player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag;
+		Peek.gs_kakariko_impas = Has.hookshot || Spawn.adult_kak_roof || Has.hover_boots || player.bombchus;
+		Peek.gs_graveyard_wall = Has.boomerang || player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag;
+		Peek.gs_river_near_grotto = Has.hookshot || player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag;
+		Peek.gs_river_above_bridge = Has.hookshot || player.bombchus || Has.bow;
+		Peek.gs_fountain_above_log = Has.jabu_entrance_access && (Has.boomerang || player.bombchus || Has.slingshot || Has.can_use_dins || Has.bomb_bag);
+		Peek.gs_fountain_hidden_cave = Has.ice_entrance_access && Has.silver_gauntlets && (Has.hookshot || player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && Has.can_blast_or_smash;
+		Peek.gs_hylia_tree = Has.longshot || player.bombchus;
 		Peek.gs_valley_small_bridge = true;
-		Peek.gs_valley_tent = Has.fortress_access && (Has.hookshot || Player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag);
-		Peek.gs_valley_pillar = Has.fortress_access && (Has.hookshot || Player.bombchus || Has.bow);
-		Peek.gs_fortress_archery = Has.fortress_access && (Has.hookshot || Player.bombchus || Has.bow);
-		Peek.gs_wasteland = (Has.hookshot || Player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && (Has.can_cross_quicksand || Has.can_enter_colossus);
-		Peek.gs_colossus_tree = (Has.hookshot || Player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && Has.can_enter_colossus;
-		Peek.gs_colossus_hill = (Has.requiem && Has.bean_access) || ((Has.hookshot || Player.bombchus || Has.bow) && Has.can_enter_colossus);
-		Peek.gs_deku_basement_back = Has.deku_access && (Has.bomb_bag || Player.bombchus);
-		Peek.gs_dodongos_above_stairs = Has.dodongos_climb && (Has.hookshot || Has.boomerang || Player.bombchus || Has.slingshot || Has.bow || Has.dins_fire || Has.bomb_bag);
+		Peek.gs_valley_tent = Has.fortress_access && (Has.hookshot || player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag);
+		Peek.gs_valley_pillar = Has.fortress_access && (Has.hookshot || player.bombchus || Has.bow);
+		Peek.gs_fortress_archery = Has.fortress_access && (Has.hookshot || player.bombchus || Has.bow);
+		Peek.gs_wasteland = (Has.hookshot || player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && (Has.can_cross_quicksand || Has.can_enter_colossus);
+		Peek.gs_colossus_tree = (Has.hookshot || player.bombchus || Has.bow || Has.can_use_dins || Has.bomb_bag) && Has.can_enter_colossus;
+		Peek.gs_colossus_hill = (Has.requiem && Has.bean_access) || ((Has.hookshot || player.bombchus || Has.bow) && Has.can_enter_colossus);
+		Peek.gs_deku_basement_back = Has.deku_access && (Has.bomb_bag || player.bombchus);
+		Peek.gs_dodongos_above_stairs = Has.dodongos_climb && (Has.hookshot || Has.boomerang || player.bombchus || Has.slingshot || Has.bow || Has.dins_fire || Has.bomb_bag);
 		Peek.gs_jabu_near_octo_1 = Has.can_hit_jabu_switch && (Has.boomerang || Has.slingshot);
 		Peek.gs_jabu_near_octo_2 = Has.can_hit_jabu_switch && (Has.boomerang || Has.slingshot);
-		Peek.gs_forest_outdoor_west = Has.forest_temple_adult_access && (Has.hookshot || Has.bow || (Has.time && Player.bombchus));
-		Peek.gs_water_central = Has.middle_water && (Has.longshot || (Has.can_use_farores && Has.hookshot) || Player.bombchus || Has.bow);
-		Peek.gs_spirit_before_child_knuckle = Has.spirit_temple_access && ((Has.bomb_bag || Player.bombchus) && (Has.boomerang || Has.slingshot || Player.bombchus) && Player.current_spirit_keys >= 1 && Has.spirit_temple_child_access) || ((Has.hookshot || Has.bow || Player.bombchus || Has.can_use_dins) && Has.silver_gauntlets && Player.current_spirit_keys >= 1);
-		Peek.gs_spirit_boulder_room = Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || Player.bombchus);
-		Peek.gs_spirit_lobby = Has.spirit_temple_access && (Has.can_push_spirit_silver_block && Player.current_spirit_keys >= 1 && (Has.hookshot || Has.hover_boots || Has.bow)) || ((Has.bomb_bag || Player.bombchus) && Has.slingshot && Player.current_spirit_keys >= 1 && Has.spirit_temple_child_access);
+		Peek.gs_forest_outdoor_west = Has.forest_temple_adult_access && (Has.hookshot || Has.bow || (Has.time && player.bombchus));
+		Peek.gs_water_central = Has.middle_water && (Has.longshot || (Has.can_use_farores && Has.hookshot) || player.bombchus || Has.bow);
+		Peek.gs_spirit_before_child_knuckle = Has.spirit_temple_access && ((Has.bomb_bag || player.bombchus) && (Has.boomerang || Has.slingshot || player.bombchus) && player.current_spirit_keys >= 1 && Has.spirit_temple_child_access) || ((Has.hookshot || Has.bow || player.bombchus || Has.can_use_dins) && Has.silver_gauntlets && player.current_spirit_keys >= 1);
+		Peek.gs_spirit_boulder_room = Has.can_push_spirit_silver_block && (Has.bow || Has.hookshot || player.bombchus);
+		Peek.gs_spirit_lobby = Has.spirit_temple_access && (Has.can_push_spirit_silver_block && player.current_spirit_keys >= 1 && (Has.hookshot || Has.hover_boots || Has.bow)) || ((Has.bomb_bag || player.bombchus) && Has.slingshot && player.current_spirit_keys >= 1 && Has.spirit_temple_child_access);
 		Peek.gs_shadow_crusher = Has.can_bomb_shadow_wall;
-		Peek.gs_shadow_near_boat = Has.can_pass_shadow_hookshot_door && (Has.longshot || Has.bow || Player.bombchus) && Player.current_shadow_keys >=4;
-		Peek.gs_well_west_inner = Has.botw_child_access && Player.current_well_keys >=1;
-		Peek.gs_well_east_inner = Has.botw_child_access && Player.current_well_keys >=1;
-		Peek.gs_ice_spinning_scythe = Has.ice_access && (Has.hookshot || Has.bow || Player.bombchus || Has.bomb_bag || Has.can_use_dins);
-		Peek.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || Player.bombchus || Has.bomb_bag || Has.can_use_dins);
-		Peek.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || Player.bombchus || Has.bomb_bag || Has.can_use_dins);
+		Peek.gs_shadow_near_boat = Has.can_pass_shadow_hookshot_door && (Has.longshot || Has.bow || player.bombchus) && player.current_shadow_keys >=4;
+		Peek.gs_well_west_inner = Has.botw_child_access && player.current_well_keys >=1;
+		Peek.gs_well_east_inner = Has.botw_child_access && player.current_well_keys >=1;
+		Peek.gs_ice_spinning_scythe = Has.ice_access && (Has.hookshot || Has.bow || player.bombchus || Has.bomb_bag || Has.can_use_dins);
+		Peek.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.bombchus || Has.bomb_bag || Has.can_use_dins);
+		Peek.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.bombchus || Has.bomb_bag || Has.can_use_dins);
 		
 		if(rules.csmc == "on") {
 			Peek.goron_maze_1 = true;
@@ -1909,24 +1909,24 @@ function locationLogic(){
 			Peek.gerudo_hammer = Has.fortress_access;
 			Peek.gerudo_roof = Has.fortress_access;
 			Peek.dodongos_end_of_bridge = Has.can_break_dodongos_wall;
-			Peek.forest_midCourtyard = Has.forest_temple_access && ((Has.time || (Has.forest_temple_adult_access && (Has.bow || ((Has.hover_boots || Has.goron_bracelet) && Player.current_forest_keys>=1)) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && Player.current_forest_keys>=5))));
-			Peek.forest_blockRoom = Has.forest_temple_access && Player.current_forest_keys >= 1 && ((Has.forest_temple_adult_access && Has.bow) || (Has.forest_temple_child_access && Has.slingshot));
+			Peek.forest_midCourtyard = Has.forest_temple_access && ((Has.time || (Has.forest_temple_adult_access && (Has.bow || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys>=1)) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys>=5))));
+			Peek.forest_blockRoom = Has.forest_temple_access && player.current_forest_keys >= 1 && ((Has.forest_temple_adult_access && Has.bow) || (Has.forest_temple_child_access && Has.slingshot));
 			Peek.fire_hammer2 = Has.fire_temple_access;
 			Peek.fire_upperMaze = Has.can_climb_fire_temple;
 			Peek.fire_shortcut = Has.can_climb_fire_temple;
 			Peek.water_cracked = Has.can_do_water_checks;
 			Peek.water_block = Has.water_temple_adult_access;
-			Peek.water_river = Has.can_do_water_checks && Player.current_water_keys >= 2 && Has.time && Has.hookshot;
-			Peek.spirit_adultLeft = Has.can_push_spirit_silver_block && Has.lullaby && (Has.bow || Has.hookshot || Has.bomb_bag || Player.bombchus);
+			Peek.water_river = Has.can_do_water_checks && player.current_water_keys >= 2 && Has.time && Has.hookshot;
+			Peek.spirit_adultLeft = Has.can_push_spirit_silver_block && Has.lullaby && (Has.bow || Has.hookshot || Has.bomb_bag || player.bombchus);
 			Peek.spirit_rightHand = Has.can_enter_colossus;
-			Peek.shadow_dins1 = Has.can_ride_shadow_boat && Player.current_shadow_keys >=4;
-			Peek.shadow_dins2 = Has.can_ride_shadow_boat && Player.current_shadow_keys >=4;
+			Peek.shadow_dins1 = Has.can_ride_shadow_boat && player.current_shadow_keys >=4;
+			Peek.shadow_dins2 = Has.can_ride_shadow_boat && player.current_shadow_keys >=4;
 			Peek.ganons_shadowTrial1 = Has.can_enter_ganons;
 			Peek.gtg_aboveEyes = Has.gtg_access;//&& Has.can_see;
-			Peek.gtg_freestanding = Has.gtg_access && (Player.current_gtg_keys >= 2 || (Has.bomb_bag || Player.bombchus) || (Has.can_climb_gtg_hole /*&& Has.can_see*/));
+			Peek.gtg_freestanding = Has.gtg_access && (player.current_gtg_keys >= 2 || (Has.bomb_bag || player.bombchus) || (Has.can_climb_gtg_hole /*&& Has.can_see*/));
 			Peek.gtg_right2 = Has.gtg_access;
 			Peek.gtg_right3 = Has.gtg_access;
-			Peek.gtg_left1 = Has.gtg_access && (Player.current_gtg_keys >= 1 || (Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow));
+			Peek.gtg_left1 = Has.gtg_access && (player.current_gtg_keys >= 1 || (Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow));
 			Peek.gtg_left2 = Has.gtg_access;
 			Peek.gtg_left3 = Has.gtg_access;
 			Peek.gtg_left4 = Has.gtg_access;
@@ -1939,7 +1939,7 @@ function locationLogic(){
 			Peek.well_basement = Has.botw_child_access;
 		}
 		
-		Peek = Location_Could_Peek;
-		Has = CouldHave;
+		Peek = locationCouldPeek;
+		Has = couldHave;
 	}
 }

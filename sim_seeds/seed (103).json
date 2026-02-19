@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle with Poe":                      1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        9,
@@ -328,7 +328,7 @@
     "GC Pot Freestanding PoH":                              "Bombchus (10)",
     "GC Rolling Goron as Child":                            "Piece of Heart",
     "GC Rolling Goron as Adult":                            "Deku Nuts (5)",
-    "GC Maze Left Chest":                                   "Claim Check",
+    "GC Maze Left Chest":                                   "Claim checkToItemMap",
     "GC Maze Right Chest":                                  "Mirror Shield",
     "GC Maze Center Chest":                                 "Progressive Strength Upgrade",
     "DMC Volcano Freestanding PoH":                         "Rupees (50)",

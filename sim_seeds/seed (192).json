@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle with Milk":                     1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -335,7 +335,7 @@
     "DMC Volcano Freestanding PoH":                         "Piece of Heart",
     "DMC Wall Freestanding PoH":                            "Bow",
     "DMC Upper Grotto Chest":                               "Deku Seeds (30)",
-    "DMC Great Fairy Reward":                               "Claim Check",
+    "DMC Great Fairy Reward":                               "Claim checkToItemMap",
     "ZR Open Grotto Chest":                                 "Rupees (50)",
     "ZR Frogs in the Rain":                                 "Dins Fire",
     "ZR Frogs Ocarina Game":                                "Piece of Heart",
@@ -538,7 +538,7 @@
     "ZF Iceberg Freestanding PoH":                    "Boomerang",
     "Deku Tree Queen Gohma Heart":                    "Megaton Hammer",
     "GC Maze Left Chest":                             "Progressive Strength Upgrade",
-    "DMC Great Fairy Reward":                         "Claim Check",
+    "DMC Great Fairy Reward":                         "Claim checkToItemMap",
     "DMT Biggoron":                                   "Iron Boots",
     "Spirit Temple First Mirror Right Chest":         "Light Arrows"
   },
@@ -555,7 +555,7 @@
         "Gerudo Training Ground Hammer Room Clear Chest": "Bomb Bag",
         "Market Bombchu Bowling Second Prize":            "Progressive Hookshot",
         "Deku Tree Queen Gohma Heart":                    "Megaton Hammer",
-        "DMC Great Fairy Reward":                         "Claim Check",
+        "DMC Great Fairy Reward":                         "Claim checkToItemMap",
         "DMT Biggoron":                                   "Iron Boots"
       },
       "Path to Twinrova":     {
@@ -701,7 +701,7 @@
     },
     "10": {
       "Barinade":                                     "Shadow Medallion",
-      "DMC Great Fairy Reward":                       "Claim Check",
+      "DMC Great Fairy Reward":                       "Claim checkToItemMap",
       "GC Maze Left Chest":                           "Progressive Strength Upgrade"
     },
     "11": {

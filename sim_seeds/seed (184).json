@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Milk":                     1,
     "Bottle with Poe":                      1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        6,
@@ -386,7 +386,7 @@
     "Bottom of the Well Back Left Bombable Chest":          "Small Key (Bottom of the Well)",
     "Bottom of the Well Underwater Left Chest":             "Heart Container",
     "Bottom of the Well Freestanding Key":                  "Light Arrows",
-    "Bottom of the Well Compass Chest":                     "Claim Check",
+    "Bottom of the Well Compass Chest":                     "Claim checkToItemMap",
     "Bottom of the Well Center Skulltula Chest":            "Rupees (50)",
     "Bottom of the Well Right Bottom Fake Wall Chest":      "Rupees (5)",
     "Bottom of the Well Fire Keese Chest":                  "Bow",
@@ -528,7 +528,7 @@
     "Sheik in Forest":                                      "Song of Time",
     "Song from Malon":                                      "Song of Storms",
     "Bottom of the Well Freestanding Key":                  "Light Arrows",
-    "Bottom of the Well Compass Chest":                     "Claim Check",
+    "Bottom of the Well Compass Chest":                     "Claim checkToItemMap",
     "DMT Biggoron":                                         "Megaton Hammer",
     "Kak Redead Grotto Chest":                              "Rutos Letter",
     "ZR Frogs in the Rain":                                 "Boomerang",
@@ -550,20 +550,20 @@
       "Path to King Dodongo": {
         "Graveyard Dampe Race Hookshot Chest": "Bow",
         "Song from Malon":                     "Song of Storms",
-        "Bottom of the Well Compass Chest":    "Claim Check",
+        "Bottom of the Well Compass Chest":    "Claim checkToItemMap",
         "DMT Biggoron":                        "Megaton Hammer"
       },
       "Path to Queen Gohma":  {
         "Graveyard Dampe Race Hookshot Chest":        "Bow",
         "Song from Malon":                            "Song of Storms",
-        "Bottom of the Well Compass Chest":           "Claim Check",
+        "Bottom of the Well Compass Chest":           "Claim checkToItemMap",
         "DMT Biggoron":                               "Megaton Hammer",
         "Dodongos Cavern Bomb Flower Platform Chest": "Kokiri Sword"
       },
       "Path to Barinade":     {
         "Graveyard Dampe Race Hookshot Chest": "Bow",
         "Song from Malon":                     "Song of Storms",
-        "Bottom of the Well Compass Chest":    "Claim Check",
+        "Bottom of the Well Compass Chest":    "Claim checkToItemMap",
         "DMT Biggoron":                        "Megaton Hammer",
         "Kak Redead Grotto Chest":             "Rutos Letter",
         "ZR Frogs in the Rain":                "Boomerang",
@@ -574,7 +574,7 @@
         "Graveyard Dampe Race Hookshot Chest":                  "Bow",
         "Sheik in Forest":                                      "Song of Time",
         "Song from Malon":                                      "Song of Storms",
-        "Bottom of the Well Compass Chest":                     "Claim Check",
+        "Bottom of the Well Compass Chest":                     "Claim checkToItemMap",
         "DMT Biggoron":                                         "Megaton Hammer",
         "Kak Redead Grotto Chest":                              "Rutos Letter",
         "ZR Frogs in the Rain":                                 "Boomerang",
@@ -594,7 +594,7 @@
         "Graveyard Dampe Race Hookshot Chest":                  "Bow",
         "Sheik in Forest":                                      "Song of Time",
         "Song from Malon":                                      "Song of Storms",
-        "Bottom of the Well Compass Chest":                     "Claim Check",
+        "Bottom of the Well Compass Chest":                     "Claim checkToItemMap",
         "DMT Biggoron":                                         "Megaton Hammer",
         "Kak Redead Grotto Chest":                              "Rutos Letter",
         "ZR Frogs in the Rain":                                 "Boomerang",
@@ -687,7 +687,7 @@
       "Song from Malon":                                    "Song of Storms"
     },
     "3":  {
-      "Bottom of the Well Compass Chest":                   "Claim Check",
+      "Bottom of the Well Compass Chest":                   "Claim checkToItemMap",
       "Bottom of the Well Freestanding Key":                "Light Arrows"
     },
     "4":  {

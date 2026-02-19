@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Red Potion":               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        5,
@@ -292,7 +292,7 @@
     "HF Deku Scrub Grotto":                                 {"item": "Progressive Wallet", "price": 10},
     "Market Shooting Gallery Reward":                       "Piece of Heart",
     "Market Bombchu Bowling First Prize":                   "Arrows (10)",
-    "Market Bombchu Bowling Second Prize":                  "Claim Check",
+    "Market Bombchu Bowling Second Prize":                  "Claim checkToItemMap",
     "Market Lost Dog":                                      "Rupees (20)",
     "Market Treasure Chest Game Reward":                    "Rupees (5)",
     "Market 10 Big Poes":                                   "Rupees (20)",

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Blue Fire":                1,
     "Bottle with Fairy":                    1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -303,7 +303,7 @@
     "Kak Anju as Child":                                    "Bombs (5)",
     "Kak Anju as Adult":                                    "Heart Container",
     "Kak Impas House Freestanding PoH":                     "Piece of Heart",
-    "Kak Windmill Freestanding PoH":                        "Claim Check",
+    "Kak Windmill Freestanding PoH":                        "Claim checkToItemMap",
     "Kak Man on Roof":                                      "Biggoron Sword",
     "Kak Open Grotto Chest":                                "Progressive Scale",
     "Kak Redead Grotto Chest":                              "Rupees (5)",
@@ -523,7 +523,7 @@
     "Song from Impa":   "Requiem of Spirit"
   },
   ":woth_locations":           {
-    "Kak Windmill Freestanding PoH":                "Claim Check",
+    "Kak Windmill Freestanding PoH":                "Claim checkToItemMap",
     "Song from Windmill":                           "Eponas Song",
     "LW Ocarina Memory Game":                       "Progressive Strength Upgrade",
     "Song from Saria":                              "Nocturne of Shadow",
@@ -562,7 +562,7 @@
         "Gerudo Training Ground Maze Right Side Chest": "Progressive Hookshot"
       },
       "Path to Volvagia":      {
-        "Kak Windmill Freestanding PoH":                "Claim Check",
+        "Kak Windmill Freestanding PoH":                "Claim checkToItemMap",
         "Song from Windmill":                           "Eponas Song",
         "DMT Biggoron":                                 "Hover Boots",
         "Colossus Freestanding PoH":                    "Progressive Hookshot",
@@ -579,7 +579,7 @@
         "Forest Temple Well Chest":             "Fire Arrows"
       },
       "Path to Barinade":      {
-        "Kak Windmill Freestanding PoH":            "Claim Check",
+        "Kak Windmill Freestanding PoH":            "Claim checkToItemMap",
         "LW Ocarina Memory Game":                   "Progressive Strength Upgrade",
         "Song from Saria":                          "Nocturne of Shadow",
         "DMT Biggoron":                             "Hover Boots",
@@ -660,7 +660,7 @@
       "HF Open Grotto Chest":                          "Bow",
       "KF Shop Item 1":                                "Buy Deku Shield",
       "Kak Bazaar Item 7":                             "Buy Deku Stick (1)",
-      "Kak Windmill Freestanding PoH":                 "Claim Check",
+      "Kak Windmill Freestanding PoH":                 "Claim checkToItemMap",
       "Master Sword Pedestal":                         "Time Travel",
       "Song from Windmill":                            "Eponas Song"
     },

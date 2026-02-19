@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Blue Potion":              1,
     "Bottle with Poe":                      1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -339,7 +339,7 @@
     "ZR Frogs in the Rain":                                 "Rupees (200)",
     "ZR Frogs Ocarina Game":                                "Piece of Heart",
     "ZR Near Open Grotto Freestanding PoH":                 "Rupees (5)",
-    "ZR Near Domain Freestanding PoH":                      "Claim Check",
+    "ZR Near Domain Freestanding PoH":                      "Claim checkToItemMap",
     "ZD Diving Minigame":                                   "Progressive Hookshot",
     "ZD Chest":                                             "Arrows (10)",
     "ZD King Zora Thawed":                                  "Bombs (10)",

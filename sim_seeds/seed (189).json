@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Red Potion":               1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        5,
@@ -338,7 +338,7 @@
     "DMC Great Fairy Reward":                               "Slingshot",
     "ZR Open Grotto Chest":                                 "Rupees (5)",
     "ZR Frogs in the Rain":                                 "Piece of Heart",
-    "ZR Frogs Ocarina Game":                                "Claim Check",
+    "ZR Frogs Ocarina Game":                                "Claim checkToItemMap",
     "ZR Near Open Grotto Freestanding PoH":                 "Piece of Heart",
     "ZR Near Domain Freestanding PoH":                      "Heart Container",
     "ZD Diving Minigame":                                   "Progressive Wallet",
@@ -626,7 +626,7 @@
     "HF (Near Market Grotto)":         {"text": "They say that slaying #40 Gold Skulltulas# reveals #Bombchus (5 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Kak 40 Gold Skulltula Reward"], "hinted_items": ["Bombchus (5)"]},
     "HF (Open Grotto)":                {"text": "They say that #Kakariko Village# is on the path to #King Dodongo#.", "colors": ["Red", "Light Blue"], "hinted_locations": ["Kak Windmill Freestanding PoH"], "hinted_items": ["Kokiri Sword"]},
     "HF (Southeast Grotto)":           {"text": "They say that shooting a #target in the woods# grants #a Piece of Heart#.", "colors": ["Green", "Red"], "hinted_locations": ["LW Target in Woods"], "hinted_items": ["Piece of Heart"]},
-    "KF (Deku Tree Left)":             {"text": "They say that the final reward from the #Frogs of Zora's River# is #the Claim Check#.", "colors": ["Green", "Red"], "hinted_locations": ["ZR Frogs Ocarina Game"], "hinted_items": ["Claim Check"]},
+    "KF (Deku Tree Left)":             {"text": "They say that the final reward from the #Frogs of Zora's River# is #the Claim checkToItemMap#.", "colors": ["Green", "Red"], "hinted_locations": ["ZR Frogs Ocarina Game"], "hinted_items": ["Claim checkToItemMap"]},
     "KF (Deku Tree Right)":            {"text": "They say that a #ravaged village# mourns with #Epona's Song#.", "colors": ["Green", "Red"], "hinted_locations": ["Sheik in Kakariko"], "hinted_items": ["Eponas Song"]},
     "KF (Outside Storms)":             {"text": "They say that slaying #50 Gold Skulltulas# reveals #Arrows (30 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Kak 50 Gold Skulltula Reward"], "hinted_items": ["Arrows (30)"]},
     "KF (Storms Grotto)":              {"text": "They say that #Kokiri Forest# is on the path to #Twinrova#.", "colors": ["Yellow", "Light Blue"], "hinted_locations": ["KF Midos Top Left Chest"], "hinted_items": ["Magic Meter"]},
@@ -642,7 +642,7 @@
     "ToT (Left)":                      {"text": "They say that shooting a #target in the woods# grants #a Piece of Heart#.", "colors": ["Green", "Red"], "hinted_locations": ["LW Target in Woods"], "hinted_items": ["Piece of Heart"]},
     "ToT (Left-Center)":               {"text": "They say that #Kokiri Forest# is on the path to #Twinrova#.", "colors": ["Yellow", "Light Blue"], "hinted_locations": ["KF Midos Top Left Chest"], "hinted_items": ["Magic Meter"]},
     "ToT (Right)":                     {"text": "They say that the final prize of #the thieves' training# is #a Piece of Heart#.", "colors": ["Green", "Red"], "hinted_locations": ["Gerudo Training Ground Maze Path Final Chest"], "hinted_items": ["Piece of Heart"]},
-    "ToT (Right-Center)":              {"text": "They say that the final reward from the #Frogs of Zora's River# is #the Claim Check#.", "colors": ["Green", "Red"], "hinted_locations": ["ZR Frogs Ocarina Game"], "hinted_items": ["Claim Check"]},
+    "ToT (Right-Center)":              {"text": "They say that the final reward from the #Frogs of Zora's River# is #the Claim checkToItemMap#.", "colors": ["Green", "Red"], "hinted_locations": ["ZR Frogs Ocarina Game"], "hinted_items": ["Claim checkToItemMap"]},
     "ZD (Mweep)":                      {"text": "They say that #Kakariko Village# is on the path to #King Dodongo#.", "colors": ["Red", "Light Blue"], "hinted_locations": ["Kak Windmill Freestanding PoH"], "hinted_items": ["Kokiri Sword"]},
     "ZF (Fairy)":                      {"text": "They say that a chest in the #central pillar of Water Temple# contains #a Small Key#.", "colors": ["Green", "Red"], "hinted_locations": ["Water Temple Central Pillar Chest"], "hinted_items": ["Small Key (Water Temple)"]},
     "ZF (Jabu)":                       {"text": "They say that #deep in the wasteland# is #Arrows (5 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Wasteland Chest"], "hinted_items": ["Arrows (5)"]},

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Milk":                     1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -374,7 +374,7 @@
     "Dodongos Cavern Compass Chest":                        "Rupees (20)",
     "Dodongos Cavern Bomb Flower Platform Chest":           "Nayrus Love",
     "Dodongos Cavern Bomb Bag Chest":                       "Rupees (50)",
-    "Dodongos Cavern End of Bridge Chest":                  "Claim Check",
+    "Dodongos Cavern End of Bridge Chest":                  "Claim checkToItemMap",
     "Dodongos Cavern Boss Room Chest":                      "Heart Container",
     "Dodongos Cavern King Dodongo Heart":                   "Arrows (10)",
     "Jabu Jabus Belly Boomerang Chest":                     "Heart Container",

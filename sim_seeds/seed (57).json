@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -302,7 +302,7 @@
     "LLR Freestanding PoH":                                 "Piece of Heart",
     "Kak Anju as Child":                                    "Deku Nut Capacity",
     "Kak Anju as Adult":                                    "Megaton Hammer",
-    "Kak Impas House Freestanding PoH":                     "Claim Check",
+    "Kak Impas House Freestanding PoH":                     "Claim checkToItemMap",
     "Kak Windmill Freestanding PoH":                        "Dins Fire",
     "Kak Man on Roof":                                      "Kokiri Sword",
     "Kak Open Grotto Chest":                                "Piece of Heart",

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fairy":                    1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        5,
@@ -382,7 +382,7 @@
     "Jabu Jabus Belly Compass Chest":                       "Deku Nut Capacity",
     "Jabu Jabus Belly Barinade Heart":                      "Rupees (5)",
     "Bottom of the Well Front Left Fake Wall Chest":        "Piece of Heart",
-    "Bottom of the Well Front Center Bombable Chest":       "Claim Check",
+    "Bottom of the Well Front Center Bombable Chest":       "Claim checkToItemMap",
     "Bottom of the Well Back Left Bombable Chest":          "Piece of Heart",
     "Bottom of the Well Underwater Left Chest":             "Piece of Heart",
     "Bottom of the Well Freestanding Key":                  "Piece of Heart",

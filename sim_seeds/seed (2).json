@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle with Red Potion":               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -296,7 +296,7 @@
     "Market Lost Dog":                                      "Heart Container",
     "Market Treasure Chest Game Reward":                    "Nayrus Love",
     "Market 10 Big Poes":                                   "Slingshot",
-    "ToT Light Arrows Cutscene":                            "Claim Check",
+    "ToT Light Arrows Cutscene":                            "Claim checkToItemMap",
     "HC Great Fairy Reward":                                "Piece of Heart",
     "LLR Talons Chickens":                                  "Deku Seeds (30)",
     "LLR Freestanding PoH":                                 "Heart Container",
@@ -543,7 +543,7 @@
     "GC Darunias Joy":                           "Progressive Hookshot",
     "Song from Ocarina of Time":                 "Suns Song",
     "Graveyard Heart Piece Grave Chest":         "Iron Boots",
-    "ToT Light Arrows Cutscene":                 "Claim Check",
+    "ToT Light Arrows Cutscene":                 "Claim checkToItemMap",
     "DMT Biggoron":                              "Light Arrows"
   },
   ":goal_locations":           {
@@ -835,7 +835,7 @@
       "Morpha":                                         "Spirit Medallion"
     },
     "23": {
-      "ToT Light Arrows Cutscene":                      "Claim Check"
+      "ToT Light Arrows Cutscene":                      "Claim checkToItemMap"
     },
     "24": {
       "DMT Biggoron":                                   "Light Arrows"

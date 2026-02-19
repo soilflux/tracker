@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -469,7 +469,7 @@
     "Spirit Temple Near Four Armos Chest":                  "Piece of Heart (Treasure Chest Game)",
     "Spirit Temple Hallway Right Invisible Chest":          "Heart Container",
     "Spirit Temple Hallway Left Invisible Chest":           "Light Arrows",
-    "Spirit Temple Mirror Shield Chest":                    "Claim Check",
+    "Spirit Temple Mirror Shield Chest":                    "Claim checkToItemMap",
     "Spirit Temple Boss Key Chest":                         "Rupees (20)",
     "Spirit Temple Topmost Chest":                          "Boss Key (Spirit Temple)",
     "Spirit Temple Twinrova Heart":                         "Rupees (200)",
@@ -594,7 +594,7 @@
     "Colossus (Spirit Temple)":        {"text": "They say that #deep in the wasteland# is #Arrows (5 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Wasteland Chest"], "hinted_items": ["Arrows (5)"]},
     "DMC (Bombable Wall)":             {"text": "They say that #Kakariko Village# is on the path to #Barinade#.", "colors": ["Blue", "Light Blue"], "hinted_locations": ["Kak Redead Grotto Chest"], "hinted_items": ["Progressive Hookshot"]},
     "DMC (Upper Grotto)":              {"text": "They say that #the Graveyard# is on the path to #Twinrova#.", "colors": ["Yellow", "Light Blue"], "hinted_locations": ["Graveyard Dampe Gravedigging Tour"], "hinted_items": ["Progressive Strength Upgrade"]},
-    "DMT (Biggoron)":                  {"text": "They say that upon the #Colossus's left hand# is #the Claim Check#.", "colors": ["Green", "Red"], "hinted_locations": ["Spirit Temple Mirror Shield Chest"], "hinted_items": ["Claim Check"]},
+    "DMT (Biggoron)":                  {"text": "They say that upon the #Colossus's left hand# is #the Claim checkToItemMap#.", "colors": ["Green", "Red"], "hinted_locations": ["Spirit Temple Mirror Shield Chest"], "hinted_items": ["Claim checkToItemMap"]},
     "DMT (Storms Grotto)":             {"text": "They say that the #Skull Mask# yields #a Deku Stick#.", "colors": ["Green", "Red"], "hinted_locations": ["Deku Theater Skull Mask"], "hinted_items": ["Deku Stick (1)"]},
     "Dodongos Cavern (Bombable Wall)": {"text": "They say that a #fairy outside Hyrule Castle# holds #a Deku Shield#.", "colors": ["Green", "Red"], "hinted_locations": ["HC Great Fairy Reward"], "hinted_items": ["Deku Shield"]},
     "GC (Maze)":                       {"text": "They say that #Kokiri Forest# is on the path to #Bongo Bongo#.", "colors": ["Pink", "Light Blue"], "hinted_locations": ["KF Midos Top Right Chest"], "hinted_items": ["Magic Meter"]},
@@ -613,7 +613,7 @@
     "KF (Outside Storms)":             {"text": "They say that the final prize of #the thieves' training# is #the Stone of Agony#.", "colors": ["Green", "Red"], "hinted_locations": ["Gerudo Training Ground Maze Path Final Chest"], "hinted_items": ["Stone of Agony"]},
     "KF (Storms Grotto)":              {"text": "They say that #the Sacred Forest Meadow# is on the path to #Barinade#.", "colors": ["Blue", "Light Blue"], "hinted_locations": ["Song from Saria"], "hinted_items": ["Bolero of Fire"]},
     "Kak (Open Grotto)":               {"text": "They say that slaying #40 Gold Skulltulas# reveals #a Recovery Heart#.", "colors": ["Green", "Red"], "hinted_locations": ["Kak 40 Gold Skulltula Reward"], "hinted_items": ["Recovery Heart"]},
-    "LH (Lab)":                        {"text": "They say that upon the #Colossus's left hand# is #the Claim Check#.", "colors": ["Green", "Red"], "hinted_locations": ["Spirit Temple Mirror Shield Chest"], "hinted_items": ["Claim Check"]},
+    "LH (Lab)":                        {"text": "They say that upon the #Colossus's left hand# is #the Claim checkToItemMap#.", "colors": ["Green", "Red"], "hinted_locations": ["Spirit Temple Mirror Shield Chest"], "hinted_items": ["Claim checkToItemMap"]},
     "LH (Southeast Corner)":           {"text": "They say that slaying #30 Gold Skulltulas# reveals #Arrows (30 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Kak 30 Gold Skulltula Reward"], "hinted_items": ["Arrows (30)"]},
     "LH (Southwest Corner)":           {"text": "They say that #deep in the wasteland# is #Arrows (5 pieces)#.", "colors": ["Green", "Red"], "hinted_locations": ["Wasteland Chest"], "hinted_items": ["Arrows (5)"]},
     "LW (Bridge)":                     {"text": "They say that #Biggoron# crafts #a Big Poe Bottle#.", "colors": ["Green", "Red"], "hinted_locations": ["DMT Biggoron"], "hinted_items": ["Bottle with Big Poe"]},

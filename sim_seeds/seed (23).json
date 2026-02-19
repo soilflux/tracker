@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Green Potion":             1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        4,
@@ -327,7 +327,7 @@
     "DMT Biggoron":                                         "Rupees (5)",
     "GC Darunias Joy":                                      "Deku Seeds (30)",
     "GC Pot Freestanding PoH":                              "Bombs (20)",
-    "GC Rolling Goron as Child":                            "Claim Check",
+    "GC Rolling Goron as Child":                            "Claim checkToItemMap",
     "GC Rolling Goron as Adult":                            "Heart Container",
     "GC Maze Left Chest":                                   "Bombs (10)",
     "GC Maze Right Chest":                                  "Rupees (5)",

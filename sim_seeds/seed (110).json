@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Milk":                     1,
     "Bottle with Red Potion":               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        3,
@@ -454,7 +454,7 @@
     "Shadow Temple Invisible Floormaster Chest":            "Rupees (5)",
     "Shadow Temple Bongo Bongo Heart":                      "Heart Container",
     "Spirit Temple Child Bridge Chest":                     "Small Key (Spirit Temple)",
-    "Spirit Temple Child Early Torches Chest":              "Claim Check",
+    "Spirit Temple Child Early Torches Chest":              "Claim checkToItemMap",
     "Spirit Temple Child Climb North Chest":                "Small Key (Spirit Temple)",
     "Spirit Temple Child Climb East Chest":                 "Piece of Heart",
     "Spirit Temple Map Chest":                              "Deku Shield",

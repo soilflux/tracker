@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Green Potion":             1,
     "Bottle":                               1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        7,
@@ -392,7 +392,7 @@
     "Bottom of the Well Fire Keese Chest":                  "Rupees (5)",
     "Bottom of the Well Like Like Chest":                   "Rupees (5)",
     "Bottom of the Well Map Chest":                         "Slingshot",
-    "Bottom of the Well Underwater Front Chest":            "Claim Check",
+    "Bottom of the Well Underwater Front Chest":            "Claim checkToItemMap",
     "Bottom of the Well Invisible Chest":                   "Deku Nuts (5)",
     "Bottom of the Well Lens of Truth Chest":               "Piece of Heart",
     "Forest Temple First Room Chest":                       "Small Key (Forest Temple)",

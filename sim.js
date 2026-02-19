@@ -182,9 +182,9 @@ function simCheckDungeonER() {
 function simGetStartingMajorItem() {
     value = Object.keys(SpoilerJSON[":randomized_starting_items"])[0];
     value2 = Items2[inputs.indexOf(SpoilerItemToInput[value])];
-    Player[value2] = true;
-    Logic[value2] = true;
-    CouldHave[value2] = true;
+    player[value2] = true;
+    logic[value2] = true;
+    couldHave[value2] = true;
     
     return value;
 }
@@ -282,9 +282,9 @@ function simCheckAdultSpawn() {
 function simCheckLightArrowHint() {
   const log = document.getElementById("simLog");
   
-  for (const loc of Locations) {
+  for (const loc of checks) {
     if (SpoilerJSON.locations[LocationToSpoilerName[loc]] === "Light Arrows") {
-      const area = AreaNamesLong[AreaNames.indexOf(LocationToArea[loc])]; 
+      const area = AreaNamesLong[AreaNames.indexOf(checkToAreaMap[loc])]; 
       log.value = `Light Arrows can be found in ${area}.\n${log.value}`;
       break;
     }
@@ -439,12 +439,12 @@ function simProcessHint(hint, str) {
 				else
 					temp_item2 = SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]];
 				
-				if(Check[SpoilerLocationToLocationName[loc1]] == "unknown")
+				if(checkToItemMap[SpoilerLocationToLocationName[loc1]] == "unknown")
 					document.getElementById(SpoilerLocationToLocationName[loc1]).value = capitalizeFirstLetter(temp_item);
-				Hinted[SpoilerLocationToLocationName[loc1]] = true;
-				if(Check[SpoilerLocationToLocationName[loc2]] == "unknown")
+				isCheckHinted[SpoilerLocationToLocationName[loc1]] = true;
+				if(checkToItemMap[SpoilerLocationToLocationName[loc2]] == "unknown")
 					document.getElementById(SpoilerLocationToLocationName[loc2]).value = capitalizeFirstLetter(temp_item2);
-				Hinted[SpoilerLocationToLocationName[loc2]] = true;
+				isCheckHinted[SpoilerLocationToLocationName[loc2]] = true;
 				isDualHint = true;
 				break;
 			}

@@ -135,7 +135,7 @@
       "Prescription",
       "Eyeball Frog",
       "Eyedrops",
-      "Claim Check"
+      "Claim checkToItemMap"
     ]
   },
   "randomized_settings":       {
@@ -159,7 +159,7 @@
     "Bottle with Fish":                     1,
     "Bottle with Milk":                     1,
     "Bow":                                  3,
-    "Claim Check":                          1,
+    "Claim checkToItemMap":                          1,
     "Deku Nut Capacity":                    2,
     "Deku Nuts (10)":                       1,
     "Deku Nuts (5)":                        2,
@@ -492,7 +492,7 @@
     "Gerudo Training Ground Freestanding Key":              "Small Key (Gerudo Training Ground)",
     "Gerudo Training Ground Maze Right Central Chest":      "Deku Stick (1)",
     "Gerudo Training Ground Maze Right Side Chest":         "Slingshot",
-    "Gerudo Training Ground Underwater Silver Rupee Chest": "Claim Check",
+    "Gerudo Training Ground Underwater Silver Rupee Chest": "Claim checkToItemMap",
     "Gerudo Training Ground Beamos Chest":                  "Small Key (Gerudo Training Ground)",
     "Gerudo Training Ground Hidden Ceiling Chest":          "Rupees (5)",
     "Gerudo Training Ground Maze Path First Chest":         "Small Key (Gerudo Training Ground)",
