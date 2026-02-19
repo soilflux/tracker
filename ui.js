@@ -1348,6 +1348,7 @@ function updateLogicInfo() {
 	if (true) {document.getElementById("skulls_in_logic").innerHTML = Logic.gold_skulltulas + " in Logic";} else {document.getElementById("skulls_in_logic").innerHTML = "??? in Logic"}
   
   Player.accessible = 0;
+  Player.tokensAccessible = 0;
 
 	Player.logically_accessible = 0;
 	Player.forest_logically_accessible=0;
@@ -1375,11 +1376,12 @@ function updateLogicInfo() {
 	for (var i = 0; i < Locations.length; i++) {
 		if (!songLocations.includes(Locations[i])) {
       hideCheck(Locations[i]);
-		}
-		
+		}  
 		if (rules.skullSanity == "off") {
-			if(Locations[i].startsWith("gs_"))
+			if(Locations[i].startsWith("gs_")) {
 				unusedLocations.push(i);
+        if(Location_Access[Locations[i]]) Player.tokensAccessible += 1;
+      }
 		}
 		else if (rules.skullSanity == "dungeon") {
 			if(Locations[i].startsWith("gs_") && (!Locations[i].startsWith("gs_deku") && !Locations[i].startsWith("gs_dodongos") && !Locations[i].startsWith("gs_jabu") && !Locations[i].startsWith("gs_forest") && !Locations[i].startsWith("gs_fire") && !Locations[i].startsWith("gs_water") && !Locations[i].startsWith("gs_spirit") && !Locations[i].startsWith("gs_shadow") && !Locations[i].startsWith("gs_ice") && !Locations[i].startsWith("gs_well")))
@@ -1664,6 +1666,7 @@ function updateLogicInfo() {
 	document.getElementById("checks_remaining").innerHTML=Player.checks_remaining + " Checks Left";
 	if (!nerfed) {document.getElementById("logically_accessible").innerHTML=Player.logically_accessible + " in Logic";} else {document.getElementById("logically_accessible").innerHTML="??? in Logic"}
   document.getElementById("accessible").innerHTML = Player.accessible + " Accessible";
+  document.getElementById("tokensAccessible").innerHTML = Player.tokensAccessible + " Accessible";
 }
 
 function searchingFor_tracking() {
