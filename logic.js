@@ -832,24 +832,24 @@ function logicShortcuts() {
 function updateLocationLogic() {
   {
     const {
-      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale, 
-      hookshot, bean_access, longshot, bow, bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion, 
-      spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows, ice_access, giants_wallet, deku_access, 
-      deku_child_access, slingshot, deku_adult_access, can_use_fire, can_pass_mido_as_adult, sarias, can_use_dins, can_stop_link_the_goron, 
-      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top, 
-      hover_boots, crater_by_city, gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem, 
-      can_enter_colossus, can_cross_quicksand, can_save_carpenters, gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access, 
-      forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key, fire_temple_access, 
-      fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks, 
-      middle_water, water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access, 
-      spirit_temple_access, spirit_keys, silver_gauntlets, can_push_spirit_silver_block, mirror_shield, spirit_boss_key, 
-      can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, can_beat_shadow_boss, 
-      ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, 
+      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale,
+      hookshot, bean_access, longshot, bow, bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion,
+      spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows, ice_access, giants_wallet, deku_access,
+      deku_child_access, slingshot, deku_adult_access, can_use_fire, can_pass_mido_as_adult, sarias, can_use_dins, can_stop_link_the_goron,
+      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top,
+      hover_boots, crater_by_city, gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem,
+      can_enter_colossus, can_cross_quicksand, can_save_carpenters, gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access,
+      forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key, fire_temple_access,
+      fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks,
+      middle_water, water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access,
+      spirit_temple_access, spirit_keys, silver_gauntlets, can_push_spirit_silver_block, mirror_shield, spirit_boss_key,
+      can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, can_beat_shadow_boss,
+      ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys,
       can_enter_fire_temple_entrance, forest_medallion, fire_medallion, projectile_both, water_medallion, can_enter_ganons, jabu_entrance_access, shadow_temple_adult_access
     } = logic;
     const {
       adult_fishing, child_hyrule_fairy, adult_ogc, child_zf_fairy, adult_zf_fairy, child_zf, child_lower_dmc, child_lower_dmc_fairy, child_dmt_fairy_ool,
-      child_upper_dmc, adult_lower_dmc_fairy, adult_zd, adult_kak_roof, child_dmt_fairy, adult_dmt_fairy, 
+      child_upper_dmc, adult_lower_dmc_fairy, adult_zd, adult_kak_roof, child_dmt_fairy, adult_dmt_fairy,
     } = Spawn;
 
     locationLogic.kokiri_mido_1 = true;

@@ -1144,6 +1144,15 @@ logic.current_ganons_keys = 0;
 logic.current_gtg_keys = 0;
 logic.current_well_keys = 0;
 
+logic.forced_forest_keys = 0;
+logic.forced_fire_keys = 0;
+logic.forced_water_keys = 0;
+logic.forced_spirit_keys = 0;
+logic.forced_shadow_keys = 0;
+logic.forced_ganons_keys = 0;
+logic.forced_gtg_keys = 0;
+logic.forced_well_keys = 0;
+
 //SPAWNS
 Spawn = {};
 
