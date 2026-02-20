@@ -1328,8 +1328,6 @@ function updateLogicInfo() {
   for (i = 1; i <= 100; i++) {
     if (gs[i] == true) { logic.gold_skulltulas += 1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />"; };
   }
-  document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens";
-  if (true) { document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in Logic"; } else { document.getElementById("skulls_in_logic").innerHTML = "??? in logic" }
 
   player.accessible = 0;
   player.tokensAccessible = 0;
@@ -1651,9 +1649,11 @@ function updateLogicInfo() {
   player.checks_remaining += player.forest_checks_remaining + player.fire_checks_remaining + player.water_checks_remaining + player.spirit_checks_remaining + player.shadow_checks_remaining + player.gtg_checks_remaining + player.well_checks_remaining + player.ganons_checks_remaining;
 
   document.getElementById("checks_remaining").innerHTML = player.checks_remaining + " Checks Left";
-  if (!nerfed) { document.getElementById("logically_accessible").innerHTML = player.logically_accessible + " in Logic"; } else { document.getElementById("logically_accessible").innerHTML = "??? in Logic" }
   document.getElementById("accessible").innerHTML = player.accessible + " Accessible";
+  if (!nerfed) { document.getElementById("logically_accessible").innerHTML = player.logically_accessible + " in Logic"; } else { document.getElementById("logically_accessible").innerHTML = "??? in Logic" }
+  document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens";
   document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible + " Accessible";
+  document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in Logic";
 }
 
 function searchingFor_tracking() {

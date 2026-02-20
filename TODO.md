@@ -1,4 +1,3 @@
-- [ ] add song locations into the main checklist
 - [ ] condensed woths
 - [ ] make hinted items within song locations bold (as it is for other locations)
 - [ ] change note box into input boxes to match the rest of the tracker
@@ -6,7 +5,6 @@
 - [ ] cluster checks on the list by proximity rather than by area
 - [ ] don't border locations that have their important items hinted (unless also path)
 - [ ] eliminate reliance on midUpdate() interval runs
-- [ ] remove the non-linso item tracker and add a condensed visual for 1me, 3me and stone dungeons
 - [ ] add flee to credits
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
@@ -27,3 +25,5 @@
 - [x] put aminal stuff in a separate file
 - [x] replace usages of AreaIndexes
 - [x] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
+- [x] add song locations into the main checklist
+- [x] remove the non-linso item tracker and add a condensed visual for forestfirewater med, spiritshadowlight med, and stone dungeons
