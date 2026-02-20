@@ -242,7 +242,7 @@ function processInputs() {
 }
 
 function hideCheck(locationId) {
-  if (rules.shiftChecks == "on" && !songChecks.includes(locationId)) {
+  if (rules.shiftChecks == "on") {
     document.getElementById(locationId).style.display = "none";
     document.getElementById("text_" + locationId).style.display = "none";
     document.getElementById("br_" + locationId).style.display = "none";
@@ -1358,9 +1358,6 @@ function updateLogicInfo() {
   player.checks_remaining = 0;
   unusedLocations = [];
   for (var i = 0; i < checks.length; i++) {
-    if (!songChecks.includes(checks[i])) {
-      hideCheck(checks[i]);
-    }
     if (rules.skullSanity == "off") {
       if (checks[i].startsWith("gs_")) {
         unusedLocations.push(i);
@@ -1572,7 +1569,7 @@ function updateLogicInfo() {
       }
     }
     else {
-      if (hideInaccessible && !songChecks.includes(key)) {
+      if (hideInaccessible) {
         if (rules.shiftChecks == "on") {
           document.getElementById(str).style.display = "none";
           document.getElementById(key).style.display = "none";

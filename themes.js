@@ -69,9 +69,6 @@ function dark_soli() {
   var temp = 0;
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
-    if (songChecks.includes(key)) {
-      continue;
-    }
     let areaName = checkToAreaMap[checks[i]];
     let imgFile = "url('./images/" + AreaImages[areaName] + ".png')";
     if (imgFile) {
@@ -259,9 +256,6 @@ function dark_normie() {
   if (document.getElementById(shadowPlacement + "_req5") != null) { document.getElementById(shadowPlacement + "_req5").src = player.hookshot_img; }
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
-    if (songChecks.includes(key)) {
-      continue;
-    }
     let areaName = checkToAreaMap[checks[i]];
     let imgFile = "url('./normal/areas/" + AreaImages[areaName] + ".jpg')";
     if (imgFile) {
