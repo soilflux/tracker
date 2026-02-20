@@ -1,17 +1,17 @@
 function wothAndBarrenProcessing() {
-	
-	NUM_WOTHS = 8;
-	for( var i = 1; i <= 35; i++) {
-	Area[i] = "normal";
-	}
-	
-	wothAreas = ["", "", "", "", "", "", "", "", ""];
-	AreaGoalPathBoss = ["", "", "", "", "", "", "", "", ""];
 
-	for (var i = 1; i <= NUM_WOTHS; i++) {
-		var wothInput = document.getElementById("woth_input" + i).value;
-		wothInput = wothInput.replace("2","");
-		const areaMapping = {
+  NUM_WOTHS = 8;
+  for (var i = 1; i <= 35; i++) {
+    Area[i] = "normal";
+  }
+
+  wothAreas = ["", "", "", "", "", "", "", "", ""];
+  AreaGoalPathBoss = ["", "", "", "", "", "", "", "", ""];
+
+  for (var i = 1; i <= NUM_WOTHS; i++) {
+    var wothInput = document.getElementById("woth_input" + i).value;
+    wothInput = wothInput.replace("2", "");
+    const areaMapping = {
       "ko": 1, "kok": 1, "kf": 1, "koki": 1, "kfc": 1,
       "ra": 2, "llr": 2, "ranch": 2, "lon": 2, "ran": 2,
       "hf": 3, "fie": 3, "field": 3,
@@ -54,189 +54,189 @@ function wothAndBarrenProcessing() {
       Area[index] = "woth";
       wothAreas[i] = AreaNames[index];
     }
-    
+
     if (i <= 5) {
       const inputElement = document.getElementById("barren_input" + i);
       if (inputElement) {
         const barrenInput = inputElement.value.trim().toLowerCase();
         const index = areaMapping[barrenInput];
-        
+
         if (index !== undefined) {
           Area[index] = "barren";
         }
       }
     }
-  
-		if (rules.hintsType == "path") {
-			var pathInput = document.getElementById("path_boss" + i).value.toLowerCase();
-			
-			if (pathInput.startsWith("de") || pathInput.startsWith("go")) {AreaGoalPathBoss[i] = "Gohma";} 
-			if (pathInput.startsWith("do") || pathInput.startsWith("kd") || pathInput.startsWith("dc") || pathInput.startsWith("ki")) {AreaGoalPathBoss[i] = "Dodongo";} 
-			if (pathInput.startsWith("ja") || pathInput.startsWith("ba")) {AreaGoalPathBoss[i] = "Barinade";} 
-			if (pathInput.startsWith("fo") || pathInput.startsWith("ph") || pathInput.startsWith("pg")) {AreaGoalPathBoss[i] = "PG";} 
-			if (pathInput.startsWith("fi") || pathInput.startsWith("vo")) {AreaGoalPathBoss[i] = "Volv";} 
-			if (pathInput.startsWith("wa") || pathInput.startsWith("mo")) {AreaGoalPathBoss[i] = "Morpha";} 
-			if (pathInput.startsWith("sp") || pathInput.startsWith("tw")) {AreaGoalPathBoss[i] = "Twinrova";} 
-			if (pathInput.startsWith("sh") || pathInput.startsWith("bo")) {AreaGoalPathBoss[i] = "Bongo";}
-			if (pathInput.startsWith("to")) {AreaGoalPathBoss[i] = "Tower";}
-			if (pathInput.startsWith("ti")) {AreaGoalPathBoss[i] = "Time";}
-			if (pathInput.startsWith("he")) {AreaGoalPathBoss[i] = "Hero";}
-			if (pathInput.startsWith("ev")) {AreaGoalPathBoss[i] = "Evil's Bane";}
-			if (pathInput == "0") {AreaGoalPathBoss[i] = "0 Important";} 
-			if (pathInput == "1") {AreaGoalPathBoss[i] = "1 Important";} 
-			if (pathInput == "2") {AreaGoalPathBoss[i] = "2 Important";} 
-			if (pathInput == "3") {AreaGoalPathBoss[i] = "3 Important";} 
-			if (pathInput == "4") {AreaGoalPathBoss[i] = "4 Important";} 
-			if (pathInput == "5") {AreaGoalPathBoss[i] = "5 Important";} 
-			if (pathInput == "6") {AreaGoalPathBoss[i] = "6 Important";} 
-			if (pathInput == "7") {AreaGoalPathBoss[i] = "7 Important";} 
-			if (pathInput == "8") {AreaGoalPathBoss[i] = "8 Important";} 
-			if (pathInput == "9") {AreaGoalPathBoss[i] = "9 Important";} 
-			if (pathInput == "10") {AreaGoalPathBoss[i] = "10 Important";} 
-			if (pathInput.startsWith("li")) {AreaGoalPathBoss[i] = "Light Arrows";} 
-		}
-	}
-	
-	AreaColors = ["", "00ff88", " aaaa00", " ffff00", " ffaa00", " 00aaff", " aaaaaa", " 84FFFF", " FE0404", " ffffff", " 70ffff", " aaffff", " 996000", " 009000", " 80ff80", " ffcc00", " B35705", " 573E02", " ff5050", " 678C8A", " 8f8493", " 5DB8FE", " 00ffff", " cccc90", " cccc30", " ffff90", " ff0080", " 5FAF36", " ff0000", " 00cccc", " ffff50", " c900c9", " 990000", " ffcc60", " ff00ff"];
-	WotHColors = ["", "9cc4d9", "white", "b19cd9","d09cd9","cyan","9CD9C4","D9B19C"];
 
-	for (var i = 1; i <= 35; i++) {
-		if (Area[i] == "woth" && AreaWotHAge[i] != 1) {
-			if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) {document.getElementById("woth1_title").innerHTML = AreaNames[i]; woth1 = AreaNames[i];}
-			else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) {document.getElementById("woth2_title").innerHTML = AreaNames[i]; woth2 = AreaNames[i];}
-			else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) {document.getElementById("woth3_title").innerHTML = AreaNames[i]; woth3 = AreaNames[i];}
-			else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) {document.getElementById("woth4_title").innerHTML = AreaNames[i]; woth4 = AreaNames[i];}
-			else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) {document.getElementById("woth5_title").innerHTML = AreaNames[i]; woth5 = AreaNames[i];}
-			else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) {document.getElementById("woth6_title").innerHTML = AreaNames[i]; woth6 = AreaNames[i];}
-			else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) {document.getElementById("woth7_title").innerHTML = AreaNames[i]; woth7 = AreaNames[i];}
-			else if (woth8 == "unknown" || !Area[AreaNames.indexOf(woth8)].includes("woth")) {document.getElementById("woth8_title").innerHTML = AreaNames[i]; woth8 = AreaNames[i];}
-			AreaWotHAge[i] = 1;
-		}
-		else if (Area[i] == "normal" || Area[i] == "barren") {
-			if (woth1 == AreaNames[i]) {woth1 = "unknown"}
-			if (woth2 == AreaNames[i]) {woth2 = "unknown"}
-			if (woth3 == AreaNames[i]) {woth3 = "unknown"}
-			if (woth4 == AreaNames[i]) {woth4 = "unknown"}
-			if (woth5 == AreaNames[i]) {woth5 = "unknown"}
-			if (woth6 == AreaNames[i]) {woth6 = "unknown"}
-			if (woth7 == AreaNames[i]) {woth7 = "unknown"}
-			if (woth8 == AreaNames[i]) {woth8 = "unknown"}
-		AreaWotHAge[i] = 0;	
-		}
-	}
+    if (rules.hintsType == "path") {
+      var pathInput = document.getElementById("path_boss" + i).value.toLowerCase();
 
-		for (var i = 1; i <= 35; i++) {
-			
-			var wothRowNumber = 1;
-			var wothNumber = 0;
-			var tempnumber3 = 1;
-			var tempbool = false;
-		
-			
-			if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i] || woth7 == AreaNames[i] || woth8 == AreaNames[i]) {
-				
-				if (woth1 == AreaNames[i]) {wothNumber = 1;}
-				else if (woth2 == AreaNames[i]) {wothNumber = 2;}
-				else if (woth3 == AreaNames[i]) {wothNumber = 3;}
-				else if (woth4 == AreaNames[i]) {wothNumber = 4;}
-				else if (woth5 == AreaNames[i]) {wothNumber = 5;}
-				else if (woth6 == AreaNames[i]) {wothNumber = 6;}
-				else if (woth7 == AreaNames[i]) {wothNumber = 7;}
-				else if (woth8 == AreaNames[i]) {wothNumber = 8;}
-				var tempArray = [];
-				document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 3).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 4).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
-				document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
-				for (var k = 0; k<Items.length; k++) {
-					if (Items[k] == "light_arrows" && rules.preset != "S8" && rules.preset != "s9") {continue;}
-					if (Items[k] == "farores_wind" && rules.preset != "s9") {continue;}
-					if (Items[k] == "serenade" && rules.preset != "s9") {continue;}
-					if (Items[k] == "prelude" && rules.preset != "s9") {continue;}
-					if (Items[k] == "lullaby" && rules.preset != "s9") {continue;}
-					if (Items[k] == checkToItemMap["lullabyCheck"]) {continue;}
-					if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
-						if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
-							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
-							
-							if(nerfed) {
-								document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
-								
-								if(ManualWotHItems[Items[k]]) {
-									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
-									document.getElementById("wothMajor" + k + wothNumber).className = "manualWothImages";
-								}
-								else if(ManualNotWotHItems[Items[k]]) {
-									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "none";
-									document.getElementById("wothMajor" + k + wothNumber).className = "notWothItemImages";
-								}
-								else {
-									document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
-									document.getElementById("wothMajor" + k + wothNumber).className = "wothMajorImages";
-								}
-							}
-							
-							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<span onmousedown = 'markWothItemArrow(this)' id = 'wothItemArrow" + wothNumber + "_" + k + "' data-item = '" + Items[k] + "' class = 'woth_item_arrow'> &#8594; </span>"; 
-							
-							if(MarkedWotHItemArrow == "wothItemArrow" + wothNumber + "_" + k)
-								document.getElementById("wothItemArrow" + wothNumber + "_" + k).style.color = inLogicColor;
-							
-							if(ManualWotHItemLocked[Items[k]] != undefined) {
-								for(var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
-									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemLocked[Items[k]][q]) {
-											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
-											
-											if (ManualWotHMinorItems[Items[j]]) {
-												document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
-											} 
-										}
-									}
-								}
-							}
-							if(ManualWotHItemPutInLogic[Items[k]] != undefined) {
-								for(var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
-									for (var j = 0; j < Items.length; j++) {
-										if(Items[j] == ManualWotHItemPutInLogic[Items[k]][q]) {
-											document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
-											
-											if (ManualWotHMinorItems[Items[j]]) {
-											document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)"); 
-											} 
-										}
-									}
-								}
-							}
-							
-							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += " <br />"; wothRowNumber += 1; tempArray.push(Items[k]); 
-						}
-					} 	
-				}
-				
-				document.getElementById("woth" + wothNumber + "_title").innerHTML = AreaNames[i];
-			
-				if (rules.hintsType == "path") {
-					var addedArrow = false;
-					for(var q = 1; q <= NUM_WOTHS; q++)
-						if(wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {
-							if(!addedArrow) {
-								document.getElementById("woth" + wothNumber + "_title").innerHTML += " &#8594; "; 
-								addedArrow = true;
-							}
-							else
-								document.getElementById("woth" + wothNumber + "_title").innerHTML += ", "; 
-							document.getElementById("woth" + wothNumber + "_title").innerHTML += AreaGoalPathBoss[q];
-						}
-				}
-				
-				document.getElementById("woth" + wothNumber + "_title").style.color= WotHColors[wothNumber];
-			}
-			
-		}	
-		
+      if (pathInput.startsWith("de") || pathInput.startsWith("go")) { AreaGoalPathBoss[i] = "Gohma"; }
+      if (pathInput.startsWith("do") || pathInput.startsWith("kd") || pathInput.startsWith("dc") || pathInput.startsWith("ki")) { AreaGoalPathBoss[i] = "Dodongo"; }
+      if (pathInput.startsWith("ja") || pathInput.startsWith("ba")) { AreaGoalPathBoss[i] = "Barinade"; }
+      if (pathInput.startsWith("fo") || pathInput.startsWith("ph") || pathInput.startsWith("pg")) { AreaGoalPathBoss[i] = "PG"; }
+      if (pathInput.startsWith("fi") || pathInput.startsWith("vo")) { AreaGoalPathBoss[i] = "Volv"; }
+      if (pathInput.startsWith("wa") || pathInput.startsWith("mo")) { AreaGoalPathBoss[i] = "Morpha"; }
+      if (pathInput.startsWith("sp") || pathInput.startsWith("tw")) { AreaGoalPathBoss[i] = "Twinrova"; }
+      if (pathInput.startsWith("sh") || pathInput.startsWith("bo")) { AreaGoalPathBoss[i] = "Bongo"; }
+      if (pathInput.startsWith("to")) { AreaGoalPathBoss[i] = "Tower"; }
+      if (pathInput.startsWith("ti")) { AreaGoalPathBoss[i] = "Time"; }
+      if (pathInput.startsWith("he")) { AreaGoalPathBoss[i] = "Hero"; }
+      if (pathInput.startsWith("ev")) { AreaGoalPathBoss[i] = "Evil's Bane"; }
+      if (pathInput == "0") { AreaGoalPathBoss[i] = "0 Important"; }
+      if (pathInput == "1") { AreaGoalPathBoss[i] = "1 Important"; }
+      if (pathInput == "2") { AreaGoalPathBoss[i] = "2 Important"; }
+      if (pathInput == "3") { AreaGoalPathBoss[i] = "3 Important"; }
+      if (pathInput == "4") { AreaGoalPathBoss[i] = "4 Important"; }
+      if (pathInput == "5") { AreaGoalPathBoss[i] = "5 Important"; }
+      if (pathInput == "6") { AreaGoalPathBoss[i] = "6 Important"; }
+      if (pathInput == "7") { AreaGoalPathBoss[i] = "7 Important"; }
+      if (pathInput == "8") { AreaGoalPathBoss[i] = "8 Important"; }
+      if (pathInput == "9") { AreaGoalPathBoss[i] = "9 Important"; }
+      if (pathInput == "10") { AreaGoalPathBoss[i] = "10 Important"; }
+      if (pathInput.startsWith("li")) { AreaGoalPathBoss[i] = "Light Arrows"; }
+    }
+  }
+
+  AreaColors = ["", "00ff88", " aaaa00", " ffff00", " ffaa00", " 00aaff", " aaaaaa", " 84FFFF", " FE0404", " ffffff", " 70ffff", " aaffff", " 996000", " 009000", " 80ff80", " ffcc00", " B35705", " 573E02", " ff5050", " 678C8A", " 8f8493", " 5DB8FE", " 00ffff", " cccc90", " cccc30", " ffff90", " ff0080", " 5FAF36", " ff0000", " 00cccc", " ffff50", " c900c9", " 990000", " ffcc60", " ff00ff"];
+  WotHColors = ["", "9cc4d9", "white", "b19cd9", "d09cd9", "cyan", "9CD9C4", "D9B19C"];
+
+  for (var i = 1; i <= 35; i++) {
+    if (Area[i] == "woth" && AreaWotHAge[i] != 1) {
+      if (woth1 == "unknown" || !Area[AreaNames.indexOf(woth1)].includes("woth")) { document.getElementById("woth1_title").innerHTML = AreaNames[i]; woth1 = AreaNames[i]; }
+      else if (woth2 == "unknown" || !Area[AreaNames.indexOf(woth2)].includes("woth")) { document.getElementById("woth2_title").innerHTML = AreaNames[i]; woth2 = AreaNames[i]; }
+      else if (woth3 == "unknown" || !Area[AreaNames.indexOf(woth3)].includes("woth")) { document.getElementById("woth3_title").innerHTML = AreaNames[i]; woth3 = AreaNames[i]; }
+      else if (woth4 == "unknown" || !Area[AreaNames.indexOf(woth4)].includes("woth")) { document.getElementById("woth4_title").innerHTML = AreaNames[i]; woth4 = AreaNames[i]; }
+      else if (woth5 == "unknown" || !Area[AreaNames.indexOf(woth5)].includes("woth")) { document.getElementById("woth5_title").innerHTML = AreaNames[i]; woth5 = AreaNames[i]; }
+      else if (woth6 == "unknown" || !Area[AreaNames.indexOf(woth6)].includes("woth")) { document.getElementById("woth6_title").innerHTML = AreaNames[i]; woth6 = AreaNames[i]; }
+      else if (woth7 == "unknown" || !Area[AreaNames.indexOf(woth7)].includes("woth")) { document.getElementById("woth7_title").innerHTML = AreaNames[i]; woth7 = AreaNames[i]; }
+      else if (woth8 == "unknown" || !Area[AreaNames.indexOf(woth8)].includes("woth")) { document.getElementById("woth8_title").innerHTML = AreaNames[i]; woth8 = AreaNames[i]; }
+      AreaWotHAge[i] = 1;
+    }
+    else if (Area[i] == "normal" || Area[i] == "barren") {
+      if (woth1 == AreaNames[i]) { woth1 = "unknown" }
+      if (woth2 == AreaNames[i]) { woth2 = "unknown" }
+      if (woth3 == AreaNames[i]) { woth3 = "unknown" }
+      if (woth4 == AreaNames[i]) { woth4 = "unknown" }
+      if (woth5 == AreaNames[i]) { woth5 = "unknown" }
+      if (woth6 == AreaNames[i]) { woth6 = "unknown" }
+      if (woth7 == AreaNames[i]) { woth7 = "unknown" }
+      if (woth8 == AreaNames[i]) { woth8 = "unknown" }
+      AreaWotHAge[i] = 0;
+    }
+  }
+
+  for (var i = 1; i <= 35; i++) {
+
+    var wothRowNumber = 1;
+    var wothNumber = 0;
+    var tempnumber3 = 1;
+    var tempbool = false;
+
+
+    if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i] || woth7 == AreaNames[i] || woth8 == AreaNames[i]) {
+
+      if (woth1 == AreaNames[i]) { wothNumber = 1; }
+      else if (woth2 == AreaNames[i]) { wothNumber = 2; }
+      else if (woth3 == AreaNames[i]) { wothNumber = 3; }
+      else if (woth4 == AreaNames[i]) { wothNumber = 4; }
+      else if (woth5 == AreaNames[i]) { wothNumber = 5; }
+      else if (woth6 == AreaNames[i]) { wothNumber = 6; }
+      else if (woth7 == AreaNames[i]) { wothNumber = 7; }
+      else if (woth8 == AreaNames[i]) { wothNumber = 8; }
+      var tempArray = [];
+      document.getElementById("woth" + wothNumber + "_text" + 1).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 2).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 3).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 4).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML = "";
+      document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML = "";
+      for (var k = 0; k < Items.length; k++) {
+        if (Items[k] == "light_arrows" && rules.preset != "S8" && rules.preset != "s9") { continue; }
+        if (Items[k] == "farores_wind" && rules.preset != "s9") { continue; }
+        if (Items[k] == "serenade" && rules.preset != "s9") { continue; }
+        if (Items[k] == "prelude" && rules.preset != "s9") { continue; }
+        if (Items[k] == "lullaby" && rules.preset != "s9") { continue; }
+        if (Items[k] == checkToItemMap["lullabyCheck"]) { continue; }
+        if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
+          if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
+            document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">";
+
+            if (nerfed) {
+              document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
+
+              if (ManualWotHItems[Items[k]]) {
+                document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
+                document.getElementById("wothMajor" + k + wothNumber).className = "manualWothImages";
+              }
+              else if (ManualNotWotHItems[Items[k]]) {
+                document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "none";
+                document.getElementById("wothMajor" + k + wothNumber).className = "notWothItemImages";
+              }
+              else {
+                document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
+                document.getElementById("wothMajor" + k + wothNumber).className = "wothMajorImages";
+              }
+            }
+
+            document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<span onmousedown = 'markWothItemArrow(this)' id = 'wothItemArrow" + wothNumber + "_" + k + "' data-item = '" + Items[k] + "' class = 'woth_item_arrow'> &#8594; </span>";
+
+            if (MarkedWotHItemArrow == "wothItemArrow" + wothNumber + "_" + k)
+              document.getElementById("wothItemArrow" + wothNumber + "_" + k).style.color = inLogicColor;
+
+            if (ManualWotHItemLocked[Items[k]] != undefined) {
+              for (var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
+                for (var j = 0; j < Items.length; j++) {
+                  if (Items[j] == ManualWotHItemLocked[Items[k]][q]) {
+                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+
+                    if (ManualWotHMinorItems[Items[j]]) {
+                      document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)");
+                    }
+                  }
+                }
+              }
+            }
+            if (ManualWotHItemPutInLogic[Items[k]] != undefined) {
+              for (var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
+                for (var j = 0; j < Items.length; j++) {
+                  if (Items[j] == ManualWotHItemPutInLogic[Items[k]][q]) {
+                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+
+                    if (ManualWotHMinorItems[Items[j]]) {
+                      document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)");
+                    }
+                  }
+                }
+              }
+            }
+
+            document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += " <br />"; wothRowNumber += 1; tempArray.push(Items[k]);
+          }
+        }
+      }
+
+      document.getElementById("woth" + wothNumber + "_title").innerHTML = AreaNames[i];
+
+      if (rules.hintsType == "path") {
+        var addedArrow = false;
+        for (var q = 1; q <= NUM_WOTHS; q++)
+          if (wothAreas[q] == AreaNames[i] && AreaGoalPathBoss[q] != "") {
+            if (!addedArrow) {
+              document.getElementById("woth" + wothNumber + "_title").innerHTML += " &#8594; ";
+              addedArrow = true;
+            }
+            else
+              document.getElementById("woth" + wothNumber + "_title").innerHTML += ", ";
+            document.getElementById("woth" + wothNumber + "_title").innerHTML += AreaGoalPathBoss[q];
+          }
+      }
+
+      document.getElementById("woth" + wothNumber + "_title").style.color = WotHColors[wothNumber];
+    }
+
+  }
+
   const dungeonMappings = {
     12: { key: 'deku_checks_remaining', bossCheck: true },
     16: { key: 'dodongos_checks_remaining', bossCheck: true },
@@ -245,13 +245,13 @@ function wothAndBarrenProcessing() {
 
   const uiMappings = {
     28: { id: "forest", action: "color" },
-    29: { id: "fire",   action: "color" },
+    29: { id: "fire", action: "color" },
     30: { id: "spirit", action: "color" },
     31: { id: "shadow", action: "color" },
-    32: { id: "water",  action: "color" },
+    32: { id: "water", action: "color" },
     33: { id: "ganons", action: "click" },
-    34: { id: "gtg",    action: "click" },
-    35: { id: "well",   action: "click" }
+    34: { id: "gtg", action: "click" },
+    35: { id: "well", action: "click" }
   };
 
   for (let i = 1; i <= 35; i++) {
@@ -263,7 +263,7 @@ function wothAndBarrenProcessing() {
 
       if (i <= 27) {
         const dungeon = dungeonMappings[i];
-        
+
         areaToCheckMap[AreaNames[i]].forEach(loc => {
           const isUnknown = checkToItemMap[loc] === "unknown";
           const isNotHint = !loc.startsWith("h_");
@@ -279,209 +279,209 @@ function wothAndBarrenProcessing() {
           player[dungeon.key] = 0;
           player.checks_remaining -= 1;
         }
-      } 
+      }
       else if (uiMappings[i]) {
         const item = uiMappings[i];
         const element = document.getElementById(item.id);
-        
+
         if (item.action === "color") {
           element.style.color = "red";
         } else {
           element.click();
         }
       }
-      
+
       hinted = false;
     }
   }
-  
-	var array = ["forest", "fire", "water", "spirit", "shadow"];
-	for (var i = 0; i < array.length; i++) {
-		if (document.getElementById(array[i]).style.color == "red" && (logic.emerald == array[i] || logic.ruby == array[i] || logic.sapphire == array[i]) && (checkToItemMap.oot == "minuet" || checkToItemMap.oot == "serenade" || checkToItemMap.oot == "prelude" || (checkToItemMap.oot == "bolero" && (checkToItemMap.crater_bean == "junk" && player.hookshot) || player.hover_boots) || (checkToItemMap.oot == "suns" && checkToItemMap.redead_grave == "junk") || (checkToItemMap.oot == "sarias" && checkToItemMap.goron_dance == "junk" && checkToItemMap.saria_kid == "junk"))) {document.getElementById(array[i]).click(); document.getElementById(array[i]).style.color = "lightblue"; if (logic.emerald == array[i]) {player.emerald = false;} if (logic.ruby == array[i]) {player.ruby = false;} if (logic.sapphire == array[i]) {player.sapphire = false;}}
-	}
+
+  var array = ["forest", "fire", "water", "spirit", "shadow"];
+  for (var i = 0; i < array.length; i++) {
+    if (document.getElementById(array[i]).style.color == "red" && (logic.emerald == array[i] || logic.ruby == array[i] || logic.sapphire == array[i]) && (checkToItemMap.oot == "minuet" || checkToItemMap.oot == "serenade" || checkToItemMap.oot == "prelude" || (checkToItemMap.oot == "bolero" && (checkToItemMap.crater_bean == "junk" && player.hookshot) || player.hover_boots) || (checkToItemMap.oot == "suns" && checkToItemMap.redead_grave == "junk") || (checkToItemMap.oot == "sarias" && checkToItemMap.goron_dance == "junk" && checkToItemMap.saria_kid == "junk"))) { document.getElementById(array[i]).click(); document.getElementById(array[i]).style.color = "lightblue"; if (logic.emerald == array[i]) { player.emerald = false; } if (logic.ruby == array[i]) { player.ruby = false; } if (logic.sapphire == array[i]) { player.sapphire = false; } }
+  }
 }
 
 function alternateHintInput() {
 
-	var lines = document.getElementById("hintInput").value.split('\n');
-	for (const line of lines) {
-		const rawTerms = line.split(' ');
-		const terms = rawTerms.filter(str => str.length > 0);
-		// Only process lines with 2 or 3 terms.
-		if (terms.length < 2 || terms.length > 3) {
-			continue;
-		}
+  var lines = document.getElementById("hintInput").value.split('\n');
+  for (const line of lines) {
+    const rawTerms = line.split(' ');
+    const terms = rawTerms.filter(str => str.length > 0);
+    // Only process lines with 2 or 3 terms.
+    if (terms.length < 2 || terms.length > 3) {
+      continue;
+    }
 
-		// We expect first term to be an existing check code.
-		const checkCode = terms[0].toLowerCase();
-		if (!(checkCode in hintTable)) continue;
+    // We expect first term to be an existing check code.
+    const checkCode = terms[0].toLowerCase();
+    if (!(checkCode in hintTable)) continue;
 
-		if (terms.length === 2) {
-			const itemCode = terms[1];
-			// checkCode should be for an individual hint, and itemCode should exist.
-			if (typeof hintTable[checkCode] != 'string' || !inputs.includes(itemCode.toLowerCase())) {
-				continue;
-			}
-			processAlternateHintInput(hintTable[checkCode], itemCode);		
-		}
-		else if (terms.length === 3) {
-			const itemCode1 = terms[1];
-			const itemCode2 = terms[2];
-			// checkCode should be for a dual hint, and both itemCodes should exist.
-			const dualChecks = hintTable[checkCode];
-			if (!Array.isArray(dualChecks) ||
-				dualChecks.length != 2 ||
-				!dualChecks.every(item => typeof item === 'string') ||
-				!inputs.includes(itemCode1.toLowerCase()) ||
-				!inputs.includes(itemCode2.toLowerCase())) {
-				continue;
-			}
-			processAlternateHintInput(dualChecks[0], itemCode1);
-			processAlternateHintInput(dualChecks[1], itemCode2);
-		}
-	}
+    if (terms.length === 2) {
+      const itemCode = terms[1];
+      // checkCode should be for an individual hint, and itemCode should exist.
+      if (typeof hintTable[checkCode] != 'string' || !inputs.includes(itemCode.toLowerCase())) {
+        continue;
+      }
+      processAlternateHintInput(hintTable[checkCode], itemCode);
+    }
+    else if (terms.length === 3) {
+      const itemCode1 = terms[1];
+      const itemCode2 = terms[2];
+      // checkCode should be for a dual hint, and both itemCodes should exist.
+      const dualChecks = hintTable[checkCode];
+      if (!Array.isArray(dualChecks) ||
+        dualChecks.length != 2 ||
+        !dualChecks.every(item => typeof item === 'string') ||
+        !inputs.includes(itemCode1.toLowerCase()) ||
+        !inputs.includes(itemCode2.toLowerCase())) {
+        continue;
+      }
+      processAlternateHintInput(dualChecks[0], itemCode1);
+      processAlternateHintInput(dualChecks[1], itemCode2);
+    }
+  }
 }
 
 function processAlternateHintInput(checkName, rawItemCode) {
-	const itemCode = rawItemCode.toLowerCase();
-	const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
-	if (!(checkName in checkToItemMap) || !inputs.includes(itemCode)) {
-		return;
-	}
+  const itemCode = rawItemCode.toLowerCase();
+  const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
+  if (!(checkName in checkToItemMap) || !inputs.includes(itemCode)) {
+    return;
+  }
 
-	// Junk
-	if (itemCode === inputs[0]) {
-    if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; } 
-		if (itemCodeIsUppercase) baitsChecked += 1; 
-	}
-	// SK
-	else if (itemCode === inputs[1]) {
-		if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]);}
-	}
-	// BK
-	else if (itemCode === inputs[2]) {
-		if (checkToItemMap[checkName] == "unknown") {thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]);}
-	}
-	else {
-		if (checkToItemMap[checkName] == "unknown") {
-			hintedInput = itemCode;
-			document.getElementById(checkName).value = capitalizeFirstLetter(itemCode);
-		}
-		else if (!isCheckHinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
-			simOverride = true;
-			if (textSongChecks.includes("text_"+checkName)) {
-				//document.getElementById("text_"+checkName).dispatchEvent(new Event('mousedown'));
-				isCheckHinted[checkName] = true;
-			}
-			else {
-				if(checkToItemMap[checkName] == "prescription" || checkToItemMap[checkName] == "claim_check")
-					//document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
-					isCheckHinted[checkName] = true;
-				else
-					//document.getElementById(checkToItemMap[checkName]+"_location").dispatchEvent(new Event('mousedown'));
-					isCheckHinted[checkName] = true;
-			}
-			simOverride = false;
-		}
-	}	
+  // Junk
+  if (itemCode === inputs[0]) {
+    if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; }
+    if (itemCodeIsUppercase) baitsChecked += 1;
+  }
+  // SK
+  else if (itemCode === inputs[1]) {
+    if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]); }
+  }
+  // BK
+  else if (itemCode === inputs[2]) {
+    if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]); }
+  }
+  else {
+    if (checkToItemMap[checkName] == "unknown") {
+      hintedInput = itemCode;
+      document.getElementById(checkName).value = capitalizeFirstLetter(itemCode);
+    }
+    else if (!isCheckHinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
+      simOverride = true;
+      if (textSongChecks.includes("text_" + checkName)) {
+        //document.getElementById("text_"+checkName).dispatchEvent(new Event('mousedown'));
+        isCheckHinted[checkName] = true;
+      }
+      else {
+        if (checkToItemMap[checkName] == "prescription" || checkToItemMap[checkName] == "claim_check")
+          //document.getElementById("trade_location").dispatchEvent(new Event('mousedown'));
+          isCheckHinted[checkName] = true;
+        else
+          //document.getElementById(checkToItemMap[checkName]+"_location").dispatchEvent(new Event('mousedown'));
+          isCheckHinted[checkName] = true;
+      }
+      simOverride = false;
+    }
+  }
 }
 
 function markWothItem(x) {
-	if(event.which == 1 && ManualWotHItems[x.getAttribute("data-item")] != true) {
-		ManualWotHItems[x.getAttribute("data-item")] = true;
-		ManualNotWotHItems[x.getAttribute("data-item")] = false;
-	}
-	else if(event.which == 3 && ManualNotWotHItems[x.getAttribute("data-item")] != true) {
-		ManualNotWotHItems[x.getAttribute("data-item")] = true;
-		ManualWotHItems[x.getAttribute("data-item")] = false;
-	}
-	else {
-		ManualWotHItems[x.getAttribute("data-item")] = false;
-		ManualNotWotHItems[x.getAttribute("data-item")] = false;
-	}
-	midUpdate();
+  if (event.which == 1 && ManualWotHItems[x.getAttribute("data-item")] != true) {
+    ManualWotHItems[x.getAttribute("data-item")] = true;
+    ManualNotWotHItems[x.getAttribute("data-item")] = false;
+  }
+  else if (event.which == 3 && ManualNotWotHItems[x.getAttribute("data-item")] != true) {
+    ManualNotWotHItems[x.getAttribute("data-item")] = true;
+    ManualWotHItems[x.getAttribute("data-item")] = false;
+  }
+  else {
+    ManualWotHItems[x.getAttribute("data-item")] = false;
+    ManualNotWotHItems[x.getAttribute("data-item")] = false;
+  }
+  midUpdate();
 }
 
 function markWothItemArrow(x) {
-	if(MarkedWotHItemArrow == x.id)
-		MarkedWotHItemArrow = null;
-	else
-		MarkedWotHItemArrow = x.id;
-	midUpdate();
+  if (MarkedWotHItemArrow == x.id)
+    MarkedWotHItemArrow = null;
+  else
+    MarkedWotHItemArrow = x.id;
+  midUpdate();
 }
 
 function markMinorWothItem(x) {
-	var theItem = x.getAttribute("data-item");
-	var theParent = x.getAttribute("data-parent");
-	
-	if(event.which == 1) {
-		if(ManualWotHMinorItems[theItem] == undefined || ManualWotHMinorItems[theItem] == false)
-			ManualWotHMinorItems[theItem] = true;
-		else
-			ManualWotHMinorItems[theItem] = false;
-	}
-	else if(event.which == 2) {
-		if(ManualWotHItemLocked[theParent].includes(theItem)) {
-			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
-			ManualWotHItemPutInLogic[theParent].push(theItem);
-		}
-		else if(ManualWotHItemPutInLogic[theParent].includes(theItem)) {
-			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
-			ManualWotHItemLocked[theParent].push(theItem);
-		}
-	}
-	else if(event.which == 3 && ManualNotWotHItems[theItem] != true) {
-		if(ManualWotHItemLocked[theParent].includes(theItem))
-			ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
-		if(ManualWotHItemPutInLogic[theParent].includes(theItem))
-			ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
-		
-		ManualWotHMinorItems[theItem] = false;
-	}
-	midUpdate();
+  var theItem = x.getAttribute("data-item");
+  var theParent = x.getAttribute("data-parent");
+
+  if (event.which == 1) {
+    if (ManualWotHMinorItems[theItem] == undefined || ManualWotHMinorItems[theItem] == false)
+      ManualWotHMinorItems[theItem] = true;
+    else
+      ManualWotHMinorItems[theItem] = false;
+  }
+  else if (event.which == 2) {
+    if (ManualWotHItemLocked[theParent].includes(theItem)) {
+      ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
+      ManualWotHItemPutInLogic[theParent].push(theItem);
+    }
+    else if (ManualWotHItemPutInLogic[theParent].includes(theItem)) {
+      ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
+      ManualWotHItemLocked[theParent].push(theItem);
+    }
+  }
+  else if (event.which == 3 && ManualNotWotHItems[theItem] != true) {
+    if (ManualWotHItemLocked[theParent].includes(theItem))
+      ManualWotHItemLocked[theParent].splice(ManualWotHItemLocked[theParent].indexOf(theItem), 1);
+    if (ManualWotHItemPutInLogic[theParent].includes(theItem))
+      ManualWotHItemPutInLogic[theParent].splice(ManualWotHItemPutInLogic[theParent].indexOf(theItem), 1);
+
+    ManualWotHMinorItems[theItem] = false;
+  }
+  midUpdate();
 }
 
 // Right clicking a woth hint will hide all the corresponding items and strike out the hint.
 // Left clicking will restore all the woth items.
 function resetWoth(element, num) {
-	for (var i = 1; i <= 35; i++) {
-		index = 0;
-		if (num == 1)
-			index = wothAreas.indexOf(woth1)
-		else if (num == 2)
-			index = wothAreas.indexOf(woth2)
-		else if (num == 3)
-			index = wothAreas.indexOf(woth3)
-		else if (num == 4)
-			index = wothAreas.indexOf(woth4)
-		else if (num == 5)
-			index = wothAreas.indexOf(woth5)
-		else if (num == 6)
-			index = wothAreas.indexOf(woth6)
-		else if (num == 7)
-			index = wothAreas.indexOf(woth7)
-		else if (num == 8)
-			index = wothAreas.indexOf(woth8)
-		if(AreaNames[i] == wothAreas[index]) {
-			for (var k = 0; k < Items.length; k++) {
-				if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
-					if(event.button == 0 && ManualNotWotHItems[Items[k]]) {
-						ManualNotWotHItems[Items[k]] = false;
-					}
-					if (event.button == 2) {
-						ManualNotWotHItems[Items[k]] = true;
-						ManualWotHItems[Items[k]] = false;
-					}
-				}
-			}
-		}
-	}
+  for (var i = 1; i <= 35; i++) {
+    index = 0;
+    if (num == 1)
+      index = wothAreas.indexOf(woth1)
+    else if (num == 2)
+      index = wothAreas.indexOf(woth2)
+    else if (num == 3)
+      index = wothAreas.indexOf(woth3)
+    else if (num == 4)
+      index = wothAreas.indexOf(woth4)
+    else if (num == 5)
+      index = wothAreas.indexOf(woth5)
+    else if (num == 6)
+      index = wothAreas.indexOf(woth6)
+    else if (num == 7)
+      index = wothAreas.indexOf(woth7)
+    else if (num == 8)
+      index = wothAreas.indexOf(woth8)
+    if (AreaNames[i] == wothAreas[index]) {
+      for (var k = 0; k < Items.length; k++) {
+        if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
+          if (event.button == 0 && ManualNotWotHItems[Items[k]]) {
+            ManualNotWotHItems[Items[k]] = false;
+          }
+          if (event.button == 2) {
+            ManualNotWotHItems[Items[k]] = true;
+            ManualWotHItems[Items[k]] = false;
+          }
+        }
+      }
+    }
+  }
 
-	if (event.button == 0) {
-		element.style.textDecoration = "none";
-	} else if (event.button == 2) {
-		element.style.textDecoration = "line-through";
-	}
-	
-	midUpdate();
+  if (event.button == 0) {
+    element.style.textDecoration = "none";
+  } else if (event.button == 2) {
+    element.style.textDecoration = "line-through";
+  }
+
+  midUpdate();
 }
