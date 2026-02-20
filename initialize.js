@@ -33,7 +33,7 @@ var chuCount = 0;
 var rupeeCount = 0;
 var chusInBigChests = false;
 var unusedLocations = [];
-var dimmed = 0.25;
+var dimmed = 0.35;
 var age = "";
 var ageSetStamp = 0;
 
@@ -131,10 +131,10 @@ if (rules.preset == "sgl2025")
 
 var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 
-var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows","biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
+var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows","biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
 var checkSummaryText = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror Shield", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Dins Fire", "Fire Arrows", "Lens", "Letter", "Trade", "Light Arrows", "Ice Arrows", "BGS", "Nayru's", "Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack"];
-var textSongSpots = ["text_zeldasSpot", "text_eponasSpot", "text_sariasSpot", "text_sunsSpot", "text_oot", "text_stormsSpot", "text_minuetSpot", "text_boleroSpot", "text_serenadeSpot", "text_requiemSpot", "text_nocturneSpot", "text_preludeSpot"];
-var songSpots = ["zeldasSpot", "eponasSpot", "sariasSpot", "sunsSpot", "oot", "stormsSpot", "minuetSpot", "boleroSpot", "serenadeSpot", "requiemSpot", "nocturneSpot", "preludeSpot"];
+var textSongChecks = ["text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
+var songChecks = ["lullabyCheck", "eponasCheck", "sariasCheck", "sunsCheck", "timeCheck", "stormsCheck", "minuetCheck", "boleroCheck", "serenadeCheck", "requiemCheck", "nocturneCheck", "preludeCheck"];
 var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
 var ItemImages = [];
 var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim checkToItemMap", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
@@ -144,8 +144,8 @@ var alwaysTable = {
   "3": "tokens_30",
   "4": "tokens_40",
   "5": "tokens_50",
-  "o": "oot",
-  "n": "nocturneSpot",
+  "o": "timeCheck",
+  "n": "nocturneCheck",
   "b": "trade_quest",
   "f": "frogs_2",
   "m": "theater_skull",
@@ -158,12 +158,12 @@ var alwaysTable = {
 }
 
 var sometimesTableReduced = {
-  "bo": "boleroSpot",
-  "su": "sunsSpot",
-  "me": "minuetSpot",
-  "pr": "preludeSpot",
-  "re": "requiemSpot",
-  "se": "serenadeSpot",
+  "bo": "boleroCheck",
+  "su": "sunsCheck",
+  "me": "minuetCheck",
+  "pr": "preludeCheck",
+  "re": "requiemCheck",
+  "se": "serenadeCheck",
   "2": "tokens_20",
   "po": "poes",
   "ch": "anjus_chickens",
@@ -232,9 +232,9 @@ var hintTable = {
 	"sho": "archery_game",
 	"shoo": "archery_game",
 	"shooting": "archery_game",
-	"bol": "boleroSpot",
-	"bolero": "boleroSpot",
-	"cra": "boleroSpot",
+	"bol": "boleroCheck",
+	"bolero": "boleroCheck",
+	"cra": "boleroCheck",
 	"cob": "colossus_bean",
 	"col": "colossus_bean",
 	"colo": "colossus_bean",
@@ -386,36 +386,36 @@ var hintTable = {
 	"lens": "market_lens_game",
 	"lensgame": "market_lens_game",
 	"tcg": "market_lens_game",
-	"mea": "minuetSpot",
-	"min": "minuetSpot",
-	"minuet": "minuetSpot",
-	"3me": "nocturneSpot",
-	"noc": "nocturneSpot",
-	"nocturne": "nocturneSpot",
-	"oot": "oot",
-	"oots": "oot",
-	"ootsong": "oot",
+	"mea": "minuetCheck",
+	"min": "minuetCheck",
+	"minuet": "minuetCheck",
+	"3me": "nocturneCheck",
+	"noc": "nocturneCheck",
+	"nocturne": "nocturneCheck",
+	"timeCheck": "timeCheck",
+	"oots": "timeCheck",
+	"ootsong": "timeCheck",
 	"poe": "poes",
 	"poes": "poes",
-	"1me": "preludeSpot",
-	"pre": "preludeSpot",
-	"prelude": "preludeSpot",
-	"tot": "preludeSpot",
+	"1me": "preludeCheck",
+	"pre": "preludeCheck",
+	"prelude": "preludeCheck",
+	"tot": "preludeCheck",
 	"red": "redead_grave",
 	"redead": "redead_grave",
 	"sgr": "redead_grave",
 	"sung": "redead_grave",
 	"sungrave": "redead_grave",
-	"colosong": "requiemSpot",
-	"desert": "requiemSpot",
-	"req": "requiemSpot",
-	"wastesong": "requiemSpot",
-	"wls": "requiemSpot",
-	"wsl": "requiemSpot",
+	"colosong": "requiemCheck",
+	"desert": "requiemCheck",
+	"req": "requiemCheck",
+	"wastesong": "requiemCheck",
+	"wls": "requiemCheck",
+	"wsl": "requiemCheck",
 	"scr": "scrub_crater_child",
-	"ice": "serenadeSpot",
-	"ser": "serenadeSpot",
-	"serenade": "serenadeSpot",
+	"ice": "serenadeCheck",
+	"ser": "serenadeCheck",
+	"serenade": "serenadeCheck",
 	"sfl": "shadow_floormaster",
 	"shadowfloor": "shadow_floormaster",
 	"shfloor": "shadow_floormaster",
@@ -449,7 +449,7 @@ var hintTable = {
 	"sil": "spirit_rightHand",
 	"silver": "spirit_rightHand",
 	"silvers": "spirit_rightHand",
-	"cos": "sunsSpot",
+	"cos": "sunsCheck",
 	"tar": "target",
 	"targ": "target",
 	"target": "target",
@@ -719,7 +719,7 @@ var adult = [
   "water_compass", "water_map", "water_cracked", "water_torches", "gs_water_near_boss_key", "water_bossKey", "gs_water_south_basement", "water_block", "gs_water_central", "water_pillar", "gs_water_platform_room", "water_dLink", "gs_water_river", "water_river", "water_dragon", "water_morpha",
   "scrub_ganons_1", "scrub_ganons_2", "scrub_ganons_3", "scrub_ganons_4", "ganons_lightTrial1", "ganons_lightTrial2", "ganons_lightTrial3", "ganons_lightTrial4", "ganons_lightTrial5", "ganons_lightTrial6", "ganons_lightTrial7", "ganons_lightTrialLullaby", "ganons_spiritTrial1", "ganons_spiritTrial2", "ganons_forestTrial", "ganons_waterTrial1", "ganons_waterTrial2", "ganons_shadowTrial1", "ganons_shadowTrial2", "ganons_bossKey",
   "gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1",  "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
-  "stormsSpot", "boleroSpot", "minuetSpot", "serenadeSpot", "preludeSpot", "nocturneSpot",
+  "stormsCheck", "boleroCheck", "minuetCheck", "serenadeCheck", "preludeCheck", "nocturneCheck",
 ];
 var child = [
   "kokiri_sword",
@@ -737,7 +737,7 @@ var child = [
   "gs_jabu_vines", "scrub_jabu", "jabu_map", "jabu_compass", "jabu_boomerang", "gs_jabu_near_octo_1", "gs_jabu_near_octo_2", "gs_jabu_near_boss", "jabu_barinade",
   "spirit_childLeft", "spirit_childRight",
   "well_fakeLeft", "well_frontBombable", "well_centerBig", "well_fakeRight", "well_centerSmall", "well_backBombable", "well_waterLeft", "well_coffin", "well_waterFront", "well_invisible", "well_deadHand", "gs_well_west_inner", "gs_well_east_inner", "well_locked1", "well_locked2", "gs_well_like_like", "well_basement",
-  "zeldasSpot", "eponasSpot", "sariasSpot", "oot",
+  "lullabyCheck", "eponasCheck", "sariasCheck", "timeCheck",
 ];
 
 const AreaImages = {
@@ -781,9 +781,9 @@ var checkToAreaMap = {
     // Kokiri Forest
     "kokiri_mido_1": "Kokiri", "kokiri_mido_2": "Kokiri", "kokiri_mido_3": "Kokiri", "kokiri_mido_4": "Kokiri", "kokiri_sword": "Kokiri", "shop_kokiri_TL": "Kokiri", "shop_kokiri_TR": "Kokiri", "shop_kokiri_BR": "Kokiri", "shop_kokiri_BL": "Kokiri", "gs_kokiri_child": "Kokiri", "gs_kokiri_soil": "Kokiri", "gs_kokiri_adult": "Kokiri", "kokiri_storms": "Kokiri", "cow_kokiri": "Kokiri", "h_deku_left": "Kokiri", "h_deku_right": "Kokiri", "h_near_lw": "Kokiri", "h_kokiri_storms": "Kokiri",
     // Lon Lon Ranch
-    "talons_chickens": "Ranch", "gs_lon_lon_tree": "Ranch", "eponasSpot": "Ranch", "back_of_ranch": "Ranch", "scrub_ranch_1": "Ranch", "scrub_ranch_2": "Ranch", "scrub_ranch_3": "Ranch", "gs_lon_lon_window": "Ranch", "gs_lon_lon_shed": "Ranch", "gs_lon_lon_back_wall": "Ranch", "cow_ranch1": "Ranch", "cow_ranch2": "Ranch", "cow_ranch3": "Ranch", "cow_ranch4": "Ranch",
+    "talons_chickens": "Ranch", "gs_lon_lon_tree": "Ranch", "eponasCheck": "Ranch", "back_of_ranch": "Ranch", "scrub_ranch_1": "Ranch", "scrub_ranch_2": "Ranch", "scrub_ranch_3": "Ranch", "gs_lon_lon_window": "Ranch", "gs_lon_lon_shed": "Ranch", "gs_lon_lon_back_wall": "Ranch", "cow_ranch1": "Ranch", "cow_ranch2": "Ranch", "cow_ranch3": "Ranch", "cow_ranch4": "Ranch",
     // Hyrule Field
-    "hyrule_marketGrotto": "Field", "hyrule_tektite_grotto": "Field", "hyrule_hp_scrub": "Field", "hyrule_openGrotto": "Field", "hyrule_remoteGrotto": "Field", "gs_outside_kakariko": "Field", "gs_near_gerudo": "Field", "hyrule_ocarina": "Field", "cow_field": "Field", "h_hyrule_remoteGrotto": "Field", "h_hyrule_openGrotto": "Field", "h_hyrule_marketGrotto": "Field", "h_hyrule_web": "Field", "oot": "Field", 
+    "hyrule_marketGrotto": "Field", "hyrule_tektite_grotto": "Field", "hyrule_hp_scrub": "Field", "hyrule_openGrotto": "Field", "hyrule_remoteGrotto": "Field", "gs_outside_kakariko": "Field", "gs_near_gerudo": "Field", "hyrule_ocarina": "Field", "cow_field": "Field", "h_hyrule_remoteGrotto": "Field", "h_hyrule_openGrotto": "Field", "h_hyrule_marketGrotto": "Field", "h_hyrule_web": "Field", "timeCheck": "Field", 
     // Gerudo Valley
     "gerudovalley_box": "Valley", "gerudovalley_fall": "Valley", "gs_valley_small_bridge": "Valley", "gs_valley_bean": "Valley", "gs_valley_pillar": "Valley", "gs_valley_tent": "Valley", "gerudo_hammer": "Valley", "scrub_gv_1": "Valley", "scrub_gv_2": "Valley", "cow_valley": "Valley", "h_valley": "Valley",
     // Lake Hylia
@@ -791,21 +791,21 @@ var checkToAreaMap = {
     // Market
     "gs_market": "Market", "shop_market_bazaar_TL": "Market", "shop_market_bazaar_TR": "Market", "shop_market_bazaar_BR": "Market", "shop_market_bazaar_BL": "Market", "shop_market_potion_TL": "Market", "shop_market_potion_TR": "Market", "shop_market_potion_BR": "Market", "shop_market_potion_BL": "Market", "shop_market_chu_TL": "Market", "shop_market_chu_TR": "Market", "shop_market_chu_BR": "Market", "shop_market_chu_BL": "Market", "market_slingshot_game": "Market", "richard": "Market", "market_bowling_1": "Market", "market_bowling_2": "Market", "market_lens_game": "Market", "poes": "Market", "h_tot_1": "Market", "h_tot_2": "Market", "h_tot_3": "Market", "h_tot_4": "Market",
     // Hyrule Castle
-    "gs_hyrule_castle_tree": "Hyr Cas", "dins_fairy": "Hyr Cas", "gs_hyrule_castle_grotto": "Hyr Cas", "h_castle_1": "Hyr Cas", "h_castle_2": "Hyr Cas", "h_castle_sos": "Hyr Cas", "zeldasSpot": "Hyr Cas", 
+    "gs_hyrule_castle_tree": "Hyr Cas", "dins_fairy": "Hyr Cas", "gs_hyrule_castle_grotto": "Hyr Cas", "h_castle_1": "Hyr Cas", "h_castle_2": "Hyr Cas", "h_castle_sos": "Hyr Cas", "lullabyCheck": "Hyr Cas", 
     // Outside Ganon's Castle
     "gs_ogc": "OGC", "g_fairy": "OGC",
     // Temple of Time
-    "lacs": "ToT", "preludeSpot": "ToT",
+    "lacs": "ToT", "preludeCheck": "ToT",
     // Zora's Fountain
     "gs_fountain_above_log": "Fountain", "gs_fountain_tree": "Fountain", "fountain_fairy": "Fountain", "glacier_hp": "Fountain", "bottom_of_fountain": "Fountain", "gs_fountain_hidden_cave": "Fountain", "h_fountain_fairy": "Fountain", "h_fountain": "Fountain",
     // Ice Cavern
-    "gs_ice_spinning_scythe": "Ice", "ice_map": "Ice", "gs_ice_hp_room": "Ice", "ice_hp": "Ice", "ice_compass": "Ice", "gs_ice_block_room": "Ice", "ice_irons": "Ice", "serenadeSpot": "Ice",
+    "gs_ice_spinning_scythe": "Ice", "ice_map": "Ice", "gs_ice_hp_room": "Ice", "ice_hp": "Ice", "ice_compass": "Ice", "gs_ice_block_room": "Ice", "ice_irons": "Ice", "serenadeCheck": "Ice",
     // Deku Tree
     "deku_lobby": "Deku", "deku_slingshot": "Deku", "deku_slingshot_room_side": "Deku", "deku_compass": "Deku", "deku_compass_room_side": "Deku", "gs_deku_compass": "Deku", "gs_deku_basement_gate": "Deku", "gs_deku_basement_vines": "Deku", "deku_basement": "Deku", "gs_deku_basement_back": "Deku", "deku_queen_gohma": "Deku",
     // Lost Woods
     "lost_woods_fairy_ocarina": "Lost Woods", "target": "Lost Woods", "ocarina_game": "Lost Woods", "lw_generic": "Lost Woods", "scrub_lw_1": "Lost Woods", "scrub_lw_2": "Lost Woods", "gs_lost_woods_bean_2": "Lost Woods", "lost_woods_scrub_grotto": "Lost Woods", "scrub_lw_3": "Lost Woods", "gs_lost_woods_bean_1": "Lost Woods", "skull_kid": "Lost Woods", "bridge_scrub": "Lost Woods", "gs_lost_woods_above_stage": "Lost Woods", "theater_skull": "Lost Woods", "theater_truth": "Lost Woods", "h_lw_bridge": "Lost Woods", "h_lw_generic": "Lost Woods",
     // Sacred Forest Meadow
-    "wolfos_grotto": "SFM", "sariasSpot": "SFM", "minuetSpot": "SFM", "gs_sacred_forest": "SFM", "scrub_sfm_1": "SFM", "scrub_sfm_2": "SFM", "h_saria": "SFM", "h_sfm_1": "SFM", "h_sfm_2": "SFM",
+    "wolfos_grotto": "SFM", "sariasCheck": "SFM", "minuetCheck": "SFM", "gs_sacred_forest": "SFM", "scrub_sfm_1": "SFM", "scrub_sfm_2": "SFM", "h_saria": "SFM", "h_sfm_1": "SFM", "h_sfm_2": "SFM",
     // Goron City
     "shop_goron_TL": "Goron City", "shop_goron_TR": "Goron City", "shop_goron_BR": "Goron City", "shop_goron_BL": "Goron City", "rolling_goron": "Goron City", "goron_dance": "Goron City", "goron_pot": "Goron City", "goron_maze_1": "Goron City", "goron_maze_2": "Goron City", "gs_goron_maze": "Goron City", "goron_maze_3": "Goron City", "gs_goron_center": "Goron City", "goron_link": "Goron City", "scrub_goron_1": "Goron City", "scrub_goron_2": "Goron City", "scrub_goron_3": "Goron City", "goron_medigoron": "Goron City", "h_goron_maze": "Goron City", "h_medigoron": "Goron City",
     // Dodongo's Cavern
@@ -813,17 +813,17 @@ var checkToAreaMap = {
     // Death Mountain Trail
     "trail_top": "Trail", "gs_trail_bombable_wall": "Trail", "trail_bombable": "Trail", "trail_storms": "Trail", "trail_fairy": "Trail", "trade_quest": "Trail", "gs_trail_hail_path": "Trail", "gs_trail_above_dodongos": "Trail", "gs_trail_soil": "Trail", "cow_trail": "Trail", "h_trail_storms": "Trail", "h_trail_storms": "Trail", "h_biggoron": "Trail",
     // Death Mountain Crater
-    "crater_bean": "Crater", "crater_nook_hp": "Crater", "boleroSpot": "Crater", "scrub_crater_1": "Crater", "scrub_crater_2": "Crater", "scrub_crater_3": "Crater", "crater_hammer_fairy": "Crater", "crater_grotto": "Crater", "gs_crater_soil": "Crater", "gs_crater_crate": "Crater", "scrub_crater_child": "Crater", "h_crater_grotto": "Crater", "h_crater_wall": "Crater",
+    "crater_bean": "Crater", "crater_nook_hp": "Crater", "boleroCheck": "Crater", "scrub_crater_1": "Crater", "scrub_crater_2": "Crater", "scrub_crater_3": "Crater", "crater_hammer_fairy": "Crater", "crater_grotto": "Crater", "gs_crater_soil": "Crater", "gs_crater_crate": "Crater", "scrub_crater_child": "Crater", "h_crater_grotto": "Crater", "h_crater_wall": "Crater",
     // Kakariko Village
-    "tokens_10": "Kakariko", "tokens_20": "Kakariko", "tokens_30": "Kakariko", "tokens_40": "Kakariko", "tokens_50": "Kakariko", "shop_kakariko_bazaar_TL": "Kakariko", "shop_kakariko_bazaar_TR": "Kakariko", "shop_kakariko_bazaar_BR": "Kakariko", "shop_kakariko_bazaar_BL": "Kakariko", "shop_kakariko_potion_TL": "Kakariko", "shop_kakariko_potion_TR": "Kakariko", "shop_kakariko_potion_BR": "Kakariko", "shop_kakariko_potion_BL": "Kakariko", "man_on_roof": "Kakariko", "kakariko_grotto": "Kakariko", "kakariko_hag": "Kakariko", "windmill": "Kakariko", "stormsSpot": "Kakariko", "anju": "Kakariko", "kakariko_cow_house": "Kakariko", "archery_game": "Kakariko", "redead_grotto": "Kakariko", "anjus_chickens": "Kakariko", "gs_kakariko_tree": "Kakariko", "gs_kakariko_guard_house": "Kakariko", "gs_kakariko_tower": "Kakariko", "gs_kakariko_construction": "Kakariko", "gs_kakariko_skulltula_house": "Kakariko", "gs_kakariko_impas": "Kakariko", "cow_kakariko": "Kakariko", "h_kakariko_grotto": "Kakariko", "nocturneSpot": "Kakariko", 
+    "tokens_10": "Kakariko", "tokens_20": "Kakariko", "tokens_30": "Kakariko", "tokens_40": "Kakariko", "tokens_50": "Kakariko", "shop_kakariko_bazaar_TL": "Kakariko", "shop_kakariko_bazaar_TR": "Kakariko", "shop_kakariko_bazaar_BR": "Kakariko", "shop_kakariko_bazaar_BL": "Kakariko", "shop_kakariko_potion_TL": "Kakariko", "shop_kakariko_potion_TR": "Kakariko", "shop_kakariko_potion_BR": "Kakariko", "shop_kakariko_potion_BL": "Kakariko", "man_on_roof": "Kakariko", "kakariko_grotto": "Kakariko", "kakariko_hag": "Kakariko", "windmill": "Kakariko", "stormsCheck": "Kakariko", "anju": "Kakariko", "kakariko_cow_house": "Kakariko", "archery_game": "Kakariko", "redead_grotto": "Kakariko", "anjus_chickens": "Kakariko", "gs_kakariko_tree": "Kakariko", "gs_kakariko_guard_house": "Kakariko", "gs_kakariko_tower": "Kakariko", "gs_kakariko_construction": "Kakariko", "gs_kakariko_skulltula_house": "Kakariko", "gs_kakariko_impas": "Kakariko", "cow_kakariko": "Kakariko", "h_kakariko_grotto": "Kakariko", "nocturneCheck": "Kakariko", 
     // Graveyard
-    "shield_grave": "Graveyard", "graveyard_box": "Graveyard", "race_1": "Graveyard", "race_2": "Graveyard", "sunsSpot": "Graveyard", "gravedigging_tour": "Graveyard", "gs_graveyard_soil": "Graveyard", "gs_graveyard_wall": "Graveyard", "redead_grave": "Graveyard", "composers_grave": "Graveyard", "h_nocturne": "Graveyard",
+    "shield_grave": "Graveyard", "graveyard_box": "Graveyard", "race_1": "Graveyard", "race_2": "Graveyard", "sunsCheck": "Graveyard", "gravedigging_tour": "Graveyard", "gs_graveyard_soil": "Graveyard", "gs_graveyard_wall": "Graveyard", "redead_grave": "Graveyard", "composers_grave": "Graveyard", "h_nocturne": "Graveyard",
     // Zora's River
     "gs_river_tree": "River", "scrub_river_1": "River", "scrub_river_2": "River", "river_bean_salesman": "River", "river_pillar": "River", "frogs_1": "River", "river_grotto": "River", "gs_river_near_grotto": "River", "gs_river_above_bridge": "River", "river_ledge": "River", "gs_river_ladder": "River", "frogs_2": "River", "h_river_grotto": "River", "h_river_pillar": "River", "h_river_domain": "River",
     // Zora's Domain
     "shop_domain_TL": "Domain", "shop_domain_TR": "Domain", "shop_domain_BR": "Domain", "shop_domain_BL": "Domain", "zora_torches": "Domain", "zora_diving": "Domain", "thaw_king": "Domain", "gs_domain": "Domain", "h_domain": "Domain",
     // Desert Colossus
-    "colossus_bean": "Colossus", "requiemSpot": "Colossus", "colossus_fairy": "Colossus", "gs_colossus_soil": "Colossus", "gs_colossus_hill": "Colossus", "gs_colossus_tree": "Colossus", "scrub_colossus_1": "Colossus", "scrub_colossus_2": "Colossus", "h_colossus": "Colossus",
+    "colossus_bean": "Colossus", "requiemCheck": "Colossus", "colossus_fairy": "Colossus", "gs_colossus_soil": "Colossus", "gs_colossus_hill": "Colossus", "gs_colossus_tree": "Colossus", "scrub_colossus_1": "Colossus", "scrub_colossus_2": "Colossus", "h_colossus": "Colossus",
     // Haunted Wasteland
     "gs_wasteland": "Wasteland", "wasteland_carpet": "Wasteland", "wasteland": "Wasteland",
     // Jabu Jabu's Belly
@@ -858,7 +858,7 @@ const areaToCheckMap = Object.entries(checkToAreaMap).reduce((acc, [check, area]
     return acc;
 }, {});
 
-var songChecks = ["zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"];
+var songChecks = ["lullabyCheck", "eponasCheck", "sariasCheck", "stormsCheck", "sunsCheck", "boleroCheck", "minuetCheck", "requiemCheck", "serenadeCheck", "preludeCheck", "nocturneCheck", "timeCheck"];
   
 var checks = [
 	"kokiri_mido_1", "kokiri_mido_2", "kokiri_mido_3", "kokiri_mido_4", "kokiri_sword", "shop_kokiri_TL", "shop_kokiri_TR", "shop_kokiri_BR", "shop_kokiri_BL", "gs_kokiri_child", "gs_kokiri_soil", "gs_kokiri_adult", "kokiri_storms", "cow_kokiri", "h_deku_left", "h_deku_right", "h_near_lw", "h_kokiri_storms",
@@ -895,7 +895,7 @@ var checks = [
   "fortress_card", "gs_fortress_top", "gerudo_roof", "gerudo_archery_1", "gerudo_archery_2", "gs_fortress_archery",
   "gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1",  "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
 	"well_fakeLeft", "well_frontBombable", "well_centerBig", "well_fakeRight", "well_centerSmall", "well_backBombable", "well_waterLeft", "well_coffin", "well_waterFront", "well_invisible", "well_deadHand", "gs_well_west_inner", "gs_well_east_inner", "well_locked1", "well_locked2", "gs_well_like_like", "well_basement",
-	"zeldasSpot", "eponasSpot", "sariasSpot", "stormsSpot", "sunsSpot", "boleroSpot", "minuetSpot", "requiemSpot", "serenadeSpot", "preludeSpot", "nocturneSpot", "oot"
+	"lullabyCheck", "eponasCheck", "sariasCheck", "stormsCheck", "sunsCheck", "boleroCheck", "minuetCheck", "requiemCheck", "serenadeCheck", "preludeCheck", "nocturneCheck", "timeCheck"
 ];
 soliLinsoSongOrderConvert = [1,2,3,6,4,8,7,11,9,12,10,5];
 	
@@ -936,7 +936,7 @@ var checkNames = [
 	/*Bottom of the Well*/"Fake L", "F Bmb", "C Big", "Fake R", "C Small", "B Bmb", "Watr L", "Coffin", "Watr F", "Invisibl", "D Hand", "*Door L", "*Door R", "Lockd 1", "Lockd 2", "*Lockd", "Base",
 	/*Songs*/"Zelda", "Malon", "Saria", "Windmill", "Grave", "Crater", "Ad. SFM", "Colossus", "Ice", "1 Med", "3 Med", "OoT Song"
 ];
-var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "trade_quest", "frogs_2", "theater_skull"];
+var alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "trade_quest", "frogs_2", "theater_skull"];
 	
 itemToCheckMap.med1 = "unknown";
 itemToCheckMap.med2 = "unknown";
@@ -1838,18 +1838,18 @@ var LocationToSpoilerName = {
 	"well_locked1": "Bottom of the Well Fire Keese Chest",
 	"well_locked2": "Bottom of the Well Like Like Chest",
 	"well_basement": "Bottom of the Well Map Chest",
-	"zeldasSpot": "Song from Impa",
-	"eponasSpot": "Song from Malon",
-	"sariasSpot": "Song from Saria",
-	"stormsSpot": "Song from Windmill",
-	"sunsSpot": "Song from Royal Familys Tomb",
-	"boleroSpot": "Sheik in Crater",
-	"minuetSpot": "Sheik in Forest",
-	"requiemSpot": "Sheik at Colossus",
-	"serenadeSpot": "Sheik in Ice Cavern",
-	"preludeSpot": "Sheik at Temple",
-	"nocturneSpot": "Sheik in Kakariko",
-	"oot": "Song from Ocarina of Time",
+	"lullabyCheck": "Song from Impa",
+	"eponasCheck": "Song from Malon",
+	"sariasCheck": "Song from Saria",
+	"stormsCheck": "Song from Windmill",
+	"sunsCheck": "Song from Royal Familys Tomb",
+	"boleroCheck": "Sheik in Crater",
+	"minuetCheck": "Sheik in Forest",
+	"requiemCheck": "Sheik at Colossus",
+	"serenadeCheck": "Sheik in Ice Cavern",
+	"preludeCheck": "Sheik at Temple",
+	"nocturneCheck": "Sheik in Kakariko",
+	"timeCheck": "Song from Ocarina of Time",
 	"h_deku_left" : "KF (Deku Tree Left)",
 	"h_deku_right" : "KF (Deku Tree Right)",
 	"h_near_lw" : "KF (Outside Storms)",
@@ -2137,18 +2137,18 @@ var SpoilerLocationToLocationName = {
 	"Bottom of the Well Fire Keese Chest": "well_locked1",
 	"Bottom of the Well Like Like Chest": "well_locked2",
 	"Bottom of the Well Map Chest": "well_basement",
-	"Song from Impa": "zeldasSpot",
-	"Song from Malon": "eponasSpot",
-	"Song from Saria": "sariasSpot",
-	"Song from Windmill": "stormsSpot",
-	"Song from Royal Familys Tomb": "sunsSpot",
-	"Sheik in Crater": "boleroSpot",
-	"Sheik in Forest": "minuetSpot",
-	"Sheik at Colossus": "requiemSpot",
-	"Sheik in Ice Cavern": "serenadeSpot",
-	"Sheik at Temple": "preludeSpot",
-	"Sheik in Kakariko": "nocturneSpot",
-	"Song from Ocarina of Time": "oot",
+	"Song from Impa": "lullabyCheck",
+	"Song from Malon": "eponasCheck",
+	"Song from Saria": "sariasCheck",
+	"Song from Windmill": "stormsCheck",
+	"Song from Royal Familys Tomb": "sunsCheck",
+	"Sheik in Crater": "boleroCheck",
+	"Sheik in Forest": "minuetCheck",
+	"Sheik at Colossus": "requiemCheck",
+	"Sheik in Ice Cavern": "serenadeCheck",
+	"Sheik at Temple": "preludeCheck",
+	"Sheik in Kakariko": "nocturneCheck",
+	"Song from Ocarina of Time": "timeCheck",
 	"KF (Deku Tree Left)": "h_deku_left",
 	"KF (Deku Tree Right)": "h_deku_right",
 	"KF (Outside Storms)": "h_near_lw",
@@ -2344,7 +2344,7 @@ var SpoilerHintLocationToInput = {
 	"Kak 50 Gold Skulltula Reward" : "50",
 	"ZR Frogs Ocarina Game" : "fr2",
 	"HF Ocarina of Time Item" : "ooti",
-	"Song from Ocarina of Time" : "oot",
+	"Song from Ocarina of Time" : "timeCheck",
 	"HC Great Fairy Reward" : "cas",
 	"OGC Great Fairy Reward" : "ogc",
 	"LW Target in Woods" : "tar",
@@ -2375,13 +2375,13 @@ if (rules.preset == "aminalFunhouse") {
 }
 if (rules.preset == "sgl2025") {
 	document.getElementById("hintInput").innerHTML = "20 \n30 \n40 x\n50 x\nnoc \nfr2 \nmas \nLIGHT precomp.\n3 dual: \n6 some: \n";
-	document.getElementById("preludeSpot").value = "pre";
+	document.getElementById("preludeCheck").value = "pre";
 }
 if (rules.preset == "truth")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas x\ntru \n";
 if (rules.preset == "leagueS9") {
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
-	document.getElementById("zeldasSpot").value = "pre";
+	document.getElementById("lullabyCheck").value = "pre";
 }
 if (rules.preset == "S7" || rules.preset == "truth") {
 	document.getElementById("markChildLocation").value = "kok";

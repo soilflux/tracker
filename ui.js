@@ -892,18 +892,15 @@ function itemHighlights() {
 	if (!player.dins_fire) {if(document.getElementById(shadowPlacement +"_req1") != null) {document.getElementById(shadowPlacement +"_req1").style.opacity =dimmed; }}
 	if (!player.hover_boots) {if(document.getElementById(shadowPlacement +"_req3") != null) {document.getElementById(shadowPlacement +"_req3").style.opacity =dimmed; }}
 	
-	if (player.lullaby) {document.getElementById("lullabyimg").style.opacity =1;} else {document.getElementById("lullabyimg").style.opacity =dimmed;}
-	if (player.eponas) {document.getElementById("eponasimg").style.opacity =1;} else {document.getElementById("eponasimg").style.opacity =dimmed;}
-	if (player.sarias) {document.getElementById("sariasimg").style.opacity =1;} else {document.getElementById("sariasimg").style.opacity =dimmed;}
-	if (player.suns) {document.getElementById("sunsimg").style.opacity =1;} else {document.getElementById("sunsimg").style.opacity =dimmed;}
-	if (player.time) {document.getElementById("sotimg").style.opacity =1;} else {document.getElementById("sotimg").style.opacity =dimmed;}
-	if (player.storms) {document.getElementById("sosimg").style.opacity =1;} else {document.getElementById("sosimg").style.opacity =dimmed;}
-	if (player.minuet) {document.getElementById("minuetimg").style.opacity =1;} else {document.getElementById("minuetimg").style.opacity =dimmed;}
-	if (player.bolero) {document.getElementById("boleroimg").style.opacity =1;} else {document.getElementById("boleroimg").style.opacity =dimmed;}
-	if (player.serenade) {document.getElementById("serenadeimg").style.opacity =1;} else {document.getElementById("serenadeimg").style.opacity =dimmed;}
-	if (player.requiem) {document.getElementById("requiemimg").style.opacity =1;} else {document.getElementById("requiemimg").style.opacity =dimmed;}
-	if (player.nocturne) {document.getElementById("nocturneimg").style.opacity =1;} else {document.getElementById("nocturneimg").style.opacity =dimmed;}
-	if (player.prelude) {document.getElementById("preludeimg").style.opacity =1;} else {document.getElementById("preludeimg").style.opacity =dimmed;}
+	const songs = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
+
+	songs.forEach(song => {
+		const img = document.getElementById(song + "img");
+		if (img) {
+			img.style.filter = player[song] ? "contrast(100%)" : "contrast(0%)";
+			img.style.opacity = player[song] ? "1" : "0.7";
+		}
+	});
 	
 	if (player.bottle || logic.bottle) {document.getElementById("bottleimg").style.opacity =1;} else {document.getElementById("bottleimg").style.opacity =dimmed;}
 	if (player.farores_wind) {document.getElementById("faroresimg").style.opacity =1;} else {document.getElementById("faroresimg").style.opacity =dimmed;}
@@ -1058,7 +1055,7 @@ function updateRules() {
     document.getElementById("barren_input3").style.display = "inline-block"; 
     document.getElementById("barren_input4").style.display = "inline-block"; 
     document.getElementById("barren_input5").style.display = "inline-block"; 
-    alwaysHints = ["oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull","lacs"];
+    alwaysHints = ["timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull","lacs"];
   }
 	else if (rules.preset == "truth") {
     rules.kzSkip = "allowed"; 
@@ -1087,7 +1084,7 @@ function updateRules() {
     document.getElementById("barren_input3").style.display = "inline-block";
     document.getElementById("barren_input4").style.display = "inline-block";
     document.getElementById("barren_input5").style.display = "none";
-    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "theater_truth"];
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull", "theater_truth"];
     player.farores_wind = true;
   }
 	else if (rules.preset == "leagueS9") {
@@ -1117,7 +1114,7 @@ function updateRules() {
     document.getElementById("barren_input3").style.display = "inline"; 
     document.getElementById("barren_input4").style.display = "none"; 
     document.getElementById("barren_input5").style.display = "none"; 
-    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];
     player.farores_wind = true; 
     knownItems.farores_wind = true; 
     player.lens = true; 
@@ -1154,7 +1151,7 @@ function updateRules() {
     document.getElementById("barren_input4").style.display = "inline-block";
     document.getElementById("barren_input5").style.display = "inline-block";
     document.getElementById("markAdultLocation").value = "tot";
-    alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneSpot", "frogs_2", "theater_skull"];
+    alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneCheck", "frogs_2", "theater_skull"];
     player.prelude = true;
     player.farores_wind = true;
     knownItems.farores_wind = true;
@@ -1192,7 +1189,7 @@ function updateRules() {
     document.getElementById("barren_input4").style.display = "none";
     document.getElementById("barren_input5").style.display = "none";
     document.getElementById("markAdultLocation").value = "tot";
-    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "oot", "nocturneSpot", "trade_quest", "frogs_2", "theater_skull"];
+    alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull"];
   } 
   
   if(rules.preset == "s9")
@@ -1332,7 +1329,7 @@ function updateLogicInfo() {
 		if (gs[i] == true) {logic.gold_skulltulas +=1; document.getElementById("skullsInLogicList").innerHTML += gsText[i] + "<br />" ;} ;
 	}
 	document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens" ;
-	if (true) {document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in logic";} else {document.getElementById("skulls_in_logic").innerHTML = "??? in logic"}
+	if (true) {document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in Logic";} else {document.getElementById("skulls_in_logic").innerHTML = "??? in logic"}
   
   player.accessible = 0;
   player.tokensAccessible = 0;
@@ -1405,11 +1402,10 @@ function updateLogicInfo() {
     }
     
 		var key = checks[i];
-		
 		str = "text_" + key;
 		str2 = "br_" + key;
         
-    if (key == "preludeSpot" || key == "nocturneSpot" || key == "oot") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
+    if (key == "preludeCheck" || key == "nocturneCheck" || key == "timeCheck") {document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block";}
 		
     if (checkToItemMap[key] == "unknown" || forcedDisplay[i] || (coopmode && (checkToItemMap[key] == "small_key" || checkToItemMap[key] == "boss_key"))) {
       document.getElementById(str).style.display = "inline-block";
@@ -1447,6 +1443,12 @@ function updateLogicInfo() {
                 document.getElementById(key).style.display = "none";
             }
 			continue;
+		}
+
+		if (songChecks.includes(key)) {
+			if (checkToItemMap[key] != "unknown") document.getElementById(key + "Display").style.backgroundColor = "";
+			else if (checkToItemMap[key] == "unknown" && locationAccess[key]) document.getElementById(key + "Display").style.backgroundColor = "rgb(0,80,0)";
+			else if (checkToItemMap[key] == "unknown") document.getElementById(key + "Display").style.backgroundColor = "rgb(80,0,0)";
 		}
 		
 		if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") {if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") {colorChange = true;} else {colorChange = false;}} else {colorChange = false;}
@@ -1593,6 +1595,7 @@ function updateLogicInfo() {
 			}
 		}
 		if (colorChange) {document.getElementById(str).style.color = "magenta";document.getElementById(str).style.opacity = "1";}
+		
 	}
 	if (document.getElementById("pieceDungeons").value.includes("de")) {document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1;}
 	if (document.getElementById("pieceDungeons").value.includes("do")) {document.getElementById("text_dodongos_above_king").style.color = "#FFD700"; document.getElementById("text_dodongos_above_king").style.opacity = 1;}
@@ -1647,7 +1650,7 @@ function updateLogicInfo() {
 	if (!player.water_boss_key) {player.water_checks_remaining -= 1;}
 	if (!player.spirit_boss_key) {player.spirit_checks_remaining -= 1;}
 	if (!player.shadow_boss_key) {player.shadow_checks_remaining -= 1;}
-	
+
 	player.checks_remaining += player.forest_checks_remaining + player.fire_checks_remaining + player.water_checks_remaining + player.spirit_checks_remaining + player.shadow_checks_remaining + player.gtg_checks_remaining + player.well_checks_remaining + player.ganons_checks_remaining;
     
 	document.getElementById("checks_remaining").innerHTML=player.checks_remaining + " Checks Left";
@@ -1832,14 +1835,14 @@ function updateProbabilities() {
 }
 
 function updateWothBorders() {
-	let AreaSongSpots = [[],[],["text_eponasSpot"],["text_oot"],[],[],[],[],[],["text_preludeSpot"],[],["text_serenadeSpot"],[],[],["text_sariasSpot", "text_minuetSpot"],[],[],[], ["text_boleroSpot"],["text_stormsSpot", "text_nocturneSpot"],["text_sunsSpot"],[],[],["text_requiemSpot"],[],[],[],[],[],[],[],[],[],[],[],[]];
-	let AreaSongSpotsWithoutText = [[],[],["eponasSpot"],["oot"],[],[],[],[],[],["preludeSpot"],[],["serenadeSpot"],[],[],["sariasSpot", "minuetSpot"],[],[],[], ["boleroSpot"],["stormsSpot", "nocturneSpot"],["sunsSpot"],[],[],["requiemSpot"],[],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongChecks = [[],[],["text_eponasCheck"],["text_timeCheck"],[],[],[],[],[],["text_preludeCheck"],[],["text_serenadeCheck"],[],[],["text_sariasCheck", "text_minuetCheck"],[],[],[], ["text_boleroCheck"],["text_stormsCheck", "text_nocturneCheck"],["text_sunsCheck"],[],[],["text_requiemCheck"],[],[],[],[],[],[],[],[],[],[],[],[]];
+	let AreaSongChecksWithoutText = [[],[],["eponasCheck"],["timeCheck"],[],[],[],[],[],["preludeCheck"],[],["serenadeCheck"],[],[],["sariasCheck", "minuetCheck"],[],[],[], ["boleroCheck"],["stormsCheck", "nocturneCheck"],["sunsCheck"],[],[],["requiemCheck"],[],[],[],[],[],[],[],[],[],[],[],[]];
 	
 	for (var i = 1; i <= 35; i++) {	
 		if((Area[i] == "woth" || Area[i] == "woth1" || Area[i] == "2woth" || Area[i] == "3woth" || Area[i] == "4woth" || Area[i] == "5woth") && colorWothAreas) {
-			for(var j = 0; j < AreaSongSpots[i].length; j++) {
-				var songText = AreaSongSpots[i][j];
-				if ((isCheckHinted[AreaSongSpotsWithoutText[i][j]] == false || isCheckHinted[AreaSongSpotsWithoutText[i][j]] == undefined) && !alwaysHints.includes(AreaSongSpotsWithoutText[i][j])) {
+			for(var j = 0; j < AreaSongChecks[i].length; j++) {
+				var songText = AreaSongChecks[i][j];
+				if ((isCheckHinted[AreaSongChecksWithoutText[i][j]] == false || isCheckHinted[AreaSongChecksWithoutText[i][j]] == undefined) && !alwaysHints.includes(AreaSongChecksWithoutText[i][j])) {
 					document.getElementById(songText).style.border = "solid 2px";
 				}
 				else {
@@ -1857,8 +1860,8 @@ function updateWothBorders() {
 			});
 		}	
 		else if(Area[i] == "barren") {
-			for(var j = 0; j < AreaSongSpots[i].length; j++) {
-				var songText = AreaSongSpots[i][j];
+			for(var j = 0; j < AreaSongChecks[i].length; j++) {
+				var songText = AreaSongChecks[i][j];
 				document.getElementById(songText).style.border = "solid 2px red";
 			}
 			
@@ -1876,8 +1879,8 @@ function updateWothBorders() {
 				}
 			});
 			
-			for(var j = 0; j < AreaSongSpots[i].length; j++) {
-				var songText = AreaSongSpots[i][j];
+			for(var j = 0; j < AreaSongChecks[i].length; j++) {
+				var songText = AreaSongChecks[i][j];
 				
 				document.getElementById(songText).style.border = "none";
 			}

@@ -157,7 +157,7 @@ function wothAndBarrenProcessing() {
 					if (Items[k] == "serenade" && rules.preset != "s9") {continue;}
 					if (Items[k] == "prelude" && rules.preset != "s9") {continue;}
 					if (Items[k] == "lullaby" && rules.preset != "s9") {continue;}
-					if (Items[k] == checkToItemMap["zeldasSpot"]) {continue;}
+					if (Items[k] == checkToItemMap["lullabyCheck"]) {continue;}
 					if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
 						if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
 							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">"; 
@@ -369,7 +369,7 @@ function processAlternateHintInput(checkName, rawItemCode) {
 		}
 		else if (!isCheckHinted[checkName] && itemCode != inputs[ItemNames2.indexOf("Bombchus")]) {
 			simOverride = true;
-			if (textSongSpots.includes("text_"+checkName)) {
+			if (textSongChecks.includes("text_"+checkName)) {
 				//document.getElementById("text_"+checkName).dispatchEvent(new Event('mousedown'));
 				isCheckHinted[checkName] = true;
 			}

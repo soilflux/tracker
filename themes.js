@@ -88,8 +88,8 @@ function dark_soli() {
 	document.getElementById("eponasimg").src=player.eponas_img;
 	document.getElementById("sariasimg").src=player.sarias_img;
 	document.getElementById("sunsimg").src=player.suns_img;
-	document.getElementById("sotimg").src=player.time_img;
-	document.getElementById("sosimg").src=player.storms_img;
+	document.getElementById("timeimg").src=player.time_img;
+	document.getElementById("stormsimg").src=player.storms_img;
 	document.getElementById("minuetimg").src=player.minuet_img;
 	document.getElementById("boleroimg").src=player.bolero_img;
 	document.getElementById("serenadeimg").src=player.serenade_img;
@@ -278,8 +278,8 @@ function dark_normie() {
 	document.getElementById("eponasimg").src=player.eponas_img;
 	document.getElementById("sariasimg").src=player.sarias_img;
 	document.getElementById("sunsimg").src=player.suns_img;
-	document.getElementById("sotimg").src=player.time_img;
-	document.getElementById("sosimg").src=player.storms_img;
+	document.getElementById("timeimg").src=player.time_img;
+	document.getElementById("stormsimg").src=player.storms_img;
 	document.getElementById("minuetimg").src=player.minuet_img;
 	document.getElementById("boleroimg").src=player.bolero_img;
 	document.getElementById("serenadeimg").src=player.serenade_img;

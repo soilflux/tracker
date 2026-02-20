@@ -892,13 +892,16 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-
-.songpics {
+.song-icon {
   position: relative;
-  height: 38px;
-  width: 38px;
-  margin-bottom: 2px;
-  opacity: 0.2;
+  height: 34px;
+  width: 34px;
+}
+#songs-grid{
+  display: flex;
+  flex-wrap: wrap;       /* Allows it to go to the next line */
+  width: 230px;          /* Adjust width so exactly 6 fit per row */
+  gap: 4px;              /* Space between the boxes */
 }
 
 .bonuspics {

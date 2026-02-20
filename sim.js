@@ -46,7 +46,7 @@ function readLog() {
 			simCheckAdultSpawn();
 	}
 	
-	document.getElementById("zeldasSpot").value = SpoilerItemToInput[SpoilerJSON["locations"]["Song from Impa"]];
+	document.getElementById("lullabyCheck").value = SpoilerItemToInput[SpoilerJSON["locations"]["Song from Impa"]];
 	simStartingReward();
 }
 function onChooseFile(event, onLoadFileHandler) {
@@ -423,7 +423,7 @@ function simProcessHint(hint, str) {
 				
 				var temp_item = "";
 				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][0]] == undefined)
-					if(!songSpots.includes(SpoilerLocationToLocationName[loc1]))
+					if(!songChecks.includes(SpoilerLocationToLocationName[loc1]))
 						temp_item = "x";
 					else
 						temp_item = "pre";
@@ -432,7 +432,7 @@ function simProcessHint(hint, str) {
 				
 				var temp_item2 = "";
 				if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"][1]] == undefined)
-					if(!songSpots.includes(SpoilerLocationToLocationName[loc2]))
+					if(!songChecks.includes(SpoilerLocationToLocationName[loc2]))
 						temp_item2 = "x";
 					else
 						temp_item2 = "pre";
@@ -455,7 +455,7 @@ function simProcessHint(hint, str) {
 		
 			var temp_item = "";
 			if(SpoilerItemToInput[SpoilerJSON["gossip_stones"][LocationToSpoilerName[str]]["hinted_items"]] == undefined)
-				if(!songSpots.includes(SpoilerLocationToLocationName[loc]))
+				if(!songChecks.includes(SpoilerLocationToLocationName[loc]))
 					temp_item = "x";
 				else
 					temp_item = "pre";
