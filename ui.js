@@ -1652,7 +1652,7 @@ function updateLogicInfo() {
   document.getElementById("accessible").innerHTML = player.accessible + " Accessible";
   if (!nerfed) { document.getElementById("logically_accessible").innerHTML = player.logically_accessible + " in Logic"; } else { document.getElementById("logically_accessible").innerHTML = "??? in Logic" }
   document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens";
-  document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible + " Accessible";
+  document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible-player.tokens + " Accessible";
   document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in Logic";
 }
 
