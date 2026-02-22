@@ -1156,8 +1156,6 @@ logic.forced_well_keys = 0;
 //SPAWNS
 Spawn = {};
 
-//RULES
-Rules = {};
 rules.kzSkip = "allowed";
 rules.waterHop = "allowed";
 rules.valleyWithHook = "allowed";

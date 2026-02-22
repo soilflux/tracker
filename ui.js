@@ -903,6 +903,7 @@ function itemHighlights() {
   });
 
   if (player.bottle || logic.bottle) { document.getElementById("bottleimg").style.opacity = 1; } else { document.getElementById("bottleimg").style.opacity = dimmed; }
+  if (player.bombchus) { document.getElementById("chuButton").style.opacity = 1; } else { document.getElementById("chuButton").style.opacity = dimmed; }
   if (player.farores_wind) { document.getElementById("faroresimg").style.opacity = 1; } else { document.getElementById("faroresimg").style.opacity = dimmed; }
   if (player.fire_arrows) { document.getElementById("firearrowsimg").style.opacity = 1; } else { document.getElementById("firearrowsimg").style.opacity = dimmed; }
   if (player.silver_scale) { document.getElementById("silverscaleimg").style.opacity = 1; } else { document.getElementById("silverscaleimg").style.opacity = dimmed; }
@@ -1042,7 +1043,7 @@ function updateRules() {
     rules.beans = "vanilla";
     rules.expensive = "vanilla";
     rules.csmc = "on";
-    rules.chusInLogic = "off";
+    rules.chusInLogic = "on";
     rules.preplantBeans = "off";
     rules.blueFireArrows = "off";
     rules.hintsType = "path";
@@ -1073,6 +1074,7 @@ function updateRules() {
     rules.ganonBk = "remove";
     rules.preplantBeans = "off";
     rules.csmc = "on";
+    rules.chusInLogic = "off";
     rules.shopSanity = "off";
     rules.scrubSanity = "off";
     rules.fae = "banned";
@@ -1103,6 +1105,7 @@ function updateRules() {
     rules.expensive = "shuffled";
     rules.ganonBk = "remove";
     rules.csmc = "on";
+    rules.chusInLogic = "off";
     rules.shopSanity = "4";
     rules.scrubSanity = "off";
     rules.fae = "banned";
@@ -1139,6 +1142,7 @@ function updateRules() {
     rules.expensive = "vanilla";
     rules.ganonBk = "lacs";
     rules.csmc = "on";
+    rules.chusInLogic = "off";
     rules.shopSanity = "off";
     rules.scrubSanity = "off";
     rules.fae = "banned";

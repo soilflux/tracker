@@ -157,6 +157,7 @@ function wothAndBarrenProcessing() {
         if (Items[k] == "serenade" && rules.preset != "s9") { continue; }
         if (Items[k] == "prelude" && rules.preset != "s9") { continue; }
         if (Items[k] == "lullaby" && rules.preset != "s9") { continue; }
+        if (Items[k].startsWith("bombchus") && rules.chusInLogic == "off") { continue; }
         if (Items[k] == checkToItemMap["lullabyCheck"]) { continue; }
         if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
           if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
