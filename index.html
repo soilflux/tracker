@@ -45,6 +45,16 @@
             <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dungText"></small><img id="dung2_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onmousedown = "highlight(this)"><img id="dung2_req4" onmousedown = "highlight(this)"><img id="dung2_req5" onmousedown = "highlight(this)"><br />
             <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dungText"></small><img id="dung3_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onmousedown = "highlight(this)"><img id="dung3_req4" onmousedown = "highlight(this)"><img id="dung3_req5" onmousedown = "highlight(this)"><br />
           </div>
+          <div id="miscItems1">
+            <img src="./images/farores.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)">
+            <br><img src="./images/firearrows.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)">
+            <br><img src="./images/lens.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)">
+          </div>
+          <div id="miscItems2">
+            <img src="./images/chu.png" id="chuButton" onmousedown="highlight(this)" class="bonuspics"></img>
+            <br><img src="./images/silverscale.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)">
+            <br><img src="./images/bottle.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)">
+          </div>
           <div id="tokenStatsColumn">
             <small id="tokens_acquired" class="stat-text"></small>
             <br><small id="tokensAccessible" class="stat-text"></small>
@@ -58,8 +68,7 @@
         </div>
         <div id="songColumn"><span id = "songs" class="song_spacing"></span>
           <img id = "redRupee" class = "rupeeButtons" src = "normal/redRupee.png" onmouseDown="modifyRupees(20)"></img><img id = "blueRupee" class = "rupeeButtons" src = "normal/blueRupee.png" onmouseDown="modifyRupees(5)"></img><small id = "rupeeCount">0</small>
-          <br id="rupeeBreak" class="half_break" style="display: none;"/><img src="./images/farores.png" id="faroresimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/firearrows.png" id="firearrowsimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/lens.png" id="lensimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/chu.png" id="chuButton" onmousedown="highlight(this)" class="bonuspics"></img><br />
-          <img src="./images/silverscale.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/bottle.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/slingshot.png" id="slingshotimg" class="bonuspics" onmousedown = "highlight(this)"><img src="./images/strength3.png" id="goldengauntletsimg" class="bonuspics" onmousedown = "highlight(this)">
+          <br id="rupeeBreak" class="half_break" style="display: none;"/>
           <br class="half_break"/><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
           <br class="half_break"/><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br class="half_break"/>
           <img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input>

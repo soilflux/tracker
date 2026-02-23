@@ -908,8 +908,6 @@ function itemHighlights() {
   if (player.fire_arrows) { document.getElementById("firearrowsimg").style.opacity = 1; } else { document.getElementById("firearrowsimg").style.opacity = dimmed; }
   if (player.silver_scale) { document.getElementById("silverscaleimg").style.opacity = 1; } else { document.getElementById("silverscaleimg").style.opacity = dimmed; }
   if (player.lens) { document.getElementById("lensimg").style.opacity = 1; } else { document.getElementById("lensimg").style.opacity = dimmed; }
-  if (player.golden_gauntlets) { document.getElementById("goldengauntletsimg").style.opacity = 1; } else { document.getElementById("goldengauntletsimg").style.opacity = dimmed; }
-  if (player.slingshot) { document.getElementById("slingshotimg").style.opacity = 1; } else { document.getElementById("slingshotimg").style.opacity = dimmed; }
 }
 
 function dungeonHighlights() {

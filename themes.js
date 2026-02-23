@@ -98,8 +98,6 @@ function dark_soli() {
   document.getElementById("lensimg").src = player.lens_img;
   document.getElementById("silverscaleimg").src = player.silver_scale_img;
   document.getElementById("bottleimg").src = player.bottle_img;
-  document.getElementById("slingshotimg").src = player.slingshot_img;
-  document.getElementById("goldengauntletsimg").src = player.golden_gauntlets_img;
 
   document.getElementById("iWantToRemoveThisButton").innerHTML = "Appease Viewers";
 
@@ -285,8 +283,6 @@ function dark_normie() {
   document.getElementById("lensimg").src = player.lens_img;
   document.getElementById("silverscaleimg").src = player.silver_scale_img;
   document.getElementById("bottleimg").src = player.bottle_img;
-  document.getElementById("slingshotimg").src = player.slingshot_img;
-  document.getElementById("goldengauntletsimg").src = player.golden_gauntlets_img;
 
   document.getElementById("iWantToRemoveThisButton").innerHTML = "Original";
 
