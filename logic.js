@@ -1,111 +1,109 @@
 function refreshLogicForStuff() {
-  if (knownItems.kokiri_sword == true) { logic.kokiri_sword = locationLogic[itemToCheckMap.kokiri_sword]; } else { logic.kokiri_sword = false; }
+  logic.kokiri_sword = locationLogic[itemToCheckMap.kokiri_sword] || false;
+  logic.farores_wind = locationLogic[itemToCheckMap.farores_wind] || false;
 
-  if (knownItems.farores_wind == true) { logic.farores_wind = locationLogic[itemToCheckMap.farores_wind]; } else { logic.farores_wind = false; }
-
-  if (knownItems.slingshot1 == true) { logic.slingshot1 = locationLogic[itemToCheckMap.slingshot1]; }
-  if (knownItems.slingshot2 == true) { logic.slingshot2 = locationLogic[itemToCheckMap.slingshot2]; }
-  if (knownItems.slingshot3 == true) { logic.slingshot3 = locationLogic[itemToCheckMap.slingshot3]; }
+  logic.slingshot1 = locationLogic[itemToCheckMap.slingshot1] || false;
+  logic.slingshot2 = locationLogic[itemToCheckMap.slingshot2] || false;
+  logic.slingshot3 = locationLogic[itemToCheckMap.slingshot3] || false;
   logic.slingshot = logic.slingshot1 || logic.slingshot2 || logic.slingshot3;
 
-  if (knownItems.boomerang == true) { logic.boomerang = locationLogic[itemToCheckMap.boomerang]; } else { logic.boomerang = false; }
+  logic.boomerang = locationLogic[itemToCheckMap.boomerang] || false;
 
-  if (knownItems.rutos_letter == true) { logic.rutos_letter = locationLogic[itemToCheckMap.rutos_letter]; } else { logic.rutos_letter = false; }
-  if (knownItems.bottle1 == true) { logic.bottle1 = locationLogic[itemToCheckMap.bottle1]; }
-  if (knownItems.bottle2 == true) { logic.bottle2 = locationLogic[itemToCheckMap.bottle2]; }
-  if (knownItems.bottle3 == true) { logic.bottle3 = locationLogic[itemToCheckMap.bottle3]; }
-  if (knownItems.bottle4 == true) { logic.bottle4 = locationLogic[itemToCheckMap.bottle4]; }
+  logic.rutos_letter = locationLogic[itemToCheckMap.rutos_letter] || false;
+  logic.bottle1 = locationLogic[itemToCheckMap.bottle1] || false;
+  logic.bottle2 = locationLogic[itemToCheckMap.bottle2] || false;
+  logic.bottle3 = locationLogic[itemToCheckMap.bottle3] || false;
+  logic.bottle4 = locationLogic[itemToCheckMap.bottle4] || false;
   logic.bottle = (logic.rutos_letter && logic.child_can_enter_domain) || logic.bottle1 || logic.bottle2 || logic.bottle3 || logic.bottle4;
 
-  if (knownItems.scale1 == true) { logic.scale1 = locationLogic[itemToCheckMap.scale1]; }
-  if (knownItems.scale2 == true) { logic.scale2 = locationLogic[itemToCheckMap.scale2]; }
+  logic.scale1 = locationLogic[itemToCheckMap.scale1] || false;
+  logic.scale2 = locationLogic[itemToCheckMap.scale2] || false;
   logic.silver_scale = logic.scale1 || logic.scale2;
   logic.golden_scale = logic.scale1 && logic.scale2;
 
-  if (knownItems.bomb_bag1 == true) { logic.bomb_bag1 = locationLogic[itemToCheckMap.bomb_bag1]; }
-  if (knownItems.bomb_bag2 == true) { logic.bomb_bag2 = locationLogic[itemToCheckMap.bomb_bag2]; }
-  if (knownItems.bomb_bag3 == true) { logic.bomb_bag3 = locationLogic[itemToCheckMap.bomb_bag3]; }
+  logic.bomb_bag1 = locationLogic[itemToCheckMap.bomb_bag1] || false;
+  logic.bomb_bag2 = locationLogic[itemToCheckMap.bomb_bag2] || false;
+  logic.bomb_bag3 = locationLogic[itemToCheckMap.bomb_bag3] || false;
   logic.bomb_bag = logic.bomb_bag1 || logic.bomb_bag2 || logic.bomb_bag3;
 
-  if (knownItems.bombchus1 == true) { logic.bombchus1 = locationLogic[itemToCheckMap.bombchus1]; }
-  if (knownItems.bombchus2 == true) { logic.bombchus2 = locationLogic[itemToCheckMap.bombchus2]; }
-  if (knownItems.bombchus3 == true) { logic.bombchus3 = locationLogic[itemToCheckMap.bombchus3]; }
-  if (knownItems.bombchus4 == true) { logic.bombchus4 = locationLogic[itemToCheckMap.bombchus4]; }
-  if (knownItems.bombchus5 == true) { logic.bombchus5 = locationLogic[itemToCheckMap.bombchus5]; }
+  logic.bombchus1 = locationLogic[itemToCheckMap.bombchus1] || false;
+  logic.bombchus2 = locationLogic[itemToCheckMap.bombchus2] || false;
+  logic.bombchus3 = locationLogic[itemToCheckMap.bombchus3] || false;
+  logic.bombchus4 = locationLogic[itemToCheckMap.bombchus4] || false;
+  logic.bombchus5 = locationLogic[itemToCheckMap.bombchus5] || false;
   logic.bombchus = logic.bombchus1 || logic.bombchus2 || logic.bombchus3 || logic.bombchus4 || logic.bombchus5;
 
-  if (knownItems.hammer == true) { logic.hammer = locationLogic[itemToCheckMap.hammer]; } else { logic.hammer = false; }
+  logic.hammer = locationLogic[itemToCheckMap.hammer] || false;
 
-  if (knownItems.bow1 == true) { logic.bow1 = locationLogic[itemToCheckMap.bow1]; }
-  if (knownItems.bow2 == true) { logic.bow2 = locationLogic[itemToCheckMap.bow2]; }
-  if (knownItems.bow3 == true) { logic.bow3 = locationLogic[itemToCheckMap.bow3]; }
+  logic.bow1 = locationLogic[itemToCheckMap.bow1] || false;
+  logic.bow2 = locationLogic[itemToCheckMap.bow2] || false;
+  logic.bow3 = locationLogic[itemToCheckMap.bow3] || false;
   logic.bow = logic.bow1 || logic.bow2 || logic.bow3;
 
-  if (knownItems.hookshot1 == true) { logic.hookshot1 = locationLogic[itemToCheckMap.hookshot1]; }
-  if (knownItems.hookshot2 == true) { logic.hookshot2 = locationLogic[itemToCheckMap.hookshot2]; }
+  logic.hookshot1 = locationLogic[itemToCheckMap.hookshot1] || false;
+  logic.hookshot2 = locationLogic[itemToCheckMap.hookshot2] || false;
   logic.hookshot = logic.hookshot1 || logic.hookshot2;
   logic.longshot = logic.hookshot1 && logic.hookshot2;
-  if (knownItems.strength1 == true) { logic.strength1 = locationLogic[itemToCheckMap.strength1]; }
-  if (knownItems.strength2 == true) { logic.strength2 = locationLogic[itemToCheckMap.strength2]; }
-  if (knownItems.strength3 == true) { logic.strength3 = locationLogic[itemToCheckMap.strength3]; }
+
+  logic.strength1 = locationLogic[itemToCheckMap.strength1] || false;
+  logic.strength2 = locationLogic[itemToCheckMap.strength2] || false;
+  logic.strength3 = locationLogic[itemToCheckMap.strength3] || false;
   logic.goron_bracelet = logic.strength1 || logic.strength2 || logic.strength3;
-  logic.silver_gauntlets = (logic.strength1 && logic.strength2) || (logic.strength1 && logic.strength3) || (logic.strength2 && logic.strength3)
+  logic.silver_gauntlets = (logic.strength1 && logic.strength2) || (logic.strength1 && logic.strength3) || (logic.strength2 && logic.strength3);
   logic.golden_gauntlets = logic.strength1 && logic.strength2 && logic.strength3;
 
-  if (knownItems.mirror_shield == true) { logic.mirror_shield = locationLogic[itemToCheckMap.mirror_shield]; } else { logic.mirror_shield = false; }
+  logic.mirror_shield = locationLogic[itemToCheckMap.mirror_shield] || false;
+  logic.big_poe = locationLogic[itemToCheckMap.big_poe] || false;
+  logic.iron_boots = locationLogic[itemToCheckMap.iron_boots] || false;
+  logic.hover_boots = locationLogic[itemToCheckMap.hover_boots] || false;
 
-  if (knownItems.big_poe == true) { logic.big_poe = locationLogic[itemToCheckMap.big_poe]; } else { logic.big_poe = false; }
-
-  if (knownItems.iron_boots == true) { logic.iron_boots = locationLogic[itemToCheckMap.iron_boots]; } else { logic.iron_boots = false; }
-  if (knownItems.hover_boots == true) { logic.hover_boots = locationLogic[itemToCheckMap.hover_boots]; } else { logic.hover_boots = false; }
-
-  if (knownItems.magic1 == true) { logic.magic1 = locationLogic[itemToCheckMap.magic1]; }
-  if (knownItems.magic2 == true) { logic.magic2 = locationLogic[itemToCheckMap.magic2]; }
+  logic.magic1 = locationLogic[itemToCheckMap.magic1] || false;
+  logic.magic2 = locationLogic[itemToCheckMap.magic2] || false;
   logic.magic = logic.magic1 || logic.magic2;
 
-  if (knownItems.dins_fire == true) { logic.dins_fire = locationLogic[itemToCheckMap.dins_fire]; } else { logic.dins_fire = false; }
-  if (knownItems.fire_arrows == true) { logic.fire_arrows = locationLogic[itemToCheckMap.fire_arrows]; } else { logic.fire_arrows = false; }
+  logic.dins_fire = locationLogic[itemToCheckMap.dins_fire] || false;
+  logic.fire_arrows = locationLogic[itemToCheckMap.fire_arrows] || false;
 
-  if (knownItems.wallet1 == true) { logic.wallet1 = locationLogic[itemToCheckMap.wallet1]; }
-  if (knownItems.wallet2 == true) { logic.wallet2 = locationLogic[itemToCheckMap.wallet2]; }
-  if (knownItems.wallet3 == true) { logic.wallet3 = locationLogic[itemToCheckMap.wallet3]; }
+  logic.wallet1 = locationLogic[itemToCheckMap.wallet1] || false;
+  logic.wallet2 = locationLogic[itemToCheckMap.wallet2] || false;
+  logic.wallet3 = locationLogic[itemToCheckMap.wallet3] || false;
   logic.adults_wallet = logic.wallet1 || logic.wallet2 || logic.wallet3;
   logic.giants_wallet = (logic.wallet1 && logic.wallet2) || (logic.wallet1 && logic.wallet3) || (logic.wallet2 && logic.wallet3);
   logic.tycoon_wallet = logic.wallet1 && logic.wallet2 && logic.wallet3;
 
-  if (knownItems.goron_tunic == true) { logic.goron_tunic = locationLogic[itemToCheckMap.goron_tunic]; } else { logic.goron_tunic = false; }
-  if (knownItems.zora_tunic == true) { logic.zora_tunic = locationLogic[itemToCheckMap.zora_tunic]; } else { logic.zora_tunic = false; }
-  if (knownItems.lens == true) { logic.lens = locationLogic[itemToCheckMap.lens]; } else { logic.lens = false; }
-  if (knownItems.stone_of_agony == true) { logic.stone_of_agony = locationLogic[itemToCheckMap.stone_of_agony]; } else { logic.stone_of_agony = false; }
-  if (knownItems.prescription == true) { logic.prescription = locationLogic[itemToCheckMap.prescription]; } else { logic.prescription = false; }
-  if (knownItems.claim_check == true) { logic.claim_check = locationLogic[itemToCheckMap.claim_check]; } else { logic.claim_check = false; }
+  logic.goron_tunic = locationLogic[itemToCheckMap.goron_tunic] || false;
+  logic.zora_tunic = locationLogic[itemToCheckMap.zora_tunic] || false;
+  logic.lens = locationLogic[itemToCheckMap.lens] || false;
+  logic.stone_of_agony = locationLogic[itemToCheckMap.stone_of_agony] || false;
+  logic.prescription = locationLogic[itemToCheckMap.prescription] || false;
+  logic.claim_check = locationLogic[itemToCheckMap.claim_check] || false;
   logic.trade = logic.claim_check || logic.prescription;
 
-  if (knownItems.light_arrows == true) { logic.light_arrows = locationLogic[itemToCheckMap.light_arrows]; }
-  if (knownItems.ice_arrows == true) { logic.ice_arrows = locationLogic[itemToCheckMap.ice_arrows]; }
-  if (knownItems.forest_key_ring == true) { logic.forest_key_ring = locationLogic[itemToCheckMap.forest_key_ring]; }
-  if (knownItems.fire_key_ring == true) { logic.fire_key_ring = locationLogic[itemToCheckMap.fire_key_ring]; }
-  if (knownItems.water_key_ring == true) { logic.water_key_ring = locationLogic[itemToCheckMap.water_key_ring]; }
-  if (knownItems.spirit_key_ring == true) { logic.spirit_key_ring = locationLogic[itemToCheckMap.spirit_key_ring]; }
-  if (knownItems.shadow_key_ring == true) { logic.shadow_key_ring = locationLogic[itemToCheckMap.shadow_key_ring]; }
-  if (knownItems.well_key_ring == true) { logic.well_key_ring = locationLogic[itemToCheckMap.well_key_ring]; }
-  if (knownItems.gtg_key_ring == true) { logic.gtg_key_ring = locationLogic[itemToCheckMap.gtg_key_ring]; }
-  if (knownItems.ganons_key_ring == true) { logic.ganons_key_ring = locationLogic[itemToCheckMap.ganons_key_ring]; }
-  if (knownItems.gerudo_card == true) { logic.gerudo_card = locationLogic[itemToCheckMap.gerudo_card]; }
-  if (knownItems.magic_bean_pack == true) { logic.magic_bean_pack = locationLogic[itemToCheckMap.magic_bean_pack]; }
+  logic.light_arrows = locationLogic[itemToCheckMap.light_arrows] || false;
+  logic.ice_arrows = locationLogic[itemToCheckMap.ice_arrows] || false;
+  logic.forest_key_ring = locationLogic[itemToCheckMap.forest_key_ring] || false;
+  logic.fire_key_ring = locationLogic[itemToCheckMap.fire_key_ring] || false;
+  logic.water_key_ring = locationLogic[itemToCheckMap.water_key_ring] || false;
+  logic.spirit_key_ring = locationLogic[itemToCheckMap.spirit_key_ring] || false;
+  logic.shadow_key_ring = locationLogic[itemToCheckMap.shadow_key_ring] || false;
+  logic.well_key_ring = locationLogic[itemToCheckMap.well_key_ring] || false;
+  logic.gtg_key_ring = locationLogic[itemToCheckMap.gtg_key_ring] || false;
+  logic.ganons_key_ring = locationLogic[itemToCheckMap.ganons_key_ring] || false;
+  logic.gerudo_card = locationLogic[itemToCheckMap.gerudo_card] || false;
+  logic.magic_bean_pack = locationLogic[itemToCheckMap.magic_bean_pack] || false;
 
-  if (knownItems.lullaby == true) { logic.lullaby = locationLogic[itemToCheckMap.lullaby]; }
-  if (knownItems.eponas == true) { logic.eponas = locationLogic[itemToCheckMap.eponas]; }
-  if (knownItems.sarias == true) { logic.sarias = locationLogic[itemToCheckMap.sarias]; }
-  if (knownItems.suns == true) { logic.suns = locationLogic[itemToCheckMap.suns]; }
-  if (knownItems.time == true) { logic.time = locationLogic[itemToCheckMap.time]; }
-  if (knownItems.storms == true) { logic.storms = locationLogic[itemToCheckMap.storms]; }
-  if (knownItems.minuet == true) { logic.minuet = locationLogic[itemToCheckMap.minuet]; }
-  if (knownItems.bolero == true) { logic.bolero = locationLogic[itemToCheckMap.bolero]; }
-  if (knownItems.serenade == true) { logic.serenade = locationLogic[itemToCheckMap.serenade]; }
-  if (knownItems.requiem == true) { logic.requiem = locationLogic[itemToCheckMap.requiem]; }
-  if (knownItems.nocturne == true) { logic.nocturne = locationLogic[itemToCheckMap.nocturne]; }
-  if (knownItems.prelude == true) { logic.prelude = locationLogic[itemToCheckMap.prelude]; }
+  logic.lullaby = locationLogic[itemToCheckMap.lullaby] || false;
+  logic.eponas = locationLogic[itemToCheckMap.eponas] || false;
+  logic.sarias = locationLogic[itemToCheckMap.sarias] || false;
+  logic.suns = locationLogic[itemToCheckMap.suns] || false;
+  logic.time = locationLogic[itemToCheckMap.time] || false;
+  logic.storms = locationLogic[itemToCheckMap.storms] || false;
+  logic.minuet = locationLogic[itemToCheckMap.minuet] || false;
+  logic.bolero = locationLogic[itemToCheckMap.bolero] || false;
+  logic.serenade = locationLogic[itemToCheckMap.serenade] || false;
+  logic.requiem = locationLogic[itemToCheckMap.requiem] || false;
+  logic.nocturne = locationLogic[itemToCheckMap.nocturne] || false;
+  logic.prelude = locationLogic[itemToCheckMap.prelude] || false;
 
 
 
@@ -670,7 +668,7 @@ function logicShortcuts() {
   logic.jabu_entrance_access = ((logic.rutos_letter || rules.fountain == "open") && logic.child_can_enter_domain) || Spawn.child_zf;
   logic.can_hit_jabu_switch = logic.jabu_access && logic.bomb_bag || ((logic.boomerang || logic.slingshot) && logic.jabu_child_access) || ((logic.hookshot || logic.bow) && logic.jabu_adult_access);
   logic.fortress_access = logic.eponas || logic.longshot || Spawn.adult_gf || Spawn.adult_wasteland || (Spawn.child_gv_gf && logic.kokiri_sword);
-  logic.can_save_carpenters = (Spawn.child_gv_gf && logic.kokiri_sword) || (logic.fortress_access && ((logic.bow || logic.hookshot || logic.hover_boots) || true)) /*fast carpenter fix**/;
+  logic.can_save_carpenters = (Spawn.child_gv_gf && logic.kokiri_sword) || logic.fortress_access
   logic.gtg_entrance_access = (logic.can_save_carpenters && rules.gerudoCard == "vanilla") || (logic.fortress_access && logic.gerudo_card && rules.gerudoCard == "shuffled");
   logic.can_cross_quicksand = logic.fortress_access && (logic.longshot || logic.hover_boots) && (rules.gerudoCard == "vanilla" || logic.gerudo_card || Spawn.adult_wasteland);
   logic.can_enter_colossus = (logic.can_cross_quicksand && (logic.brackets || logic.can_see)) || logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || locationLogic.spirit_leftHand || locationLogic.spirit_rightHand;
@@ -684,7 +682,7 @@ function logicShortcuts() {
   logic.can_enter_child_dodongos = logic.bomb_bag || logic.goron_bracelet;
   logic.can_break_dodongos_wall = logic.dodongos_access && (logic.goron_bracelet || logic.bomb_bag || (logic.dodongos_adult_access && logic.hammer));
   logic.dodongos_climb = logic.can_break_dodongos_wall && (logic.bomb_bag || logic.goron_bracelet || logic.can_use_dins);
-  logic.can_enter_shadow_entrance = (logic.nocturne || Spawn.adult_nocturne) && logic.can_use_dins;//&& logic.can_see;
+  logic.can_enter_shadow_entrance = (logic.nocturne || Spawn.adult_nocturne) && logic.can_use_dins;
   logic.can_cross_shadow_gap = logic.shadow_temple_adult_access && logic.hover_boots;
   logic.can_bomb_shadow_wall = logic.can_cross_shadow_gap && logic.bomb_bag && (rules.smallKeys != "keyRings" || couldHave.shadow_key_ring);
   logic.can_pass_shadow_hookshot_door = logic.can_bomb_shadow_wall && logic.hookshot;
@@ -726,7 +724,7 @@ function logicShortcuts() {
   player.can_hit_jabu_switch = player.jabu_access && player.bomb_bag || player.bombchus || ((player.boomerang || player.slingshot) && player.jabu_child_access) || ((player.hookshot || player.bow) && player.jabu_adult_access);
 
   player.fortress_access = player.eponas || player.longshot || player.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && player.hookshot);
-  player.can_save_carpenters = Spawn.child_gv_gf || (player.fortress_access && ((player.bow || player.hookshot || player.hover_boots) || true)) /*fast carpenter fix**/;
+  player.can_save_carpenters = Spawn.child_gv_gf || player.fortress_access
   player.gtg_entrance_access = (player.can_save_carpenters && rules.gerudoCard == "vanilla") || (player.fortress_access && player.gerudo_card && rules.gerudoCard == "shuffled");
   player.can_cross_quicksand = player.fortress_access && (rules.gerudoCard == "vanilla" || player.gerudo_card);
   player.can_enter_colossus = (player.can_cross_quicksand) || player.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || locationAccess.spirit_leftHand || locationAccess.spirit_rightHand;
