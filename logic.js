@@ -839,25 +839,18 @@ function logicShortcuts() {
 function updateLocationLogic() {
   {
     const {
-      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale,
-      hookshot, bean_access, longshot, bow, bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion,
-      spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows, ice_access, giants_wallet, deku_access,
-      deku_child_access, slingshot, deku_adult_access, can_use_fire, can_pass_mido_as_adult, sarias, can_use_dins, can_stop_link_the_goron,
-      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top,
-      hover_boots, crater_by_city, gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem,
-      can_enter_colossus, can_cross_quicksand, can_save_carpenters, gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access,
-      forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key, fire_temple_access,
-      fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks,
-      middle_water, water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access,
-      spirit_temple_access, spirit_keys, silver_gauntlets, can_push_spirit_silver_block, mirror_shield, spirit_boss_key,
-      can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, can_beat_shadow_boss,
-      ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, bombchus,
+      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale,hookshot, bean_access, longshot, bow, 
+      bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion,spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows, 
+      ice_access, giants_wallet, deku_access, deku_child_access, slingshot, deku_adult_access, can_use_fire, can_pass_mido_as_adult, sarias, can_use_dins, can_stop_link_the_goron,
+      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top, hover_boots, crater_by_city, 
+      gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem, can_enter_colossus, can_cross_quicksand, can_save_carpenters, 
+      gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access,forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key, 
+      fire_temple_access, fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks,middle_water, 
+      water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access, spirit_temple_access, spirit_keys, silver_gauntlets, 
+      can_push_spirit_silver_block, mirror_shield, spirit_boss_key, can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, 
+      can_beat_shadow_boss, ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, bombchus, 
       can_enter_fire_temple_entrance, forest_medallion, fire_medallion, projectile_both, water_medallion, can_enter_ganons, jabu_entrance_access, shadow_temple_adult_access
     } = logic;
-    const {
-      adult_fishing, child_hyrule_fairy, adult_ogc, child_zf_fairy, adult_zf_fairy, child_zf, child_lower_dmc, child_lower_dmc_fairy, child_dmt_fairy_ool,
-      child_upper_dmc, adult_lower_dmc_fairy, adult_zd, adult_kak_roof, child_dmt_fairy, adult_dmt_fairy,
-    } = Spawn;
 
     locationLogic.kokiri_mido_1 = true;
     locationLogic.kokiri_mido_2 = true;
@@ -878,7 +871,7 @@ function updateLocationLogic() {
     locationLogic.gerudo_hammer = fortress_access && hammer;
     locationLogic.hylia_child_fishing = true;
     locationLogic.hylia_bottle = silver_scale;
-    locationLogic.hylia_adult_fishing = hookshot || bean_access || adult_fishing;
+    locationLogic.hylia_adult_fishing = hookshot || bean_access || Spawn.adult_fishing;
     locationLogic.hylia_lab_top = hookshot || bean_access;
     locationLogic.hylia_lab_dive = golden_scale;
     locationLogic.hylia_sun_shoot = longshot && bow;
@@ -888,10 +881,10 @@ function updateLocationLogic() {
     locationLogic.market_bowling_2 = bomb_bag || (bombchus && rules.chusInLogic == "on");
     locationLogic.market_lens_game = can_see;
     locationLogic.poes = (bow && eponas && bottle) || big_poe;
-    locationLogic.dins_fairy = (bomb_bag || child_hyrule_fairy) && lullaby;
-    locationLogic.g_fairy = (golden_gauntlets || adult_ogc) && lullaby;
+    locationLogic.dins_fairy = (bomb_bag || Spawn.child_hyrule_fairy) && lullaby;
+    locationLogic.g_fairy = (golden_gauntlets || Spawn.adult_ogc) && lullaby;
     locationLogic.lacs = shadow_medallion && spirit_medallion;
-    locationLogic.fountain_fairy = ((ice_entrance_access && bomb_bag) || child_zf_fairy || adult_zf_fairy || (bomb_bag && child_zf)) && lullaby;
+    locationLogic.fountain_fairy = ((ice_entrance_access && bomb_bag) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || (bomb_bag && Spawn.child_zf)) && lullaby;
     locationLogic.glacier_hp = ice_entrance_access;
     locationLogic.bottom_of_fountain = ice_entrance_access && iron_boots;
     locationLogic.ice_map = ice_adult_access && (bottle || can_shoot_blue_fire_arrows);
@@ -919,8 +912,8 @@ function updateLocationLogic() {
     locationLogic.theater_truth = kokiri_emerald && goron_ruby && zora_sapphire && sarias;
     locationLogic.wolfos_grotto = bomb_bag || (can_pass_mido_as_adult && hammer);
     locationLogic.rolling_goron = bomb_bag;
-    locationLogic.goron_dance = (lullaby || child_lower_dmc) && sarias;
-    locationLogic.goron_pot = bomb_bag && (lullaby || can_use_dins || child_lower_dmc);
+    locationLogic.goron_dance = (lullaby || Spawn.child_lower_dmc) && sarias;
+    locationLogic.goron_pot = bomb_bag && (lullaby || can_use_dins || Spawn.child_lower_dmc);
     locationLogic.goron_maze_1 = can_blast_or_smash || silver_gauntlets;
     locationLogic.goron_maze_2 = can_blast_or_smash || silver_gauntlets;
     locationLogic.goron_maze_3 = hammer || silver_gauntlets;
@@ -936,12 +929,12 @@ function updateLocationLogic() {
     locationLogic.trail_bombable = can_blast_or_smash;
     locationLogic.trail_top = true;
     locationLogic.trail_storms = storms;
-    locationLogic.trail_fairy = (can_blast_or_smash || child_dmt_fairy || adult_dmt_fairy) && lullaby;
-    locationLogic.trade_quest = ((((ice_access && bottle) || ((giants_wallet || can_enter_ganons) && (lullaby || adult_zd) && bottle)) && prescription) || claim_check) && crater_top;
+    locationLogic.trail_fairy = (can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && lullaby;
+    locationLogic.trade_quest = ((((ice_access && bottle) || ((giants_wallet || can_enter_ganons) && (lullaby || Spawn.adult_zd) && bottle)) && prescription) || claim_check) && crater_top;
     locationLogic.crater_bean = (bolero && bean_access) || (hover_boots && crater_by_city);
-    locationLogic.crater_hammer_fairy = ((crater_by_city && hammer) || child_lower_dmc_fairy || adult_lower_dmc_fairy) && lullaby;
+    locationLogic.crater_hammer_fairy = ((crater_by_city && hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && lullaby;
     locationLogic.crater_grotto = can_blast_or_smash;
-    locationLogic.crater_nook_hp = crater_top || child_upper_dmc;
+    locationLogic.crater_nook_hp = crater_top || Spawn.child_upper_dmc;
     locationLogic.man_on_roof = true;
     locationLogic.kakariko_grotto = true;
     locationLogic.kakariko_hag = adults_wallet;
@@ -1088,7 +1081,7 @@ function updateLocationLogic() {
     locationLogic.gtg_silvers4 = gtg_adult_access && hookshot && silver_gauntlets;
     locationLogic.gtg_eyes = gtg_adult_access && hookshot && bow;
     locationLogic.gtg_aboveEyes = gtg_adult_access && hookshot && bow;
-    locationLogic.gtg_keese = gtg_adult_access && hookshot
+    locationLogic.gtg_keese = gtg_adult_access && hookshot;
     locationLogic.gtg_flamesChest = gtg_adult_access && hookshot && hammer;
     locationLogic.gtg_freestanding = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
     locationLogic.gtg_right2 = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
@@ -1100,13 +1093,13 @@ function updateLocationLogic() {
     locationLogic.gtg_left4 = gtg_access && gtg_keys >= 7;
     locationLogic.gtg_final = gtg_access && gtg_keys >= 9;
     locationLogic.gtg_toilet = gtg_adult_access && iron_boots && time && hookshot;
-    locationLogic.well_fakeRight = botw_child_access;;
-    locationLogic.well_centerSmall = botw_child_access;;
+    locationLogic.well_fakeRight = botw_child_access;
+    locationLogic.well_centerSmall = botw_child_access;
     locationLogic.well_backBombable = botw_child_access && bomb_bag;
     locationLogic.well_waterLeft = botw_child_access && lullaby;
     locationLogic.well_coffin = botw_child_access;
-    locationLogic.well_centerBig = botw_child_access;;
-    locationLogic.well_fakeLeft = botw_child_access;;
+    locationLogic.well_centerBig = botw_child_access;
+    locationLogic.well_fakeLeft = botw_child_access;
     locationLogic.well_frontBombable = botw_child_access && bomb_bag;
     locationLogic.well_waterFront = botw_child_access && lullaby;
     locationLogic.well_deadHand = botw_child_access && lullaby;
@@ -1150,7 +1143,7 @@ function updateLocationLogic() {
     locationLogic.scrub_crater_1 = hammer && crater_by_city;
     locationLogic.scrub_crater_2 = hammer && crater_by_city;
     locationLogic.scrub_crater_3 = hammer && crater_by_city;
-    locationLogic.scrub_crater_child = bomb_bag || child_upper_dmc || child_lower_dmc || child_lower_dmc_fairy || child_dmt_fairy || child_dmt_fairy_ool || hammer;
+    locationLogic.scrub_crater_child = bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || hammer;
     locationLogic.scrub_goron_1 = time || (can_wear_goron_tunic && hookshot);
     locationLogic.scrub_goron_2 = time || (can_wear_goron_tunic && hookshot);
     locationLogic.scrub_goron_3 = time || (can_wear_goron_tunic && hookshot);
@@ -1222,7 +1215,7 @@ function updateLocationLogic() {
     locationLogic.gs_kakariko_guard_house = true;
     locationLogic.gs_kakariko_tree = true;
     locationLogic.gs_kakariko_tower = bomb_bag || slingshot;
-    locationLogic.gs_kakariko_impas = hookshot || adult_kak_roof;
+    locationLogic.gs_kakariko_impas = hookshot || Spawn.adult_kak_roof;
     locationLogic.gs_graveyard_wall = boomerang;
     locationLogic.gs_graveyard_soil = bottle;
     locationLogic.gs_trail_soil = bottle && (bomb_bag || goron_bracelet);
@@ -1231,13 +1224,13 @@ function updateLocationLogic() {
     locationLogic.gs_trail_above_dodongos = hammer;
     locationLogic.gs_goron_center = true;
     locationLogic.gs_goron_maze = bomb_bag;
-    locationLogic.gs_crater_crate = can_blast_or_smash || child_upper_dmc;
+    locationLogic.gs_crater_crate = can_blast_or_smash || Spawn.child_upper_dmc;
     locationLogic.gs_crater_soil = bottle && bolero;
     locationLogic.gs_river_ladder = child_can_enter_river;
     locationLogic.gs_river_near_grotto = hookshot;
     locationLogic.gs_river_above_bridge = hookshot;
     locationLogic.gs_river_tree = true;
-    locationLogic.gs_domain = (lullaby || adult_zd) && (hookshot || magic || bow);
+    locationLogic.gs_domain = (lullaby || Spawn.adult_zd) && (hookshot || magic || bow);
     locationLogic.gs_fountain_above_log = jabu_entrance_access && boomerang;
     locationLogic.gs_fountain_tree = jabu_entrance_access;
     locationLogic.gs_fountain_hidden_cave = ice_entrance_access && silver_gauntlets && hookshot && can_blast_or_smash;
