@@ -27,6 +27,13 @@ function refreshLogicForStuff() {
   if (knownItems.bomb_bag3 == true) { logic.bomb_bag3 = locationLogic[itemToCheckMap.bomb_bag3]; }
   logic.bomb_bag = logic.bomb_bag1 || logic.bomb_bag2 || logic.bomb_bag3;
 
+  if (knownItems.bombchus1 == true) { logic.bombchus1 = locationLogic[itemToCheckMap.bombchus1]; }
+  if (knownItems.bombchus2 == true) { logic.bombchus2 = locationLogic[itemToCheckMap.bombchus2]; }
+  if (knownItems.bombchus3 == true) { logic.bombchus3 = locationLogic[itemToCheckMap.bombchus3]; }
+  if (knownItems.bombchus4 == true) { logic.bombchus4 = locationLogic[itemToCheckMap.bombchus4]; }
+  if (knownItems.bombchus5 == true) { logic.bombchus5 = locationLogic[itemToCheckMap.bombchus5]; }
+  logic.bombchus = logic.bombchus1 || logic.bombchus2 || logic.bombchus3 || logic.bombchus4 || logic.bombchus5;
+
   if (knownItems.hammer == true) { logic.hammer = locationLogic[itemToCheckMap.hammer]; } else { logic.hammer = false; }
 
   if (knownItems.bow1 == true) { logic.bow1 = locationLogic[itemToCheckMap.bow1]; }
@@ -844,7 +851,7 @@ function updateLocationLogic() {
       middle_water, water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access,
       spirit_temple_access, spirit_keys, silver_gauntlets, can_push_spirit_silver_block, mirror_shield, spirit_boss_key,
       can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, can_beat_shadow_boss,
-      ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys,
+      ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, bombchus,
       can_enter_fire_temple_entrance, forest_medallion, fire_medallion, projectile_both, water_medallion, can_enter_ganons, jabu_entrance_access, shadow_temple_adult_access
     } = logic;
     const {
@@ -877,8 +884,8 @@ function updateLocationLogic() {
     locationLogic.hylia_sun_shoot = longshot && bow;
     locationLogic.market_slingshot_game = true;
     locationLogic.richard = true;
-    locationLogic.market_bowling_1 = bomb_bag;
-    locationLogic.market_bowling_2 = bomb_bag;
+    locationLogic.market_bowling_1 = bomb_bag || (bombchus && rules.chusInLogic == "on");
+    locationLogic.market_bowling_2 = bomb_bag || (bombchus && rules.chusInLogic == "on");
     locationLogic.market_lens_game = can_see;
     locationLogic.poes = (bow && eponas && bottle) || big_poe;
     locationLogic.dins_fairy = (bomb_bag || child_hyrule_fairy) && lullaby;
@@ -1319,8 +1326,8 @@ function updateLocationLogic() {
     Access.hylia_sun_shoot = Has.bow && Has.longshot;
     Access.market_slingshot_game = true;
     Access.richard = true;
-    Access.market_bowling_1 = Has.bomb_bag;
-    Access.market_bowling_2 = Has.bomb_bag;
+    Access.market_bowling_1 = Has.bomb_bag || (Has.bombchus && rules.chusInLogic == "on");
+    Access.market_bowling_2 = Has.bomb_bag || (Has.bombchus && rules.chusInLogic == "on");
     Access.market_lens_game = Has.can_see;
     Access.poes = (Has.bow && (Has.can_use_bottle || Has.jabu_entrance_access)) || Has.big_poe;
     Access.dins_fairy = (Has.bomb_bag || player.bombchus || Spawn.child_hyrule_fairy) && Has.lullaby;
