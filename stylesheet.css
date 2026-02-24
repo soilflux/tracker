@@ -436,6 +436,7 @@ body {
 #major_probability {
   font-size: 14px;
   color: gold;
+  margin-left:8px;
 }
 
 #goMode {
