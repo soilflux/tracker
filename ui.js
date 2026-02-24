@@ -1836,7 +1836,14 @@ function updateProbabilities() {
   else {
     document.getElementById('goMode').style.display = "none";
   }
-  document.getElementById("major_probability").innerHTML = "Looking For (" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(1) + "%)"
+
+  const chanceOfFindPerCheck = 1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks);
+  const val = Math.min(Math.max(chanceOfFindPerCheck, 0.05), 0.14);
+  const percentage = (val - 0.05) / (0.14 - 0.05);
+  const hue = percentage * 120; 
+  document.getElementById("major_probability").style.color =`hsl(${hue}, 100%, 45%)`;
+
+  document.getElementById("theLetterN").innerHTML ="(" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(1) + "%) n"
 }
 
 function updateWothBorders() {
