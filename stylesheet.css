@@ -389,27 +389,27 @@ body {
 }
 
 .searchingFor_images {
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
 }
 
 #searchingFor_div {
-  width: 180px;
+  width: 100px;
 }
 
 #probability_input {
   width: 25px;
   height: 16px;
   position: relative;
-  top: 14px;
-  left: 140px;
+  top: 7px;
+  left: 32px;
 }
 
 #theLetterN {
   color: white;
   position: relative;
-  left: 140px;
-  top: 13px;
+  left: 32px;
+  top: 6px;
 }
 
 #timerMultiplier {
@@ -418,7 +418,7 @@ body {
 
 #probabilityColumn {
   left: 1740px;
-  top: 46px;
+  top: 26px;
   position: absolute;
   float: left;
   width: 350px;
@@ -445,7 +445,7 @@ body {
 
 #frogSongHelper {
   width: 175px;
-  top: -2px;
+  top: 81px;
   position: absolute;
 }
 

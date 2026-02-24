@@ -55,6 +55,10 @@
             <br><img src="./images/silverscale.png" id="silverscaleimg" class="bonuspics" onmousedown = "highlight(this)">
             <br><img src="./images/bottle.png" id="bottleimg" class="bonuspics" onmousedown = "highlight(this)">
           </div>
+          <div id = "searchingFor">     
+            <small id="major_probability"></small><br><div id = "searchingFor_div"><img id = "goMode" src = "./normal/gomode.png"></img></div>
+            <small id = "theLetterN">n </small><input spellcheck="false" id = "probability_input" class = "hint_input" value = '1'></input>   
+          </div>
           <div id="tokenStatsColumn">
             <small id="tokens_acquired" class="stat-text"></small>
             <br><small id="tokensAccessible" class="stat-text"></small>
@@ -186,8 +190,6 @@
         </div>
         
         <div id="probabilityColumn">
-          <small id = "theLetterN">n </small><input spellcheck="false" id = "probability_input" class = "hint_input" value = '1'></input><br>
-          <small id="major_probability">Searching For (0%)</small><br><div id = "searchingFor_div"><img id = "goMode" src = "./normal/gomode.png"></img></div>
           <img src = "./normal/frogsong.png" id="frogSongHelper"></img>
         </div>		 
         <small id = "timer"></small><br>

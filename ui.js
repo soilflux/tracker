@@ -1836,7 +1836,7 @@ function updateProbabilities() {
   else {
     document.getElementById('goMode').style.display = "none";
   }
-  document.getElementById("major_probability").innerHTML = "Searching For (" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(2) + "%)"
+  document.getElementById("major_probability").innerHTML = "Looking For (" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(1) + "%)"
 }
 
 function updateWothBorders() {
