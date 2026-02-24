@@ -3,7 +3,7 @@ var checkToItemMap = {};
 var player = {};
 var couldHave = {};
 var person = {};
-var locationLogic = {};
+var checkLogic = {};
 var locationPeek = {};
 var locationAccess = {};
 var locationCouldAccess = {};
@@ -31,7 +31,6 @@ var simOverride = false;
 var SpoilerJSON;
 var chuCount = 0;
 var rupeeCount = 0;
-var chusInBigChests = false;
 var unusedLocations = [];
 var dimmed = 0.35;
 var age = "";
@@ -1451,7 +1450,7 @@ for (var i = 0; i < Items.length; i++) {
   itemToCheckMap[Items[i]] = "unknown";
 }
 
-updateLocationLogic();
+updateCheckLogic();
 
 changeThemes();
 
@@ -2224,7 +2223,7 @@ var SpoilerItemToInput = {
   "Prescription": inputs[inputNames.indexOf("Prescription")],
   "Eyeball Frog": inputs[inputNames.indexOf("Prescription")],
   "Eyedrops": inputs[inputNames.indexOf("Prescription")],
-  "Claim checkToItemMap": inputs[inputNames.indexOf("Claim checkToItemMap")],
+  "Claim Check": inputs[inputNames.indexOf("Claim Check")],
   "Progressive Wallet": inputs[inputNames.indexOf("Progressive Wallet")],
   "Nayrus Love": inputs[inputNames.indexOf("Nayrus Love")],
   "Biggoron Sword": inputs[inputNames.indexOf("BGS")],

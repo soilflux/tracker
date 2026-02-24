@@ -1125,7 +1125,6 @@ function updateRules() {
   }
   else if (rules.preset == "sgl2025") {
     rules.kzSkip = "allowed";
-    chusInBigChests = true;
     rules.bossKeys = "ownDungeon";
     rules.ocarinas = "vanilla";
     rules.bridge = "threeStones";
@@ -1455,7 +1454,7 @@ function updateLogicInfo() {
     if (locationAccess[key] == true)
       player.accessible += 1;
 
-    if (locationLogic[key] == true) {
+    if (checkLogic[key] == true) {
       if (nerfed && locationPeek[key] == true && !locationAccess[key] == true) {
         document.getElementById(str).className = "access_check_text";
         document.getElementById(str).style.opacity = .5;

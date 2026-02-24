@@ -1,109 +1,109 @@
 function refreshLogicForStuff() {
-  logic.kokiri_sword = locationLogic[itemToCheckMap.kokiri_sword] || false;
-  logic.farores_wind = locationLogic[itemToCheckMap.farores_wind] || false;
+  logic.kokiri_sword = checkLogic[itemToCheckMap.kokiri_sword] || false;
+  logic.farores_wind = checkLogic[itemToCheckMap.farores_wind] || false;
 
-  logic.slingshot1 = locationLogic[itemToCheckMap.slingshot1] || false;
-  logic.slingshot2 = locationLogic[itemToCheckMap.slingshot2] || false;
-  logic.slingshot3 = locationLogic[itemToCheckMap.slingshot3] || false;
+  logic.slingshot1 = checkLogic[itemToCheckMap.slingshot1] || false;
+  logic.slingshot2 = checkLogic[itemToCheckMap.slingshot2] || false;
+  logic.slingshot3 = checkLogic[itemToCheckMap.slingshot3] || false;
   logic.slingshot = logic.slingshot1 || logic.slingshot2 || logic.slingshot3;
 
-  logic.boomerang = locationLogic[itemToCheckMap.boomerang] || false;
+  logic.boomerang = checkLogic[itemToCheckMap.boomerang] || false;
 
-  logic.rutos_letter = locationLogic[itemToCheckMap.rutos_letter] || false;
-  logic.bottle1 = locationLogic[itemToCheckMap.bottle1] || false;
-  logic.bottle2 = locationLogic[itemToCheckMap.bottle2] || false;
-  logic.bottle3 = locationLogic[itemToCheckMap.bottle3] || false;
-  logic.bottle4 = locationLogic[itemToCheckMap.bottle4] || false;
+  logic.rutos_letter = checkLogic[itemToCheckMap.rutos_letter] || false;
+  logic.bottle1 = checkLogic[itemToCheckMap.bottle1] || false;
+  logic.bottle2 = checkLogic[itemToCheckMap.bottle2] || false;
+  logic.bottle3 = checkLogic[itemToCheckMap.bottle3] || false;
+  logic.bottle4 = checkLogic[itemToCheckMap.bottle4] || false;
   logic.bottle = (logic.rutos_letter && logic.child_can_enter_domain) || logic.bottle1 || logic.bottle2 || logic.bottle3 || logic.bottle4;
 
-  logic.scale1 = locationLogic[itemToCheckMap.scale1] || false;
-  logic.scale2 = locationLogic[itemToCheckMap.scale2] || false;
+  logic.scale1 = checkLogic[itemToCheckMap.scale1] || false;
+  logic.scale2 = checkLogic[itemToCheckMap.scale2] || false;
   logic.silver_scale = logic.scale1 || logic.scale2;
   logic.golden_scale = logic.scale1 && logic.scale2;
 
-  logic.bomb_bag1 = locationLogic[itemToCheckMap.bomb_bag1] || false;
-  logic.bomb_bag2 = locationLogic[itemToCheckMap.bomb_bag2] || false;
-  logic.bomb_bag3 = locationLogic[itemToCheckMap.bomb_bag3] || false;
+  logic.bomb_bag1 = checkLogic[itemToCheckMap.bomb_bag1] || false;
+  logic.bomb_bag2 = checkLogic[itemToCheckMap.bomb_bag2] || false;
+  logic.bomb_bag3 = checkLogic[itemToCheckMap.bomb_bag3] || false;
   logic.bomb_bag = logic.bomb_bag1 || logic.bomb_bag2 || logic.bomb_bag3;
 
-  logic.bombchus1 = locationLogic[itemToCheckMap.bombchus1] || false;
-  logic.bombchus2 = locationLogic[itemToCheckMap.bombchus2] || false;
-  logic.bombchus3 = locationLogic[itemToCheckMap.bombchus3] || false;
-  logic.bombchus4 = locationLogic[itemToCheckMap.bombchus4] || false;
-  logic.bombchus5 = locationLogic[itemToCheckMap.bombchus5] || false;
+  logic.bombchus1 = checkLogic[itemToCheckMap.bombchus1] || false;
+  logic.bombchus2 = checkLogic[itemToCheckMap.bombchus2] || false;
+  logic.bombchus3 = checkLogic[itemToCheckMap.bombchus3] || false;
+  logic.bombchus4 = checkLogic[itemToCheckMap.bombchus4] || false;
+  logic.bombchus5 = checkLogic[itemToCheckMap.bombchus5] || false;
   logic.bombchus = logic.bombchus1 || logic.bombchus2 || logic.bombchus3 || logic.bombchus4 || logic.bombchus5;
 
-  logic.hammer = locationLogic[itemToCheckMap.hammer] || false;
+  logic.hammer = checkLogic[itemToCheckMap.hammer] || false;
 
-  logic.bow1 = locationLogic[itemToCheckMap.bow1] || false;
-  logic.bow2 = locationLogic[itemToCheckMap.bow2] || false;
-  logic.bow3 = locationLogic[itemToCheckMap.bow3] || false;
+  logic.bow1 = checkLogic[itemToCheckMap.bow1] || false;
+  logic.bow2 = checkLogic[itemToCheckMap.bow2] || false;
+  logic.bow3 = checkLogic[itemToCheckMap.bow3] || false;
   logic.bow = logic.bow1 || logic.bow2 || logic.bow3;
 
-  logic.hookshot1 = locationLogic[itemToCheckMap.hookshot1] || false;
-  logic.hookshot2 = locationLogic[itemToCheckMap.hookshot2] || false;
+  logic.hookshot1 = checkLogic[itemToCheckMap.hookshot1] || false;
+  logic.hookshot2 = checkLogic[itemToCheckMap.hookshot2] || false;
   logic.hookshot = logic.hookshot1 || logic.hookshot2;
   logic.longshot = logic.hookshot1 && logic.hookshot2;
 
-  logic.strength1 = locationLogic[itemToCheckMap.strength1] || false;
-  logic.strength2 = locationLogic[itemToCheckMap.strength2] || false;
-  logic.strength3 = locationLogic[itemToCheckMap.strength3] || false;
+  logic.strength1 = checkLogic[itemToCheckMap.strength1] || false;
+  logic.strength2 = checkLogic[itemToCheckMap.strength2] || false;
+  logic.strength3 = checkLogic[itemToCheckMap.strength3] || false;
   logic.goron_bracelet = logic.strength1 || logic.strength2 || logic.strength3;
   logic.silver_gauntlets = (logic.strength1 && logic.strength2) || (logic.strength1 && logic.strength3) || (logic.strength2 && logic.strength3);
   logic.golden_gauntlets = logic.strength1 && logic.strength2 && logic.strength3;
 
-  logic.mirror_shield = locationLogic[itemToCheckMap.mirror_shield] || false;
-  logic.big_poe = locationLogic[itemToCheckMap.big_poe] || false;
-  logic.iron_boots = locationLogic[itemToCheckMap.iron_boots] || false;
-  logic.hover_boots = locationLogic[itemToCheckMap.hover_boots] || false;
+  logic.mirror_shield = checkLogic[itemToCheckMap.mirror_shield] || false;
+  logic.big_poe = checkLogic[itemToCheckMap.big_poe] || false;
+  logic.iron_boots = checkLogic[itemToCheckMap.iron_boots] || false;
+  logic.hover_boots = checkLogic[itemToCheckMap.hover_boots] || false;
 
-  logic.magic1 = locationLogic[itemToCheckMap.magic1] || false;
-  logic.magic2 = locationLogic[itemToCheckMap.magic2] || false;
+  logic.magic1 = checkLogic[itemToCheckMap.magic1] || false;
+  logic.magic2 = checkLogic[itemToCheckMap.magic2] || false;
   logic.magic = logic.magic1 || logic.magic2;
 
-  logic.dins_fire = locationLogic[itemToCheckMap.dins_fire] || false;
-  logic.fire_arrows = locationLogic[itemToCheckMap.fire_arrows] || false;
+  logic.dins_fire = checkLogic[itemToCheckMap.dins_fire] || false;
+  logic.fire_arrows = checkLogic[itemToCheckMap.fire_arrows] || false;
 
-  logic.wallet1 = locationLogic[itemToCheckMap.wallet1] || false;
-  logic.wallet2 = locationLogic[itemToCheckMap.wallet2] || false;
-  logic.wallet3 = locationLogic[itemToCheckMap.wallet3] || false;
+  logic.wallet1 = checkLogic[itemToCheckMap.wallet1] || false;
+  logic.wallet2 = checkLogic[itemToCheckMap.wallet2] || false;
+  logic.wallet3 = checkLogic[itemToCheckMap.wallet3] || false;
   logic.adults_wallet = logic.wallet1 || logic.wallet2 || logic.wallet3;
   logic.giants_wallet = (logic.wallet1 && logic.wallet2) || (logic.wallet1 && logic.wallet3) || (logic.wallet2 && logic.wallet3);
   logic.tycoon_wallet = logic.wallet1 && logic.wallet2 && logic.wallet3;
 
-  logic.goron_tunic = locationLogic[itemToCheckMap.goron_tunic] || false;
-  logic.zora_tunic = locationLogic[itemToCheckMap.zora_tunic] || false;
-  logic.lens = locationLogic[itemToCheckMap.lens] || false;
-  logic.stone_of_agony = locationLogic[itemToCheckMap.stone_of_agony] || false;
-  logic.prescription = locationLogic[itemToCheckMap.prescription] || false;
-  logic.claim_check = locationLogic[itemToCheckMap.claim_check] || false;
+  logic.goron_tunic = checkLogic[itemToCheckMap.goron_tunic] || false;
+  logic.zora_tunic = checkLogic[itemToCheckMap.zora_tunic] || false;
+  logic.lens = checkLogic[itemToCheckMap.lens] || false;
+  logic.stone_of_agony = checkLogic[itemToCheckMap.stone_of_agony] || false;
+  logic.prescription = checkLogic[itemToCheckMap.prescription] || false;
+  logic.claim_check = checkLogic[itemToCheckMap.claim_check] || false;
   logic.trade = logic.claim_check || logic.prescription;
 
-  logic.light_arrows = locationLogic[itemToCheckMap.light_arrows] || false;
-  logic.ice_arrows = locationLogic[itemToCheckMap.ice_arrows] || false;
-  logic.forest_key_ring = locationLogic[itemToCheckMap.forest_key_ring] || false;
-  logic.fire_key_ring = locationLogic[itemToCheckMap.fire_key_ring] || false;
-  logic.water_key_ring = locationLogic[itemToCheckMap.water_key_ring] || false;
-  logic.spirit_key_ring = locationLogic[itemToCheckMap.spirit_key_ring] || false;
-  logic.shadow_key_ring = locationLogic[itemToCheckMap.shadow_key_ring] || false;
-  logic.well_key_ring = locationLogic[itemToCheckMap.well_key_ring] || false;
-  logic.gtg_key_ring = locationLogic[itemToCheckMap.gtg_key_ring] || false;
-  logic.ganons_key_ring = locationLogic[itemToCheckMap.ganons_key_ring] || false;
-  logic.gerudo_card = locationLogic[itemToCheckMap.gerudo_card] || false;
-  logic.magic_bean_pack = locationLogic[itemToCheckMap.magic_bean_pack] || false;
+  logic.light_arrows = checkLogic[itemToCheckMap.light_arrows] || false;
+  logic.ice_arrows = checkLogic[itemToCheckMap.ice_arrows] || false;
+  logic.forest_key_ring = checkLogic[itemToCheckMap.forest_key_ring] || false;
+  logic.fire_key_ring = checkLogic[itemToCheckMap.fire_key_ring] || false;
+  logic.water_key_ring = checkLogic[itemToCheckMap.water_key_ring] || false;
+  logic.spirit_key_ring = checkLogic[itemToCheckMap.spirit_key_ring] || false;
+  logic.shadow_key_ring = checkLogic[itemToCheckMap.shadow_key_ring] || false;
+  logic.well_key_ring = checkLogic[itemToCheckMap.well_key_ring] || false;
+  logic.gtg_key_ring = checkLogic[itemToCheckMap.gtg_key_ring] || false;
+  logic.ganons_key_ring = checkLogic[itemToCheckMap.ganons_key_ring] || false;
+  logic.gerudo_card = checkLogic[itemToCheckMap.gerudo_card] || false;
+  logic.magic_bean_pack = checkLogic[itemToCheckMap.magic_bean_pack] || false;
 
-  logic.lullaby = locationLogic[itemToCheckMap.lullaby] || false;
-  logic.eponas = locationLogic[itemToCheckMap.eponas] || false;
-  logic.sarias = locationLogic[itemToCheckMap.sarias] || false;
-  logic.suns = locationLogic[itemToCheckMap.suns] || false;
-  logic.time = locationLogic[itemToCheckMap.time] || false;
-  logic.storms = locationLogic[itemToCheckMap.storms] || false;
-  logic.minuet = locationLogic[itemToCheckMap.minuet] || false;
-  logic.bolero = locationLogic[itemToCheckMap.bolero] || false;
-  logic.serenade = locationLogic[itemToCheckMap.serenade] || false;
-  logic.requiem = locationLogic[itemToCheckMap.requiem] || false;
-  logic.nocturne = locationLogic[itemToCheckMap.nocturne] || false;
-  logic.prelude = locationLogic[itemToCheckMap.prelude] || false;
+  logic.lullaby = checkLogic[itemToCheckMap.lullaby] || false;
+  logic.eponas = checkLogic[itemToCheckMap.eponas] || false;
+  logic.sarias = checkLogic[itemToCheckMap.sarias] || false;
+  logic.suns = checkLogic[itemToCheckMap.suns] || false;
+  logic.time = checkLogic[itemToCheckMap.time] || false;
+  logic.storms = checkLogic[itemToCheckMap.storms] || false;
+  logic.minuet = checkLogic[itemToCheckMap.minuet] || false;
+  logic.bolero = checkLogic[itemToCheckMap.bolero] || false;
+  logic.serenade = checkLogic[itemToCheckMap.serenade] || false;
+  logic.requiem = checkLogic[itemToCheckMap.requiem] || false;
+  logic.nocturne = checkLogic[itemToCheckMap.nocturne] || false;
+  logic.prelude = checkLogic[itemToCheckMap.prelude] || false;
 
 
 
@@ -239,11 +239,11 @@ function refreshLogicForStuff() {
   couldHave.water_boss_key = logic.forced_water_boss_key;
   couldHave.spirit_boss_key = logic.forced_spirit_boss_key;
   couldHave.shadow_boss_key = logic.forced_shadow_boss_key;
-  if (player.forest_boss_key == true) { logic.forest_boss_key = locationLogic[itemToCheckMap.forest_boss_key]; couldHave.forest_boss_key = true; }
-  if (player.fire_boss_key == true) { logic.fire_boss_key = locationLogic[itemToCheckMap.fire_boss_key]; couldHave.fire_boss_key = true; }
-  if (player.water_boss_key == true) { logic.water_boss_key = locationLogic[itemToCheckMap.water_boss_key]; couldHave.water_boss_key = true; }
-  if (player.spirit_boss_key == true) { logic.spirit_boss_key = locationLogic[itemToCheckMap.spirit_boss_key]; couldHave.spirit_boss_key = true; }
-  if (player.shadow_boss_key == true) { logic.shadow_boss_key = locationLogic[itemToCheckMap.shadow_boss_key]; couldHave.shadow_boss_key = true; }
+  if (player.forest_boss_key == true) { logic.forest_boss_key = checkLogic[itemToCheckMap.forest_boss_key]; couldHave.forest_boss_key = true; }
+  if (player.fire_boss_key == true) { logic.fire_boss_key = checkLogic[itemToCheckMap.fire_boss_key]; couldHave.fire_boss_key = true; }
+  if (player.water_boss_key == true) { logic.water_boss_key = checkLogic[itemToCheckMap.water_boss_key]; couldHave.water_boss_key = true; }
+  if (player.spirit_boss_key == true) { logic.spirit_boss_key = checkLogic[itemToCheckMap.spirit_boss_key]; couldHave.spirit_boss_key = true; }
+  if (player.shadow_boss_key == true) { logic.shadow_boss_key = checkLogic[itemToCheckMap.shadow_boss_key]; couldHave.shadow_boss_key = true; }
 
   if (nerfed) {
     logic.bomb_bag = false;
@@ -351,42 +351,42 @@ function refreshLogicForStuff() {
   player.forest = false;
   couldHave.forest = false;
   locationAccess.forest_medallion_location = false;
-  if (logic.forest_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.deku_queen_gohma; locationAccess.forest_medallion_location = locationAccess.deku_queen_gohma; couldHave.forest = locationCouldAccess.deku_queen_gohma; }
-  else if (logic.forest_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.dodongos_king_dodongo; locationAccess.forest_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.forest = locationCouldAccess.dodongos_king_dodongo; }
-  else if (logic.forest_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.jabu_barinade; locationAccess.forest_medallion_location = locationAccess.jabu_barinade; couldHave.forest = locationCouldAccess.jabu_barinade; }
-  else if (logic.forest_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.forest_phantomGanon; locationAccess.forest_medallion_location = locationAccess.forest_phantomGanon; couldHave.forest = locationCouldAccess.forest_phantomGanon; }
-  else if (logic.forest_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.fire_volvagia; locationAccess.forest_medallion_location = locationAccess.fire_volvagia; couldHave.forest = locationCouldAccess.fire_volvagia; }
-  else if (logic.forest_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.water_morpha; locationAccess.forest_medallion_location = locationAccess.water_morpha; couldHave.forest = locationCouldAccess.water_morpha; }
-  else if (logic.forest_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.spirit_twinrova; locationAccess.forest_medallion_location = locationAccess.spirit_twinrova; couldHave.forest = locationCouldAccess.spirit_twinrova; }
-  else if (logic.forest_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.forest = true; } logic.forest_medallion = locationLogic.shadow_bongo; locationAccess.forest_medallion_location = locationAccess.shadow_bongo; couldHave.forest = locationCouldAccess.shadow_bongo; }
+  if (logic.forest_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.deku_queen_gohma; locationAccess.forest_medallion_location = locationAccess.deku_queen_gohma; couldHave.forest = locationCouldAccess.deku_queen_gohma; }
+  else if (logic.forest_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.dodongos_king_dodongo; locationAccess.forest_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.forest = locationCouldAccess.dodongos_king_dodongo; }
+  else if (logic.forest_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.jabu_barinade; locationAccess.forest_medallion_location = locationAccess.jabu_barinade; couldHave.forest = locationCouldAccess.jabu_barinade; }
+  else if (logic.forest_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.forest_phantomGanon; locationAccess.forest_medallion_location = locationAccess.forest_phantomGanon; couldHave.forest = locationCouldAccess.forest_phantomGanon; }
+  else if (logic.forest_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.fire_volvagia; locationAccess.forest_medallion_location = locationAccess.fire_volvagia; couldHave.forest = locationCouldAccess.fire_volvagia; }
+  else if (logic.forest_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.water_morpha; locationAccess.forest_medallion_location = locationAccess.water_morpha; couldHave.forest = locationCouldAccess.water_morpha; }
+  else if (logic.forest_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.spirit_twinrova; locationAccess.forest_medallion_location = locationAccess.spirit_twinrova; couldHave.forest = locationCouldAccess.spirit_twinrova; }
+  else if (logic.forest_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.forest = true; } logic.forest_medallion = checkLogic.shadow_bongo; locationAccess.forest_medallion_location = locationAccess.shadow_bongo; couldHave.forest = locationCouldAccess.shadow_bongo; }
   else if (logic.forest_medallion_location == "pocket") { player.forest = true; logic.forest_medallion = true; locationAccess.forest_medallion_location = true; couldHave.forest = true; }
   else { logic.forest_medallion_location == "unknown"; logic.forest_medallion = false; }
 
   player.fire = false;
   couldHave.fire = false;
   locationAccess.fire_medallion_location = false;
-  if (logic.fire_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.deku_queen_gohma; locationAccess.fire_medallion_location = locationAccess.deku_queen_gohma; couldHave.fire = locationCouldAccess.deku_queen_gohma; }
-  else if (logic.fire_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.dodongos_king_dodongo; locationAccess.fire_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.fire = locationCouldAccess.dodongos_king_dodongo; }
-  else if (logic.fire_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.jabu_barinade; locationAccess.fire_medallion_location = locationAccess.jabu_barinade; couldHave.fire = locationCouldAccess.jabu_barinade; }
-  else if (logic.fire_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.forest_phantomGanon; locationAccess.fire_medallion_location = locationAccess.forest_phantomGanon; couldHave.fire = locationCouldAccess.forest_phantomGanon; }
-  else if (logic.fire_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.fire_volvagia; locationAccess.fire_medallion_location = locationAccess.fire_volvagia; couldHave.fire = locationCouldAccess.fire_volvagia; }
-  else if (logic.fire_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.water_morpha; locationAccess.fire_medallion_location = locationAccess.water_morpha; couldHave.fire = locationCouldAccess.water_morpha; }
-  else if (logic.fire_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.spirit_twinrova; locationAccess.fire_medallion_location = locationAccess.spirit_twinrova; couldHave.fire = locationCouldAccess.spirit_twinrova; }
-  else if (logic.fire_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.fire = true; } logic.fire_medallion = locationLogic.shadow_bongo; locationAccess.fire_medallion_location = locationAccess.shadow_bongo; couldHave.fire = locationCouldAccess.shadow_bongo; }
+  if (logic.fire_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.deku_queen_gohma; locationAccess.fire_medallion_location = locationAccess.deku_queen_gohma; couldHave.fire = locationCouldAccess.deku_queen_gohma; }
+  else if (logic.fire_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.dodongos_king_dodongo; locationAccess.fire_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.fire = locationCouldAccess.dodongos_king_dodongo; }
+  else if (logic.fire_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.jabu_barinade; locationAccess.fire_medallion_location = locationAccess.jabu_barinade; couldHave.fire = locationCouldAccess.jabu_barinade; }
+  else if (logic.fire_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.forest_phantomGanon; locationAccess.fire_medallion_location = locationAccess.forest_phantomGanon; couldHave.fire = locationCouldAccess.forest_phantomGanon; }
+  else if (logic.fire_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.fire_volvagia; locationAccess.fire_medallion_location = locationAccess.fire_volvagia; couldHave.fire = locationCouldAccess.fire_volvagia; }
+  else if (logic.fire_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.water_morpha; locationAccess.fire_medallion_location = locationAccess.water_morpha; couldHave.fire = locationCouldAccess.water_morpha; }
+  else if (logic.fire_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.spirit_twinrova; locationAccess.fire_medallion_location = locationAccess.spirit_twinrova; couldHave.fire = locationCouldAccess.spirit_twinrova; }
+  else if (logic.fire_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.fire = true; } logic.fire_medallion = checkLogic.shadow_bongo; locationAccess.fire_medallion_location = locationAccess.shadow_bongo; couldHave.fire = locationCouldAccess.shadow_bongo; }
   else if (logic.fire_medallion_location == "pocket") { player.fire = true; logic.fire_medallion = true; locationAccess.fire_medallion_location = true; couldHave.fire = true; }
   else { logic.fire_medallion_location == "unknown"; logic.fire_medallion = false; }
 
   player.water = false;
   couldHave.water = false;
   locationAccess.water_medallion_location = false;
-  if (logic.water_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.water = true; } logic.water_medallion = locationLogic.deku_queen_gohma; locationAccess.water_medallion_location = locationAccess.deku_queen_gohma; couldHave.water = locationCouldAccess.deku_queen_gohma; }
-  else if (logic.water_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.water = true; } logic.water_medallion = locationLogic.dodongos_king_dodongo; locationAccess.water_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.water = locationCouldAccess.dodongos_king_dodongo; }
-  else if (logic.water_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.water = true; } logic.water_medallion = locationLogic.jabu_barinade; locationAccess.water_medallion_location = locationAccess.jabu_barinade; couldHave.water = locationCouldAccess.jabu_barinade; }
-  else if (logic.water_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.water = true; } logic.water_medallion = locationLogic.forest_phantomGanon; locationAccess.water_medallion_location = locationAccess.forest_phantomGanon; couldHave.water = locationCouldAccess.forest_phantomGanon; }
-  else if (logic.water_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.water = true; } logic.water_medallion = locationLogic.fire_volvagia; locationAccess.water_medallion_location = locationAccess.fire_volvagia; couldHave.water = locationCouldAccess.fire_volvagia; }
-  else if (logic.water_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.water = true; } logic.water_medallion = locationLogic.water_morpha; locationAccess.water_medallion_location = locationAccess.water_morpha; couldHave.water = locationCouldAccess.water_morpha; }
-  else if (logic.water_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.water = true; } logic.water_medallion = locationLogic.spirit_twinrova; locationAccess.water_medallion_location = locationAccess.spirit_twinrova; couldHave.water = locationCouldAccess.spirit_twinrova; }
-  else if (logic.water_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.water = true; } logic.water_medallion = locationLogic.shadow_bongo; locationAccess.water_medallion_location = locationAccess.shadow_bongo; couldHave.water = locationCouldAccess.shadow_bongo; }
+  if (logic.water_medallion_location == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.water = true; } logic.water_medallion = checkLogic.deku_queen_gohma; locationAccess.water_medallion_location = locationAccess.deku_queen_gohma; couldHave.water = locationCouldAccess.deku_queen_gohma; }
+  else if (logic.water_medallion_location == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.water = true; } logic.water_medallion = checkLogic.dodongos_king_dodongo; locationAccess.water_medallion_location = locationAccess.dodongos_king_dodongo; couldHave.water = locationCouldAccess.dodongos_king_dodongo; }
+  else if (logic.water_medallion_location == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.water = true; } logic.water_medallion = checkLogic.jabu_barinade; locationAccess.water_medallion_location = locationAccess.jabu_barinade; couldHave.water = locationCouldAccess.jabu_barinade; }
+  else if (logic.water_medallion_location == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.water = true; } logic.water_medallion = checkLogic.forest_phantomGanon; locationAccess.water_medallion_location = locationAccess.forest_phantomGanon; couldHave.water = locationCouldAccess.forest_phantomGanon; }
+  else if (logic.water_medallion_location == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.water = true; } logic.water_medallion = checkLogic.fire_volvagia; locationAccess.water_medallion_location = locationAccess.fire_volvagia; couldHave.water = locationCouldAccess.fire_volvagia; }
+  else if (logic.water_medallion_location == "water") { if (checkToItemMap.water_morpha != "unknown") { player.water = true; } logic.water_medallion = checkLogic.water_morpha; locationAccess.water_medallion_location = locationAccess.water_morpha; couldHave.water = locationCouldAccess.water_morpha; }
+  else if (logic.water_medallion_location == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.water = true; } logic.water_medallion = checkLogic.spirit_twinrova; locationAccess.water_medallion_location = locationAccess.spirit_twinrova; couldHave.water = locationCouldAccess.spirit_twinrova; }
+  else if (logic.water_medallion_location == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.water = true; } logic.water_medallion = checkLogic.shadow_bongo; locationAccess.water_medallion_location = locationAccess.shadow_bongo; couldHave.water = locationCouldAccess.shadow_bongo; }
   else if (logic.water_medallion_location == "pocket") { player.water = true; logic.water_medallion = true; locationAccess.water_medallion_location = true; couldHave.water = true; }
   else { logic.water_medallion_location == "unknown"; logic.water_medallion = false; }
 
@@ -406,14 +406,14 @@ function refreshLogicForStuff() {
     str = "generic" + i;
     str2 = "gen" + i;
     player[str2] = false;
-    if (logic[str] == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player[str2] = true; } logic[str2] = locationLogic.deku_queen_gohma; if (document.getElementById("text_" + dekuPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(dekuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.deku_queen_gohma; couldHave.shadow_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.shadow_medallion_location = locationAccess.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + dekuPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(dekuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.deku_queen_gohma; couldHave.spirit_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.spirit_medallion_location = locationAccess.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.light_medallion_location = player[checkToItemMap["deku_queen_gohma"]]; } }
-    else if (logic[str] == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player[str2] = true; } logic[str2] = locationLogic.dodongos_king_dodongo; if (document.getElementById("text_" + dodongosPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.dodongos_king_dodongo; couldHave.shadow_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.shadow_medallion_location = locationAccess.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + dodongosPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.dodongos_king_dodongo; couldHave.spirit_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.spirit_medallion_location = locationAccess.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.light_medallion_location = player[checkToItemMap["dodongos_king_dodongo"]]; } }
-    else if (logic[str] == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player[str2] = true; } logic[str2] = locationLogic.jabu_barinade; if (document.getElementById("text_" + jabuPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(jabuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.jabu_barinade; couldHave.shadow_medallion = locationCouldAccess.jabu_barinade; locationAccess.shadow_medallion_location = locationAccess.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + jabuPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(jabuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.jabu_barinade; couldHave.spirit_medallion = locationCouldAccess.jabu_barinade; locationAccess.spirit_medallion_location = locationAccess.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.jabu_barinade; locationAccess.light_medallion_location = player[checkToItemMap["jabu_barinade"]]; } }
-    else if (logic[str] == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player[str2] = true; } logic[str2] = locationLogic.forest_phantomGanon; if (document.getElementById("text_" + forestPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(forestPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.forest_phantomGanon; couldHave.shadow_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.shadow_medallion_location = locationAccess.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + forestPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(forestPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.forest_phantomGanon; couldHave.spirit_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.spirit_medallion_location = locationAccess.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.light_medallion_location = player[checkToItemMap["forest_phantomGanon"]]; } }
-    else if (logic[str] == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player[str2] = true; } logic[str2] = locationLogic.fire_volvagia; if (document.getElementById("text_" + firePlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(firePlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.fire_volvagia; couldHave.shadow_medallion = locationCouldAccess.fire_volvagia; locationAccess.shadow_medallion_location = locationAccess.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + firePlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(firePlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.fire_volvagia; couldHave.spirit_medallion = locationCouldAccess.fire_volvagia; locationAccess.spirit_medallion_location = locationAccess.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.fire_volvagia; locationAccess.light_medallion_location = player[checkToItemMap["fire_volvagia"]]; } }
-    else if (logic[str] == "water") { if (checkToItemMap.water_morpha != "unknown") { player[str2] = true; } logic[str2] = locationLogic.water_morpha; if (document.getElementById("text_" + waterPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(waterPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.water_morpha; couldHave.shadow_medallion = locationCouldAccess.water_morpha; locationAccess.shadow_medallion_location = locationAccess.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + waterPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(waterPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.water_morpha; couldHave.spirit_medallion = locationCouldAccess.water_morpha; locationAccess.spirit_medallion_location = locationAccess.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.water_morpha; locationAccess.light_medallion_location = player[checkToItemMap["water_morpha"]]; } }
-    else if (logic[str] == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player[str2] = true; } logic[str2] = locationLogic.spirit_twinrova; if (document.getElementById("text_" + spiritPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(spiritPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.spirit_twinrova; couldHave.shadow_medallion = locationCouldAccess.spirit_twinrova; locationAccess.shadow_medallion_location = locationAccess.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + spiritPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(spiritPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.spirit_twinrova; couldHave.spirit_medallion = locationCouldAccess.spirit_twinrova; locationAccess.spirit_medallion_location = locationAccess.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.spirit_twinrova; locationAccess.light_medallion_location = player[checkToItemMap["spirit_twinrova"]]; } }
-    else if (logic[str] == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player[str2] = true; } logic[str2] = locationLogic.shadow_bongo; if (document.getElementById("text_" + shadowPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(shadowPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = locationLogic.shadow_bongo; couldHave.shadow_medallion = locationCouldAccess.shadow_bongo; locationAccess.shadow_medallion_location = locationAccess.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + shadowPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(shadowPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = locationLogic.shadow_bongo; couldHave.spirit_medallion = locationCouldAccess.shadow_bongo; locationAccess.spirit_medallion_location = locationAccess.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = locationLogic.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.shadow_bongo; locationAccess.light_medallion_location = player[checkToItemMap["shadow_bongo"]]; } }
+    if (logic[str] == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player[str2] = true; } logic[str2] = checkLogic.deku_queen_gohma; if (document.getElementById("text_" + dekuPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(dekuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.deku_queen_gohma; couldHave.shadow_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.shadow_medallion_location = locationAccess.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + dekuPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(dekuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.deku_queen_gohma; couldHave.spirit_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.spirit_medallion_location = locationAccess.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.deku_queen_gohma; if (checkToItemMap.deku_queen_gohma != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.deku_queen_gohma; locationAccess.light_medallion_location = player[checkToItemMap["deku_queen_gohma"]]; } }
+    else if (logic[str] == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player[str2] = true; } logic[str2] = checkLogic.dodongos_king_dodongo; if (document.getElementById("text_" + dodongosPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.dodongos_king_dodongo; couldHave.shadow_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.shadow_medallion_location = locationAccess.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + dodongosPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(dodongosPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.dodongos_king_dodongo; couldHave.spirit_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.spirit_medallion_location = locationAccess.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.dodongos_king_dodongo; if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.dodongos_king_dodongo; locationAccess.light_medallion_location = player[checkToItemMap["dodongos_king_dodongo"]]; } }
+    else if (logic[str] == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player[str2] = true; } logic[str2] = checkLogic.jabu_barinade; if (document.getElementById("text_" + jabuPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(jabuPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.jabu_barinade; couldHave.shadow_medallion = locationCouldAccess.jabu_barinade; locationAccess.shadow_medallion_location = locationAccess.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + jabuPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(jabuPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.jabu_barinade; couldHave.spirit_medallion = locationCouldAccess.jabu_barinade; locationAccess.spirit_medallion_location = locationAccess.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.jabu_barinade; if (checkToItemMap.jabu_barinade != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.jabu_barinade; locationAccess.light_medallion_location = player[checkToItemMap["jabu_barinade"]]; } }
+    else if (logic[str] == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player[str2] = true; } logic[str2] = checkLogic.forest_phantomGanon; if (document.getElementById("text_" + forestPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(forestPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.forest_phantomGanon; couldHave.shadow_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.shadow_medallion_location = locationAccess.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + forestPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(forestPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.forest_phantomGanon; couldHave.spirit_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.spirit_medallion_location = locationAccess.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.forest_phantomGanon; if (checkToItemMap.forest_phantomGanon != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.forest_phantomGanon; locationAccess.light_medallion_location = player[checkToItemMap["forest_phantomGanon"]]; } }
+    else if (logic[str] == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player[str2] = true; } logic[str2] = checkLogic.fire_volvagia; if (document.getElementById("text_" + firePlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(firePlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.fire_volvagia; couldHave.shadow_medallion = locationCouldAccess.fire_volvagia; locationAccess.shadow_medallion_location = locationAccess.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + firePlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(firePlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.fire_volvagia; couldHave.spirit_medallion = locationCouldAccess.fire_volvagia; locationAccess.spirit_medallion_location = locationAccess.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.fire_volvagia; if (checkToItemMap.fire_volvagia != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.fire_volvagia; locationAccess.light_medallion_location = player[checkToItemMap["fire_volvagia"]]; } }
+    else if (logic[str] == "water") { if (checkToItemMap.water_morpha != "unknown") { player[str2] = true; } logic[str2] = checkLogic.water_morpha; if (document.getElementById("text_" + waterPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(waterPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.water_morpha; couldHave.shadow_medallion = locationCouldAccess.water_morpha; locationAccess.shadow_medallion_location = locationAccess.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + waterPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(waterPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.water_morpha; couldHave.spirit_medallion = locationCouldAccess.water_morpha; locationAccess.spirit_medallion_location = locationAccess.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.water_morpha; if (checkToItemMap.water_morpha != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.water_morpha; locationAccess.light_medallion_location = player[checkToItemMap["water_morpha"]]; } }
+    else if (logic[str] == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player[str2] = true; } logic[str2] = checkLogic.spirit_twinrova; if (document.getElementById("text_" + spiritPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(spiritPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.spirit_twinrova; couldHave.shadow_medallion = locationCouldAccess.spirit_twinrova; locationAccess.shadow_medallion_location = locationAccess.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + spiritPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(spiritPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.spirit_twinrova; couldHave.spirit_medallion = locationCouldAccess.spirit_twinrova; locationAccess.spirit_medallion_location = locationAccess.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.spirit_twinrova; if (checkToItemMap.spirit_twinrova != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.spirit_twinrova; locationAccess.light_medallion_location = player[checkToItemMap["spirit_twinrova"]]; } }
+    else if (logic[str] == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player[str2] = true; } logic[str2] = checkLogic.shadow_bongo; if (document.getElementById("text_" + shadowPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(shadowPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = checkLogic.shadow_bongo; couldHave.shadow_medallion = locationCouldAccess.shadow_bongo; locationAccess.shadow_medallion_location = locationAccess.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.shadow_medallion = true; }; } else if (document.getElementById("text_" + shadowPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(shadowPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = checkLogic.shadow_bongo; couldHave.spirit_medallion = locationCouldAccess.shadow_bongo; locationAccess.spirit_medallion_location = locationAccess.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.spirit_medallion = true; }; } else { logic.light_medallion = checkLogic.shadow_bongo; if (checkToItemMap.shadow_bongo != "unknown") { player.light_medallion = true; }; couldHave.light_medallion = locationCouldAccess.shadow_bongo; locationAccess.light_medallion_location = player[checkToItemMap["shadow_bongo"]]; } }
     else if (logic[str] == "pocket") { player[str2] = true; logic[str2] = true; if (document.getElementById("text_" + pocketPlacement).style.color == "rgb(238, 130, 238)") { document.getElementById(pocketPlacement + "_icon").src = dungIconSources[6]; logic.shadow_medallion = true; couldHave.shadow_medallion = true; locationAccess.shadow_medallion_location = true; player.shadow_medallion = true; } else if (document.getElementById("text_" + pocketPlacement).style.color == "rgb(255, 165, 0)") { document.getElementById(pocketPlacement + "_icon").src = dungIconSources[7]; logic.spirit_medallion = true; couldHave.spirit_medallion = true; locationAccess.spirit_medallion_location = true; player.spirit_medallion = true; } else { logic.light_medallion = true; player.light_medallion = true; couldHave.light_medallion = true; locationAccess.light_medallion_location = true; } }
     else { logic[str2] = false; }
   }
@@ -421,40 +421,40 @@ function refreshLogicForStuff() {
   player.emerald = false;
   couldHave.emerald = false;
   locationAccess.emerald_location = false;
-  if (logic.emerald == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.deku_queen_gohma; locationAccess.emerald_location = locationAccess.deku_queen_gohma; couldHave.emerald = locationCouldAccess.deku_queen_gohma; }
-  if (logic.emerald == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.dodongos_king_dodongo; locationAccess.emerald_location = locationAccess.dodongos_king_dodongo; couldHave.emerald = locationCouldAccess.dodongos_king_dodongo; }
-  if (logic.emerald == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.jabu_barinade; locationAccess.emerald_location = locationAccess.jabu_barinade; couldHave.emerald = locationCouldAccess.jabu_barinade; }
-  if (logic.emerald == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.forest_phantomGanon; locationAccess.emerald_location = locationAccess.forest_phantomGanon; couldHave.emerald = locationCouldAccess.forest_phantomGanon; }
-  if (logic.emerald == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.fire_volvagia; locationAccess.emerald_location = locationAccess.fire_volvagia; couldHave.emerald = locationCouldAccess.fire_volvagia; }
-  if (logic.emerald == "water") { if (checkToItemMap.water_morpha != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.water_morpha; locationAccess.emerald_location = locationAccess.water_morpha; couldHave.emerald = locationCouldAccess.water_morpha; }
-  if (logic.emerald == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.spirit_twinrova; locationAccess.emerald_location = locationAccess.spirit_twinrova; couldHave.emerald = locationCouldAccess.spirit_twinrova; }
-  if (logic.emerald == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.emerald = true; } logic.kokiri_emerald = locationLogic.shadow_bongo; locationAccess.emerald_location = locationAccess.shadow_bongo; couldHave.emerald = locationCouldAccess.shadow_bongo; }
+  if (logic.emerald == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.deku_queen_gohma; locationAccess.emerald_location = locationAccess.deku_queen_gohma; couldHave.emerald = locationCouldAccess.deku_queen_gohma; }
+  if (logic.emerald == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.dodongos_king_dodongo; locationAccess.emerald_location = locationAccess.dodongos_king_dodongo; couldHave.emerald = locationCouldAccess.dodongos_king_dodongo; }
+  if (logic.emerald == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.jabu_barinade; locationAccess.emerald_location = locationAccess.jabu_barinade; couldHave.emerald = locationCouldAccess.jabu_barinade; }
+  if (logic.emerald == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.forest_phantomGanon; locationAccess.emerald_location = locationAccess.forest_phantomGanon; couldHave.emerald = locationCouldAccess.forest_phantomGanon; }
+  if (logic.emerald == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.fire_volvagia; locationAccess.emerald_location = locationAccess.fire_volvagia; couldHave.emerald = locationCouldAccess.fire_volvagia; }
+  if (logic.emerald == "water") { if (checkToItemMap.water_morpha != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.water_morpha; locationAccess.emerald_location = locationAccess.water_morpha; couldHave.emerald = locationCouldAccess.water_morpha; }
+  if (logic.emerald == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.spirit_twinrova; locationAccess.emerald_location = locationAccess.spirit_twinrova; couldHave.emerald = locationCouldAccess.spirit_twinrova; }
+  if (logic.emerald == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.emerald = true; } logic.kokiri_emerald = checkLogic.shadow_bongo; locationAccess.emerald_location = locationAccess.shadow_bongo; couldHave.emerald = locationCouldAccess.shadow_bongo; }
   if (logic.emerald == "pocket") { player.emerald = true; logic.kokiri_emerald = true; locationAccess.emerald_location = true; couldHave.emerald = true; }
 
   player.ruby = false;
   couldHave.ruby = false;
   locationAccess.ruby_location = false;
-  if (logic.ruby == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.deku_queen_gohma; locationAccess.ruby_location = locationAccess.deku_queen_gohma; couldHave.ruby = locationCouldAccess.deku_queen_gohma; }
-  if (logic.ruby == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.dodongos_king_dodongo; locationAccess.ruby_location = locationAccess.dodongos_king_dodongo; couldHave.ruby = locationCouldAccess.dodongos_king_dodongo; }
-  if (logic.ruby == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.jabu_barinade; locationAccess.ruby_location = locationAccess.jabu_barinade; couldHave.ruby = locationCouldAccess.jabu_barinade; }
-  if (logic.ruby == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.forest_phantomGanon; locationAccess.ruby_location = locationAccess.forest_phantomGanon; couldHave.ruby = locationCouldAccess.forest_phantomGanon; }
-  if (logic.ruby == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.fire_volvagia; locationAccess.ruby_location = locationAccess.fire_volvagia; couldHave.ruby = locationCouldAccess.fire_volvagia; }
-  if (logic.ruby == "water") { if (checkToItemMap.water_morpha != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.water_morpha; locationAccess.ruby_location = locationAccess.water_morpha; couldHave.ruby = locationCouldAccess.water_morpha; }
-  if (logic.ruby == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.spirit_twinrova; locationAccess.ruby_location = locationAccess.spirit_twinrova; couldHave.ruby = locationCouldAccess.spirit_twinrova; }
-  if (logic.ruby == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.ruby = true; } logic.goron_ruby = locationLogic.shadow_bongo; locationAccess.ruby_location = locationAccess.shadow_bongo; couldHave.ruby = locationCouldAccess.shadow_bongo; }
+  if (logic.ruby == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.deku_queen_gohma; locationAccess.ruby_location = locationAccess.deku_queen_gohma; couldHave.ruby = locationCouldAccess.deku_queen_gohma; }
+  if (logic.ruby == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.dodongos_king_dodongo; locationAccess.ruby_location = locationAccess.dodongos_king_dodongo; couldHave.ruby = locationCouldAccess.dodongos_king_dodongo; }
+  if (logic.ruby == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.jabu_barinade; locationAccess.ruby_location = locationAccess.jabu_barinade; couldHave.ruby = locationCouldAccess.jabu_barinade; }
+  if (logic.ruby == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.forest_phantomGanon; locationAccess.ruby_location = locationAccess.forest_phantomGanon; couldHave.ruby = locationCouldAccess.forest_phantomGanon; }
+  if (logic.ruby == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.fire_volvagia; locationAccess.ruby_location = locationAccess.fire_volvagia; couldHave.ruby = locationCouldAccess.fire_volvagia; }
+  if (logic.ruby == "water") { if (checkToItemMap.water_morpha != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.water_morpha; locationAccess.ruby_location = locationAccess.water_morpha; couldHave.ruby = locationCouldAccess.water_morpha; }
+  if (logic.ruby == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.spirit_twinrova; locationAccess.ruby_location = locationAccess.spirit_twinrova; couldHave.ruby = locationCouldAccess.spirit_twinrova; }
+  if (logic.ruby == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.ruby = true; } logic.goron_ruby = checkLogic.shadow_bongo; locationAccess.ruby_location = locationAccess.shadow_bongo; couldHave.ruby = locationCouldAccess.shadow_bongo; }
   if (logic.ruby == "pocket") { player.ruby = true; logic.goron_ruby = true; locationAccess.ruby_location = true; couldHave.ruby = true; }
 
   player.sapphire = false;
   couldHave.sapphire = false;
   locationAccess.sapphire_location = false;
-  if (logic.sapphire == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.deku_queen_gohma; locationAccess.sapphire_location = locationAccess.deku_queen_gohma; couldHave.sapphire = locationCouldAccess.deku_queen_gohma; }
-  if (logic.sapphire == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.dodongos_king_dodongo; locationAccess.sapphire_location = locationAccess.dodongos_king_dodongo; couldHave.sapphire = locationCouldAccess.dodongos_king_dodongo; }
-  if (logic.sapphire == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.jabu_barinade; locationAccess.sapphire_location = locationAccess.jabu_barinade; couldHave.sapphire = locationCouldAccess.jabu_barinade; }
-  if (logic.sapphire == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.forest_phantomGanon; locationAccess.sapphire_location = locationAccess.forest_phantomGanon; couldHave.sapphire = locationCouldAccess.forest_phantomGanon; }
-  if (logic.sapphire == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.fire_volvagia; locationAccess.sapphire_location = locationAccess.fire_volvagia; couldHave.sapphire = locationCouldAccess.fire_volvagia; }
-  if (logic.sapphire == "water") { if (checkToItemMap.water_morpha != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.water_morpha; locationAccess.sapphire_location = locationAccess.water_morpha; couldHave.sapphire = locationCouldAccess.water_morpha; }
-  if (logic.sapphire == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.spirit_twinrova; locationAccess.sapphire_location = locationAccess.spirit_twinrova; couldHave.sapphire = locationCouldAccess.spirit_twinrova; }
-  if (logic.sapphire == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.sapphire = true; } logic.zora_sapphire = locationLogic.shadow_bongo; locationAccess.sapphire_location = locationAccess.shadow_bongo; couldHave.sapphire = locationCouldAccess.shadow_bongo; }
+  if (logic.sapphire == "deku") { if (checkToItemMap.deku_queen_gohma != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.deku_queen_gohma; locationAccess.sapphire_location = locationAccess.deku_queen_gohma; couldHave.sapphire = locationCouldAccess.deku_queen_gohma; }
+  if (logic.sapphire == "dodongos") { if (checkToItemMap.dodongos_king_dodongo != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.dodongos_king_dodongo; locationAccess.sapphire_location = locationAccess.dodongos_king_dodongo; couldHave.sapphire = locationCouldAccess.dodongos_king_dodongo; }
+  if (logic.sapphire == "jabu") { if (checkToItemMap.jabu_barinade != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.jabu_barinade; locationAccess.sapphire_location = locationAccess.jabu_barinade; couldHave.sapphire = locationCouldAccess.jabu_barinade; }
+  if (logic.sapphire == "forest") { if (checkToItemMap.forest_phantomGanon != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.forest_phantomGanon; locationAccess.sapphire_location = locationAccess.forest_phantomGanon; couldHave.sapphire = locationCouldAccess.forest_phantomGanon; }
+  if (logic.sapphire == "fire") { if (checkToItemMap.fire_volvagia != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.fire_volvagia; locationAccess.sapphire_location = locationAccess.fire_volvagia; couldHave.sapphire = locationCouldAccess.fire_volvagia; }
+  if (logic.sapphire == "water") { if (checkToItemMap.water_morpha != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.water_morpha; locationAccess.sapphire_location = locationAccess.water_morpha; couldHave.sapphire = locationCouldAccess.water_morpha; }
+  if (logic.sapphire == "spirit") { if (checkToItemMap.spirit_twinrova != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.spirit_twinrova; locationAccess.sapphire_location = locationAccess.spirit_twinrova; couldHave.sapphire = locationCouldAccess.spirit_twinrova; }
+  if (logic.sapphire == "shadow") { if (checkToItemMap.shadow_bongo != "unknown") { player.sapphire = true; } logic.zora_sapphire = checkLogic.shadow_bongo; locationAccess.sapphire_location = locationAccess.shadow_bongo; couldHave.sapphire = locationCouldAccess.shadow_bongo; }
   if (logic.sapphire == "pocket") { player.sapphire = true; logic.zora_sapphire = true; locationAccess.sapphire_location = true; couldHave.sapphire = true; }
 
 
@@ -481,7 +481,7 @@ function refreshLogicForStuff() {
       logic[`current_${dungeon.key}_keys`] = logic[`forced_${dungeon.key}_keys`];
 
       areaToCheckMap[dungeon.name].forEach(loc => {
-        if (checkToItemMap[loc] === "small_key" && locationLogic[loc]) {
+        if (checkToItemMap[loc] === "small_key" && checkLogic[loc]) {
           logic[`current_${dungeon.key}_keys`] += 1;
         }
       });
@@ -495,7 +495,7 @@ function refreshLogicForStuff() {
       for (const loc of locations) {
         if (loc === bossLocation || loc.includes("gs_")) continue;
 
-        if (!locationLogic[loc] && (checkToItemMap[loc] === "boss_key" || checkToItemMap[loc] === "unknown")) {
+        if (!checkLogic[loc] && (checkToItemMap[loc] === "boss_key" || checkToItemMap[loc] === "unknown")) {
           foundMissingBK = true;
           break;
         }
@@ -591,7 +591,7 @@ function refreshLogicForStuff() {
               const isKey = checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown";
               const isSpecialBK = data.bkSpecial ? data.bkSpecial(loc) : false;
 
-              if (!locationLogic[loc] && (isKey || isSpecialBK)) {
+              if (!checkLogic[loc] && (isKey || isSpecialBK)) {
                 logic[minKeyProp] = i;
                 found = true;
                 break;
@@ -613,7 +613,7 @@ function refreshLogicForStuff() {
 
     if (logic.current_ganons_keys < 2) {
       const needsKeys = areaToCheckMap["Ganon's"].some(loc =>
-        loc !== "ganons_lightTrialLullaby" && !locationLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
+        loc !== "ganons_lightTrialLullaby" && !checkLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
       );
       logic.min_ganons_keys = needsKeys ? 0 : 2;
     }
@@ -623,7 +623,7 @@ function refreshLogicForStuff() {
     if (logic.current_well_keys < 3) {
       const needsKeys = areaToCheckMap["Well"].some(loc =>
         !["well_locked1", "well_locked2"].includes(loc) && !loc.includes("gs_") &&
-        !locationLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
+        !checkLogic[loc] && (checkToItemMap[loc] === "small_key" || checkToItemMap[loc] === "unknown")
       );
       logic.min_well_keys = needsKeys ? 0 : 3;
     }
@@ -671,8 +671,8 @@ function logicShortcuts() {
   logic.can_save_carpenters = (Spawn.child_gv_gf && logic.kokiri_sword) || logic.fortress_access
   logic.gtg_entrance_access = (logic.can_save_carpenters && rules.gerudoCard == "vanilla") || (logic.fortress_access && logic.gerudo_card && rules.gerudoCard == "shuffled");
   logic.can_cross_quicksand = logic.fortress_access && (logic.longshot || logic.hover_boots) && (rules.gerudoCard == "vanilla" || logic.gerudo_card || Spawn.adult_wasteland);
-  logic.can_enter_colossus = (logic.can_cross_quicksand && (logic.brackets || logic.can_see)) || logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || locationLogic.spirit_leftHand || locationLogic.spirit_rightHand;
-  logic.can_enter_child_colossus = logic.requiem || Spawn.child_colossus || locationLogic.spirit_rightHand;
+  logic.can_enter_colossus = (logic.can_cross_quicksand && (logic.brackets || logic.can_see)) || logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || checkLogic.spirit_leftHand || checkLogic.spirit_rightHand;
+  logic.can_enter_child_colossus = logic.requiem || Spawn.child_colossus || checkLogic.spirit_rightHand;
   logic.can_use_fire = (logic.dins_fire || (logic.bow && logic.fire_arrows)) && logic.magic;
   logic.can_use_dins = logic.dins_fire && logic.magic;
   logic.can_shoot_blue_fire_arrows = logic.ice_arrows && logic.bow && logic.magic && rules.blueFireArrows == "on";
@@ -834,7 +834,7 @@ function logicShortcuts() {
   couldHave.child_can_get_past_mido = rules.deku == "open" || couldHave.kokiri_sword;
   couldHave.can_enter_deku_entrance = couldHave.child_can_get_past_mido;
 }
-function updateLocationLogic() {
+function updateCheckLogic() {
   {
     const {
       storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale,hookshot, bean_access, longshot, bow, 
@@ -850,448 +850,448 @@ function updateLocationLogic() {
       can_enter_fire_temple_entrance, forest_medallion, fire_medallion, projectile_both, water_medallion, can_enter_ganons, jabu_entrance_access, shadow_temple_adult_access
     } = logic;
 
-    locationLogic.kokiri_mido_1 = true;
-    locationLogic.kokiri_mido_2 = true;
-    locationLogic.kokiri_mido_3 = true;
-    locationLogic.kokiri_mido_4 = true;
-    locationLogic.kokiri_sword = true;
-    locationLogic.kokiri_storms = storms;
-    locationLogic.talons_chickens = true;
-    locationLogic.back_of_ranch = true;
-    locationLogic.hyrule_remoteGrotto = can_blast_or_smash;
-    locationLogic.hyrule_openGrotto = true;
-    locationLogic.hyrule_hp_scrub = can_blast_or_smash;
-    locationLogic.hyrule_marketGrotto = can_blast_or_smash;
-    locationLogic.hyrule_tektite_grotto = can_blast_or_smash && (golden_scale || iron_boots);
-    locationLogic.hyrule_ocarina = kokiri_emerald && goron_ruby && zora_sapphire;
-    locationLogic.gerudovalley_box = true;
-    locationLogic.gerudovalley_fall = true;
-    locationLogic.gerudo_hammer = fortress_access && hammer;
-    locationLogic.hylia_child_fishing = true;
-    locationLogic.hylia_bottle = silver_scale;
-    locationLogic.hylia_adult_fishing = hookshot || bean_access || Spawn.adult_fishing;
-    locationLogic.hylia_lab_top = hookshot || bean_access;
-    locationLogic.hylia_lab_dive = golden_scale;
-    locationLogic.hylia_sun_shoot = longshot && bow;
-    locationLogic.market_slingshot_game = true;
-    locationLogic.richard = true;
-    locationLogic.market_bowling_1 = bomb_bag || (bombchus && rules.chusInLogic == "on");
-    locationLogic.market_bowling_2 = bomb_bag || (bombchus && rules.chusInLogic == "on");
-    locationLogic.market_lens_game = can_see;
-    locationLogic.poes = (bow && eponas && bottle) || big_poe;
-    locationLogic.dins_fairy = (bomb_bag || Spawn.child_hyrule_fairy) && lullaby;
-    locationLogic.g_fairy = (golden_gauntlets || Spawn.adult_ogc) && lullaby;
-    locationLogic.lacs = shadow_medallion && spirit_medallion;
-    locationLogic.fountain_fairy = ((ice_entrance_access && bomb_bag) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || (bomb_bag && Spawn.child_zf)) && lullaby;
-    locationLogic.glacier_hp = ice_entrance_access;
-    locationLogic.bottom_of_fountain = ice_entrance_access && iron_boots;
-    locationLogic.ice_map = ice_adult_access && (bottle || can_shoot_blue_fire_arrows);
-    locationLogic.ice_compass = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
-    locationLogic.ice_hp = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
-    locationLogic.ice_irons = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
-    locationLogic.deku_lobby = deku_access;
-    locationLogic.deku_slingshot = deku_access;
-    locationLogic.deku_slingshot_room_side = deku_access;
-    locationLogic.deku_compass = deku_access;
-    locationLogic.deku_compass_room_side = deku_access;
-    locationLogic.deku_basement = deku_access;
+    checkLogic.kokiri_mido_1 = true;
+    checkLogic.kokiri_mido_2 = true;
+    checkLogic.kokiri_mido_3 = true;
+    checkLogic.kokiri_mido_4 = true;
+    checkLogic.kokiri_sword = true;
+    checkLogic.kokiri_storms = storms;
+    checkLogic.talons_chickens = true;
+    checkLogic.back_of_ranch = true;
+    checkLogic.hyrule_remoteGrotto = can_blast_or_smash;
+    checkLogic.hyrule_openGrotto = true;
+    checkLogic.hyrule_hp_scrub = can_blast_or_smash;
+    checkLogic.hyrule_marketGrotto = can_blast_or_smash;
+    checkLogic.hyrule_tektite_grotto = can_blast_or_smash && (golden_scale || iron_boots);
+    checkLogic.hyrule_ocarina = kokiri_emerald && goron_ruby && zora_sapphire;
+    checkLogic.gerudovalley_box = true;
+    checkLogic.gerudovalley_fall = true;
+    checkLogic.gerudo_hammer = fortress_access && hammer;
+    checkLogic.hylia_child_fishing = true;
+    checkLogic.hylia_bottle = silver_scale;
+    checkLogic.hylia_adult_fishing = hookshot || bean_access || Spawn.adult_fishing;
+    checkLogic.hylia_lab_top = hookshot || bean_access;
+    checkLogic.hylia_lab_dive = golden_scale;
+    checkLogic.hylia_sun_shoot = longshot && bow;
+    checkLogic.market_slingshot_game = true;
+    checkLogic.richard = true;
+    checkLogic.market_bowling_1 = bomb_bag || (bombchus && rules.chusInLogic == "on");
+    checkLogic.market_bowling_2 = bomb_bag || (bombchus && rules.chusInLogic == "on");
+    checkLogic.market_lens_game = can_see;
+    checkLogic.poes = (bow && eponas && bottle) || big_poe;
+    checkLogic.dins_fairy = (bomb_bag || Spawn.child_hyrule_fairy) && lullaby;
+    checkLogic.g_fairy = (golden_gauntlets || Spawn.adult_ogc) && lullaby;
+    checkLogic.lacs = shadow_medallion && spirit_medallion;
+    checkLogic.fountain_fairy = ((ice_entrance_access && bomb_bag) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || (bomb_bag && Spawn.child_zf)) && lullaby;
+    checkLogic.glacier_hp = ice_entrance_access;
+    checkLogic.bottom_of_fountain = ice_entrance_access && iron_boots;
+    checkLogic.ice_map = ice_adult_access && (bottle || can_shoot_blue_fire_arrows);
+    checkLogic.ice_compass = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
+    checkLogic.ice_hp = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
+    checkLogic.ice_irons = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
+    checkLogic.deku_lobby = deku_access;
+    checkLogic.deku_slingshot = deku_access;
+    checkLogic.deku_slingshot_room_side = deku_access;
+    checkLogic.deku_compass = deku_access;
+    checkLogic.deku_compass_room_side = deku_access;
+    checkLogic.deku_basement = deku_access;
     if (rules.preset == "sgl2025")
-      locationLogic.deku_queen_gohma = deku_access;
+      checkLogic.deku_queen_gohma = deku_access;
     else
-      locationLogic.deku_queen_gohma = deku_access && ((deku_child_access && slingshot) || (deku_adult_access && can_use_fire));
-    locationLogic.lost_woods_fairy_ocarina = true;
-    locationLogic.ocarina_game = true;
-    locationLogic.lw_generic = can_blast_or_smash;
-    locationLogic.lost_woods_scrub_grotto = bomb_bag || (can_pass_mido_as_adult && hammer);
-    locationLogic.bridge_scrub = true;
-    locationLogic.target = slingshot;
-    locationLogic.skull_kid = sarias;
-    locationLogic.theater_skull = true;
-    locationLogic.theater_truth = kokiri_emerald && goron_ruby && zora_sapphire && sarias;
-    locationLogic.wolfos_grotto = bomb_bag || (can_pass_mido_as_adult && hammer);
-    locationLogic.rolling_goron = bomb_bag;
-    locationLogic.goron_dance = (lullaby || Spawn.child_lower_dmc) && sarias;
-    locationLogic.goron_pot = bomb_bag && (lullaby || can_use_dins || Spawn.child_lower_dmc);
-    locationLogic.goron_maze_1 = can_blast_or_smash || silver_gauntlets;
-    locationLogic.goron_maze_2 = can_blast_or_smash || silver_gauntlets;
-    locationLogic.goron_maze_3 = hammer || silver_gauntlets;
-    locationLogic.goron_link = can_stop_link_the_goron;
-    locationLogic.goron_medigoron = (can_blast_or_smash || goron_bracelet) && adults_wallet;
-    locationLogic.dodongos_map = can_break_dodongos_wall;
-    locationLogic.dodongos_compass = can_break_dodongos_wall;
-    locationLogic.dodongos_bomb_flower_platform = dodongos_climb;
-    locationLogic.dodongos_bomb_bag = dodongos_climb;
-    locationLogic.dodongos_end_of_bridge = dodongos_climb && (bomb_bag || (dodongos_adult_access && hammer));
-    locationLogic.dodongos_above_king = dodongos_climb && bomb_bag;
-    locationLogic.dodongos_king_dodongo = dodongos_climb && bomb_bag;
-    locationLogic.trail_bombable = can_blast_or_smash;
-    locationLogic.trail_top = true;
-    locationLogic.trail_storms = storms;
-    locationLogic.trail_fairy = (can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && lullaby;
-    locationLogic.trade_quest = ((((ice_access && bottle) || ((giants_wallet || can_enter_ganons) && (lullaby || Spawn.adult_zd) && bottle)) && prescription) || claim_check) && crater_top;
-    locationLogic.crater_bean = (bolero && bean_access) || (hover_boots && crater_by_city);
-    locationLogic.crater_hammer_fairy = ((crater_by_city && hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && lullaby;
-    locationLogic.crater_grotto = can_blast_or_smash;
-    locationLogic.crater_nook_hp = crater_top || Spawn.child_upper_dmc;
-    locationLogic.man_on_roof = true;
-    locationLogic.kakariko_grotto = true;
-    locationLogic.kakariko_hag = adults_wallet;
-    locationLogic.windmill = true;
-    locationLogic.anju = true;
-    locationLogic.kakariko_cow_house = true;
-    locationLogic.archery_game = bow;
-    locationLogic.redead_grotto = can_blast_or_smash;
-    locationLogic.anjus_chickens = true;
-    locationLogic.tokens_10 = gold_skulltulas >= 10;
-    locationLogic.tokens_20 = gold_skulltulas >= 20;
-    locationLogic.tokens_30 = gold_skulltulas >= 30;
-    locationLogic.tokens_40 = gold_skulltulas >= 40;
-    locationLogic.tokens_50 = gold_skulltulas >= 50;
-    locationLogic.shield_grave = true;
-    locationLogic.gravedigging_tour = true;
-    locationLogic.redead_grave = suns;
-    locationLogic.composers_grave = lullaby && can_use_fire;
-    locationLogic.graveyard_box = bean_access || longshot;
-    locationLogic.race_1 = true;
-    locationLogic.race_2 = true;
-    locationLogic.river_bean_salesman = child_can_enter_river;
-    locationLogic.river_pillar = child_can_enter_river || hover_boots || rules.preplantBeans == "on";
-    locationLogic.river_grotto = true;
-    locationLogic.river_ledge = child_can_enter_river || hover_boots;
-    locationLogic.frogs_1 = child_can_enter_river && storms;
-    locationLogic.frogs_2 = child_can_enter_river && (storms && lullaby && eponas && sarias && suns && time);
-    locationLogic.zora_diving = child_can_enter_domain;
-    locationLogic.zora_torches = child_can_enter_domain;
-    locationLogic.thaw_king = can_enter_adult_domain && ((bottle && (ice_access || giants_wallet || can_enter_ganons)) || can_shoot_blue_fire_arrows);
-    locationLogic.colossus_bean = requiem && bean_access;
-    locationLogic.colossus_fairy = can_enter_colossus && bomb_bag && lullaby;
-    locationLogic.wasteland = can_cross_quicksand && can_use_fire;
-    locationLogic.wasteland_carpet = can_cross_quicksand && adults_wallet;
-    locationLogic.fortress_card = can_save_carpenters;
-    locationLogic.gerudo_roof = fortress_access && (hookshot || hover_boots);
-    locationLogic.gerudo_archery_1 = eponas && bow && gtg_entrance_access;
-    locationLogic.gerudo_archery_2 = eponas && bow && gtg_entrance_access;
-    locationLogic.jabu_boomerang = can_hit_jabu_switch;
-    locationLogic.jabu_map = can_hit_jabu_switch && boomerang && jabu_child_access;
-    locationLogic.jabu_compass = can_hit_jabu_switch && boomerang && jabu_child_access;
-    locationLogic.jabu_barinade = can_hit_jabu_switch && boomerang && jabu_child_access;
-    locationLogic.forest_first = forest_temple_access;
-    locationLogic.forest_stalfos = forest_temple_access;
-    locationLogic.forest_midCourtyard = forest_temple_adult_access && ((((time || bow || (hover_boots && forest_keys >= 1)) && hookshot)) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5));
-    locationLogic.forest_highCourtyard = forest_temple_access && (time || (forest_temple_adult_access && ((bow && hookshot) || (hover_boots && forest_keys >= 1) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5))));
-    locationLogic.forest_lowCourtyard = forest_temple_access && (time || (forest_temple_adult_access && ((bow && hookshot) || (hover_boots && forest_keys >= 1) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5))));
-    locationLogic.forest_blockRoom = forest_temple_adult_access && forest_keys >= 1 && (bow || (forest_temple_child_access && slingshot)) && goron_bracelet;
-    locationLogic.forest_bossKey = forest_temple_adult_access && forest_keys >= 2 && bow && goron_bracelet;
-    locationLogic.forest_floormaster = forest_temple_adult_access && ((bow && goron_bracelet && forest_keys >= 2) || (hover_boots && forest_keys >= 1));
-    locationLogic.forest_red = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 3;
-    locationLogic.forest_bow = forest_temple_adult_access && goron_bracelet && forest_keys >= 3;
-    locationLogic.forest_blue = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 3;
-    locationLogic.forest_fallingCeiling = forest_temple_adult_access && goron_bracelet && (bow || can_use_dins) && forest_keys >= 5;
-    locationLogic.forest_nearBoss = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 5;
-    locationLogic.forest_phantomGanon = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 5 && forest_boss_key;
-    locationLogic.fire_nearBoss = fire_temple_access;
-    locationLogic.fire_hammer1 = fire_temple_adult_access && hammer && (rules.smallKeys != "keyRings" || fire_key_ring);
-    locationLogic.fire_hammer2 = fire_temple_adult_access && hammer && (rules.smallKeys != "keyRings" || fire_key_ring);
-    locationLogic.fire_lavaOpen = fire_temple_access && fire_keys >= 1;
-    locationLogic.fire_lavaBomb = fire_temple_adult_access && fire_keys >= 1 && bomb_bag;
-    locationLogic.fire_volvagia = fire_temple_adult_access && fire_boss_key && hammer && can_wear_goron_tunic && (hover_boots || (fire_keys >= 7 && (time || bomb_bag)));
-    locationLogic.fire_lowerMaze = can_climb_fire_temple;
-    locationLogic.fire_sideRoom = can_climb_fire_temple;
-    locationLogic.fire_map = can_climb_fire_temple && ((fire_keys >= 4 && bow) || fire_keys >= 5);
-    locationLogic.fire_upperMaze = can_climb_fire_temple && fire_keys >= 5;
-    locationLogic.fire_shortcut = can_climb_fire_temple && fire_keys >= 5 && bomb_bag;
-    locationLogic.fire_scarecrow = can_climb_fire_temple && fire_keys >= 5 && hookshot;
-    locationLogic.fire_compass = can_climb_fire_temple && fire_keys >= 6;
-    locationLogic.fire_sotGoron = can_climb_fire_temple && (fire_keys >= 7 || (fire_keys >= 6 && hover_boots)) && hammer && (time || bomb_bag);
-    locationLogic.fire_top = can_climb_fire_temple && (fire_keys >= 7 || (fire_keys >= 6 && hammer && hover_boots)) && bomb_bag;
-    locationLogic.water_compass = can_do_water_checks && hookshot;
-    locationLogic.water_map = can_do_water_checks;
-    locationLogic.water_cracked = middle_water && bomb_bag;
-    locationLogic.water_torches = can_do_water_checks && lullaby && (bow || can_use_dins || water_temple_child_access);
-    locationLogic.water_block = can_do_water_checks && lullaby && bow && goron_bracelet && (hover_boots || longshot) && hookshot;
-    locationLogic.water_pillar = middle_water && can_wear_zora_tunic && hookshot;
-    locationLogic.water_dLink = can_do_water_checks && water_keys >= 5 && hookshot;
-    locationLogic.water_river = can_do_water_checks && water_keys >= 5 && time && bow && hookshot;
-    locationLogic.water_dragon = can_do_water_checks && ((water_keys >= 5 && time && bow) || (goron_bracelet && lullaby)) && hookshot;
-    locationLogic.water_bossKey = can_do_water_checks && longshot && water_keys >= 5 && ((bomb_bag && goron_bracelet) || hover_boots);
-    locationLogic.water_morpha = can_do_water_checks && water_boss_key && longshot;
-    locationLogic.spirit_childLeft = spirit_temple_child_access && (slingshot || boomerang);
-    locationLogic.spirit_childRight = spirit_temple_child_access && (slingshot || boomerang);
-    locationLogic.spirit_childClimb1 = spirit_temple_access && (spirit_keys >= 1 && projectile_both);
-    locationLogic.spirit_childClimb2 = spirit_temple_access && (spirit_keys >= 1 && projectile_both);
-    locationLogic.spirit_map = spirit_temple_access && (spirit_keys >= 5 && spirit_temple_child_access && bomb_bag) || (spirit_keys >= 3 && silver_gauntlets && can_use_fire) || (bomb_bag && spirit_keys >= 1 && can_use_fire);
-    locationLogic.spirit_sunRoom = spirit_temple_access && (spirit_keys >= 5 && spirit_temple_child_access && bomb_bag) || (spirit_keys >= 3 && silver_gauntlets && can_use_fire) || (bomb_bag && spirit_keys >= 1 && can_use_fire);
-    locationLogic.spirit_rightHand = spirit_temple_access && ((spirit_keys >= 3 && longshot && bomb_bag) || spirit_keys >= 5) && ((spirit_temple_child_access && bomb_bag) || (can_push_spirit_silver_block && (bow || hookshot || bomb_bag)));
-    locationLogic.spirit_adultLeft = can_push_spirit_silver_block && hookshot && lullaby;
-    locationLogic.spirit_adultRight = can_push_spirit_silver_block && (bow || hookshot || bomb_bag);
-    locationLogic.spirit_rotatingMirror1 = can_push_spirit_silver_block && spirit_keys >= 3;
-    locationLogic.spirit_rotatingMirror2 = can_push_spirit_silver_block && spirit_keys >= 3;
-    locationLogic.spirit_lullabyHand = can_push_spirit_silver_block && spirit_keys >= 3 && lullaby;
-    locationLogic.spirit_lullabyHigh = can_push_spirit_silver_block && spirit_keys >= 3 && lullaby && (hookshot || hover_boots);
-    locationLogic.spirit_nearFourArmos = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag && mirror_shield;
-    locationLogic.spirit_invisible1 = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
-    locationLogic.spirit_invisible2 = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
-    locationLogic.spirit_leftHand = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
-    locationLogic.spirit_bossKey = can_push_spirit_silver_block && spirit_keys >= 5 && bow && lullaby && hookshot;
-    locationLogic.spirit_tippyTop = can_push_spirit_silver_block && spirit_keys >= 5 && mirror_shield;
-    locationLogic.spirit_twinrova = can_push_spirit_silver_block && spirit_keys >= 5 && mirror_shield && bomb_bag && spirit_boss_key && hookshot;
-    locationLogic.shadow_map = shadow_temple_adult_access && (hover_boots || hookshot);
-    locationLogic.shadow_hovers = shadow_temple_adult_access && (hover_boots || hookshot);
-    locationLogic.shadow_compass = can_cross_shadow_gap;
-    locationLogic.shadow_earlySilvers = can_cross_shadow_gap;
-    locationLogic.shadow_spinning1 = can_bomb_shadow_wall;
-    locationLogic.shadow_spinning2 = can_bomb_shadow_wall;
-    locationLogic.shadow_spikesLower = can_bomb_shadow_wall;
-    locationLogic.shadow_spikesUpper = can_bomb_shadow_wall && goron_bracelet;
-    locationLogic.shadow_spikesSwitch = can_bomb_shadow_wall && goron_bracelet;
-    locationLogic.shadow_redeadSilvers = can_bomb_shadow_wall && shadow_keys >= 2;
-    locationLogic.shadow_pot = can_bomb_shadow_wall && hookshot && shadow_keys >= 2;
-    locationLogic.shadow_wind = can_pass_shadow_hookshot_door && shadow_keys >= 3;
-    locationLogic.shadow_bombable = can_pass_shadow_hookshot_door && shadow_keys >= 3;
-    locationLogic.shadow_gibdos = can_pass_shadow_hookshot_door && shadow_keys >= 3;
-    locationLogic.shadow_dins1 = can_ride_shadow_boat && shadow_keys >= 4 && can_use_dins;
-    locationLogic.shadow_dins2 = can_ride_shadow_boat && shadow_keys >= 4 && can_use_dins;
-    locationLogic.shadow_floormaster = can_ride_shadow_boat && shadow_keys >= 4;
-    locationLogic.shadow_bongo = can_beat_shadow_boss && shadow_keys >= 5;
-    locationLogic.ganons_lightTrial1 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial2 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial3 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial4 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial5 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial6 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrial7 = can_enter_ganons && golden_gauntlets;
-    locationLogic.ganons_lightTrialLullaby = can_enter_ganons && golden_gauntlets && lullaby && ganons_keys >= 1;
-    locationLogic.ganons_spiritTrial1 = can_enter_ganons && hookshot;
-    locationLogic.ganons_spiritTrial2 = can_enter_ganons && hookshot && bomb_bag;
-    locationLogic.ganons_forestTrial = can_enter_ganons;
-    locationLogic.ganons_waterTrial1 = can_enter_ganons;
-    locationLogic.ganons_waterTrial2 = can_enter_ganons;
-    locationLogic.ganons_shadowTrial1 = can_enter_ganons && ((bow && fire_arrows && magic) || hookshot || hover_boots || time);
-    locationLogic.ganons_shadowTrial2 = can_enter_ganons && ((bow && fire_arrows && magic) || (longshot && (hover_boots || can_use_dins)));
-    locationLogic.ganons_bossKey = can_enter_ganons;
-    locationLogic.gtg_lobbyLeft = gtg_access && ((bow && gtg_adult_access) || (slingshot && gtg_child_access));
-    locationLogic.gtg_lobbyRight = gtg_access && ((bow && gtg_adult_access) || (slingshot && gtg_child_access));
-    locationLogic.gtg_stalfos = gtg_access;
-    locationLogic.gtg_wolfos = gtg_adult_access && hookshot;
-    locationLogic.gtg_silvers1 = gtg_adult_access && hookshot && silver_gauntlets;
-    locationLogic.gtg_silvers2 = gtg_adult_access && hookshot && silver_gauntlets;
-    locationLogic.gtg_silvers3 = gtg_adult_access && hookshot && silver_gauntlets;
-    locationLogic.gtg_silvers4 = gtg_adult_access && hookshot && silver_gauntlets;
-    locationLogic.gtg_eyes = gtg_adult_access && hookshot && bow;
-    locationLogic.gtg_aboveEyes = gtg_adult_access && hookshot && bow;
-    locationLogic.gtg_keese = gtg_adult_access && hookshot;
-    locationLogic.gtg_flamesChest = gtg_adult_access && hookshot && hammer;
-    locationLogic.gtg_freestanding = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
-    locationLogic.gtg_right2 = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
-    locationLogic.gtg_right3 = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
-    locationLogic.gtg_beamos = gtg_access && bomb_bag;
-    locationLogic.gtg_left1 = gtg_access && gtg_keys >= 3;
-    locationLogic.gtg_left2 = gtg_access && gtg_keys >= 4;
-    locationLogic.gtg_left3 = gtg_access && gtg_keys >= 6;
-    locationLogic.gtg_left4 = gtg_access && gtg_keys >= 7;
-    locationLogic.gtg_final = gtg_access && gtg_keys >= 9;
-    locationLogic.gtg_toilet = gtg_adult_access && iron_boots && time && hookshot;
-    locationLogic.well_fakeRight = botw_child_access;
-    locationLogic.well_centerSmall = botw_child_access;
-    locationLogic.well_backBombable = botw_child_access && bomb_bag;
-    locationLogic.well_waterLeft = botw_child_access && lullaby;
-    locationLogic.well_coffin = botw_child_access;
-    locationLogic.well_centerBig = botw_child_access;
-    locationLogic.well_fakeLeft = botw_child_access;
-    locationLogic.well_frontBombable = botw_child_access && bomb_bag;
-    locationLogic.well_waterFront = botw_child_access && lullaby;
-    locationLogic.well_deadHand = botw_child_access && lullaby;
-    locationLogic.well_invisible = botw_child_access && lullaby;
-    locationLogic.well_locked1 = botw_child_access && well_keys >= 3;
-    locationLogic.well_locked2 = botw_child_access && well_keys >= 3;
-    locationLogic.well_basement = botw_child_access && (bomb_bag || ((well_keys >= 3 || can_use_dins) && goron_bracelet));
-    locationLogic.lullabyCheck = true;
-    locationLogic.eponasCheck = true;
-    locationLogic.sariasCheck = true;
-    locationLogic.stormsCheck = true;
-    locationLogic.sunsCheck = lullaby;
-    locationLogic.boleroCheck = can_enter_fire_temple_entrance;
-    locationLogic.minuetCheck = can_pass_mido_as_adult;
-    locationLogic.requiemCheck = can_enter_colossus;
-    locationLogic.serenadeCheck = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
-    locationLogic.preludeCheck = forest_medallion;
-    locationLogic.nocturneCheck = forest_medallion && fire_medallion && water_medallion;
-    locationLogic.oot = kokiri_emerald && goron_ruby && zora_sapphire;
-    locationLogic.scrub_dodongos_1 = can_break_dodongos_wall;
-    locationLogic.scrub_dodongos_2 = can_break_dodongos_wall;
-    locationLogic.scrub_dodongos_3 = can_break_dodongos_wall && bomb_bag;
-    locationLogic.scrub_dodongos_4 = can_break_dodongos_wall && bomb_bag;
-    locationLogic.scrub_jabu = can_hit_jabu_switch;
-    locationLogic.scrub_ganons_1 = can_enter_ganons;
-    locationLogic.scrub_ganons_2 = can_enter_ganons;
-    locationLogic.scrub_ganons_3 = can_enter_ganons;
-    locationLogic.scrub_ganons_4 = can_enter_ganons;
-    locationLogic.scrub_river_1 = storms;
-    locationLogic.scrub_river_2 = storms;
-    locationLogic.scrub_sfm_1 = storms;
-    locationLogic.scrub_sfm_2 = storms;
-    locationLogic.scrub_lake_1 = true;
-    locationLogic.scrub_lake_2 = true;
-    locationLogic.scrub_lake_3 = true;
-    locationLogic.scrub_lw_1 = true;
-    locationLogic.scrub_lw_2 = true;
-    locationLogic.scrub_lw_3 = can_blast_or_smash;
-    locationLogic.scrub_colossus_1 = silver_gauntlets && can_enter_colossus;
-    locationLogic.scrub_colossus_2 = silver_gauntlets && can_enter_colossus;
-    locationLogic.scrub_crater_1 = hammer && crater_by_city;
-    locationLogic.scrub_crater_2 = hammer && crater_by_city;
-    locationLogic.scrub_crater_3 = hammer && crater_by_city;
-    locationLogic.scrub_crater_child = bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || hammer;
-    locationLogic.scrub_goron_1 = time || (can_wear_goron_tunic && hookshot);
-    locationLogic.scrub_goron_2 = time || (can_wear_goron_tunic && hookshot);
-    locationLogic.scrub_goron_3 = time || (can_wear_goron_tunic && hookshot);
-    locationLogic.scrub_ranch_1 = true;
-    locationLogic.scrub_ranch_2 = true;
-    locationLogic.scrub_ranch_3 = true;
-    locationLogic.scrub_gv_1 = fortress_access && storms;
-    locationLogic.scrub_gv_2 = fortress_access && storms;
-    locationLogic.shop_kokiri_TL = logic[shopLogic.shop_kokiri_TL];
-    locationLogic.shop_kokiri_TR = logic[shopLogic.shop_kokiri_TR];
-    locationLogic.shop_kokiri_BR = logic[shopLogic.shop_kokiri_BR];
-    locationLogic.shop_kokiri_BL = logic[shopLogic.shop_kokiri_BL];
-    locationLogic.shop_market_bazaar_TL = logic[shopLogic.shop_market_bazaar_TL];
-    locationLogic.shop_market_bazaar_TR = logic[shopLogic.shop_market_bazaar_TR];
-    locationLogic.shop_market_bazaar_BR = logic[shopLogic.shop_market_bazaar_BR];
-    locationLogic.shop_market_bazaar_BL = logic[shopLogic.shop_market_bazaar_BL];
-    locationLogic.shop_market_potion_TL = logic[shopLogic.shop_market_potion_TL];
-    locationLogic.shop_market_potion_TR = logic[shopLogic.shop_market_potion_TR];
-    locationLogic.shop_market_potion_BR = logic[shopLogic.shop_market_potion_BR];
-    locationLogic.shop_market_potion_BL = logic[shopLogic.shop_market_potion_BL];
-    locationLogic.shop_market_chu_TL = logic[shopLogic.shop_market_chu_TL];
-    locationLogic.shop_market_chu_TR = logic[shopLogic.shop_market_chu_TR];
-    locationLogic.shop_market_chu_BR = logic[shopLogic.shop_market_chu_BR];
-    locationLogic.shop_market_chu_BL = logic[shopLogic.shop_market_chu_BL];
-    locationLogic.shop_kakariko_bazaar_TL = logic[shopLogic.shop_kakariko_bazaar_TL];
-    locationLogic.shop_kakariko_bazaar_TR = logic[shopLogic.shop_kakariko_bazaar_TR];
-    locationLogic.shop_kakariko_bazaar_BR = logic[shopLogic.shop_kakariko_bazaar_BR];
-    locationLogic.shop_kakariko_bazaar_BL = logic[shopLogic.shop_kakariko_bazaar_BL];
-    locationLogic.shop_kakariko_potion_TL = logic[shopLogic.shop_kakariko_potion_TL];
-    locationLogic.shop_kakariko_potion_TR = logic[shopLogic.shop_kakariko_potion_TR];
-    locationLogic.shop_kakariko_potion_BR = logic[shopLogic.shop_kakariko_potion_BR];
-    locationLogic.shop_kakariko_potion_BL = logic[shopLogic.shop_kakariko_potion_BL];
-    locationLogic.shop_goron_TL = logic[shopLogic.shop_goron_TL] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
-    locationLogic.shop_goron_TR = logic[shopLogic.shop_goron_TR] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
-    locationLogic.shop_goron_BR = logic[shopLogic.shop_goron_BR] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
-    locationLogic.shop_goron_BL = logic[shopLogic.shop_goron_BL] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
-    locationLogic.shop_domain_TL = logic[shopLogic.shop_domain_TL] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
-    locationLogic.shop_domain_TR = logic[shopLogic.shop_domain_TR] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
-    locationLogic.shop_domain_BR = logic[shopLogic.shop_domain_BR] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
-    locationLogic.shop_domain_BL = logic[shopLogic.shop_domain_BL] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
-    locationLogic.cow_kokiri = eponas;
-    locationLogic.cow_ranch1 = eponas;
-    locationLogic.cow_ranch2 = eponas;
-    locationLogic.cow_ranch3 = eponas;
-    locationLogic.cow_ranch4 = eponas;
-    locationLogic.cow_field = eponas && ((hammer && can_use_fire) || (bomb_bag && can_use_dins));
-    locationLogic.cow_valley = eponas;
-    locationLogic.cow_trail = eponas && can_blast_or_smash;
-    locationLogic.cow_kakariko = eponas;
+      checkLogic.deku_queen_gohma = deku_access && ((deku_child_access && slingshot) || (deku_adult_access && can_use_fire));
+    checkLogic.lost_woods_fairy_ocarina = true;
+    checkLogic.ocarina_game = true;
+    checkLogic.lw_generic = can_blast_or_smash;
+    checkLogic.lost_woods_scrub_grotto = bomb_bag || (can_pass_mido_as_adult && hammer);
+    checkLogic.bridge_scrub = true;
+    checkLogic.target = slingshot;
+    checkLogic.skull_kid = sarias;
+    checkLogic.theater_skull = true;
+    checkLogic.theater_truth = kokiri_emerald && goron_ruby && zora_sapphire && sarias;
+    checkLogic.wolfos_grotto = bomb_bag || (can_pass_mido_as_adult && hammer);
+    checkLogic.rolling_goron = bomb_bag;
+    checkLogic.goron_dance = (lullaby || Spawn.child_lower_dmc) && sarias;
+    checkLogic.goron_pot = bomb_bag && (lullaby || can_use_dins || Spawn.child_lower_dmc);
+    checkLogic.goron_maze_1 = can_blast_or_smash || silver_gauntlets;
+    checkLogic.goron_maze_2 = can_blast_or_smash || silver_gauntlets;
+    checkLogic.goron_maze_3 = hammer || silver_gauntlets;
+    checkLogic.goron_link = can_stop_link_the_goron;
+    checkLogic.goron_medigoron = (can_blast_or_smash || goron_bracelet) && adults_wallet;
+    checkLogic.dodongos_map = can_break_dodongos_wall;
+    checkLogic.dodongos_compass = can_break_dodongos_wall;
+    checkLogic.dodongos_bomb_flower_platform = dodongos_climb;
+    checkLogic.dodongos_bomb_bag = dodongos_climb;
+    checkLogic.dodongos_end_of_bridge = dodongos_climb && (bomb_bag || (dodongos_adult_access && hammer));
+    checkLogic.dodongos_above_king = dodongos_climb && bomb_bag;
+    checkLogic.dodongos_king_dodongo = dodongos_climb && bomb_bag;
+    checkLogic.trail_bombable = can_blast_or_smash;
+    checkLogic.trail_top = true;
+    checkLogic.trail_storms = storms;
+    checkLogic.trail_fairy = (can_blast_or_smash || Spawn.child_dmt_fairy || Spawn.adult_dmt_fairy) && lullaby;
+    checkLogic.trade_quest = ((((ice_access && bottle) || ((giants_wallet || can_enter_ganons) && (lullaby || Spawn.adult_zd) && bottle)) && prescription) || claim_check) && crater_top;
+    checkLogic.crater_bean = (bolero && bean_access) || (hover_boots && crater_by_city);
+    checkLogic.crater_hammer_fairy = ((crater_by_city && hammer) || Spawn.child_lower_dmc_fairy || Spawn.adult_lower_dmc_fairy) && lullaby;
+    checkLogic.crater_grotto = can_blast_or_smash;
+    checkLogic.crater_nook_hp = crater_top || Spawn.child_upper_dmc;
+    checkLogic.man_on_roof = true;
+    checkLogic.kakariko_grotto = true;
+    checkLogic.kakariko_hag = adults_wallet;
+    checkLogic.windmill = true;
+    checkLogic.anju = true;
+    checkLogic.kakariko_cow_house = true;
+    checkLogic.archery_game = bow;
+    checkLogic.redead_grotto = can_blast_or_smash;
+    checkLogic.anjus_chickens = true;
+    checkLogic.tokens_10 = gold_skulltulas >= 10;
+    checkLogic.tokens_20 = gold_skulltulas >= 20;
+    checkLogic.tokens_30 = gold_skulltulas >= 30;
+    checkLogic.tokens_40 = gold_skulltulas >= 40;
+    checkLogic.tokens_50 = gold_skulltulas >= 50;
+    checkLogic.shield_grave = true;
+    checkLogic.gravedigging_tour = true;
+    checkLogic.redead_grave = suns;
+    checkLogic.composers_grave = lullaby && can_use_fire;
+    checkLogic.graveyard_box = bean_access || longshot;
+    checkLogic.race_1 = true;
+    checkLogic.race_2 = true;
+    checkLogic.river_bean_salesman = child_can_enter_river;
+    checkLogic.river_pillar = child_can_enter_river || hover_boots || rules.preplantBeans == "on";
+    checkLogic.river_grotto = true;
+    checkLogic.river_ledge = child_can_enter_river || hover_boots;
+    checkLogic.frogs_1 = child_can_enter_river && storms;
+    checkLogic.frogs_2 = child_can_enter_river && (storms && lullaby && eponas && sarias && suns && time);
+    checkLogic.zora_diving = child_can_enter_domain;
+    checkLogic.zora_torches = child_can_enter_domain;
+    checkLogic.thaw_king = can_enter_adult_domain && ((bottle && (ice_access || giants_wallet || can_enter_ganons)) || can_shoot_blue_fire_arrows);
+    checkLogic.colossus_bean = requiem && bean_access;
+    checkLogic.colossus_fairy = can_enter_colossus && bomb_bag && lullaby;
+    checkLogic.wasteland = can_cross_quicksand && can_use_fire;
+    checkLogic.wasteland_carpet = can_cross_quicksand && adults_wallet;
+    checkLogic.fortress_card = can_save_carpenters;
+    checkLogic.gerudo_roof = fortress_access && (hookshot || hover_boots);
+    checkLogic.gerudo_archery_1 = eponas && bow && gtg_entrance_access;
+    checkLogic.gerudo_archery_2 = eponas && bow && gtg_entrance_access;
+    checkLogic.jabu_boomerang = can_hit_jabu_switch;
+    checkLogic.jabu_map = can_hit_jabu_switch && boomerang && jabu_child_access;
+    checkLogic.jabu_compass = can_hit_jabu_switch && boomerang && jabu_child_access;
+    checkLogic.jabu_barinade = can_hit_jabu_switch && boomerang && jabu_child_access;
+    checkLogic.forest_first = forest_temple_access;
+    checkLogic.forest_stalfos = forest_temple_access;
+    checkLogic.forest_midCourtyard = forest_temple_adult_access && ((((time || bow || (hover_boots && forest_keys >= 1)) && hookshot)) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5));
+    checkLogic.forest_highCourtyard = forest_temple_access && (time || (forest_temple_adult_access && ((bow && hookshot) || (hover_boots && forest_keys >= 1) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5))));
+    checkLogic.forest_lowCourtyard = forest_temple_access && (time || (forest_temple_adult_access && ((bow && hookshot) || (hover_boots && forest_keys >= 1) || (goron_bracelet && (bow || can_use_dins) && forest_keys >= 5))));
+    checkLogic.forest_blockRoom = forest_temple_adult_access && forest_keys >= 1 && (bow || (forest_temple_child_access && slingshot)) && goron_bracelet;
+    checkLogic.forest_bossKey = forest_temple_adult_access && forest_keys >= 2 && bow && goron_bracelet;
+    checkLogic.forest_floormaster = forest_temple_adult_access && ((bow && goron_bracelet && forest_keys >= 2) || (hover_boots && forest_keys >= 1));
+    checkLogic.forest_red = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 3;
+    checkLogic.forest_bow = forest_temple_adult_access && goron_bracelet && forest_keys >= 3;
+    checkLogic.forest_blue = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 3;
+    checkLogic.forest_fallingCeiling = forest_temple_adult_access && goron_bracelet && (bow || can_use_dins) && forest_keys >= 5;
+    checkLogic.forest_nearBoss = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 5;
+    checkLogic.forest_phantomGanon = forest_temple_adult_access && goron_bracelet && bow && forest_keys >= 5 && forest_boss_key;
+    checkLogic.fire_nearBoss = fire_temple_access;
+    checkLogic.fire_hammer1 = fire_temple_adult_access && hammer && (rules.smallKeys != "keyRings" || fire_key_ring);
+    checkLogic.fire_hammer2 = fire_temple_adult_access && hammer && (rules.smallKeys != "keyRings" || fire_key_ring);
+    checkLogic.fire_lavaOpen = fire_temple_access && fire_keys >= 1;
+    checkLogic.fire_lavaBomb = fire_temple_adult_access && fire_keys >= 1 && bomb_bag;
+    checkLogic.fire_volvagia = fire_temple_adult_access && fire_boss_key && hammer && can_wear_goron_tunic && (hover_boots || (fire_keys >= 7 && (time || bomb_bag)));
+    checkLogic.fire_lowerMaze = can_climb_fire_temple;
+    checkLogic.fire_sideRoom = can_climb_fire_temple;
+    checkLogic.fire_map = can_climb_fire_temple && ((fire_keys >= 4 && bow) || fire_keys >= 5);
+    checkLogic.fire_upperMaze = can_climb_fire_temple && fire_keys >= 5;
+    checkLogic.fire_shortcut = can_climb_fire_temple && fire_keys >= 5 && bomb_bag;
+    checkLogic.fire_scarecrow = can_climb_fire_temple && fire_keys >= 5 && hookshot;
+    checkLogic.fire_compass = can_climb_fire_temple && fire_keys >= 6;
+    checkLogic.fire_sotGoron = can_climb_fire_temple && (fire_keys >= 7 || (fire_keys >= 6 && hover_boots)) && hammer && (time || bomb_bag);
+    checkLogic.fire_top = can_climb_fire_temple && (fire_keys >= 7 || (fire_keys >= 6 && hammer && hover_boots)) && bomb_bag;
+    checkLogic.water_compass = can_do_water_checks && hookshot;
+    checkLogic.water_map = can_do_water_checks;
+    checkLogic.water_cracked = middle_water && bomb_bag;
+    checkLogic.water_torches = can_do_water_checks && lullaby && (bow || can_use_dins || water_temple_child_access);
+    checkLogic.water_block = can_do_water_checks && lullaby && bow && goron_bracelet && (hover_boots || longshot) && hookshot;
+    checkLogic.water_pillar = middle_water && can_wear_zora_tunic && hookshot;
+    checkLogic.water_dLink = can_do_water_checks && water_keys >= 5 && hookshot;
+    checkLogic.water_river = can_do_water_checks && water_keys >= 5 && time && bow && hookshot;
+    checkLogic.water_dragon = can_do_water_checks && ((water_keys >= 5 && time && bow) || (goron_bracelet && lullaby)) && hookshot;
+    checkLogic.water_bossKey = can_do_water_checks && longshot && water_keys >= 5 && ((bomb_bag && goron_bracelet) || hover_boots);
+    checkLogic.water_morpha = can_do_water_checks && water_boss_key && longshot;
+    checkLogic.spirit_childLeft = spirit_temple_child_access && (slingshot || boomerang);
+    checkLogic.spirit_childRight = spirit_temple_child_access && (slingshot || boomerang);
+    checkLogic.spirit_childClimb1 = spirit_temple_access && (spirit_keys >= 1 && projectile_both);
+    checkLogic.spirit_childClimb2 = spirit_temple_access && (spirit_keys >= 1 && projectile_both);
+    checkLogic.spirit_map = spirit_temple_access && (spirit_keys >= 5 && spirit_temple_child_access && bomb_bag) || (spirit_keys >= 3 && silver_gauntlets && can_use_fire) || (bomb_bag && spirit_keys >= 1 && can_use_fire);
+    checkLogic.spirit_sunRoom = spirit_temple_access && (spirit_keys >= 5 && spirit_temple_child_access && bomb_bag) || (spirit_keys >= 3 && silver_gauntlets && can_use_fire) || (bomb_bag && spirit_keys >= 1 && can_use_fire);
+    checkLogic.spirit_rightHand = spirit_temple_access && ((spirit_keys >= 3 && longshot && bomb_bag) || spirit_keys >= 5) && ((spirit_temple_child_access && bomb_bag) || (can_push_spirit_silver_block && (bow || hookshot || bomb_bag)));
+    checkLogic.spirit_adultLeft = can_push_spirit_silver_block && hookshot && lullaby;
+    checkLogic.spirit_adultRight = can_push_spirit_silver_block && (bow || hookshot || bomb_bag);
+    checkLogic.spirit_rotatingMirror1 = can_push_spirit_silver_block && spirit_keys >= 3;
+    checkLogic.spirit_rotatingMirror2 = can_push_spirit_silver_block && spirit_keys >= 3;
+    checkLogic.spirit_lullabyHand = can_push_spirit_silver_block && spirit_keys >= 3 && lullaby;
+    checkLogic.spirit_lullabyHigh = can_push_spirit_silver_block && spirit_keys >= 3 && lullaby && (hookshot || hover_boots);
+    checkLogic.spirit_nearFourArmos = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag && mirror_shield;
+    checkLogic.spirit_invisible1 = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
+    checkLogic.spirit_invisible2 = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
+    checkLogic.spirit_leftHand = can_push_spirit_silver_block && spirit_keys >= 4 && bomb_bag;
+    checkLogic.spirit_bossKey = can_push_spirit_silver_block && spirit_keys >= 5 && bow && lullaby && hookshot;
+    checkLogic.spirit_tippyTop = can_push_spirit_silver_block && spirit_keys >= 5 && mirror_shield;
+    checkLogic.spirit_twinrova = can_push_spirit_silver_block && spirit_keys >= 5 && mirror_shield && bomb_bag && spirit_boss_key && hookshot;
+    checkLogic.shadow_map = shadow_temple_adult_access && (hover_boots || hookshot);
+    checkLogic.shadow_hovers = shadow_temple_adult_access && (hover_boots || hookshot);
+    checkLogic.shadow_compass = can_cross_shadow_gap;
+    checkLogic.shadow_earlySilvers = can_cross_shadow_gap;
+    checkLogic.shadow_spinning1 = can_bomb_shadow_wall;
+    checkLogic.shadow_spinning2 = can_bomb_shadow_wall;
+    checkLogic.shadow_spikesLower = can_bomb_shadow_wall;
+    checkLogic.shadow_spikesUpper = can_bomb_shadow_wall && goron_bracelet;
+    checkLogic.shadow_spikesSwitch = can_bomb_shadow_wall && goron_bracelet;
+    checkLogic.shadow_redeadSilvers = can_bomb_shadow_wall && shadow_keys >= 2;
+    checkLogic.shadow_pot = can_bomb_shadow_wall && hookshot && shadow_keys >= 2;
+    checkLogic.shadow_wind = can_pass_shadow_hookshot_door && shadow_keys >= 3;
+    checkLogic.shadow_bombable = can_pass_shadow_hookshot_door && shadow_keys >= 3;
+    checkLogic.shadow_gibdos = can_pass_shadow_hookshot_door && shadow_keys >= 3;
+    checkLogic.shadow_dins1 = can_ride_shadow_boat && shadow_keys >= 4 && can_use_dins;
+    checkLogic.shadow_dins2 = can_ride_shadow_boat && shadow_keys >= 4 && can_use_dins;
+    checkLogic.shadow_floormaster = can_ride_shadow_boat && shadow_keys >= 4;
+    checkLogic.shadow_bongo = can_beat_shadow_boss && shadow_keys >= 5;
+    checkLogic.ganons_lightTrial1 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial2 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial3 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial4 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial5 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial6 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrial7 = can_enter_ganons && golden_gauntlets;
+    checkLogic.ganons_lightTrialLullaby = can_enter_ganons && golden_gauntlets && lullaby && ganons_keys >= 1;
+    checkLogic.ganons_spiritTrial1 = can_enter_ganons && hookshot;
+    checkLogic.ganons_spiritTrial2 = can_enter_ganons && hookshot && bomb_bag;
+    checkLogic.ganons_forestTrial = can_enter_ganons;
+    checkLogic.ganons_waterTrial1 = can_enter_ganons;
+    checkLogic.ganons_waterTrial2 = can_enter_ganons;
+    checkLogic.ganons_shadowTrial1 = can_enter_ganons && ((bow && fire_arrows && magic) || hookshot || hover_boots || time);
+    checkLogic.ganons_shadowTrial2 = can_enter_ganons && ((bow && fire_arrows && magic) || (longshot && (hover_boots || can_use_dins)));
+    checkLogic.ganons_bossKey = can_enter_ganons;
+    checkLogic.gtg_lobbyLeft = gtg_access && ((bow && gtg_adult_access) || (slingshot && gtg_child_access));
+    checkLogic.gtg_lobbyRight = gtg_access && ((bow && gtg_adult_access) || (slingshot && gtg_child_access));
+    checkLogic.gtg_stalfos = gtg_access;
+    checkLogic.gtg_wolfos = gtg_adult_access && hookshot;
+    checkLogic.gtg_silvers1 = gtg_adult_access && hookshot && silver_gauntlets;
+    checkLogic.gtg_silvers2 = gtg_adult_access && hookshot && silver_gauntlets;
+    checkLogic.gtg_silvers3 = gtg_adult_access && hookshot && silver_gauntlets;
+    checkLogic.gtg_silvers4 = gtg_adult_access && hookshot && silver_gauntlets;
+    checkLogic.gtg_eyes = gtg_adult_access && hookshot && bow;
+    checkLogic.gtg_aboveEyes = gtg_adult_access && hookshot && bow;
+    checkLogic.gtg_keese = gtg_adult_access && hookshot;
+    checkLogic.gtg_flamesChest = gtg_adult_access && hookshot && hammer;
+    checkLogic.gtg_freestanding = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
+    checkLogic.gtg_right2 = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
+    checkLogic.gtg_right3 = gtg_access && (gtg_keys >= 9 || (bomb_bag && (time || gtg_child_access)) || (hookshot && time));
+    checkLogic.gtg_beamos = gtg_access && bomb_bag;
+    checkLogic.gtg_left1 = gtg_access && gtg_keys >= 3;
+    checkLogic.gtg_left2 = gtg_access && gtg_keys >= 4;
+    checkLogic.gtg_left3 = gtg_access && gtg_keys >= 6;
+    checkLogic.gtg_left4 = gtg_access && gtg_keys >= 7;
+    checkLogic.gtg_final = gtg_access && gtg_keys >= 9;
+    checkLogic.gtg_toilet = gtg_adult_access && iron_boots && time && hookshot;
+    checkLogic.well_fakeRight = botw_child_access;
+    checkLogic.well_centerSmall = botw_child_access;
+    checkLogic.well_backBombable = botw_child_access && bomb_bag;
+    checkLogic.well_waterLeft = botw_child_access && lullaby;
+    checkLogic.well_coffin = botw_child_access;
+    checkLogic.well_centerBig = botw_child_access;
+    checkLogic.well_fakeLeft = botw_child_access;
+    checkLogic.well_frontBombable = botw_child_access && bomb_bag;
+    checkLogic.well_waterFront = botw_child_access && lullaby;
+    checkLogic.well_deadHand = botw_child_access && lullaby;
+    checkLogic.well_invisible = botw_child_access && lullaby;
+    checkLogic.well_locked1 = botw_child_access && well_keys >= 3;
+    checkLogic.well_locked2 = botw_child_access && well_keys >= 3;
+    checkLogic.well_basement = botw_child_access && (bomb_bag || ((well_keys >= 3 || can_use_dins) && goron_bracelet));
+    checkLogic.lullabyCheck = true;
+    checkLogic.eponasCheck = true;
+    checkLogic.sariasCheck = true;
+    checkLogic.stormsCheck = true;
+    checkLogic.sunsCheck = lullaby;
+    checkLogic.boleroCheck = can_enter_fire_temple_entrance;
+    checkLogic.minuetCheck = can_pass_mido_as_adult;
+    checkLogic.requiemCheck = can_enter_colossus;
+    checkLogic.serenadeCheck = ice_access && (bottle || can_shoot_blue_fire_arrows) && (ice_adult_access || giants_wallet);
+    checkLogic.preludeCheck = forest_medallion;
+    checkLogic.nocturneCheck = forest_medallion && fire_medallion && water_medallion;
+    checkLogic.oot = kokiri_emerald && goron_ruby && zora_sapphire;
+    checkLogic.scrub_dodongos_1 = can_break_dodongos_wall;
+    checkLogic.scrub_dodongos_2 = can_break_dodongos_wall;
+    checkLogic.scrub_dodongos_3 = can_break_dodongos_wall && bomb_bag;
+    checkLogic.scrub_dodongos_4 = can_break_dodongos_wall && bomb_bag;
+    checkLogic.scrub_jabu = can_hit_jabu_switch;
+    checkLogic.scrub_ganons_1 = can_enter_ganons;
+    checkLogic.scrub_ganons_2 = can_enter_ganons;
+    checkLogic.scrub_ganons_3 = can_enter_ganons;
+    checkLogic.scrub_ganons_4 = can_enter_ganons;
+    checkLogic.scrub_river_1 = storms;
+    checkLogic.scrub_river_2 = storms;
+    checkLogic.scrub_sfm_1 = storms;
+    checkLogic.scrub_sfm_2 = storms;
+    checkLogic.scrub_lake_1 = true;
+    checkLogic.scrub_lake_2 = true;
+    checkLogic.scrub_lake_3 = true;
+    checkLogic.scrub_lw_1 = true;
+    checkLogic.scrub_lw_2 = true;
+    checkLogic.scrub_lw_3 = can_blast_or_smash;
+    checkLogic.scrub_colossus_1 = silver_gauntlets && can_enter_colossus;
+    checkLogic.scrub_colossus_2 = silver_gauntlets && can_enter_colossus;
+    checkLogic.scrub_crater_1 = hammer && crater_by_city;
+    checkLogic.scrub_crater_2 = hammer && crater_by_city;
+    checkLogic.scrub_crater_3 = hammer && crater_by_city;
+    checkLogic.scrub_crater_child = bomb_bag || Spawn.child_upper_dmc || Spawn.child_lower_dmc || Spawn.child_lower_dmc_fairy || Spawn.child_dmt_fairy || Spawn.child_dmt_fairy_ool || hammer;
+    checkLogic.scrub_goron_1 = time || (can_wear_goron_tunic && hookshot);
+    checkLogic.scrub_goron_2 = time || (can_wear_goron_tunic && hookshot);
+    checkLogic.scrub_goron_3 = time || (can_wear_goron_tunic && hookshot);
+    checkLogic.scrub_ranch_1 = true;
+    checkLogic.scrub_ranch_2 = true;
+    checkLogic.scrub_ranch_3 = true;
+    checkLogic.scrub_gv_1 = fortress_access && storms;
+    checkLogic.scrub_gv_2 = fortress_access && storms;
+    checkLogic.shop_kokiri_TL = logic[shopLogic.shop_kokiri_TL];
+    checkLogic.shop_kokiri_TR = logic[shopLogic.shop_kokiri_TR];
+    checkLogic.shop_kokiri_BR = logic[shopLogic.shop_kokiri_BR];
+    checkLogic.shop_kokiri_BL = logic[shopLogic.shop_kokiri_BL];
+    checkLogic.shop_market_bazaar_TL = logic[shopLogic.shop_market_bazaar_TL];
+    checkLogic.shop_market_bazaar_TR = logic[shopLogic.shop_market_bazaar_TR];
+    checkLogic.shop_market_bazaar_BR = logic[shopLogic.shop_market_bazaar_BR];
+    checkLogic.shop_market_bazaar_BL = logic[shopLogic.shop_market_bazaar_BL];
+    checkLogic.shop_market_potion_TL = logic[shopLogic.shop_market_potion_TL];
+    checkLogic.shop_market_potion_TR = logic[shopLogic.shop_market_potion_TR];
+    checkLogic.shop_market_potion_BR = logic[shopLogic.shop_market_potion_BR];
+    checkLogic.shop_market_potion_BL = logic[shopLogic.shop_market_potion_BL];
+    checkLogic.shop_market_chu_TL = logic[shopLogic.shop_market_chu_TL];
+    checkLogic.shop_market_chu_TR = logic[shopLogic.shop_market_chu_TR];
+    checkLogic.shop_market_chu_BR = logic[shopLogic.shop_market_chu_BR];
+    checkLogic.shop_market_chu_BL = logic[shopLogic.shop_market_chu_BL];
+    checkLogic.shop_kakariko_bazaar_TL = logic[shopLogic.shop_kakariko_bazaar_TL];
+    checkLogic.shop_kakariko_bazaar_TR = logic[shopLogic.shop_kakariko_bazaar_TR];
+    checkLogic.shop_kakariko_bazaar_BR = logic[shopLogic.shop_kakariko_bazaar_BR];
+    checkLogic.shop_kakariko_bazaar_BL = logic[shopLogic.shop_kakariko_bazaar_BL];
+    checkLogic.shop_kakariko_potion_TL = logic[shopLogic.shop_kakariko_potion_TL];
+    checkLogic.shop_kakariko_potion_TR = logic[shopLogic.shop_kakariko_potion_TR];
+    checkLogic.shop_kakariko_potion_BR = logic[shopLogic.shop_kakariko_potion_BR];
+    checkLogic.shop_kakariko_potion_BL = logic[shopLogic.shop_kakariko_potion_BL];
+    checkLogic.shop_goron_TL = logic[shopLogic.shop_goron_TL] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
+    checkLogic.shop_goron_TR = logic[shopLogic.shop_goron_TR] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
+    checkLogic.shop_goron_BR = logic[shopLogic.shop_goron_BR] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
+    checkLogic.shop_goron_BL = logic[shopLogic.shop_goron_BL] && (lullaby || can_stop_link_the_goron || bomb_bag || can_use_dins);
+    checkLogic.shop_domain_TL = logic[shopLogic.shop_domain_TL] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
+    checkLogic.shop_domain_TR = logic[shopLogic.shop_domain_TR] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
+    checkLogic.shop_domain_BR = logic[shopLogic.shop_domain_BR] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
+    checkLogic.shop_domain_BL = logic[shopLogic.shop_domain_BL] && ((bomb_bag && lullaby) || silver_scale || (lullaby && ((can_enter_ganons && bottle) || jabu_entrance_access || (giants_wallet && bottle))));
+    checkLogic.cow_kokiri = eponas;
+    checkLogic.cow_ranch1 = eponas;
+    checkLogic.cow_ranch2 = eponas;
+    checkLogic.cow_ranch3 = eponas;
+    checkLogic.cow_ranch4 = eponas;
+    checkLogic.cow_field = eponas && ((hammer && can_use_fire) || (bomb_bag && can_use_dins));
+    checkLogic.cow_valley = eponas;
+    checkLogic.cow_trail = eponas && can_blast_or_smash;
+    checkLogic.cow_kakariko = eponas;
 
-    locationLogic.gs_kokiri_child = true;
-    locationLogic.gs_kokiri_soil = bottle;
-    locationLogic.gs_kokiri_adult = hookshot;
-    locationLogic.gs_market = true;
-    locationLogic.gs_lost_woods_bean_1 = bottle;
-    locationLogic.gs_lost_woods_bean_2 = bottle;
-    locationLogic.gs_lost_woods_above_stage = bean_access && can_pass_mido_as_adult;
-    locationLogic.gs_sacred_forest = hookshot && can_pass_mido_as_adult;
-    locationLogic.gs_outside_kakariko = (boomerang && bomb_bag) || (can_blast_or_smash && hookshot);
-    locationLogic.gs_near_gerudo = (hammer && can_use_fire && hookshot) || (can_use_dins && bomb_bag && boomerang);
-    locationLogic.gs_hyrule_castle_tree = true;
-    locationLogic.gs_hyrule_castle_grotto = storms && bomb_bag && boomerang;
-    locationLogic.gs_lon_lon_tree = true;
-    locationLogic.gs_lon_lon_shed = true;
-    locationLogic.gs_lon_lon_window = boomerang;
-    locationLogic.gs_lon_lon_back_wall = boomerang;
-    locationLogic.gs_kakariko_construction = true;
-    locationLogic.gs_kakariko_skulltula_house = true;
-    locationLogic.gs_kakariko_guard_house = true;
-    locationLogic.gs_kakariko_tree = true;
-    locationLogic.gs_kakariko_tower = bomb_bag || slingshot;
-    locationLogic.gs_kakariko_impas = hookshot || Spawn.adult_kak_roof;
-    locationLogic.gs_graveyard_wall = boomerang;
-    locationLogic.gs_graveyard_soil = bottle;
-    locationLogic.gs_trail_soil = bottle && (bomb_bag || goron_bracelet);
-    locationLogic.gs_trail_bombable_wall = can_blast_or_smash;
-    locationLogic.gs_trail_hail_path = hammer;
-    locationLogic.gs_trail_above_dodongos = hammer;
-    locationLogic.gs_goron_center = true;
-    locationLogic.gs_goron_maze = bomb_bag;
-    locationLogic.gs_crater_crate = can_blast_or_smash || Spawn.child_upper_dmc;
-    locationLogic.gs_crater_soil = bottle && bolero;
-    locationLogic.gs_river_ladder = child_can_enter_river;
-    locationLogic.gs_river_near_grotto = hookshot;
-    locationLogic.gs_river_above_bridge = hookshot;
-    locationLogic.gs_river_tree = true;
-    locationLogic.gs_domain = (lullaby || Spawn.adult_zd) && (hookshot || magic || bow);
-    locationLogic.gs_fountain_above_log = jabu_entrance_access && boomerang;
-    locationLogic.gs_fountain_tree = jabu_entrance_access;
-    locationLogic.gs_fountain_hidden_cave = ice_entrance_access && silver_gauntlets && hookshot && can_blast_or_smash;
-    locationLogic.gs_hylia_bean = bottle;
-    locationLogic.gs_hylia_lab_wall = boomerang;
-    locationLogic.gs_hylia_island = true;
-    locationLogic.gs_hylia_tree = longshot;
-    locationLogic.gs_hylia_lab_crate = iron_boots && hookshot;
-    locationLogic.gs_valley_small_bridge = boomerang;
-    locationLogic.gs_valley_bean = bottle;
-    locationLogic.gs_valley_tent = fortress_access && hookshot;
-    locationLogic.gs_valley_pillar = fortress_access && hookshot;
-    locationLogic.gs_fortress_archery = fortress_access && hookshot;
-    locationLogic.gs_fortress_top = fortress_access;
-    locationLogic.gs_wasteland = hookshot && can_cross_quicksand;
-    locationLogic.gs_colossus_soil = bottle && requiem;
-    locationLogic.gs_colossus_tree = hookshot && can_enter_colossus;
-    locationLogic.gs_colossus_hill = (requiem && bean_access) || (longshot && can_enter_colossus);
-    locationLogic.gs_ogc = true;
-    locationLogic.gs_deku_basement_back = deku_access && boomerang && bomb_bag && slingshot;
-    locationLogic.gs_deku_basement_gate = deku_access;
-    locationLogic.gs_deku_basement_vines = deku_access && (slingshot || boomerang || bomb_bag || can_use_dins);
-    locationLogic.gs_deku_compass = deku_access;
-    locationLogic.gs_dodongos_east_side = can_break_dodongos_wall;
-    locationLogic.gs_dodongos_stair_vines = dodongos_climb;
-    locationLogic.gs_dodongos_above_stairs = (dodongos_climb && hookshot) || (boomerang && (bomb_bag || goron_bracelet));
-    locationLogic.gs_dodongos_scarecrow = can_break_dodongos_wall && hookshot;
-    locationLogic.gs_dodongos_before_king = bomb_bag;
-    locationLogic.gs_jabu_vines = can_hit_jabu_switch;
-    locationLogic.gs_jabu_near_octo_1 = can_hit_jabu_switch && boomerang;
-    locationLogic.gs_jabu_near_octo_2 = can_hit_jabu_switch && boomerang;
-    locationLogic.gs_jabu_near_boss = can_hit_jabu_switch && boomerang;
-    locationLogic.gs_forest_first = forest_temple_adult_access && hookshot;
-    locationLogic.gs_forest_lobby = forest_temple_adult_access && hookshot;
-    locationLogic.gs_forest_outdoor_east = forest_temple_adult_access && hookshot && ((bow || time) || (forest_keys >= 1 && hover_boots));
-    locationLogic.gs_forest_outdoor_west = forest_temple_adult_access && hookshot && (((bow || time) && longshot) || (forest_keys >= 1 && hover_boots) || (forest_keys >= 2 && goron_bracelet && bow))
-    locationLogic.gs_forest_basement = forest_temple_adult_access && hookshot && bow && goron_bracelet && forest_keys >= 5;
-    locationLogic.gs_fire_time = fire_temple_adult_access && fire_keys >= 1 && time;
-    locationLogic.gs_fire_bomb_wall = can_climb_fire_temple && goron_bracelet && bomb_bag;
-    locationLogic.gs_fire_scarecrow_1 = can_climb_fire_temple && goron_bracelet && fire_keys >= 5 && hookshot;
-    locationLogic.gs_fire_scarecrow_2 = can_climb_fire_temple && goron_bracelet && fire_keys >= 5 && hookshot;
-    locationLogic.gs_fire_basement = fire_temple_adult_access && hammer;
-    locationLogic.gs_water_south_basement = can_do_water_checks && bomb_bag && lullaby && hookshot;
-    locationLogic.gs_water_river = can_do_water_checks && time && water_keys >= 5 && hookshot;
-    locationLogic.gs_water_central = middle_water && longshot;
-    locationLogic.gs_water_near_boss_key = can_do_water_checks && longshot && lullaby && water_keys >= 4;
-    locationLogic.gs_water_platform_room = can_do_water_checks && longshot && lullaby && water_keys >= 4;
-    locationLogic.gs_spirit_metal_fence = spirit_temple_child_access && (boomerang || slingshot);
-    locationLogic.gs_spirit_before_child_knuckle = spirit_temple_access && (bomb_bag && boomerang && hookshot && spirit_keys >= 1) || (boomerang && spirit_keys >= 5 && bomb_bag && spirit_temple_child_access) || (hookshot && silver_gauntlets && spirit_keys >= 3);
-    locationLogic.gs_spirit_boulder_room = can_push_spirit_silver_block && time && (bow || hookshot || bomb_bag);
-    locationLogic.gs_spirit_lobby = can_push_spirit_silver_block && spirit_keys >= 3 && (hookshot || hover_boots);
-    locationLogic.gs_spirit_child_climb = spirit_temple_access && spirit_keys >= 1;
-    locationLogic.gs_shadow_like_like = can_bomb_shadow_wall;
-    locationLogic.gs_shadow_crusher = can_bomb_shadow_wall && hookshot;
-    locationLogic.gs_shadow_giant_pot = can_bomb_shadow_wall && shadow_keys >= 2 && hookshot;
-    locationLogic.gs_shadow_near_boat = can_pass_shadow_hookshot_door && longshot && shadow_keys >= 4;
-    locationLogic.gs_shadow_three_pots = can_ride_shadow_boat;
-    locationLogic.gs_well_west_inner = boomerang && well_keys >= 3;
-    locationLogic.gs_well_east_inner = boomerang && well_keys >= 3;
-    locationLogic.gs_well_like_like = boomerang && well_keys >= 3;
-    locationLogic.gs_ice_spinning_scythe = ice_access && hookshot;
-    locationLogic.gs_ice_hp_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
-    locationLogic.gs_ice_block_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
+    checkLogic.gs_kokiri_child = true;
+    checkLogic.gs_kokiri_soil = bottle;
+    checkLogic.gs_kokiri_adult = hookshot;
+    checkLogic.gs_market = true;
+    checkLogic.gs_lost_woods_bean_1 = bottle;
+    checkLogic.gs_lost_woods_bean_2 = bottle;
+    checkLogic.gs_lost_woods_above_stage = bean_access && can_pass_mido_as_adult;
+    checkLogic.gs_sacred_forest = hookshot && can_pass_mido_as_adult;
+    checkLogic.gs_outside_kakariko = (boomerang && bomb_bag) || (can_blast_or_smash && hookshot);
+    checkLogic.gs_near_gerudo = (hammer && can_use_fire && hookshot) || (can_use_dins && bomb_bag && boomerang);
+    checkLogic.gs_hyrule_castle_tree = true;
+    checkLogic.gs_hyrule_castle_grotto = storms && bomb_bag && boomerang;
+    checkLogic.gs_lon_lon_tree = true;
+    checkLogic.gs_lon_lon_shed = true;
+    checkLogic.gs_lon_lon_window = boomerang;
+    checkLogic.gs_lon_lon_back_wall = boomerang;
+    checkLogic.gs_kakariko_construction = true;
+    checkLogic.gs_kakariko_skulltula_house = true;
+    checkLogic.gs_kakariko_guard_house = true;
+    checkLogic.gs_kakariko_tree = true;
+    checkLogic.gs_kakariko_tower = bomb_bag || slingshot;
+    checkLogic.gs_kakariko_impas = hookshot || Spawn.adult_kak_roof;
+    checkLogic.gs_graveyard_wall = boomerang;
+    checkLogic.gs_graveyard_soil = bottle;
+    checkLogic.gs_trail_soil = bottle && (bomb_bag || goron_bracelet);
+    checkLogic.gs_trail_bombable_wall = can_blast_or_smash;
+    checkLogic.gs_trail_hail_path = hammer;
+    checkLogic.gs_trail_above_dodongos = hammer;
+    checkLogic.gs_goron_center = true;
+    checkLogic.gs_goron_maze = bomb_bag;
+    checkLogic.gs_crater_crate = can_blast_or_smash || Spawn.child_upper_dmc;
+    checkLogic.gs_crater_soil = bottle && bolero;
+    checkLogic.gs_river_ladder = child_can_enter_river;
+    checkLogic.gs_river_near_grotto = hookshot;
+    checkLogic.gs_river_above_bridge = hookshot;
+    checkLogic.gs_river_tree = true;
+    checkLogic.gs_domain = (lullaby || Spawn.adult_zd) && (hookshot || magic || bow);
+    checkLogic.gs_fountain_above_log = jabu_entrance_access && boomerang;
+    checkLogic.gs_fountain_tree = jabu_entrance_access;
+    checkLogic.gs_fountain_hidden_cave = ice_entrance_access && silver_gauntlets && hookshot && can_blast_or_smash;
+    checkLogic.gs_hylia_bean = bottle;
+    checkLogic.gs_hylia_lab_wall = boomerang;
+    checkLogic.gs_hylia_island = true;
+    checkLogic.gs_hylia_tree = longshot;
+    checkLogic.gs_hylia_lab_crate = iron_boots && hookshot;
+    checkLogic.gs_valley_small_bridge = boomerang;
+    checkLogic.gs_valley_bean = bottle;
+    checkLogic.gs_valley_tent = fortress_access && hookshot;
+    checkLogic.gs_valley_pillar = fortress_access && hookshot;
+    checkLogic.gs_fortress_archery = fortress_access && hookshot;
+    checkLogic.gs_fortress_top = fortress_access;
+    checkLogic.gs_wasteland = hookshot && can_cross_quicksand;
+    checkLogic.gs_colossus_soil = bottle && requiem;
+    checkLogic.gs_colossus_tree = hookshot && can_enter_colossus;
+    checkLogic.gs_colossus_hill = (requiem && bean_access) || (longshot && can_enter_colossus);
+    checkLogic.gs_ogc = true;
+    checkLogic.gs_deku_basement_back = deku_access && boomerang && bomb_bag && slingshot;
+    checkLogic.gs_deku_basement_gate = deku_access;
+    checkLogic.gs_deku_basement_vines = deku_access && (slingshot || boomerang || bomb_bag || can_use_dins);
+    checkLogic.gs_deku_compass = deku_access;
+    checkLogic.gs_dodongos_east_side = can_break_dodongos_wall;
+    checkLogic.gs_dodongos_stair_vines = dodongos_climb;
+    checkLogic.gs_dodongos_above_stairs = (dodongos_climb && hookshot) || (boomerang && (bomb_bag || goron_bracelet));
+    checkLogic.gs_dodongos_scarecrow = can_break_dodongos_wall && hookshot;
+    checkLogic.gs_dodongos_before_king = bomb_bag;
+    checkLogic.gs_jabu_vines = can_hit_jabu_switch;
+    checkLogic.gs_jabu_near_octo_1 = can_hit_jabu_switch && boomerang;
+    checkLogic.gs_jabu_near_octo_2 = can_hit_jabu_switch && boomerang;
+    checkLogic.gs_jabu_near_boss = can_hit_jabu_switch && boomerang;
+    checkLogic.gs_forest_first = forest_temple_adult_access && hookshot;
+    checkLogic.gs_forest_lobby = forest_temple_adult_access && hookshot;
+    checkLogic.gs_forest_outdoor_east = forest_temple_adult_access && hookshot && ((bow || time) || (forest_keys >= 1 && hover_boots));
+    checkLogic.gs_forest_outdoor_west = forest_temple_adult_access && hookshot && (((bow || time) && longshot) || (forest_keys >= 1 && hover_boots) || (forest_keys >= 2 && goron_bracelet && bow))
+    checkLogic.gs_forest_basement = forest_temple_adult_access && hookshot && bow && goron_bracelet && forest_keys >= 5;
+    checkLogic.gs_fire_time = fire_temple_adult_access && fire_keys >= 1 && time;
+    checkLogic.gs_fire_bomb_wall = can_climb_fire_temple && goron_bracelet && bomb_bag;
+    checkLogic.gs_fire_scarecrow_1 = can_climb_fire_temple && goron_bracelet && fire_keys >= 5 && hookshot;
+    checkLogic.gs_fire_scarecrow_2 = can_climb_fire_temple && goron_bracelet && fire_keys >= 5 && hookshot;
+    checkLogic.gs_fire_basement = fire_temple_adult_access && hammer;
+    checkLogic.gs_water_south_basement = can_do_water_checks && bomb_bag && lullaby && hookshot;
+    checkLogic.gs_water_river = can_do_water_checks && time && water_keys >= 5 && hookshot;
+    checkLogic.gs_water_central = middle_water && longshot;
+    checkLogic.gs_water_near_boss_key = can_do_water_checks && longshot && lullaby && water_keys >= 4;
+    checkLogic.gs_water_platform_room = can_do_water_checks && longshot && lullaby && water_keys >= 4;
+    checkLogic.gs_spirit_metal_fence = spirit_temple_child_access && (boomerang || slingshot);
+    checkLogic.gs_spirit_before_child_knuckle = spirit_temple_access && (bomb_bag && boomerang && hookshot && spirit_keys >= 1) || (boomerang && spirit_keys >= 5 && bomb_bag && spirit_temple_child_access) || (hookshot && silver_gauntlets && spirit_keys >= 3);
+    checkLogic.gs_spirit_boulder_room = can_push_spirit_silver_block && time && (bow || hookshot || bomb_bag);
+    checkLogic.gs_spirit_lobby = can_push_spirit_silver_block && spirit_keys >= 3 && (hookshot || hover_boots);
+    checkLogic.gs_spirit_child_climb = spirit_temple_access && spirit_keys >= 1;
+    checkLogic.gs_shadow_like_like = can_bomb_shadow_wall;
+    checkLogic.gs_shadow_crusher = can_bomb_shadow_wall && hookshot;
+    checkLogic.gs_shadow_giant_pot = can_bomb_shadow_wall && shadow_keys >= 2 && hookshot;
+    checkLogic.gs_shadow_near_boat = can_pass_shadow_hookshot_door && longshot && shadow_keys >= 4;
+    checkLogic.gs_shadow_three_pots = can_ride_shadow_boat;
+    checkLogic.gs_well_west_inner = boomerang && well_keys >= 3;
+    checkLogic.gs_well_east_inner = boomerang && well_keys >= 3;
+    checkLogic.gs_well_like_like = boomerang && well_keys >= 3;
+    checkLogic.gs_ice_spinning_scythe = ice_access && hookshot;
+    checkLogic.gs_ice_hp_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
+    checkLogic.gs_ice_block_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
   }
   for (let i = 0, Access = locationAccess, Has = player; i < 2; i++) {
     Access.kokiri_sword = true;

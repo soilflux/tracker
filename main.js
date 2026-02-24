@@ -46,7 +46,7 @@ function midUpdate() {
   while (i < 100000) {
     refreshLogicForStuff();
     logicShortcuts();
-    updateLocationLogic();
+    updateCheckLogic();
     updateDungeonER();
     gsArrayBuilder();
     if (i >= 1 && player.logically_accessible > previousInLogicChecks || logic.gold_skulltulas > previousInLogicSkulls) {
