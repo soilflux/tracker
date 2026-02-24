@@ -540,11 +540,14 @@ body {
   align-items: flex-start;  /* Aligns columns to the top */
   gap: 5px;   
 }
-#undecided-column {
-  margin-top:20px;
+#unstreamed-row {
+  float:bottom;
   display: flex;            /* Enables side-by-side layout */
   flex-direction: row;      /* Ensures they go horizontally */
-  align-items: flex-start;  /* Aligns columns to the top */
+  align-items: flex-end;  /* Aligns columns to the top */
+  position: absolute;
+  bottom:5px;
+  left:600px;
   gap: 5px;   
 }
 .three-dungeons {
