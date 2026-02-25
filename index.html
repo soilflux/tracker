@@ -97,7 +97,8 @@
           <div id = "barren_hints_div">
             <input spellcheck="false" id = "barren_input1" class = "barren_input"></input><input spellcheck="false" id = "barren_input2" class = "barren_input"></input><input spellcheck="false" id = "barren_input3" class = "barren_input"></input><input spellcheck="false" id = "barren_input4" class = "barren_input"></input><input spellcheck="false" id = "barren_input5" class = "barren_input"></input>
           </div>
-          <div id = "path_hints_div"><div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "woth_input"><br><text id="path_arrow1" class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class = "woth_input"></div><div><input spellcheck="false" id="woth_input2" class = "woth_input"><br><text id="path_arrow2"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class = "woth_input"></div><div><input spellcheck="false" id="woth_input3" class = "woth_input"><br><text id="path_arrow3"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class = "woth_input"></div><div><input spellcheck="false" id="woth_input4" class = "woth_input"><br><text id="path_arrow4"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class = "woth_input"></div><div><input spellcheck="false" id="woth_input5" class = "woth_input"><br><text id="path_arrow5"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class = "woth_input"></div><div><input spellcheck="false" id="woth_input6" class = "woth_input"><text id="path_arrow6"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class = "woth_input"></div><div><input spellcheck="false" id="woth_input7" class = "woth_input"><br><text id="path_arrow7"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss7" class = "woth_input"></div><div><input spellcheck="false" id="woth_input8" class = "woth_input"><br><text id="path_arrow8"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss8" class = "woth_input"></div><br></div>
+          <div id = "path_hints_div">
+            <div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "woth_input"><br><text id="path_arrow1" class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class = "woth_input"></div><div><input spellcheck="false" id="woth_input2" class = "woth_input"><br><text id="path_arrow2"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class = "woth_input"></div><div><input spellcheck="false" id="woth_input3" class = "woth_input"><br><text id="path_arrow3"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class = "woth_input"></div><div><input spellcheck="false" id="woth_input4" class = "woth_input"><br><text id="path_arrow4"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class = "woth_input"></div><div><input spellcheck="false" id="woth_input5" class = "woth_input"><br><text id="path_arrow5"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class = "woth_input"></div><div><input spellcheck="false" id="woth_input6" class = "woth_input"><text id="path_arrow6"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class = "woth_input"></div><div><input spellcheck="false" id="woth_input7" class = "woth_input"><br><text id="path_arrow7"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss7" class = "woth_input"></div><div><input spellcheck="false" id="woth_input8" class = "woth_input"><br><text id="path_arrow8"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss8" class = "woth_input"></div><br></div>
           </div>
             <div id = "scrollable_section">
              <div id = "soli_woth_info">
@@ -113,75 +114,14 @@
               </div>
             </div>
           </div>
-          <div id="dungeons_summary">
-          </div>
+          <div id="dungeons_summary"></div>
+          <img src = "./normal/frogsong.png" id="frogSongHelper"></img>
           <div id = "dungspawnInputs">
             <br><br><br /><br /><br><img src = "./normal/triforce.png" id = "triforcePic" class = "medallions"></img><input id = "pieceDungeons" class="layout_input"></input>
           </div>
         </div>  
         <div id="linsoColumn"><img id ="linso_background" src="./images/background.png"></div>
-        <div id="checkSummaryColumn1" class="checkSummaryColumn">
-          <small id="bomb_bag1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bomb Bag &#8594; </small><br />
-          <small id="bomb_bag2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bomb Bag &#8594; </small><br />
-          <small id="bomb_bag3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bomb Bag &#8594; </small><br />
-          <small id="bombchus1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bombchus &#8594; </small><br />
-          <small id="bombchus2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bombchus &#8594; </small><br />
-          <small id="bombchus3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bombchus &#8594; </small><br />
-          <small id="bombchus4_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bombchus &#8594; </small><br />
-          <small id="bombchus5_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bombchus &#8594; </small><br />
-          <small id="boomerang_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Boomerang &#8594; </small><br />
-          <small id="bottle1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
-          <small id="bottle2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
-          <small id="bottle3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br />
-          <div id="bottle4_location_div"><small id="bottle4_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bottle &#8594; </small><br></div>
-          <small id="bow1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
-          <small id="bow2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
-          <small id="bow3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Bow &#8594; </small><br />
-          <small id="dins_fire_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Dins Fire &#8594; </small><br />
-          <small id="farores_wind_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Farores &#8594; </small><br />
-          <small id="fire_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Fire Arrows &#8594; </small><br />
-          <div id="gerudo_card_location_div"><small id="gerudo_card_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Gerudo Card &#8594; </small><br></div>
-          <small id="goron_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Goron Tunic &#8594; </small><br />
-          <small id="hammer_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hammer &#8594; </small><br />
-          <small id="hookshot1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hookshot &#8594; </small><br />
-          <small id="hookshot2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hookshot &#8594; </small><br />
-          <small id="hover_boots_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Hover Boots &#8594; </small><br />
-          <div id="ice_arrows_location_div"><small id="ice_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Ice Arrows &#8594; </small><br /></div>
-          <small id="iron_boots_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Iron Boots &#8594; </small><br />
-          <div id="forest_key_ring_location_div"><small id="forest_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Forest Key Ring &#8594; </small><br></div>
-          <div id="fire_key_ring_location_div"><small id="fire_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Fire Key Ring &#8594; </small><br></div>
-          <div id="water_key_ring_location_div"><small id="water_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Water Key Ring &#8594; </small><br></div>
-          <div id="spirit_key_ring_location_div"><small id="spirit_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Spirit Key Ring &#8594; </small></div>
-          <div id="checkSummaryColumn2">
-            <small id="kokiri_sword_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Kokiri Sword &#8594; </small><br />
-            <small id="lens_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Lens &#8594; </small><br />
-            <div id="rutos_letter_location_div"><small id="rutos_letter_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Letter &#8594; </small><br /></div>
-            <small id="light_arrows_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Light Arrows &#8594; </small><br />
-            <small id="magic1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
-            <small id="magic2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic &#8594; </small><br />
-            <div id="magic_bean_pack_location_div"><small id="magic_bean_pack_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Magic Bean Pack&#8594; </small><br></div>
-            <small id="mirror_shield_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Mirror Shield &#8594; </small><br />
-            <small id="scale1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Scale &#8594; </small><br />
-            <small id="scale2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Scale &#8594; </small><br />
-            <small id="slingshot1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Slingshot &#8594; </small><br />
-            <small id="slingshot2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Slingshot &#8594; </small><br />
-            <small id="slingshot3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Slingshot &#8594; </small><br />
-            <small id="strength1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Strength &#8594; </small><br />
-            <small id="strength2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Strength &#8594; </small><br />
-            <small id="strength3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Strength &#8594; </small><br />
-            <small id="trade_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Trade &#8594; </small><br />
-            <small id="wallet1_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet &#8594; </small><br />
-            <small id="wallet2_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet &#8594; </small><br />
-            <div id="wallet3_location_div"><small id="wallet3_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Wallet &#8594; </small><br></div>
-            <small id="zora_tunic_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Zora Tunic &#8594; </small><br />
-            <div id="shadow_key_ring_location_div"><small id="shadow_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Shadow Key Ring &#8594; </small><br></div>
-            <div id="well_key_ring_location_div"><small id="well_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Well Key Ring &#8594; </small><br></div>
-            <div id="gtg_key_ring_location_div"><small id="gtg_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">GTG Key Ring &#8594; </small><br></div>
-            <div id="ganons_key_ring_location_div"><small id="ganons_key_ring_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Ganons Key Ring &#8594; </small></div>
-            <div id="biggoron_sword_location_div"><small id="biggoron_sword_location" class="checkSummaryText" onmousedown = "toggleHint(this)">BGS &#8594; </small><br></div>
-            <div id="nayrus_love_location_div"><small id="nayrus_love_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Nayru's &#8594; </small><br></div>
-            <div id="stone_of_agony_location_div"><small id="stone_of_agony_location" class="checkSummaryText" onmousedown = "toggleHint(this)">Agony &#8594; </small></div>
-          </div>
+        <div id="checkSummaryColumn1" class="checkSummaryColumn"></div>
           <textarea spellcheck="false" rows="25" cols="80" id = "simLog" class = "simLog"></textarea><br>
           <button id = "simCheckAltar" onclick="simCheckAltar()" style = "display: none;">Check Altar</button>
           <button id = "simCheckChildSpawn" onclick="simCheckChildSpawn()" style = "display: none;">Check Child Spawn</button>
@@ -190,7 +130,7 @@
         </div>
         
         <div id="probabilityColumn">
-          <img src = "./normal/frogsong.png" id="frogSongHelper"></img>
+          
         </div>		 
         <small id = "timer"></small><br>
       </div>	

@@ -444,22 +444,12 @@ body {
   width: 20px;
 }
 
-#frogSongHelper {
-  width: 175px;
-  top: 81px;
-  position: absolute;
-}
-
 .checkSummaryColumn {
   margin-top: 10px;
   position: relative;
   float: left;
   height: 200px;
   width: 250px;
-}
-
-#checkSummaryColumn2 {
-  position: relative;
 }
 
 .checked_text_summary {

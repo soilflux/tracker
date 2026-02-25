@@ -1242,52 +1242,52 @@ function updateRules() {
   }
 
   if (rules.blueFireArrows == "off")
-    document.getElementById("ice_arrows_location_div").style.display = "none";
+    document.getElementById("ice_arrows_location").style.display = "none";
   else
-    document.getElementById("ice_arrows_location_div").style.display = "inline";
+    document.getElementById("ice_arrows_location").style.display = "inline";
 
   if (rules.fountain == "closed") {
-    document.getElementById("rutos_letter_location_div").style.display = "inline";
-    document.getElementById("bottle4_location_div").style.display = "none";
+    document.getElementById("rutos_letter_location").style.display = "inline";
+    document.getElementById("bottle4_location").style.display = "none";
   } else {
-    document.getElementById("rutos_letter_location_div").style.display = "none";
-    document.getElementById("bottle4_location_div").style.display = "inline";
+    document.getElementById("rutos_letter_location").style.display = "none";
+    document.getElementById("bottle4_location").style.display = "inline";
   }
 
   if (rules.shopSanity == "OFF")
-    document.getElementById("wallet3_location_div").style.display = "none";
+    document.getElementById("wallet3_location").style.display = "none";
   else
-    document.getElementById("wallet3_location_div").style.display = "inline";
+    document.getElementById("wallet3_location").style.display = "inline";
 
   if (rules.smallKeys == "keyRings") {
-    document.getElementById("forest_key_ring_location_div").style.display = "inline";
-    document.getElementById("fire_key_ring_location_div").style.display = "inline";
-    document.getElementById("water_key_ring_location_div").style.display = "inline";
-    document.getElementById("spirit_key_ring_location_div").style.display = "inline";
-    document.getElementById("shadow_key_ring_location_div").style.display = "inline";
-    document.getElementById("well_key_ring_location_div").style.display = "inline";
-    document.getElementById("gtg_key_ring_location_div").style.display = "inline";
-    document.getElementById("ganons_key_ring_location_div").style.display = "inline";
+    document.getElementById("forest_key_ring_location").style.display = "inline";
+    document.getElementById("fire_key_ring_location").style.display = "inline";
+    document.getElementById("water_key_ring_location").style.display = "inline";
+    document.getElementById("spirit_key_ring_location").style.display = "inline";
+    document.getElementById("shadow_key_ring_location").style.display = "inline";
+    document.getElementById("well_key_ring_location").style.display = "inline";
+    document.getElementById("gtg_key_ring_location").style.display = "inline";
+    document.getElementById("ganons_key_ring_location").style.display = "inline";
   } else {
-    document.getElementById("forest_key_ring_location_div").style.display = "none";
-    document.getElementById("fire_key_ring_location_div").style.display = "none";
-    document.getElementById("water_key_ring_location_div").style.display = "none";
-    document.getElementById("spirit_key_ring_location_div").style.display = "none";
-    document.getElementById("shadow_key_ring_location_div").style.display = "none";
-    document.getElementById("well_key_ring_location_div").style.display = "none";
-    document.getElementById("gtg_key_ring_location_div").style.display = "none";
-    document.getElementById("ganons_key_ring_location_div").style.display = "none";
+    document.getElementById("forest_key_ring_location").style.display = "none";
+    document.getElementById("fire_key_ring_location").style.display = "none";
+    document.getElementById("water_key_ring_location").style.display = "none";
+    document.getElementById("spirit_key_ring_location").style.display = "none";
+    document.getElementById("shadow_key_ring_location").style.display = "none";
+    document.getElementById("well_key_ring_location").style.display = "none";
+    document.getElementById("gtg_key_ring_location").style.display = "none";
+    document.getElementById("ganons_key_ring_location").style.display = "none";
   }
 
   if (rules.gerudoCard == "shuffled") {
-    document.getElementById("gerudo_card_location_div").style.display = "inline";
+    document.getElementById("gerudo_card_location").style.display = "inline";
   } else {
-    document.getElementById("gerudo_card_location_div").style.display = "none";
+    document.getElementById("gerudo_card_location").style.display = "none";
   }
   if (rules.beans == "shuffled") {
-    document.getElementById("magic_bean_pack_location_div").style.display = "inline";
+    document.getElementById("magic_bean_pack_location").style.display = "inline";
   } else {
-    document.getElementById("magic_bean_pack_location_div").style.display = "none";
+    document.getElementById("magic_bean_pack_location").style.display = "none";
   }
   if (rules.bossKeys == "remove") {
     player.forest_boss_key = true;
@@ -1317,9 +1317,9 @@ function updateLogicInfo() {
   document.getElementById("woth_input4").style.display = "inline";
   document.getElementById("woth_input5").style.display = "inline";
 
-  document.getElementById("biggoron_sword_location_div").style.display = "none";
-  document.getElementById("nayrus_love_location_div").style.display = "none";
-  document.getElementById("stone_of_agony_location_div").style.display = "none";
+  document.getElementById("biggoron_sword_location").style.display = "none";
+  document.getElementById("nayrus_love_location").style.display = "none";
+  document.getElementById("stone_of_agony_location").style.display = "none";
 
 
 
@@ -1664,7 +1664,6 @@ function searchingFor_tracking() {
 }
 
 function updateSummaryText() {
-  // Update checkToItemMap Summary ClassNames (only items, not songs)
 
   for (var i = 0; i <= 50; i++) {
     str = checkSummary[i] + "_location";
