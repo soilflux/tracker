@@ -78,9 +78,6 @@ function original() {
   }
 
   document.getElementById("chuButton").src = player.chu_img;
-  document.getElementById("gan_req2").src = player.light_arrows_img;
-  document.getElementById("gan_req1").src = player.magic_img;
-  document.getElementById("gan_req3").src = player.bow_img;
   document.getElementById("lullabyimg").src = player.lullaby_img;
   document.getElementById("eponasimg").src = player.eponas_img;
   document.getElementById("sariasimg").src = player.sarias_img;
@@ -261,9 +258,6 @@ function normal() {
   }
   document.getElementById("chuButton").src = player.chu_img;
   document.getElementById("chuButton").style.opacity = .4;
-  document.getElementById("gan_req2").src = player.light_arrows_img;
-  document.getElementById("gan_req1").src = player.magic_img;
-  document.getElementById("gan_req3").src = player.bow_img;
   document.getElementById("lullabyimg").src = player.lullaby_img;
   document.getElementById("eponasimg").src = player.eponas_img;
   document.getElementById("sariasimg").src = player.sarias_img;

@@ -529,7 +529,7 @@ body {
   align-items: flex-end;  /* Aligns columns to the top */
   position: absolute;
   bottom:5px;
-  left:600px;
+  left:590px;
   gap: 5px;   
 }
 .three-dungeons {

@@ -858,9 +858,8 @@ function areaBreaks() {
 function itemHighlights() {
   if (player.kokiri_sword) { if (document.getElementById(dekuPlacement + "_req1") != null) { document.getElementById(dekuPlacement + "_req1").style.opacity = 1; } }
   if (player.bomb_bag) { if (document.getElementById(dodongosPlacement + "_req1") != null) { document.getElementById(dodongosPlacement + "_req1").style.opacity = 1; } if (document.getElementById(shadowPlacement + "_req4") != null) { document.getElementById(shadowPlacement + "_req4").style.opacity = 1; } if (document.getElementById(spiritPlacement + "_req3") != null) { document.getElementById(spiritPlacement + "_req3").style.opacity = 1; } }
-  if (player.magic) { document.getElementById("gan_req1").style.opacity = 1; if (document.getElementById(shadowPlacement + "_req2") != null) { document.getElementById(shadowPlacement + "_req2").style.opacity = 1; } }
-  if (player.light_arrows) { document.getElementById("gan_req2").style.opacity = 1; }
-  if (player.bow) { document.getElementById("gan_req3").style.opacity = 1; if (document.getElementById(forestPlacement + "_req2") != null) { document.getElementById(forestPlacement + "_req2").style.opacity = 1; } }
+  if (player.magic) { if (document.getElementById(shadowPlacement + "_req2") != null) { document.getElementById(shadowPlacement + "_req2").style.opacity = 1; } }
+  if (player.bow) { if (document.getElementById(forestPlacement + "_req2") != null) { document.getElementById(forestPlacement + "_req2").style.opacity = 1; } }
   if (player.hookshot) { if (document.getElementById(forestPlacement + "_req1") != null) { document.getElementById(forestPlacement + "_req1").style.opacity = 1; } if (document.getElementById(shadowPlacement + "_req5") != null) { document.getElementById(shadowPlacement + "_req5").style.opacity = 1; } if (document.getElementById(spiritPlacement + "_req4") != null) { document.getElementById(spiritPlacement + "_req4").style.opacity = 1; } }
   if (player.goron_bracelet) { if (document.getElementById(forestPlacement + "_req3") != null) { document.getElementById(forestPlacement + "_req3").style.opacity = 1; } }
   if (player.hammer) { if (document.getElementById(firePlacement + "_req1") != null) { document.getElementById(firePlacement + "_req1").style.opacity = 1; } }
@@ -876,9 +875,8 @@ function itemHighlights() {
 
   if (!player.kokiri_sword) { if (document.getElementById(dekuPlacement + "_req1") != null) { document.getElementById(dekuPlacement + "_req1").style.opacity = dimmed; } }
   if (!player.bomb_bag) { if (document.getElementById(dodongosPlacement + "_req1") != null) { document.getElementById(dodongosPlacement + "_req1").style.opacity = dimmed; } if (document.getElementById(shadowPlacement + "_req4") != null) { document.getElementById(shadowPlacement + "_req4").style.opacity = dimmed; } if (document.getElementById(spiritPlacement + "_req3") != null) { document.getElementById(spiritPlacement + "_req3").style.opacity = dimmed; } }
-  if (!player.magic) { document.getElementById("gan_req1").style.opacity = dimmed; if (document.getElementById(shadowPlacement + "_req2") != null) { document.getElementById(shadowPlacement + "_req2").style.opacity = dimmed; } }
-  if (!player.light_arrows) { document.getElementById("gan_req2").style.opacity = dimmed; }
-  if (!player.bow) { document.getElementById("gan_req3").style.opacity = dimmed; if (document.getElementById(forestPlacement + "_req2") != null) { document.getElementById(forestPlacement + "_req2").style.opacity = dimmed; } }
+  if (!player.magic) { if (document.getElementById(shadowPlacement + "_req2") != null) { document.getElementById(shadowPlacement + "_req2").style.opacity = dimmed; } }
+  if (!player.bow) { if (document.getElementById(forestPlacement + "_req2") != null) { document.getElementById(forestPlacement + "_req2").style.opacity = dimmed; } }
   if (!player.hookshot) { if (document.getElementById(forestPlacement + "_req1") != null) { document.getElementById(forestPlacement + "_req1").style.opacity = dimmed; } if (document.getElementById(shadowPlacement + "_req5") != null) { document.getElementById(shadowPlacement + "_req5").style.opacity = dimmed; } if (document.getElementById(spiritPlacement + "_req4") != null) { document.getElementById(spiritPlacement + "_req4").style.opacity = dimmed; } }
   if (!player.goron_bracelet) { if (document.getElementById(forestPlacement + "_req3") != null) { document.getElementById(forestPlacement + "_req3").style.opacity = dimmed; } }
   if (!player.hammer) { if (document.getElementById(firePlacement + "_req1") != null) { document.getElementById(firePlacement + "_req1").style.opacity = dimmed; } }
