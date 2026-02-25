@@ -381,13 +381,14 @@ body {
 
 #searchingFor_div {
   width: 100px;
+  height:60px;
 }
 
 #probability_input {
   width: 25px;
   height: 16px;
   position: relative;
-  top: 7px;
+  top:1px;
   left: 12px;
 }
 
@@ -395,7 +396,7 @@ body {
   color: white;
   position: relative;
   left: 12px;
-  top: 6px;
+  top: 0px;
 }
 
 #timerMultiplier {
