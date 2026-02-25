@@ -635,7 +635,8 @@ body {
   height: 12px;
   width: 12px;
   margin-right: 4px;
-  margin-top: 9px;
+  position:relative;
+  top:2px;
 }
 
 .dungcolumn {

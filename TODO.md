@@ -1,11 +1,9 @@
 - [ ] condensed woths
-- [ ] make hinted items within song locations bold (as it is for other locations)
 - [ ] change note box into input boxes to match the rest of the tracker
 - [ ] find middle ground to remove large woth font option
 - [ ] cluster checks on the list by proximity rather than by area
 - [ ] don't border locations that have their important items hinted (unless also path)
 - [ ] eliminate reliance on midUpdate() interval runs
-- [ ] add flee to credits
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
@@ -13,7 +11,6 @@
 - [ ] automatically check off marked duplicates if you get another one
 - [ ] use a lowercased version of areanames in backend
 - [ ] 1 character input for mark rest of current age checks in an area junk
-- [ ] don't list chus in woth if bombchus aren't in logic
 - [ ] duplicate some checks on the checklist (for example, crate waterfall should be before child hylia, but also next to gtg)
 - [ ] extra <br> by cluster instead of by area (for example: colossus, wasteland, fortress, gtg, valley are effectively all the same play and it should be structured as such)
 
@@ -27,3 +24,5 @@
 - [x] Normalize every check name to between 4-7 characters (6 is ideal, ' doesn't count)
 - [x] add song locations into the main checklist
 - [x] remove the non-linso item tracker and add a condensed visual for forestfirewater med, spiritshadowlight med, and stone dungeons
+- [x] add flee to credits
+- [x] don't list chus in woth if bombchus aren't in logic
