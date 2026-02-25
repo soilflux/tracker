@@ -120,10 +120,11 @@ body {
 }
 
 .track_text {
-  font-size: 26px;
-  margin-left: 3px;
-  margin-right: 3px;
-  vertical-align: top;
+  font-size: 20px;
+  margin-left: 2px;
+  margin-right: 1px;
+  position:relative;
+  bottom:5px;
 }
 
 #tokenStatsColumn {
