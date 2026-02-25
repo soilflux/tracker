@@ -361,21 +361,6 @@ body {
   width: 83px;
 }
 
-#inputConfig {
-  width: 200px;
-  float: left;
-}
-
-#inputConfig2 {
-  width: 200px;
-  float: left;
-}
-
-#inputConfig3 {
-  width: 200px;
-  float: left;
-}
-
 #skullsInLogicList {
   display: none;
   float: left;
@@ -445,10 +430,9 @@ body {
 }
 
 .checkSummaryColumn {
-  margin-top: 10px;
-  position: relative;
-  float: left;
-  height: 200px;
+  position: absolute;
+  right:0px;
+  top:150px;
   width: 250px;
 }
 
@@ -522,7 +506,12 @@ body {
   border: 1px ridge #202020;
   background-image: url("./normal/background.png");
 }
-
+#settings {
+  display: flex;            /* Enables side-by-side layout */
+  flex-direction: row;      /* Ensures they go horizontally */
+  align-items: flex-start;  /* Aligns columns to the top */
+  gap: 5px;   
+}
 #info-row {
   margin-top:2px;
   display: flex;            /* Enables side-by-side layout */
@@ -631,8 +620,9 @@ body {
 }
 
 #linsoColumn {
-  position: relative;
-  top:12px;
+  position: absolute;
+  top:150px;
+  right:270px;
   width: 280px;
 }
 
@@ -645,16 +635,6 @@ body {
   width: 12px;
   margin-right: 4px;
   margin-top: 9px;
-}
-
-#songcolumn {
-  margin-top: 4px;
-  float: left;
-  width: 130px;
-}
-
-.song_spacing {
-  line-height: 131%;
 }
 
 .dungcolumn {
@@ -676,13 +656,6 @@ body {
 .half_span {
   display: inline-block;
   width: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 #row {

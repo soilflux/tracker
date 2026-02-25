@@ -415,7 +415,6 @@ function linsoControl() {
     document.getElementById("linsoControl").innerHTML = "Show LinSo";
     document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info"));
     document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
-    document.getElementById("checkSummaryColumn1").style.top = "45px"; document.getElementById("checkSummaryColumn1").style.left = "1030px";
 
   }
   else {
@@ -424,7 +423,6 @@ function linsoControl() {
     document.getElementById("linsoControl").innerHTML = "Hide LinSo";
     document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info"));
     document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
-    document.getElementById("checkSummaryColumn1").style.top = "0px"; document.getElementById("checkSummaryColumn1").style.left = "550px";
   }
 }
 
