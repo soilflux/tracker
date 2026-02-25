@@ -242,26 +242,6 @@ function toCamelCase(str) {
     .join("");
 }
 
-function whoAmI() {
-  if (person.type == "soli") {
-    person.type = "normie";
-    localStorage.setItem("type", "normie");
-    player.themeChange = true;
-    Update();
-  }
-  else if (person.type == "normie") {
-    person.type = "soli";
-    localStorage.setItem("type", "soli");
-    player.themeChange = true;
-    Update();
-  }
-}
-
-function altThemeControl() {
-  if (colorTheme == "dark") { colorTheme = "light"; localStorage.setItem("theme", colorTheme); document.getElementById("altThemeControl").innerHTML = "Light Theme"; }
-  else { colorTheme = "dark"; localStorage.setItem("theme", colorTheme); document.getElementById("altThemeControl").innerHTML = "Dark Theme"; }
-}
-
 function wothSizeToggle() {
   button = document.getElementById("wothSizeToggle");
 
@@ -294,10 +274,10 @@ function areaTitlesToggle() {
   button = document.getElementById("areaTitlesToggle");
   isHidden = document.getElementById("title_kokiri").classList.contains("hidden");
   if (isHidden) {
-    button.textContent = "Show itemToCheckMap Headers";
+    button.textContent = "Show Area Headers";
     localStorage.setItem("showAreaTitles", "false");
   } else {
-    button.textContent = "Hide itemToCheckMap Headers";
+    button.textContent = "Hide Area Headers";
     localStorage.setItem("showAreaTitles", "true");
   }
 }
@@ -380,15 +360,6 @@ function timerControl() {
   timerStuff();
 }
 
-function hamsdaToggle() {
-  hamsda = !hamsda;
-  localStorage.setItem("hamsda", hamsda);
-  if (!hamsda)
-    document.getElementById("hamsdaToggle").innerHTML = "Enable Hamsda Tracking";
-  else
-    document.getElementById("hamsdaToggle").innerHTML = "Disable Hamsda Tracking";
-}
-
 function nerfControl() {
   if (nerfed) {
     nerfed = false;
@@ -406,29 +377,6 @@ function saveStuff() {
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
   localStorage.setItem("inputPresets", document.getElementById("inputPresets").value);
-}
-
-function linsoControl() {
-  if (linso) {
-    linso = false;
-    localStorage.setItem("linso", linso);
-    document.getElementById("linsoControl").innerHTML = "Show LinSo";
-    document.getElementById("soli_woth_info").appendChild(document.getElementById("woth_info"));
-    document.getElementById("woth_info").style.top = "560px"; document.getElementById("woth_info").style.marginLeft = "0px";
-
-  }
-  else {
-    linso = true;
-    localStorage.setItem("linso", linso);
-    document.getElementById("linsoControl").innerHTML = "Hide LinSo";
-    document.getElementById("linsoColumn").appendChild(document.getElementById("woth_info"));
-    document.getElementById("woth_info").style.top = "400px"; document.getElementById("woth_info").style.marginLeft = "3px";
-  }
-}
-
-function inaccessibleControl() {
-  if (hideInaccessible) { hideInaccessible = false; localStorage.setItem("hideInaccessible", hideInaccessible); document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible"; }
-  else { hideInaccessible = true; localStorage.setItem("hideInaccessible", hideInaccessible); document.getElementById("inaccessibleControl").innerHTML = "Show Inaccessible"; }
 }
 
 function coopControl() {
@@ -829,7 +777,7 @@ String.prototype.replaceAt = function (index, replacement) {
 }
 
 function flash() {
-  if (rules.flashOnInput === "off") {
+  if (rules.flashFeedback === "off") {
     return;
   }
   const toFlash = document.getElementById('hintInput');

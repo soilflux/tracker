@@ -242,7 +242,7 @@ function processInputs() {
 }
 
 function hideCheck(locationId) {
-  if (rules.shiftChecks == "on") {
+  if (rules.listSorting == "dynamic") {
     document.getElementById(locationId).style.display = "none";
     document.getElementById("text_" + locationId).style.display = "none";
     document.getElementById("br_" + locationId).style.display = "none";
@@ -358,7 +358,7 @@ function dungeonHeaderVisibility() {
       el.style.display = "inline-block";
     }
     else {
-      if (rules.shiftChecks == "off") {
+      if (rules.listSorting == "fixed") {
         el.style.visibility = "hidden";
       }
       else {
@@ -948,8 +948,8 @@ function toggleLinsoGoMode() {
 }
 
 function refreshLinSo() {
-  if (linso) {
-    document.getElementById("linsoColumn").style.display = "inline-block";
+  if (rules.linso == "show") {
+    document.getElementById("linsoTracker").style.display = "inline-block";
     for (let i = 0; i < songChecks.length; i++) {
       if (checkToItemMap[songChecks[i]] != "unknown") {
         document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 1;
@@ -1014,7 +1014,7 @@ function refreshLinSo() {
     }
     if (angelFlag) { document.getElementById(animalID).style.opacity = 0.4; }
   }
-  else { document.getElementById("linsoColumn").style.display = "none"; }
+  else { document.getElementById("linsoTracker").style.display = "none"; }
 }
 function updateInputs() {
   for (var i = 0; i < spawnInputs.length; i++) {
@@ -1500,7 +1500,7 @@ function updateLogicInfo() {
       }
       else {
         if (locationPeek[key] == true && !locationCouldAccess[key] == true) {
-          if (hamsda) {
+          if (rules.highlightInLogicChecks == "on") {
             document.getElementById(str).className = "access_check_text";
             document.getElementById(str).style.opacity = .7;
             document.getElementById(str).style.fontWeight = "normal";
@@ -1515,7 +1515,7 @@ function updateLogicInfo() {
 
         }
         else {
-          if (hamsda) {
+          if (rules.highlightInLogicChecks == "on") {
             document.getElementById(str).className = "access_check_text";
             document.getElementById(str).style.opacity = .7;
             document.getElementById(str).style.fontWeight = "normal";
@@ -1530,7 +1530,7 @@ function updateLogicInfo() {
           if (songChecks.includes(key) && checkToItemMap[key] != "unknown" && ManualOutOfLogicItems[checkToItemMap[key]]) {
             document.getElementById(str).style.color = "#FFA500";
           }
-          else if (hamsda) {
+          else if (rules.highlightInLogicChecks == "on") {
             document.getElementById(str).style.color = "yellow";
           }
           else {
@@ -1568,8 +1568,8 @@ function updateLogicInfo() {
       }
     }
     else {
-      if (hideInaccessible) {
-        if (rules.shiftChecks == "on") {
+      if (rules.inaccessibleChecks == "hide") {
+        if (rules.listSorting == "dynamic") {
           document.getElementById(str).style.display = "none";
           document.getElementById(key).style.display = "none";
           document.getElementById(str2).style.display = "none";
@@ -1583,7 +1583,7 @@ function updateLogicInfo() {
       document.getElementById(str).className = "ool_check_text";
       document.getElementById(str).style.opacity = .25;
       document.getElementById(str).style.fontWeight = "normal";
-      if (colorTheme == "dark") {
+      if (rules.colorScheme == "dark") {
         document.getElementById(str).style.color = "white";
       }
       else {
@@ -1728,10 +1728,10 @@ function updateSummaryText() {
       else
         document.getElementById(str).className = "checked_text_summary_ool";
 
-      if (colorTheme == "dark" && document.getElementById(str).className == "checked_text_summary_ool") {
+      if (rules.colorScheme == "dark" && document.getElementById(str).className == "checked_text_summary_ool") {
         document.getElementById(str).style.color = 'white';
       }
-      else if (colorTheme == "light" && document.getElementById(str).className == "checked_text_summary_ool") {
+      else if (rules.colorScheme == "light" && document.getElementById(str).className == "checked_text_summary_ool") {
         document.getElementById(str).style.color = 'black';
       }
       else {

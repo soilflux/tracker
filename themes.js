@@ -1,4 +1,4 @@
-function dark_soli() {
+function original() {
   player.bomb_img = "./images/explosive.png";
   player.rutos_letter_img = "./images/letter.png";
   player.boomerang_img = "./images/boomerang.png";
@@ -99,12 +99,10 @@ function dark_soli() {
   document.getElementById("silverscaleimg").src = player.silver_scale_img;
   document.getElementById("bottleimg").src = player.bottle_img;
 
-  document.getElementById("iWantToRemoveThisButton").innerHTML = "Appease Viewers";
-
   ItemImages = [player.farores_wind_img, player.slingshot_img, player.slingshot_img, player.slingshot_img, player.boomerang_img, player.silver_scale_img, player.silver_scale_img, player.rutos_letter_img, player.bottle_img, player.bottle_img, player.bottle_img, player.bottle_img, player.bomb_img, player.bomb_img, player.bomb_img, player.chu_img, player.chu_img, player.chu_img, player.chu_img, player.chu_img, player.hammer_img, player.bow_img, player.bow_img, player.bow_img, player.hookshot_img, player.hookshot_img, player.goron_bracelet_img, player.goron_bracelet_img, player.goron_bracelet_img, player.mirror_shield_img, player.magic_img, player.magic_img, player.iron_boots_img, player.kokiri_sword_img, player.hover_boots_img, player.wallet1_img, player.wallet1_img, player.wallet1_img, player.goron_tunic_img, player.zora_tunic_img, player.dins_fire_img, player.fire_arrows_img, player.lens_img, player.prescription_img, player.claim_check_img, player.light_arrows_img, player.ice_arrows_img, player.biggoron_sword_img, player.nayrus_love_img, player.stone_of_agony_img, player.forest_key_img, player.fire_key_img, player.water_key_img, player.spirit_key_img, player.shadow_key_img, player.well_key_img, player.gtg_key_img, player.ganon_key_img, player.gerudo_card_img, player.beans_img, player.lullaby_img, player.eponas_img, player.suns_img, player.sarias_img, player.storms_img, player.minuet_img, player.bolero_img, player.requiem_img, player.nocturne_img, player.time_img, player.prelude_img, player.serenade_img];
 }
 
-function dark_normie() {
+function normal() {
   player.bomb_img = "./normal/items/bomb.png";
   player.rutos_letter_img = "./normal/items/rutos_letter.png";
   player.boomerang_img = "./normal/items/boomerang.png";
@@ -284,23 +282,16 @@ function dark_normie() {
   document.getElementById("silverscaleimg").src = player.silver_scale_img;
   document.getElementById("bottleimg").src = player.bottle_img;
 
-  document.getElementById("iWantToRemoveThisButton").innerHTML = "Original";
-
   ItemImages = [player.farores_wind_img, player.slingshot_img, player.slingshot_img, player.slingshot_img, player.boomerang_img, player.silver_scale_img, player.silver_scale_img, player.rutos_letter_img, player.bottle_img, player.bottle_img, player.bottle_img, player.bottle_img, player.bomb_img, player.bomb_img, player.bomb_img, player.chu_img, player.chu_img, player.chu_img, player.chu_img, player.chu_img, player.hammer_img, player.bow_img, player.bow_img, player.bow_img, player.hookshot_img, player.hookshot_img, player.goron_bracelet_img, player.goron_bracelet_img, player.goron_bracelet_img, player.mirror_shield_img, player.magic_img, player.magic_img, player.iron_boots_img, player.kokiri_sword_img, player.hover_boots_img, player.wallet1_img, player.wallet1_img, player.wallet1_img, player.goron_tunic_img, player.zora_tunic_img, player.dins_fire_img, player.fire_arrows_img, player.lens_img, player.prescription_img, player.claim_check_img, player.light_arrows_img, player.ice_arrows_img, player.biggoron_sword_img, player.nayrus_love_img, player.stone_of_agony_img, player.forest_key_img, player.fire_key_img, player.water_key_img, player.spirit_key_img, player.shadow_key_img, player.well_key_img, player.gtg_key_img, player.ganon_key_img, player.gerudo_card_img, player.beans_img, player.lullaby_img, player.eponas_img, player.suns_img, player.sarias_img, player.storms_img, player.minuet_img, player.bolero_img, player.requiem_img, player.nocturne_img, player.time_img, player.prelude_img, player.serenade_img];
 }
 
-function changeThemes() {
-  if (player.theme == "dark" && player.themeChange) {
-    if (person.type == "soli") { dark_soli(); }
-    else if (person.type == "normie") { dark_normie(); }
-    dark_theme();
-  }
-  if (player.theme == "light" && player.themeChange) {
-    light_theme();
-  }
+function updateTheme() {
+  if (rules.theme == "original") original();
+  else if (rules.theme == "normal") normal();
+}
 
-
-  if (colorTheme == "light") {
+function updateColorScheme() {
+  if (rules.colorScheme == "light") {
     document.getElementById('row').style.backgroundColor = '#576166';
     document.querySelectorAll('.hint_input').forEach(e => { e.style.backgroundColor = '#404040'; e.style.color = 'white'; });
     document.querySelectorAll('.super_hint_input').forEach(e => { e.style.backgroundColor = '#404040'; e.style.color = 'white'; });
@@ -324,40 +315,4 @@ function changeThemes() {
     document.querySelectorAll('.ool_check_text').forEach(e => { e.style.color = 'white'; });
     document.querySelectorAll('.simLog').forEach(e => { e.style.backgroundColor = '#121212'; e.style.color = 'white'; });
   }
-}
-
-function dark_theme() {
-  player.themeChange = false;
-  document.getElementById("checks_remaining").style.color = "lightblue";
-  document.getElementById("logically_accessible").style.color = "lightblue";
-  var all = document.getElementsByClassName('logic_check_text');
-  for (var i = 0; i < all.length; i++) {
-    all[i].style.color = inLogicColor;
-  }
-  if (document.getElementById('text_dung1') != null) { document.getElementById('text_dung1').style.color = 'lightgreen'; }
-  if (document.getElementById('text_dung2') != null) { document.getElementById('text_dung2').style.color = '#ff4d4d'; }
-  if (document.getElementById('text_dung3') != null) { document.getElementById('text_dung3').style.color = 'lightblue'; }
-  if (document.getElementById('text_dung4') != null) { document.getElementById('text_dung4').style.color = 'lightgreen'; }
-  if (document.getElementById('text_dung5') != null) { document.getElementById('text_dung5').style.color = '#ff4d4d'; }
-  if (document.getElementById('text_dung6') != null) { document.getElementById('text_dung6').style.color = 'lightblue'; }
-  if (document.getElementById('text_gan') != null) { document.getElementById('text_gan').style.color = '#FFA3B8'; }
-  document.body.style.backgroundColor = "";
-}
-
-function light_theme() {
-  player.themeChange = false;
-  document.getElementById("logically_accessible").style.color = "blue";
-  document.getElementById("checks_remaining").style.color = "blue";
-  var all = document.getElementsByClassName('logic_check_text');
-  for (var i = 0; i < all.length; i++) {
-    all[i].style.color = 'darkgreen';
-  }
-  if (document.getElementById('text_dung1') != null) { document.getElementById('text_dung1').style.color = 'green'; }
-  if (document.getElementById('text_dung2') != null) { document.getElementById('text_dung2').style.color = 'red'; }
-  if (document.getElementById('text_dung3') != null) { document.getElementById('text_dung3').style.color = 'blue'; }
-  if (document.getElementById('text_dung4') != null) { document.getElementById('text_dung4').style.color = 'green'; }
-  if (document.getElementById('text_dung5') != null) { document.getElementById('text_dung5').style.color = 'red'; }
-  if (document.getElementById('text_dung6') != null) { document.getElementById('text_dung6').style.color = 'blue'; }
-  if (document.getElementById('text_gan') != null) { document.getElementById('text_gan').style.color = '#990000'; }
-  document.body.style.backgroundColor = "white";
 }

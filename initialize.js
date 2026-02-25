@@ -21,9 +21,6 @@ var hintedInput = "";
 var removeBKFlag = false;
 var timerMultiplier = 1;
 var nerfed = true;
-var hamsda = false;
-if (localStorage.getItem("hamsda")) { if (localStorage.getItem("hamsda") == "true") { hamsda = true; } else { hamsda = false; }; }
-if (hamsda) { document.getElementById("hamsdaToggle").innerHTML = "Disable Hamsda Tracking"; }
 var toFocus = null;
 var inLogicColor = 'chartreuse'
 var simActive = false;
@@ -54,8 +51,13 @@ document.getElementById("markStones").value = "112233";
 buildCheckSummary();
 
 const rulesConfig = {
-  shiftChecks: { label: "Shift Checks", options: ["Off", "On"] },
-  flashOnInput: { label: "Flash on Input", options: ["Off", "On"] },
+  inaccessibleChecks: { label: "Inaccessible", options: ["Hide", "Show"] },
+  listSorting: { label: "List Sorting", options: ["Fixed", "Dynamic"] },
+  flashFeedback: { label: "Flash Feedback", options: ["Off", "On"] },
+  highlightInLogicChecks: { label: "Color In-Logic", options: ["Off", "On"] },
+  theme: { label: "Theme", options: ["Normal", "Original"] },
+  colorScheme: { label: "Color Scheme", options: ["Dark", "Light"] },
+  linso: { label: "LinSo", options: ["Hide", "Show"] },
   preset: { label: "Preset", options: ["None", "S9", "Aminal Funhouse", "Truth", "League S9", "SGL 2025"] },
   skullSanity: { label: "Skull Sanity", options: ["Off", "Dungeon", "Overworld", "All"] },
   scrubSanity: { label: "Scrub Sanity", options: ["Off", "Overworld", "All"] },
@@ -73,7 +75,7 @@ const rulesConfig = {
   beans: { label: "Beans", options: ["Vanilla", "Shuffled"] },
   expensive: { label: "Expensive", options: ["Vanilla", "Shuffled"] },
   csmc: { label: "CSMC", options: ["Off", "On"] },
-  chusInLogic: { label: "Chus in logic", options: ["Off", "On"] },
+  chusInLogic: { label: "Chus in Logic", options: ["Off", "On"] },
   preplantBeans: { label: "Preplant Beans", options: ["Off", "On"] },
   blueFireArrows: { label: "Blu Fire Arrw", options: ["Off", "On"] },
   hintType: { label: "Hints Type", options: ["WotH", "Path"] },
@@ -114,7 +116,7 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   input.id = key;
   wrapper.appendChild(input);
   container.appendChild(wrapper);
-  if (key == "flashOnInput")
+  if (key == "highlightInLogicChecks" || key == "linso")
     container.appendChild(document.createElement('br'));
 
   const savedValue = localStorage.getItem("rules_" + key) ?? config.default ?? toCamelCase(config.options[0]);
@@ -123,7 +125,9 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   input.addEventListener('change', (e) => {
     rules[key] = e.target.value;
     localStorage.setItem("rules_" + key, e.target.value);
-    updateRules();
+    if (key == "theme") updateTheme();
+    else if (key == "colorScheme") updateColorScheme();
+    else updateRules();
   });
 });
 
@@ -138,7 +142,7 @@ var textSongChecks = ["text_lullabyCheck", "text_eponasCheck", "text_sariasCheck
 var songChecks = ["lullabyCheck", "eponasCheck", "sariasCheck", "sunsCheck", "timeCheck", "stormsCheck", "minuetCheck", "boleroCheck", "serenadeCheck", "requiemCheck", "nocturneCheck", "preludeCheck"];
 var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
 var ItemImages = [];
-var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim checkToItemMap", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
+var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
 
 //take advantage of a small pool to shorten the inputs
 var alwaysTable = {
@@ -603,10 +607,10 @@ var areaInputs = {
 };
 
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
-var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim checkToItemMap", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "a", "q", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var pathInputs = ["x", "de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev", "li", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim checkToItemMap", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
+var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet", "bombchus"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf", "dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc", "ogcool", "gcshop", "zdshop", "kakr"];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy", "ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
@@ -667,14 +671,8 @@ var pauseTotal = 0;
 var pauseInitial = 0;
 var pauseFlag = true;
 var initialTime = d.getTime();
-var linso = true;
-if (localStorage.getItem("linso")) { linso = localStorage.getItem("linso") === 'true'; }
 var linsoGoMode = false;
 var linsoLightRotation = 0;
-if (localStorage.getItem("type")) { person.type = localStorage.getItem("type"); } else { person.type = "normie"; }
-person.type = "normie";
-var colorTheme = "dark";
-if (localStorage.getItem("theme") != null) { if (localStorage.getItem("theme") == "light") { colorTheme = "light"; document.getElementById("altThemeControl").innerHTML = "Light Theme" }; }
 
 player.tokens = 0;
 token_click = 4;
@@ -687,9 +685,6 @@ player.current_shadow_keys = 0;
 player.current_ganons_keys = 0;
 player.current_gtg_keys = 0;
 player.current_well_keys = 0;
-
-player.theme = "dark";
-player.themeChange = true;
 
 var tempTime = 0;
 var timerHours = 0;
@@ -1126,6 +1121,7 @@ var AreaNamesLong = [
   "Bottom of the Well"
 ];
 
+
 logic.forest_medallion_location = "unknown";
 logic.fire_medallion_location = "unknown";
 logic.water_medallion_location = "unknown";
@@ -1185,9 +1181,7 @@ var AreaAge = new Array(36).fill(0);
 var AreaWotHAge = new Array(36).fill(0);
 var checkLog = '';
 var colorWothAreas = true;
-var hideInaccessible = true;
 var coopmode = false;
-if (localStorage.getItem("hideInaccessible") != null) { if (localStorage.getItem("hideInaccessible") == "false") { hideInaccessible = false; document.getElementById("inaccessibleControl").innerHTML = "Hide Inaccessible" }; }
 if (localStorage.getItem("wothSize") === "big") wothSizeToggle();
 
 // halp button
@@ -1241,6 +1235,7 @@ window.onclick = function (event) {
 for (var i = 0; i < 244; i++) {
   checkToItemMap[itemToCheckMap[i]] = "unknown";
 }
+
 
 var parent = document.getElementById("normalColumn1");
 
@@ -1438,6 +1433,7 @@ for (var i = 0; i < checks.length; i++) {
   }
 }
 
+
 if (localStorage.getItem("showAreaTitles") === "true") areaTitlesToggle();
 
 var backUp = [];
@@ -1454,7 +1450,9 @@ for (var i = 0; i < Items.length; i++) {
 
 updateCheckLogic();
 
-changeThemes();
+updateColorScheme();
+updateTheme();
+wothSizeToggle();
 
 var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
@@ -1476,7 +1474,7 @@ for (var i = 1; i <= 11; i++) {
         elem.style.color = "hotpink";
         elem.style.opacity = 0;
         elem.innerHTML = 999;
-        document.getElementById("linsoColumn").appendChild(elem);
+        document.getElementById("linsoTracker").appendChild(elem);
         continue;
       }
       var elem = document.createElement("small");
@@ -1486,7 +1484,7 @@ for (var i = 1; i <= 11; i++) {
       if (i == 10) { elem.style.left = -25 + j * 41 + "px"; } else { elem.style.left = -28 + j * 41 + "px"; }
       elem.style.top = tempTop + i * 40 + "px";
       elem.style.opacity = 1;
-      document.getElementById("linsoColumn").appendChild(elem);
+      document.getElementById("linsoTracker").appendChild(elem);
       continue;
     }
     if (linsoOrder[linsoOrderIncrement] == "") { linsoOrderIncrement += 1; continue; }
@@ -1498,7 +1496,7 @@ for (var i = 1; i <= 11; i++) {
       elem.style.left = -38 + j * 41 + "px";
       elem.style.top = tempTop + i * 40 + "px";
       elem.onmousedown = linso_counter;
-      document.getElementById("linsoColumn").appendChild(elem);
+      document.getElementById("linsoTracker").appendChild(elem);
       linsoOrderIncrement += 1;
     }
     else {
@@ -1531,7 +1529,7 @@ for (var i = 1; i <= 11; i++) {
         elem2.id = "linsoLight";
         elem2.src = "./normal/linsoLight.png";
         elem2.style.opacity = 0;
-        document.getElementById("linsoColumn").appendChild(elem2);
+        document.getElementById("linsoTracker").appendChild(elem2);
 
         var elem3 = document.createElement("IMG");
         elem3.style.position = "absolute";
@@ -1542,9 +1540,9 @@ for (var i = 1; i <= 11; i++) {
         elem3.style.opacity = 0;
         elem3.style.height = "28px";
         elem3.style.width = "28px";
-        document.getElementById("linsoColumn").appendChild(elem3);
+        document.getElementById("linsoTracker").appendChild(elem3);
       }
-      document.getElementById("linsoColumn").appendChild(elem);
+      document.getElementById("linsoTracker").appendChild(elem);
       linsoOrderIncrement += 1;
     }
   }
@@ -1564,7 +1562,7 @@ for (var i = 1; i <= 12; i++) {
   elem.style.opacity = .3;
   elem.style.filter = "grayscale(100%)";
   elem.onclick = linSoClick;
-  document.getElementById("linsoColumn").appendChild(elem);
+  document.getElementById("linsoTracker").appendChild(elem);
   linsoOrderIncrement += 1;
 }
 
@@ -1578,11 +1576,8 @@ for (var i = 1; i <= 12; i++) {
   elem.style.left = 278 + "px";
   elem.style.top = tempTop + i * 31 + "px";
   elem.style.opacity = 0;
-  document.getElementById("linsoColumn").appendChild(elem);
+  document.getElementById("linsoTracker").appendChild(elem);
 }
-var linsoString = false;
-if (localStorage.getItem("linso")) { linsoString = localStorage.getItem("linso"); }
-if (linsoString == "true") { linso = true; }
 
 searchItems = ["Boomerang", "Bomb Bag", "Bow", "Hammer", "Scale", "Hookshot", "Letter", "Strength", "Mirror", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Din's Fire", "Light Arrows"]
 for (var i = 1; i <= 15; i++) {
@@ -2395,14 +2390,6 @@ document.getElementById("linso52").click();
 document.getElementById("linso61").click();
 player.zeldas_letter = true;
 
-showNewPatchNotes();
-linsoControl(); linsoControl();
-updateRules();
-setInterval(slowUpdate, 3000);
-setInterval(midUpdate, 1500);
-setInterval(fastUpdate, 70);
-Update(); midUpdate(); midUpdate(); fastUpdate();
-
 function buildCheckSummary() {
   const itemData = [
     { id: "bomb_bag", label: "Bomb Bag", count: 3 },
@@ -2461,3 +2448,10 @@ function buildCheckSummary() {
   });
   container.innerHTML = finalHtml;
 }
+
+showNewPatchNotes();
+updateRules();
+setInterval(slowUpdate, 3000);
+setInterval(midUpdate, 1500);
+setInterval(fastUpdate, 70);
+Update(); midUpdate(); midUpdate(); fastUpdate();

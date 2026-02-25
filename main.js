@@ -1,10 +1,9 @@
 function Update() {
   saveStuff();
-  changeThemes();
   keyDungeonInfo();
   itemHighlights();
   dungeonHighlights();
-  if (rules.shiftChecks == "on") areaBreaks();
+  if (rules.listSorting == "dynamic") areaBreaks();
   updateSummaryText();
   updateProbabilities();
 }

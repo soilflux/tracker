@@ -141,7 +141,7 @@ body {
 
 #text_gan {
   vertical-align: top;
-  color: #fb4570;
+  color: #FFA3B8;
   font-size: 26px;
   text-transform: uppercase;
   font-family: "Consolas", Courier, monospace;
@@ -180,13 +180,13 @@ body {
 }
 
 #text_dung4 {
-  color: green;
+  color: lightgreen;
 }
 #text_dung5 {
-  color: red;
+  color: #ff4d4d;
 }
 #text_dung6 {
-  color: blue;
+  color: lightblue;
 }
 #text_dung7 {
   color: rgb(238, 130, 238);
@@ -198,17 +198,17 @@ body {
   color: white;
 }
 #text_dung1 {
-  color: green;
+  color: lightgreen;
   font-weight: 100;
   opacity: 0.8;
 }
 #text_dung2 {
-  color: red;
+  color: #ff4d4d;
   font-weight: 100;
   opacity: 0.8;
 }
 #text_dung3 {
-  color: blue;
+  color: lightblue;
   font-weight: 100;
   opacity: 0.8;
 }
@@ -506,6 +506,7 @@ body {
   border: 1px ridge #202020;
   background-image: url("./normal/background.png");
 }
+
 #settings {
   display: flex;            /* Enables side-by-side layout */
   flex-direction: row;      /* Ensures they go horizontally */

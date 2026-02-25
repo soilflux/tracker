@@ -271,7 +271,7 @@ function wothAndBarrenProcessing() {
           const isNotBoss = !(dungeon?.bossCheck && bossStrings.includes(loc));
           const isDisplayed = document.getElementById(loc).style.display != "none";
 
-          if (isUnknown && isNotHint && isNotBoss && (isDisplayed || rules.shiftChecks == "on")) {
+          if (isUnknown && isNotHint && isNotBoss && (isDisplayed || rules.listSorting == "dynamic")) {
             document.getElementById("text_" + loc).dispatchEvent(new Event('mousedown'));
           }
         });
