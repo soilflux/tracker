@@ -140,14 +140,6 @@ body {
   float: top;
 }
 
-#text_gan {
-  vertical-align: top;
-  color: #FFA3B8;
-  font-size: 26px;
-  text-transform: uppercase;
-  font-family: "Consolas", Courier, monospace;
-}
-
 .linsomed {
   font-size: 16px;
   font-family: "Consolas", Courier, monospace;
@@ -240,12 +232,6 @@ body {
   margin-right: 2px;
 }
 
-#dungspawnInputs {
-  position: absolute;
-  top: 1040px;
-  left: -140px;
-}
-
 .stones {
   height: 25px;
   width: 25px;
@@ -269,12 +255,6 @@ body {
 }
 
 #quest1 {
-  display: none;
-}
-
-#triforcePic {
-  margin-top: 1px;
-  margin-right: 4px;
   display: none;
 }
 
@@ -540,13 +520,6 @@ body {
   position: absolute;
   left: 985px;
   top: 900px;
-}
-
-#pieceDungeons {
-  width: 92px;
-  margin-left: 0px;
-  margin-top: 2px;
-  display: none;
 }
 
 #settingsColumn {

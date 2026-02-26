@@ -1230,15 +1230,6 @@ function updateRules() {
     document.getElementById("path_arrow6").style.display = "none";
   }
 
-  if (rules.preset == "aminalFunhouse") {
-    document.getElementById("triforcePic").style.display = "inline-block";
-    document.getElementById("pieceDungeons").style.display = "inline-block";
-    document.getElementById("pieceDungeons").value = "dedojafofiwaspsh";
-  } else {
-    document.getElementById("triforcePic").style.display = "none";
-    document.getElementById("pieceDungeons").style.display = "none";
-  }
-
   if (rules.blueFireArrows == "off")
     document.getElementById("ice_arrows_location").style.display = "none";
   else
@@ -1591,14 +1582,17 @@ function updateLogicInfo() {
     if (colorChange) { document.getElementById(str).style.color = "magenta"; document.getElementById(str).style.opacity = "1"; }
 
   }
-  if (document.getElementById("pieceDungeons").value.includes("de")) { document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("do")) { document.getElementById("text_dodongos_above_king").style.color = "#FFD700"; document.getElementById("text_dodongos_above_king").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("ja")) { document.getElementById("text_jabu_map").style.color = "#FFD700"; document.getElementById("text_jabu_map").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("fo")) { document.getElementById("text_forest_bossKey").style.color = "#FFD700"; document.getElementById("text_forest_bossKey").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("fi")) { document.getElementById("text_fire_hammer1").style.color = "#FFD700"; document.getElementById("text_fire_hammer1").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("wa")) { document.getElementById("text_water_morpha").style.color = "#FFD700"; document.getElementById("text_water_morpha").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("sh")) { document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1; }
-  if (document.getElementById("pieceDungeons").value.includes("sp")) { document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1; }
+
+  if (rules.preset == "aminalFunhouse") {
+    document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1;
+    document.getElementById("text_dodongos_above_king").style.color = "#FFD700"; document.getElementById("text_dodongos_above_king").style.opacity = 1;
+    document.getElementById("text_jabu_map").style.color = "#FFD700"; document.getElementById("text_jabu_map").style.opacity = 1;
+    document.getElementById("text_forest_bossKey").style.color = "#FFD700"; document.getElementById("text_forest_bossKey").style.opacity = 1;
+    document.getElementById("text_fire_hammer1").style.color = "#FFD700"; document.getElementById("text_fire_hammer1").style.opacity = 1;
+    document.getElementById("text_water_morpha").style.color = "#FFD700"; document.getElementById("text_water_morpha").style.opacity = 1;
+    document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1;
+    document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1;
+  }
 
   if (rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
     logic.forest_keys = player.current_forest_keys = 5;
@@ -1651,7 +1645,7 @@ function updateLogicInfo() {
   document.getElementById("accessible").innerHTML = player.accessible + " Accessible";
   if (!nerfed) { document.getElementById("logically_accessible").innerHTML = player.logically_accessible + " in Logic"; } else { document.getElementById("logically_accessible").innerHTML = "??? in Logic" }
   document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens";
-  document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible-player.tokens + " Accessible";
+  document.getElementById("tokensAccessible").innerHTML = player.tokensAccessible - player.tokens + " Accessible";
   document.getElementById("skulls_in_logic").innerHTML = logic.gold_skulltulas + " in Logic";
 }
 
@@ -1837,10 +1831,10 @@ function updateProbabilities() {
   const chanceOfFindPerCheck = 1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks);
   const val = Math.min(Math.max(chanceOfFindPerCheck, 0.05), 0.14);
   const percentage = (val - 0.05) / (0.14 - 0.05);
-  const hue = percentage * 120; 
-  document.getElementById("major_probability").style.color =`hsl(${hue}, 100%, 45%)`;
+  const hue = percentage * 120;
+  document.getElementById("major_probability").style.color = `hsl(${hue}, 100%, 45%)`;
 
-  document.getElementById("theLetterN").innerHTML ="(" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(1) + "%) n"
+  document.getElementById("theLetterN").innerHTML = "(" + ((1 - Math.pow(1 - majorLeft / (player.checks_remaining - nChecks / 2 + 1 / 2), nChecks)) * 100).toFixed(1) + "%) n"
 }
 
 function updateWothBorders() {
