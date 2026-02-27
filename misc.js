@@ -780,7 +780,7 @@ function flash() {
   if (rules.flashFeedback === "off") {
     return;
   }
-  const toFlash = document.getElementById('hintInput');
+  const toFlash = document.getElementById('checkSummaryColumn1');
 
   toFlash.classList.add('highlight-flash');
 
