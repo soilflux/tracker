@@ -891,7 +891,6 @@ function itemHighlights() {
   if (!player.hover_boots) { if (document.getElementById(shadowPlacement + "_req3") != null) { document.getElementById(shadowPlacement + "_req3").style.opacity = dimmed; } }
 
   const songs = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
-
   songs.forEach(song => {
     const img = document.getElementById(song + "img");
     if (img) {
@@ -899,13 +898,6 @@ function itemHighlights() {
       img.style.opacity = player[song] ? "1" : "0.7";
     }
   });
-
-  if (player.bottle || logic.bottle) { document.getElementById("bottleimg").style.opacity = 1; } else { document.getElementById("bottleimg").style.opacity = dimmed; }
-  if (player.bombchus) { document.getElementById("chuButton").style.opacity = 1; } else { document.getElementById("chuButton").style.opacity = dimmed; }
-  if (player.farores_wind) { document.getElementById("faroresimg").style.opacity = 1; } else { document.getElementById("faroresimg").style.opacity = dimmed; }
-  if (player.fire_arrows) { document.getElementById("firearrowsimg").style.opacity = 1; } else { document.getElementById("firearrowsimg").style.opacity = dimmed; }
-  if (player.silver_scale) { document.getElementById("silverscaleimg").style.opacity = 1; } else { document.getElementById("silverscaleimg").style.opacity = dimmed; }
-  if (player.lens) { document.getElementById("lensimg").style.opacity = 1; } else { document.getElementById("lensimg").style.opacity = dimmed; }
 }
 
 function dungeonHighlights() {
@@ -1894,16 +1886,29 @@ function updateWothBorders() {
 
 function updateUsefulAreaItems() {
   if (player.can_see) {
-    for (const loc of areaToCheckMap["Shadow"]) {
+    highlightFirstVisible("Shadow", "pink");
+  }
+
+  if (player.silver_scale) {
+    const scaleAreas = ["River", "Domain", "Hylia", "Lost Woods"];
+    scaleAreas.forEach(area => highlightFirstVisible(area, "silver"));
+  }
+
+  function highlightFirstVisible(areaKey, color) {
+    const locations = areaToCheckMap[areaKey] || [];
+    
+    for (const loc of locations) {
       const element = document.getElementById(loc);
-      if (element && element.style.display === "inline-block" && element.style.visibility === "visible") {
+      
+      if (element?.style.display === "inline-block" && element?.style.visibility === "visible") {
         const textElement = document.getElementById("text_" + loc);
         if (textElement) {
-          textElement.innerHTML = colorFirstLetter(textElement.innerHTML, "pink");
+          textElement.innerHTML = colorFirstLetter(textElement.innerHTML, color);
         }
-        break;
+        return true;
       }
     }
+    return false;
   }
 }
 

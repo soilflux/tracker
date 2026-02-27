@@ -157,9 +157,6 @@ function refreshLogicForStuff() {
   player.golden_scale = false;
   if (player.scale1 && player.scale2) { player.golden_scale = true; }
 
-  if (player.golden_scale == true) { document.getElementById("silverscaleimg").src = player.golden_scale_img; }
-  else { document.getElementById("silverscaleimg").src = player.silver_scale_img; }
-
   player.magic = false;
   if (player.magic1 || player.magic2) { player.magic = true; }
 
