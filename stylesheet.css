@@ -946,34 +946,26 @@ body {
 #stonePic {
   height: 16px;
   width: 16px;
-  position:absolute;
-  right:50px;
-  top:129px;
+  position:relative;
+  top:4px;
+  margin-right:-1px;
 }
 #markStones {
   width: 50px;
   color: white;
-  position:absolute;
-  text-align:center;
-  right:4px;
-  top:123px;
   font-size:12px;
 }
 
 #medallionPic {
   height: 16px;
   width: 16px;
-  position:absolute;
-  right:160px;
-  top:129px;
+  position:relative;
+  top:4px;
+  margin-right:-1px;
 }
 #markMedallions {
   width: 90px;
   color: white;
-  position:absolute;
-  right:74px;
-  text-align:center;
-  top:123px;
   font-size:12px;
 }
 

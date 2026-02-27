@@ -78,18 +78,10 @@
           <br class="half_break"/><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br class="half_break"/>
           <img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><br>
           <img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br>
-          <img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input><br>
-          <img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input><br>
           <div id="dungeon_er_input_div">
             <text class="dung_er_label">DeDoJaFoFiWa</text><br><text class="dung_er_label">ShSpBoIcGt</text><br>
             <textarea id="mark_ER_Dungeons" class="layout_input">dedojafofiwashspboicgt</textarea>
           </div>
-          
-          <br /><br />
-          <img id="ageButton" onmousedown="switchAge()" class="buttonpics" src ="./images/child.png"></img><br /> 
-          
-          <br /><br><br><br><br><br><br><br><br><br><br><br><br><br><button id="timerControl" onmousedown="timerControl()">Pause</button><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-          
         </div>
         <div id = "unstreamed-row">        
           <div id = "barren_hints_div">
@@ -98,17 +90,18 @@
           <div id = "path_hints_div">
             <div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "woth_input"><br><text id="path_arrow1" class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class = "woth_input"></div><div><input spellcheck="false" id="woth_input2" class = "woth_input"><br><text id="path_arrow2"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class = "woth_input"></div><div><input spellcheck="false" id="woth_input3" class = "woth_input"><br><text id="path_arrow3"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class = "woth_input"></div><div><input spellcheck="false" id="woth_input4" class = "woth_input"><br><text id="path_arrow4"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class = "woth_input"></div><div><input spellcheck="false" id="woth_input5" class = "woth_input"><br><text id="path_arrow5"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class = "woth_input"></div><div><input spellcheck="false" id="woth_input6" class = "woth_input"><br><text id="path_arrow6"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class = "woth_input"></div><div><input spellcheck="false" id="woth_input7" class = "woth_input"><br><text id="path_arrow7"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss7" class = "woth_input"></div><div><input spellcheck="false" id="woth_input8" class = "woth_input"><br><text id="path_arrow8"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss8" class = "woth_input"></div><br></div>
           </div>
-            <div id = "scrollable_section">
-             <div id = "soli_woth_info">
-            </div>
+          <div id = "scrollable_section">
+            <div id = "soli_woth_info"></div>
           </div>
           <div id="dungeons_summary"></div>
-          <img src = "./normal/frogsong.png" id="frogSongHelper"></img>
+          <div>
+            <img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input>
+            <img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input>
+            <br><img src = "./normal/frogsong.png" id="frogSongHelper"></img>
+            </div>
         </div>  
         <div id="linsoColumn">
-          <div id = "linsoTracker"><img id ="linso_background" src="./images/background.png">
-
-          </div>
+          <div id = "linsoTracker"><img id ="linso_background" src="./images/background.png"></div>
           <div id = "woth_info">
             <small id="woth1_title" class="woth_info_title" onmousedown="resetWoth(this,1)"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
             <small id="woth2_title" class="woth_info_title" onmousedown="resetWoth(this,2)"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
