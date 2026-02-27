@@ -1641,7 +1641,7 @@ function updateLogicInfo() {
 
   player.checks_remaining += player.forest_checks_remaining + player.fire_checks_remaining + player.water_checks_remaining + player.spirit_checks_remaining + player.shadow_checks_remaining + player.gtg_checks_remaining + player.well_checks_remaining + player.ganons_checks_remaining;
 
-  document.getElementById("checks_remaining").innerHTML = player.checks_remaining + " Checks Left";
+  document.getElementById("checks_remaining").innerHTML = player.checks_remaining + " Left";
   document.getElementById("accessible").innerHTML = player.accessible + " Accessible";
   if (!nerfed) { document.getElementById("logically_accessible").innerHTML = player.logically_accessible + " in Logic"; } else { document.getElementById("logically_accessible").innerHTML = "??? in Logic" }
   document.getElementById("tokens_acquired").innerHTML = player.tokens + " Tokens";
