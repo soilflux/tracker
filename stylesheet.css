@@ -9,6 +9,7 @@ html {
   user-select: none;
   color: white;
   height: 3000px;
+  font-family: 'Roboto Condensed', sans-serif;
   background-size: cover;
 }
 
@@ -51,33 +52,25 @@ body {
 
 .superJunk {
   color: lightblue;
-  font-size: 21px;
-  letter-spacing: -5px;
-  margin-left: -1px;
-  margin-bottom: -4px;
-  margin-top:-4px;
+  font-size: 14px;
+  letter-spacing:-0.17em;
   position: relative;
-  bottom: 1px;
+  bottom: 3px;
 }
 
 .superSK {
+  margin-left:2px;
   color: lightgrey;
-  font-size: 21px;
-  margin-left: 2px;
-  margin-bottom: -4px;
-  margin-top:-4px;
+  font-size: 14px;
   position: relative;
-  bottom: 1px;
+  bottom: 3px;
 }
 
 .superBK {
   color: #ca3433;
-  font-size: 21px;
-  margin-left: -2px;
-  margin-bottom: -4px;
-  margin-top:-4px;
+  font-size: 14px;
   position: relative;
-  bottom: 1px;
+  bottom: 3px;
 }
 
 .chuButtons {
@@ -745,56 +738,56 @@ body {
 }
 
 .logic_check_text {
-  font-size: 16px;
+  font-size: 14px;
   color: chartreuse;
   display: inline-block;
   opacity: 1;
-  margin-top: 1px;
+  margin-top: 2.5px;
   vertical-align: top;
-  letter-spacing: -1.3px;
+  letter-spacing: -0.05em;
 }
 
 .known_check_text {
-  font-size: 16px;
+  font-size: 14px;
   color: green;
   font-weight: normal;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 1px;
+  margin-top: 2.5px;
   vertical-align: top;
-  letter-spacing: -1.3px;
+  letter-spacing: -0.05em;
 }
 
 .access_check_text {
-  font-size: 16px;
+  font-size: 14px;
   color: yellow;
   font-weight: normal;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 1px;
+  margin-top: 2.5px;
   vertical-align: top;
-  letter-spacing: -1.3px;
+  letter-spacing: -0.05em;
 }
 
 .ool_check_text {
   vertical-align: top;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   color: white;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 1px;
-  letter-spacing: -1.3px;
+  margin-top: 2.5px;
+  letter-spacing: -0.05em;
 }
 
 .gossip_text {
-  font-size: 16px;
+  font-size: 14px;
   color: pink;
   display: inline-block;
   opacity: 1;
-  margin-top: 1px;
+  margin-top: 2.5px;
   vertical-align: top;
-  letter-spacing: -1.3px;
+  letter-spacing: -0.05em;
 }
 
 #linso11 {

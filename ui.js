@@ -1562,7 +1562,7 @@ function updateLogicInfo() {
         }
       }
       document.getElementById(str).className = "ool_check_text";
-      document.getElementById(str).style.opacity = .25;
+      document.getElementById(str).style.opacity = .2;
       document.getElementById(str).style.fontWeight = "normal";
       if (rules.colorScheme == "dark") {
         document.getElementById(str).style.color = "white";
