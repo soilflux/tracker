@@ -414,7 +414,7 @@ body {
 .checkSummaryColumn {
   position: absolute;
   right:0px;
-  top:150px;
+  top:100px;
   width: 250px;
 }
 
@@ -597,7 +597,7 @@ body {
 
 #linsoColumn {
   position: absolute;
-  top:150px;
+  top:100px;
   right:270px;
   width: 280px;
 }
