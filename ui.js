@@ -1382,6 +1382,8 @@ function updateLogicInfo() {
     str = "text_" + key;
     str2 = "br_" + key;
 
+    document.getElementById(key).style.opacity = 1;
+
     if (key == "preludeCheck" || key == "nocturneCheck" || key == "timeCheck") { document.getElementById(str).style.display = "inline-block"; document.getElementById(str2).style.display = "inline-block"; }
 
     if (checkToItemMap[key] == "unknown" || forcedDisplay[i] || (coopmode && (checkToItemMap[key] == "small_key" || checkToItemMap[key] == "boss_key"))) {
@@ -1562,7 +1564,8 @@ function updateLogicInfo() {
         }
       }
       document.getElementById(str).className = "ool_check_text";
-      document.getElementById(str).style.opacity = .2;
+      document.getElementById(str).style.opacity = .05;
+      document.getElementById(key).style.opacity = .05;
       document.getElementById(str).style.fontWeight = "normal";
       if (rules.colorScheme == "dark") {
         document.getElementById(str).style.color = "white";
@@ -1576,14 +1579,14 @@ function updateLogicInfo() {
   }
 
   if (rules.preset == "aminalFunhouse") {
-    document.getElementById("text_deku_lobby").style.color = "#FFD700"; document.getElementById("text_deku_lobby").style.opacity = 1;
-    document.getElementById("text_dodongos_above_king").style.color = "#FFD700"; document.getElementById("text_dodongos_above_king").style.opacity = 1;
-    document.getElementById("text_jabu_map").style.color = "#FFD700"; document.getElementById("text_jabu_map").style.opacity = 1;
-    document.getElementById("text_forest_bossKey").style.color = "#FFD700"; document.getElementById("text_forest_bossKey").style.opacity = 1;
-    document.getElementById("text_fire_hammer1").style.color = "#FFD700"; document.getElementById("text_fire_hammer1").style.opacity = 1;
-    document.getElementById("text_water_morpha").style.color = "#FFD700"; document.getElementById("text_water_morpha").style.opacity = 1;
-    document.getElementById("text_shadow_compass").style.color = "#FFD700"; document.getElementById("text_shadow_compass").style.opacity = 1;
-    document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700"; document.getElementById("text_spirit_nearFourArmos").style.opacity = 1;
+    document.getElementById("text_deku_lobby").style.color = "#FFD700";
+    document.getElementById("text_dodongos_above_king").style.color = "#FFD700";
+    document.getElementById("text_jabu_map").style.color = "#FFD700";
+    document.getElementById("text_forest_bossKey").style.color = "#FFD700";
+    document.getElementById("text_fire_hammer1").style.color = "#FFD700";
+    document.getElementById("text_water_morpha").style.color = "#FFD700";
+    document.getElementById("text_shadow_compass").style.color = "#FFD700";
+    document.getElementById("text_spirit_nearFourArmos").style.color = "#FFD700";
   }
 
   if (rules.smallKeys == "remove" || rules.smallKeys == "keyRings") {
