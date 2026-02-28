@@ -1933,6 +1933,8 @@ function updateCheckLogic() {
       Peek.water_cracked = Has.can_do_water_checks;
       Peek.water_block = Has.water_temple_adult_access;
       Peek.water_river = Has.can_do_water_checks && player.current_water_keys >= 2 && Has.time && Has.hookshot;
+      Peek.spirit_childLeft = Has.spirit_temple_child_access;
+      Peek.spirit_childRight = Has.spirit_temple_child_access;
       Peek.spirit_adultLeft = Has.can_push_spirit_silver_block && Has.lullaby && (Has.bow || Has.hookshot || Has.bomb_bag || player.bombchus);
       Peek.spirit_rightHand = Has.can_enter_colossus;
       Peek.shadow_dins1 = Has.can_ride_shadow_boat && player.current_shadow_keys >= 4;

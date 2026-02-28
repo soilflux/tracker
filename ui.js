@@ -1564,8 +1564,8 @@ function updateLogicInfo() {
         }
       }
       document.getElementById(str).className = "ool_check_text";
-      document.getElementById(str).style.opacity = .05;
-      document.getElementById(key).style.opacity = .05;
+      document.getElementById(str).style.opacity = .075;
+      document.getElementById(key).style.opacity = .075;
       document.getElementById(str).style.fontWeight = "normal";
       if (rules.colorScheme == "dark") {
         document.getElementById(str).style.color = "white";
