@@ -302,6 +302,14 @@ function wothAndBarrenProcessing() {
   }
 }
 
+function wothDisplay() {
+  const pathStart = "./normal/areas/";
+  const pathEnd = ".jpg";
+  const woth1Area = AreaImages[hintCodeToAreaMap[document.getElementById("woth_input1").value]]
+  const woth1Image = pathStart + woth1Area + pathEnd;
+  if (woth1Area) {document.getElementById("woth1Image").src = woth1Image};
+}
+
 function alternateHintInput() {
 
   var lines = document.getElementById("hintInput").value.split('\n');

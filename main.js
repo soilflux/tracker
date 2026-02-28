@@ -69,6 +69,7 @@ function midUpdate() {
   updateSpawnInputs();
   refreshLinSo();
   updateWothBorders();
+  wothDisplay();
   updateUsefulAreaItems();
   dungeonHeaderVisibility();
   Update();

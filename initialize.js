@@ -606,6 +606,44 @@ var areaInputs = {
   "we": "we", "bo": "we"                    // Well
 };
 
+var hintCodeToAreaMap = {
+  "ko": "Kokiri",
+  "ra": "Ranch",
+  "hf": "Field",
+  "gv": "Valley",
+  "lh": "Hylia",
+  "mk": "Market",
+  "ca": "Hyr Cas",
+  "ou": "OGC",
+  "to": "ToT",
+  "zf": "Fountain",
+  "ic": "Ice",
+  "de": "Deku",
+  "lw": "Lost Woods",
+  "sf": "SFM",
+  "go": "Goron City",
+  "dc": "Dodongos",
+  "tr": "Trail",
+  "cr": "Crater",
+  "ka": "Kakariko",
+  "gy": "Graveyard",
+  "zr": "River",
+  "zd": "Domain",
+  "co": "Colossus",
+  "was": "Wasteland",
+  "th": "Thieves",
+  "gf": "Fortress",
+  "jj": "Jabu",
+  "for": "Forest",
+  "fir": "Fire",
+  "wat": "Water",
+  "sh": "Shadow",
+  "sp": "Spirit",
+  "ga": "Ganon's",
+  "gt": "GTG",
+  "we": "Well"
+};
+
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var inputs = ["x", "a", "q", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];

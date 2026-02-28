@@ -13,6 +13,10 @@ html {
   background-size: cover;
 }
 
+img:not([src]) {
+  visibility: hidden;
+}
+
 button {
   background: #696969;
   color: white;
@@ -666,6 +670,11 @@ body {
   color: lightblue;
 }
 
+.wothImages {
+  height:22px;
+  width:28px;
+}
+
 .picture_input {
   width: 28px;
   height: 22px;
@@ -742,7 +751,7 @@ body {
   color: chartreuse;
   display: inline-block;
   opacity: 1;
-  margin-top: 2.5px;
+  margin-top: 2.2px;
   vertical-align: top;
   letter-spacing: -0.05em;
 }
@@ -753,7 +762,7 @@ body {
   font-weight: normal;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 2.5px;
+  margin-top: 2.2px;
   vertical-align: top;
   letter-spacing: -0.05em;
 }
@@ -764,7 +773,7 @@ body {
   font-weight: normal;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 2.5px;
+  margin-top: 2.2px;
   vertical-align: top;
   letter-spacing: -0.05em;
 }
@@ -776,7 +785,7 @@ body {
   color: white;
   display: inline-block;
   opacity: 0.5;
-  margin-top: 2.5px;
+  margin-top: 2.2px;
   letter-spacing: -0.05em;
 }
 
@@ -785,7 +794,7 @@ body {
   color: pink;
   display: inline-block;
   opacity: 1;
-  margin-top: 2.5px;
+  margin-top: 2.2px;
   vertical-align: top;
   letter-spacing: -0.05em;
 }

@@ -1850,8 +1850,7 @@ function updateWothBorders() {
 
       areaToCheckMap[AreaNames[i]].forEach(loc => {
         if (!alwaysHints.includes(loc) && (isCheckHinted[loc] == false || isCheckHinted[loc] == undefined) && !loc.startsWith("h_")) {
-          document.getElementById("text_" + loc).style.border = "solid cyan 2px";
-          document.getElementById("text_" + loc).style.letterSpacing = "-1.6px";
+          document.getElementById("text_" + loc).style.border = "solid cyan 1px";
         }
         else
           document.getElementById("text_" + loc).style.border = "";
