@@ -845,6 +845,7 @@ function Undo() {
   logic[checkToItemMap[lastCheck[lastCheck.length - 1]]] = false;
   checkToItemMap[lastCheck[lastCheck.length - 1]] = "unknown";
   document.getElementById(lastCheck[lastCheck.length - 1]).value = "";
+  areaToItemsMap[checkToAreaMap[lastCheck[lastCheck.length - 1]]].pop();
   lastCheck.pop();
   midUpdate();
 }

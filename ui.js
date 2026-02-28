@@ -234,6 +234,7 @@ function processInputs() {
         if (!player[Items2[inputIdx] + duplicate]) { forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage = ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase() }
         thisIsHinted = false;
         hintedInput = "";
+        areaToItemsMap[checkToAreaMap[locationId]].push(Items2[inputIdx]);
         trackAnimalQuest();
         break;
       }

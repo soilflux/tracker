@@ -13,10 +13,6 @@ html {
   background-size: cover;
 }
 
-img:not([src]) {
-  visibility: hidden;
-}
-
 button {
   background: #696969;
   color: white;
@@ -35,6 +31,24 @@ body {
   background-size: cover;
   margin: 0;
   overflow: hidden;
+}
+
+.wothItems {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top:5.5px;
+  visibility: hidden;
+}
+.wothCondensed {
+  margin-top:-2px;
+}
+
+#woth1 {
+  margin-top:-4px;
+}
+#woth4 {
+  margin-top:-4px;
 }
 
 #inputPresets {
@@ -683,6 +697,8 @@ body {
   border: none;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: magenta;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .woth_item_arrow {

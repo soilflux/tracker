@@ -32,6 +32,10 @@ var unusedLocations = [];
 var dimmed = 0.35;
 var age = "";
 var ageSetStamp = 0;
+let areaPathStart = "./normal/areas/";
+let areaPathEnd = ".jpg";
+let itemPathStart = "./normal/items/";
+let itemPathEnd = ".png";
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
@@ -634,9 +638,9 @@ var hintCodeToAreaMap = {
   "th": "Thieves",
   "gf": "Fortress",
   "jj": "Jabu",
-  "for": "Forest",
-  "fir": "Fire",
-  "wat": "Water",
+  "for": "Forest", "fo": "Forest",
+  "fir": "Fire", "fi": "Fire",
+  "wat": "Water", "wa": "Water",
   "sh": "Shadow",
   "sp": "Spirit",
   "ga": "Ganon's",
@@ -773,6 +777,43 @@ var child = [
   "well_fakeLeft", "well_frontBombable", "well_centerBig", "well_fakeRight", "well_centerSmall", "well_backBombable", "well_waterLeft", "well_coffin", "well_waterFront", "well_invisible", "well_deadHand", "gs_well_west_inner", "gs_well_east_inner", "well_locked1", "well_locked2", "gs_well_like_like", "well_basement",
   "lullabyCheck", "eponasCheck", "sariasCheck", "timeCheck",
 ];
+
+const areaToItemsMap = {
+  "Kokiri": [],
+  "Ranch": [],
+  "Field": [],
+  "Valley": [],
+  "Hylia": [],
+  "Market": [],
+  "Hyr Cas": [],
+  "OGC": [],
+  "ToT": [],
+  "Fountain": [],
+  "Ice": [],
+  "Deku": [],
+  "Lost Woods": [],
+  "SFM": [],
+  "Goron City": [],
+  "Dodongos": [],
+  "Trail": [],
+  "Crater": [],
+  "Kakariko": [],
+  "Graveyard": [],
+  "River": [],
+  "Domain": [],
+  "Colossus": [],
+  "Wasteland": [],
+  "Fortress": [],
+  "Jabu": [],
+  "Forest": [],
+  "Fire": [],
+  "Water": [],
+  "Shadow": [],
+  "Spirit": [],
+  "Well": [],
+  "GTG": [],
+  "Ganon's": []
+};
 
 const AreaImages = {
   "Kokiri": "kokiri",

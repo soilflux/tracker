@@ -303,11 +303,28 @@ function wothAndBarrenProcessing() {
 }
 
 function wothDisplay() {
-  const pathStart = "./normal/areas/";
-  const pathEnd = ".jpg";
-  const woth1Area = AreaImages[hintCodeToAreaMap[document.getElementById("woth_input1").value]]
-  const woth1Image = pathStart + woth1Area + pathEnd;
-  if (woth1Area) {document.getElementById("woth1Image").src = woth1Image};
+  [1, 2, 3, 4, 5 , 6].forEach(id => {
+    const areaKey = hintCodeToAreaMap[document.getElementById(`woth_input${id}`)?.value];
+    const pathKey = hintCodeToAreaMap[document.getElementById(`path_boss${id}`)?.value];
+    const items = areaToItemsMap[areaKey] ?? [];
+    const areaFile = AreaImages[areaKey];
+    const pathFile = AreaImages[pathKey];
+
+    [1, 2, 3].forEach((itemNum, index) => {
+      const img = document.getElementById(`woth${id}Item${itemNum}`);
+      const itemName = items[index];
+      
+      img.style.visibility = itemName ? "visible" : "hidden";
+      img.src = itemName ? `${itemPathStart}${itemName}${itemPathEnd}` : "";
+    });
+
+    const areaImg = document.getElementById(`woth${id}Image`);
+    const pathImg = document.getElementById(`path${id}Image`);
+    areaImg.style.visibility = areaFile ? "visible" : "hidden";
+    pathImg.style.visibility = pathFile ? "visible" : "hidden";
+    if (areaFile) areaImg.src = `${areaPathStart}${areaFile}${areaPathEnd}`;
+    if (pathFile) pathImg.src = `${areaPathStart}${pathFile}${areaPathEnd}`;
+  });
 }
 
 function alternateHintInput() {
