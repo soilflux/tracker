@@ -118,14 +118,6 @@ body {
   display: none;
 }
 
-#timerControl {
-  margin-left: 90px;
-  display: none;
-  top: 970px;
-  position: absolute;
-  right: 1180px;
-}
-
 #normalColumn1 {
   margin-left: 4px;
 }
@@ -388,10 +380,6 @@ body {
   position: relative;
   left: 12px;
   top: 0px;
-}
-
-#timerMultiplier {
-  width: 50px;
 }
 
 #probabilityColumn {
@@ -885,11 +873,11 @@ body {
 }
 
 #timer {
-  font-size: 50px;
+  font-size: 20px;
   color: white;
   position: absolute;
-  top: -10px;
-  left: 1740px;
+  top: 55px;
+  right: 140px;
   font-family: calibri;
 }
 
