@@ -10,6 +10,7 @@ var locationCouldAccess = {};
 var locationCouldPeek = {};
 var logic = {};
 var shopLogic = {};
+let Spawn = {};
 var itemToCheckMap = {};
 var gs = [];
 var Area = [];
@@ -1228,13 +1229,6 @@ logic.forced_shadow_keys = 0;
 logic.forced_ganons_keys = 0;
 logic.forced_gtg_keys = 0;
 logic.forced_well_keys = 0;
-
-//SPAWNS
-Spawn = {};
-
-rules.kzSkip = "allowed";
-rules.waterHop = "allowed";
-rules.valleyWithHook = "allowed";
 
 var woth1 = "unknown";
 var woth2 = "unknown";

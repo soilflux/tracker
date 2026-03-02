@@ -300,7 +300,7 @@ function inputPresets() {
     inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
   }
   else if (document.getElementById("inputPresets").value == "RECOMMENDED") {
-    inputs = ["x", "a", "q", "bm", "ch", "bo", "bt", "bi", "bw", "di", "fa", "fi", "go", "ha", "ho", "hv", "ir", "ko", "le", "ru", "li", "ma", "mr", "sc", "sl", "st", "ip", "cl", "wa", "zo", "ic", "bg", "na", "ny", "5fo", "5fi", "5wa", "5sp", "5sh", "5we", "5ge", "5ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "so", "mi", "bl", "se", "re", "no", "pr"];
+    inputs = ["x", "a", "q", "bb", "ch", "rr", "tt", "bi", "bw", "di", "fa", "ff", "go", "ha", "hh", "ho", "ir", "ko", "le", "ru", "li", "ma", "mr", "sc", "sl", "ss", "pr", "cl", "ww", "zo", "ic", "bg", "na", "ag", "fo", "fi", "wa", "sp", "sh", "we", "gt", "ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "st", "mi", "bo", "se", "re", "no", "pp"];
   }
 
   var parent = document.getElementById("inputConfig");
@@ -316,8 +316,9 @@ function inputPresets() {
 
 function saveInputs() {
   for (var i = 0; i < inputs.length; i++) {
-    localStorage.setItem(inputNames[i], inputs[i]);
+    localStorage.setItem(inputNames[i], document.getElementById(inputNames[i]).value);
   }
+  inputPresets();
 }
 
 function download() {

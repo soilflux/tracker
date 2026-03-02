@@ -492,7 +492,8 @@ body {
   display: flex;            /* Enables side-by-side layout */
   flex-direction: row;      /* Ensures they go horizontally */
   align-items: flex-start;  /* Aligns columns to the top */
-  gap: 5px;   
+  gap: 5px; 
+  margin-left:4px;  
 }
 #info-row {
   margin-top:2px;
