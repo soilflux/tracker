@@ -300,7 +300,7 @@ function inputPresets() {
     inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
   }
   else if (document.getElementById("inputPresets").value == "RECOMMENDED") {
-    inputs = ["x", "a", "q", "bb", "ch", "rr", "tt", "bi", "bw", "di", "fa", "ff", "go", "ha", "hh", "ho", "ir", "ko", "le", "ru", "li", "ma", "mr", "sc", "sl", "ss", "pr", "cl", "ww", "zo", "ic", "bg", "na", "ag", "fo", "fi", "wa", "sp", "sh", "we", "gt", "ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "st", "mi", "bo", "se", "re", "no", "pp"];
+    inputs = ["x", "a", "q", "bom", "ch", "ra", "bot", "bi", "bow", "di", "fa", "fi", "go", "ha", "hh", "ho", "ir", "ko", "le", "ru", "li", "ma", "mir", "sc", "sl", "ss", "pp", "cl", "ww", "zo", "ic", "bg", "na", "ag", "fo", "ff", "wa", "sp", "sh", "we", "gt", "ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "st", "min", "bol", "se", "re", "no", "pr"];
   }
 
   var parent = document.getElementById("inputConfig");
