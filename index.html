@@ -250,40 +250,13 @@
   <small id="timer"></small>
   </div>
 
-  <div id="myModal" class="modal">
+  <div id="halp" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <p> The tracker is designed to be used with the browser in fullscreen mode (f11).
 
         <br><br><b>Inputs</b>:
-        <br>All inputs are done using an input box listed on the left of each check name.
-
-        <br><b>Items: </b>
-        <br>x,a,q for junk, small key, boss key. You may also left click, right click or middle click the check name.
-        the former will typically be faster.
-        <br>Otherwise, an item code that typically is an initialism of the common name for that item. these are listed
-        on the bottom left if you scroll down. they can also be customized there but note that a code should not overlap
-        with the start of different code.
-        <br>End with a capital letter to input peeked items. Click off the check when item has been obtained.
-
-        <br><br>The following may be input using ANY check input box.
-
-        <br><b>Path and Barrens:</b>
-        <br>Start with a prefix: 1 for path or 2 for barren. continue with an area code, plus a path code for pathes.
-        these codes are listed under the 'Location Codes' button.
-        <br>For example, 1trde means trail is path to gohma. 1riev means river is evil's bane. 2zd means domain is
-        barren.
-
-        <br><b>Always and Sometimes:</b>
-        <br>Start with a prefix: 3 for always, 4 for sometimes. follow with codes for the hint and item(s).
-        <br>For example, 3bx means biggoron is nothing. 44bxsl means bowling has a junk item and a slingshot. 4daho
-        means dancing dad has a hookshot.
-        <br>Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
-
-        <br><b>Medallions:</b>
-        <br>Start with prefix: 0. follow with two items codes for the dungeon that has each medallion, going in the
-        order: light, forest, fire, water, shadow, spirit.
-        <br>For example, 0defofrshspdo means deku has light, forest has forest, pocket has fire etc.
+        <br>All inputs are done using an input box listed on the left of each check name. See 'Codes' for more info.
 
         <br><br><b>Check Color Codes:</b>
         <br>Bright green = can access logically with items you currently have
@@ -296,11 +269,6 @@
 
         <br><br> Timer can be started and paused using the pause key
 
-        <br><br> <b>Path Display</b>
-        <br> Left click items listed to the left of the arrow to highlight them yellow or right click to remove them.
-        Left clicking the area name brings back all removed items.
-        <br> Click arrow to add an item to the right of it by clicking an item in the check summary. these items can be
-        highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
         <br><br><b>Check Summary</b>:
         <br>Right clicking locations will toggle the item from it as obtained/unobtained.
         <br><br><b>Simulator</b>:
@@ -354,6 +322,8 @@
           </p>
           <br>
           <b>Area Codes</b>
+          <p style="color: #888; font-style: italic;">Use prefix 1 for pathes/woth (ex. 1wade means water is path to gohma)<br>
+          Use prefix 2 for barrens (ex. 2ko means kokiri is barren)
           <p>
             ko = kokiri<br>
             ra = ranch<br>
@@ -390,6 +360,22 @@
             ga = ganon's castle<br>
             gt = gtg<br>
             we = well
+          </p>
+          <br>
+          <b>Medallions/Entrances</b>
+          <p style="color: #888; font-style: italic;">Use prefix 0 for medallions (0dejafowafrsp = deku > light, jabu > forest etc.)<br>
+          Use prefix 9 for entrances (ex. 9dedojafofiwashspboicgt)
+          </p>
+          <p>
+            de = deku<br>
+            do = dodongos<br>
+            ja = jabu<br>
+            fo = forest<br>
+            fi = fire<br>
+            wa = water<br>
+            sh = shadow<br>
+            sp = spirit<br>
+            fr = free<br>
           </p>
         </div>
 
@@ -617,7 +603,7 @@
       <button id="areaTitlesToggle" onmousedown="areaTitlesToggle()">Show Area Headers</button><br /><br />
 
       <button id="myBtn">halp</button><br />
-      <button id="locationCodes">Location Codes</button><br />
+      <button id="locationCodes">Codes</button><br />
       <button id="patchNotesBtn">Patch Notes</button><br /><br />
 
       <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input>

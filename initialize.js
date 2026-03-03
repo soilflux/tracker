@@ -1370,7 +1370,7 @@ var coopmode = false;
 if (localStorage.getItem("wothSize") === "big") wothSizeToggle();
 
 // halp button
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("halp");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
