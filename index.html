@@ -142,19 +142,21 @@
       <br id="rupeeBreak" class="half_break" style="display: none;" />
       <br class="half_break" /><button id="chuPlus" class="chuButtons" onmouseDown="incrementChus()">+</button><button
         id="chuMinus" class="chuButtons" onmouseDown="decrementChus()">-</button><small id="chuCount">Chus: 0</small>
-      <br class="half_break" /><span id="notes" spellcheck="false"><small id="unread"></small></span><textarea
-        spellcheck="false" rows="19" cols="13" id="hintInput" class="alt_hint_input"></textarea><br /><br
+      <br class="half_break" /><span id="notes" spellcheck="false"><small id="unread"></small></span><br /><br
         class="half_break" />
       <img id="childPic" src="./images/child.png" class="man"></img><input id="markChildLocation"
         class="mark_spawn"></input><br>
       <img src="./images/adult.png" id="adultPic" class="man"></img><input id="markAdultLocation"
         class="mark_spawn"></input><br>
+      
+    </div>
+    <div id="unstreamed-row">
+      <textarea spellcheck="false" rows="15" cols="13" id="hintInput" class="alt_hint_input"></textarea>
+      <div id="dungeons_summary"></div>
       <div id="dungeon_er_input_div">
         <text class="dung_er_label">DeDoJaFoFiWa</text><br><text class="dung_er_label">ShSpBoIcGt</text><br>
         <textarea id="mark_ER_Dungeons" class="layout_input">dedojafofiwashspboicgt</textarea>
       </div>
-    </div>
-    <div id="unstreamed-row">
       <div id="barren_hints_div">
         <input spellcheck="false" id="barren_input1" class="barren_input"></input><input spellcheck="false"
           id="barren_input2" class="barren_input"></input><input spellcheck="false" id="barren_input3"
@@ -185,7 +187,7 @@
       <div id="scrollable_section">
         <div id="soli_woth_info"></div>
       </div>
-      <div id="dungeons_summary"></div>
+      
       <div>
         <img id="medallionPic" class="man"></img><input id="markMedallions" class="layout_input"></input>
         <img id="stonePic" class="man"></img><input id="markStones" class="layout_input"> </input>

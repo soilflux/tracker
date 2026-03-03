@@ -2542,7 +2542,7 @@ function popup() {
 document.documentElement.spellcheck = false;
 document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 if (rules.preset == "s9") {
-  document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n\n2 dual:\n\n\n\n3 some:\n";
+  document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n2 dual:\n\n\n3 some:\n";
 }
 if (rules.preset == "aminalFunhouse") {
   document.getElementById("hintInput").innerHTML = "10 x\n20 x\n30 x\n40 x\n50 x";
