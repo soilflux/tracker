@@ -657,7 +657,7 @@ const inputToItemMap = {
   "ch": "bombchus",
   "ra": "boomerang", "boo": "boomerang",
   "bot": "bottle",
-  "bi": "bottle",
+  "bi": "big_poe",
   "bow": "bow",
   "di": "dins_fire",
   "fa": "farores_wind",
@@ -707,6 +707,10 @@ const inputToItemMap = {
   "no": "nocturne",
   "pr": "prelude"
 };
+
+const itemToInputMap = Object.fromEntries(
+  Object.entries(inputToItemMap).map(([code, item]) => [item, code])
+);
 
 const itemToNameMap = {
   "junk": "Junk",
@@ -768,20 +772,11 @@ const itemToNameMap = {
 
 var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hover_boots", "iron_boots", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
-var inputs = ["x", "a", "q", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
 var pathInputs = ["x", "de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev", "li", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var inputNames = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farore's Wind", "Fire Arrows", "Goron Tunic", "Hammer", "Progressive Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Progressive Scale", "Slingshot", "Progressive Strength", "Prescription", "Claim Check", "Progressive Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's Song", "Saria's Song", "Song of Time", "Sun's Song", "Song of Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet", "bombchus"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf", "dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc", "ogcool", "gcshop", "zdshop", "kakr"];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy", "ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
-
-var parent = document.getElementById("inputConfig");
-for (var i = 0; i < inputs.length; i++) {
-  var elem = document.createElement("input"); elem.id = inputNames[i]; elem.value = inputs[i]; elem.className = "settings_small"; parent.appendChild(elem);
-  var elem = document.createElement("small"); elem.id = "text_" + inputNames[i]; elem.className = "check_text"; elem.innerHTML = inputNames[i]; parent.appendChild(elem);
-  var elem = document.createElement("br"); elem.id = "br_" + inputNames[i]; parent.appendChild(elem);
-}
-inputPresets();
+let songs = ["lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 
 var parent = document.getElementById("inputConfig2");
 for (var i = 0; i < spawnInputs.length; i++) {
@@ -2375,75 +2370,75 @@ var SpoilerLocationToLocationName = {
   "Colossus (Spirit Temple)": "h_colossus"
 };
 
-var SpoilerItemToInput = {
-  "Bomb Bag": inputs[inputNames.indexOf("Bomb Bag")],
-  "Boomerang": inputs[inputNames.indexOf("Boomerang")],
-  "Bottle": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Red Potion": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Green Potion": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Blue Potion": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Fairy": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Bugs": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Fish": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Milk": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Poe": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Blue Fire": inputs[inputNames.indexOf("Bottle")],
-  "Bottle with Big Poe": inputs[inputNames.indexOf("Big Poe")],
-  "Bow": inputs[inputNames.indexOf("Bow")],
-  "Dins Fire": inputs[inputNames.indexOf("Din's Fire")],
-  "Farores Wind": inputs[inputNames.indexOf("Farore's Wind")],
-  "Fire Arrows": inputs[inputNames.indexOf("Fire Arrows")],
-  "Goron Tunic": inputs[inputNames.indexOf("Goron Tunic")],
-  "Megaton Hammer": inputs[inputNames.indexOf("Hammer")],
-  "Progressive Hookshot": inputs[inputNames.indexOf("Progressive Hookshot")],
-  "Hover Boots": inputs[inputNames.indexOf("Hover Boots")],
-  "Iron Boots": inputs[inputNames.indexOf("Iron Boots")],
-  "Kokiri Sword": inputs[inputNames.indexOf("Kokiri Sword")],
-  "Lens of Truth": inputs[inputNames.indexOf("Lens")],
-  "Rutos Letter": inputs[inputNames.indexOf("Ruto's Letter")],
-  "Light Arrows": inputs[inputNames.indexOf("Light Arrows")],
-  "Magic Meter": inputs[inputNames.indexOf("Magic")],
-  "Mirror Shield": inputs[inputNames.indexOf("Mirror Shield")],
-  "Progressive Scale": inputs[inputNames.indexOf("Progressive Scale")],
-  "Slingshot": inputs[inputNames.indexOf("Slingshot")],
-  "Progressive Strength Upgrade": inputs[inputNames.indexOf("Progressive Strength")],
-  "Prescription": inputs[inputNames.indexOf("Prescription")],
-  "Eyeball Frog": inputs[inputNames.indexOf("Prescription")],
-  "Eyedrops": inputs[inputNames.indexOf("Prescription")],
-  "Claim Check": inputs[inputNames.indexOf("Claim Check")],
-  "Progressive Wallet": inputs[inputNames.indexOf("Progressive Wallet")],
-  "Nayrus Love": inputs[inputNames.indexOf("Nayrus Love")],
-  "Biggoron Sword": inputs[inputNames.indexOf("BGS")],
-  "Stone of Agony": inputs[inputNames.indexOf("Stone of Agony")],
-  "Zora Tunic": inputs[inputNames.indexOf("Zora Tunic")],
-  "Zeldas Lullaby": inputs[inputNames.indexOf("Lullaby")],
-  "Eponas Song": inputs[inputNames.indexOf("Epona's Song")],
-  "Sarias Song": inputs[inputNames.indexOf("Saria's Song")],
-  "Song of Time": inputs[inputNames.indexOf("Song of Time")],
-  "Suns Song": inputs[inputNames.indexOf("Sun's Song")],
-  "Song of Storms": inputs[inputNames.indexOf("Song of Storms")],
-  "Minuet of Forest": inputs[inputNames.indexOf("Minuet")],
-  "Bolero of Fire": inputs[inputNames.indexOf("Bolero")],
-  "Serenade of Water": inputs[inputNames.indexOf("Serenade")],
-  "Requiem of Spirit": inputs[inputNames.indexOf("Requiem")],
-  "Nocturne of Shadow": inputs[inputNames.indexOf("Nocturne")],
-  "Prelude of Light": inputs[inputNames.indexOf("Prelude")],
-  "Bombchus (10)": inputs[inputNames.indexOf("Bombchus")],
-  "Bombchus (20)": inputs[inputNames.indexOf("Bombchus")],
-  "Bombchus (5)": inputs[inputNames.indexOf("Bombchus")],
-  "Small Key (Forest Temple)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Fire Temple)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Water Temple)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Spirit Temple)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Shadow Temple)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Bottom of the Well)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Gerudo Training Ground)": inputs[inputNames.indexOf("Small Key")],
-  "Small Key (Ganons Castle)": inputs[inputNames.indexOf("Small Key")],
-  "Boss Key (Forest Temple)": inputs[inputNames.indexOf("Boss Key")],
-  "Boss Key (Fire Temple)": inputs[inputNames.indexOf("Boss Key")],
-  "Boss Key (Water Temple)": inputs[inputNames.indexOf("Boss Key")],
-  "Boss Key (Spirit Temple)": inputs[inputNames.indexOf("Boss Key")],
-  "Boss Key (Shadow Temple)": inputs[inputNames.indexOf("Boss Key")]
+const SpoilerItemToInput = {
+  "Bomb Bag": itemToInputMap["bomb_bag"],
+  "Boomerang": itemToInputMap["boomerang"],
+  "Bottle": itemToInputMap["bottle"],
+  "Bottle with Red Potion": itemToInputMap["bottle"],
+  "Bottle with Green Potion": itemToInputMap["bottle"],
+  "Bottle with Blue Potion": itemToInputMap["bottle"],
+  "Bottle with Fairy": itemToInputMap["bottle"],
+  "Bottle with Bugs": itemToInputMap["bottle"],
+  "Bottle with Fish": itemToInputMap["bottle"],
+  "Bottle with Milk": itemToInputMap["bottle"],
+  "Bottle with Poe": itemToInputMap["bottle"],
+  "Bottle with Blue Fire": itemToInputMap["bottle"],
+  "Bottle with Big Poe": itemToInputMap["big_poe"],
+  "Bow": itemToInputMap["bow"],
+  "Dins Fire": itemToInputMap["dins_fire"],
+  "Farores Wind": itemToInputMap["farores_wind"],
+  "Fire Arrows": itemToInputMap["fire_arrows"],
+  "Goron Tunic": itemToInputMap["go"],
+  "Megaton Hammer": itemToInputMap["hammer"],
+  "Progressive Hookshot": itemToInputMap["hookshot"],
+  "Hover Boots": itemToInputMap["hover_boots"],
+  "Iron Boots": itemToInputMap["iron_boots"],
+  "Kokiri Sword": itemToInputMap["kokiri_sword"],
+  "Lens of Truth": itemToInputMap["lens"],
+  "Rutos Letter": itemToInputMap["rutos_letter"],
+  "Light Arrows": itemToInputMap["light_arrows"],
+  "Magic Meter": itemToInputMap["magic"],
+  "Mirror Shield": itemToInputMap["mirror_shield"],
+  "Progressive Scale": itemToInputMap["scale"],
+  "Slingshot": itemToInputMap["slingshot"],
+  "Progressive Strength Upgrade": itemToInputMap["strength"],
+  "Prescription": itemToInputMap["prescription"],
+  "Eyeball Frog": itemToInputMap["prescription"],
+  "Eyedrops": itemToInputMap["prescription"],
+  "Claim Check": itemToInputMap["claim_check"],
+  "Progressive Wallet": itemToInputMap["wallet"],
+  "Nayrus Love": itemToInputMap["nayrus_love"],
+  "Biggoron Sword": itemToInputMap["biggoron_sword"],
+  "Stone of Agony": itemToInputMap["stone_of_agony"],
+  "Zora Tunic": itemToInputMap["zora_tunic"],
+  "Zeldas Lullaby": itemToInputMap["lullaby"],
+  "Eponas Song": itemToInputMap["eponas"],
+  "Sarias Song": itemToInputMap["sarias"],
+  "Song of Time": itemToInputMap["time"],
+  "Suns Song": itemToInputMap["suns"],
+  "Song of Storms": itemToInputMap["storms"],
+  "Minuet of Forest": itemToInputMap["minuet"],
+  "Bolero of Fire": itemToInputMap["bolero"],
+  "Serenade of Water": itemToInputMap["serenade"],
+  "Requiem of Spirit": itemToInputMap["requiem"],
+  "Nocturne of Shadow": itemToInputMap["nocturne"],
+  "Prelude of Light": itemToInputMap["prelude"],
+  "Bombchus (10)": itemToInputMap["bombchus"],
+  "Bombchus (20)": itemToInputMap["bombchus"],
+  "Bombchus (5)": itemToInputMap["bombchus"],
+  "Small Key (Forest Temple)": itemToInputMap["small_key"],
+  "Small Key (Fire Temple)": itemToInputMap["small_key"],
+  "Small Key (Water Temple)": itemToInputMap["small_key"],
+  "Small Key (Spirit Temple)": itemToInputMap["small_key"],
+  "Small Key (Shadow Temple)": itemToInputMap["small_key"],
+  "Small Key (Bottom of the Well)": itemToInputMap["small_key"],
+  "Small Key (Gerudo Training Ground)": itemToInputMap["small_key"],
+  "Small Key (Ganons Castle)": itemToInputMap["small_key"],
+  "Boss Key (Forest Temple)": itemToInputMap["boss_key"],
+  "Boss Key (Fire Temple)": itemToInputMap["boss_key"],
+  "Boss Key (Water Temple)": itemToInputMap["boss_key"],
+  "Boss Key (Spirit Temple)": itemToInputMap["boss_key"],
+  "Boss Key (Shadow Temple)": itemToInputMap["boss_key"]
 };
 
 var SpoilerAreaToInput = {

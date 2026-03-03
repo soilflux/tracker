@@ -295,32 +295,6 @@ function toggleSettings() {
   }
 }
 
-function inputPresets() {
-  if (document.getElementById("inputPresets").value == "LEGACY") {
-    inputs = ["x", "sk", "bk", "bom", "chu", "boo", "bot", "big", "bow", "din", "far", "fir", "gor", "ham", "hoo", "hov", "iro", "kok", "len", "rut", "lig", "mag", "mir", "sca", "sli", "str", "scr", "cla", "wal", "zor", "ice", "bgs", "nay", "sto", "fok", "fik", "wak", "spk", "shk", "wek", "gek", "gak", "ger", "bea", "lul", "epo", "sar", "sot", "sun", "sos", "min", "bol", "ser", "req", "noc", "pre"];
-  }
-  else if (document.getElementById("inputPresets").value == "RECOMMENDED") {
-    inputs = ["x", "a", "q", "bom", "ch", "ra", "bot", "bi", "bow", "di", "fa", "fi", "go", "ha", "hh", "ho", "ir", "ko", "le", "ru", "li", "ma", "mir", "sc", "sl", "ss", "pp", "cl", "ww", "zo", "ic", "bg", "na", "ag", "fo", "ff", "wa", "sp", "sh", "we", "gt", "ga", "ge", "be", "lu", "ep", "sa", "ti", "su", "st", "min", "bol", "se", "re", "no", "pr"];
-  }
-
-  var parent = document.getElementById("inputConfig");
-  for (var i = 0; i < inputs.length; i++) {
-    if (document.getElementById("inputPresets").value == "CUSTOM") {
-      if (localStorage.getItem(inputNames[i])) {
-        inputs[i] = localStorage.getItem(inputNames[i]);
-      }
-    }
-    document.getElementById(inputNames[i]).value = inputs[i];
-  }
-}
-
-function saveInputs() {
-  for (var i = 0; i < inputs.length; i++) {
-    localStorage.setItem(inputNames[i], document.getElementById(inputNames[i]).value);
-  }
-  inputPresets();
-}
-
 function download() {
   var a = document.body.appendChild(
     document.createElement("a")
@@ -377,7 +351,6 @@ function saveStuff() {
   localStorage.setItem("simSeed", document.getElementById("simSeed").value);
   localStorage.setItem("desiredAnimal", document.getElementById("desiredAnimal").value);
   localStorage.setItem("quest1", document.getElementById("quest1").value);
-  localStorage.setItem("inputPresets", document.getElementById("inputPresets").value);
 }
 
 function coopControl() {

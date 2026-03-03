@@ -72,7 +72,7 @@ function processInputs() {
 
     if (item == "junk") {
       if (isBoss.includes(locationId) && hinted) {
-        checkToItemMap[document.getElementById(locationId).id] = "junk";
+        checkToItemMap[locationId] = "junk";
         forcedDisplay[i] = true;
         continue;
       }
@@ -85,7 +85,7 @@ function processInputs() {
         document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
       }
       else {
-        checkToItemMap[document.getElementById(locationId).id] = "small_key";
+        checkToItemMap[locationId] = "small_key";
         forcedDisplay[i] = true;
       }
       continue;
@@ -95,7 +95,7 @@ function processInputs() {
         document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
       }
       else {
-        checkToItemMap[document.getElementById(locationId).id] = "boss_key";
+        checkToItemMap[locationId] = "boss_key";
         forcedDisplay[i] = true;
       }
       continue;
@@ -110,7 +110,7 @@ function processInputs() {
           document.getElementById("trade_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
         } else if (item == "big_poe") {
           document.getElementById("bottle" + duplicate + "_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
-        } else if (!songChecks.includes(item)) {
+        } else if (!songs.includes(item)) {
           document.getElementById(item + duplicate + "_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
         }
         knownItems[item + duplicate] = true;
@@ -510,7 +510,7 @@ function junk() {
       checkToItemMap[locationId] = "junk";
     }
 
-    else if (type == 1 || (type == 0 && event.altKey) || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Boss Key")]) {
+    else if (type == 1 || (type == 0 && event.altKey) || document.getElementById(locationId).value.toLowerCase() == itemToInputMap["boss_key"]) {
       if (locationId.includes("forest_") && !player.forest_boss_key) { player.forest_boss_key = true; itemToCheckMap.forest_boss_key = locationId; }
       else if (locationId.includes("fire_") && !player.fire_boss_key) { player.fire_boss_key = true; itemToCheckMap.fire_boss_key = locationId; }
       else if (locationId.includes("water_") && !player.water_boss_key) { player.water_boss_key = true; itemToCheckMap.water_boss_key = locationId; }
@@ -524,7 +524,7 @@ function junk() {
       checkToItemMap[locationId] = "boss_key";
     }
 
-    else if ((type == 2 && !event.altKey) || document.getElementById(locationId).value.toLowerCase() == inputs[inputNames.indexOf("Small Key")]) {
+    else if ((type == 2 && !event.altKey) || document.getElementById(locationId).value.toLowerCase() == itemToInputMap["small_key"]) {
       if (locationId.includes("forest_") && player.current_forest_keys < 5) { player.current_forest_keys += 1; }
       else if (locationId.includes("fire_") && player.current_fire_keys < 8) { player.current_fire_keys += 1; }
       else if (locationId.includes("water_") && player.current_water_keys < 6) { player.current_water_keys += 1; }

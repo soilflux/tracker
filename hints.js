@@ -345,7 +345,7 @@ function alternateHintInput() {
     if (terms.length === 2) {
       const itemCode = terms[1];
       // checkCode should be for an individual hint, and itemCode should exist.
-      if (typeof hintTable[checkCode] != 'string' || !inputs.includes(itemCode.toLowerCase())) {
+      if (typeof hintTable[checkCode] != 'string' || !inputToItemMap[itemCode.toLowerCase()]) {
         continue;
       }
       processAlternateHintInput(hintTable[checkCode], itemCode);
@@ -371,21 +371,18 @@ function alternateHintInput() {
 function processAlternateHintInput(checkName, rawItemCode) {
   const itemCode = rawItemCode.toLowerCase();
   const itemCodeIsUppercase = rawItemCode === rawItemCode.toUpperCase();
-  if (!(checkName in checkToItemMap) || !inputs.includes(itemCode)) {
+  if (!(checkName in checkToItemMap) || !inputToItemMap[itemCode]) {
     return;
   }
 
-  // Junk
-  if (itemCode === inputs[0]) {
+  if (itemCode === itemToInputMap["junk"]) {
     if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById("text_" + checkName).dispatchEvent(new Event('mousedown')); thisIsHinted = false; }
     if (itemCodeIsUppercase) baitsChecked += 1;
   }
-  // SK
-  else if (itemCode === inputs[1]) {
+  else if (itemCode === itemToInputMap["small_key"]) {
     if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Small Key")]); }
   }
-  // BK
-  else if (itemCode === inputs[2]) {
+  else if (itemCode === itemToInputMap["boss_key"]) {
     if (checkToItemMap[checkName] == "unknown") { thisIsHinted = true; document.getElementById(checkName).value = capitalizeFirstLetter(inputs[inputNames.indexOf("Boss Key")]); }
   }
   else {
