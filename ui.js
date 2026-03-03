@@ -761,7 +761,7 @@ function junkUltra() {
       hideCheck(loc);
       lastCheck.push(loc);
     });
-    midUpdate(); slowUpdate(); Update();
+    midUpdate(); Update();
   }
 }
 
@@ -1014,12 +1014,6 @@ function refreshLinSo() {
     if (angelFlag) { document.getElementById(animalID).style.opacity = 0.4; }
   }
   else { document.getElementById("linsoTracker").style.display = "none"; }
-}
-function updateInputs() {
-  for (var i = 0; i < spawnInputs.length; i++) {
-    spawnInputs[i] = document.getElementById(spawnNames[i]).value;
-    localStorage.setItem(spawnNames[i], spawnInputs[i]);
-  }
 }
 
 function updateRules() {

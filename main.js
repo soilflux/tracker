@@ -74,7 +74,3 @@ function midUpdate() {
   dungeonHeaderVisibility();
   Update();
 }
-
-function slowUpdate() {
-  updateInputs();
-}

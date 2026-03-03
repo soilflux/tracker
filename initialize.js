@@ -89,12 +89,11 @@ const rulesConfig = {
   waterHop: { label: "Water Hop", options: ["Banned", "Allowed"] },
   valleyWithHook: { label: "Valley w/ Hook", options: ["Banned", "Allowed"] },
 };
-const container = document.getElementById('settingsColumn');
+let container = document.getElementById('settingsColumn1');
 
 const rules = {};
 
 Object.entries(rulesConfig).forEach(([key, config]) => {
-
   const wrapper = document.createElement('div');
   wrapper.className = "rules-row";
 
@@ -121,8 +120,15 @@ Object.entries(rulesConfig).forEach(([key, config]) => {
   input.id = key;
   wrapper.appendChild(input);
   container.appendChild(wrapper);
-  if (key == "highlightInLogicChecks" || key == "linso")
+  if (key == "preset")
     container.appendChild(document.createElement('br'));
+  if (key == "hintType")
+    container.appendChild(document.createElement('br'));
+
+  if (key == "highlightInLogicChecks")
+    container = document.getElementById('settingsColumn2');
+  if (key == "linso")
+    container = document.getElementById('settingsColumn3');
 
   const savedValue = localStorage.getItem("rules_" + key) ?? config.default ?? toCamelCase(config.options[0]);
   rules[key] = savedValue;
@@ -777,14 +783,6 @@ var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hooksh
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf", "dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc", "ogcool", "gcshop", "zdshop", "kakr"];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy", "ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
 let songs = ["lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
-
-var parent = document.getElementById("inputConfig2");
-for (var i = 0; i < spawnInputs.length; i++) {
-  if (localStorage.getItem(spawnNames[i])) { spawnInputs[i] = localStorage.getItem(spawnNames[i]); }
-  var elem = document.createElement("input"); elem.id = spawnNames[i]; elem.value = spawnInputs[i]; elem.className = "custom_spawn"; parent.appendChild(elem);
-  var elem = document.createElement("small"); elem.id = "text_" + spawnNames[i]; elem.className = "check_text"; elem.innerHTML = spawnNames[i]; parent.appendChild(elem);
-  var elem = document.createElement("br"); elem.id = "br_" + spawnNames[i]; parent.appendChild(elem);
-}
 
 for (var i = 3; i < Items2.length; i++) {
   if (Items2[i] != "bombchus" && Items2[i] != "slingshot" && Items2[i] != "bomb_bag" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
@@ -2636,7 +2634,6 @@ function buildCheckSummary() {
 
 showNewPatchNotes();
 updateRules();
-setInterval(slowUpdate, 3000);
 setInterval(midUpdate, 1500);
 setInterval(fastUpdate, 70);
 Update(); midUpdate(); midUpdate(); fastUpdate();

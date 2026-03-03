@@ -363,11 +363,6 @@ body {
   color: gold;
 }
 
-#credits {
-  width: 200px;
-  float: left;
-}
-
 .searchingFor_images {
   height: 20px;
   width: 20px;
@@ -546,14 +541,9 @@ body {
   top: 900px;
 }
 
-#settingsColumn {
-  position: absolute;
-  left: 925px;
-}
-
 #statsColumn {
   position: absolute;
-  left: 1300px;
+  left: 1400px;
 }
 
 .patchNotes {
@@ -863,9 +853,9 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   align-items: flex-start;
-  padding: 20px;
+  padding: 5px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ddd;
   background-color: #1a1a1a;
@@ -895,7 +885,7 @@ body {
 
 .close {
   float: right;
-  right:45px;
+  right:25px;
   position:relative;
   font-size: 100px;
   font-weight: bold;

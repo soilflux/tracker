@@ -306,10 +306,38 @@
       <span class="close">&times;</span>
 
       <div class="hint-container">
+        <div class="hint-group">
+          <b>Spawns</b>
+          <p style="color: #888; font-style: italic;"></p>
+          <p>
+            dmcl = DMC by goron city<br>
+            dmcf = DMC fountain<br>
+            dmcu = DMC by trail<br>
+            dmtf = trail fairy<br>
+            dmtfool = trail fairy(ool)<br>
+            gf = fortress<br>
+            waste = waste<br>
+            col = colossus<br>
+            zd = domain<br>
+            zr = river<br>
+            zf = fountain<br>
+            zff = fountain fairy<br>
+            zffool = fountain fairy(ool)<br>
+            hf = dins fairy<br>
+            sfm = sfm<br>
+            noct = nocturne<br>
+            fish = fishing<br>
+            ogc = ogc fairy<br>
+            ogcool = ogc fairy(ool)<br>
+            gcshop = goron shop<br>
+            zdshop = domain shop<br>
+            kakr = kak rooftop<br>
+          </p>
+        </div>
 
         <div class="hint-group">
           <b>Always Hints</b>
-          <p style="color: #888; font-style: italic;">Use prefix 3 (ex: 33x = 30 skulls empty)</p>
+          <p style="color: #888; font-style: italic;">Prefix 3 (33x = 30 skulls empty)</p>
           <p>
             3 = 30 skulls<br>
             4 = 40 skulls<br>
@@ -321,9 +349,9 @@
             m = skull mask
           </p>
           <br>
-          <b>Area Codes</b>
-          <p style="color: #888; font-style: italic;">Use prefix 1 for pathes/woth (ex. 1wade means water is path to gohma)<br>
-          Use prefix 2 for barrens (ex. 2ko means kokiri is barren)
+          <b>Areas</b>
+          <p style="color: #888; font-style: italic;">Prefix 1 for pathes/woth (1wade means water is path to gohma)<br>
+            Prefix 2 for barrens (2ko means kokiri is barren)
           <p>
             ko = kokiri<br>
             ra = ranch<br>
@@ -363,8 +391,8 @@
           </p>
           <br>
           <b>Medallions/Entrances</b>
-          <p style="color: #888; font-style: italic;">Use prefix 0 for medallions (0dejafowafrsp = deku > light, jabu > forest etc.)<br>
-          Use prefix 9 for entrances (ex. 9dedojafofiwashspboicgt)
+          <p style="color: #888; font-style: italic;">Prefix 0 for meds (0dejafowafrsp = deku>light, jabu>forest..)<br>
+            Prefix 9 for entrances (9dedojafofiwashspboicgt)
           </p>
           <p>
             de = deku<br>
@@ -381,7 +409,7 @@
 
         <div class="hint-group">
           <b>Sometimes Hints</b>
-          <p style="color: #888; font-style: italic;">Use prefix 4 (ex: 4chx = chickens empty)</p>
+          <p style="color: #888; font-style: italic;">Prefix 4 (4chx = chickens empty)</p>
           <p>
             bo = Bolero<br>
             su = Sun's Song<br>
@@ -443,10 +471,10 @@
         </div>
 
         <div class="hint-group">
-          <b>Item Inputs</b>
+          <b>Items</b>
           <p style="color: #888; font-style: italic;">Mostly first two letters, sometimes three<br>
-          note many items allow a double tap of first, with emphasis on key progressives<br>
-          scale allows vv because ss was taken
+            note many items allow a double tap of first, with emphasis on key progressives<br>
+            scale allows vv because ss was taken
           </p>
           <p>
             x = junk<br>
@@ -537,7 +565,8 @@
         next to checks, leaving the boxes for always/sometimes hints,
         barrens, paths, entrances and medallions mostly obsolete/inferior.
         <br>
-        <br>Shortened item inputs, and added faster alternatives. All of the old ones will still work, although many of them will trigger with only 2 letters, which may throw you off for a bit.
+        <br>Shortened item inputs, and added faster alternatives. All of the old ones will still work, although many of
+        them will trigger with only 2 letters, which may throw you off for a bit.
         <!-- <br />dual hints supported, see location codes
             <br />added left click / right click to dungeon entrances to highlight/hide them. also added med images to dungeon entrances
             <br />added buttons to toggle bigger path hint font and location headers
@@ -586,9 +615,6 @@
   </div>
 
   <div id="settings">
-
-    <div id="inputConfig2"><small class="customizeTitles">Custom Spawn Inputs</small><br><br class="half_break"></div>
-
     <div id="skullsInLogicList"></div>
     <div id="credits"><small class="customizeTitles">Credits</small>
       <br><img src="./images/soli.png" class="pplpics">Soli
@@ -615,6 +641,9 @@
         <option value="ON">ON</option>
       </select><br><br class="half_break">
     </div>
+    <div id="settingsColumn1"></div>
+    <div id="settingsColumn2"></div>
+    <div id="settingsColumn3"></div>
     <div id="statsColumn">
       <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions"
         id="desiredAnimal">
