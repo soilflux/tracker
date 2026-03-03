@@ -17,7 +17,7 @@ function processInputs() {
         else {
 
         }
-        checkLog += "" + timerHours + "h " + timerMinutes + "m " + timerSeconds + "s " + checkArea + ": " + checkName + "\n";
+        checkLog += `${timerHours}h ${timerMinutes}m ${timerSeconds}s ${checkArea}: ${checkName}\n`;
       }
       continue;
     }
@@ -28,124 +28,20 @@ function processInputs() {
     if (input == '' || input == "???") {
       continue;
     }
-    //PATH
-    if (input.startsWith("1")) {
-      input = input.slice(1);
-      Object.keys(areaInputs).forEach(key => {
-        if (input.startsWith(key)) {
-          input = input.replace(key, "");
-          for (var j = 0; j < pathInputs.length; j++) {
-            if (input.startsWith(pathInputs[j])) {
-              let wothNum = 8;
-              for (var k = 1; k < wothNum; k++) {
-                if (document.getElementById("woth_input" + k).value == "") {
-                  document.getElementById("woth_input" + k).value = areaInputs[key];
-                  document.getElementById("path_boss" + k).value = pathInputs[j];
-                  document.getElementById(locationId).value = "";
-                  wothAndBarrenProcessing();
-                  flash();
-                  break;
-                }
-              }
-            }
-          }
-        }
-      });
-      continue;
-    }
-    //BARREN
-    if (input.startsWith("2")) {
-      input = input.slice(1);
-      Object.keys(areaInputs).forEach(key => {
-        if (input.startsWith(key)) {
-          let barrenNum = 8;
-          for (var j = 1; j < barrenNum; j++) {
-            if (document.getElementById("barren_input" + j).value == "") {
-              document.getElementById("barren_input" + j).value = areaInputs[key];
-              document.getElementById(locationId).value = "";
-              wothAndBarrenProcessing();
-              flash();
-              break;
-            }
-          }
-        }
-      });
-      continue;
-    }
-    //ALWAYS
-    if (input.startsWith("3")) {
-      input = input.slice(1);
-      Object.keys(alwaysTable).forEach(key => {
-        if (input.startsWith(key)) {
-          input = input.slice(1);
-          if (inputs.includes(input)) {
-            document.getElementById(alwaysTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
-            document.getElementById(locationId).value = "";
-            flash();
-          }
-        }
-      });
-      continue;
-    }
-    //SOMETIMES
-    if (input.startsWith("4")) {
-      input = input.slice(1);
-      Object.keys(sometimesTableReduced).forEach(key => {
-        if (input.startsWith(key)) {
-          input = input.replace(key, '');
-          if (inputs.includes(input.slice(0, 1))) {
-            if (!key.startsWith("4")) {
-              document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
-              document.getElementById(locationId).value = "";
-              flash();
-            }
-            else {
-              let firstInput = input.charAt(0).toUpperCase();
-              if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
-                firstInput += input.slice(1);
-                input = input.slice(2);
-              }
-              else {
-                input = input.slice(1);
-              }
-              if (inputs.includes(input)) {
-                document.getElementById(sometimesTableReduced[key][0]).value = firstInput;
-                document.getElementById(sometimesTableReduced[key][1]).value = input.charAt(0).toUpperCase() + input.slice(1);
-                document.getElementById(locationId).value = "";
-                flash();
-              }
-            }
-          }
-        }
-      });
-      continue;
-    }
-    //DUNGEON ENTRANCES
-    if (input.startsWith("9")) {
-      input = input.slice(1);
-      if (input.length == 22) {
-        document.getElementById("mark_ER_Dungeons").value = input;
-        document.getElementById(locationId).value = "";
-        updateDungeonER();
-        flash();
-      }
-      continue;
-    }
-    //MEDALLIONS
-    if (input.startsWith("0")) {
-      input = input.slice(1);
-      if (input.length == 12) {
-        document.getElementById("markMedallions").value = input;
-        document.getElementById(locationId).value = "";
-        stoneMedallionInput();
-        flash();
-      }
-      continue;
+
+    const inputType = checkInputType(input);
+    switch (inputType) {
+      case "path": handlePathInput(input, locationId); continue;
+      case "barren": handleBarrenInput(input, locationId); continue;
+      case "always": handleAlwaysInput(input, locationId); continue;
+      case "sometimes": handleSometimesInput(input, locationId); continue;
+      case "entrances": handleEntrancesInput(input, locationId); continue;
+      case "medallions": handleMedallionsInput(input, locationId); continue;
     }
 
     // Break early if input is invalid.
     if (!item) {
-      continue;      
+      continue;
     }
 
     // don't allow inputting the same item twice if it's not a duplicate item
@@ -236,6 +132,121 @@ function processInputs() {
         break;
       }
     }
+  }
+}
+
+function checkInputType(input) {
+  switch (input[0]) {
+    case "1": return "path";
+    case "2": return "barren";
+    case "3": return "always";
+    case "4": return "sometimes";
+    case "9": return "entrance";
+    case "0": return "medallion";
+    default: return "item";
+  }
+}
+
+function handlePathInput(input, locationId) {
+  input = input.slice(1);
+  Object.keys(areaInputs).forEach(key => {
+    if (input.startsWith(key)) {
+      input = input.replace(key, "");
+      for (var j = 0; j < pathInputs.length; j++) {
+        if (input.startsWith(pathInputs[j])) {
+          let wothNum = 8;
+          for (var k = 1; k < wothNum; k++) {
+            if (document.getElementById("woth_input" + k).value == "") {
+              document.getElementById("woth_input" + k).value = areaInputs[key];
+              document.getElementById("path_boss" + k).value = pathInputs[j];
+              document.getElementById(locationId).value = "";
+              wothAndBarrenProcessing();
+              flash();
+              break;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+function handleBarrenInput(input, locationId) {
+  input = input.slice(1);
+  Object.keys(areaInputs).forEach(key => {
+    if (input.startsWith(key)) {
+      let barrenNum = 8;
+      for (var j = 1; j < barrenNum; j++) {
+        if (document.getElementById("barren_input" + j).value == "") {
+          document.getElementById("barren_input" + j).value = areaInputs[key];
+          document.getElementById(locationId).value = "";
+          wothAndBarrenProcessing();
+          flash();
+          break;
+        }
+      }
+    }
+  });
+}
+function handleAlwaysInput(input, locationId) {
+  input = input.slice(1);
+  Object.keys(alwaysTable).forEach(key => {
+    if (input.startsWith(key)) {
+      input = input.slice(1);
+      if (inputs.includes(input)) {
+        document.getElementById(alwaysTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+        document.getElementById(locationId).value = "";
+        flash();
+      }
+    }
+  });
+}
+function handleSometimesInput(input, locationId) {
+  input = input.slice(1);
+  Object.keys(sometimesTableReduced).forEach(key => {
+    if (input.startsWith(key)) {
+      input = input.replace(key, '');
+      if (inputs.includes(input.slice(0, 1))) {
+        if (!key.startsWith("4")) {
+          document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+          document.getElementById(locationId).value = "";
+          flash();
+        }
+        else {
+          let firstInput = input.charAt(0).toUpperCase();
+          if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
+            firstInput += input.slice(1);
+            input = input.slice(2);
+          }
+          else {
+            input = input.slice(1);
+          }
+          if (inputs.includes(input)) {
+            document.getElementById(sometimesTableReduced[key][0]).value = firstInput;
+            document.getElementById(sometimesTableReduced[key][1]).value = input.charAt(0).toUpperCase() + input.slice(1);
+            document.getElementById(locationId).value = "";
+            flash();
+          }
+        }
+      }
+    }
+  });
+}
+function handleEntrancesInput(input, locationId) {
+  input = input.slice(1);
+  if (input.length == 22) {
+    document.getElementById("mark_ER_Dungeons").value = input;
+    document.getElementById(locationId).value = "";
+    updateDungeonER();
+    flash();
+  }
+}
+function handleMedallionsInput(input, locationId) {
+  input = input.slice(1);
+  if (input.length == 12) {
+    document.getElementById("markMedallions").value = input;
+    document.getElementById(locationId).value = "";
+    stoneMedallionInput();
+    flash();
   }
 }
 
@@ -1905,10 +1916,10 @@ function updateUsefulAreaItems() {
 
   function highlightFirstVisible(areaKey, color) {
     const locations = areaToCheckMap[areaKey] || [];
-    
+
     for (const loc of locations) {
       const element = document.getElementById(loc);
-      
+
       if (element?.style.display === "inline-block" && element?.style.visibility === "visible") {
         const textElement = document.getElementById("text_" + loc);
         if (textElement) {
