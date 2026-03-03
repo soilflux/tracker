@@ -1,412 +1,558 @@
 <!DOCTYPE>
-  <html>
-    <head>
-      <link id = "tab_pic" rel="shortcut icon" href="tab_pics/circus_tent.png" />
-      <link style="text/css" rel="stylesheet" href="stylesheet.css"/>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-      <title>Aminal Tracker</title>
-    </head>
-    <body oncontextmenu="return false;">
-      <div id ="row" class="row">
-        <div id="normalColumn1" class="column"></div>
-        <div id="normalColumn2" class="column"></div>	
-        <div id="normalColumn3" class="column"></div>	
-        <div class="dungColumn" id="dung1"><span class ="oops">-</span></div>
-        <div class="dungColumn" id="dung2"><span class ="oops">-</span></div>
-        <div class="dungColumn" id="dung3"><span class ="oops">-</span></div>
-        <div class="dungColumn" id="dung4"><span class ="oops">-</span></div>
-        <div id="info-row">
-          <div id = "songs-grid"> 
-            <div id="lullabyCheckDisplay"><img src="./images/lullaby.png" id="lullabyimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="eponasCheckDisplay"><img src="./images/eponas.png" id="eponasimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="sariasCheckDisplay"><img src="./images/sarias.png" id="sariasimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="sunsCheckDisplay"><img src="./images/suns.png" id="sunsimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="timeCheckDisplay"><img src="./images/sot.png" id="timeimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="stormsCheckDisplay"><img src="./images/sos.png" id="stormsimg" class = "song-icon" onmousedown="highlight(this)"></div>
+<html>
 
-            <div id="minuetCheckDisplay"><img src="./images/minuet.png" id="minuetimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="boleroCheckDisplay"><img src="./images/bolero.png" id="boleroimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="serenadeCheckDisplay"><img src="./images/serenade.png" id="serenadeimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="requiemCheckDisplay"><img src="./images/requiem.png" id="requiemimg" class = "song-icon" onmousedown="highlight(this)"></div>
-            <div id="nocturneCheckDisplay"><img src="./images/nocturne.png" id="nocturneimg" class = "song-icon"onmousedown="highlight(this)"></div>
-            <div id="preludeCheckDisplay"><img src="./images/prelude.png" id="preludeimg" class = "song-icon"onmousedown="highlight(this)"></div>
-          </div>
-          <div>
-            <div id = "woth1" class = "wothCondensed"><img id = "woth1Image" class = "wothImages"><img id = "path1Image" class = "wothImages"><img id = "woth1Item1" class = "wothItems"><img id = "woth1Item2" class = "wothItems"><img id = "woth1Item3" class = "wothItems"></div>
-            <div id = "woth2" class = "wothCondensed"><img id = "woth2Image" class = "wothImages"><img id = "path2Image" class = "wothImages"><img id = "woth2Item1" class = "wothItems"><img id = "woth2Item2" class = "wothItems"><img id = "woth2Item3" class = "wothItems"></div>
-            <div id = "woth3" class = "wothCondensed"><img id = "woth3Image" class = "wothImages"><img id = "path3Image" class = "wothImages"><img id = "woth3Item1" class = "wothItems"><img id = "woth3Item2" class = "wothItems"><img id = "woth3Item3" class = "wothItems"></div>
-          </div>
-          <div>
-            <div id = "woth4" class = "wothCondensed"><img id = "woth4Image" class = "wothImages"><img id = "path4Image" class = "wothImages"><img id = "woth4Item1" class = "wothItems"><img id = "woth4Item2" class = "wothItems"><img id = "woth4Item3" class = "wothItems"></div>
-            <div id = "woth5" class = "wothCondensed"><img id = "woth5Image" class = "wothImages"><img id = "path5Image" class = "wothImages"><img id = "woth5Item1" class = "wothItems"><img id = "woth5Item2" class = "wothItems"><img id = "woth5Item3" class = "wothItems"></div>
-            <div id = "woth6" class = "wothCondensed"><img id = "woth6Image" class = "wothImages"><img id = "path6Image" class = "wothImages"><img id = "woth6Item1" class = "wothItems"><img id = "woth6Item2" class = "wothItems"><img id = "woth6Item3" class = "wothItems"></div>
-          </div>
-          <div id = "forestFireWater" class = "three-dungeons">
-            <img src = "./normal/items/forest.png" id = "dung4_icon" class = "medallions"><small id="text_dung4" class="dungText">???</small><img id="dung4_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text2" ></small><img id="dung4_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung4_text3" ></small><img id="dung4_req3" onmousedown = "highlight(this)"><img id="dung4_req4" onmousedown = "highlight(this)"><img id="dung4_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/fire.png" id = "dung5_icon" class = "medallions"><small id="text_dung5" class="dungText">???</small><img id="dung5_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text2" ></small><img id="dung5_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung5_text3" ></small><img id="dung5_req3" onmousedown = "highlight(this)"><img id="dung5_req4" onmousedown = "highlight(this)"><img id="dung5_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/water.png" id = "dung6_icon" class = "medallions"><small id="text_dung6" class="dungText">???</small><img id="dung6_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung6_text2" ></small><img id="dung6_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung6_text3" ></small><img id="dung6_req3" onmousedown = "highlight(this)"><img id="dung6_req4" onmousedown = "highlight(this)"><img id="dung6_req5" onmousedown = "highlight(this)"><br />
-          </div>
-          <div id = "spiritShadowLight" class = "three-dungeons">
-            <img src = "./normal/items/light.png" id = "dung7_icon" class = "medallions"><small id="text_dung7" class="dungText">???</small><img id="dung7_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung7_text2" ></small><img id="dung7_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung7_text3" ></small><img id="dung7_req3" onmousedown = "highlight(this)"><img id="dung7_req4" onmousedown = "highlight(this)"><img id="dung7_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/light.png" id = "dung8_icon"class = "medallions"><small id="text_dung8" class="dungText">???</small><img id="dung8_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung8_text2" ></small><img id="dung8_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung8_text3" ></small><img id="dung8_req3" onmousedown = "highlight(this)"><img id="dung8_req4" onmousedown = "highlight(this)"><img id="dung8_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/light.png" id = "dung9_icon" class = "medallions"><small id="text_dung9" class="dungText">???</small><img id="dung9_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung9_text2" ></small><img id="dung9_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung9_text3" ></small><img id="dung9_req3" onmousedown = "highlight(this)"><img id="dung9_req4" onmousedown = "highlight(this)"><img id="dung9_req5" onmousedown = "highlight(this)"><br />
-          </div>
-          <div id = "emeraldRubySapphire" class = "three-dungeons">
-            <img src = "./normal/items/emerald.png" id = "dung1_icon" class = "stones"><small id="text_dung1" class="dungText" ></small><img id="dung1_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung1_text2" ></small><img id="dung1_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung1_text3" ></small><img id="dung1_req3" onmousedown = "highlight(this)"><img id="dung1_req4" onmousedown = "highlight(this)"><img id="dung1_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/ruby.png" id = "dung2_icon" class = "stones"><small id="text_dung2" class="dungText"></small><img id="dung2_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text2" ></small><img id="dung2_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung2_text3" ></small><img id="dung2_req3" onmousedown = "highlight(this)"><img id="dung2_req4" onmousedown = "highlight(this)"><img id="dung2_req5" onmousedown = "highlight(this)"><br />
-            <img src = "./normal/items/sapphire.png" id = "dung3_icon" class = "stones"><small id="text_dung3" class="dungText"></small><img id="dung3_req1" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text2" ></small><img id="dung3_req2" onmousedown = "highlight(this)"><small class="track_text" id="dung3_text3" ></small><img id="dung3_req3" onmousedown = "highlight(this)"><img id="dung3_req4" onmousedown = "highlight(this)"><img id="dung3_req5" onmousedown = "highlight(this)"><br />
-          </div>
-          <div id = "searchingFor">     
-            <small id="major_probability">Searching For</small><br>
-            <div id = "searchingFor_div"><img id = "goMode" src = "./normal/gomode.png"></img></div>
-            <small id = "theLetterN">n </small><input spellcheck="false" id = "probability_input" class = "hint_input" value = '1'></input>   
-          </div>
-          <div id="checkStatsColumn">
-            <small id="checks_remaining" class="stat-text"></small>
-            <br><small id="accessible" class="stat-text"></small>
-            <br><small id="logically_accessible" class="stat-text"></small>
-          </div>
-          <div id="tokenStatsColumn">
-            <small id="tokens_acquired" class="stat-text"></small>
-            <br><small id="tokensAccessible" class="stat-text"></small>
-            <br><small id="skulls_in_logic" class="stat-text"></small>
-         </div>
+<head>
+  <link id="tab_pic" rel="shortcut icon" href="tab_pics/circus_tent.png" />
+  <link style="text/css" rel="stylesheet" href="stylesheet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <title>Aminal Tracker</title>
+</head>
+
+<body oncontextmenu="return false;">
+  <div id="row" class="row">
+    <div id="normalColumn1" class="column"></div>
+    <div id="normalColumn2" class="column"></div>
+    <div id="normalColumn3" class="column"></div>
+    <div class="dungColumn" id="dung1"><span class="oops">-</span></div>
+    <div class="dungColumn" id="dung2"><span class="oops">-</span></div>
+    <div class="dungColumn" id="dung3"><span class="oops">-</span></div>
+    <div class="dungColumn" id="dung4"><span class="oops">-</span></div>
+    <div id="info-row">
+      <div id="songs-grid">
+        <div id="lullabyCheckDisplay"><img src="./images/lullaby.png" id="lullabyimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="eponasCheckDisplay"><img src="./images/eponas.png" id="eponasimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="sariasCheckDisplay"><img src="./images/sarias.png" id="sariasimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="sunsCheckDisplay"><img src="./images/suns.png" id="sunsimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="timeCheckDisplay"><img src="./images/sot.png" id="timeimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="stormsCheckDisplay"><img src="./images/sos.png" id="stormsimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+
+        <div id="minuetCheckDisplay"><img src="./images/minuet.png" id="minuetimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="boleroCheckDisplay"><img src="./images/bolero.png" id="boleroimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="serenadeCheckDisplay"><img src="./images/serenade.png" id="serenadeimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="requiemCheckDisplay"><img src="./images/requiem.png" id="requiemimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="nocturneCheckDisplay"><img src="./images/nocturne.png" id="nocturneimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+        <div id="preludeCheckDisplay"><img src="./images/prelude.png" id="preludeimg" class="song-icon"
+            onmousedown="highlight(this)"></div>
+      </div>
+      <div>
+        <div id="woth1" class="wothCondensed"><img id="woth1Image" class="wothImages"><img id="path1Image"
+            class="wothImages"><img id="woth1Item1" class="wothItems"><img id="woth1Item2" class="wothItems"><img
+            id="woth1Item3" class="wothItems"></div>
+        <div id="woth2" class="wothCondensed"><img id="woth2Image" class="wothImages"><img id="path2Image"
+            class="wothImages"><img id="woth2Item1" class="wothItems"><img id="woth2Item2" class="wothItems"><img
+            id="woth2Item3" class="wothItems"></div>
+        <div id="woth3" class="wothCondensed"><img id="woth3Image" class="wothImages"><img id="path3Image"
+            class="wothImages"><img id="woth3Item1" class="wothItems"><img id="woth3Item2" class="wothItems"><img
+            id="woth3Item3" class="wothItems"></div>
+      </div>
+      <div>
+        <div id="woth4" class="wothCondensed"><img id="woth4Image" class="wothImages"><img id="path4Image"
+            class="wothImages"><img id="woth4Item1" class="wothItems"><img id="woth4Item2" class="wothItems"><img
+            id="woth4Item3" class="wothItems"></div>
+        <div id="woth5" class="wothCondensed"><img id="woth5Image" class="wothImages"><img id="path5Image"
+            class="wothImages"><img id="woth5Item1" class="wothItems"><img id="woth5Item2" class="wothItems"><img
+            id="woth5Item3" class="wothItems"></div>
+        <div id="woth6" class="wothCondensed"><img id="woth6Image" class="wothImages"><img id="path6Image"
+            class="wothImages"><img id="woth6Item1" class="wothItems"><img id="woth6Item2" class="wothItems"><img
+            id="woth6Item3" class="wothItems"></div>
+      </div>
+      <div id="forestFireWater" class="three-dungeons">
+        <img src="./normal/items/forest.png" id="dung4_icon" class="medallions"><small id="text_dung4"
+          class="dungText">???</small><img id="dung4_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung4_text2"></small><img id="dung4_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung4_text3"></small><img id="dung4_req3" onmousedown="highlight(this)"><img id="dung4_req4"
+          onmousedown="highlight(this)"><img id="dung4_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/fire.png" id="dung5_icon" class="medallions"><small id="text_dung5"
+          class="dungText">???</small><img id="dung5_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung5_text2"></small><img id="dung5_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung5_text3"></small><img id="dung5_req3" onmousedown="highlight(this)"><img id="dung5_req4"
+          onmousedown="highlight(this)"><img id="dung5_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/water.png" id="dung6_icon" class="medallions"><small id="text_dung6"
+          class="dungText">???</small><img id="dung6_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung6_text2"></small><img id="dung6_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung6_text3"></small><img id="dung6_req3" onmousedown="highlight(this)"><img id="dung6_req4"
+          onmousedown="highlight(this)"><img id="dung6_req5" onmousedown="highlight(this)"><br />
+      </div>
+      <div id="spiritShadowLight" class="three-dungeons">
+        <img src="./normal/items/light.png" id="dung7_icon" class="medallions"><small id="text_dung7"
+          class="dungText">???</small><img id="dung7_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung7_text2"></small><img id="dung7_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung7_text3"></small><img id="dung7_req3" onmousedown="highlight(this)"><img id="dung7_req4"
+          onmousedown="highlight(this)"><img id="dung7_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/light.png" id="dung8_icon" class="medallions"><small id="text_dung8"
+          class="dungText">???</small><img id="dung8_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung8_text2"></small><img id="dung8_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung8_text3"></small><img id="dung8_req3" onmousedown="highlight(this)"><img id="dung8_req4"
+          onmousedown="highlight(this)"><img id="dung8_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/light.png" id="dung9_icon" class="medallions"><small id="text_dung9"
+          class="dungText">???</small><img id="dung9_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung9_text2"></small><img id="dung9_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung9_text3"></small><img id="dung9_req3" onmousedown="highlight(this)"><img id="dung9_req4"
+          onmousedown="highlight(this)"><img id="dung9_req5" onmousedown="highlight(this)"><br />
+      </div>
+      <div id="emeraldRubySapphire" class="three-dungeons">
+        <img src="./normal/items/emerald.png" id="dung1_icon" class="stones"><small id="text_dung1"
+          class="dungText"></small><img id="dung1_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung1_text2"></small><img id="dung1_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung1_text3"></small><img id="dung1_req3" onmousedown="highlight(this)"><img id="dung1_req4"
+          onmousedown="highlight(this)"><img id="dung1_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/ruby.png" id="dung2_icon" class="stones"><small id="text_dung2"
+          class="dungText"></small><img id="dung2_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung2_text2"></small><img id="dung2_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung2_text3"></small><img id="dung2_req3" onmousedown="highlight(this)"><img id="dung2_req4"
+          onmousedown="highlight(this)"><img id="dung2_req5" onmousedown="highlight(this)"><br />
+        <img src="./normal/items/sapphire.png" id="dung3_icon" class="stones"><small id="text_dung3"
+          class="dungText"></small><img id="dung3_req1" onmousedown="highlight(this)"><small class="track_text"
+          id="dung3_text2"></small><img id="dung3_req2" onmousedown="highlight(this)"><small class="track_text"
+          id="dung3_text3"></small><img id="dung3_req3" onmousedown="highlight(this)"><img id="dung3_req4"
+          onmousedown="highlight(this)"><img id="dung3_req5" onmousedown="highlight(this)"><br />
+      </div>
+      <div id="searchingFor">
+        <small id="major_probability">Searching For</small><br>
+        <div id="searchingFor_div"><img id="goMode" src="./normal/gomode.png"></img></div>
+        <small id="theLetterN">n </small><input spellcheck="false" id="probability_input" class="hint_input"
+          value='1'></input>
+      </div>
+      <div id="checkStatsColumn">
+        <small id="checks_remaining" class="stat-text"></small>
+        <br><small id="accessible" class="stat-text"></small>
+        <br><small id="logically_accessible" class="stat-text"></small>
+      </div>
+      <div id="tokenStatsColumn">
+        <small id="tokens_acquired" class="stat-text"></small>
+        <br><small id="tokensAccessible" class="stat-text"></small>
+        <br><small id="skulls_in_logic" class="stat-text"></small>
+      </div>
+    </div>
+    <div id="songColumn"><span id="songs" class="song_spacing"></span>
+      <img id="redRupee" class="rupeeButtons" src="normal/redRupee.png" onmouseDown="modifyRupees(20)"></img><img
+        id="blueRupee" class="rupeeButtons" src="normal/blueRupee.png" onmouseDown="modifyRupees(5)"></img><small
+        id="rupeeCount">0</small>
+      <br id="rupeeBreak" class="half_break" style="display: none;" />
+      <br class="half_break" /><button id="chuPlus" class="chuButtons" onmouseDown="incrementChus()">+</button><button
+        id="chuMinus" class="chuButtons" onmouseDown="decrementChus()">-</button><small id="chuCount">Chus: 0</small>
+      <br class="half_break" /><span id="notes" spellcheck="false"><small id="unread"></small></span><textarea
+        spellcheck="false" rows="19" cols="13" id="hintInput" class="alt_hint_input"></textarea><br /><br
+        class="half_break" />
+      <img id="childPic" src="./images/child.png" class="man"></img><input id="markChildLocation"
+        class="mark_spawn"></input><br>
+      <img src="./images/adult.png" id="adultPic" class="man"></img><input id="markAdultLocation"
+        class="mark_spawn"></input><br>
+      <div id="dungeon_er_input_div">
+        <text class="dung_er_label">DeDoJaFoFiWa</text><br><text class="dung_er_label">ShSpBoIcGt</text><br>
+        <textarea id="mark_ER_Dungeons" class="layout_input">dedojafofiwashspboicgt</textarea>
+      </div>
+    </div>
+    <div id="unstreamed-row">
+      <div id="barren_hints_div">
+        <input spellcheck="false" id="barren_input1" class="barren_input"></input><input spellcheck="false"
+          id="barren_input2" class="barren_input"></input><input spellcheck="false" id="barren_input3"
+          class="barren_input"></input><input spellcheck="false" id="barren_input4" class="barren_input"></input><input
+          spellcheck="false" id="barren_input5" class="barren_input"></input>
+      </div>
+      <div id="path_hints_div">
+        <div style="display: flex;text-align:center;">
+          <div><input spellcheck="false" id="woth_input1" class="woth_input"><br><text id="path_arrow1"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input2" class="woth_input"><br><text id="path_arrow2"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input3" class="woth_input"><br><text id="path_arrow3"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input4" class="woth_input"><br><text id="path_arrow4"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input5" class="woth_input"><br><text id="path_arrow5"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input6" class="woth_input"><br><text id="path_arrow6"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input7" class="woth_input"><br><text id="path_arrow7"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss7" class="woth_input"></div>
+          <div><input spellcheck="false" id="woth_input8" class="woth_input"><br><text id="path_arrow8"
+              class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss8" class="woth_input"></div>
+          <br>
         </div>
-        <div id="songColumn"><span id = "songs" class="song_spacing"></span>
-          <img id = "redRupee" class = "rupeeButtons" src = "normal/redRupee.png" onmouseDown="modifyRupees(20)"></img><img id = "blueRupee" class = "rupeeButtons" src = "normal/blueRupee.png" onmouseDown="modifyRupees(5)"></img><small id = "rupeeCount">0</small>
-          <br id="rupeeBreak" class="half_break" style="display: none;"/>
-          <br class="half_break"/><button id = "chuPlus" class = "chuButtons" onmouseDown="incrementChus()">+</button><button id = "chuMinus" class = "chuButtons" onmouseDown="decrementChus()">-</button><small id = "chuCount">Chus: 0</small>
-          <br class="half_break"/><span id = "notes" spellcheck="false"><small id = "unread"></small></span><textarea spellcheck="false" rows="19" cols="13" id = "hintInput" class="alt_hint_input"></textarea><br /><br class="half_break"/>
-          <img id = "childPic" src ="./images/child.png" class = "man"></img><input id = "markChildLocation" class = "mark_spawn"></input><br>
-          <img src ="./images/adult.png" id = "adultPic" class = "man"></img><input id = "markAdultLocation" class = "mark_spawn"></input><br>
-          <div id="dungeon_er_input_div">
-            <text class="dung_er_label">DeDoJaFoFiWa</text><br><text class="dung_er_label">ShSpBoIcGt</text><br>
-            <textarea id="mark_ER_Dungeons" class="layout_input">dedojafofiwashspboicgt</textarea>
-          </div>
-        </div>
-        <div id = "unstreamed-row">        
-          <div id = "barren_hints_div">
-            <input spellcheck="false" id = "barren_input1" class = "barren_input"></input><input spellcheck="false" id = "barren_input2" class = "barren_input"></input><input spellcheck="false" id = "barren_input3" class = "barren_input"></input><input spellcheck="false" id = "barren_input4" class = "barren_input"></input><input spellcheck="false" id = "barren_input5" class = "barren_input"></input>
-          </div>
-          <div id = "path_hints_div">
-            <div style="display: flex;text-align:center;"><div><input spellcheck="false" id="woth_input1" class = "woth_input"><br><text id="path_arrow1" class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss1" class = "woth_input"></div><div><input spellcheck="false" id="woth_input2" class = "woth_input"><br><text id="path_arrow2"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss2" class = "woth_input"></div><div><input spellcheck="false" id="woth_input3" class = "woth_input"><br><text id="path_arrow3"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss3" class = "woth_input"></div><div><input spellcheck="false" id="woth_input4" class = "woth_input"><br><text id="path_arrow4"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss4" class = "woth_input"></div><div><input spellcheck="false" id="woth_input5" class = "woth_input"><br><text id="path_arrow5"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss5" class = "woth_input"></div><div><input spellcheck="false" id="woth_input6" class = "woth_input"><br><text id="path_arrow6"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss6" class = "woth_input"></div><div><input spellcheck="false" id="woth_input7" class = "woth_input"><br><text id="path_arrow7"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss7" class = "woth_input"></div><div><input spellcheck="false" id="woth_input8" class = "woth_input"><br><text id="path_arrow8"class="path_arrow">&#8595;<br></text><input spellcheck="false" id="path_boss8" class = "woth_input"></div><br></div>
-          </div>
-          <div id = "scrollable_section">
-            <div id = "soli_woth_info"></div>
-          </div>
-          <div id="dungeons_summary"></div>
-          <div>
-            <img id = "medallionPic" class = "man"></img><input id="markMedallions" class="layout_input" ></input>
-            <img id = "stonePic" class = "man"></img><input id="markStones" class= "layout_input"> </input>
-            <br><img src = "./normal/frogsong.png" id="frogSongHelper"></img>
-            </div>
-        </div>  
-        <div id="linsoColumn">
-          <div id = "linsoTracker"><img id ="linso_background" src="./images/background.png"></div>
-          <div id = "woth_info">
-            <small id="woth1_title" class="woth_info_title" onmousedown="resetWoth(this,1)"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
-            <small id="woth2_title" class="woth_info_title" onmousedown="resetWoth(this,2)"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
-            <small id="woth3_title" class="woth_info_title" onmousedown="resetWoth(this,3)"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
-            <small id="woth4_title" class="woth_info_title" onmousedown="resetWoth(this,4)"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
-            <small id="woth5_title" class="woth_info_title" onmousedown="resetWoth(this,5)"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
-            <small id="woth6_title" class="woth_info_title" onmousedown="resetWoth(this,6)"></small><br /><small id="woth6_text1" class="woth_info_text"></small><small id="woth6_text2" class="woth_info_text"></small><small id="woth6_text3" class="woth_info_text"></small><small id="woth6_text4" class="woth_info_text"></small><small id="woth6_text5" class="woth_info_text"></small><small id="woth6_text6" class="woth_info_text"></small><small id="woth6_text7" class="woth_info_text"></small>
-            <small id="woth7_title" class="woth_info_title" onmousedown="resetWoth(this,7)"></small><br /><small id="woth7_text1" class="woth_info_text"></small><small id="woth7_text2" class="woth_info_text"></small><small id="woth7_text3" class="woth_info_text"></small><small id="woth7_text4" class="woth_info_text"></small><small id="woth7_text5" class="woth_info_text"></small><small id="woth7_text6" class="woth_info_text"></small><small id="woth7_text7" class="woth_info_text"></small>
-            <small id="woth8_title" class="woth_info_title" onmousedown="resetWoth(this,8)"></small><br /><small id="woth8_text1" class="woth_info_text"></small><small id="woth8_text2" class="woth_info_text"></small><small id="woth8_text3" class="woth_info_text"></small><small id="woth8_text4" class="woth_info_text"></small><small id="woth8_text5" class="woth_info_text"></small><small id="woth8_text6" class="woth_info_text"></small><small id="woth8_text7" class="woth_info_text"></small>
-          </div> 
+      </div>
+      <div id="scrollable_section">
+        <div id="soli_woth_info"></div>
+      </div>
+      <div id="dungeons_summary"></div>
+      <div>
+        <img id="medallionPic" class="man"></img><input id="markMedallions" class="layout_input"></input>
+        <img id="stonePic" class="man"></img><input id="markStones" class="layout_input"> </input>
+        <br><img src="./normal/frogsong.png" id="frogSongHelper"></img>
+      </div>
+    </div>
+    <div id="linsoColumn">
+      <div id="linsoTracker"><img id="linso_background" src="./images/background.png"></div>
+      <div id="woth_info">
+        <small id="woth1_title" class="woth_info_title" onmousedown="resetWoth(this,1)"></small><br /><small
+          id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small
+          id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small
+          id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small
+          id="woth1_text7" class="woth_info_text"></small>
+        <small id="woth2_title" class="woth_info_title" onmousedown="resetWoth(this,2)"></small><br /><small
+          id="woth2_text1" class="woth_info_text"></small><small id="woth2_text2" class="woth_info_text"></small><small
+          id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small
+          id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small
+          id="woth2_text7" class="woth_info_text"></small>
+        <small id="woth3_title" class="woth_info_title" onmousedown="resetWoth(this,3)"></small><br /><small
+          id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small
+          id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small
+          id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small
+          id="woth3_text7" class="woth_info_text"></small>
+        <small id="woth4_title" class="woth_info_title" onmousedown="resetWoth(this,4)"></small><br /><small
+          id="woth4_text1" class="woth_info_text"></small><small id="woth4_text2" class="woth_info_text"></small><small
+          id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small
+          id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small
+          id="woth4_text7" class="woth_info_text"></small>
+        <small id="woth5_title" class="woth_info_title" onmousedown="resetWoth(this,5)"></small><br /><small
+          id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small
+          id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small
+          id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small
+          id="woth5_text7" class="woth_info_text"></small>
+        <small id="woth6_title" class="woth_info_title" onmousedown="resetWoth(this,6)"></small><br /><small
+          id="woth6_text1" class="woth_info_text"></small><small id="woth6_text2" class="woth_info_text"></small><small
+          id="woth6_text3" class="woth_info_text"></small><small id="woth6_text4" class="woth_info_text"></small><small
+          id="woth6_text5" class="woth_info_text"></small><small id="woth6_text6" class="woth_info_text"></small><small
+          id="woth6_text7" class="woth_info_text"></small>
+        <small id="woth7_title" class="woth_info_title" onmousedown="resetWoth(this,7)"></small><br /><small
+          id="woth7_text1" class="woth_info_text"></small><small id="woth7_text2" class="woth_info_text"></small><small
+          id="woth7_text3" class="woth_info_text"></small><small id="woth7_text4" class="woth_info_text"></small><small
+          id="woth7_text5" class="woth_info_text"></small><small id="woth7_text6" class="woth_info_text"></small><small
+          id="woth7_text7" class="woth_info_text"></small>
+        <small id="woth8_title" class="woth_info_title" onmousedown="resetWoth(this,8)"></small><br /><small
+          id="woth8_text1" class="woth_info_text"></small><small id="woth8_text2" class="woth_info_text"></small><small
+          id="woth8_text3" class="woth_info_text"></small><small id="woth8_text4" class="woth_info_text"></small><small
+          id="woth8_text5" class="woth_info_text"></small><small id="woth8_text6" class="woth_info_text"></small><small
+          id="woth8_text7" class="woth_info_text"></small>
+      </div>
+    </div>
+
+    <div id="checkSummaryColumn1" class="checkSummaryColumn"></div>
+    <textarea spellcheck="false" rows="25" cols="80" id="simLog" class="simLog"></textarea><br>
+    <button id="simCheckAltar" onclick="simCheckAltar()" style="display: none;">Check Altar</button>
+    <button id="simCheckChildSpawn" onclick="simCheckChildSpawn()" style="display: none;">Check Child Spawn</button>
+    <button id="simCheckAdultSpawn" onclick="simCheckAdultSpawn()" style="display: none;">Check Adult Spawn</button>
+    <button id="simCheckLightArrowHint" onclick="simCheckLightArrowHint()" style="display: none;">Check Light Arrow
+      Hint</button>
+  </div>
+
+  <small id="timer"></small>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p> The tracker is designed to be used with the browser in fullscreen mode (f11).
+
+        <br><br><b>Inputs</b>:
+        <br>All inputs are done using an input box listed on the left of each check name.
+
+        <br><b>Items: </b>
+        <br>x,a,q for junk, small key, boss key. You may also left click, right click or middle click the check name.
+        the former will typically be faster.
+        <br>Otherwise, an item code that typically is an initialism of the common name for that item. these are listed
+        on the bottom left if you scroll down. they can also be customized there but note that a code should not overlap
+        with the start of different code.
+        <br>End with a capital letter to input peeked items. Click off the check when item has been obtained.
+
+        <br><br>The following may be input using ANY check input box.
+
+        <br><b>Path and Barrens:</b>
+        <br>Start with a prefix: 1 for path or 2 for barren. continue with an area code, plus a path code for pathes.
+        these codes are listed under the 'Location Codes' button.
+        <br>For example, 1trde means trail is path to gohma. 1riev means river is evil's bane. 2zd means domain is
+        barren.
+
+        <br><b>Always and Sometimes:</b>
+        <br>Start with a prefix: 3 for always, 4 for sometimes. follow with codes for the hint and item(s).
+        <br>For example, 3bx means biggoron is nothing. 44bxsl means bowling has a junk item and a slingshot. 4daho
+        means dancing dad has a hookshot.
+        <br>Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
+
+        <br><b>Medallions:</b>
+        <br>Start with prefix: 0. follow with two items codes for the dungeon that has each medallion, going in the
+        order: light, forest, fire, water, shadow, spirit.
+        <br>For example, 0defofrshspdo means deku has light, forest has forest, pocket has fire etc.
+
+        <br><br><b>Check Color Codes:</b>
+        <br>Bright green = can access logically with items you currently have
+        <br>Faded green = can access logically with items you currently have access to
+        <br>Faded yellow = can check out of logic (based on items you currently have access to)
+        <br>White = known but currently unobtainable
+
+        <br><br> Child and adult emoji boxes are used to input spawns relevant to check accessibility for child and
+        adult, respectively (or even irrelevant spawns to help you remember).
+
+        <br><br> Timer can be started and paused using the pause key
+
+        <br><br> <b>Path Display</b>
+        <br> Left click items listed to the left of the arrow to highlight them yellow or right click to remove them.
+        Left clicking the area name brings back all removed items.
+        <br> Click arrow to add an item to the right of it by clicking an item in the check summary. these items can be
+        highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
+        <br><br><b>Check Summary</b>:
+        <br>Right clicking locations will toggle the item from it as obtained/unobtained.
+        <br><br><b>Simulator</b>:
+        <br>To start the simulator click the "Play the Sim" button and select a spoiler log (only S6 and S5 tested).
+        <br>If you enter in a value from 1-200 in the input box next to the "Play the Sim" button, a seed included with
+        the tracker will be used instead of requiring a selection(this feature does not work offline).
+        <br>The log will appear which keeps track of what you find. It will initially tell you your starting dungeon
+        reward, song, age, and spawn.
+        <br>Click the "Check Altar" button to mark medallions and stones.
+        <br>Click the "Check Adult Spawn" or "Check Child Spawn" button to reveal the spawn for the age you didn't start
+        as.
+        <br>Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked
+        check again to obtain it.
+        <br>If you peek a check which is not freestanding, it will tell you that you found an unknown big chest, labeled
+        by "???". You can left click the check again to obtain the item there.
+        <br>Click a Gossip Stone check (colored pink) to get a hint. WotH, Path, Barren, Always, and Sometimes hints can
+        then be manually entered in the tracker.
+        <br><br><b>Animal Companionship</b>:
+        <br>Gain 1 companion XP with current animal after inputting 20 items into check input boxes or through the hint
+        box.
+        <br>companion level is equal to 2.5*sqrt of companion XP-1, rounded down.
+        <br>the tracker will roll a d2 once for every companion level, then reroll animals other than your highest level
+        animal for every result of 1. if it fails to roll that animal, it will repeat the process for your next highest
+        level animal.
+        <br>in other words, increase rolling odds for a particular animal after 1,2,3,4,6,8,11,13,16,20... seeds played
+        with that animal.
+        <br><b>wish for:</b> the wished for animal will be given highest rolling priority and a 2 lvl buff towards its
+        chance of being rolled. this eventually guarantees its dominance even if you don't consistently refresh for it.
+      </p>
+    </div>
+  </div>
+
+  <div id="myModal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <div class="hint-container">
+
+        <div class="hint-group">
+          <b>Always Hints</b>
+          <p style="color: #888; font-style: italic;">Use prefix 3 (ex: 33x = 30 skulls empty)</p>
+          <p>
+            3 = 30 skulls<br>
+            4 = 40 skulls<br>
+            5 = 50 skulls<br>
+            o = oot song<br>
+            n = burning kak<br>
+            b = trade quest<br>
+            f = frogs 2<br>
+            m = skull mask
+          </p>
+          <br>
+          <b>Area Codes</b>
+          <p>
+            ko = kokiri<br>
+            ra = ranch<br>
+            hf = hyrule field<br>
+            gv = gerudo valley<br>
+            lh = lake hylia<br>
+            mk = market<br>
+            ca = hyrule castle<br>
+            ou = outside ganon's castle<br>
+            to = temple of time<br>
+            zf = zora's fountain<br>
+            ic = ice cavern<br>
+            de = deku tree<br>
+            lo = lost woods<br>
+            sf = sfm<br>
+            go = goron city<br>
+            dc = dodongo's cavern<br>
+            tr = trail<br>
+            cr = crater<br>
+            ka = kakariko<br>
+            gy = graveyard<br>
+            zr = zora's river<br>
+            zd = zora's domain<br>
+            co = colossus<br>
+            hw = haunted wasteland<br>
+            th = thieve's hideout<br>
+            gf = gerudo fortress<br>
+            jj = jabu jabu<br>
+            fo = forest<br>
+            fi = fire<br>
+            wa = water<br>
+            sh = shadow<br>
+            sp = spirit<br>
+            ga = ganon's castle<br>
+            gt = gtg<br>
+            we = well
+          </p>
         </div>
 
-        <div id="checkSummaryColumn1" class="checkSummaryColumn"></div>
-          <textarea spellcheck="false" rows="25" cols="80" id = "simLog" class = "simLog"></textarea><br>
-          <button id = "simCheckAltar" onclick="simCheckAltar()" style = "display: none;">Check Altar</button>
-          <button id = "simCheckChildSpawn" onclick="simCheckChildSpawn()" style = "display: none;">Check Child Spawn</button>
-          <button id = "simCheckAdultSpawn" onclick="simCheckAdultSpawn()" style = "display: none;">Check Adult Spawn</button>
-          <button id = "simCheckLightArrowHint" onclick="simCheckLightArrowHint()" style = "display: none;">Check Light Arrow Hint</button>
+        <div class="hint-group">
+          <b>Sometimes Hints</b>
+          <p style="color: #888; font-style: italic;">Use prefix 4 (ex: 4chx = chickens empty)</p>
+          <p>
+            bo = Bolero<br>
+            su = Sun's Song<br>
+            me = Minuet<br>
+            pr = Prelude<br>
+            re = Requiem<br>
+            se = Serenade<br>
+            2 = 20 Tokens<br>
+            po = Poes<br>
+            ch = Chickens<br>
+            cg = Composer Grave<br>
+            sc = Scrub Child<br>
+            da = Goron Dance<br>
+            f1 = Frogs 1<br>
+            ma = Goron Maze 3<br>
+            gp = Goron Pot<br>
+            15 = Archery 2<br>
+            ca = Din's Fairy<br>
+            fo = Ice Fountain<br>
+            kz = Thaw King<br>
+            di = Lab Dive<br>
+            og = Ganon Fairy<br>
+            hs = Hylia Sun<br>
+            ki = Skull Kid<br>
+            rg = Redead Grave<br>
+            ta = Target<br>
+            le = Market Lens<br>
+            vr = Gerudo Hammer<br>
+            wa = Wasteland<br>
+            fl = Fire Top<br>
+            pi = Fire Scarecrow<br>
+            fi = GTG Final<br>
+            to = GTG Toilet<br>
+            ir = Ice Irons<br>
+            st = Shadow Trial 2<br>
+            ja = Jabu Boom<br>
+            sp = Shadow Pot<br>
+            lh = Spirit L-Hand<br>
+            rh = Spirit R-Hand<br>
+            ce = Water Pillar<br>
+            wb = Water BK<br>
+            ri = Water River<br>
+            4f = Din & Ganon Fairy<br>
+            4h = Fire Hammer 1 & 2<br>
+            4t = Spirit Trial 1 & 2<br>
+            4g = Archery 1 & 2<br>
+            4v = GV Box & Fall<br>
+            4l = Lab Top & Fishing<br>
+            4b = Bowling 1 & 2<br>
+            4d = Shadow Din 1 & 2<br>
+            4i = Shadow Spinning 1 & 2<br>
+            4a = Spirit Adult L & R<br>
+            4c = Spirit Child L & R<br>
+            4s = Spirit Hand L & R<br>
+            4r = Water Dark Link & River<br>
+            4w = Well Dead Hand & Inv<br>
+            4z = Zora Diving & Torches
+          </p>
         </div>
-        
-        <small id = "timer"></small>
-      </div>	
 
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p> The tracker is designed to be used with the browser in fullscreen mode (f11).
-          
-          <br><br><b>Inputs</b>:
-          <br>All inputs are done using an input box listed on the left of each check name.
-          
-          <br><b>Items: </b>
-          <br>x,a,q for junk, small key, boss key. You may also left click, right click or middle click the check name. the former will typically be faster.
-          <br>Otherwise, an item code that typically is an initialism of the common name for that item. these are listed on the bottom left if you scroll down. they can also be customized there but note that a code should not overlap with the start of different code.
-          <br>End with a capital letter to input peeked items. Click off the check when item has been obtained.
-          
-          <br><br>The following may be input using ANY check input box.
-        
-          <br><b>Path and Barrens:</b>
-          <br>Start with a prefix: 1 for path or 2 for barren. continue with an area code, plus a path code for pathes. these codes are listed under the 'Location Codes' button.
-          <br>For example, 1trde means trail is path to gohma. 1riev means river is evil's bane. 2zd means domain is barren.
-          
-          <br><b>Always and Sometimes:</b>
-          <br>Start with a prefix: 3 for always, 4 for sometimes. follow with codes for the hint and item(s). 
-          <br>For example, 3bx means biggoron is nothing. 44bxsl means bowling has a junk item and a slingshot. 4daho means dancing dad has a hookshot.
-          <br>Codes for locations can be found by scrolling down and pressing the "Location Codes" button.
-          
-          <br><b>Medallions:</b>
-          <br>Start with prefix: 0. follow with two items codes for the dungeon that has each medallion, going in the order: light, forest, fire, water, shadow, spirit. 
-          <br>For example, 0defofrshspdo means deku has light, forest has forest, pocket has fire etc.
-          
-          <br><br><b>Check Color Codes:</b>
-          <br>Bright green = can access logically with items you currently have
-          <br>Faded green = can access logically with items you currently have access to
-          <br>Faded yellow = can check out of logic (based on items you currently have access to)
-          <br>White = known but currently unobtainable
-          
-          <br><br> Child and adult emoji boxes are used to input spawns relevant to check accessibility for child and adult, respectively (or even irrelevant spawns to help you remember).
-          
-          <br><br> Timer can be started and paused using the pause key
-          
-          <br><br> <b>Path Display</b>
-          <br> Left click items listed to the left of the arrow to highlight them yellow or right click to remove them. Left clicking the area name brings back all removed items.
-          <br> Click arrow to add an item to the right of it by clicking an item in the check summary. these items can be highlighted yellow with left click, surrounded by a red box with middle click and removed with right click.
-          <br><br><b>Check Summary</b>:
-          <br>Right clicking locations will toggle the item from it as obtained/unobtained.
-          <br><br><b>Simulator</b>:
-          <br>To start the simulator click the "Play the Sim" button and select a spoiler log (only S6 and S5 tested).
-          <br>If you enter in a value from 1-200 in the input box next to the "Play the Sim" button, a seed included with the tracker will be used instead of requiring a selection(this feature does not work offline).
-          <br>The log will appear which keeps track of what you find. It will initially tell you your starting dungeon reward, song, age, and spawn.
-          <br>Click the "Check Altar" button to mark medallions and stones.
-          <br>Click the "Check Adult Spawn" or "Check Child Spawn" button to reveal the spawn for the age you didn't start as. 
-          <br>Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.
-          <br>If you peek a check which is not freestanding, it will tell you that you found an unknown big chest, labeled by "???". You can left click the check again to obtain the item there.
-          <br>Click a Gossip Stone check (colored pink) to get a hint. WotH, Path, Barren, Always, and Sometimes hints can then be manually entered in the tracker.
-          <br><br><b>Animal Companionship</b>:
-          <br>Gain 1 companion XP with current animal after inputting 20 items into check input boxes or through the hint box.
-          <br>companion level is equal to 2.5*sqrt of companion XP-1, rounded down.
-          <br>the tracker will roll a d2 once for every companion level, then reroll animals other than your highest level animal for every result of 1. if it fails to roll that animal, it will repeat the process for your next highest level animal.
-          <br>in other words, increase rolling odds for a particular animal after 1,2,3,4,6,8,11,13,16,20... seeds played with that animal.
-          <br><b>wish for:</b> the wished for animal will be given highest rolling priority and a 2 lvl buff towards its chance of being rolled. this eventually guarantees its dominance even if you don't consistently refresh for it. 
+        <div class="hint-group">
+          <b>Item Inputs</b>
+          <p style="color: #888; font-style: italic;">Mostly first two letters, sometimes three<br>
+          note many items allow a double tap of first, with emphasis on key progressives<br>
+          scale allows vv because ss was taken
+          </p>
+          <p>
+            x = junk<br>
+            a = small key<br>
+            q = boss key<br>
+            bom = bomb bag<br>
+            ch = bombchus<br>
+            ra, boo = boomerang<br>
+            bot = bottle<br>
+            bi = big poe<br>
+            bow = bow<br>
+            di = dins fire<br>
+            fa = farores wind<br>
+            fi = fire arrows<br>
+            ic = ice arrows<br>
+            li = light arrows<br>
+            na = nayrus love<br>
+            go = goron tunic<br>
+            zo = zora tunic<br>
+            ha = hammer<br>
+            hh, hoo = hookshot<br>
+            hov = hover boots<br>
+            ir = iron boots<br>
+            ko = kokiri sword<br>
+            mir = mirror shield<br>
+            le = lens<br>
+            ma = magic<br>
+            vv, sca = scale<br>
+            sl = slingshot<br>
+            ss = strength<br>
+            ww, wal = wallet<br>
+            ru = rutos letter<br>
+            ge = gerudo card<br>
+            ag = agony<br>
+            be = bean pack<br>
+            pp, scr = prescription<br>
+            cl = claim check<br>
+            bg = biggoron sword<br>
+            lu = lullaby<br>
+            ep = eponas<br>
+            sa = sarias<br>
+            ti = time<br>
+            su = suns<br>
+            st = storms<br>
+            min = minuet<br>
+            bol = bolero<br>
+            se = serenade<br>
+            re = requiem<br>
+            no = nocturne<br>
+            pr = prelude<br>
+            <br>
+            <b>Key Rings:</b>
+            fo = forest<br>
+            ff = fire<br>
+            wat = water<br>
+            sp = spirit<br>
+            sh = shadow<br>
+            we = well<br>
+            gt = gtg<br>
+            ga = ganon<br>
           </p>
         </div>
       </div>
-        
-      <div id="myModal3" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>
-            <b>Area Codes</b>
-            <br> ko = kokiri
-            <br> ra = ranch
-            <br> hf = hyrule field
-            <br> gv = gerudo valley
-            <br> lh = lake hylia
-            <br> mk = market
-            <br> ca = hyrule castle
-            <br> ou = outside ganon's castle
-            <br> to = temple of time
-            <br> zf = zora's fountain
-            <br> ic = ice cavern
-            <br> de = deku tree
-            <br> lo = lost woods
-            <br> sf = sfm
-            <br> go = goron city
-            <br> dc = dodongo's cavern
-            <br> tr = trail
-            <br> cr = crater
-            <br> ka = kakariko
-            <br> gy = graveyard
-            <br> zr = zora's river
-            <br> zd = zora's domain
-            <br> co = colossus
-            <br> hw = haunted wasteland
-            <br> th = thieve's hideout
-            <br> gf = gerudo fortress
-            <br> jj = jabu jabu
-            <br> fo = forest
-            <br> fi = fire
-            <br> wa = water
-            <br> sh = shadow
-            <br> sp = spirit
-            <br> ga = ganon's castle
-            <br> gt = gtg
-            <br> we = well
-            <br>
-            <br><b>Always Hints(doesn't work in the note box)</b>
-            <br>use prefix 3 (example: 33x means 30 skulls has nothing)
-            <br>
-            <br> 3 = 30 skulls
-            <br> 4 = 40 skulls
-            <br> 5 = 50 skulls
-            <br> o = oot song
-            <br> n = burning kak
-            <br> b = trade quest
-            <br> f = frogs 2
-            <br> m = skull mask
-            <br>
-            <br><b>Sometimes Hints(doesn't work in the note box)</b>
-            <br>use prefix 4 (example: 4chx means anju's chickens has nothing)
-            <br>
-            <br>bo = Bolero
-            <br>su = Sun's Song
-            <br>me = Minuet
-            <br>pr = Prelude
-            <br>re = Requiem
-            <br>se = Serenade
-            <br>2 = 20 Tokens
-            <br>po = Poes
-            <br>ch = Anju's Chickens
-            <br>cg = Composer's Grave
-            <br>sc = Scrub Crater Child
-            <br>da = Goron Dance
-            <br>f1 = Frogs 1
-            <br>ma = Goron Maze 3
-            <br>gp = Goron Pot
-            <br>15 = Gerudo Archery 2
-            <br>ca = Din's Fairy
-            <br>fo = Ice Bottom of Fountain
-            <br>kz = Thaw King
-            <br>di = Hylia Lab Dive
-            <br>og = Ganon's Fairy
-            <br>hs = Hylia Sun Shoot
-            <br>ki = Skull Kid
-            <br>rg = Redead Grave
-            <br>ta = Target
-            <br>le = Market Lens Game
-            <br>vr = Gerudo Hammer
-            <br>wa = Wasteland
-            <br>fl = Fire Top
-            <br>pi = Fire Scarecrow
-            <br>fi = GTG Final
-            <br>to = GTG Toilet
-            <br>ir = Ice Irons
-            <br>st = Ganon's Shadow Trial 2
-            <br>ja = Jabu Boomerang
-            <br>sp = Shadow Pot
-            <br>lh = Spirit Left Hand
-            <br>rh = Spirit Right Hand
-            <br>ce = Water Pillar
-            <br>wb = Water Boss Key
-            <br>ri = Water River
-            <br>4f = Din's Fairy & Ganon's Fairy
-            <br>4h = Fire Hammer 1 & 2
-            <br>4t = Ganon's Spirit Trial 1 & 2
-            <br>4g = Gerudo Archery 1 & 2
-            <br>4v = Gerudo Valley Box & Fall
-            <br>4l = Hylia Lab Top & Adult Fishing
-            <br>4b = Market Bowling 1 & 2
-            <br>4d = Shadow Din's 1 & 2
-            <br>4i = Shadow Spinning 1 & 2
-            <br>4a = Spirit Adult Left & Right
-            <br>4c = Spirit Child Left & Right
-            <br>4s = Spirit Right Hand & Left Hand
-            <br>4r = Water Dark Link & River
-            <br>4w = Well Dead Hand & Invisible
-            <br>4z = Zora Diving & Torches
-            <br>
-            <br><b><u>Legacy(note box) Hint Codes</u></b>
-            <br><b>Dual hints (hint item1 item2)</b>
-            <br />castle fairies = hcogc
-            <br />chu bowling = chu, bowl, bowling
-            <br />valley box+crate = gv, val
-            <br />lake bean = lh, lhb, lhbean
-            <br />domain dive+torch = zd, zddt, dom, domdt
-            <br />horseback archery = hba
-            <br />dead hand = dea2, dead2, deha2, dh2
-            <br />fire hammer loop = fil, filoop, haml, hamloop
-            <br />dark link loop = dll, dlloop, dlriv
-            <br />shadow wooden walls = shdin, shend, shwo, shwood
-            <br />shadow invisible blades = shinv, shblades
-            <br />adult spirit = adsp, spblock
-            <br />child spirit = chsp, spcrawl
-            <br />colossus hands = rhlh, sphands
-            <br />spirit trial = spt
-            <br />
-            <br /><b>Individual hints (hint item)</b>
-            <br />hylia bottle = hyb, rut, ruto, rutos, bottle, bot
-            <br />atz grotto = atz
-            <br />crater bean = crb, crater, craterbean
-            <br />graveyard box = grb, gybox, box, gybean
-            <br />colossus bean = cob, colossusbean, col, colo, colossus
-            <br />fountain peek = fop, icyp, fountainp 
-            <br />hylia sun = hyliasun, shootthesun, sunshoot, shootsun, ss, sts
-            <br />poes = poe, poes
-            <br />lens game = len, lens, lensgame, chestgame, cmg, tcg
-            <br />20 skulls = 20
-            <br />30 skulls = 30
-            <br />40 skulls = 40
-            <br />50 skulls = 50
-            <br />redead grave = red, redead, sgr, sung, sungrave
-            <br />composers item = coi, comp, composer
-            <br />composers song = cos
-            <br />scarecrow = sca, scarecrow, pie, pierre
-            <br />top of fire = fla, hammer, flare, flaredancer
-            <br />water bk = wbk, waterbk
-            <br />water river = riv, river, riverch, riverchest
-            <br />gtg final = fin, gtg, gtgf, gtgfin, gtgfinal
-            <br />toilet = toi, toilet, gtgtoilet
-            <br />dead hand = dea, deadhand
-            <br />wasteland = was, waste, wasteland
-            <br />colossus song = ws, req, wls, desert, wastesong, colosong
-            <br />pot = pot
-            <br />dancing = dan, daru, darunia, dancin, dancing
-            <br />left hand = lef, mir, mirror, lefthand
-            <br />right hand = rig, sil, silver, silvers, righthand
-            <br />gc hammer = goh, gchammer, gcleft, maze3
-            <br />gv hammer = gvh, gvhammer
-            <br />cuccos = cuc, cucc, cucco, cuccos, chicken, chickens
-            <br />crater song = cra, bol, bolero
-            <br />meadow song = mea, min, minuet
-            <br />tot song = 1me, tot, pre, prelude
-            <br />king zora = kin, kz, kingzora
-            <br />boomerang chest = jab, jabu, boom, boomerang, rang, boo
-            <br />adult shooting = sho, shooting, archery, shoo
-            <br />forest floormaster = ffl, forestfloor, ffloor
-            <br />shadow floormaster = sfl, shadowfloor, shfloor
-            <br />burning kak = 3me, noc, nocturne
-            <br />ice song = ice, ser, serenade
-            <br />fountain hinted = fou, fountain, icy
-            <br />saria kid = kid, skullkid
-            <br />biggoron = big, bgs, trade
-            <br />skull mask = mas, skullmask, mask
-            <br />mask of truth = tru
-            <br />frogs 2 = fr2, frog, frogs, frogs2
-            <br />oot item = ooti, ootitem, thrown, thr, toss, gfcb (gift from canonical bae)
-            <br />oot song = oot, oots, ootsong
-            <br />crater child scrub = scr
-            <br />hyrule castle fairy = hc, ohc, cas, hfa, casf, hyf
-            <br />ganon fairy = ogc, gfa, gaf
-            <br />lost woods target = tar, targ, target, 
-            <br />frogs in storm = fr1, frogs1, frog1
-            <br />hylia lab dive = div, dive, 
-            <br />water pillar = pil, pill, pillar, cen, cent, central
-            <br />shadow pot = shap, shapot, shp, shpot
-            <br />ice irons = iro, iron, irons, 
-            <br />ganon shadow trial 2 = sh2, st, sha2, st2, lik, sht
-            <br />child spirit left = chspirit1, chspi1, csp1, cs1, chl, ch1
-            <br />child spirit right= chspirit2, chspi2, csp2, cs2, chr, ch2
-            <br />horse back archery 1000 = hba1, 1000, 100
-            <br />horse back archery 1500 = hba2, 1500, 150
-            <br />hylia labtop = labtop, laptop, laro, labroof, topolab, topoflab
-            <br />valley ledge = valley1, gv1, gvledge, valleyledge, valledge, val1
-            <br />valley waterfall = valley2, gv2, waterfall, gvfall, watfall, val2
-            <br />domain torchrun = zdtorches, zdfire, zdfir, domtorches, domfire, domfir
-            <br />domain diving game = zddiving, zddiv, zdgame, domdiving, domdiv, domgame
-            <br />deadhand = dh, deadhand, mrhand, hand, deha, dead
-            <br />behind deadhand = dhbehind, dhback, inv, steve, steven, bdh
-            <br />dark link= dlink, dl, me, clone, darklink, yami
-          </p>
-        </div>
-      </div> 
+    </div>
+  </div>
 
-      <div id="patchNotesModal" class="modal" data-version="74">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>
-            <!-- IMPORTANT: When adding a patch note, also update data-version to match the latest note -->
-            <br><b>stream friendly info has been placed along the top, done for two reasons:</b>
-            <br>&nbsp;&nbsp;1 - to support a stream layout (alternative to LinSo) that shows the checklist and the top bar, filling the rest of the space with the game.
-            <br>&nbsp;&nbsp;2 - to provide more space for one monitor gaming.
-            <br>
-            <br><b>new(better) input methods, see halp for more info</b>
-            <!-- <br />dual hints supported, see location codes
+  <div id="patchNotesModal" class="modal" data-version="74">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>
+        <!-- IMPORTANT: When adding a patch note, also update data-version to match the latest note -->
+        <br>Useful info has been placed along the edges of the tracker. The main reason for this is to better support
+        setups where the emulator is placed over the center.
+        Ergonomically, it makes more sense for the eyes to be focused on the center of the monitor most of the time.
+        There's also just a lot more free space now overall.
+        <br>It's now viable to display the checklist and top bar on stream, filling the rest of the space with the game.
+        Understandably, this could be considered too information
+        dense for a stream layout, but this is the intended alternative to showing the LinSo tracker.
+        <br>
+        <br>Songs are now in the main checklist, mainly to make the next check highlight more intuitive.
+        <br>
+        <br>A new layout for information on songs has been added.
+        <br>-A green background means the vanilla check for that song is accessible and unknown.
+        <br>-A red background means the vanilla check for that song is inaccessible and unknown.
+        <br>-The pictures show whether you have the item or not, as usual.
+        <br>
+        <br>New input methods, see halp for more info. The short of it is that everything can be done through the boxes
+        next to checks, leaving the boxes for always/sometimes hints,
+        barrens, paths, entrances and medallions mostly obsolete/inferior.
+        <br>
+        <br>Shortened item inputs, and added faster alternatives. All of the old ones will still work, although many of them will trigger with only 2 letters, which may throw you off for a bit.
+        <!-- <br />dual hints supported, see location codes
             <br />added left click / right click to dungeon entrances to highlight/hide them. also added med images to dungeon entrances
             <br />added buttons to toggle bigger path hint font and location headers
             <br />added unimportant important items (bgs, sto, nay)
@@ -449,68 +595,73 @@
             <br />4: Hotkey for Incrementing Token Counter(- and =)
             <br />3: LinSo Trade Items and Token Counter (Show LinSo button)
             <br />1: Custom Item Inputs (scroll down)  -->
-          </p>
-        </div>
-      </div>
+      </p>
+    </div>
+  </div>
 
-      <div id ="settings">
-        
-        <div id = "inputConfig2"><small class = "customizeTitles">Custom Spawn Inputs</small><br><br class ="half_break"></div>
-        
-        <div id = "skullsInLogicList"></div>
-        <div id = "credits"><small class = "customizeTitles">Credits</small>
-          <br><img src="./images/soli.png" class="pplpics">Soli
-          <br><img src="./images/exodus.png" class="pplpics">Exodus
-          <br><img src="./images/beeluigi.png" class="pplpics">Beeluigi
-          <br><img src="./images/juwk.png" class="pplpics">Juwk
-          <br><img src="./images/flee.png" class="pplpics">Flee
-        </div>
-        
-        <div id = "settingsColumn">  
-          <button id="wothSizeToggle" onmousedown="wothSizeToggle()">Large WotH Font</button><br />
-          <button id="areaTitlesToggle" onmousedown="areaTitlesToggle()">Show Area Headers</button><br /><br />
-          
-          <button id="myBtn">halp</button><br />
-          <button id="locationCodes">Location Codes</button><br />
-          <button id="patchNotesBtn">Patch Notes</button><br /><br />
-          
-          <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input> 
-          <input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" />
-          <br /><button onmousedown="download()">Download Log</button><br /><br />
-          <select class="settingsOptions" id="gossips" style="display:none">
-            <option value="OFF">OFF</option>
-            <option value="ON">ON</option>
-          </select><br><br class="half_break">  
-        </div>
-        <div id = "statsColumn">
-          <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions" id="desiredAnimal"><option value="random">random</option></select><br><br class="half_break">
-          <label id="quest1Label" for="quest1Options">quest 1</label>
-          <select class="settingsOptions" id="quest1">
-            <option value="unselected">unselected</option>
-            <option value="3BombbagsAnd3Slingshots">get 3 bomb bags and 3 slingshots for +14% XP</option>
-            <option value="4ForestItems">get 4+ items in forest for +21% XP</option>
-            <option value="slingshotBeforeBombbag">get slingshot before bomb bag for +7% XP</option>
-          </select><br><br class="half_break">
-          <small id = "animalLV"></small><br>
-          <small id = "rollChance"></small><br>
-          <small id = "seedsDone"></small><br>
-          <small id = "quest1Mult"></small><br>
-          <small id = "yamiChance"></small><br>
-          <small id = "yamiMult"></small><br>
-          <small id = "angelChance"></small><br>
-          <small id = "angelMult"></small><br>
-          <small id = "rainbowChance"></small><br>
-          <small id = "rainbowMult"></small><br>
-        </div>
-      </div>
-    </body>
-    <script src="sim.js"></script>
-    <script src="misc.js"></script>
-    <script src="logic.js"></script>
-    <script src="hints.js"></script>
-    <script src="ui.js"></script>
-    <script src="themes.js"></script>
-    <script src="main.js"></script>
-    <script src="aminals.js"></script>	
-    <script src="initialize.js"></script>	
-  </html>
+  <div id="settings">
+
+    <div id="inputConfig2"><small class="customizeTitles">Custom Spawn Inputs</small><br><br class="half_break"></div>
+
+    <div id="skullsInLogicList"></div>
+    <div id="credits"><small class="customizeTitles">Credits</small>
+      <br><img src="./images/soli.png" class="pplpics">Soli
+      <br><img src="./images/exodus.png" class="pplpics">Exodus
+      <br><img src="./images/beeluigi.png" class="pplpics">Beeluigi
+      <br><img src="./images/juwk.png" class="pplpics">Juwk
+      <br><img src="./images/flee.png" class="pplpics">Flee
+    </div>
+
+    <div id="settingsColumn">
+      <button id="wothSizeToggle" onmousedown="wothSizeToggle()">Large WotH Font</button><br />
+      <button id="areaTitlesToggle" onmousedown="areaTitlesToggle()">Show Area Headers</button><br /><br />
+
+      <button id="myBtn">halp</button><br />
+      <button id="locationCodes">Location Codes</button><br />
+      <button id="patchNotesBtn">Patch Notes</button><br /><br />
+
+      <button id="simControl" onmousedown="simControl()">Play the Sim</button><input id="simSeed"></input>
+      <input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))'
+        style="display:none;" />
+      <br /><button onmousedown="download()">Download Log</button><br /><br />
+      <select class="settingsOptions" id="gossips" style="display:none">
+        <option value="OFF">OFF</option>
+        <option value="ON">ON</option>
+      </select><br><br class="half_break">
+    </div>
+    <div id="statsColumn">
+      <label id="desiredAnimalLabel" for="desiredAnimal">wish for</label><select class="settingsOptions"
+        id="desiredAnimal">
+        <option value="random">random</option>
+      </select><br><br class="half_break">
+      <label id="quest1Label" for="quest1Options">quest 1</label>
+      <select class="settingsOptions" id="quest1">
+        <option value="unselected">unselected</option>
+        <option value="3BombbagsAnd3Slingshots">get 3 bomb bags and 3 slingshots for +14% XP</option>
+        <option value="4ForestItems">get 4+ items in forest for +21% XP</option>
+        <option value="slingshotBeforeBombbag">get slingshot before bomb bag for +7% XP</option>
+      </select><br><br class="half_break">
+      <small id="animalLV"></small><br>
+      <small id="rollChance"></small><br>
+      <small id="seedsDone"></small><br>
+      <small id="quest1Mult"></small><br>
+      <small id="yamiChance"></small><br>
+      <small id="yamiMult"></small><br>
+      <small id="angelChance"></small><br>
+      <small id="angelMult"></small><br>
+      <small id="rainbowChance"></small><br>
+      <small id="rainbowMult"></small><br>
+    </div>
+  </div>
+</body>
+<script src="sim.js"></script>
+<script src="misc.js"></script>
+<script src="logic.js"></script>
+<script src="hints.js"></script>
+<script src="ui.js"></script>
+<script src="themes.js"></script>
+<script src="main.js"></script>
+<script src="aminals.js"></script>
+<script src="initialize.js"></script>
+
+</html>

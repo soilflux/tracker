@@ -22,8 +22,10 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 0px; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 
 body {
@@ -37,18 +39,20 @@ body {
   height: 20px;
   width: 20px;
   position: relative;
-  top:5.5px;
+  top: 5.5px;
   visibility: hidden;
 }
+
 .wothCondensed {
-  margin-top:-2px;
+  margin-top: -2px;
 }
 
 #woth1 {
-  margin-top:-4px;
+  margin-top: -4px;
 }
+
 #woth4 {
-  margin-top:-4px;
+  margin-top: -4px;
 }
 
 .area_rewards {
@@ -67,13 +71,13 @@ body {
 .superJunk {
   color: lightblue;
   font-size: 14px;
-  letter-spacing:-0.17em;
+  letter-spacing: -0.17em;
   position: relative;
   bottom: 3px;
 }
 
 .superSK {
-  margin-left:2px;
+  margin-left: 2px;
   color: lightgrey;
   font-size: 14px;
   position: relative;
@@ -122,20 +126,22 @@ body {
   font-size: 20px;
   margin-left: 2px;
   margin-right: 1px;
-  position:relative;
-  bottom:5px;
+  position: relative;
+  bottom: 5px;
 }
 
 #tokenStatsColumn {
   color: gold;
   font-weight: bold;
 }
+
 #checkStatsColumn {
   color: lightblue;
   font-weight: bold;
 }
+
 .stat-text {
-  font-size:16px;
+  font-size: 16px;
   float: top;
 }
 
@@ -174,31 +180,39 @@ body {
 #text_dung4 {
   color: lightgreen;
 }
+
 #text_dung5 {
   color: #ff4d4d;
 }
+
 #text_dung6 {
   color: lightblue;
 }
+
 #text_dung7 {
   color: rgb(238, 130, 238);
 }
+
 #text_dung8 {
   color: rgb(255, 165, 0);
 }
+
 #text_dung9 {
   color: white;
 }
+
 #text_dung1 {
   color: lightgreen;
   font-weight: 100;
   opacity: 0.8;
 }
+
 #text_dung2 {
   color: #ff4d4d;
   font-weight: 100;
   opacity: 0.8;
 }
+
 #text_dung3 {
   color: lightblue;
   font-weight: 100;
@@ -268,7 +282,7 @@ body {
   width: 22px;
   margin-left: -1px;
   margin-right: -3px;
-  margin-top:3px;
+  margin-top: 3px;
   opacity: 0.2;
 }
 
@@ -281,6 +295,7 @@ body {
   color: white;
   font-size: 12px;
 }
+
 .woth_input {
   width: 29px;
   vertical-align: top;
@@ -360,14 +375,14 @@ body {
 
 #searchingFor_div {
   width: 100px;
-  height:60px;
+  height: 60px;
 }
 
 #probability_input {
   width: 25px;
   height: 16px;
   position: relative;
-  top:1px;
+  top: 1px;
   left: 12px;
 }
 
@@ -398,7 +413,7 @@ body {
 #major_probability {
   font-size: 14px;
   color: gold;
-  margin-left:8px;
+  margin-left: 8px;
 }
 
 #goMode {
@@ -408,8 +423,8 @@ body {
 
 .checkSummaryColumn {
   position: absolute;
-  right:0px;
-  top:100px;
+  right: 0px;
+  top: 100px;
   width: 250px;
 }
 
@@ -485,33 +500,46 @@ body {
 }
 
 #settings {
-  display: flex;            /* Enables side-by-side layout */
-  flex-direction: row;      /* Ensures they go horizontally */
-  align-items: flex-start;  /* Aligns columns to the top */
-  gap: 5px; 
-  margin-left:4px;  
+  display: flex;
+  /* Enables side-by-side layout */
+  flex-direction: row;
+  /* Ensures they go horizontally */
+  align-items: flex-start;
+  /* Aligns columns to the top */
+  gap: 5px;
+  margin-left: 4px;
 }
+
 #info-row {
-  margin-top:2px;
-  display: flex;            /* Enables side-by-side layout */
-  flex-direction: row;      /* Ensures they go horizontally */
-  align-items: flex-start;  /* Aligns columns to the top */
-  gap: 5px;   
+  margin-top: 2px;
+  display: flex;
+  /* Enables side-by-side layout */
+  flex-direction: row;
+  /* Ensures they go horizontally */
+  align-items: flex-start;
+  /* Aligns columns to the top */
+  gap: 5px;
 }
+
 #unstreamed-row {
-  float:bottom;
-  display: flex;            /* Enables side-by-side layout */
-  flex-direction: row;      /* Ensures they go horizontally */
-  align-items: flex-end;  /* Aligns columns to the top */
+  float: bottom;
+  display: flex;
+  /* Enables side-by-side layout */
+  flex-direction: row;
+  /* Ensures they go horizontally */
+  align-items: flex-end;
+  /* Aligns columns to the top */
   position: absolute;
-  bottom:5px;
-  left:590px;
-  gap: 5px;   
+  bottom: 5px;
+  left: 590px;
+  gap: 5px;
 }
+
 .three-dungeons {
-  margin-top:-2px;
-  width:162px;
+  margin-top: -2px;
+  width: 162px;
 }
+
 #patchNotesColumn {
   position: absolute;
   left: 985px;
@@ -593,8 +621,8 @@ body {
 
 #linsoColumn {
   position: absolute;
-  top:100px;
-  right:270px;
+  top: 100px;
+  right: 270px;
   width: 280px;
 }
 
@@ -606,8 +634,8 @@ body {
   height: 12px;
   width: 12px;
   margin-right: 4px;
-  position:relative;
-  top:2px;
+  position: relative;
+  top: 2px;
 }
 
 .dungcolumn {
@@ -633,11 +661,12 @@ body {
 
 #row {
   background-color: #3b4144;
-  height:1080px;
+  height: 1080px;
 }
 
 .highlight-flash {
-  background-color: #00ffcc !important; /* A bright teal/cyan */
+  background-color: #00ffcc !important;
+  /* A bright teal/cyan */
   transition: background-color 0.05s ease-in;
 }
 
@@ -670,8 +699,8 @@ body {
 }
 
 .wothImages {
-  height:22px;
-  width:28px;
+  height: 22px;
+  width: 28px;
 }
 
 .picture_input {
@@ -820,37 +849,68 @@ body {
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
+  background-color: #353535;
+  color:white;
+}
+
+.hint-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ddd;
+  background-color: #1a1a1a;
+}
+
+.hint-group {
+  flex: 1;
+  min-width: 240px;
+  margin-bottom: 20px;
+}
+
+.hint-group b {
+  display: block;
+  font-size: 1.1em;
+  color: #ffcc00;
+  border-bottom: 1px solid #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hint-group p {
+  margin: 0;
+  line-height: 1.1;
+  font-size: 0.9em;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .close {
-  color: #aaa;
   float: right;
-  font-size: 28px;
+  right:45px;
+  position:relative;
+  font-size: 100px;
   font-weight: bold;
+  cursor: pointer;
+  color: red;
 }
 
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
 .song-icon {
   position: relative;
   height: 34px;
   width: 34px;
 }
-#songs-grid{
+
+#songs-grid {
   display: flex;
-  flex-wrap: wrap;       /* Allows it to go to the next line */
-  width: 230px;          /* Adjust width so exactly 6 fit per row */
-  gap: 4px;              /* Space between the boxes */
+  flex-wrap: wrap;
+  /* Allows it to go to the next line */
+  width: 230px;
+  /* Adjust width so exactly 6 fit per row */
+  gap: 4px;
+  /* Space between the boxes */
 }
 
 .bonuspics {
@@ -884,8 +944,13 @@ body {
 }
 
 @keyframes rotation {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(359deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 #woth_info {
@@ -949,27 +1014,29 @@ body {
 #stonePic {
   height: 16px;
   width: 16px;
-  position:relative;
-  top:4px;
-  margin-right:-1px;
+  position: relative;
+  top: 4px;
+  margin-right: -1px;
 }
+
 #markStones {
   width: 50px;
   color: white;
-  font-size:12px;
+  font-size: 12px;
 }
 
 #medallionPic {
   height: 16px;
   width: 16px;
-  position:relative;
-  top:4px;
-  margin-right:-1px;
+  position: relative;
+  top: 4px;
+  margin-right: -1px;
 }
+
 #markMedallions {
   width: 90px;
   color: white;
-  font-size:12px;
+  font-size: 12px;
 }
 
 #mark_ER_Dungeons {
@@ -997,40 +1064,141 @@ h1 {
   display: inline;
 }
 
-#title_kokiri { color: #20ea01; }
-#title_ranch { color: #101001; }
-#title_field { color: #b6b004; }
-#title_valley { color: #01e6d7; }
-#title_hylia { color: #0101e6; }
-#title_market { color: #c704e5; }
-#title_hcastle { color: #84fe0b; }
-#title_outG { color: #fe0404; }
-#title_ToT { color: #d4e3ef; }
-#title_river { color: #5db8fe; }
-#title_domain { color: #a3d7fe; }
-#title_lostwoods { color: #004f0b; }
-#title_ganons { color: rgb(253, 215, 228); }
-#title_sfm { color: #8bfb9a; }
-#title_gcity { color: #feb813; }
-#title_trail { color: #573e02; }
-#title_kakariko { color: #678c8a; }
-#title_crater { color: #fe3e04; }
-#title_fortress { color: #c3ab7c; }
-#title_wasteland { color: #976500; }
-#title_colossus { color: #fed788; }
-#title_graveyard { color: #200a28; }
-#title_deku { color: #563c25; }
-#title_dodongos { color: #b35705; }
-#title_jabu { color: #077d8a; }
-#title_fountain { color: #77f1fe; }
-#title_ice { color: #9ef3fd; }
-#title_forest { color: #88fa4e; }
-#title_fire { color: rgb(255, 80, 80); }
-#title_water { color: rgb(74, 170, 255); }
-#title_spirit { color: yellow; }
-#title_shadow { color: rgb(199, 100, 255); }
-#title_well { color: #de86fe; }
-#title_gtg { color: #fe8b08; }
+#title_kokiri {
+  color: #20ea01;
+}
+
+#title_ranch {
+  color: #101001;
+}
+
+#title_field {
+  color: #b6b004;
+}
+
+#title_valley {
+  color: #01e6d7;
+}
+
+#title_hylia {
+  color: #0101e6;
+}
+
+#title_market {
+  color: #c704e5;
+}
+
+#title_hcastle {
+  color: #84fe0b;
+}
+
+#title_outG {
+  color: #fe0404;
+}
+
+#title_ToT {
+  color: #d4e3ef;
+}
+
+#title_river {
+  color: #5db8fe;
+}
+
+#title_domain {
+  color: #a3d7fe;
+}
+
+#title_lostwoods {
+  color: #004f0b;
+}
+
+#title_ganons {
+  color: rgb(253, 215, 228);
+}
+
+#title_sfm {
+  color: #8bfb9a;
+}
+
+#title_gcity {
+  color: #feb813;
+}
+
+#title_trail {
+  color: #573e02;
+}
+
+#title_kakariko {
+  color: #678c8a;
+}
+
+#title_crater {
+  color: #fe3e04;
+}
+
+#title_fortress {
+  color: #c3ab7c;
+}
+
+#title_wasteland {
+  color: #976500;
+}
+
+#title_colossus {
+  color: #fed788;
+}
+
+#title_graveyard {
+  color: #200a28;
+}
+
+#title_deku {
+  color: #563c25;
+}
+
+#title_dodongos {
+  color: #b35705;
+}
+
+#title_jabu {
+  color: #077d8a;
+}
+
+#title_fountain {
+  color: #77f1fe;
+}
+
+#title_ice {
+  color: #9ef3fd;
+}
+
+#title_forest {
+  color: #88fa4e;
+}
+
+#title_fire {
+  color: rgb(255, 80, 80);
+}
+
+#title_water {
+  color: rgb(74, 170, 255);
+}
+
+#title_spirit {
+  color: yellow;
+}
+
+#title_shadow {
+  color: rgb(199, 100, 255);
+}
+
+#title_well {
+  color: #de86fe;
+}
+
+#title_gtg {
+  color: #fe8b08;
+}
 
 .half_break {
   line-height: 5px;
@@ -1050,16 +1218,20 @@ h1 {
 }
 
 .rules-row {
-  display: flex;            /* Makes this a flex container */
-  justify-content: space-between; /* Pushes label to left, select to right */
-  align-items: center;      /* Centers them vertically */
-  width: 100%;              /* Ensure the row takes up the full width */
+  display: flex;
+  /* Makes this a flex container */
+  justify-content: space-between;
+  /* Pushes label to left, select to right */
+  align-items: center;
+  /* Centers them vertically */
+  width: 100%;
+  /* Ensure the row takes up the full width */
 }
 
 .rules-row select {
   background-color: #404040;
   color: white;
-  width:170px;
+  width: 170px;
 }
 
 #desiredAnimalLabel {
