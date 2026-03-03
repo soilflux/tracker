@@ -22,6 +22,7 @@ function processInputs() {
       continue;
     }
     let input = document.getElementById(locationId).value;
+    let item = inputToItemMap[input.toLowerCase()];
 
     // Break early if no user input.
     if (input == '' || input == "???") {
@@ -143,27 +144,26 @@ function processInputs() {
     }
 
     // Break early if input is invalid.
-    var inputIdx = inputs.indexOf(input.toLowerCase());
-    if (inputIdx === -1) {
-      continue;
+    if (!item) {
+      continue;      
     }
 
     // don't allow inputting the same item twice if it's not a duplicate item
-    if (!DuplicateItems.includes(Items2[inputIdx]) && knownItems[Items2[inputIdx]]) {
+    if (!DuplicateItems.includes(item) && knownItems[item]) {
       continue;
     }
 
     // if it is a duplicate item and all copies are already known, don't allow the input
-    if (Items2[inputIdx] == "bomb_bag" && knownItems["bomb_bag3"]) continue;
-    if (Items2[inputIdx] == "bow" && knownItems["bow3"]) continue;
-    if (Items2[inputIdx] == "slingshot" && knownItems["slingshot3"]) continue;
-    if (Items2[inputIdx] == "strength" && knownItems["strength3"]) continue;
-    if (Items2[inputIdx] == "bottle" && knownItems["bottle4"]) continue;
-    if (Items2[inputIdx] == "hookshot" && knownItems["hookshot2"]) continue;
-    if (Items2[inputIdx] == "magic" && knownItems["magic2"]) continue;
-    if (Items2[inputIdx] == "scale" && knownItems["scale2"]) continue;
-    if (Items2[inputIdx] == "wallet" && knownItems["wallet3"]) continue;
-    if ((Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") && (knownItems["prescription"] || knownItems["claim_check"])) continue;
+    if (item == "bomb_bag" && knownItems["bomb_bag3"]) continue;
+    if (item == "bow" && knownItems["bow3"]) continue;
+    if (item == "slingshot" && knownItems["slingshot3"]) continue;
+    if (item == "strength" && knownItems["strength3"]) continue;
+    if (item == "bottle" && knownItems["bottle4"]) continue;
+    if (item == "hookshot" && knownItems["hookshot2"]) continue;
+    if (item == "magic" && knownItems["magic2"]) continue;
+    if (item == "scale" && knownItems["scale2"]) continue;
+    if (item == "wallet" && knownItems["wallet3"]) continue;
+    if ((item == "prescription" || item == "claim_check") && (knownItems["prescription"] || knownItems["claim_check"])) continue;
 
     if (isLowerCase(input.charAt(0)) && isUpperCase(input.charAt(input.length - 1))) {
       peeked = true;
@@ -174,10 +174,7 @@ function processInputs() {
       document.getElementById(locationId).value = input.toLowerCase();
     }
 
-    // Input may have been lowercased or emptied, so set it again.
-    input = document.getElementById(locationId).value;
-
-    if (inputIdx == 0) {
+    if (item == "junk") {
       if (isBoss.includes(locationId) && hinted) {
         checkToItemMap[document.getElementById(locationId).id] = "junk";
         forcedDisplay[i] = true;
@@ -187,7 +184,7 @@ function processInputs() {
       flash();
       continue;
     }
-    if (inputIdx == 1) {
+    if (item == "small_key") {
       if (!hinted) {
         document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
       }
@@ -197,7 +194,7 @@ function processInputs() {
       }
       continue;
     }
-    if (inputIdx == 2) {
+    if (item == "boss_key") {
       if (!hinted) {
         document.getElementById("text_" + locationId).dispatchEvent(new Event('mousedown'));
       }
@@ -210,31 +207,31 @@ function processInputs() {
     for (var k = 0; k <= 5; k++) {
       if (k == 0) { var duplicate = ""; }
       else { var duplicate = k + ""; }
-      if (!knownItems[Items2[inputIdx] + duplicate]) {
-        checkToItemMap[document.getElementById(locationId).id] = Items2[inputIdx] + duplicate;
-        itemToCheckMap[Items2[inputIdx] + duplicate] = document.getElementById(locationId).id;
-        if (Items2[inputIdx] == "prescription" || Items2[inputIdx] == "claim_check") {
-          document.getElementById("trade_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
-        } else if (Items2[inputIdx] == "big_poe") {
-          document.getElementById("bottle" + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
-        } else if (inputIdx < Items2.indexOf("lullaby")) {
-          document.getElementById(Items2[inputIdx] + duplicate + "_location").innerHTML = ItemNames2[inputIdx] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
+      if (!knownItems[item + duplicate]) {
+        checkToItemMap[document.getElementById(locationId).id] = item + duplicate;
+        itemToCheckMap[item + duplicate] = document.getElementById(locationId).id;
+        if (item == "prescription" || item == "claim_check") {
+          document.getElementById("trade_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
+        } else if (item == "big_poe") {
+          document.getElementById("bottle" + duplicate + "_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
+        } else if (!songChecks.includes(item)) {
+          document.getElementById(item + duplicate + "_location").innerHTML = itemToNameMap[item] + " &#8594; " + checkToAreaMap[locationId] + ": " + checkNames[i];
         }
-        knownItems[Items2[inputIdx] + duplicate] = true;
-        if (inputs[inputIdx] == "big") { knownItems.big_poe = true; itemToCheckMap.big_poe = document.getElementById(locationId).id; }
+        knownItems[item + duplicate] = true;
+        if (item == "big_poe") { knownItems.big_poe = true; itemToCheckMap.big_poe = document.getElementById(locationId).id; }
         if (!hinted && !peeked) {
-          player[Items2[inputIdx] + duplicate] = true;
-          if (inputs[inputIdx] == "big")
+          player[item + duplicate] = true;
+          if (item == "big_poe")
             player["big_poe"] = true;
         }
         if (hinted) { isCheckHinted[locationId] = true; }
-        if (hintedInput == inputs[inputIdx])
+        if (hintedInput == input)
           thisIsHinted = true;
         junkItem(document.getElementById(locationId));
-        if (!player[Items2[inputIdx] + duplicate]) { forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage = ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase() }
+        if (!player[item + duplicate]) { forcedDisplay[i] = true; document.getElementById(locationId).style.backgroundImage = ""; document.getElementById(locationId).value = document.getElementById(locationId).value.toUpperCase() }
         thisIsHinted = false;
         hintedInput = "";
-        areaToItemsMap[checkToAreaMap[locationId]].push(Items2[inputIdx]);
+        areaToItemsMap[checkToAreaMap[locationId]].push(item);
         trackAnimalQuest();
         break;
       }
