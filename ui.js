@@ -35,6 +35,7 @@ function processInputs() {
       case "barren": handleBarrenInput(input, locationId); continue;
       case "always": handleAlwaysInput(input, locationId); continue;
       case "sometimes": handleSometimesInput(input, locationId); continue;
+      case "dual": handleDualInput(input, locationId); continue;
       case "entrances": handleEntrancesInput(input, locationId); continue;
       case "medallions": handleMedallionsInput(input, locationId); continue;
     }
@@ -141,6 +142,7 @@ function checkInputType(input) {
     case "2": return "barren";
     case "3": return "always";
     case "4": return "sometimes";
+    case "5": return "dual";
     case "9": return "entrance";
     case "0": return "medallion";
     default: return "item";
@@ -188,11 +190,16 @@ function handleBarrenInput(input, locationId) {
   });
 }
 function handleAlwaysInput(input, locationId) {
-  input = input.slice(1);
+  if (input[1] === input[0]) {
+    input = input.slice(2) + "x";
+  }
+  else {
+    input = input.slice(1);
+  }
   Object.keys(alwaysTable).forEach(key => {
     if (input.startsWith(key)) {
       input = input.slice(1);
-      if (inputs.includes(input)) {
+      if (inputToItemMap[input]) {
         document.getElementById(alwaysTable[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
         document.getElementById(locationId).value = "";
         flash();
@@ -201,32 +208,46 @@ function handleAlwaysInput(input, locationId) {
   });
 }
 function handleSometimesInput(input, locationId) {
-  input = input.slice(1);
+  if (input[1] === input[0]) {
+    input = input.slice(2) + "x";
+  }
+  else {
+    input = input.slice(1);
+  }
   Object.keys(sometimesTableReduced).forEach(key => {
     if (input.startsWith(key)) {
-      input = input.replace(key, '');
-      if (inputs.includes(input.slice(0, 1))) {
-        if (!key.startsWith("4")) {
-          document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
-          document.getElementById(locationId).value = "";
-          flash();
-        }
-        else {
-          let firstInput = input.charAt(0).toUpperCase();
-          if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
-            firstInput += input.slice(1);
-            input = input.slice(2);
-          }
-          else {
-            input = input.slice(1);
-          }
-          if (inputs.includes(input)) {
-            document.getElementById(sometimesTableReduced[key][0]).value = firstInput;
-            document.getElementById(sometimesTableReduced[key][1]).value = input.charAt(0).toUpperCase() + input.slice(1);
-            document.getElementById(locationId).value = "";
-            flash();
-          }
-        }
+      input = input.slice(2);
+      if (inputToItemMap[input.slice(0, 1)]) {
+        document.getElementById(sometimesTableReduced[key]).value = input.charAt(0).toUpperCase() + input.slice(1);
+        document.getElementById(locationId).value = "";
+        flash();
+      }
+    }
+  });
+}
+function handleDualInput(input, locationId) {
+  if (input[1] === input[0]) {
+    input = input.slice(2) + "xx";
+  }
+  else {
+    input = input.slice(1);
+  }
+  Object.keys(dualTable).forEach(key => {
+    if (input.startsWith(key)) {
+      input = input.slice(1);
+      let firstInput = input.charAt(0).toUpperCase();
+      if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
+        firstInput += input.charAt(1);
+        input = input.slice(2);
+      }
+      else {
+        input = input.slice(1);
+      }
+      if (inputToItemMap[input]) {
+        document.getElementById(dualTable[key][0]).value = firstInput;
+        document.getElementById(dualTable[key][1]).value = input.charAt(0).toUpperCase() + input.slice(1);
+        document.getElementById(locationId).value = "";
+        flash();
       }
     }
   });
