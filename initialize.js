@@ -218,21 +218,21 @@ var sometimesTableReduced = {
 }
 
 const dualTable = {
-  "f": ["dins_fairy", "g_fairy"],
-  "h": ["fire_hammer1", "fire_hammer2"],
-  "g": ["ganons_spiritTrial1", "ganons_spiritTrial2"],
-  "a": ["gerudo_archery_1", "gerudo_archery_2"],
-  "v": ["gerudovalley_box", "gerudovalley_fall"],
-  "l": ["hylia_lab_top", "hylia_adult_fishing"],
-  "m": ["market_bowling_1", "market_bowling_2"],
-  "d": ["shadow_dins1", "shadow_dins2"],
-  "s": ["shadow_spinning1", "shadow_spinning2"],
-  "a": ["spirit_adultLeft", "spirit_adultRight"],
-  "c": ["spirit_childLeft", "spirit_childRight"],
-  "r": ["spirit_rightHand", "spirit_leftHand"],
-  "w": ["water_dLink", "water_river"],
-  "b": ["well_deadHand", "well_invisible"],
-  "z": ["zora_diving", "zora_torches"],
+  "ca": ["dins_fairy", "g_fairy"],
+  "fi": ["fire_hammer1", "fire_hammer2"],
+  "ga": ["ganons_spiritTrial1", "ganons_spiritTrial2"],
+  "fo": ["gerudo_archery_1", "gerudo_archery_2"],
+  "gv": ["gerudovalley_box", "gerudovalley_fall"],
+  "lh": ["hylia_lab_top", "hylia_adult_fishing"],
+  "ma": ["market_bowling_1", "market_bowling_2"],
+  "sd": ["shadow_dins1", "shadow_dins2"],
+  "ss": ["shadow_spinning1", "shadow_spinning2"],
+  "as": ["spirit_adultLeft", "spirit_adultRight"],
+  "cs": ["spirit_childLeft", "spirit_childRight"],
+  "co": ["spirit_rightHand", "spirit_leftHand"],
+  "wa": ["water_dLink", "water_river"],
+  "we": ["well_deadHand", "well_invisible"],
+  "do": ["zora_diving", "zora_torches"],
 }
 
 // When adding to hint table, take care not to duplicate keys.

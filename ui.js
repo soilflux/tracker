@@ -234,7 +234,7 @@ function handleDualInput(input, locationId) {
   }
   Object.keys(dualTable).forEach(key => {
     if (input.startsWith(key)) {
-      input = input.slice(1);
+      input = input.slice(2);
       let firstInput = input.charAt(0).toUpperCase();
       if (!input.startsWith("a") && !input.startsWith("q") && !input.startsWith("x")) {
         firstInput += input.charAt(1);
