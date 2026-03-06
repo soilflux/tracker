@@ -738,7 +738,7 @@ function logicShortcuts() {
   player.can_enter_child_dodongos = player.bomb_bag || player.goron_bracelet || player.bombchus;
   player.can_break_dodongos_wall = player.dodongos_access && (player.bomb_bag || player.bombchus || player.goron_bracelet || (player.dodongos_adult_access && (player.hammer || player.can_shoot_blue_fire_arrows)));
   player.dodongos_climb = player.can_break_dodongos_wall && (player.bomb_bag || player.bombchus || player.goron_bracelet || player.can_use_dins || (player.dodongos_adult_access && player.bow));
-  player.can_enter_shadow_entrance = (player.nocturne || Spawn.adult_nocturne) && (player.can_use_dins || (rules.fae == "allowed" && player.can_use_fire));//&& player.can_see;
+  player.can_enter_shadow_entrance = (player.nocturne || Spawn.adult_nocturne) && (player.can_use_dins || (rules.fae == "allowed" && player.can_use_fire));
   player.can_cross_shadow_gap = player.shadow_temple_adult_access && player.hover_boots;
   player.can_bomb_shadow_wall = player.can_cross_shadow_gap && (player.bomb_bag || player.bombchus) && (rules.smallKeys != "keyRings" || player.shadow_key_ring);
   player.can_pass_shadow_hookshot_door = player.can_bomb_shadow_wall && player.hookshot;
@@ -1413,7 +1413,7 @@ function updateCheckLogic() {
     Access.ice_irons = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
     Access.bottom_of_fountain = Has.ice_entrance_access && Has.iron_boots;
     Access.thaw_king = Has.can_enter_adult_domain && ((Has.can_use_bottle && (Has.ice_access || Has.giants_wallet || Has.can_enter_ganons)) || Has.can_shoot_blue_fire_arrows);
-    forestCheckAccess(player, "locationAccess");
+    dungeonCheckAccess("forest", player, "locationAccess");
     Access.fire_nearBoss = Has.fire_temple_access;
     Access.fire_hammer1 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
     Access.fire_hammer2 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
@@ -1717,7 +1717,7 @@ function updateCheckLogic() {
     Has = couldHave;
   }
 
-  forestCheckAccess(couldHave, "couldAccess");
+  dungeonCheckAccess("forest", couldHave, "couldAccess");
   locationCouldAccess.fire_nearBoss = couldHave.fire_temple_access;
   locationCouldAccess.fire_hammer1 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
   locationCouldAccess.fire_hammer2 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
@@ -1932,18 +1932,82 @@ function updateCheckLogic() {
 }
 
 function updateEntranceAccess(dungeon, sim) {
-  if (dungeonToEntrance_ER_dict[dungeon] == "forest_temple") {
+  if (dungeonToEntrance_ER_dict[dungeon] == "deku") {
+    sim.adultEntrance = rules.deku == "open" || sim.kokiri_sword;
+    sim.childEntrance = rules.deku == "open" || sim.kokiri_sword;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "dodongos") {
+    sim.adultEntrance = true;
+    sim.childEntrance = sim.bomb_bag || sim.goron_bracelet || sim.bombchus;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "jabu") {
+    sim.adultEntrance = false;
+    sim.childEntrance = (sim.child_can_enter_domain && (sim.rutos_letter || rules.fountain == "open")) || sim.child_zf;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "forest") {
     sim.adultEntrance = sim.hookshot;
     sim.childEntrance = false;
     sim.entrance = sim.adultEntrance || sim.childEntrance
   }
+  if (dungeonToEntrance_ER_dict[dungeon] == "fire") {
+    sim.can_stop_link_the_goron = sim.bomb_bag || sim.bow || sim.goron_bracelet || sim.bombchus;
+    sim.child_can_enter_river = sim.bomb_bag || sim.bombchus || sim.silver_scale || Spawn.child_zd || Spawn.child_zr;
+    sim.reverse_crater = (sim.hover_boots || sim.hookshot || sim.child_can_enter_river) && sim.bolero;
+    sim.crater_by_city = sim.can_stop_link_the_goron || sim.reverse_crater || sim.hammer || (sim.longshot && sim.hammer) || Spawn.adult_lower_dmc;
+
+    sim.adultEntrance = sim.can_enter_fire_temple_entrance = (sim.crater_by_city && (sim.hookshot || sim.hover_boots)) || sim.bolero;
+    sim.childEntrance = sim.bolero;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "water") {
+    sim.adultEntrance = sim.hookshot && (sim.iron_boots || sim.golden_scale);
+    sim.childEntrance = false;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "shadow") {
+    sim.adultEntrance = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
+    sim.childEntrance = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "spirit") {
+    sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
+    sim.can_cross_quicksand = sim.fortress_access && (rules.gerudoCard == "vanilla" || sim.gerudo_card);
+
+    sim.adultEntrance = (sim.can_cross_quicksand) || sim.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || locationAccess.spirit_leftHand || locationAccess.spirit_rightHand;
+    sim.childEntrance = sim.requiem || Spawn.child_colossus || Spawn.child_wasteland || locationAccess.spirit_rightHand;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "botw") {
+    sim.adultEntrance = sim.storms;
+    sim.childEntrance = sim.storms;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "ice") {
+    sim.can_enter_adult_domain = sim.lullaby || sim.hover_boots || Spawn.adult_zd;
+    sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bomb_bag || sim.bombchus;
+
+    sim.adultEntrance = (sim.can_enter_adult_domain && ((sim.rutos_letter && sim.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
+    sim.childEntrance = false;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  if (dungeonToEntrance_ER_dict[dungeon] == "gtg") {
+    sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
+
+    sim.adultEntrance = (sim.can_save_carpenters && rules.gerudoCard == "vanilla") || (sim.fortress_access && sim.gerudo_card && rules.gerudoCard == "shuffled");
+    sim.childEntrance = false;
+    sim.entrance = sim.adultEntrance || sim.childEntrance;
+  }
+  
 }
 
 function unlocksChecksInForest() {
   const items = ["hookshot", "goron_bracelet", "hover_boots", "bow", "time", "slingshot", "longshot"];
   if (rules.smallKeys == "keyRings") items.push("forest_key_ring");
 
-  const startCount = forestCheckAccess(player);
+  const startCount = dungeonCheckAccess("forest", player);
   let itemsUnlockChecks = [];
   for (const item of items) {
     if (player[item]) continue;
@@ -1952,25 +2016,22 @@ function unlocksChecksInForest() {
       ...player,
       [item]: true
     };
-    sim.current_forest_keys += Math.round(startCount*0.45);
-    if (startCount < forestCheckAccess(sim, "sim")) itemsUnlockChecks.push(item);
+    sim.current_forest_keys += Math.round(startCount * 0.45);
+    if (startCount < dungeonCheckAccess("forest", sim, "sim")) itemsUnlockChecks.push(item);
   }
   updateDungeonItemImages("forest", itemsUnlockChecks);
 }
-function forestCheckAccess(sim, type) {
-  updateEntranceAccess("forest_temple", sim);
-
-  const {
-    hookshot, adultEntrance, time, hover_boots, current_forest_keys, forest_boss_key, bow, goron_bracelet, can_use_dins, childEntrance, forest_key_ring,
-    entrance, slingshot, longshot
-  } = sim;
-
+function dungeonCheckAccess(dungeon, sim, type) {
+  updateEntranceAccess(dungeon, sim);
   const smallKeys = (count) => {
-    const meetsCount = current_forest_keys >= count;
-    const meetsSetting = rules.smallKeys !== "keyRings" || forest_key_ring;
+    const meetsCount = sim[`current_${dungeon}_keys`] >= count;
+    const meetsSetting = rules.smallKeys !== "keyRings" || sim[`${dungeon}_key_ring`];
     return meetsCount && meetsSetting;
   };
+  const bossKey = sim[`${dungeon}_boss_key`];
+  const {adultEntrance, childEntrance, entrance} = sim;
 
+  const {hookshot, time, hover_boots, bow, goron_bracelet, can_use_dins,  slingshot, longshot} = sim;
   const checks = {
     gs_forest_first: adultEntrance && hookshot,
     gs_forest_lobby: adultEntrance && hookshot,
@@ -1990,11 +2051,10 @@ function forestCheckAccess(sim, type) {
     forest_blue: adultEntrance && goron_bracelet && bow && smallKeys(3),
     forest_fallingCeiling: adultEntrance && goron_bracelet && (bow || can_use_dins) && smallKeys(5),
     forest_nearBoss: adultEntrance && goron_bracelet && bow && smallKeys(5),
-    forest_phantomGanon: adultEntrance && goron_bracelet && bow && smallKeys(5) && forest_boss_key,
+    forest_phantomGanon: adultEntrance && goron_bracelet && bow && smallKeys(5) && bossKey,
   }
 
-  assignChecks(checks,type);
-
+  assignChecks(checks, type);
   return Object.values(checks).filter(Boolean).length;
 }
 

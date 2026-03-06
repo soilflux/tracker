@@ -40,8 +40,8 @@ let itemPathEnd = ".png";
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to
-var dungs_list2 = { "deku": "Deku", "dodongos": "DC", "jabu": "Jabu", "forest_temple": "Forest", "fire_temple": "Fire", "water_temple": "Water", "shadow_temple": "Shadow", "spirit_temple": "Spirit", "botw": "BotW", "ice": "Ice", "gtg": "GTG" };
-var dungs_list = ["deku", "dodongos", "jabu", "forest_temple", "fire_temple", "water_temple", "shadow_temple", "spirit_temple", "botw", "ice", "gtg"];
+var dungs_list2 = { "deku": "Deku", "dodongos": "DC", "jabu": "Jabu", "forest": "Forest", "fire": "Fire", "water": "Water", "shadow": "Shadow", "spirit": "Spirit", "botw": "BotW", "ice": "Ice", "gtg": "GTG" };
+var dungs_list = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "botw", "ice", "gtg"];
 var dungs_list_short = ["de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "bo", "ic", "gt"];
 var dungs_colors = Array(dungs_list.length).fill("white");
 var dungs_strike = Array(dungs_list.length).fill("none");

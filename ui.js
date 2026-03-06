@@ -1908,11 +1908,11 @@ function updateChecklistEntrances() {
     "deku": { from: "kokiri", to: "deku" },
     "dodongos": { from: "dmt", to: "dodongos" },
     "jabu": { from: "fountain", to: "jabu" },
-    "forest_temple": { from: "sfm", to: "forest" },
-    "fire_temple": { from: "dmc", to: "fire" },
-    "water_temple": { from: "hylia", to: "water" },
-    "shadow_temple": { from: "graveyard", to: "shadow" },
-    "spirit_temple": { from: "colossus", to: "spirit" },
+    "forest": { from: "sfm", to: "forest" },
+    "fire": { from: "dmc", to: "fire" },
+    "water": { from: "hylia", to: "water" },
+    "shadow": { from: "graveyard", to: "shadow" },
+    "spirit": { from: "colossus", to: "spirit" },
     "botw": { from: "kakariko", to: "well" },
     "ice": { from: "fountain", to: "ice" },
     "gtg": { from: "fortress", to: "gtg" }
@@ -2061,7 +2061,7 @@ function update_dungeon_ER_Logic() {
       player[dungs_list[d] + "_adult_access"] = false;
       couldHave[dungs_list[d] + "_adult_access"] = false;
     }
-    else if (enter == "forest_temple") {
+    else if (enter == "forest") {
       logic[dungs_list[d] + "_child_access"] = false;
       player[dungs_list[d] + "_child_access"] = false;
       couldHave[dungs_list[d] + "_child_access"] = false;
@@ -2070,7 +2070,7 @@ function update_dungeon_ER_Logic() {
       player[dungs_list[d] + "_adult_access"] = player.can_enter_forest_temple_entrance;
       couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_forest_temple_entrance;
     }
-    else if (enter == "fire_temple") {
+    else if (enter == "fire") {
       if (rules.dungeonEr == "ganonsExcluded") {
         logic[dungs_list[d] + "_child_access"] = logic.bolero;
         player[dungs_list[d] + "_child_access"] = player.bolero;
@@ -2086,7 +2086,7 @@ function update_dungeon_ER_Logic() {
       player[dungs_list[d] + "_adult_access"] = player.can_enter_fire_temple_entrance;
       couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_fire_temple_entrance;
     }
-    else if (enter == "water_temple") {
+    else if (enter == "water") {
       logic[dungs_list[d] + "_child_access"] = false;
       player[dungs_list[d] + "_child_access"] = false;
       couldHave[dungs_list[d] + "_child_access"] = false;
@@ -2095,7 +2095,7 @@ function update_dungeon_ER_Logic() {
       player[dungs_list[d] + "_adult_access"] = player.can_enter_water_entrance;
       couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_water_entrance;
     }
-    else if (enter == "shadow_temple") {
+    else if (enter == "shadow") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_shadow_entrance;
       player[dungs_list[d] + "_child_access"] = player.can_enter_shadow_entrance;
       couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_shadow_entrance;
@@ -2104,7 +2104,7 @@ function update_dungeon_ER_Logic() {
       player[dungs_list[d] + "_adult_access"] = player.can_enter_shadow_entrance;
       couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_shadow_entrance;
     }
-    else if (enter == "spirit_temple") {
+    else if (enter == "spirit") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_child_colossus;
       player[dungs_list[d] + "_child_access"] = player.can_enter_child_colossus;
       couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_child_colossus;
