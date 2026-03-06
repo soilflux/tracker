@@ -1952,10 +1952,10 @@ function unlocksChecksInForest() {
       ...player,
       [item]: true
     };
-    sim.current_forest_keys += Math.round(startCount / 2);
+    sim.current_forest_keys += Math.round(startCount*0.45);
     if (startCount < forestCheckAccess(sim, "sim")) itemsUnlockChecks.push(item);
   }
-  console.log(itemsUnlockChecks)
+  updateDungeonItemImages("forest", itemsUnlockChecks);
 }
 function forestCheckAccess(sim, type) {
   updateEntranceAccess("forest_temple", sim);
@@ -1993,8 +1993,26 @@ function forestCheckAccess(sim, type) {
     forest_phantomGanon: adultEntrance && goron_bracelet && bow && smallKeys(5) && forest_boss_key,
   }
 
-  if (type === "locationAccess") Object.assign(locationAccess, checks);
-  if (type === "couldAccess") Object.assign(locationCouldAccess, checks);
+  assignChecks(checks,type);
 
   return Object.values(checks).filter(Boolean).length;
+}
+
+function assignChecks(checks, type) {
+  if (type === "locationAccess") Object.assign(locationAccess, checks);
+  else if (type === "couldAccess") Object.assign(locationCouldAccess, checks);
+}
+
+function updateDungeonItemImages(dungeon, items) {
+  const prefix = window[dungeon + "Placement"];
+
+  for (let i = 0; i < 3; i++) {
+    const itemSlotNumber = i + 1;
+    const imgElement = document.getElementById(prefix + "_item" + itemSlotNumber);
+
+    if (imgElement) {
+      const itemName = items[i];
+      imgElement.src = itemName ? player[itemName + "_img"] : "";
+    }
+  }
 }
