@@ -1413,20 +1413,7 @@ function updateCheckLogic() {
     Access.ice_irons = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.bombchus || Has.bomb_bag || Has.giants_wallet);
     Access.bottom_of_fountain = Has.ice_entrance_access && Has.iron_boots;
     Access.thaw_king = Has.can_enter_adult_domain && ((Has.can_use_bottle && (Has.ice_access || Has.giants_wallet || Has.can_enter_ganons)) || Has.can_shoot_blue_fire_arrows);
-    Access.forest_first = Has.forest_temple_access;
-    Access.forest_stalfos = Has.forest_temple_access;
-    Access.forest_midCourtyard = Has.forest_temple_adult_access && (((Has.time && (Has.hover_boots || Has.hookshot)) || (Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys >= 1 && (Has.hover_boots || Has.hookshot))) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys >= 5));
-    Access.forest_highCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys >= 1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys >= 5))));
-    Access.forest_lowCourtyard = Has.forest_temple_access && (Has.time || (Has.forest_temple_adult_access && ((Has.bow && Has.hookshot) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys >= 1) || (Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys >= 5))));
-    Access.forest_blockRoom = Has.forest_temple_adult_access && player.current_forest_keys >= 1 && (Has.bow || (Has.forest_temple_child_access && Has.slingshot)) && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_bossKey = Has.forest_temple_adult_access && player.current_forest_keys >= 2 && Has.bow && Has.goron_bracelet && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_floormaster = Has.forest_temple_adult_access && ((Has.bow && Has.goron_bracelet && player.current_forest_keys >= 2) || ((Has.hover_boots || Has.goron_bracelet) && player.current_forest_keys >= 1)) && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_red = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys >= 3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_bow = Has.forest_temple_adult_access && Has.goron_bracelet && player.current_forest_keys >= 3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_blue = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys >= 3 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_fallingCeiling = Has.forest_temple_adult_access && Has.goron_bracelet && (Has.bow || Has.can_use_dins) && player.current_forest_keys >= 5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_nearBoss = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys >= 5 && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
-    Access.forest_phantomGanon = Has.forest_temple_adult_access && Has.goron_bracelet && Has.bow && player.current_forest_keys >= 5 && player.forest_boss_key && (rules.smallKeys != "keyRings" || Has.forest_key_ring);
+    forestCheckAccess(player, "locationAccess");
     Access.fire_nearBoss = Has.fire_temple_access;
     Access.fire_hammer1 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
     Access.fire_hammer2 = Has.fire_temple_adult_access && Has.hammer && (rules.smallKeys != "keyRings" || Has.fire_key_ring);
@@ -1699,11 +1686,6 @@ function updateCheckLogic() {
     Access.gs_jabu_near_octo_1 = Has.can_hit_jabu_switch && Has.boomerang;
     Access.gs_jabu_near_octo_2 = Has.can_hit_jabu_switch && Has.boomerang;
     Access.gs_jabu_near_boss = Has.can_hit_jabu_switch && Has.boomerang;
-    Access.gs_forest_first = Has.forest_temple_adult_access && Has.hookshot;
-    Access.gs_forest_lobby = Has.forest_temple_adult_access && Has.hookshot;
-    Access.gs_forest_outdoor_east = Has.forest_temple_adult_access && Has.hookshot && ((Has.bow || Has.time) || (player.current_forest_keys >= 1 && Has.hover_boots));
-    Access.gs_forest_outdoor_west = Has.forest_temple_adult_access && Has.hookshot && (((Has.bow || Has.time) && Has.longshot) || (player.current_forest_keys >= 1 && Has.hover_boots) || (player.current_forest_keys >= 2 && Has.goron_bracelet && Has.bow))
-    Access.gs_forest_basement = Has.forest_temple_adult_access && Has.hookshot && Has.bow && Has.goron_bracelet && player.current_forest_keys >= 5;
     Access.gs_fire_time = Has.fire_temple_adult_access && player.current_fire_keys >= 1;
     Access.gs_fire_bomb_wall = Has.can_climb_fire_temple && (Has.bomb_bag || player.bombchus);
     Access.gs_fire_scarecrow_1 = Has.can_climb_fire_temple && player.current_fire_keys >= 5 && Has.hookshot;
@@ -1735,20 +1717,7 @@ function updateCheckLogic() {
     Has = couldHave;
   }
 
-  locationCouldAccess.forest_first = couldHave.forest_temple_access;
-  locationCouldAccess.forest_stalfos = couldHave.forest_temple_access;
-  locationCouldAccess.forest_midCourtyard = couldHave.forest_temple_adult_access && ((couldHave.time && (couldHave.hover_boots || couldHave.hookshot) || (couldHave.bow && couldHave.hookshot) || ((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys >= 1 && (couldHave.hover_boots || couldHave.hookshot))));
-  locationCouldAccess.forest_highCourtyard = couldHave.forest_temple_access && (couldHave.time || (couldHave.forest_temple_adult_access && (((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys >= 1) || (couldHave.bow && couldHave.hookshot/* && (couldHave.iron_boots || couldHave.scale2 || couldHave.longshot)*/))));
-  locationCouldAccess.forest_lowCourtyard = couldHave.forest_temple_access && (couldHave.time || (couldHave.forest_temple_adult_access && (((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys >= 1) || (couldHave.bow && couldHave.hookshot/* && (couldHave.iron_boots || couldHave.scale2 || couldHave.longshot)*/))));
-  locationCouldAccess.forest_blockRoom = couldHave.forest_temple_adult_access && (couldHave.bow || (couldHave.forest_temple_child_access && couldHave.slingshot)) && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_bossKey = couldHave.forest_temple_adult_access && couldHave.bow && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_floormaster = couldHave.forest_temple_adult_access && ((couldHave.bow && couldHave.goron_bracelet) || ((couldHave.hover_boots || couldHave.goron_bracelet) && player.current_forest_keys >= 1)) && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_red = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_bow = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_blue = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_fallingCeiling = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && (couldHave.bow || couldHave.can_use_dins) && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_nearBoss = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
-  locationCouldAccess.forest_phantomGanon = couldHave.forest_temple_adult_access && couldHave.goron_bracelet && couldHave.bow && (rules.smallKeys != "keyRings" || couldHave.forest_key_ring);
+  forestCheckAccess(couldHave, "couldAccess");
   locationCouldAccess.fire_nearBoss = couldHave.fire_temple_access;
   locationCouldAccess.fire_hammer1 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
   locationCouldAccess.fire_hammer2 = couldHave.fire_temple_adult_access && couldHave.hammer && (rules.smallKeys != "keyRings" || couldHave.fire_key_ring);
@@ -1962,7 +1931,7 @@ function updateCheckLogic() {
   }
 }
 
-function dungeonEntrance(dungeon, sim) {
+function updateEntranceAccess(dungeon, sim) {
   if (dungeonToEntrance_ER_dict[dungeon] == "forest_temple") {
     sim.adultEntrance = sim.hookshot;
     sim.childEntrance = false;
@@ -1974,7 +1943,7 @@ function unlocksChecksInForest() {
   const items = ["hookshot", "goron_bracelet", "hover_boots", "bow", "time", "slingshot", "longshot"];
   if (rules.smallKeys == "keyRings") items.push("forest_key_ring");
 
-  const startCount = forestChecks(player);
+  const startCount = forestCheckAccess(player);
   let itemsUnlockChecks = [];
   for (const item of items) {
     if (player[item]) continue;
@@ -1984,13 +1953,12 @@ function unlocksChecksInForest() {
       [item]: true
     };
     sim.current_forest_keys += Math.round(startCount / 2);
-    if (startCount < forestChecks(sim, true)) itemsUnlockChecks.push(item);
+    if (startCount < forestCheckAccess(sim, "sim")) itemsUnlockChecks.push(item);
   }
   console.log(itemsUnlockChecks)
 }
-function forestChecks(sim, isSimulating = false) {
-  sim.can_enter_forest_temple_entrance = sim.hookshot;
-  dungeonEntrance("forest_temple", sim);
+function forestCheckAccess(sim, type) {
+  updateEntranceAccess("forest_temple", sim);
 
   const {
     hookshot, adultEntrance, time, hover_boots, current_forest_keys, forest_boss_key, bow, goron_bracelet, can_use_dins, childEntrance, forest_key_ring,
@@ -2025,7 +1993,8 @@ function forestChecks(sim, isSimulating = false) {
     forest_phantomGanon: adultEntrance && goron_bracelet && bow && smallKeys(5) && forest_boss_key,
   }
 
-  if (!isSimulating) Object.assign(locationAccess, checks);
+  if (type === "locationAccess") Object.assign(locationAccess, checks);
+  if (type === "couldAccess") Object.assign(locationCouldAccess, checks);
 
   return Object.values(checks).filter(Boolean).length;
 }
