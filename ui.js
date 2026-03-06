@@ -139,10 +139,10 @@ function processInputs() {
 function checkInputType(input) {
   switch (input[0]) {
     case "1": return "path";
-    case "2": return "barren";
-    case "3": return "always";
-    case "4": return "sometimes";
-    case "5": return "dual";
+    case "2": return "always";
+    case "3": return "sometimes";
+    case "4": return "dual";
+    case "5": return "barren";
     case "9": return "entrance";
     case "0": return "medallion";
     default: return "item";

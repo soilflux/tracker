@@ -834,16 +834,16 @@ function logicShortcuts() {
 function updateCheckLogic() {
   {
     const {
-      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale,hookshot, bean_access, longshot, bow, 
-      bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion,spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows, 
+      storms, can_blast_or_smash, golden_scale, iron_boots, kokiri_emerald, goron_ruby, zora_sapphire, fortress_access, hammer, silver_scale, hookshot, bean_access, longshot, bow,
+      bomb_bag, can_see, eponas, bottle, big_poe, lullaby, golden_gauntlets, shadow_medallion, spirit_medallion, ice_entrance_access, ice_adult_access, can_shoot_blue_fire_arrows,
       ice_access, giants_wallet, deku_access, deku_child_access, slingshot, deku_adult_access, can_use_fire, can_pass_mido_as_adult, sarias, can_use_dins, can_stop_link_the_goron,
-      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top, hover_boots, crater_by_city, 
-      gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem, can_enter_colossus, can_cross_quicksand, can_save_carpenters, 
-      gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access,forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key, 
-      fire_temple_access, fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks,middle_water, 
-      water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access, spirit_temple_access, spirit_keys, silver_gauntlets, 
-      can_push_spirit_silver_block, mirror_shield, spirit_boss_key, can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat, 
-      can_beat_shadow_boss, ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, bombchus, 
+      goron_bracelet, adults_wallet, can_break_dodongos_wall, dodongos_climb, dodongos_adult_access, bolero, prescription, claim_check, crater_top, hover_boots, crater_by_city,
+      gold_skulltulas, suns, child_can_enter_river, time, child_can_enter_domain, can_enter_adult_domain, requiem, can_enter_colossus, can_cross_quicksand, can_save_carpenters,
+      gtg_entrance_access, can_hit_jabu_switch, boomerang, jabu_child_access, forest_temple_access, forest_temple_adult_access, forest_keys, forest_temple_child_access, forest_boss_key,
+      fire_temple_access, fire_temple_adult_access, fire_key_ring, fire_keys, fire_boss_key, can_wear_goron_tunic, can_climb_fire_temple, can_do_water_checks, middle_water,
+      water_temple_child_access, can_wear_zora_tunic, water_keys, water_boss_key, spirit_temple_child_access, spirit_temple_access, spirit_keys, silver_gauntlets,
+      can_push_spirit_silver_block, mirror_shield, spirit_boss_key, can_cross_shadow_gap, can_bomb_shadow_wall, shadow_keys, can_pass_shadow_hookshot_door, can_ride_shadow_boat,
+      can_beat_shadow_boss, ganons_keys, fire_arrows, magic, gtg_access, gtg_adult_access, gtg_child_access, gtg_keys, botw_child_access, well_keys, bombchus,
       can_enter_fire_temple_entrance, forest_medallion, fire_medallion, projectile_both, water_medallion, can_enter_ganons, jabu_entrance_access, shadow_temple_adult_access
     } = logic;
 
@@ -1960,4 +1960,72 @@ function updateCheckLogic() {
     Peek = locationCouldPeek;
     Has = couldHave;
   }
+}
+
+function dungeonEntrance(dungeon, sim) {
+  if (dungeonToEntrance_ER_dict[dungeon] == "forest_temple") {
+    sim.adultEntrance = sim.hookshot;
+    sim.childEntrance = false;
+    sim.entrance = sim.adultEntrance || sim.childEntrance
+  }
+}
+
+function unlocksChecksInForest() {
+  const items = ["hookshot", "goron_bracelet", "hover_boots", "bow", "time", "slingshot", "longshot"];
+  if (rules.smallKeys == "keyRings") items.push("forest_key_ring");
+
+  const startCount = forestChecks(player);
+  let itemsUnlockChecks = [];
+  for (const item of items) {
+    if (player[item]) continue;
+    if (item == "longshot" && !player["hookshot"]) continue;
+    const sim = {
+      ...player,
+      [item]: true
+    };
+    sim.current_forest_keys += Math.round(startCount / 2);
+    if (startCount < forestChecks(sim, true)) itemsUnlockChecks.push(item);
+  }
+  console.log(itemsUnlockChecks)
+}
+function forestChecks(sim, isSimulating = false) {
+  sim.can_enter_forest_temple_entrance = sim.hookshot;
+  dungeonEntrance("forest_temple", sim);
+
+  const {
+    hookshot, adultEntrance, time, hover_boots, current_forest_keys, forest_boss_key, bow, goron_bracelet, can_use_dins, childEntrance, forest_key_ring,
+    entrance, slingshot, longshot
+  } = sim;
+
+  const smallKeys = (count) => {
+    const meetsCount = current_forest_keys >= count;
+    const meetsSetting = rules.smallKeys !== "keyRings" || forest_key_ring;
+    return meetsCount && meetsSetting;
+  };
+
+  const checks = {
+    gs_forest_first: adultEntrance && hookshot,
+    gs_forest_lobby: adultEntrance && hookshot,
+    gs_forest_outdoor_east: adultEntrance && hookshot && ((bow || time) || (smallKeys(1) && hover_boots)),
+    gs_forest_outdoor_west: adultEntrance && hookshot && (((bow || time) && longshot) || (smallKeys(1) && hover_boots) || (smallKeys(2) && goron_bracelet && bow)),
+    gs_forest_basement: adultEntrance && hookshot && bow && goron_bracelet && smallKeys(5),
+    forest_first: entrance,
+    forest_stalfos: entrance,
+    forest_midCourtyard: adultEntrance && (((time && (hover_boots || hookshot)) || (bow && hookshot) || ((hover_boots || goron_bracelet) && smallKeys(1) && (hover_boots || hookshot))) || (goron_bracelet && (bow || can_use_dins) && smallKeys(5))),
+    forest_highCourtyard: entrance && (time || (adultEntrance && ((bow && hookshot) || ((hover_boots || goron_bracelet) && smallKeys(1)) || (goron_bracelet && (bow || can_use_dins) && smallKeys(5))))),
+    forest_lowCourtyard: entrance && (time || (adultEntrance && ((bow && hookshot) || ((hover_boots || goron_bracelet) && smallKeys(1)) || (goron_bracelet && (bow || can_use_dins) && smallKeys(5))))),
+    forest_blockRoom: adultEntrance && smallKeys(1) && (bow || (childEntrance && slingshot)) && goron_bracelet,
+    forest_bossKey: adultEntrance && smallKeys(2) && bow && goron_bracelet,
+    forest_floormaster: adultEntrance && ((bow && goron_bracelet && smallKeys(2)) || ((hover_boots || goron_bracelet) && smallKeys(1))),
+    forest_red: adultEntrance && goron_bracelet && bow && smallKeys(3),
+    forest_bow: adultEntrance && goron_bracelet && smallKeys(3),
+    forest_blue: adultEntrance && goron_bracelet && bow && smallKeys(3),
+    forest_fallingCeiling: adultEntrance && goron_bracelet && (bow || can_use_dins) && smallKeys(5),
+    forest_nearBoss: adultEntrance && goron_bracelet && bow && smallKeys(5),
+    forest_phantomGanon: adultEntrance && goron_bracelet && bow && smallKeys(5) && forest_boss_key,
+  }
+
+  if (!isSimulating) Object.assign(locationAccess, checks);
+
+  return Object.values(checks).filter(Boolean).length;
 }

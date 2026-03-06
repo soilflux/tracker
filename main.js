@@ -73,4 +73,5 @@ function midUpdate() {
   updateUsefulAreaItems();
   dungeonHeaderVisibility();
   Update();
+  unlocksChecksInForest();
 }

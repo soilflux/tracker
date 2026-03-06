@@ -2637,4 +2637,4 @@ showNewPatchNotes();
 updateRules();
 setInterval(midUpdate, 1500);
 setInterval(fastUpdate, 70);
-Update(); midUpdate(); midUpdate(); fastUpdate();
+midUpdate();
