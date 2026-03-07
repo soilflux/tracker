@@ -2097,12 +2097,7 @@ function update_dungeon_ER_Logic() {
     }
     else if (enter == "shadow") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_shadow_entrance;
-      player[dungs_list[d] + "_child_access"] = player.can_enter_shadow_entrance;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_shadow_entrance;
-
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_shadow_entrance;
-      player[dungs_list[d] + "_adult_access"] = player.can_enter_shadow_entrance;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_shadow_entrance;
     }
     else if (enter == "spirit") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_child_colossus;

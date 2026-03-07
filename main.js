@@ -73,5 +73,9 @@ function midUpdate() {
   updateUsefulAreaItems();
   dungeonHeaderVisibility();
   Update();
-  unlocksChecksInForest();
+  unlocksChecksInDungeon("forest");
+  unlocksChecksInDungeon("fire");
+  unlocksChecksInDungeon("water");
+  unlocksChecksInDungeon("shadow");
+  unlocksChecksInDungeon("spirit");
 }
