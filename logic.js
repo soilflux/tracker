@@ -1809,11 +1809,18 @@ function unlocksChecksInDungeon() {
       sim[item] = true;
 
       sim[`current_${dungeon}_keys`] += Math.round(startCount * 0.45);
-      if (startCount < dungeonCheckAccess(dungeon, sim, "sim")) itemsUnlockChecks.push(item);
+      const newCount = dungeonCheckAccess(dungeon, sim, "sim");
+      if (newCount > startCount) {
+        itemsUnlockChecks.push({
+          name: item,
+          count: newCount
+        });
+      }
       sim[item] = false;
       sim[`current_${dungeon}_keys`] -= Math.round(startCount * 0.45);
     }
-    updateDungeonItemImages(dungeon, itemsUnlockChecks);
+    itemsUnlockChecks.sort((a, b) => b.count - a.count);
+    updateDungeonItemImages(dungeon, itemsUnlockChecks.map(obj => obj.name));
   }
   updateDungeonItemImages("pocket");
 }
@@ -1833,7 +1840,6 @@ function dungeonCheckAccess(dungeon, sim, type) {
   const can_use_fire = (dins_fire || (bow && fire_arrows)) && magic;
   const can_use_dins = dins_fire && magic;
   const can_shoot_blue_fire_arrows = ice_arrows && bow && magic && rules.blueFireArrows == "on";
-
   let checks = {};
   let peeks = {};
   if (dungeon === "deku") {
@@ -1888,7 +1894,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_dodongos_above_stairs = dodongos_climb && (hookshot || boomerang || bombchus || slingshot || bow || dins_fire || bomb_bag);
     }
   } else if (dungeon === "jabu") {
-    const can_hit_jabu_switch = entrance && bomb_bag || bombchus || ((boomerang || slingshot) && childEntrance) || ((hookshot || bow) && adultEntrance);
+    const can_hit_jabu_switch = entrance && (bomb_bag || bombchus) || ((boomerang || slingshot) && childEntrance) || ((hookshot || bow) && adultEntrance);
     checks = {
       jabu_boomerang: can_hit_jabu_switch,
       jabu_map: can_hit_jabu_switch && boomerang && childEntrance,
@@ -2113,8 +2119,8 @@ function updateDungeonItemImages(dungeon, items) {
     const imgElement = document.getElementById(prefix + "_item" + itemSlotNumber);
 
     if (imgElement) {
-      if (dungeon === "pocket") {imgElement.src = ""; continue;}
-      if (items[i] == "bombchus") {imgElement.src = player["chu" + "_img"]; continue;}
+      if (dungeon === "pocket") { imgElement.src = ""; continue; }
+      if (items[i] == "bombchus") { imgElement.src = player["chu" + "_img"]; continue; }
       const itemName = items[i];
       imgElement.src = itemName ? player[itemName + "_img"] : "";
     }
