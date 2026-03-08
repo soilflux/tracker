@@ -2029,13 +2029,9 @@ function update_dungeon_ER_Logic() {
 
     if (enter == "deku") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_deku_entrance;
-      player[dungs_list[d] + "_child_access"] = player.can_enter_deku_entrance;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_deku_entrance;
 
       if (rules.dungeonEr == "ganonsExcluded") {
         logic[dungs_list[d] + "_adult_access"] = logic.can_enter_deku_entrance;
-        player[dungs_list[d] + "_adult_access"] = player.can_enter_deku_entrance;
-        couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_deku_entrance;
       }
       else {
         logic[dungs_list[d] + "_adult_access"] = false;
@@ -2045,36 +2041,19 @@ function update_dungeon_ER_Logic() {
     }
     else if (enter == "dodongos") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_child_dodongos;
-      player[dungs_list[d] + "_child_access"] = player.can_enter_child_dodongos;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_child_dodongos;
-
       logic[dungs_list[d] + "_adult_access"] = true;
-      player[dungs_list[d] + "_adult_access"] = true;
-      couldHave[dungs_list[d] + "_adult_access"] = true;
     }
     else if (enter == "jabu") {
       logic[dungs_list[d] + "_child_access"] = logic.jabu_entrance_access;
-      player[dungs_list[d] + "_child_access"] = player.jabu_entrance_access;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.jabu_entrance_access;
-
       logic[dungs_list[d] + "_adult_access"] = false;
-      player[dungs_list[d] + "_adult_access"] = false;
-      couldHave[dungs_list[d] + "_adult_access"] = false;
     }
     else if (enter == "forest") {
       logic[dungs_list[d] + "_child_access"] = false;
-      player[dungs_list[d] + "_child_access"] = false;
-      couldHave[dungs_list[d] + "_child_access"] = false;
-
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_forest_temple_entrance;
-      player[dungs_list[d] + "_adult_access"] = player.can_enter_forest_temple_entrance;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_forest_temple_entrance;
     }
     else if (enter == "fire") {
       if (rules.dungeonEr == "ganonsExcluded") {
         logic[dungs_list[d] + "_child_access"] = logic.bolero;
-        player[dungs_list[d] + "_child_access"] = player.bolero;
-        couldHave[dungs_list[d] + "_child_access"] = couldHave.bolero;
       }
       else {
         logic[dungs_list[d] + "_child_access"] = false;
@@ -2083,17 +2062,10 @@ function update_dungeon_ER_Logic() {
       }
 
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_fire_temple_entrance;
-      player[dungs_list[d] + "_adult_access"] = player.can_enter_fire_temple_entrance;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_fire_temple_entrance;
     }
     else if (enter == "water") {
       logic[dungs_list[d] + "_child_access"] = false;
-      player[dungs_list[d] + "_child_access"] = false;
-      couldHave[dungs_list[d] + "_child_access"] = false;
-
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_water_entrance;
-      player[dungs_list[d] + "_adult_access"] = player.can_enter_water_entrance;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_water_entrance;
     }
     else if (enter == "shadow") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_shadow_entrance;
@@ -2101,22 +2073,13 @@ function update_dungeon_ER_Logic() {
     }
     else if (enter == "spirit") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_child_colossus;
-      player[dungs_list[d] + "_child_access"] = player.can_enter_child_colossus;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_child_colossus;
-
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_colossus;
-      player[dungs_list[d] + "_adult_access"] = player.can_enter_colossus;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_colossus;
     }
     else if (enter == "botw") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_well_entrance;
-      player[dungs_list[d] + "_child_access"] = player.can_enter_well_entrance;
-      couldHave[dungs_list[d] + "_child_access"] = couldHave.can_enter_well_entrance;
 
       if (rules.dungeonEr == "ganonsExcluded") {
         logic[dungs_list[d] + "_adult_access"] = logic.can_enter_well_entrance;
-        player[dungs_list[d] + "_adult_access"] = player.can_enter_well_entrance;
-        couldHave[dungs_list[d] + "_adult_access"] = couldHave.can_enter_well_entrance;
       }
       else {
         logic[dungs_list[d] + "_adult_access"] = false;
@@ -2126,25 +2089,13 @@ function update_dungeon_ER_Logic() {
     }
     else if (enter == "ice") {
       logic[dungs_list[d] + "_child_access"] = false;
-      player[dungs_list[d] + "_child_access"] = false;
-      couldHave[dungs_list[d] + "_child_access"] = false;
-
       logic[dungs_list[d] + "_adult_access"] = logic.ice_entrance_access;
-      player[dungs_list[d] + "_adult_access"] = player.ice_entrance_access;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.ice_entrance_access;
     }
     else if (enter == "gtg") {
       logic[dungs_list[d] + "_child_access"] = false;
-      player[dungs_list[d] + "_child_access"] = false;
-      couldHave[dungs_list[d] + "_child_access"] = false;
-
       logic[dungs_list[d] + "_adult_access"] = logic.gtg_entrance_access;
-      player[dungs_list[d] + "_adult_access"] = player.gtg_entrance_access;
-      couldHave[dungs_list[d] + "_adult_access"] = couldHave.gtg_entrance_access;
     }
 
     logic[dungs_list[d] + "_access"] = logic[dungs_list[d] + "_child_access"] || logic[dungs_list[d] + "_adult_access"];
-    player[dungs_list[d] + "_access"] = player[dungs_list[d] + "_child_access"] || player[dungs_list[d] + "_adult_access"];
-    couldHave[dungs_list[d] + "_access"] = couldHave[dungs_list[d] + "_child_access"] || couldHave[dungs_list[d] + "_adult_access"];
   }
 }

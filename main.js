@@ -37,45 +37,49 @@ function fastUpdate() {
   }
 }
 
-function midUpdate() {
-  var i = 0;
-  var previousInLogicChecks = player.logically_accessible;
-  var previousInLogicSkulls = logic.gold_skulltulas;
-  var flag = false;
-  while (i < 100000) {
-    refreshLogicForStuff();
-    logicShortcuts();
-    updateCheckLogic();
-    updateDungeonER();
-    gsArrayBuilder();
-    if (i >= 1 && player.logically_accessible > previousInLogicChecks || logic.gold_skulltulas > previousInLogicSkulls) {
-      i += 1;
-      previousInLogicChecks = player.logically_accessible;
-      previousInLogicSkulls = logic.gold_skulltulas;
-      flag = false;
+function midUpdate(force = false) {
+  clearTimeout(timer);
+
+  const runLogic = () => {
+    var i = 0;
+    var previousInLogicChecks = player.logically_accessible;
+    var previousInLogicSkulls = logic.gold_skulltulas;
+    var flag = false;
+    while (i < 100000) {
+      refreshLogicForStuff();
+      logicShortcuts();
+      unlocksChecksInDungeon();
+      updateCheckLogic();
+      updateDungeonER();
+      gsArrayBuilder();
+      if (i >= 1 && player.logically_accessible > previousInLogicChecks || logic.gold_skulltulas > previousInLogicSkulls) {
+        i += 1;
+        previousInLogicChecks = player.logically_accessible;
+        previousInLogicSkulls = logic.gold_skulltulas;
+        flag = false;
+      } else if (!flag) {
+        flag = true;
+      } else {
+        i = 100000;
+      }
     }
-    else if (!flag) {
-      flag = true;
-    }
-    else {
-      i = 100000;
-    }
+    stoneMedallionInput();
+    wothAndBarrenProcessing();
+    alternateHintInput();
+    setInLogicMaxForDungeons();
+    updateLogicInfo();
+    updateSpawnInputs();
+    refreshLinSo();
+    updateWothBorders();
+    wothDisplay();
+    updateUsefulAreaItems();
+    dungeonHeaderVisibility();
+    Update();
+  };
+
+  if (force) {
+    runLogic();
+  } else {
+    timer = setTimeout(runLogic, 1000);
   }
-  stoneMedallionInput();
-  wothAndBarrenProcessing();
-  alternateHintInput();
-  setInLogicMaxForDungeons();
-  updateLogicInfo();
-  updateSpawnInputs();
-  refreshLinSo();
-  updateWothBorders();
-  wothDisplay();
-  updateUsefulAreaItems();
-  dungeonHeaderVisibility();
-  Update();
-  unlocksChecksInDungeon("forest");
-  unlocksChecksInDungeon("fire");
-  unlocksChecksInDungeon("water");
-  unlocksChecksInDungeon("shadow");
-  unlocksChecksInDungeon("spirit");
 }

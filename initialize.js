@@ -2635,6 +2635,6 @@ function buildCheckSummary() {
 
 showNewPatchNotes();
 updateRules();
-setInterval(midUpdate, 1500);
+setInterval(midUpdate, 3000);
 setInterval(fastUpdate, 70);
-midUpdate();
+midUpdate(true);
