@@ -1423,7 +1423,6 @@ function updateLogicInfo() {
 
     if (checkAccess[key] == true)
       player.accessible += 1;
-
     if (checkLogic[key] == true) {
       if (nerfed && checkPeek[key] == true && !checkAccess[key] == true) {
         document.getElementById(str).className = "access_check_text";

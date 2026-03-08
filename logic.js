@@ -181,6 +181,9 @@ function refreshLogicForStuff() {
   couldHave.bomb_bag = false;
   if (couldHave.bomb_bag1 || couldHave.bomb_bag2 || couldHave.bomb_bag3) { couldHave.bomb_bag = true; }
 
+  couldHave.bombchus = false;
+  if (couldHave.bombchus1 || couldHave.bombchus2 || couldHave.bombchus3 || couldHave.bombchus4 || couldHave.bombchus5) { couldHave.bombchus = true; }
+
   couldHave.bow = false;
   if (couldHave.bow1 || couldHave.bow2 || couldHave.bow3) { couldHave.bow = true; }
 
@@ -1640,7 +1643,6 @@ function updateCheckLogic() {
     Peek.h_sfm_2 = true;
     Peek.h_goron_maze = Has.can_blast_or_smash;
     Peek.h_medigoron = Has.can_blast_or_smash;
-    Peek.h_dodongos = Has.can_break_dodongos_wall;
     Peek.h_trail_storms = Has.storms;
     Peek.h_biggoron = Has.crater_top;
     Peek.h_crater_grotto = Has.can_blast_or_smash;
@@ -1795,7 +1797,7 @@ function unlocksChecksInDungeon() {
       "boomerang", "mirror_shield", "silver_gauntlets", "fire_arrows", "bolero", "nocturne", "ice_arrows", "rutos_letter", "golden_scale", "requiem", "gerudo_card", "eponas"
     ];
     if (rules.smallKeys == "keyRings") items.push(`${dungeon}_key_ring`);
-    const sim = {...player};
+    const sim = { ...player };
 
     const startCount = dungeonCheckAccess(dungeon, player);
     let itemsUnlockChecks = [];
@@ -1805,7 +1807,7 @@ function unlocksChecksInDungeon() {
       if (item == "silver_gauntlets" && !sim["goron_bracelet"]) continue;
       if (item == "golden_scale" && !sim["silver_scale"]) continue;
       sim[item] = true;
-      
+
       sim[`current_${dungeon}_keys`] += Math.round(startCount * 0.45);
       if (startCount < dungeonCheckAccess(dungeon, sim, "sim")) itemsUnlockChecks.push(item);
       sim[item] = false;
@@ -1832,6 +1834,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
   const can_shoot_blue_fire_arrows = ice_arrows && bow && magic && rules.blueFireArrows == "on";
 
   let checks = {};
+  let peeks = {};
   if (dungeon === "deku") {
     checks = {
       deku_lobby: entrance,
@@ -1846,7 +1849,9 @@ function dungeonCheckAccess(dungeon, sim, type) {
       gs_deku_basement_vines: entrance,
       gs_deku_compass: entrance,
     }
-    if (type !== "sim") checkPeek.gs_deku_basement_back = entrance && (bomb_bag || bombchus);
+    if (type !== "sim") {
+      peeks.gs_deku_basement_back = entrance && (bomb_bag || bombchus);
+    }
   } else if (dungeon === "dodongos") {
     const can_break_dodongos_wall = entrance && (bomb_bag || bombchus || goron_bracelet || (adultEntrance && (hammer || can_shoot_blue_fire_arrows)));
     const dodongos_climb = can_break_dodongos_wall && (bomb_bag || bombchus || goron_bracelet || can_use_dins || (adultEntrance && bow));
@@ -1868,8 +1873,13 @@ function dungeonCheckAccess(dungeon, sim, type) {
       scrub_dodongos_3: dodongos_climb && (bomb_bag || bombchus || goron_bracelet),
       scrub_dodongos_4: dodongos_climb && (bomb_bag || bombchus || goron_bracelet),
     }
-    if (type !== "sim") checkPeek.gs_dodongos_above_stairs = dodongos_climb && (hookshot || boomerang || bombchus || slingshot || bow || dins_fire || bomb_bag);
-    if (csmc == "on") checkPeek.dodongos_end_of_bridge = can_break_dodongos_wall;
+    if (type !== "sim") {
+      if (csmc == "on") {
+        peeks.dodongos_end_of_bridge = can_break_dodongos_wall;
+      }
+      peeks.h_dodongos = can_break_dodongos_wall;
+      peeks.gs_dodongos_above_stairs = dodongos_climb && (hookshot || boomerang || bombchus || slingshot || bow || dins_fire || bomb_bag);
+    }
   } else if (dungeon === "jabu") {
     const can_hit_jabu_switch = entrance && bomb_bag || bombchus || ((boomerang || slingshot) && childEntrance) || ((hookshot || bow) && adultEntrance);
     checks = {
@@ -1884,8 +1894,8 @@ function dungeonCheckAccess(dungeon, sim, type) {
       gs_jabu_near_boss: can_hit_jabu_switch && boomerang,
     }
     if (type !== "sim") {
-      checkPeek.gs_jabu_near_octo_1 = can_hit_jabu_switch && (boomerang || slingshot);
-      checkPeek.gs_jabu_near_octo_2 = can_hit_jabu_switch && (boomerang || slingshot);
+      peeks.gs_jabu_near_octo_1 = can_hit_jabu_switch && (boomerang || slingshot);
+      peeks.gs_jabu_near_octo_2 = can_hit_jabu_switch && (boomerang || slingshot);
     }
   } else if (dungeon === "forest") {
     checks = {
@@ -1911,10 +1921,10 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        checkPeek.forest_midCourtyard = entrance && ((time || (adultEntrance && (bow || ((hover_boots || goron_bracelet) && smallKeys(1))) || (goron_bracelet && (bow || can_use_dins) && smallKeys(5)))));
-        checkPeek.forest_blockRoom = entrance && smallKeys(1) && ((adultEntrance && bow) || (childEntrance && slingshot));
+        peeks.forest_midCourtyard = entrance && ((time || (adultEntrance && (bow || ((hover_boots || goron_bracelet) && smallKeys(1))) || (goron_bracelet && (bow || can_use_dins) && smallKeys(5)))));
+        peeks.forest_blockRoom = entrance && smallKeys(1) && ((adultEntrance && bow) || (childEntrance && slingshot));
       }
-      checkPeek.gs_forest_outdoor_west = adultEntrance && (hookshot || bow || (time && bombchus));
+      peeks.gs_forest_outdoor_west = adultEntrance && (hookshot || bow || (time && bombchus));
     }
   } else if (dungeon === "fire") {
     const can_climb_fire_temple = adultEntrance && smallKeys(3) && (bow || hookshot || bomb_bag || bombchus);
@@ -1942,9 +1952,9 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        checkPeek.fire_hammer2 = entrance;
-        checkPeek.fire_upperMaze = can_climb_fire_temple;
-        checkPeek.fire_shortcut = can_climb_fire_temple;
+        peeks.fire_hammer2 = entrance;
+        peeks.fire_upperMaze = can_climb_fire_temple;
+        peeks.fire_shortcut = can_climb_fire_temple;
       }
     }
   } else if (dungeon === "water") {
@@ -1970,11 +1980,11 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        checkPeek.water_cracked = can_do_water_checks;
-        checkPeek.water_block = adultEntrance;
-        checkPeek.water_river = can_do_water_checks && smallKeys(2) && time && hookshot;
+        peeks.water_cracked = can_do_water_checks;
+        peeks.water_block = adultEntrance;
+        peeks.water_river = can_do_water_checks && smallKeys(2) && time && hookshot;
       }
-      checkPeek.gs_water_central = middle_water && (longshot || (can_use_farores && hookshot) || bombchus || bow);
+      peeks.gs_water_central = middle_water && (longshot || (can_use_farores && hookshot) || bombchus || bow);
     }
   } else if (dungeon === "shadow") {
     const can_cross_shadow_gap = adultEntrance && hover_boots;
@@ -2008,11 +2018,11 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        checkPeek.shadow_dins1 = can_ride_shadow_boat && smallKeys(4);
-        checkPeek.shadow_dins2 = can_ride_shadow_boat && smallKeys(4);
+        peeks.shadow_dins1 = can_ride_shadow_boat && smallKeys(4);
+        peeks.shadow_dins2 = can_ride_shadow_boat && smallKeys(4);
       }
-      checkPeek.gs_shadow_crusher = can_bomb_shadow_wall;
-      checkPeek.gs_shadow_near_boat = can_pass_shadow_hookshot_door && (longshot || bow || bombchus) && smallKeys(4);
+      peeks.gs_shadow_crusher = can_bomb_shadow_wall;
+      peeks.gs_shadow_near_boat = can_pass_shadow_hookshot_door && (longshot || bow || bombchus) && smallKeys(4);
     }
   } else if (dungeon === "spirit") {
     const can_push_spirit_silver_block = adultEntrance && silver_gauntlets;
@@ -2050,24 +2060,30 @@ function dungeonCheckAccess(dungeon, sim, type) {
     const can_enter_colossus = (can_cross_quicksand) || requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checks.spirit_leftHand || checks.spirit_rightHand;
     if (type !== "sim") {
       if (csmc === "on") {
-        checkPeek.spirit_childLeft = childEntrance;
-        checkPeek.spirit_childRight = childEntrance;
-        checkPeek.spirit_adultLeft = can_push_spirit_silver_block && lullaby && (bow || hookshot || bomb_bag || bombchus);
-        checkPeek.spirit_rightHand = can_enter_colossus;
+        peeks.spirit_childLeft = childEntrance;
+        peeks.spirit_childRight = childEntrance;
+        peeks.spirit_adultLeft = can_push_spirit_silver_block && lullaby && (bow || hookshot || bomb_bag || bombchus);
+        peeks.spirit_rightHand = can_enter_colossus;
       }
-      checkPeek.gs_spirit_before_child_knuckle = entrance && ((bomb_bag || bombchus) && (boomerang || slingshot || bombchus) && smallKeys(1) && childEntrance) || ((hookshot || bow || bombchus || can_use_dins) && silver_gauntlets && smallKeys(1));
-      checkPeek.gs_spirit_boulder_room = can_push_spirit_silver_block && (bow || hookshot || bombchus);
-      checkPeek.gs_spirit_lobby = entrance && (can_push_spirit_silver_block && smallKeys(1) && (hookshot || hover_boots || bow)) || ((bomb_bag || bombchus) && slingshot && smallKeys(1) && childEntrance);
+      peeks.gs_spirit_before_child_knuckle = entrance && ((bomb_bag || bombchus) && (boomerang || slingshot || bombchus) && smallKeys(1) && childEntrance) || ((hookshot || bow || bombchus || can_use_dins) && silver_gauntlets && smallKeys(1));
+      peeks.gs_spirit_boulder_room = can_push_spirit_silver_block && (bow || hookshot || bombchus);
+      peeks.gs_spirit_lobby = entrance && (can_push_spirit_silver_block && smallKeys(1) && (hookshot || hover_boots || bow)) || ((bomb_bag || bombchus) && slingshot && smallKeys(1) && childEntrance);
     }
   }
-  
-  assignChecks(checks, type);
+
+  assignChecks(checks, peeks, type);
   return Object.values(checks).filter(Boolean).length;
 }
 
-function assignChecks(checks, type) {
-  if (type === "checkAccess") Object.assign(checkAccess, checks);
-  else if (type === "couldAccess") Object.assign(checkCouldAccess, checks);
+function assignChecks(checks, peeks, type) {
+  if (type === "checkAccess") {
+    Object.assign(checkAccess, checks);
+    Object.assign(checkPeek, peeks);
+  }
+  else if (type === "couldAccess") {
+    Object.assign(checkCouldAccess, checks);
+    Object.assign(locationCouldPeek, peeks);
+  }
 }
 
 function updateDungeonItemImages(dungeon, items) {
