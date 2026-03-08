@@ -1815,6 +1815,7 @@ function unlocksChecksInDungeon() {
     }
     updateDungeonItemImages(dungeon, itemsUnlockChecks);
   }
+  updateDungeonItemImages("pocket");
 }
 function dungeonCheckAccess(dungeon, sim, type) {
   const smallKeys = (count) => {
@@ -2112,7 +2113,8 @@ function updateDungeonItemImages(dungeon, items) {
     const imgElement = document.getElementById(prefix + "_item" + itemSlotNumber);
 
     if (imgElement) {
-      if (items[i] == "bombchus") continue;
+      if (dungeon === "pocket") {imgElement.src = ""; continue;}
+      if (items[i] == "bombchus") {imgElement.src = player["chu" + "_img"]; continue;}
       const itemName = items[i];
       imgElement.src = itemName ? player[itemName + "_img"] : "";
     }

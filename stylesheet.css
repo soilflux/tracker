@@ -289,6 +289,7 @@ img[src="#"] {
   margin-left: -1px;
   margin-right: -3px;
   margin-top: 3px;
+  filter: contrast(40%);
 }
 
 .barren_input {
