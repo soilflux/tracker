@@ -1508,7 +1508,7 @@ function updateLogicInfo() {
         }
       }
     }
-    else if (checkCouldAccess[key] == true || locationCouldPeek[key] == true) {
+    else if (checkCouldAccess[key] == true || checkCouldPeek[key] == true) {
       if (!nerfed) {
         document.getElementById(str).className = "access_check_text";
         document.getElementById(str).style.opacity = .2;
@@ -1516,7 +1516,7 @@ function updateLogicInfo() {
         document.getElementById(str).style.color = "yellow";
       }
       else {
-        if (!checkCouldAccess[key] == true && locationCouldPeek[key] == true) {
+        if (!checkCouldAccess[key] == true && checkCouldPeek[key] == true) {
           document.getElementById(str).className = "access_check_text";
           document.getElementById(str).style.opacity = .2;
           document.getElementById(str).style.fontWeight = "normal";

@@ -1595,7 +1595,7 @@ function updateCheckLogic() {
   checkCouldAccess.ganons_spiritTrial2 = couldHave.can_enter_ganons && (couldHave.bomb_bag || player.bombchus || couldHave.bow);//&& couldHave.can_see;
 
   Object.assign(checkPeek, checkAccess);
-  Object.assign(locationCouldPeek, checkCouldAccess);
+  Object.assign(checkCouldPeek, checkCouldAccess);
 
   for (let i = 0, Peek = checkPeek, Has = player; i < 2; i++) {
     Peek.hyrule_tektite_grotto = Has.can_blast_or_smash;
@@ -1708,7 +1708,7 @@ function updateCheckLogic() {
       Peek.well_basement = Has.botw_child_access;
     }
 
-    Peek = locationCouldPeek;
+    Peek = checkCouldPeek;
     Has = couldHave;
   }
 }
@@ -2082,7 +2082,7 @@ function assignChecks(checks, peeks, type) {
   }
   else if (type === "couldAccess") {
     Object.assign(checkCouldAccess, checks);
-    Object.assign(locationCouldPeek, peeks);
+    Object.assign(checkCouldPeek, peeks);
   }
 }
 
