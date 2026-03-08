@@ -770,7 +770,7 @@ function junkUltra() {
       hideCheck(loc);
       lastCheck.push(loc);
     });
-    midUpdate(); Update();
+    midUpdate();
   }
 }
 
@@ -827,7 +827,7 @@ function highlightNextCheck(locationId) {
       return false;
     }
 
-    if (document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden" && document.getElementById(loc).value == "" && locationPeek[loc]) {
+    if (document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden" && document.getElementById(loc).value == "" && checkPeek[loc]) {
       return true;
     }
   }
@@ -1328,7 +1328,7 @@ function updateLogicInfo() {
     if (rules.skullSanity == "off") {
       if (checks[i].startsWith("gs_")) {
         unusedLocations.push(i);
-        if (locationAccess[checks[i]]) player.tokensAccessible += 1;
+        if (checkAccess[checks[i]]) player.tokensAccessible += 1;
       }
     }
     else if (rules.skullSanity == "dungeon") {
@@ -1398,7 +1398,7 @@ function updateLogicInfo() {
 
     if (key.startsWith("h_")) {
       document.getElementById(str).className = "gossip_text";
-      if (locationPeek[key] && checkToItemMap[key] != "junk") {
+      if (checkPeek[key] && checkToItemMap[key] != "junk") {
         document.getElementById(str).style.display = "inline-block";
         document.getElementById(str2).style.display = "inline-block";
         document.getElementById(key).style.display = "inline-block";
@@ -1413,7 +1413,7 @@ function updateLogicInfo() {
 
     if (songChecks.includes(key)) {
       if (checkToItemMap[key] != "unknown") document.getElementById(key + "Display").style.backgroundColor = "";
-      else if (checkToItemMap[key] == "unknown" && locationAccess[key]) document.getElementById(key + "Display").style.backgroundColor = "rgb(0,80,0)";
+      else if (checkToItemMap[key] == "unknown" && checkAccess[key]) document.getElementById(key + "Display").style.backgroundColor = "rgb(0,80,0)";
       else if (checkToItemMap[key] == "unknown") document.getElementById(key + "Display").style.backgroundColor = "rgb(80,0,0)";
     }
 
@@ -1421,17 +1421,17 @@ function updateLogicInfo() {
     if (document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") { continue; }
     document.getElementById(str).innerHTML = backUp[i];
 
-    if (locationAccess[key] == true)
+    if (checkAccess[key] == true)
       player.accessible += 1;
 
     if (checkLogic[key] == true) {
-      if (nerfed && locationPeek[key] == true && !locationAccess[key] == true) {
+      if (nerfed && checkPeek[key] == true && !checkAccess[key] == true) {
         document.getElementById(str).className = "access_check_text";
         document.getElementById(str).style.opacity = .5;
         document.getElementById(str).style.fontWeight = "normal";
         document.getElementById(str).style.color = "yellow";
       }
-      else if (locationPeek[key] == true) {
+      else if (checkPeek[key] == true) {
         document.getElementById(str).className = "logic_check_text";
         document.getElementById(str).style.opacity = 1;
       }
@@ -1461,7 +1461,7 @@ function updateLogicInfo() {
         if (checkToAreaMap[key] == "Well") { player.well_logically_accessible += 1; }
       }
     }
-    else if (locationPeek[key] == true) {
+    else if (checkPeek[key] == true) {
       if (!nerfed) {
         document.getElementById(str).className = "access_check_text";
         document.getElementById(str).style.opacity = .5;
@@ -1469,7 +1469,7 @@ function updateLogicInfo() {
         document.getElementById(str).style.color = "yellow";
       }
       else {
-        if (locationPeek[key] == true && !locationCouldAccess[key] == true) {
+        if (checkPeek[key] == true && !checkCouldAccess[key] == true) {
           if (rules.highlightInLogicChecks == "on") {
             document.getElementById(str).className = "access_check_text";
             document.getElementById(str).style.opacity = .7;
@@ -1509,7 +1509,7 @@ function updateLogicInfo() {
         }
       }
     }
-    else if (locationCouldAccess[key] == true || locationCouldPeek[key] == true) {
+    else if (checkCouldAccess[key] == true || locationCouldPeek[key] == true) {
       if (!nerfed) {
         document.getElementById(str).className = "access_check_text";
         document.getElementById(str).style.opacity = .2;
@@ -1517,7 +1517,7 @@ function updateLogicInfo() {
         document.getElementById(str).style.color = "yellow";
       }
       else {
-        if (!locationCouldAccess[key] == true && locationCouldPeek[key] == true) {
+        if (!checkCouldAccess[key] == true && locationCouldPeek[key] == true) {
           document.getElementById(str).className = "access_check_text";
           document.getElementById(str).style.opacity = .2;
           document.getElementById(str).style.fontWeight = "normal";
