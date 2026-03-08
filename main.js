@@ -41,33 +41,21 @@ function midUpdate(force = false) {
   clearTimeout(timer);
 
   const runLogic = () => {
-    var i = 0;
-    var previousInLogicChecks = player.logically_accessible;
-    var previousInLogicSkulls = logic.gold_skulltulas;
-    var flag = false;
-    while (i < 100000) {
+    let previousAccessibleChecks = -1; let previousAccessibleTokens = -1;
+    while (player.accessible > previousAccessibleChecks || player.tokensAccessible > previousAccessibleTokens) {
+      previousAccessibleChecks = player.accessible; previousAccessibleTokens = player.tokensAccessible;
       refreshLogicForStuff();
       logicShortcuts();
-      unlocksChecksInDungeon();
       updateCheckLogic();
       updateDungeonER();
       gsArrayBuilder();
-      if (i >= 1 && player.logically_accessible > previousInLogicChecks || logic.gold_skulltulas > previousInLogicSkulls) {
-        i += 1;
-        previousInLogicChecks = player.logically_accessible;
-        previousInLogicSkulls = logic.gold_skulltulas;
-        flag = false;
-      } else if (!flag) {
-        flag = true;
-      } else {
-        i = 100000;
-      }
+      updateLogicInfo();
     }
+    unlocksChecksInDungeon();
     stoneMedallionInput();
     wothAndBarrenProcessing();
     alternateHintInput();
     setInLogicMaxForDungeons();
-    updateLogicInfo();
     updateSpawnInputs();
     refreshLinSo();
     updateWothBorders();

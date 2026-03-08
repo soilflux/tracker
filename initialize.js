@@ -820,6 +820,8 @@ document.getElementById("stonePic").src = dungIconSources[Math.floor(Math.random
 document.getElementById("medallionPic").src = dungIconSources[Math.floor(Math.random() * 6) + 3];
 
 player.logically_accessible = 0;
+player.accessible = 0;
+player.accessibleTokens = 0;
 var d = new Date();
 var pauseTotal = 0;
 var pauseInitial = 0;
