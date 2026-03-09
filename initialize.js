@@ -33,10 +33,6 @@ var unusedLocations = [];
 var dimmed = 0.35;
 var age = "";
 var ageSetStamp = 0;
-let areaPathStart = "./normal/areas/";
-let areaPathEnd = ".jpg";
-let itemPathStart = "./normal/items/";
-let itemPathEnd = ".png";
 
 var dungeonToEntrance_ER_dict = {}; // given a dungeon, tell which entrance you enter to get to it
 var entranceToDungeon_ER_dict = {}; // given a dugeon entrance, tell which dungeon it leads to

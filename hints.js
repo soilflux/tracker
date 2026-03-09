@@ -315,7 +315,7 @@ function wothDisplay() {
       const itemName = items[index];
       
       img.style.visibility = itemName ? "visible" : "hidden";
-      img.src = itemName ? `${itemPathStart}${itemName}${itemPathEnd}` : "";
+      img.src = itemName ? itemToImageMap[itemName] : "";
     });
 
     const areaImg = document.getElementById(`woth${id}Image`);
