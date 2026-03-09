@@ -2119,10 +2119,9 @@ function updateDungeonItemImages(dungeon, items) {
     const imgElement = document.getElementById(prefix + "_item" + itemSlotNumber);
 
     if (imgElement) {
-      if (dungeon === "pocket") { imgElement.src = ""; continue; }
-      if (items[i] == "bombchus") { imgElement.src = player["chu" + "_img"]; continue; }
+      if (dungeon === "pocket") { imgElement.src = ""; continue; }  
       const itemName = items[i];
-      imgElement.src = itemName ? player[itemName + "_img"] : "";
+      imgElement.src = itemName ? itemToImageMap[itemName] : "";
     }
   }
 }

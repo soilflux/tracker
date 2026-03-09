@@ -786,6 +786,8 @@ var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fa
 let songs = ["lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 
 for (var i = 3; i < Items2.length; i++) {
+  console.log(Items2[i])
+  console.log(itemToImageMap[Items2[i]])
   if (Items2[i] != "bombchus" && Items2[i] != "slingshot" && Items2[i] != "bomb_bag" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
     knownItems[Items2[i]] = false;
   } else {
@@ -927,43 +929,6 @@ const areaToItemsMap = {
   "Well": [],
   "GTG": [],
   "Ganon's": []
-};
-
-const AreaImages = {
-  "Kokiri": "kokiri",
-  "Ranch": "ranch",
-  "Field": "field",
-  "Valley": "valley",
-  "Hylia": "hylia",
-  "Market": "market",
-  "Hyr Cas": "hyrule_castle",
-  "OGC": "ogc",
-  "ToT": "tot",
-  "Fountain": "fountain",
-  "Ice": "ice",
-  "Deku": "deku",
-  "Lost Woods": "lost_woods",
-  "SFM": "sfm",
-  "Goron City": "goron",
-  "Dodongos": "dodongos",
-  "Trail": "dmt",
-  "Crater": "dmc",
-  "Kakariko": "kakariko",
-  "Graveyard": "graveyard",
-  "River": "river",
-  "Domain": "domain",
-  "Colossus": "colossus",
-  "Wasteland": "wasteland",
-  "Fortress": "fortress",
-  "Jabu": "jabu",
-  "Forest": "forest",
-  "Fire": "fire",
-  "Water": "water",
-  "Shadow": "shadow",
-  "Spirit": "spirit",
-  "Well": "well",
-  "GTG": "gtg",
-  "Ganon's": "ganons"
 };
 
 var checkToAreaMap = {
@@ -1640,7 +1605,7 @@ updateColorScheme();
 updateTheme();
 wothSizeToggle();
 
-var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "chu", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "beans", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
+var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "bombchus", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
 var linsoOrderIncrement = 0;
@@ -1697,7 +1662,7 @@ for (var i = 1; i <= 11; i++) {
       else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
         rollAnimal();
       }
-      else { elem.src = player[linsoOrder[linsoOrderIncrement] + "_img"]; }
+      else { elem.src = itemToImageMap[linsoOrder[linsoOrderIncrement]]; }
       player[linsoOrder[linsoOrderIncrement]] = false;
       if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") { player[linsoOrder[linsoOrderIncrement]] = true; }
       elem.style.position = "absolute";
@@ -1741,7 +1706,7 @@ for (var i = 1; i <= 12; i++) {
   elem.id = "linsoS" + i;
   elem.style.height = "35px";
   elem.style.width = "35px";
-  elem.src = player[linsoOrder2[linsoOrderIncrement] + "_img"];
+  elem.src = itemToImageMap[linsoOrder2[linsoOrderIncrement]];;
   elem.style.position = "absolute";
   elem.style.left = 258 + "px";
   elem.style.top = tempTop + i * 31 + "px";

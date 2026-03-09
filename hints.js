@@ -307,8 +307,8 @@ function wothDisplay() {
     const areaKey = hintCodeToAreaMap[document.getElementById(`woth_input${id}`)?.value];
     const pathKey = hintCodeToAreaMap[document.getElementById(`path_boss${id}`)?.value];
     const items = areaToItemsMap[areaKey] ?? [];
-    const areaFile = AreaImages[areaKey];
-    const pathFile = AreaImages[pathKey];
+    const areaFile = areaToImageMap[areaKey];
+    const pathFile = areaToImageMap[pathKey];
 
     [1, 2, 3].forEach((itemNum, index) => {
       const img = document.getElementById(`woth${id}Item${itemNum}`);
@@ -322,8 +322,8 @@ function wothDisplay() {
     const pathImg = document.getElementById(`path${id}Image`);
     areaImg.style.visibility = areaFile ? "visible" : "hidden";
     pathImg.style.visibility = pathFile ? "visible" : "hidden";
-    if (areaFile) areaImg.src = `${areaPathStart}${areaFile}${areaPathEnd}`;
-    if (pathFile) pathImg.src = `${areaPathStart}${pathFile}${areaPathEnd}`;
+    if (areaFile) areaImg.src = areaFile;
+    if (pathFile) pathImg.src = pathFile;
   });
 }
 
