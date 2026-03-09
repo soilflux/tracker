@@ -1,196 +1,7 @@
 function highlight(x) {
-  var item = "";
-  if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))) { item = "kokiri_sword"; }
-  if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))) { item = "bomb_bag"; }
-  if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))) { item = "iron_boots"; }
-  if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))) { item = "hover_boots"; }
-  if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))) { item = "hookshot"; }
-  if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))) { item = "bow"; }
-  if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))) { item = "strength"; }
-  if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))) { item = "hammer"; }
-  if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))) { item = "scale"; }
-  if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))) { item = "strength"; }
-  if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))) { item = "magic"; }
-  if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))) { item = "hookshot"; }
-  if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))) { item = "mirror_shield"; }
-  if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))) { item = "dins_fire"; }
-  if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))) { item = "rutos_letter"; }
-  if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))) { item = "boomerang"; }
-  if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))) { item = "lens"; }
-  if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))) { item = "strength"; }
-  if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))) { item = "scale"; }
-  if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))) { item = "light_arrows"; }
-  if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))) { item = "fire_arrows"; }
-  if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))) { item = "farores_wind"; }
-  if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))) { item = "bottle"; }
-  if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))) { item = "slingshot"; }
-  if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))) { item = "lullaby"; }
-  if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))) { item = "eponas"; }
-  if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))) { item = "sarias"; }
-  if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))) { item = "suns_song"; }
-  if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))) { item = "song_of_time"; }
-  if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))) { item = "song_of_storms"; }
-  if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))) { item = "minuet"; }
-  if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))) { item = "bolero"; }
-  if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))) { item = "serenade"; }
-  if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))) { item = "requiem"; }
-  if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))) { item = "nocturne"; }
-  if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))) { item = "prelude"; }
-
-  if (event.button == 2) {
-    searchingFors = document.getElementsByClassName("searchingFor_images");
-    l = searchingFors.length;
-    flag = false;
-    if (item == "scale" || item == "bomb_bag" || item == "bow" || item == "wallet" || item == "strength" || item == "hookshot" || item == "slingshot" || item == "magic") { item = item + '1' }
-    if (!searchItems.includes(ItemNames[Items.indexOf(item)])) {
-      for (i = 0; i < l; i++) {
-        if (searchingFors[i].id == "searchingFor_" + item) {
-          searchingFors[i].style.display = "inline-block";
-          searchingFors[i].src = event.target.src;
-          searchItems.push(ItemNames[Items.indexOf(item)])
-          flag = true;
-          break;
-        }
-      }
-      if (!flag) {
-        for (i = 0; i < l; i++) {
-          if (searchingFors[i].style.display == "none" || searchingFors[i].style.visibility == "hidden") {
-            searchingFors[i].id = "searchingFor_" + item;
-            searchingFors[i].style.display = "inline-block";
-            searchingFors[i].src = event.target.src;
-            searchItems.push(ItemNames[Items.indexOf(item)])
-            break;
-          }
-        }
-      }
-    }
-    else {
-      for (i = 0; i < l; i++) {
-        if (searchingFors[i].id == "searchingFor_" + item) {
-          searchingFors[i].style.display = "none";
-          searchItems.splice(searchItems.indexOf(ItemNames[Items.indexOf(item)]), 1)
-          break;
-        }
-      }
-    }
-  }
-
-  else if (event.button == 0) {
-
-    if (x.id == "silverscaleimg") {
-      if (player.golden_scale == true) {
-        player.scale1 = false;
-        player.scale2 = false;
-        document.getElementById(x.id).src = player.silver_scale_img;
-        x.style.opacity = .2;
-      }
-      else if (x.style.opacity == 1) {
-        player.scale2 = true;
-        document.getElementById(x.id).src = player.golden_scale_img;
-      }
-      else {
-        player.scale1 = true;
-        x.style.opacity = 1;
-      }
-    }
-    else {
-      if (x.style.opacity == 1) { x.style.opacity = .2; }
-      else { x.style.opacity = 1; }
-    }
-    if (x.id == "for_med") {
-      if (x.style.opacity == 1) { logic.forest_medallion = true; }
-    }
-    else if (document.getElementById(x.id).style.opacity == 1) {
-      if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))) { player.kokiri_sword = true; }
-      if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))) { player.bomb_bag1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))) { player.iron_boots = true; }
-      if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))) { player.hover_boots = true; }
-      if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))) { player.hookshot1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))) { player.bow1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))) { player.strength1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))) { player.hammer = true; }
-      if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))) { player.scale1 = true; player.scale2 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))) { player.strength1 = true; player.strength2 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))) { player.magic1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))) { player.hookshot1 = true; player.hookshot2 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))) { player.mirror_shield = true; }
-      if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))) { player.dins_fire = true; }
-      if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))) { player.rutos_letter = true; }
-      if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))) { player.boomerang = true; }
-      if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))) { player.lens = true; }
-      if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))) { player.strength1 = true; player.strength2 = true; player.strength3 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))) { player.scale1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))) { player.light_arrows = true; }
-      if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))) { player.fire_arrows = true; }
-      if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))) { player.farores_wind = true; }
-      if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))) { player.bottle1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))) { player.slingshot1 = true; }
-      if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))) { player.lullaby = true; }
-      if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))) { player.eponas = true; }
-      if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))) { player.sarias = true; }
-      if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))) { player.suns = true; }
-      if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))) { player.time = true; }
-      if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))) { player.storms = true; }
-      if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))) { player.minuet = true; }
-      if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))) { player.bolero = true; }
-      if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))) { player.serenade = true; }
-      if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))) { player.requiem = true; }
-      if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))) { player.nocturne = true; }
-      if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))) { player.prelude = true; }
-      if (document.getElementById(x.id).src.endsWith(player.chu_img.substring(2))) { player.bombchus1 = true; }
-    }
-    else {
-      if (document.getElementById(x.id).src.endsWith(player.kokiri_sword_img.substring(2))) { player.kokiri_sword = false; }
-      if (document.getElementById(x.id).src.endsWith(player.bomb_img.substring(2))) { player.bomb_bag1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.iron_boots_img.substring(2))) { player.iron_boots = false; }
-      if (document.getElementById(x.id).src.endsWith(player.hover_boots_img.substring(2))) { player.hover_boots = false; }
-      if (document.getElementById(x.id).src.endsWith(player.hookshot_img.substring(2))) { player.hookshot1 = false; player.hookshot2 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.bow_img.substring(2))) { player.bow1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.goron_bracelet_img.substring(2))) { player.strength1 = false; player.strength2 = false; player.strength3 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.hammer_img.substring(2))) { player.hammer = false; }
-      if (document.getElementById(x.id).src.endsWith(player.golden_scale_img.substring(2))) { player.scale2 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.silver_gauntlets_img.substring(2))) { player.strength2 = false; player.strength3 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.magic_img.substring(2))) { player.magic1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.longshot_img.substring(2))) { player.hookshot2 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.mirror_shield_img.substring(2))) { player.mirror_shield = false; }
-      if (document.getElementById(x.id).src.endsWith(player.dins_fire_img.substring(2))) { player.dins_fire = false; }
-      if (document.getElementById(x.id).src.endsWith(player.rutos_letter_img.substring(2))) { player.rutos_letter = false; }
-      if (document.getElementById(x.id).src.endsWith(player.boomerang_img.substring(2))) { player.boomerang = false; }
-      if (document.getElementById(x.id).src.endsWith(player.lens_img.substring(2))) { player.lens = false; }
-      if (document.getElementById(x.id).src.endsWith(player.golden_gauntlets_img.substring(2))) { player.strength3 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.silver_scale_img.substring(2))) { player.scale1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.light_arrows_img.substring(2))) { player.light_arrows = false; }
-      if (document.getElementById(x.id).src.endsWith(player.fire_arrows_img.substring(2))) { player.fire_arrows = false; }
-      if (document.getElementById(x.id).src.endsWith(player.farores_wind_img.substring(2))) { player.farores_wind = false; }
-      if (document.getElementById(x.id).src.endsWith(player.bottle_img.substring(2))) { player.bottle1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.slingshot_img.substring(2))) { player.slingshot1 = false; }
-      if (document.getElementById(x.id).src.endsWith(player.lullaby_img.substring(2))) { player.lullaby = false; }
-      if (document.getElementById(x.id).src.endsWith(player.eponas_img.substring(2))) { player.eponas = false; }
-      if (document.getElementById(x.id).src.endsWith(player.sarias_img.substring(2))) { player.sarias = false; }
-      if (document.getElementById(x.id).src.endsWith(player.suns_img.substring(2))) { player.suns = player.suns = false; }
-      if (document.getElementById(x.id).src.endsWith(player.time_img.substring(2))) { player.time = false; }
-      if (document.getElementById(x.id).src.endsWith(player.storms_img.substring(2))) { player.storms = false; }
-      if (document.getElementById(x.id).src.endsWith(player.minuet_img.substring(2))) { player.minuet = false; }
-      if (document.getElementById(x.id).src.endsWith(player.bolero_img.substring(2))) { player.bolero = false; }
-      if (document.getElementById(x.id).src.endsWith(player.serenade_img.substring(2))) { player.serenade = false; }
-      if (document.getElementById(x.id).src.endsWith(player.requiem_img.substring(2))) { player.requiem = false; }
-      if (document.getElementById(x.id).src.endsWith(player.nocturne_img.substring(2))) { player.nocturne = false; }
-      if (document.getElementById(x.id).src.endsWith(player.prelude_img.substring(2))) { player.prelude = false; }
-      if (document.getElementById(x.id).src.endsWith(player.chu_img.substring(2))) { player.bombchus1 = false; }
-    }
-
-
-    if (x.id == "fir_med" && x.style.opacity == 1) { logic.fire_medallion = true; }
-    if (x.id == "wat_med" && x.style.opacity == 1) { logic.water_medallion = true; }
-    if (x.id == "spi_med" && x.style.opacity == 1) { logic.spirit_medallion = true; }
-    if (x.id == "sha_med" && x.style.opacity == 1) { logic.shadow_medallion = true; }
-    if (x.id == "lit_med" && x.style.opacity == 1) { logic.light_medallion = true; }
-
-    if (x.id == "kok_eme" && x.style.opacity == 1) { logic.kokiri_emerald = true; }
-    if (x.id == "gor_rub" && x.style.opacity == 1) { logic.goron_ruby = true; }
-    if (x.id == "zor_sap" && x.style.opacity == 1) { logic.zora_sapphire = true; }
-  }
-  midUpdate();
+  const item = x.id.replace("img","");
+  player[item] = !player[item];
+  midUpdate(true);
 }
 
 function highlightDungeonEntrance(element) {
@@ -210,25 +21,6 @@ function highlightDungeonEntrance(element) {
     element.style.textDecoration = strike;
     element.style.color = strike == "none" ? dungs_colors[idx] : "gray";
   }
-}
-
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
 }
 
 function toCamelCase(str) {
@@ -282,19 +74,6 @@ function areaTitlesToggle() {
   }
 }
 
-function toggleSettings() {
-  if (logic.brackets) {
-    logic.brackets = false;
-    document.getElementById("SettingsToggle").innerHTML = "Switch to Brackets";
-    Update();
-  }
-  else {
-    logic.brackets = true;
-    document.getElementById("SettingsToggle").innerHTML = "Switch to Weekly";
-    Update();
-  }
-}
-
 function download() {
   var a = document.body.appendChild(
     document.createElement("a")
@@ -333,18 +112,6 @@ function timerControl() {
   if (paused) { paused = false; document.getElementById("timerControl").innerHTML = "Pause"; }
   else { paused = true; document.getElementById("timerControl").innerHTML = "Resume"; }
   timerStuff();
-}
-
-function nerfControl() {
-  if (nerfed) {
-    nerfed = false;
-    document.getElementById("skullsInLogicList").style.display = "inline-block";
-  }
-  else {
-    nerfed = true;
-    document.getElementById("skullsInLogicList").style.display = "none";
-  }
-  Update();
 }
 
 function saveStuff() {
