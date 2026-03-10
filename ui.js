@@ -1711,14 +1711,14 @@ function updateProbabilities() {
   if (searchItems.includes("Din's Fire") && !knownItems.dins_fire) { majorLeft += 1; document.getElementById("searchingFor_dins_fire").style.display = "inline-block"; goMode = false; }
   else if (searchItems.includes("Din's Fire")) { document.getElementById("searchingFor_dins_fire").style.display = "none"; }
 
-  if (searchItems.includes("Hover Boots") && !knownItems.hover_boots) { majorLeft += 1; document.getElementById("searchingFor_hover_boots").style.display = "inline-block"; goMode = false; }
-  else if (searchItems.includes("Hover Boots")) { document.getElementById("searchingFor_hover_boots").style.display = "none"; }
+  if (searchItems.includes("Hover Boots") && !knownItems.hovers) { majorLeft += 1; document.getElementById("searchingFor_hovers").style.display = "inline-block"; goMode = false; }
+  else if (searchItems.includes("Hover Boots")) { document.getElementById("searchingFor_hovers").style.display = "none"; }
 
   if (searchItems.includes("Kokiri Sword") && !knownItems.kokiri_sword) { majorLeft += 1; document.getElementById("searchingFor_kokiri_sword").style.display = "inline-block"; goMode = false; }
   else if (searchItems.includes("Kokiri Sword")) { document.getElementById("searchingFor_kokiri_sword").style.display = "none"; }
 
-  if (searchItems.includes("Iron Boots") && !knownItems.iron_boots) { majorLeft += 1; document.getElementById("searchingFor_iron_boots").style.display = "inline-block"; goMode = false; }
-  else if (searchItems.includes("Iron Boots")) { document.getElementById("searchingFor_iron_boots").style.display = "none"; }
+  if (searchItems.includes("Iron Boots") && !knownItems.irons) { majorLeft += 1; document.getElementById("searchingFor_irons").style.display = "inline-block"; goMode = false; }
+  else if (searchItems.includes("Iron Boots")) { document.getElementById("searchingFor_irons").style.display = "none"; }
 
   if (searchItems.includes("Light Arrows") && !knownItems.light_arrows) { majorLeft += 1; document.getElementById("searchingFor_light_arrows").style.display = "inline-block"; goMode = false; }
   else if (searchItems.includes("Light Arrows")) { document.getElementById("searchingFor_light_arrows").style.display = "none"; }
