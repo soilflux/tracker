@@ -161,10 +161,10 @@ function wothAndBarrenProcessing() {
         if (Items[k] == checkToItemMap["lullabyCheck"]) { continue; }
         if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
           if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
-            document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + ">";
+            document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + itemImages[k] + ">";
 
             if (nerfed) {
-              document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
+              document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + k + wothNumber + "'" + " class = 'wothMajorImages' src=" + itemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
 
               if (ManualWotHItems[Items[k]]) {
                 document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).style.display = "block";
@@ -189,7 +189,7 @@ function wothAndBarrenProcessing() {
               for (var q = 0; q < ManualWotHItemLocked[Items[k]].length; q++) {
                 for (var j = 0; j < Items.length; j++) {
                   if (Items[j] == ManualWotHItemLocked[Items[k]][q]) {
-                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'wothImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + itemImages[j] + ">";
 
                     if (ManualWotHMinorItems[Items[j]]) {
                       document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)");
@@ -202,7 +202,7 @@ function wothAndBarrenProcessing() {
               for (var q = 0; q < ManualWotHItemPutInLogic[Items[k]].length; q++) {
                 for (var j = 0; j < Items.length; j++) {
                   if (Items[j] == ManualWotHItemPutInLogic[Items[k]][q]) {
-                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + ItemImages[j] + ">";
+                    document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += "<img id = 'wothMinor" + j + wothNumber + "'" + "class = 'putInLogicByWothItemImages' data-item = '" + Items[j] + "' data-parent = '" + Items[k] + "'onmousedown = 'markMinorWothItem(this)' src=" + itemImages[j] + ">";
 
                     if (ManualWotHMinorItems[Items[j]]) {
                       document.getElementById("wothMinor" + j + wothNumber).style.setProperty("-webkit-filter", "drop-shadow(0px 0px 5px yellow)");

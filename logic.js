@@ -296,9 +296,6 @@ function refreshLogicForStuff() {
     logic.magic = false;
     if (player.magic1 || player.magic2 || couldHave.magic1 || couldHave.magic2) { logic.magic = true; }
 
-    logic.double_magic = false;
-    if ((player.magic1 || couldHave.magic1) && (player.magic2 || couldHave.magic2)) { logic.double_magic = true; }
-
     logic.kokiri_sword = player.kokiri_sword || couldHave.kokiri_sword;
     logic.farores_wind = player.farores_wind || couldHave.farores_wind;
     logic.boomerang = player.boomerang || couldHave.boomerang;

@@ -394,16 +394,13 @@ function updateChecklistRewards() {
   rewardList.forEach((rewardName, index) => {
     const logicKey = "dung" + (index + 1);
 
-    // Get the name of the dungeon assigned to this reward (e.g., "deku")
     const dungeonName = logic[logicKey];
 
-    // Only update if the logic has a value AND that value is a valid dungeon ID
     if (dungeonName && validDungeons.has(dungeonName)) {
       const element = document.getElementById("reward_" + dungeonName);
 
       if (element) {
-        // Construct the image variable name (e.g., "emerald_img")
-        element.src = player[rewardName + "_img"];
+        element.src = itemToImageMap[rewardName];
         element.style.visibility = "visible";
       }
     }
@@ -446,58 +443,6 @@ function updateSpawnInputs() {
   if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fountain")].toLowerCase()) { Spawn.adult_zf = true; } else { Spawn.adult_zf = false; }
   if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fountain fairy")].toLowerCase()) { Spawn.adult_zf_fairy = true; Spawn.adult_zf = true; } else { Spawn.adult_zf_fairy = false; }
   if (document.getElementById("markAdultLocation").value.toLowerCase() == spawnInputs[spawnNames.indexOf("fountain fairy(ool)")].toLowerCase()) { Spawn.adult_zf_fairy_ool = true; Spawn.adult_zf = true; } else { Spawn.adult_zf_fairy_ool = false; }
-}
-
-function linSoClick() {
-  var str = event.target.src.split("/");
-  str = str[str.length - 1];
-  str = str.substring(0, str.length - 4);
-  //if (str.endsWith("forest") || str.endsWith("fire") || str.endsWith("water")){return;}
-  if (str.endsWith("hookshot") && player.hookshot) { player.hookshot2 = true; }
-  else if (str.endsWith("longshot")) { player.hookshot1 = false; player.hookshot2 = false; }
-  else if (str.endsWith("hookshot")) { player.hookshot1 = true; }
-  else if (str.endsWith("bracelet") && player.goron_bracelet) { if (!player.strength1) { player.strength1 = true; } else if (!player.strength2) { player.strength2 = true; } else { player.strength3 = true; } }
-  else if (str.endsWith("silver_gauntlets")) { player.strength1 = true; player.strength2 = true; player.strength3 = true; }
-  else if (str.endsWith("golden_gauntlets")) { player.strength1 = false; player.strength2 = false; player.strength3 = false; }
-  else if (str.endsWith("bracelet")) { player.strength1 = true; }
-  else if (str.endsWith("silver_scale") && player.scale1) { player.scale2 = true; }
-  else if (str.endsWith("golden_scale")) { player.scale1 = false; player.scale2 = false; }
-  else if (str.endsWith("silver_scale")) { player.scale1 = true; }
-  else if (str.endsWith("magic") && player.magic) { player.magic2 = true; }
-  else if (str.endsWith("magic_2")) { player.magic1 = false; player.magic2 = false; }
-  else if (str.endsWith("adults_wallet") && player.adults_wallet) { player.wallet2 = true; }
-  else if (str.endsWith("giants_wallet") && player.wallet3) { player.wallet1 = false; player.wallet2 = false; player.wallet3 = false; }
-  else if (str.endsWith("giants_wallet") && player.giants_wallet) { player.wallet3 = true; }
-  else if (str.endsWith("adults_wallet")) { player.wallet1 = true; }
-  else if (str.endsWith("magic")) { player.magic1 = true; }
-  else if (str.endsWith("bomb")) { if (player.bomb_bag1) { player.bomb_bag1 = false; player.bomb_bag2 = false; player.bomb_bag3 = false; } else { player.bomb_bag1 = true; } }
-  else if (str.endsWith("claim_check") && player.claim_check) { player.claim_check = false; }
-  else if (str.endsWith("chicken1") && player.chicken1) { player.chicken1 = false; player.blue_chicken = true; }
-  else if (str.endsWith("blue_chicken") && player.blue_chicken) { player.blue_chicken = false; player.odd_mushroom = true; }
-  else if (str.endsWith("eyeball_frog") && player.eyeball_frog) { player.eyeball_frog = false; player.eyedrops = true; }
-  else if (str.endsWith("broken_sword") && player.broken_sword) { player.broken_sword = false; player.prescription = true; }
-  else if (str.endsWith("eyedrops") && player.eyedrops) { player.eyedrops = false; player.claim_check = true; }
-  else if (str.endsWith("odd_mushroom") && player.odd_mushroom) { player.odd_mushroom = false; player.antidote = true; }
-  else if (str.endsWith("antidote") && player.antidote) { player.antidote = false; player.poachers_saw = true; }
-  else if (str.endsWith("egg1") && player.egg1) { player.egg1 = false; player.chicken1 = true; }
-  else if (str.endsWith("poachers_saw") && player.poachers_saw) { player.poachers_saw = false; player.broken_sword = true; }
-  else if (str.endsWith("prescription") && player.prescription) { player.prescription = false; player.eyeball_frog = true; }
-  else if (str.endsWith("egg1")) { player.egg1 = true; }
-  else if (str.endsWith("mask_of_truth") && player.mask_of_truth) { player.mask_of_truth = false; }
-  else if (str.endsWith("gerudo_mask") && player.gerudo_mask) { player.gerudo_mask = false; player.mask_of_truth = true; }
-  else if (str.endsWith("zora_mask") && player.zora_mask) { player.zora_mask = false; player.gerudo_mask = true; }
-  else if (str.endsWith("goron_mask") && player.goron_mask) { player.goron_mask = false; player.zora_mask = true; }
-  else if (str.endsWith("bunny_hood") && player.bunny_hood) { player.bunny_hood = false; player.goron_mask = true; }
-  else if (str.endsWith("spooky_mask") && player.spooky_mask) { player.spooky_mask = false; player.bunny_hood = true; }
-  else if (str.endsWith("skull_mask") && player.skull_mask) { player.skull_mask = false; player.spooky_mask = true; }
-  else if (str.endsWith("keaton_mask") && player.keaton_mask) { player.keaton_mask = false; player.skull_mask = true; }
-  else if (str.endsWith("zeldas_letter") && player.zeldas_letter) { player.zeldas_letter = false; player.keaton_mask = true; }
-  else if (str.endsWith("chicken2") && player.chicken2) { player.chicken2 = false; player.zeldas_letter = true; }
-  else if (str.endsWith("egg2") && player.egg2) { player.egg2 = false; player.chicken2 = true; }
-  else if (str.endsWith("egg2")) { player.egg2 = true; }
-  else if (event.target.style.filter == "none") { player[str] = false; player[str + 1] = false; }
-  else { player[str] = true; player[str + 1] = true; }
-  midUpdate();
 }
 
 function junk() {
@@ -945,37 +890,18 @@ function refreshLinSo() {
         if (i > 9) { continue; }
         if (linsoOrder[temp] == "" || linsoOrder[temp] == "circus") { temp += 1; continue; }
         if (linsoOrder[temp] == "" || linsoOrder[temp] == "skull_counter") { temp += 1; continue; }
-        if (linsoOrder[temp] == "hookshot") { if (player.hookshot && !player.longshot) { document.getElementById("linso" + i + j).src = player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.longshot) { document.getElementById("linso" + i + j).src = player.longshot_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.hookshot_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "silver_scale") { if (player.silver_scale && !player.golden_scale) { document.getElementById("linso" + i + j).src = player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.golden_scale) { document.getElementById("linso" + i + j).src = player.golden_scale_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.silver_scale_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "adults_wallet") { if (player.tycoon_wallet) { document.getElementById("linso103").style.opacity = 1; } else { document.getElementById("linso103").style.opacity = 0; } if (player.giants_wallet) { document.getElementById("linso" + i + j).src = player.wallet2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.adults_wallet) { document.getElementById("linso" + i + j).src = player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.wallet1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "goron_bracelet") { if (player.golden_gauntlets) { document.getElementById("linso" + i + j).src = player.golden_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.silver_gauntlets) { document.getElementById("linso" + i + j).src = player.silver_gauntlets_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.goron_bracelet) { document.getElementById("linso" + i + j).src = player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.goron_bracelet_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "bomb") { if (player.bomb_bag) { document.getElementById("linso" + i + j).src = player.bomb_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.bomb_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "magic") { if (player.double_magic) { document.getElementById("linso" + i + j).src = player.magic_2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.magic) { document.getElementById("linso" + i + j).src = player.magic_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = player.magic_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
-        else if (linsoOrder[temp] == "egg1" && player.claim_check) { document.getElementById("linso" + i + j).src = player.claim_check_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
+        if (linsoOrder[temp] == "hookshot") { if (player.hookshot && !player.longshot) { document.getElementById("linso" + i + j).src = itemToImageMap["hookshot"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.longshot) { document.getElementById("linso" + i + j).src = itemToImageMap["longshot"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = itemToImageMap["hookshot"]; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
+        else if (linsoOrder[temp] == "silver_scale") { if (player.silver_scale && !player.golden_scale) { document.getElementById("linso" + i + j).src = itemToImageMap["silver_scale"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.golden_scale) { document.getElementById("linso" + i + j).src = itemToImageMap["golden_scale"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = itemToImageMap["silver_scale"]; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
+        else if (linsoOrder[temp] == "adults_wallet") { if (player.tycoon_wallet) { document.getElementById("linso103").style.opacity = 1; } else { document.getElementById("linso103").style.opacity = 0; } if (player.giants_wallet) { document.getElementById("linso" + i + j).src = itemToImageMap["wallet2"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.adults_wallet) { document.getElementById("linso" + i + j).src = itemToImageMap["wallet1"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = itemToImageMap["wallet1"]; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
+        else if (linsoOrder[temp] == "goron_bracelet") { if (player.golden_gauntlets) { document.getElementById("linso" + i + j).src = itemToImageMap["golden_gauntlets"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.silver_gauntlets) { document.getElementById("linso" + i + j).src = itemToImageMap["silver_gauntlets"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else if (player.goron_bracelet) { document.getElementById("linso" + i + j).src = itemToImageMap["goron_bracelet"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; } else { document.getElementById("linso" + i + j).src = itemToImageMap["goron_bracelet"]; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; } }
+        else if (linsoOrder[temp] == "egg1" && player.claim_check) { document.getElementById("linso" + i + j).src = itemToImageMap["claim_check"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg1" && player.eyedrops) { document.getElementById("linso" + i + j).src = player.eyedrops_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg1" && player.eyeball_frog) { document.getElementById("linso" + i + j).src = player.eyeball_frog_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.prescription) { document.getElementById("linso" + i + j).src = player.prescription_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.broken_sword) { document.getElementById("linso" + i + j).src = player.broken_sword_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.poachers_saw) { document.getElementById("linso" + i + j).src = player.poachers_saw_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.antidote) { document.getElementById("linso" + i + j).src = player.antidote_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.odd_mushroom) { document.getElementById("linso" + i + j).src = player.odd_mushroom_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.blue_chicken) { document.getElementById("linso" + i + j).src = player.blue_chicken_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.chicken1) { document.getElementById("linso" + i + j).src = player.chicken1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1" && player.egg1) { document.getElementById("linso" + i + j).src = player.egg1_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg1") { document.getElementById("linso" + i + j).src = player.egg1_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; }
-        else if (linsoOrder[temp] == "egg2" && player.mask_of_truth) { document.getElementById("linso" + i + j).src = player.mask_of_truth_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.gerudo_mask) { document.getElementById("linso" + i + j).src = player.gerudo_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.zora_mask) { document.getElementById("linso" + i + j).src = player.zora_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.goron_mask) { document.getElementById("linso" + i + j).src = player.goron_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.bunny_hood) { document.getElementById("linso" + i + j).src = player.bunny_hood_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.spooky_mask) { document.getElementById("linso" + i + j).src = player.spooky_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.skull_mask) { document.getElementById("linso" + i + j).src = player.skull_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2" && player.keaton_mask) { document.getElementById("linso" + i + j).src = player.keaton_mask_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
+        else if (linsoOrder[temp] == "egg1" && player.prescription) { document.getElementById("linso" + i + j).src = itemToImageMap["prescription"]; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg2" && player.zeldas_letter) { document.getElementById("linso" + i + j).src = player.zeldas_letter_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg2" && player.chicken2) { document.getElementById("linso" + i + j).src = player.chicken2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg2" && player.egg2) { document.getElementById("linso" + i + j).src = player.egg2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-        else if (linsoOrder[temp] == "egg2") { document.getElementById("linso" + i + j).src = player.egg2_img; document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; }
-        else if (player[linsoOrder[temp]] || (player[linsoOrder[temp] + 1])) { document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
+       else if (player[linsoOrder[temp]] || (player[linsoOrder[temp] + 1])) { document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else { document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; }
         temp += 1;
       }

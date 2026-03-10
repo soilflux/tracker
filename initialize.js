@@ -148,7 +148,6 @@ var checkSummaryText = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boome
 var textSongChecks = ["text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
 var songChecks = ["lullabyCheck", "eponasCheck", "sariasCheck", "sunsCheck", "timeCheck", "stormsCheck", "minuetCheck", "boleroCheck", "serenadeCheck", "requiemCheck", "nocturneCheck", "preludeCheck"];
 var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "iron_boots", "kokiri_sword", "hover_boots", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
-var ItemImages = [];
 var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
 
 //take advantage of a small pool to shorten the inputs
@@ -1601,7 +1600,7 @@ updateColorScheme();
 updateTheme();
 wothSizeToggle();
 
-var linsoOrder = ["stick", "nut", "bomb", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "bombchus", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
+var linsoOrder = ["stick", "nut", "bomb_bag", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "bombchus", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "iron_boots", "hover_boots", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
 var linsoOrderIncrement = 0;
@@ -1651,10 +1650,10 @@ for (var i = 1; i <= 11; i++) {
       elem.id = "linso" + i + j;
       elem.style.height = "35px";
       elem.style.width = "35px";
-      if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) { elem.src = player.bottle_img; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) { elem.src = player.shadow_img; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) { elem.src = player.spirit_img; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) { elem.src = player.light_img; }
+      if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) { elem.src = itemToImageMap["bottle"]; }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) { elem.src = itemToImageMap["shadow"]; }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) { elem.src = itemToImageMap["spirit"]; }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) { elem.src = itemToImageMap["light"]; }
       else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
         rollAnimal();
       }
@@ -1665,7 +1664,7 @@ for (var i = 1; i <= 11; i++) {
       elem.style.left = -32 + j * 41 + "px";
       elem.style.top = tempTop + i * 40 + "px";
       if (linsoOrder[linsoOrderIncrement].startsWith("circus")) { elem.style.opacity = 0; } else { elem.style.opacity = .3; elem.style.filter = "grayscale(100%)"; }
-      if (linsoOrder[linsoOrderIncrement] == "skull_token") { elem.onmousedown = linso_counter; } else if (!linsoOrder[linsoOrderIncrement].startsWith("circus")) { elem.onclick = linSoClick; }
+      if (linsoOrder[linsoOrderIncrement] == "skull_token") { elem.onmousedown = linso_counter; } 
       if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
         var elem2 = document.createElement("IMG");
         elem2.style.position = "absolute";
@@ -1708,7 +1707,6 @@ for (var i = 1; i <= 12; i++) {
   elem.style.top = tempTop + i * 31 + "px";
   elem.style.opacity = .3;
   elem.style.filter = "grayscale(100%)";
-  elem.onclick = linSoClick;
   document.getElementById("linsoTracker").appendChild(elem);
   linsoOrderIncrement += 1;
 }
@@ -1730,7 +1728,7 @@ searchItems = ["Boomerang", "Bomb Bag", "Bow", "Hammer", "Scale", "Hookshot", "L
 for (var i = 1; i <= 15; i++) {
   var id = 'searchingFor_' + Items[ItemNames.indexOf(searchItems[i - 1])]
   document.getElementById("searchingFor_div").innerHTML += '<img id = ' + id + ' class = "searchingFor_images" onmousedown = searchingFor_tracking()>'
-  document.getElementById(id).src = ItemImages[ItemNames.indexOf(searchItems[i - 1])];
+  document.getElementById(id).src = itemImages[ItemNames.indexOf(searchItems[i - 1])];
   document.getElementById(id).style.display = "inline-block";
 }
 
