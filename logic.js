@@ -1711,79 +1711,83 @@ function updateCheckLogic() {
 }
 
 function updateEntranceAccess(dungeon, sim) {
-  if (dungeonToEntrance_ER_dict[dungeon] == "deku") {
-    sim.adultEntry = rules.deku == "open" || sim.kokiri_sword;
-    sim.childEntry = rules.deku == "open" || sim.kokiri_sword;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "dodongos") {
-    sim.adultEntry = true;
-    sim.childEntry = sim.bomb_bag || sim.goron_bracelet || sim.bombchus;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "jabu") {
-    sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bomb_bag || sim.bombchus;
+  const entrance = dungeonToEntrance_ER_dict[dungeon];
 
-    sim.adultEntry = false;
-    sim.childEntry = (sim.child_can_enter_domain && (sim.rutos_letter || rules.fountain == "open")) || sim.child_zf;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "forest") {
-    sim.adultEntry = sim.hookshot;
-    sim.childEntry = false;
-    sim.entry = sim.adultEntry || sim.childEntry
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "fire") {
-    sim.can_stop_link_the_goron = sim.bomb_bag || sim.bow || sim.goron_bracelet || sim.bombchus;
-    sim.child_can_enter_river = sim.bomb_bag || sim.bombchus || sim.silver_scale || Spawn.child_zd || Spawn.child_zr;
-    sim.reverse_crater = (sim.hovers || sim.hookshot || sim.child_can_enter_river) && sim.bolero;
-    sim.crater_by_city = sim.can_stop_link_the_goron || sim.reverse_crater || sim.hammer || (sim.longshot && sim.hammer) || Spawn.adult_lower_dmc;
+  switch (entrance) {
+    case "deku":
+      sim.adult = rules.deku == "open" || sim.kokiri_sword;
+      sim.child = rules.deku == "open" || sim.kokiri_sword;
+      break;
 
-    sim.adultEntry = (sim.crater_by_city && (sim.hookshot || sim.hovers)) || sim.bolero;
-    sim.childEntry = sim.bolero;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "water") {
-    sim.adultEntry = sim.hookshot && (sim.irons || sim.golden_scale);
-    sim.childEntry = false;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "shadow") {
-    sim.can_use_fire = (sim.dins_fire || (sim.bow && sim.fire_arrows)) && sim.magic;
-    sim.can_use_dins = sim.dins_fire && sim.magic;
+    case "dodongos":
+      sim.adult = true;
+      sim.child = sim.bomb_bag || sim.goron_bracelet || sim.bombchus;
+      break;
 
-    sim.adultEntry = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
-    sim.childEntry = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "spirit") {
-    sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
-    sim.can_cross_quicksand = sim.fortress_access && (rules.gerudoCard == "vanilla" || sim.gerudo_card);
+    case "jabu":
+      sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bomb_bag || sim.bombchus;
+      sim.adult = false;
+      sim.child = (sim.child_can_enter_domain && (sim.rutos_letter || rules.fountain == "open")) || sim.child_zf;
+      break;
 
-    sim.adultEntry = (sim.can_cross_quicksand) || sim.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checkAccess.spirit_leftHand || checkAccess.spirit_rightHand;
-    sim.childEntry = sim.requiem || Spawn.child_colossus || Spawn.child_wasteland || checkAccess.spirit_rightHand;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "botw") {
-    sim.adultEntry = sim.storms;
-    sim.childEntry = sim.storms;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "ice") {
-    sim.can_enter_adult_domain = sim.lullaby || sim.hovers || Spawn.adult_zd;
-    sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bomb_bag || sim.bombchus;
+    case "forest":
+      sim.adult = sim.hookshot;
+      sim.child = false;
+      break;
 
-    sim.adultEntry = (sim.can_enter_adult_domain && ((sim.rutos_letter && sim.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
-    sim.childEntry = false;
-    sim.entry = sim.adultEntry || sim.childEntry;
-  }
-  if (dungeonToEntrance_ER_dict[dungeon] == "gtg") {
-    sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
+    case "fire":
+      sim.can_stop_link_the_goron = sim.bomb_bag || sim.bow || sim.goron_bracelet || sim.bombchus;
+      sim.child_can_enter_river = sim.bomb_bag || sim.bombchus || sim.silver_scale || Spawn.child_zd || Spawn.child_zr;
+      sim.reverse_crater = (sim.hovers || sim.hookshot || sim.child_can_enter_river) && sim.bolero;
+      sim.crater_by_city = sim.can_stop_link_the_goron || sim.reverse_crater || sim.hammer || (sim.longshot && sim.hammer) || Spawn.adult_lower_dmc;
 
-    sim.adultEntry = (sim.can_save_carpenters && rules.gerudoCard == "vanilla") || (sim.fortress_access && sim.gerudo_card && rules.gerudoCard == "shuffled");
-    sim.childEntry = false;
-    sim.entry = sim.adultEntry || sim.childEntry;
+      sim.adult = (sim.crater_by_city && (sim.hookshot || sim.hovers)) || sim.bolero;
+      sim.child = sim.bolero;
+      break;
+
+    case "water":
+      sim.adult = sim.hookshot && (sim.irons || sim.golden_scale);
+      sim.child = false;
+      break;
+
+    case "shadow":
+      sim.can_use_fire = (sim.dins_fire || (sim.bow && sim.fire_arrows)) && sim.magic;
+      sim.can_use_dins = sim.dins_fire && sim.magic;
+      const shadowAccess = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
+
+      sim.adult = shadowAccess;
+      sim.child = shadowAccess;
+      break;
+
+    case "spirit":
+      sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
+      sim.can_cross_quicksand = sim.fortress_access && (rules.gerudoCard == "vanilla" || sim.gerudo_card);
+
+      sim.adult = sim.can_cross_quicksand || sim.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checkAccess.spirit_leftHand || checkAccess.spirit_rightHand;
+      sim.child = sim.requiem || Spawn.child_colossus || Spawn.child_wasteland || checkAccess.spirit_rightHand;
+      break;
+
+    case "botw":
+      sim.adult = sim.storms;
+      sim.child = sim.storms;
+      break;
+
+    case "ice":
+      sim.can_enter_adult_domain = sim.lullaby || sim.hovers || Spawn.adult_zd;
+      sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bomb_bag || sim.bombchus;
+
+      sim.adult = (sim.can_enter_adult_domain && ((sim.rutos_letter && sim.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
+      sim.child = false;
+      break;
+
+    case "gtg":
+      sim.fortress_access = sim.eponas || sim.longshot || sim.requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && sim.hookshot);
+
+      sim.adult = (sim.can_save_carpenters && rules.gerudoCard == "vanilla") || (sim.fortress_access && sim.gerudo_card && rules.gerudoCard == "shuffled");
+      sim.child = false;
+      break;
   }
+  sim.entry = sim.adult || sim.child;
 }
 
 function unlocksChecksInDungeon() {
@@ -1833,7 +1837,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
     magic, fire_arrows, ice_arrows, requiem, gerudo_card, eponas
   } = sim;
   updateEntranceAccess(dungeon, sim);
-  const { adultEntry, childEntry, entry, } = sim;
+  const { adult, child, entry } = sim;
   const can_use_fire = (dins_fire || (bow && fire_arrows)) && magic;
   const can_shoot_blue_fire_arrows = ice_arrows && bow && magic && rules.blueFireArrows == "on";
   const explosives = (bomb_bag || bombchus);
@@ -1842,34 +1846,38 @@ function dungeonCheckAccess(dungeon, sim, type) {
   const strength2 = silver_gauntlets;
   let checks = {};
   let peeks = {};
+  if (!entry) {
+    assignChecks(checks, peeks, type);
+    return Object.values(checks).filter(Boolean).length;
+  }
   if (dungeon === "deku") {
     checks = {
-      deku_lobby: entry,
-      deku_slingshot: entry,
-      deku_slingshot_room_side: entry,
-      deku_compass: entry,
-      deku_compass_room_side: entry,
-      deku_basement: entry,
-      deku_queen_gohma: entry && (childEntry || (adultEntry && (can_use_fire || bow))),
+      deku_lobby: true,
+      deku_slingshot: true,
+      deku_slingshot_room_side: true,
+      deku_compass: true,
+      deku_compass_room_side: true,
+      deku_basement: true,
+      deku_queen_gohma: (child || (adult && (can_use_fire || bow))),
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_deku_basement_back: entry && boomerang && explosives,
-        gs_deku_basement_gate: entry,
-        gs_deku_basement_vines: entry,
-        gs_deku_compass: entry,
+        gs_deku_basement_back: boomerang && explosives,
+        gs_deku_basement_gate: true,
+        gs_deku_basement_vines: true,
+        gs_deku_compass: true,
       }),
     }
     if (type !== "sim") {
-      peeks.gs_deku_basement_back = entry && explosives;
+      peeks.gs_deku_basement_back = explosives;
     }
   } else if (dungeon === "dodongos") {
-    const can_break_dodongos_wall = entry && (explosives || strength1 || (adultEntry && (hammer || can_shoot_blue_fire_arrows)));
-    const dodongos_climb = can_break_dodongos_wall && (explosives || strength1 || dins || (adultEntry && bow));
+    const can_break_dodongos_wall = (explosives || strength1 || (adult && (hammer || can_shoot_blue_fire_arrows)));
+    const dodongos_climb = can_break_dodongos_wall && (explosives || strength1 || dins || (adult && bow));
     checks = {
       dodongos_map: can_break_dodongos_wall,
       dodongos_compass: can_break_dodongos_wall,
       dodongos_bomb_flower_platform: dodongos_climb,
       dodongos_bomb_bag: dodongos_climb,
-      dodongos_end_of_bridge: dodongos_climb && (explosives || (adultEntry && hammer)),
+      dodongos_end_of_bridge: dodongos_climb && (explosives || (adult && hammer)),
       dodongos_above_king: dodongos_climb && explosives,
       dodongos_king_dodongo: dodongos_climb && explosives,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
@@ -1894,12 +1902,12 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_dodongos_above_stairs = dodongos_climb && (hookshot || boomerang || explosives || slingshot || bow || dins_fire);
     }
   } else if (dungeon === "jabu") {
-    const can_hit_jabu_switch = entry && explosives || ((boomerang || slingshot) && childEntry) || ((hookshot || bow) && adultEntry);
+    const can_hit_jabu_switch = explosives || ((boomerang || slingshot) && child) || ((hookshot || bow) && adult);
     checks = {
       jabu_boomerang: can_hit_jabu_switch,
-      jabu_map: can_hit_jabu_switch && boomerang && childEntry,
-      jabu_compass: can_hit_jabu_switch && boomerang && childEntry,
-      jabu_barinade: can_hit_jabu_switch && boomerang && childEntry,
+      jabu_map: can_hit_jabu_switch && boomerang && child,
+      jabu_compass: can_hit_jabu_switch && boomerang && child,
+      jabu_barinade: can_hit_jabu_switch && boomerang && child,
       scrub_jabu: can_hit_jabu_switch,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
         gs_jabu_vines: can_hit_jabu_switch,
@@ -1914,44 +1922,44 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
   } else if (dungeon === "forest") {
     checks = {
-      forest_first: entry,
-      forest_stalfos: entry,
-      forest_midCourtyard: adultEntry && (((time && (hovers || hookshot)) || (bow && hookshot) || ((hovers || strength1) && keys(1) && (hovers || hookshot))) || (strength1 && (bow || dins) && keys(5))),
-      forest_highCourtyard: entry && (time || (adultEntry && ((bow && hookshot) || ((hovers || strength1) && keys(1)) || (strength1 && (bow || dins) && keys(5))))),
-      forest_lowCourtyard: entry && (time || (adultEntry && ((bow && hookshot) || ((hovers || strength1) && keys(1)) || (strength1 && (bow || dins) && keys(5))))),
-      forest_blockRoom: adultEntry && keys(1) && (bow || (childEntry && slingshot)) && strength1,
-      forest_bossKey: adultEntry && keys(2) && bow && strength1,
-      forest_floormaster: adultEntry && ((bow && strength1 && keys(2)) || ((hovers || strength1) && keys(1))),
-      forest_red: adultEntry && strength1 && bow && keys(3),
-      forest_bow: adultEntry && strength1 && keys(3),
-      forest_blue: adultEntry && strength1 && bow && keys(3),
-      forest_fallingCeiling: adultEntry && strength1 && (bow || dins) && keys(5),
-      forest_nearBoss: adultEntry && strength1 && bow && keys(5),
-      forest_phantomGanon: adultEntry && strength1 && bow && keys(5) && bossKey,
+      forest_first: true,
+      forest_stalfos: true,
+      forest_midCourtyard: adult && (((time && (hovers || hookshot)) || (bow && hookshot) || ((hovers || strength1) && keys(1) && (hovers || hookshot))) || (strength1 && (bow || dins) && keys(5))),
+      forest_highCourtyard: (time || (adult && ((bow && hookshot) || ((hovers || strength1) && keys(1)) || (strength1 && (bow || dins) && keys(5))))),
+      forest_lowCourtyard: (time || (adult && ((bow && hookshot) || ((hovers || strength1) && keys(1)) || (strength1 && (bow || dins) && keys(5))))),
+      forest_blockRoom: adult && keys(1) && (bow || (child && slingshot)) && strength1,
+      forest_bossKey: adult && keys(2) && bow && strength1,
+      forest_floormaster: adult && ((bow && strength1 && keys(2)) || ((hovers || strength1) && keys(1))),
+      forest_red: adult && strength1 && bow && keys(3),
+      forest_bow: adult && strength1 && keys(3),
+      forest_blue: adult && strength1 && bow && keys(3),
+      forest_fallingCeiling: adult && strength1 && (bow || dins) && keys(5),
+      forest_nearBoss: adult && strength1 && bow && keys(5),
+      forest_phantomGanon: adult && strength1 && bow && keys(5) && bossKey,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_forest_first: adultEntry && hookshot,
-        gs_forest_lobby: adultEntry && hookshot,
-        gs_forest_outdoor_east: adultEntry && hookshot && ((bow || time) || (keys(1) && hovers)),
-        gs_forest_outdoor_west: adultEntry && hookshot && (((bow || time) && longshot) || (keys(1) && hovers) || (keys(2) && strength1 && bow)),
-        gs_forest_basement: adultEntry && hookshot && bow && strength1 && keys(5),
+        gs_forest_first: adult && hookshot,
+        gs_forest_lobby: adult && hookshot,
+        gs_forest_outdoor_east: adult && hookshot && ((bow || time) || (keys(1) && hovers)),
+        gs_forest_outdoor_west: adult && hookshot && (((bow || time) && longshot) || (keys(1) && hovers) || (keys(2) && strength1 && bow)),
+        gs_forest_basement: adult && hookshot && bow && strength1 && keys(5),
       }),
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        peeks.forest_midCourtyard = entry && ((time || (adultEntry && (bow || ((hovers || strength1) && keys(1))) || (strength1 && (bow || dins) && keys(5)))));
-        peeks.forest_blockRoom = entry && keys(1) && ((adultEntry && bow) || (childEntry && slingshot));
+        peeks.forest_midCourtyard = ((time || (adult && (bow || ((hovers || strength1) && keys(1))) || (strength1 && (bow || dins) && keys(5)))));
+        peeks.forest_blockRoom = keys(1) && ((adult && bow) || (child && slingshot));
       }
-      peeks.gs_forest_outdoor_west = adultEntry && (hookshot || bow || (time && bombchus));
+      peeks.gs_forest_outdoor_west = adult && (hookshot || bow || (time && bombchus));
     }
   } else if (dungeon === "fire") {
-    const can_climb_fire_temple = adultEntry && keys(3) && (bow || hookshot || explosives);
+    const can_climb_fire_temple = adult && keys(3) && (bow || hookshot || explosives);
     checks = {
-      fire_nearBoss: entry,
-      fire_hammer1: adultEntry && hammer && keys(0),
-      fire_hammer2: adultEntry && hammer && keys(0),
-      fire_lavaOpen: entry && keys(1),
-      fire_lavaBomb: entry && keys(1) && (bomb_bag || (bombchus && adultEntry)),
-      fire_volvagia: adultEntry && bossKey && hammer,
+      fire_nearBoss: true,
+      fire_hammer1: adult && hammer && keys(0),
+      fire_hammer2: adult && hammer && keys(0),
+      fire_lavaOpen: keys(1),
+      fire_lavaBomb: keys(1) && (bomb_bag || (bombchus && adult)),
+      fire_volvagia: adult && bossKey && hammer,
       fire_lowerMaze: can_climb_fire_temple,
       fire_sideRoom: can_climb_fire_temple,
       fire_map: can_climb_fire_temple && ((keys(4) && bow) || keys(5)),
@@ -1962,35 +1970,35 @@ function dungeonCheckAccess(dungeon, sim, type) {
       fire_sotGoron: can_climb_fire_temple && keys(6) && hammer && (time || explosives),
       fire_top: can_climb_fire_temple && keys(6) && explosives,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_fire_time: adultEntry && keys(1),
+        gs_fire_time: adult && keys(1),
         gs_fire_bomb_wall: can_climb_fire_temple && explosives,
         gs_fire_scarecrow_1: can_climb_fire_temple && keys(5) && hookshot,
         gs_fire_scarecrow_2: can_climb_fire_temple && keys(5) && hookshot,
-        gs_fire_basement: adultEntry && hammer,
+        gs_fire_basement: adult && hammer,
       }),
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        peeks.fire_hammer2 = entry;
+        peeks.fire_hammer2 = true;
         peeks.fire_upperMaze = can_climb_fire_temple;
         peeks.fire_shortcut = can_climb_fire_temple;
       }
     }
   } else if (dungeon === "water") {
-    const can_do_water_checks = adultEntry && (irons || longshot);
+    const can_do_water_checks = adult && (irons || longshot);
     const middle_water = can_do_water_checks && lullaby && (bow || dins || keys(1));
     checks = {
-      water_compass: adultEntry && ((lullaby && longshot) || irons),
+      water_compass: adult && ((lullaby && longshot) || irons),
       water_map: can_do_water_checks,
       water_cracked: can_do_water_checks && (lullaby || (irons && bombchus)) && explosives,
-      water_torches: can_do_water_checks && lullaby && (bow || dins || childEntry),
+      water_torches: can_do_water_checks && lullaby && (bow || dins || child),
       water_block: can_do_water_checks && lullaby && (((bow && hookshot) || (hovers && bomb_bag)) && strength1),
       water_pillar: middle_water && irons && hookshot,
       water_dLink: can_do_water_checks && keys(2) && hookshot,
       water_river: can_do_water_checks && keys(2) && time && bow && hookshot,
       water_dragon: can_do_water_checks && ((keys(2) && hookshot && time && bow) || (strength1 && lullaby && ((irons && hookshot) || bombchus) && (silver_scale || irons))),
       water_bossKey: can_do_water_checks && (lullaby || irons) && (longshot || hovers) && keys(2),
-      water_morpha: adultEntry && bossKey && (rules.waterHop == "allowed" || longshot),
+      water_morpha: adult && bossKey && (rules.waterHop == "allowed" || longshot),
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
         gs_water_south_basement: can_do_water_checks && explosives && lullaby && hookshot,
         gs_water_river: can_do_water_checks && time && keys(2) && hookshot,
@@ -2002,19 +2010,19 @@ function dungeonCheckAccess(dungeon, sim, type) {
     if (type !== "sim") {
       if (csmc === "on") {
         peeks.water_cracked = can_do_water_checks;
-        peeks.water_block = adultEntry;
+        peeks.water_block = adult;
         peeks.water_river = can_do_water_checks && keys(2) && time && hookshot;
       }
       peeks.gs_water_central = middle_water && (longshot || (can_use_farores && hookshot) || bombchus || bow);
     }
   } else if (dungeon === "shadow") {
-    const can_cross_shadow_gap = adultEntry && hovers;
+    const can_cross_shadow_gap = adult && hovers;
     const can_bomb_shadow_wall = can_cross_shadow_gap && explosives && keys(0);
     const can_pass_shadow_hookshot_door = can_bomb_shadow_wall && hookshot;
     const can_ride_shadow_boat = can_pass_shadow_hookshot_door && lullaby;
     checks = {
-      shadow_map: adultEntry && (hovers || hookshot),
-      shadow_hovers: adultEntry && (hovers || hookshot),
+      shadow_map: adult && (hovers || hookshot),
+      shadow_hovers: adult && (hovers || hookshot),
       shadow_compass: can_cross_shadow_gap,
       shadow_earlySilvers: can_cross_shadow_gap,
       shadow_spinning1: can_bomb_shadow_wall,
@@ -2048,17 +2056,17 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_shadow_near_boat = can_pass_shadow_hookshot_door && (longshot || bow || bombchus) && keys(4);
     }
   } else if (dungeon === "spirit") {
-    const can_push_spirit_silver_block = adultEntry && strength2;
+    const can_push_spirit_silver_block = adult && strength2;
     const projectile_child = explosives || slingshot || boomerang;
     const projectile_adult = explosives || bow || hookshot;
     checks = {
-      spirit_childLeft: childEntry && (slingshot || boomerang || bombchus),
-      spirit_childRight: childEntry && (slingshot || boomerang || bombchus),
-      spirit_childClimb1: entry && keys(1) && ((projectile_child && childEntry) || (projectile_adult && strength2)),
-      spirit_childClimb2: entry && keys(1) && ((projectile_child && childEntry) || (projectile_adult && strength2)),
-      spirit_map: entry && keys(1) && ((childEntry && explosives) || (((can_use_fire || bow) && strength2))),
-      spirit_sunRoom: entry && keys(1) && ((childEntry && explosives) || (((can_use_fire || bow) && strength2))),
-      spirit_rightHand: entry && keys(2) && ((childEntry && explosives) || (can_push_spirit_silver_block && (bow || hookshot || bombchus))),
+      spirit_childLeft: child && (slingshot || boomerang || bombchus),
+      spirit_childRight: child && (slingshot || boomerang || bombchus),
+      spirit_childClimb1: keys(1) && ((projectile_child && child) || (projectile_adult && strength2)),
+      spirit_childClimb2: keys(1) && ((projectile_child && child) || (projectile_adult && strength2)),
+      spirit_map: keys(1) && ((child && explosives) || (((can_use_fire || bow) && strength2))),
+      spirit_sunRoom: keys(1) && ((child && explosives) || (((can_use_fire || bow) && strength2))),
+      spirit_rightHand: keys(2) && ((child && explosives) || (can_push_spirit_silver_block && (bow || hookshot || bombchus))),
       spirit_adultLeft: can_push_spirit_silver_block && hookshot && lullaby,
       spirit_adultRight: can_push_spirit_silver_block && (bow || hookshot || bombchus),
       spirit_rotatingMirror1: can_push_spirit_silver_block && keys(1),
@@ -2073,11 +2081,11 @@ function dungeonCheckAccess(dungeon, sim, type) {
       spirit_tippyTop: can_push_spirit_silver_block && keys(3) && mirror_shield,
       spirit_twinrova: can_push_spirit_silver_block && keys(3) && mirror_shield && explosives && bossKey && hookshot,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_spirit_metal_fence: childEntry && (boomerang || slingshot || bombchus),
-        gs_spirit_before_child_knuckle: entry && (explosives && boomerang && keys(1) && childEntry) || (hookshot && strength2 && keys(1)),
+        gs_spirit_metal_fence: child && (boomerang || slingshot || bombchus),
+        gs_spirit_before_child_knuckle: (explosives && boomerang && keys(1) && child) || (hookshot && strength2 && keys(1)),
         gs_spirit_boulder_room: can_push_spirit_silver_block && time && (bow || hookshot || bombchus),
         gs_spirit_lobby: can_push_spirit_silver_block && keys(1) && (hookshot || hovers),
-        gs_spirit_child_climb: entry && keys(1),
+        gs_spirit_child_climb: keys(1),
       }),
     }
     const fortress_access = eponas || longshot || requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && hookshot);
@@ -2085,14 +2093,14 @@ function dungeonCheckAccess(dungeon, sim, type) {
     const can_enter_colossus = (can_cross_quicksand) || requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checks.spirit_leftHand || checks.spirit_rightHand;
     if (type !== "sim") {
       if (csmc === "on") {
-        peeks.spirit_childLeft = childEntry;
-        peeks.spirit_childRight = childEntry;
+        peeks.spirit_childLeft = child;
+        peeks.spirit_childRight = child;
         peeks.spirit_adultLeft = can_push_spirit_silver_block && lullaby && (bow || hookshot || explosives);
         peeks.spirit_rightHand = can_enter_colossus;
       }
-      peeks.gs_spirit_before_child_knuckle = entry && (explosives && (boomerang || slingshot || bombchus) && keys(1) && childEntry) || ((hookshot || bow || bombchus || dins) && strength2 && keys(1));
+      peeks.gs_spirit_before_child_knuckle = (explosives && (boomerang || slingshot || bombchus) && keys(1) && child) || ((hookshot || bow || bombchus || dins) && strength2 && keys(1));
       peeks.gs_spirit_boulder_room = can_push_spirit_silver_block && (bow || hookshot || bombchus);
-      peeks.gs_spirit_lobby = entry && (can_push_spirit_silver_block && keys(1) && (hookshot || hovers || bow)) || (explosives && slingshot && keys(1) && childEntry);
+      peeks.gs_spirit_lobby = (can_push_spirit_silver_block && keys(1) && (hookshot || hovers || bow)) || (explosives && slingshot && keys(1) && child);
     }
   }
 
@@ -2119,7 +2127,7 @@ function updateDungeonItemImages(dungeon, items) {
     const imgElement = document.getElementById(prefix + "_item" + itemSlotNumber);
 
     if (imgElement) {
-      if (dungeon === "pocket") { imgElement.src = ""; continue; }  
+      if (dungeon === "pocket") { imgElement.src = ""; continue; }
       const itemName = items[i];
       imgElement.src = itemName ? itemToImageMap[itemName] : "";
     }
