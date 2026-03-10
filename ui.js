@@ -303,10 +303,7 @@ function stoneMedallionInput() {
   for (var i = 1; i <= 9; i++) {
 
     logic["dung" + i] = "unknown";
-    document.getElementById("dung" + i + "_icon").src = dungIconSources[i - 1];
-
-    if (i <= 3) { document.getElementById("dung" + i + "_icon").className = "stones"; }
-    if (i > 3) { document.getElementById("dung" + i + "_icon").className = "medallions"; }
+    if (!document.getElementById("markMedallions").value.includes("-")) document.getElementById("dung" + i + "_icon").src = dungIconSources[i - 1];
 
     if (str == "de") { logic["dung" + i] = "deku"; document.getElementById("text_dung" + i).innerHTML = "dek"; dekuPlacement = "dung" + i; }
     else if (str == "do") { logic["dung" + i] = "dodongos"; document.getElementById("text_dung" + i).innerHTML = "dod"; dodongosPlacement = "dung" + i; }
@@ -317,9 +314,6 @@ function stoneMedallionInput() {
     else if (str == "sh") { logic["dung" + i] = "shadow"; document.getElementById("text_dung" + i).innerHTML = "sha"; shadowPlacement = "dung" + i; }
     else if (str == "sp") { logic["dung" + i] = "spirit"; document.getElementById("text_dung" + i).innerHTML = "spi"; spiritPlacement = "dung" + i; }
     else if (str == "fr" || str == "kk") { logic["dung" + i] = "pocket"; document.getElementById("text_dung" + i).innerHTML = "pok"; pocketPlacement = "dung" + i; }
-    else {
-      document.getElementById("dung" + i + "_icon").className = "empty";
-    }
 
     if (i == 1) { str = document.getElementById("markStones").value.substring(2, 4); }
     else if (i == 2) { str = document.getElementById("markStones").value.substring(4, 6); }
@@ -344,8 +338,6 @@ function stoneMedallionInput() {
     else if (shadowPlacement == "unknown" && logic["dung" + i] == "unknown") { if (logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown" && logic.dung7 != "unknown" && logic.dung8 != "unknown" && logic.dung9 != "unknown") { logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i - 1]; } else if (logic.dung1 != "unknown" && logic.dung2 != "unknown" && logic.dung3 != "unknown" && logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown") { logic["dung" + i] = "shadow"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8]; } document.getElementById("text_dung" + i).innerHTML = "sha"; shadowPlacement = "dung" + i; }
     else if (spiritPlacement == "unknown" && logic["dung" + i] == "unknown") { if (logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown" && logic.dung7 != "unknown" && logic.dung8 != "unknown" && logic.dung9 != "unknown") { logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i - 1]; } else if (logic.dung1 != "unknown" && logic.dung2 != "unknown" && logic.dung3 != "unknown" && logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown") { logic["dung" + i] = "spirit"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8]; } document.getElementById("text_dung" + i).innerHTML = "spi"; spiritPlacement = "dung" + i; }
     else if (pocketPlacement == "unknown" && logic["dung" + i] == "unknown") { if (logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown" && logic.dung7 != "unknown" && logic.dung8 != "unknown" && logic.dung9 != "unknown") { logic["dung" + i] = "pocket"; document.getElementById("dung" + i + "_icon").src = dungIconSources[i - 1]; } else if (logic.dung1 != "unknown" && logic.dung2 != "unknown" && logic.dung3 != "unknown" && logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown") { logic["dung" + i] = "pocket"; document.getElementById("dung" + i + "_icon").src = dungIconSources[8]; } document.getElementById("text_dung" + i).innerHTML = "pok"; pocketPlacement = "dung" + i; }
-    if (i <= 3 && logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown" && logic.dung7 != "unknown" && logic.dung8 != "unknown" && logic.dung9 != "unknown") { document.getElementById("dung" + i + "_icon").className = "stones"; }
-    if (i > 3 && logic.dung1 != "unknown" && logic.dung2 != "unknown" && logic.dung3 != "unknown" && logic.dung4 != "unknown" && logic.dung5 != "unknown" && logic.dung6 != "unknown") { document.getElementById("dung" + i + "_icon").className = "medallions"; }
   }
 
   logic.emerald = logic.dung1;

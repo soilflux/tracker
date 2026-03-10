@@ -781,8 +781,6 @@ var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fa
 let songs = ["lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 
 for (var i = 3; i < Items2.length; i++) {
-  console.log(Items2[i])
-  console.log(itemToImageMap[Items2[i]])
   if (Items2[i] != "bombchus" && Items2[i] != "slingshot" && Items2[i] != "bomb_bag" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
     knownItems[Items2[i]] = false;
   } else {
