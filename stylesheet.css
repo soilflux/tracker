@@ -753,11 +753,7 @@ img[src="#"] {
   color: white;
 }
 
-.check_text {
-  font-size: 16px;
-}
-
-.logic_check_text {
+.logic-check-text {
   font-size: 14px;
   color: chartreuse;
   display: inline-block;
@@ -767,7 +763,18 @@ img[src="#"] {
   letter-spacing: -0.05em;
 }
 
-.known_check_text {
+.access-check-text {
+  font-size: 14px;
+  color: var(--access-font-color, chartreuse);
+  font-weight: normal;
+  display: inline-block;
+  opacity: var(--access-opacity, 1);
+  margin-top: 2.2px;
+  vertical-align: top;
+  letter-spacing: -0.05em;
+}
+
+.could-access-check-text {
   font-size: 14px;
   color: green;
   font-weight: normal;
@@ -778,9 +785,9 @@ img[src="#"] {
   letter-spacing: -0.05em;
 }
 
-.access_check_text {
+.peek-check-text {
   font-size: 14px;
-  color: yellow;
+  color: var(--peek-font-color, yellow);
   font-weight: normal;
   display: inline-block;
   opacity: 0.5;
@@ -789,13 +796,24 @@ img[src="#"] {
   letter-spacing: -0.05em;
 }
 
-.ool_check_text {
+.could-peek-check-text {
+  font-size: 14px;
+  color: yellow;
+  font-weight: normal;
+  display: inline-block;
+  opacity: 0.2;
+  margin-top: 2.2px;
+  vertical-align: top;
+  letter-spacing: -0.05em;
+}
+
+.ool-check-text {
   vertical-align: top;
   font-size: 14px;
   font-weight: normal;
-  color: white;
+  color: var(--ool-font-color, white);
   display: inline-block;
-  opacity: 0.5;
+  opacity: 0.075;
   margin-top: 2.2px;
   letter-spacing: -0.05em;
 }

@@ -1,14 +1,17 @@
 var isCheckHinted = {};
 var checkToItemMap = {};
-var player = {};
-var couldHave = {};
-var person = {};
+
+var logic = {};
 var checkLogic = {};
-var checkPeek = {};
+
+var player = {};
 var checkAccess = {};
+var checkPeek = {};
+
+var couldHave = {};
 var checkCouldAccess = {};
 var checkCouldPeek = {};
-var logic = {};
+
 var shopLogic = {};
 let Spawn = {};
 var itemToCheckMap = {};
@@ -23,7 +26,6 @@ var removeBKFlag = false;
 var timerMultiplier = 1;
 var nerfed = true;
 var toFocus = null;
-var inLogicColor = 'chartreuse'
 var simActive = false;
 var simOverride = false;
 var SpoilerJSON;
@@ -1570,7 +1572,7 @@ for (var i = 0; i < checks.length; i++) {
     var elem = document.createElement("br"); elem.dataset.dungeon = "well"; parent.appendChild(elem);
   }
   var elem = document.createElement("input"); elem.id = checks[i]; elem.className = "picture_input"; parent.appendChild(elem);
-  var elem = document.createElement("small"); elem.id = "text_" + checks[i]; elem.className = "check_text"; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
+  var elem = document.createElement("small"); elem.id = "text_" + checks[i]; elem.onmousedown = junk; elem.innerHTML = checkNames[i]; parent.appendChild(elem);
   var elem = document.createElement("br"); elem.id = "br_" + checks[i]; parent.appendChild(elem);
   if (checkToAreaMap[checks[i + 1]] != checkToAreaMap[checks[i]]) {
     var elem = document.createElement("br"); elem.className = "area_breaks"; parent.appendChild(elem);

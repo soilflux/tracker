@@ -269,6 +269,7 @@ function updateColorScheme() {
     document.querySelectorAll('.mark_spawn').forEach(e => { e.style.backgroundColor = '#404040'; e.style.color = 'white'; });
     document.querySelectorAll('.simLog').forEach(e => { e.style.backgroundColor = '#404040'; e.style.color = 'white'; });
     document.querySelectorAll('.ool_check_text').forEach(e => { e.style.color = 'black'; });
+    document.documentElement.style.setProperty('--ool-font-color', 'black');
   }
   else {
     document.getElementById('row').style.backgroundColor = '#181818';
@@ -281,5 +282,6 @@ function updateColorScheme() {
     document.querySelectorAll('.mark_spawn').forEach(e => { e.style.backgroundColor = '#121212'; e.style.color = 'white'; });
     document.querySelectorAll('.ool_check_text').forEach(e => { e.style.color = 'white'; });
     document.querySelectorAll('.simLog').forEach(e => { e.style.backgroundColor = '#121212'; e.style.color = 'white'; });
+    document.documentElement.style.setProperty('--ool-font-color', 'white');
   }
 }

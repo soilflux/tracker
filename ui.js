@@ -893,7 +893,7 @@ function refreshLinSo() {
         else if (linsoOrder[temp] == "egg2" && player.zeldas_letter) { document.getElementById("linso" + i + j).src = player.zeldas_letter_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg2" && player.chicken2) { document.getElementById("linso" + i + j).src = player.chicken2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else if (linsoOrder[temp] == "egg2" && player.egg2) { document.getElementById("linso" + i + j).src = player.egg2_img; document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
-       else if (player[linsoOrder[temp]] || (player[linsoOrder[temp] + 1])) { document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
+        else if (player[linsoOrder[temp]] || (player[linsoOrder[temp] + 1])) { document.getElementById("linso" + i + j).style.filter = "none"; document.getElementById("linso" + i + j).style.opacity = 1; }
         else { document.getElementById("linso" + i + j).style.filter = "grayscale(100%)"; document.getElementById("linso" + i + j).style.opacity = dimmed; }
         temp += 1;
       }
@@ -1191,6 +1191,17 @@ function updateRules() {
     player.shadow_boss_key = false;
   }
 
+  if (rules.highlightInLogicChecks == "on") {
+    document.documentElement.style.setProperty('--access-font-color', 'yellow');
+    document.documentElement.style.setProperty('--access-opacity', '0.5');
+    document.documentElement.style.setProperty('--peek-font-color', 'orange');
+  }
+  else {
+    document.documentElement.style.setProperty('--access-font-color', 'chartreuse');
+    document.documentElement.style.setProperty('--access-opacity', '1');
+    document.documentElement.style.setProperty('--peek-font-color', 'yellow');
+  }
+
   Object.keys(rulesConfig).forEach(key => {
     document.getElementById(key).value = rules[key];
   });
@@ -1337,32 +1348,41 @@ function updateLogicInfo() {
 
     if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") { if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") { colorChange = true; } else { colorChange = false; } } else { colorChange = false; }
     if (document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") { continue; }
-    document.getElementById(str).innerHTML = backUp[i];
+    document.getElementById(str).innerHTML = backUp[i];   
 
-    if (checkAccess[key] == true)
-      player.accessible += 1;
-    if (checkLogic[key] == true) {
-      if (nerfed && checkPeek[key] == true && !checkAccess[key] == true) {
-        document.getElementById(str).className = "access_check_text";
-        document.getElementById(str).style.opacity = .5;
-        document.getElementById(str).style.fontWeight = "normal";
-        document.getElementById(str).style.color = "yellow";
-      }
-      else if (checkPeek[key] == true) {
-        document.getElementById(str).className = "logic_check_text";
-        document.getElementById(str).style.opacity = 1;
-      }
-      else {
-        document.getElementById(str).className = "known_check_text";
-        document.getElementById(str).style.fontWeight = "normal";
-        document.getElementById(str).style.opacity = .5;
-      }
+    let className = "ool-check-text";
 
-      if (songChecks.includes(key) && checkToItemMap[key] != "unknown" && ManualOutOfLogicItems[checkToItemMap[key]]) {
-        document.getElementById(str).style.color = "#FFA500";
-      } else {
-        document.getElementById(str).style.color = inLogicColor;
-      }
+    if (checkLogic[key] && rules.highlightInLogicChecks === "on") {
+      className = "logic-check-text";
+    } else if (checkAccess[key]) {
+      className = "access-check-text";
+    } else if (checkCouldAccess[key]) {
+      className = "could-access-check-text";
+    } else if (checkPeek[key]) {
+      className = "peek-check-text";
+    } else if (checkCouldPeek[key]) {
+      className = "could-peek-check-text";
+    }
+
+    document.getElementById(str).className = className;
+
+    if (className === "ool-check-text" && rules.inaccessibleChecks === "hide") {
+      const ids = [str, key, str2];
+      const isDynamic = rules.listSorting === "dynamic";
+
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (isDynamic) {
+          el.style.display = "none";
+        } else {
+          el.style.visibility = "hidden";
+        }
+      });
+    }
+
+    if (className === "access-check-text") player.accessible += 1;
+
+    if (className === "logic-check-text") {
       if (document.getElementById(key).style.display != "none" && document.getElementById(key).style.visibility != "hidden") {
         player.logically_accessible += 1;
         if (key == "deku_queen_gohma" && player.deku_checks_remaining == 0) { player.logically_accessible -= 1; }
@@ -1378,108 +1398,8 @@ function updateLogicInfo() {
         if (checkToAreaMap[key] == "Well") { player.well_logically_accessible += 1; }
       }
     }
-    else if (checkPeek[key] == true) {
-      if (!nerfed) {
-        document.getElementById(str).className = "access_check_text";
-        document.getElementById(str).style.opacity = .5;
-        document.getElementById(str).style.fontWeight = "normal";
-        document.getElementById(str).style.color = "yellow";
-      }
-      else {
-        if (checkPeek[key] == true && !checkCouldAccess[key] == true) {
-          if (rules.highlightInLogicChecks == "on") {
-            document.getElementById(str).className = "access_check_text";
-            document.getElementById(str).style.opacity = .7;
-            document.getElementById(str).style.fontWeight = "normal";
-            document.getElementById(str).style.color = "#FFA500";
-          }
-          else {
-            document.getElementById(str).className = "access_check_text";
-            document.getElementById(str).style.opacity = .7;
-            document.getElementById(str).style.fontWeight = "normal";
-            document.getElementById(str).style.color = "yellow";
-          }
 
-        }
-        else {
-          if (rules.highlightInLogicChecks == "on") {
-            document.getElementById(str).className = "access_check_text";
-            document.getElementById(str).style.opacity = .7;
-            document.getElementById(str).style.fontWeight = "normal";
-            document.getElementById(str).style.color = "yellow";
-          }
-          else {
-            document.getElementById(str).className = "logic_check_text";
-            document.getElementById(str).style.opacity = 1;
-            document.getElementById(str).style.color = "chartreuse";
-          }
-
-          if (songChecks.includes(key) && checkToItemMap[key] != "unknown" && ManualOutOfLogicItems[checkToItemMap[key]]) {
-            document.getElementById(str).style.color = "#FFA500";
-          }
-          else if (rules.highlightInLogicChecks == "on") {
-            document.getElementById(str).style.color = "yellow";
-          }
-          else {
-            document.getElementById(str).style.color = inLogicColor;
-          }
-        }
-      }
-    }
-    else if (checkCouldAccess[key] == true || checkCouldPeek[key] == true) {
-      if (!nerfed) {
-        document.getElementById(str).className = "access_check_text";
-        document.getElementById(str).style.opacity = .2;
-        document.getElementById(str).style.fontWeight = "normal";
-        document.getElementById(str).style.color = "yellow";
-      }
-      else {
-        if (!checkCouldAccess[key] == true && checkCouldPeek[key] == true) {
-          document.getElementById(str).className = "access_check_text";
-          document.getElementById(str).style.opacity = .2;
-          document.getElementById(str).style.fontWeight = "normal";
-          document.getElementById(str).style.color = "yellow";
-        }
-        else {
-          document.getElementById(str).className = "access_check_text";
-          document.getElementById(str).style.fontWeight = "normal";
-          document.getElementById(str).style.opacity = .2;
-
-          if (songChecks.includes(key) && checkToItemMap[key] != "unknown" && ManualOutOfLogicItems[checkToItemMap[key]]) {
-            document.getElementById(str).style.color = "#FFA500";
-          }
-          else {
-            document.getElementById(str).style.color = "yellow";
-          }
-        }
-      }
-    }
-    else {
-      if (rules.inaccessibleChecks == "hide") {
-        if (rules.listSorting == "dynamic") {
-          document.getElementById(str).style.display = "none";
-          document.getElementById(key).style.display = "none";
-          document.getElementById(str2).style.display = "none";
-        }
-        else {
-          document.getElementById(str).style.visibility = "hidden";
-          document.getElementById(key).style.visibility = "hidden";
-          document.getElementById(str2).style.visibility = "hidden";
-        }
-      }
-      document.getElementById(str).className = "ool_check_text";
-      document.getElementById(str).style.opacity = .075;
-      document.getElementById(key).style.opacity = .075;
-      document.getElementById(str).style.fontWeight = "normal";
-      if (rules.colorScheme == "dark") {
-        document.getElementById(str).style.color = "white";
-      }
-      else {
-        document.getElementById(str).style.color = "black";
-      }
-    }
     if (colorChange) { document.getElementById(str).style.color = "magenta"; document.getElementById(str).style.opacity = "1"; }
-
   }
 
   if (rules.preset == "aminalFunhouse") {
