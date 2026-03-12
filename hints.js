@@ -153,11 +153,11 @@ function wothAndBarrenProcessing() {
       document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML = "";
       for (var k = 0; k < Items.length; k++) {
         if (Items[k] == "light_arrows" && rules.preset != "S8" && rules.preset != "s9") { continue; }
-        if (Items[k] == "farores_wind" && rules.preset != "s9") { continue; }
+        if (Items[k] == "farores" && rules.preset != "s9") { continue; }
         if (Items[k] == "serenade" && rules.preset != "s9") { continue; }
         if (Items[k] == "prelude" && rules.preset != "s9") { continue; }
         if (Items[k] == "lullaby" && rules.preset != "s9") { continue; }
-        if (Items[k].startsWith("bombchus") && rules.chusInLogic == "off") { continue; }
+        if (Items[k].startsWith("chus") && rules.chusInLogic == "off") { continue; }
         if (Items[k] == checkToItemMap["lullabyCheck"]) { continue; }
         if (itemToCheckMap[Items[k]] != null && (isCheckHinted[itemToCheckMap[Items[k]]] == false || typeof isCheckHinted[itemToCheckMap[Items[k]]] == "undefined") && !alwaysHints.includes(itemToCheckMap[Items[k]])) {
           if (checkToAreaMap[itemToCheckMap[Items[k]]] == AreaNames[i]) {
@@ -302,20 +302,32 @@ function wothAndBarrenProcessing() {
   }
 }
 
+
+const skippedItems = {};
+
 function wothDisplay() {
-  [1, 2, 3, 4, 5 , 6].forEach(id => {
+  [1, 2, 3, 4, 5, 6].forEach(id => {
     const areaKey = hintCodeToAreaMap[document.getElementById(`woth_input${id}`)?.value];
     const pathKey = hintCodeToAreaMap[document.getElementById(`path_boss${id}`)?.value];
-    const items = areaToItemsMap[areaKey] ?? [];
+    
+    const allItems = areaToItemsMap[areaKey] ?? [];
+    const visibleItems = allItems.filter(item => !skippedItems[`${areaKey}-${item}`]);
+
     const areaFile = areaToImageMap[areaKey];
     const pathFile = areaToImageMap[pathKey];
 
     [1, 2, 3].forEach((itemNum, index) => {
       const img = document.getElementById(`woth${id}Item${itemNum}`);
-      const itemName = items[index];
-      
-      img.style.visibility = itemName ? "visible" : "hidden";
-      img.src = itemName ? itemToImageMap[itemName] : "";
+      const itemName = visibleItems[index];
+
+      if (itemName) {
+        img.src = itemToImageMap[itemName];
+        img.style.visibility = "visible";
+        img.oncontextmenu = () => toggleItemSkipped(areaKey, itemName);
+      } else {
+        img.style.visibility = "hidden";
+        img.oncontextmenu = null;
+      }
     });
 
     const areaImg = document.getElementById(`woth${id}Image`);
@@ -326,6 +338,14 @@ function wothDisplay() {
     if (pathFile) pathImg.src = pathFile;
   });
 }
+
+function toggleItemSkipped(areaKey, itemName) {
+  const skipKey = `${areaKey}-${itemName}`;
+  skippedItems[skipKey] = !skippedItems[skipKey];
+
+  wothDisplay();
+}
+
 
 function alternateHintInput() {
 

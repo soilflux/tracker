@@ -51,9 +51,9 @@ function processInputs() {
     }
 
     // if it is a duplicate item and all copies are already known, don't allow the input
-    if (item == "bomb_bag" && knownItems["bomb_bag3"]) continue;
+    if (item == "bombs" && knownItems["bombs3"]) continue;
     if (item == "bow" && knownItems["bow3"]) continue;
-    if (item == "slingshot" && knownItems["slingshot3"]) continue;
+    if (item == "sling" && knownItems["sling3"]) continue;
     if (item == "strength" && knownItems["strength3"]) continue;
     if (item == "bottle" && knownItems["bottle4"]) continue;
     if (item == "hookshot" && knownItems["hookshot2"]) continue;
@@ -822,9 +822,9 @@ function itemHighlights() {
 }
 
 function dungeonHighlights() {
-  if (player.forest) { document.getElementById("dung4_icon").style.opacity = 1; document.getElementById("text_dung4").style.opacity = dimmed; } else { document.getElementById("dung4_icon").style.opacity = dimmed; document.getElementById("text_dung4").style.opacity = 1; }
-  if (player.fire) { document.getElementById("dung5_icon").style.opacity = 1; document.getElementById("text_dung5").style.opacity = dimmed; } else { document.getElementById("dung5_icon").style.opacity = dimmed; document.getElementById("text_dung5").style.opacity = 1; }
-  if (player.water) { document.getElementById("dung6_icon").style.opacity = 1; document.getElementById("text_dung6").style.opacity = dimmed; } else { document.getElementById("dung6_icon").style.opacity = dimmed; document.getElementById("text_dung6").style.opacity = 1; }
+  if (player.forestMedallion) { document.getElementById("dung4_icon").style.opacity = 1; document.getElementById("text_dung4").style.opacity = dimmed; } else { document.getElementById("dung4_icon").style.opacity = dimmed; document.getElementById("text_dung4").style.opacity = 1; }
+  if (player.fireMedallion) { document.getElementById("dung5_icon").style.opacity = 1; document.getElementById("text_dung5").style.opacity = dimmed; } else { document.getElementById("dung5_icon").style.opacity = dimmed; document.getElementById("text_dung5").style.opacity = 1; }
+  if (player.waterMedallion) { document.getElementById("dung6_icon").style.opacity = 1; document.getElementById("text_dung6").style.opacity = dimmed; } else { document.getElementById("dung6_icon").style.opacity = dimmed; document.getElementById("text_dung6").style.opacity = 1; }
   if (player.gen1) { document.getElementById("dung7_icon").style.opacity = 1; document.getElementById("text_dung7").style.opacity = dimmed; } else { document.getElementById("dung7_icon").style.opacity = dimmed; document.getElementById("text_dung7").style.opacity = 1; }
   if (player.gen2) { document.getElementById("dung8_icon").style.opacity = 1; document.getElementById("text_dung8").style.opacity = dimmed; } else { document.getElementById("dung8_icon").style.opacity = dimmed; document.getElementById("text_dung8").style.opacity = 1; }
   if (player.gen3) { document.getElementById("dung9_icon").style.opacity = 1; document.getElementById("text_dung9").style.opacity = dimmed; } else { document.getElementById("dung9_icon").style.opacity = dimmed; document.getElementById("text_dung9").style.opacity = 1; }
@@ -974,7 +974,7 @@ function updateRules() {
     document.getElementById("barren_input4").style.display = "inline-block";
     document.getElementById("barren_input5").style.display = "none";
     alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull", "theater_truth"];
-    player.farores_wind = true;
+    player.farores = true;
   }
   else if (rules.preset == "leagueS9") {
     rules.kzSkip = "allowed";
@@ -1008,8 +1008,8 @@ function updateRules() {
     document.getElementById("barren_input4").style.display = "none";
     document.getElementById("barren_input5").style.display = "none";
     alwaysHints = ["tokens_30", "tokens_40", "tokens_50", "timeCheck", "nocturneCheck", "trade_quest", "frogs_2", "theater_skull", "scrub_crater_child"];
-    player.farores_wind = true;
-    knownItems.farores_wind = true;
+    player.farores = true;
+    knownItems.farores = true;
     player.lens = true;
     knownItems.lens = true;
     player.light_arrows = true;
@@ -1049,8 +1049,8 @@ function updateRules() {
     document.getElementById("markAdultLocation").value = "tot";
     alwaysHints = ["tokens_20", "tokens_30", "tokens_40", "tokens_50", "nocturneCheck", "frogs_2", "theater_skull"];
     player.prelude = true;
-    player.farores_wind = true;
-    knownItems.farores_wind = true;
+    player.farores = true;
+    knownItems.farores = true;
     player.lens = true;
     knownItems.lens = true;
   }
@@ -1565,8 +1565,8 @@ function updateProbabilities() {
   if (searchItems.includes("Hammer") && !knownItems.hammer) { majorLeft += 1; document.getElementById("searchingFor_hammer").style.display = "inline-block"; goMode = false; }
   else if (searchItems.includes("Hammer")) { document.getElementById("searchingFor_hammer").style.display = "none"; }
 
-  if (searchItems.includes("Mirror") && !knownItems.mirror_shield) { majorLeft += 1; document.getElementById("searchingFor_mirror_shield").style.display = "inline-block"; goMode = false; }
-  else if (searchItems.includes("Mirror")) { document.getElementById("searchingFor_mirror_shield").style.display = "none"; }
+  if (searchItems.includes("Mirror") && !knownItems.mirror) { majorLeft += 1; document.getElementById("searchingFor_mirror").style.display = "inline-block"; goMode = false; }
+  else if (searchItems.includes("Mirror")) { document.getElementById("searchingFor_mirror").style.display = "none"; }
 
   if (searchItems.includes("Strength") && !knownItems.strength3) {
     document.getElementById("searchingFor_strength1").style.display = "inline-block"; goMode = false;
@@ -1605,23 +1605,23 @@ function updateProbabilities() {
   }
   else { document.getElementById("searchingFor_hookshot1").style.display = "none"; }
 
-  if (searchItems.includes("Bomb Bag") && !player.bomb_bag) {
-    document.getElementById("searchingFor_bomb_bag1").style.display = "inline-block"; goMode = false;
-    if (!knownItems.bomb_bag1) { majorLeft += 1; }
-    if (!knownItems.bomb_bag2) { majorLeft += 1; }
-    if (!knownItems.bomb_bag3) { majorLeft += 1; }
+  if (searchItems.includes("Bomb Bag") && !player.bombs) {
+    document.getElementById("searchingFor_bombs1").style.display = "inline-block"; goMode = false;
+    if (!knownItems.bombs1) { majorLeft += 1; }
+    if (!knownItems.bombs2) { majorLeft += 1; }
+    if (!knownItems.bombs3) { majorLeft += 1; }
   }
-  else { document.getElementById("searchingFor_bomb_bag1").style.display = "none"; }
+  else { document.getElementById("searchingFor_bombs1").style.display = "none"; }
 
   if (searchItems.includes("Slingshot")) {
-    if (player.slingshot) { document.getElementById("searchingFor_slingshot1").style.display = "none"; }
-    if (!knownItems.slingshot1) { majorLeft += 1; }
-    if (!knownItems.slingshot2) { majorLeft += 1; }
-    if (!knownItems.slingshot3) { majorLeft += 1; } else { document.getElementById("searchingFor_slingshot1").style.display = "none"; }
+    if (player.sling) { document.getElementById("searchingFor_slingshot1").style.display = "none"; }
+    if (!knownItems.sling1) { majorLeft += 1; }
+    if (!knownItems.sling2) { majorLeft += 1; }
+    if (!knownItems.sling3) { majorLeft += 1; } else { document.getElementById("searchingFor_slingshot1").style.display = "none"; }
   }
 
-  if (searchItems.includes("Din's Fire") && !knownItems.dins_fire) { majorLeft += 1; document.getElementById("searchingFor_dins_fire").style.display = "inline-block"; goMode = false; }
-  else if (searchItems.includes("Din's Fire")) { document.getElementById("searchingFor_dins_fire").style.display = "none"; }
+  if (searchItems.includes("Din's Fire") && !knownItems.dins) { majorLeft += 1; document.getElementById("searchingFor_dins").style.display = "inline-block"; goMode = false; }
+  else if (searchItems.includes("Din's Fire")) { document.getElementById("searchingFor_dins").style.display = "none"; }
 
   if (searchItems.includes("Hover Boots") && !knownItems.hovers) { majorLeft += 1; document.getElementById("searchingFor_hovers").style.display = "inline-block"; goMode = false; }
   else if (searchItems.includes("Hover Boots")) { document.getElementById("searchingFor_hovers").style.display = "none"; }

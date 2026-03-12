@@ -145,11 +145,11 @@ if (rules.preset == "sgl2025")
 
 var hintStones = ["Crater: Hint", "Crater: Gr. Hint", "Trail: Gr. Hint", "Trail: Bigo Hint", "Colossus: Hint", "Dodongos: Hint", "Field: Open Gr. Hint", "Field: Remote Gr. Hint", "Field: Destiny Hint", "Valley: Hint", "Hylia: After Valley Hint", "Hylia: Back Right Hint", "Hylia: Back Left Hint", "Hyrule Castle: First Hint", "Hyrule Castle: Second Hint", "Temple of Time: First Hint", "Temple of Time: Second Hint", "Temple of Time: Third Hint", "Temple of Time: Fourth Hint", "Kakariko: Gr. Hint", "Kokiri: Left Deku Hint", "Kokiri: Right Deku Hint", "Kokiri: Gr. Hint", "Kokiri: LW Hint", "Lost Woods: Br. Hint", "Lost Woods: Gr. Hint", "SFM: Sarias Hint", "SFM: Maze 1 Hint", "SFM: Maze 2 Hint", "River: Gr. Hint", "River: Plateau Hint", "River: By ZD Hint", "Domain: Hint", "Fountain: Jabu Hint", "Fountain: By Fairy Hint", "Goron City: Maze Hint", "Goron City: Medigoron Hint", "Graveyard: Hint", "Hyrule Castle: Storms Hint", "Field: Hammer Hint"];
 
-var checkSummary = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "irons", "kokiri_sword", "hovers", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
+var checkSummary = ["farores", "sling1", "sling2", "sling3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bombs1", "bombs2", "bombs3", "chus1", "chus2", "chus3", "chus4", "chus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror", "magic1", "magic2", "irons", "kokiri_sword", "hovers", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins", "fire_arrows", "lens", "trade", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
 var checkSummaryText = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror Shield", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Dins Fire", "Fire Arrows", "Lens", "Letter", "Trade", "Light Arrows", "Ice Arrows", "BGS", "Nayru's", "Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack"];
 var textSongChecks = ["text_lullabyCheck", "text_eponasCheck", "text_sariasCheck", "text_sunsCheck", "text_timeCheck", "text_stormsCheck", "text_minuetCheck", "text_boleroCheck", "text_serenadeCheck", "text_requiemCheck", "text_nocturneCheck", "text_preludeCheck"];
 var songChecks = ["lullabyCheck", "eponasCheck", "sariasCheck", "sunsCheck", "timeCheck", "stormsCheck", "minuetCheck", "boleroCheck", "serenadeCheck", "requiemCheck", "nocturneCheck", "preludeCheck"];
-var Items = ["farores_wind", "slingshot1", "slingshot2", "slingshot3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bomb_bag1", "bomb_bag2", "bomb_bag3", "bombchus1", "bombchus2", "bombchus3", "bombchus4", "bombchus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror_shield", "magic1", "magic2", "irons", "kokiri_sword", "hovers", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins_fire", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
+var Items = ["farores", "sling1", "sling2", "sling3", "boomerang", "scale1", "scale2", "rutos_letter", "bottle1", "bottle2", "bottle3", "bottle4", "bombs1", "bombs2", "bombs3", "chus1", "chus2", "chus3", "chus4", "chus5", "hammer", "bow1", "bow2", "bow3", "hookshot1", "hookshot2", "strength1", "strength2", "strength3", "mirror", "magic1", "magic2", "irons", "kokiri_sword", "hovers", "wallet1", "wallet2", "wallet3", "goron_tunic", "zora_tunic", "dins", "fire_arrows", "lens", "prescription", "claim_check", "light_arrows", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "suns", "sarias", "storms", "minuet", "bolero", "requiem", "nocturne", "time", "prelude", "serenade"];
 var ItemNames = ["Farores", "Slingshot", "Slingshot", "Slingshot", "Boomerang", "Scale", "Scale", "Letter", "Bottle", "Bottle", "Bottle", "Bottle", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Bombchus", "Hammer", "Bow", "Bow", "Bow", "Hookshot", "Hookshot", "Strength", "Strength", "Strength", "Mirror", "Magic", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Wallet", "Wallet", "Wallet", "Goron Tunic", "Zora Tunic", "Din's Fire", "Fire Arrows", "Lens", "Prescription", "Claim Check", "Light Arrows", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Eponas", "Suns", "Sarias", "Storms", "Minuet", "Bolero", "Requiem", "Nocturne", "Time", "Prelude", "Serenade"];
 
 //take advantage of a small pool to shorten the inputs
@@ -657,14 +657,14 @@ const inputToItemMap = {
   "x": "junk",
   "a": "small_key",
   "q": "boss_key",
-  "bom": "bomb_bag",
-  "ch": "bombchus",
+  "bom": "bombs",
+  "ch": "chus",
   "ra": "boomerang", "boo": "boomerang",
   "bot": "bottle",
   "bi": "big_poe",
   "bow": "bow",
-  "di": "dins_fire",
-  "fa": "farores_wind",
+  "di": "dins",
+  "fa": "farores",
   "fi": "fire_arrows",
   "go": "goron_tunic",
   "ha": "hammer",
@@ -676,9 +676,9 @@ const inputToItemMap = {
   "ru": "rutos_letter",
   "li": "light_arrows",
   "ma": "magic",
-  "mir": "mirror_shield",
+  "mir": "mirror",
   "sca": "scale", "vv": "scale",
-  "sl": "slingshot",
+  "sl": "sling",
   "ss": "strength",
   "pp": "prescription", "scr": "prescription",
   "cl": "claim_check",
@@ -720,13 +720,13 @@ const itemToNameMap = {
   "junk": "Junk",
   "small_key": "Small Key",
   "boss_key": "Boss Key",
-  "bomb_bag": "Bomb Bag",
-  "bombchus": "Bombchus",
+  "bombs": "Bomb Bag",
+  "chus": "Bombchus",
   "boomerang": "Boomerang",
   "bottle": "Bottle",
   "bow": "Bow",
-  "dins_fire": "Din's Fire",
-  "farores_wind": "Farores",
+  "dins": "Din's Fire",
+  "farores": "Farores",
   "fire_arrows": "Fire Arrows",
   "goron_tunic": "Goron Tunic",
   "hammer": "Hammer",
@@ -738,9 +738,9 @@ const itemToNameMap = {
   "rutos_letter": "Ruto's Letter",
   "light_arrows": "Light Arrows",
   "magic": "Magic",
-  "mirror_shield": "Mirror Shield",
+  "mirror": "Mirror Shield",
   "scale": "Scale",
-  "slingshot": "Slingshot",
+  "sling": "Slingshot",
   "strength": "Strength",
   "prescription": "Prescription",
   "claim_check": "Claim Check",
@@ -774,16 +774,16 @@ const itemToNameMap = {
   "prelude": "Prelude"
 };
 
-var Items2 = ["junk", "small_key", "boss_key", "bomb_bag", "bombchus", "boomerang", "bottle", "bottle", "bow", "dins_fire", "farores_wind", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hovers", "irons", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror_shield", "scale", "slingshot", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
+var Items2 = ["junk", "small_key", "boss_key", "bombs", "chus", "boomerang", "bottle", "bottle", "bow", "dins", "farores", "fire_arrows", "goron_tunic", "hammer", "hookshot", "hovers", "irons", "kokiri_sword", "lens", "rutos_letter", "light_arrows", "magic", "mirror", "scale", "sling", "strength", "prescription", "claim_check", "wallet", "zora_tunic", "ice_arrows", "biggoron_sword", "nayrus_love", "stone_of_agony", "forest_key_ring", "fire_key_ring", "water_key_ring", "spirit_key_ring", "shadow_key_ring", "well_key_ring", "gtg_key_ring", "ganons_key_ring", "gerudo_card", "magic_bean_pack", "lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 var ItemNames2 = ["Junk", "Small Key", "Boss Key", "Bomb Bag", "Bombchus", "Boomerang", "Bottle", "Big Poe", "Bow", "Din's Fire", "Farores", "Fire Arrows", "Goron Tunic", "Hammer", "Hookshot", "Hover Boots", "Iron Boots", "Kokiri Sword", "Lens", "Ruto's Letter", "Light Arrows", "Magic", "Mirror Shield", "Scale", "Slingshot", "Strength", "Prescription", "Claim Check", "Wallet", "Zora Tunic", "Ice Arrows", "BGS", "Nayrus Love", "Stone of Agony", "Forest Key Ring", "Fire Key Ring", "Water Key Ring", "Spirit Key Ring", "Shadow Key Ring", "Well Key Ring", "GTG Key Ring", "Ganons Key Ring", "Gerudo Card", "Magic Bean Pack", "Lullaby", "Epona's", "Saria's", "Time", "Sun's", "Storms", "Minuet", "Bolero", "Serenade", "Requiem", "Nocturne", "Prelude"];
 var pathInputs = ["x", "de", "do", "ja", "fo", "fi", "wa", "sh", "sp", "to", "ti", "he", "ev", "li", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var DuplicateItems = ["slingshot", "scale", "bottle", "bomb_bag", "bow", "hookshot", "strength", "magic", "wallet", "bombchus"];
+var DuplicateItems = ["sling", "scale", "bottle", "bombs", "bow", "hookshot", "strength", "magic", "wallet", "chus"];
 var spawnInputs = ["dmcl", "dmcf", "dmcu", "dmtf", "dmtfool", "gf", "waste", "col", "zd", "zr", "zf", "zff", "zffool", "hf", "sfm", "noct", "fish", "ogc", "ogcool", "gcshop", "zdshop", "kakr"];
 var spawnNames = ["DMC by Goron City", "DMC fountain", "DMC by trail", "trail fairy", "trail fairy(ool)", "fortress", "waste", "colossus", "domain", "river", "fountain", "fountain fairy", "fountain fairy(ool)", "dins fairy", "sfm", "nocturne", "fishing", "ogc fairy", "ogc fairy(ool)", "goron shop", "domain shop", "kak rooftop"];
 let songs = ["lullaby", "eponas", "sarias", "time", "suns", "storms", "minuet", "bolero", "serenade", "requiem", "nocturne", "prelude"];
 
 for (var i = 3; i < Items2.length; i++) {
-  if (Items2[i] != "bombchus" && Items2[i] != "slingshot" && Items2[i] != "bomb_bag" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
+  if (Items2[i] != "chus" && Items2[i] != "sling" && Items2[i] != "bombs" && Items2[i] != "bow" && Items2[i] != "hookshot" && Items2[i] != "wallet" && Items2[i] != "strength" && Items2[i] != "bottle" && Items2[i] != "scale" && Items2[i] != "magic") {
     knownItems[Items2[i]] = false;
   } else {
     knownItems[Items2[i]] = true;
@@ -854,7 +854,7 @@ var adult = [
   "glacier_hp", "bottom_of_fountain",
   "gs_ice_spinning_scythe", "ice_map", "gs_ice_hp_room", "ice_hp", "ice_compass", "gs_ice_block_room", "ice_irons",
   "goron_link",
-  "gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "dodongos_map", "dodongos_compass", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
+  "gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "dodongos_map", "dodongos_compass", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bombs", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
   "trail_fairy",
   "crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "crater_grotto", "h_crater_grotto", "h_crater_wall",
   "anju", "archery_game",
@@ -958,7 +958,7 @@ var checkToAreaMap = {
   // Goron City
   "shop_goron_TL": "Goron City", "shop_goron_TR": "Goron City", "shop_goron_BR": "Goron City", "shop_goron_BL": "Goron City", "rolling_goron": "Goron City", "goron_dance": "Goron City", "goron_pot": "Goron City", "goron_maze_1": "Goron City", "goron_maze_2": "Goron City", "gs_goron_maze": "Goron City", "goron_maze_3": "Goron City", "gs_goron_center": "Goron City", "goron_link": "Goron City", "scrub_goron_1": "Goron City", "scrub_goron_2": "Goron City", "scrub_goron_3": "Goron City", "goron_medigoron": "Goron City", "h_goron_maze": "Goron City", "h_medigoron": "Goron City",
   // Dodongo's Cavern
-  "gs_dodongos_east_side": "Dodongos", "gs_dodongos_scarecrow": "Dodongos", "scrub_dodongos_1": "Dodongos", "scrub_dodongos_2": "Dodongos", "dodongos_map": "Dodongos", "dodongos_compass": "Dodongos", "gs_dodongos_above_stairs": "Dodongos", "gs_dodongos_stair_vines": "Dodongos", "dodongos_bomb_flower_platform": "Dodongos", "scrub_dodongos_3": "Dodongos", "scrub_dodongos_4": "Dodongos", "dodongos_bomb_bag": "Dodongos", "dodongos_end_of_bridge": "Dodongos", "gs_dodongos_before_king": "Dodongos", "dodongos_above_king": "Dodongos", "dodongos_king_dodongo": "Dodongos", "h_dodongos": "Dodongos",
+  "gs_dodongos_east_side": "Dodongos", "gs_dodongos_scarecrow": "Dodongos", "scrub_dodongos_1": "Dodongos", "scrub_dodongos_2": "Dodongos", "dodongos_map": "Dodongos", "dodongos_compass": "Dodongos", "gs_dodongos_above_stairs": "Dodongos", "gs_dodongos_stair_vines": "Dodongos", "dodongos_bomb_flower_platform": "Dodongos", "scrub_dodongos_3": "Dodongos", "scrub_dodongos_4": "Dodongos", "dodongos_bombs": "Dodongos", "dodongos_end_of_bridge": "Dodongos", "gs_dodongos_before_king": "Dodongos", "dodongos_above_king": "Dodongos", "dodongos_king_dodongo": "Dodongos", "h_dodongos": "Dodongos",
   // Death Mountain Trail
   "trail_top": "Trail", "gs_trail_bombable_wall": "Trail", "trail_bombable": "Trail", "trail_storms": "Trail", "trail_fairy": "Trail", "trade_quest": "Trail", "gs_trail_hail_path": "Trail", "gs_trail_above_dodongos": "Trail", "gs_trail_soil": "Trail", "cow_trail": "Trail", "h_trail_storms": "Trail", "h_trail_storms": "Trail", "h_biggoron": "Trail",
   // Death Mountain Crater
@@ -1025,7 +1025,7 @@ var checks = [
   "lost_woods_fairy_ocarina", "target", "ocarina_game", "lw_generic", "scrub_lw_1", "scrub_lw_2", "gs_lost_woods_bean_2", "lost_woods_scrub_grotto", "scrub_lw_3", "gs_lost_woods_bean_1", "skull_kid", "bridge_scrub", "gs_lost_woods_above_stage", "theater_skull", "theater_truth", "h_lw_bridge", "h_lw_generic",
   "wolfos_grotto", "sariasCheck", "minuetCheck", "gs_sacred_forest", "scrub_sfm_1", "scrub_sfm_2", "h_saria", "h_sfm_1", "h_sfm_2",
   "shop_goron_TL", "shop_goron_TR", "shop_goron_BR", "shop_goron_BL", "rolling_goron", "goron_dance", "goron_pot", "goron_maze_1", "goron_maze_2", "gs_goron_maze", "goron_maze_3", "gs_goron_center", "goron_link", "scrub_goron_1", "scrub_goron_2", "scrub_goron_3", "goron_medigoron", "h_goron_maze", "h_medigoron",
-  "gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "dodongos_map", "dodongos_compass", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bomb_bag", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
+  "gs_dodongos_east_side", "gs_dodongos_scarecrow", "scrub_dodongos_1", "scrub_dodongos_2", "dodongos_map", "dodongos_compass", "gs_dodongos_above_stairs", "gs_dodongos_stair_vines", "dodongos_bomb_flower_platform", "scrub_dodongos_3", "scrub_dodongos_4", "dodongos_bombs", "dodongos_end_of_bridge", "gs_dodongos_before_king", "dodongos_above_king", "dodongos_king_dodongo", "h_dodongos",
   "trail_top", "gs_trail_bombable_wall", "trail_bombable", "trail_storms", "trail_fairy", "trade_quest", "gs_trail_hail_path", "gs_trail_above_dodongos", "gs_trail_soil", "cow_trail", "h_trail_storms", "h_biggoron",
   "crater_bean", "scrub_crater_1", "scrub_crater_2", "scrub_crater_3", "crater_hammer_fairy", "crater_nook_hp", "boleroCheck", "crater_grotto", "gs_crater_soil", "gs_crater_crate", "scrub_crater_child", "h_crater_grotto", "h_crater_wall",
   "tokens_10", "tokens_20", "tokens_30", "tokens_40", "tokens_50", "shop_kakariko_bazaar_TL", "shop_kakariko_bazaar_TR", "shop_kakariko_bazaar_BR", "shop_kakariko_bazaar_BL", "shop_kakariko_potion_TL", "shop_kakariko_potion_TR", "shop_kakariko_potion_BR", "shop_kakariko_potion_BL", "man_on_roof", "kakariko_grotto", "kakariko_hag", "windmill", "stormsCheck", "anju", "kakariko_cow_house", "archery_game", "redead_grotto", "anjus_chickens", "gs_kakariko_tree", "gs_kakariko_guard_house", "gs_kakariko_tower", "gs_kakariko_construction", "gs_kakariko_skulltula_house", "gs_kakariko_impas", "cow_kakariko", "h_kakariko_grotto", "nocturneCheck",
@@ -1600,7 +1600,7 @@ updateColorScheme();
 updateTheme();
 wothSizeToggle();
 
-var linsoOrder = ["stick", "nut", "bomb_bag", "bow", "fire_arrows", "dins_fire", "slingshot", "ocarina", "bombchus", "hookshot", "ice_arrows", "farores_wind", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror_shield", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "irons", "hovers", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
+var linsoOrder = ["stick", "nut", "bombs", "bow", "fire_arrows", "dins", "sling", "ocarina", "chus", "hookshot", "ice_arrows", "farores", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "irons", "hovers", "emerald", "ruby", "sapphire", "forest", "fire", "water", "gen1", "gen2", "gen3"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];
 
 var linsoOrderIncrement = 0;
@@ -1796,7 +1796,7 @@ var LocationToSpoilerName = {
   "dodongos_map": "Dodongos Cavern Map Chest",
   "dodongos_compass": "Dodongos Cavern Compass Chest",
   "dodongos_bomb_flower_platform": "Dodongos Cavern Bomb Flower Platform Chest",
-  "dodongos_bomb_bag": "Dodongos Cavern Bomb Bag Chest",
+  "dodongos_bombs": "Dodongos Cavern Bomb Bag Chest",
   "dodongos_end_of_bridge": "Dodongos Cavern End of Bridge Chest",
   "dodongos_above_king": "Dodongos Cavern Boss Room Chest",
   "dodongos_king_dodongo": "Dodongos Cavern King Dodongo Heart",
@@ -2095,7 +2095,7 @@ var SpoilerLocationToLocationName = {
   "Dodongos Cavern Map Chest": "dodongos_map",
   "Dodongos Cavern Compass Chest": "dodongos_compass",
   "Dodongos Cavern Bomb Flower Platform Chest": "dodongos_bomb_flower_platform",
-  "Dodongos Cavern Bomb Bag Chest": "dodongos_bomb_bag",
+  "Dodongos Cavern Bomb Bag Chest": "dodongos_bombs",
   "Dodongos Cavern End of Bridge Chest": "dodongos_end_of_bridge",
   "Dodongos Cavern Boss Room Chest": "dodongos_above_king",
   "Dodongos Cavern King Dodongo Heart": "dodongos_king_dodongo",
@@ -2331,7 +2331,7 @@ var SpoilerLocationToLocationName = {
 };
 
 const SpoilerItemToInput = {
-  "Bomb Bag": itemToInputMap["bomb_bag"],
+  "Bomb Bag": itemToInputMap["bombs"],
   "Boomerang": itemToInputMap["boomerang"],
   "Bottle": itemToInputMap["bottle"],
   "Bottle with Red Potion": itemToInputMap["bottle"],
@@ -2345,8 +2345,8 @@ const SpoilerItemToInput = {
   "Bottle with Blue Fire": itemToInputMap["bottle"],
   "Bottle with Big Poe": itemToInputMap["big_poe"],
   "Bow": itemToInputMap["bow"],
-  "Dins Fire": itemToInputMap["dins_fire"],
-  "Farores Wind": itemToInputMap["farores_wind"],
+  "Dins Fire": itemToInputMap["dins"],
+  "Farores Wind": itemToInputMap["farores"],
   "Fire Arrows": itemToInputMap["fire_arrows"],
   "Goron Tunic": itemToInputMap["go"],
   "Megaton Hammer": itemToInputMap["hammer"],
@@ -2358,9 +2358,9 @@ const SpoilerItemToInput = {
   "Rutos Letter": itemToInputMap["rutos_letter"],
   "Light Arrows": itemToInputMap["light_arrows"],
   "Magic Meter": itemToInputMap["magic"],
-  "Mirror Shield": itemToInputMap["mirror_shield"],
+  "Mirror Shield": itemToInputMap["mirror"],
   "Progressive Scale": itemToInputMap["scale"],
-  "Slingshot": itemToInputMap["slingshot"],
+  "Slingshot": itemToInputMap["sling"],
   "Progressive Strength Upgrade": itemToInputMap["strength"],
   "Prescription": itemToInputMap["prescription"],
   "Eyeball Frog": itemToInputMap["prescription"],
@@ -2383,9 +2383,9 @@ const SpoilerItemToInput = {
   "Requiem of Spirit": itemToInputMap["requiem"],
   "Nocturne of Shadow": itemToInputMap["nocturne"],
   "Prelude of Light": itemToInputMap["prelude"],
-  "Bombchus (10)": itemToInputMap["bombchus"],
-  "Bombchus (20)": itemToInputMap["bombchus"],
-  "Bombchus (5)": itemToInputMap["bombchus"],
+  "Bombchus (10)": itemToInputMap["chus"],
+  "Bombchus (20)": itemToInputMap["chus"],
+  "Bombchus (5)": itemToInputMap["chus"],
   "Small Key (Forest Temple)": itemToInputMap["small_key"],
   "Small Key (Fire Temple)": itemToInputMap["small_key"],
   "Small Key (Water Temple)": itemToInputMap["small_key"],
@@ -2537,13 +2537,13 @@ player.zeldas_letter = true;
 
 function buildCheckSummary() {
   const itemData = [
-    { id: "bomb_bag", label: "Bomb Bag", count: 3 },
-    { id: "bombchus", label: "Bombchus", count: 5 },
+    { id: "bombs", label: "Bomb Bag", count: 3 },
+    { id: "chus", label: "Bombchus", count: 5 },
     { id: "boomerang", label: "Boomerang", count: 1 },
     { id: "bottle", label: "Bottle", count: 4 },
     { id: "bow", label: "Bow", count: 3 },
-    { id: "dins_fire", label: "Dins Fire", count: 1 },
-    { id: "farores_wind", label: "Farores", count: 1 },
+    { id: "dins", label: "Dins Fire", count: 1 },
+    { id: "farores", label: "Farores", count: 1 },
     { id: "fire_arrows", label: "Fire Arrows", count: 1 },
     { id: "gerudo_card", label: "Gerudo Card", count: 1 },
     { id: "goron_tunic", label: "Goron Tunic", count: 1 },
@@ -2562,9 +2562,9 @@ function buildCheckSummary() {
     { id: "light_arrows", label: "Light Arrows", count: 1 },
     { id: "magic", label: "Magic", count: 2 },
     { id: "magic_bean_pack", label: "Magic Bean Pack", count: 1 },
-    { id: "mirror_shield", label: "Mirror Shield", count: 1 },
+    { id: "mirror", label: "Mirror Shield", count: 1 },
     { id: "scale", label: "Scale", count: 2 },
-    { id: "slingshot", label: "Slingshot", count: 3 },
+    { id: "sling", label: "Slingshot", count: 3 },
     { id: "strength", label: "Strength", count: 3 },
     { id: "trade", label: "Trade", count: 1 },
     { id: "wallet", label: "Wallet", count: 3 },

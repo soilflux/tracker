@@ -27,4 +27,4 @@
 - [x] add song locations into the main checklist
 - [x] remove the non-linso item tracker and add a condensed visual for forestfirewater med, spiritshadowlight med, and stone dungeons
 - [x] add flee to credits
-- [x] don't list chus in woth if bombchus aren't in logic
+- [x] don't list chus in woth if chus aren't in logic

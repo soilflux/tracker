@@ -143,8 +143,8 @@ function trackAnimalQuest() {
     localStorage.setItem("quest1Mults", JSON.stringify(quest1Mults));
   }
 
-  if (player.slingshot
-    && !player.bomb_bag
+  if (player.sling
+    && !player.bombs
     && !quest1Flag
     && document.getElementById("quest1").style.display != "none"
     && document.getElementById("quest1").value == "slingshotBeforeBombbag") {
@@ -154,8 +154,8 @@ function trackAnimalQuest() {
     localStorage.setItem("quest1Mults", JSON.stringify(quest1Mults));
   }
 
-  if (player.bomb_bag3
-    && player.slingshot3
+  if (player.bombs3
+    && player.sling3
     && !quest1Flag
     && document.getElementById("quest1").style.display != "none"
     && document.getElementById("quest1").value == "3BombbagsAnd3Slingshots") {
