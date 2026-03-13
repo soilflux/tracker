@@ -244,10 +244,9 @@ img[src="#"] {
 }
 
 .man {
-  height: 25px;
-  width: 25px;
-  margin-bottom: 6px;
-  margin-top: 0px;
+  height: 20px;
+  width: 20px;
+  margin-top: 1px;
   margin-right: 2px;
 }
 
@@ -723,8 +722,6 @@ img[src="#"] {
 .mark_spawn {
   width: 55px;
   vertical-align: top;
-  margin-bottom: 0px;
-  margin-top: 3px;
   background-color: #181818;
   color: white;
 }
@@ -935,11 +932,8 @@ img[src="#"] {
 }
 
 #timer {
-  font-size: 20px;
+  font-size: 24px;
   color: white;
-  position: absolute;
-  top: 55px;
-  right: 140px;
   font-family: calibri;
 }
 
