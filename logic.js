@@ -1931,6 +1931,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
     }
   } else if (dungeon === "forest") {
     const courtyard = time || (bow && hookshot) || ((hovers || strength1) && keys(1))
+    const upperCourtyard = (hovers || strength1) && keys(1)
     const afterBlock = adult && strength1;
     checks = {
       forest_first: true,
@@ -1940,7 +1941,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       forest_lowCourtyard: courtyard,
       forest_blockRoom: afterBlock && keys(1) && (bow || sling),
       forest_bossKey: afterBlock && keys(2) && bow,
-      forest_floormaster: (hovers || strength1) && keys(1),
+      forest_floormaster: upperCourtyard,
       forest_red: afterBlock && bow && keys(3),
       forest_bow: afterBlock && keys(3),
       forest_blue: afterBlock && bow && keys(3),
@@ -1950,8 +1951,8 @@ function dungeonCheckAccess(dungeon, sim, type) {
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
         gs_forest_first: hookshot,
         gs_forest_lobby: hookshot,
-        gs_forest_outdoor_east: hookshot && ((bow || time) || (keys(1) && hovers)),
-        gs_forest_outdoor_west: adult && hookshot && (((bow || time) && longshot) || (keys(1) && hovers) || (keys(2) && strength1 && bow)),
+        gs_forest_outdoor_east: hookshot && courtyard,
+        gs_forest_outdoor_west: (courtyard && longshot) || (upperCourtyard && hookshot),
         gs_forest_basement: afterBlock && hookshot && bow && keys(5),
       }),
     }
@@ -1960,71 +1961,73 @@ function dungeonCheckAccess(dungeon, sim, type) {
         peeks.forest_midCourtyard = courtyard;
         peeks.forest_blockRoom = keys(1) && (bow || sling);
       }
-      peeks.gs_forest_outdoor_west = hookshot || bow || (time && chus);
+      peeks.gs_forest_outdoor_west = (bow && hookshot) || (upperCourtyard && bombs) || (courtyard && (bow || chus)) ;
+      peeks.gs_forest_outdoor_east = hookshot || hovers || bow || (time && chus);
     }
   } else if (dungeon === "fire") {
-    const can_climb_fire_temple = adult && keys(3) && (bow || hookshot || explosives);
+    const afterClimb = adult && keys(3) && (bow || hookshot || explosives);
     checks = {
       fire_nearBoss: true,
-      fire_hammer1: adult && hammer && keys(0),
-      fire_hammer2: adult && hammer && keys(0),
+      fire_hammer1: hammer && keys(0),
+      fire_hammer2: hammer && keys(0),
       fire_lavaOpen: keys(1),
       fire_lavaBomb: keys(1) && (bombs || (chus && adult)),
-      fire_volvagia: adult && bossKey && hammer,
-      fire_lowerMaze: can_climb_fire_temple,
-      fire_sideRoom: can_climb_fire_temple,
-      fire_map: can_climb_fire_temple && ((keys(4) && bow) || keys(5)),
-      fire_upperMaze: can_climb_fire_temple && keys(5),
-      fire_shortcut: can_climb_fire_temple && keys(5) && explosives,
-      fire_scarecrow: can_climb_fire_temple && keys(5) && hookshot,
-      fire_compass: can_climb_fire_temple && keys(6),
-      fire_sotGoron: can_climb_fire_temple && keys(6) && hammer && (time || explosives),
-      fire_top: can_climb_fire_temple && keys(6) && explosives,
+      fire_volvagia: bossKey && hammer,
+      fire_lowerMaze: afterClimb,
+      fire_sideRoom: afterClimb,
+      fire_map: afterClimb && ((keys(4) && bow) || keys(5)),
+      fire_upperMaze: afterClimb && keys(5),
+      fire_shortcut: afterClimb && keys(5) && explosives,
+      fire_scarecrow: afterClimb && keys(5) && hookshot,
+      fire_compass: afterClimb && keys(6),
+      fire_sotGoron: afterClimb && keys(6) && hammer && (time || explosives),
+      fire_top: afterClimb && keys(6) && explosives,
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
         gs_fire_time: adult && keys(1),
-        gs_fire_bomb_wall: can_climb_fire_temple && explosives,
-        gs_fire_scarecrow_1: can_climb_fire_temple && keys(5) && hookshot,
-        gs_fire_scarecrow_2: can_climb_fire_temple && keys(5) && hookshot,
-        gs_fire_basement: adult && hammer,
+        gs_fire_bomb_wall: afterClimb && explosives,
+        gs_fire_scarecrow_1: afterClimb && keys(5) && hookshot,
+        gs_fire_scarecrow_2: afterClimb && keys(5) && hookshot,
+        gs_fire_basement: hammer,
       }),
     }
     if (type !== "sim") {
       if (csmc === "on") {
         peeks.fire_hammer2 = true;
-        peeks.fire_upperMaze = can_climb_fire_temple;
-        peeks.fire_shortcut = can_climb_fire_temple;
+        peeks.fire_upperMaze = afterClimb;
+        peeks.fire_shortcut = afterClimb;
       }
     }
   } else if (dungeon === "water") {
-    const can_do_water_checks = adult && (irons || longshot);
-    const middle_water = can_do_water_checks && lullaby && (bow || dins || keys(1));
+    const drained = lullaby && (irons || longshot);
+    const pillar = drained && (bow || dins || keys(1));
+    const river = keys(2) && hookshot && time
     checks = {
-      water_compass: adult && ((lullaby && longshot) || irons),
-      water_map: can_do_water_checks,
-      water_cracked: can_do_water_checks && (lullaby || (irons && chus)) && explosives,
-      water_torches: can_do_water_checks && lullaby && (bow || dins || child),
-      water_block: can_do_water_checks && lullaby && (((bow && hookshot) || (hovers && bombs)) && strength1),
-      water_pillar: middle_water && irons && hookshot,
-      water_dLink: can_do_water_checks && keys(2) && hookshot,
-      water_river: can_do_water_checks && keys(2) && time && bow && hookshot,
-      water_dragon: can_do_water_checks && ((keys(2) && hookshot && time && bow) || (strength1 && lullaby && ((irons && hookshot) || chus) && (silver_scale || irons))),
-      water_bossKey: can_do_water_checks && (lullaby || irons) && (longshot || hovers) && keys(2),
+      water_compass: drained || irons,
+      water_map: irons || longshot,
+      water_cracked: explosives && (drained || (irons && chus)),
+      water_torches: drained && (bow || dins || child),
+      water_block: strength1 && (irons || (drained && (bow && hookshot) || (hovers && bombs))),
+      water_pillar: pillar && irons && hookshot,
+      water_dLink: keys(2) && hookshot,
+      water_river: river && bow,
+      water_dragon: (river && bow) || (drained && strength1 && ((irons && hookshot) || chus) && (silver_scale || irons)),
+      water_bossKey: (drained || irons) && (longshot || hovers) && keys(2),
       water_morpha: adult && bossKey && (rules.waterHop == "allowed" || longshot),
       ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_water_south_basement: can_do_water_checks && explosives && lullaby && hookshot,
-        gs_water_river: can_do_water_checks && time && keys(2) && hookshot,
-        gs_water_central: middle_water && (longshot || (farores && hookshot)),
-        gs_water_near_boss_key: can_do_water_checks && (longshot || hovers) && (lullaby || irons) && keys(1),
-        gs_water_platform_room: can_do_water_checks && hookshot && keys(1),
+        gs_water_south_basement: drained && explosives && hookshot,
+        gs_water_river: river,
+        gs_water_central: pillar && (longshot || (farores && hookshot)),
+        gs_water_near_boss_key: (drained || irons) && (longshot || hovers) && keys(1),
+        gs_water_platform_room: hookshot && keys(1),
       }),
     }
     if (type !== "sim") {
       if (csmc === "on") {
-        peeks.water_cracked = can_do_water_checks;
+        peeks.water_cracked = irons || longshot;
         peeks.water_block = adult;
-        peeks.water_river = can_do_water_checks && keys(2) && time && hookshot;
+        peeks.water_river = river;
       }
-      peeks.gs_water_central = middle_water && (longshot || (farores && hookshot) || chus || bow);
+      peeks.gs_water_central = pillar && (longshot || (farores && hookshot) || chus || bow);
     }
   } else if (dungeon === "shadow") {
     const afterWall = adult && hovers && explosives && keys(1);
@@ -2079,7 +2082,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       spirit_adultLeft: strength2 && hookshot && lullaby,
       spirit_adultRight: strength2 && (bow || hookshot || chus),
       spirit_rotatingMirror1: strength2 && keys(1),
-      spirit_rotatingMirror2: strength2 && keys(1),    
+      spirit_rotatingMirror2: strength2 && keys(1),
       spirit_lullabyHand: strength2 && keys(1) && lullaby,
       spirit_lullabyHigh: strength2 && keys(1) && lullaby && (hookshot || hovers),
       spirit_nearFourArmos: strength2 && keys(2) && explosives && mirror,
@@ -2109,7 +2112,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       }
       peeks.gs_spirit_before_child_knuckle = (explosives && (boomerang || sling || chus) && keys(1) && child) || ((hookshot || bow || chus || dins) && strength2 && keys(1));
       peeks.gs_spirit_boulder_room = strength2 && (bow || hookshot || chus);
-      peeks.gs_spirit_lobby = (strength2 && keys(1) && (hookshot || hovers || bow)) || (explosives && sling && keys(1) && child);
+      peeks.gs_spirit_lobby = (strength2 && keys(1) && (hookshot || hovers || bow)) || (explosives && sling && keys(1));
     }
   }
 

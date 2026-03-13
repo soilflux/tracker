@@ -7,14 +7,14 @@
 - [ ] reduce size of checks in checklist if there are extra checks (from skullsanity or cowsanity or such things)
 - [ ] add an avg finish time stat(last 25 seeds) by preset
 - [ ] add a 1-length input for generic important items 
-- [ ] display a list of the next few checks that would be suggested assuming you entire junk
+- [ ] display a list of the next few checks that would be suggested assuming you enter junk
 - [ ] automatically check off marked duplicates if you get another one
 - [ ] use a lowercased version of areanames in backend
 - [ ] 1 character input for mark rest of current age checks in an area junk
 - [ ] duplicate some checks on the checklist (for example, crate waterfall should be before child hylia, but also next to gtg)
 - [ ] extra <br> by cluster instead of by area (for example: colossus, wasteland, fortress, gtg, valley are effectively all the same play and it should be structured as such)
 - [ ] blendier frog song helper
-- [ ] display dungeons needed to unlock checks in dungeons rather than your inventory status
+
 
 - [x] add chus to checksummary
 - [x] add a hotkey thats like tab but runs highlightNextCheck() instead of just going to the next box
@@ -28,3 +28,4 @@
 - [x] remove the non-linso item tracker and add a condensed visual for forestfirewater med, spiritshadowlight med, and stone dungeons
 - [x] add flee to credits
 - [x] don't list chus in woth if chus aren't in logic
+- [x] display items needed to unlock checks in dungeons rather than your inventory status
