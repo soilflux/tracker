@@ -543,7 +543,7 @@ img[src="#"] {
 }
 
 .wothImages {
-  margin-bottom: 0px;
+  margin-right:3px;
   height: 22px;
   width: 22px;
   vertical-align: middle;
@@ -929,6 +929,10 @@ img[src="#"] {
   margin-top: 2px;
   margin-bottom: 3px;
   opacity: 1;
+}
+
+.glow-yellow {
+  filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow);
 }
 
 #timer {

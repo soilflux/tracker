@@ -309,7 +309,7 @@ function wothDisplay() {
   [1, 2, 3, 4, 5, 6].forEach(id => {
     const areaKey = hintCodeToAreaMap[document.getElementById(`woth_input${id}`)?.value];
     const pathKey = hintCodeToAreaMap[document.getElementById(`path_boss${id}`)?.value];
-    
+
     const allItems = areaToItemsMap[areaKey] ?? [];
     const visibleItems = allItems.filter(item => !skippedItems[`${areaKey}-${item}`]);
 
@@ -323,10 +323,12 @@ function wothDisplay() {
       if (itemName) {
         img.src = itemToImageMap[itemName];
         img.style.visibility = "visible";
+        img.onclick = () => toggleGlow(img);
         img.oncontextmenu = () => toggleItemSkipped(areaKey, itemName);
       } else {
         img.style.visibility = "hidden";
         img.oncontextmenu = null;
+        img.onclick = null;
       }
     });
 
@@ -345,6 +347,12 @@ function toggleItemSkipped(areaKey, itemName) {
 
   wothDisplay();
 }
+
+function toggleGlow(img) {
+  img.classList.toggle("glow-yellow");
+}
+
+
 
 
 function alternateHintInput() {

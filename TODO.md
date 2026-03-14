@@ -1,4 +1,3 @@
-- [ ] condensed woths
 - [ ] change note box into input boxes to match the rest of the tracker
 - [ ] find middle ground to remove large woth font option
 - [ ] cluster checks on the list by proximity rather than by area
@@ -29,3 +28,4 @@
 - [x] add flee to credits
 - [x] don't list chus in woth if chus aren't in logic
 - [x] display items needed to unlock checks in dungeons rather than your inventory status
+- [x] condensed woths
