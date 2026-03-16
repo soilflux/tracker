@@ -1274,7 +1274,7 @@ function updateCheckLogic() {
     checkLogic.gs_ice_block_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
   }
 
-  const dungeons = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit"];
+  const dungeons = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well"];
   dungeons.forEach(name => {
     dungeonCheckAccess(name, player, "checkAccess");
     dungeonCheckAccess(name, couldHave, "couldAccess");
@@ -1423,20 +1423,6 @@ function updateCheckLogic() {
     Access.gtg_left4 = Has.gtg_access && player.current_gtg_keys >= 5 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
     Access.gtg_final = Has.gtg_access && player.current_gtg_keys >= 7 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
     Access.gtg_toilet = Has.gtg_adult_access && Has.irons && Has.time && Has.hookshot /*&& Has.can_see*/;
-    Access.well_fakeRight = Has.botw_child_access;//&& Has.can_see;
-    Access.well_backBombable = Has.botw_child_access && (Has.bombs || player.chus);
-    Access.well_waterLeft = Has.botw_child_access && Has.lullaby;
-    Access.well_coffin = Has.botw_child_access;
-    Access.well_centerSmall = Has.botw_child_access;//&& Has.can_see;
-    Access.well_centerBig = Has.botw_child_access;//&& Has.can_see;
-    Access.well_frontBombable = Has.botw_child_access && (Has.bombs || player.chus);
-    Access.well_deadHand = Has.botw_child_access && Has.lullaby;//&& Has.kokiri_sword;
-    Access.well_invisible = Has.botw_child_access && Has.lullaby;//&& Has.can_see ;
-    Access.well_waterFront = Has.botw_child_access && Has.lullaby;
-    Access.well_fakeLeft = Has.botw_child_access;//&& Has.can_see;
-    Access.well_locked1 = Has.botw_child_access && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bombs || player.chus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
-    Access.well_locked2 = Has.botw_child_access && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bombs || player.chus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);//&& Has.can_see ;
-    Access.well_basement = Has.botw_child_access && ((Has.bombs || player.chus) || (((/*Has.can_see &&*/ player.current_well_keys >= 1) || Has.can_use_dins) && Has.goron_bracelet));
     Access.lullabyCheck = true;
     Access.eponasCheck = true;
     Access.sariasCheck = true;
@@ -1576,9 +1562,6 @@ function updateCheckLogic() {
     Access.gs_colossus_tree = Has.hookshot && Has.can_enter_colossus;
     Access.gs_colossus_hill = (Has.requiem && Has.bean_access) || (Has.hookshot && Has.can_enter_colossus);
     Access.gs_ogc = true;
-    Access.gs_well_west_inner = Has.botw_child_access && Has.boomerang && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bombs || player.chus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
-    Access.gs_well_east_inner = Has.botw_child_access && Has.boomerang && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bombs || player.chus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
-    Access.gs_well_like_like = Has.botw_child_access && (player.current_well_keys >= 1 || (Has.lullaby && (Has.bombs || player.chus))) && (rules.smallKeys != "keyRings" || Has.well_key_ring);
     Access.gs_ice_spinning_scythe = Has.ice_access && Has.hookshot;
     Access.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && Has.hookshot;
     Access.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || (Has.hovers && Has.bow));
@@ -1669,8 +1652,6 @@ function updateCheckLogic() {
     Peek.gs_wasteland = (Has.hookshot || player.chus || Has.bow || Has.can_use_dins || Has.bombs) && (Has.can_cross_quicksand || Has.can_enter_colossus);
     Peek.gs_colossus_tree = (Has.hookshot || player.chus || Has.bow || Has.can_use_dins || Has.bombs) && Has.can_enter_colossus;
     Peek.gs_colossus_hill = (Has.requiem && Has.bean_access) || ((Has.hookshot || player.chus || Has.bow) && Has.can_enter_colossus);
-    Peek.gs_well_west_inner = Has.botw_child_access && player.current_well_keys >= 1;
-    Peek.gs_well_east_inner = Has.botw_child_access && player.current_well_keys >= 1;
     Peek.gs_ice_spinning_scythe = Has.ice_access && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
     Peek.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
     Peek.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
@@ -1692,12 +1673,6 @@ function updateCheckLogic() {
       Peek.gtg_left3 = Has.gtg_access;
       Peek.gtg_left4 = Has.gtg_access;
       Peek.gtg_final = Has.gtg_access;
-      Peek.well_backBombable = Has.botw_child_access;
-      Peek.well_waterLeft = Has.botw_child_access;
-      Peek.well_frontBombable = Has.botw_child_access;
-      Peek.well_waterFront = Has.botw_child_access;
-      Peek.well_locked2 = Has.botw_child_access;//&& Has.can_see ;
-      Peek.well_basement = Has.botw_child_access;
     }
 
     Peek = checkCouldPeek;
@@ -1762,7 +1737,7 @@ function updateEntranceAccess(dungeon, sim) {
       sim.child = sim.requiem || Spawn.child_colossus || Spawn.child_wasteland || checkAccess.spirit_rightHand;
       break;
 
-    case "botw":
+    case "well":
       sim.adult = sim.storms;
       sim.child = sim.storms;
       break;
@@ -1790,7 +1765,7 @@ function unlocksChecksInDungeon() {
   for (const dungeon of dungeons) {
     const items = [
       "hookshot", "goron_bracelet", "hovers", "bow", "time", "sling", "longshot", "dins", "magic", "irons", "silver_scale", "lullaby", "farores", "bombs", "chus", "hammer",
-      "boomerang", "mirror", "silver_gauntlets", "fire_arrows", "bolero", "nocturne", "ice_arrows", "rutos_letter", "golden_scale", "requiem", "gerudo_card", "eponas"
+      "boomerang", "mirror", "silver_gauntlets", "fire_arrows", "bolero", "nocturne", "ice_arrows", "rutos_letter", "golden_scale", "requiem", "gerudo_card", "eponas", "kokiri_sword"
     ];
     if (rules.smallKeys == "keyRings") items.push(`${dungeon}_key_ring`);
     const sim = { ...player };
@@ -1868,12 +1843,10 @@ function dungeonCheckAccess(dungeon, sim, type) {
       deku_compass_room_side: true,
       deku_basement: true,
       deku_queen_gohma: (child || (adult && (fireSource || bow))),
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_deku_basement_back: boomerang && explosives,
-        gs_deku_basement_gate: true,
-        gs_deku_basement_vines: true,
-        gs_deku_compass: true,
-      }),
+      gs_deku_basement_back: boomerang && explosives,
+      gs_deku_basement_gate: true,
+      gs_deku_basement_vines: true,
+      gs_deku_compass: true,
     }
     if (type !== "sim") {
       peeks.gs_deku_basement_back = explosives;
@@ -1889,13 +1862,11 @@ function dungeonCheckAccess(dungeon, sim, type) {
       dodongos_end_of_bridge: floor2 && (explosives || hammer),
       dodongos_above_king: floor2 && explosives,
       dodongos_king_dodongo: floor2 && explosives,
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_dodongos_east_side: afterWall,
-        gs_dodongos_stair_vines: floor2,
-        gs_dodongos_above_stairs: floor2 && (hookshot || boomerang),
-        gs_dodongos_scarecrow: afterWall,
-        gs_dodongos_before_king: explosives,
-      }),
+      gs_dodongos_east_side: afterWall,
+      gs_dodongos_stair_vines: floor2,
+      gs_dodongos_above_stairs: floor2 && (hookshot || boomerang),
+      gs_dodongos_scarecrow: afterWall,
+      gs_dodongos_before_king: explosives,
       ...(rules.scrubSanity == "all" && {
         scrub_dodongos_1: afterWall,
         scrub_dodongos_2: afterWall,
@@ -1904,7 +1875,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       }),
     }
     if (type !== "sim") {
-      if (csmc == "on") {
+      if (rules.csmc == "on") {
         peeks.dodongos_end_of_bridge = afterWall;
       }
       peeks.h_dodongos = afterWall;
@@ -1918,12 +1889,10 @@ function dungeonCheckAccess(dungeon, sim, type) {
       jabu_compass: afterSwitch && boomerang,
       jabu_barinade: afterSwitch && boomerang,
       scrub_jabu: afterSwitch,
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_jabu_vines: afterSwitch,
-        gs_jabu_near_octo_1: afterSwitch && boomerang,
-        gs_jabu_near_octo_2: afterSwitch && boomerang,
-        gs_jabu_near_boss: afterSwitch && boomerang,
-      }),
+      gs_jabu_vines: afterSwitch,
+      gs_jabu_near_octo_1: afterSwitch && boomerang,
+      gs_jabu_near_octo_2: afterSwitch && boomerang,
+      gs_jabu_near_boss: afterSwitch && boomerang,
     }
     if (type !== "sim") {
       peeks.gs_jabu_near_octo_1 = afterSwitch && (boomerang || sling);
@@ -1948,20 +1917,18 @@ function dungeonCheckAccess(dungeon, sim, type) {
       forest_fallingCeiling: afterBlock && (bow || dins) && keys(5),
       forest_nearBoss: afterBlock && bow && keys(5),
       forest_phantomGanon: afterBlock && bow && keys(5) && bossKey,
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_forest_first: hookshot,
-        gs_forest_lobby: hookshot,
-        gs_forest_outdoor_east: hookshot && courtyard,
-        gs_forest_outdoor_west: (courtyard && longshot) || (upperCourtyard && hookshot),
-        gs_forest_basement: afterBlock && hookshot && bow && keys(5),
-      }),
+      gs_forest_first: hookshot,
+      gs_forest_lobby: hookshot,
+      gs_forest_outdoor_east: hookshot && courtyard,
+      gs_forest_outdoor_west: (courtyard && longshot) || (upperCourtyard && hookshot),
+      gs_forest_basement: afterBlock && hookshot && bow && keys(5),
     }
     if (type !== "sim") {
-      if (csmc === "on") {
+      if (rules.csmc === "on") {
         peeks.forest_midCourtyard = courtyard;
         peeks.forest_blockRoom = keys(1) && (bow || sling);
       }
-      peeks.gs_forest_outdoor_west = (bow && hookshot) || (upperCourtyard && bombs) || (courtyard && (bow || chus)) ;
+      peeks.gs_forest_outdoor_west = (bow && hookshot) || (upperCourtyard && bombs) || (courtyard && (bow || chus));
       peeks.gs_forest_outdoor_east = hookshot || hovers || bow || (time && chus);
     }
   } else if (dungeon === "fire") {
@@ -1982,16 +1949,14 @@ function dungeonCheckAccess(dungeon, sim, type) {
       fire_compass: afterClimb && keys(6),
       fire_sotGoron: afterClimb && keys(6) && hammer && (time || explosives),
       fire_top: afterClimb && keys(6) && explosives,
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_fire_time: adult && keys(1),
-        gs_fire_bomb_wall: afterClimb && explosives,
-        gs_fire_scarecrow_1: afterClimb && keys(5) && hookshot,
-        gs_fire_scarecrow_2: afterClimb && keys(5) && hookshot,
-        gs_fire_basement: hammer,
-      }),
+      gs_fire_time: adult && keys(1),
+      gs_fire_bomb_wall: afterClimb && explosives,
+      gs_fire_scarecrow_1: afterClimb && keys(5) && hookshot,
+      gs_fire_scarecrow_2: afterClimb && keys(5) && hookshot,
+      gs_fire_basement: hammer,
     }
     if (type !== "sim") {
-      if (csmc === "on") {
+      if (rules.csmc === "on") {
         peeks.fire_hammer2 = true;
         peeks.fire_upperMaze = afterClimb;
         peeks.fire_shortcut = afterClimb;
@@ -2013,16 +1978,14 @@ function dungeonCheckAccess(dungeon, sim, type) {
       water_dragon: (river && bow) || (drained && strength1 && ((irons && hookshot) || chus) && (silver_scale || irons)),
       water_bossKey: (drained || irons) && (longshot || hovers) && keys(2),
       water_morpha: adult && bossKey && (rules.waterHop == "allowed" || longshot),
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_water_south_basement: drained && explosives && hookshot,
-        gs_water_river: river,
-        gs_water_central: pillar && (longshot || (farores && hookshot)),
-        gs_water_near_boss_key: (drained || irons) && (longshot || hovers) && keys(1),
-        gs_water_platform_room: hookshot && keys(1),
-      }),
+      gs_water_south_basement: drained && explosives && hookshot,
+      gs_water_river: river,
+      gs_water_central: pillar && (longshot || (farores && hookshot)),
+      gs_water_near_boss_key: (drained || irons) && (longshot || hovers) && keys(1),
+      gs_water_platform_room: hookshot && keys(1),
     }
     if (type !== "sim") {
-      if (csmc === "on") {
+      if (rules.csmc === "on") {
         peeks.water_cracked = irons || longshot;
         peeks.water_block = adult;
         peeks.water_river = river;
@@ -2052,16 +2015,14 @@ function dungeonCheckAccess(dungeon, sim, type) {
       shadow_dins2: afterBoat && dins,
       shadow_floormaster: afterBoat,
       shadow_bongo: afterBoat && (bow || longshot || chus) && bossKey && keys(5),
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_shadow_like_like: afterWall,
-        gs_shadow_crusher: afterWall && (hookshot || bombs),
-        gs_shadow_giant_pot: afterWall && keys(2) && hookshot,
-        gs_shadow_near_boat: afterFans && longshot && keys(4),
-        gs_shadow_three_pots: afterBoat,
-      }),
+      gs_shadow_like_like: afterWall,
+      gs_shadow_crusher: afterWall && (hookshot || bombs),
+      gs_shadow_giant_pot: afterWall && keys(2) && hookshot,
+      gs_shadow_near_boat: afterFans && longshot && keys(4),
+      gs_shadow_three_pots: afterBoat,
     }
     if (type !== "sim") {
-      if (csmc === "on") {
+      if (rules.csmc === "on") {
         peeks.shadow_dins1 = afterBoat;
         peeks.shadow_dins2 = afterBoat;
       }
@@ -2092,19 +2053,17 @@ function dungeonCheckAccess(dungeon, sim, type) {
       spirit_bossKey: strength2 && keys(3) && lullaby,
       spirit_tippyTop: strength2 && keys(3) && mirror,
       spirit_twinrova: strength2 && keys(3) && mirror && explosives && bossKey && hookshot,
-      ...((rules.skullSanity == "dungeon" || rules.skullSanity == "all") && {
-        gs_spirit_metal_fence: child && (boomerang || sling || chus),
-        gs_spirit_before_child_knuckle: (explosives && boomerang && keys(1) && child) || (hookshot && strength2 && keys(1)),
-        gs_spirit_boulder_room: strength2 && time && (bow || hookshot || chus),
-        gs_spirit_lobby: strength2 && keys(1) && (hookshot || hovers),
-        gs_spirit_child_climb: keys(1),
-      }),
+      gs_spirit_metal_fence: child && (boomerang || sling || chus),
+      gs_spirit_before_child_knuckle: (explosives && boomerang && keys(1) && child) || (hookshot && strength2 && keys(1)),
+      gs_spirit_boulder_room: strength2 && time && (bow || hookshot || chus),
+      gs_spirit_lobby: strength2 && keys(1) && (hookshot || hovers),
+      gs_spirit_child_climb: keys(1),
     }
     const fortress = eponas || longshot || requiem || Spawn.adult_gf || Spawn.adult_wasteland || (rules.valleyWithHook == "allowed" && hookshot);
     const afterQuicksand = fortress && (rules.gerudoCard == "vanilla" || gerudo_card);
     const colossus = afterQuicksand || requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checks.spirit_leftHand || checks.spirit_rightHand;
     if (type !== "sim") {
-      if (csmc === "on") {
+      if (rules.csmc === "on") {
         peeks.spirit_childLeft = child;
         peeks.spirit_childRight = child;
         peeks.spirit_adultLeft = strength2 && lullaby && (bow || hookshot || explosives);
@@ -2115,11 +2074,45 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_spirit_lobby = (strength2 && keys(1) && (hookshot || hovers || bow)) || (explosives && sling && keys(1));
     }
   }
-
+  else if (dungeon === "well" && child) {
+    checks = {
+      well_fakeRight: true,
+      well_backBombable: explosives,
+      well_waterLeft: lullaby,
+      well_coffin: true,
+      well_centerSmall: true,
+      well_centerBig: true,
+      well_frontBombable: explosives,
+      well_deadHand: lullaby,
+      well_invisible: lullaby,
+      well_waterFront: lullaby,
+      well_fakeLeft: true,
+      well_locked1: keys(1) || (lullaby && explosives),
+      well_locked2: keys(1) || (lullaby && explosives),
+      well_basement: explosives || ((keys(1) || dins) && strength1),
+      gs_well_west_inner: boomerang && keys(1),
+      gs_well_east_inner: boomerang && keys(1),
+      gs_well_like_like: keys(1),
+    }
+    if (type !== "sim") {
+      if (rules.csmc === "on") {
+        peeks.well_backBombable = true;
+        peeks.well_waterLeft = true;
+        peeks.well_frontBombable = true;
+        peeks.well_waterFront = true;
+        peeks.well_locked2 = true;
+        peeks.well_basement = true;
+      }
+    }
+    peeks.gs_well_west_inner = keys(1);
+    peeks.gs_well_east_inner = keys(1);
+  }
   assignChecks(checks, peeks, type);
-  return Object.values(checks).filter(Boolean).length;
-}
 
+
+  const excludeGs = !rules.skullsanity == "off";
+  return Object.entries(checks).filter(([k, v]) => v && (!excludeGs || !k.includes('gs_'))).length;
+}
 function assignChecks(checks, peeks, type) {
   if (type === "checkAccess") {
     Object.assign(checkAccess, checks);

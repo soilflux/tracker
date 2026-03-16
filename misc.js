@@ -1,7 +1,7 @@
 function highlight(x) {
   const item = x.id.replace("img","");
   player[item] = !player[item];
-  midUpdate(true);
+  midUpdate();
 }
 
 function highlightDungeonEntrance(element) {
@@ -588,5 +588,5 @@ function Undo() {
   document.getElementById(lastCheck[lastCheck.length - 1]).value = "";
   areaToItemsMap[checkToAreaMap[lastCheck[lastCheck.length - 1]]].pop();
   lastCheck.pop();
-  midUpdate(true);
+  midUpdate();
 }

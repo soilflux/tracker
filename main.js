@@ -37,7 +37,7 @@ function fastUpdate() {
   }
 }
 
-function midUpdate(force = false) {
+function midUpdate(force = true) {
   clearTimeout(timer);
 
   const runLogic = () => {

@@ -306,18 +306,26 @@ function wothAndBarrenProcessing() {
 const skippedItems = {};
 
 function wothDisplay() {
-  [1, 2, 3, 4, 5, 6].forEach(id => {
-    const areaKey = hintCodeToAreaMap[document.getElementById(`woth_input${id}`)?.value];
-    const pathKey = hintCodeToAreaMap[document.getElementById(`path_boss${id}`)?.value];
+  let importantCount = 0;
+  [1, 2, 3, 4, 5, 6, 7, 8].forEach(id => {
+    const pathInput = document.getElementById(`path_boss${id}`)?.value;
+    const pathKey = hintCodeToAreaMap[pathInput] ?? hintCodeToItemMap[pathInput];
+    if (!pathKey) {
+      importantDisplay();
+      importantCount += 1;
+      return;
+    }
+    const pathFile = areaToImageMap[pathKey] ?? itemToImageMap[pathKey];
+    const areaInput = document.getElementById(`woth_input${id}`)?.value
+    const areaKey = hintCodeToAreaMap[areaInput];
+    const areaFile = areaToImageMap[areaKey];
 
     const allItems = areaToItemsMap[areaKey] ?? [];
     const visibleItems = allItems.filter(item => !skippedItems[`${areaKey}-${item}`]);
 
-    const areaFile = areaToImageMap[areaKey];
-    const pathFile = areaToImageMap[pathKey];
 
     [1, 2, 3].forEach((itemNum, index) => {
-      const img = document.getElementById(`woth${id}Item${itemNum}`);
+      const img = document.getElementById(`woth${id - importantCount}Item${itemNum}`);
       const itemName = visibleItems[index];
 
       if (itemName) {
@@ -332,8 +340,8 @@ function wothDisplay() {
       }
     });
 
-    const areaImg = document.getElementById(`woth${id}Image`);
-    const pathImg = document.getElementById(`path${id}Image`);
+    const areaImg = document.getElementById(`woth${id - importantCount}Image`);
+    const pathImg = document.getElementById(`path${id - importantCount}Image`);
     areaImg.style.visibility = areaFile ? "visible" : "hidden";
     pathImg.style.visibility = pathFile ? "visible" : "hidden";
     if (areaFile) areaImg.src = areaFile;
@@ -350,6 +358,10 @@ function toggleItemSkipped(areaKey, itemName) {
 
 function toggleGlow(img) {
   img.classList.toggle("glow-yellow");
+}
+
+function importantDisplay() {
+
 }
 
 

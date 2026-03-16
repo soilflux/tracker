@@ -31,13 +31,13 @@ function processInputs() {
 
     const inputType = checkInputType(input);
     switch (inputType) {
-      case "path": handlePathInput(input, locationId); continue;
-      case "barren": handleBarrenInput(input, locationId); continue;
+      case "path": handlePathInput(input, locationId); midUpdate(); continue;
+      case "barren": handleBarrenInput(input, locationId); midUpdate(); continue;
       case "always": handleAlwaysInput(input, locationId); continue;
       case "sometimes": handleSometimesInput(input, locationId); continue;
       case "dual": handleDualInput(input, locationId); continue;
-      case "entrances": handleEntrancesInput(input, locationId); continue;
-      case "medallions": handleMedallionsInput(input, locationId); continue;
+      case "entrances": handleEntrancesInput(input, locationId); midUpdate(); continue;
+      case "medallions": handleMedallionsInput(input, locationId); midUpdate(); continue;
     }
 
     // Break early if input is invalid.
@@ -1750,7 +1750,7 @@ function updateChecklistEntrances() {
     "water": { from: "hylia", to: "water" },
     "shadow": { from: "graveyard", to: "shadow" },
     "spirit": { from: "colossus", to: "spirit" },
-    "botw": { from: "kakariko", to: "well" },
+    "well": { from: "kakariko", to: "well" },
     "ice": { from: "fountain", to: "ice" },
     "gtg": { from: "fortress", to: "gtg" }
   };
@@ -1912,7 +1912,7 @@ function update_dungeon_ER_Logic() {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_child_colossus;
       logic[dungs_list[d] + "_adult_access"] = logic.can_enter_colossus;
     }
-    else if (enter == "botw") {
+    else if (enter == "well") {
       logic[dungs_list[d] + "_child_access"] = logic.can_enter_well_entrance;
 
       if (rules.dungeonEr == "ganonsExcluded") {
