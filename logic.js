@@ -1274,7 +1274,7 @@ function updateCheckLogic() {
     checkLogic.gs_ice_block_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
   }
 
-  const dungeons = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well"];
+  const dungeons = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "gtg", "ice"];
   dungeons.forEach(name => {
     dungeonCheckAccess(name, player, "checkAccess");
     dungeonCheckAccess(name, couldHave, "couldAccess");
@@ -1379,10 +1379,6 @@ function updateCheckLogic() {
     Access.race_2 = true;
     Access.fountain_fairy = ((Has.ice_entrance_access && (Has.bombs || player.chus || (Has.hammer && Has.silver_gauntlets))) || Spawn.child_zf_fairy || Spawn.adult_zf_fairy || ((Has.bombs || player.chus) && Spawn.child_zf)) && Has.lullaby;
     Access.glacier_hp = Has.ice_entrance_access;
-    Access.ice_map = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.chus || Has.bombs);
-    Access.ice_hp = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.chus || Has.bombs || Has.giants_wallet);
-    Access.ice_compass = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.chus || Has.bombs || Has.giants_wallet);
-    Access.ice_irons = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.chus || Has.bombs || Has.giants_wallet);
     Access.bottom_of_fountain = Has.ice_entrance_access && Has.irons;
     Access.thaw_king = Has.can_enter_adult_domain && ((Has.can_use_bottle && (Has.ice_access || Has.giants_wallet || Has.can_enter_ganons)) || Has.can_shoot_blue_fire_arrows);
     Access.ganons_lightTrial1 = Has.can_enter_ganons && Has.golden_gauntlets;
@@ -1401,28 +1397,6 @@ function updateCheckLogic() {
     Access.ganons_shadowTrial1 = Has.can_enter_ganons && ((Has.bow && Has.fire_arrows && Has.magic) || Has.hookshot || Has.hovers || Has.time);
     Access.ganons_shadowTrial2 = Has.can_enter_ganons && ((Has.bow && Has.fire_arrows && Has.magic) || (Has.longshot && (Has.hovers || Has.can_use_dins)));
     Access.ganons_bossKey = Has.can_enter_ganons;
-    Access.gtg_lobbyLeft = Has.gtg_access && ((Has.bow && Has.gtg_adult_access) || (Has.sling && Has.gtg_child_access));
-    Access.gtg_lobbyRight = Has.gtg_access && ((Has.bow && Has.gtg_adult_access) || (Has.sling && Has.gtg_child_access));
-    Access.gtg_stalfos = Has.gtg_access;
-    Access.gtg_wolfos = Has.gtg_access;
-    Access.gtg_silvers1 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets;//&& Has.can_see ;
-    Access.gtg_silvers2 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets;//&& Has.can_see ;
-    Access.gtg_silvers3 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets;//&& Has.can_see ;
-    Access.gtg_silvers4 = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.silver_gauntlets;//&& Has.can_see ;
-    Access.gtg_eyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;  //((Has.bombs || player.current_gtg_keys >= 9) && Has.hammer));
-    Access.gtg_aboveEyes = Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow;//&& Has.can_see;
-    Access.gtg_keese = Has.gtg_adult_access && Has.can_climb_gtg_hole;// && (Has.can_see || (Has.bombs || player.current_gtg_keys >= 9)) ;
-    Access.gtg_flamesChest = Has.gtg_adult_access && Has.can_climb_gtg_hole/*&& Has.can_see*/;
-    Access.gtg_freestanding = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bombs || player.chus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-    Access.gtg_right2 = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bombs || player.chus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-    Access.gtg_right3 = Has.gtg_access && (player.current_gtg_keys >= 2 || ((Has.bombs || player.chus) && (Has.time || Has.gtg_child_access)) || (Has.can_climb_gtg_hole /*&& Has.can_see*/ && Has.time));
-    Access.gtg_beamos = Has.gtg_access && (Has.bombs || player.chus);
-    Access.gtg_left1 = Has.gtg_access && player.current_gtg_keys >= 1 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);//&& Has.can_see;
-    Access.gtg_left2 = Has.gtg_access && player.current_gtg_keys >= 2 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-    Access.gtg_left3 = Has.gtg_access && player.current_gtg_keys >= 4 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-    Access.gtg_left4 = Has.gtg_access && player.current_gtg_keys >= 5 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-    Access.gtg_final = Has.gtg_access && player.current_gtg_keys >= 7 && (rules.smallKeys != "keyRings" || Has.gtg_key_ring);
-    Access.gtg_toilet = Has.gtg_adult_access && Has.irons && Has.time && Has.hookshot /*&& Has.can_see*/;
     Access.lullabyCheck = true;
     Access.eponasCheck = true;
     Access.sariasCheck = true;
@@ -1431,7 +1405,6 @@ function updateCheckLogic() {
     Access.boleroCheck = Has.can_enter_fire_temple_entrance;
     Access.minuetCheck = true;
     Access.requiemCheck = Has.can_enter_colossus;
-    Access.serenadeCheck = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.ice_adult_access || player.chus || Has.bombs || Has.giants_wallet);
     Access.preludeCheck = Has.forestMedallion || Has.forestMedallion || Access.forest_medallion_location;
     Access.nocturneCheck = (Has.forestMedallion || Has.forestMedallion || Access.forest_medallion_location) && (Has.fireMedallion || Has.fireMedallion || Access.fire_medallion_location) && (Has.waterMedallion || Has.waterMedallion || Access.water_medallion_location);
     Access.oot = (Has.emerald || Has.emerald || Access.emerald_location) && (Has.ruby || Has.ruby || Access.ruby_location) && (Has.sapphire || Has.sapphire || Access.sapphire_location);
@@ -1562,9 +1535,6 @@ function updateCheckLogic() {
     Access.gs_colossus_tree = Has.hookshot && Has.can_enter_colossus;
     Access.gs_colossus_hill = (Has.requiem && Has.bean_access) || (Has.hookshot && Has.can_enter_colossus);
     Access.gs_ogc = true;
-    Access.gs_ice_spinning_scythe = Has.ice_access && Has.hookshot;
-    Access.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && Has.hookshot;
-    Access.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || (Has.hovers && Has.bow));
 
     Access = checkCouldAccess;
     Has = couldHave;
@@ -1652,9 +1622,6 @@ function updateCheckLogic() {
     Peek.gs_wasteland = (Has.hookshot || player.chus || Has.bow || Has.can_use_dins || Has.bombs) && (Has.can_cross_quicksand || Has.can_enter_colossus);
     Peek.gs_colossus_tree = (Has.hookshot || player.chus || Has.bow || Has.can_use_dins || Has.bombs) && Has.can_enter_colossus;
     Peek.gs_colossus_hill = (Has.requiem && Has.bean_access) || ((Has.hookshot || player.chus || Has.bow) && Has.can_enter_colossus);
-    Peek.gs_ice_spinning_scythe = Has.ice_access && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
-    Peek.gs_ice_hp_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
-    Peek.gs_ice_block_room = Has.ice_access && (Has.can_use_bottle || Has.can_shoot_blue_fire_arrows) && (Has.hookshot || Has.bow || player.chus || Has.bombs || Has.can_use_dins);
 
     if (rules.csmc == "on") {
       Peek.goron_maze_1 = true;
@@ -1664,15 +1631,6 @@ function updateCheckLogic() {
       Peek.gerudo_hammer = Has.fortress_access;
       Peek.gerudo_roof = Has.fortress_access;
       Peek.ganons_shadowTrial1 = Has.can_enter_ganons;
-      Peek.gtg_aboveEyes = Has.gtg_access;//&& Has.can_see;
-      Peek.gtg_freestanding = Has.gtg_access && (player.current_gtg_keys >= 2 || (Has.bombs || player.chus) || (Has.can_climb_gtg_hole /*&& Has.can_see*/));
-      Peek.gtg_right2 = Has.gtg_access;
-      Peek.gtg_right3 = Has.gtg_access;
-      Peek.gtg_left1 = Has.gtg_access && (player.current_gtg_keys >= 1 || (Has.gtg_adult_access && Has.can_climb_gtg_hole && Has.bow));
-      Peek.gtg_left2 = Has.gtg_access;
-      Peek.gtg_left3 = Has.gtg_access;
-      Peek.gtg_left4 = Has.gtg_access;
-      Peek.gtg_final = Has.gtg_access;
     }
 
     Peek = checkCouldPeek;
@@ -1746,7 +1704,7 @@ function updateEntranceAccess(dungeon, sim) {
       sim.can_enter_adult_domain = sim.lullaby || sim.hovers || Spawn.adult_zd;
       sim.child_can_enter_domain = sim.silver_scale || Spawn.child_zd || Spawn.child_zr || sim.bombs || sim.chus;
 
-      sim.adult = (sim.can_enter_adult_domain && ((sim.rutos_letter && sim.child_can_enter_domain) || rules.fountain == "open" || rules.kzSkip)) || Spawn.adult_zf;
+      sim.adult = (sim.can_enter_adult_domain && ((sim.rutos_letter && sim.child_can_enter_domain) || rules.fountain === "open" || rules.kzSkip === "allowed")) || Spawn.adult_zf;
       sim.child = false;
       break;
 
@@ -1803,8 +1761,12 @@ function dungeonCheckAccess(dungeon, sim, type) {
   };
   const bossKey = sim[`${dungeon}_boss_key`];
   const { time, bombs, chus, silver_scale, lullaby, silver_gauntlets, magic, requiem, gerudo_card, eponas } = sim;
+  const explosives = (bombs || chus);
   const dins = sim.dins && magic;
   const farores = sim.farores && magic;
+  const wallet2 = sim.giants_wallet;
+  const child_can_enter_river = explosives || silver_scale || Spawn.child_zd || Spawn.child_zr;
+  const bottle = sim.bottle || (sim.rutos_letter && child_can_enter_river);
   const strength1 = sim.goron_bracelet;
 
   updateEntranceAccess(dungeon, sim);
@@ -1826,13 +1788,12 @@ function dungeonCheckAccess(dungeon, sim, type) {
 
   const fireSource = (dins || (bow && fire_arrows)) && magic;
   const blueFireArrows = ice_arrows && bow && magic && rules.blueFireArrows == "on";
-  const explosives = (bombs || chus);
 
   let checks = {};
   let peeks = {};
   if (!entry) {
     assignChecks(checks, peeks, type);
-    return Object.values(checks).filter(Boolean).length;
+    return 0;
   }
   if (dungeon === "deku") {
     checks = {
@@ -2094,18 +2055,69 @@ function dungeonCheckAccess(dungeon, sim, type) {
       gs_well_east_inner: boomerang && keys(1),
       gs_well_like_like: keys(1),
     }
-    if (type !== "sim") {
-      if (rules.csmc === "on") {
-        peeks.well_backBombable = true;
-        peeks.well_waterLeft = true;
-        peeks.well_frontBombable = true;
-        peeks.well_waterFront = true;
-        peeks.well_locked2 = true;
-        peeks.well_basement = true;
-      }
+    if (rules.csmc === "on") {
+      peeks.well_backBombable = true;
+      peeks.well_waterLeft = true;
+      peeks.well_frontBombable = true;
+      peeks.well_waterFront = true;
+      peeks.well_locked2 = true;
+      peeks.well_basement = true;
     }
     peeks.gs_well_west_inner = keys(1);
     peeks.gs_well_east_inner = keys(1);
+  }
+  else if (dungeon === "gtg") {
+    const climb = hookshot || hovers || bombs;
+    checks = {
+      gtg_lobbyLeft: bow || sling,
+      gtg_lobbyRight: bow || sling,
+      gtg_stalfos: true,
+      gtg_wolfos: true,
+      gtg_silvers1: climb && strength2,
+      gtg_silvers2: climb && strength2,
+      gtg_silvers3: climb && strength2,
+      gtg_silvers4: climb && strength2,
+      gtg_eyes: climb && bow,
+      gtg_aboveEyes: climb && bow,
+      gtg_keese: climb,
+      gtg_flamesChest: climb,
+      gtg_freestanding: keys(2) || (explosives && (time || child)) || (climb && time),
+      gtg_right2: keys(2) || (explosives && (time || child)) || (climb && time),
+      gtg_right3: keys(2) || (explosives && (time || child)) || (climb && time),
+      gtg_beamos: explosives,
+      gtg_left1: keys(1),
+      gtg_left2: keys(2),
+      gtg_left3: keys(4),
+      gtg_left4: keys(5),
+      gtg_final: keys(7),
+      gtg_toilet: irons && time && hookshot,
+    }
+    if (rules.csmc === "on") {
+      peeks.gtg_aboveEyes = true;
+      peeks.gtg_freestanding = keys(2) || explosives || climb;
+      peeks.gtg_right2 = true;
+      peeks.gtg_right3 = true;
+      peeks.gtg_left1 = keys(1) || (climb && bow);
+      peeks.gtg_left2 = true;
+      peeks.gtg_left3 = true;
+      peeks.gtg_left4 = true;
+      peeks.gtg_final = true;
+    }
+  }
+  else if (dungeon === "ice") {
+    checks = {
+      ice_map: (bottle || blueFireArrows) && (adult || explosives),
+      ice_hp: (bottle || blueFireArrows) && (adult || explosives || wallet2),
+      ice_compass: (bottle || blueFireArrows) && (adult || explosives || wallet2),
+      ice_irons: (bottle || blueFireArrows) && (adult || explosives || wallet2),
+      serenadeCheck: (bottle || blueFireArrows) && (adult || explosives || wallet2),
+      gs_ice_spinning_scythe: hookshot,
+      gs_ice_hp_room: (bottle || blueFireArrows) && hookshot,
+      gs_ice_block_room: (bottle || blueFireArrows) && (hookshot || (hovers && bow)),
+    }
+    peeks.gs_ice_spinning_scythe = hookshot || bow || explosives || dins;
+    peeks.gs_ice_hp_room = (bottle || blueFireArrows) && (hookshot || bow || explosives || dins);
+    peeks.gs_ice_block_room = (bottle || blueFireArrows) && (hookshot || bow || explosives || dins);
   }
   assignChecks(checks, peeks, type);
 
