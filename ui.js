@@ -1202,6 +1202,41 @@ function updateRules() {
     document.documentElement.style.setProperty('--peek-font-color', 'yellow');
   }
 
+  unusedLocations = [];
+  for (const check of checks) {
+    if (rules.skullSanity == "off") {
+      if (check.startsWith("gs_")) {
+        unusedLocations.push(check);
+        if (checkAccess[check]) player.tokensAccessible += 1;
+      }
+    }
+    else if (rules.skullSanity == "dungeon") {
+      if (check.startsWith("gs_") && (!check.startsWith("gs_deku") && !check.startsWith("gs_dodongos") && !check.startsWith("gs_jabu") && !check.startsWith("gs_forest") && !check.startsWith("gs_fire") && !check.startsWith("gs_water") && !check.startsWith("gs_spirit") && !check.startsWith("gs_shadow") && !check.startsWith("gs_ice") && !check.startsWith("gs_well")))
+        unusedLocations.push(check);
+    }
+    else if (rules.skullSanity == "overworld") {
+      if (check.startsWith("gs_deku") || check.startsWith("gs_dodongos") || check.startsWith("gs_jabu") || check.startsWith("gs_forest") || check.startsWith("gs_fire") || check.startsWith("gs_water") || check.startsWith("gs_spirit") || check.startsWith("gs_shadow") || check.startsWith("gs_ice") || check.startsWith("gs_well"))
+        unusedLocations.push(check);
+    }
+    if (rules.scrubSanity == "off") {
+      if (check.startsWith("scrub_"))
+        unusedLocations.push(check);
+    }
+    else if (rules.scrubSanity == "overworld") {
+      if (check.startsWith("scrub_dodongos") || check.startsWith("scrub_jabu") || check.startsWith("scrub_ganons"))
+        unusedLocations.push(check);
+    }
+    if (rules.shopSanity != "4" && check.startsWith("shop_")) { unusedLocations.push(check); }
+    if (rules.cowSanity == "off" && check.startsWith("cow_")) { unusedLocations.push(check); }
+    if (document.getElementById("gossips").value != "ON" && check.startsWith("h_")) { unusedLocations.push(check); }
+    if (rules.ganonBk == "lacs" && check.startsWith("lacs")) { unusedLocations.push(check); }
+    if (rules.ocarinas == "vanilla" && (check.startsWith("hyrule_ocarina") || check.startsWith("lost_woods_fairy_ocarina"))) { unusedLocations.push(check); }
+    if (rules.beans == "vanilla" && check.startsWith("river_bean_salesman")) { unusedLocations.push(check); }
+    if (rules.gerudoCard == "vanilla" && check.startsWith("fortress_card")) { unusedLocations.push(check); }
+    if (rules.preset != "TRUTH" && check.startsWith("theater_truth")) { unusedLocations.push(check); }
+    if (rules.expensive == "vanilla" && (check == "goron_medigoron" || check.startsWith("kakariko_hag") || check.startsWith("wasteland_carpet"))) { unusedLocations.push(check); }
+  }
+
   Object.keys(rulesConfig).forEach(key => {
     document.getElementById(key).value = rules[key];
   });
@@ -1252,42 +1287,9 @@ function updateLogicInfo() {
   temp = 0;
   var colorChange = false;
   player.checks_remaining = 0;
-  unusedLocations = [];
   for (var i = 0; i < checks.length; i++) {
-    if (rules.skullSanity == "off") {
-      if (checks[i].startsWith("gs_")) {
-        unusedLocations.push(i);
-        if (checkAccess[checks[i]]) player.tokensAccessible += 1;
-      }
-    }
-    else if (rules.skullSanity == "dungeon") {
-      if (checks[i].startsWith("gs_") && (!checks[i].startsWith("gs_deku") && !checks[i].startsWith("gs_dodongos") && !checks[i].startsWith("gs_jabu") && !checks[i].startsWith("gs_forest") && !checks[i].startsWith("gs_fire") && !checks[i].startsWith("gs_water") && !checks[i].startsWith("gs_spirit") && !checks[i].startsWith("gs_shadow") && !checks[i].startsWith("gs_ice") && !checks[i].startsWith("gs_well")))
-        unusedLocations.push(i);
-    }
-    else if (rules.skullSanity == "overworld") {
-      if (checks[i].startsWith("gs_deku") || checks[i].startsWith("gs_dodongos") || checks[i].startsWith("gs_jabu") || checks[i].startsWith("gs_forest") || checks[i].startsWith("gs_fire") || checks[i].startsWith("gs_water") || checks[i].startsWith("gs_spirit") || checks[i].startsWith("gs_shadow") || checks[i].startsWith("gs_ice") || checks[i].startsWith("gs_well"))
-        unusedLocations.push(i);
-    }
 
-    if (rules.scrubSanity == "off") {
-      if (checks[i].startsWith("scrub_"))
-        unusedLocations.push(i);
-    }
-    else if (rules.scrubSanity == "overworld") {
-      if (checks[i].startsWith("scrub_dodongos") || checks[i].startsWith("scrub_jabu") || checks[i].startsWith("scrub_ganons"))
-        unusedLocations.push(i);
-    }
-
-    if (rules.shopSanity != "4" && checks[i].startsWith("shop_")) { unusedLocations.push(i); }
-    if (rules.cowSanity == "off" && checks[i].startsWith("cow_")) { unusedLocations.push(i); }
-    if (document.getElementById("gossips").value != "ON" && checks[i].startsWith("h_")) { unusedLocations.push(i); }
-    if (rules.ganonBk == "lacs" && checks[i].startsWith("lacs")) { unusedLocations.push(i); }
-    if (rules.ocarinas == "vanilla" && (checks[i].startsWith("hyrule_ocarina") || checks[i].startsWith("lost_woods_fairy_ocarina"))) { unusedLocations.push(i); }
-    if (rules.beans == "vanilla" && checks[i].startsWith("river_bean_salesman")) { unusedLocations.push(i); }
-    if (rules.gerudoCard == "vanilla" && checks[i].startsWith("fortress_card")) { unusedLocations.push(i); }
-    if (rules.preset != "TRUTH" && checks[i].startsWith("theater_truth")) { unusedLocations.push(i); }
-    if (rules.expensive == "vanilla" && (checks[i] == "goron_medigoron" || checks[i].startsWith("kakariko_hag") || checks[i].startsWith("wasteland_carpet"))) { unusedLocations.push(i); }
-    if (unusedLocations.includes(i)) {
+    if (unusedLocations.includes(checks[i])) {
       document.getElementById(checks[i]).style.display = "none";
       document.getElementById("text_" + checks[i]).style.display = "none";
       document.getElementById("br_" + checks[i]).style.display = "none";
@@ -1348,7 +1350,7 @@ function updateLogicInfo() {
 
     if (document.getElementById(str).style.display != "none" && document.getElementById(str).style.visibility != "hidden") { if (document.getElementById(str).style.color == "orange" || document.getElementById(str).style.color == "magenta") { colorChange = true; } else { colorChange = false; } } else { colorChange = false; }
     if (document.getElementById(str).style.display == "none" || document.getElementById(str).style.visibility == "hidden") { continue; }
-    document.getElementById(str).innerHTML = backUp[i];   
+    document.getElementById(str).innerHTML = backUp[i];
 
     let className = "ool-check-text";
 

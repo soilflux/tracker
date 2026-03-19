@@ -1274,10 +1274,10 @@ function updateCheckLogic() {
     checkLogic.gs_ice_block_room = ice_access && (bottle || can_shoot_blue_fire_arrows) && hookshot;
   }
 
-  const dungeons = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "gtg", "ice"];
-  dungeons.forEach(name => {
-    dungeonCheckAccess(name, player, "checkAccess");
-    dungeonCheckAccess(name, couldHave, "couldAccess");
+  const areas = ["deku", "dodongos", "jabu", "forest", "fire", "water", "shadow", "spirit", "well", "gtg", "ice"];
+  areas.forEach(name => {
+    areaCheckAccess(name, player, "checkAccess");
+    areaCheckAccess(name, couldHave, "couldAccess");
   });
 
   for (let i = 0, Access = checkAccess, Has = player; i < 2; i++) {
@@ -1728,7 +1728,7 @@ function unlocksChecksInDungeon() {
     if (rules.smallKeys == "keyRings") items.push(`${dungeon}_key_ring`);
     const sim = { ...player };
 
-    const startCount = dungeonCheckAccess(dungeon, player, "sim");
+    const startCount = areaCheckAccess(dungeon, player, "sim");
     let itemsUnlockChecks = [];
     for (const item of items) {
       if (sim[item]) continue;
@@ -1738,7 +1738,7 @@ function unlocksChecksInDungeon() {
       sim[item] = true;
 
       sim[`current_${dungeon}_keys`] += Math.round(startCount * 0.45);
-      const newCount = dungeonCheckAccess(dungeon, sim, "sim");
+      const newCount = areaCheckAccess(dungeon, sim, "sim");
       if (newCount > startCount) {
         itemsUnlockChecks.push({
           name: item,
@@ -1753,13 +1753,13 @@ function unlocksChecksInDungeon() {
   }
   updateDungeonItemImages("pocket");
 }
-function dungeonCheckAccess(dungeon, sim, type) {
+function areaCheckAccess(area, sim, type) {
   const keys = (count) => {
-    const meetsCount = sim[`current_${dungeon}_keys`] >= count;
-    const meetsSetting = rules.smallKeys !== "keyRings" || sim[`${dungeon}_key_ring`];
+    const meetsCount = sim[`current_${area}_keys`] >= count;
+    const meetsSetting = rules.smallKeys !== "keyRings" || sim[`${area}_key_ring`];
     return meetsCount && meetsSetting;
   };
-  const bossKey = sim[`${dungeon}_boss_key`];
+  const bossKey = sim[`${area}_boss_key`];
   const { time, bombs, chus, silver_scale, lullaby, silver_gauntlets, magic, requiem, gerudo_card, eponas } = sim;
   const explosives = (bombs || chus);
   const dins = sim.dins && magic;
@@ -1769,7 +1769,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
   const bottle = sim.bottle || (sim.rutos_letter && child_can_enter_river);
   const strength1 = sim.goron_bracelet;
 
-  updateEntranceAccess(dungeon, sim);
+  updateEntranceAccess(area, sim);
   const { adult, child, entry } = sim;
 
   const hovers = sim.hovers && adult;
@@ -1795,7 +1795,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
     assignChecks(checks, peeks, type);
     return 0;
   }
-  if (dungeon === "deku") {
+  if (area === "deku") {
     checks = {
       deku_lobby: true,
       deku_slingshot: true,
@@ -1812,7 +1812,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
     if (type !== "sim") {
       peeks.gs_deku_basement_back = explosives;
     }
-  } else if (dungeon === "dodongos") {
+  } else if (area === "dodongos") {
     const afterWall = explosives || strength1 || hammer || blueFireArrows;
     const floor2 = afterWall && (explosives || strength1 || dins || bow);
     checks = {
@@ -1842,7 +1842,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.h_dodongos = afterWall;
       peeks.gs_dodongos_above_stairs = floor2 && (hookshot || boomerang || explosives || sling || bow || dins);
     }
-  } else if (dungeon === "jabu") {
+  } else if (area === "jabu") {
     const afterSwitch = explosives || boomerang || sling || hookshot || bow;
     checks = {
       jabu_boomerang: afterSwitch,
@@ -1859,7 +1859,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_jabu_near_octo_1 = afterSwitch && (boomerang || sling);
       peeks.gs_jabu_near_octo_2 = afterSwitch && (boomerang || sling);
     }
-  } else if (dungeon === "forest") {
+  } else if (area === "forest") {
     const courtyard = time || (bow && hookshot) || ((hovers || strength1) && keys(1))
     const upperCourtyard = (hovers || strength1) && keys(1)
     const afterBlock = adult && strength1;
@@ -1892,7 +1892,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_forest_outdoor_west = (bow && hookshot) || (upperCourtyard && bombs) || (courtyard && (bow || chus));
       peeks.gs_forest_outdoor_east = hookshot || hovers || bow || (time && chus);
     }
-  } else if (dungeon === "fire") {
+  } else if (area === "fire") {
     const afterClimb = adult && keys(3) && (bow || hookshot || explosives);
     checks = {
       fire_nearBoss: true,
@@ -1923,7 +1923,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
         peeks.fire_shortcut = afterClimb;
       }
     }
-  } else if (dungeon === "water") {
+  } else if (area === "water") {
     const drained = lullaby && (irons || longshot);
     const pillar = drained && (bow || dins || keys(1));
     const river = keys(2) && hookshot && time
@@ -1953,7 +1953,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       }
       peeks.gs_water_central = pillar && (longshot || (farores && hookshot) || chus || bow);
     }
-  } else if (dungeon === "shadow") {
+  } else if (area === "shadow") {
     const afterWall = adult && hovers && explosives && keys(1);
     const afterFans = adult && hovers && explosives && hookshot && keys(3);
     const afterBoat = adult && hovers && explosives && hookshot && lullaby && keys(4);
@@ -1990,7 +1990,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_shadow_crusher = afterWall;
       peeks.gs_shadow_near_boat = afterFans && (longshot || bow || chus) && keys(4);
     }
-  } else if (dungeon === "spirit") {
+  } else if (area === "spirit") {
     const childProjectile = explosives || sling || boomerang;
     const adultProjectile = explosives || bow || hookshot;
     checks = {
@@ -2035,7 +2035,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gs_spirit_lobby = (strength2 && keys(1) && (hookshot || hovers || bow)) || (explosives && sling && keys(1));
     }
   }
-  else if (dungeon === "well" && child) {
+  else if (area === "well" && child) {
     checks = {
       well_fakeRight: true,
       well_backBombable: explosives,
@@ -2066,7 +2066,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
     peeks.gs_well_west_inner = keys(1);
     peeks.gs_well_east_inner = keys(1);
   }
-  else if (dungeon === "gtg") {
+  else if (area === "gtg") {
     const climb = hookshot || hovers || bombs;
     checks = {
       gtg_lobbyLeft: bow || sling,
@@ -2104,7 +2104,7 @@ function dungeonCheckAccess(dungeon, sim, type) {
       peeks.gtg_final = true;
     }
   }
-  else if (dungeon === "ice") {
+  else if (area === "ice") {
     checks = {
       ice_map: (bottle || blueFireArrows) && (adult || explosives),
       ice_hp: (bottle || blueFireArrows) && (adult || explosives || wallet2),
@@ -2119,8 +2119,8 @@ function dungeonCheckAccess(dungeon, sim, type) {
     peeks.gs_ice_hp_room = (bottle || blueFireArrows) && (hookshot || bow || explosives || dins);
     peeks.gs_ice_block_room = (bottle || blueFireArrows) && (hookshot || bow || explosives || dins);
   }
+  
   assignChecks(checks, peeks, type);
-
 
   const excludeGs = !rules.skullsanity == "off";
   return Object.entries(checks).filter(([k, v]) => v && (!excludeGs || !k.includes('gs_'))).length;
