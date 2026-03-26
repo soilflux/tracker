@@ -683,7 +683,7 @@ const inputToItemMap = {
   "mir": "mirror",
   "sca": "scale", "vv": "scale",
   "sl": "sling",
-  "ss": "strength",
+  "ss": "strength", "st": "strength",
   "pp": "prescription", "scr": "prescription",
   "cl": "claim_check",
   "ww": "wallet", "wal": "wallet",
@@ -705,9 +705,9 @@ const inputToItemMap = {
   "lu": "lullaby",
   "ep": "eponas",
   "sa": "sarias",
-  "ti": "time",
+  "ti": "time", "sot": "time",
   "su": "suns",
-  "st": "storms",
+  "sos": "storms",
   "min": "minuet",
   "bol": "bolero",
   "se": "serenade",
@@ -1049,6 +1049,7 @@ var checks = [
   "gtg_lobbyLeft", "gtg_lobbyRight", "gtg_stalfos", "gtg_wolfos", "gtg_silvers1", "gtg_silvers2", "gtg_silvers3", "gtg_silvers4", "gtg_eyes", "gtg_aboveEyes", "gtg_keese", "gtg_flamesChest", "gtg_freestanding", "gtg_right2", "gtg_right3", "gtg_beamos", "gtg_left1", "gtg_left2", "gtg_left3", "gtg_left4", "gtg_final", "gtg_toilet",
   "well_fakeLeft", "well_frontBombable", "well_centerBig", "well_fakeRight", "well_centerSmall", "well_backBombable", "well_waterLeft", "well_coffin", "well_waterFront", "well_invisible", "well_deadHand", "gs_well_west_inner", "gs_well_east_inner", "well_locked1", "well_locked2", "gs_well_like_like", "well_basement",
 ];
+
 soliLinsoSongOrderConvert = [1, 2, 3, 6, 4, 8, 7, 11, 9, 12, 10, 5];
 
 var checkNames = [
