@@ -575,70 +575,22 @@
       <span class="close">&times;</span>
       <p>
         <!-- IMPORTANT: When adding a patch note, also update data-version to match the latest note -->
-        <br>Useful info has been placed along the edges of the tracker. The main reason for this is to better support
-        setups where the emulator is placed over the center.
-        Ergonomically, it makes more sense for the eyes to be focused on the center of the monitor most of the time.
-        There's also just a lot more free space now overall.
-        <br>It's now viable to display the checklist and top bar on stream, filling the rest of the space with the game.
-        Understandably, this could be considered too information
-        dense for a stream layout, but this is the intended alternative to showing the LinSo tracker.
+        <br>Useful info has been placed on the edges of the tracker to optimize around playing with an emulator over the center of the tracker.
         <br>
         <br>Songs are now in the main checklist, mainly to make the next check highlight more intuitive.
+        <br>
+        <br>New input methods, see halp for more info. The short of it is that everything can be done through the boxes
+        next to checks. The boxes for always/sometimes hints, barrens, paths, entrances, and medallions are now optional, slower alternatives.
+        <br>
+        <br>Shortened item inputs, and added faster alternatives. All of the old ones will still work, although many of
+        them will trigger with only 2 letters, which may throw you off for a bit.
+        <br>
+        <br>Items next to dungeon names now show items you don't have, in order from most checks unlocked in that dungeon to least.
         <br>
         <br>A new layout for information on songs has been added.
         <br>-A green background means the vanilla check for that song is accessible and unknown.
         <br>-A red background means the vanilla check for that song is inaccessible and unknown.
         <br>-The pictures show whether you have the item or not, as usual.
-        <br>
-        <br>New input methods, see halp for more info. The short of it is that everything can be done through the boxes
-        next to checks, leaving the boxes for always/sometimes hints,
-        barrens, paths, entrances and medallions mostly obsolete/inferior.
-        <br>
-        <br>Shortened item inputs, and added faster alternatives. All of the old ones will still work, although many of
-        them will trigger with only 2 letters, which may throw you off for a bit.
-        <!-- <br />dual hints supported, see location codes
-            <br />added left click / right click to dungeon entrances to highlight/hide them. also added med images to dungeon entrances
-            <br />added buttons to toggle bigger path hint font and location headers
-            <br />added unimportant important items (bgs, sto, nay)
-            <br />added right click / left click on path hints to collapse path hints and reduce clutter
-            <br />added S9 preset, dungeon ER, important items, light arrow hint
-            <br />various changes up to SGL 2025 and league S9
-            <br />added new animals and increased the power of levels to compensate for decreased roll odds
-            <br />added yami-mal evolution: if nocturne of shadow is located in the animal's preferred location, it will gain yami powers for the rest of the seed and a permanent +6.66% increase in XP(additive multiplier). also quartered xp gains during sim mode.
-            <br />fixed animal rng to work as described (leveling up other animals was taking away from odds of rolling highest level animal) 
-            <br />added more locations to alt hint input(to support dual hint locations) 
-            <br />added ability to enter items into song locations. changed prescription input from "pre" to "scr"
-            <br />changed the way big chest info is displayed. can capitalize x(or first letter of whatever your junk input is) to signify a big chest item that wasn't important(bait item)
-            <br />added ToD tracking--yellow means day;blue means night. left click number to save value;right click to load. emojis set beginning/mid night/day. hotkey is period, also supports controller
-            <br />replaced sim seeds with 200 new seeds. if you collect 20 items in a built-in seed, the seed number will automatically increment for next time.
-            <br />may now play sim using seeds included with the tracker. currently 20 seeds are included. to use, enter a value from 1-20 in the input box next to "Play the Sim"
-            <br />added a new simulator(see halp), credit to exodus
-            <br />added animal companionship; gain 1 XP with current animal after inputting a certain number of items. chance of rolling an animal goes up with its level(more info in halp)
-            <br />fix for bait probability(calculation was very wrong); also added the ability to click bait text to decrement untracked items (DD, bigo, stone of agony, ice arrows, nayru's) 
-            <br />cleaned up "searching for"--won't display items if you know about the location of all its copies or if you have an item you only need one of(like a bomb bag) 
-            <br />added light theme and a preset for season 6 (changes by exodus) 
-            <br />added league S3 and SGL 2022 preset (exodus)
-            <br />51: known but not obtained item locations now stay in the checklist
-            <br />50: right clicks on items listed in woth locations now remove the item instead of highlighting it red. The woth location can be reset by clicking on its title. (change by exodus) 
-            <br />49: searching for items are now manually tracked. click items listed to remove them. right click item icons on main tracker to add them. n can be modified (chance of finding at least one searched for item in n checks).
-            <br />48: added probabilities for chance of an item from a category(explosives, major, bait(in big chests)) in any one check. This is a simplfied calculation based on items left in that category and checks remaining. logic is not factored in at all so in some cases there will be a large level of inaccuracy.
-            <br />47: updated halp to include recently added features. can now hover over the keys remaining circles to see locations where keys were found (by exodus)
-            <br />46: check summary functions(exodus): can right click a location in check summary to toggle item from it obtained/not obtained. can left click a location in check summary to toggle it hinted/unhinted
-            <br />45: peek/csmc visibility(exodus): separate color for checks you can peek but can't obtain (faded yellow)
-            <br />44: path hint functions(exodus): left click an item in woth item list to highlight it yellow and right click to highlight it red. tracker will recognize starting letters of a boss name in pointed to woth boxes (use at least two letters)
-            <br />43: tracker no longer knows logic
-            <br />42: added frogs2 song display and S5 preset(by exodus)
-            <br />39: Added a new text style for an in logic check that requires an item you have not yet picked up
-            <br />38: added axes support for controller input(might not work with your controller atm).
-            <br />31: controller input works for child dungeons and ice by middle clicking the input box for any check within them
-            <br />27: added Controller Inputs (configure buttons below by selecting the box and pressing desired button on controller); Usage: Clicking a dungeon name will name a check next to the enlarged items near bottom of screen. Pressing the accept inputs button initiates a 1s window to press either the junk, key, item or skip button. This sequence continues until there are no more accessible checks in dungeon.
-            <br />26: timer now starts paused and the hotkey for it has been changed to the pause key
-            <br />22: Added highlighting to patch numbers that were loaded for the first time
-            <br />8: Mouse Only Inputs. Usage: Right click boxes for locations with items (can stack locations) Then, click on the item that was found at leftmost location in the list (still needs work)
-            <br />7: added spawn inputs (scroll down) <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ceO91iG4BK78gPTU9c3lvQR9nxIRrncX3SLp_DiQbLg/edit#gid=223535798"><span class = "black">b</span><span class = "yellow">e</span><span class = "black">e</span>luigi's spawns sheet for reference</a>
-            <br />4: Hotkey for Incrementing Token Counter(- and =)
-            <br />3: LinSo Trade Items and Token Counter (Show LinSo button)
-            <br />1: Custom Item Inputs (scroll down)  -->
       </p>
     </div>
   </div>
