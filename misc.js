@@ -1,3 +1,31 @@
+const oldVersionButton = document.getElementById('oldVersion');
+oldVersionButton.addEventListener('click', () => {
+  window.location.href = 'https://soilflux.github.io/trackerOld/';
+});
+
+const exportBtn = document.getElementById('exportBtn');
+exportBtn.onclick = async () => {
+  await navigator.clipboard.writeText(JSON.stringify(localStorage));
+  exportBtn.innerText = "Copied!";
+  setTimeout(() => exportBtn.innerText = "Copy Data to Clipboard", 2000);
+};
+
+
+document.getElementById('importBtn').onclick = () => {
+  const data = prompt("Paste your exported data here:");
+  
+  if (data) {
+    try {
+      const json = JSON.parse(data);
+      Object.entries(json).forEach(([k, v]) => localStorage.setItem(k, v));
+      alert("Import successful! Refreshing...");
+      location.reload(); 
+    } catch (e) {
+      alert("Invalid data. Make sure you copied the whole string.");
+    }
+  }
+};
+
 function highlight(x) {
   const item = x.id.replace("img","");
   player[item] = !player[item];
