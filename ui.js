@@ -738,7 +738,7 @@ function highlightNextCheck(locationId) {
     age = "child";
     ageSetStamp = d.getTime();
   }
-
+ 
   let checkArea = checkToAreaMap[locationId];
 
   for (const loc of areaToCheckMap[checkArea].slice(areaToCheckMap[checkArea].indexOf(locationId))) {
@@ -764,7 +764,7 @@ function highlightNextCheck(locationId) {
       return false;
     }
 
-    if (document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden" && document.getElementById(loc).value == "" && checkPeek[loc]) {
+    if (document.getElementById(loc).style.display != "none" && document.getElementById(loc).style.visibility != "hidden" && document.getElementById(loc).value == "" && (checkPeek[loc] || checkAccess[loc])) {
       return true;
     }
   }
