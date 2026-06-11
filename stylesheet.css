@@ -644,7 +644,7 @@ img[src="#"] {
 #row {
   background-color: #3b4144;
   height: 1080px;
-  box-shadow: inset 0 0 15px 15px rgba(0,0,140,0.5);
+  /*box-shadow: inset 0 0 15px 15px rgba(0,0,140,0.5);*/
 }
 
 .highlight-flash {
