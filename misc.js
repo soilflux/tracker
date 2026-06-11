@@ -137,8 +137,8 @@ function isLowerCase(str) {
 
 function timerControl() {
   pauseFlag = true;
-  if (paused) { paused = false; document.getElementById("timerControl").innerHTML = "Pause"; }
-  else { paused = true; document.getElementById("timerControl").innerHTML = "Resume"; }
+  if (paused) { paused = false; }
+  else { paused = true; }
   timerStuff();
 }
 
