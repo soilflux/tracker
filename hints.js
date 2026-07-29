@@ -129,9 +129,6 @@ function wothAndBarrenProcessing() {
 
     var wothRowNumber = 1;
     var wothNumber = 0;
-    var tempnumber3 = 1;
-    var tempbool = false;
-
 
     if (woth1 == AreaNames[i] || woth2 == AreaNames[i] || woth3 == AreaNames[i] || woth4 == AreaNames[i] || woth5 == AreaNames[i] || woth6 == AreaNames[i] || woth7 == AreaNames[i] || woth8 == AreaNames[i]) {
 

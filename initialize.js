@@ -1603,7 +1603,6 @@ updateCheckLogic();
 
 updateColorScheme();
 updateTheme();
-wothSizeToggle();
 
 var linsoOrder = ["stick", "nut", "bombs", "bow", "fire_arrows", "dins", "sling", "ocarina", "chus", "hookshot", "ice_arrows", "farores", "boomerang", "lens", "magic_bean_pack", "hammer", "light_arrows", "nayrus_love", "rutos_letter", "bottle1", "bottle2", "bottle3", "egg1", "egg2", "kokiri_sword", "master_sword", "biggoron_sword", "circus", "skull_token", "skull_counter", "deku_shield", "hylian_shield", "mirror", "magic", "adults_wallet", "gerudo_card", "kokiri_tunic", "goron_tunic", "zora_tunic", "stone_of_agony", "silver_scale", "goron_bracelet", "kokiri_boots", "irons", "hovers", "emerald", "ruby", "sapphire", "forestMedallion", "fireMedallion", "waterMedallion", "gen1", "gen2", "gen3"];
 var linsoOrder2 = ["lullaby", "eponas", "sarias", "suns", "time", "storms", "minuet", "bolero", "serenade", "nocturne", "requiem", "prelude"];

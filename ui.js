@@ -738,7 +738,7 @@ function highlightNextCheck(locationId) {
     age = "child";
     ageSetStamp = d.getTime();
   }
- 
+
   let checkArea = checkToAreaMap[locationId];
 
   for (const loc of areaToCheckMap[checkArea].slice(areaToCheckMap[checkArea].indexOf(locationId))) {
@@ -861,6 +861,7 @@ function toggleLinsoGoMode() {
 function refreshLinSo() {
   if (rules.linso == "show") {
     document.getElementById("linsoTracker").style.display = "inline-block";
+    document.getElementById("woth_info").style.display = "inline-block";
     for (let i = 0; i < songChecks.length; i++) {
       if (checkToItemMap[songChecks[i]] != "unknown") {
         document.getElementById("linsoC" + soliLinsoSongOrderConvert[i]).style.opacity = 1;
@@ -906,7 +907,10 @@ function refreshLinSo() {
     }
     if (angelFlag) { document.getElementById(animalID).style.opacity = 0.4; }
   }
-  else { document.getElementById("linsoTracker").style.display = "none"; }
+  else {
+    document.getElementById("linsoTracker").style.display = "none";
+    document.getElementById("woth_info").style.display = "none";
+  }
 }
 
 function updateRules() {
