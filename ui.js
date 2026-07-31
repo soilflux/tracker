@@ -1771,8 +1771,8 @@ function updateChecklistEntrances() {
     const imageData = entranceImages[entranceType];
 
     if (imageData) {
-      document.getElementById(`${elementPrefix}_from`).src = `${basePath}${imageData.from}.jpg`;
-      document.getElementById(`${elementPrefix}_to`).src = `${basePath}${imageData.to}.jpg`;
+      document.getElementById(`${elementPrefix}_from`).src = `${basePath}${imageData.from}.png`;
+      document.getElementById(`${elementPrefix}_to`).src = `${basePath}${imageData.to}.png`;
     }
   }
 }

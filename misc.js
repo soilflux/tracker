@@ -603,7 +603,7 @@ function Undo() {
   forcedDisplay[checks.indexOf(lastCheck[lastCheck.length - 1])] = false;
   for (var i = 0; i < AreaNames.length; i++) {
     if (checkToAreaMap[lastCheck[lastCheck.length - 1]] == AreaNames[i] && !songChecks.includes(lastCheck[lastCheck.length - 1])) {
-      document.getElementById(lastCheck[lastCheck.length - 1]).style.backgroundImage = `url('${areaToImageMap[AreaNames[i]]}')`;
+      document.getElementById(lastCheck[lastCheck.length - 1]).style.backgroundImage = getAreaImagePath(areaToImageMap[areaName]);
     }
   }
 

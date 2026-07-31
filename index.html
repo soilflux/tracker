@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link id="tab_pic" rel="shortcut icon" href="tab_pics/circus_tent.png" />
+  <link id="tab_pic" rel="shortcut icon" href="animals/circus_tent.png" />
   <link style="text/css" rel="stylesheet" href="stylesheet.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
   <title>Aminal Tracker</title>
@@ -21,31 +21,31 @@
       <div>
         <div id="importants"></div>
       </div>
-      <div id="songs-grid">
-        <div id="lullabyCheckDisplay"><img src="./images/lullaby.png" id="lullabyimg" class="song-icon"
+      <div id="songs-grid"> <!-- original images show on page load for memes -->
+        <div id="lullabyCheckDisplay"><img src="./original/items/lullaby.png" id="lullabyimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="eponasCheckDisplay"><img src="./images/eponas.png" id="eponasimg" class="song-icon"
+        <div id="eponasCheckDisplay"><img src="./original/items/eponas.png" id="eponasimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="sariasCheckDisplay"><img src="./images/sarias.png" id="sariasimg" class="song-icon"
+        <div id="sariasCheckDisplay"><img src="./original/items/sarias.png" id="sariasimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="sunsCheckDisplay"><img src="./images/suns.png" id="sunsimg" class="song-icon"
+        <div id="sunsCheckDisplay"><img src="./original/items/suns.png" id="sunsimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="timeCheckDisplay"><img src="./images/sot.png" id="timeimg" class="song-icon"
+        <div id="timeCheckDisplay"><img src="./original/items/sot.png" id="timeimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="stormsCheckDisplay"><img src="./images/sos.png" id="stormsimg" class="song-icon"
+        <div id="stormsCheckDisplay"><img src="./original/items/sos.png" id="stormsimg" class="song-icon"
             onmousedown="highlight(this)"></div>
 
-        <div id="minuetCheckDisplay"><img src="./images/minuet.png" id="minuetimg" class="song-icon"
+        <div id="minuetCheckDisplay"><img src="./original/items/minuet.png" id="minuetimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="boleroCheckDisplay"><img src="./images/bolero.png" id="boleroimg" class="song-icon"
+        <div id="boleroCheckDisplay"><img src="./original/items/bolero.png" id="boleroimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="serenadeCheckDisplay"><img src="./images/serenade.png" id="serenadeimg" class="song-icon"
+        <div id="serenadeCheckDisplay"><img src="./original/items/serenade.png" id="serenadeimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="requiemCheckDisplay"><img src="./images/requiem.png" id="requiemimg" class="song-icon"
+        <div id="requiemCheckDisplay"><img src="./original/items/requiem.png" id="requiemimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="nocturneCheckDisplay"><img src="./images/nocturne.png" id="nocturneimg" class="song-icon"
+        <div id="nocturneCheckDisplay"><img src="./original/items/nocturne.png" id="nocturneimg" class="song-icon"
             onmousedown="highlight(this)"></div>
-        <div id="preludeCheckDisplay"><img src="./images/prelude.png" id="preludeimg" class="song-icon"
+        <div id="preludeCheckDisplay"><img src="./original/items/prelude.png" id="preludeimg" class="song-icon"
             onmousedown="highlight(this)"></div>
       </div>
       <div>
@@ -131,7 +131,7 @@
       </div>
       <div id="searchingFor">
         <small id="major_probability">Searching For</small><br>
-        <div id="searchingFor_div"><img id="goMode" src="./normal/gomode.png"></img></div>
+        <div id="searchingFor_div"><img id="goMode" src="./linso/gomode.png"></img></div>
         <small id="theLetterN">n </small><input spellcheck="false" id="probability_input" class="hint_input"
           value='1'></input>
       </div>
@@ -147,9 +147,9 @@
       </div>
       <div>
         <small id="timer"></small><br>
-        <img id="childPic" src="./images/child.png" class="man"></img><input id="markChildLocation"
+        <img id="childPic" src="./original/child.png" class="man"></img><input id="markChildLocation"
           class="mark_spawn"></input><br>
-        <img src="./images/adult.png" id="adultPic" class="man"></img><input id="markAdultLocation"
+        <img src="./original/adult.png" id="adultPic" class="man"></img><input id="markAdultLocation"
           class="mark_spawn"></input><br>
       </div>
     </div>
@@ -209,7 +209,7 @@
       </div>
     </div>
     <div id="linsoColumn">
-      <div id="linsoTracker"><img id="linso_background" src="./images/background.png"></div>
+      <div id="linsoTracker"><img id="linso_background" src="./linso/background.png"></div>
       <div id="woth_info">
         <small id="woth1_title" class="woth_info_title" onmousedown="resetWoth(this,1)"></small><br /><small
           id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small
@@ -598,11 +598,11 @@
   <div id="settings">
     <div id="skullsInLogicList"></div>
     <div id="credits"><small class="customizeTitles">Credits</small>
-      <br><img src="./images/soli.png" class="pplpics">Soli
-      <br><img src="./images/exodus.png" class="pplpics">Exodus
-      <br><img src="./images/beeluigi.png" class="pplpics">Beeluigi
-      <br><img src="./images/juwk.png" class="pplpics">Juwk
-      <br><img src="./images/flee.png" class="pplpics">Flee
+      <br><img src="./original/soli.png" class="pplpics">Soli
+      <br><img src="./original/exodus.png" class="pplpics">Exodus
+      <br><img src="./original/beeluigi.png" class="pplpics">Beeluigi
+      <br><img src="./original/juwk.png" class="pplpics">Juwk
+      <br><img src="./original/flee.png" class="pplpics">Flee
     </div>
 
     <div id="settingsColumn">

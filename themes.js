@@ -100,40 +100,40 @@ const itemToImageMap = {
 };
 
 const areaToImageMap = {
-  "Kokiri": "./normal/areas/kokiri.jpg",
-  "Ranch": "./normal/areas/ranch.jpg",
-  "Field": "./normal/areas/field.jpg",
-  "Valley": "./normal/areas/valley.jpg",
-  "Hylia": "./normal/areas/hylia.jpg",
-  "Market": "./normal/areas/market.jpg",
-  "Hyr Cas": "./normal/areas/hyrule_castle.jpg",
-  "OGC": "./normal/areas/ogc.jpg",
-  "ToT": "./normal/areas/tot.jpg",
-  "Fountain": "./normal/areas/fountain.jpg",
-  "Ice": "./normal/areas/ice.jpg",
-  "Deku": "./normal/areas/deku.jpg",
-  "Lost Woods": "./normal/areas/lost_woods.jpg",
-  "SFM": "./normal/areas/sfm.jpg",
-  "Goron City": "./normal/areas/goron.jpg",
-  "Dodongos": "./normal/areas/dodongos.jpg",
-  "Trail": "./normal/areas/dmt.jpg",
-  "Crater": "./normal/areas/dmc.jpg",
-  "Kakariko": "./normal/areas/kakariko.jpg",
-  "Graveyard": "./normal/areas/graveyard.jpg",
-  "River": "./normal/areas/river.jpg",
-  "Domain": "./normal/areas/domain.jpg",
-  "Colossus": "./normal/areas/colossus.jpg",
-  "Wasteland": "./normal/areas/wasteland.jpg",
-  "Fortress": "./normal/areas/fortress.jpg",
-  "Jabu": "./normal/areas/jabu.jpg",
-  "Forest": "./normal/areas/forest.jpg",
-  "Fire": "./normal/areas/fire.jpg",
-  "Water": "./normal/areas/water.jpg",
-  "Shadow": "./normal/areas/shadow.jpg",
-  "Spirit": "./normal/areas/spirit.jpg",
-  "Well": "./normal/areas/well.jpg",
-  "GTG": "./normal/areas/gtg.jpg",
-  "Ganon's": "./normal/areas/ganons.jpg"
+  "Kokiri": "kokiri",
+  "Ranch": "ranch",
+  "Field": "field",
+  "Valley": "valley",
+  "Hylia": "hylia",
+  "Market": "market",
+  "Hyr Cas": "hyrule_castle",
+  "OGC": "ogc",
+  "ToT": "tot",
+  "Fountain": "fountain",
+  "Ice": "ice",
+  "Deku": "deku",
+  "Lost Woods": "lost_woods",
+  "SFM": "sfm",
+  "Goron City": "goron",
+  "Dodongos": "dodongos",
+  "Trail": "dmt",
+  "Crater": "dmc",
+  "Kakariko": "kakariko",
+  "Graveyard": "graveyard",
+  "River": "river",
+  "Domain": "domain",
+  "Colossus": "colossus",
+  "Wasteland": "wasteland",
+  "Fortress": "fortress",
+  "Jabu": "jabu",
+  "Forest": "forest",
+  "Fire": "fire",
+  "Water": "water",
+  "Shadow": "shadow",
+  "Spirit": "spirit",
+  "Well": "well",
+  "GTG": "gtg",
+  "Ganon's": "ganons"
 };
 
 const itemImages = [
@@ -211,13 +211,16 @@ const itemImages = [
   itemToImageMap["serenade"]
 ];
 
+function getAreaImagePath(area) {
+  return `url('./${rules.theme}/areas/${area}.png')`;
+}
+
 function original() {
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
     let areaName = checkToAreaMap[checks[i]];
-    let imgFile = "url('./images/" + AreaImages[areaName] + ".png')";
+    let imgFile = getAreaImagePath(areaToImageMap[areaName]);
     if (imgFile) {
-      player[AreaImages[areaName] + "_img"] = imgFile;
       document.getElementById(key).style.backgroundImage = imgFile;
     }
   }
@@ -233,9 +236,9 @@ function normal() {
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
     let areaName = checkToAreaMap[checks[i]];
-    let imgFile = areaToImageMap[areaName];
+    let imgFile = getAreaImagePath(areaToImageMap[areaName]);
     if (imgFile) {
-      document.getElementById(key).style.backgroundImage = `url("${imgFile}")`;
+      document.getElementById(key).style.backgroundImage = imgFile;
     }
   }
   document.getElementById("lullabyimg").src = itemToImageMap["lullaby"];
