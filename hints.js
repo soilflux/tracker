@@ -312,10 +312,10 @@ function wothDisplay() {
       importantCount += 1;
       return;
     }
-    const pathFile = areaToImageMap[pathKey] ?? itemToImageMap[pathKey];
+    const pathFile = getImagePath(pathKey);
     const areaInput = document.getElementById(`woth_input${id}`)?.value
     const areaKey = hintCodeToAreaMap[areaInput];
-    const areaFile = areaToImageMap[areaKey];
+    const areaFile = getImagePath(areaKey);
 
     const allItems = areaToItemsMap[areaKey] ?? [];
     const visibleItems = allItems.filter(item => !skippedItems[`${areaKey}-${item}`]);
@@ -326,7 +326,7 @@ function wothDisplay() {
       const itemName = visibleItems[index];
 
       if (itemName) {
-        img.src = itemToImageMap[itemName];
+        img.src = getImagePath(itemName);
         img.style.visibility = "visible";
         img.onclick = () => toggleGlow(img);
         img.oncontextmenu = () => toggleItemSkipped(areaKey, itemName);

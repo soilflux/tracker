@@ -2146,7 +2146,7 @@ function updateDungeonItemImages(dungeon, items) {
     if (imgElement) {
       if (dungeon === "pocket") { imgElement.src = ""; continue; }
       const itemName = items[i];
-      imgElement.src = itemName ? itemToImageMap[itemName] : "";
+      imgElement.src = itemName ? getImagePath(itemName) : "";
     }
   }
 }

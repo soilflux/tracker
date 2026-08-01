@@ -1654,14 +1654,14 @@ for (var i = 1; i <= 11; i++) {
       elem.id = "linso" + i + j;
       elem.style.height = "35px";
       elem.style.width = "35px";
-      if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) { elem.src = itemToImageMap["bottle"]; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) { elem.src = itemToImageMap["shadow"]; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) { elem.src = itemToImageMap["spirit"]; }
-      else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) { elem.src = itemToImageMap["light"]; }
+      if (linsoOrder[linsoOrderIncrement].startsWith("bottle")) { elem.src = getImagePath("bottle"); }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen1")) { elem.src = getImagePath("shadow"); }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen2")) { elem.src = getImagePath("spirit"); }
+      else if (linsoOrder[linsoOrderIncrement].startsWith("gen3")) { elem.src = getImagePath("light"); }
       else if (linsoOrder[linsoOrderIncrement].startsWith("circus")) {
         rollAnimal();
       }
-      else { elem.src = itemToImageMap[linsoOrder[linsoOrderIncrement]]; }
+      else { elem.src = getImagePath(linsoOrder[linsoOrderIncrement]); }
       player[linsoOrder[linsoOrderIncrement]] = false;
       if (linsoOrder[linsoOrderIncrement] == "kokiri_boots" || linsoOrder[linsoOrderIncrement] == "kokiri_tunic" || linsoOrder[linsoOrderIncrement] == "skull_token") { player[linsoOrder[linsoOrderIncrement]] = true; }
       elem.style.position = "absolute";
@@ -1705,7 +1705,7 @@ for (var i = 1; i <= 12; i++) {
   elem.id = "linsoS" + i;
   elem.style.height = "35px";
   elem.style.width = "35px";
-  elem.src = itemToImageMap[linsoOrder2[linsoOrderIncrement]];;
+  elem.src = getImagePath(linsoOrder2[linsoOrderIncrement]);
   elem.style.position = "absolute";
   elem.style.left = 258 + "px";
   elem.style.top = tempTop + i * 31 + "px";
@@ -1728,11 +1728,12 @@ for (var i = 1; i <= 12; i++) {
   document.getElementById("linsoTracker").appendChild(elem);
 }
 
-searchItems = ["Boomerang", "Bomb Bag", "Bow", "Hammer", "Scale", "Hookshot", "Letter", "Strength", "Mirror", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Din's Fire", "Light Arrows"]
+searchItems = ["Boomerang", "Bomb Bag", "Bow", "Hammer", "Scale", "Hookshot", "Letter", "Strength", "Mirror", "Magic", "Iron Boots", "Kokiri Sword", "Hover Boots", "Din's Fire", "Light Arrows"];
+searchItems2 = ["boomerang", "bombs", "bow", "hammer", "silver_scale", "hookshot", "rutos_letter", "goron_bracelet", "mirror", "magic", "irons", "kokiri_sword", "hovers", "dins", "light_arrows"];
 for (var i = 1; i <= 15; i++) {
   var id = 'searchingFor_' + Items[ItemNames.indexOf(searchItems[i - 1])]
   document.getElementById("searchingFor_div").innerHTML += '<img id = ' + id + ' class = "searchingFor_images" onmousedown = searchingFor_tracking()>'
-  document.getElementById(id).src = itemImages[ItemNames.indexOf(searchItems[i - 1])];
+  document.getElementById(id).src = getImagePath(searchItems2[i - 1]);
   document.getElementById(id).style.display = "inline-block";
 }
 

@@ -1,102 +1,102 @@
 const itemToImageMap = {
-  "chus": "./normal/items/chu.png",
-  "rutos_letter": "./normal/items/rutos_letter.png",
-  "boomerang": "./normal/items/boomerang.png",
-  "hookshot": "./normal/items/hookshot.png",
-  "bow": "./normal/items/bow.png",
-  "goron_bracelet": "./normal/items/goron_bracelet.png",
-  "lens": "./normal/items/lens.png",
-  "golden_gauntlets": "./normal/items/golden_gauntlets.png",
-  "hammer": "./normal/items/hammer.png",
-  "irons": "./normal/items/iron_boots.png",
-  "kokiri_sword": "./normal/items/kokiri_sword.png",
-  "silver_scale": "./normal/items/silver_scale.png",
-  "golden_scale": "./normal/items/golden_scale.png",
-  "longshot": "./normal/items/longshot.png",
-  "silver_gauntlets": "./normal/items/silver_gauntlets.png",
-  "mirror": "./normal/items/mirror_shield.png",
-  "dins": "./normal/items/dins_fire.png",
-  "magic": "./normal/items/magic.png",
-  "magic_2": "./normal/items/magic_2.png",
-  "hovers": "./normal/items/hover_boots.png",
-  "light_arrows": "./normal/items/light_arrows.png",
-  "fire_arrows": "./normal/items/fire_arrows.png",
-  "farores": "./normal/items/farores_wind.png",
-  "bottle": "./normal/items/bottle.png",
-  "sling": "./normal/items/slingshot.png",
-  "lullaby": "./normal/items/lullaby.png",
-  "eponas": "./normal/items/eponas.png",
-  "sarias": "./normal/items/sarias.png",
-  "suns": "./normal/items/suns.png",
-  "time": "./normal/items/time.png",
-  "storms": "./normal/items/storms.png",
-  "minuet": "./normal/items/minuet.png",
-  "bolero": "./normal/items/bolero.png",
-  "serenade": "./normal/items/serenade.png",
-  "requiem": "./normal/items/requiem.png",
-  "nocturne": "./normal/items/nocturne.png",
-  "prelude": "./normal/items/prelude.png",
-  "wallet1": "./normal/items/adults_wallet.png",
-  "boots": "./normal/items/boots.png",
-  "stone_of_agony": "./normal/items/stone_of_agony.png",
-  "antidote": "./normal/items/antidote.png",
-  "big_poe": "./normal/items/big_poe.png",
-  "biggoron_sword": "./normal/items/biggoron_sword.png",
-  "blue_chicken": "./normal/items/blue_chicken.png",
-  "bombs": "./normal/items/bomb.png",
-  "broken_sword": "./normal/items/broken_sword.png",
-  "bunny_hood": "./normal/items/bunny_hood.png",
-  "chicken1": "./normal/items/chicken1.png",
-  "chicken2": "./normal/items/chicken2.png",
-  "claim_check": "./normal/items/claim_check.png",
-  "deku_shield": "./normal/items/deku_shield.png",
-  "egg1": "./normal/items/egg1.png",
-  "egg2": "./normal/items/egg2.png",
-  "eyeball_frog": "./normal/items/eyeball_frog.png",
-  "eyedrops": "./normal/items/eyedrops.png",
-  "gerudo_card": "./normal/items/gerudo_card.png",
-  "gerudo_mask": "./normal/items/gerudo_mask.png",
-  "wallet2": "./normal/items/giants_wallet.png",
-  "goron_mask": "./normal/items/goron_mask.png",
-  "goron_tunic": "./normal/items/goron_tunic.png",
-  "hylian_shield": "./normal/items/hylian_shield.png",
-  "ice_arrows": "./normal/items/ice_arrows.png",
-  "forest_key_ring": "./normal/items/forest-temple-key.png",
-  "fire_key_ring": "./normal/items/fire-temple-key.png",
-  "water_key_ring": "./normal/items/water-temple-key.png",
-  "spirit_key_ring": "./normal/items/spirit-temple-key.png",
-  "shadow_key_ring": "./normal/items/shadow-temple-key.png",
-  "gtg_key_ring": "./normal/items/gtg-key.png",
-  "well_key_ring": "./normal/items/botw-key.png",
-  "ganons_key_ring": "./normal/items/ganon-key.png",
-  "keaton_mask": "./normal/items/keaton_mask.png",
-  "kokiri_boots": "./normal/items/kokiri_boots.png",
-  "kokiri_tunic": "./normal/items/kokiri_tunic.png",
-  "magic_bean_pack": "./normal/items/beans.png",
-  "mask_of_truth": "./normal/items/mask_of_truth.png",
-  "master_sword": "./normal/items/master_sword.png",
-  "nayrus_love": "./normal/items/nayrus_love.png",
-  "nut": "./normal/items/nut.png",
-  "ocarina": "./normal/items/ocarina.png",
-  "odd_mushroom": "./normal/items/odd_mushroom.png",
-  "poachers_saw": "./normal/items/poachers_saw.png",
-  "prescription": "./normal/items/prescription.png",
-  "skull_mask": "./normal/items/skull_mask.png",
-  "skull_token": "./normal/items/skull_token.png",
-  "spooky_mask": "./normal/items/spooky_mask.png",
-  "stick": "./normal/items/stick.png",
-  "zeldas_letter": "./normal/items/zeldas_letter.png",
-  "zora_mask": "./normal/items/zora_mask.png",
-  "zora_tunic": "./normal/items/zora_tunic.png",
-  "emerald": "./normal/items/emerald.png",
-  "ruby": "./normal/items/ruby.png",
-  "sapphire": "./normal/items/sapphire.png",
-  "forestMedallion": "./normal/items/forest.png",
-  "fireMedallion": "./normal/items/fire.png",
-  "waterMedallion": "./normal/items/water.png",
-  "shadow": "./normal/items/shadow.png",
-  "spirit": "./normal/items/spirit.png",
-  "light": "./normal/items/light.png"
+  "chus": "chu",
+  "rutos_letter": "rutos_letter",
+  "boomerang": "boomerang",
+  "hookshot": "hookshot",
+  "bow": "bow",
+  "goron_bracelet": "goron_bracelet",
+  "lens": "lens",
+  "golden_gauntlets": "golden_gauntlets",
+  "hammer": "hammer",
+  "irons": "iron_boots",
+  "kokiri_sword": "kokiri_sword",
+  "silver_scale": "silver_scale",
+  "golden_scale": "golden_scale",
+  "longshot": "longshot",
+  "silver_gauntlets": "silver_gauntlets",
+  "mirror": "mirror_shield",
+  "dins": "dins_fire",
+  "magic": "magic",
+  "magic_2": "magic_2",
+  "hovers": "hover_boots",
+  "light_arrows": "light_arrows",
+  "fire_arrows": "fire_arrows",
+  "farores": "farores_wind",
+  "bottle": "bottle",
+  "sling": "slingshot",
+  "lullaby": "lullaby",
+  "eponas": "eponas",
+  "sarias": "sarias",
+  "suns": "suns",
+  "time": "time",
+  "storms": "storms",
+  "minuet": "minuet",
+  "bolero": "bolero",
+  "serenade": "serenade",
+  "requiem": "requiem",
+  "nocturne": "nocturne",
+  "prelude": "prelude",
+  "wallet1": "adults_wallet",
+  "boots": "boots",
+  "stone_of_agony": "stone_of_agony",
+  "antidote": "antidote",
+  "big_poe": "big_poe",
+  "biggoron_sword": "biggoron_sword",
+  "blue_chicken": "blue_chicken",
+  "bombs": "bomb",
+  "broken_sword": "broken_sword",
+  "bunny_hood": "bunny_hood",
+  "chicken1": "chicken1",
+  "chicken2": "chicken2",
+  "claim_check": "claim_check",
+  "deku_shield": "deku_shield",
+  "egg1": "egg1",
+  "egg2": "egg2",
+  "eyeball_frog": "eyeball_frog",
+  "eyedrops": "eyedrops",
+  "gerudo_card": "gerudo_card",
+  "gerudo_mask": "gerudo_mask",
+  "wallet2": "giants_wallet",
+  "goron_mask": "goron_mask",
+  "goron_tunic": "goron_tunic",
+  "hylian_shield": "hylian_shield",
+  "ice_arrows": "ice_arrows",
+  "forest_key_ring": "forest-temple-key",
+  "fire_key_ring": "fire-temple-key",
+  "water_key_ring": "water-temple-key",
+  "spirit_key_ring": "spirit-temple-key",
+  "shadow_key_ring": "shadow-temple-key",
+  "gtg_key_ring": "gtg-key",
+  "well_key_ring": "botw-key",
+  "ganons_key_ring": "ganon-key",
+  "keaton_mask": "keaton_mask",
+  "kokiri_boots": "kokiri_boots",
+  "kokiri_tunic": "kokiri_tunic",
+  "magic_bean_pack": "beans",
+  "mask_of_truth": "mask_of_truth",
+  "master_sword": "master_sword",
+  "nayrus_love": "nayrus_love",
+  "nut": "nut",
+  "ocarina": "ocarina",
+  "odd_mushroom": "odd_mushroom",
+  "poachers_saw": "poachers_saw",
+  "prescription": "prescription",
+  "skull_mask": "skull_mask",
+  "skull_token": "skull_token",
+  "spooky_mask": "spooky_mask",
+  "stick": "stick",
+  "zeldas_letter": "zeldas_letter",
+  "zora_mask": "zora_mask",
+  "zora_tunic": "zora_tunic",
+  "emerald": "emerald",
+  "ruby": "ruby",
+  "sapphire": "sapphire",
+  "forestMedallion": "forest",
+  "fireMedallion": "fire",
+  "waterMedallion": "water",
+  "shadow": "shadow",
+  "spirit": "spirit",
+  "light": "light"
 };
 
 const areaToImageMap = {
@@ -211,15 +211,18 @@ const itemImages = [
   itemToImageMap["serenade"]
 ];
 
-function getAreaImagePath(area) {
-  return `url('./${rules.theme}/areas/${area}.png')`;
+function getImagePath(areaOrItem) {
+  const directory = itemToImageMap[areaOrItem] ? "items" : "areas";
+  areaOrItem = itemToImageMap[areaOrItem] ?? areaToImageMap[areaOrItem];
+  if (directory == 'areas') return `url('./${rules.theme}/${directory}/${areaOrItem}.png')`;
+  else return `./${rules.theme}/${directory}/${areaOrItem}.png`
 }
 
 function original() {
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
     let areaName = checkToAreaMap[checks[i]];
-    let imgFile = getAreaImagePath(areaToImageMap[areaName]);
+    let imgFile = getImagePath(areaName);
     if (imgFile) {
       document.getElementById(key).style.backgroundImage = imgFile;
     }
@@ -236,23 +239,23 @@ function normal() {
   for (var i = 0; i < checks.length; i++) {
     var key = checks[i];
     let areaName = checkToAreaMap[checks[i]];
-    let imgFile = getAreaImagePath(areaToImageMap[areaName]);
+    let imgFile = getImagePath(areaName);
     if (imgFile) {
       document.getElementById(key).style.backgroundImage = imgFile;
     }
   }
-  document.getElementById("lullabyimg").src = itemToImageMap["lullaby"];
-  document.getElementById("eponasimg").src = itemToImageMap["eponas"];
-  document.getElementById("sariasimg").src = itemToImageMap["sarias"];
-  document.getElementById("sunsimg").src = itemToImageMap["suns"];
-  document.getElementById("timeimg").src = itemToImageMap["time"];
-  document.getElementById("stormsimg").src = itemToImageMap["storms"];
-  document.getElementById("minuetimg").src = itemToImageMap["minuet"];
-  document.getElementById("boleroimg").src = itemToImageMap["bolero"];
-  document.getElementById("serenadeimg").src = itemToImageMap["serenade"];
-  document.getElementById("requiemimg").src = itemToImageMap["requiem"];
-  document.getElementById("nocturneimg").src = itemToImageMap["nocturne"];
-  document.getElementById("preludeimg").src = itemToImageMap["prelude"];
+  document.getElementById("lullabyimg").src = getImagePath("lullaby");
+  document.getElementById("eponasimg").src = getImagePath("eponas");
+  document.getElementById("sariasimg").src = getImagePath("sarias");
+  document.getElementById("sunsimg").src = getImagePath("suns");
+  document.getElementById("timeimg").src = getImagePath("time");
+  document.getElementById("stormsimg").src = getImagePath("storms");
+  document.getElementById("minuetimg").src = getImagePath("minuet");
+  document.getElementById("boleroimg").src = getImagePath("bolero");
+  document.getElementById("serenadeimg").src = getImagePath("serenade");
+  document.getElementById("requiemimg").src = getImagePath("requiem");
+  document.getElementById("nocturneimg").src = getImagePath("nocturne");
+  document.getElementById("preludeimg").src = getImagePath("prelude");
 }
 
 function updateTheme() {
