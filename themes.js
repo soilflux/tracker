@@ -214,6 +214,7 @@ const itemImages = [
 function getImagePath(areaOrItem) {
   const directory = itemToImageMap[areaOrItem] ? "items" : "areas";
   areaOrItem = itemToImageMap[areaOrItem] ?? areaToImageMap[areaOrItem];
+  console.log(areaOrItem)
   if (directory == 'areas') return `url('./${rules.theme}/${directory}/${areaOrItem}.png')`;
   else return `./${rules.theme}/${directory}/${areaOrItem}.png`
 }

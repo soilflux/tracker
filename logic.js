@@ -670,7 +670,7 @@ function logicShortcuts() {
   logic.can_cross_quicksand = logic.fortress_access && (logic.longshot || logic.hovers) && (rules.gerudoCard == "vanilla" || logic.gerudo_card || Spawn.adult_wasteland);
   logic.can_enter_colossus = (logic.can_cross_quicksand && (logic.brackets || logic.can_see)) || logic.requiem || Spawn.child_colossus || Spawn.adult_colossus || checkLogic.spirit_leftHand || checkLogic.spirit_rightHand;
   logic.can_enter_child_colossus = logic.requiem || Spawn.child_colossus || checkLogic.spirit_rightHand;
-  logic.fireMedallion = (logic.dins || (logic.bow && logic.fire_arrows)) && logic.magic;
+  logic.can_use_fire = (logic.dins || (logic.bow && logic.fire_arrows)) && logic.magic;
   logic.can_use_dins = logic.dins && logic.magic;
   logic.can_shoot_blue_fire_arrows = logic.ice_arrows && logic.bow && logic.magic && rules.blueFireArrows == "on";
   logic.can_use_farores = logic.farores && logic.magic;
@@ -725,7 +725,7 @@ function logicShortcuts() {
   player.can_enter_colossus = (player.can_cross_quicksand) || player.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checkAccess.spirit_leftHand || checkAccess.spirit_rightHand;
   player.can_enter_child_colossus = player.requiem || Spawn.child_colossus || Spawn.child_wasteland || checkAccess.spirit_rightHand;
   player.can_use_fire_arrows = player.fire_arrows && player.magic && player.bow;
-  player.fireMedallion = (player.dins || (player.bow && player.fire_arrows)) && player.magic;
+  player.can_use_fire = (player.dins || (player.bow && player.fire_arrows)) && player.magic;
   player.can_use_dins = player.dins && player.magic;
   player.can_shoot_blue_fire_arrows = player.ice_arrows && player.bow && player.magic && rules.blueFireArrows == "on";
   player.can_use_farores = player.farores && player.magic;
@@ -769,7 +769,7 @@ function logicShortcuts() {
   couldHave.can_cross_quicksand = couldHave.fortress_access && (rules.gerudoCard == "vanilla" || couldHave.gerudo_card);
   couldHave.can_enter_colossus = (couldHave.can_cross_quicksand) || couldHave.requiem || Spawn.child_colossus || Spawn.adult_colossus || Spawn.adult_wasteland || Spawn.child_wasteland || checkCouldAccess.spirit_leftHand || checkCouldAccess.spirit_rightHand;
   couldHave.can_enter_child_colossus = couldHave.requiem || Spawn.child_colossus || Spawn.child_wasteland || checkCouldAccess.spirit_rightHand;
-  couldHave.fireMedallion = (couldHave.dins || (couldHave.bow && couldHave.fire_arrows)) && couldHave.magic;
+  couldHave.can_use_fire = (couldHave.dins || (couldHave.bow && couldHave.fire_arrows)) && couldHave.magic;
   couldHave.can_use_dins = couldHave.dins && couldHave.magic;
   couldHave.can_shoot_blue_fire_arrows = couldHave.ice_arrows && couldHave.bow && couldHave.magic && rules.blueFireArrows == "on";
   couldHave.can_use_farores = couldHave.farores && couldHave.magic;
@@ -779,7 +779,7 @@ function logicShortcuts() {
   couldHave.can_enter_child_dodongos = couldHave.bombs || couldHave.goron_bracelet || player.chus;
   couldHave.can_break_dodongos_wall = couldHave.dodongos_access && (couldHave.bombs || player.chus || couldHave.goron_bracelet || (couldHave.dodongos_adult_access && (couldHave.hammer || couldHave.can_shoot_blue_fire_arrows)))
   couldHave.dodongos_climb = couldHave.can_break_dodongos_wall && (couldHave.bombs || player.chus || couldHave.goron_bracelet || couldHave.can_use_dins || (player.dodongos_adult_access && couldHave.bow));
-  couldHave.can_enter_shadow_entrance = (couldHave.nocturne || Spawn.adult_nocturne) && (couldHave.can_use_dins || (rules.fae == "allowed" && player.fireMedallion));//&& couldHave.can_see;
+  couldHave.can_enter_shadow_entrance = (couldHave.nocturne || Spawn.adult_nocturne) && (couldHave.can_use_dins || (rules.fae == "allowed" && player.can_use_fire));//&& couldHave.can_see;
   couldHave.can_cross_shadow_gap = couldHave.shadow_temple_adult_access && couldHave.hovers;
   couldHave.can_bomb_shadow_wall = couldHave.can_cross_shadow_gap && (couldHave.bombs || player.chus) && (rules.smallKeys != "keyRings" || couldHave.shadow_key_ring);
   couldHave.can_pass_shadow_hookshot_door = couldHave.can_bomb_shadow_wall && couldHave.hookshot;
@@ -1352,7 +1352,7 @@ function updateCheckLogic() {
     Access.gerudo_roof = Has.fortress_access && (Has.hookshot || Has.hovers);
     Access.gerudo_archery_1 = Has.eponas && Has.bow && Has.gtg_entrance_access;
     Access.gerudo_archery_2 = Has.eponas && Has.bow && Has.gtg_entrance_access;
-    Access.wasteland = (Has.can_cross_quicksand || Has.requiem) && Has.fireMedallion;
+    Access.wasteland = (Has.can_cross_quicksand || Has.requiem) && Has.can_use_fire;
     Access.wasteland_carpet = (Has.can_cross_quicksand || Has.requiem) && Has.adults_wallet;
     Access.colossus_fairy = Has.can_enter_colossus && (Has.bombs || player.chus) && Has.lullaby;
     Access.colossus_bean = Has.requiem && Has.bean_access;
@@ -1474,7 +1474,7 @@ function updateCheckLogic() {
     Access.cow_ranch2 = Has.eponas;
     Access.cow_ranch3 = Has.eponas;
     Access.cow_ranch4 = Has.eponas;
-    Access.cow_field = Has.eponas && ((Has.hammer && Has.fireMedallion) || (Has.bombs && Has.can_use_dins));
+    Access.cow_field = Has.eponas && ((Has.hammer && Has.can_use_fire) || (Has.bombs && Has.can_use_dins));
     Access.cow_valley = Has.eponas;
     Access.cow_trail = Has.eponas && Has.can_blast_or_smash;
     Access.cow_kakariko = Has.eponas;
@@ -1488,7 +1488,7 @@ function updateCheckLogic() {
     Access.gs_lost_woods_above_stage = Has.bean_access || (Has.hookshot && (player.chus || Has.bow)) || Has.longshot;
     Access.gs_sacred_forest = Has.hookshot;
     Access.gs_outside_kakariko = (Has.boomerang && (Has.bombs || player.chus)) || (Has.can_blast_or_smash && Has.hookshot);
-    Access.gs_near_gerudo = (Has.hammer && Has.fireMedallion && Has.hookshot) || (Has.can_use_dins && (Has.bombs || player.chus) && Has.boomerang);
+    Access.gs_near_gerudo = (Has.hammer && Has.can_use_fire && Has.hookshot) || (Has.can_use_dins && (Has.bombs || player.chus) && Has.boomerang);
     Access.gs_hyrule_castle_tree = true;
     Access.gs_hyrule_castle_grotto = Has.storms && Has.boomerang;
     Access.gs_lon_lon_tree = true;
@@ -1567,7 +1567,7 @@ function updateCheckLogic() {
     Peek.h_hyrule_remoteGrotto = Has.can_blast_or_smash;
     Peek.h_hyrule_openGrotto = true;
     Peek.h_hyrule_marketGrotto = Has.can_blast_or_smash;
-    Peek.h_hyrule_web = (Has.hammer && Has.fireMedallion) || ((Has.bombs || player.chus) && Has.can_use_dins)
+    Peek.h_hyrule_web = (Has.hammer && Has.can_use_fire) || ((Has.bombs || player.chus) && Has.can_use_dins)
     Peek.h_valley = true;
     Peek.h_lab = true;
     Peek.h_back_right_lake = true;
@@ -1604,7 +1604,7 @@ function updateCheckLogic() {
     Peek.gs_lost_woods_above_stage = Has.bean_access || player.chus || Has.bow || Has.longshot || Has.can_use_dins;
     Peek.gs_sacred_forest = Has.hookshot || player.chus || Has.bombs || Has.bow || Has.can_use_dins;
     Peek.gs_outside_kakariko = ((Has.boomerang || Has.sling || Has.can_use_dins) && (Has.bombs || player.chus)) || (Has.can_blast_or_smash && (Has.hookshot || Has.bow || Has.can_use_dins)) || player.chus || Has.bombs;
-    Peek.gs_near_gerudo = (Has.hammer && (Has.fireMedallion || player.chus || Has.bow)) || ((Has.bombs || player.chus) && (Has.can_use_dins || Has.sling || player.chus));
+    Peek.gs_near_gerudo = (Has.hammer && (Has.can_use_fire || player.chus || Has.bow)) || ((Has.bombs || player.chus) && (Has.can_use_dins || Has.sling || player.chus));
     Peek.gs_hyrule_castle_grotto = Has.storms && (Has.boomerang || player.chus || Has.sling || Has.can_use_dins || Has.bombs);
     Peek.gs_lon_lon_window = Has.boomerang || player.chus || Has.sling;
     Peek.gs_lon_lon_back_wall = Has.boomerang || player.chus || Has.sling || Has.can_use_dins || Has.bombs;
@@ -1679,9 +1679,9 @@ function updateEntranceAccess(dungeon, sim) {
       break;
 
     case "shadow":
-      sim.fireMedallion = (sim.dins || (sim.bow && sim.fire_arrows)) && sim.magic;
+      sim.can_use_fire = (sim.dins || (sim.bow && sim.fire_arrows)) && sim.magic;
       sim.can_use_dins = sim.dins && sim.magic;
-      const shadowAccess = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.fireMedallion));
+      const shadowAccess = (sim.nocturne || Spawn.adult_nocturne) && (sim.can_use_dins || (rules.fae == "allowed" && sim.can_use_fire));
 
       sim.adult = shadowAccess;
       sim.child = shadowAccess;
