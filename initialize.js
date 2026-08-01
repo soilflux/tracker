@@ -1720,7 +1720,7 @@ for (var i = 1; i <= 12; i++) {
   elem.id = "linsoC" + i;
   elem.style.height = "15px";
   elem.style.width = "15px";
-  elem.src = "./normal/check.png";
+  elem.src = "./linso/check.png";
   elem.style.position = "absolute";
   elem.style.left = 278 + "px";
   elem.style.top = tempTop + i * 31 + "px";
