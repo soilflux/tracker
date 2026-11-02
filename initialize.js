@@ -2905,7 +2905,7 @@ if (document.getElementById("presets").value == "SGL_2025") {
 }
 if (document.getElementById("presets").value == "TRUTH")
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas x\ntru \n";
-if (document.getElementById("presets").value == "LEAGUE_S9") {
+if (document.getElementById("presets").value == "LEAGUE_S10" || document.getElementById("presets").value == "LEAGUE_S9") {
 	document.getElementById("hintInput").innerHTML = "30 \n40 \n50 \noot \nnoc \nbig \nfr2 \nmas \n";
 	document.getElementById("zeldasSpot").value = "pre";
 }
